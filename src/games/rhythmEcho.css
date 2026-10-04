@@ -63,7 +63,7 @@
   font-size: 13px;
 }
 .re-score-label > span {
-  font-size: 11px;
+  font-size: 12px;
   color: #725d69;
 }
 .re-phrase {
@@ -90,7 +90,7 @@
   font-size: 12px;
 }
 .re-interval small {
-  font-size: 10px;
+  font-size: 12px;
   color: #75616e;
 }
 .re-interval.re-current {
@@ -190,7 +190,11 @@
   background: #fff7f1;
 }
 .rhythm-echo button:disabled {
-  opacity: 0.5;
+  opacity: 1;
+  color: #57434e;
+  background: #eee5e8;
+  border-color: #a08b94;
+  box-shadow: none;
   cursor: default;
 }
 .rhythm-echo button:focus-visible,
@@ -225,7 +229,7 @@
   box-shadow: 0 2px 3px #a37b861c;
 }
 .re-mode-note {
-  font-size: 11px;
+  font-size: 12px;
   line-height: 1.6;
   color: #755d69;
 }
@@ -255,7 +259,7 @@
   cursor: pointer;
 }
 .re-token-panel button small {
-  font-size: 10px;
+  font-size: 12px;
   line-height: 1.5;
 }
 .re-token-panel button b {
@@ -306,7 +310,7 @@
   line-height: 1;
 }
 .re-drum > small {
-  font-size: 10px;
+  font-size: 12px;
 }
 .re-drum.re-armed {
   background: #e9ced7;
@@ -401,7 +405,7 @@
   border-radius: 8px;
   border: 1px solid #dbc1c9;
   background: #fffbf7;
-  font-size: 11px;
+  font-size: 12px;
 }
 .re-guide details {
   margin: 20px 0;
@@ -430,7 +434,7 @@
 }
 .re-keyboard,
 .re-tolerance-detail {
-  font-size: 11px;
+  font-size: 12px;
   line-height: 1.8;
   color: #755e6b;
 }
@@ -458,7 +462,7 @@
     font-size: 12px;
   }
   .re-token-panel button small {
-    font-size: 9px;
+    font-size: 12px;
   }
   .re-guide br {
     display: none;

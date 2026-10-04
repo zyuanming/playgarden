@@ -109,7 +109,7 @@
   overflow-wrap: anywhere;
 }
 .mr-cell-caption {
-  font-size: 10px;
+  font-size: 12px;
   min-height: 15px;
   margin-top: 3px;
 }
@@ -188,7 +188,11 @@
   color: #35503c;
 }
 .mr-actions button:disabled {
-  opacity: 0.55;
+  opacity: 1;
+  color: #415844;
+  background: #e7eddf;
+  border-color: #8c9d87;
+  box-shadow: none;
   cursor: default;
 }
 .mr-hint {

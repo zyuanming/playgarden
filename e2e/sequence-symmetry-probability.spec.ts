@@ -1,4 +1,4 @@
-import { test, expect } from "@playwright/test";
+import { test, expect, type Page } from "@playwright/test";
 import { openGame, chooseLevel, complete, captureErrors } from "./helpers";
 import { memoryRoutesSolutions } from "../src/games/memoryRoutesSolutions";
 import { rhythmEchoSolutions } from "../src/games/rhythmEchoSolutions";
@@ -9,11 +9,38 @@ import {
   independentBagSolutions,
 } from "../tests/symmetryProbabilityOracle";
 
+async function readableDisabled(page: Page, selector: string) {
+  const colors = await page.locator(selector).evaluateAll((nodes) =>
+    nodes.map((node) => {
+      const s = getComputedStyle(node);
+      return { opacity: s.opacity, fg: s.color, bg: s.backgroundColor };
+    }),
+  );
+  expect(colors.length).toBeGreaterThan(0);
+  const luminance = (css: string) => {
+    const values = css
+      .match(/[\d.]+/g)!
+      .slice(0, 3)
+      .map(Number)
+      .map((v) => v / 255)
+      .map((v) => (v <= 0.04045 ? v / 12.92 : ((v + 0.055) / 1.055) ** 2.4));
+    return values[0] * 0.2126 + values[1] * 0.7152 + values[2] * 0.0722;
+  };
+  for (const color of colors) {
+    expect(color.opacity).toBe("1");
+    const a = luminance(color.fg),
+      b = luminance(color.bg);
+    expect(
+      (Math.max(a, b) + 0.05) / (Math.min(a, b) + 0.05),
+    ).toBeGreaterThanOrEqual(4.5);
+  }
+}
 test("all ordered memory routes with repeatable observation", async ({
   page,
 }, info) => {
   const errors = captureErrors(page);
   await openGame(page, "路线记忆");
+  await readableDisabled(page, ".mr-actions button:disabled");
   await page.screenshot({
     path: info.outputPath("memory-routes-start.png"),
     fullPage: true,
@@ -46,6 +73,14 @@ test("all ordered memory routes with repeatable observation", async ({
 test("all untimed rhythm motif transformations", async ({ page }, info) => {
   const errors = captureErrors(page);
   await openGame(page, "节奏回声");
+  await readableDisabled(page, ".rhythm-echo button:disabled");
+  const labels = await page
+    .locator(".re-token-panel button small")
+    .evaluateAll((nodes) =>
+      nodes.map((n) => parseFloat(getComputedStyle(n).fontSize)),
+    );
+  expect(labels.length).toBeGreaterThan(0);
+  expect(Math.min(...labels)).toBeGreaterThanOrEqual(12);
   await page.screenshot({
     path: info.outputPath("rhythm-echo-start.png"),
     fullPage: true,
@@ -61,6 +96,7 @@ test("all untimed rhythm motif transformations", async ({ page }, info) => {
       "data-rhythm-echo-won",
       "true",
     );
+    await readableDisabled(page, ".rhythm-echo button:disabled");
     await complete(page, info, "rhythm-echo", level);
   }
   expect(errors).toEqual([]);
