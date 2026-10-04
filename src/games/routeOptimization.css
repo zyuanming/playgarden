@@ -1,0 +1,358 @@
+/* Original route-map presentation. Every interactive control is >= 44 CSS px. */
+.route-optimization {
+  --ro-ink: #4b3d69;
+  --ro-accent: #745499;
+  --ro-paper: #f4eef9;
+  --ro-border: #d9cbe7;
+}
+.route-optimization.route-postman {
+  --ro-ink: #244f64;
+  --ro-accent: #336f86;
+  --ro-paper: #edf5f8;
+  --ro-border: #c6dce5;
+}
+.route-optimization .ro-play-area {
+  width: 100%;
+  min-width: 0;
+  max-width: 600px;
+  margin-inline: auto;
+}
+.route-optimization .ro-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+.route-optimization .ro-heading h3 {
+  margin-top: 5px;
+  font-size: clamp(18px, 2.4vw, 25px);
+}
+.route-optimization .ro-budget {
+  flex: 0 0 auto;
+  color: var(--ro-ink);
+  background: var(--ro-paper);
+  border: 1px solid var(--ro-border);
+  padding: 10px 14px;
+  border-radius: 16px;
+  text-align: center;
+}
+.route-optimization .ro-budget strong {
+  font-size: 28px;
+  line-height: 1;
+}
+.route-optimization .ro-budget span {
+  display: block;
+  margin-top: 5px;
+  font-size: 12px;
+}
+.route-optimization .ro-passport {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 6px;
+  margin-bottom: 12px;
+}
+.route-optimization .ro-passport > span {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  background: #fffdf9;
+  border: 1px dashed #b2a0c7;
+  border-radius: 9px;
+  padding: 6px 2px;
+  color: #625273;
+}
+.route-optimization .ro-passport b {
+  font-size: 17px;
+}
+.route-optimization .ro-passport small {
+  font-size: 11px;
+}
+.route-optimization .ro-passport .ro-stamped {
+  border: 2px solid var(--ro-accent);
+  background: var(--ro-paper);
+  padding: 5px 1px;
+  color: var(--ro-ink);
+}
+.route-optimization .ro-delivery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 8px;
+  background: var(--ro-paper);
+  color: var(--ro-ink);
+  border: 1px solid var(--ro-border);
+  padding: 13px;
+  border-radius: 13px;
+  margin-bottom: 12px;
+  font-size: 13px;
+}
+.route-optimization .ro-delivery b {
+  font-size: 17px;
+}
+.route-optimization .ro-delivery progress {
+  display: block;
+  width: 100%;
+  height: 12px;
+  accent-color: var(--ro-accent);
+}
+.route-optimization .ro-map {
+  overflow: hidden;
+  background: radial-gradient(ellipse at 50% 45%, #fffefa, var(--ro-paper));
+  border: 1px solid var(--ro-border);
+  border-radius: 23px;
+}
+.route-postman .ro-map {
+  background:
+    linear-gradient(90deg, transparent 49.7%, #dde9ef 50%, transparent 50.3%),
+    linear-gradient(transparent 49.7%, #dde9ef 50%, transparent 50.3%),
+    var(--ro-paper);
+  background-size: 28px 28px;
+}
+.route-optimization .ro-map svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 380px;
+}
+.route-optimization .ro-map-legend {
+  font-size: 12px;
+  margin: 0;
+  padding: 8px 12px 11px;
+  color: var(--ro-ink);
+  text-align: center;
+  background: #ffffffb8;
+  line-height: 1.6;
+}
+.route-optimization .ro-map-caption {
+  margin: 7px 3px 12px;
+  font-size: 12px;
+  line-height: 1.6;
+  color: #625e63;
+}
+.route-optimization .ro-unwalked-road {
+  stroke: #a598b0;
+  stroke-width: 2.5;
+  stroke-dasharray: 5 5;
+}
+.route-postman .ro-unwalked-road {
+  stroke: #809ba8;
+}
+.route-optimization .ro-walked-road {
+  stroke: var(--ro-accent);
+  stroke-width: 5;
+  stroke-linecap: round;
+}
+.route-optimization .ro-repeat-outline {
+  stroke: #a55925;
+  stroke-width: 11;
+  stroke-linecap: round;
+}
+.route-optimization .ro-repeat-outline + line {
+  stroke: #fff9ec;
+  stroke-width: 4;
+}
+.route-optimization .ro-town {
+  fill: #fffefa;
+  stroke: var(--ro-accent);
+  stroke-width: 2;
+}
+.route-optimization .ro-visited-town {
+  fill: var(--ro-paper);
+  stroke-width: 3;
+}
+.route-optimization .ro-town-label {
+  fill: var(--ro-ink);
+  font:
+    800 20px system-ui,
+    sans-serif;
+}
+.route-optimization .ro-location-ring {
+  stroke: var(--ro-ink);
+  stroke-width: 3;
+  fill: #fffefa;
+}
+.route-optimization .ro-home-mark {
+  stroke: var(--ro-ink);
+  stroke-width: 3;
+  fill: none;
+  stroke-linejoin: round;
+}
+.route-optimization .ro-here-mark {
+  fill: var(--ro-ink);
+}
+.route-optimization .ro-feedback {
+  background: var(--ro-paper);
+  color: var(--ro-ink);
+  padding: 12px 14px;
+  border-radius: 12px;
+  line-height: 1.7;
+  font-size: 14px;
+  font-weight: 700;
+}
+.route-optimization .ro-over-budget {
+  background: #fff0df;
+  color: #87491c;
+}
+.route-optimization .ro-hint {
+  border: 2px dashed var(--ro-accent);
+  background: #fffdf3;
+  border-radius: 12px;
+  padding: 12px;
+  font-size: 14px;
+  line-height: 1.75;
+}
+.route-optimization .ro-path {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-block: 13px;
+  border-left: 3px solid var(--ro-border);
+  padding-left: 11px;
+}
+.route-optimization .ro-path strong {
+  font-size: 12px;
+  color: #655c70;
+}
+.route-optimization .ro-path span {
+  font-size: 14px;
+  line-height: 1.75;
+  overflow-wrap: anywhere;
+  color: var(--ro-ink);
+}
+.route-optimization .ro-road-heading {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 5px;
+  align-items: center;
+  margin-bottom: 9px;
+}
+.route-optimization .ro-road-heading h4 {
+  font-size: 15px;
+  margin: 0;
+}
+.route-optimization .ro-road-heading > span {
+  font-size: 12px;
+  color: #65606a;
+}
+.route-optimization .ro-road-choices {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 9px;
+}
+.route-optimization .ro-road-choice {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 6px;
+  text-align: left;
+  min-height: 93px;
+  min-width: 44px;
+  padding: 10px 11px;
+  background: #fffefa;
+  color: var(--ro-ink);
+  border: 2px solid var(--ro-accent);
+  border-radius: 12px;
+  box-shadow: 0 2px 0 var(--ro-border);
+  touch-action: manipulation;
+  white-space: normal;
+  line-height: 1.35;
+}
+.route-optimization .ro-road-choice:disabled {
+  opacity: 1;
+  color: #716b76;
+  border-color: #d8d2dd;
+  background: #f5f3f6;
+  box-shadow: none;
+  cursor: default;
+  transform: none;
+}
+.route-optimization .ro-road-choice:not(:disabled):hover {
+  background: var(--ro-paper);
+  transform: translateY(-1px);
+}
+.route-optimization .ro-road-choice:focus-visible,
+.route-optimization summary:focus-visible {
+  outline: 3px solid #182e44;
+  outline-offset: 3px;
+}
+.route-optimization .ro-road-main {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+.route-optimization .ro-road-main b {
+  font-size: 17px;
+}
+.route-optimization .ro-road-main strong {
+  font-size: 18px;
+}
+.route-optimization .ro-road-main small {
+  font-size: 11px;
+  font-weight: 500;
+}
+.route-optimization .ro-road-state {
+  font-size: 12px;
+}
+.route-optimization .ro-road-action {
+  font-size: 11px;
+  line-height: 1.55;
+}
+.route-optimization .ro-road-covered {
+  border-style: double;
+}
+.route-optimization .ro-road-choice.ro-hinted {
+  background: #fff1b9;
+  border-color: #806120;
+}
+.route-optimization .ro-guide {
+  align-self: start;
+}
+.route-optimization .ro-worked-example {
+  background: var(--ro-paper);
+  border: 1px solid var(--ro-border);
+  border-radius: 13px;
+  padding-inline: 14px;
+  margin-block: 17px;
+  color: var(--ro-ink);
+}
+.route-optimization .ro-worked-example summary {
+  min-height: 48px;
+  padding-block: 13px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 700;
+}
+.route-optimization .ro-worked-example p {
+  margin-top: 0;
+  font-size: 14px;
+  line-height: 1.9;
+}
+.route-optimization .ro-insight {
+  color: var(--ro-ink);
+  font-size: 14px;
+  line-height: 1.85;
+}
+@media (max-width: 520px) {
+  .route-optimization .ro-road-choices {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .route-optimization .ro-heading {
+    gap: 8px;
+  }
+  .route-optimization .ro-budget {
+    padding: 9px;
+  }
+  .route-optimization .ro-budget span {
+    font-size: 11px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .route-optimization button {
+    transition: none;
+  }
+}

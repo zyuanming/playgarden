@@ -286,6 +286,7 @@
 }
 
 /* Locked and completed comparators are learning content, not fading controls. */
-.sorting-network select:disabled {
-  opacity: 1;
-}
+.sorting-network select:disabled { opacity: 1; }
+
+.sorting-network .sn-scroll-cue {color:#375640;font-size:13px;line-height:1.6;margin:10px 0;}
+.sorting-network .sn-switches button:disabled { opacity: 1; }

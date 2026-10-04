@@ -1,3 +1,11 @@
+import {conditionalSorterLevels} from "../src/games/conditionalSorterLevels";
+import {stateMachineLocksLevels} from "../src/games/stateMachineLocksLogic";
+import {
+  townTourLevels,
+  postmanRoutesLevels,
+} from "../src/games/routeOptimizationLevels";
+import { kakuroLevels } from "../src/games/kakuroLogic";
+import { arithmeticCageLevels } from "../src/games/arithmeticCageLogic";
 import { describe, it, expect } from "vitest";
 import { games } from "../src/lib/registry";
 import { GAME_IDS } from "../src/lib/catalog";
@@ -55,6 +63,12 @@ const packs = {
   "sorting-network": sortingNetworkLevels,
   voxel: voxelViewsLevels,
   "cube-net": cubeNetLevels,
+  kakuro: kakuroLevels,
+  "conditional-sorter":conditionalSorterLevels,
+  "state-machine-locks":stateMachineLocksLevels,
+  "town-tour": townTourLevels,
+  "postman-routes": postmanRoutesLevels,
+  "arithmetic-cage": arithmeticCageLevels,
   untangle: untangleLevels,
   "minimum-network": minimumNetworkLevels,
   hitori: hitoriLevels,
@@ -113,8 +127,8 @@ describe("Scalable catalog contract", () => {
       expect(game.artwork.url).toMatch(/^\//);
     }),
   );
-  it("counts only 49 real games and 588 levels, not the roadmap", () => {
-    expect(games).toHaveLength(49);
-    expect(games.reduce((sum, g) => sum + g.levelCount, 0)).toBe(588);
+  it("counts only 55 real games and 660 levels, not the roadmap", () => {
+    expect(games).toHaveLength(55);
+    expect(games.reduce((sum, g) => sum + g.levelCount, 0)).toBe(660);
   });
 });
