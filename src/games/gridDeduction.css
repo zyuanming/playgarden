@@ -594,3 +594,10 @@
     transition: none;
   }
 }
+/* Explicit tracks prevent global button centering from shrinking percentage-sized game pieces. */
+.gd-layout .gd-box-cell {
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: minmax(0, 1fr);
+  justify-content: stretch;
+  gap: 0;
+}

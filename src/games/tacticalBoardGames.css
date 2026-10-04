@@ -439,3 +439,10 @@
     transition: none;
   }
 }
+/* Keep discs circular even when buttons inherit the shared centered-control styles. */
+.tbg-layout .tbg-square {
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: minmax(0, 1fr);
+  justify-content: stretch;
+  gap: 0;
+}

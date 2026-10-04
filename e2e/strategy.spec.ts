@@ -25,6 +25,11 @@ test("all box-pushing routes", async ({ page }, info) => {
     for (const direction of boxLevels[level].solution)
       await page.locator(`[data-direction="${direction}"]`).click();
     await complete(page, info, "boxes", level);
+    const crate = await page
+      .locator(".gd-box-board .gd-crate")
+      .first()
+      .boundingBox();
+    expect(Math.abs(crate!.width - crate!.height)).toBeLessThan(1);
   }
   expect(errors).toEqual([]);
 });
@@ -49,6 +54,8 @@ test("all Reversi endgames against AI", async ({ page }, info) => {
     for (const index of reversiLevels[level].solution)
       await page.locator(`button[data-cell="${index}"]`).click();
     await complete(page, info, "reversi", level);
+    const disc = await page.locator(".tbg-disc").first().boundingBox();
+    expect(Math.abs(disc!.width - disc!.height)).toBeLessThan(1);
   }
   expect(errors).toEqual([]);
 });
