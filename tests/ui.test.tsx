@@ -119,7 +119,12 @@ describe("All nine playable levels", () => {
         const btn = screen.getByRole("button", {
           name: `${t.x + 1} 列 ${t.y + 1} 行桥块，旋转`,
         });
-        for (let n = 0; n < (l.solution[i] - t.rotation + 4) % 4; n++)
+        for (
+          let n = 0;
+          n <
+          (l.solution[i] - t.rotation + 4) % (t.kind === "straight" ? 2 : 4);
+          n++
+        )
           fireEvent.click(btn);
       });
       expect(done).toHaveBeenCalledOnce();

@@ -92,7 +92,11 @@ test("catalog and all nine game levels work with persistent progress", async ({
     const l = bridgeLevels[level];
     for (let i = 0; i < l.tiles.length; i++) {
       const t = l.tiles[i];
-      for (let n = 0; n < (l.solution[i] - t.rotation + 4) % 4; n++)
+      for (
+        let n = 0;
+        n < (l.solution[i] - t.rotation + 4) % (t.kind === "straight" ? 2 : 4);
+        n++
+      )
         await page
           .getByRole("button", {
             name: `${t.x + 1} 列 ${t.y + 1} 行桥块，旋转`,
