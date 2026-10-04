@@ -1,3 +1,4 @@
+import { contrastRatio } from "./colorContrast";
 import { test, expect, type Page } from "@playwright/test";
 import { openGame, chooseLevel, complete, captureErrors } from "./helpers";
 import { memoryRoutesSolutions } from "../src/games/memoryRoutesSolutions";
@@ -12,29 +13,32 @@ import {
 async function readableDisabled(page: Page, selector: string) {
   const colors = await page.locator(selector).evaluateAll((nodes) =>
     nodes.map((node) => {
-      const s = getComputedStyle(node);
-      return { opacity: s.opacity, fg: s.color, bg: s.backgroundColor };
+      const s = getComputedStyle(node),
+        backgrounds: string[] = [];
+      for (
+        let current: Element | null = node;
+        current;
+        current = current.parentElement
+      )
+        backgrounds.push(getComputedStyle(current).backgroundColor);
+      return {
+        opacity: s.opacity,
+        fg: s.color,
+        backgrounds,
+        label: node.textContent,
+      };
     }),
   );
   expect(colors.length).toBeGreaterThan(0);
-  const luminance = (css: string) => {
-    const values = css
-      .match(/[\d.]+/g)!
-      .slice(0, 3)
-      .map(Number)
-      .map((v) => v / 255)
-      .map((v) => (v <= 0.04045 ? v / 12.92 : ((v + 0.055) / 1.055) ** 2.4));
-    return values[0] * 0.2126 + values[1] * 0.7152 + values[2] * 0.0722;
-  };
   for (const color of colors) {
     expect(color.opacity).toBe("1");
-    const a = luminance(color.fg),
-      b = luminance(color.bg);
     expect(
-      (Math.max(a, b) + 0.05) / (Math.min(a, b) + 0.05),
+      contrastRatio(color.fg, color.backgrounds),
+      JSON.stringify(color),
     ).toBeGreaterThanOrEqual(4.5);
   }
 }
+
 test("all ordered memory routes with repeatable observation", async ({
   page,
 }, info) => {
