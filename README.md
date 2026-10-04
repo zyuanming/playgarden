@@ -60,7 +60,7 @@ npm run build
 ## 验证状态
 
 - TypeScript 类型检查、Vite 生产构建、799 项本地逻辑/存储/DOM 自动化测试通过。每个关卡都有可复现的解法验证；数独验证唯一解，花园侦探验证不猜测推理，熄灯谜阵用 GF(2) 求解器验证。
-- 浏览器测试覆盖 1536×1024 桌面窗口和 390×844 触屏模拟窗口。主分支上一批 17 款/204 关已通过 36 个浏览器场景及截图复核。本批扩展到 52 个场景、完整执行全部 300 关，发布前以 GitHub Actions 实际结果为准；当前新增批次正在等待浏览器验收。Three.js 测试使用实际画布，不使用替身。
+- 浏览器测试覆盖 1536×1024 桌面窗口和 390×844 触屏模拟窗口。52 个浏览器场景已通过，分别完整执行全部 300 关，并复核新增游戏截图。验证记录：[本批完整检查](https://github.com/zyuanming/playgarden/actions/runs/37217445011)。修复了城市预览每次输入重复建立 WebGL 上下文的问题；Three.js 测试使用实际画布，不使用替身。
 - 浏览器测试发现并修复了机器人换关时旧动画帧导致的错误，并加入回归测试。DOM 测试另外覆盖重来、撤销与执行中暂停/恢复。
 - 运行 `npx playwright install chromium` 后可用 `npm run test:e2e` 重现浏览器检查；完整结果和临时截图在 [GitHub Actions](https://github.com/zyuanming/playgarden/actions) 中查看。
 - 尚未验证 Safari、Firefox、真实 iOS/Android 硬件、屏幕阅读器或完整 WCAG 合规性。手机尺寸的 Chromium 测试不等于真机验收。
