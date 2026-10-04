@@ -41,6 +41,14 @@ export const GAME_IDS = [
   "dots",
   "incline",
   "buoyancy",
+  "untangle",
+  "minimum-network",
+  "hitori",
+  "nurikabe",
+  "binary",
+  "sorting-network",
+  "voxel",
+  "cube-net",
 ] as const;
 export type GameId = (typeof GAME_IDS)[number];
 export type Category =
@@ -120,6 +128,18 @@ export const regionNumberArtwork = (index: number) => ({
 
 export const strategyPhysicsArtwork = (index: number) => ({
   url: "/strategy-physics-art.webp",
+  position: `${(index % 2) * 100}% ${index < 2 ? 12 : 88}%`,
+  size: "200% auto",
+});
+
+export const optimizationIslandsArtwork = (index: number) => ({
+  url: "/optimization-islands-art.webp",
+  position: `${(index % 2) * 100}% ${index < 2 ? 12 : 88}%`,
+  size: "200% auto",
+});
+
+export const bitSpatialArtwork = (index: number) => ({
+  url: "/bit-spatial-art.webp",
   position: `${(index % 2) * 100}% ${index < 2 ? 12 : 88}%`,
   size: "200% auto",
 });

@@ -42,7 +42,23 @@ import { hexLevels } from "../src/games/hexLogic";
 import { dotsLevels } from "../src/games/dotsAndBoxesLogic";
 import { inclineLevels } from "../src/games/inclineLogic";
 import { buoyancyLevels } from "../src/games/buoyancyLogic";
+import { untangleLevels } from "../src/games/untangleLogic";
+import { minimumNetworkLevels } from "../src/games/minimumNetworkLogic";
+import { hitoriLevels } from "../src/games/hitoriLogic";
+import { nurikabeLevels } from "../src/games/nurikabeLogic";
+import { binaryCourierLevels } from "../src/games/binaryCourierLogic";
+import { sortingNetworkLevels } from "../src/games/sortingNetworkLogic";
+import { voxelViewsLevels } from "../src/games/voxelViewsLogic";
+import { cubeNetLevels } from "../src/games/cubeNetLogic";
 const packs = {
+  binary: binaryCourierLevels,
+  "sorting-network": sortingNetworkLevels,
+  voxel: voxelViewsLevels,
+  "cube-net": cubeNetLevels,
+  untangle: untangleLevels,
+  "minimum-network": minimumNetworkLevels,
+  hitori: hitoriLevels,
+  nurikabe: nurikabeLevels,
   hex: hexLevels,
   dots: dotsLevels,
   incline: inclineLevels,
@@ -97,8 +113,8 @@ describe("Scalable catalog contract", () => {
       expect(game.artwork.url).toMatch(/^\//);
     }),
   );
-  it("counts only 41 real games and 492 levels, not the roadmap", () => {
-    expect(games).toHaveLength(41);
-    expect(games.reduce((sum, g) => sum + g.levelCount, 0)).toBe(492);
+  it("counts only 49 real games and 588 levels, not the roadmap", () => {
+    expect(games).toHaveLength(49);
+    expect(games.reduce((sum, g) => sum + g.levelCount, 0)).toBe(588);
   });
 });
