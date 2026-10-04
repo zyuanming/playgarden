@@ -78,6 +78,14 @@ test("all resource-limited state machine door challenges", async ({
           nodes.every((node) => getComputedStyle(node).opacity === "1"),
         ),
     ).toBe(true);
+    const history = page.getByLabel("执行轨迹，可上下滚动回看", {
+      exact: true,
+    });
+    expect(
+      await history.evaluate(
+        (node) => node.scrollTop + node.clientHeight >= node.scrollHeight - 2,
+      ),
+    ).toBe(true);
     await complete(page, info, "state-machine-locks", level);
   }
   expect(errors).toEqual([]);

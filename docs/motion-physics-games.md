@@ -56,4 +56,4 @@ All controls are native buttons, usable with click/touch/Tab/Enter/Space. Select
 - Dock launch/readout: `[data-testid="buoyancy-launch"]`, `buoyancy-draft`, `buoyancy-target`, `buoyancy-mass`.
 - Workbench accessible regions: `斜坡停车实验台`, `浮力配载码头`.
 
-The component suite replays all 24 certificates through DOM buttons and also covers pause, consumed tokens, reset, level change, hints without auto-solving, full slots, keyboard-only completion, idempotent completion, undo/replay and a persistent SVG without WebGL. Browser screenshot/visual QA is intentionally left to integration; this worker did not use a browser or modify registry/App/shared types/global CSS/package files.
+The component suite replays all 24 certificates through DOM buttons and also covers pause, consumed tokens, reset, level change, hints without auto-solving, full slots, keyboard-only completion, idempotent completion, undo/replay and a persistent SVG without WebGL. Browser screenshot and visual validation are separate from these component tests; consult the corresponding CI run and release review.

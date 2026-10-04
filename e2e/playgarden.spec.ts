@@ -39,6 +39,23 @@ test("catalog search, category, difficulty, favorites and legacy migration", asy
     fullPage: true,
     animations: "disabled",
   });
+  await page.getByRole("combobox", { name: "游戏排序" }).selectOption("newest");
+  await expect(page.locator(".game-card").first()).toContainText(
+    games.at(-1)!.title,
+  );
+  await page.screenshot({
+    path: info.outputPath("catalog-newest.png"),
+    fullPage: true,
+    animations: "disabled",
+  });
+  await page
+    .getByRole("combobox", { name: "游戏排序" })
+    .selectOption("continue");
+  await expect(page.locator(".game-card").first()).toContainText("光线实验室");
+  await expect(page.getByText(/优先显示已经开始/)).toBeVisible();
+  await page
+    .getByRole("combobox", { name: "游戏排序" })
+    .selectOption("featured");
   await page.getByRole("button", { name: "我的收藏", exact: true }).click();
   await expect(page.locator(".game-card")).toHaveCount(1);
   await page.getByRole("button", { name: "游戏大厅", exact: true }).click();

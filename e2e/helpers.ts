@@ -6,6 +6,7 @@ export async function openGame(page: Page, title: string) {
     .getByRole("button", { name: `开始玩${title}`, exact: true })
     .click();
   await expect(page.locator(".game-surface")).toBeVisible();
+  await expect(page.locator(".game-surface .loading")).toHaveCount(0);
 }
 export async function chooseLevel(page: Page, level: number) {
   await page

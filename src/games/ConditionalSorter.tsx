@@ -71,7 +71,7 @@ function SorterLevel({
     trace = traceSort(state.program, parcel);
   useEffect(() => {
     onStatus(
-      "从上往下检查条件，第一条命中就装箱；全部包裹都正确才通关。先读右侧任务单。",
+      "从上往下检查条件，第一条命中就装箱；全部包裹都正确才通关。先看任务说明与完整测试表。",
     );
   }, []);
   useEffect(() => {
