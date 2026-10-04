@@ -1097,3 +1097,5 @@ footer a {
     align-self: flex-start;
   }
 }
+
+.catalog-sort-help { color:#425f51; font-size:13px; text-align:center; line-height:1.6; margin:12px 0; }

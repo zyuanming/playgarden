@@ -12,7 +12,7 @@ Two original MIT-licensed Playgarden games, authored for this repository. All ru
 - `routeOptimization.css`: scoped styles; minimum 44 px controls, large map labels, distinct town-passport and postal-coverage feedback.
 - `tests/routeOptimizationGames.test.tsx`: independent mathematical oracles and every-level rendered replay.
 
-The parent integration owns catalog, registry, shell, package, and end-to-end test changes. These files do not alter those surfaces.
+Catalog metadata, lazy-loading registration and end-to-end checks are maintained separately from these modules.
 
 ## Different mathematical goals
 
@@ -102,7 +102,7 @@ A second production proof uses road-weight sum plus minimum shortest-path pairin
 
 ## Verification commands
 
-Run checks serially to fit the shared workspace's memory budget:
+Run checks serially when memory is limited:
 
 - `NODE_OPTIONS=--max-old-space-size=384 ./node_modules/.bin/vitest run tests/routeOptimizationGames.test.tsx --maxWorkers=1`
 - `NODE_OPTIONS=--max-old-space-size=512 ./node_modules/.bin/tsc -b`

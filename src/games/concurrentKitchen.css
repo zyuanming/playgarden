@@ -1,0 +1,411 @@
+/* SPDX-License-Identifier: MIT */
+.concurrent-kitchen {
+  align-items: start;
+}
+.concurrent-kitchen .ck-workbench {
+  min-width: 0;
+  padding: 20px;
+  border: 1px solid #ddcbb3;
+  border-radius: 24px;
+  background: #faf4e8;
+}
+.concurrent-kitchen .ck-heading,
+.concurrent-kitchen .ck-timeline-heading,
+.concurrent-kitchen .ck-task-heading,
+.concurrent-kitchen .ck-editor-heading {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+.concurrent-kitchen h3 {
+  margin: 7px 0;
+  color: #594531;
+}
+.concurrent-kitchen h4 {
+  margin: 0;
+  color: #514b38;
+  font-size: 0.9rem;
+}
+.concurrent-kitchen .ck-heading .mini-label {
+  color: #816740;
+}
+.concurrent-kitchen .ck-deadline {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 67px;
+  border: 2px solid #ad8250;
+  border-radius: 15px;
+  background: #fffdf7;
+  padding: 7px 12px;
+  color: #664b2d;
+}
+.concurrent-kitchen .ck-deadline small {
+  font-size: 0.65rem;
+}
+.concurrent-kitchen .ck-deadline strong {
+  font-size: 1.7rem;
+  line-height: 1.2;
+}
+.concurrent-kitchen .ck-intro {
+  color: #685943;
+  font-size: 0.88rem;
+  line-height: 1.65;
+}
+.concurrent-kitchen .ck-station-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 16px 0;
+}
+.concurrent-kitchen .ck-station-strip > div {
+  flex: 1 1 135px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #ddd4c1;
+  border-radius: 12px;
+  background: #fffdf7;
+  padding: 7px;
+  gap: 8px;
+}
+.concurrent-kitchen .ck-station-strip svg {
+  width: 48px;
+  height: 38px;
+  fill: #eedfc4;
+  stroke: #735f41;
+  stroke-width: 2;
+}
+.concurrent-kitchen .ck-station-strip span {
+  font-size: 0.78rem;
+  color: #5c523c;
+  font-weight: 700;
+}
+.concurrent-kitchen .ck-station-strip small {
+  display: block;
+  font-size: 0.65rem;
+  margin-top: 3px;
+  font-weight: 400;
+}
+.concurrent-kitchen .ck-timeline-heading span,
+.concurrent-kitchen .ck-task-heading span,
+.concurrent-kitchen .ck-editor-heading span {
+  font-size: 0.69rem;
+  color: #75674c;
+}
+.concurrent-kitchen .ck-timeline-scroll {
+  max-width: 100%;
+  overflow-x: auto;
+  margin: 10px 0 18px;
+  border: 1px solid #d4c9b3;
+  border-radius: 12px;
+  background: #fffefa;
+}
+.concurrent-kitchen .ck-timeline {
+  border-collapse: separate;
+  border-spacing: 0;
+  width: 100%;
+  table-layout: auto;
+  font-size: 0.72rem;
+  color: #544936;
+}
+.concurrent-kitchen .ck-timeline caption {
+  caption-side: bottom;
+  text-align: left;
+  padding: 10px;
+  font-size: 0.69rem;
+  line-height: 1.6;
+}
+.concurrent-kitchen .ck-timeline th {
+  min-width: 44px;
+  height: 44px;
+  padding: 6px 2px;
+  background: #eee6d3;
+  text-align: center;
+  border-right: 1px solid #dad1bd;
+}
+.concurrent-kitchen .ck-timeline th span {
+  display: block;
+  font-size: 0.61rem;
+  font-weight: 400;
+}
+.concurrent-kitchen .ck-timeline th:first-child {
+  min-width: 65px;
+  position: sticky;
+  left: 0;
+  z-index: 1;
+  box-shadow: 1px 0 #cbbfa6;
+}
+.concurrent-kitchen .ck-timeline td {
+  min-width: 44px;
+  height: 49px;
+  padding: 3px 2px;
+  border-right: 1px solid #e5dece;
+  border-top: 1px solid #e5dece;
+  text-align: center;
+}
+.concurrent-kitchen .ck-time-task {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  min-height: 36px;
+  margin: 2px 0;
+  font-weight: 800;
+  color: #373c34;
+  border: 1px solid #938b7570;
+  border-radius: 5px;
+}
+.concurrent-kitchen .ck-time-selected {
+  outline: 2px solid #655133;
+  outline-offset: -2px;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.concurrent-kitchen .ck-cell-conflict {
+  background: #ffe3db;
+}
+.concurrent-kitchen .ck-cell-conflict .ck-time-task {
+  border: 2px solid #b44935;
+}
+.concurrent-kitchen .ck-empty {
+  color: #847965;
+}
+.concurrent-kitchen .ck-conflicts {
+  border: 1px solid #b8583e;
+  border-left: 4px solid #b8583e;
+  border-radius: 11px;
+  background: #fff0e8;
+  padding: 10px 12px;
+  color: #833e2a;
+  font-size: 0.77rem;
+  line-height: 1.6;
+  margin: 12px 0;
+}
+.concurrent-kitchen .ck-conflicts ul {
+  margin: 6px 0;
+  padding-left: 20px;
+}
+.concurrent-kitchen .ck-conflicts p {
+  margin: 5px 0 0;
+}
+.concurrent-kitchen .ck-task-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 9px;
+  margin: 10px 0 16px;
+}
+.concurrent-kitchen button {
+  font: inherit;
+  min-height: 44px;
+  min-width: 44px;
+  cursor: pointer;
+}
+.concurrent-kitchen .ck-task {
+  border: 2px solid #d6cdb9;
+  border-radius: 13px;
+  background: #fffefa;
+  color: #4e4838;
+  text-align: left;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.concurrent-kitchen .ck-task:hover {
+  border-color: #8d805c;
+}
+.concurrent-kitchen .ck-task.ck-selected {
+  border: 3px solid #5b6941;
+  padding: 9px;
+  box-shadow: inset 0 0 0 2px #eef1df;
+  background: #f7f8eb;
+}
+.concurrent-kitchen .ck-task-top {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  width: 100%;
+}
+.concurrent-kitchen .ck-badge {
+  display: flex;
+  flex: 0 0 29px;
+  align-items: center;
+  justify-content: center;
+  width: 29px;
+  height: 29px;
+  border-radius: 8px;
+  border: 1px solid #b4a68c;
+  color: #3c4035;
+}
+.concurrent-kitchen .ck-task-top strong {
+  font-size: 0.79rem;
+}
+.concurrent-kitchen .ck-selected-word {
+  margin-left: auto;
+  white-space: nowrap;
+  font-size: 0.65rem;
+  color: #4e6536;
+}
+.concurrent-kitchen .ck-task-spec,
+.concurrent-kitchen .ck-predecessor {
+  font-size: 0.71rem;
+  line-height: 1.5;
+}
+.concurrent-kitchen .ck-task-status {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #5e6846;
+}
+.concurrent-kitchen .ck-task-conflict .ck-task-status {
+  color: #9c402f;
+}
+.concurrent-kitchen .ck-editor {
+  border: 1px solid #bdc6a1;
+  background: #eef1e1;
+  border-radius: 15px;
+  padding: 13px;
+}
+.concurrent-kitchen .ck-editor p {
+  font-size: 0.76rem;
+  color: #566047;
+  line-height: 1.6;
+  margin: 8px 0;
+}
+.concurrent-kitchen .ck-start-options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(46px, 1fr));
+  gap: 7px;
+}
+.concurrent-kitchen .ck-start-options button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #fffefa;
+  border: 2px solid #b8c1a5;
+  border-radius: 10px;
+  color: #425435;
+  padding: 6px;
+}
+.concurrent-kitchen .ck-start-options button strong {
+  font-size: 1rem;
+}
+.concurrent-kitchen .ck-start-options button small {
+  font-size: 0.65rem;
+}
+.concurrent-kitchen .ck-start-options button.ck-start-selected {
+  background: #55633e;
+  color: #fffef4;
+  border-color: #3c4d28;
+}
+.concurrent-kitchen .ck-remove {
+  margin-top: 10px;
+  padding: 8px 13px;
+  border: 1px solid #a6b28d;
+  border-radius: 10px;
+  background: #fffefa;
+  color: #526141;
+  font-size: 0.77rem;
+}
+.concurrent-kitchen .ck-editor .ck-keyboard {
+  font-size: 0.67rem;
+  margin-bottom: 0;
+}
+.concurrent-kitchen [aria-disabled="true"] {
+  cursor: default;
+}
+.concurrent-kitchen button:focus-visible,
+.concurrent-kitchen .ck-timeline-scroll:focus-visible {
+  outline: 3px solid #916c29;
+  outline-offset: 3px;
+}
+.concurrent-kitchen .ck-hinted {
+  box-shadow: 0 0 0 3px #d99622;
+}
+.concurrent-kitchen .ck-notes {
+  min-width: 0;
+}
+.concurrent-kitchen .ck-notes p {
+  line-height: 1.7;
+}
+.concurrent-kitchen .ck-rule {
+  padding: 12px;
+  border: 1px solid #e0d7c1;
+  background: #faf5e9;
+  border-radius: 12px;
+  margin: 10px 0;
+  color: #65573b;
+}
+.concurrent-kitchen .ck-rule strong {
+  font-size: 0.82rem;
+}
+.concurrent-kitchen .ck-rule p {
+  margin: 5px 0 0;
+  font-size: 0.77rem;
+}
+.concurrent-kitchen .ck-objective {
+  font-weight: 600;
+  color: #516140;
+}
+.concurrent-kitchen .ck-hint {
+  border: 1px solid #cda34c;
+  border-radius: 12px;
+  padding: 12px;
+  background: #fff0bd;
+  color: #725622;
+}
+.concurrent-kitchen .ck-notes .ck-fiction {
+  font-size: 0.68rem;
+  color: #776c56;
+}
+@media (max-width: 600px) {
+  .concurrent-kitchen .ck-workbench {
+    padding: 12px;
+    border-radius: 18px;
+  }
+  .concurrent-kitchen .ck-station-strip {
+    gap: 5px;
+  }
+  .concurrent-kitchen .ck-station-strip > div {
+    flex-basis: 85px;
+    flex-direction: column;
+    gap: 3px;
+  }
+  .concurrent-kitchen .ck-task-list {
+    gap: 7px;
+  }
+  .concurrent-kitchen .ck-task {
+    padding: 8px;
+  }
+  .concurrent-kitchen .ck-task.ck-selected {
+    padding: 7px;
+  }
+  .concurrent-kitchen .ck-task-top {
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+  .concurrent-kitchen .ck-task-top strong {
+    font-size: 0.74rem;
+  }
+  .concurrent-kitchen .ck-selected-word {
+    margin-left: 0;
+  }
+  .concurrent-kitchen .ck-editor {
+    padding: 10px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .concurrent-kitchen * {
+    scroll-behavior: auto;
+  }
+}
+
+.concurrent-kitchen .ck-scroll-cue {
+  font-size: 13px;
+  color: #385647;
+  line-height: 1.7;
+  margin: 12px 0;
+}

@@ -1,5 +1,9 @@
-import {conditionalSorterLevels} from "../src/games/conditionalSorterLevels";
-import {stateMachineLocksLevels} from "../src/games/stateMachineLocksLogic";
+import { concurrentKitchenLevels } from "../src/games/concurrentKitchenLevels";
+import { parabolicTargetsLevels } from "../src/games/parabolicTargetsLevels";
+import { currentCircuitLevels } from "../src/games/currentCircuitLevels";
+import { budgetTownLevels } from "../src/games/budgetTownLevels";
+import { conditionalSorterLevels } from "../src/games/conditionalSorterLevels";
+import { stateMachineLocksLevels } from "../src/games/stateMachineLocksLogic";
 import {
   townTourLevels,
   postmanRoutesLevels,
@@ -64,8 +68,12 @@ const packs = {
   voxel: voxelViewsLevels,
   "cube-net": cubeNetLevels,
   kakuro: kakuroLevels,
-  "conditional-sorter":conditionalSorterLevels,
-  "state-machine-locks":stateMachineLocksLevels,
+  "concurrent-kitchen": concurrentKitchenLevels,
+  parabolic: parabolicTargetsLevels,
+  "current-circuit": currentCircuitLevels,
+  "budget-town": budgetTownLevels,
+  "conditional-sorter": conditionalSorterLevels,
+  "state-machine-locks": stateMachineLocksLevels,
   "town-tour": townTourLevels,
   "postman-routes": postmanRoutesLevels,
   "arithmetic-cage": arithmeticCageLevels,
@@ -127,8 +135,8 @@ describe("Scalable catalog contract", () => {
       expect(game.artwork.url).toMatch(/^\//);
     }),
   );
-  it("counts only 55 real games and 660 levels, not the roadmap", () => {
-    expect(games).toHaveLength(55);
-    expect(games.reduce((sum, g) => sum + g.levelCount, 0)).toBe(660);
+  it("counts only 59 real games and 708 levels, not the roadmap", () => {
+    expect(games).toHaveLength(59);
+    expect(games.reduce((sum, g) => sum + g.levelCount, 0)).toBe(708);
   });
 });

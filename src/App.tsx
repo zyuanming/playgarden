@@ -15,6 +15,7 @@ import {
   FlaskConical,
 } from "lucide-react";
 import { games } from "./lib/registry";
+import { orderCatalog, type CatalogOrder } from "./lib/catalogOrder";
 import {
   completeLevel,
   parseProgress,
@@ -43,6 +44,7 @@ export default function App() {
   const [query, setQuery] = useState("");
   const [favoritesOnly, setFavoritesOnly] = useState(false);
   const [difficulty, setDifficulty] = useState("全部难度");
+  const [order, setOrder] = useState<CatalogOrder>("featured");
   useEffect(() => {
     try {
       localStorage.setItem(STORAGE_KEY, JSON.stringify(progress));
@@ -53,13 +55,13 @@ export default function App() {
   }, [progress]);
   useEffect(
     () => setVisibleLimit(12),
-    [category, query, favoritesOnly, difficulty],
+    [category, query, favoritesOnly, difficulty, order],
   );
   function finish(id: GameId, l: number) {
     if (!progress.muted) completionChime();
     setProgress((p) => completeLevel(p, id, l));
   }
-  const visible = games.filter(
+  const visible = orderCatalog(games, order, progress.completed).filter(
     (g) =>
       (category === "全部" || g.category === category) &&
       (!favoritesOnly || progress.favorites.includes(g.id)) &&
@@ -176,8 +178,24 @@ export default function App() {
                 <option>中级</option>
                 <option>进阶</option>
               </select>
+              <select
+                aria-label="游戏排序"
+                value={order}
+                onChange={(event) =>
+                  setOrder(event.target.value as CatalogOrder)
+                }
+              >
+                <option value="featured">精选顺序</option>
+                <option value="newest">最新加入</option>
+                <option value="continue">继续挑战</option>
+              </select>
             </div>
           </div>
+          {order === "continue" && (
+            <p className="catalog-sort-help">
+              优先显示已经开始、尚未完成的游戏；进度只保存在这个浏览器。
+            </p>
+          )}
           <p className="catalog-count">
             {visible.length} 款可玩游戏 ·{" "}
             {visible.reduce((total, game) => total + game.levelCount, 0)} 个关卡

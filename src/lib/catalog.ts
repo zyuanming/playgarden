@@ -55,6 +55,10 @@ export const GAME_IDS = [
   "postman-routes",
   "conditional-sorter",
   "state-machine-locks",
+  "parabolic",
+  "current-circuit",
+  "budget-town",
+  "concurrent-kitchen",
 ] as const;
 export type GameId = (typeof GAME_IDS)[number];
 export type Category =
@@ -153,5 +157,11 @@ export const bitSpatialArtwork = (index: number) => ({
 export const mathRouteCodeArtwork = (index: number) => ({
   url: "/math-route-code-art.webp",
   position: `${(index % 2) * 100}% ${[6, 50, 94][Math.floor(index / 2)]}%`,
+  size: "200% auto",
+});
+
+export const scienceTownArtwork = (index: number) => ({
+  url: "/science-town-art.webp",
+  position: `${(index % 2) * 100}% ${index < 2 ? 12 : 88}%`,
   size: "200% auto",
 });

@@ -48,7 +48,7 @@ Both components implement `GameProps`, reset/level-keyed state, pause locking, i
 - Hint completion from arbitrary valid current placements and every selection of a small weighted graph.
 - All-level completion using the actual rendered flower/empty-cell or edge controls, plus pause, undo, reset, keyboard, alternate optima, malformed input and idempotent completion tests.
 
-This file describes the verification suite, not its execution status. The delivering worker reports the actual commands and results separately. No browser-based screenshot QA is performed by this module worker.
+This file describes the verification suite. Actual execution status, browser screenshots and release review are recorded in the corresponding CI run and pull request.
 
 ## Independent playability review corrections
 

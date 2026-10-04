@@ -24,6 +24,11 @@ function MachineLevel({
 }: GameProps) {
   const config = stateMachineLocksLevels[level] ?? stateMachineLocksLevels[0];
   const [state, setState] = useState(() => createMachineLockState(config));
+  const historyRef = useRef<HTMLOListElement>(null);
+  useEffect(() => {
+    const list = historyRef.current;
+    if (list) list.scrollTop = list.scrollHeight;
+  }, [state.history.length]);
   const [hint, setHint] = useState<ReturnType<typeof machineLockHint> | null>(
     null,
   );
@@ -216,7 +221,14 @@ function MachineLevel({
         )}
         <div className="ml-history" aria-label="输入与门锁历史">
           <h4>执行轨迹</h4>
-          <ol>
+          <p className="ml-history-help">
+            按执行顺序记录；最新一步保持可见，可上下滚动回看。
+          </p>
+          <ol
+            ref={historyRef}
+            tabIndex={0}
+            aria-label="执行轨迹，可上下滚动回看"
+          >
             <li>
               <b>出发：{config.states[config.start]}</b>
               <span>
