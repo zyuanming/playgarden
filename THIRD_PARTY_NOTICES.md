@@ -2,19 +2,19 @@
 
 The original Playgarden code is MIT licensed; see LICENSE. This inventory covers direct dependencies, not a claim that every future candidate game or asset has been audited. Installed packages retain their upstream license files. See package-lock.json for exact resolved versions.
 
-| Package                                      | License    | Upstream                                           |
-| -------------------------------------------- | ---------- | -------------------------------------------------- |
-| React / React DOM                            | MIT        | https://github.com/facebook/react                  |
-| Three.js                                     | MIT        | https://github.com/mrdoob/three.js                 |
-| lucide-react                                 | ISC        | https://github.com/lucide-icons/lucide             |
-| Vite                                         | MIT        | https://github.com/vitejs/vite                     |
-| TypeScript                                   | Apache-2.0 | https://github.com/microsoft/TypeScript            |
-| Vitest                                       | MIT        | https://github.com/vitest-dev/vitest               |
-| Prettier                                     | MIT        | https://github.com/prettier/prettier               |
-| Testing Library                              | MIT        | https://github.com/testing-library                 |
-| jsdom                                        | MIT        | https://github.com/jsdom/jsdom                     |
-| Playwright                                   | Apache-2.0 | https://github.com/microsoft/playwright            |
-| @types/react, @types/react-dom, @types/three | MIT        | https://github.com/DefinitelyTyped/DefinitelyTyped |
+| Package                                                   | License    | Upstream                                           |
+| --------------------------------------------------------- | ---------- | -------------------------------------------------- |
+| React / React DOM                                         | MIT        | https://github.com/facebook/react                  |
+| Three.js                                                  | MIT        | https://github.com/mrdoob/three.js                 |
+| lucide-react                                              | ISC        | https://github.com/lucide-icons/lucide             |
+| Vite                                                      | MIT        | https://github.com/vitejs/vite                     |
+| TypeScript                                                | Apache-2.0 | https://github.com/microsoft/TypeScript            |
+| Vitest                                                    | MIT        | https://github.com/vitest-dev/vitest               |
+| Prettier                                                  | MIT        | https://github.com/prettier/prettier               |
+| Testing Library                                           | MIT        | https://github.com/testing-library                 |
+| jsdom                                                     | MIT        | https://github.com/jsdom/jsdom                     |
+| Playwright                                                | Apache-2.0 | https://github.com/microsoft/playwright            |
+| @types/node, @types/react, @types/react-dom, @types/three | MIT        | https://github.com/DefinitelyTyped/DefinitelyTyped |
 
 The project does not import Three.js example assets or any third-party game source. Candidate resources in docs/OPEN_SOURCE_RESOURCES.md are references only, not bundled dependencies.
 

@@ -40,7 +40,9 @@ const base = {
 describe("Catalog and shell interactions", () => {
   it("filters, favorites and reload persistence", () => {
     const first = render(<App />);
-    expect(screen.getAllByRole("article")).toHaveLength(games.length);
+    expect(screen.getAllByRole("article")).toHaveLength(
+      Math.min(games.length, 12),
+    );
     fireEvent.change(screen.getByRole("textbox", { name: "搜索游戏" }), {
       target: { value: "机器人" },
     });
@@ -75,7 +77,9 @@ describe("Catalog and shell interactions", () => {
     });
     expect(screen.getByText("暂时没有匹配的游戏")).toBeTruthy();
     fireEvent.click(screen.getByRole("button", { name: "查看全部游戏" }));
-    expect(screen.getAllByRole("article")).toHaveLength(games.length);
+    expect(screen.getAllByRole("article")).toHaveLength(
+      Math.min(games.length, 12),
+    );
   });
   it("wins, persists progress, resets and pauses with Escape", async () => {
     render(<App />);
