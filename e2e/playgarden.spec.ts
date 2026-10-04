@@ -1,4 +1,4 @@
-import { test, expect, type Page, type TestInfo } from "@playwright/test";
+import { test, expect } from "@playwright/test";
 import { games } from "../src/lib/registry";
 import { lightLevels } from "../src/games/lightLogic";
 import { robotLevels, commandLabels } from "../src/games/robotLogic";
@@ -11,48 +11,7 @@ import { minesLevels } from "../src/games/minesLogic";
 import { hanoiLevels } from "../src/games/hanoiLogic";
 import { STORAGE_KEY, LEGACY_STORAGE_KEY } from "../src/lib/progress";
 
-async function openGame(page: Page, title: string) {
-  await page.goto("/");
-  await page
-    .getByRole("button", { name: `开始玩${title}`, exact: true })
-    .click();
-  await expect(page.locator(".game-surface")).toBeVisible();
-}
-async function chooseLevel(page: Page, level: number) {
-  await page
-    .getByLabel("选择关卡", { exact: true })
-    .selectOption(String(level));
-  await expect(page.locator(".game-main")).toHaveAttribute(
-    "data-level",
-    String(level),
-  );
-}
-async function complete(
-  page: Page,
-  info: TestInfo,
-  game: string,
-  level: number,
-) {
-  await expect(page.locator(".status")).toHaveClass(/success/, {
-    timeout: 30000,
-  });
-  expect(
-    await page.evaluate(
-      () => document.documentElement.scrollWidth <= innerWidth,
-    ),
-  ).toBe(true);
-  if ([0, 5, 11].includes(level))
-    await page.screenshot({
-      path: info.outputPath(`${game}-${level + 1}.png`),
-      fullPage: true,
-      animations: "disabled",
-    });
-}
-function captureErrors(page: Page) {
-  const errors: string[] = [];
-  page.on("pageerror", (error) => errors.push(error.message));
-  return errors;
-}
+import { openGame, chooseLevel, complete, captureErrors } from "./helpers";
 
 test("catalog search, category, difficulty, favorites and legacy migration", async ({
   page,
@@ -72,7 +31,9 @@ test("catalog search, category, difficulty, favorites and legacy migration", asy
     { key: LEGACY_STORAGE_KEY },
   );
   await page.goto("/");
-  await expect(page.locator(".game-card")).toHaveCount(games.length);
+  await expect(page.locator(".game-card")).toHaveCount(
+    Math.min(games.length, 12),
+  );
   await page.screenshot({
     path: info.outputPath("catalog.png"),
     fullPage: true,
@@ -85,10 +46,14 @@ test("catalog search, category, difficulty, favorites and legacy migration", asy
   await expect(page.locator(".game-card")).toHaveCount(1);
   await page.getByRole("textbox", { name: "搜索游戏" }).fill("");
   await page.getByRole("button", { name: "数字推理", exact: true }).click();
-  await expect(page.locator(".game-card")).toHaveCount(1);
+  await expect(page.locator(".game-card")).toHaveCount(
+    games.filter((g) => g.category === "数字推理").length,
+  );
   await page.getByRole("button", { name: "全部", exact: true }).click();
   await page.getByRole("combobox", { name: "筛选难度" }).selectOption("进阶");
-  await expect(page.locator(".game-card")).toHaveCount(1);
+  await expect(page.locator(".game-card")).toHaveCount(
+    games.filter((g) => g.difficulty === "进阶").length,
+  );
   await page
     .getByRole("combobox", { name: "筛选难度" })
     .selectOption("全部难度");

@@ -9,6 +9,14 @@ export const GAME_IDS = [
   "memory",
   "mines",
   "hanoi",
+  "nonogram",
+  "boxes",
+  "connect",
+  "reversi",
+  "merge",
+  "traffic",
+  "arithmetic",
+  "word-search",
 ] as const;
 export type GameId = (typeof GAME_IDS)[number];
 export type Category =
@@ -41,4 +49,16 @@ export const expansionArtwork = (index: number) => ({
   url: "/expansion-art.webp",
   position: `${(index % 3) * 50}% ${index < 3 ? 12 : 88}%`,
   size: "300% auto",
+});
+
+export const strategyArtwork = (index: number) => ({
+  url: "/strategy-art.webp",
+  position: `${(index % 2) * 100}% ${index < 2 ? 12 : 88}%`,
+  size: "200% auto",
+});
+
+export const discoveryArtwork = (index: number) => ({
+  url: "/discovery-art.webp",
+  position: `${(index % 2) * 100}% ${index < 2 ? 12 : 88}%`,
+  size: "200% auto",
 });

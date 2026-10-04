@@ -9,8 +9,18 @@ import { sudokuLevels } from "../src/games/sudokuLogic";
 import { memoryLevels } from "../src/games/memoryLogic";
 import { lightsOutLevels } from "../src/games/lightsOutLogic";
 import { minesLevels } from "../src/games/minesLogic";
+import { nonogramLevels } from "../src/games/nonogramLogic";
+import { connectLevels } from "../src/games/connectLogic";
+import { mergeLevels } from "../src/games/mergeLogic";
+import { trafficLevels } from "../src/games/trafficLogic";
+import { reversiLevels } from "../src/games/reversiLogic";
+import { boxLevels } from "../src/games/boxLogic";
 import { hanoiLevels } from "../src/games/hanoiLogic";
+import { arithmeticLevels } from "../src/games/arithmeticLogic";
+import { wordSearchLevels } from "../src/games/wordSearchLogic";
 const packs = {
+  arithmetic: arithmeticLevels,
+  "word-search": wordSearchLevels,
   light: lightLevels,
   robot: robotLevels,
   bridge: bridgeLevels,
@@ -20,6 +30,12 @@ const packs = {
   "lights-out": lightsOutLevels,
   mines: minesLevels,
   hanoi: hanoiLevels,
+  nonogram: nonogramLevels,
+  boxes: boxLevels,
+  connect: connectLevels,
+  reversi: reversiLevels,
+  merge: mergeLevels,
+  traffic: trafficLevels,
 };
 describe("Scalable catalog contract", () => {
   it("has unique registered IDs and exactly the implemented set", () => {
@@ -33,8 +49,8 @@ describe("Scalable catalog contract", () => {
       expect(game.artwork.url).toMatch(/^\//);
     }),
   );
-  it("counts only 9 real games and 108 levels, not the roadmap", () => {
-    expect(games).toHaveLength(9);
-    expect(games.reduce((sum, g) => sum + g.levelCount, 0)).toBe(108);
+  it("counts only 17 real games and 204 levels, not the roadmap", () => {
+    expect(games).toHaveLength(17);
+    expect(games.reduce((sum, g) => sum + g.levelCount, 0)).toBe(204);
   });
 });
