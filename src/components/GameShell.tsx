@@ -6,10 +6,10 @@ import {
   RotateCcw,
   Lightbulb,
   Undo2,
-  Check,
   ArrowRight,
 } from "lucide-react";
 import { games } from "../lib/registry";
+import { GameBoundary } from "./GameBoundary";
 import type { GameId } from "../lib/types";
 export function GameShell({
   id,
@@ -23,7 +23,12 @@ export function GameShell({
   completed: number[];
 }) {
   const game = games.find((g) => g.id === id)!;
-  const [level, setLevel] = useState(0);
+  const [level, setLevel] = useState(
+    () =>
+      Array.from({ length: game.levelCount }, (_, i) => i).find(
+        (i) => !completed.includes(i),
+      ) ?? 0,
+  );
   const [paused, setPaused] = useState(false);
   const [reset, setReset] = useState(0);
   const [hint, setHint] = useState(0);
@@ -47,7 +52,7 @@ export function GameShell({
     setReset((r) => r + 1);
   }
   return (
-    <main className="game-main">
+    <main className="game-main" data-game={id} data-level={level}>
       <button className="back-link" onClick={onBack}>
         <ArrowLeft size={18} />
         返回游戏大厅
@@ -57,17 +62,23 @@ export function GameShell({
           <span className={`category ${game.tone}`}>{game.category}</span>
           <h1>{game.title}</h1>
         </div>
-        <div className="level-tabs" aria-label="选择关卡">
-          {[0, 1, 2].map((l) => (
-            <button
-              key={l}
-              className={level === l ? "active" : ""}
-              aria-pressed={level === l}
-              onClick={() => changeLevel(l)}
-            >
-              {completed.includes(l) && <Check size={15} />}第 {l + 1} 关
-            </button>
-          ))}
+        <div className="level-picker">
+          <label htmlFor="game-level">选择关卡</label>
+          <select
+            id="game-level"
+            value={level}
+            onChange={(event) => changeLevel(Number(event.target.value))}
+          >
+            {Array.from({ length: game.levelCount }, (_, l) => (
+              <option key={l} value={l}>
+                第 {l + 1} 关{completed.includes(l) ? " · 已完成" : ""}
+              </option>
+            ))}
+          </select>
+          <span>
+            {completed.filter((l) => l < game.levelCount).length}/
+            {game.levelCount} 已完成
+          </span>
         </div>
       </div>
       <div className="game-toolbar">
@@ -93,24 +104,28 @@ export function GameShell({
           <Lightbulb size={17} />
           提示
         </button>
-        <span>第 {level + 1} / 3 关</span>
+        <span>
+          第 {level + 1} / {game.levelCount} 关
+        </span>
       </div>
       <div className="game-surface">
-        <Suspense fallback={<p className="loading">正在准备游戏…</p>}>
-          <Game
-            key={`${level}:${reset}`}
-            level={level}
-            paused={paused}
-            resetToken={reset}
-            hintToken={hint}
-            undoToken={undo}
-            onComplete={() => {
-              setWon(true);
-              onComplete(level);
-            }}
-            onStatus={setStatus}
-          />
-        </Suspense>
+        <GameBoundary key={`${id}:${level}:${reset}`} onBack={onBack}>
+          <Suspense fallback={<p className="loading">正在准备游戏…</p>}>
+            <Game
+              key={`${level}:${reset}`}
+              level={level}
+              paused={paused}
+              resetToken={reset}
+              hintToken={hint}
+              undoToken={undo}
+              onComplete={() => {
+                setWon(true);
+                onComplete(level);
+              }}
+              onStatus={setStatus}
+            />
+          </Suspense>
+        </GameBoundary>
         {paused && (
           <div className="pause-overlay">
             <Pause size={36} />
@@ -131,9 +146,11 @@ export function GameShell({
         {won && (
           <button
             className="primary"
-            onClick={() => (level < 2 ? changeLevel(level + 1) : onBack())}
+            onClick={() =>
+              level < game.levelCount - 1 ? changeLevel(level + 1) : onBack()
+            }
           >
-            {level < 2 ? "下一关" : "返回大厅"}
+            {level < game.levelCount - 1 ? "下一关" : "返回大厅"}
             <ArrowRight size={18} />
           </button>
         )}

@@ -9,6 +9,7 @@ import {
 } from "@testing-library/react";
 import { act } from "react";
 import App from "../src/App";
+import { games } from "../src/lib/registry";
 import RobotRoutes from "../src/games/RobotRoutes";
 import LightLab from "../src/games/LightLab";
 import BridgeBlocks from "../src/games/BridgeBlocks";
@@ -39,7 +40,7 @@ const base = {
 describe("Catalog and shell interactions", () => {
   it("filters, favorites and reload persistence", () => {
     const first = render(<App />);
-    expect(screen.getAllByRole("article")).toHaveLength(3);
+    expect(screen.getAllByRole("article")).toHaveLength(games.length);
     fireEvent.change(screen.getByRole("textbox", { name: "搜索游戏" }), {
       target: { value: "机器人" },
     });
@@ -66,13 +67,15 @@ describe("Catalog and shell interactions", () => {
     fireEvent.change(screen.getByRole("combobox", { name: "筛选难度" }), {
       target: { value: "中级" },
     });
-    expect(screen.getAllByRole("article")).toHaveLength(1);
+    expect(screen.getAllByRole("article")).toHaveLength(
+      games.filter((g) => g.difficulty === "中级").length,
+    );
     fireEvent.change(screen.getByRole("textbox"), {
       target: { value: "不存在" },
     });
     expect(screen.getByText("暂时没有匹配的游戏")).toBeTruthy();
     fireEvent.click(screen.getByRole("button", { name: "查看全部游戏" }));
-    expect(screen.getAllByRole("article")).toHaveLength(3);
+    expect(screen.getAllByRole("article")).toHaveLength(games.length);
   });
   it("wins, persists progress, resets and pauses with Escape", async () => {
     render(<App />);

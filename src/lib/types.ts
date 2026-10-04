@@ -1,4 +1,4 @@
-export type GameId = "light" | "robot" | "bridge";
+export type { GameId } from "./catalog";
 export type GameProps = {
   level: number;
   paused: boolean;

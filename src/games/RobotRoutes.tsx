@@ -67,7 +67,10 @@ export default function RobotRoutes({
     <div className="puzzle-layout">
       <div
         className="robot-board board"
-        style={{ gridTemplateColumns: `repeat(${config.size},1fr)` }}
+        style={{
+          gridTemplateColumns: `repeat(${config.size},1fr)`,
+          gridTemplateRows: `repeat(${config.size},minmax(0,1fr))`,
+        }}
       >
         {Array.from({ length: config.size ** 2 }, (_, i) => {
           const x = i % config.size,
