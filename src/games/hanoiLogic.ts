@@ -9,6 +9,8 @@ export type HanoiLevel = {
 };
 export function moveDisk(pegs: Pegs, from: number, to: number): Pegs | null {
   if (
+    !Number.isInteger(from) ||
+    !Number.isInteger(to) ||
     from < 0 ||
     from > 2 ||
     to < 0 ||

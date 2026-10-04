@@ -1045,3 +1045,17 @@ footer a {
   text-align: center;
   margin-top: 28px;
 }
+
+.module-error {
+  padding: 35px;
+  background: white;
+  border-radius: 24px;
+}
+.module-error h2 {
+  font-size: 24px;
+}
+.module-error p {
+  margin: 18px 0;
+  line-height: 1.7;
+  color: var(--muted);
+}

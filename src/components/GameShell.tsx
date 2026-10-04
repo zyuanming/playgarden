@@ -9,6 +9,7 @@ import {
   ArrowRight,
 } from "lucide-react";
 import { games } from "../lib/registry";
+import { GameBoundary } from "./GameBoundary";
 import type { GameId } from "../lib/types";
 export function GameShell({
   id,
@@ -108,21 +109,23 @@ export function GameShell({
         </span>
       </div>
       <div className="game-surface">
-        <Suspense fallback={<p className="loading">正在准备游戏…</p>}>
-          <Game
-            key={`${level}:${reset}`}
-            level={level}
-            paused={paused}
-            resetToken={reset}
-            hintToken={hint}
-            undoToken={undo}
-            onComplete={() => {
-              setWon(true);
-              onComplete(level);
-            }}
-            onStatus={setStatus}
-          />
-        </Suspense>
+        <GameBoundary key={`${id}:${level}:${reset}`} onBack={onBack}>
+          <Suspense fallback={<p className="loading">正在准备游戏…</p>}>
+            <Game
+              key={`${level}:${reset}`}
+              level={level}
+              paused={paused}
+              resetToken={reset}
+              hintToken={hint}
+              undoToken={undo}
+              onComplete={() => {
+                setWon(true);
+                onComplete(level);
+              }}
+              onStatus={setStatus}
+            />
+          </Suspense>
+        </GameBoundary>
         {paused && (
           <div className="pause-overlay">
             <Pause size={36} />

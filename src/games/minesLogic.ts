@@ -32,6 +32,9 @@ export function revealCell(
   index: number,
 ): MinesState {
   if (
+    !Number.isInteger(index) ||
+    index < 0 ||
+    index >= level.size ** 2 ||
     state.failed ||
     state.flags.includes(index) ||
     state.revealed.includes(index)

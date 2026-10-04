@@ -69,3 +69,10 @@ describe("Deductive garden", () => {
     expect(state.failed).toBe(false);
   });
 });
+it("invalid engine coordinates cannot corrupt a game", () => {
+  expect(moveDisk([[1], [], []], 1.5, 2)).toBeNull();
+  const level = minesLevels[0],
+    state = { revealed: [], flags: [], failed: false };
+  expect(revealCell(level, state, -1)).toBe(state);
+  expect(revealCell(level, state, 999)).toBe(state);
+});
