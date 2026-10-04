@@ -170,8 +170,8 @@ function FractionRound({
               aria-label={`${i + 1} 号托盘，需要 ${fraction(target)}${state.filled[i] ? "，已完成" : ""}`}
             >
               <small>{i + 1} 号配方</small>
-              <strong>{state.filled[i] ? "✓" : fraction(target)}</strong>
-              <span>{state.filled[i] ? "配好了" : "点此送入一片"}</span>
+              <strong>{fraction(target)}</strong>
+              <span>{state.filled[i] ? "配好了 ✓" : "点此送入一片"}</span>
             </button>
           ))}
         </div>

@@ -2,7 +2,10 @@ import { test, expect } from "@playwright/test";
 import { openGame, chooseLevel, complete, captureErrors } from "./helpers";
 import { shikakuLevels } from "../src/games/shikakuLogic";
 import { tentsLevels } from "../src/games/tentsLogic";
-import { fractionMosaicLevels } from "../src/games/fractionMosaicLogic";
+import {
+  fractionMosaicLevels,
+  formatFraction,
+} from "../src/games/fractionMosaicLogic";
 import { coordinateTreasureLevels } from "../src/games/coordinateTreasureLogic";
 test("all unique rectangular partitions", async ({ page }, info) => {
   const errors = captureErrors(page);
@@ -72,6 +75,12 @@ test("all exact fraction recipes", async ({ page }, info) => {
         else await page.locator(`[data-fraction-tray="${move.tray}"]`).click();
       }
     }
+    for (const [tray, target] of fractionMosaicLevels[level].targets.entries())
+      await expect(
+        page.locator(`[data-fraction-tray="${tray}"]`),
+      ).toContainText(
+        formatFraction(target, fractionMosaicLevels[level].denominator),
+      );
     await complete(page, info, "fraction", level);
   }
   expect(errors).toEqual([]);
@@ -93,6 +102,13 @@ test("all vector-card treasure routes", async ({ page }, info) => {
       await page.locator(`[data-vector-card="${card}"]`).click();
       await page.locator('[data-coordinate-action="move"]').click();
     }
+    expect(
+      await page
+        .locator(".ct-cell")
+        .evaluateAll((nodes) =>
+          nodes.every((node) => getComputedStyle(node).opacity === "1"),
+        ),
+    ).toBe(true);
     await complete(page, info, "coordinate", level);
   }
   expect(errors).toEqual([]);

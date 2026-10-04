@@ -385,3 +385,12 @@
     flex-wrap: wrap;
   }
 }
+
+/* Recipe quantities and map coordinates remain information, even when inactive. */
+.nsw-game .fm-tray:disabled,
+.nsw-game .ct-cell:disabled {
+  opacity: 1;
+}
+.nsw-game .fm-empty {
+  grid-column: 1 / -1;
+}
