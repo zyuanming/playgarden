@@ -1,0 +1,287 @@
+.number-game .number-play-area {
+  width: 100%;
+  max-width: 520px;
+  margin-inline: auto;
+  min-width: 0;
+}
+.number-game .number-board-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+.number-game .number-board-header h3 {
+  font-size: 24px;
+  margin-top: 7px;
+}
+.number-game .number-count {
+  white-space: nowrap;
+  background: #edf1e8;
+  padding: 11px 16px;
+  border-radius: 18px;
+  font-size: 14px;
+}
+.number-game .number-count strong {
+  font-size: 23px;
+  margin-right: 3px;
+}
+.number-game .number-slide-board {
+  display: grid;
+  gap: 9px;
+  background: #10372e;
+  padding: 14px;
+  border-radius: 27px;
+  aspect-ratio: 1;
+  box-shadow: 0 12px 25px #10372e12;
+  outline-offset: 5px;
+}
+.number-game .number-slide-tile {
+  border-radius: 17px;
+  background: #f6f8f3;
+  aspect-ratio: 1;
+  font-size: clamp(24px, 4vw, 43px);
+  font-weight: 800;
+  padding: 0;
+  position: relative;
+  min-width: 0;
+  box-shadow: 0 4px 0 #08251d;
+  touch-action: manipulation;
+}
+.number-game .number-slide-tile.number-home {
+  background: #dbe8d6;
+}
+.number-game .number-slide-tile.number-movable {
+  background: #dafa3b;
+}
+.number-game .number-slide-tile:hover:not(:disabled) {
+  background: #ebfba0;
+}
+.number-game .number-slide-tile:disabled {
+  opacity: 0.75;
+}
+.number-game .number-slide-dot {
+  position: absolute;
+  font-size: 19px;
+  line-height: 1;
+  bottom: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.number-game .number-slide-gap {
+  color: #c2d2b2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: #1c493e;
+  border: 1px dashed #789485;
+  border-radius: 17px;
+  gap: 2px;
+}
+.number-game .number-slide-gap > span {
+  font-size: 24px;
+  opacity: 0.65;
+}
+.number-game .number-slide-gap small {
+  font-size: 12px;
+}
+.number-game .number-board-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  color: #5e726c;
+  font-size: 13px;
+  margin-top: 15px;
+  line-height: 1.5;
+}
+.number-game .number-target {
+  display: grid;
+  gap: 4px;
+  max-width: 172px;
+  margin: 22px 0;
+}
+.number-game .number-target span {
+  display: grid;
+  place-items: center;
+  aspect-ratio: 1;
+  border: 1px solid #d4dfd2;
+  border-radius: 6px;
+  background: #edf1e8;
+  font-size: 14px;
+}
+.number-game .number-target .number-target-gap {
+  background: transparent;
+  border: 1px dashed #a5b7a3;
+}
+.number-game .number-guide {
+  min-width: 0;
+}
+.number-game .number-sudoku-board {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  background: #10372e;
+  gap: 1px;
+  padding: 5px;
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: 0 12px 25px #10372e12;
+}
+.number-game .number-sudoku-cell {
+  position: relative;
+  aspect-ratio: 1;
+  border-radius: 0;
+  padding: 6px;
+  font-size: clamp(27px, 4.5vw, 42px);
+  font-weight: 600;
+  background: #fff;
+  color: #10372e;
+  min-width: 0;
+  touch-action: manipulation;
+}
+.number-game .number-sudoku-cell:nth-child(4n + 2) {
+  margin-right: 4px;
+}
+.number-game .number-sudoku-cell:nth-child(n + 5):nth-child(-n + 8) {
+  margin-bottom: 4px;
+}
+.number-game .number-sudoku-cell.number-peer {
+  background: #eef3e8;
+}
+.number-game .number-sudoku-cell.number-given {
+  background: #d7e4d0;
+  font-weight: 850;
+}
+.number-game .number-sudoku-cell.number-selected {
+  background: #dafa3b;
+  box-shadow: inset 0 0 0 3px #10372e;
+  z-index: 1;
+}
+.number-game .number-sudoku-cell.number-conflict {
+  color: #9c3227;
+  background: #ffe2d8;
+}
+.number-game .number-sudoku-cell:hover:not(:disabled) {
+  transform: none;
+  background: #e8f3c5;
+}
+.number-game .number-sudoku-cell:focus-visible {
+  outline-offset: -6px;
+  outline: 3px solid #365d24;
+  z-index: 2;
+}
+.number-game .number-sudoku-cell:disabled {
+  opacity: 0.8;
+}
+.number-game .number-error-mark {
+  position: absolute;
+  font-size: 12px;
+  top: 7px;
+  right: 8px;
+  width: 17px;
+  height: 17px;
+  display: grid;
+  place-items: center;
+  background: #9c3227;
+  color: white;
+  border-radius: 50%;
+  font-weight: 800;
+}
+.number-game .number-given-mark {
+  position: absolute;
+  font-size: 14px;
+  bottom: 3px;
+  color: #62795c;
+  line-height: 1;
+}
+.number-game .number-notes {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  font-size: clamp(14px, 2vw, 18px);
+  color: #54694b;
+  font-weight: 500;
+}
+.number-game .number-notes > span {
+  display: grid;
+  place-items: center;
+}
+.number-game .number-input-pad {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) 1.2fr;
+  gap: 8px;
+  margin-top: 22px;
+}
+.number-game .number-input-pad button {
+  background: #10372e;
+  color: #f6f8f3;
+  border-radius: 14px;
+  font-size: 25px;
+  font-weight: 750;
+  padding: 12px 4px;
+  min-height: 52px;
+  touch-action: manipulation;
+}
+.number-game .number-input-pad button:hover:not(:disabled) {
+  background: #295747;
+}
+.number-game .number-input-pad .number-clear {
+  font-size: 14px;
+  background: #e8ece2;
+  color: #10372e;
+}
+.number-game .number-pencil {
+  margin-top: 12px;
+  border: 1px solid #c8d3bf;
+  background: transparent;
+  font-size: 14px;
+  min-height: 44px;
+}
+.number-game .number-pencil.number-pencil-active {
+  background: #dafa3b;
+  border-color: #91a52b;
+}
+.number-game .number-hinted {
+  outline: 4px solid #f7a943 !important;
+  outline-offset: -6px;
+  z-index: 2;
+}
+.number-game .number-won {
+  box-shadow:
+    0 0 0 4px #dafa3b,
+    0 12px 25px #10372e12;
+}
+@media (max-width: 600px) {
+  .number-game .number-board-header h3 {
+    font-size: 21px;
+  }
+  .number-game .number-slide-board {
+    gap: 7px;
+    padding: 10px;
+    border-radius: 21px;
+  }
+  .number-game .number-slide-tile,
+  .number-game .number-slide-gap {
+    border-radius: 12px;
+  }
+  .number-game .number-count {
+    padding: 8px 12px;
+  }
+  .number-game .number-board-footer {
+    font-size: 12px;
+  }
+  .number-game .number-slide-dot {
+    bottom: 4px;
+    font-size: 15px;
+  }
+  .number-game .number-input-pad {
+    gap: 6px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .number-game button {
+    transition: none;
+  }
+}

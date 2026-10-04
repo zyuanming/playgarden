@@ -10,16 +10,27 @@ import {
   Volume2,
   VolumeX,
   BarChart3,
+  Brain,
+  Hash,
 } from "lucide-react";
 import { games } from "./lib/registry";
-import { completeLevel, parseProgress, STORAGE_KEY } from "./lib/progress";
+import {
+  completeLevel,
+  parseProgress,
+  STORAGE_KEY,
+  LEGACY_STORAGE_KEY,
+} from "./lib/progress";
+import { CATEGORIES } from "./lib/catalog";
 import type { GameId } from "./lib/types";
 import { GameShell } from "./components/GameShell";
 import { completionChime } from "./lib/sound";
 export default function App() {
   const [progress, setProgress] = useState(() => {
     try {
-      return parseProgress(localStorage.getItem(STORAGE_KEY));
+      return parseProgress(
+        localStorage.getItem(STORAGE_KEY) ??
+          localStorage.getItem(LEGACY_STORAGE_KEY),
+      );
     } catch {
       return parseProgress(null);
     }
@@ -27,6 +38,7 @@ export default function App() {
   const [storageError, setStorageError] = useState(false);
   const [selected, setSelected] = useState<GameId | null>(null);
   const [category, setCategory] = useState("全部");
+  const [visibleLimit, setVisibleLimit] = useState(12);
   const [query, setQuery] = useState("");
   const [favoritesOnly, setFavoritesOnly] = useState(false);
   const [difficulty, setDifficulty] = useState("全部难度");
@@ -38,6 +50,10 @@ export default function App() {
       setStorageError(true);
     }
   }, [progress]);
+  useEffect(
+    () => setVisibleLimit(12),
+    [category, query, favoritesOnly, difficulty],
+  );
   function finish(id: GameId, l: number) {
     if (!progress.muted) completionChime();
     setProgress((p) => completeLevel(p, id, l));
@@ -138,7 +154,7 @@ export default function App() {
             </label>
             <div className="filters">
               <div className="category-tabs">
-                {["全部", "逻辑思维", "编程启蒙", "空间想象"].map((c) => (
+                {CATEGORIES.map((c) => (
                   <button
                     key={c}
                     className={category === c ? "active" : ""}
@@ -157,17 +173,35 @@ export default function App() {
                 <option>全部难度</option>
                 <option>初级</option>
                 <option>中级</option>
+                <option>进阶</option>
               </select>
             </div>
           </div>
+          <p className="catalog-count">
+            {visible.length} 款可玩游戏 ·{" "}
+            {visible.reduce((total, game) => total + game.levelCount, 0)} 个关卡
+          </p>
           <section className="game-grid" aria-label="游戏列表">
-            {visible.map((g) => {
+            {visible.slice(0, visibleLimit).map((g) => {
               const Icon =
-                g.id === "light" ? Puzzle : g.id === "robot" ? Code2 : Box;
+                g.category === "逻辑思维"
+                  ? Puzzle
+                  : g.category === "编程启蒙"
+                    ? Code2
+                    : g.category === "记忆观察"
+                      ? Brain
+                      : g.category === "数字推理"
+                        ? Hash
+                        : Box;
               return (
                 <article className="game-card" key={g.id}>
                   <button
-                    className={`card-art art-${g.image}`}
+                    className="card-art"
+                    style={{
+                      backgroundImage: `url(${g.artwork.url})`,
+                      backgroundPosition: g.artwork.position,
+                      backgroundSize: g.artwork.size,
+                    }}
                     aria-label={`开始玩${g.title}`}
                     onClick={() => setSelected(g.id)}
                   />
@@ -211,7 +245,10 @@ export default function App() {
                       aria-label={`已完成 ${progress.completed[g.id].length} 关`}
                     >
                       <span>
-                        {[0, 1, 2].map((l) => (
+                        {Array.from(
+                          { length: Math.min(g.levelCount, 12) },
+                          (_, l) => l,
+                        ).map((l) => (
                           <i
                             key={l}
                             className={
@@ -220,13 +257,22 @@ export default function App() {
                           />
                         ))}
                       </span>
-                      <small>{progress.completed[g.id].length}/3 关</small>
+                      <small>
+                        {progress.completed[g.id].length}/{g.levelCount} 关
+                      </small>
                     </div>
                   </div>
                 </article>
               );
             })}
           </section>
+          {visibleLimit < visible.length && (
+            <div className="load-more">
+              <button onClick={() => setVisibleLimit((n) => n + 12)}>
+                再看看更多游戏
+              </button>
+            </div>
+          )}
           {!visible.length && (
             <div className="empty">
               <Heart size={30} />

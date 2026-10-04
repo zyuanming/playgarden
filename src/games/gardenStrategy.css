@@ -1,0 +1,182 @@
+.strategy-stats {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 13px;
+  color: #526e5f;
+  margin: 0 0 18px;
+}
+.hanoi-board {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  align-items: end;
+  background: #f7e9c7;
+  border-radius: 24px;
+  padding: 24px 12px 14px;
+  min-height: 330px;
+}
+.hanoi-peg {
+  position: relative;
+  border-radius: 14px;
+  height: 270px;
+  background: transparent !important;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-direction: column;
+  padding: 0 0 36px;
+  min-width: 0;
+  transform: none !important;
+  border: 2px solid transparent;
+}
+.hanoi-peg.selected {
+  border-color: #769d42;
+  box-shadow: 0 0 0 4px #dafa3b70;
+}
+.hanoi-peg.target .hanoi-label {
+  background: #dafa3b;
+}
+.hanoi-pole {
+  position: absolute;
+  width: 10px;
+  height: 220px;
+  border-radius: 7px;
+  background: #628e72;
+  bottom: 36px;
+}
+.hanoi-disks {
+  position: relative;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  width: 100%;
+  gap: 4px;
+  z-index: 1;
+}
+.hanoi-disk {
+  height: 28px;
+  border-radius: 10px;
+  background: #f1a141;
+  box-shadow: 0 3px 0 #af732d;
+  color: #244d37;
+  font-size: 13px;
+  font-weight: 750;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.disk-2 {
+  background: #ddedb1;
+}
+.disk-3 {
+  background: #beaed8;
+}
+.disk-4 {
+  background: #f6d774;
+}
+.disk-5 {
+  background: #9fcec8;
+}
+.disk-6 {
+  background: #ecc7c0;
+}
+.hanoi-label {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  left: 0;
+  right: 0;
+  font-size: 13px;
+  padding: 7px;
+  border-radius: 10px;
+}
+.mines-modes {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+.mines-modes button {
+  font-size: 13px;
+  padding: 11px 15px;
+}
+.mines-board {
+  display: grid;
+  gap: 6px;
+  background: #e7efdc;
+  padding: 12px;
+  border-radius: 22px;
+}
+.mines-board button {
+  padding: 0;
+  aspect-ratio: 1;
+  min-width: 0;
+  border-radius: 9px;
+  background: #b9cd92;
+  box-shadow: 0 3px 0 #8fac66;
+  font-size: 23px;
+  font-weight: 800;
+  transform: none !important;
+  opacity: 1 !important;
+}
+.mines-board button.open {
+  background: #f9fbf1;
+  box-shadow: none;
+  color: #8c9a75;
+}
+.mines-board button.open.count-1 {
+  color: #356f9b;
+}
+.mines-board button.open.count-2 {
+  color: #418451;
+}
+.mines-board button.open.count-3 {
+  color: #ae6b38;
+}
+.mines-board button.open.count-4 {
+  color: #765398;
+}
+.mines-board button.flagged {
+  background: #f0d5a2;
+  color: #9b611c;
+}
+.mines-board button.stone {
+  background: #d7b5a4;
+  color: #875e49;
+}
+@media (max-width: 700px) {
+  .hanoi-board {
+    min-height: 280px;
+    padding: 15px 6px 10px;
+    gap: 4px;
+  }
+  .hanoi-peg {
+    height: 240px;
+    padding-bottom: 35px;
+  }
+  .hanoi-pole {
+    height: 200px;
+  }
+  .hanoi-disk {
+    height: 25px;
+    font-size: 11px;
+  }
+  .strategy-stats {
+    font-size: 11px;
+  }
+  .mines-board {
+    padding: 8px;
+    gap: 4px;
+  }
+  .mines-board button {
+    font-size: 19px;
+    border-radius: 7px;
+  }
+  .mines-modes button {
+    padding: 10px 12px;
+  }
+}

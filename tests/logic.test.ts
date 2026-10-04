@@ -63,11 +63,11 @@ describe("Versioned local progress", () => {
   it("recovers malformed data", () =>
     expect(parseProgress("{oops")).toEqual(initialProgress()));
   it("rejects unknown versions", () =>
-    expect(parseProgress('{"version":2}')).toEqual(initialProgress()));
+    expect(parseProgress('{"version":99}')).toEqual(initialProgress()));
   it("filters invalid progress", () =>
     expect(
       parseProgress(
-        '{"version":1,"favorites":["robot","bad"],"completed":{"light":[0,0,-1,9,"1"]}}',
+        '{"version":1,"favorites":["robot","bad"],"completed":{"light":[0,0,-1,10000,"1"]}}',
       ).completed.light,
     ).toEqual([0]));
   it("completion is idempotent", () => {
@@ -78,4 +78,14 @@ describe("Versioned local progress", () => {
     );
     expect(p.completed.light).toEqual([0]);
   });
+});
+
+it("migrates legacy progress without losing earned levels", () => {
+  const p = parseProgress(
+    '{"version":1,"favorites":["light"],"completed":{"light":[0,1,2]},"muted":true}',
+  );
+  expect(p.version).toBe(2);
+  expect(p.completed.light).toEqual([0, 1, 2]);
+  expect(p.favorites).toEqual(["light"]);
+  expect(p.muted).toBe(true);
 });
