@@ -88,6 +88,12 @@ test("catalog and all nine game levels work with persistent progress", async ({
     .getByRole("button", { name: "开始玩积木桥梁", exact: true })
     .click();
   await expect(page.locator(".bridge-scene canvas")).toBeVisible();
+  const tileBox = await page
+    .locator(".bridge-grid button")
+    .first()
+    .boundingBox();
+  expect(tileBox).not.toBeNull();
+  expect(Math.abs(tileBox!.width - tileBox!.height)).toBeLessThan(1);
   for (let level = 0; level < bridgeLevels.length; level++) {
     const l = bridgeLevels[level];
     for (let i = 0; i < l.tiles.length; i++) {

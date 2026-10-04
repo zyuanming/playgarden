@@ -674,11 +674,15 @@ footer a {
 }
 .bridge-grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-template-rows: repeat(5, minmax(0, 1fr));
   gap: 5px;
   aspect-ratio: 1;
 }
 .bridge-grid button {
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
   background: #eaa34d;
   border-radius: 9px;
   padding: 0;
