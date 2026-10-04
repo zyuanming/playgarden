@@ -204,3 +204,14 @@
     scroll-behavior: auto !important;
   }
 }
+
+.code-clues summary::after {
+  content: "展开 ▾";
+  margin-left: auto;
+  padding-left: 12px;
+  font-size: 0.75rem;
+  white-space: nowrap;
+}
+.code-clues details[open] > summary::after {
+  content: "收起 ▴";
+}

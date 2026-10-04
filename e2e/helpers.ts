@@ -43,3 +43,23 @@ export function captureErrors(page: Page) {
   page.on("pageerror", (error) => errors.push(error.message));
   return errors;
 }
+
+export async function verifyDisclosure(page: Page, selector: string) {
+  const summary = page.locator(selector).first();
+  const before = await summary.evaluate((node) =>
+    node.parentElement!.hasAttribute("open"),
+  );
+  expect(
+    await summary.evaluate((node) => getComputedStyle(node, "::after").content),
+  ).toContain(before ? "收起" : "展开");
+  await summary.focus();
+  await summary.press("Enter");
+  await expect
+    .poll(() =>
+      summary.evaluate((node) => node.parentElement!.hasAttribute("open")),
+    )
+    .toBe(!before);
+  expect(
+    await summary.evaluate((node) => getComputedStyle(node, "::after").content),
+  ).toContain(before ? "展开" : "收起");
+}

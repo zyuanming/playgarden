@@ -1,3 +1,4 @@
+import { verifyDisclosure } from "./helpers";
 import { test, expect } from "@playwright/test";
 import { openGame, chooseLevel, complete, captureErrors } from "./helpers";
 import { iceStopsLevels } from "../src/games/iceStopsLevels";
@@ -96,6 +97,7 @@ test("all original carry-letter equations and cancellable hint results", async (
 }, info) => {
   const errors = captureErrors(page);
   await openGame(page, "进位字母");
+  await verifyDisclosure(page, ".carry-letters summary");
   await page.screenshot({
     path: info.outputPath("carry-letters-start.png"),
     fullPage: true,
@@ -130,6 +132,7 @@ test("all unique balanced binary grids with fixed clue preservation", async ({
 }, info) => {
   const errors = captureErrors(page);
   await openGame(page, "双符平衡");
+  await verifyDisclosure(page, ".binary-balance summary");
   await page.screenshot({
     path: info.outputPath("binary-balance-start.png"),
     fullPage: true,
@@ -155,6 +158,13 @@ test("all unique balanced binary grids with fixed clue preservation", async ({
         .locator("[data-binary-cell]")
         .evaluateAll((ns) =>
           ns.every((n) => getComputedStyle(n).opacity === "1"),
+        ),
+    ).toBe(true);
+    expect(
+      await page
+        .locator(".bb-counts p")
+        .evaluateAll((ns) =>
+          ns.every((n) => n.getBoundingClientRect().height < 32),
         ),
     ).toBe(true);
     await complete(page, info, "binary-balance", level);

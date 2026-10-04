@@ -1,3 +1,4 @@
+import { verifyDisclosure } from "./helpers";
 import { test, expect, type Page, type Locator } from "@playwright/test";
 import { openGame, chooseLevel, complete, captureErrors } from "./helpers";
 import { codeCluesLevels } from "../src/games/codeCluesLevels";
@@ -62,6 +63,7 @@ test("all feedback-code investigations and visible latest evidence", async ({
 }, info) => {
   const errors = captureErrors(page);
   await openGame(page, "码符侦探");
+  await verifyDisclosure(page, ".code-clues summary");
   await page.screenshot({
     path: info.outputPath("code-clues-start.png"),
     fullPage: true,
@@ -122,6 +124,7 @@ test("all energy schedules with continuous keyboard periods", async ({
 }, info) => {
   const errors = captureErrors(page);
   await openGame(page, "储能调度");
+  await verifyDisclosure(page, ".energy-dispatch summary");
   await page.screenshot({
     path: info.outputPath("energy-dispatch-start.png"),
     fullPage: true,
