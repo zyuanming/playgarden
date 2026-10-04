@@ -14,6 +14,7 @@ test("catalog and all nine game levels work with persistent progress", async ({
   ).toBeVisible();
   await expect(page.locator(".game-card")).toHaveCount(3);
   await page.screenshot({
+    animations: "disabled",
     path: testInfo.outputPath("catalog.png"),
     fullPage: true,
   });
@@ -49,6 +50,7 @@ test("catalog and all nine game levels work with persistent progress", async ({
     }
     await expect(page.getByRole("status")).toContainText("光线到达目标");
     await page.screenshot({
+      animations: "disabled",
       path: testInfo.outputPath(`light-${level + 1}.png`),
       fullPage: true,
     });
@@ -62,6 +64,9 @@ test("catalog and all nine game levels work with persistent progress", async ({
   await page
     .getByRole("button", { name: "开始玩机器人路线", exact: true })
     .click();
+  const robotCell = await page.locator(".robot-cell").first().boundingBox();
+  expect(robotCell).not.toBeNull();
+  expect(Math.abs(robotCell!.width - robotCell!.height)).toBeLessThan(1);
   for (let level = 0; level < robotLevels.length; level++) {
     const l = robotLevels[level];
     for (const c of l.solution)
@@ -74,6 +79,7 @@ test("catalog and all nine game levels work with persistent progress", async ({
       timeout: 12000,
     });
     await page.screenshot({
+      animations: "disabled",
       path: testInfo.outputPath(`robot-${level + 1}.png`),
       fullPage: true,
     });
@@ -112,6 +118,7 @@ test("catalog and all nine game levels work with persistent progress", async ({
     }
     await expect(page.getByRole("status")).toContainText("桥梁连通了");
     await page.screenshot({
+      animations: "disabled",
       path: testInfo.outputPath(`bridge-${level + 1}.png`),
       fullPage: true,
     });
