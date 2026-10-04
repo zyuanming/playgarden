@@ -1,3 +1,7 @@
+import { rollingFacesLevels } from "../src/games/rollingFacesLevels";
+import { shapeMosaicLevels } from "../src/games/shapeMosaicLevels";
+import { codeCluesLevels } from "../src/games/codeCluesLevels";
+import { energyDispatchLevels } from "../src/games/energyDispatchLevels";
 import { concurrentKitchenLevels } from "../src/games/concurrentKitchenLevels";
 import { parabolicTargetsLevels } from "../src/games/parabolicTargetsLevels";
 import { currentCircuitLevels } from "../src/games/currentCircuitLevels";
@@ -63,11 +67,15 @@ import { sortingNetworkLevels } from "../src/games/sortingNetworkLogic";
 import { voxelViewsLevels } from "../src/games/voxelViewsLogic";
 import { cubeNetLevels } from "../src/games/cubeNetLogic";
 const packs = {
+  "rolling-faces": rollingFacesLevels,
+  "shape-mosaic": shapeMosaicLevels,
   binary: binaryCourierLevels,
   "sorting-network": sortingNetworkLevels,
   voxel: voxelViewsLevels,
   "cube-net": cubeNetLevels,
   kakuro: kakuroLevels,
+  "code-clues": codeCluesLevels,
+  "energy-dispatch": energyDispatchLevels,
   "concurrent-kitchen": concurrentKitchenLevels,
   parabolic: parabolicTargetsLevels,
   "current-circuit": currentCircuitLevels,
@@ -135,8 +143,8 @@ describe("Scalable catalog contract", () => {
       expect(game.artwork.url).toMatch(/^\//);
     }),
   );
-  it("counts only 59 real games and 708 levels, not the roadmap", () => {
-    expect(games).toHaveLength(59);
-    expect(games.reduce((sum, g) => sum + g.levelCount, 0)).toBe(708);
+  it("counts only 63 real games and 756 levels, not the roadmap", () => {
+    expect(games).toHaveLength(63);
+    expect(games.reduce((sum, g) => sum + g.levelCount, 0)).toBe(756);
   });
 });
