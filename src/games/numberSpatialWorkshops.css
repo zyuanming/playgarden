@@ -1,0 +1,403 @@
+.nsw-game .nsw-workbench {
+  width: 100%;
+  max-width: 650px;
+  min-width: 0;
+  margin-inline: auto;
+  color: #284d41;
+}
+.nsw-game .nsw-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+.nsw-game .nsw-heading h3 {
+  margin: 7px 0 0;
+  font-size: clamp(22px, 3vw, 29px);
+  letter-spacing: -0.7px;
+}
+.nsw-game .nsw-badge {
+  flex-shrink: 0;
+  font-size: 11px;
+  font-weight: 700;
+  border: 1px solid #bfd2c3;
+  border-radius: 30px;
+  padding: 8px 11px;
+}
+.nsw-game .nsw-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+.nsw-game .nsw-stats > span {
+  flex: 1;
+  min-width: 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  border-radius: 12px;
+  background: #edf1e7;
+  padding: 10px 13px;
+  font-size: 11px;
+  color: #596d61;
+}
+.nsw-game .nsw-stats b {
+  font-size: 18px;
+  font-variant-numeric: tabular-nums;
+  color: #254c3d;
+}
+.nsw-game button {
+  font: inherit;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  color: inherit;
+}
+.nsw-game button:focus-visible {
+  outline: 3px solid #315f6a;
+  outline-offset: 3px;
+}
+.nsw-game button:disabled {
+  cursor: default;
+}
+.nsw-game button.nsw-selected {
+  border-color: #456748;
+  box-shadow: 0 0 0 3px #d9ec6e;
+  background: #f6fbdc;
+}
+.nsw-game button.nsw-hinted {
+  border-color: #d27d2f;
+  box-shadow: 0 0 0 3px #f7bc665e;
+}
+.nsw-game .nsw-instruction {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  font-size: 12px;
+  margin-bottom: 12px;
+}
+.nsw-game .nsw-instruction span {
+  color: #687367;
+  font-size: 11px;
+}
+.nsw-game .nsw-feedback {
+  padding: 14px 16px;
+  min-height: 66px;
+  line-height: 1.7;
+  background: #e8efe5;
+  border-radius: 14px;
+  font-size: 13px;
+  margin: 16px 0 0;
+  color: #375e47;
+}
+.nsw-game .nsw-notes ul {
+  padding-left: 19px;
+  color: #5a6c5c;
+  font-size: 13px;
+  line-height: 1.8;
+}
+.nsw-game .fm-trays {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+  gap: 12px;
+  margin-bottom: 19px;
+}
+.nsw-game .fm-tray {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 9px;
+  min-height: 118px;
+  padding: 14px 8px;
+  border: 2px dashed #b9c9aa;
+  border-radius: 16px;
+  background: #fafbf3;
+}
+.nsw-game .fm-tray small {
+  color: #68755e;
+  font-size: 11px;
+}
+.nsw-game .fm-tray strong {
+  font-size: 30px;
+  line-height: 1.1;
+  font-variant-numeric: tabular-nums;
+}
+.nsw-game .fm-tray span {
+  font-size: 10px;
+  color: #688363;
+}
+.nsw-game .fm-tray.nsw-complete {
+  border-style: solid;
+  background: #e2ebcc;
+  border-color: #a7be8e;
+}
+.nsw-game .fm-pantry {
+  padding: 19px;
+  background: #f0f2e9;
+  border: 1px solid #d8dfce;
+  border-radius: 20px;
+}
+.nsw-game .fm-pieces {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(96px, 1fr));
+  gap: 11px;
+}
+.nsw-game .fm-piece {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  align-items: center;
+  min-height: 132px;
+  border: 2px solid #d6dac6;
+  border-radius: 15px;
+  padding: 14px 10px;
+  background: #fffdf4;
+}
+.nsw-game .fm-piece strong {
+  font-size: 28px;
+  font-variant-numeric: tabular-nums;
+}
+.nsw-game .fm-piece small {
+  font-size: 10px;
+  color: #6b7561;
+}
+.nsw-game .fm-tiles {
+  display: grid;
+  gap: 2px;
+  width: 100%;
+  max-width: 114px;
+}
+.nsw-game .fm-tiles i {
+  aspect-ratio: 1;
+  border-radius: 2px;
+  background: #e8ebde;
+  border: 1px solid #dce2d0;
+}
+.nsw-game .fm-tiles .fm-tile-filled {
+  background: #d7ae5f;
+  border-color: #c99d47;
+}
+.nsw-game .fm-actions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 15px;
+}
+.nsw-game .fm-actions button,
+.nsw-game .ct-actions button {
+  min-height: 47px;
+  padding: 10px 12px;
+  border: 1px solid #bdcbb7;
+  background: #f4f7eb;
+  border-radius: 12px;
+  font-size: 13px;
+}
+.nsw-game .fm-actions button b {
+  margin-left: 5px;
+}
+.nsw-game .fm-actions button:disabled,
+.nsw-game .ct-actions button:disabled,
+.nsw-game .ct-card:disabled {
+  opacity: 0.48;
+}
+.nsw-game .fm-empty {
+  margin: 28px auto;
+  line-height: 1.8;
+  text-align: center;
+  font-size: 16px;
+}
+.nsw-game .ct-chart {
+  position: relative;
+  padding: 16px 18px 22px 26px;
+  background: #ecf2e9;
+  border: 1px solid #d0dccb;
+  border-radius: 20px;
+}
+.nsw-game .ct-grid {
+  display: grid;
+  gap: 4px;
+}
+.nsw-game .ct-cell {
+  aspect-ratio: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  gap: 3px;
+  border: 1px solid #d4dfcf;
+  border-radius: 8px;
+  padding: 2px;
+  background: #fbfcf4;
+}
+.nsw-game .ct-cell > span {
+  min-height: 21px;
+  color: #c79024;
+  font-size: clamp(18px, 3vw, 26px);
+  line-height: 1;
+}
+.nsw-game .ct-cell small {
+  font-size: 12px;
+  line-height: 1.2;
+  color: #284b36;
+  font-variant-numeric: tabular-nums;
+}
+.nsw-game .ct-cell.ct-rock {
+  background: #d8ddd3;
+  border-color: #b8c3b5;
+}
+.nsw-game .ct-cell.ct-rock > span {
+  color: #7e8a7b;
+}
+.nsw-game .ct-cell.ct-player {
+  background: #375d4d;
+  border-color: #29493b;
+}
+.nsw-game .ct-cell.ct-player > span {
+  color: #e7f794;
+}
+.nsw-game .ct-cell.ct-player small {
+  color: #f1f8de;
+}
+.nsw-game .ct-cell.ct-player i {
+  position: absolute;
+  top: 2px;
+  right: 4px;
+  color: #fff;
+  font-size: 11px;
+}
+.nsw-game .ct-cell.ct-preview {
+  background: #f8e8ba;
+  border-color: #d7b766;
+}
+.nsw-game .ct-axis-y,
+.nsw-game .ct-axis-x {
+  position: absolute;
+  font-size: 10px;
+  color: #678069;
+}
+.nsw-game .ct-axis-y {
+  left: 6px;
+  top: 8px;
+}
+.nsw-game .ct-axis-x {
+  right: 12px;
+  bottom: 5px;
+}
+.nsw-game .ct-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 14px;
+  margin: 12px 0 19px;
+  font-size: 10px;
+  color: #64755f;
+}
+.nsw-game .ct-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(105px, 1fr));
+  gap: 9px;
+}
+.nsw-game .ct-card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border: 2px solid #c4d0bc;
+  border-radius: 12px;
+  min-height: 67px;
+  padding: 11px 8px;
+  background: #fafcf2;
+}
+.nsw-game .ct-card strong {
+  font-size: 18px;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.nsw-game .ct-card small {
+  font-size: 10px;
+  color: #66715f;
+}
+.nsw-game .ct-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+.nsw-game .ct-actions .ct-confirm {
+  flex: 1;
+  background: #3b5e45;
+  color: #f6f9e8;
+  border-color: #3b5e45;
+}
+@media (max-width: 480px) {
+  .nsw-game .nsw-badge {
+    display: none;
+  }
+  .nsw-game .nsw-stats > span {
+    min-width: 80px;
+    padding: 9px;
+  }
+  .nsw-game .nsw-stats b {
+    font-size: 16px;
+  }
+  .nsw-game .fm-pantry {
+    padding: 13px;
+  }
+  .nsw-game .fm-pieces {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+  }
+  .nsw-game .fm-piece {
+    min-height: 119px;
+    padding: 12px 7px;
+  }
+  .nsw-game .fm-piece strong {
+    font-size: 25px;
+  }
+  .nsw-game .fm-trays {
+    gap: 8px;
+  }
+  .nsw-game .ct-chart {
+    padding: 16px 9px 22px 21px;
+  }
+  .nsw-game .ct-grid {
+    gap: 3px;
+  }
+  .nsw-game .ct-cell {
+    border-radius: 5px;
+  }
+  .nsw-game .ct-cell > span {
+    min-height: 17px;
+    font-size: 18px;
+  }
+  .nsw-game .ct-cards {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .nsw-game .ct-card strong {
+    font-size: 15px;
+  }
+  .nsw-game .ct-actions {
+    flex-wrap: wrap;
+  }
+  .nsw-game .nsw-instruction {
+    flex-wrap: wrap;
+  }
+}
+
+/* Recipe quantities and map coordinates remain information, even when inactive. */
+.nsw-game .fm-tray:disabled,
+.nsw-game .ct-cell:disabled {
+  opacity: 1;
+}
+.nsw-game .fm-empty {
+  grid-column: 1 / -1;
+}
+
+.nsw-game .ct-axis-y,
+.nsw-game .ct-axis-x {
+  font-size: 12px;
+  color: #284b36;
+}

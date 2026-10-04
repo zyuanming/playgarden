@@ -1,0 +1,305 @@
+/* SPDX-License-Identifier: MIT */
+.mp-game .mp-workbench {
+  width: 100%;
+  max-width: 640px;
+  min-width: 0;
+  margin-inline: auto;
+}
+.mp-game .mp-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+.mp-game .mp-heading h3 {
+  margin: 8px 0 0;
+  font-size: clamp(22px, 3vw, 29px);
+  color: #294c40;
+  letter-spacing: -0.5px;
+}
+.mp-game .mp-badge {
+  flex-shrink: 0;
+  border-radius: 50px;
+  padding: 9px 14px;
+  background: #e7edde;
+  color: #58705a;
+  font-size: 13px;
+}
+.mp-game .mp-scene {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #d8e1d0;
+  border-radius: 22px;
+  background: #f3f4e9;
+}
+.mp-game .mp-scene svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  min-height: 170px;
+  font-family: inherit;
+}
+.mp-game .mp-scene-note {
+  display: block;
+  text-align: center;
+  padding: 9px 10px;
+  font-size: 11px;
+  line-height: 1.5;
+  color: #566c5e;
+  background: #edf1e4;
+}
+.mp-game .mp-dock-scene .mp-scene-note {
+  background: #d7e8e0;
+}
+.mp-game .mp-readouts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin: 14px 0;
+}
+.mp-game .mp-readouts > div {
+  padding: 14px 15px;
+  border: 1px solid #dce4d4;
+  border-radius: 14px;
+  background: #fafbf5;
+  min-width: 0;
+}
+.mp-game .mp-readouts small {
+  display: block;
+  color: #637668;
+  font-size: 12px;
+  margin-bottom: 5px;
+}
+.mp-game .mp-readouts strong {
+  display: block;
+  color: #315a48;
+  font-size: clamp(15px, 2.7vw, 22px);
+  overflow-wrap: anywhere;
+  font-variant-numeric: tabular-nums;
+}
+.mp-game fieldset {
+  min-width: 0;
+  padding: 0;
+  margin: 18px 0;
+  border: 0;
+}
+.mp-game legend {
+  padding: 0;
+  margin-bottom: 10px;
+  color: #52684f;
+  font-size: 13px;
+  font-weight: 650;
+}
+.mp-game .mp-option-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.mp-game .mp-option-row button {
+  flex: 1 0 74px;
+  min-height: 46px;
+  padding: 10px 9px;
+  border: 1px solid #d5dfcc;
+  border-radius: 11px;
+  background: #f7f9f0;
+  color: #48613f;
+  font-size: 14px;
+  font-variant-numeric: tabular-nums;
+}
+.mp-game button {
+  cursor: pointer;
+  touch-action: manipulation;
+  transition: none;
+}
+.mp-game button:focus-visible {
+  outline: 3px solid #365c46;
+  outline-offset: 3px;
+}
+.mp-game button:disabled {
+  cursor: default;
+  opacity: 0.52;
+}
+.mp-game button.is-selected {
+  border-color: #5f8050;
+  background: #e6efd9;
+  box-shadow: inset 0 0 0 1px #5f8050;
+  color: #315432;
+}
+.mp-game button.is-selected:disabled {
+  opacity: 0.78;
+}
+.mp-game .mp-action {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  min-height: 49px;
+  border: 1px solid #385e49;
+  border-radius: 13px;
+  background: #3e6b50;
+  color: white;
+  font: inherit;
+  font-weight: 650;
+  margin-top: 20px;
+}
+.mp-game .mp-action span {
+  font-size: 22px;
+}
+.mp-game button.mp-hinted {
+  outline: 3px solid #cb9b37;
+  outline-offset: 2px;
+}
+.mp-game .mp-result {
+  min-height: 48px;
+  margin: 13px 0 0;
+  font-size: 13px;
+  line-height: 1.7;
+  color: #69785f;
+}
+.mp-game .mp-success {
+  color: #376d3f;
+  font-weight: 650;
+}
+.mp-game .mp-ledger {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-bottom: 19px;
+}
+.mp-game .mp-ledger span {
+  padding: 7px 10px;
+  border-radius: 8px;
+  background: #edf1e4;
+  color: #5d715c;
+  font-size: 11px;
+}
+.mp-game .mp-ledger b {
+  color: #345b42;
+  margin-left: 5px;
+  font-size: 13px;
+}
+.mp-game .mp-card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+.mp-game .mp-card-grid button {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  padding: 11px 5px 9px;
+  border: 1px solid #d8e1d0;
+  background: #f8faf3;
+  border-radius: 13px;
+  color: #415c48;
+}
+.mp-game .mp-card-grid strong {
+  font-size: 13px;
+}
+.mp-game .mp-card-grid small {
+  font-size: 11px;
+  color: #63765b;
+}
+.mp-game .mp-hull-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 47px;
+  height: 25px;
+  margin: 2px 0 4px;
+  border-radius: 3px 3px 10px 10px;
+  background: #d3af79;
+  color: #5a452e;
+  font-size: 16px;
+  font-weight: 700;
+  box-shadow: inset 0 -5px #bc945d;
+}
+.mp-game .mp-cargo-icon {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  gap: 2px;
+  min-width: 40px;
+  padding: 4px 5px;
+  border-radius: 4px;
+  background: #dbe1db;
+  color: #52636a;
+  font-weight: 700;
+  font-size: 17px;
+}
+.mp-game .mp-cargo-icon.required {
+  background: #d3dfc4;
+  color: #4d6a42;
+}
+.mp-game .mp-placement {
+  margin-top: 3px;
+  font-size: 10px;
+  color: #607853;
+}
+.mp-game .mp-detail {
+  margin: 0 0 14px;
+  font-size: 12px;
+  line-height: 1.7;
+  color: #6b7762;
+}
+.mp-game .mp-assumptions {
+  border-block: 1px solid #e0e5d9;
+  padding: 14px 0;
+  margin: 19px 0;
+  color: #5e725d;
+  font-size: 13px;
+  line-height: 1.75;
+}
+.mp-game .mp-assumptions summary {
+  cursor: pointer;
+  color: #3b6347;
+  font-weight: 650;
+}
+.mp-game .mp-assumptions summary:focus-visible {
+  outline: 3px solid #365c46;
+  outline-offset: 3px;
+}
+.mp-game .mp-assumptions p {
+  font-size: 12px;
+}
+@media (max-width: 480px) {
+  .mp-game .mp-readouts > div {
+    padding: 11px;
+  }
+  .mp-game .mp-option-row {
+    gap: 6px;
+  }
+  .mp-game .mp-option-row button {
+    flex-basis: 65px;
+  }
+  .mp-game .mp-card-grid {
+    gap: 6px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .mp-game *,
+  .mp-game *::before,
+  .mp-game *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.mp-game .mp-last-observation {
+  margin: 16px 0;
+  padding: 14px 16px;
+  border-left: 4px solid #ad8235;
+  border-radius: 0 12px 12px 0;
+  background: #f5efdf;
+  color: #334d3d;
+  font-size: 13px;
+  line-height: 1.7;
+}
+.mp-game .mp-last-observation p {
+  margin-top: 6px;
+}

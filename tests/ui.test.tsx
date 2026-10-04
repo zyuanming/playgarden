@@ -216,3 +216,44 @@ it("catalog loads more real modules without placeholders", () => {
     );
   }
 });
+
+describe("completion navigation", () => {
+  it("focuses the visible completion action, then the new level heading", async () => {
+    const original = Object.getOwnPropertyDescriptor(
+      HTMLElement.prototype,
+      "scrollIntoView",
+    );
+    const scroll = vi.fn();
+    Object.defineProperty(HTMLElement.prototype, "scrollIntoView", {
+      configurable: true,
+      value: scroll,
+    });
+    try {
+      render(<App />);
+      fireEvent.click(screen.getByRole("button", { name: "开始玩光线实验室" }));
+      fireEvent.click(await screen.findByRole("button", { name: /镜子 1/ }));
+      const next = await screen.findByRole("button", { name: "下一关" });
+      await waitFor(() => expect(document.activeElement).toBe(next));
+      expect(next.closest(".game-win-banner")).not.toBeNull();
+      fireEvent.click(next);
+      await waitFor(() =>
+        expect(
+          document.querySelector(".game-main")?.getAttribute("data-level"),
+        ).toBe("1"),
+      );
+      expect(document.activeElement).toBe(
+        screen.getByRole("heading", { name: "光线实验室", level: 1 }),
+      );
+      expect(scroll).toHaveBeenCalledWith({ block: "start", behavior: "auto" });
+      expect(screen.queryByRole("button", { name: "下一关" })).toBeNull();
+    } finally {
+      if (original)
+        Object.defineProperty(
+          HTMLElement.prototype,
+          "scrollIntoView",
+          original,
+        );
+      else Reflect.deleteProperty(HTMLElement.prototype, "scrollIntoView");
+    }
+  });
+});

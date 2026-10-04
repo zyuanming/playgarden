@@ -1,4 +1,4 @@
-import { Suspense, useState, useEffect } from "react";
+import { Suspense, useState, useEffect, useRef } from "react";
 import {
   ArrowLeft,
   Pause,
@@ -36,6 +36,21 @@ export function GameShell({
   const [status, setStatus] = useState("");
   const [won, setWon] = useState(false);
   const Game = game.component;
+  const mainRef = useRef<HTMLElement>(null);
+  const headingRef = useRef<HTMLHeadingElement>(null);
+  const advanceRef = useRef<HTMLButtonElement>(null);
+  useEffect(() => {
+    mainRef.current?.scrollIntoView?.({ block: "start", behavior: "auto" });
+    headingRef.current?.focus({ preventScroll: true });
+  }, [id, level]);
+  useEffect(() => {
+    if (!won) return;
+    advanceRef.current?.scrollIntoView?.({
+      block: "nearest",
+      behavior: "auto",
+    });
+    advanceRef.current?.focus({ preventScroll: true });
+  }, [won]);
   useEffect(() => {
     const listener = (e: KeyboardEvent) => {
       if (e.key === "Escape") setPaused((p) => !p);
@@ -52,7 +67,7 @@ export function GameShell({
     setReset((r) => r + 1);
   }
   return (
-    <main className="game-main" data-game={id} data-level={level}>
+    <main ref={mainRef} className="game-main" data-game={id} data-level={level}>
       <button className="back-link" onClick={onBack}>
         <ArrowLeft size={18} />
         返回游戏大厅
@@ -60,7 +75,9 @@ export function GameShell({
       <div className="game-heading">
         <div>
           <span className={`category ${game.tone}`}>{game.category}</span>
-          <h1>{game.title}</h1>
+          <h1 ref={headingRef} tabIndex={-1}>
+            {game.title}
+          </h1>
         </div>
         <div className="level-picker">
           <label htmlFor="game-level">选择关卡</label>
@@ -108,6 +125,24 @@ export function GameShell({
           第 {level + 1} / {game.levelCount} 关
         </span>
       </div>
+      {won && (
+        <div className="game-win-banner" aria-label="通关操作">
+          <p>
+            <strong>第 {level + 1} 关完成了！</strong>
+            <span>可以继续挑战，也可以随时休息。</span>
+          </p>
+          <button
+            ref={advanceRef}
+            className="primary"
+            onClick={() =>
+              level < game.levelCount - 1 ? changeLevel(level + 1) : onBack()
+            }
+          >
+            {level < game.levelCount - 1 ? "下一关" : "返回大厅"}
+            <ArrowRight size={18} />
+          </button>
+        </div>
+      )}
       <div className="game-surface">
         <GameBoundary key={`${id}:${level}:${reset}`} onBack={onBack}>
           <Suspense fallback={<p className="loading">正在准备游戏…</p>}>
@@ -143,17 +178,6 @@ export function GameShell({
         aria-live="polite"
       >
         <p>{status}</p>
-        {won && (
-          <button
-            className="primary"
-            onClick={() =>
-              level < game.levelCount - 1 ? changeLevel(level + 1) : onBack()
-            }
-          >
-            {level < game.levelCount - 1 ? "下一关" : "返回大厅"}
-            <ArrowRight size={18} />
-          </button>
-        )}
       </div>
       <p className="privacy-note">
         进度仅保存在当前浏览器。随时休息，不需要赶时间。
