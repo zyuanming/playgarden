@@ -242,8 +242,9 @@
   line-height: 1;
 }
 .nsw-game .ct-cell small {
-  font-size: clamp(8px, 1.5vw, 10px);
-  color: #697e6b;
+  font-size: 12px;
+  line-height: 1.2;
+  color: #284b36;
   font-variant-numeric: tabular-nums;
 }
 .nsw-game .ct-cell.ct-rock {
@@ -393,4 +394,10 @@
 }
 .nsw-game .fm-empty {
   grid-column: 1 / -1;
+}
+
+.nsw-game .ct-axis-y,
+.nsw-game .ct-axis-x {
+  font-size: 12px;
+  color: #284b36;
 }

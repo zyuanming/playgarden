@@ -713,3 +713,38 @@ describe("motion physics accessible controls", () => {
     expect(q.onComplete).not.toHaveBeenCalled();
   });
 });
+
+describe("retained experiment observations", () => {
+  it("keeps the previous measured incline result while changing a parameter", () => {
+    const p = props(),
+      view = render(<InclineLab {...p} />);
+    fireEvent.click(inclineButton({ part: "height", value: 20 }));
+    fireEvent.click(inclineButton({ part: "release" }));
+    fireEvent.click(inclineButton({ part: "height", value: 40 }));
+    expect(screen.getByTestId("incline-distance").textContent).toBe("等待释放");
+    expect(
+      screen.getByTestId("incline-last-observation").textContent,
+    ).toContain("20 cm");
+    expect(
+      screen.getByTestId("incline-last-observation").textContent,
+    ).toContain("高度 20");
+    view.rerender(<InclineLab {...p} resetToken={1} />);
+    expect(screen.queryByTestId("incline-last-observation")).toBeNull();
+  });
+  it("keeps the previous draft and mass while changing dock cargo", () => {
+    const p = props(),
+      view = render(<BuoyancyDock {...p} />);
+    fireEvent.click(dockButton({ kind: "hull", index: 1 }));
+    fireEvent.click(dockButton({ kind: "launch" }));
+    fireEvent.click(dockButton({ kind: "cargo", index: 0 }));
+    expect(screen.getByTestId("buoyancy-draft").textContent).toBe("等待下水");
+    expect(
+      screen.getByTestId("buoyancy-last-observation").textContent,
+    ).toContain("40 mm");
+    expect(
+      screen.getByTestId("buoyancy-last-observation").textContent,
+    ).toContain("8 kg");
+    view.rerender(<BuoyancyDock {...p} resetToken={1} />);
+    expect(screen.queryByTestId("buoyancy-last-observation")).toBeNull();
+  });
+});

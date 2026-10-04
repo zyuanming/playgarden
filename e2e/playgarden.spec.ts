@@ -84,6 +84,42 @@ test("all 12 light levels", async ({ page }, info) => {
           .getByRole("button", { name: new RegExp(`镜子 ${i + 1}，`) })
           .click();
     await complete(page, info, "light", level);
+    if (level <= 1) {
+      const next = page.getByRole("button", { name: "下一关", exact: true });
+      await expect(next).toBeInViewport();
+      await expect(next).toBeFocused();
+      if (level === 0) await next.click();
+      else {
+        await page.evaluate(() =>
+          window.scrollTo(0, document.body.scrollHeight),
+        );
+        await expect(next).toBeFocused();
+        await page.keyboard.press("Enter");
+      }
+      await expect(page.locator(".game-main")).toHaveAttribute(
+        "data-level",
+        String(level + 1),
+      );
+      const heading = page.getByRole("heading", {
+        name: "光线实验室",
+        level: 1,
+      });
+      await expect(heading).toBeInViewport();
+      await expect(heading).toBeFocused();
+      expect(
+        await page
+          .locator(".game-surface")
+          .evaluate(
+            (node) => node.getBoundingClientRect().top < innerHeight - 50,
+          ),
+      ).toBe(true);
+      await page.screenshot({
+        path: info.outputPath(
+          `light-next-level-${level === 0 ? "click" : "keyboard"}-viewport.png`,
+        ),
+        animations: "disabled",
+      });
+    }
   }
   expect(errors).toEqual([]);
 });

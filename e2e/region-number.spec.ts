@@ -40,6 +40,29 @@ test("all uniquely placed forest tents", async ({ page }, info) => {
     fullPage: true,
     animations: "disabled",
   });
+  const target = Array.from(
+    { length: tentsLevels[0].size ** 2 },
+    (_, i) => i,
+  ).filter((i) => !tentsLevels[0].trees.includes(i))[1];
+  await page.locator(`[data-tents-cell="${target}"]`).click();
+  await page.getByRole("button", { name: "草地 X", exact: true }).click();
+  await expect(page.locator(`[data-tents-cell="${target}"]`)).toHaveAttribute(
+    "data-value",
+    "0",
+  );
+  await expect(page.locator(`[data-tents-cell="${target}"]`)).toHaveAttribute(
+    "data-tents-cursor",
+    "true",
+  );
+  await expect(page.getByTestId("tents-current-cell")).toContainText(
+    "下方按钮只修改此格",
+  );
+  await page.screenshot({
+    path: info.outputPath("tents-current-selection.png"),
+    fullPage: true,
+    animations: "disabled",
+  });
+  await page.getByRole("button", { name: "重来", exact: true }).click();
   for (let level = 0; level < tentsLevels.length; level++) {
     await chooseLevel(page, level);
     for (const cell of tentsLevels[level].solution)
@@ -107,6 +130,15 @@ test("all vector-card treasure routes", async ({ page }, info) => {
         .locator(".ct-cell")
         .evaluateAll((nodes) =>
           nodes.every((node) => getComputedStyle(node).opacity === "1"),
+        ),
+    ).toBe(true);
+    expect(
+      await page
+        .locator(".ct-cell small")
+        .evaluateAll((nodes) =>
+          nodes.every(
+            (node) => parseFloat(getComputedStyle(node).fontSize) >= 12,
+          ),
         ),
     ).toBe(true);
     await complete(page, info, "coordinate", level);

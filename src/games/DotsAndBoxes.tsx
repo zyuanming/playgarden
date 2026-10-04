@@ -181,63 +181,69 @@ function DotsRound({
           <span>✦ 绿叶 · 你的花田</span>
           <span>○ 白花 · 对手花田</span>
         </div>
-        <div
-          className="cxg-dots-board"
-          style={
-            { "--dots-columns": columns, "--dots-rows": rows } as CSSProperties
-          }
-          data-testid="dots-board"
-          data-edges={state.board.edges.join(",")}
-          data-boxes={state.board.boxes.join(",")}
-          data-turn={state.turn}
-          data-winner={winner ?? "playing"}
-          role="group"
-          aria-label={`${rows} 行 ${columns} 列花田，虚线可以点击画线`}
-        >
-          {Array.from({ length: (rows + 1) * (columns + 1) }, (_, i) => (
-            <i
-              key={`d${i}`}
-              className="cxg-dot"
-              aria-hidden="true"
-              style={{
-                gridRow: Math.floor(i / (columns + 1)) * 2 + 1,
-                gridColumn: (i % (columns + 1)) * 2 + 1,
-              }}
-            />
-          ))}
-          {state.board.edges.map((_, index) =>
-            index < horizontal
-              ? edgeButton(
-                  index,
-                  Math.floor(index / columns) * 2,
-                  (index % columns) * 2 + 1,
-                  false,
-                )
-              : edgeButton(
-                  index,
-                  Math.floor((index - horizontal) / (columns + 1)) * 2 + 1,
-                  ((index - horizontal) % (columns + 1)) * 2,
-                  true,
-                ),
-          )}
-          {state.board.boxes.map((owner, index) => (
-            <div
-              key={`b${index}`}
-              data-dots-box={index}
-              data-owner={owner}
-              className={`cxg-dots-box ${owner === 1 ? "is-player" : owner === 2 ? "is-opponent" : ""} ${state.lastMove?.captured.includes(index) ? "is-new" : ""}`}
-              style={{
-                gridRow: Math.floor(index / columns) * 2 + 2,
-                gridColumn: (index % columns) * 2 + 2,
-              }}
-              aria-label={`第 ${index + 1} 格，${owner === 1 ? "你的花田" : owner === 2 ? "白花的花田" : "尚未围成"}`}
-            >
-              <span aria-hidden="true">
-                {owner === 1 ? "✦" : owner === 2 ? "○" : "·"}
-              </span>
-            </div>
-          ))}
+        <div className="cxg-dots-scroll">
+          <div
+            className="cxg-dots-board"
+            style={
+              {
+                "--dots-columns": columns,
+                "--dots-rows": rows,
+              } as CSSProperties
+            }
+            data-testid="dots-board"
+            data-edges={state.board.edges.join(",")}
+            data-boxes={state.board.boxes.join(",")}
+            data-turn={state.turn}
+            data-winner={winner ?? "playing"}
+            role="group"
+            aria-label={`${rows} 行 ${columns} 列花田，虚线可以点击画线`}
+          >
+            {Array.from({ length: (rows + 1) * (columns + 1) }, (_, i) => (
+              <i
+                key={`d${i}`}
+                className="cxg-dot"
+                aria-hidden="true"
+                style={{
+                  gridRow: Math.floor(i / (columns + 1)) * 2 + 1,
+                  gridColumn: (i % (columns + 1)) * 2 + 1,
+                }}
+              />
+            ))}
+            {state.board.edges.map((_, index) =>
+              index < horizontal
+                ? edgeButton(
+                    index,
+                    Math.floor(index / columns) * 2,
+                    (index % columns) * 2 + 1,
+                    false,
+                  )
+                : edgeButton(
+                    index,
+                    Math.floor((index - horizontal) / (columns + 1)) * 2 + 1,
+                    ((index - horizontal) % (columns + 1)) * 2,
+                    true,
+                  ),
+            )}
+            {state.board.boxes.map((owner, index) => (
+              <div
+                key={`b${index}`}
+                data-dots-box={index}
+                data-owner={owner}
+                className={`cxg-dots-box ${owner === 1 ? "is-player" : owner === 2 ? "is-opponent" : ""} ${state.lastMove?.captured.includes(index) ? "is-new" : ""}`}
+                style={{
+                  gridRow: Math.floor(index / columns) * 2 + 2,
+                  gridColumn: (index % columns) * 2 + 2,
+                }}
+                aria-label={`第 ${index + 1} 格，${owner === 1 ? "你的花田" : owner === 2 ? "白花的花田" : "尚未围成"}`}
+              >
+                <span aria-hidden="true">
+                  {owner === 1 ? "✦" : owner === 2 ? "○" : "·"}
+                </span>
+              </div>
+            ))}
+          </div>
         </div>
+        <p className="cxg-touch-note">点击虚线即可画边；小屏可横向滑动棋盘。</p>
         <p className="cxg-caption" aria-live="polite">
           {state.lastMove
             ? `${state.lastMove.player === 1 ? "你" : "白花"}画了第 ${state.lastMove.edge + 1} 条边。${state.lastMove.captured.length ? `围成 ${state.lastMove.captured.length} 格。` : "没有围成新格。"}${state.lastMove.extraTurn ? "获得额外回合。" : ""}`

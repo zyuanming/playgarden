@@ -27,6 +27,17 @@ for (const [title, id, levels, selector] of [
           "2",
         );
       }
+      if (id === "dots") {
+        const targets = await page
+          .locator("[data-dots-edge]")
+          .evaluateAll((nodes) =>
+            nodes.map((node) => {
+              const r = node.getBoundingClientRect();
+              return [r.width, r.height];
+            }),
+          );
+        expect(targets.every(([w, h]) => w >= 43.5 && h >= 43.5)).toBe(true);
+      }
       await complete(page, info, id, level);
     }
     expect(errors).toEqual([]);
@@ -40,6 +51,18 @@ test("all exact incline energy experiments", async ({ page }, info) => {
     fullPage: true,
     animations: "disabled",
   });
+  await page.locator('[data-incline-part="height"][data-value="20"]').click();
+  await page.getByTestId("incline-release").click();
+  await page.locator('[data-incline-part="height"][data-value="40"]').click();
+  await expect(page.getByTestId("incline-last-observation")).toContainText(
+    "20 cm",
+  );
+  await page.screenshot({
+    path: info.outputPath("physics-retained-trial.png"),
+    fullPage: true,
+    animations: "disabled",
+  });
+  await page.getByRole("button", { name: "重来", exact: true }).click();
   for (let level = 0; level < inclineLevels.length; level++) {
     await chooseLevel(page, level);
     for (const move of inclineSolutions[level])
@@ -64,6 +87,18 @@ test("all exact static buoyancy experiments", async ({ page }, info) => {
     fullPage: true,
     animations: "disabled",
   });
+  await page.locator('[data-dock-kind="hull"][data-index="1"]').click();
+  await page.getByTestId("buoyancy-launch").click();
+  await page.locator('[data-dock-kind="cargo"][data-index="0"]').click();
+  await expect(page.getByTestId("buoyancy-last-observation")).toContainText(
+    "40 mm",
+  );
+  await page.screenshot({
+    path: info.outputPath("physics-retained-trial.png"),
+    fullPage: true,
+    animations: "disabled",
+  });
+  await page.getByRole("button", { name: "重来", exact: true }).click();
   for (let level = 0; level < buoyancyLevels.length; level++) {
     await chooseLevel(page, level);
     for (const move of buoyancySolutions[level])

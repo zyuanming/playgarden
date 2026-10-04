@@ -434,3 +434,15 @@
     transition: none;
   }
 }
+
+.rc-layout .rc-square.is-cursor {
+  outline: 3px solid #274d38;
+  outline-offset: -4px;
+  z-index: 1;
+}
+.rc-layout .rc-current-cell {
+  margin-top: 14px;
+  color: #274d38;
+  font-size: 13px;
+  line-height: 1.7;
+}

@@ -716,3 +716,27 @@ describe("Tents accessible round lifecycle", () => {
     }
   });
 });
+
+describe("explicit Tents toolbar target", () => {
+  it("keeps a visible named cursor when focus moves into the toolbar", () => {
+    render(<TentsGarden {...props()} />);
+    const config = tentsLevels[0];
+    const free = Array.from({ length: config.size ** 2 }, (_, i) => i).filter(
+      (i) => !config.trees.includes(i),
+    );
+    const index = free[1];
+    fireEvent.click(square("tents", index));
+    expect(square("tents", index).getAttribute("data-tents-cursor")).toBe(
+      "true",
+    );
+    expect(screen.getByTestId("tents-current-cell").textContent).toContain(
+      `第 ${Math.floor(index / config.size) + 1} 行第 ${(index % config.size) + 1} 列`,
+    );
+    fireEvent.click(screen.getByRole("button", { name: "草地 X" }));
+    expect(square("tents", index).getAttribute("data-value")).toBe("0");
+    expect(square("tents", index).classList.contains("is-cursor")).toBe(true);
+    expect(
+      document.querySelectorAll('[data-tents-cursor="true"]'),
+    ).toHaveLength(1);
+  });
+});

@@ -289,3 +289,17 @@
     scroll-behavior: auto !important;
   }
 }
+
+.mp-game .mp-last-observation {
+  margin: 16px 0;
+  padding: 14px 16px;
+  border-left: 4px solid #ad8235;
+  border-radius: 0 12px 12px 0;
+  background: #f5efdf;
+  color: #334d3d;
+  font-size: 13px;
+  line-height: 1.7;
+}
+.mp-game .mp-last-observation p {
+  margin-top: 6px;
+}

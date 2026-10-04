@@ -39,6 +39,12 @@ function InclineExperiment({
     completed = useRef(false);
   const result = evaluateIncline(config, state.settings),
     won = isInclineSolved(config, state);
+  const previousTrial = [...state.history]
+    .reverse()
+    .find((snapshot) => snapshot.tested);
+  const previousResult = previousTrial
+    ? evaluateIncline(config, previousTrial.settings)
+    : null;
   const min = physicsRatioValue(config.targetMinCm),
     max = physicsRatioValue(config.targetMaxCm);
   const stop = result.stopCm ? physicsRatioValue(result.stopCm) : 0;
@@ -223,6 +229,20 @@ function InclineExperiment({
             </strong>
           </div>
         </div>
+        {previousTrial && previousResult && (
+          <aside
+            className="mp-last-observation"
+            data-testid="incline-last-observation"
+          >
+            <strong>上次已完成试验</strong>
+            <p>
+              高度 {previousTrial.settings.height} cm · 坡面 μ{" "}
+              {(previousTrial.settings.rampFriction ?? 0) / 100} · 地面 μ{" "}
+              {(previousTrial.settings.brakeFriction ?? 0) / 100}
+            </p>
+            <p>{describeInclineResult(previousResult)}</p>
+          </aside>
+        )}
         <div className="mp-options">
           {inclineParts.map((part) => (
             <fieldset key={part}>

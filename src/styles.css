@@ -1059,3 +1059,41 @@ footer a {
   line-height: 1.7;
   color: var(--muted);
 }
+
+.game-main {
+  scroll-margin-top: 16px;
+}
+.game-win-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 20px;
+  margin-bottom: 18px;
+  border: 1px solid #bed48e;
+  border-radius: 18px;
+  background: #e6f1c9;
+}
+.game-win-banner p {
+  display: grid;
+  gap: 5px;
+}
+.game-win-banner p span {
+  color: #465b3c;
+  font-size: 13px;
+  line-height: 1.5;
+}
+.game-win-banner .primary {
+  min-height: 44px;
+  flex-shrink: 0;
+}
+@media (max-width: 540px) {
+  .game-win-banner {
+    align-items: stretch;
+    flex-direction: column;
+    padding: 16px;
+  }
+  .game-win-banner .primary {
+    align-self: flex-start;
+  }
+}

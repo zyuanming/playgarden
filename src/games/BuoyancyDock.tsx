@@ -37,6 +37,12 @@ function DockExperiment({
     completed = useRef(false);
   const result = evaluateBuoyancy(config, state),
     won = isBuoyancySolved(config, state);
+  const previousTrial = [...state.history]
+    .reverse()
+    .find((snapshot) => snapshot.tested);
+  const previousResult = previousTrial
+    ? evaluateBuoyancy(config, previousTrial)
+    : null;
   const selectedHulls = config.hulls.filter((_, i) => state.hulls[i]);
   const selectedCargo = config.cargo.filter((_, i) => state.cargo[i]);
   const draft = result.draftMm ? physicsRatioValue(result.draftMm) : 0;
@@ -239,6 +245,19 @@ function DockExperiment({
             </strong>
           </div>
         </div>
+        {previousResult && (
+          <aside
+            className="mp-last-observation"
+            data-testid="buoyancy-last-observation"
+          >
+            <strong>上次已完成试航</strong>
+            <p>
+              总质量 {previousResult.massG / 1000} kg · 水线面积{" "}
+              {previousResult.areaDm2} dm²
+            </p>
+            <p>{describeBuoyancyResult(previousResult)}</p>
+          </aside>
+        )}
         <div className="mp-ledger">
           <span>
             总质量 <b data-testid="buoyancy-mass">{result.massG / 1000} kg</b>

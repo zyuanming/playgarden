@@ -63,7 +63,12 @@ function TentsRound({
   const config = tentsLevels[level] ?? tentsLevels[0],
     n = config.size;
   const [state, setState] = useState(() => createTentsState(config)),
-    [cursor, setCursor] = useState(0),
+    [cursor, setCursor] = useState(
+      () =>
+        Array.from({ length: n * n }, (_, i) => i).find(
+          (i) => !config.trees.includes(i),
+        ) ?? 0,
+    ),
     [hint, setHint] = useState<TentsHint | null>(null),
     [message, setMessage] = useState(introduction);
   const cells = useRef<(HTMLButtonElement | null)[]>([]),
@@ -234,16 +239,21 @@ function TentsRound({
                   data-tents-cell={index}
                   data-value={value}
                   data-tree={tree}
+                  data-tents-cursor={cursor === index}
+                  aria-current={cursor === index ? "true" : undefined}
                   disabled={paused || won}
                   aria-disabled={tree || paused || won}
-                  className={`rc-square ${tree ? "is-tree" : value === 1 ? "is-tent" : value === 0 ? "is-grass" : ""} ${bad ? "is-conflict" : ""} ${hint && hint.kind !== "unavailable" && hint.index === index ? "is-hinted" : ""}`}
+                  className={`rc-square ${cursor === index ? "is-cursor" : ""} ${tree ? "is-tree" : value === 1 ? "is-tent" : value === 0 ? "is-grass" : ""} ${bad ? "is-conflict" : ""} ${hint && hint.kind !== "unavailable" && hint.index === index ? "is-hinted" : ""}`}
                   style={{
                     gridRow: Math.floor(index / n) + 2,
                     gridColumn: (index % n) + 2,
                   }}
                   tabIndex={cursor === index ? 0 : -1}
                   onFocus={() => setCursor(index)}
-                  onClick={() => edit(index)}
+                  onClick={() => {
+                    setCursor(index);
+                    edit(index);
+                  }}
                   aria-label={`第 ${Math.floor(index / n) + 1} 行第 ${(index % n) + 1} 列，${tree ? "固定的树" : value === 1 ? "帐篷" : value === 0 ? "草地" : "未标记"}${bad ? "，规则冲突" : ""}`}
                 >
                   {tree ? (
@@ -273,7 +283,21 @@ function TentsRound({
             </div>
           )}
         </div>
-        <div className="rc-tools" aria-label="给所选格子标记">
+        <p
+          className="rc-current-cell"
+          id="tents-current-cell"
+          data-testid="tents-current-cell"
+        >
+          当前格：第 {Math.floor(cursor / n) + 1} 行第 {(cursor % n) + 1} 列
+          {config.trees.includes(cursor) ? "（固定的树）" : "（深色描边）"}
+          。下方按钮只修改此格。
+        </p>
+        <div
+          className="rc-tools"
+          role="group"
+          aria-label="给所选格子标记"
+          aria-describedby="tents-current-cell"
+        >
           <button
             type="button"
             disabled={paused || won || config.trees.includes(cursor)}
