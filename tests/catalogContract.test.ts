@@ -34,7 +34,23 @@ import { hashiLevels } from "../src/games/hashiLogic";
 import { slitherlinkLevels } from "../src/games/slitherlinkLogic";
 import { booleanCircuitLevels } from "../src/games/booleanCircuitLogic";
 import { stackQueueLevels } from "../src/games/stackQueueLogic";
+import { shikakuLevels } from "../src/games/shikakuLogic";
+import { tentsLevels } from "../src/games/tentsLogic";
+import { fractionMosaicLevels } from "../src/games/fractionMosaicLogic";
+import { coordinateTreasureLevels } from "../src/games/coordinateTreasureLogic";
+import { hexLevels } from "../src/games/hexLogic";
+import { dotsLevels } from "../src/games/dotsAndBoxesLogic";
+import { inclineLevels } from "../src/games/inclineLogic";
+import { buoyancyLevels } from "../src/games/buoyancyLogic";
 const packs = {
+  hex: hexLevels,
+  dots: dotsLevels,
+  incline: inclineLevels,
+  buoyancy: buoyancyLevels,
+  shikaku: shikakuLevels,
+  tents: tentsLevels,
+  fraction: fractionMosaicLevels,
+  coordinate: coordinateTreasureLevels,
   hashi: hashiLevels,
   slitherlink: slitherlinkLevels,
   circuit: booleanCircuitLevels,
@@ -81,8 +97,8 @@ describe("Scalable catalog contract", () => {
       expect(game.artwork.url).toMatch(/^\//);
     }),
   );
-  it("counts only 33 real games and 396 levels, not the roadmap", () => {
-    expect(games).toHaveLength(33);
-    expect(games.reduce((sum, g) => sum + g.levelCount, 0)).toBe(396);
+  it("counts only 41 real games and 492 levels, not the roadmap", () => {
+    expect(games).toHaveLength(41);
+    expect(games.reduce((sum, g) => sum + g.levelCount, 0)).toBe(492);
   });
 });

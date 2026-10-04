@@ -1,0 +1,133 @@
+/** Original MIT puzzles. Certificates are never read by solving, validation, or hints. */
+export type TentsLevel = {
+  title: string;
+  size: number;
+  trees: number[];
+  rowCounts: number[];
+  columnCounts: number[];
+  solution: number[];
+  authoringNodes: number;
+  authoringCandidates: number;
+};
+export const tentsLevels: TentsLevel[] = [
+  {
+    size: 4,
+    trees: [1, 2, 4],
+    rowCounts: [2, 0, 1, 0],
+    columnCounts: [2, 0, 0, 1],
+    solution: [0, 3, 8],
+    authoringNodes: 5,
+    authoringCandidates: 4,
+    title: "林间初营",
+  },
+  {
+    size: 4,
+    trees: [3, 13, 15],
+    rowCounts: [1, 0, 0, 2],
+    columnCounts: [1, 0, 2, 0],
+    solution: [2, 12, 14],
+    authoringNodes: 5,
+    authoringCandidates: 4,
+    title: "树荫相伴",
+  },
+  {
+    size: 4,
+    trees: [1, 7, 8, 10],
+    rowCounts: [1, 1, 0, 2],
+    columnCounts: [1, 1, 1, 1],
+    solution: [3, 5, 12, 14],
+    authoringNodes: 13,
+    authoringCandidates: 8,
+    title: "四角晨风",
+  },
+  {
+    size: 5,
+    trees: [3, 5, 6, 19],
+    rowCounts: [2, 0, 1, 0, 1],
+    columnCounts: [1, 1, 1, 0, 1],
+    solution: [0, 2, 11, 24],
+    authoringNodes: 22,
+    authoringCandidates: 10,
+    title: "小径扎营",
+  },
+  {
+    size: 5,
+    trees: [3, 5, 7, 16, 19],
+    rowCounts: [1, 0, 2, 0, 2],
+    columnCounts: [1, 1, 1, 0, 2],
+    solution: [4, 10, 12, 21, 24],
+    authoringNodes: 26,
+    authoringCandidates: 10,
+    title: "溪畔帐篷",
+  },
+  {
+    size: 5,
+    trees: [3, 6, 11, 14, 19],
+    rowCounts: [1, 1, 1, 1, 1],
+    columnCounts: [1, 1, 1, 1, 1],
+    solution: [2, 5, 13, 16, 24],
+    authoringNodes: 24,
+    authoringCandidates: 13,
+    title: "相邻的树",
+  },
+  {
+    size: 6,
+    trees: [1, 10, 18, 19, 26, 29],
+    rowCounts: [2, 0, 1, 0, 2, 1],
+    columnCounts: [2, 1, 1, 0, 2, 0],
+    solution: [0, 4, 13, 24, 28, 32],
+    authoringNodes: 35,
+    authoringCandidates: 14,
+    title: "六格林地",
+  },
+  {
+    size: 6,
+    trees: [1, 4, 12, 15, 24, 32, 34],
+    rowCounts: [1, 1, 1, 1, 1, 2],
+    columnCounts: [2, 1, 1, 1, 1, 1],
+    solution: [3, 7, 16, 18, 26, 30, 35],
+    authoringNodes: 43,
+    authoringCandidates: 21,
+    title: "星光营地",
+  },
+  {
+    size: 6,
+    trees: [0, 4, 8, 16, 19, 27, 29],
+    rowCounts: [1, 1, 1, 1, 1, 2],
+    columnCounts: [1, 1, 1, 1, 1, 2],
+    solution: [5, 6, 14, 22, 25, 33, 35],
+    authoringNodes: 84,
+    authoringCandidates: 21,
+    title: "连夜细雨",
+  },
+  {
+    size: 7,
+    trees: [5, 8, 10, 26, 27, 28, 31, 46],
+    rowCounts: [1, 1, 1, 1, 1, 2, 1],
+    columnCounts: [1, 1, 0, 1, 2, 1, 2],
+    solution: [6, 11, 15, 25, 34, 35, 38, 47],
+    authoringNodes: 80,
+    authoringCandidates: 24,
+    title: "七行松林",
+  },
+  {
+    size: 7,
+    trees: [1, 5, 15, 19, 28, 34, 36, 37, 38],
+    rowCounts: [2, 0, 2, 1, 1, 3, 0],
+    columnCounts: [2, 0, 3, 0, 1, 0, 3],
+    solution: [2, 6, 16, 20, 21, 30, 35, 39, 41],
+    authoringNodes: 91,
+    authoringCandidates: 23,
+    title: "交错树影",
+  },
+  {
+    size: 7,
+    trees: [1, 4, 13, 14, 17, 37, 39, 40, 42, 47],
+    rowCounts: [2, 1, 1, 1, 2, 1, 2],
+    columnCounts: [3, 0, 2, 1, 1, 2, 1],
+    solution: [0, 3, 12, 16, 21, 30, 33, 35, 46, 48],
+    authoringNodes: 98,
+    authoringCandidates: 30,
+    title: "森林露营家",
+  },
+];
