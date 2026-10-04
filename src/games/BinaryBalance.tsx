@@ -297,18 +297,28 @@ function BinaryRound({
           <div>
             <h4>行计数</h4>
             {Array.from({ length: n }, (_, r) => (
-              <p key={r}>
-                第 {r + 1} 行：
-                {countLine(Array.from({ length: n }, (_, c) => r * n + c))}
+              <p
+                key={r}
+                aria-label={`第${r + 1}行：${countLine(Array.from({ length: n }, (_, c) => r * n + c))}`}
+              >
+                {r + 1}：
+                {countLine(
+                  Array.from({ length: n }, (_, c) => r * n + c),
+                ).replaceAll(" ", "")}
               </p>
             ))}
           </div>
           <div>
             <h4>列计数</h4>
             {Array.from({ length: n }, (_, c) => (
-              <p key={c}>
-                第 {c + 1} 列：
-                {countLine(Array.from({ length: n }, (_, r) => r * n + c))}
+              <p
+                key={c}
+                aria-label={`第${c + 1}列：${countLine(Array.from({ length: n }, (_, r) => r * n + c))}`}
+              >
+                {c + 1}：
+                {countLine(
+                  Array.from({ length: n }, (_, r) => r * n + c),
+                ).replaceAll(" ", "")}
               </p>
             ))}
           </div>

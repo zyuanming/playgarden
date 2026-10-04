@@ -269,3 +269,14 @@
     scroll-behavior: auto !important;
   }
 }
+
+.energy-dispatch summary::after {
+  content: "展开 ▾";
+  margin-left: auto;
+  padding-left: 12px;
+  font-size: 0.75rem;
+  white-space: nowrap;
+}
+.energy-dispatch details[open] > summary::after {
+  content: "收起 ▴";
+}

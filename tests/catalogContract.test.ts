@@ -1,3 +1,7 @@
+import { compressionPostLevels } from "../src/games/compressionPostLevels";
+import { functionFactoryLevels } from "../src/games/functionFactoryLevels";
+import { railwayTimetableLevels } from "../src/games/railwayTimetableLevels";
+import { pipeCapacityLevels } from "../src/games/pipeCapacityLevels";
 import { binaryBalanceLevels } from "../src/games/binaryBalanceLevels";
 import { carryLettersLevels } from "../src/games/carryLettersLevels";
 import { fleetLevels } from "../src/games/fleetLevels";
@@ -71,6 +75,10 @@ import { sortingNetworkLevels } from "../src/games/sortingNetworkLogic";
 import { voxelViewsLevels } from "../src/games/voxelViewsLogic";
 import { cubeNetLevels } from "../src/games/cubeNetLogic";
 const packs = {
+  "compression-post": compressionPostLevels,
+  "function-factory": functionFactoryLevels,
+  "railway-timetable": railwayTimetableLevels,
+  "pipe-capacity": pipeCapacityLevels,
   "binary-balance": binaryBalanceLevels,
   "carry-letters": carryLettersLevels,
   "fleet-logic": fleetLevels,
@@ -151,8 +159,8 @@ describe("Scalable catalog contract", () => {
       expect(game.artwork.url).toMatch(/^\//);
     }),
   );
-  it("counts only 67 real games and 804 levels, not the roadmap", () => {
-    expect(games).toHaveLength(67);
-    expect(games.reduce((sum, g) => sum + g.levelCount, 0)).toBe(804);
+  it("counts only 71 real games and 852 levels, not the roadmap", () => {
+    expect(games).toHaveLength(71);
+    expect(games.reduce((sum, g) => sum + g.levelCount, 0)).toBe(852);
   });
 });

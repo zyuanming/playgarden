@@ -67,6 +67,10 @@ export const GAME_IDS = [
   "fleet-logic",
   "carry-letters",
   "binary-balance",
+  "pipe-capacity",
+  "railway-timetable",
+  "function-factory",
+  "compression-post",
 ] as const;
 export type GameId = (typeof GAME_IDS)[number];
 export type Category =
@@ -182,6 +186,12 @@ export const codeEnergySpatialArtwork = (index: number) => ({
 
 export const iceFleetNumberArtwork = (index: number) => ({
   url: "/ice-fleet-number-art.webp",
+  position: `${(index % 2) * 100}% ${index < 2 ? 12 : 88}%`,
+  size: "200% auto",
+});
+
+export const flowRailFunctionArtwork = (index: number) => ({
+  url: "/flow-rail-function-codec-art.webp",
   position: `${(index % 2) * 100}% ${index < 2 ? 12 : 88}%`,
   size: "200% auto",
 });

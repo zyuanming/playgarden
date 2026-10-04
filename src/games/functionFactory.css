@@ -1,0 +1,232 @@
+/* SPDX-License-Identifier: MIT */
+.function-factory {
+  --ff-ink: #173643;
+  --ff-accent: #075f65;
+  color: var(--ff-ink);
+  align-items: start;
+}
+.ff-workbench {
+  min-width: 0;
+  background: #f7fbfa;
+  border: 1px solid #b6ccc9;
+  border-radius: 20px;
+  padding: 18px;
+}
+.ff-heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.ff-heading b {
+  font-size: 0.85rem;
+}
+.ff-banner {
+  background: #deeee8;
+  border-radius: 12px;
+  padding: 12px;
+  line-height: 1.6;
+}
+.ff-pictures {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+.ff-trace {
+  margin: 0;
+  background: #fff;
+  border: 1px solid #bccfce;
+  border-radius: 12px;
+  padding: 12px;
+  min-width: 0;
+}
+.ff-trace figcaption {
+  font-weight: 800;
+}
+.ff-trace svg {
+  width: 100%;
+  height: 210px;
+  background: #f4f8f7;
+}
+.ff-trace line {
+  stroke: #075f65;
+  stroke-width: 3;
+  stroke-linecap: round;
+}
+.ff-trace text {
+  font-size: 12px;
+  fill: #243d43;
+  paint-order: stroke;
+  stroke: #f4f8f7;
+  stroke-width: 3px;
+  stroke-linejoin: round;
+}
+.ff-trace circle,
+.ff-trace path {
+  fill: #9f381c;
+  stroke: #fff;
+  stroke-width: 1;
+}
+.ff-trace p {
+  font-size: 0.8rem;
+  line-height: 1.55;
+}
+.ff-strokes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 0;
+  list-style: none;
+  font-size: 0.76rem;
+}
+.ff-strokes li {
+  border: 1px solid #bbc9c7;
+  border-radius: 5px;
+  padding: 3px 5px;
+  background: #f0f6f3;
+  color: #213d3e;
+}
+.ff-preview-note {
+  padding: 24px;
+  border: 2px dashed #9bafaa;
+  border-radius: 12px;
+  display: grid;
+  align-content: center;
+  line-height: 1.8;
+}
+.ff-programs {
+  display: grid;
+  gap: 12px;
+  margin: 18px 0;
+}
+.ff-programs section {
+  border: 1px solid #a9bebb;
+  border-radius: 12px;
+  padding: 12px;
+  background: #fff;
+}
+.ff-programs h4 {
+  margin: 0 0 10px;
+}
+.ff-slots {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.function-factory button {
+  min-width: 44px;
+  min-height: 44px;
+  border: 1px solid #759892;
+  background: #fff;
+  color: #173643;
+  border-radius: 8px;
+  font: inherit;
+  cursor: pointer;
+  padding: 8px 12px;
+}
+.function-factory button:hover:not(:disabled) {
+  background: #d9eee8;
+  color: #123e40;
+}
+.function-factory button:focus-visible,
+.function-factory:focus-visible {
+  outline: 3px solid #a63f1b;
+  outline-offset: 3px;
+}
+.ff-slots button {
+  min-width: 56px;
+  display: grid;
+  gap: 4px;
+}
+.ff-slots small {
+  font-size: 0.7rem;
+}
+.ff-slots b {
+  font-size: 1.25rem;
+}
+.function-factory button[aria-pressed="true"] {
+  background: #075f65;
+  color: #fff;
+  border-color: #075f65;
+}
+.function-factory button[aria-pressed="true"]:hover {
+  background: #06464a;
+  color: #fff;
+}
+.function-factory button.ff-hinted {
+  box-shadow: 0 0 0 3px #b45519;
+}
+.function-factory button:disabled {
+  opacity: 1;
+  background: #e6eeeb;
+  color: #52655e;
+  cursor: default;
+  border-color: #a5b3ae;
+}
+.ff-palette {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+  background: #edf4db;
+  border: 2px solid #728348;
+  border-radius: 12px;
+  padding: 12px;
+  margin-bottom: 14px;
+}
+.ff-palette strong {
+  flex-basis: 100%;
+}
+.function-factory .ff-run {
+  background: #075f65;
+  color: #fff;
+  width: 100%;
+  font-weight: 800;
+}
+.function-factory .ff-run:hover:not(:disabled) {
+  background: #034347;
+  color: #fff;
+}
+.ff-hint,
+.ff-search {
+  padding: 12px;
+  background: #fff0d4;
+  border: 1px solid #b28a46;
+  border-radius: 12px;
+  line-height: 1.6;
+}
+.ff-search button {
+  display: block;
+  margin-top: 10px;
+}
+.ff-notes {
+  line-height: 1.75;
+}
+.ff-notes ol {
+  padding-left: 24px;
+}
+.ff-scroll-cue {
+  border-top: 1px solid #a4b9ae;
+  padding-top: 12px;
+  font-size: 0.85rem;
+}
+@media (max-width: 650px) {
+  .ff-pictures {
+    grid-template-columns: 1fr;
+  }
+  .ff-workbench {
+    padding: 12px;
+  }
+  .ff-trace svg {
+    height: 180px;
+  }
+  .ff-slots {
+    gap: 6px;
+  }
+  .ff-slots button {
+    min-width: 48px;
+  }
+  .ff-heading {
+    font-size: 0.85rem;
+  }
+}

@@ -1,0 +1,256 @@
+/* SPDX-License-Identifier: MIT */
+.compression-post {
+  --cp-ink: #263747;
+  color: var(--cp-ink);
+  align-items: start;
+}
+.cp-workbench {
+  min-width: 0;
+  padding: 18px;
+  background: #fbf9f3;
+  border: 1px solid #d6ccb5;
+  border-radius: 20px;
+}
+.cp-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.cp-heading h4 {
+  margin: 0;
+}
+.cp-heading > strong {
+  background: #263747;
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 8px;
+}
+.cp-heading > strong.cp-over {
+  background: #992c1d;
+  color: #fff;
+}
+.cp-banner {
+  padding: 12px;
+  background: #f1e7c9;
+  border-radius: 12px;
+  line-height: 1.6;
+}
+.cp-message,
+.cp-dictionary,
+.cp-packets {
+  background: #fff;
+  border: 1px solid #cec6b1;
+  border-radius: 12px;
+  padding: 14px;
+  margin: 14px 0;
+}
+.cp-message h4,
+.cp-dictionary h4 {
+  margin: 0 0 12px;
+}
+.cp-message ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.cp-message li {
+  display: grid;
+  justify-items: center;
+  align-content: start;
+  gap: 4px;
+  position: relative;
+  min-width: 48px;
+  padding: 8px 4px;
+  border: 1px solid #a8b3ba;
+  border-radius: 9px;
+  background: #f2f5f7;
+  color: #263747;
+}
+.cp-message li span {
+  font-size: 1.5rem;
+}
+.cp-message li small {
+  font-size: 0.7rem;
+}
+.cp-message li.cp-packed {
+  background: #e1eee7;
+  border-color: #7f9b89;
+}
+.cp-message li.cp-next {
+  outline: 3px solid #a05b09;
+  background: #fff0cd;
+}
+.cp-message li em {
+  font-style: normal;
+  font-size: 0.65rem;
+  font-weight: 800;
+}
+.cp-exact-message {
+  font-size: 0.85rem;
+  line-height: 1.65;
+  overflow-wrap: anywhere;
+}
+.cp-dictionary ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.cp-dictionary li {
+  border: 1px solid #938aaa;
+  border-radius: 8px;
+  padding: 8px 12px;
+  display: flex;
+  gap: 10px;
+  background: #f2eefb;
+  color: #35264e;
+  align-items: center;
+}
+.cp-dictionary li span {
+  font-weight: 800;
+  letter-spacing: 0.1em;
+}
+.cp-dictionary p {
+  font-size: 0.8rem;
+  line-height: 1.7;
+}
+.cp-costs {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  font-size: 0.8rem;
+  line-height: 1.65;
+}
+.cp-costs span {
+  padding: 8px;
+  border-radius: 8px;
+  background: #e8edf0;
+  border: 1px solid #bbc6cd;
+}
+.cp-options {
+  display: grid;
+  gap: 12px;
+  margin: 18px 0;
+}
+.cp-options section {
+  border-top: 1px dashed #aaa38f;
+  padding-top: 8px;
+}
+.cp-options h4 {
+  margin: 4px 0 10px;
+}
+.cp-option-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.compression-post button {
+  min-width: 44px;
+  min-height: 44px;
+  border: 1px solid #8c9ba4;
+  background: #fff;
+  color: #263747;
+  border-radius: 8px;
+  padding: 10px 12px;
+  cursor: pointer;
+  font: inherit;
+}
+.cp-option-buttons button {
+  display: grid;
+  gap: 5px;
+  text-align: left;
+  font-size: 0.85rem;
+}
+.cp-option-buttons button span {
+  font-size: 0.78rem;
+  overflow-wrap: anywhere;
+}
+.compression-post button:hover:not(:disabled) {
+  background: #e7edf0;
+  color: #1a303f;
+  border-color: #5c798a;
+}
+.compression-post button:focus-visible,
+.compression-post:focus-visible {
+  outline: 3px solid #a6500c;
+  outline-offset: 3px;
+}
+.compression-post button:disabled {
+  opacity: 1;
+  cursor: default;
+  color: #52636a;
+  background: #e9eeed;
+  border-color: #acb8b8;
+}
+.compression-post button.cp-hinted {
+  box-shadow: 0 0 0 3px #a45b13;
+}
+.cp-unavailable {
+  font-size: 0.8rem;
+  color: #52616a;
+}
+.cp-packets ol {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+.cp-packets li {
+  background: #f0f4f3;
+  border-left: 4px solid #4f7767;
+  padding: 10px;
+  display: grid;
+  gap: 4px;
+  font-size: 0.85rem;
+}
+.cp-packets li span {
+  font-size: 0.78rem;
+}
+.cp-decoded {
+  overflow-wrap: anywhere;
+  line-height: 1.7;
+}
+.cp-hint {
+  background: #fff0cc;
+  border: 1px solid #b08434;
+  padding: 14px;
+  border-radius: 12px;
+  line-height: 1.7;
+}
+.cp-notes {
+  line-height: 1.75;
+}
+.cp-notes ol {
+  padding-left: 24px;
+}
+.cp-scroll-cue {
+  border-top: 1px solid #bdbba8;
+  padding-top: 12px;
+  font-size: 0.85rem;
+}
+@media (max-width: 650px) {
+  .cp-workbench {
+    padding: 12px;
+  }
+  .cp-message {
+    padding: 12px;
+  }
+  .cp-message ol {
+    gap: 7px;
+  }
+  .cp-message li {
+    min-width: 44px;
+  }
+  .cp-option-buttons button {
+    flex: 1 1 140px;
+  }
+  .cp-heading {
+    font-size: 0.85rem;
+  }
+}

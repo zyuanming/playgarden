@@ -178,3 +178,14 @@
     gap: 7px;
   }
 }
+
+.carry-letters summary::after {
+  content: "展开 ▾";
+  margin-left: auto;
+  padding-left: 12px;
+  font-size: 0.75rem;
+  white-space: nowrap;
+}
+.carry-letters details[open] > summary::after {
+  content: "收起 ▴";
+}

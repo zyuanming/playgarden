@@ -1,3 +1,4 @@
+import { flowRailFunctionArtwork } from "./catalog";
 import { iceFleetNumberArtwork } from "./catalog";
 import { lazy, type LazyExoticComponent, type ComponentType } from "react";
 import type { GameProps } from "./types";
@@ -834,6 +835,54 @@ export const games: GameDefinition[] = [
     artwork: iceFleetNumberArtwork(3),
     source: original,
     component: lazy(() => import("../games/BinaryBalance")),
+  },
+  {
+    id: "pipe-capacity",
+    title: "管道配流",
+    subtitle: "分配有限流量，在容量与守恒之间找到低成本路线。",
+    category: "逻辑思维",
+    difficulty: "进阶",
+    tone: "green",
+    levelCount: 12,
+    artwork: flowRailFunctionArtwork(0),
+    source: original,
+    component: lazy(() => import("../games/PipeCapacity")),
+  },
+  {
+    id: "railway-timetable",
+    title: "列车时刻",
+    subtitle: "安排道岔与等待，让两辆列车安全共享路网。",
+    category: "逻辑思维",
+    difficulty: "进阶",
+    tone: "orange",
+    levelCount: 12,
+    artwork: flowRailFunctionArtwork(1),
+    source: original,
+    component: lazy(() => import("../games/RailwayTimetable")),
+  },
+  {
+    id: "function-factory",
+    title: "函数工厂",
+    subtitle: "定义可复用的小函数，组合出完整有序的笔画。",
+    category: "编程启蒙",
+    difficulty: "中级",
+    tone: "green",
+    levelCount: 12,
+    artwork: flowRailFunctionArtwork(2),
+    source: original,
+    component: lazy(() => import("../games/FunctionFactory")),
+  },
+  {
+    id: "compression-post",
+    title: "压缩邮局",
+    subtitle: "权衡字面包、重复包与词典，让消息无损又紧凑。",
+    category: "编程启蒙",
+    difficulty: "中级",
+    tone: "purple",
+    levelCount: 12,
+    artwork: flowRailFunctionArtwork(3),
+    source: original,
+    component: lazy(() => import("../games/CompressionPost")),
   },
 ];
 export const findGame = (id: string) => games.find((game) => game.id === id);
