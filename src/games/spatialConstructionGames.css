@@ -406,3 +406,10 @@
     padding: 10px;
   }
 }
+
+/* A finished construction remains readable; only unavailable action controls fade. */
+.sc-game .sc-voxel-cell:disabled,
+.sc-game .sc-net-cell:disabled,
+.sc-game .sc-face:disabled {
+  opacity: 1;
+}

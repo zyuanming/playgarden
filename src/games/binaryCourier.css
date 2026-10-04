@@ -259,3 +259,8 @@
     padding: 9px;
   }
 }
+
+/* Used cards keep their operation and quantity readable. */
+.binary-courier .by-cards button:disabled {
+  opacity: 1;
+}

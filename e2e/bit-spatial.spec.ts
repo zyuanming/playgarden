@@ -23,6 +23,13 @@ test("all consumable bit-operation deliveries", async ({ page }, info) => {
     await chooseLevel(page, level);
     for (const card of binaryCourierLevels[level].solution)
       await page.locator(`[data-binary-card="${card}"]`).click();
+    expect(
+      await page
+        .locator("[data-binary-card]")
+        .evaluateAll((nodes) =>
+          nodes.every((node) => getComputedStyle(node).opacity === "1"),
+        ),
+    ).toBe(true);
     await complete(page, info, "binary", level);
   }
   expect(errors).toEqual([]);
@@ -55,6 +62,13 @@ test("all universally verified sorting networks", async ({ page }, info) => {
         if ((await control.inputValue()) !== value)
           await control.selectOption(value);
       }
+    expect(
+      await page
+        .locator("[data-sorting-stage]")
+        .evaluateAll((nodes) =>
+          nodes.every((node) => getComputedStyle(node).opacity === "1"),
+        ),
+    ).toBe(true);
     await complete(page, info, "sorting-network", level);
   }
   expect(errors).toEqual([]);
@@ -75,6 +89,13 @@ test("all exact voxel projections with actual WebGL", async ({
     for (const cell of voxelViewsCertificates[level])
       if (voxelViewsLevels[level].locked[cell] !== 1)
         await page.locator(`[data-voxel-cell="${cell}"]`).click();
+    expect(
+      await page
+        .locator("[data-voxel-cell]")
+        .evaluateAll((nodes) =>
+          nodes.every((node) => getComputedStyle(node).opacity === "1"),
+        ),
+    ).toBe(true);
     await complete(page, info, "voxel", level);
   }
   expect(errors).toEqual([]);
@@ -99,6 +120,13 @@ test("all valid labeled cube nets with actual folded WebGL", async ({
       }
     await page.locator('[data-net-action="preview"]').click();
     await expect(page.locator("canvas")).toBeVisible();
+    expect(
+      await page
+        .locator("[data-net-cell]")
+        .evaluateAll((nodes) =>
+          nodes.every((node) => getComputedStyle(node).opacity === "1"),
+        ),
+    ).toBe(true);
     await complete(page, info, "cube-net", level);
   }
   expect(errors).toEqual([]);

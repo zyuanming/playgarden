@@ -284,3 +284,8 @@
     padding: 8px;
   }
 }
+
+/* Locked and completed comparators are learning content, not fading controls. */
+.sorting-network select:disabled {
+  opacity: 1;
+}
