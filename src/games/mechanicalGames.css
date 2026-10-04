@@ -1,0 +1,361 @@
+.mechanical-game {
+  --mech-ink: #254f49;
+  --mech-green: #377d67;
+  --mech-gold: #e6a844;
+  --mech-pale: #f5ecda;
+  align-items: start;
+}
+.mechanical-game .mechanical-workbench {
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid #dfdac6;
+  border-radius: 24px;
+  background: #fffdf6;
+  box-shadow: 0 12px 30px #27463b0d;
+}
+.mechanical-game .mechanical-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 18px 20px 10px;
+  color: var(--mech-ink);
+  font-size: 12px;
+}
+.mechanical-game .mechanical-scene {
+  position: relative;
+  width: 100%;
+  height: clamp(230px, 32vw, 310px);
+  overflow: hidden;
+  background: #f3e8d5;
+}
+.mechanical-game .mechanical-scene canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.mechanical-game .mechanical-scene > p {
+  display: grid;
+  place-content: center;
+  min-height: 100%;
+  margin: 0;
+  padding: 28px;
+  color: var(--mech-ink);
+  text-align: center;
+  line-height: 1.8;
+}
+.mechanical-game .torque-meter {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  text-align: center;
+  gap: 12px;
+  padding: 15px 20px;
+  color: var(--mech-ink);
+  background: #e9f1e6;
+}
+.mechanical-game .torque-meter > span {
+  font-size: 13px;
+}
+.mechanical-game .torque-meter > span strong {
+  margin-left: 6px;
+  font-size: 22px;
+}
+.mechanical-game .torque-meter > div {
+  display: flex;
+  flex-direction: column;
+}
+.mechanical-game .torque-meter small {
+  font-size: 10px;
+  letter-spacing: 2px;
+}
+.mechanical-game .torque-meter > div strong {
+  font-size: 29px;
+  line-height: 1.15;
+}
+.mechanical-game .is-balanced {
+  background: #dff0c2;
+}
+.mechanical-game .balance-slots-scroll {
+  overflow-x: auto;
+  padding: 20px 12px 8px;
+}
+.mechanical-game .balance-slots {
+  display: grid;
+  gap: 3px;
+  min-width: min-content;
+}
+.mechanical-game .balance-slots button,
+.mechanical-game .balance-pivot {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  min-height: 68px;
+  padding: 5px 1px;
+  border: 1px solid #d9d3c2;
+  border-radius: 10px;
+  background: #f4eee0;
+  color: #667069;
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+}
+.mechanical-game .balance-slots button:disabled {
+  opacity: 1;
+  cursor: default;
+}
+.mechanical-game .balance-slots .fixed {
+  background: #e5e2dc;
+  color: #505b57;
+}
+.mechanical-game .balance-slots .available {
+  background: #e8f3e1;
+  border-color: #81a882;
+  color: #255647;
+  cursor: pointer;
+}
+.mechanical-game .balance-slots .available:hover {
+  background: #d2e7c5;
+}
+.mechanical-game .slot-load {
+  font-weight: 750;
+  white-space: nowrap;
+  font-size: 11px;
+}
+.mechanical-game .balance-pivot {
+  border: 0;
+  background: transparent;
+  color: #bb7949;
+}
+.mechanical-game .balance-pivot span {
+  font-size: 25px;
+}
+.mechanical-game .mechanical-instruction {
+  min-height: 24px;
+  margin: 12px 18px;
+  color: var(--mech-ink);
+  font-size: 13px;
+  line-height: 1.7;
+}
+.mechanical-game .balance-rack {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin: 12px 18px 18px;
+  padding: 12px;
+  border-radius: 16px;
+  background: var(--mech-pale);
+}
+.mechanical-game .balance-rack > button:not(.balance-return) {
+  display: grid;
+  grid-template-columns: 34px auto;
+  grid-template-rows: 22px 18px;
+  align-items: center;
+  gap: 0 8px;
+  min-width: 87px;
+  min-height: 58px;
+  padding: 7px 10px;
+  border: 2px solid transparent;
+  border-radius: 12px;
+  background: #fffdf6;
+  color: var(--mech-ink);
+  text-align: left;
+}
+.mechanical-game .weight-icon {
+  grid-row: 1 / 3;
+  display: grid;
+  place-content: center;
+  width: 32px;
+  height: 37px;
+  border-radius: 10px 10px 7px 7px;
+  background: var(--mech-gold);
+  box-shadow: inset 0 -4px 0 #bd843429;
+  color: #583f22;
+  font-size: 20px;
+  font-weight: 800;
+}
+.mechanical-game .balance-rack small {
+  font-size: 10px;
+}
+.mechanical-game .balance-return {
+  min-height: 48px;
+  padding: 10px 14px;
+  margin-left: auto;
+  background: #fffaf0;
+  border: 1px dashed #879d86;
+  border-radius: 10px;
+  color: #38634d;
+  font-size: 12px;
+}
+.mechanical-game .balance-rack > button.selected {
+  border-color: var(--mech-green);
+  background: #e5f1df;
+}
+.mechanical-game .mechanical-caption {
+  margin: 12px 18px 16px;
+  color: #69776d;
+  font-size: 11px;
+  line-height: 1.7;
+}
+.mechanical-game button {
+  touch-action: manipulation;
+}
+.mechanical-game button:focus-visible {
+  outline: 3px solid #244c42;
+  outline-offset: 3px;
+}
+.mechanical-game button.hinted {
+  outline: 3px dashed #ba7021;
+  outline-offset: 2px;
+}
+.mechanical-game .gear-readouts {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  padding: 16px;
+  background: #e9f1e6;
+  color: var(--mech-ink);
+}
+.mechanical-game .gear-readouts > div {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.mechanical-game .gear-readouts small {
+  font-size: 10px;
+}
+.mechanical-game .gear-readouts strong {
+  font-size: 25px;
+  line-height: 1.25;
+  font-variant-numeric: tabular-nums;
+  overflow-wrap: anywhere;
+}
+.mechanical-game .gear-readouts strong span {
+  font-size: 10px;
+  font-weight: 500;
+}
+.mechanical-game .gear-stage-list {
+  padding: 0 16px 14px;
+}
+.mechanical-game .gear-stage {
+  padding: 14px 0 6px;
+}
+.mechanical-game .gear-stage + .gear-stage {
+  border-top: 1px dashed #d8dccb;
+}
+.mechanical-game .gear-stage h4 {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 12px;
+  color: var(--mech-ink);
+  font-size: 14px;
+}
+.mechanical-game .gear-stage h4 span {
+  font-size: 10px;
+  font-weight: 500;
+  color: #788570;
+}
+.mechanical-game .gear-shaft-note {
+  margin: -6px 0 14px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  background: #e9eef0;
+  font-size: 10px;
+  color: #4b717c;
+  line-height: 1.6;
+}
+.mechanical-game .gear-part-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 22px;
+}
+.mechanical-game .gear-part-grid fieldset {
+  min-width: 0;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+.mechanical-game .gear-part-grid legend {
+  margin-bottom: 8px;
+  padding: 0;
+  font-size: 11px;
+  color: #5a7163;
+}
+.mechanical-game .gear-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.mechanical-game .gear-options button {
+  min-width: 44px;
+  min-height: 46px;
+  padding: 8px;
+  border: 1px solid #d9d2bf;
+  border-radius: 11px;
+  background: #f6efdf;
+  color: #5e603e;
+}
+.mechanical-game .gear-options strong {
+  font-size: 19px;
+}
+.mechanical-game .gear-options small {
+  margin-left: 3px;
+  font-size: 10px;
+}
+.mechanical-game .gear-options .selected {
+  border-color: var(--mech-green);
+  background: #dbead6;
+  color: var(--mech-ink);
+  box-shadow: inset 0 0 0 1px var(--mech-green);
+}
+.mechanical-game .gear-options .selected:disabled {
+  opacity: 1;
+}
+.mechanical-game .gear-equation {
+  margin: 12px 0 0;
+  color: #657465;
+  font-size: 11px;
+  line-height: 1.7;
+}
+@media (max-width: 540px) {
+  .mechanical-game .mechanical-title {
+    padding: 14px 12px 10px;
+  }
+  .mechanical-game .balance-rack {
+    margin: 12px;
+    padding: 8px;
+    gap: 7px;
+  }
+  .mechanical-game .balance-rack > button:not(.balance-return) {
+    min-width: 77px;
+    padding: 6px;
+    gap: 0 6px;
+  }
+  .mechanical-game .balance-return {
+    margin-left: 0;
+  }
+  .mechanical-game .gear-part-grid {
+    gap: 14px;
+  }
+  .mechanical-game .gear-readouts {
+    padding: 14px 10px;
+    gap: 7px;
+  }
+  .mechanical-game .gear-readouts strong {
+    font-size: 22px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .mechanical-game *,
+  .mechanical-game *::before,
+  .mechanical-game *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}

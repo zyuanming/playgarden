@@ -1,0 +1,383 @@
+.nc-game {
+  align-items: start;
+}
+.nc-game .nc-play-area {
+  min-width: 0;
+  width: 100%;
+  max-width: 530px;
+  margin-inline: auto;
+}
+.nc-game .nc-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+.nc-game .nc-heading h3 {
+  margin: 6px 0 0;
+  font-size: 25px;
+}
+.nc-game .nc-level {
+  white-space: nowrap;
+  padding: 10px 13px;
+  border: 1px solid #d1dfc8;
+  border-radius: 14px;
+  font-variant-numeric: tabular-nums;
+  font-size: 13px;
+}
+.nc-game .nc-toolbar,
+.nc-game .nc-board-footer {
+  display: flex;
+  gap: 12px;
+  justify-content: space-between;
+  font-size: 12px;
+  color: #526b5b;
+  line-height: 1.5;
+}
+.nc-game .nc-toolbar {
+  margin: 12px 0;
+}
+.nc-game .nc-board-footer {
+  margin-top: 14px;
+}
+.nc-game .nc-futoshiki-board {
+  display: grid;
+  background: #e6edde;
+  padding: 14px;
+  border-radius: 23px;
+  gap: 0;
+}
+.nc-game .nc-cell {
+  position: relative;
+  display: grid;
+  place-items: center;
+  aspect-ratio: 1;
+  width: 100%;
+  min-width: 0;
+  min-height: 44px;
+  padding: 5px;
+  border: 1px solid #ccd9c3;
+  border-radius: 11px;
+  background: #fffef8;
+  color: #153e31;
+  font-weight: 700;
+  font-size: clamp(23px, 4vw, 39px);
+  touch-action: manipulation;
+  box-shadow: 0 3px 0 #ccd7c3;
+}
+.nc-game .nc-cell.nc-given {
+  background: #1b4a39;
+  border-color: #1b4a39;
+  color: #f7faec;
+}
+.nc-game .nc-cell.nc-selected {
+  background: #dafa3b;
+  border-color: #607b28;
+  box-shadow: inset 0 0 0 2px #173f2f;
+}
+.nc-game .nc-cell.nc-conflict {
+  background: #ffebe0;
+  color: #992f20;
+  border-color: #cc7058;
+}
+.nc-game .nc-cell.nc-hinted {
+  outline: 3px solid #dd993c;
+  outline-offset: -5px;
+}
+.nc-game .nc-cell:disabled {
+  opacity: 1;
+  cursor: default;
+}
+.nc-game .nc-cell:hover:not(:disabled) {
+  background: #e9f5b8;
+  transform: none;
+}
+.nc-game .nc-cell:focus-visible {
+  outline: 3px solid #417442;
+  outline-offset: -5px;
+  z-index: 2;
+}
+.nc-game .nc-error {
+  position: absolute;
+  right: 4px;
+  top: 3px;
+  font-size: 12px;
+  line-height: 17px;
+  width: 17px;
+  height: 17px;
+  color: #fff;
+  background: #a73f2b;
+  border-radius: 50%;
+}
+.nc-game .nc-lock {
+  position: absolute;
+  bottom: 2px;
+  right: 6px;
+  font-size: 13px;
+  line-height: 1;
+  color: #bdcfa7;
+}
+.nc-game .nc-notes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 100%;
+  gap: 1px;
+  font-size: clamp(11px, 2vw, 15px);
+  font-weight: 500;
+  line-height: 1.4;
+  color: #4c6c48;
+}
+.nc-game .nc-notes span {
+  min-height: 14px;
+}
+.nc-game .nc-sign {
+  display: grid;
+  place-items: center;
+  align-self: stretch;
+  font-size: 23px;
+  font-weight: 650;
+  color: #456843;
+  line-height: 1;
+}
+.nc-game .nc-sign-vertical > span {
+  transform: rotate(90deg);
+}
+.nc-game .nc-sign-conflict {
+  color: #a33723;
+  background: #ffddcb;
+  border-radius: 4px;
+}
+.nc-game .nc-won {
+  box-shadow: 0 0 0 4px #dafa3b;
+}
+.nc-game .nc-input-pad {
+  display: grid;
+  grid-template-columns: repeat(var(--nc-size), minmax(0, 1fr)) 1.2fr;
+  gap: 7px;
+  margin-top: 20px;
+}
+.nc-game .nc-input-pad button {
+  min-height: 49px;
+  min-width: 0;
+  padding: 8px 2px;
+  border-radius: 12px;
+  font-size: 25px;
+  color: #f8fbef;
+  background: #123d2e;
+  touch-action: manipulation;
+}
+.nc-game .nc-input-pad button:hover:not(:disabled) {
+  background: #315f42;
+}
+.nc-game .nc-input-pad .nc-erase {
+  font-size: 13px;
+  background: #e8eddf;
+  color: #244b36;
+}
+.nc-game .nc-notes-toggle {
+  background: transparent;
+  margin-top: 12px;
+  border: 1px solid #becfb2;
+  border-radius: 11px;
+  min-height: 44px;
+  font-size: 13px;
+  touch-action: manipulation;
+}
+.nc-game .nc-notes-toggle[aria-pressed="true"] {
+  background: #dafa3b;
+}
+.nc-game .nc-input-pad button:disabled,
+.nc-game .nc-notes-toggle:disabled {
+  opacity: 0.55;
+}
+.nc-game .nc-guide {
+  min-width: 0;
+}
+.nc-game .nc-rule-example {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 18px 0;
+  font-size: 26px;
+}
+.nc-game .nc-rule-example > span {
+  background: #e4edd9;
+  width: 49px;
+  height: 49px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+}
+.nc-game .nc-skyline-board {
+  display: grid;
+  grid-template-columns: 38px repeat(var(--nc-size), minmax(0, 1fr)) 38px;
+  grid-template-rows: 40px repeat(var(--nc-size), auto) 40px;
+  gap: 4px;
+  padding: 8px;
+  border-radius: 22px;
+  background: #e9efdf;
+}
+.nc-game .nc-skyline-board .nc-cell {
+  border-radius: 8px;
+}
+.nc-game .nc-sky-clue {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  min-width: 0;
+  min-height: 40px;
+  padding: 2px;
+  border: 1px solid transparent;
+  border-radius: 9px;
+  background: transparent;
+  color: #365c3d;
+  font-size: 21px;
+  font-weight: 750;
+  touch-action: manipulation;
+}
+.nc-game .nc-sky-clue small {
+  font-size: 11px;
+  font-weight: 500;
+}
+.nc-game .nc-sky-clue-top,
+.nc-game .nc-sky-clue-bottom {
+  flex-direction: column;
+  gap: 0;
+  line-height: 1.1;
+}
+.nc-game .nc-sky-clue-left {
+  flex-direction: row;
+}
+.nc-game .nc-sky-clue-right {
+  flex-direction: row-reverse;
+}
+.nc-game .nc-sky-clue.nc-clue-satisfied {
+  background: #d3e3bd;
+}
+.nc-game .nc-sky-clue.nc-clue-conflict {
+  background: #ffe1d3;
+  color: #9b3825;
+}
+.nc-game .nc-sky-clue.nc-clue-empty {
+  color: #7b8d70;
+}
+.nc-game .nc-sky-clue.nc-view-selected {
+  border-color: #506c39;
+}
+.nc-game .nc-sky-clue:disabled {
+  opacity: 0.55;
+}
+.nc-game .nc-city-preview {
+  margin: 20px 0;
+  border: 1px solid #d2dec5;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #f6f9ed;
+}
+.nc-game .nc-city-canvas {
+  height: 215px;
+  width: 100%;
+  position: relative;
+  background: #e9efdf;
+}
+.nc-game .nc-city-canvas canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.nc-game .nc-city-preview figcaption {
+  font-size: 12px;
+  color: #405e40;
+  padding: 12px 14px 0;
+}
+.nc-game .nc-city-fallback {
+  display: grid;
+  place-content: center;
+  text-align: center;
+  height: 100%;
+  margin: 0;
+  color: #48673d;
+  font-weight: 700;
+}
+.nc-game .nc-city-fallback small {
+  display: block;
+  font-size: 12px;
+  font-weight: 400;
+}
+.nc-game .nc-street {
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 16px 0;
+  margin: 0;
+  list-style: none;
+  min-height: 85px;
+}
+.nc-game .nc-street li {
+  width: 37px;
+}
+.nc-game .nc-street li > span {
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  background: #bbcdb0;
+  border-radius: 5px 5px 0 0;
+  color: #183f2d;
+  font-weight: 700;
+  font-size: 12px;
+  min-height: 20px;
+}
+.nc-game .nc-street li.nc-visible-building > span {
+  background: #dafa3b;
+  border: 1px solid #839d39;
+}
+.nc-game .nc-view-caption {
+  margin: 9px 14px 14px;
+  font-size: 12px;
+  line-height: 1.5;
+  color: #52644a;
+}
+.nc-game .nc-preview-paused .nc-city-canvas,
+.nc-game .nc-preview-paused .nc-street {
+  opacity: 0.45;
+}
+@media (max-width: 600px) {
+  .nc-game .nc-heading h3 {
+    font-size: 22px;
+  }
+  .nc-game .nc-futoshiki-board {
+    padding: 9px;
+    border-radius: 17px;
+  }
+  .nc-game .nc-skyline-board {
+    grid-template-columns: 29px repeat(var(--nc-size), minmax(0, 1fr)) 29px;
+    gap: 3px;
+    padding: 5px;
+  }
+  .nc-game .nc-sky-clue {
+    font-size: 18px;
+  }
+  .nc-game .nc-cell {
+    font-size: 25px;
+    border-radius: 7px;
+  }
+  .nc-game .nc-skyline-board .nc-cell {
+    min-height: 40px;
+  }
+  .nc-game .nc-input-pad {
+    gap: 5px;
+  }
+  .nc-game .nc-board-footer {
+    font-size: 11px;
+    gap: 7px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .nc-game * {
+    transition: none !important;
+    animation: none !important;
+  }
+}

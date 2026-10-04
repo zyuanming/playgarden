@@ -17,10 +17,18 @@ export const GAME_IDS = [
   "traffic",
   "arithmetic",
   "word-search",
+  "balance",
+  "gears",
+  "one-stroke",
+  "map-colors",
+  "futoshiki",
+  "skyline",
+  "jugs",
+  "river",
 ] as const;
 export type GameId = (typeof GAME_IDS)[number];
 export type Category =
-  "逻辑思维" | "编程启蒙" | "空间想象" | "记忆观察" | "数字推理";
+  "逻辑思维" | "编程启蒙" | "空间想象" | "记忆观察" | "数字推理" | "科学实验";
 export const CATEGORIES: readonly string[] = [
   "全部",
   "逻辑思维",
@@ -28,6 +36,7 @@ export const CATEGORIES: readonly string[] = [
   "空间想象",
   "记忆观察",
   "数字推理",
+  "科学实验",
 ];
 export type GameMeta = {
   id: GameId;
@@ -59,6 +68,18 @@ export const strategyArtwork = (index: number) => ({
 
 export const discoveryArtwork = (index: number) => ({
   url: "/discovery-art.webp",
+  position: `${(index % 2) * 100}% ${index < 2 ? 12 : 88}%`,
+  size: "200% auto",
+});
+
+export const scienceArtwork = (index: number) => ({
+  url: "/science-graph-art.webp",
+  position: `${(index % 2) * 100}% ${index < 2 ? 12 : 88}%`,
+  size: "200% auto",
+});
+
+export const planningArtwork = (index: number) => ({
+  url: "/constraint-planning-art.webp",
   position: `${(index % 2) * 100}% ${index < 2 ? 12 : 88}%`,
   size: "200% auto",
 });

@@ -70,7 +70,7 @@ describe("Catalog and shell interactions", () => {
       target: { value: "中级" },
     });
     expect(screen.getAllByRole("article")).toHaveLength(
-      games.filter((g) => g.difficulty === "中级").length,
+      Math.min(games.filter((g) => g.difficulty === "中级").length, 12),
     );
     fireEvent.change(screen.getByRole("textbox"), {
       target: { value: "不存在" },
@@ -205,4 +205,14 @@ it("changing robot levels after a long program never renders an invalid frame", 
     view.rerender(<RobotRoutes {...props} level={2} />),
   ).not.toThrow();
   expect(screen.getByRole("button", { name: "前进" })).toBeTruthy();
+});
+
+it("catalog loads more real modules without placeholders", () => {
+  render(<App />);
+  if (games.length > 12) {
+    fireEvent.click(screen.getByRole("button", { name: "再看看更多游戏" }));
+    expect(screen.getAllByRole("article")).toHaveLength(
+      Math.min(games.length, 24),
+    );
+  }
 });

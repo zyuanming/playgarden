@@ -18,7 +18,23 @@ import { boxLevels } from "../src/games/boxLogic";
 import { hanoiLevels } from "../src/games/hanoiLogic";
 import { arithmeticLevels } from "../src/games/arithmeticLogic";
 import { wordSearchLevels } from "../src/games/wordSearchLogic";
+import { balanceLevels } from "../src/games/balanceLogic";
+import { gearLevels } from "../src/games/gearLogic";
+import { oneStrokeLevels } from "../src/games/oneStrokeLogic";
+import { mapColorsLevels } from "../src/games/mapColorsLogic";
+import { futoshikiLevels } from "../src/games/futoshikiLogic";
+import { skylineLevels } from "../src/games/skylineLogic";
+import { waterJugLevels } from "../src/games/waterJugLogic";
+import { riverLevels } from "../src/games/riverLogic";
 const packs = {
+  futoshiki: futoshikiLevels,
+  skyline: skylineLevels,
+  jugs: waterJugLevels,
+  river: riverLevels,
+  balance: balanceLevels,
+  gears: gearLevels,
+  "one-stroke": oneStrokeLevels,
+  "map-colors": mapColorsLevels,
   arithmetic: arithmeticLevels,
   "word-search": wordSearchLevels,
   light: lightLevels,
@@ -49,8 +65,8 @@ describe("Scalable catalog contract", () => {
       expect(game.artwork.url).toMatch(/^\//);
     }),
   );
-  it("counts only 17 real games and 204 levels, not the roadmap", () => {
-    expect(games).toHaveLength(17);
-    expect(games.reduce((sum, g) => sum + g.levelCount, 0)).toBe(204);
+  it("counts only 25 real games and 300 levels, not the roadmap", () => {
+    expect(games).toHaveLength(25);
+    expect(games.reduce((sum, g) => sum + g.levelCount, 0)).toBe(300);
   });
 });

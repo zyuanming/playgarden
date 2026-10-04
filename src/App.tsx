@@ -12,6 +12,7 @@ import {
   BarChart3,
   Brain,
   Hash,
+  FlaskConical,
 } from "lucide-react";
 import { games } from "./lib/registry";
 import {
@@ -192,7 +193,9 @@ export default function App() {
                       ? Brain
                       : g.category === "数字推理"
                         ? Hash
-                        : Box;
+                        : g.category === "科学实验"
+                          ? FlaskConical
+                          : Box;
               return (
                 <article className="game-card" key={g.id}>
                   <button

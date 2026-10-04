@@ -25,6 +25,12 @@ jobs:
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: browser-evidence
-          path: test-results/
+          name: browser-desktop-evidence
+          path: test-results/desktop/
+          retention-days: 7
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: browser-mobile-evidence
+          path: test-results/mobile/
           retention-days: 7
