@@ -8,6 +8,33 @@ import {
   mosaicChangeOrientation,
   type MosaicPiece,
 } from "../src/games/shapeMosaicLogic";
+async function assertActionContrast(page: Page, control: Locator) {
+  const contrast = () =>
+    control.evaluate((node) => {
+      const style = getComputedStyle(node);
+      const luminance = (color: string) => {
+        const rgb = (color.match(/[\d.]+/g) ?? [])
+          .slice(0, 3)
+          .map(Number)
+          .map((v) => {
+            const c = v / 255;
+            return c <= 0.04045 ? c / 12.92 : ((c + 0.055) / 1.055) ** 2.4;
+          });
+        return rgb[0] * 0.2126 + rgb[1] * 0.7152 + rgb[2] * 0.0722;
+      };
+      const a = luminance(style.color),
+        b = luminance(style.backgroundColor);
+      return (Math.max(a, b) + 0.05) / (Math.min(a, b) + 0.05);
+    });
+  await control.hover();
+  expect(await contrast()).toBeGreaterThanOrEqual(4.5);
+  await control.focus();
+  expect(await contrast()).toBeGreaterThanOrEqual(4.5);
+  await page.mouse.down();
+  expect(await contrast()).toBeGreaterThanOrEqual(4.5);
+  await page.mouse.move(0, 0);
+  await page.mouse.up();
+}
 async function keyboardTo(page: Page, target: Locator) {
   for (let n = 0; n < 70; n++) {
     if (await target.evaluate((e) => e === document.activeElement)) return;
@@ -40,6 +67,7 @@ test("all feedback-code investigations and visible latest evidence", async ({
     fullPage: true,
     animations: "disabled",
   });
+  await assertActionContrast(page, page.locator("[data-code-clues-submit]"));
   // Repeated non-winning guesses intentionally fill the history before its scroll assertion.
   for (let i = 0; i < 12; i++)
     await page.locator("[data-code-clues-submit]").click();
@@ -99,6 +127,10 @@ test("all energy schedules with continuous keyboard periods", async ({
     fullPage: true,
     animations: "disabled",
   });
+  await assertActionContrast(
+    page,
+    page.locator("[data-energy-dispatch-commit]"),
+  );
   for (let level = 0; level < 12; level++) {
     await chooseLevel(page, level);
     const config = energyDispatchLevels[level];

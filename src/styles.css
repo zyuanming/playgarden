@@ -46,7 +46,7 @@ button {
     transform 0.18s;
 }
 button:hover:not(:disabled) {
-  background: #e4ebdc;
+  box-shadow: 0 2px 6px #203d1820;
   transform: translateY(-1px);
 }
 button:disabled {
