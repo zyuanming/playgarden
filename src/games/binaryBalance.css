@@ -1,0 +1,170 @@
+/* SPDX-License-Identifier: MIT */
+.binary-balance {
+  color: #293b51;
+  align-items: start;
+}
+.binary-balance .bb-workbench {
+  min-width: 0;
+  padding: clamp(12px, 3vw, 28px);
+  border: 1px solid #ccd8e8;
+  border-radius: 24px;
+  background: #f8faff;
+}
+.binary-balance h3 {
+  margin: 12px 0;
+}
+.binary-balance .bb-state {
+  min-height: 28px;
+  line-height: 1.6;
+}
+.binary-balance .bb-board-wrap {
+  overflow-x: auto;
+  padding: 6px;
+  margin: 16px -6px 8px;
+}
+.binary-balance .bb-board {
+  display: grid;
+  grid-template-columns: repeat(var(--bb-size), minmax(44px, 1fr));
+  width: min(100%, 420px);
+  min-width: calc(var(--bb-size) * 44px + (var(--bb-size) - 1) * 4px);
+  gap: 4px;
+  margin: auto;
+}
+.binary-balance button {
+  min-width: 44px;
+  min-height: 44px;
+  font: inherit;
+  color: #293b51;
+  border: 1px solid #93a9c4;
+  border-radius: 10px;
+  background: #fff;
+  padding: 10px 12px;
+  cursor: pointer;
+}
+.binary-balance .bb-cell {
+  min-width: 44px;
+  min-height: 48px;
+  aspect-ratio: 1;
+  padding: 0;
+  display: grid;
+  place-items: center;
+  border: 2px solid #aebdd2;
+  border-radius: 10px;
+  position: relative;
+  font-size: clamp(1.15rem, 4vw, 1.55rem);
+  font-weight: 800;
+}
+.binary-balance .bb-value-1 {
+  color: #244578;
+  background: #e5edff;
+}
+.binary-balance .bb-value-2 {
+  color: #74471b;
+  background: #fff0d9;
+}
+.binary-balance .bb-given {
+  border-style: double;
+  border-width: 3px;
+}
+.binary-balance .bb-cell small {
+  position: absolute;
+  bottom: 2px;
+  right: 4px;
+  font-size: 8px;
+}
+.binary-balance .bb-cell.bb-selected {
+  border-color: #345d89;
+  box-shadow: inset 0 0 0 2px #345d89;
+}
+.binary-balance .bb-cell.bb-conflict {
+  border-color: #a93e36;
+}
+.binary-balance .bb-alert {
+  position: absolute;
+  top: 1px;
+  right: 4px;
+  font-size: 13px;
+  color: #902c25;
+}
+.binary-balance button:disabled {
+  opacity: 1;
+  cursor: default;
+  -webkit-text-fill-color: currentColor;
+}
+.binary-balance .bb-pad button:disabled {
+  background: #e3e9f1;
+  color: #465a72;
+}
+.binary-balance :is(button, summary):focus-visible {
+  outline: 3px solid #7d469d;
+  outline-offset: 3px;
+}
+.binary-balance .bb-pad {
+  display: flex;
+  gap: 9px;
+}
+.binary-balance .bb-pad button {
+  flex: 1;
+  font-weight: 700;
+}
+.binary-balance .bb-selection {
+  font-size: 0.9rem;
+  min-height: 24px;
+  line-height: 1.7;
+}
+.binary-balance .bb-help {
+  color: #516781;
+  font-size: 0.86rem;
+  line-height: 1.8;
+}
+.binary-balance .bb-counts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 18px;
+}
+.binary-balance .bb-counts > div {
+  border: 1px solid #d9e2ef;
+  background: white;
+  padding: 12px;
+  border-radius: 12px;
+}
+.binary-balance .bb-counts h4 {
+  margin: 0 0 10px;
+}
+.binary-balance .bb-counts p {
+  margin: 5px 0;
+  font-size: 0.88rem;
+}
+.binary-balance .bb-hint {
+  background: #fff4d9;
+  border: 1px solid #dac38c;
+  border-radius: 12px;
+  line-height: 1.8;
+  padding: 14px;
+}
+.binary-balance .bb-notes {
+  min-width: 0;
+}
+.binary-balance .bb-notes :is(p, li) {
+  line-height: 1.8;
+}
+.binary-balance details {
+  border-top: 1px solid #ccd8e8;
+  padding-top: 8px;
+}
+.binary-balance summary {
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-weight: 700;
+}
+@media (max-width: 380px) {
+  .binary-balance .bb-workbench {
+    padding: 10px;
+  }
+  .binary-balance .bb-counts > div {
+    padding: 9px;
+  }
+}

@@ -129,6 +129,7 @@ function SlitherlinkRound(props: GameProps) {
                 onFocus={() => round.setSelected(index)}
                 onClick={() => round.cycle(index)}
                 onKeyDown={(event) => {
+                  if (event.ctrlKey || event.metaKey || event.altKey) return;
                   if (
                     round.paused ||
                     round.won ||

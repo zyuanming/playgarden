@@ -369,6 +369,7 @@ export default function RouteOptimizationRound({
                 aria-label={`道路 ${roadName(index)}，路费 ${road.cost}，已走 ${count} 次。${reason || `从 ${label(analysis.current)} 到 ${label(to)}`}${hinted ? "。提示道路" : ""}`}
                 onClick={() => walk(index)}
                 onKeyDown={(event) => {
+                  if (event.ctrlKey || event.metaKey || event.altKey) return;
                   if (
                     ![
                       "ArrowLeft",

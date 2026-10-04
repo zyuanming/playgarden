@@ -196,6 +196,7 @@ function UntangleRound({
                 }，${spotName(spot)}${flower && selected === node ? "，已选中" : ""}${hinted ? "，提示位置" : ""}`}
                 onClick={() => choose(spot)}
                 onKeyDown={(event) => {
+                  if (event.ctrlKey || event.metaKey || event.altKey) return;
                   if (paused || won) return;
                   if (
                     event.key === "Escape" &&

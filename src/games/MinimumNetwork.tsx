@@ -221,6 +221,7 @@ function NetworkRound({
                 aria-label={`线路 ${edgeName(index)}，造价 ${edge.cost}，${selected ? "已连接，再点取消" : "未连接"}${hinted ? "，提示线路" : ""}`}
                 onClick={() => toggle(index)}
                 onKeyDown={(event) => {
+                  if (event.ctrlKey || event.metaKey || event.altKey) return;
                   if (
                     !event.key.startsWith("Arrow") &&
                     event.key !== "Home" &&

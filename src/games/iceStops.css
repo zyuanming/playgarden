@@ -1,0 +1,259 @@
+/* SPDX-License-Identifier: MIT */
+.ice-game {
+  --ice-ink: #193c50;
+  color: var(--ice-ink);
+}
+.ice-playfield {
+  min-width: 0;
+  background: linear-gradient(155deg, #f4fcff, #dfedf1);
+  border: 1px solid #bad2db;
+  border-radius: 24px;
+  padding: clamp(16px, 3vw, 28px);
+}
+.ice-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+.ice-heading h3,
+.ice-guide h3 {
+  margin: 8px 0 16px;
+  font-size: clamp(22px, 3vw, 30px);
+}
+.ice-emblem {
+  font-size: 40px;
+  color: #397487;
+}
+.ice-stats {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 8px 0 20px;
+  font-size: 14px;
+}
+.ice-stats b {
+  font-size: 24px;
+}
+.ice-scroll {
+  overflow-x: auto;
+  padding: 5px 4px 8px;
+}
+.ice-board {
+  min-width: calc(var(--ice-columns) * 48px + 6px);
+  display: grid;
+  grid-template-columns: repeat(var(--ice-columns), minmax(0, 1fr));
+  gap: 4px;
+  background: #aec8d2;
+  border: 7px solid #aec8d2;
+  border-radius: 18px;
+  width: min(100%, 440px);
+  margin: 0 auto;
+}
+.ice-cell {
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  border-radius: 9px;
+  background: #f0f9fc;
+  color: #789cac;
+  font-size: 18px;
+}
+.ice-cell.ice-rock {
+  background: repeating-linear-gradient(
+    135deg,
+    #7e9fae,
+    #7e9fae 7px,
+    #89aab9 7px,
+    #89aab9 10px
+  );
+  color: #183f52;
+  box-shadow: inset 0 -4px #638696;
+}
+.ice-goal {
+  border: 2px dashed var(--ice-color);
+  background: #f9fcff;
+  color: var(--ice-dark);
+  font-weight: 800;
+}
+.ice-color-0 {
+  --ice-color: #48819d;
+  --ice-dark: #174f69;
+  --ice-light: #b8e3f3;
+}
+.ice-color-1 {
+  --ice-color: #a2781c;
+  --ice-dark: #684908;
+  --ice-light: #f8dfa1;
+}
+.ice-color-2 {
+  --ice-color: #936694;
+  --ice-dark: #663768;
+  --ice-light: #e8cbe8;
+}
+.ice-puck {
+  z-index: 1;
+  align-self: center;
+  justify-self: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 86%;
+  height: 86%;
+  min-height: 44px;
+  min-width: 44px;
+  padding: 0;
+  border: 2px solid var(--ice-color);
+  border-radius: 50%;
+  background: var(--ice-light);
+  color: var(--ice-dark);
+  box-shadow:
+    0 4px 0 var(--ice-color),
+    inset 0 3px #ffffffb0;
+  cursor: pointer;
+}
+.ice-puck b {
+  font-size: 22px;
+  line-height: 1;
+}
+.ice-puck small {
+  font-size: 10px;
+  margin-top: 3px;
+}
+.ice-puck.ice-selected {
+  outline: 3px solid #193c50;
+  outline-offset: 2px;
+}
+.ice-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 22px 0 12px;
+}
+.ice-controls b {
+  width: 100%;
+  text-align: center;
+  font-size: 14px;
+}
+.ice-controls button {
+  min-width: 56px;
+  min-height: 44px;
+  padding: 8px 12px;
+  color: #183f52;
+  background: #fff;
+  border: 1px solid #94b5c2;
+  border-radius: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.ice-controls .ice-hint-button {
+  background: #f8dfa1;
+  border: 2px solid #a2781c;
+}
+.ice-game button:disabled {
+  opacity: 1;
+  cursor: default;
+  filter: saturate(0.72);
+}
+.ice-game button:focus-visible,
+.ice-board:focus-visible {
+  outline: 3px solid #173f54;
+  outline-offset: 4px;
+}
+.ice-feedback {
+  min-height: 52px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: #ffffffbd;
+  font-size: 14px;
+  line-height: 1.7;
+  margin-bottom: 0;
+}
+.ice-guide {
+  min-width: 0;
+  padding: 24px;
+  border: 1px solid #d9e3e6;
+  border-radius: 24px;
+  background: #f9fbf8;
+}
+.ice-guide p,
+.ice-guide li {
+  font-size: 14px;
+  line-height: 1.9;
+}
+.ice-guide ol {
+  padding-left: 22px;
+}
+.ice-guide li {
+  margin: 10px 0;
+}
+.ice-keyboard {
+  padding: 14px;
+  background: #e4f0f4;
+  border-radius: 12px;
+  font-size: 13px;
+  line-height: 1.8;
+}
+@media (max-width: 520px) {
+  .ice-playfield {
+    padding: 12px;
+  }
+  .ice-board {
+    gap: 2px;
+    border-width: 4px;
+  }
+  .ice-cell {
+    border-radius: 6px;
+  }
+  .ice-puck {
+    width: 91%;
+    height: 91%;
+  }
+  .ice-puck b {
+    font-size: 18px;
+  }
+  .ice-puck small {
+    font-size: 9px;
+  }
+  .ice-guide {
+    padding: 18px;
+  }
+  .ice-puck.ice-selected {
+    outline-width: 2px;
+    outline-offset: 0;
+  }
+}
+
+.ice-scroll-help {
+  color: #426070;
+  font-size: 12px;
+  line-height: 1.7;
+  margin: 10px 0 6px;
+}
+
+.ice-goal-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 12px 0;
+}
+.ice-goal-legend span {
+  display: flex;
+  flex: 1 1 105px;
+  flex-direction: column;
+  gap: 3px;
+  padding: 8px 10px;
+  border: 1px solid var(--ice-color);
+  border-radius: 10px;
+  background: #ffffffc9;
+  color: var(--ice-dark);
+  font-size: 11px;
+}
+.ice-goal-legend b {
+  font-size: 13px;
+}

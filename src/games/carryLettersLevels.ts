@@ -1,0 +1,131 @@
+// SPDX-License-Identifier: MIT
+// Original equations, literal clues and separately stored verification certificates.
+import type { CarryLevel } from "./carryLettersLogic";
+export const carryLettersLevels: CarryLevel[] = [
+  {
+    id: "cl-01",
+    title: "一束进位",
+    lesson:
+      "从个位开始：A 加 A 的个位是 6。十位出现新字母，说明有进位；不同字母不能用同一数字。",
+    addends: ["A", "A"],
+    result: "BC",
+    givens: { C: 6 },
+    certificate: { mapping: { A: 8, B: 1, C: 6 }, carries: [1, 0] },
+  },
+  {
+    id: "cl-02",
+    title: "长短相加",
+    lesson: "较短的加数靠右对齐。试想个位是否进位，再检查十位。",
+    addends: ["AB", "B"],
+    result: "CD",
+    givens: { A: 2, D: 4 },
+    certificate: { mapping: { A: 2, B: 7, C: 3, D: 4 }, carries: [1, 0] },
+  },
+  {
+    id: "cl-03",
+    title: "数字接力",
+    lesson: "同一字母到处代表相同的数字。一个数字可能同时约束个位与十位。",
+    addends: ["AB", "AB"],
+    result: "BC",
+    givens: { B: 4 },
+    certificate: { mapping: { A: 2, B: 4, C: 8 }, carries: [0, 0] },
+  },
+  {
+    id: "cl-04",
+    title: "百位新芽",
+    lesson: "相同加数翻倍后多出一位。别忘了个位送来的进位还会参与十位。",
+    addends: ["AB", "AB"],
+    result: "CCD",
+    givens: { B: 8 },
+    certificate: { mapping: { A: 5, B: 8, C: 1, D: 6 }, carries: [1, 1, 0] },
+  },
+  {
+    id: "cl-05",
+    title: "交错的十位",
+    lesson: "加数与结果共享字母。每列的等式需要和字母不重复规则一起成立。",
+    addends: ["AB", "CD"],
+    result: "EC",
+    givens: { A: 4, B: 7 },
+    certificate: { mapping: { A: 4, B: 7, C: 3, D: 6, E: 8 }, carries: [1, 0] },
+  },
+  {
+    id: "cl-06",
+    title: "重复的回声",
+    lesson: "结果首尾相同，能把相隔两列的线索连接起来。",
+    addends: ["ABC", "ABC"],
+    result: "BDB",
+    givens: { A: 1 },
+    certificate: { mapping: { A: 1, B: 2, C: 6, D: 5 }, carries: [1, 0, 0] },
+  },
+  {
+    id: "cl-07",
+    title: "三束相加",
+    lesson:
+      "三个加数可能产生进位 2。进位不是独立字母，不受数字不重复规则限制。",
+    addends: ["AB", "CD", "EF"],
+    result: "GDE",
+    givens: { A: 6, B: 8, D: 7 },
+    certificate: {
+      mapping: { A: 6, B: 8, C: 5, D: 7, E: 4, F: 9, G: 1 },
+      carries: [2, 1, 0],
+    },
+  },
+  {
+    id: "cl-08",
+    title: "换位轨迹",
+    lesson: "交换位置的字母让两列互相约束。先从最低位试起，再回头检查。",
+    addends: ["ABC", "BAD"],
+    result: "ECB",
+    givens: { A: 2, B: 3 },
+    certificate: {
+      mapping: { A: 2, B: 3, C: 6, D: 7, E: 5 },
+      carries: [1, 0, 0],
+    },
+  },
+  {
+    id: "cl-09",
+    title: "双重进位",
+    lesson: "两次进位可能连成链。按个位、十位、百位顺序记录进位。",
+    addends: ["ABC", "DEB"],
+    result: "CFF",
+    givens: { A: 4, B: 8 },
+    certificate: {
+      mapping: { A: 4, B: 8, C: 7, D: 2, E: 6, F: 5 },
+      carries: [1, 1, 0],
+    },
+  },
+  {
+    id: "cl-10",
+    title: "三行编织",
+    lesson: "三行使用同一组字母但顺序不同。保持映射一致，不要只看某一行。",
+    addends: ["ABC", "ACB", "BCA"],
+    result: "DDA",
+    givens: { A: 2 },
+    certificate: { mapping: { A: 2, B: 3, C: 7, D: 8 }, carries: [1, 1, 0] },
+  },
+  {
+    id: "cl-11",
+    title: "零的站位",
+    lesson: "0 可以在数的中间或末尾，不能放在多位数的首位。",
+    addends: ["ABCD", "BCAD"],
+    result: "EFGF",
+    givens: { A: 1, C: 8 },
+    certificate: {
+      mapping: { A: 1, B: 3, C: 8, D: 6, E: 5, F: 2, G: 0 },
+      carries: [1, 1, 1, 0],
+    },
+  },
+  {
+    id: "cl-12",
+    title: "五列终章",
+    lesson:
+      "五列、三个加数同时配合。用每一列的加法和最后没有额外进位来检查全式。",
+    addends: ["ABCDB", "ABCDB", "ABCDB"],
+    result: "EEFDD",
+    givens: { C: 6 },
+    certificate: {
+      mapping: { A: 1, B: 8, C: 6, D: 4, E: 5, F: 9 },
+      carries: [2, 1, 1, 2, 0],
+    },
+  },
+];

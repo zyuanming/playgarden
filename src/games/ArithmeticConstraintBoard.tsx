@@ -109,6 +109,7 @@ export function useArithmeticRound(props: GameProps, rules: ArithmeticRules) {
     }
   }
   function navigate(event: KeyboardEvent<HTMLButtonElement>, index: number) {
+    if (event.ctrlKey || event.metaKey || event.altKey) return;
     const delta: Record<string, number> = {
       ArrowUp: -rules.width,
       ArrowDown: rules.width,

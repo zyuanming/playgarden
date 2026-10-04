@@ -188,6 +188,7 @@ function HashiRound(props: GameProps) {
               disabled={round.paused || round.won}
               onClick={() => choose(index)}
               onKeyDown={(event) => {
+                if (event.ctrlKey || event.metaKey || event.altKey) return;
                 if (round.paused || round.won || !event.key.startsWith("Arrow"))
                   return;
                 event.preventDefault();

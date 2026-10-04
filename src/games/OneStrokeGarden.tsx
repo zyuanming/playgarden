@@ -207,6 +207,7 @@ function OneStrokeLevel({
                 aria-pressed={active}
                 onClick={() => choose(index)}
                 onKeyDown={(event) => {
+                  if (event.ctrlKey || event.metaKey || event.altKey) return;
                   if (
                     !event.key.startsWith("Arrow") &&
                     event.key !== "Home" &&
