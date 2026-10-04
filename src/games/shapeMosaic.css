@@ -1,0 +1,264 @@
+/* SPDX-License-Identifier: MIT */
+.shape-mosaic {
+  --sm-ink: #2c4d40;
+  align-items: start;
+}
+.shape-mosaic .sm-workbench {
+  min-width: 0;
+}
+.shape-mosaic .sm-heading {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+.shape-mosaic .sm-inventory {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(88px, 1fr));
+  gap: 7px;
+}
+.shape-mosaic .sm-inventory button {
+  min-height: 107px;
+  min-width: 44px;
+  padding: 7px 5px;
+  border: 1px solid #d2cbb8;
+  border-radius: 12px;
+  background: #f3efe3;
+  color: #284a3d;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+.shape-mosaic .sm-inventory button[aria-pressed="true"] {
+  outline: 3px solid #386451;
+  outline-offset: -3px;
+  background: #e7eddd;
+}
+.shape-mosaic .sm-inventory b {
+  font-size: 0.9rem;
+}
+.shape-mosaic .sm-inventory b small {
+  font-size: 0.68rem;
+  font-weight: 500;
+}
+.shape-mosaic .sm-inventory span {
+  font-size: 0.62rem;
+}
+.shape-mosaic .sm-piece-mini {
+  height: 48px;
+  max-width: 70px;
+  overflow: visible;
+}
+.shape-mosaic .sm-tools {
+  margin: 14px 0 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  border: 1px solid #cfcbb9;
+  background: #eeecdf;
+  border-radius: 14px;
+  padding: 12px;
+}
+.shape-mosaic .sm-selected {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+.shape-mosaic .sm-piece-preview {
+  width: 88px;
+  height: 82px;
+  max-width: 25vw;
+  flex-shrink: 0;
+  overflow: visible;
+}
+.shape-mosaic .sm-selected span,
+.shape-mosaic .sm-selected small {
+  display: block;
+  font-size: 0.75rem;
+  margin-top: 4px;
+}
+.shape-mosaic .sm-actions {
+  display: grid;
+  gap: 5px;
+  min-width: 112px;
+}
+.shape-mosaic .sm-actions button {
+  min-height: 44px;
+  border: 1px solid #b8c2af;
+  border-radius: 8px;
+  background: #f7f5ec;
+  font-size: 0.8rem;
+  color: #2c4c3f;
+}
+.shape-mosaic .sm-actions button:disabled {
+  opacity: 0.55;
+}
+.shape-mosaic .sm-board-help {
+  font-size: 0.83rem;
+  min-height: 22px;
+  margin: 10px 0;
+}
+.shape-mosaic .sm-board {
+  display: grid;
+  gap: 4px;
+  padding: 8px;
+  background: #d9d4c2;
+  border-radius: 15px;
+  max-width: 520px;
+  margin: auto;
+}
+.shape-mosaic .sm-board button,
+.shape-mosaic .sm-hole {
+  height: 65px;
+  min-height: 44px;
+  min-width: 44px;
+  border: 1px solid #c2c2ab;
+  border-radius: 6px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  background: #faf6e9;
+  color: #213f34;
+  padding: 3px;
+}
+.shape-mosaic .sm-board button small {
+  font-size: 0.61rem;
+  line-height: 1;
+}
+.shape-mosaic .sm-board button b {
+  font-size: 1.15rem;
+}
+.shape-mosaic .sm-hole {
+  background: repeating-linear-gradient(
+    45deg,
+    #b5b6a8,
+    #b5b6a8 6px,
+    #c2c3b3 6px,
+    #c2c3b3 12px
+  );
+  color: #646f60;
+  border: 0;
+}
+.shape-mosaic .sm-board .sm-ghost-valid {
+  outline: 3px dashed #286943;
+  outline-offset: -4px;
+}
+.shape-mosaic .sm-board .sm-ghost-invalid {
+  outline: 3px dashed #9c462a;
+  outline-offset: -4px;
+}
+.shape-mosaic .sm-anchor-star {
+  position: absolute;
+  right: 3px;
+  top: 2px;
+  font-size: 0.8rem;
+  background: #fffae4;
+  border-radius: 3px;
+  padding: 0 2px;
+}
+.shape-mosaic .sm-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 14px;
+  font-size: 0.7rem;
+  margin: 12px 0;
+  color: #566a5b;
+}
+.shape-mosaic .sm-message {
+  padding: 12px 14px;
+  background: #f0ecdf;
+  border-radius: 10px;
+  line-height: 1.55;
+  min-height: 64px;
+  font-size: 0.86rem;
+}
+.shape-mosaic .note ol {
+  padding-left: 22px;
+}
+.shape-mosaic .note li {
+  margin: 8px 0;
+}
+.shape-mosaic button:focus-visible {
+  outline: 3px solid #b45b30 !important;
+  outline-offset: 3px !important;
+}
+.shape-mosaic .sm-board button:disabled {
+  opacity: 1;
+  cursor: default;
+}
+@media (max-width: 540px) {
+  .shape-mosaic .sm-inventory {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+  .shape-mosaic .sm-inventory button {
+    min-height: 99px;
+  }
+  .shape-mosaic .sm-tools {
+    gap: 6px;
+    padding: 8px;
+  }
+  .shape-mosaic .sm-selected {
+    gap: 7px;
+  }
+  .shape-mosaic .sm-piece-preview {
+    width: 64px;
+    height: 68px;
+  }
+  .shape-mosaic .sm-actions {
+    min-width: 100px;
+  }
+  .shape-mosaic .sm-board {
+    padding: 5px;
+    gap: 3px;
+  }
+  .shape-mosaic .sm-board button,
+  .shape-mosaic .sm-hole {
+    height: 55px;
+  }
+  .shape-mosaic .sm-selected small {
+    font-size: 0.65rem;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .shape-mosaic * {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+.shape-mosaic .sm-piece-mini {
+  width: 70px;
+  max-width: 100%;
+}
+@media (max-width: 360px) {
+  .shape-mosaic.puzzle-layout {
+    padding: 8px;
+  }
+  .shape-mosaic .sm-board {
+    gap: 1px;
+    padding: 0;
+  }
+  .shape-mosaic .sm-tools {
+    padding: 6px;
+  }
+}
+/* The shell dims generic disabled buttons; keep the completed inventory legible. */
+.shape-mosaic .sm-inventory button:disabled {
+  opacity: 1;
+  cursor: default;
+}
+
+.shape-mosaic .sm-shape-description {
+  width: 100%;
+  font-size: 0.85rem;
+  line-height: 1.7;
+  color: #365146;
+}

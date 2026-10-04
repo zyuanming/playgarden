@@ -1,0 +1,206 @@
+/* SPDX-License-Identifier: MIT */
+.code-clues {
+  --cc-ink: #26344c;
+  --cc-accent: #566bb3;
+  color: var(--cc-ink);
+  align-items: start;
+}
+.code-clues .cc-workbench {
+  min-width: 0;
+  padding: clamp(16px, 3vw, 30px);
+  background: #f9fbff;
+  border: 1px solid #d9e1f3;
+  border-radius: 24px;
+}
+.code-clues .cc-heading {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.code-clues .cc-heading strong {
+  background: #e8edfc;
+  padding: 8px 13px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+}
+.code-clues .cc-vault {
+  display: flex;
+  gap: clamp(8px, 2vw, 18px);
+  justify-content: center;
+  padding: 28px 0 12px;
+}
+.code-clues .cc-vault span {
+  display: grid;
+  place-items: center;
+  width: clamp(48px, 10vw, 78px);
+  height: clamp(60px, 12vw, 88px);
+  border: 2px solid #7688bf;
+  border-radius: 16px;
+  background: linear-gradient(145deg, #eff3ff, #fff);
+  font-size: 2rem;
+  font-weight: 800;
+  box-shadow: 0 4px 0 #dbe2f6;
+}
+.code-clues .cc-instruction {
+  text-align: center;
+  line-height: 1.7;
+}
+.code-clues .cc-draft {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+  margin: 20px 0 14px;
+}
+.code-clues .cc-draft label {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+.code-clues select {
+  min-width: 0;
+  width: 100%;
+  min-height: 50px;
+  border: 2px solid #9aa9ca;
+  border-radius: 11px;
+  background: white;
+  color: var(--cc-ink);
+  font: inherit;
+  padding: 8px;
+}
+.code-clues button {
+  min-height: 44px;
+  border-radius: 11px;
+  padding: 10px 14px;
+  font: inherit;
+  font-weight: 700;
+  border: 1px solid #a5b2d2;
+  background: #fff;
+  color: var(--cc-ink);
+  cursor: pointer;
+}
+.code-clues .cc-submit {
+  width: 100%;
+  background: #425993;
+  color: white;
+  border-color: #425993;
+  margin-bottom: 16px;
+}
+.code-clues button:disabled,
+.code-clues select:disabled {
+  opacity: 0.64;
+  cursor: default;
+}
+.code-clues select:disabled {
+  opacity: 1;
+}
+.code-clues button:focus-visible,
+.code-clues select:focus-visible,
+.code-clues summary:focus-visible,
+.code-clues [tabindex]:focus-visible {
+  outline: 3px solid #805618;
+  outline-offset: 4px;
+}
+.code-clues .cc-help {
+  font-size: 0.88rem;
+  line-height: 1.75;
+  color: #56637a;
+}
+.code-clues .cc-history,
+.code-clues .cc-initial {
+  list-style: none;
+  padding: 0;
+  margin: 12px 0;
+}
+.code-clues .cc-history {
+  max-height: 420px;
+  overflow: auto;
+  padding: 4px;
+  border-radius: 12px;
+  scrollbar-gutter: stable;
+}
+.code-clues .cc-feedback {
+  padding: 13px;
+  border: 1px solid #d5ddec;
+  background: white;
+  border-radius: 13px;
+  margin-bottom: 9px;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+.code-clues .cc-history .cc-feedback:last-child {
+  border-color: var(--cc-accent);
+}
+.code-clues .cc-row-label {
+  font-size: 0.78rem;
+  color: #61718c;
+  font-weight: 700;
+}
+.code-clues .cc-feedback strong {
+  letter-spacing: 0.02em;
+  overflow-wrap: anywhere;
+  font-size: 0.95rem;
+}
+.code-clues .cc-feedback > div {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.code-clues .cc-feedback > div span {
+  padding: 5px 9px;
+  background: #edf1fa;
+  border-radius: 7px;
+  font-size: 0.88rem;
+}
+.code-clues .cc-feedback b {
+  font-size: 1rem;
+}
+.code-clues .cc-empty {
+  padding: 20px 10px;
+  color: #61718c;
+  line-height: 1.7;
+}
+.code-clues .cc-hint {
+  background: #fff5dc;
+  border: 1px solid #e3c987;
+  padding: 14px;
+  border-radius: 13px;
+  margin: 10px 0 18px;
+  line-height: 1.7;
+}
+.code-clues .cc-hint p {
+  margin: 0 0 10px;
+}
+.code-clues .cc-notes {
+  min-width: 0;
+}
+.code-clues details {
+  border-top: 1px solid #d9e1ee;
+  border-bottom: 1px solid #d9e1ee;
+  padding: 12px 0;
+  line-height: 1.8;
+}
+.code-clues summary {
+  cursor: pointer;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+}
+@media (max-width: 540px) {
+  .code-clues .cc-draft {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .code-clues .cc-workbench {
+    padding: 16px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .code-clues * {
+    scroll-behavior: auto !important;
+  }
+}

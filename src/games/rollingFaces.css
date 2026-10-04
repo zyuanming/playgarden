@@ -1,0 +1,259 @@
+/* SPDX-License-Identifier: MIT */
+.rolling-faces {
+  --rf-ink: #284a3f;
+  --rf-paper: #f4f0e5;
+  align-items: start;
+}
+.rolling-faces .rf-workbench {
+  min-width: 0;
+}
+.rolling-faces .rf-heading {
+  display: flex;
+  gap: 12px;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+.rolling-faces .rf-scene {
+  margin: 0 0 12px;
+  border: 1px solid #dad5c3;
+  background: #eeeade;
+  border-radius: 18px;
+  overflow: hidden;
+}
+.rolling-faces .rf-scene-host {
+  height: 220px;
+  width: 100%;
+}
+.rolling-faces .rf-scene-host canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.rolling-faces figcaption {
+  padding: 8px 12px;
+  font-size: 0.75rem;
+  color: #51675c;
+  text-align: center;
+}
+.rolling-faces .rf-fallback {
+  padding: 24px;
+  text-align: center;
+  min-height: 100px;
+}
+.rolling-faces .rf-fallback p {
+  font-size: 0.85rem;
+  margin: 8px 0 0;
+}
+.rolling-faces .rf-compass {
+  text-align: center;
+  font-weight: 750;
+  line-height: 1.6;
+  margin-bottom: 8px;
+}
+.rolling-faces .rf-compass span {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+.rolling-faces .rf-board {
+  display: grid;
+  gap: 5px;
+  padding: 9px;
+  border-radius: 15px;
+  background: #d8d3c1;
+  outline-offset: 4px;
+  max-width: 520px;
+  margin: auto;
+}
+.rolling-faces .rf-board button,
+.rolling-faces .rf-wall {
+  min-width: 44px;
+  min-height: 83px;
+  border: 1px solid #c8c4b3;
+  border-radius: 8px;
+  background: #f7f4eb;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  color: #2c493e;
+  font-size: 0.7rem;
+  padding: 4px 1px;
+}
+.rolling-faces .rf-board small {
+  font-size: 0.6rem;
+  color: #5c6d62;
+}
+.rolling-faces .rf-board .rf-wall {
+  background: repeating-linear-gradient(
+    45deg,
+    #b6b4a7,
+    #b6b4a7 8px,
+    #c3c1b4 8px,
+    #c3c1b4 16px
+  );
+  color: #6c7064;
+  border: 0;
+}
+.rolling-faces .rf-cell-symbol {
+  font-size: 1rem;
+  font-weight: 800;
+  min-height: 24px;
+}
+.rolling-faces .rf-board .rf-exit {
+  border: 2px solid #688b58;
+  background: #e5edda;
+}
+.rolling-faces .rf-board .rf-gate {
+  box-shadow:
+    inset 4px 0 #a890b9,
+    inset -4px 0 #a890b9;
+}
+.rolling-faces .rf-board .rf-current {
+  outline: 3px solid #325d4d;
+  outline-offset: -3px;
+  background: #d9e7da;
+}
+.rolling-faces .rf-cube-marker {
+  padding: 4px 6px;
+  background: #315e4f;
+  color: #fff9e9;
+  border-radius: 5px;
+  font-size: 0.9rem;
+}
+.rolling-faces .rf-plate-label {
+  font-weight: 750;
+}
+.rolling-faces .rf-controls {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(44px, 1fr));
+  gap: 8px;
+  margin: 14px auto 0;
+  max-width: 520px;
+}
+.rolling-faces .rf-controls button {
+  min-height: 56px;
+  border: 1px solid #b8c7ba;
+  border-radius: 10px;
+  background: #ecf1e6;
+  font-weight: 800;
+  color: #294f40;
+}
+.rolling-faces .rf-controls small {
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 400;
+  margin-top: 3px;
+}
+.rolling-faces .rf-message {
+  min-height: 58px;
+  padding: 12px 14px;
+  background: #f0ecdf;
+  border-radius: 10px;
+  line-height: 1.55;
+  font-size: 0.9rem;
+}
+.rolling-faces .rf-faces {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 7px;
+  max-width: 270px;
+  margin: 16px auto;
+}
+.rolling-faces .rf-face {
+  min-height: 55px;
+  background: #e9e3d2;
+  border: 1px solid #ccc9b7;
+  border-radius: 8px;
+  text-align: center;
+  padding: 5px;
+}
+.rolling-faces .rf-face small {
+  display: block;
+  font-size: 0.7rem;
+}
+.rolling-faces .rf-face b {
+  font-size: 1.2rem;
+}
+.rolling-faces .rf-face-0 {
+  grid-column: 2;
+  grid-row: 2;
+}
+.rolling-faces .rf-face-1 {
+  grid-column: 3;
+  grid-row: 3;
+  background: #d2dfca;
+}
+.rolling-faces .rf-face-2 {
+  grid-column: 2;
+  grid-row: 1;
+}
+.rolling-faces .rf-face-3 {
+  grid-column: 2;
+  grid-row: 3;
+}
+.rolling-faces .rf-face-4 {
+  grid-column: 1;
+  grid-row: 2;
+}
+.rolling-faces .rf-face-5 {
+  grid-column: 3;
+  grid-row: 2;
+}
+.rolling-faces .rf-target {
+  font-weight: 750;
+}
+.rolling-faces li {
+  margin-bottom: 8px;
+  font-size: 0.85rem;
+}
+.rolling-faces button:focus-visible,
+.rolling-faces [tabindex]:focus-visible {
+  outline: 3px solid #b45b30;
+  outline-offset: 3px;
+}
+.rolling-faces button:disabled {
+  cursor: default;
+  opacity: 1;
+}
+.rolling-faces button:disabled:not(.rf-current) {
+  color: #56675d;
+}
+@media (max-width: 540px) {
+  .rolling-faces .rf-scene-host {
+    height: 170px;
+  }
+  .rolling-faces .rf-board {
+    gap: 3px;
+    padding: 5px;
+  }
+  .rolling-faces .rf-board button,
+  .rolling-faces .rf-wall {
+    min-height: 82px;
+  }
+  .rolling-faces .rf-board {
+    grid-template-columns: repeat(6, minmax(44px, 1fr));
+  }
+  .rolling-faces .rf-controls {
+    gap: 5px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .rolling-faces * {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+/* Keep six 44px targets inside the shell even at a 320px viewport. */
+@media (max-width: 360px) {
+  .rolling-faces.puzzle-layout {
+    padding: 8px;
+  }
+  .rolling-faces .rf-board {
+    gap: 1px;
+    padding: 0;
+  }
+}

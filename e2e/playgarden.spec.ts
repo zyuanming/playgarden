@@ -31,6 +31,10 @@ test("catalog search, category, difficulty, favorites and legacy migration", asy
     { key: LEGACY_STORAGE_KEY },
   );
   await page.goto("/");
+  for (const select of await page.locator(".filters select").all()) {
+    const box = await select.boundingBox();
+    expect(box!.height).toBeGreaterThanOrEqual(44);
+  }
   await expect(page.locator(".game-card")).toHaveCount(
     Math.min(games.length, 12),
   );

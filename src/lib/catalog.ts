@@ -59,6 +59,10 @@ export const GAME_IDS = [
   "current-circuit",
   "budget-town",
   "concurrent-kitchen",
+  "code-clues",
+  "energy-dispatch",
+  "rolling-faces",
+  "shape-mosaic",
 ] as const;
 export type GameId = (typeof GAME_IDS)[number];
 export type Category =
@@ -162,6 +166,12 @@ export const mathRouteCodeArtwork = (index: number) => ({
 
 export const scienceTownArtwork = (index: number) => ({
   url: "/science-town-art.webp",
+  position: `${(index % 2) * 100}% ${index < 2 ? 12 : 88}%`,
+  size: "200% auto",
+});
+
+export const codeEnergySpatialArtwork = (index: number) => ({
+  url: "/code-energy-spatial-art.webp",
   position: `${(index % 2) * 100}% ${index < 2 ? 12 : 88}%`,
   size: "200% auto",
 });

@@ -308,6 +308,9 @@ function BudgetTownRound({
           <span>虚线字母格 = 候选设施</span>
           <span>浅色范围 = 当前地块半径</span>
         </div>
+        <p className="bt-map-cue">
+          地图可左右滑动查看；键盘方向键选择地块时，会自动显示所选位置。
+        </p>
         <div className="bt-map-scroll" ref={mapScroll}>
           <div
             className="bt-map"

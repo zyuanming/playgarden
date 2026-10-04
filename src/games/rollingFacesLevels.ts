@@ -1,0 +1,432 @@
+// SPDX-License-Identifier: MIT
+// Hand-authored bounded boards and face goals. Certificates are shortest BFS witnesses.
+import type { RollingLevel } from "./rollingFacesLogic";
+export const rollingFacesLevels: readonly RollingLevel[] = [
+  {
+    id: "rolling-01",
+    title: "两步看落面",
+    lesson: "先预测落地面，再看北侧面。顺序不同，终点相同也未必过关。",
+    rows: ["...", "..#"],
+    start: [0, 0],
+    exit: {
+      x: 1,
+      y: 1,
+      bottom: 4,
+      north: 3,
+    },
+    plates: [],
+    gates: [],
+    certificate: {
+      moves: ["E", "S"],
+      shortest: 2,
+      visited: 6,
+    },
+  },
+  {
+    id: "rolling-02",
+    title: "绕开石墙",
+    lesson: "墙让路径转弯；每次转弯都要重新追踪六个面。",
+    rows: ["...", "##.", "..."],
+    start: [0, 0],
+    exit: {
+      x: 0,
+      y: 2,
+      bottom: 0,
+      north: 4,
+    },
+    plates: [],
+    gates: [],
+    certificate: {
+      moves: ["E", "E", "S", "S", "W", "W"],
+      shortest: 6,
+      visited: 7,
+    },
+  },
+  {
+    id: "rolling-03",
+    title: "环路换朝向",
+    lesson: "原地回到一个格子，朝向可能已经改变。尝试完整的环路。",
+    rows: ["....", ".##.", "...."],
+    start: [0, 0],
+    exit: {
+      x: 1,
+      y: 0,
+      bottom: 2,
+      north: 1,
+    },
+    plates: [],
+    gates: [],
+    certificate: {
+      moves: ["S", "S", "E", "E", "E", "N", "N", "W", "W"],
+      shortest: 9,
+      visited: 20,
+    },
+  },
+  {
+    id: "rolling-04",
+    title: "第一扇面门",
+    lesson: "门只检查滚入之后的底面，不检查滚动之前的底面。",
+    rows: ["....", "..#.", "...."],
+    start: [0, 0],
+    exit: {
+      x: 1,
+      y: 0,
+      bottom: 1,
+      north: 0,
+    },
+    plates: [],
+    gates: [
+      {
+        x: 1,
+        y: 1,
+        face: 4,
+      },
+    ],
+    certificate: {
+      moves: ["E", "S", "W", "S", "E", "E", "E", "N", "N", "W", "W"],
+      shortest: 11,
+      visited: 53,
+    },
+  },
+  {
+    id: "rolling-05",
+    title: "点亮一块踏板",
+    lesson: "踏板要用指定底面压过；点亮之后会一直保留。",
+    rows: ["....", "....", ".##."],
+    start: [0, 0],
+    exit: {
+      x: 3,
+      y: 2,
+      bottom: 4,
+      north: 0,
+    },
+    plates: [
+      {
+        x: 1,
+        y: 1,
+        face: 4,
+      },
+    ],
+    gates: [],
+    certificate: {
+      moves: ["E", "S", "E", "N", "E", "S", "S"],
+      shortest: 7,
+      visited: 139,
+    },
+  },
+  {
+    id: "rolling-06",
+    title: "带钥匙绕路",
+    lesson: "出口前的门还需要已点亮的踏板。先规划取钥匙，再规划朝向。",
+    rows: [".....", "..#..", "....."],
+    start: [0, 0],
+    exit: {
+      x: 2,
+      y: 0,
+      bottom: 2,
+      north: 0,
+    },
+    plates: [
+      {
+        x: 0,
+        y: 1,
+        face: 5,
+      },
+    ],
+    gates: [
+      {
+        x: 2,
+        y: 0,
+        face: 2,
+        needs: 1,
+      },
+    ],
+    certificate: {
+      moves: ["E", "S", "W", "N", "E", "E"],
+      shortest: 6,
+      visited: 59,
+    },
+  },
+  {
+    id: "rolling-07",
+    title: "双踏板花园",
+    lesson: "两块踏板可以按任意顺序点亮，但不必沿原路返回。",
+    rows: [".....", ".#.#.", "....."],
+    start: [0, 0],
+    exit: {
+      x: 2,
+      y: 2,
+      bottom: 5,
+      north: 4,
+    },
+    plates: [
+      {
+        x: 3,
+        y: 0,
+        face: 2,
+      },
+      {
+        x: 1,
+        y: 2,
+        face: 3,
+      },
+    ],
+    gates: [],
+    certificate: {
+      moves: ["E", "E", "E", "W", "S", "S", "W", "E"],
+      shortest: 8,
+      visited: 41,
+    },
+  },
+  {
+    id: "rolling-08",
+    title: "门后的回环",
+    lesson: "窄门限制进入时的面；越过门之后再找调整朝向的空间。",
+    rows: [".....", ".....", "..#..", "....."],
+    start: [0, 0],
+    exit: {
+      x: 4,
+      y: 1,
+      bottom: 4,
+      north: 0,
+    },
+    plates: [
+      {
+        x: 4,
+        y: 1,
+        face: 4,
+      },
+      {
+        x: 1,
+        y: 3,
+        face: 3,
+      },
+    ],
+    gates: [
+      {
+        x: 4,
+        y: 1,
+        face: 4,
+      },
+    ],
+    certificate: {
+      moves: ["S", "S", "S", "E", "N", "N", "E", "N", "E", "E", "S"],
+      shortest: 11,
+      visited: 581,
+    },
+  },
+  {
+    id: "rolling-09",
+    title: "缺口与双门",
+    lesson: "不同门要求不同底面。地图边缘的空地可以用来换朝向。",
+    rows: ["......", ".#..#.", "......", "##..##"],
+    start: [0, 0],
+    exit: {
+      x: 4,
+      y: 2,
+      bottom: 0,
+      north: 4,
+    },
+    plates: [
+      {
+        x: 2,
+        y: 0,
+        face: 0,
+      },
+      {
+        x: 3,
+        y: 2,
+        face: 3,
+      },
+    ],
+    gates: [
+      {
+        x: 2,
+        y: 0,
+        face: 0,
+      },
+      {
+        x: 5,
+        y: 2,
+        face: 2,
+      },
+    ],
+    certificate: {
+      moves: ["E", "E", "E", "S", "S", "N", "N", "W", "S", "S", "E", "E"],
+      shortest: 12,
+      visited: 355,
+    },
+  },
+  {
+    id: "rolling-10",
+    title: "三枚面印",
+    lesson: "全部三枚面印都要点亮；出口还会检查北侧面。",
+    rows: [".....", "..#..", ".....", ".#.#.", "....."],
+    start: [0, 0],
+    exit: {
+      x: 4,
+      y: 2,
+      bottom: 0,
+      north: 4,
+    },
+    plates: [
+      {
+        x: 3,
+        y: 0,
+        face: 2,
+      },
+      {
+        x: 2,
+        y: 2,
+        face: 5,
+      },
+      {
+        x: 1,
+        y: 4,
+        face: 3,
+      },
+    ],
+    gates: [
+      {
+        x: 4,
+        y: 2,
+        face: 0,
+      },
+    ],
+    certificate: {
+      moves: [
+        "E",
+        "E",
+        "E",
+        "E",
+        "S",
+        "S",
+        "S",
+        "S",
+        "W",
+        "W",
+        "W",
+        "E",
+        "N",
+        "N",
+        "E",
+        "E",
+      ],
+      shortest: 16,
+      visited: 1110,
+    },
+  },
+  {
+    id: "rolling-11",
+    title: "折返的钥匙",
+    lesson: "先考虑哪些踏板能顺路点亮，再检查进入最后一扇门的落地面。",
+    rows: ["......", ".#.#..", "......", "..#.#.", "......"],
+    start: [0, 0],
+    exit: {
+      x: 2,
+      y: 0,
+      bottom: 0,
+      north: 1,
+    },
+    plates: [
+      {
+        x: 4,
+        y: 0,
+        face: 5,
+      },
+      {
+        x: 2,
+        y: 4,
+        face: 0,
+      },
+      {
+        x: 2,
+        y: 2,
+        face: 5,
+      },
+    ],
+    gates: [
+      {
+        x: 4,
+        y: 0,
+        face: 5,
+      },
+      {
+        x: 2,
+        y: 2,
+        face: 5,
+      },
+    ],
+    certificate: {
+      moves: [
+        "S",
+        "S",
+        "S",
+        "S",
+        "E",
+        "E",
+        "W",
+        "W",
+        "N",
+        "N",
+        "E",
+        "E",
+        "N",
+        "N",
+        "E",
+        "E",
+        "W",
+        "W",
+      ],
+      shortest: 18,
+      visited: 1512,
+    },
+  },
+  {
+    id: "rolling-12",
+    title: "六面远征",
+    lesson: "三个面印、两扇门和定向出口共同决定旅程。用空地调面，再通过瓶颈。",
+    rows: ["......", "..##..", "......", ".#..#.", "......"],
+    start: [0, 0],
+    exit: {
+      x: 5,
+      y: 4,
+      bottom: 3,
+      north: 1,
+    },
+    plates: [
+      {
+        x: 3,
+        y: 0,
+        face: 2,
+      },
+      {
+        x: 2,
+        y: 4,
+        face: 0,
+      },
+      {
+        x: 3,
+        y: 2,
+        face: 2,
+      },
+    ],
+    gates: [
+      {
+        x: 3,
+        y: 0,
+        face: 2,
+      },
+      {
+        x: 3,
+        y: 2,
+        face: 2,
+      },
+    ],
+    certificate: {
+      moves: ["E", "E", "E", "E", "S", "S", "W", "W", "S", "S", "E", "E", "E"],
+      shortest: 13,
+      visited: 865,
+    },
+  },
+];

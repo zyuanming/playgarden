@@ -146,6 +146,7 @@ test("all exact physical resistor circuit experiments", async ({
 test("all minimum-budget spatial service plans", async ({ page }, info) => {
   const errors = captureErrors(page);
   await openGame(page, "预算小镇");
+  await expect(page.locator(".bt-map-cue")).toBeVisible();
   await expect(page.locator("[data-budget-town-game]")).toBeVisible();
   await page.screenshot({
     path: info.outputPath("budget-town-start.png"),

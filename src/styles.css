@@ -202,6 +202,8 @@ a:hover {
   background: #cce62b !important;
 }
 .filters select {
+  min-height: 44px;
+  padding: 8px 4px;
   background: transparent;
   border: 0;
   font-size: 13px;
@@ -1098,4 +1100,10 @@ footer a {
   }
 }
 
-.catalog-sort-help { color:#425f51; font-size:13px; text-align:center; line-height:1.6; margin:12px 0; }
+.catalog-sort-help {
+  color: #425f51;
+  font-size: 13px;
+  text-align: center;
+  line-height: 1.6;
+  margin: 12px 0;
+}
