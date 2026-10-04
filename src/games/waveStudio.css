@@ -1,0 +1,224 @@
+/* SPDX-License-Identifier: MIT */
+.wave-studio {
+  color: #253758;
+  min-width: 0;
+}
+.wave-studio .puzzle-layout {
+  align-items: start;
+}
+.wave-studio .ws-bench {
+  padding: 20px;
+  min-width: 0;
+  background: #f0f2fa;
+  border: 1px solid #b0bbd3;
+  border-radius: 22px;
+}
+.wave-studio .ws-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.wave-studio p {
+  line-height: 1.65;
+}
+.wave-studio h3 {
+  font-size: 1rem;
+  margin: 0 0 10px;
+}
+.wave-studio .ws-budget,
+.wave-studio .ws-legend {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 12px 0;
+  font-size: 14px;
+}
+.wave-studio .ws-budget span {
+  padding: 9px 12px;
+  border: 1px solid #a3b0ca;
+  border-radius: 9px;
+  background: #fff;
+}
+.wave-studio .ws-legend span:nth-child(1) {
+  color: #80420a;
+  font-weight: 700;
+}
+.wave-studio .ws-legend span:nth-child(2) {
+  color: #164f87;
+  font-weight: 700;
+}
+.wave-studio .ws-viewport {
+  overflow-x: auto;
+  max-width: 100%;
+  background: white;
+  border: 1px solid #b5bfd3;
+  border-radius: 14px;
+}
+.wave-studio .ws-viewport svg {
+  display: block;
+  min-width: 640px;
+  max-width: none;
+}
+.wave-studio .ws-oscillators {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(170px, 100%), 1fr));
+  gap: 10px;
+  margin: 14px 0;
+}
+.wave-studio .ws-oscillators article {
+  padding: 13px;
+  min-width: 0;
+  border: 1px solid #a8b5cc;
+  border-radius: 14px;
+  background: #fff;
+}
+.wave-studio .ws-oscillators p {
+  font-size: 13px;
+  overflow-wrap: anywhere;
+}
+.wave-studio small {
+  color: #475c7e;
+  font-size: 13px;
+}
+.wave-studio label {
+  display: grid;
+  gap: 5px;
+  margin: 12px 0;
+  font-weight: 700;
+  font-size: 14px;
+  border-radius: 8px;
+}
+.wave-studio select {
+  min-height: 46px;
+  min-width: 0;
+  width: 100%;
+  border: 2px solid #8495b5;
+  border-radius: 9px;
+  padding: 8px;
+  background: #fff;
+  color: #253758;
+  font: inherit;
+}
+.wave-studio select:disabled {
+  background: #e1e7f0;
+  color: #3c4f6e;
+  opacity: 1;
+}
+.wave-studio .ws-hinted {
+  outline: 3px dashed #96570b;
+  outline-offset: 4px;
+}
+.wave-studio .ws-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 9px;
+}
+.wave-studio .ws-actions span {
+  font-size: 14px;
+}
+.wave-studio button {
+  min-height: 46px;
+  min-width: 44px;
+  padding: 9px 14px;
+  border: 2px solid #284a78;
+  border-radius: 10px;
+  background: #284a78;
+  color: #fff;
+  font: inherit;
+  cursor: pointer;
+}
+.wave-studio button:hover {
+  color: #fff;
+  background: #1a365f;
+}
+.wave-studio button:active {
+  color: #fff;
+  background: #102648;
+}
+.wave-studio button[aria-disabled="true"],
+.wave-studio button[aria-disabled="true"]:hover {
+  background: #dce3ef;
+  color: #40516c;
+  border-color: #8595af;
+  cursor: default;
+}
+.wave-studio
+  :is(button, select, summary, .ws-viewport, .ws-table-wrap):focus-visible,
+.wave-studio:focus-visible {
+  outline: 3px solid #a05a04;
+  outline-offset: 3px;
+}
+.wave-studio .ws-status {
+  border-left: 4px solid #4b618b;
+  border-radius: 8px;
+  background: #dfe7f6;
+  padding: 12px;
+}
+.wave-studio .ws-notes {
+  min-width: 0;
+}
+.wave-studio .ws-table-wrap {
+  max-width: 100%;
+  overflow-x: auto;
+  border: 1px solid #a4b2ca;
+  border-radius: 12px;
+  background: #fff;
+}
+.wave-studio table {
+  width: 100%;
+  min-width: 340px;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+.wave-studio th,
+.wave-studio td {
+  padding: 12px 9px;
+  text-align: center;
+  border-bottom: 1px solid #c9d2e2;
+  white-space: nowrap;
+}
+.wave-studio thead {
+  background: #e0e7f4;
+}
+.wave-studio details {
+  background: #eef1f8;
+  border-radius: 12px;
+  padding: 12px;
+  margin-top: 18px;
+}
+.wave-studio summary {
+  min-height: 44px;
+  align-content: center;
+  cursor: pointer;
+  font-weight: 700;
+}
+.wave-studio details p {
+  font-size: 14px;
+}
+@media (max-width: 600px) {
+  .wave-studio .ws-bench {
+    padding: 12px;
+  }
+  .wave-studio .ws-oscillators {
+    grid-template-columns: 1fr;
+  }
+  .wave-studio .ws-oscillators article {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+  }
+  .wave-studio .ws-oscillators h3,
+  .wave-studio .ws-oscillators p {
+    grid-column: 1/-1;
+    margin: 0;
+  }
+}
+.wave-studio .ws-scroll-help {
+  color: #3c4f6e;
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 10px 0;
+}

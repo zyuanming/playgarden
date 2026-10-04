@@ -1,3 +1,4 @@
+import { foldTreeLightArtwork } from "./catalog";
 import { flowRailFunctionArtwork } from "./catalog";
 import { iceFleetNumberArtwork } from "./catalog";
 import { lazy, type LazyExoticComponent, type ComponentType } from "react";
@@ -883,6 +884,54 @@ export const games: GameDefinition[] = [
     artwork: flowRailFunctionArtwork(3),
     source: original,
     component: lazy(() => import("../games/CompressionPost")),
+  },
+  {
+    id: "paper-fold",
+    title: "折纸打孔",
+    subtitle: "折叠纸层后打孔，展开检验每个孔的位置。",
+    category: "空间想象",
+    difficulty: "中级",
+    tone: "orange",
+    levelCount: 12,
+    artwork: foldTreeLightArtwork(0),
+    source: original,
+    component: lazy(() => import("../games/PaperFold")),
+  },
+  {
+    id: "tree-rotations",
+    title: "树形旋转",
+    subtitle: "保持键值顺序，用局部旋转优化搜索树。",
+    category: "编程启蒙",
+    difficulty: "进阶",
+    tone: "green",
+    levelCount: 12,
+    artwork: foldTreeLightArtwork(1),
+    source: original,
+    component: lazy(() => import("../games/TreeRotations")),
+  },
+  {
+    id: "spectral-filters",
+    title: "理想滤光",
+    subtitle: "组合有限滤片，用精确比例调配目标光。",
+    category: "科学实验",
+    difficulty: "中级",
+    tone: "purple",
+    levelCount: 12,
+    artwork: foldTreeLightArtwork(2),
+    source: original,
+    component: lazy(() => import("../games/SpectralFilters")),
+  },
+  {
+    id: "wave-studio",
+    title: "谐波工作室",
+    subtitle: "调节频率、幅度与相位，合成目标谐波。",
+    category: "科学实验",
+    difficulty: "进阶",
+    tone: "green",
+    levelCount: 12,
+    artwork: foldTreeLightArtwork(3),
+    source: original,
+    component: lazy(() => import("../games/WaveStudio")),
   },
 ];
 export const findGame = (id: string) => games.find((game) => game.id === id);
