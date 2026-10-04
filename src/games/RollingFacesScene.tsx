@@ -152,8 +152,9 @@ export default function RollingFacesScene({
       const w = Math.max(1, container.clientWidth),
         h = Math.max(1, container.clientHeight),
         aspect = w / h,
-        span = Math.max(level.rows.length, level.rows[0].length) + 1.8,
-        half = Math.max(span / 2, span / (2 * aspect));
+        projectedHeight = level.rows.length / Math.sqrt(2) + 1.4,
+        projectedWidth = level.rows[0].length + 0.8,
+        half = Math.max(projectedHeight / 2, projectedWidth / (2 * aspect));
       camera.left = -half * aspect;
       camera.right = half * aspect;
       camera.top = half;

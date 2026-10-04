@@ -168,6 +168,15 @@ test("all exact-cover mosaics with readable shape descriptions", async ({
 }, info) => {
   const errors = captureErrors(page);
   await openGame(page, "拼片镶嵌");
+  const selectedLabel = await page.locator(".sm-selected strong").boundingBox();
+  expect(selectedLabel!.height).toBeLessThan(50);
+  const geometryText = await page
+    .locator(".sm-shape-description")
+    .boundingBox();
+  const previewBox = await page.locator(".sm-selected").boundingBox();
+  expect(geometryText!.y).toBeGreaterThanOrEqual(
+    previewBox!.y + previewBox!.height,
+  );
   await page.screenshot({
     path: info.outputPath("shape-mosaic-start.png"),
     fullPage: true,
