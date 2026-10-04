@@ -1,3 +1,7 @@
+import { paperFoldLevels } from "../src/games/paperFoldLevels";
+import { treeRotationsLevels } from "../src/games/treeRotationsLevels";
+import { spectralFiltersLevels } from "../src/games/spectralFiltersLevels";
+import { waveStudioLevels } from "../src/games/waveStudioLevels";
 import { compressionPostLevels } from "../src/games/compressionPostLevels";
 import { functionFactoryLevels } from "../src/games/functionFactoryLevels";
 import { railwayTimetableLevels } from "../src/games/railwayTimetableLevels";
@@ -75,6 +79,11 @@ import { sortingNetworkLevels } from "../src/games/sortingNetworkLogic";
 import { voxelViewsLevels } from "../src/games/voxelViewsLogic";
 import { cubeNetLevels } from "../src/games/cubeNetLogic";
 const packs = {
+  "paper-fold": paperFoldLevels,
+  "tree-rotations": treeRotationsLevels,
+  "spectral-filters": spectralFiltersLevels,
+  "wave-studio": waveStudioLevels,
+
   "compression-post": compressionPostLevels,
   "function-factory": functionFactoryLevels,
   "railway-timetable": railwayTimetableLevels,
@@ -159,8 +168,8 @@ describe("Scalable catalog contract", () => {
       expect(game.artwork.url).toMatch(/^\//);
     }),
   );
-  it("counts only 71 real games and 852 levels, not the roadmap", () => {
-    expect(games).toHaveLength(71);
-    expect(games.reduce((sum, g) => sum + g.levelCount, 0)).toBe(852);
+  it("counts only 75 real games and 900 levels, not the roadmap", () => {
+    expect(games).toHaveLength(75);
+    expect(games.reduce((sum, g) => sum + g.levelCount, 0)).toBe(900);
   });
 });

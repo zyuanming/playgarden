@@ -1,0 +1,179 @@
+.tree-rotations-host {
+  min-width: 0;
+}
+.tree-rotations-host:focus-visible {
+  outline: 3px solid #93532a;
+  outline-offset: 3px;
+  border-radius: 16px;
+}
+.tree-rotations {
+  color: #293f37;
+}
+.tree-rotations .tr-workbench {
+  min-width: 0;
+  background: #f3f5ea;
+  border: 1px solid #bac9b7;
+  border-radius: 24px;
+  padding: clamp(12px, 2vw, 24px);
+}
+.tree-rotations .tr-heading,
+.tree-rotations .tr-metrics,
+.tree-rotations .tr-controls {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.tree-rotations .tr-heading {
+  justify-content: space-between;
+}
+.tree-rotations .tr-metrics {
+  margin: 16px 0;
+}
+.tree-rotations .tr-metrics span {
+  border-radius: 10px;
+  padding: 10px;
+  background: #e0e8d5;
+}
+.tree-rotations .tr-scroll-cue {
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+.tree-rotations .tr-viewport {
+  max-width: 100%;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  border: 1px solid #b4c5ad;
+  border-radius: 14px;
+  background: #fafbf4;
+  padding: 8px 0 16px;
+}
+.tree-rotations .tr-board {
+  position: relative;
+  margin: auto;
+}
+.tree-rotations .tr-edges {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.tree-rotations .tr-edges line {
+  stroke: #7a9274;
+  stroke-width: 3;
+}
+.tree-rotations button {
+  min-width: 44px;
+  min-height: 44px;
+  border: 2px solid #85a179;
+  background: #f9fcf2;
+  color: #293f37;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.tree-rotations .tr-board button {
+  position: absolute;
+  width: 56px;
+  height: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  padding: 2px;
+  z-index: 1;
+}
+.tree-rotations .tr-board button b {
+  font-size: 21px;
+}
+.tree-rotations .tr-board button small {
+  font-size: 11px;
+}
+.tree-rotations .tr-board .tr-selected {
+  background: #d9e6bd;
+  border: 3px solid #4e7047;
+}
+.tree-rotations button:hover {
+  background: #e1edcc;
+}
+.tree-rotations button:active {
+  background: #ccdfa9;
+}
+.tree-rotations button[aria-disabled="true"] {
+  color: #53634e;
+  background: #edf0e6;
+  border-color: #c3ccb9;
+  cursor: default;
+}
+.tree-rotations button:focus-visible,
+.tree-rotations [tabindex]:focus-visible,
+.tree-rotations summary:focus-visible {
+  outline: 3px solid #93532a;
+  outline-offset: 3px;
+}
+.tree-rotations .tr-root-label {
+  position: absolute;
+  left: -7px;
+  top: -13px;
+  padding: 1px 5px;
+  font-size: 11px;
+  border-radius: 5px;
+  color: #fff;
+  background: #4e7047;
+}
+.tree-rotations .tr-selection {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 16px 0 10px;
+}
+.tree-rotations .tr-controls button {
+  padding: 10px 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+}
+.tree-rotations .tr-controls small {
+  font-size: 12px;
+}
+.tree-rotations .tr-message {
+  min-height: 48px;
+  padding: 12px;
+  background: #e2eacc;
+  border-left: 4px solid #6a873f;
+  border-radius: 6px;
+}
+.tree-rotations .tr-relations summary {
+  min-height: 44px;
+  padding: 10px 0;
+  font-weight: 700;
+  cursor: pointer;
+}
+.tree-rotations .tr-relations ul {
+  padding-left: 20px;
+  font-size: 0.86rem;
+  line-height: 1.8;
+}
+.tree-rotations .tr-goal {
+  padding: 16px;
+  background: #edf0d4;
+  border: 2px solid #a5ad70;
+  border-radius: 16px;
+}
+.tree-rotations .tr-goal ul,
+.tree-rotations .game-notes ol {
+  padding-left: 20px;
+  line-height: 1.7;
+}
+.tree-rotations .tr-goal p {
+  font-size: 0.86rem;
+  line-height: 1.7;
+}
+@media (prefers-reduced-motion: reduce) {
+  .tree-rotations * {
+    scroll-behavior: auto !important;
+    transition: none !important;
+    animation: none !important;
+  }
+}

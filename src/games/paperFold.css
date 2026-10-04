@@ -1,0 +1,214 @@
+.paper-fold-host {
+  min-width: 0;
+}
+.paper-fold-host:focus-visible {
+  outline: 3px solid #93532a;
+  outline-offset: 3px;
+  border-radius: 16px;
+}
+.paper-fold {
+  --pf-ink: #263f44;
+  color: var(--pf-ink);
+}
+.paper-fold .pf-workbench {
+  min-width: 0;
+  padding: clamp(12px, 2vw, 24px);
+  border: 1px solid #b7c7c4;
+  border-radius: 24px;
+  background: #f6f5eb;
+}
+.paper-fold .pf-heading,
+.paper-fold .pf-controls {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.paper-fold .pf-phase {
+  padding: 12px;
+  background: #deece7;
+  border-radius: 12px;
+  font-weight: 650;
+}
+.paper-fold .pf-folds {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+.paper-fold button {
+  color: #233f42;
+  background: #fdfcf5;
+  border: 2px solid #8baba5;
+  border-radius: 10px;
+  min-width: 44px;
+  min-height: 44px;
+  cursor: pointer;
+}
+.paper-fold .pf-folds button {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 10px;
+  gap: 4px;
+  text-align: left;
+}
+.paper-fold button:hover {
+  background: #dceae4;
+}
+.paper-fold button:active {
+  background: #c1dacf;
+}
+.paper-fold button[aria-disabled="true"] {
+  color: #566b6b;
+  background: #eeeee8;
+  border-color: #c3cdca;
+  cursor: default;
+}
+.paper-fold button:focus-visible,
+.paper-fold [tabindex]:focus-visible,
+.paper-fold summary:focus-visible {
+  outline: 3px solid #984b2e;
+  outline-offset: 3px;
+}
+.paper-fold .pf-scroll-cue {
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+.paper-fold .pf-viewport {
+  max-width: 100%;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  padding: 5px 5px 14px;
+  border: 1px solid #b5c4bd;
+  border-radius: 12px;
+}
+.paper-fold .pf-board {
+  display: grid;
+  gap: 5px;
+  width: max-content;
+  margin: auto;
+}
+.paper-fold .pf-board button {
+  height: 76px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  padding: 3px;
+}
+.paper-fold .pf-board small {
+  font-size: 11px;
+}
+.paper-fold .pf-board span {
+  font-size: 12px;
+}
+.paper-fold .pf-board .pf-stack {
+  background: #dceadf;
+  border-bottom-width: 5px;
+}
+.paper-fold .pf-board .pf-empty {
+  background: #f2f1e9;
+  border-style: dashed;
+}
+.paper-fold .pf-board .pf-hole {
+  background: #d4e4e8;
+  color: #243f48;
+}
+.paper-fold .pf-board .pf-target-cell {
+  border-color: #915434;
+}
+.paper-fold .pf-controls {
+  margin-top: 14px;
+  justify-content: flex-start;
+}
+.paper-fold .pf-controls button {
+  padding: 10px 12px;
+}
+.paper-fold .pf-message {
+  padding: 12px;
+  background: #e6ede6;
+  border-left: 4px solid #608976;
+  border-radius: 5px;
+  min-height: 48px;
+}
+.paper-fold .pf-target {
+  padding: 16px;
+  border: 2px solid #ba835b;
+  border-radius: 16px;
+  background: #fff4dd;
+}
+.paper-fold .pf-target-grid {
+  display: grid;
+  gap: 4px;
+  max-width: 260px;
+  margin: 14px 0;
+}
+.paper-fold .pf-target-grid span {
+  display: grid;
+  place-items: center;
+  aspect-ratio: 1;
+  background: #f8e8c5;
+  color: #957246;
+  border: 1px solid #c5ab7f;
+}
+.paper-fold .pf-target-grid .pf-target-mark {
+  background: #f6cd92;
+  color: #633b22;
+}
+.paper-fold .pf-target p,
+.paper-fold .pf-layer-list li {
+  line-height: 1.65;
+  overflow-wrap: anywhere;
+}
+.paper-fold .pf-layer-list summary {
+  cursor: pointer;
+  min-height: 44px;
+  padding: 10px 0;
+  font-weight: 700;
+}
+.paper-fold .pf-layer-list ul {
+  padding-left: 20px;
+  font-size: 0.85rem;
+}
+.paper-fold .pf-scene {
+  margin: 14px 0;
+  padding: 10px;
+  background: #e6e9de;
+  border-radius: 14px;
+}
+.paper-fold .pf-scene-host {
+  height: 260px;
+  width: 100%;
+}
+.paper-fold .pf-scene-host canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.paper-fold .pf-scene figcaption,
+.paper-fold .pf-scene-fallback {
+  font-size: 0.85rem;
+  line-height: 1.6;
+}
+.paper-fold .game-notes ol {
+  padding-left: 20px;
+  line-height: 1.65;
+}
+@media (max-width: 440px) {
+  .paper-fold .pf-folds {
+    grid-template-columns: 1fr;
+  }
+  .paper-fold .pf-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .paper-fold * {
+    scroll-behavior: auto !important;
+    transition: none !important;
+    animation: none !important;
+  }
+}
