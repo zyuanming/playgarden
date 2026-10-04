@@ -337,3 +337,8 @@
     scroll-behavior: auto;
   }
 }
+/* Solved board geometry remains opaque and legible behind disabled controls. */
+.network-game .nd-island:disabled,
+.network-game .nd-loop-edge:disabled {
+  opacity: 1;
+}

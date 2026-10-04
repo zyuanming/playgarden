@@ -353,3 +353,14 @@
     margin-bottom: 13px;
   }
 }
+/* Percentage-sized holes need a full-width explicit grid track. */
+.st-game .st-peg-cell {
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: minmax(0, 1fr);
+  justify-content: stretch;
+  gap: 0;
+}
+.st-game .st-hole svg {
+  width: 78%;
+  height: 78%;
+}

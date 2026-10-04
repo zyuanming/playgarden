@@ -7,6 +7,12 @@ import { stackQueueLevels } from "../src/games/stackQueueLogic";
 test("all connected Hashi island networks", async ({ page }, info) => {
   const errors = captureErrors(page);
   await openGame(page, "桥岛连心");
+  await expect(page.locator("[data-hashi-board]")).toBeVisible();
+  await page.screenshot({
+    path: info.outputPath("hashi-start.png"),
+    fullPage: true,
+    animations: "disabled",
+  });
   for (let level = 0; level < hashiLevels.length; level++) {
     await chooseLevel(page, level);
     for (let edge = 0; edge < hashiLevels[level].solution.length; edge++) {
@@ -22,6 +28,12 @@ test("all connected Hashi island networks", async ({ page }, info) => {
 test("all single-loop Slitherlink puzzles", async ({ page }, info) => {
   const errors = captureErrors(page);
   await openGame(page, "数回花环");
+  await expect(page.locator("[data-slitherlink-board]")).toBeVisible();
+  await page.screenshot({
+    path: info.outputPath("slitherlink-start.png"),
+    fullPage: true,
+    animations: "disabled",
+  });
   for (let level = 0; level < slitherlinkLevels.length; level++) {
     await chooseLevel(page, level);
     for (let edge = 0; edge < slitherlinkLevels[level].solution.length; edge++)
@@ -34,6 +46,12 @@ test("all single-loop Slitherlink puzzles", async ({ page }, info) => {
 test("all complete-truth-table circuits", async ({ page }, info) => {
   const errors = captureErrors(page);
   await openGame(page, "逻辑电路");
+  await expect(page.locator("[data-circuit-game]")).toBeVisible();
+  await page.screenshot({
+    path: info.outputPath("circuit-start.png"),
+    fullPage: true,
+    animations: "disabled",
+  });
   for (let level = 0; level < booleanCircuitLevels.length; level++) {
     await chooseLevel(page, level);
     for (const [index, gate] of booleanCircuitLevels[
@@ -57,6 +75,12 @@ test("all complete-truth-table circuits", async ({ page }, info) => {
 test("all capacity-limited stack and queue plans", async ({ page }, info) => {
   const errors = captureErrors(page);
   await openGame(page, "栈与队列工坊");
+  await expect(page.locator("[data-cargo-game]")).toBeVisible();
+  await page.screenshot({
+    path: info.outputPath("stack-queue-start.png"),
+    fullPage: true,
+    animations: "disabled",
+  });
   for (let level = 0; level < stackQueueLevels.length; level++) {
     await chooseLevel(page, level);
     for (const move of stackQueueLevels[level].solution)
