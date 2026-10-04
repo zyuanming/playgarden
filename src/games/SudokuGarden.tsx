@@ -109,6 +109,7 @@ function SudokuLevelView({
       className="puzzle-layout number-game"
       data-number-game="sudoku"
       onKeyDown={(event) => {
+        if (event.ctrlKey || event.metaKey || event.altKey) return;
         if (event.ctrlKey || event.metaKey || event.altKey || paused || won)
           return;
         if (/^[1-4]$/.test(event.key)) {
@@ -164,6 +165,7 @@ function SudokuLevelView({
                   setHinted(null);
                 }}
                 onKeyDown={(event) => {
+                  if (event.ctrlKey || event.metaKey || event.altKey) return;
                   const delta: Record<string, number> = {
                     ArrowUp: -4,
                     ArrowDown: 4,

@@ -1,3 +1,4 @@
+import { iceFleetNumberArtwork } from "./catalog";
 import { lazy, type LazyExoticComponent, type ComponentType } from "react";
 import type { GameProps } from "./types";
 import {
@@ -785,6 +786,54 @@ export const games: GameDefinition[] = [
     artwork: codeEnergySpatialArtwork(3),
     source: original,
     component: lazy(() => import("../games/ShapeMosaic")),
+  },
+  {
+    id: "ice-stops",
+    title: "冰原停靠",
+    subtitle: "借另一枚冰块刹车，规划滑行与临时停靠。",
+    category: "逻辑思维",
+    difficulty: "中级",
+    tone: "green",
+    levelCount: 12,
+    artwork: iceFleetNumberArtwork(0),
+    source: original,
+    component: lazy(() => import("../games/IceStops")),
+  },
+  {
+    id: "fleet-logic",
+    title: "船队海图",
+    subtitle: "读取行列数量和船只片段，推断完整舰队。",
+    category: "逻辑思维",
+    difficulty: "进阶",
+    tone: "purple",
+    levelCount: 12,
+    artwork: iceFleetNumberArtwork(1),
+    source: original,
+    component: lazy(() => import("../games/FleetLogic")),
+  },
+  {
+    id: "carry-letters",
+    title: "进位字母",
+    subtitle: "同一字母代表同一数字，用逐列进位解开算式。",
+    category: "数字推理",
+    difficulty: "中级",
+    tone: "orange",
+    levelCount: 12,
+    artwork: iceFleetNumberArtwork(2),
+    source: original,
+    component: lazy(() => import("../games/CarryLetters")),
+  },
+  {
+    id: "binary-balance",
+    title: "双符平衡",
+    subtitle: "平衡 A 与 B，避免三连和重复行列。",
+    category: "逻辑思维",
+    difficulty: "中级",
+    tone: "purple",
+    levelCount: 12,
+    artwork: iceFleetNumberArtwork(3),
+    source: original,
+    component: lazy(() => import("../games/BinaryBalance")),
   },
 ];
 export const findGame = (id: string) => games.find((game) => game.id === id);

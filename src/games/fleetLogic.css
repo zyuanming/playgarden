@@ -1,0 +1,267 @@
+/* SPDX-License-Identifier: MIT */
+.fleet-game {
+  --fleet-ink: #203b4a;
+  color: var(--fleet-ink);
+}
+.fleet-playfield {
+  min-width: 0;
+  background: #eef5f6;
+  border: 1px solid #c1d3d8;
+  border-radius: 24px;
+  padding: clamp(14px, 3vw, 28px);
+}
+.fleet-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.fleet-heading h3,
+.fleet-guide h3 {
+  font-size: clamp(22px, 3vw, 30px);
+  margin: 8px 0 18px;
+}
+.fleet-compass {
+  font-size: 42px;
+  color: #497585;
+}
+.fleet-inventory {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  margin: 0 0 18px;
+}
+.fleet-inventory > span {
+  display: grid;
+  grid-template-columns: auto auto;
+  align-items: center;
+  gap: 4px 8px;
+  padding: 8px 12px;
+  border: 1px solid #c4d4d9;
+  background: #fafdfb;
+  border-radius: 12px;
+}
+.fleet-inventory small {
+  grid-column: 1/-1;
+  text-align: center;
+  font-size: 11px;
+}
+.fleet-mini-ship {
+  display: flex;
+  gap: 2px;
+}
+.fleet-mini-ship b {
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+  background: #335e72;
+}
+.fleet-inventory strong {
+  font-size: 14px;
+}
+.fleet-brushes {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+.fleet-brushes button {
+  min-height: 44px;
+  padding: 8px 14px;
+  border: 1px solid #9bb6c2;
+  background: #fff;
+  color: #294958;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  cursor: pointer;
+}
+.fleet-brushes button[aria-pressed="true"] {
+  background: #284e60;
+  color: #fff;
+  border-color: #284e60;
+}
+.fleet-brushes button > span {
+  font-size: 20px;
+  line-height: 1;
+}
+.fleet-scroll {
+  overflow-x: auto;
+  padding: 3px 3px 10px;
+}
+.fleet-grid {
+  width: min(100%, 420px);
+  min-width: calc(40px + var(--fleet-size) * 48px);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 38px repeat(var(--fleet-size), minmax(44px, 1fr));
+  gap: 4px;
+}
+.fleet-axis {
+  grid-row: 1;
+  grid-column: 1;
+  font-size: 10px;
+  align-self: center;
+  line-height: 1.7;
+  color: #4b6875;
+}
+.fleet-total {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 38px;
+  color: #284e60;
+  background: #e0eaed;
+  border-radius: 8px;
+}
+.fleet-total b {
+  font-size: 19px;
+  line-height: 1.2;
+}
+.fleet-total small {
+  font-size: 10px;
+}
+.fleet-count-met {
+  background: #d3e9df;
+  color: #245a44;
+}
+.fleet-count-over {
+  background: #f3d9d1;
+  color: #823c27;
+}
+.fleet-cell {
+  aspect-ratio: 1;
+  min-height: 44px;
+  min-width: 44px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #aac5d0;
+  background: #fff;
+  border-radius: 8px;
+  padding: 1px;
+  color: #416375;
+  cursor: pointer;
+}
+.fleet-cell > span {
+  font-size: 26px;
+  line-height: 1;
+}
+.fleet-cell small {
+  font-size: 9px;
+  margin-top: 2px;
+}
+.fleet-sea {
+  background: #dceff6;
+  color: #386b81;
+}
+.fleet-ship {
+  background: #365f72;
+  color: #fff;
+  border-color: #294e60;
+}
+.fleet-fixed {
+  box-shadow: inset 0 0 0 2px #bd9133;
+  cursor: default;
+}
+.fleet-hinted {
+  outline: 3px solid #9b6b0e;
+  outline-offset: 1px;
+}
+.fleet-cell:focus-visible,
+.fleet-game button:focus-visible {
+  outline: 3px solid #af6921;
+  outline-offset: 2px;
+}
+.fleet-game button:disabled {
+  opacity: 1;
+  cursor: default;
+}
+.fleet-game button:disabled:not(.fleet-cell) {
+  background: #e3e9e9;
+  color: #536872;
+  border-color: #b4c1c6;
+}
+.fleet-brushes button[aria-pressed="true"]:disabled {
+  color: #fff;
+  background: #3c5c68;
+}
+.fleet-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  margin: 14px 0;
+}
+.fleet-actions button {
+  min-height: 44px;
+  padding: 8px 14px;
+  color: #284e60;
+  background: #fafdfb;
+  border: 1px solid #9ab5c0;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 700;
+}
+.fleet-feedback {
+  min-height: 58px;
+  padding: 12px 14px;
+  margin-bottom: 0;
+  border-radius: 12px;
+  background: #ffffffc9;
+  font-size: 14px;
+  line-height: 1.8;
+}
+.fleet-guide {
+  min-width: 0;
+  padding: 24px;
+  border: 1px solid #d9e3e6;
+  border-radius: 24px;
+  background: #fbfbf5;
+}
+.fleet-guide p,
+.fleet-guide li {
+  font-size: 14px;
+  line-height: 1.9;
+}
+.fleet-guide ol {
+  padding-left: 22px;
+}
+.fleet-guide li {
+  margin: 10px 0;
+}
+.fleet-keyboard {
+  padding: 14px;
+  background: #e5edf0;
+  border-radius: 12px;
+  font-size: 13px;
+  line-height: 1.8;
+}
+@media (max-width: 520px) {
+  .fleet-playfield {
+    padding: 12px;
+  }
+  .fleet-guide {
+    padding: 18px;
+  }
+  .fleet-inventory {
+    gap: 6px;
+  }
+  .fleet-inventory > span {
+    padding: 7px 9px;
+  }
+  .fleet-brushes button {
+    padding: 8px 10px;
+  }
+}
+
+.fleet-scroll-help {
+  color: #426070;
+  font-size: 12px;
+  line-height: 1.7;
+  margin: 10px 0 6px;
+}

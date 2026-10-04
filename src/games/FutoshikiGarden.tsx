@@ -119,6 +119,7 @@ export function useConstraintRound(props: GameProps, rules: RoundRules) {
     }
   }
   function navigate(event: KeyboardEvent<HTMLButtonElement>, index: number) {
+    if (event.ctrlKey || event.metaKey || event.altKey) return;
     const delta: Record<string, number> = {
       ArrowUp: -rules.size,
       ArrowDown: rules.size,

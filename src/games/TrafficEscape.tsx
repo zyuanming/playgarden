@@ -149,6 +149,7 @@ function TrafficRound({
             aria-label="六乘六停车场，选车后用方向键移动"
             tabIndex={0}
             onKeyDown={(event) => {
+              if (event.ctrlKey || event.metaKey || event.altKey) return;
               if (!event.key.startsWith("Arrow")) return;
               event.preventDefault();
               if (paused || won) return;

@@ -116,6 +116,7 @@ function MapColorsLevel({
       className="puzzle-layout graph-game"
       data-graph-game="map-colors"
       onKeyDown={(event) => {
+        if (event.ctrlKey || event.metaKey || event.altKey) return;
         const color = Number(event.key) - 1;
         if (
           /^[1-4]$/.test(event.key) &&
@@ -243,6 +244,7 @@ function MapColorsLevel({
                 aria-label={`花房 ${node.label}，${paintColor ? `${paintColor.name} ${paintColor.symbol}` : "未涂色"}，邻居 ${adjacency[index].map((n) => config.nodes[n].label).join("、")}${conflictNodes.has(index) ? "，颜色冲突" : ""}${hinted ? "，提示花房" : ""}`}
                 onClick={() => paint(index)}
                 onKeyDown={(event) => {
+                  if (event.ctrlKey || event.metaKey || event.altKey) return;
                   if (event.key === "Delete" || event.key === "Backspace") {
                     event.preventDefault();
                     paint(index, -1);

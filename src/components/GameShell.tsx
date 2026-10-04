@@ -53,7 +53,8 @@ export function GameShell({
   }, [won]);
   useEffect(() => {
     const listener = (e: KeyboardEvent) => {
-      if (e.key === "Escape") setPaused((p) => !p);
+      if (e.key === "Escape" && !e.ctrlKey && !e.metaKey && !e.altKey)
+        setPaused((p) => !p);
     };
     window.addEventListener("keydown", listener);
     return () => window.removeEventListener("keydown", listener);

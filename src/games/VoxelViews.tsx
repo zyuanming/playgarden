@@ -60,6 +60,7 @@ function VoxelRound(props: GameProps) {
     return `第 ${z + 1} 层，x=${x + 1}，y=${y + 1}`;
   };
   function keyboard(event: KeyboardEvent<HTMLButtonElement>, index: number) {
+    if (event.ctrlKey || event.metaKey || event.altKey) return;
     const moves: Record<string, number> = {
       ArrowLeft: -1,
       ArrowRight: 1,

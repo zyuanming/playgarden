@@ -155,6 +155,7 @@ function MergeRound({
             aria-label="合并棋盘，方向键移动全部数字"
             tabIndex={0}
             onKeyDown={(event) => {
+              if (event.ctrlKey || event.metaKey || event.altKey) return;
               const direction = (
                 {
                   ArrowUp: "up",

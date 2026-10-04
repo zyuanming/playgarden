@@ -99,6 +99,7 @@ function SlidingLevel({
           aria-label="数字滑块棋盘，方向键移动空格"
           tabIndex={0}
           onKeyDown={(event) => {
+            if (event.ctrlKey || event.metaKey || event.altKey) return;
             if (!event.key.startsWith("Arrow")) return;
             event.preventDefault();
             if (paused || won) return;

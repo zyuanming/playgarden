@@ -238,6 +238,7 @@ function MosaicRound({
       data-mosaic-orientation={orientation}
       data-mosaic-placed={used}
       onKeyDown={(event) => {
+        if (event.ctrlKey || event.metaKey || event.altKey) return;
         if (
           locked ||
           event.repeat ||
@@ -406,6 +407,7 @@ function MosaicRound({
                   }}
                   onClick={() => place(x, y)}
                   onKeyDown={(event) => {
+                    if (event.ctrlKey || event.metaKey || event.altKey) return;
                     const delta = (
                       {
                         ArrowUp: [0, -1],

@@ -62,6 +62,7 @@ function NetRound(props: GameProps) {
   const fold = foldCubeNet(level.size, round.board),
     count = round.board.filter((p) => p >= 0).length;
   function keyboard(event: KeyboardEvent<HTMLButtonElement>, cell: number) {
+    if (event.ctrlKey || event.metaKey || event.altKey) return;
     const delta: Record<string, number> = {
       ArrowLeft: -1,
       ArrowRight: 1,

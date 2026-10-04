@@ -1,3 +1,7 @@
+import { binaryBalanceLevels } from "../src/games/binaryBalanceLevels";
+import { carryLettersLevels } from "../src/games/carryLettersLevels";
+import { fleetLevels } from "../src/games/fleetLevels";
+import { iceStopsLevels } from "../src/games/iceStopsLevels";
 import { rollingFacesLevels } from "../src/games/rollingFacesLevels";
 import { shapeMosaicLevels } from "../src/games/shapeMosaicLevels";
 import { codeCluesLevels } from "../src/games/codeCluesLevels";
@@ -67,6 +71,10 @@ import { sortingNetworkLevels } from "../src/games/sortingNetworkLogic";
 import { voxelViewsLevels } from "../src/games/voxelViewsLogic";
 import { cubeNetLevels } from "../src/games/cubeNetLogic";
 const packs = {
+  "binary-balance": binaryBalanceLevels,
+  "carry-letters": carryLettersLevels,
+  "fleet-logic": fleetLevels,
+  "ice-stops": iceStopsLevels,
   "rolling-faces": rollingFacesLevels,
   "shape-mosaic": shapeMosaicLevels,
   binary: binaryCourierLevels,
@@ -143,8 +151,8 @@ describe("Scalable catalog contract", () => {
       expect(game.artwork.url).toMatch(/^\//);
     }),
   );
-  it("counts only 63 real games and 756 levels, not the roadmap", () => {
-    expect(games).toHaveLength(63);
-    expect(games.reduce((sum, g) => sum + g.levelCount, 0)).toBe(756);
+  it("counts only 67 real games and 804 levels, not the roadmap", () => {
+    expect(games).toHaveLength(67);
+    expect(games.reduce((sum, g) => sum + g.levelCount, 0)).toBe(804);
   });
 });
