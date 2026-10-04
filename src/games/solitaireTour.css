@@ -1,0 +1,355 @@
+.st-game .st-playfield {
+  width: 100%;
+  max-width: 510px;
+  min-width: 0;
+  margin-inline: auto;
+}
+.st-game .st-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 18px;
+  color: #274b38;
+}
+.st-game .st-heading h3 {
+  font-size: clamp(20px, 2.5vw, 27px);
+  margin: 7px 0 0;
+}
+.st-game .st-emblem {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  flex-shrink: 0;
+  border-radius: 18px;
+  color: #305a3f;
+  background: #e8f2d4;
+  transform: rotate(-7deg);
+}
+.st-game .st-emblem svg {
+  width: 38px;
+  height: 38px;
+}
+.st-game .st-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-bottom: 16px;
+  font-size: 12px;
+  color: #526a4c;
+}
+.st-game .st-stats > span {
+  border-radius: 11px;
+  padding: 8px 10px;
+  background: #f0f4e7;
+}
+.st-game .st-stats b {
+  color: #274b38;
+  font-size: 17px;
+}
+.st-game .st-board-scroll {
+  overflow-x: auto;
+  padding: 4px;
+  margin: -4px;
+}
+.st-game .st-board {
+  display: grid;
+  grid-template-columns: repeat(var(--st-columns), minmax(0, 1fr));
+  gap: 6px;
+  padding: 16px;
+  border: 1px solid #d5e1c9;
+  border-radius: 24px;
+  background: #edf3e4;
+  min-width: calc(
+    var(--st-columns) * 44px + (var(--st-columns) - 1) * 6px + 34px
+  );
+}
+.st-game .st-peg-board {
+  background: radial-gradient(ellipse at 50% 20%, #f8fbed, #e6eedb);
+}
+.st-game .st-cell {
+  min-width: 44px;
+  min-height: 44px;
+  width: 100%;
+  aspect-ratio: 1;
+  position: relative;
+  padding: 0;
+  display: grid;
+  place-items: center;
+  color: #28533b;
+  border: 2px solid transparent;
+  border-radius: 14px;
+  transform: none;
+  touch-action: manipulation;
+  opacity: 1;
+}
+.st-game .st-cell:focus-visible {
+  outline: 3px solid #244733;
+  outline-offset: 2px;
+  z-index: 2;
+}
+.st-game .st-cell:hover:not(:disabled) {
+  border-color: #58744b;
+}
+.st-game .st-cell:disabled {
+  cursor: default;
+  opacity: 1;
+}
+.st-game .st-coordinate {
+  position: absolute;
+  top: 4px;
+  left: 5px;
+  font-size: 9px;
+  line-height: 1;
+  font-weight: 500;
+  color: #536a4b;
+}
+.st-game .st-peg-cell {
+  background: transparent;
+}
+.st-game .st-hole {
+  width: 64%;
+  height: 64%;
+  border-radius: 50%;
+  background: #d9e2cc;
+  border: 2px solid #a7ba91;
+  box-shadow: inset 0 3px 3px #59713d1a;
+  display: grid;
+  place-items: center;
+}
+.st-game .st-occupied .st-hole {
+  background: #fcfdf2;
+  border-color: #779361;
+  box-shadow: 0 4px 0 #b4c69e;
+}
+.st-game .st-sprout {
+  width: 78%;
+  height: 78%;
+}
+.st-game .st-selected {
+  background: #deedc7;
+  border-color: #4b703c;
+}
+.st-game .st-selected .st-hole {
+  background: #dafa3b;
+}
+.st-game .st-target .st-hole {
+  outline: 2px dashed #8d803d;
+  outline-offset: 3px;
+}
+.st-game .st-star {
+  position: absolute;
+  right: 1px;
+  top: 1px;
+  font-size: clamp(12px, 2vw, 19px);
+  color: #7c621b;
+}
+.st-game .st-landing-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #658648;
+  display: block;
+  box-shadow: 0 0 0 4px #6586481a;
+}
+.st-game .st-hinted {
+  outline: 3px solid #92702b;
+  outline-offset: -2px;
+}
+.st-game .st-hint-label {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 1px 4px;
+  border-radius: 5px;
+  background: #ffe4a2;
+  color: #654b16;
+}
+.st-game .st-missing {
+  aspect-ratio: 1;
+  min-width: 0;
+}
+.st-game .st-knight-board {
+  gap: 4px;
+  background: #e2ebd7;
+  padding: 12px;
+  min-width: calc(
+    var(--st-columns) * 44px + (var(--st-columns) - 1) * 4px + 26px
+  );
+}
+.st-game .st-knight-cell {
+  border: 1px solid #bacbad;
+  border-radius: 10px;
+  background: #fbfcef;
+}
+.st-game .st-dark-square {
+  background: #d3e2bf;
+  border-color: #adbf9e;
+}
+.st-game .st-knight-cell.st-visited {
+  background: #e4ebda;
+  color: #577049;
+  border-style: dashed;
+}
+.st-game .st-knight-cell.st-current {
+  background: #dafa3b;
+  border: 2px solid #3b5d35;
+  color: #224633;
+  box-shadow: 0 2px 0 #9caf60;
+}
+.st-game .st-knight-symbol {
+  width: 60%;
+  height: 60%;
+}
+.st-game .st-order {
+  font-size: clamp(15px, 2.6vw, 24px);
+  font-weight: 750;
+  line-height: 1;
+}
+.st-game .st-current-order {
+  position: absolute;
+  right: 4px;
+  bottom: 2px;
+  font-size: 10px;
+  font-weight: 700;
+}
+.st-game .st-start-mark {
+  position: absolute;
+  left: 4px;
+  bottom: 2px;
+  font-size: 9px;
+  color: #3d5635;
+}
+.st-game .st-square-seed {
+  color: #aab99d;
+  font-size: 24px;
+}
+.st-game .st-knight-missing {
+  border: 1px dashed #c3d1b4;
+  border-radius: 10px;
+  background: repeating-linear-gradient(
+    135deg,
+    transparent 0 6px,
+    #cbd8bd55 6px 7px
+  );
+}
+.st-game .st-legend {
+  margin: 13px 0;
+  font-size: 11px;
+  line-height: 1.7;
+  color: #5d7052;
+}
+.st-game .st-feedback {
+  margin: 14px 0 0;
+  min-height: 68px;
+  padding: 13px 16px;
+  border-radius: 14px;
+  color: #4e6647;
+  background: #f0f4e8;
+  font-size: 13px;
+  line-height: 1.8;
+}
+.st-game .st-route {
+  border-radius: 13px;
+  padding: 12px 15px;
+  background: #f7f8f0;
+}
+.st-game .st-route p {
+  font-size: 12px;
+  line-height: 1.8;
+  color: #506b45;
+  margin: 5px 0 0;
+  overflow-wrap: anywhere;
+}
+.st-game .st-rule-card {
+  padding: 15px 18px;
+  background: #edf3e3;
+  color: #37583c;
+  border: 1px solid #d4e0c5;
+  border-radius: 15px;
+  font-size: 15px;
+  line-height: 1.8;
+}
+.st-game .st-knight-rule {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+.st-game .st-knight-rule svg {
+  width: 105px;
+  height: 66px;
+  flex-shrink: 0;
+}
+.st-game .st-knight-rule small {
+  color: #687d5c;
+  font-size: 11px;
+}
+.st-game .st-notes p {
+  line-height: 1.8;
+}
+.st-game .st-complete {
+  background: #dafa3b;
+  color: #2c4e32;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 14px;
+  border-radius: 13px;
+  margin-top: 12px;
+  text-align: center;
+}
+.st-game .st-won {
+  border-color: #759649;
+  box-shadow: 0 0 0 3px #dafa3b77;
+}
+@media (max-width: 700px) {
+  .st-game {
+    min-width: 0;
+  }
+  .st-game .st-board {
+    padding: 10px;
+    gap: 4px;
+    min-width: calc(
+      var(--st-columns) * 44px + (var(--st-columns) - 1) * 4px + 22px
+    );
+    border-radius: 17px;
+  }
+  .st-game .st-knight-board {
+    padding: 8px;
+    gap: 3px;
+    min-width: calc(
+      var(--st-columns) * 44px + (var(--st-columns) - 1) * 3px + 18px
+    );
+  }
+  .st-game .st-stats {
+    font-size: 10px;
+    gap: 5px;
+  }
+  .st-game .st-stats > span {
+    padding: 7px 8px;
+  }
+  .st-game .st-stats b {
+    font-size: 15px;
+  }
+  .st-game .st-coordinate {
+    top: 3px;
+    left: 3px;
+    font-size: 8px;
+  }
+  .st-game .st-hole {
+    width: 61%;
+    height: 61%;
+  }
+  .st-game .st-cell {
+    border-radius: 10px;
+  }
+  .st-game .st-knight-cell {
+    border-radius: 8px;
+  }
+  .st-game .st-heading {
+    margin-bottom: 13px;
+  }
+}
