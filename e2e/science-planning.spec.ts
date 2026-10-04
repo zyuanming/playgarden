@@ -23,11 +23,33 @@ async function readableDiagram(page: import("@playwright/test").Page) {
   expect(sizes.length).toBeGreaterThan(0);
   expect(Math.min(...sizes)).toBeGreaterThanOrEqual(11.9);
 }
+
+async function inspectDiagramRight(
+  page: import("@playwright/test").Page,
+  info: import("@playwright/test").TestInfo,
+  id: string,
+) {
+  const diagram = page.getByLabel("实验图，可左右滚动查看", { exact: true });
+  if (await diagram.evaluate((node) => node.scrollWidth > node.clientWidth)) {
+    await diagram.focus();
+    for (let i = 0; i < 20; i++) await page.keyboard.press("ArrowRight");
+    await expect
+      .poll(() => diagram.evaluate((node) => node.scrollLeft))
+      .toBeGreaterThan(0);
+    await page.screenshot({
+      path: info.outputPath(`${id}-diagram-right.png`),
+      fullPage: true,
+      animations: "disabled",
+    });
+  }
+}
+
 test("all continuous parabolic clearance experiments", async ({
   page,
 }, info) => {
   const errors = captureErrors(page);
   await openGame(page, "抛物线靶场");
+  await expect(page.locator("[data-parabolic-game]")).toBeVisible();
   await page.screenshot({
     path: info.outputPath("parabolic-start.png"),
     fullPage: true,
@@ -62,6 +84,7 @@ test("all continuous parabolic clearance experiments", async ({
       `起点高度 ${parabolicTargetsLevels[level].startHeight} m`,
     );
     await complete(page, info, "parabolic", level);
+    if (level === 11) await inspectDiagramRight(page, info, "parabolic");
   }
   expect(errors).toEqual([]);
 });
@@ -70,6 +93,7 @@ test("all exact physical resistor circuit experiments", async ({
 }, info) => {
   const errors = captureErrors(page);
   await openGame(page, "电流实验室");
+  await expect(page.locator("[data-current-game]")).toBeVisible();
   await page.screenshot({
     path: info.outputPath("current-circuit-start.png"),
     fullPage: true,
@@ -115,12 +139,14 @@ test("all exact physical resistor circuit experiments", async ({
       `灯 A 固定电阻 ${currentCircuitLevels[level].lampA} Ω`,
     );
     await complete(page, info, "current-circuit", level);
+    if (level === 11) await inspectDiagramRight(page, info, "current-circuit");
   }
   expect(errors).toEqual([]);
 });
 test("all minimum-budget spatial service plans", async ({ page }, info) => {
   const errors = captureErrors(page);
   await openGame(page, "预算小镇");
+  await expect(page.locator("[data-budget-town-game]")).toBeVisible();
   await page.screenshot({
     path: info.outputPath("budget-town-start.png"),
     fullPage: true,
@@ -194,6 +220,7 @@ test("all minimum-budget spatial service plans", async ({ page }, info) => {
 test("all optimal concurrent kitchen schedules", async ({ page }, info) => {
   const errors = captureErrors(page);
   await openGame(page, "并发厨房");
+  await expect(page.locator("[data-kitchen-game]")).toBeVisible();
   await page.screenshot({
     path: info.outputPath("concurrent-kitchen-start.png"),
     fullPage: true,
