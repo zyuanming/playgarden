@@ -183,6 +183,16 @@ function FleetRound({
         <p className="fleet-scroll-help" id="fleet-scroll-help">
           窄屏可左右滑动海图；方向键换格会显示所选位置。
         </p>
+        <section className="fleet-row-targets" aria-label="固定行目标">
+          <strong>行目标（从上到下）</strong>
+          <ol>
+            {config.rowTotals.map((total, row) => (
+              <li key={row} data-fleet-row-target={row}>
+                第 {row + 1} 行：{total} 格
+              </li>
+            ))}
+          </ol>
+        </section>
         <div className="fleet-scroll" ref={viewport} data-fleet-viewport>
           <div
             className="fleet-grid"

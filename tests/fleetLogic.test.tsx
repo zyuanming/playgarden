@@ -561,3 +561,18 @@ describe("FleetLogic viewport and browser-shortcut regressions", () => {
     expect(cell.tabIndex).toBe(0);
   });
 });
+
+it("keeps every public row target outside the horizontally scrollable board", () => {
+  const view = render(<FleetLogic {...props()} />);
+  for (let level = 0; level < 12; level++) {
+    view.rerender(<FleetLogic {...props()} level={level} />);
+    const clues = view.container.querySelectorAll("[data-fleet-row-target]");
+    expect(clues).toHaveLength(fleetLevels[level].size);
+    clues.forEach((clue, row) => {
+      expect(clue.closest("[data-fleet-viewport]")).toBeNull();
+      expect(clue.textContent).toBe(
+        `第 ${row + 1} 行：${fleetLevels[level].rowTotals[row]} 格`,
+      );
+    });
+  }
+});

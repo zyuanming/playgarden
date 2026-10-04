@@ -37,7 +37,7 @@ test("all movable-stop ice journeys and continuous keyboard visibility", async (
         );
       }
     }
-    await expect(page.locator('[data-ice-won]')).toHaveAttribute(
+    await expect(page.locator("[data-ice-won]")).toHaveAttribute(
       "data-ice-won",
       "true",
     );
@@ -63,10 +63,30 @@ test("all uniquely reconstructed fleets from public fragment clues", async ({
       if (!config.clues.some((c) => c.cell === cell))
         await page.locator(`[data-fleet-cell="${cell}"]`).click();
     await page.locator("[data-fleet-fill-sea]").click();
-    await expect(page.locator('[data-fleet-won]')).toHaveAttribute(
+    await expect(page.locator("[data-fleet-won]")).toHaveAttribute(
       "data-fleet-won",
       "true",
     );
+    if (level === 11) {
+      await page.locator("[data-fleet-viewport]").evaluate((node) => {
+        node.scrollLeft = node.scrollWidth;
+      });
+      for (const [row, total] of config.rowTotals.entries()) {
+        const clue = page.locator(`[data-fleet-row-target="${row}"]`);
+        await expect(clue).toBeVisible();
+        await expect(clue).toHaveText(`第 ${row + 1} 行：${total} 格`);
+        const box = await clue.boundingBox();
+        expect(box!.x).toBeGreaterThanOrEqual(0);
+        expect(box!.x + box!.width).toBeLessThanOrEqual(
+          page.viewportSize()!.width,
+        );
+      }
+      await page.screenshot({
+        path: info.outputPath("fleet-row-clues-right.png"),
+        fullPage: true,
+        animations: "disabled",
+      });
+    }
     await complete(page, info, "fleet-logic", level);
   }
   expect(errors).toEqual([]);

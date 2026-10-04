@@ -265,3 +265,23 @@
   line-height: 1.7;
   margin: 10px 0 6px;
 }
+
+.fleet-row-targets {
+  margin: 10px 0;
+  color: #294958;
+  font-size: 0.82rem;
+}
+.fleet-row-targets ol {
+  list-style: none;
+  padding: 0;
+  margin: 8px 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.fleet-row-targets li {
+  background: #fafdfb;
+  border: 1px solid #c4d4d9;
+  border-radius: 7px;
+  padding: 5px 8px;
+}
