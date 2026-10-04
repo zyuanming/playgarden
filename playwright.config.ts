@@ -9,6 +9,8 @@ export default defineConfig({
     baseURL: "http://127.0.0.1:4173",
     headless: true,
     trace: "retain-on-failure",
+    actionTimeout: 10000,
+    screenshot: "only-on-failure",
   },
   projects: [
     { name: "desktop", use: { viewport: { width: 1536, height: 1024 } } },

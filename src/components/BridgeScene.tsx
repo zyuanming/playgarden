@@ -85,6 +85,7 @@ export function BridgeScene({ tiles, won }: { tiles: Tile[]; won: boolean }) {
       geometries.forEach((g) => g.dispose());
       materials.forEach((m) => m.dispose());
       renderer.dispose();
+      renderer.forceContextLoss();
       renderer.domElement.remove();
     };
   }, [tiles, won]);

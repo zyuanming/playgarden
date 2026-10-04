@@ -1,9 +1,10 @@
 :root {
   font-family:
-    ui-rounded, "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+    ui-rounded, "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC",
+    "Noto Sans SC", system-ui, sans-serif;
   color: #10372e;
   background: #f6f8f3;
-  font-synthesis: none;
+  font-synthesis: weight;
   --ink: #10372e;
   --muted: #5e726c;
   --lime: #dafa3b;
@@ -323,7 +324,7 @@ a:hover {
   align-items: center;
   justify-content: space-between;
   margin-top: 16px;
-  color: #7c8a83;
+  color: #62766a;
 }
 .card-progress > span {
   display: flex;
@@ -474,7 +475,7 @@ footer a {
 .mini-label {
   font-size: 12px;
   letter-spacing: 2px;
-  color: #7c9068;
+  color: #57713e;
 }
 .game-notes h3,
 .program-panel h3 {
@@ -501,7 +502,7 @@ footer a {
 }
 .muted {
   font-size: 13px !important;
-  color: #7d8b83 !important;
+  color: #62766a !important;
 }
 .status {
   display: flex;
@@ -524,7 +525,7 @@ footer a {
   white-space: nowrap;
 }
 .privacy-note {
-  color: #819084;
+  color: #617567;
   text-align: center;
   font-size: 12px;
   margin-top: 22px;

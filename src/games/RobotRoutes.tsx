@@ -22,7 +22,7 @@ export default function RobotRoutes({
   const [step, setStep] = useState<number | null>(null);
   const [running, setRunning] = useState(false);
   const result = runProgram(config, commands, repeat);
-  const robot = result.frames[step ?? 0];
+  const robot = result.frames[Math.min(step ?? 0, result.frames.length - 1)];
   useEffect(() => {
     setCommands([]);
     setRepeat(1);
@@ -86,7 +86,7 @@ export default function RobotRoutes({
                 <span
                   className={`robot-piece ${robot.crashed ? "crashed" : ""}`}
                   style={{ transform: `rotate(${robot.direction * 90}deg)` }}
-                  aria-label="机器人朝向"
+                  aria-label={`机器人${["向右", "向下", "向左", "向上"][robot.direction]}`}
                 >
                   <span>••</span>
                   <b>›</b>

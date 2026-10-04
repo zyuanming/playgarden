@@ -131,9 +131,7 @@ describe("All nine playable levels", () => {
       const done = vi.fn();
       render(<RobotRoutes {...base} level={level} onComplete={done} />);
       l.solution.forEach((c) =>
-        fireEvent.click(
-          screen.getByRole("button", { name: commandLabels[c] }),
-        ),
+        fireEvent.click(screen.getByRole("button", { name: commandLabels[c] })),
       );
       fireEvent.change(screen.getByRole("combobox"), {
         target: { value: String(l.repeat) },
@@ -177,4 +175,22 @@ it("light undo restores its previous mirror", () => {
   expect(
     screen.getByRole("button", { name: "镜子 1，反斜杠，点击旋转" }),
   ).toBeTruthy();
+});
+
+it("changing robot levels after a long program never renders an invalid frame", async () => {
+  vi.useFakeTimers();
+  const props = { ...base, level: 1 };
+  const view = render(<RobotRoutes {...props} />);
+  for (const c of robotLevels[1].solution)
+    fireEvent.click(screen.getByRole("button", { name: commandLabels[c] }));
+  fireEvent.change(screen.getByRole("combobox"), { target: { value: "4" } });
+  fireEvent.click(screen.getByRole("button", { name: "运行程序" }));
+  for (let i = 0; i < 18; i++)
+    await act(async () => {
+      await vi.advanceTimersByTimeAsync(410);
+    });
+  expect(() =>
+    view.rerender(<RobotRoutes {...props} level={2} />),
+  ).not.toThrow();
+  expect(screen.getByRole("button", { name: "前进" })).toBeTruthy();
 });

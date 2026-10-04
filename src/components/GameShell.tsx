@@ -98,6 +98,7 @@ export function GameShell({
       <div className="game-surface">
         <Suspense fallback={<p className="loading">正在准备游戏…</p>}>
           <Game
+            key={`${level}:${reset}`}
             level={level}
             paused={paused}
             resetToken={reset}
