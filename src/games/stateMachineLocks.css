@@ -1,0 +1,309 @@
+/* SPDX-License-Identifier: MIT */
+.state-machine-locks {
+  align-items: start;
+  outline: none;
+}
+.state-machine-locks .ml-workbench {
+  min-width: 0;
+  border: 1px solid #c1c9e1;
+  border-radius: 24px;
+  background: #eff0f9;
+  padding: 20px;
+}
+.state-machine-locks .ml-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.state-machine-locks .ml-heading strong {
+  color: #53618d;
+}
+.state-machine-locks .ml-instruction,
+.state-machine-locks .ml-notes p {
+  line-height: 1.65;
+}
+.state-machine-locks .ml-state-display {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  flex-wrap: wrap;
+  background: #fff;
+  border: 1px solid #c8cde0;
+  border-radius: 16px;
+  padding: 15px;
+}
+.state-machine-locks .ml-state-display > div {
+  display: grid;
+  gap: 5px;
+}
+.state-machine-locks .ml-state-display small {
+  color: #697189;
+}
+.state-machine-locks .ml-state-display strong {
+  font-size: 1.25rem;
+  color: #3a466d;
+}
+.state-machine-locks .ml-state-match {
+  font-size: 0.75rem;
+  color: #5d698e;
+}
+.state-machine-locks .ml-doors {
+  display: grid;
+  gap: 10px;
+  margin: 15px 0;
+}
+.state-machine-locks .ml-door {
+  min-width: 0;
+  display: grid;
+  justify-items: center;
+  text-align: center;
+  background: #e0e4ef;
+  border: 2px solid #9ea8bf;
+  border-radius: 18px;
+  padding: 10px 5px;
+}
+.state-machine-locks .ml-door svg {
+  width: min(85px, 100%);
+  height: 85px;
+}
+.state-machine-locks .ml-door svg rect {
+  fill: #aebbd0;
+  stroke: #52617d;
+  stroke-width: 3;
+}
+.state-machine-locks .ml-door svg circle {
+  fill: #35435f;
+}
+.state-machine-locks .ml-door svg path {
+  stroke: #52617d;
+  fill: none;
+  stroke-width: 5;
+  stroke-linecap: round;
+}
+.state-machine-locks .ml-door.ml-open {
+  background: #e1f2e7;
+  border-color: #79aa90;
+  border-style: dashed;
+}
+.state-machine-locks .ml-open svg rect {
+  fill: #b5d5bf;
+  stroke: #417556;
+}
+.state-machine-locks .ml-open svg path {
+  stroke: #417556;
+}
+.state-machine-locks .ml-door strong {
+  font-size: 0.85rem;
+  color: #3d4e69;
+}
+.state-machine-locks .ml-door span {
+  margin-top: 6px;
+  font-size: 0.76rem;
+  color: #617068;
+}
+.state-machine-locks .ml-inputs {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 9px;
+}
+.state-machine-locks .ml-inputs button {
+  min-width: 0;
+  min-height: 130px;
+  padding: 10px 8px;
+  border: 2px solid #aab6d7;
+  border-radius: 15px;
+  background: #fff;
+  color: #414e70;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  cursor: pointer;
+  font: inherit;
+  text-align: left;
+}
+.state-machine-locks .ml-input-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4px;
+  width: 100%;
+  font-size: 0.7rem;
+}
+.state-machine-locks kbd {
+  border: 1px solid #b7c0d6;
+  background: #edf0f8;
+  border-radius: 5px;
+  padding: 2px 6px;
+}
+.state-machine-locks .ml-inputs button strong {
+  font-size: 0.95rem;
+}
+.state-machine-locks .ml-inputs button > span:not(.ml-input-top),
+.state-machine-locks .ml-inputs button small {
+  font-size: 0.73rem;
+  line-height: 1.4;
+}
+.state-machine-locks .ml-inputs .ml-danger-input {
+  border-color: #d3a497;
+  background: #fff4ef;
+}
+.state-machine-locks .ml-inputs .ml-hinted {
+  outline: 3px solid #c29535;
+  outline-offset: 2px;
+  background: #fff4cf;
+}
+.state-machine-locks button:disabled {
+  cursor: default;
+  opacity: 0.5;
+}
+.state-machine-locks button:focus-visible,
+.state-machine-locks summary:focus-visible,
+.state-machine-locks:focus-visible {
+  outline: 3px solid #7486be;
+  outline-offset: 3px;
+}
+.state-machine-locks .ml-alert,
+.state-machine-locks .ml-hint {
+  background: #fff0d7;
+  padding: 12px;
+  border-radius: 12px;
+  color: #795d36;
+  line-height: 1.6;
+}
+.state-machine-locks .ml-history {
+  border: 1px solid #cbd1e2;
+  border-radius: 13px;
+  background: #ffffffb0;
+  padding: 12px;
+  margin-top: 15px;
+}
+.state-machine-locks h4 {
+  margin: 0;
+  color: #414d71;
+}
+.state-machine-locks .ml-history ol {
+  max-height: 230px;
+  overflow: auto;
+  list-style: none;
+  margin: 10px 0 0;
+  padding: 0;
+}
+.state-machine-locks .ml-history li {
+  display: grid;
+  gap: 4px;
+  padding: 8px 3px;
+  border-top: 1px dashed #cbd1e1;
+  font-size: 0.77rem;
+  color: #4c5974;
+}
+.state-machine-locks .ml-history li span {
+  font-size: 0.7rem;
+  color: #71778a;
+}
+.state-machine-locks .ml-keyboard,
+.state-machine-locks .ml-footnote,
+.state-machine-locks .ml-table-help {
+  font-size: 0.76rem;
+  line-height: 1.65;
+  color: #677087;
+}
+.state-machine-locks .ml-notes {
+  min-width: 0;
+}
+.state-machine-locks .ml-explanation {
+  background: #f0f1f9;
+  border: 1px solid #cfd3e6;
+  padding: 10px;
+  border-radius: 12px;
+}
+.state-machine-locks .ml-explanation summary {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 0.83rem;
+}
+.state-machine-locks .ml-explanation p {
+  font-size: 0.82rem;
+}
+.state-machine-locks .ml-table-title {
+  margin-top: 18px;
+}
+.state-machine-locks .ml-table-wrap {
+  overflow-x: auto;
+  border: 1px solid #c4cadd;
+  border-radius: 12px;
+}
+.state-machine-locks table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.7rem;
+  background: #fff;
+}
+.state-machine-locks th {
+  padding: 10px 6px;
+  background: #e8ebf5;
+}
+.state-machine-locks th small {
+  display: block;
+  font-size: 0.61rem;
+  padding-top: 3px;
+}
+.state-machine-locks td {
+  padding: 9px 5px;
+  border: 1px solid #e0e3ee;
+  text-align: center;
+  min-width: 68px;
+}
+.state-machine-locks td strong,
+.state-machine-locks td span {
+  display: block;
+}
+.state-machine-locks td span {
+  margin-top: 5px;
+  font-size: 0.66rem;
+  color: #6d758a;
+}
+.state-machine-locks .ml-current-row {
+  outline: 2px solid #667dab;
+  outline-offset: -2px;
+  background: #edf2ff;
+}
+.state-machine-locks .ml-current-row th {
+  background: #cfdcf5;
+}
+.state-machine-locks .ml-forbidden-cell {
+  background: #fff3ee;
+}
+@media (max-width: 600px) {
+  .state-machine-locks .ml-workbench {
+    padding: 12px;
+    border-radius: 18px;
+  }
+  .state-machine-locks .ml-inputs {
+    gap: 6px;
+  }
+  .state-machine-locks .ml-inputs button {
+    padding: 9px 6px;
+  }
+  .state-machine-locks .ml-inputs button strong {
+    font-size: 0.8rem;
+  }
+  .state-machine-locks .ml-state-display {
+    padding: 12px;
+  }
+  .state-machine-locks .ml-state-display strong {
+    font-size: 1.05rem;
+  }
+  .state-machine-locks .ml-doors {
+    gap: 6px;
+  }
+}
+
+.state-machine-locks [data-machine-lock-input]:disabled {
+  opacity: 1;
+}

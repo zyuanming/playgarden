@@ -1,0 +1,299 @@
+/* SPDX-License-Identifier: MIT */
+.conditional-sorter {
+  align-items: start;
+}
+.conditional-sorter .cs-workbench {
+  min-width: 0;
+  border: 1px solid #bdd5cb;
+  border-radius: 24px;
+  background: #edf5ee;
+  padding: 20px;
+}
+.conditional-sorter .cs-heading,
+.conditional-sorter .cs-rule-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.conditional-sorter .cs-heading strong {
+  color: #305f50;
+}
+.conditional-sorter .cs-instruction,
+.conditional-sorter .cs-notes p {
+  line-height: 1.65;
+}
+.conditional-sorter .cs-preview {
+  display: grid;
+  grid-template-columns: 80px minmax(0, 1fr);
+  align-items: center;
+  gap: 14px;
+  background: #ffffffc9;
+  border-radius: 16px;
+  border: 1px solid #d1e1d7;
+  padding: 12px;
+  margin: 16px 0;
+}
+.conditional-sorter .cs-preview p {
+  margin: 5px 0;
+  font-size: 0.88rem;
+}
+.conditional-sorter .cs-preview ol {
+  padding-left: 18px;
+  margin: 6px 0;
+  line-height: 1.6;
+  font-size: 0.77rem;
+  color: #465e51;
+}
+.conditional-sorter .cs-parcel {
+  width: 80px;
+  height: 92px;
+  overflow: visible;
+}
+.conditional-sorter .cs-parcel circle,
+.conditional-sorter .cs-parcel rect,
+.conditional-sorter .cs-parcel path {
+  stroke-width: 3;
+  stroke: #967244;
+  fill: #f4dbb1;
+}
+.conditional-sorter .cs-glass circle,
+.conditional-sorter .cs-glass rect,
+.conditional-sorter .cs-glass path {
+  fill: #cceafa;
+  stroke: #527c95;
+  stroke-dasharray: 6 3;
+}
+.conditional-sorter .cs-metal circle,
+.conditional-sorter .cs-metal rect,
+.conditional-sorter .cs-metal path {
+  fill: #dfe2e9;
+  stroke: #616977;
+  stroke-width: 5;
+}
+.conditional-sorter .cs-parcel text {
+  font-size: 32px;
+  font-weight: 800;
+  fill: #2d3c36;
+}
+.conditional-sorter .cs-parcel .cs-material {
+  font-size: 12px;
+  font-weight: 500;
+}
+.conditional-sorter .cs-program {
+  display: grid;
+  gap: 9px;
+}
+.conditional-sorter .cs-rule,
+.conditional-sorter .cs-otherwise {
+  border: 2px solid #c8d8ce;
+  border-radius: 14px;
+  padding: 11px;
+  background: #fffef9;
+}
+.conditional-sorter .cs-hit {
+  border-color: #487761;
+  box-shadow: inset 4px 0 #487761;
+}
+.conditional-sorter .cs-rule-heading strong {
+  font-size: 0.88rem;
+  color: #426653;
+}
+.conditional-sorter .cs-order {
+  display: flex;
+  gap: 4px;
+}
+.conditional-sorter button,
+.conditional-sorter select {
+  min-height: 44px;
+  font: inherit;
+}
+.conditional-sorter .cs-order button {
+  min-width: 44px;
+  border: 1px solid #bdd0c4;
+  background: #f1f6ee;
+  border-radius: 10px;
+  color: #3b6250;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+.conditional-sorter .cs-rule-fields {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 105px;
+  gap: 10px;
+  margin-top: 7px;
+}
+.conditional-sorter label {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 0;
+  font-size: 0.78rem;
+  color: #536757;
+}
+.conditional-sorter select {
+  width: 100%;
+  min-width: 0;
+  border: 1px solid #aebfb2;
+  border-radius: 9px;
+  padding: 8px;
+  background: white;
+  color: #263e32;
+  font-size: 0.85rem;
+}
+.conditional-sorter .cs-otherwise label {
+  display: grid;
+  grid-template-columns: 1fr 105px;
+  align-items: center;
+}
+.conditional-sorter .cs-otherwise label strong {
+  grid-column: 1;
+}
+.conditional-sorter .cs-otherwise label span {
+  grid-column: 1;
+}
+.conditional-sorter .cs-otherwise select {
+  grid-column: 2;
+  grid-row: 1 / 3;
+}
+.conditional-sorter .cs-counterexample {
+  display: block;
+  width: 100%;
+  margin-top: 13px;
+  padding: 10px;
+  border: 1px solid #d2b279;
+  border-radius: 10px;
+  color: #745421;
+  background: #fff4d9;
+  font-size: 0.82rem;
+  cursor: pointer;
+  text-align: left;
+}
+.conditional-sorter .cs-hint {
+  background: #fff2bb;
+  padding: 12px;
+  border-radius: 12px;
+  color: #6a5328;
+  line-height: 1.6;
+}
+.conditional-sorter .cs-hinted {
+  outline: 3px solid #cc9737;
+  outline-offset: 2px;
+}
+.conditional-sorter .cs-keyboard,
+.conditional-sorter .cs-domain {
+  color: #607566;
+  font-size: 0.75rem;
+  line-height: 1.65;
+}
+.conditional-sorter .cs-notes {
+  min-width: 0;
+}
+.conditional-sorter .cs-explanation {
+  background: #edf4ed;
+  border: 1px solid #cbdccc;
+  border-radius: 12px;
+  padding: 10px;
+}
+.conditional-sorter .cs-explanation summary {
+  cursor: pointer;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+  font-size: 0.83rem;
+}
+.conditional-sorter .cs-explanation p {
+  font-size: 0.81rem;
+}
+.conditional-sorter .cs-tests-heading {
+  margin-top: 18px;
+}
+.conditional-sorter h4 {
+  margin: 0;
+}
+.conditional-sorter .cs-tests-heading span {
+  font-size: 0.68rem;
+  color: #627466;
+}
+.conditional-sorter .cs-table-wrap {
+  max-height: 450px;
+  overflow: auto;
+  border: 1px solid #c5d4c7;
+  border-radius: 12px;
+  background: white;
+}
+.conditional-sorter table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.69rem;
+}
+.conditional-sorter th {
+  position: sticky;
+  top: 0;
+  background: #e5eee5;
+  padding: 10px 5px;
+  z-index: 1;
+  white-space: nowrap;
+}
+.conditional-sorter td {
+  border-top: 1px solid #e3ebe3;
+  text-align: center;
+  padding: 2px 4px;
+  white-space: nowrap;
+}
+.conditional-sorter td:first-child {
+  padding: 2px 0;
+}
+.conditional-sorter td button {
+  display: block;
+  width: 100%;
+  border: 0;
+  background: none;
+  padding: 6px 4px;
+  font-size: 0.71rem;
+  cursor: pointer;
+  color: #314d3c;
+}
+.conditional-sorter tr.cs-selected {
+  background: #edf4d8;
+  outline: 2px solid #6f874e;
+  outline-offset: -2px;
+}
+.conditional-sorter button:focus-visible,
+.conditional-sorter select:focus-visible,
+.conditional-sorter summary:focus-visible {
+  outline: 3px solid #52794c;
+  outline-offset: 2px;
+}
+.conditional-sorter button:disabled,
+.conditional-sorter select:disabled {
+  cursor: default;
+  opacity: 0.56;
+}
+@media (max-width: 600px) {
+  .conditional-sorter .cs-workbench {
+    padding: 12px;
+    border-radius: 18px;
+  }
+  .conditional-sorter .cs-rule-fields {
+    grid-template-columns: minmax(0, 1fr) 90px;
+    gap: 6px;
+  }
+  .conditional-sorter .cs-preview {
+    grid-template-columns: 60px minmax(0, 1fr);
+    gap: 8px;
+  }
+  .conditional-sorter .cs-parcel {
+    width: 60px;
+  }
+  .conditional-sorter .cs-rule-heading strong {
+    font-size: 0.78rem;
+  }
+}
+
+.conditional-sorter select:disabled,
+.conditional-sorter [data-sorter-parcel]:disabled {
+  opacity: 1;
+}

@@ -156,6 +156,7 @@ function NetworkLevel({
             </button>
           </div>
         </div>
+        <p className="sn-scroll-cue">左右滑动查看全部阶段与输出；键盘可先聚焦图示，再按左右方向键。</p>
         <div
           className="sn-network-scroll"
           tabIndex={0}
