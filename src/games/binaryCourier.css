@@ -1,0 +1,266 @@
+/* SPDX-License-Identifier: MIT */
+.binary-courier {
+  align-items: start;
+  outline: none;
+}
+.binary-courier .by-workbench {
+  min-width: 0;
+  padding: 20px;
+  border: 1px solid #bbcadf;
+  border-radius: 24px;
+  background: #edf1f9;
+}
+.binary-courier .by-heading,
+.binary-courier .by-register-label,
+.binary-courier .by-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.binary-courier .by-heading strong {
+  font-size: 0.86rem;
+  color: #3c5277;
+}
+.binary-courier .by-instruction {
+  color: #455575;
+  line-height: 1.6;
+}
+.binary-courier .by-register {
+  padding: 16px;
+  border-radius: 18px;
+  color: #eff5ff;
+  background: #233554;
+  box-shadow: inset 0 0 0 1px #516387;
+}
+.binary-courier .by-register-label {
+  font-size: 0.8rem;
+  margin-bottom: 12px;
+}
+.binary-courier .by-register-label span {
+  font-size: 0.7rem;
+  color: #c5d4f2;
+}
+.binary-courier .by-bit-row,
+.binary-courier .by-target-row {
+  display: grid;
+  gap: 6px;
+}
+.binary-courier .by-bit {
+  min-width: 0;
+  display: grid;
+  justify-items: center;
+  gap: 5px;
+  background: #1a2740;
+  border: 1px solid #687b9d;
+  border-radius: 9px;
+  padding: 9px 2px 4px;
+}
+.binary-courier .by-bit b {
+  font-family: ui-monospace, monospace;
+  font-size: clamp(1.4rem, 3vw, 2.1rem);
+}
+.binary-courier .by-bit small {
+  font-size: 0.61rem;
+  color: #c6d2e9;
+}
+.binary-courier .by-bit > span {
+  font-size: 0.75rem;
+  min-height: 16px;
+  color: #d1e6ff;
+}
+.binary-courier .by-bit.lit {
+  background: #46618b;
+  color: #fff7cb;
+  border-color: #97b2d9;
+}
+.binary-courier .by-bit.match {
+  box-shadow: inset 0 -3px #89d6b6;
+}
+.binary-courier .by-target-label {
+  margin: 17px 0 9px;
+}
+.binary-courier .by-target-row span {
+  display: grid;
+  place-items: center;
+  min-height: 36px;
+  border: 1px dashed #8b9ec0;
+  border-radius: 7px;
+  font:
+    700 1.2rem ui-monospace,
+    monospace;
+  background: #263c60;
+}
+.binary-courier .by-target-row .lit {
+  background: #ddd09c;
+  color: #303c50;
+  border-style: solid;
+}
+.binary-courier .by-card-heading {
+  margin: 20px 0 10px;
+  color: #455a7c;
+}
+.binary-courier h4 {
+  margin: 0;
+}
+.binary-courier .by-card-heading span {
+  font-size: 0.76rem;
+}
+.binary-courier .by-cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+.binary-courier .by-cards button {
+  min-height: 114px;
+  min-width: 0;
+  display: grid;
+  gap: 10px;
+  text-align: left;
+  padding: 12px;
+  border: 1px solid #a0b1ce;
+  border-radius: 13px;
+  background: #fffefa;
+  color: #354c74;
+}
+.binary-courier .by-card-top small {
+  font-size: 0.7rem;
+}
+.binary-courier kbd {
+  display: inline-grid;
+  place-items: center;
+  padding: 2px 6px;
+  border: 1px solid #a9bbd7;
+  border-radius: 5px;
+  background: #eaf0f8;
+  font-size: 0.73rem;
+}
+.binary-courier .by-cards strong {
+  font-size: 0.86rem;
+  overflow-wrap: anywhere;
+}
+.binary-courier .by-preview {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  font-size: 0.7rem;
+  color: #5e6f89;
+}
+.binary-courier .by-preview b {
+  font:
+    700 0.85rem ui-monospace,
+    monospace;
+  letter-spacing: 0.04em;
+}
+.binary-courier .by-cards button.spent {
+  background: #e1e6ef;
+}
+.binary-courier button:disabled {
+  opacity: 0.56;
+  cursor: default;
+}
+.binary-courier .by-cards .by-hinted {
+  outline: 3px solid #bc891a;
+  outline-offset: 2px;
+}
+.binary-courier .by-history {
+  padding: 12px;
+  margin-top: 16px;
+  background: #ffffffa6;
+  border-radius: 12px;
+  color: #455575;
+  font-size: 0.75rem;
+}
+.binary-courier .by-history ol {
+  margin: 9px 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 7px;
+}
+.binary-courier .by-history li {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  justify-content: space-between;
+}
+.binary-courier .by-history b {
+  font-family: ui-monospace, monospace;
+  letter-spacing: 0.07em;
+}
+.binary-courier .by-keyboard {
+  font-size: 0.77rem;
+  line-height: 1.6;
+  color: #556884;
+  margin-bottom: 0;
+}
+.binary-courier .by-rule {
+  border: 1px solid #d2dae8;
+  background: #f1f4fa;
+  padding: 12px;
+  border-radius: 12px;
+}
+.binary-courier .by-rule p {
+  font-size: 0.83rem;
+  margin: 8px 0 0;
+}
+.binary-courier .by-legend {
+  font-size: 0.84rem;
+  line-height: 1.5;
+}
+.binary-courier .by-legend div {
+  margin: 12px 0;
+}
+.binary-courier dt {
+  font-weight: 750;
+  color: #3e577c;
+}
+.binary-courier dd {
+  margin: 3px 0;
+  color: #637089;
+}
+.binary-courier .by-par {
+  padding: 12px;
+  border-radius: 10px;
+  background: #e8edf6;
+  font-size: 0.85rem;
+}
+.binary-courier .by-hint,
+.binary-courier .by-alert {
+  padding: 12px;
+  border-radius: 10px;
+  background: #fff0c6;
+  color: #70521c;
+  font-size: 0.84rem;
+  line-height: 1.6;
+}
+.binary-courier:focus-visible,
+.binary-courier button:focus-visible {
+  outline: 3px solid #355bd3;
+  outline-offset: 3px;
+}
+@media (max-width: 580px) {
+  .binary-courier .by-workbench {
+    padding: 13px;
+  }
+  .binary-courier .by-register {
+    padding: 10px;
+  }
+  .binary-courier .by-bit-row,
+  .binary-courier .by-target-row {
+    gap: 3px;
+  }
+  .binary-courier .by-bit small {
+    font-size: 0.53rem;
+  }
+  .binary-courier .by-cards button {
+    padding: 9px;
+  }
+}
+
+/* Used cards keep their operation and quantity readable. */
+.binary-courier .by-cards button:disabled {
+  opacity: 1;
+}

@@ -1,0 +1,201 @@
+.go-game .go-garden-board {
+  background: radial-gradient(circle at 50% 50%, #fbfcf3, #e7efd9);
+}
+.go-game .go-spot {
+  position: absolute;
+  transform: translate(-50%, -50%) !important;
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  touch-action: manipulation;
+  z-index: 2;
+  opacity: 1;
+}
+.go-game .go-empty {
+  border: 0;
+  background: transparent;
+  color: #647b4c;
+  font-size: 30px;
+}
+.go-game .go-empty:hover:not(:disabled) {
+  background: #d8eab7;
+  box-shadow: inset 0 0 0 2px #779655;
+}
+.go-game .go-flower {
+  background: #fffef6;
+  color: #24482e;
+  border: 2px solid #89a06e;
+  box-shadow: 0 3px 0 #c6d7b0;
+}
+.go-game .go-flower > span {
+  position: absolute;
+  color: #e3c761;
+  font-size: 42px;
+  line-height: 1;
+}
+.go-game .go-flower b {
+  position: relative;
+  z-index: 1;
+  font-size: 17px;
+  color: #23442b;
+}
+.go-game .go-selected {
+  background: #e7fa89;
+  border: 3px solid #325b38;
+  box-shadow: 0 0 0 4px #dafa3b88;
+}
+.go-game .go-hinted {
+  outline: 3px dashed #a67719;
+  outline-offset: 2px;
+}
+.go-game .go-hint-mark {
+  position: absolute;
+  top: -7px;
+  right: -3px;
+  font-size: 16px;
+  color: #785319;
+  background: #ffe8a6;
+  border-radius: 50%;
+  width: 19px;
+  height: 19px;
+  font-style: normal;
+  line-height: 19px;
+}
+.go-game .go-spot:focus-visible,
+.go-game .go-edge-choice:focus-visible {
+  outline: 3px solid #173f30;
+  outline-offset: 3px;
+  z-index: 4;
+}
+.go-game .go-conflict-legend {
+  border-top: 3px dashed #9b4334;
+}
+.go-game .go-hint-text {
+  margin-top: 12px;
+  padding: 12px 14px;
+  border-radius: 14px;
+  border: 1px solid #e2c271;
+  background: #fff4d2;
+  color: #624b22;
+  font-size: 13px;
+  line-height: 1.7;
+}
+.go-game .go-network-board {
+  max-width: 410px;
+  margin: auto;
+  background: #f5f7ec;
+}
+.go-game .go-network-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.go-game .go-network-unused-line {
+  stroke: #aeb7a2;
+  stroke-width: 0.65;
+  stroke-dasharray: 1.5 1.1;
+}
+.go-game .go-network-selected-line {
+  stroke: #35653e;
+  stroke-width: 1.35;
+}
+.go-game .go-cost-label {
+  fill: #284b36;
+  font:
+    700 4px system-ui,
+    sans-serif;
+  stroke: #f5f7ec;
+  stroke-width: 1.3;
+  paint-order: stroke;
+}
+.go-game .go-cost-selected {
+  fill: #244d32;
+}
+.go-game .go-station {
+  fill: #fffdf4;
+  stroke: #5d8050;
+  stroke-width: 0.8;
+}
+.go-game .go-station-label {
+  fill: #2d4b32;
+  font:
+    800 4.7px system-ui,
+    sans-serif;
+}
+.go-game .go-network-choices {
+  margin-top: 14px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 9px;
+}
+.go-game .go-edge-choice {
+  min-width: 0;
+  min-height: 56px;
+  padding: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  border: 1px solid #c5d1b7;
+  border-radius: 13px;
+  color: #3c5738;
+  background: #f5f7ee;
+  touch-action: manipulation;
+}
+.go-game .go-edge-choice b,
+.go-game .go-edge-choice small {
+  display: block;
+  white-space: nowrap;
+}
+.go-game .go-edge-choice b {
+  font-size: 14px;
+}
+.go-game .go-edge-choice small {
+  font-size: 11px;
+  margin-top: 2px;
+}
+.go-game .go-edge-check {
+  font-size: 20px;
+  width: 19px;
+}
+.go-game .go-edge-selected {
+  border: 2px solid #4f7840;
+  padding: 8px;
+  background: #ddeac8;
+  color: #294b32;
+}
+.go-game .go-edge-choice:disabled {
+  opacity: 1;
+  cursor: default;
+}
+@media (max-width: 390px) {
+  .go-game .go-network-choices {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .go-game .go-edge-choice {
+    min-height: 52px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .go-game button {
+    transition: none;
+  }
+}
+
+.go-conflict-details {
+  margin: 12px 0;
+  color: #284b36;
+  font-size: 14px;
+  line-height: 1.7;
+}
+.go-conflict-details summary {
+  min-height: 44px;
+  cursor: pointer;
+  padding: 10px 0;
+}
