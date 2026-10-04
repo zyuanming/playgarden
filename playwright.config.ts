@@ -14,9 +14,14 @@ export default defineConfig({
     screenshot: "only-on-failure",
   },
   projects: [
-    { name: "desktop", use: { viewport: { width: 1536, height: 1024 } } },
+    {
+      name: "desktop",
+      outputDir: "test-results/desktop",
+      use: { viewport: { width: 1536, height: 1024 } },
+    },
     {
       name: "mobile",
+      outputDir: "test-results/mobile",
       use: {
         viewport: { width: 390, height: 844 },
         isMobile: true,

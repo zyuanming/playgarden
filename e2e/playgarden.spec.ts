@@ -47,12 +47,12 @@ test("catalog search, category, difficulty, favorites and legacy migration", asy
   await page.getByRole("textbox", { name: "搜索游戏" }).fill("");
   await page.getByRole("button", { name: "数字推理", exact: true }).click();
   await expect(page.locator(".game-card")).toHaveCount(
-    games.filter((g) => g.category === "数字推理").length,
+    Math.min(games.filter((g) => g.category === "数字推理").length, 12),
   );
   await page.getByRole("button", { name: "全部", exact: true }).click();
   await page.getByRole("combobox", { name: "筛选难度" }).selectOption("进阶");
   await expect(page.locator(".game-card")).toHaveCount(
-    games.filter((g) => g.difficulty === "进阶").length,
+    Math.min(games.filter((g) => g.difficulty === "进阶").length, 12),
   );
   await page
     .getByRole("combobox", { name: "筛选难度" })

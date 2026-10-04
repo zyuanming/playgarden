@@ -1,0 +1,288 @@
+.graph-game .gp-play-area {
+  width: 100%;
+  max-width: 510px;
+  min-width: 0;
+  margin-inline: auto;
+}
+.graph-game .gp-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  margin-bottom: 16px;
+}
+.graph-game .gp-heading h3 {
+  font-size: clamp(18px, 2.4vw, 25px);
+  margin-top: 6px;
+}
+.graph-game .gp-counter {
+  background: #eaf1da;
+  padding: 9px 14px;
+  border-radius: 17px;
+  font-size: 14px;
+  flex-shrink: 0;
+  text-align: center;
+  color: #264d38;
+}
+.graph-game .gp-counter strong {
+  font-size: 25px;
+}
+.graph-game .gp-counter small {
+  display: block;
+  font-size: 11px;
+  margin-top: 2px;
+}
+.graph-game .gp-graph {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 25px;
+  background: #f1f5e8;
+  border: 1px solid #dce5cf;
+  isolation: isolate;
+}
+.graph-game .gp-trail-board {
+  background: radial-gradient(circle at 50% 50%, #f9fbf3, #eaf1df);
+}
+.graph-game .gp-map-board {
+  background: #f8f6ec;
+}
+.graph-game .gp-lines {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: visible;
+}
+.graph-game .gp-unused-edge {
+  stroke: #7a9278;
+  stroke-width: 1;
+  stroke-dasharray: 1.5 1.8;
+  stroke-linecap: round;
+}
+.graph-game .gp-walked-edge {
+  stroke: #3e7153;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+}
+.graph-game .gp-step-number {
+  fill: #fff;
+  font:
+    700 3.1px system-ui,
+    sans-serif;
+}
+.graph-game .gp-node {
+  position: absolute;
+  transform: translate(-50%, -50%) !important;
+  width: clamp(44px, 10vw, 54px);
+  height: clamp(44px, 10vw, 54px);
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0;
+  border: 2px solid #8fa482;
+  background: #fffef8;
+  color: #234c35;
+  font-size: 19px;
+  font-weight: 800;
+  box-shadow: 0 3px 0 #ccdbc1;
+  touch-action: manipulation;
+  opacity: 1;
+  z-index: 1;
+}
+.graph-game .gp-node:focus-visible {
+  outline: 3px solid #163d2f;
+  outline-offset: 4px;
+  z-index: 4;
+}
+.graph-game .gp-node:hover:not(:disabled) {
+  background: #e2efc5;
+  border-color: #294e39;
+}
+.graph-game .gp-trail-node {
+  border-radius: 50%;
+}
+.graph-game .gp-trail-node small {
+  font-size: 9px;
+  font-weight: 600;
+  margin-top: -2px;
+}
+.graph-game .gp-visited {
+  background: #d3e2bf;
+  border-color: #507944;
+}
+.graph-game .gp-current {
+  background: #dafa3b !important;
+  border: 3px double #254b31;
+  box-shadow: 0 0 0 5px #dafa3b66;
+}
+.graph-game .gp-reachable:not(.gp-current) {
+  border-color: #5d8040;
+}
+.graph-game .gp-hinted {
+  outline: 3px solid #917031;
+  outline-offset: 4px;
+  z-index: 2;
+}
+.graph-game .gp-hint-star {
+  position: absolute;
+  right: -10px;
+  top: -12px;
+  width: 21px;
+  height: 21px;
+  display: grid;
+  place-items: center;
+  font-style: normal;
+  font-size: 14px;
+  color: #61460f;
+  background: #ffe49c;
+  border-radius: 50%;
+}
+.graph-game .gp-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 18px;
+  align-items: center;
+  margin-top: 14px;
+  font-size: 11px;
+  color: #596f50;
+}
+.graph-game .gp-legend span {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+.graph-game .gp-legend i {
+  width: 24px;
+  display: block;
+}
+.graph-game .gp-legend-unused {
+  border-top: 2px dashed #7a9278;
+}
+.graph-game .gp-legend-used {
+  border-top: 4px solid #3e7153;
+}
+.graph-game .gp-route {
+  margin-top: 16px;
+  padding: 13px 16px;
+  background: #f7f8ef;
+  border-radius: 15px;
+}
+.graph-game .gp-route p {
+  margin-top: 7px;
+  font-size: 14px;
+  line-height: 1.8;
+  color: #35513b;
+  overflow-wrap: anywhere;
+}
+.graph-game .gp-guide .gp-insight {
+  margin-bottom: 19px;
+  font-size: 13px;
+  color: #536a4a;
+}
+.graph-game .gp-neighbor-edge {
+  stroke: #a3aa94;
+  stroke-width: 1.1;
+  stroke-linecap: round;
+}
+.graph-game .gp-conflict-edge {
+  stroke: #9b4334;
+  stroke-width: 1.8;
+  stroke-dasharray: 2 1;
+}
+.graph-game .gp-map-node {
+  border-radius: 35% 35% 30% 30%;
+  border-color: #8e9b7a;
+}
+.graph-game .gp-map-node small {
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1.1;
+}
+.graph-game .gp-map-node b {
+  font-size: 21px;
+  line-height: 1.05;
+}
+.graph-game .gp-conflict-node {
+  border: 3px dashed #973f32;
+  box-shadow: 0 0 0 3px #f7dcd3;
+}
+.graph-game .gp-palette {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-bottom: 15px;
+}
+.graph-game .gp-palette button {
+  min-height: 48px;
+  min-width: 44px;
+  display: flex;
+  gap: 6px;
+  padding: 9px 10px;
+  border: 2px solid transparent;
+  border-radius: 13px;
+  font-size: 12px;
+  touch-action: manipulation;
+}
+.graph-game .gp-palette b {
+  font-size: 18px;
+}
+.graph-game .gp-palette small {
+  font-size: 11px;
+}
+.graph-game .gp-palette .gp-selected-color {
+  border-color: #183f30;
+  box-shadow: 0 0 0 2px #fff inset;
+}
+.graph-game .gp-palette .gp-eraser {
+  background: #edf0e7;
+  color: #506047;
+}
+.graph-game .gp-map-feedback {
+  margin-top: 14px;
+  border-radius: 12px;
+  background: #eff3e5;
+  padding: 12px 14px;
+  color: #42603d;
+  font-size: 13px;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+.graph-game .gp-has-conflicts {
+  background: #fbebe0;
+  color: #8c4032;
+}
+.graph-game .gp-won {
+  border-color: #6b913b;
+  box-shadow: 0 0 0 3px #dafa3b77;
+}
+@media (max-width: 700px) {
+  .graph-game {
+    min-width: 0;
+  }
+  .graph-game .gp-heading {
+    gap: 8px;
+  }
+  .graph-game .gp-counter {
+    padding: 8px 10px;
+  }
+  .graph-game .gp-palette {
+    gap: 5px;
+  }
+  .graph-game .gp-palette button {
+    padding: 8px;
+    gap: 5px;
+  }
+  .graph-game .gp-guide h3 {
+    font-size: 25px;
+  }
+}
+/* Long level labels wrap above the title, never into its line box. */
+.graph-game .gp-heading > div { min-width: 0; }
+.graph-game .gp-heading .mini-label { display: block; line-height: 1.6; }
+.graph-game .gp-heading h3 { line-height: 1.4; }
