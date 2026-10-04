@@ -25,6 +25,14 @@ export const GAME_IDS = [
   "skyline",
   "jugs",
   "river",
+  "sowing",
+  "nim",
+  "peg",
+  "knight",
+  "hashi",
+  "slitherlink",
+  "circuit",
+  "stack-queue",
 ] as const;
 export type GameId = (typeof GAME_IDS)[number];
 export type Category =
@@ -80,6 +88,18 @@ export const scienceArtwork = (index: number) => ({
 
 export const planningArtwork = (index: number) => ({
   url: "/constraint-planning-art.webp",
+  position: `${(index % 2) * 100}% ${index < 2 ? 12 : 88}%`,
+  size: "200% auto",
+});
+
+export const classicArtwork = (index: number) => ({
+  url: "/classic-tactics-art.webp",
+  position: `${(index % 2) * 100}% ${index < 2 ? 12 : 88}%`,
+  size: "200% auto",
+});
+
+export const networkCodeArtwork = (index: number) => ({
+  url: "/network-code-art.webp",
   position: `${(index % 2) * 100}% ${index < 2 ? 12 : 88}%`,
   size: "200% auto",
 });

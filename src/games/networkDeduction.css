@@ -1,0 +1,344 @@
+.network-game .nd-panel {
+  width: 100%;
+  max-width: 560px;
+  min-width: 0;
+  margin-inline: auto;
+  padding: clamp(12px, 2vw, 24px);
+}
+.network-game .nd-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+.network-game .nd-heading h3 {
+  margin: 5px 0 0;
+  font-size: clamp(19px, 3vw, 26px);
+}
+.network-game .nd-badge {
+  flex-shrink: 0;
+  padding: 8px 12px;
+  border-radius: 15px;
+  background: #e6eee0;
+  color: #315c43;
+  font-size: 21px;
+  text-align: center;
+}
+.network-game .nd-badge small {
+  display: block;
+  font-size: 10px;
+  margin-top: 3px;
+}
+.network-game .nd-board {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1;
+  isolation: isolate;
+  border-radius: 23px;
+  border: 1px solid #d8e1cd;
+  overflow: hidden;
+  background: #f3f6ec;
+}
+.network-game .nd-hashi-board {
+  background: radial-gradient(ellipse at 30% 30%, #f0f8f5, #dbe9e5);
+}
+.network-game .nd-won {
+  box-shadow: 0 0 0 3px #b6d4a4;
+}
+.network-game .nd-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: visible;
+}
+.network-game .nd-route-empty {
+  stroke: #91aca0;
+  stroke-width: 0.5;
+  stroke-dasharray: 1.2 1.4;
+}
+.network-game .nd-bridge {
+  stroke: #42664d;
+  stroke-width: 1.1;
+  stroke-linecap: round;
+}
+.network-game .nd-route-selected {
+  stroke: #e9b96b;
+  stroke-width: 5;
+  opacity: 0.45;
+  stroke-linecap: round;
+}
+.network-game .nd-bad-line {
+  stroke: #aa463d;
+}
+.network-game .nd-cross {
+  text-anchor: middle;
+  fill: #7d6260;
+  font-size: 5px;
+  font-weight: 700;
+}
+.network-game .nd-island {
+  position: absolute;
+  z-index: 2;
+  transform: translate(-50%, -50%);
+  width: clamp(33px, 7vw, 44px);
+  height: clamp(33px, 7vw, 44px);
+  border: 2px solid #849e82;
+  border-radius: 50%;
+  background: #fffdf1;
+  color: #294b38;
+  padding: 0;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 3px 0 #afc7b866;
+  touch-action: manipulation;
+}
+.network-game .nd-island strong {
+  font-size: clamp(17px, 3vw, 22px);
+  margin-top: 7px;
+}
+.network-game .nd-island-name {
+  position: absolute;
+  top: 2px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 9px;
+  color: #416452;
+  font-weight: 800;
+  background: transparent;
+  border-radius: 3px;
+  padding: 1px 3px;
+}
+.network-game .nd-island.nd-satisfied {
+  background: #d0e4ba;
+  border-color: #5b8054;
+}
+.network-game .nd-island.nd-anchor {
+  outline: 4px solid #d9a541;
+  outline-offset: 2px;
+}
+.network-game .nd-island.nd-bad {
+  background: #fae0d6;
+  border-color: #ba6456;
+}
+.network-game button:focus-visible,
+.network-game select:focus-visible {
+  outline: 3px solid #266aab;
+  outline-offset: 3px;
+  z-index: 5;
+}
+.network-game .nd-route-picker {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  margin-top: 12px;
+}
+.network-game .nd-route-picker select {
+  font: inherit;
+  border: 1px solid #c7d7c2;
+  border-radius: 10px;
+  min-height: 38px;
+  background: #fffdf4;
+  color: #345440;
+  padding: 4px 9px;
+}
+.network-game .nd-route-picker > span {
+  margin-left: auto;
+  font-size: 12px;
+  color: #536a55;
+}
+.network-game .nd-tools {
+  display: flex;
+  gap: 7px;
+  flex-wrap: wrap;
+  margin-top: 14px;
+}
+.network-game .nd-tools button,
+.network-game .nd-apply {
+  flex: 1;
+  min-height: 42px;
+  border: 1px solid #c5d1b8;
+  border-radius: 12px;
+  background: #edf2e4;
+  color: #355135;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 650;
+  padding: 7px 10px;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+.network-game .nd-apply {
+  display: block;
+  background: #ead8a8;
+  border-color: #d6b56b;
+  width: 100%;
+  margin-top: 10px;
+}
+.network-game button:disabled,
+.network-game select:disabled {
+  cursor: default;
+  opacity: 0.67;
+}
+.network-game .nd-message {
+  font-size: 12px;
+  line-height: 1.7;
+  color: #56684b;
+  margin: 12px 0 0;
+  min-height: 3.4em;
+}
+.network-game .nd-clue {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  font-size: clamp(16px, 3.8vw, 27px);
+  font-weight: 650;
+  color: #657254;
+  pointer-events: none;
+  line-height: 1;
+}
+.network-game .nd-clue-satisfied {
+  color: #3e814a;
+}
+.network-game .nd-clue-bad {
+  color: #b54b3e;
+}
+.network-game .nd-dot {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  width: 6px;
+  height: 6px;
+  background: #667b59;
+  border-radius: 50%;
+  z-index: 2;
+  pointer-events: none;
+}
+.network-game .nd-loop-edge {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  border: 0;
+  padding: 0;
+  background: transparent;
+  border-radius: 8px;
+  cursor: pointer;
+  z-index: 1;
+  touch-action: manipulation;
+  color: #8a6752;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.network-game .nd-edge-h {
+  width: calc(100% / var(--nd-cols) - 10px);
+  height: 30px;
+}
+.network-game .nd-edge-v {
+  height: calc(100% / var(--nd-rows) - 10px);
+  width: 30px;
+}
+.network-game .nd-loop-edge.nd-selected {
+  background: #e9c87c55;
+}
+.network-game .nd-loop-edge.nd-hinted {
+  background: #f2d27b99;
+  outline: 2px solid #c4973c;
+}
+.network-game .nd-loop-edge > span {
+  display: block;
+  position: absolute;
+  border-radius: 4px;
+}
+.network-game .nd-edge-h > span {
+  height: 4px;
+  width: 100%;
+}
+.network-game .nd-edge-v > span {
+  width: 4px;
+  height: 100%;
+}
+.network-game .nd-line-on > span {
+  background: #416746;
+}
+.network-game .nd-line-unknown.nd-edge-h > span {
+  height: 0;
+  border-top: 2px dashed #abb79b;
+}
+.network-game .nd-line-unknown.nd-edge-v > span {
+  width: 0;
+  border-left: 2px dashed #abb79b;
+}
+.network-game .nd-line-cross > span {
+  width: auto;
+  height: auto;
+  font-size: 21px;
+  line-height: 1;
+}
+.network-game .nd-loop-edge.nd-bad {
+  background: #f4c5b777;
+}
+.network-game .nd-error-mark {
+  position: absolute;
+  font-size: 10px;
+  right: 1px;
+  bottom: 0;
+  color: #a7422f;
+}
+.network-game .nd-legend {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 7px;
+  margin-top: 11px;
+  color: #687856;
+  font-size: 11px;
+}
+.network-game .nd-guide p {
+  line-height: 1.85;
+}
+.network-game .nd-pause {
+  font-size: 12px;
+  color: #64704e;
+}
+@media (max-width: 420px) {
+  .network-game .nd-panel {
+    padding: 10px;
+  }
+  .network-game .nd-tools {
+    gap: 5px;
+  }
+  .network-game .nd-tools button {
+    padding-inline: 6px;
+    font-size: 12px;
+  }
+  .network-game .nd-island {
+    width: 32px;
+    height: 32px;
+  }
+  .network-game .nd-island-name {
+    top: 1px;
+    font-size: 7px;
+  }
+  .network-game .nd-heading {
+    gap: 6px;
+  }
+  .network-game .nd-badge {
+    font-size: 18px;
+    padding: 7px 10px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .network-game * {
+    scroll-behavior: auto;
+  }
+}
+/* Solved board geometry remains opaque and legible behind disabled controls. */
+.network-game .nd-island:disabled,
+.network-game .nd-loop-edge:disabled {
+  opacity: 1;
+}
