@@ -78,4 +78,4 @@ Both files contain complete DOM journeys for every level: reset, edits/moves, im
 
 - Finite authored puzzle sets, no procedural level generator, user-created puzzle editor, external game engine, or remote storage.
 - Engine search runs synchronously. The measured authored searches are short; the maximum synthetic Fleet CSP budget is a safety cap rather than a frame-time promise. If the supported puzzle dimensions are enlarged, revisit both domain validation and scheduling.
-- Registry/catalog wiring and integrated actual-browser responsive checks belong to the parent integration task.
+- Registry/catalog wiring and actual-browser responsive checks are validated in the full project.

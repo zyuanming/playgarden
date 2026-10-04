@@ -37,7 +37,7 @@ test("all movable-stop ice journeys and continuous keyboard visibility", async (
         );
       }
     }
-    await expect(page.locator('[data-game="ice-stops"]')).toHaveAttribute(
+    await expect(page.locator('[data-ice-won]')).toHaveAttribute(
       "data-ice-won",
       "true",
     );
@@ -63,7 +63,7 @@ test("all uniquely reconstructed fleets from public fragment clues", async ({
       if (!config.clues.some((c) => c.cell === cell))
         await page.locator(`[data-fleet-cell="${cell}"]`).click();
     await page.locator("[data-fleet-fill-sea]").click();
-    await expect(page.locator('[data-game="fleet-logic"]')).toHaveAttribute(
+    await expect(page.locator('[data-fleet-won]')).toHaveAttribute(
       "data-fleet-won",
       "true",
     );

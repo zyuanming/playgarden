@@ -1,6 +1,6 @@
 # CarryLetters and BinaryBalance
 
-Original Playgarden implementations and problem sets, licensed MIT. No copied game source, famous alphametic, external asset, network call, package, or runtime level generation is used. Registry/catalog integration is deliberately left to the parent integration task.
+Original Playgarden implementations and problem sets, licensed MIT. No copied game source, famous alphametic, external asset, network call, package, or runtime level generation is used. Registry/catalog integration follows the shared module contract.
 
 ## Delivered modules
 
