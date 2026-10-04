@@ -757,18 +757,31 @@ describe("Skyline optional city visualization", () => {
         paused={false}
       />,
     );
+    expect(rendererState.instances).toHaveLength(1);
+    expect(rendererState.instances[0].dispose).not.toHaveBeenCalled();
+    expect(rendererState.instances[0].forceContextLoss).not.toHaveBeenCalled();
+    rerender(
+      <SkylineScene
+        level={level}
+        values={level.givens}
+        side="right"
+        index={1}
+        paused={false}
+      />,
+    );
+    expect(rendererState.instances).toHaveLength(1);
+    expect(rendererState.instances[0].render).toHaveBeenCalled();
+    unmount();
     expect(rendererState.instances[0].dispose).toHaveBeenCalledTimes(1);
     expect(rendererState.instances[0].forceContextLoss).toHaveBeenCalledTimes(
       1,
     );
-    unmount();
-    expect(rendererState.instances[1].dispose).toHaveBeenCalledTimes(1);
     expect(
-      rendererState.instances[1].renderLists.dispose,
+      rendererState.instances[0].renderLists.dispose,
     ).toHaveBeenCalledTimes(1);
-    expect(disconnect).toHaveBeenCalledTimes(2);
-    expect(geometryDispose).toHaveBeenCalledTimes(2);
-    expect(materialDispose).toHaveBeenCalledTimes(8);
+    expect(disconnect).toHaveBeenCalledTimes(1);
+    expect(geometryDispose).toHaveBeenCalledTimes(1);
+    expect(materialDispose).toHaveBeenCalledTimes(4);
     expect(document.querySelector("canvas")).toBeNull();
   });
   it("handles context creation failure and context loss with readable fallback", () => {

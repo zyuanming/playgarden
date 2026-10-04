@@ -282,3 +282,7 @@
     font-size: 25px;
   }
 }
+/* Long level labels wrap above the title, never into its line box. */
+.graph-game .gp-heading > div { min-width: 0; }
+.graph-game .gp-heading .mini-label { display: block; line-height: 1.6; }
+.graph-game .gp-heading h3 { line-height: 1.4; }

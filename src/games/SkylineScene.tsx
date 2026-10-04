@@ -28,6 +28,9 @@ export default function SkylineScene({
 }) {
   const host = useRef<HTMLDivElement>(null);
   const [fallback, setFallback] = useState(false);
+  const updateScene = useRef<
+    ((values: number[], side: SkylineSide, index: number) => void) | null
+  >(null);
   const line = skylineLine(level, values, side, index),
     complete = line.every(Boolean);
   let highest = 0;
@@ -82,6 +85,8 @@ export default function SkylineScene({
       new THREE.MeshStandardMaterial({ color: "#dafa3b", roughness: 0.8 }),
       new THREE.MeshStandardMaterial({ color: "#f8fbf0", roughness: 0.8 }),
     ];
+    const buildings = new THREE.Group();
+    scene.add(buildings);
     const addBox = (
       x: number,
       y: number,
@@ -94,24 +99,8 @@ export default function SkylineScene({
       const mesh = new THREE.Mesh(geometry, materials[material]);
       mesh.position.set(x, y, z);
       mesh.scale.set(w, h, d);
-      scene.add(mesh);
+      buildings.add(mesh);
     };
-    addBox(0, -0.13, 0, n + 0.45, 0.2, n + 0.45, 0);
-    values.forEach((height, i) => {
-      const r = Math.floor(i / n),
-        c = i % n,
-        x = c - shift,
-        z = r - shift;
-      const selected =
-        side === "left" || side === "right" ? r === index : c === index;
-      addBox(x, -0.005, z, 0.85, 0.07, 0.85, selected ? 2 : 3);
-      if (!height) return;
-      const h = height * 0.5;
-      addBox(x, h / 2 + 0.06, z, 0.61, h, 0.61, selected ? 1 : 0);
-      addBox(x, h + 0.085, z, 0.65, 0.07, 0.65, selected ? 2 : 3);
-      for (let floor = 1; floor < height; floor++)
-        addBox(x, floor * 0.5 + 0.08, z, 0.625, 0.025, 0.625, 3);
-    });
     const draw = () => {
       if (lost) return;
       const width = Math.max(1, container.clientWidth),
@@ -121,6 +110,31 @@ export default function SkylineScene({
       camera.updateProjectionMatrix();
       renderer.render(scene, camera);
     };
+    updateScene.current = (nextValues, nextSide, nextIndex) => {
+      buildings.clear();
+      camera.position.set(...views[nextSide]);
+      camera.lookAt(0, 0.6, 0);
+      addBox(0, -0.13, 0, n + 0.45, 0.2, n + 0.45, 0);
+      nextValues.forEach((height, i) => {
+        const r = Math.floor(i / n),
+          c = i % n,
+          x = c - shift,
+          z = r - shift;
+        const selected =
+          nextSide === "left" || nextSide === "right"
+            ? r === nextIndex
+            : c === nextIndex;
+        addBox(x, -0.005, z, 0.85, 0.07, 0.85, selected ? 2 : 3);
+        if (!height) return;
+        const h = height * 0.5;
+        addBox(x, h / 2 + 0.06, z, 0.61, h, 0.61, selected ? 1 : 0);
+        addBox(x, h + 0.085, z, 0.65, 0.07, 0.65, selected ? 2 : 3);
+        for (let floor = 1; floor < height; floor++)
+          addBox(x, floor * 0.5 + 0.08, z, 0.625, 0.025, 0.625, 3);
+      });
+      draw();
+    };
+    updateScene.current(values, side, index);
     const onLost = (event: Event) => {
       event.preventDefault();
       lost = true;
@@ -134,6 +148,7 @@ export default function SkylineScene({
     window.addEventListener("resize", draw);
     draw();
     return () => {
+      updateScene.current = null;
       observer?.disconnect();
       window.removeEventListener("resize", draw);
       renderer.domElement.removeEventListener("webglcontextlost", onLost);
@@ -145,7 +160,10 @@ export default function SkylineScene({
       renderer.forceContextLoss();
       renderer.domElement.remove();
     };
-  }, [level, values, side, index]);
+  }, [level.size]);
+  useEffect(() => {
+    updateScene.current?.(values, side, index);
+  }, [values, side, index]);
   return (
     <figure className={`nc-city-preview ${paused ? "nc-preview-paused" : ""}`}>
       <div

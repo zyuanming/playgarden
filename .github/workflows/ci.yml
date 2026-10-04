@@ -26,11 +26,21 @@ jobs:
         if: always()
         with:
           name: browser-desktop-evidence
-          path: test-results/desktop/
+          path: |
+            test-results/desktop/**/*.png
+            test-results/desktop/**/error-context.md
           retention-days: 7
       - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: browser-mobile-evidence
-          path: test-results/mobile/
+          path: |
+            test-results/mobile/**/*.png
+            test-results/mobile/**/error-context.md
+          retention-days: 7
+      - uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: browser-failure-traces
+          path: test-results/**/trace.zip
           retention-days: 7
