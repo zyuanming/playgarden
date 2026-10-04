@@ -1,3 +1,4 @@
+import { sequenceSymmetryArtwork } from "./catalog";
 import { foldTreeLightArtwork } from "./catalog";
 import { flowRailFunctionArtwork } from "./catalog";
 import { iceFleetNumberArtwork } from "./catalog";
@@ -932,6 +933,54 @@ export const games: GameDefinition[] = [
     artwork: foldTreeLightArtwork(3),
     source: original,
     component: lazy(() => import("../games/WaveStudio")),
+  },
+  {
+    id: "memory-routes",
+    title: "路线记忆",
+    subtitle: "记住路线的转弯与回访，藏起后按顺序重走。",
+    category: "记忆观察",
+    difficulty: "中级",
+    tone: "green",
+    levelCount: 12,
+    artwork: sequenceSymmetryArtwork(0),
+    source: original,
+    component: lazy(() => import("../games/MemoryRoutes")),
+  },
+  {
+    id: "rhythm-echo",
+    title: "节奏回声",
+    subtitle: "读懂节奏变换，用不计时的间隔卡回应。",
+    category: "记忆观察",
+    difficulty: "中级",
+    tone: "purple",
+    levelCount: 12,
+    artwork: sequenceSymmetryArtwork(1),
+    source: original,
+    component: lazy(() => import("../games/RhythmEcho")),
+  },
+  {
+    id: "symmetry-repair",
+    title: "对称修补",
+    subtitle: "遵守镜像与旋转规则，在有限预算内修补图案。",
+    category: "空间想象",
+    difficulty: "进阶",
+    tone: "orange",
+    levelCount: 12,
+    artwork: sequenceSymmetryArtwork(2),
+    source: original,
+    component: lazy(() => import("../games/SymmetryRepair")),
+  },
+  {
+    id: "probability-bag",
+    title: "概率抽袋",
+    subtitle: "设计袋中数量，用精确概率满足抽取条件。",
+    category: "数字推理",
+    difficulty: "进阶",
+    tone: "green",
+    levelCount: 12,
+    artwork: sequenceSymmetryArtwork(3),
+    source: original,
+    component: lazy(() => import("../games/ProbabilityBag")),
   },
 ];
 export const findGame = (id: string) => games.find((game) => game.id === id);

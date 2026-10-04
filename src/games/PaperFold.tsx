@@ -149,7 +149,9 @@ function PaperRound({
         </div>
         <p className="pf-phase">
           {b.phase === "folding"
-            ? "① 折纸：可以继续折，或开始打孔"
+            ? b.folds >= l.maxFolds
+              ? "① 折叠次数已用满，开始打孔"
+              : "① 折纸：可以继续折，或开始打孔"
             : b.phase === "punching"
               ? "② 打孔：折痕已锁定，准备展开"
               : "③ 展开：逐个原格检查孔位"}
