@@ -104,3 +104,13 @@ test('full runner uses unfiltered discovery while focused runner passes validate
     }
   } finally { rmSync(root, {recursive:true, force:true}); }
 });
+
+
+test('literal JSON fixture imports are tracked while dynamic imports remain conservative', () => {
+  const fixture = {'tests/fixture.ts':'import records from "./puzzles.json";', 'tests/puzzles.json':'[{"lesson":"import(fileName) is only text"}]'};
+  const graph = dependencyGraph(fixture);
+  assert.equal(graph.unresolved.size, 0);
+  assert.ok(graph.graph.get('tests/fixture.ts').has('tests/puzzles.json'));
+  assert.equal(dependencyGraph({...fixture, 'tests/fixture.ts':'import(fileName)'}).unresolved.size, 1);
+  assert.equal(dependencyGraph({'tests/fixture.ts':'import records from "./missing.json";'}).unresolved.size, 1);
+});

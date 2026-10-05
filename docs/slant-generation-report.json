@@ -1,0 +1,90 @@
+{
+  "sourceCommit": "a7c7826bce5cbb9b9c337c11b9b7f8b278e76fba",
+  "generatorVersion": "playgarden-slant-v1",
+  "node": "v24.19.0",
+  "candidatePools": [
+    {
+      "width": 5,
+      "height": 5,
+      "advanced": false,
+      "candidates": 500,
+      "unique": 500,
+      "duplicates": 0,
+      "rejected": 0
+    },
+    {
+      "width": 8,
+      "height": 8,
+      "advanced": false,
+      "candidates": 250,
+      "unique": 250,
+      "duplicates": 0,
+      "rejected": 0
+    },
+    {
+      "width": 5,
+      "height": 5,
+      "advanced": true,
+      "candidates": 250,
+      "unique": 245,
+      "duplicates": 0,
+      "rejected": 5
+    },
+    {
+      "width": 8,
+      "height": 8,
+      "advanced": true,
+      "candidates": 250,
+      "unique": 250,
+      "duplicates": 0,
+      "rejected": 0
+    },
+    {
+      "width": 12,
+      "height": 10,
+      "advanced": true,
+      "candidates": 250,
+      "unique": 250,
+      "duplicates": 0,
+      "rejected": 0
+    }
+  ],
+  "count": 300,
+  "d4Distinct": 300,
+  "independentlyVerified": true,
+  "chapters": [
+    {
+      "title": "数字的入口",
+      "firstScore": 30,
+      "lastScore": 80
+    },
+    {
+      "title": "森林的连锁",
+      "firstScore": 81,
+      "lastScore": 145
+    },
+    {
+      "title": "沿路推演",
+      "firstScore": 83,
+      "lastScore": 278
+    },
+    {
+      "title": "反向求证",
+      "firstScore": 116,
+      "lastScore": 1410
+    },
+    {
+      "title": "交织的约束",
+      "firstScore": 362,
+      "lastScore": 28541
+    },
+    {
+      "title": "深林远行",
+      "firstScore": 1275,
+      "lastScore": 234855
+    }
+  ],
+  "independentUnique": 300,
+  "independentD4Distinct": 300,
+  "independentSearchNodes": 20540
+}

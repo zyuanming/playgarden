@@ -11,7 +11,7 @@ export function sourcesAt(root) {
     for (const entry of readdirSync(resolve(root, dir), { withFileTypes: true })) {
       const path = posix.join(dir, entry.name);
       if (entry.isDirectory()) walk(path);
-      else if (/\.(?:[cm]?[jt]sx?|css)$/.test(path)) sources[path] = readFileSync(resolve(root, path), 'utf8');
+      else if (/\.(?:[cm]?[jt]sx?|css|json)$/.test(path)) sources[path] = readFileSync(resolve(root, path), 'utf8');
     }
   }
   for (const dir of ['src', 'e2e', 'tests']) walk(dir);
@@ -24,6 +24,8 @@ export function dependencyGraph(sources) {
   const unresolved = new Set();
   for (const [path, text] of Object.entries(sources)) {
     const deps = new Set();
+    // Literal JSON imports are data-only; track their path without parsing values as code.
+    if (path.endsWith(".json")) { graph.set(path, deps); continue; }
     // Import/export-from, side-effect imports, and literal dynamic imports.
     const pattern = /(?:\bfrom\s*|\bimport\s*\(\s*|\bimport\s*)["']([^"']+)["']/g;
     for (const match of text.matchAll(pattern)) {
@@ -134,3 +136,4 @@ function main() {
   if (process.env.GITHUB_OUTPUT) appendFileSync(process.env.GITHUB_OUTPUT, `mode=${plan.mode}\nmatrix=${JSON.stringify({ shard: plan.shards })}\ntotal=${plan.total}\nfiles=${JSON.stringify(plan.files)}\n`);
 }
 if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) main();
+

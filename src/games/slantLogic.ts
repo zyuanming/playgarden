@@ -82,7 +82,7 @@ export function slantHint(p: SlantPuzzle, board: readonly number[]) {
   const cell = board.findIndex(v => !v);
   if (cell < 0) return { message: "所有数字都满足，斜线也没有闭环。", cell: -1, value: 0 };
   const value = result.solutions[0][cell];
-  return { cell, value, message: `第 ${Math.floor(cell / p.width) + 1} 行第 ${cell % p.width + 1} 列应填 ${value === -1 ? "反斜线 \\" : "斜线 /"}。当前局面的约束推演证明，另一方向无法同时满足数字与无环规则。` };
+  return { cell, value, message: `第 ${Math.floor(cell / p.width) + 1} 行第 ${cell % p.width + 1} 列应填 ${value === -1 ? "反斜线 \\" : "斜线 /"}。${result.stats.branches > 0 ? "搜索验证" : "数字与闭环传播"}证明：另一方向无法同时满足所有数字与无环规则。` };
 }
 export type SlantState = { board: SlantValue[]; history: SlantValue[][]; moves: number };
 export const newSlantState = (p: SlantPuzzle): SlantState => ({ board: Array(p.width * p.height).fill(0), history: [], moves: 0 });

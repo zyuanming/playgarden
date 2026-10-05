@@ -79,6 +79,7 @@ export const GAME_IDS = [
   "rhythm-echo",
   "symmetry-repair",
   "probability-bag",
+  "slant",
 ] as const;
 export type GameId = (typeof GAME_IDS)[number];
 export type Category =
@@ -101,7 +102,8 @@ export type GameMeta = {
   tone: "green" | "purple" | "orange";
   levelCount: number;
   artwork: { url: string; position: string; size: string };
-  source: { kind: "original"; license: "MIT"; notes: string };
+  resumeKey?: string;
+  source: { kind: "original"; license: "MIT"; notes: string } | { kind: "adapted"; license: "MIT"; notes: string; author: string; url: string; commit: string; notice: string };
 };
 // Resolve public artwork beside the document, including the /playgarden/ Pages base.
 export const firstGameArtwork = (index: number) => ({
@@ -216,4 +218,5 @@ export const sequenceSymmetryArtwork = (index: number) => ({
   position: `${(index % 2) * 100}% ${index < 2 ? 12 : 88}%`,
   size: "200% auto",
 });
+
 
