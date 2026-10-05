@@ -62,7 +62,8 @@
 .mr-cell {
   min-width: 44px;
   min-height: 78px;
-  aspect-ratio: 1;
+  /* Repeated route labels may wrap at every viewport width. */
+  aspect-ratio: auto;
   position: relative;
   border: 1px solid #aaba9b;
   border-radius: 12px;
