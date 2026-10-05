@@ -446,3 +446,12 @@
   font-size: 13px;
   line-height: 1.7;
 }
+
+/* Shikaku-only campaign context; no change to the campsite board. */
+.rc-layout[data-region-game="shikaku"] .rc-campaign {
+  margin: -4px 0 16px;
+  font-size: 12px;
+  line-height: 1.8;
+  color: #496148;
+  overflow-wrap: anywhere;
+}

@@ -1,13 +1,9 @@
-# 浏览器检查如何扩展到 100 款游戏
+# 浏览器检查与题库扩展
 
-类型检查、单元测试和构建先在 `validate` 作业执行一次。通过后，所有 Playwright 场景按 8 个分片分配，每片仍包含真实游戏操作；最多同时运行 4 个浏览器作业。桌面和触屏模拟两个项目都会参与分片，没有排除任何旧游戏或关卡。
+`validate` 先运行类型检查、全量单元/DOM 测试及生产构建。选择器对公共外壳、目录、工具、未知依赖或手动检查使用 full 模式：8 片，最多同时 4 个作业。局部游戏变更使用 focused 模式，并保留当前存档/外壳 smoke。
 
-`fullyParallel: true` 让 Playwright 按测试场景划分。每款游戏的一个场景会完整游玩该游戏的全部关卡，避免把单个关卡流程切断。验证总数必须按所有分片相加；不能把单片成功当作整个仓库通过。
+focused 通常为 1 片；包含矩形花园 200 关时使用 4 片，测试仍覆盖所有 200 关的桌面与移动尺寸。`fullyParallel: true` 按完整测试场景划分；矩形花园每场最多 5 关、Slant 按尺寸 2–10 关、Lights Out 按章节，不会跨进程拆开一局。其他现有游戏的全部流程保留。单片成功不等于整个仓库通过。
 
-本地完整执行：`npm run test:e2e`。
+完整执行：`npm run test:e2e`。单片：`npx playwright test --shard=1/8`。矩形聚焦：`npx playwright test e2e/shikaku-campaign.spec.ts e2e/current-save-smoke.spec.ts --shard=1/4`。`--list` 可核对各片实际分配，两种 viewport 均应出现。每个场景保持原 120 秒门槛，工作流 browser 保持 20 分钟，不用放宽超时掩盖过长流程。
 
-复现一片：`npx playwright test --shard=1/8`，将分子替换为 1–8。用 `--list` 可先检查分配。
-
-截图和错误上下文按分片保存，失败追踪单独保存；保留 3 天，减少持续扩展带来的存储占用。需要长期留存的发布截图应另行保存。所有工作流权限仍只有 `contents: read`，checkout 不保留凭据，不部署网站。
-
-参考：[Playwright 官方分片说明](https://playwright.dev/docs/test-sharding)、[GitHub Actions 矩阵说明](https://docs.github.com/en/actions/how-tos/write-workflows/choose-what-workflows-do/run-job-variations)。
+截图和错误上下文按分片保存，失败 trace 单独保存，保留 3 天。正式发布的关键截图与机器验题摘要需另存。Pages 构建/预览测试通过，并且全部 browser 片通过后，现有 pages-deploy 才发布当前 main。validate/browser 保持只读 contents；仅原有部署作业持有 Pages 部署权限。不修改分支保护、凭据或权限。

@@ -1,36 +1,11 @@
 import { test, expect } from "@playwright/test";
 import { openGame, chooseLevel, complete, captureErrors } from "./helpers";
-import { shikakuLevels } from "../src/games/shikakuLogic";
 import { tentsLevels } from "../src/games/tentsLogic";
 import {
   fractionMosaicLevels,
   formatFraction,
 } from "../src/games/fractionMosaicLogic";
 import { coordinateTreasureLevels } from "../src/games/coordinateTreasureLogic";
-test("all unique rectangular partitions", async ({ page }, info) => {
-  const errors = captureErrors(page);
-  await openGame(page, "矩形花园");
-  await expect(page.locator('[data-region-game="shikaku"]')).toBeVisible();
-  await page.screenshot({
-    path: info.outputPath("shikaku-start.png"),
-    fullPage: true,
-    animations: "disabled",
-  });
-  for (let level = 0; level < shikakuLevels.length; level++) {
-    await chooseLevel(page, level);
-    const config = shikakuLevels[level];
-    for (const [r0, c0, r1, c1] of config.solution) {
-      await page
-        .locator(`[data-shikaku-cell="${r0 * config.size + c0}"]`)
-        .click();
-      await page
-        .locator(`[data-shikaku-cell="${r1 * config.size + c1}"]`)
-        .click();
-    }
-    await complete(page, info, "shikaku", level);
-  }
-  expect(errors).toEqual([]);
-});
 test("all uniquely placed forest tents", async ({ page }, info) => {
   const errors = captureErrors(page);
   await openGame(page, "林间帐篷");

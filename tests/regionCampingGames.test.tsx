@@ -192,10 +192,10 @@ function certifyTents(level: TentsLevel) {
 }
 
 describe("original independently certified region and camping levels", () => {
-  it("has twelve distinct progressive boards per module", () => {
-    expect(shikakuLevels).toHaveLength(12);
+  it("keeps the classic twelve and appends 188 distinct Shikaku boards", () => {
+    expect(shikakuLevels).toHaveLength(200);
     expect(tentsLevels).toHaveLength(12);
-    expect(shikakuLevels.map((l) => l.size)).toEqual([
+    expect(shikakuLevels.slice(0, 12).map((l) => l.size)).toEqual([
       3, 3, 4, 4, 5, 5, 5, 6, 6, 6, 7, 7,
     ]);
     expect(tentsLevels.map((l) => l.size)).toEqual([
@@ -203,7 +203,7 @@ describe("original independently certified region and camping levels", () => {
     ]);
     expect(
       new Set(shikakuLevels.map((l) => JSON.stringify([l.size, l.clues]))).size,
-    ).toBe(12);
+    ).toBe(200);
     expect(
       new Set(
         tentsLevels.map((l) =>
@@ -243,9 +243,10 @@ describe("original independently certified region and camping levels", () => {
       expect(search.nodes).toBeLessThan(50000);
     },
   );
-  it("all hints solve authored packs using current state, without certificate access", () => {
-    for (const raw of shikakuLevels) {
-      const l = { ...raw, solution: [] };
+  it.each(shikakuLevels.map((l, i) => [i, l] as const))(
+    "Shikaku %i hints solve the current state with poisoned certificates",
+    (_i, raw) => {
+      const l = { ...raw, solution: [[99, 99, 99, 99]] as ShikakuRect[] };
       let state = createShikakuState();
       for (let step = 0; step < l.clues.length; step++) {
         const hint = getShikakuHint(l, state.rectangles);
@@ -255,7 +256,9 @@ describe("original independently certified region and camping levels", () => {
       }
       expect(isShikakuSolved(l, state.rectangles)).toBe(true);
       expect(getShikakuHint(l, state.rectangles)).toBeNull();
-    }
+    },
+  );
+  it("Tents hints solve the current state without certificate access", () => {
     for (const raw of tentsLevels) {
       const l = { ...raw, solution: [] };
       let state = createTentsState(l);
@@ -390,7 +393,7 @@ describe("Shikaku state and guarded public logic", () => {
     expect(solveShikaku(l, [], 2, 1).status).toBe("budget");
     expect(solveShikaku(l, [], 1).status).toBe("limit");
     expect(getShikakuHint(l, [], 1)?.kind).toBe("unavailable");
-    expect(shikakuSolutions).toHaveLength(12);
+    expect(shikakuSolutions).toHaveLength(200);
   });
 });
 
@@ -577,30 +580,22 @@ describe("Shikaku accessible round lifecycle", () => {
     expect(document.querySelectorAll("[data-shikaku-cell]")).toHaveLength(49);
     expect(regionCount()).toBe(0);
   });
-  it("completes each real board through clicks exactly once, including undo and replay", () => {
-    for (let level = 0; level < 12; level++) {
-      const p = props({ level }),
-        view = render(
-          <StrictMode>
-            <ShikakuGarden {...p} />
-          </StrictMode>,
-        ),
-        l = shikakuLevels[level];
+  it.each(shikakuLevels.map((l, i) => [i, l] as const))(
+    "completes Shikaku %i through real DOM clicks and locks terminal undo",
+    (level, l) => {
+      const p = props({ level });
+      const view = render(<StrictMode><ShikakuGarden {...p} /></StrictMode>);
       l.solution.forEach((r) => draw(l.size, r));
       expect(p.onComplete).toHaveBeenCalledTimes(1);
       expect(document.querySelector("[data-complete=true]")).not.toBeNull();
       fireEvent.click(square("shikaku", 0));
+      view.rerender(<StrictMode><ShikakuGarden {...p} undoToken={1} hintToken={1} /></StrictMode>);
+      expect(regionCount()).toBe(l.clues.length);
+      expect(document.querySelector("[data-complete=true]")).not.toBeNull();
+      expect(document.querySelector("[data-region-hint]")).toBeNull();
       expect(p.onComplete).toHaveBeenCalledTimes(1);
-      view.rerender(
-        <StrictMode>
-          <ShikakuGarden {...p} undoToken={1} />
-        </StrictMode>,
-      );
-      draw(l.size, l.solution.at(-1)!);
-      expect(p.onComplete).toHaveBeenCalledTimes(1);
-      view.unmount();
-    }
-  });
+    },
+  );
   it("reset starts a new completion lifetime", () => {
     const p = props(),
       view = render(<ShikakuGarden {...p} />);

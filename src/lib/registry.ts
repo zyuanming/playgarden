@@ -437,7 +437,7 @@ export const games: GameDefinition[] = [
     category: "空间想象",
     difficulty: "中级",
     tone: "purple",
-    levelCount: 12,
+    levelCount: 200,
     artwork: regionNumberArtwork(0),
     source: original,
     component: lazy(() => import("../games/ShikakuGarden")),

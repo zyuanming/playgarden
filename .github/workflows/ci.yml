@@ -62,7 +62,10 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npx playwright install --with-deps chromium
-      - run: node scripts/run-browser-tests.mjs
+      - name: List and run every assigned browser journey
+        run: |
+          node scripts/run-browser-tests.mjs --list
+          node scripts/run-browser-tests.mjs
         env:
           BROWSER_MODE: ${{ needs.select.outputs.mode }}
           BROWSER_FILES: ${{ needs.select.outputs.files }}

@@ -95,12 +95,12 @@ test('full runner uses unfiltered discovery while focused runner passes validate
     writeFileSync(join(root, 'node_modules/@playwright/test/cli.js'), 'console.log(JSON.stringify(process.argv.slice(2)));');
     writeFileSync(join(root, 'e2e/new-game.test.ts'), '');
     writeFileSync(join(root, 'e2e/example.spec.ts'), '');
-    for (const mode of ['full', 'focused']) {
-      const result = spawnSync(process.execPath, [fileURLToPath(new URL('./run-browser-tests.mjs', import.meta.url))], {
+    for (const mode of ['full', 'focused']) for (const list of [false, true]) {
+      const result = spawnSync(process.execPath, [fileURLToPath(new URL('./run-browser-tests.mjs', import.meta.url)), ...(list ? ['--list'] : [])], {
         cwd: root, encoding: 'utf8', env: {...process.env, BROWSER_MODE:mode, BROWSER_FILES:JSON.stringify(['e2e/example.spec.ts']), BROWSER_SHARD:'1', BROWSER_TOTAL:mode==='full'?'8':'1'},
       });
       assert.equal(result.status, 0, result.stderr);
-      assert.deepEqual(JSON.parse(result.stdout), mode==='full'?['test','--shard=1/8']:['test','e2e/example.spec.ts','--shard=1/1']);
+      assert.deepEqual(JSON.parse(result.stdout), [...(mode==='full'?['test','--shard=1/8']:['test','e2e/example.spec.ts','--shard=1/1']), ...(list ? ['--list'] : [])]);
     }
   } finally { rmSync(root, {recursive:true, force:true}); }
 });
@@ -113,4 +113,16 @@ test('literal JSON fixture imports are tracked while dynamic imports remain cons
   assert.ok(graph.graph.get('tests/fixture.ts').has('tests/puzzles.json'));
   assert.equal(dependencyGraph({...fixture, 'tests/fixture.ts':'import(fileName)'}).unresolved.size, 1);
   assert.equal(dependencyGraph({'tests/fixture.ts':'import records from "./missing.json";'}).unresolved.size, 1);
+});
+
+test('Shikaku expanded campaign keeps every desktop/mobile journey and uses four focused shards', () => {
+  for (const path of ['src/games/ShikakuGarden.tsx', 'src/games/shikakuLevels.ts', 'src/games/shikakuExpansion.ts', 'e2e/shikaku-campaign.spec.ts']) {
+    const selected = plan([path]);
+    assert.equal(selected.mode, 'focused', path);
+    assert.ok(selected.files.includes('e2e/shikaku-campaign.spec.ts'));
+    assert.ok(selected.files.includes('e2e/current-save-smoke.spec.ts'));
+    assert.deepEqual(selected.shards, [1, 2, 3, 4]);
+    assert.equal(selected.total, 4);
+  }
+  assert.ok(plan(['src/games/regionCamping.css']).files.includes('e2e/region-number.spec.ts'));
 });

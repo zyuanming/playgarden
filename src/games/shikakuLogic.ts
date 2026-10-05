@@ -330,7 +330,7 @@ export function getShikakuHint(
     ? {
         kind: "deduction",
         rectangle: [...rectangle],
-        reason: `结合你已画的区域，所有可行划分都包含从第 ${rectangle[0] + 1} 行第 ${rectangle[1] + 1} 列到第 ${rectangle[2] + 1} 行第 ${rectangle[3] + 1} 列的矩形。`,
+        reason: `完整枚举当前局面后，所有可行划分都包含从第 ${rectangle[0] + 1} 行第 ${rectangle[1] + 1} 列到第 ${rectangle[2] + 1} 行第 ${rectangle[3] + 1} 列的矩形。`,
       }
     : {
         kind: "unavailable",

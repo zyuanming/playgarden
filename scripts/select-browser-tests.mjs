@@ -105,7 +105,8 @@ export function browserPlan({ sources, changes, full = false }) {
     }
   }
   if (!all.includes('e2e/current-save-smoke.spec.ts')) return fullPlan('missing shared smoke');
-  return { mode: 'focused', reason: 'changed features plus current-save/shell smoke', files: [...selected].sort(), shards: [1], total: 1 };
+  const shards = selected.has('e2e/shikaku-campaign.spec.ts') ? [1, 2, 3, 4] : [1];
+  return { mode: 'focused', reason: 'changed features plus current-save/shell smoke', files: [...selected].sort(), shards, total: shards.length };
 }
 
 export function parseDiff(text) {

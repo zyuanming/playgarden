@@ -77,7 +77,7 @@ function ShikakuRound({
   useEffect(() => {
     if (tokens.current.undoToken === undoToken) return;
     tokens.current.undoToken = undoToken;
-    if (paused) return;
+    if (paused || won) return;
     setState((s) => undoShikaku(s));
     setHint(null);
     setAnchor(null);
@@ -86,7 +86,7 @@ function ShikakuRound({
         ? "已撤销上一步的区域操作。"
         : "还没有可撤销的区域。",
     );
-  }, [undoToken, paused, state.history.length]);
+  }, [undoToken, paused, won, state.history.length]);
   function place(rect: ShikakuRect) {
     if (paused || won) return;
     const next = placeShikakuRectangle(state, config, rect);
@@ -155,9 +155,13 @@ function ShikakuRound({
             <h3>{config.title}</h3>
           </div>
           <span className="rc-level">
-            {String(shikakuLevels.indexOf(config) + 1).padStart(2, "0")} / 12
+            {String(shikakuLevels.indexOf(config) + 1).padStart(3, "0")} / {shikakuLevels.length}
           </span>
         </header>
+        <p className="rc-campaign" data-shikaku-chapter={config.chapter ?? 0}>
+          <strong>{config.chapter ? `练习 ${config.chapter} / 4` : "经典入门 · 12 关"}</strong>
+          {" · "}{config.objective ?? "先观察面积与边界，再让矩形完整铺满花园。"}
+        </p>
         <div className="rc-stats">
           <span>
             <strong>{covered}</strong> / {n * n} 格

@@ -1,5 +1,7 @@
 # Rectangle Garden and Forest Campsite
 
+> Historical 12+12 module report. Shikaku now preserves these twelve and appends 188 levels; see [the 200-level campaign report](shikaku-campaign.md). Tents remains unchanged.
+
 Two original MIT modules, with 24 newly authored puzzles. No imported puzzle banks, libraries, artwork, network calls, timers, or runtime randomness. The inline tree/tent SVGs and styles were created for these modules.
 
 ## Integration

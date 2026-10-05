@@ -1,7 +1,12 @@
+import { shikakuExpansion } from "./shikakuExpansion";
 /** Original MIT puzzles, authored with deterministic rectangular partitions. Certificates are not used by solving/hints. */
 export type ShikakuRect = [number, number, number, number];
 export type ShikakuClue = { index: number; area: number };
 export type ShikakuLevel = {
+  id?: string;
+  contentVersion?: number;
+  chapter?: number;
+  objective?: string;
   title: string;
   size: number;
   clues: ShikakuClue[];
@@ -615,4 +620,5 @@ export const shikakuLevels: ShikakuLevel[] = [
     authoringCandidates: 36,
     title: "园艺规划师",
   },
+  ...shikakuExpansion,
 ];
