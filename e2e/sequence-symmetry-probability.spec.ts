@@ -39,12 +39,64 @@ async function readableDisabled(page: Page, selector: string) {
   }
 }
 
+async function readableMemoryCells(page: Page) {
+  const cells = await page
+    .locator("[data-memory-routes-cell]")
+    .evaluateAll((nodes) =>
+      nodes.map((node) => {
+        const box = node.getBoundingClientRect();
+        const labels = [...node.children]
+          .filter((n) => n.textContent?.trim())
+          .map((n) => {
+            const r = n.getBoundingClientRect();
+            return {
+              text: n.textContent,
+              top: r.top,
+              bottom: r.bottom,
+              left: r.left,
+              right: r.right,
+            };
+          });
+        return {
+          cell: node.getAttribute("data-memory-routes-cell"),
+          box: {
+            top: box.top,
+            bottom: box.bottom,
+            left: box.left,
+            right: box.right,
+          },
+          labels,
+        };
+      }),
+    );
+  for (const cell of cells) {
+    for (const [i, label] of cell.labels.entries()) {
+      expect(label.top, JSON.stringify(cell)).toBeGreaterThanOrEqual(
+        cell.box.top + 0.5,
+      );
+      expect(label.bottom, JSON.stringify(cell)).toBeLessThanOrEqual(
+        cell.box.bottom - 0.5,
+      );
+      expect(label.left, JSON.stringify(cell)).toBeGreaterThanOrEqual(
+        cell.box.left + 0.5,
+      );
+      expect(label.right, JSON.stringify(cell)).toBeLessThanOrEqual(
+        cell.box.right - 0.5,
+      );
+      if (i)
+        expect(label.top, JSON.stringify(cell)).toBeGreaterThanOrEqual(
+          cell.labels[i - 1].bottom,
+        );
+    }
+  }
+}
 test("all ordered memory routes with repeatable observation", async ({
   page,
 }, info) => {
   const errors = captureErrors(page);
   await openGame(page, "路线记忆");
   await readableDisabled(page, ".mr-actions button:disabled");
+  await readableMemoryCells(page);
   await page.screenshot({
     path: info.outputPath("memory-routes-start.png"),
     fullPage: true,
@@ -70,6 +122,7 @@ test("all ordered memory routes with repeatable observation", async ({
       "data-memory-routes-won",
       "true",
     );
+    await readableMemoryCells(page);
     await complete(page, info, "memory-routes", level);
   }
   expect(errors).toEqual([]);
