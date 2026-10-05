@@ -98,6 +98,15 @@ jobs:
       - run: npm ci
       - name: Build for the GitHub Pages project path
         run: npm run build -- --base=/playgarden/
+      - name: Stamp the exact published commit into the built document
+        run: |
+          node --input-type=module <<'NODE'
+          import { readFileSync, writeFileSync } from 'node:fs';
+          const sha = process.env.GITHUB_SHA;
+          if (!/^[a-f0-9]{40}$/.test(sha || '')) throw new Error('Missing build SHA');
+          const html = readFileSync('dist/index.html', 'utf8');
+          writeFileSync('dist/index.html', html.replace('</head>', `<meta name="playgarden-commit" content="${sha}"></head>`));
+          NODE
       - run: npx playwright install --with-deps chromium
       - name: Verify production assets, games, refresh, and local saves
         run: npx playwright test --config=playwright.pages.config.ts
@@ -123,6 +132,7 @@ jobs:
     concurrency:
       group: github-pages
       cancel-in-progress: false
+      queue: max
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}

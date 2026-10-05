@@ -174,7 +174,13 @@ describe("Scalable catalog contract", () => {
     it(`${game.id} metadata matches its real levels and license`, () => {
       expect(game.levelCount).toBe(packs[game.id].length);
       expect(game.source.license).toBe("MIT");
-      expect(game.artwork.url).toMatch(/^\//);
+      expect(game.artwork.url).toMatch(/^\.\/[a-z0-9-]+\.webp$/);
+      for (const root of ["https://example.test/", "https://example.test/playgarden/"]) {
+        const base = new URL(root);
+        const artwork = new URL(game.artwork.url, base);
+        expect(artwork.origin).toBe(base.origin);
+        expect(artwork.pathname).toBe(base.pathname + game.artwork.url.slice(2));
+      }
     }),
   );
   it("counts only 79 real games and 1048 levels, not the roadmap", () => {
@@ -182,3 +188,4 @@ describe("Scalable catalog contract", () => {
     expect(games.reduce((sum, g) => sum + g.levelCount, 0)).toBe(1048);
   });
 });
+

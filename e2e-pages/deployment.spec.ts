@@ -9,6 +9,7 @@ test("production base, every game module, and earned local progress survive depl
   const loadedResources: string[] = [];
   const base = new URL(baseURL!);
   page.on("pageerror", (error) => errors.push(error.message));
+  page.on("requestfailed", (request) => errors.push(`${request.url()}: ${request.failure()?.errorText}`));
   page.on("response", (response) => {
     const url = new URL(response.url());
     if (url.origin !== base.origin) return;
@@ -20,9 +21,17 @@ test("production base, every game module, and earned local progress survive depl
   await expect(page.getByRole("heading", { name: "玩出一点新发现。" })).toBeVisible();
   await expect(page.locator(".catalog-count")).toContainText(`${games.length} 款可玩游戏`);
   await expect(page.locator(".catalog-count")).toContainText(`${games.reduce((n, g) => n + g.levelCount, 0)} 个关卡`);
+  if (process.env.GITHUB_SHA) {
+    await expect(page.locator('meta[name="playgarden-commit"]')).toHaveAttribute("content", process.env.GITHUB_SHA);
+  }
   const favicon = await page.locator('link[rel="icon"]').getAttribute("href");
   expect(favicon).toBeTruthy();
-  expect((await page.request.get(new URL(favicon!, page.url()).href)).status()).toBe(200);
+  const faviconURL = new URL(favicon!, page.url());
+  expect(faviconURL.pathname.startsWith(base.pathname)).toBe(true);
+  const faviconResponse = await page.request.get(faviconURL.href);
+  expect(faviconResponse.status()).toBe(200);
+  expect(faviconResponse.headers()["content-type"]).toContain("image/svg+xml");
+  await page.evaluate(async (url) => { const image = new Image(); image.src = url; await image.decode(); if (!image.naturalWidth) throw new Error("Empty favicon"); }, faviconURL.href);
   await page.screenshot({ path: info.outputPath("pages-home.png"), fullPage: true });
 
   await page.getByRole("button", { name: "收藏光线实验室", exact: true }).click();
@@ -35,11 +44,15 @@ test("production base, every game module, and earned local progress survive depl
     const url = image.match(/url\(["']?(.+?)["']?\)/)?.[1];
     expect(url, `artwork URL for ${game.id}`).toBeTruthy();
     expect(new URL(url!).pathname.startsWith(base.pathname)).toBe(true);
-    expect((await page.request.get(url!)).status()).toBe(200);
+    const artworkResponse = await page.request.get(url!);
+    expect(artworkResponse.status()).toBe(200);
+    expect(artworkResponse.headers()["content-type"]).toContain("image/webp");
+    await page.evaluate(async (url) => { const image = new Image(); image.src = url; await image.decode(); if (!image.naturalWidth) throw new Error("Empty artwork"); }, url!);
     await artwork.click();
     await expect(page.locator(".game-main")).toHaveAttribute("data-game", game.id);
     await expect(page.locator(".game-surface")).toBeVisible();
     await expect(page.locator(".game-surface .loading")).toHaveCount(0);
+    await expect(page.locator(".module-error")).toHaveCount(0);
     await expect(page.getByLabel("选择关卡", { exact: true }).locator("option")).toHaveCount(game.levelCount);
     if (game.id === "lights-out") {
       await page.getByLabel("选择关卡", { exact: true }).selectOption("111");
