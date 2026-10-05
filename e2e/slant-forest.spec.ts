@@ -16,11 +16,17 @@ async function solve(page:Page,index:number) {
  await expect(page.locator('[data-slant-won=true]')).toHaveCount(1);
  await expect(page.locator('.status')).toHaveClass(/success/);
 }
-// Ten-level journeys keep each bounded even with the 12×10 mobile board.
-for(let start=0;start<300;start+=10) test(`Slant genuine completion ${start+1}–${start+10}`,async({page},info)=>{
+// Bound each journey by actual cell work, preserving the original 120s timeout.
+// Failed 10-board traces showed completed boards continuing until the aggregate
+// timeout (not a blocked action). Large boards therefore use shorter journeys.
+const journeys = slantChapters.flatMap(chapter => {
+ const perRun = chapter.width >= 12 ? 2 : chapter.width >= 8 ? 5 : 10;
+ return Array.from({length:Math.ceil(chapter.count/perRun)},(_,i)=>({start:chapter.start+i*perRun,end:Math.min(chapter.start+(i+1)*perRun,chapter.start+chapter.count)}));
+});
+for(const {start,end} of journeys) test(`Slant genuine completion ${start+1}–${end}`,async({page},info)=>{
  const errors=captureErrors(page);page.on('console',m=>{if(m.type()==='error')errors.push(m.text());});
  await openGame(page,'斜线森林');await chooseLevel(page,start);
- for(let level=start;level<start+10;level++){
+ for(let level=start;level<end;level++){
   const puzzle=slantLevels[level],chapter=slantChapters[puzzle.chapter];
   await expect(page.locator('.slant-cell')).toHaveCount(puzzle.width*puzzle.height);
   await expect(page.getByLabel('本章练习')).toContainText(chapter.title);
@@ -32,7 +38,7 @@ for(let start=0;start<300;start+=10) test(`Slant genuine completion ${start+1}�
   expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
   if([0,149,299].includes(level))await page.screenshot({path:info.outputPath(`slant-${level+1}-won.png`),fullPage:true});
   const earned=await page.evaluate(key=>JSON.parse(localStorage.getItem(key)!).completed.slant,STORAGE_KEY);expect(earned).toContain(level);
-  if(level<start+9)await page.getByRole('button',{name:'下一关',exact:true}).click();
+  if(level<end-1)await page.getByRole('button',{name:'下一关',exact:true}).click();
  }
  expect(errors).toEqual([]);
 });
