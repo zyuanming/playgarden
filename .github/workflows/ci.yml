@@ -82,3 +82,88 @@ jobs:
           name: browser-failure-traces-shard-${{ matrix.shard }}
           path: test-results/**/trace.zip
           retention-days: 3
+
+  pages-build:
+    needs: validate
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+          cache: npm
+      - run: npm ci
+      - name: Build for the GitHub Pages project path
+        run: npm run build -- --base=/playgarden/
+      - run: npx playwright install --with-deps chromium
+      - name: Verify production assets, games, refresh, and local saves
+        run: npx playwright test --config=playwright.pages.config.ts
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: pages-preview-evidence
+          path: test-results/pages/
+          retention-days: 3
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  pages-deploy:
+    needs: [browser, pages-build]
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    concurrency:
+      group: github-pages
+      cancel-in-progress: false
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Do not replace a newer main with an older build
+        id: current
+        shell: bash
+        run: |
+          latest="$(git ls-remote "https://github.com/${GITHUB_REPOSITORY}.git" refs/heads/main | cut -f1)"
+          if [[ "$latest" == "$GITHUB_SHA" ]]; then
+            echo "deploy=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "Skipping superseded commit $GITHUB_SHA; main is $latest."
+            echo "deploy=false" >> "$GITHUB_OUTPUT"
+          fi
+      - uses: actions/configure-pages@v5
+        if: steps.current.outputs.deploy == 'true'
+      - name: Deploy verified build to GitHub Pages
+        if: steps.current.outputs.deploy == 'true'
+        id: deployment
+        uses: actions/deploy-pages@v4
+      - uses: actions/setup-node@v4
+        if: steps.current.outputs.deploy == 'true'
+        with:
+          node-version: "24"
+          cache: npm
+      - run: npm ci
+        if: steps.current.outputs.deploy == 'true'
+      - run: npx playwright install --with-deps chromium
+        if: steps.current.outputs.deploy == 'true'
+      - name: Verify the real public website
+        if: steps.current.outputs.deploy == 'true'
+        run: npx playwright test --config=playwright.pages.config.ts
+        env:
+          PLAYWRIGHT_BASE_URL: ${{ steps.deployment.outputs.page_url }}
+      - uses: actions/upload-artifact@v4
+        if: always() && steps.current.outputs.deploy == 'true'
+        with:
+          name: pages-public-evidence
+          path: test-results/pages/
+          retention-days: 3

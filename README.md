@@ -21,7 +21,18 @@ npm test
 npm run build
 ```
 
-构建产物在 `dist/`，可交给任意静态托管服务。当前仓库不代表已经部署了线上网站。
+构建产物在 `dist/`，可交给任意静态托管服务。GitHub Pages 使用 `/playgarden/` 子路径构建，main 的检查通过后自动发布；实际部署地址和状态以 [GitHub Actions](https://github.com/zyuanming/playgarden/actions) 的 `pages-deploy` 结果为准。
+
+首次启用：仓库 Settings → Pages → Build and deployment → Source 选择 GitHub Actions。无需域名、付费服务或额外 secret。游戏切换使用页面内状态，没有独立游戏 URL；刷新会返回大厅，已完成关卡、收藏和静音偏好保存在当前浏览器。线上站点与本地开发地址的存档按浏览器 origin 隔离，不会自动互相复制。
+
+验证 Pages 生产构建（已有 Chromium 安装时）：
+
+```bash
+npm run build -- --base=/playgarden/
+npx playwright test --config=playwright.pages.config.ts
+```
+
+设置 `PLAYWRIGHT_BASE_URL` 为已部署站点的完整 URL（带结尾 `/`），可对公开站点执行相同的资源、游戏加载和当前存档检查。
 
 ## 游戏
 
@@ -126,7 +137,7 @@ npm run build
 - 运行 `npx playwright install chromium` 后可用 `npm run test:e2e` 重现浏览器检查；完整结果和临时截图在 [GitHub Actions](https://github.com/zyuanming/playgarden/actions) 中查看。
 - 尚未验证 Safari、Firefox、真实 iOS/Android 硬件、屏幕阅读器或完整 WCAG 合规性。手机尺寸的 Chromium 测试不等于真机验收。
 - 全量依赖审计在 2026-10-04 报告 0 项漏洞；该结果是时间点检查，不是持续安全保证。
-- CI 仅运行检查和构建，不部署网站。
+- CI 对 PR 只检查；main 通过原有质量检查与 Pages 生产构建检查后，才会发布到 GitHub Pages，并对返回的真实公开网址再次运行桌面/手机尺寸 smoke。
 
 ## 模块结构
 
@@ -184,3 +195,4 @@ src/
 ## 熄灯谜阵战役
 
 112 关重建版：3×3 共 28 关、4×4 共 28 关、5×5 共 56 关。固定题库排除旋转与镜像重复，附独立逐行解法证明。教学从角/边/中心联动、叠加抵消，到逐行清理和全局计划；最短步数是参考，不限制通关。详见 [战役设计与验证](docs/lights-out-campaign.md)。
+
