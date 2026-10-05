@@ -1,0 +1,17 @@
+# Slant / 斜线森林：实际源码迁移
+
+本模块改编自 Simon Tatham's Portable Puzzle Collection 的 Slant。
+
+- 上游快照：[`a7c7826bce5cbb9b9c337c11b9b7f8b278e76fba`](https://github.com/notpeter/sgtatham-puzzles/tree/a7c7826bce5cbb9b9c337c11b9b7f8b278e76fba)，并非“最新版”。
+- 原作者主页：https://www.chiark.greenend.org.uk/~sgtatham/puzzles/
+- 原作规则致谢 Nikoli；不使用其商标美术、图片或题纸。
+- 完整 MIT 作者与许可保存在 `vendor/sgtatham-slant/LICENCE`；原始 `slant.c` 保存供逐行审计，未编译、执行或作为浏览器依赖。
+- 实际移植：`scripts/slant/adapted-generator.mjs` 对应 `slant_generate`（随机顺序逐格填入，不闭环的两个端点判定及合并）与 `new_game_desc`（四邻顶点计数、两遍优先删线索、a..z 描述编码）。这是代码级算法移植，不是仅附规则链接。
+- 变更：C 数组/DSF 改为 JavaScript；随机源换为本项目固定种子 PRNG；上游 `slant_solve` 替换为本项目约束传播/搜索。题库不是原作现成题库，种子不与 C 版本兼容。
+- 不宣称执行过上游 C 差分，也不使用上游 Easy/Hard 标签。本项目难度依据自身可复核的传播轮数、闭环排除次数、必要搜索分支和棋盘规模；“进阶”是本项目分级。
+
+## 生成和验证
+
+使用已有 Node 24，不需要新增包。`node scripts/build-slant-campaign.mjs` 从稳定种子生成候选。题库生成时保持唯一解且以顶点线索（包含尺寸）做 D4 旋转/镜像规范化后全局去重。运行时没有开局随机生成，也不引入网络依赖。解法证书只存在测试文件中，不进入玩家模块；游戏按数字和无环规则判断胜利。
+
+`src/games/slantLogic.ts` 的有界求解器从当前玩家状态求解，超过预算明确返回 timeout，不当无解。提示不自动落子；冲突局面要求撤销或擦除。所有状态转移自身阻止暂停/终局后的输入。独立验解结果与最终验收数字在本文件后续记录，尚未验证的候选不注册。
