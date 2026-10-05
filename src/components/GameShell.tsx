@@ -23,12 +23,17 @@ export function GameShell({
   completed: number[];
 }) {
   const game = games.find((g) => g.id === id)!;
-  const [level, setLevel] = useState(
-    () =>
-      Array.from({ length: game.levelCount }, (_, i) => i).find(
-        (i) => !completed.includes(i),
-      ) ?? 0,
-  );
+  const [level, setLevel] = useState(() => {
+    if (game.resumeKey) try {
+      const raw = localStorage.getItem(`${game.resumeKey}.selected`);
+      const saved = raw === null ? -1 : Number(raw);
+      if (Number.isInteger(saved) && saved >= 0 && saved < game.levelCount && !completed.includes(saved)) return saved;
+    } catch { /* Local storage can be disabled. */ }
+    return Array.from({ length: game.levelCount }, (_, i) => i).find(i => !completed.includes(i)) ?? 0;
+  });
+  useEffect(() => {
+    if (game.resumeKey) try { localStorage.setItem(`${game.resumeKey}.selected`, String(level)); } catch { /* Best-effort resume. */ }
+  }, [game.resumeKey, level]);
   const [paused, setPaused] = useState(false);
   const [reset, setReset] = useState(0);
   const [hint, setHint] = useState(0);
@@ -106,6 +111,7 @@ export function GameShell({
         </button>
         <button
           onClick={() => {
+            if (game.resumeKey) try { localStorage.removeItem(`${game.resumeKey}.round.${level}`); } catch { /* The module still receives the reset token. */ }
             setReset((r) => r + 1);
             setWon(false);
             setPaused(false);
@@ -155,6 +161,7 @@ export function GameShell({
               hintToken={hint}
               undoToken={undo}
               onComplete={() => {
+                if (game.resumeKey) try { localStorage.setItem(`${game.resumeKey}.selected`, String(Math.min(level + 1, game.levelCount - 1))); } catch { /* Best effort. */ }
                 setWon(true);
                 onComplete(level);
               }}
@@ -180,9 +187,13 @@ export function GameShell({
       >
         <p>{status}</p>
       </div>
+      {game.source.kind === "adapted" && <p className="privacy-note" aria-label="游戏源码来源">
+        改编自 <a href={game.source.url} target="_blank" rel="noreferrer">{game.source.author} 的 Slant</a> · 固定版本 {game.source.commit.slice(0, 7)} · <a href={game.source.notice} target="_blank" rel="noreferrer">完整 MIT 许可</a><br/>{game.source.notes}
+      </p>}
       <p className="privacy-note">
         进度仅保存在当前浏览器。随时休息，不需要赶时间。
       </p>
     </main>
   );
 }
+

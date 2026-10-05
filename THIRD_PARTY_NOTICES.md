@@ -16,8 +16,42 @@ The original Playgarden code is MIT licensed; see LICENSE. This inventory covers
 | Playwright                                                | Apache-2.0 | https://github.com/microsoft/playwright            |
 | @types/node, @types/react, @types/react-dom, @types/three | MIT        | https://github.com/DefinitelyTyped/DefinitelyTyped |
 
-The project does not import Three.js example assets or any third-party game source. Candidate resources in docs/OPEN_SOURCE_RESOURCES.md are references only, not bundled dependencies.
+The project does not import Three.js example assets. Slant is the first source-adapted game; other entries in docs/OPEN_SOURCE_RESOURCES.md remain candidates, not bundled dependencies.
 
 Catalog art: AI-generated original artwork commissioned for Playgarden, generated using OpenAI image generation on 2026-10-04. No external licensed character, game logo, or stock image is used. Geometry and gameplay content are original. System fonts are used; no font files are bundled.
 
 Redistributors must retain relevant upstream notices when distributing dependency code. The dependency license texts are included in node_modules after npm ci; a license inventory is not a substitute for those texts.
+
+
+## Simon Tatham’s Slant (MIT)
+
+Fixed source: https://github.com/notpeter/sgtatham-puzzles/blob/a7c7826bce5cbb9b9c337c11b9b7f8b278e76fba/slant.c
+
+Adapted filled-grid, clue generation/removal and description encoding in scripts/slant/adapted-generator.mjs. Original source retained in vendor/sgtatham-slant/slant.c; own RNG, solver, UI and levels. No third-party assets imported. Full notice also shipped as public/slant-LICENCE.txt.
+
+This software is copyright (c) 2004-2024 Simon Tatham.
+
+Portions copyright Richard Boulton, James Harvey, Mike Pinna, Jonas
+Kölker, Dariusz Olszewski, Michael Schierl, Lambros Lambrou, Bernd
+Schmidt, Steffen Bauer, Lennard Sprong, Rogier Goossens, Michael
+Quevillon, Asher Gordon, Didi Kohen and Ben Harris.
+
+Permission is hereby granted, free of charge, to any person
+obtaining a copy of this software and associated documentation files
+(the "Software"), to deal in the Software without restriction,
+including without limitation the rights to use, copy, modify, merge,
+publish, distribute, sublicense, and/or sell copies of the Software,
+and to permit persons to whom the Software is furnished to do so,
+subject to the following conditions:
+
+The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
+BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
+ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.

@@ -325,7 +325,7 @@ export default function App() {
               rel="noreferrer"
             >
               <Github size={23} />
-              原创游戏，开放生长。
+              开源游戏，开放生长。
             </a>
             <span />
           </footer>
@@ -334,3 +334,4 @@ export default function App() {
     </>
   );
 }
+

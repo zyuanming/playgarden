@@ -1,3 +1,4 @@
+import { slantLevels } from "../src/games/slantLevels";
 import { memoryRoutesLevels } from "../src/games/memoryRoutesLevels";
 import { rhythmEchoLevels } from "../src/games/rhythmEchoLevels";
 import { symmetryRepairLevels } from "../src/games/symmetryRepairLevels";
@@ -83,6 +84,7 @@ import { sortingNetworkLevels } from "../src/games/sortingNetworkLogic";
 import { voxelViewsLevels } from "../src/games/voxelViewsLogic";
 import { cubeNetLevels } from "../src/games/cubeNetLogic";
 const packs = {
+  slant: slantLevels,
   "memory-routes": memoryRoutesLevels,
   "rhythm-echo": rhythmEchoLevels,
   "symmetry-repair": symmetryRepairLevels,
@@ -183,9 +185,10 @@ describe("Scalable catalog contract", () => {
       }
     }),
   );
-  it("counts only 79 real games and 1048 levels, not the roadmap", () => {
-    expect(games).toHaveLength(79);
-    expect(games.reduce((sum, g) => sum + g.levelCount, 0)).toBe(1048);
+  it("counts only 80 real games and 1348 levels, not the roadmap", () => {
+    expect(games).toHaveLength(80);
+    expect(games.reduce((sum, g) => sum + g.levelCount, 0)).toBe(1348);
   });
 });
+
 

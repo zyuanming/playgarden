@@ -1,3 +1,4 @@
+import { SLANT_LEVEL_COUNT } from "../games/slantCampaign";
 import { LIGHTS_OUT_LEVEL_COUNT } from "../games/lightsOutCampaign";
 import { sequenceSymmetryArtwork } from "./catalog";
 import { foldTreeLightArtwork } from "./catalog";
@@ -983,5 +984,25 @@ export const games: GameDefinition[] = [
     source: original,
     component: lazy(() => import("../games/ProbabilityBag")),
   },
+  {
+    id: "slant",
+    title: "斜线森林",
+    subtitle: "数字指路，斜线成林。300 关无环推理旅程。",
+    category: "逻辑思维",
+    difficulty: "进阶",
+    tone: "green",
+    levelCount: SLANT_LEVEL_COUNT,
+    artwork: firstGameArtwork(0),
+    resumeKey: "playgarden.slant.v1",
+    source: {
+      kind: "adapted", license: "MIT", author: "Simon Tatham 与贡献者",
+      url: "https://github.com/notpeter/sgtatham-puzzles/blob/a7c7826bce5cbb9b9c337c11b9b7f8b278e76fba/slant.c",
+      commit: "a7c7826bce5cbb9b9c337c11b9b7f8b278e76fba",
+      notice: "./slant-LICENCE.txt",
+      notes: "实际移植 Slant 填盘与线索生成代码；本项目界面、求解器、种子题库与分级。",
+    },
+    component: lazy(() => import("../games/SlantForest")),
+  },
 ];
 export const findGame = (id: string) => games.find((game) => game.id === id);
+
