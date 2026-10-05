@@ -14,6 +14,9 @@ test("production base, every game module, and earned local progress survive depl
     const url = new URL(response.url());
     if (url.origin !== base.origin) return;
     if (response.status() >= 400) failedResponses.push(`${response.status()} ${url.pathname}`);
+    const mime = response.headers()["content-type"] || "";
+    if (url.pathname.endsWith(".css") && !mime.includes("text/css")) failedResponses.push(`Invalid CSS MIME ${mime}: ${url.pathname}`);
+    if (url.pathname.endsWith(".js") && !/(?:text|application)\/javascript/.test(mime)) failedResponses.push(`Invalid JS MIME ${mime}: ${url.pathname}`);
     if (/\.(?:js|css|webp|svg)$/.test(url.pathname)) loadedResources.push(url.pathname);
   });
   const response = await page.goto("./");
@@ -27,6 +30,7 @@ test("production base, every game module, and earned local progress survive depl
   const favicon = await page.locator('link[rel="icon"]').getAttribute("href");
   expect(favicon).toBeTruthy();
   const faviconURL = new URL(favicon!, page.url());
+  expect(faviconURL.origin).toBe(base.origin);
   expect(faviconURL.pathname.startsWith(base.pathname)).toBe(true);
   const faviconResponse = await page.request.get(faviconURL.href);
   expect(faviconResponse.status()).toBe(200);
@@ -43,6 +47,7 @@ test("production base, every game module, and earned local progress survive depl
     const image = await artwork.evaluate((el) => getComputedStyle(el).backgroundImage);
     const url = image.match(/url\(["']?(.+?)["']?\)/)?.[1];
     expect(url, `artwork URL for ${game.id}`).toBeTruthy();
+    expect(new URL(url!).origin).toBe(base.origin);
     expect(new URL(url!).pathname.startsWith(base.pathname)).toBe(true);
     const artworkResponse = await page.request.get(url!);
     expect(artworkResponse.status()).toBe(200);
