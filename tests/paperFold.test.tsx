@@ -463,3 +463,16 @@ describe("PaperFold 12 rendered journeys and interruption", () => {
     expect(p.onComplete).toHaveBeenCalledTimes(1);
   });
 });
+
+it("explains when the fold budget is exhausted", () => {
+  const v = render(<PaperFold {...props()} level={5} />);
+  for (const a of paperFoldLevels[5].certificate.actions) {
+    if (a.kind !== "fold") break;
+    fireEvent.click(
+      v.container.querySelector(`[data-paper-fold="${a.crease}"]`)!,
+    );
+  }
+  expect(v.container.querySelector(".pf-phase")?.textContent).toContain(
+    "折叠次数已用满，开始打孔",
+  );
+});

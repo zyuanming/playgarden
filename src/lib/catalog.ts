@@ -75,6 +75,10 @@ export const GAME_IDS = [
   "tree-rotations",
   "spectral-filters",
   "wave-studio",
+  "memory-routes",
+  "rhythm-echo",
+  "symmetry-repair",
+  "probability-bag",
 ] as const;
 export type GameId = (typeof GAME_IDS)[number];
 export type Category =
@@ -202,6 +206,12 @@ export const flowRailFunctionArtwork = (index: number) => ({
 
 export const foldTreeLightArtwork = (index: number) => ({
   url: "/fold-tree-light-wave-art.webp",
+  position: `${(index % 2) * 100}% ${index < 2 ? 12 : 88}%`,
+  size: "200% auto",
+});
+
+export const sequenceSymmetryArtwork = (index: number) => ({
+  url: "/sequence-symmetry-probability-art.webp",
   position: `${(index % 2) * 100}% ${index < 2 ? 12 : 88}%`,
   size: "200% auto",
 });
