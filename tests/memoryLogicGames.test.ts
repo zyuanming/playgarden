@@ -122,14 +122,9 @@ describe("Memory Garden deterministic rules", () => {
 });
 
 describe("Lights Out exact solver and state rules", () => {
-  it("has twelve nondecreasing minimum-move challenges", () => {
-    expect(lightsOutLevels).toHaveLength(12);
-    expect(lightsOutLevels.map((level) => level.size)).toEqual([
-      3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 5,
-    ]);
-    expect(lightsOutLevels.map((level) => level.solution.length)).toEqual([
-      2, 3, 4, 4, 5, 6, 7, 7, 8, 9, 10, 11,
-    ]);
+  it("ships 112 fixed challenges across three board sizes", () => {
+    expect(lightsOutLevels).toHaveLength(112);
+    expect([3, 4, 5].map((size) => lightsOutLevels.filter((l) => l.size === size).length)).toEqual([28, 28, 56]);
   });
   lightsOutLevels.forEach((config, level) => {
     it(`level ${level + 1} starts unsolved and supports both generated inverse and exact solution`, () => {
@@ -168,7 +163,7 @@ describe("Lights Out exact solver and state rules", () => {
     expect(lightNeighbors(3, 0).sort()).toEqual([0, 1, 3]);
     expect(lightNeighbors(3, 2).sort()).toEqual([1, 2, 5]);
     expect(lightNeighbors(3, 4).sort()).toEqual([1, 3, 4, 5, 7]);
-    const original = lightsOutLevels[11].initial;
+    const original = lightsOutLevels[111].initial;
     for (let i = 0; i < 25; i++)
       expect(toggleLight(toggleLight(original, 5, i), 5, i)).toEqual(original);
     expect(lightsOutSolved([])).toBe(false);
@@ -388,7 +383,7 @@ describe("Lights Out component behavior", () => {
       fireEvent.click(suggested!);
     }
     expect(base.onComplete).toHaveBeenCalledOnce();
-    view.rerender(h(LightsOut, { ...base, level: 11 }));
+    view.rerender(h(LightsOut, { ...base, level: 111 }));
     expect(litButtons()).toHaveLength(25);
     expect(base.onComplete).toHaveBeenCalledOnce();
     expect(

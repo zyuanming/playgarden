@@ -23,7 +23,7 @@ test('different changed features are combined', () => {
   const result = plan(['src/games/memoryRoutes.css', 'src/games/lightsOutLogic.ts']);
   assert.equal(result.mode, 'focused');
   assert.ok(result.files.includes('e2e/sequence-symmetry-probability.spec.ts'));
-  assert.ok(result.files.includes('e2e/playgarden.spec.ts'));
+  assert.ok(result.files.includes('e2e/lights-out-campaign.spec.ts'));
 });
 test('every current game source has a browser witness, including all CSS and shared game components', () => {
   assert.equal(dependencyGraph(sources).unresolved.size, 0);

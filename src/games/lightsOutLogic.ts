@@ -1,3 +1,5 @@
+import { lightsOutBoards, lightsOutChapters } from "./lightsOutCampaign.ts";
+
 /** Toggle the chosen light plus orthogonal neighbors. No edge wrapping. */
 export function lightNeighbors(size: number, index: number): number[] {
   if (
@@ -113,42 +115,42 @@ export function solveLightsOut(
 
 export type LightsOutLevel = {
   title: string;
+  chapter: number;
+  lesson: string;
   size: number;
   initial: boolean[];
   scramble: number[];
   solution: number[];
 };
 
-// Every layout is constructed by toggling an all-off board, so it is solvable.
-const recipes: { title: string; size: number; scramble: number[] }[] = [
-  { title: "两颗种子", size: 3, scramble: [0, 8] },
-  { title: "交叉的光", size: 3, scramble: [0, 4, 8] },
-  { title: "四角相遇", size: 3, scramble: [0, 2, 6, 8] },
-  { title: "花园扩建", size: 4, scramble: [0, 5, 10, 15] },
-  { title: "逐行观察", size: 4, scramble: [1, 6, 15, 7, 5] },
-  { title: "交错花田", size: 4, scramble: [3, 12, 10, 9, 7, 4] },
-  { title: "静夜方格", size: 4, scramble: [10, 8, 9, 4, 7, 14, 12] },
-  { title: "大花园", size: 5, scramble: [0, 3, 6, 12, 17, 21, 24] },
-  { title: "星光小径", size: 5, scramble: [0, 2, 5, 8, 11, 16, 19, 23] },
-  { title: "九处涟漪", size: 5, scramble: [0, 2, 4, 6, 10, 13, 17, 20, 24] },
-  { title: "深夜花田", size: 5, scramble: [12, 16, 22, 9, 13, 1, 8, 7, 6, 19] },
-  {
-    title: "让花园入睡",
-    size: 5,
-    scramble: [0, 2, 3, 5, 7, 10, 12, 16, 18, 20, 24],
+/** Fixed, offline-curated boards. The independent row-chasing tests certify
+ * every stored minimum solution; no random generation or fallback levels. */
+export const lightsOutLevels: LightsOutLevel[] = lightsOutBoards.map(
+  ([initialMask, solutionMask, title], index) => {
+    const chapter = lightsOutChapters.findIndex(
+      (part) => index >= part.start && index < part.start + part.count,
+    );
+    if (chapter < 0) throw new RangeError(`Missing Lights Out chapter: ${index}`);
+    const { size, lesson } = lightsOutChapters[chapter];
+    const cells = Array.from({ length: size * size }, (_, i) => i);
+    const solution = cells.filter((i) => (solutionMask & (1 << i)) !== 0);
+    return {
+      title,
+      chapter,
+      lesson,
+      size,
+      initial: cells.map((i) => (initialMask & (1 << i)) !== 0),
+      scramble: [...solution],
+      solution,
+    };
   },
-];
-export const lightsOutLevels: LightsOutLevel[] = recipes.map((recipe) => {
-  const initial = applyLightMoves(
-    Array<boolean>(recipe.size ** 2).fill(false),
-    recipe.size,
-    recipe.scramble,
-  );
-  const solution = solveLightsOut(initial, recipe.size);
-  if (!solution?.length)
-    throw new Error(`Invalid Lights Out layout: ${recipe.title}`);
-  return { ...recipe, initial, solution };
-});
+);
+
+export function getLightsOutLevel(index: number): LightsOutLevel {
+  if (!Number.isInteger(index) || !lightsOutLevels[index])
+    throw new RangeError(`Unknown Lights Out level: ${index}`);
+  return lightsOutLevels[index];
+}
 
 export type LightsOutState = {
   board: boolean[];

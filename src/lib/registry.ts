@@ -1,3 +1,4 @@
+import { LIGHTS_OUT_LEVEL_COUNT } from "../games/lightsOutCampaign";
 import { sequenceSymmetryArtwork } from "./catalog";
 import { foldTreeLightArtwork } from "./catalog";
 import { flowRailFunctionArtwork } from "./catalog";
@@ -82,11 +83,11 @@ export const games: GameDefinition[] = [
   {
     id: "lights-out",
     title: "熄灯谜阵",
-    subtitle: "轻点一个开关，寻找让所有灯熄灭的规律。",
+    subtitle: "8 章 112 关，从第一盏灯到五阶花园。",
     category: "逻辑思维",
     difficulty: "中级",
     tone: "green",
-    levelCount: 12,
+    levelCount: LIGHTS_OUT_LEVEL_COUNT,
     artwork: expansionArtwork(1),
     source: original,
     component: lazy(() => import("../games/LightsOut")),
