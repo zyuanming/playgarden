@@ -55,7 +55,7 @@ describe('Slant real controls',()=>{
   view.rerender(<SlantForest {...p} paused undoToken={4}/>);fireEvent.click(cell(1));expect(cell(1).dataset.value).toBe('0');
   view.rerender(<SlantForest {...p} undoToken={4}/>);expect(cell(0).dataset.value).toBe('1');
   view.rerender(<SlantForest {...p} undoToken={5}/>);expect(cell(0).dataset.value).toBe('0');
-  fireEvent.click(screen.getByRole('button',{name:'正斜线 /',exact:true}));fireEvent.click(cell(1));expect(cell(1).dataset.value).toBe('1');
+  fireEvent.click(screen.getByRole('button',{name:'正斜线 /'}));fireEvent.click(cell(1));expect(cell(1).dataset.value).toBe('1');
   view.rerender(<SlantForest {...p} resetToken={9}/>);expect([...document.querySelectorAll('.slant-cell')].every(c=>c.getAttribute('data-value')==='0')).toBe(true);
  });
  it('high-level round persists across unmount; hint never auto-plays and terminal report happens once',()=>{
