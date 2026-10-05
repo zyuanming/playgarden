@@ -177,8 +177,8 @@ describe("Scalable catalog contract", () => {
       expect(game.artwork.url).toMatch(/^\//);
     }),
   );
-  it("counts only 79 real games and 948 levels, not the roadmap", () => {
+  it("counts only 79 real games and 1048 levels, not the roadmap", () => {
     expect(games).toHaveLength(79);
-    expect(games.reduce((sum, g) => sum + g.levelCount, 0)).toBe(948);
+    expect(games.reduce((sum, g) => sum + g.levelCount, 0)).toBe(1048);
   });
 });

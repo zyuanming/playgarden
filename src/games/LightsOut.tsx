@@ -2,6 +2,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import type { GameProps } from "../lib/types";
 import {
   createLightsOutState,
+  getLightsOutLevel,
   lightNeighbors,
   lightsOutLevels,
   lightsOutSolved,
@@ -10,6 +11,7 @@ import {
   undoLight,
 } from "./lightsOutLogic";
 import "./memoryLogicGames.css";
+import { lightsOutChapters } from "./lightsOutCampaign";
 
 export default function LightsOut(props: GameProps) {
   return (
@@ -25,7 +27,8 @@ function LightsOutRound({
   onComplete,
   onStatus,
 }: GameProps) {
-  const config = lightsOutLevels[level] ?? lightsOutLevels[0];
+  const config = getLightsOutLevel(level);
+  const chapter = lightsOutChapters[config.chapter];
   const [state, setState] = useState(() => createLightsOutState(config));
   const [hint, setHint] = useState<number | null>(null);
   const [hover, setHover] = useState<number | null>(null);
@@ -85,11 +88,13 @@ function LightsOutRound({
       <section className="mlg-playfield" aria-label="熄灯花园">
         <div className="mlg-board-heading">
           <div>
-            <span className="mlg-eyebrow">LIGHTS OUT</span>
+            <span className="mlg-eyebrow">
+              第 {config.chapter + 1} 章 · {chapter.title}
+            </span>
             <h3>{config.title}</h3>
           </div>
           <span className="mlg-round-badge">
-            {String(level + 1).padStart(2, "0")} / 12
+            {String(level + 1).padStart(2, "0")} / {lightsOutLevels.length}
           </span>
         </div>
         <div className="mlg-stats" aria-live="polite">
@@ -158,6 +163,11 @@ function LightsOutRound({
           让花园入睡。
         </h3>
         <p>点击一格，它与上下左右的灯会一起切换。亮的变暗，暗的变亮。</p>
+        <div className="mlg-note" aria-label="本章练习">
+          <strong>第 {config.chapter + 1} 章 · {chapter.title}</strong>
+          <p>{config.lesson}</p>
+          <p>本章第 {level - chapter.start + 1} / {chapter.count} 关 · 共 {lightsOutChapters.length} 章</p>
+        </div>
         <div
           className="mlg-cross-demo"
           aria-label="点击中心时，中心及上下左右会切换，斜角不受影响"

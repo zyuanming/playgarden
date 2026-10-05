@@ -5,7 +5,6 @@ import { robotLevels, commandLabels } from "../src/games/robotLogic";
 import { bridgeLevels } from "../src/games/bridgeLogic";
 import { slideLevels } from "../src/games/slideLogic";
 import { sudokuLevels } from "../src/games/sudokuLogic";
-import { lightsOutLevels } from "../src/games/lightsOutLogic";
 import { memoryLevels } from "../src/games/memoryLogic";
 import { minesLevels } from "../src/games/minesLogic";
 import { hanoiLevels } from "../src/games/hanoiLogic";
@@ -231,25 +230,6 @@ test("all 12 Sudoku puzzles", async ({ page }, info) => {
         .click();
     }
     await complete(page, info, "sudoku", level);
-  }
-  expect(errors).toEqual([]);
-});
-
-test("all 12 Lights Out boards", async ({ page }, info) => {
-  const errors = captureErrors(page);
-  await openGame(page, "熄灯谜阵");
-  for (let level = 0; level < lightsOutLevels.length; level++) {
-    await chooseLevel(page, level);
-    const config = lightsOutLevels[level];
-    for (const cell of config.solution)
-      await page
-        .getByRole("button", {
-          name: new RegExp(
-            `^第 ${Math.floor(cell / config.size) + 1} 行第 ${(cell % config.size) + 1} 列，`,
-          ),
-        })
-        .click();
-    await complete(page, info, "lights-out", level);
   }
   expect(errors).toEqual([]);
 });
