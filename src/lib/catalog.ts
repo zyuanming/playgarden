@@ -103,115 +103,117 @@ export type GameMeta = {
   artwork: { url: string; position: string; size: string };
   source: { kind: "original"; license: "MIT"; notes: string };
 };
+// Resolve public artwork beside the document, including the /playgarden/ Pages base.
 export const firstGameArtwork = (index: number) => ({
-  url: "/game-art.webp",
+  url: "./game-art.webp",
   position: `${index * 50}% 50%`,
   size: "300% auto",
 });
 export const expansionArtwork = (index: number) => ({
-  url: "/expansion-art.webp",
+  url: "./expansion-art.webp",
   position: `${(index % 3) * 50}% ${index < 3 ? 12 : 88}%`,
   size: "300% auto",
 });
 
 export const strategyArtwork = (index: number) => ({
-  url: "/strategy-art.webp",
+  url: "./strategy-art.webp",
   position: `${(index % 2) * 100}% ${index < 2 ? 12 : 88}%`,
   size: "200% auto",
 });
 
 export const discoveryArtwork = (index: number) => ({
-  url: "/discovery-art.webp",
+  url: "./discovery-art.webp",
   position: `${(index % 2) * 100}% ${index < 2 ? 12 : 88}%`,
   size: "200% auto",
 });
 
 export const scienceArtwork = (index: number) => ({
-  url: "/science-graph-art.webp",
+  url: "./science-graph-art.webp",
   position: `${(index % 2) * 100}% ${index < 2 ? 12 : 88}%`,
   size: "200% auto",
 });
 
 export const planningArtwork = (index: number) => ({
-  url: "/constraint-planning-art.webp",
+  url: "./constraint-planning-art.webp",
   position: `${(index % 2) * 100}% ${index < 2 ? 12 : 88}%`,
   size: "200% auto",
 });
 
 export const classicArtwork = (index: number) => ({
-  url: "/classic-tactics-art.webp",
+  url: "./classic-tactics-art.webp",
   position: `${(index % 2) * 100}% ${index < 2 ? 12 : 88}%`,
   size: "200% auto",
 });
 
 export const networkCodeArtwork = (index: number) => ({
-  url: "/network-code-art.webp",
+  url: "./network-code-art.webp",
   position: `${(index % 2) * 100}% ${index < 2 ? 12 : 88}%`,
   size: "200% auto",
 });
 
 export const regionNumberArtwork = (index: number) => ({
-  url: "/region-number-art.webp",
+  url: "./region-number-art.webp",
   position: `${(index % 2) * 100}% ${index < 2 ? 12 : 88}%`,
   size: "200% auto",
 });
 
 export const strategyPhysicsArtwork = (index: number) => ({
-  url: "/strategy-physics-art.webp",
+  url: "./strategy-physics-art.webp",
   position: `${(index % 2) * 100}% ${index < 2 ? 12 : 88}%`,
   size: "200% auto",
 });
 
 export const optimizationIslandsArtwork = (index: number) => ({
-  url: "/optimization-islands-art.webp",
+  url: "./optimization-islands-art.webp",
   position: `${(index % 2) * 100}% ${index < 2 ? 12 : 88}%`,
   size: "200% auto",
 });
 
 export const bitSpatialArtwork = (index: number) => ({
-  url: "/bit-spatial-art.webp",
+  url: "./bit-spatial-art.webp",
   position: `${(index % 2) * 100}% ${index < 2 ? 12 : 88}%`,
   size: "200% auto",
 });
 
 export const mathRouteCodeArtwork = (index: number) => ({
-  url: "/math-route-code-art.webp",
+  url: "./math-route-code-art.webp",
   position: `${(index % 2) * 100}% ${[6, 50, 94][Math.floor(index / 2)]}%`,
   size: "200% auto",
 });
 
 export const scienceTownArtwork = (index: number) => ({
-  url: "/science-town-art.webp",
+  url: "./science-town-art.webp",
   position: `${(index % 2) * 100}% ${index < 2 ? 12 : 88}%`,
   size: "200% auto",
 });
 
 export const codeEnergySpatialArtwork = (index: number) => ({
-  url: "/code-energy-spatial-art.webp",
+  url: "./code-energy-spatial-art.webp",
   position: `${(index % 2) * 100}% ${index < 2 ? 12 : 88}%`,
   size: "200% auto",
 });
 
 export const iceFleetNumberArtwork = (index: number) => ({
-  url: "/ice-fleet-number-art.webp",
+  url: "./ice-fleet-number-art.webp",
   position: `${(index % 2) * 100}% ${index < 2 ? 12 : 88}%`,
   size: "200% auto",
 });
 
 export const flowRailFunctionArtwork = (index: number) => ({
-  url: "/flow-rail-function-codec-art.webp",
+  url: "./flow-rail-function-codec-art.webp",
   position: `${(index % 2) * 100}% ${index < 2 ? 12 : 88}%`,
   size: "200% auto",
 });
 
 export const foldTreeLightArtwork = (index: number) => ({
-  url: "/fold-tree-light-wave-art.webp",
+  url: "./fold-tree-light-wave-art.webp",
   position: `${(index % 2) * 100}% ${index < 2 ? 12 : 88}%`,
   size: "200% auto",
 });
 
 export const sequenceSymmetryArtwork = (index: number) => ({
-  url: "/sequence-symmetry-probability-art.webp",
+  url: "./sequence-symmetry-probability-art.webp",
   position: `${(index % 2) * 100}% ${index < 2 ? 12 : 88}%`,
   size: "200% auto",
 });
+
