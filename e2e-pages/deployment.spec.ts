@@ -89,6 +89,9 @@ test("production base, every game module, and earned local progress survive depl
   expect(saved.muted).toBe(true);
   await page.getByRole("button", { name: "开始玩光线实验室", exact: true }).click();
   await expect(page.getByLabel("选择关卡", { exact: true })).toHaveValue("1");
+  await expect(page.locator(".game-surface .loading")).toHaveCount(0);
+  await expect(page.locator(".module-error")).toHaveCount(0);
+  await expect(page.getByRole("button", { name: /^镜子 2，/ })).toBeVisible();
   await page.screenshot({ path: info.outputPath("pages-resumed-game.png"), fullPage: true });
   expect(loadedResources.some((path) => path.endsWith(".js"))).toBe(true);
   expect(loadedResources.some((path) => path.endsWith(".css"))).toBe(true);
