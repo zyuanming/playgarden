@@ -27,3 +27,23 @@
 .project-license p a {
   margin-left: 4px;
 }
+
+/* Every legal/source link is a real 44px touch target, including the inline notice. */
+.project-license a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 8px 6px;
+  box-sizing: border-box;
+  border-radius: 7px;
+}
+.project-license a:hover {
+  background: #eef3e8;
+}
+.project-license a:focus-visible {
+  outline: 3px solid #235c48;
+  outline-offset: 2px;
+  background: #eef3e8;
+}

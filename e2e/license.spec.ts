@@ -13,6 +13,11 @@ test("Project GPL links, original third-party terms and source are readable in b
     "href",
     "https://github.com/zyuanming/playgarden/tree/main",
   );
+  for (const link of await legal.getByRole("link").all()) {
+    const rect = await link.boundingBox();
+    expect(rect!.height).toBeGreaterThanOrEqual(44);
+    expect(rect!.width).toBeGreaterThanOrEqual(44);
+  }
   await legal.scrollIntoViewIfNeeded();
   expect(
     await page.evaluate(
@@ -32,9 +37,38 @@ test("Project GPL links, original third-party terms and source are readable in b
     page.getByRole("link", { name: "完整 BSD-2-Clause 许可", exact: true }),
   ).toBeVisible();
   await expect(page.getByLabel("项目许可与完整源码")).toBeVisible();
+  for (const link of await page
+    .getByLabel("项目许可与完整源码")
+    .getByRole("link")
+    .all()) {
+    const rect = await link.boundingBox();
+    expect(rect!.height).toBeGreaterThanOrEqual(44);
+    expect(rect!.width).toBeGreaterThanOrEqual(44);
+  }
   await page.getByLabel("项目许可与完整源码").scrollIntoViewIfNeeded();
   await page.screenshot({
     path: info.outputPath("project-license-xiangqi.png"),
+    fullPage: true,
+  });
+  await page.setViewportSize({ width: 320, height: 800 });
+  await page.getByLabel("项目许可与完整源码").scrollIntoViewIfNeeded();
+  expect(
+    await page.evaluate(
+      () => document.documentElement.scrollWidth <= innerWidth + 1,
+    ),
+  ).toBe(true);
+  for (const link of await page
+    .getByLabel("项目许可与完整源码")
+    .getByRole("link")
+    .all()) {
+    const rect = await link.boundingBox();
+    expect(rect!.height).toBeGreaterThanOrEqual(44);
+    expect(rect!.width).toBeGreaterThanOrEqual(44);
+    expect(rect!.x).toBeGreaterThanOrEqual(0);
+    expect(rect!.x + rect!.width).toBeLessThanOrEqual(320);
+  }
+  await page.screenshot({
+    path: info.outputPath("project-license-320-targets.png"),
     fullPage: true,
   });
 });
