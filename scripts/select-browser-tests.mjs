@@ -26,6 +26,19 @@ export function dependencyGraph(sources) {
     const deps = new Set();
     // Literal JSON imports are data-only; track their path without parsing values as code.
     if (path.endsWith(".json")) { graph.set(path, deps); continue; }
+    // A literal relative URL has a statically known dependency, including Vite
+    // module Workers. Remove only the exact recognized expression before the
+    // conservative import.meta guard; all other import.meta uses still run full.
+    const staticURLs = /\bnew\s+URL\s*\(\s*(["'])(\.[^"']+)\1\s*,\s*import\s*\.\s*meta\s*\.\s*url\s*\)/g;
+    const remainingText = text.replace(staticURLs, (expression, _quote, specifier) => {
+      // URL decoding/query semantics differ from filename normalization. Leave
+      // these expressions unresolved, even if a literal-looking filename exists.
+      if (/[\s\\%?#]/.test(specifier)) { unresolved.add(path); return expression; }
+      const dep = posix.normalize(posix.join(posix.dirname(path), specifier));
+      if (dep in sources) deps.add(dep);
+      else unresolved.add(path);
+      return "";
+    });
     // Import/export-from, side-effect imports, and literal dynamic imports.
     const pattern = /(?:\bfrom\s*|\bimport\s*\(\s*|\bimport\s*)["']([^"']+)["']/g;
     for (const match of text.matchAll(pattern)) {
@@ -41,7 +54,7 @@ export function dependencyGraph(sources) {
       else unresolved.add(path);
     }
     // Nonliteral imports/require need a real parser or full coverage, never guesses.
-    if (/\b(?:import|from)\s*\/[/*]/.test(text) || /\bimport\s*\.\s*meta\b/.test(text) || /\bimport\s*\(\s*(?!["'])\S/.test(text) || /\brequire\s*\(/.test(text) || /@import\b/.test(text)) unresolved.add(path);
+    if (/\b(?:import|from)\s*\/[/*]/.test(text) || /\bimport\s*\.\s*meta\b/.test(remainingText) || /\bimport\s*\(\s*(?!["'])\S/.test(text) || /\brequire\s*\(/.test(text) || /@import\b/.test(text)) unresolved.add(path);
     graph.set(path, deps);
   }
   return { graph, unresolved };

@@ -175,3 +175,43 @@ test('Tents source defines bounded real-control journeys, chapter screenshots an
   assert.ok(!/test\.(?:skip|fixme|only)|test\.setTimeout|timeout\s*:/.test(spec));
   for (const required of ['fullyParallel: true', 'timeout: 120000', 'name: "desktop"', 'name: "mobile"', 'width: 1536', 'width: 390']) assert.ok(config.includes(required), required);
 });
+
+
+test('literal module Worker URLs track the full search dependency chain', () => {
+  const fixture = {
+    'src/games/Game.tsx': 'new Worker(new URL("./engine.worker.ts", import.meta.url), { type: "module" });',
+    'src/games/engine.worker.ts': 'import { search } from "./engine";',
+    'src/games/engine.ts': 'export const search = () => 0;',
+  };
+  const { graph, unresolved } = dependencyGraph(fixture);
+  assert.equal(unresolved.size, 0);
+  assert.deepEqual([...graph.get('src/games/Game.tsx')], ['src/games/engine.worker.ts']);
+  assert.deepEqual([...graph.get('src/games/engine.worker.ts')], ['src/games/engine.ts']);
+  for (const path of ['src/games/GomokuGarden.tsx', 'src/games/gomoku.worker.ts', 'src/games/gomokuAi.ts']) {
+    assert.equal(plan([path]).mode, 'focused', path);
+    assert.ok(plan([path]).files.includes('e2e/gomoku.spec.ts'), path);
+  }
+});
+test('unknown URL expressions and other import.meta uses still fail safe', () => {
+  for (const source of [
+    'new Worker(new URL(workerPath, import.meta.url));',
+    'new URL("./missing.ts", import.meta.url);',
+    'new URL("./known.ts", import.meta.url); console.log(import.meta.env);',
+    'new URL(`./known.ts`, import.meta.url);',
+    'console.log(import.meta.url);',
+  ]) {
+    const fixture = { 'src/games/Game.tsx': source, 'src/games/known.ts': 'export const x = 1;' };
+    assert.ok(dependencyGraph(fixture).unresolved.has('src/games/Game.tsx'), source);
+  }
+});
+
+test('encoded and URL-special paths never masquerade as ordinary filenames', () => {
+  for (const specifier of ['./%61.ts', './known.ts?worker', './known.ts#v1', './a b.ts', './a\\b.ts']) {
+    const fixture = {
+      'src/games/Game.tsx': `new Worker(new URL(${JSON.stringify(specifier)}, import.meta.url));`,
+      'src/games/a.ts': 'export const x = 1;',
+      ['src/games/' + specifier.slice(2)]: 'export const x = 2;',
+    };
+    assert.ok(dependencyGraph(fixture).unresolved.has('src/games/Game.tsx'), specifier);
+  }
+});
