@@ -9,7 +9,7 @@
     "src/components/GameShell.tsx": "a5c0ab99fb07dc17967b58ff20ad7944ecfe8c5403585552279c7e28497b9d64",
     "src/lib/types.ts": "ef369ad734fb7bec34db46bc7073d68ed66e84d03f95d8f9f5a6c7e5cce55420",
     "tests/pancakeLogic.test.ts": "6162cc6e54c443727fcb25c7ee9088eb03e31d7a9540131299a5315656c8e067",
-    "tests/pancakeKitchen.test.tsx": "58785d5376ad4ad7de3e5307f1140f4baa5a067e38656b8d63b50cb13235e9fb",
+    "tests/pancakeKitchen.test.tsx": "d5f751f657ef0bd658df6c87961bed1f3b395fdfa494e352a3af6046632a2fa5",
     "e2e/pancake-campaign.spec.ts": "e5d53502271ed9aa951db1500800c30c7920c6dde43aa54b20a4ca18d0ef4a17",
     "e2e-pages/pancake-deployment.spec.ts": "b85d3a58f33e807ec0047f4cb009f6f21f419e6ca0c17f5692e10bbc317c6b38",
     "docs/pancake-campaign.md": "b856e171ba5f754532fbe64b3991275a539f9c6276322d098094a3e6caa4a779",
@@ -117,6 +117,11 @@
       "area": "DOM and browser test-source coverage",
       "result": "passed_source_coverage_review_not_executed",
       "detail": "Logic tests independently BFS all six sizes, check immutable legal/illegal flips and terminal locks, replay all 120 certificates, and repair all legal opening alternatives via current-state hints. DOM tests complete all 120 levels via preview/confirmation controls and cover native keyboard, modifiers, stable identity, pause/token consumption, StrictMode completion, overshooting the optimum, actual remount restoration, corrupt/foreign/forged saves, 4096-step limits, storage failures and full-shell restart after removeItem failure. E2E source completes 24 batches of five levels under both configured viewports, preserving first/middle/last chapter start/preview/win screenshots; targeted cases cover keyboard, focus, current hints, pause, undo, reload, restart, switching and reduced motion. Pages source plays level 120 to a genuine midgame, reloads, validates working undo history, completes via controls and checks commit metadata, real saved completion, HTTP/MIME/network errors, touch dimensions and screenshots. No state or completion is injected to fake a win. None of these DOM/browser suites has been executed as part of this independent review."
+    },
+    {
+      "area": "CI typecheck selector correction",
+      "result": "passed_minimal_source_diff_review_execution_pending",
+      "detail": "The two unsupported Testing Library getByRole exact options were replaced with anchored accessible-name regular expressions for Cancel and Restart. Reversing exactly those two substitutions reproduces the previously reviewed file SHA-256, proving no unrelated test assertions or matching scope changed. getByLabelText retains its supported exact option. CI run 37421824079 stopped at typecheck on these two calls; corrected DOM/browser execution remains unclaimed."
     }
   ],
   "notCovered": [

@@ -16,7 +16,7 @@ const layer = (count: number) => document.querySelector<HTMLButtonElement>(`[dat
 const stack = () => [...document.querySelectorAll('[data-pancake-slot]')].map(el => Number(el.getAttribute('data-size')));
 const moves = () => Number(document.querySelector('[data-pancake-moves]')!.textContent);
 const confirm = () => screen.getByRole('button', { name: /^确认翻转/ }) as HTMLButtonElement;
-const cancel = () => screen.getByRole('button', { name: '取消选择', exact: true }) as HTMLButtonElement;
+const cancel = () => screen.getByRole('button', { name: /^取消选择$/ }) as HTMLButtonElement;
 const reversePrefix = (values: number[], count: number) => values.map((_, i) => values[i < count ? count - i - 1 : i]);
 const defaults = (overrides: Partial<GameProps> = {}): GameProps => ({ level: 0, paused: false, resetToken: 0, hintToken: 0, undoToken: 0, onComplete: vi.fn(), onStatus: vi.fn(), ...overrides });
 const clickMove = (count: number) => { fireEvent.click(layer(count)); fireEvent.click(confirm()); };
@@ -182,7 +182,7 @@ it('shell restart remains fresh when removeItem throws but the old saved midgame
   expect(current).not.toEqual(pancakeLevels[2].stack);
   expect(JSON.parse(localStorage.getItem(key)!).stack).toEqual(current);
   const remove = vi.spyOn(Storage.prototype, 'removeItem').mockImplementation(() => { throw new Error('remove blocked'); });
-  await user.click(screen.getByRole('button', { name: '重来', exact: true }));
+  await user.click(screen.getByRole('button', { name: /^重来$/ }));
   await waitFor(() => expect(stack()).toEqual(pancakeLevels[2].stack));
   expect(remove).toHaveBeenCalledWith(key);
   expect(moves()).toBe(0); expect(confirm().disabled).toBe(true);
