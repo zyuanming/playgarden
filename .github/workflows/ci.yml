@@ -79,6 +79,74 @@ jobs:
             test-results/**/*.png
             test-results/**/error-context.md
           retention-days: 3
+      - name: Package every original browser image into bounded downloads
+        if: always()
+        run: python3 scripts/package-browser-evidence.py test-results evidence-parts --max-bytes 24117248 --max-parts 8
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: browser-evidence-index-shard-${{ matrix.shard }}
+          path: |
+            evidence-parts/index.json
+            evidence-parts/index.sha256
+          if-no-files-found: ignore
+          retention-days: 3
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: browser-evidence-part-01-shard-${{ matrix.shard }}
+          path: evidence-parts/part-01.zip
+          if-no-files-found: ignore
+          retention-days: 3
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: browser-evidence-part-02-shard-${{ matrix.shard }}
+          path: evidence-parts/part-02.zip
+          if-no-files-found: ignore
+          retention-days: 3
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: browser-evidence-part-03-shard-${{ matrix.shard }}
+          path: evidence-parts/part-03.zip
+          if-no-files-found: ignore
+          retention-days: 3
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: browser-evidence-part-04-shard-${{ matrix.shard }}
+          path: evidence-parts/part-04.zip
+          if-no-files-found: ignore
+          retention-days: 3
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: browser-evidence-part-05-shard-${{ matrix.shard }}
+          path: evidence-parts/part-05.zip
+          if-no-files-found: ignore
+          retention-days: 3
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: browser-evidence-part-06-shard-${{ matrix.shard }}
+          path: evidence-parts/part-06.zip
+          if-no-files-found: ignore
+          retention-days: 3
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: browser-evidence-part-07-shard-${{ matrix.shard }}
+          path: evidence-parts/part-07.zip
+          if-no-files-found: ignore
+          retention-days: 3
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: browser-evidence-part-08-shard-${{ matrix.shard }}
+          path: evidence-parts/part-08.zip
+          if-no-files-found: ignore
+          retention-days: 3
       - uses: actions/upload-artifact@v4
         if: failure()
         with:

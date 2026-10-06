@@ -27,3 +27,11 @@ focused 通常为 1 片；包含矩形花园或林间帐篷 200 关时使用 4 �
 ## 星雾探测的证据范围
 
 `blackbox-campaign.spec.ts` 在两个既有viewport用真实边缘探测、逐格标星与提交验证覆盖84关，按短批次分配；新增规则/保存/生成器及目录变更继续触发full模式。规则唯一性不是靠浏览器答案注入验证：独立Python重枚举全部布局，生产核心另逐项差分18,046布局的所有响应，并回归一个完整观测等价答案。界面测试另查返回入口、互逆回看、冲突实验、当前证据提示、撤销保留证据、暂停/存档恢复/存储拒绝和终局幂等。部署专项覆盖84关末关的中断恢复与真实完成，最终SHA仍须全量CI、原始截图独审及公网一致后才算上线。
+
+## Bounded original-image downloads
+
+The original `browser-evidence-shard-N` artifacts and failure traces remain unchanged. Because some complete screenshot archives exceed the file-materialization limit, each browser job also packages every original `*.png` and `error-context.md` into deterministic, lossless ZIP parts. No pixels are resized, recompressed as images or omitted. `scripts/package-browser-evidence.py` caps each inner ZIP at 23 MiB; the upload service's outer ZIP stays comfortably below 32 MiB. Up to 8 explicit part upload steps are supported; a larger input fails visibly rather than truncating evidence.
+
+Download `browser-evidence-index-shard-N` and all parts it lists. Verify the GitHub artifact digest, extract the outer artifact, then verify each inner ZIP against `index.json`. Its complete per-file map records original path, byte count and SHA-256; each part repeats its subset and the exact build commit. `index.sha256` checks the aggregate index. Missing directories make a valid empty index only when no evidence was produced; the independent browser job result still decides pass/fail. Original large bundles continue to be retained.
+
+The packager rejects symlinks, unsafe/colliding paths, overlapping input/output, oversized single files, too many parts and nonempty output destinations. It checks file stability and CRCs, stages all results before an atomic directory handoff, and has standard-library-only tests for byte-perfect reconstruction, deterministic ZIPs and boundary/failure behavior.
