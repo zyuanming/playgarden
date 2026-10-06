@@ -59,3 +59,10 @@ SOFTWARE.
 ## 花簇消除（Same Game）
 
 本项目自行实现同类连通消除、重力及空列压紧规则；生成器、100 关题库、中文教学与 `public/samegame-art.webp` 程序化插画均为原创并沿用本项目 MIT 许可。不包含第三方 Same Game 代码、关卡、美术、字体或音频。完整生成与独立验证范围见 `docs/samegame-campaign.md`。
+
+
+## 煎饼翻排（原创实现）
+
+前缀反转排序是数学机制参考，不引入外部游戏代码、论文图表或商业素材。`src/games/pancake*`、`PancakeKitchen.tsx`、生成器、固定排列题库、说明和 `public/pancake-art.webp` 均为本项目原创，遵循仓库 MIT 许可。卡片图由原创 `scripts/pancake/art.svg` 渲染，不使用外部字体、图片或网络请求。图形仅表达大小不同的煎饼、盘子和翻转方向。
+
+机制背景：W. H. Gates 与 C. H. Papadimitriou，1979，Bounds for sorting by prefix reversal，DOI https://doi.org/10.1016/0012-365X(79)90068-2。引用只说明数学背景，不把论文视为软件或素材许可证。所有最短距离由本仓库自产完整 BFS 与独立 Python 验证器重算。

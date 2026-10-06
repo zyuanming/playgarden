@@ -1,0 +1,128 @@
+{
+  "reviewType": "Independent source-level review; no browser used",
+  "status": "passed_source_review",
+  "sourceSha256": {
+    "src/games/pancakeLogic.ts": "d9a2a968a4aa815815c08eb43ef43e0d40faaa37daaa01f2d0e993d1eac39d29",
+    "src/games/pancakeStorage.ts": "7ca6a504362813625ec9bb9633efb5c6b12fd36151254c5c789557477e7b025b",
+    "src/games/PancakeKitchen.tsx": "d7fd613ae3a981095d302300f51d6f5d6d41c8fb4f0e5fed78dd2d2ba56cda21",
+    "src/games/pancakeKitchen.css": "a098d2a0cf3522e10d47d8b5979914c90f8b04669c32e0182feafab368551948",
+    "src/components/GameShell.tsx": "a5c0ab99fb07dc17967b58ff20ad7944ecfe8c5403585552279c7e28497b9d64",
+    "src/lib/types.ts": "ef369ad734fb7bec34db46bc7073d68ed66e84d03f95d8f9f5a6c7e5cce55420",
+    "tests/pancakeLogic.test.ts": "6162cc6e54c443727fcb25c7ee9088eb03e31d7a9540131299a5315656c8e067",
+    "tests/pancakeKitchen.test.tsx": "58785d5376ad4ad7de3e5307f1140f4baa5a067e38656b8d63b50cb13235e9fb",
+    "e2e/pancake-campaign.spec.ts": "e5d53502271ed9aa951db1500800c30c7920c6dde43aa54b20a4ca18d0ef4a17",
+    "e2e-pages/pancake-deployment.spec.ts": "b85d3a58f33e807ec0047f4cb009f6f21f419e6ca0c17f5692e10bbc317c6b38",
+    "docs/pancake-campaign.md": "b856e171ba5f754532fbe64b3991275a539f9c6276322d098094a3e6caa4a779",
+    "playwright.config.ts": "c7d18928a70a5851718f94f79694dcfb784f59f55aafd812aebc779e4e7b2a69",
+    "playwright.pages.config.ts": "cfe2d1ac72b2eb6974bc9b057ef0223effdeabd4f541335f4deaefbda5d6b13c"
+  },
+  "findings": [
+    {
+      "id": "PK-RESET-001",
+      "severity": "low",
+      "status": "resolved_source_review",
+      "summary": "Reset can reload old progress if storage deletion fails while reads remain available.",
+      "evidence": [
+        "GameShell keys both GameBoundary and Game by reset, remounting PancakeKitchen.",
+        "PancakeKitchen initializes its round ref with fresh:false on each mount.",
+        "GameShell catches removeItem errors, but the remounted game therefore loads the old round rather than honoring the reset."
+      ],
+      "recommendation": "Give the module an explicit fresh/reset signal that survives the shell remount. Add a full GameShell test with removeItem throwing and getItem returning a previous round.",
+      "resolution": "GameProps.freshStart now carries restart intent across keyed remounts. GameShell sets it true on restart and false on level selection; PancakeKitchen includes it when selecting fresh state initialization. This bypasses old stored rounds even if deletion fails.",
+      "verificationLimit": "The full GameShell DOM regression is now present: it produces a real midgame, makes removeItem throw while getItem remains readable, clicks restart and asserts a fresh stack and stored state. This independent review checked test source only; DOM execution awaits CI."
+    },
+    {
+      "id": "PK-COPY-001",
+      "severity": "minor",
+      "status": "resolved_source_review",
+      "summary": "The sidebar says undo is available at any time, while completion intentionally locks undo.",
+      "recommendation": "Limit the wording to unfinished rounds.",
+      "resolution": "Sidebar copy now explicitly limits undo to unfinished rounds."
+    },
+    {
+      "id": "PK-CSS-001",
+      "severity": "minor",
+      "status": "resolved_source_review",
+      "summary": "The game-specific 44px control rule initially overrode the existing 52/50px pancake row minimum height because of higher selector specificity.",
+      "resolution": "The added rule now excludes .pancake-row buttons. The existing desktop 52px and small-screen 50px declarations remain effective. The selector is scoped to .game-main[data-game=\"pancake\"], so other game shells are not matched."
+    }
+  ],
+  "checked": [
+    {
+      "area": "Input legality",
+      "result": "passed_source_review",
+      "detail": "The stack guard rejects wrong length, holes, duplicates, nonintegers and out-of-range sizes. Flip lengths must be integer 2..n. Production mutation uses the legal-flip helper."
+    },
+    {
+      "area": "Terminal lock",
+      "result": "passed_source_review",
+      "detail": "playPancake and undoPancake return the same terminal state. UI commit/choose, undo/hint token effects, and inner controls also guard won. Completion uses the actual sorted predicate and a per-mount once flag."
+    },
+    {
+      "area": "Current-state hint",
+      "result": "passed_source_review",
+      "detail": "The hint reads the current stack, checks at most n-1 legal prefixes and selects exact distance minus one. It preselects a preview without performing a move and honestly identifies the complete shortest-distance table."
+    },
+    {
+      "area": "Persistence chain",
+      "result": "passed_source_review",
+      "detail": "Reads validate size, ID/version, move/history length, integer bounds, original first state, every legal edge and no move after a solved state. A solved state without witnessed history is rejected. Parse/storage errors safely return an initial state."
+    },
+    {
+      "area": "Persistence budget",
+      "result": "passed_source_review",
+      "detail": "The raw payload and 4096-move bounds limit reload work. Exceeding the save limit returns false without blocking gameplay or undo; the UI displays an explicit unsaved message."
+    },
+    {
+      "area": "Pause and token consumption",
+      "result": "passed_source_review",
+      "detail": "Paused or won token changes are consumed before returning, so they do not replay on resume. Clicks and key navigation guard paused/won. No async animations, timers, or search tasks are present."
+    },
+    {
+      "area": "Keyboard and focus",
+      "result": "passed_source_review_with_browser_verification_pending",
+      "detail": "Layer keys are stable by slot, arrows/Home/End use the button refs, shortcut modifiers are guarded on each handler, cancel returns focus to the selected layer, and the shell focuses the advance control on completion. Actual browser focus is not established by this review."
+    },
+    {
+      "area": "Distinct mechanic",
+      "result": "passed_source_review",
+      "detail": "This game transforms one permutation by reversible prefix moves. Existing Sorting Network edits compare-exchange circuits and tests all inputs, a materially different decision problem."
+    },
+    {
+      "area": "Teaching and sampled choices",
+      "result": "passed_source_and_data_review",
+      "detail": "The first level is one obvious flip. Level 60 requires 6 optimal moves with 2 optimal openings, versus 8 greedy moves. Level 120 requires 9 optimal moves with 5 optimal openings, versus 11 greedy moves. Preview, target and undo support exploration without automatic solving."
+    },
+    {
+      "area": "Restart after deletion failure",
+      "result": "passed_source_review",
+      "detail": "The explicit freshStart prop is true on restart, survives shell keyed remounts, and is false on level changes. Fresh initialization does not read old localStorage."
+    },
+    {
+      "area": "Browser modifier shortcuts",
+      "result": "passed_source_review",
+      "detail": "Modified ArrowUp/ArrowDown/Home/End are ignored without canceling browser defaults. Modified Enter/Space prevent native button activation and return without game edits."
+    },
+    {
+      "area": "Game-scoped touch targets",
+      "result": "passed_source_review_with_browser_verification_pending",
+      "detail": "The new button:not(.pancake-row), select and summary rule is scoped to the pancake game shell. Stack rows retain their existing 52/50px minimum height. Non-row buttons receive a 44px minimum. Actual rendered sizes still require browser verification."
+    },
+    {
+      "area": "Campaign documentation math and boundaries",
+      "result": "passed_source_and_math_review_execution_not_claimed",
+      "detail": "The chapter counts, size ranges, min-move ranges, 55 greedy-suboptimal levels, 46,230 states, 316,644 directed edges, six graph diameters and 634 certificate flips match independent data. Documentation correctly explains that saving resumes after undo reduces the action chain to 4096 or fewer moves. All named Pancake DOM/E2E/Pages files now exist and their source coverage matches the described scope. The document explicitly separates source checking from CI/browser execution and does not claim real-device or accessibility certification."
+    },
+    {
+      "area": "DOM and browser test-source coverage",
+      "result": "passed_source_coverage_review_not_executed",
+      "detail": "Logic tests independently BFS all six sizes, check immutable legal/illegal flips and terminal locks, replay all 120 certificates, and repair all legal opening alternatives via current-state hints. DOM tests complete all 120 levels via preview/confirmation controls and cover native keyboard, modifiers, stable identity, pause/token consumption, StrictMode completion, overshooting the optimum, actual remount restoration, corrupt/foreign/forged saves, 4096-step limits, storage failures and full-shell restart after removeItem failure. E2E source completes 24 batches of five levels under both configured viewports, preserving first/middle/last chapter start/preview/win screenshots; targeted cases cover keyboard, focus, current hints, pause, undo, reload, restart, switching and reduced motion. Pages source plays level 120 to a genuine midgame, reloads, validates working undo history, completes via controls and checks commit metadata, real saved completion, HTTP/MIME/network errors, touch dimensions and screenshots. No state or completion is injected to fake a win. None of these DOM/browser suites has been executed as part of this independent review."
+    }
+  ],
+  "notCovered": [
+    "Browser interaction tests",
+    "Rendered layout/screenshots",
+    "Touch-device validation",
+    "Screen-reader certification"
+  ]
+}

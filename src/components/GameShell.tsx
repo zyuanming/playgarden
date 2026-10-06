@@ -36,6 +36,7 @@ export function GameShell({
   }, [game.resumeKey, level]);
   const [paused, setPaused] = useState(false);
   const [reset, setReset] = useState(0);
+  const [freshStart, setFreshStart] = useState(false);
   const [hint, setHint] = useState(0);
   const [undo, setUndo] = useState(0);
   const [status, setStatus] = useState("");
@@ -65,6 +66,7 @@ export function GameShell({
     return () => window.removeEventListener("keydown", listener);
   }, []);
   function changeLevel(l: number) {
+    setFreshStart(false);
     setLevel(l);
     setWon(false);
     setPaused(false);
@@ -112,6 +114,7 @@ export function GameShell({
         <button
           onClick={() => {
             if (game.resumeKey) try { localStorage.removeItem(`${game.resumeKey}.round.${level}`); } catch { /* The module still receives the reset token. */ }
+            setFreshStart(true);
             setReset((r) => r + 1);
             setWon(false);
             setPaused(false);
@@ -158,6 +161,7 @@ export function GameShell({
               level={level}
               paused={paused}
               resetToken={reset}
+              freshStart={freshStart}
               hintToken={hint}
               undoToken={undo}
               onComplete={() => {

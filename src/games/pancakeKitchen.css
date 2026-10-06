@@ -1,0 +1,55 @@
+.pancake-layout { --pk-ink:#44321f; --pk-edge:#a47535; color:var(--pk-ink); display:grid; grid-template-columns:minmax(0,1fr) 260px; gap:28px; align-items:start; }
+.pancake-layout * { box-sizing:border-box; }
+.pancake-play { min-width:0; padding:26px; border:1px solid #e5d3b8; border-radius:24px; background:#fffaf0; }
+.pancake-heading { display:flex; justify-content:space-between; align-items:flex-start; gap:12px; }
+.pancake-heading h3 { font-size:22px; margin:6px 0 0; line-height:1.35; }
+.pancake-heading > span { color:#70552f; font-size:13px; white-space:nowrap; padding-top:4px; }
+.pancake-eyebrow { color:#795323; font-weight:800; font-size:12px; letter-spacing:.07em; }
+.pancake-lesson { margin:16px 0; font-size:14px; line-height:1.8; }
+.pancake-stats { display:flex; flex-wrap:wrap; gap:8px 18px; border-block:1px solid #e8dbc6; padding:11px 0; font-size:13px; color:#685031; }
+.pancake-stats strong { color:#44321f; font-size:18px; }
+.pancake-stack-label { display:flex; flex-wrap:wrap; justify-content:space-between; gap:6px; font-size:12px; margin:22px 0 8px; color:#715332; }
+.pancake-stack { display:flex; flex-direction:column; gap:5px; }
+.pancake-layout .pancake-row { min-width:0; width:100%; min-height:52px; display:grid; grid-template-columns:20px minmax(0,1fr) 61px; gap:5px; align-items:center; border:2px solid transparent; border-radius:10px; padding:3px 6px; margin:0; background:transparent; color:var(--pk-ink); box-shadow:none; text-align:center; }
+.pancake-layout button.pancake-row:hover:not(:disabled) { border-color:#c99b55; background:#fff0d3; color:#44321f; transform:none; }
+.pancake-layout .pancake-row.is-in-range { border-left:2px dashed #795323; background:#f9e6bd; }
+.pancake-layout .pancake-row.is-boundary { border:2px dashed #795323; background:#f7dfad; }
+.pancake-layout button.pancake-row:focus-visible { outline:3px solid #215f54; outline-offset:2px; border-color:#215f54; }
+.pancake-layout button.pancake-row:active:not(:disabled) { background:#eed2a0; color:#44321f; }
+.pancake-layout button.pancake-row:disabled { opacity:1; cursor:default; color:#44321f; }
+.pancake-range { font-size:18px; font-weight:700; color:#795323; }
+.pancake-cake-zone { min-width:0; display:flex; justify-content:center; }
+.pancake-cake { width:var(--cake-width); min-width:40px; height:36px; display:flex; gap:4px; align-items:center; justify-content:center; border:1px solid #b47a28; border-bottom:5px solid #a76c22; border-radius:48% / 35%; background:linear-gradient(180deg,#ffdf8d,#efb95e); box-shadow:inset 0 2px 0 #fff0b7; color:#492b0c; }
+.pancake-cake strong { font-size:20px; line-height:1; }
+.pancake-speckles { color:#6d491d; font-size:17px; font-weight:900; letter-spacing:2px; }
+.pancake-layer { font-size:12px; color:#674922; line-height:1.4; }
+.pancake-layer small { display:block; font-size:10px; font-weight:500; }
+.pancake-plate { height:11px; border-radius:0 0 50% 50%; margin:10px 25px 0; border:2px solid #74a49b; background:#c4ded6; }
+.pancake-bottom { text-align:center; margin:5px 0 18px; font-size:12px; color:#715332; }
+.pancake-confirm { display:flex; gap:8px; flex-wrap:wrap; }
+.pancake-confirm button { min-height:46px; flex:1; font-size:14px; white-space:nowrap; }
+.pancake-preview { margin-top:18px; border:1px solid #dcc9a7; border-radius:14px; background:#fffef9; padding:15px; }
+.pancake-preview strong { font-size:13px; }
+.pancake-preview-order { display:flex; gap:5px; align-items:center; flex-wrap:wrap; margin-top:12px; }
+.pancake-preview-order > span { min-width:24px; display:flex; gap:5px; align-items:center; font-weight:800; font-size:18px; color:#735938; }
+.pancake-preview-order > span.will-flip { color:#184f43; }
+.pancake-preview-order i { font-size:12px; color:#8a7358; font-style:normal; }
+.pancake-preview p { font-size:12px; color:#70552f; margin:10px 0 0; line-height:1.6; }
+.pancake-message { font-size:14px; line-height:1.8; margin:16px 0 10px; }
+.pancake-save { font-size:11px; color:#735a3d; line-height:1.6; margin:0; }
+.pancake-notes { padding:24px 6px; font-size:14px; line-height:1.8; }
+.pancake-notes h3 { font-size:34px; line-height:1.35; margin:12px 0 20px; font-weight:750; }
+.pancake-notes ol { padding-left:21px; }
+.pancake-notes li { margin:8px 0; }
+.pancake-notes details { border-top:1px solid #dfd5c5; padding-top:14px; }
+.pancake-notes summary { cursor:pointer; font-weight:700; min-height:44px; padding-block:9px; }
+.pancake-goal { max-width:180px; margin:20px auto; display:flex; flex-direction:column; align-items:center; gap:4px; }
+.pancake-goal i { background:#ead3a7; border:1px solid #b48b46; border-radius:50% / 35%; text-align:center; font-size:12px; line-height:19px; font-style:normal; }
+.pancake-goal > span { font-size:11px; color:#70552f; }
+@media (max-width:900px) { .pancake-layout {grid-template-columns:minmax(0,1fr);gap:18px;} .pancake-notes {padding:8px 10px;} .pancake-notes h3 br {display:none;} .pancake-notes h3 {font-size:26px;} .pancake-goal {margin:15px auto;} }
+@media (max-width:500px) { .pancake-play {padding:15px 10px;border-radius:18px;} .pancake-heading h3 {font-size:18px;} .pancake-heading > span {font-size:11px;} .pancake-eyebrow {font-size:11px;letter-spacing:0;} .pancake-stats {gap:6px 12px;font-size:12px;} .pancake-layout .pancake-row {grid-template-columns:15px minmax(0,1fr) 53px;padding-inline:3px;gap:3px;min-height:50px;} .pancake-speckles {display:none;} .pancake-preview {padding:12px;} .pancake-preview-order {gap:3px;} .pancake-preview-order > span {font-size:17px;gap:3px;min-width:23px;} }
+@media (prefers-reduced-motion:reduce) { .pancake-layout *, .pancake-layout *::before, .pancake-layout *::after {transition:none!important;animation:none!important;} }
+/* This game's shell controls keep the same 44px touch floor as the stack. */
+.game-main[data-game="pancake"] button:not(.pancake-row),
+.game-main[data-game="pancake"] select,
+.game-main[data-game="pancake"] summary { min-height:44px; min-width:44px; }

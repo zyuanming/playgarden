@@ -1016,6 +1016,19 @@ export const games: GameDefinition[] = [
     source: original,
     component: lazy(() => import("../games/SameGameGarden")),
   },
+  {
+    id: "pancake",
+    title: "煎饼翻排",
+    subtitle: "6 章 120 关，翻动上方整叠，把大小排得刚刚好。",
+    category: "逻辑思维",
+    difficulty: "中级",
+    tone: "orange",
+    levelCount: 120,
+    resumeKey: "playgarden.pancake.v1",
+    artwork: { url: "./pancake-art.webp", position: "50% 50%", size: "cover" },
+    source: original,
+    component: lazy(() => import("../games/PancakeKitchen")),
+  },
 ];
 export const findGame = (id: string) => games.find((game) => game.id === id);
 
