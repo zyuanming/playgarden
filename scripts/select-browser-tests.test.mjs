@@ -115,6 +115,16 @@ test('literal JSON fixture imports are tracked while dynamic imports remain cons
   assert.equal(dependencyGraph({'tests/fixture.ts':'import records from "./missing.json";'}).unresolved.size, 1);
 });
 
+test('native JSON import attributes preserve the same static dependency edge', () => {
+  const fixture = {
+    'src/games/expansion.ts': 'import records from "./levels.json" with { type: "json" }; export default records;',
+    'src/games/levels.json': '[{"lesson":"ordinary JSON data"}]',
+  };
+  const { graph, unresolved } = dependencyGraph(fixture);
+  assert.equal(unresolved.size, 0);
+  assert.deepEqual([...graph.get('src/games/expansion.ts')], ['src/games/levels.json']);
+});
+
 test('Shikaku expanded campaign keeps every desktop/mobile journey and uses four focused shards', () => {
   for (const path of ['src/games/ShikakuGarden.tsx', 'src/games/shikakuLevels.ts', 'src/games/shikakuExpansion.ts', 'e2e/shikaku-campaign.spec.ts']) {
     const selected = plan([path]);

@@ -16,7 +16,7 @@ These are also included in `npm test`. The complete JSON reports contain per-lev
 
 ## Correctness boundary
 
-- Decode the static original level array and its explicit JSON appendix as inert data. Reject unexpected expansion-wrapper behavior.
+- Decode the static original level array and its explicit JSON appendix as inert data. Require the Node-compatible `with { type: "json" }` attribute and reject unexpected paths, attributes, or expansion-wrapper behavior.
 - Extract only board size, tree coordinates, and row/column totals before solving.
 - Assign a legal adjacent tent to each tree. Enforce distinct tent cells, all eight non-touching neighbors, and both axes' totals. Deduplicate complete assignments by sorted tent placement. This differs from the runtime's row-mask enumeration.
 - Exhaust the search before declaring one placement unique. The independent node ceiling remains 200,000. A node budget, timeout, or one-solution search limit cannot be called unique.

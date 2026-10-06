@@ -1,7 +1,7 @@
 {
   "baselineCommit": "d52e1ef7",
   "independentNodeLimit": 200000,
-  "selfTests": 26,
+  "selfTests": 29,
   "correctnessAndDiversity": {
     "ok": true,
     "failures": [],

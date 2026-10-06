@@ -38,8 +38,12 @@ The reviewed UI additions expose chapter objectives and 200-level numbering with
 
 One mismatched test expectation for appended IDs was reported and corrected; generated IDs remain stable chapter-specific identifiers. This review's trace checks tie those identifiers and indices to the shipped data and verify provenance hashes.
 
+### Node 24 JSON-module compatibility
+
+The expansion wrapper explicitly imports its JSON data with `with { type: "json" }`. The independent inert-data adapter now requires this attribute and rejects missing, incorrect, or extra attributes, a different data path, and computed exports. Direct Node v24.19.0 loading of the actual updated TypeScript wrapper succeeds and returns all 188 appended levels. All corpus and deduction metrics remain unchanged after this import-only fix; Playwright discovery and browser results are verified separately in CI.
+
 ## Scope and limitations
 
 This is evidence of staged logical practice and structural variety. It is not a human playtest, an empirical solve-time estimate, or a promise that every consecutive board is harder than its predecessor. The final two chapters share a rule family, with the final chapter providing longer and more mixed applications. Pixel/layout acceptance and browser event behavior are covered by the separate browser verification, not inferred from this mathematical review.
 
-All 26 verifier/adversarial self-tests pass. See `independent-summary.json` for compact reproducible metrics and `scripts/tents-independent/README.md` for exact commands and test coverage. Raw per-level reports are generated into `/tmp` by the test command rather than committed as another copy of the campaign.
+All 29 verifier/adversarial self-tests pass. See `independent-summary.json` for compact reproducible metrics and `scripts/tents-independent/README.md` for exact commands and test coverage. Raw per-level reports are generated into `/tmp` by the test command rather than committed as another copy of the campaign.

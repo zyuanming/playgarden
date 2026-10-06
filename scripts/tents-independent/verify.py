@@ -65,7 +65,7 @@ def read_levels(path):
             # Tie the inert adapter to the actual shipped wrapper. A changed import
             # must fail closed instead of silently auditing an unused JSON file.
             wrapper = path.with_name('tentsExpansion.ts').read_text()
-            if (not re.search(r'import\s+data\s+from\s+[\"\']\./tentsExpansionData\.json[\"\']\s*;', wrapper)
+            if (not re.search(r'''import\s+data\s+from\s+(["'])\./tentsExpansionData\.json\1\s+with\s*\{\s*type\s*:\s*(["'])json\2\s*,?\s*\}\s*;''', wrapper)
                 or not re.search(r'export const tentsExpansion\s*:\s*TentsLevel\[\]\s*=\s*data\s*;\s*$', wrapper)):
                 raise ValueError('Expansion wrapper does not expose the agreed inert data array')
             appendix = read_levels(path.with_name('tentsExpansionData.json'))

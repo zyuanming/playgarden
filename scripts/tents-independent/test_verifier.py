@@ -202,6 +202,60 @@ class CorpusTests(unittest.TestCase):
             with self.assertRaises(ValueError):
                 read_levels(path)
 
+    def test_expansion_adapter_accepts_exact_node_json_import_attribute(self):
+        with tempfile.TemporaryDirectory() as root:
+            root=Path(root)
+            path=root/'tentsLevels.ts'
+            path.write_text('export const tentsLevels: TentsLevel[] = [...tentsExpansion];\n')
+            (root/'tentsExpansionData.json').write_text(json.dumps([UNIQUE]))
+            wrapper=root/'tentsExpansion.ts'
+            for statement in (
+                'import data from "./tentsExpansionData.json" with { type: "json" };',
+                "import data from './tentsExpansionData.json' with {\n type: 'json',\n};",
+            ):
+                with self.subTest(statement=statement):
+                    wrapper.write_text(statement+'\nexport const tentsExpansion: TentsLevel[] = data;\n')
+                    self.assertEqual(read_levels(path),[UNIQUE])
+
+    def test_expansion_adapter_rejects_missing_wrong_or_extra_attributes(self):
+        with tempfile.TemporaryDirectory() as root:
+            root=Path(root)
+            path=root/'tentsLevels.ts'
+            path.write_text('export const tentsLevels: TentsLevel[] = [...tentsExpansion];\n')
+            (root/'tentsExpansionData.json').write_text(json.dumps([UNIQUE]))
+            wrapper=root/'tentsExpansion.ts'
+            for suffix in (
+                ';',
+                'with { type: "javascript" };',
+                'with { mode: "json" };',
+                'with { type: "json", mode: "other" };',
+                'assert { type: "json" };',
+                'with { type: "json\' };',
+            ):
+                with self.subTest(suffix=suffix):
+                    wrapper.write_text('import data from "./tentsExpansionData.json" '+suffix+'\nexport const tentsExpansion: TentsLevel[] = data;\n')
+                    with self.assertRaisesRegex(ValueError,'Expansion wrapper'):
+                        read_levels(path)
+
+    def test_expansion_adapter_rejects_wrong_path_or_computed_export(self):
+        with tempfile.TemporaryDirectory() as root:
+            root=Path(root)
+            path=root/'tentsLevels.ts'
+            path.write_text('export const tentsLevels: TentsLevel[] = [...tentsExpansion];\n')
+            (root/'tentsExpansionData.json').write_text(json.dumps([UNIQUE]))
+            wrapper=root/'tentsExpansion.ts'
+            good='import data from "./tentsExpansionData.json" with { type: "json" };\nexport const tentsExpansion: TentsLevel[] = data;\n'
+            for bad in (
+                good.replace('./tentsExpansionData.json','./otherData.json'),
+                good.replace('./tentsExpansionData.json','../tentsExpansionData.json'),
+                good.replace('= data;','= data.slice(0, 1);'),
+                good.replace('= data;','= [];'),
+            ):
+                with self.subTest(wrapper=bad):
+                    wrapper.write_text(bad)
+                    with self.assertRaisesRegex(ValueError,'Expansion wrapper'):
+                        read_levels(path)
+
 
 if __name__=='__main__':
     unittest.main()

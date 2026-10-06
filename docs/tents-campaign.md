@@ -45,6 +45,7 @@ No guess, answer lookup, uniqueness assumption, or global search result is used 
 
 - Board size remains capped at 7×7; search retains its 50,000-node cap.
 - Runtime solving, winning, conflicts, and hints do not read stored answers.
+- The JSON data wrapper declares its native `type: "json"` import attribute. A plain Node regression test catches module-discovery errors that a Vite build can mask.
 - A hint uses the actual current marks and requires complete enumeration before calling a value forced. Wrong positions offer a retraction with an honest repair explanation.
 - Undo retains 300 mutations. Fixed trees, repeated same-value tools, pause, and terminal-round controls cannot mutate the board.
 - Modified navigation/edit keys are ignored without triggering native Enter/Space button clicks.
