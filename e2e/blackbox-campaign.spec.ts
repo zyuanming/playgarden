@@ -203,7 +203,7 @@ for (const index of [0, 39, 83]) test(`Blackbox ${index + 1} pause, current hint
   expect(errors).toEqual([]);
 });
 
-test('Blackbox rapid duplicate probes, reversible notes, count gating and failed evidence validation', async ({ page, isMobile }) => {
+test('Blackbox rapid duplicate probes, reversible notes, count gating and failed evidence validation', async ({ page, isMobile }, info) => {
   const errors = errorsFor(page); await openGame(page, '星雾探测'); await ready(page, 0);
   // Real native double-clicks exercise two handlers without injecting board state.
   await port(page, 0).dblclick(); await expect(page.locator('[data-blackbox-shots]')).toHaveAttribute('data-blackbox-shots', '1');
@@ -213,8 +213,12 @@ test('Blackbox rapid duplicate probes, reversible notes, count gating and failed
   await activate(stars(page), isMobile); await activate(cell(page, 0), isMobile); await activate(cell(page, 1), isMobile); await expect(verify(page)).toBeDisabled();
   await activate(cell(page, 1), isMobile); await expect(verify(page)).toBeEnabled(); await activate(verify(page), isMobile);
   await expect(page.locator('[data-blackbox-won]')).toHaveAttribute('data-blackbox-won', 'false'); await expect(page.locator('[data-blackbox-shots]')).toHaveAttribute('data-blackbox-shots', '1');
+  await checkControlReachability(page);
+  await page.screenshot({ path: info.outputPath('blackbox-known-evidence-conflict.png'), fullPage: true, animations: 'disabled' });
   await activate(page.getByRole('button', { name: '重来', exact: true }), isMobile); await ready(page, 0);
   await activate(cell(page, 0), isMobile); await activate(verify(page), isMobile); await expect(page.locator('[data-blackbox-shots]')).toHaveAttribute('data-blackbox-shots', '1');
+  await checkControlReachability(page);
+  await page.screenshot({ path: info.outputPath('blackbox-new-evidence-conflict.png'), fullPage: true, animations: 'disabled' });
   const evidence = await results(page); await activate(verify(page), isMobile); expect(await results(page)).toEqual(evidence); await expect(page.locator('[data-blackbox-shots]')).toHaveAttribute('data-blackbox-shots', '1');
   await activate(cell(page, 0), isMobile); await activate(cell(page, 4), isMobile); await activate(verify(page), isMobile); await earnedOnce(page, 0); expect(errors).toEqual([]);
 });

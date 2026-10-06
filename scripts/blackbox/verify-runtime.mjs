@@ -9,6 +9,10 @@ import {blackboxLevels} from '../../src/games/blackboxLevels.ts';
 import {BLACKBOX_SAVE_LIMIT,blackboxUniverse,blackboxCandidates,blackboxSignature,traceBlackbox,validAtoms,createBlackboxState,markBlackbox,undoBlackbox,fireBlackbox,observedBlackbox,checkBlackbox,getBlackboxHint,bestBlackboxProbe} from '../../src/games/blackboxLogic.ts';
 import {parseBlackboxRound,loadBlackboxRound,saveBlackboxRound} from '../../src/games/blackboxStorage.ts';
 const campaign=JSON.parse(readFileSync(new URL('../../docs/blackbox/campaign.json',import.meta.url),'utf8'));
+// Pin rule references and ship the complete upstream license, never an inventory-only label.
+const sourceManifest=JSON.parse(readFileSync(new URL('../../vendor/sgtatham-blackbox/sources.json',import.meta.url),'utf8'));
+for(const source of sourceManifest){const bytes=readFileSync(new URL(`../../vendor/sgtatham-blackbox/${source.file}`,import.meta.url));assert.equal(bytes.length,source.bytes);assert.equal(createHash('sha256').update(bytes).digest('hex'),source.sha256);assert(source.url.includes('/a7c7826bce5cbb9b9c337c11b9b7f8b278e76fba/'));}
+assert.deepEqual(readFileSync(new URL('../../public/blackbox-LICENCE.txt',import.meta.url)),readFileSync(new URL('../../vendor/sgtatham-blackbox/LICENCE',import.meta.url)));
 const oracle=JSON.parse(execFileSync('python3',[fileURLToPath(new URL('../blackbox-independent/emit_vectors.py',import.meta.url))],{encoding:'utf8',maxBuffer:4*1024*1024}));
 for(const vector of oracle.vectors)assert.deepEqual(blackboxSignature(vector.size,vector.atoms),vector.signature);
 const started=performance.now();let layouts=0,ports=0,hintSteps=0,saveChecks=0,maxHintMs=0;
@@ -59,5 +63,5 @@ assert.equal(checkBlackbox(l,initial).kind,'count');assert.equal(undoBlackbox(in
 let long=initial;for(let i=0;i<BLACKBOX_SAVE_LIMIT;i++)long=markBlackbox(long,0,i%2?0:1);saved(l,long);
 globalThis.localStorage={setItem(){throw Error('blocked');},getItem(){throw Error('blocked');}};
 assert.equal(saveBlackboxRound(0,l,initial),false);assert.deepEqual(loadBlackboxRound(0,l),initial);assert.equal(saveBlackboxRound(0,l,markBlackbox(long,0,1)),false);
-const report={result:'pass',oracleLayouts:oracle.layouts,oraclePorts:oracle.ports,levels:blackboxLevels.length,layouts,ports,hintSteps,saveChecks,maxHintMs,digests,elapsedMs:performance.now()-started};
+const report={result:'pass',pinnedSourceFiles:sourceManifest.length,shippedLicenseMatches:true,oracleLayouts:oracle.layouts,oraclePorts:oracle.ports,levels:blackboxLevels.length,layouts,ports,hintSteps,saveChecks,maxHintMs,digests,elapsedMs:performance.now()-started};
 if(process.argv[2])writeFileSync(process.argv[2],JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report,null,2));
