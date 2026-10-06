@@ -1029,6 +1029,19 @@ export const games: GameDefinition[] = [
     source: original,
     component: lazy(() => import("../games/PancakeKitchen")),
   },
+  {
+    id: "blackbox",
+    title: "星雾探测",
+    subtitle: "6 章 84 关，从光束的去向，推理星雾里的秘密。",
+    category: "逻辑思维",
+    difficulty: "进阶",
+    tone: "purple",
+    levelCount: 84,
+    resumeKey: "playgarden.blackbox.v1",
+    artwork: { url: "./blackbox-art.webp", position: "50% 50%", size: "cover" },
+    source: original,
+    component: lazy(() => import("../games/BlackboxObservatory")),
+  },
 ];
 export const findGame = (id: string) => games.find((game) => game.id === id);
 

@@ -1,0 +1,4060 @@
+{
+  "status": "passed",
+  "schemaVersion": 1,
+  "checkedAt": "2026-10-06T07:24:22.639856+00:00",
+  "seconds": 4.87,
+  "campaignSha256": "fd32be76526b602d461cf9e5b01fc4331187f557483d1f7e01a5c0c323bcde87",
+  "runtimeSha256": "8987a53ea16c47b445f82950c4ffcfd9fdd18a735db4b42c0053fec8a654d45d",
+  "levelsVerified": 84,
+  "chaptersVerified": 6,
+  "allSelectedLayoutsUnique": true,
+  "allSelectedD4Distinct": true,
+  "probePolicy": "sumSquares, worstBucket, port; known observations only",
+  "difficultyClaim": "Recorded strategy trace length; not a minimum-probe proof",
+  "progression": "Nondecreasing within chapters; chapter 4 intentionally resets to two stars on a larger grid",
+  "equivalentAnswerWitness": {
+    "size": 3,
+    "atomsA": [
+      0,
+      8
+    ],
+    "atomsB": [
+      2,
+      6
+    ],
+    "signature": [
+      -1,
+      -2,
+      -1,
+      -1,
+      -2,
+      -1,
+      -1,
+      -2,
+      -1,
+      -1,
+      -2,
+      -1
+    ]
+  },
+  "universeLayoutsEnumerated": 15939,
+  "universePortsComputed": 315988,
+  "chapterStats": [
+    {
+      "chapter": "first-signals",
+      "universe": 9,
+      "uniqueLayouts": 9,
+      "uniqueD4Classes": 3,
+      "selected": 3,
+      "greedyRange": [
+        2,
+        2
+      ]
+    },
+    {
+      "chapter": "two-shadows",
+      "universe": 120,
+      "uniqueLayouts": 120,
+      "uniqueD4Classes": 21,
+      "selected": 9,
+      "greedyRange": [
+        2,
+        4
+      ]
+    },
+    {
+      "chapter": "turn-together",
+      "universe": 560,
+      "uniqueLayouts": 552,
+      "uniqueD4Classes": 76,
+      "selected": 12,
+      "greedyRange": [
+        3,
+        8
+      ]
+    },
+    {
+      "chapter": "wider-sky",
+      "universe": 300,
+      "uniqueLayouts": 300,
+      "uniqueD4Classes": 49,
+      "selected": 16,
+      "greedyRange": [
+        2,
+        5
+      ]
+    },
+    {
+      "chapter": "cross-evidence",
+      "universe": 2300,
+      "uniqueLayouts": 2284,
+      "uniqueD4Classes": 317,
+      "selected": 20,
+      "greedyRange": [
+        3,
+        9
+      ]
+    },
+    {
+      "chapter": "deep-nebula",
+      "universe": 12650,
+      "uniqueLayouts": 11985,
+      "uniqueD4Classes": 1572,
+      "selected": 24,
+      "greedyRange": [
+        4,
+        12
+      ]
+    }
+  ],
+  "levels": [
+    {
+      "id": "blackbox-001",
+      "size": 3,
+      "stars": 1,
+      "canonical": "4",
+      "universe": 9,
+      "signatureMatches": 1,
+      "greedyProbes": 2,
+      "signatureSha256": "aedd22e100eacd8e3d3b8eb273f179b18e17bf467d25159ec5f395d56ec8322e",
+      "probeTrace": [
+        {
+          "port": 1,
+          "result": -1,
+          "remaining": 3,
+          "sumSquares": 17,
+          "worst": 3
+        },
+        {
+          "port": 0,
+          "result": 9,
+          "remaining": 1,
+          "sumSquares": 3,
+          "worst": 1
+        }
+      ]
+    },
+    {
+      "id": "blackbox-002",
+      "size": 3,
+      "stars": 1,
+      "canonical": "1",
+      "universe": 9,
+      "signatureMatches": 1,
+      "greedyProbes": 2,
+      "signatureSha256": "c398e39669d37399f7af5155bb810b3c0ad78588caa67166f9dd3af2614beaac",
+      "probeTrace": [
+        {
+          "port": 1,
+          "result": -1,
+          "remaining": 3,
+          "sumSquares": 17,
+          "worst": 3
+        },
+        {
+          "port": 0,
+          "result": -2,
+          "remaining": 1,
+          "sumSquares": 3,
+          "worst": 1
+        }
+      ]
+    },
+    {
+      "id": "blackbox-003",
+      "size": 3,
+      "stars": 1,
+      "canonical": "0",
+      "universe": 9,
+      "signatureMatches": 1,
+      "greedyProbes": 2,
+      "signatureSha256": "15e8443550c56dd322c0303876a011f3578575d8f0543635457772b16619cbd5",
+      "probeTrace": [
+        {
+          "port": 1,
+          "result": -2,
+          "remaining": 2,
+          "sumSquares": 17,
+          "worst": 3
+        },
+        {
+          "port": 0,
+          "result": -1,
+          "remaining": 1,
+          "sumSquares": 2,
+          "worst": 1
+        }
+      ]
+    },
+    {
+      "id": "blackbox-004",
+      "size": 4,
+      "stars": 2,
+      "canonical": "1,13",
+      "universe": 120,
+      "signatureMatches": 1,
+      "greedyProbes": 2,
+      "signatureSha256": "373c4c80db56633f60b7d1a835ec9ab92aaa4a0bfe911b735a37e5a8f68291eb",
+      "probeTrace": [
+        {
+          "port": 1,
+          "result": -1,
+          "remaining": 45,
+          "sumSquares": 3220,
+          "worst": 45
+        },
+        {
+          "port": 6,
+          "result": 5,
+          "remaining": 1,
+          "sumSquares": 417,
+          "worst": 16
+        }
+      ]
+    },
+    {
+      "id": "blackbox-005",
+      "size": 4,
+      "stars": 2,
+      "canonical": "1,4",
+      "universe": 120,
+      "signatureMatches": 1,
+      "greedyProbes": 3,
+      "signatureSha256": "c3e2b4aa08117a57fc509c2dec7f868a6d5868c259e8c978b5f88aeb359edda3",
+      "probeTrace": [
+        {
+          "port": 1,
+          "result": -1,
+          "remaining": 45,
+          "sumSquares": 3220,
+          "worst": 45
+        },
+        {
+          "port": 6,
+          "result": 9,
+          "remaining": 2,
+          "sumSquares": 417,
+          "worst": 16
+        },
+        {
+          "port": 0,
+          "result": -2,
+          "remaining": 1,
+          "sumSquares": 2,
+          "worst": 1
+        }
+      ]
+    },
+    {
+      "id": "blackbox-006",
+      "size": 4,
+      "stars": 2,
+      "canonical": "0,10",
+      "universe": 120,
+      "signatureMatches": 1,
+      "greedyProbes": 3,
+      "signatureSha256": "5420628ee171961edd9bcefbf4bbe5af370dedf947cb0c0ea99ed97ff44a38ef",
+      "probeTrace": [
+        {
+          "port": 1,
+          "result": -2,
+          "remaining": 30,
+          "sumSquares": 3220,
+          "worst": 45
+        },
+        {
+          "port": 9,
+          "result": 15,
+          "remaining": 2,
+          "sumSquares": 148,
+          "worst": 8
+        },
+        {
+          "port": 0,
+          "result": -1,
+          "remaining": 1,
+          "sumSquares": 2,
+          "worst": 1
+        }
+      ]
+    },
+    {
+      "id": "blackbox-007",
+      "size": 4,
+      "stars": 2,
+      "canonical": "5,6",
+      "universe": 120,
+      "signatureMatches": 1,
+      "greedyProbes": 3,
+      "signatureSha256": "7d1d2ef662dcea801b223ecfe479b54798b29f72a63eadc8c82823f355df4de0",
+      "probeTrace": [
+        {
+          "port": 1,
+          "result": -1,
+          "remaining": 45,
+          "sumSquares": 3220,
+          "worst": 45
+        },
+        {
+          "port": 6,
+          "result": 11,
+          "remaining": 2,
+          "sumSquares": 417,
+          "worst": 16
+        },
+        {
+          "port": 0,
+          "result": 12,
+          "remaining": 1,
+          "sumSquares": 2,
+          "worst": 1
+        }
+      ]
+    },
+    {
+      "id": "blackbox-008",
+      "size": 4,
+      "stars": 2,
+      "canonical": "0,1",
+      "universe": 120,
+      "signatureMatches": 1,
+      "greedyProbes": 3,
+      "signatureSha256": "989a2d68f54736fc2a52c50bcab302ac98d224d76970482d31186ab4e5b3bf3f",
+      "probeTrace": [
+        {
+          "port": 1,
+          "result": -1,
+          "remaining": 45,
+          "sumSquares": 3220,
+          "worst": 45
+        },
+        {
+          "port": 6,
+          "result": 14,
+          "remaining": 3,
+          "sumSquares": 417,
+          "worst": 16
+        },
+        {
+          "port": 3,
+          "result": 11,
+          "remaining": 1,
+          "sumSquares": 3,
+          "worst": 1
+        }
+      ]
+    },
+    {
+      "id": "blackbox-009",
+      "size": 4,
+      "stars": 2,
+      "canonical": "1,11",
+      "universe": 120,
+      "signatureMatches": 1,
+      "greedyProbes": 4,
+      "signatureSha256": "e4c1113dfc573952b4539a2de7392ac458c67c3aefa45dd7392b927ab9d5d914",
+      "probeTrace": [
+        {
+          "port": 1,
+          "result": -1,
+          "remaining": 45,
+          "sumSquares": 3220,
+          "worst": 45
+        },
+        {
+          "port": 6,
+          "result": -1,
+          "remaining": 16,
+          "sumSquares": 417,
+          "worst": 16
+        },
+        {
+          "port": 10,
+          "result": 15,
+          "remaining": 2,
+          "sumSquares": 58,
+          "worst": 5
+        },
+        {
+          "port": 0,
+          "result": -2,
+          "remaining": 1,
+          "sumSquares": 2,
+          "worst": 1
+        }
+      ]
+    },
+    {
+      "id": "blackbox-010",
+      "size": 4,
+      "stars": 2,
+      "canonical": "0,5",
+      "universe": 120,
+      "signatureMatches": 1,
+      "greedyProbes": 4,
+      "signatureSha256": "6834179c67f2080af99bbb0f0615b5e3d914007075b0f91d835faa32d3bb87f8",
+      "probeTrace": [
+        {
+          "port": 1,
+          "result": -2,
+          "remaining": 30,
+          "sumSquares": 3220,
+          "worst": 45
+        },
+        {
+          "port": 9,
+          "result": -1,
+          "remaining": 7,
+          "sumSquares": 148,
+          "worst": 8
+        },
+        {
+          "port": 8,
+          "result": 14,
+          "remaining": 2,
+          "sumSquares": 13,
+          "worst": 2
+        },
+        {
+          "port": 0,
+          "result": -1,
+          "remaining": 1,
+          "sumSquares": 2,
+          "worst": 1
+        }
+      ]
+    },
+    {
+      "id": "blackbox-011",
+      "size": 4,
+      "stars": 2,
+      "canonical": "1,9",
+      "universe": 120,
+      "signatureMatches": 1,
+      "greedyProbes": 4,
+      "signatureSha256": "488a86440e561cb5f36759212a168413c335a23c681d9f248490c8a95c5a51b8",
+      "probeTrace": [
+        {
+          "port": 1,
+          "result": -1,
+          "remaining": 45,
+          "sumSquares": 3220,
+          "worst": 45
+        },
+        {
+          "port": 6,
+          "result": -1,
+          "remaining": 16,
+          "sumSquares": 417,
+          "worst": 16
+        },
+        {
+          "port": 10,
+          "result": 7,
+          "remaining": 5,
+          "sumSquares": 58,
+          "worst": 5
+        },
+        {
+          "port": 0,
+          "result": -2,
+          "remaining": 1,
+          "sumSquares": 7,
+          "worst": 2
+        }
+      ]
+    },
+    {
+      "id": "blackbox-012",
+      "size": 4,
+      "stars": 2,
+      "canonical": "1,5",
+      "universe": 120,
+      "signatureMatches": 1,
+      "greedyProbes": 4,
+      "signatureSha256": "1b707c97118b0a076333417efb4e41dd86b014ed855e8cae3b7c24925aaa03c6",
+      "probeTrace": [
+        {
+          "port": 1,
+          "result": -1,
+          "remaining": 45,
+          "sumSquares": 3220,
+          "worst": 45
+        },
+        {
+          "port": 6,
+          "result": 10,
+          "remaining": 5,
+          "sumSquares": 417,
+          "worst": 16
+        },
+        {
+          "port": 14,
+          "result": 8,
+          "remaining": 2,
+          "sumSquares": 9,
+          "worst": 2
+        },
+        {
+          "port": 0,
+          "result": -2,
+          "remaining": 1,
+          "sumSquares": 2,
+          "worst": 1
+        }
+      ]
+    },
+    {
+      "id": "blackbox-013",
+      "size": 4,
+      "stars": 3,
+      "canonical": "1,6,8",
+      "universe": 560,
+      "signatureMatches": 1,
+      "greedyProbes": 3,
+      "signatureSha256": "9d5f9b2514261c5c60cde665c801a31463e46726e2fca72699e590978a8b4dc3",
+      "probeTrace": [
+        {
+          "port": 0,
+          "result": -2,
+          "remaining": 91,
+          "sumSquares": 93658,
+          "worst": 274
+        },
+        {
+          "port": 3,
+          "result": 4,
+          "remaining": 10,
+          "sumSquares": 2169,
+          "worst": 40
+        },
+        {
+          "port": 9,
+          "result": 7,
+          "remaining": 1,
+          "sumSquares": 24,
+          "worst": 3
+        }
+      ]
+    },
+    {
+      "id": "blackbox-014",
+      "size": 4,
+      "stars": 3,
+      "canonical": "1,2,11",
+      "universe": 560,
+      "signatureMatches": 1,
+      "greedyProbes": 3,
+      "signatureSha256": "49e60343e80ce6accea5039a7ad3d5d148747da81de494af64b9c3b604da4fe6",
+      "probeTrace": [
+        {
+          "port": 0,
+          "result": -2,
+          "remaining": 91,
+          "sumSquares": 93658,
+          "worst": 274
+        },
+        {
+          "port": 3,
+          "result": -2,
+          "remaining": 12,
+          "sumSquares": 2169,
+          "worst": 40
+        },
+        {
+          "port": 7,
+          "result": 9,
+          "remaining": 1,
+          "sumSquares": 36,
+          "worst": 4
+        }
+      ]
+    },
+    {
+      "id": "blackbox-015",
+      "size": 4,
+      "stars": 3,
+      "canonical": "1,6,14",
+      "universe": 560,
+      "signatureMatches": 1,
+      "greedyProbes": 4,
+      "signatureSha256": "47a35633e3081e084e1b0d3d56f6f51d881a833cba6ecd97d1487c6fd862e332",
+      "probeTrace": [
+        {
+          "port": 0,
+          "result": -2,
+          "remaining": 91,
+          "sumSquares": 93658,
+          "worst": 274
+        },
+        {
+          "port": 3,
+          "result": 4,
+          "remaining": 10,
+          "sumSquares": 2169,
+          "worst": 40
+        },
+        {
+          "port": 9,
+          "result": -2,
+          "remaining": 3,
+          "sumSquares": 24,
+          "worst": 3
+        },
+        {
+          "port": 6,
+          "result": -2,
+          "remaining": 1,
+          "sumSquares": 5,
+          "worst": 2
+        }
+      ]
+    },
+    {
+      "id": "blackbox-016",
+      "size": 4,
+      "stars": 3,
+      "canonical": "1,5,8",
+      "universe": 560,
+      "signatureMatches": 1,
+      "greedyProbes": 4,
+      "signatureSha256": "ca142a70ce8f6755435eb6442058f4ad6963a389794d9d20a0483b9c648de7df",
+      "probeTrace": [
+        {
+          "port": 0,
+          "result": -2,
+          "remaining": 91,
+          "sumSquares": 93658,
+          "worst": 274
+        },
+        {
+          "port": 3,
+          "result": 11,
+          "remaining": 15,
+          "sumSquares": 2169,
+          "worst": 40
+        },
+        {
+          "port": 5,
+          "result": -1,
+          "remaining": 5,
+          "sumSquares": 59,
+          "worst": 5
+        },
+        {
+          "port": 7,
+          "result": 9,
+          "remaining": 1,
+          "sumSquares": 7,
+          "worst": 2
+        }
+      ]
+    },
+    {
+      "id": "blackbox-017",
+      "size": 4,
+      "stars": 3,
+      "canonical": "0,6,10",
+      "universe": 560,
+      "signatureMatches": 1,
+      "greedyProbes": 4,
+      "signatureSha256": "d5b93d53fba8c721d889d582da96f582885591bc4d704485222cdab3d8c69124",
+      "probeTrace": [
+        {
+          "port": 0,
+          "result": -1,
+          "remaining": 274,
+          "sumSquares": 93658,
+          "worst": 274
+        },
+        {
+          "port": 4,
+          "result": 3,
+          "remaining": 32,
+          "sumSquares": 20534,
+          "worst": 126
+        },
+        {
+          "port": 7,
+          "result": 11,
+          "remaining": 4,
+          "sumSquares": 286,
+          "worst": 15
+        },
+        {
+          "port": 12,
+          "result": -1,
+          "remaining": 1,
+          "sumSquares": 6,
+          "worst": 2
+        }
+      ]
+    },
+    {
+      "id": "blackbox-018",
+      "size": 4,
+      "stars": 3,
+      "canonical": "1,2,5",
+      "universe": 560,
+      "signatureMatches": 1,
+      "greedyProbes": 4,
+      "signatureSha256": "43c4a87f321c4d425f4e19e282b05c2c74cd7d3908424a6d764d60660b9f1b6c",
+      "probeTrace": [
+        {
+          "port": 0,
+          "result": -2,
+          "remaining": 91,
+          "sumSquares": 93658,
+          "worst": 274
+        },
+        {
+          "port": 3,
+          "result": -2,
+          "remaining": 12,
+          "sumSquares": 2169,
+          "worst": 40
+        },
+        {
+          "port": 7,
+          "result": 15,
+          "remaining": 4,
+          "sumSquares": 36,
+          "worst": 4
+        },
+        {
+          "port": 6,
+          "result": 10,
+          "remaining": 1,
+          "sumSquares": 4,
+          "worst": 1
+        }
+      ]
+    },
+    {
+      "id": "blackbox-019",
+      "size": 4,
+      "stars": 3,
+      "canonical": "0,2,7",
+      "universe": 560,
+      "signatureMatches": 1,
+      "greedyProbes": 5,
+      "signatureSha256": "58fec00420ef74c1de41a493678480843409acd617a8c751455e732b093fb852",
+      "probeTrace": [
+        {
+          "port": 0,
+          "result": -1,
+          "remaining": 274,
+          "sumSquares": 93658,
+          "worst": 274
+        },
+        {
+          "port": 4,
+          "result": -2,
+          "remaining": 40,
+          "sumSquares": 20534,
+          "worst": 126
+        },
+        {
+          "port": 7,
+          "result": 15,
+          "remaining": 8,
+          "sumSquares": 410,
+          "worst": 17
+        },
+        {
+          "port": 10,
+          "result": 14,
+          "remaining": 2,
+          "sumSquares": 16,
+          "worst": 2
+        },
+        {
+          "port": 1,
+          "result": -2,
+          "remaining": 1,
+          "sumSquares": 2,
+          "worst": 1
+        }
+      ]
+    },
+    {
+      "id": "blackbox-020",
+      "size": 4,
+      "stars": 3,
+      "canonical": "1,5,13",
+      "universe": 560,
+      "signatureMatches": 1,
+      "greedyProbes": 5,
+      "signatureSha256": "3d23ef7959085aa84f508e5db00f3deeecd38e62380531bfe4c0ab71728c81b4",
+      "probeTrace": [
+        {
+          "port": 0,
+          "result": -2,
+          "remaining": 91,
+          "sumSquares": 93658,
+          "worst": 274
+        },
+        {
+          "port": 3,
+          "result": 11,
+          "remaining": 15,
+          "sumSquares": 2169,
+          "worst": 40
+        },
+        {
+          "port": 5,
+          "result": -1,
+          "remaining": 5,
+          "sumSquares": 59,
+          "worst": 5
+        },
+        {
+          "port": 7,
+          "result": -1,
+          "remaining": 2,
+          "sumSquares": 7,
+          "worst": 2
+        },
+        {
+          "port": 6,
+          "result": -2,
+          "remaining": 1,
+          "sumSquares": 2,
+          "worst": 1
+        }
+      ]
+    },
+    {
+      "id": "blackbox-021",
+      "size": 4,
+      "stars": 3,
+      "canonical": "0,5,6",
+      "universe": 560,
+      "signatureMatches": 1,
+      "greedyProbes": 5,
+      "signatureSha256": "0ca73515c9a8dfaa635810a40fe03636e6a5967dca02485ee2c736f34b85eb79",
+      "probeTrace": [
+        {
+          "port": 0,
+          "result": -1,
+          "remaining": 274,
+          "sumSquares": 93658,
+          "worst": 274
+        },
+        {
+          "port": 4,
+          "result": 3,
+          "remaining": 32,
+          "sumSquares": 20534,
+          "worst": 126
+        },
+        {
+          "port": 7,
+          "result": 15,
+          "remaining": 4,
+          "sumSquares": 286,
+          "worst": 15
+        },
+        {
+          "port": 9,
+          "result": -1,
+          "remaining": 2,
+          "sumSquares": 6,
+          "worst": 2
+        },
+        {
+          "port": 1,
+          "result": -2,
+          "remaining": 1,
+          "sumSquares": 2,
+          "worst": 1
+        }
+      ]
+    },
+    {
+      "id": "blackbox-022",
+      "size": 4,
+      "stars": 3,
+      "canonical": "0,3,5",
+      "universe": 560,
+      "signatureMatches": 1,
+      "greedyProbes": 6,
+      "signatureSha256": "ab50f12287acea638666398d0dd578098f384d1e5469e9781a688cb0214d95c4",
+      "probeTrace": [
+        {
+          "port": 0,
+          "result": -1,
+          "remaining": 274,
+          "sumSquares": 93658,
+          "worst": 274
+        },
+        {
+          "port": 4,
+          "result": -1,
+          "remaining": 126,
+          "sumSquares": 20534,
+          "worst": 126
+        },
+        {
+          "port": 11,
+          "result": -1,
+          "remaining": 56,
+          "sumSquares": 4164,
+          "worst": 56
+        },
+        {
+          "port": 10,
+          "result": 6,
+          "remaining": 3,
+          "sumSquares": 820,
+          "worst": 24
+        },
+        {
+          "port": 1,
+          "result": -2,
+          "remaining": 2,
+          "sumSquares": 5,
+          "worst": 2
+        },
+        {
+          "port": 7,
+          "result": 15,
+          "remaining": 1,
+          "sumSquares": 2,
+          "worst": 1
+        }
+      ]
+    },
+    {
+      "id": "blackbox-023",
+      "size": 4,
+      "stars": 3,
+      "canonical": "0,2,11",
+      "universe": 560,
+      "signatureMatches": 1,
+      "greedyProbes": 7,
+      "signatureSha256": "81dc5db0f581b4f84ff918bd103419e2ab081d1994ba9235dbda8ff6b5c40aba",
+      "probeTrace": [
+        {
+          "port": 0,
+          "result": -1,
+          "remaining": 274,
+          "sumSquares": 93658,
+          "worst": 274
+        },
+        {
+          "port": 4,
+          "result": -1,
+          "remaining": 126,
+          "sumSquares": 20534,
+          "worst": 126
+        },
+        {
+          "port": 11,
+          "result": -1,
+          "remaining": 56,
+          "sumSquares": 4164,
+          "worst": 56
+        },
+        {
+          "port": 10,
+          "result": 15,
+          "remaining": 6,
+          "sumSquares": 820,
+          "worst": 24
+        },
+        {
+          "port": 2,
+          "result": -1,
+          "remaining": 3,
+          "sumSquares": 18,
+          "worst": 3
+        },
+        {
+          "port": 3,
+          "result": -2,
+          "remaining": 2,
+          "sumSquares": 5,
+          "worst": 2
+        },
+        {
+          "port": 9,
+          "result": -2,
+          "remaining": 1,
+          "sumSquares": 2,
+          "worst": 1
+        }
+      ]
+    },
+    {
+      "id": "blackbox-024",
+      "size": 4,
+      "stars": 3,
+      "canonical": "0,10,11",
+      "universe": 560,
+      "signatureMatches": 1,
+      "greedyProbes": 8,
+      "signatureSha256": "8f3f24c513f1bb75bcb69b52a654a47208e00075b8d0a896ee9ce7ebd475cb62",
+      "probeTrace": [
+        {
+          "port": 0,
+          "result": -1,
+          "remaining": 274,
+          "sumSquares": 93658,
+          "worst": 274
+        },
+        {
+          "port": 4,
+          "result": -1,
+          "remaining": 126,
+          "sumSquares": 20534,
+          "worst": 126
+        },
+        {
+          "port": 11,
+          "result": -1,
+          "remaining": 56,
+          "sumSquares": 4164,
+          "worst": 56
+        },
+        {
+          "port": 10,
+          "result": -1,
+          "remaining": 13,
+          "sumSquares": 820,
+          "worst": 24
+        },
+        {
+          "port": 7,
+          "result": -2,
+          "remaining": 4,
+          "sumSquares": 43,
+          "worst": 4
+        },
+        {
+          "port": 1,
+          "result": -2,
+          "remaining": 3,
+          "sumSquares": 10,
+          "worst": 3
+        },
+        {
+          "port": 3,
+          "result": -1,
+          "remaining": 2,
+          "sumSquares": 5,
+          "worst": 2
+        },
+        {
+          "port": 9,
+          "result": 15,
+          "remaining": 1,
+          "sumSquares": 2,
+          "worst": 1
+        }
+      ]
+    },
+    {
+      "id": "blackbox-025",
+      "size": 5,
+      "stars": 2,
+      "canonical": "1,14",
+      "universe": 300,
+      "signatureMatches": 1,
+      "greedyProbes": 2,
+      "signatureSha256": "d995672002f1b4f5ae581ecb15b0622e18b35871f5f1aea58a3b5b188a956ebd",
+      "probeTrace": [
+        {
+          "port": 2,
+          "result": -2,
+          "remaining": 49,
+          "sumSquares": 15294,
+          "worst": 98
+        },
+        {
+          "port": 12,
+          "result": 3,
+          "remaining": 1,
+          "sumSquares": 307,
+          "worst": 10
+        }
+      ]
+    },
+    {
+      "id": "blackbox-026",
+      "size": 5,
+      "stars": 2,
+      "canonical": "12,16",
+      "universe": 300,
+      "signatureMatches": 1,
+      "greedyProbes": 2,
+      "signatureSha256": "f7e98dd44684f6e73a505b4322d0acc13f654abb4e12442abc293cf1e56a150f",
+      "probeTrace": [
+        {
+          "port": 2,
+          "result": 5,
+          "remaining": 17,
+          "sumSquares": 15294,
+          "worst": 98
+        },
+        {
+          "port": 8,
+          "result": 13,
+          "remaining": 1,
+          "sumSquares": 51,
+          "worst": 6
+        }
+      ]
+    },
+    {
+      "id": "blackbox-027",
+      "size": 5,
+      "stars": 2,
+      "canonical": "10,13",
+      "universe": 300,
+      "signatureMatches": 1,
+      "greedyProbes": 2,
+      "signatureSha256": "2fe26f9b29d1afa7afef95e175023bddacaa0bafb606e5c2ac48e57ec0ac959e",
+      "probeTrace": [
+        {
+          "port": 2,
+          "result": -1,
+          "remaining": 98,
+          "sumSquares": 15294,
+          "worst": 98
+        },
+        {
+          "port": 7,
+          "result": 6,
+          "remaining": 1,
+          "sumSquares": 1568,
+          "worst": 30
+        }
+      ]
+    },
+    {
+      "id": "blackbox-028",
+      "size": 5,
+      "stars": 2,
+      "canonical": "0,16",
+      "universe": 300,
+      "signatureMatches": 1,
+      "greedyProbes": 3,
+      "signatureSha256": "c5ad08cd3503ae9b4cc7f8b7936b00af5499c91f53c2e512b2c97aad1c7f5cd2",
+      "probeTrace": [
+        {
+          "port": 2,
+          "result": -1,
+          "remaining": 98,
+          "sumSquares": 15294,
+          "worst": 98
+        },
+        {
+          "port": 7,
+          "result": 14,
+          "remaining": 3,
+          "sumSquares": 1568,
+          "worst": 30
+        },
+        {
+          "port": 11,
+          "result": -1,
+          "remaining": 1,
+          "sumSquares": 3,
+          "worst": 1
+        }
+      ]
+    },
+    {
+      "id": "blackbox-029",
+      "size": 5,
+      "stars": 2,
+      "canonical": "1,11",
+      "universe": 300,
+      "signatureMatches": 1,
+      "greedyProbes": 3,
+      "signatureSha256": "8fa3dc1e6ea4eec8cf13884187c22c716e3a15b37c8e88e5c1c25c38f1845c81",
+      "probeTrace": [
+        {
+          "port": 2,
+          "result": -2,
+          "remaining": 49,
+          "sumSquares": 15294,
+          "worst": 98
+        },
+        {
+          "port": 12,
+          "result": 8,
+          "remaining": 2,
+          "sumSquares": 307,
+          "worst": 10
+        },
+        {
+          "port": 0,
+          "result": -2,
+          "remaining": 1,
+          "sumSquares": 2,
+          "worst": 1
+        }
+      ]
+    },
+    {
+      "id": "blackbox-030",
+      "size": 5,
+      "stars": 2,
+      "canonical": "0,14",
+      "universe": 300,
+      "signatureMatches": 1,
+      "greedyProbes": 3,
+      "signatureSha256": "fff34a02e3eb9bcf3816f1d69a2dbe0877fbf0a28113baf6d07c02c2163b52a0",
+      "probeTrace": [
+        {
+          "port": 2,
+          "result": 12,
+          "remaining": 45,
+          "sumSquares": 15294,
+          "worst": 98
+        },
+        {
+          "port": 1,
+          "result": -2,
+          "remaining": 9,
+          "sumSquares": 287,
+          "worst": 10
+        },
+        {
+          "port": 11,
+          "result": 3,
+          "remaining": 1,
+          "sumSquares": 11,
+          "worst": 2
+        }
+      ]
+    },
+    {
+      "id": "blackbox-031",
+      "size": 5,
+      "stars": 2,
+      "canonical": "16,18",
+      "universe": 300,
+      "signatureMatches": 1,
+      "greedyProbes": 3,
+      "signatureSha256": "4726c13265988bd3bf73d64e7650e7308a3f95ca318fd4feb99661f6d47de68c",
+      "probeTrace": [
+        {
+          "port": 2,
+          "result": -2,
+          "remaining": 49,
+          "sumSquares": 15294,
+          "worst": 98
+        },
+        {
+          "port": 12,
+          "result": -2,
+          "remaining": 9,
+          "sumSquares": 307,
+          "worst": 10
+        },
+        {
+          "port": 6,
+          "result": -1,
+          "remaining": 1,
+          "sumSquares": 15,
+          "worst": 2
+        }
+      ]
+    },
+    {
+      "id": "blackbox-032",
+      "size": 5,
+      "stars": 2,
+      "canonical": "1,6",
+      "universe": 300,
+      "signatureMatches": 1,
+      "greedyProbes": 3,
+      "signatureSha256": "1c68f3ed00cddb662edb58ab8cd4041debf2328f5e912124bb2a098b4ed6587f",
+      "probeTrace": [
+        {
+          "port": 2,
+          "result": -2,
+          "remaining": 49,
+          "sumSquares": 15294,
+          "worst": 98
+        },
+        {
+          "port": 12,
+          "result": 7,
+          "remaining": 2,
+          "sumSquares": 307,
+          "worst": 10
+        },
+        {
+          "port": 0,
+          "result": -2,
+          "remaining": 1,
+          "sumSquares": 2,
+          "worst": 1
+        }
+      ]
+    },
+    {
+      "id": "blackbox-033",
+      "size": 5,
+      "stars": 2,
+      "canonical": "11,16",
+      "universe": 300,
+      "signatureMatches": 1,
+      "greedyProbes": 3,
+      "signatureSha256": "86586944112ab733f6192c9f7d32248c667b5726e4d45459f34fc1635222814f",
+      "probeTrace": [
+        {
+          "port": 2,
+          "result": -1,
+          "remaining": 98,
+          "sumSquares": 15294,
+          "worst": 98
+        },
+        {
+          "port": 7,
+          "result": 13,
+          "remaining": 11,
+          "sumSquares": 1568,
+          "worst": 30
+        },
+        {
+          "port": 17,
+          "result": 10,
+          "remaining": 1,
+          "sumSquares": 25,
+          "worst": 3
+        }
+      ]
+    },
+    {
+      "id": "blackbox-034",
+      "size": 5,
+      "stars": 2,
+      "canonical": "0,24",
+      "universe": 300,
+      "signatureMatches": 1,
+      "greedyProbes": 4,
+      "signatureSha256": "1a8a01024ec92a3cf6d085b8ab5e93bb542d29ebc36aeebff0729cf355c57c42",
+      "probeTrace": [
+        {
+          "port": 2,
+          "result": 12,
+          "remaining": 45,
+          "sumSquares": 15294,
+          "worst": 98
+        },
+        {
+          "port": 1,
+          "result": -2,
+          "remaining": 9,
+          "sumSquares": 287,
+          "worst": 10
+        },
+        {
+          "port": 11,
+          "result": 6,
+          "remaining": 2,
+          "sumSquares": 11,
+          "worst": 2
+        },
+        {
+          "port": 3,
+          "result": 18,
+          "remaining": 1,
+          "sumSquares": 2,
+          "worst": 1
+        }
+      ]
+    },
+    {
+      "id": "blackbox-035",
+      "size": 5,
+      "stars": 2,
+      "canonical": "1,12",
+      "universe": 300,
+      "signatureMatches": 1,
+      "greedyProbes": 4,
+      "signatureSha256": "4d1b122d908edb4aa594dc88c0b6299f878f462c2a98927b2781ff2475360de3",
+      "probeTrace": [
+        {
+          "port": 2,
+          "result": -2,
+          "remaining": 49,
+          "sumSquares": 15294,
+          "worst": 98
+        },
+        {
+          "port": 12,
+          "result": -1,
+          "remaining": 10,
+          "sumSquares": 307,
+          "worst": 10
+        },
+        {
+          "port": 11,
+          "result": 18,
+          "remaining": 2,
+          "sumSquares": 18,
+          "worst": 2
+        },
+        {
+          "port": 0,
+          "result": -2,
+          "remaining": 1,
+          "sumSquares": 2,
+          "worst": 1
+        }
+      ]
+    },
+    {
+      "id": "blackbox-036",
+      "size": 5,
+      "stars": 2,
+      "canonical": "11,17",
+      "universe": 300,
+      "signatureMatches": 1,
+      "greedyProbes": 4,
+      "signatureSha256": "cc1414f566bba32989c0e5fa7a062350ad621bb607db0da22076967a5578db65",
+      "probeTrace": [
+        {
+          "port": 2,
+          "result": -1,
+          "remaining": 98,
+          "sumSquares": 15294,
+          "worst": 98
+        },
+        {
+          "port": 7,
+          "result": 13,
+          "remaining": 11,
+          "sumSquares": 1568,
+          "worst": 30
+        },
+        {
+          "port": 17,
+          "result": -1,
+          "remaining": 3,
+          "sumSquares": 25,
+          "worst": 3
+        },
+        {
+          "port": 0,
+          "result": 16,
+          "remaining": 1,
+          "sumSquares": 3,
+          "worst": 1
+        }
+      ]
+    },
+    {
+      "id": "blackbox-037",
+      "size": 5,
+      "stars": 2,
+      "canonical": "0,1",
+      "universe": 300,
+      "signatureMatches": 1,
+      "greedyProbes": 4,
+      "signatureSha256": "e88d1b8c8dfb426baf12b870ee82c120bc45c0deaeef6ea18dc053e08abdaaae",
+      "probeTrace": [
+        {
+          "port": 2,
+          "result": -2,
+          "remaining": 49,
+          "sumSquares": 15294,
+          "worst": 98
+        },
+        {
+          "port": 12,
+          "result": 6,
+          "remaining": 7,
+          "sumSquares": 307,
+          "worst": 10
+        },
+        {
+          "port": 18,
+          "result": 8,
+          "remaining": 2,
+          "sumSquares": 13,
+          "worst": 2
+        },
+        {
+          "port": 0,
+          "result": -1,
+          "remaining": 1,
+          "sumSquares": 2,
+          "worst": 1
+        }
+      ]
+    },
+    {
+      "id": "blackbox-038",
+      "size": 5,
+      "stars": 2,
+      "canonical": "11,12",
+      "universe": 300,
+      "signatureMatches": 1,
+      "greedyProbes": 4,
+      "signatureSha256": "55120ca2ea4d9fa05a4bb94342ed4d4db6db2de07525cfe8c346c34caeabea79",
+      "probeTrace": [
+        {
+          "port": 2,
+          "result": -1,
+          "remaining": 98,
+          "sumSquares": 15294,
+          "worst": 98
+        },
+        {
+          "port": 7,
+          "result": -1,
+          "remaining": 30,
+          "sumSquares": 1568,
+          "worst": 30
+        },
+        {
+          "port": 11,
+          "result": 18,
+          "remaining": 9,
+          "sumSquares": 174,
+          "worst": 9
+        },
+        {
+          "port": 3,
+          "result": 5,
+          "remaining": 1,
+          "sumSquares": 27,
+          "worst": 4
+        }
+      ]
+    },
+    {
+      "id": "blackbox-039",
+      "size": 5,
+      "stars": 2,
+      "canonical": "10,17",
+      "universe": 300,
+      "signatureMatches": 1,
+      "greedyProbes": 5,
+      "signatureSha256": "96ff01e3ad09a9b842a6baa66fab04ef642967e399a03a2c9c6debc943f15528",
+      "probeTrace": [
+        {
+          "port": 2,
+          "result": -1,
+          "remaining": 98,
+          "sumSquares": 15294,
+          "worst": 98
+        },
+        {
+          "port": 7,
+          "result": -1,
+          "remaining": 30,
+          "sumSquares": 1568,
+          "worst": 30
+        },
+        {
+          "port": 11,
+          "result": -1,
+          "remaining": 7,
+          "sumSquares": 174,
+          "worst": 9
+        },
+        {
+          "port": 1,
+          "result": -2,
+          "remaining": 2,
+          "sumSquares": 13,
+          "worst": 2
+        },
+        {
+          "port": 0,
+          "result": 16,
+          "remaining": 1,
+          "sumSquares": 2,
+          "worst": 1
+        }
+      ]
+    },
+    {
+      "id": "blackbox-040",
+      "size": 5,
+      "stars": 2,
+      "canonical": "10,11",
+      "universe": 300,
+      "signatureMatches": 1,
+      "greedyProbes": 5,
+      "signatureSha256": "4000900b8dcab789ebdfce92e000ba319c1e512c6d5a78b9ab6eb37dcba57b20",
+      "probeTrace": [
+        {
+          "port": 2,
+          "result": -1,
+          "remaining": 98,
+          "sumSquares": 15294,
+          "worst": 98
+        },
+        {
+          "port": 7,
+          "result": 13,
+          "remaining": 11,
+          "sumSquares": 1568,
+          "worst": 30
+        },
+        {
+          "port": 17,
+          "result": 11,
+          "remaining": 3,
+          "sumSquares": 25,
+          "worst": 3
+        },
+        {
+          "port": 0,
+          "result": 10,
+          "remaining": 2,
+          "sumSquares": 5,
+          "worst": 2
+        },
+        {
+          "port": 1,
+          "result": -2,
+          "remaining": 1,
+          "sumSquares": 2,
+          "worst": 1
+        }
+      ]
+    },
+    {
+      "id": "blackbox-041",
+      "size": 5,
+      "stars": 3,
+      "canonical": "0,13,19",
+      "universe": 2300,
+      "signatureMatches": 1,
+      "greedyProbes": 3,
+      "signatureSha256": "0b3082ad3da4c6c9601288a4376cc1b0941fbcf697db9be17df7d161e8fb7df5",
+      "probeTrace": [
+        {
+          "port": 1,
+          "result": -2,
+          "remaining": 548,
+          "sumSquares": 1231730,
+          "worst": 920
+        },
+        {
+          "port": 13,
+          "result": 19,
+          "remaining": 27,
+          "sumSquares": 55628,
+          "worst": 187
+        },
+        {
+          "port": 11,
+          "result": 2,
+          "remaining": 1,
+          "sumSquares": 129,
+          "worst": 8
+        }
+      ]
+    },
+    {
+      "id": "blackbox-042",
+      "size": 5,
+      "stars": 3,
+      "canonical": "0,13,22",
+      "universe": 2300,
+      "signatureMatches": 1,
+      "greedyProbes": 4,
+      "signatureSha256": "6e5bc6130e6e54952cee9be1c37392bf59a7f6e0069cd18a3dca5db6db8f91f1",
+      "probeTrace": [
+        {
+          "port": 1,
+          "result": -2,
+          "remaining": 548,
+          "sumSquares": 1231730,
+          "worst": 920
+        },
+        {
+          "port": 13,
+          "result": -2,
+          "remaining": 115,
+          "sumSquares": 55628,
+          "worst": 187
+        },
+        {
+          "port": 6,
+          "result": 4,
+          "remaining": 5,
+          "sumSquares": 2397,
+          "worst": 34
+        },
+        {
+          "port": 2,
+          "result": 18,
+          "remaining": 1,
+          "sumSquares": 7,
+          "worst": 2
+        }
+      ]
+    },
+    {
+      "id": "blackbox-043",
+      "size": 5,
+      "stars": 3,
+      "canonical": "0,1,7",
+      "universe": 2300,
+      "signatureMatches": 1,
+      "greedyProbes": 4,
+      "signatureSha256": "780bf68028e3cebf34053b8719226a6c58965df05a9efb2e2b6beab298358f6f",
+      "probeTrace": [
+        {
+          "port": 1,
+          "result": -1,
+          "remaining": 920,
+          "sumSquares": 1231730,
+          "worst": 920
+        },
+        {
+          "port": 0,
+          "result": -1,
+          "remaining": 195,
+          "sumSquares": 167936,
+          "worst": 253
+        },
+        {
+          "port": 2,
+          "result": -2,
+          "remaining": 58,
+          "sumSquares": 5539,
+          "worst": 58
+        },
+        {
+          "port": 7,
+          "result": 13,
+          "remaining": 1,
+          "sumSquares": 610,
+          "worst": 20
+        }
+      ]
+    },
+    {
+      "id": "blackbox-044",
+      "size": 5,
+      "stars": 3,
+      "canonical": "1,6,12",
+      "universe": 2300,
+      "signatureMatches": 1,
+      "greedyProbes": 4,
+      "signatureSha256": "0ab75ec0c9aec41aaf059da72c774a079d3fdbbe4eb96a724965ce5cbf804934",
+      "probeTrace": [
+        {
+          "port": 1,
+          "result": -1,
+          "remaining": 920,
+          "sumSquares": 1231730,
+          "worst": 920
+        },
+        {
+          "port": 0,
+          "result": -2,
+          "remaining": 253,
+          "sumSquares": 167936,
+          "worst": 253
+        },
+        {
+          "port": 13,
+          "result": 8,
+          "remaining": 15,
+          "sumSquares": 12095,
+          "worst": 90
+        },
+        {
+          "port": 10,
+          "result": 17,
+          "remaining": 1,
+          "sumSquares": 59,
+          "worst": 6
+        }
+      ]
+    },
+    {
+      "id": "blackbox-045",
+      "size": 5,
+      "stars": 3,
+      "canonical": "0,21,22",
+      "universe": 2300,
+      "signatureMatches": 1,
+      "greedyProbes": 4,
+      "signatureSha256": "1480efde4ca8bfbb8f90cd384c88e07ece3b91e8c1021de2cf0fb5d3eaf832d4",
+      "probeTrace": [
+        {
+          "port": 1,
+          "result": -2,
+          "remaining": 548,
+          "sumSquares": 1231730,
+          "worst": 920
+        },
+        {
+          "port": 13,
+          "result": 18,
+          "remaining": 16,
+          "sumSquares": 55628,
+          "worst": 187
+        },
+        {
+          "port": 11,
+          "result": -1,
+          "remaining": 6,
+          "sumSquares": 66,
+          "worst": 6
+        },
+        {
+          "port": 17,
+          "result": -1,
+          "remaining": 1,
+          "sumSquares": 10,
+          "worst": 2
+        }
+      ]
+    },
+    {
+      "id": "blackbox-046",
+      "size": 5,
+      "stars": 3,
+      "canonical": "1,6,7",
+      "universe": 2300,
+      "signatureMatches": 1,
+      "greedyProbes": 4,
+      "signatureSha256": "99308599e7b2c75c7af469a9276a2db793b2d44e096f8dafcda45ebc157ae06c",
+      "probeTrace": [
+        {
+          "port": 1,
+          "result": -1,
+          "remaining": 920,
+          "sumSquares": 1231730,
+          "worst": 920
+        },
+        {
+          "port": 0,
+          "result": -2,
+          "remaining": 253,
+          "sumSquares": 167936,
+          "worst": 253
+        },
+        {
+          "port": 13,
+          "result": 7,
+          "remaining": 12,
+          "sumSquares": 12095,
+          "worst": 90
+        },
+        {
+          "port": 17,
+          "result": 10,
+          "remaining": 1,
+          "sumSquares": 28,
+          "worst": 3
+        }
+      ]
+    },
+    {
+      "id": "blackbox-047",
+      "size": 5,
+      "stars": 3,
+      "canonical": "1,13,16",
+      "universe": 2300,
+      "signatureMatches": 1,
+      "greedyProbes": 5,
+      "signatureSha256": "26a57198db6eec1433a0f52e3f53c84947abd25288d2672f54c0daa71d3862f3",
+      "probeTrace": [
+        {
+          "port": 1,
+          "result": -1,
+          "remaining": 920,
+          "sumSquares": 1231730,
+          "worst": 920
+        },
+        {
+          "port": 0,
+          "result": -2,
+          "remaining": 253,
+          "sumSquares": 167936,
+          "worst": 253
+        },
+        {
+          "port": 13,
+          "result": -1,
+          "remaining": 90,
+          "sumSquares": 12095,
+          "worst": 90
+        },
+        {
+          "port": 14,
+          "result": 8,
+          "remaining": 15,
+          "sumSquares": 1440,
+          "worst": 21
+        },
+        {
+          "port": 10,
+          "result": 19,
+          "remaining": 1,
+          "sumSquares": 69,
+          "worst": 7
+        }
+      ]
+    },
+    {
+      "id": "blackbox-048",
+      "size": 5,
+      "stars": 3,
+      "canonical": "0,18,20",
+      "universe": 2300,
+      "signatureMatches": 1,
+      "greedyProbes": 5,
+      "signatureSha256": "c122ecdb05ad7a41e04e5ba562384ed67f56f2ec5648f8c04e87458004bd3844",
+      "probeTrace": [
+        {
+          "port": 1,
+          "result": -2,
+          "remaining": 548,
+          "sumSquares": 1231730,
+          "worst": 920
+        },
+        {
+          "port": 13,
+          "result": -1,
+          "remaining": 187,
+          "sumSquares": 55628,
+          "worst": 187
+        },
+        {
+          "port": 4,
+          "result": -1,
+          "remaining": 49,
+          "sumSquares": 6215,
+          "worst": 49
+        },
+        {
+          "port": 12,
+          "result": 9,
+          "remaining": 4,
+          "sumSquares": 375,
+          "worst": 14
+        },
+        {
+          "port": 7,
+          "result": 2,
+          "remaining": 1,
+          "sumSquares": 6,
+          "worst": 2
+        }
+      ]
+    },
+    {
+      "id": "blackbox-049",
+      "size": 5,
+      "stars": 3,
+      "canonical": "0,2,21",
+      "universe": 2300,
+      "signatureMatches": 1,
+      "greedyProbes": 5,
+      "signatureSha256": "430084fe9bc906b93242a083f26c7a1ffdc2cab7d061cfc9097f39cee919a4dd",
+      "probeTrace": [
+        {
+          "port": 1,
+          "result": -2,
+          "remaining": 548,
+          "sumSquares": 1231730,
+          "worst": 920
+        },
+        {
+          "port": 13,
+          "result": 6,
+          "remaining": 36,
+          "sumSquares": 55628,
+          "worst": 187
+        },
+        {
+          "port": 12,
+          "result": -2,
+          "remaining": 8,
+          "sumSquares": 274,
+          "worst": 10
+        },
+        {
+          "port": 17,
+          "result": 7,
+          "remaining": 2,
+          "sumSquares": 14,
+          "worst": 2
+        },
+        {
+          "port": 10,
+          "result": -2,
+          "remaining": 1,
+          "sumSquares": 2,
+          "worst": 1
+        }
+      ]
+    },
+    {
+      "id": "blackbox-050",
+      "size": 5,
+      "stars": 3,
+      "canonical": "10,11,17",
+      "universe": 2300,
+      "signatureMatches": 1,
+      "greedyProbes": 5,
+      "signatureSha256": "30d7a6373fb2aa5c9e8fd95abb4692b73a31b1eebc5f63ea9199940c5b642584",
+      "probeTrace": [
+        {
+          "port": 1,
+          "result": -2,
+          "remaining": 548,
+          "sumSquares": 1231730,
+          "worst": 920
+        },
+        {
+          "port": 13,
+          "result": 7,
+          "remaining": 30,
+          "sumSquares": 55628,
+          "worst": 187
+        },
+        {
+          "port": 11,
+          "result": -1,
+          "remaining": 11,
+          "sumSquares": 220,
+          "worst": 11
+        },
+        {
+          "port": 10,
+          "result": 18,
+          "remaining": 3,
+          "sumSquares": 31,
+          "worst": 3
+        },
+        {
+          "port": 16,
+          "result": 0,
+          "remaining": 1,
+          "sumSquares": 3,
+          "worst": 1
+        }
+      ]
+    },
+    {
+      "id": "blackbox-051",
+      "size": 5,
+      "stars": 3,
+      "canonical": "11,12,16",
+      "universe": 2300,
+      "signatureMatches": 1,
+      "greedyProbes": 5,
+      "signatureSha256": "8865cbacb04fc9dce357b2b0a562b88ad9d2911f1fc5a505ff58960ed12cba87",
+      "probeTrace": [
+        {
+          "port": 1,
+          "result": -1,
+          "remaining": 920,
+          "sumSquares": 1231730,
+          "worst": 920
+        },
+        {
+          "port": 0,
+          "result": 15,
+          "remaining": 190,
+          "sumSquares": 167936,
+          "worst": 253
+        },
+        {
+          "port": 8,
+          "result": 13,
+          "remaining": 12,
+          "sumSquares": 8244,
+          "worst": 77
+        },
+        {
+          "port": 18,
+          "result": 11,
+          "remaining": 5,
+          "sumSquares": 38,
+          "worst": 5
+        },
+        {
+          "port": 3,
+          "result": 5,
+          "remaining": 1,
+          "sumSquares": 7,
+          "worst": 2
+        }
+      ]
+    },
+    {
+      "id": "blackbox-052",
+      "size": 5,
+      "stars": 3,
+      "canonical": "0,6,18",
+      "universe": 2300,
+      "signatureMatches": 1,
+      "greedyProbes": 6,
+      "signatureSha256": "80f91e5ee281edf3a73202e866cf4c17b9c1ec1b12bc938a4e3fbc0d88ac5f56",
+      "probeTrace": [
+        {
+          "port": 1,
+          "result": -2,
+          "remaining": 548,
+          "sumSquares": 1231730,
+          "worst": 920
+        },
+        {
+          "port": 13,
+          "result": -1,
+          "remaining": 187,
+          "sumSquares": 55628,
+          "worst": 187
+        },
+        {
+          "port": 4,
+          "result": 7,
+          "remaining": 28,
+          "sumSquares": 6215,
+          "worst": 49
+        },
+        {
+          "port": 11,
+          "result": -1,
+          "remaining": 11,
+          "sumSquares": 176,
+          "worst": 11
+        },
+        {
+          "port": 10,
+          "result": 17,
+          "remaining": 2,
+          "sumSquares": 25,
+          "worst": 3
+        },
+        {
+          "port": 0,
+          "result": -1,
+          "remaining": 1,
+          "sumSquares": 2,
+          "worst": 1
+        }
+      ]
+    },
+    {
+      "id": "blackbox-053",
+      "size": 5,
+      "stars": 3,
+      "canonical": "1,2,22",
+      "universe": 2300,
+      "signatureMatches": 1,
+      "greedyProbes": 6,
+      "signatureSha256": "006ec0ffc30244f774d0238a0cba6bbf870b91ab46d9814ad564e2bbc71ecbbc",
+      "probeTrace": [
+        {
+          "port": 1,
+          "result": -1,
+          "remaining": 920,
+          "sumSquares": 1231730,
+          "worst": 920
+        },
+        {
+          "port": 0,
+          "result": -2,
+          "remaining": 253,
+          "sumSquares": 167936,
+          "worst": 253
+        },
+        {
+          "port": 13,
+          "result": -2,
+          "remaining": 46,
+          "sumSquares": 12095,
+          "worst": 90
+        },
+        {
+          "port": 3,
+          "result": -2,
+          "remaining": 10,
+          "sumSquares": 390,
+          "worst": 14
+        },
+        {
+          "port": 18,
+          "result": -1,
+          "remaining": 4,
+          "sumSquares": 24,
+          "worst": 4
+        },
+        {
+          "port": 6,
+          "result": 8,
+          "remaining": 1,
+          "sumSquares": 6,
+          "worst": 2
+        }
+      ]
+    },
+    {
+      "id": "blackbox-054",
+      "size": 5,
+      "stars": 3,
+      "canonical": "1,6,18",
+      "universe": 2300,
+      "signatureMatches": 1,
+      "greedyProbes": 6,
+      "signatureSha256": "dccf08156338907f0647b0d792cd56e8c94f52022de3897889c37767c8e367ff",
+      "probeTrace": [
+        {
+          "port": 1,
+          "result": -1,
+          "remaining": 920,
+          "sumSquares": 1231730,
+          "worst": 920
+        },
+        {
+          "port": 0,
+          "result": -2,
+          "remaining": 253,
+          "sumSquares": 167936,
+          "worst": 253
+        },
+        {
+          "port": 13,
+          "result": -1,
+          "remaining": 90,
+          "sumSquares": 12095,
+          "worst": 90
+        },
+        {
+          "port": 14,
+          "result": 9,
+          "remaining": 18,
+          "sumSquares": 1440,
+          "worst": 21
+        },
+        {
+          "port": 6,
+          "result": -1,
+          "remaining": 8,
+          "sumSquares": 88,
+          "worst": 8
+        },
+        {
+          "port": 17,
+          "result": 10,
+          "remaining": 1,
+          "sumSquares": 22,
+          "worst": 4
+        }
+      ]
+    },
+    {
+      "id": "blackbox-055",
+      "size": 5,
+      "stars": 3,
+      "canonical": "0,1,12",
+      "universe": 2300,
+      "signatureMatches": 1,
+      "greedyProbes": 6,
+      "signatureSha256": "8ad52e4dd3014c510db013daa8eba859a677208b5fb2addd7d5ecbe94e07c88e",
+      "probeTrace": [
+        {
+          "port": 1,
+          "result": -1,
+          "remaining": 920,
+          "sumSquares": 1231730,
+          "worst": 920
+        },
+        {
+          "port": 0,
+          "result": -1,
+          "remaining": 195,
+          "sumSquares": 167936,
+          "worst": 253
+        },
+        {
+          "port": 2,
+          "result": -2,
+          "remaining": 58,
+          "sumSquares": 5539,
+          "worst": 58
+        },
+        {
+          "port": 7,
+          "result": -1,
+          "remaining": 20,
+          "sumSquares": 610,
+          "worst": 20
+        },
+        {
+          "port": 8,
+          "result": 13,
+          "remaining": 2,
+          "sumSquares": 78,
+          "worst": 6
+        },
+        {
+          "port": 3,
+          "result": 6,
+          "remaining": 1,
+          "sumSquares": 2,
+          "worst": 1
+        }
+      ]
+    },
+    {
+      "id": "blackbox-056",
+      "size": 5,
+      "stars": 3,
+      "canonical": "0,11,21",
+      "universe": 2300,
+      "signatureMatches": 1,
+      "greedyProbes": 7,
+      "signatureSha256": "d5d8126de6609f3da1209fadb960f53e35c2dd6d516a1ee4f47a0db8e5d7b032",
+      "probeTrace": [
+        {
+          "port": 1,
+          "result": -2,
+          "remaining": 548,
+          "sumSquares": 1231730,
+          "worst": 920
+        },
+        {
+          "port": 13,
+          "result": -2,
+          "remaining": 115,
+          "sumSquares": 55628,
+          "worst": 187
+        },
+        {
+          "port": 6,
+          "result": -1,
+          "remaining": 34,
+          "sumSquares": 2397,
+          "worst": 34
+        },
+        {
+          "port": 7,
+          "result": -2,
+          "remaining": 8,
+          "sumSquares": 150,
+          "worst": 8
+        },
+        {
+          "port": 18,
+          "result": 8,
+          "remaining": 3,
+          "sumSquares": 16,
+          "worst": 3
+        },
+        {
+          "port": 0,
+          "result": -1,
+          "remaining": 2,
+          "sumSquares": 5,
+          "worst": 2
+        },
+        {
+          "port": 11,
+          "result": 17,
+          "remaining": 1,
+          "sumSquares": 2,
+          "worst": 1
+        }
+      ]
+    },
+    {
+      "id": "blackbox-057",
+      "size": 5,
+      "stars": 3,
+      "canonical": "6,12,18",
+      "universe": 2300,
+      "signatureMatches": 1,
+      "greedyProbes": 7,
+      "signatureSha256": "3afb19edaa9012bc2317bf3c3b76f9acf2707d5c213f6e7fa0392a0df26ddadd",
+      "probeTrace": [
+        {
+          "port": 1,
+          "result": -1,
+          "remaining": 920,
+          "sumSquares": 1231730,
+          "worst": 920
+        },
+        {
+          "port": 0,
+          "result": 15,
+          "remaining": 190,
+          "sumSquares": 167936,
+          "worst": 253
+        },
+        {
+          "port": 8,
+          "result": -1,
+          "remaining": 77,
+          "sumSquares": 8244,
+          "worst": 77
+        },
+        {
+          "port": 9,
+          "result": 14,
+          "remaining": 15,
+          "sumSquares": 1099,
+          "worst": 18
+        },
+        {
+          "port": 10,
+          "result": 17,
+          "remaining": 9,
+          "sumSquares": 93,
+          "worst": 9
+        },
+        {
+          "port": 4,
+          "result": 7,
+          "remaining": 4,
+          "sumSquares": 23,
+          "worst": 4
+        },
+        {
+          "port": 11,
+          "result": 18,
+          "remaining": 1,
+          "sumSquares": 4,
+          "worst": 1
+        }
+      ]
+    },
+    {
+      "id": "blackbox-058",
+      "size": 5,
+      "stars": 3,
+      "canonical": "1,16,18",
+      "universe": 2300,
+      "signatureMatches": 1,
+      "greedyProbes": 7,
+      "signatureSha256": "e05ed98484a19b331311742cfdfc9a866f2699243d70728c5ae9dce70fd4c7ed",
+      "probeTrace": [
+        {
+          "port": 1,
+          "result": -1,
+          "remaining": 920,
+          "sumSquares": 1231730,
+          "worst": 920
+        },
+        {
+          "port": 0,
+          "result": -2,
+          "remaining": 253,
+          "sumSquares": 167936,
+          "worst": 253
+        },
+        {
+          "port": 13,
+          "result": -1,
+          "remaining": 90,
+          "sumSquares": 12095,
+          "worst": 90
+        },
+        {
+          "port": 14,
+          "result": 9,
+          "remaining": 18,
+          "sumSquares": 1440,
+          "worst": 21
+        },
+        {
+          "port": 6,
+          "result": -2,
+          "remaining": 4,
+          "sumSquares": 88,
+          "worst": 8
+        },
+        {
+          "port": 3,
+          "result": -1,
+          "remaining": 2,
+          "sumSquares": 6,
+          "worst": 2
+        },
+        {
+          "port": 10,
+          "result": 19,
+          "remaining": 1,
+          "sumSquares": 2,
+          "worst": 1
+        }
+      ]
+    },
+    {
+      "id": "blackbox-059",
+      "size": 5,
+      "stars": 3,
+      "canonical": "1,2,23",
+      "universe": 2300,
+      "signatureMatches": 1,
+      "greedyProbes": 7,
+      "signatureSha256": "1e6beb5a037387cea50c164e8e2ab1a72042314c26dde90b7d8c4a50e698677b",
+      "probeTrace": [
+        {
+          "port": 1,
+          "result": -1,
+          "remaining": 920,
+          "sumSquares": 1231730,
+          "worst": 920
+        },
+        {
+          "port": 0,
+          "result": -2,
+          "remaining": 253,
+          "sumSquares": 167936,
+          "worst": 253
+        },
+        {
+          "port": 13,
+          "result": -1,
+          "remaining": 90,
+          "sumSquares": 12095,
+          "worst": 90
+        },
+        {
+          "port": 14,
+          "result": -2,
+          "remaining": 21,
+          "sumSquares": 1440,
+          "worst": 21
+        },
+        {
+          "port": 7,
+          "result": 17,
+          "remaining": 6,
+          "sumSquares": 95,
+          "worst": 7
+        },
+        {
+          "port": 6,
+          "result": -1,
+          "remaining": 3,
+          "sumSquares": 14,
+          "worst": 3
+        },
+        {
+          "port": 2,
+          "result": -1,
+          "remaining": 1,
+          "sumSquares": 5,
+          "worst": 2
+        }
+      ]
+    },
+    {
+      "id": "blackbox-060",
+      "size": 5,
+      "stars": 3,
+      "canonical": "1,10,18",
+      "universe": 2300,
+      "signatureMatches": 1,
+      "greedyProbes": 9,
+      "signatureSha256": "9bad291b66cc813a7d3ec06a167d3ded7ed1e0884cf762193095731de61d1214",
+      "probeTrace": [
+        {
+          "port": 1,
+          "result": -1,
+          "remaining": 920,
+          "sumSquares": 1231730,
+          "worst": 920
+        },
+        {
+          "port": 0,
+          "result": -2,
+          "remaining": 253,
+          "sumSquares": 167936,
+          "worst": 253
+        },
+        {
+          "port": 13,
+          "result": -1,
+          "remaining": 90,
+          "sumSquares": 12095,
+          "worst": 90
+        },
+        {
+          "port": 14,
+          "result": 9,
+          "remaining": 18,
+          "sumSquares": 1440,
+          "worst": 21
+        },
+        {
+          "port": 6,
+          "result": -1,
+          "remaining": 8,
+          "sumSquares": 88,
+          "worst": 8
+        },
+        {
+          "port": 17,
+          "result": -1,
+          "remaining": 4,
+          "sumSquares": 22,
+          "worst": 4
+        },
+        {
+          "port": 2,
+          "result": -2,
+          "remaining": 3,
+          "sumSquares": 10,
+          "worst": 3
+        },
+        {
+          "port": 4,
+          "result": 7,
+          "remaining": 2,
+          "sumSquares": 5,
+          "worst": 2
+        },
+        {
+          "port": 10,
+          "result": -1,
+          "remaining": 1,
+          "sumSquares": 2,
+          "worst": 1
+        }
+      ]
+    },
+    {
+      "id": "blackbox-061",
+      "size": 5,
+      "stars": 4,
+      "canonical": "1,18,21,22",
+      "universe": 12650,
+      "signatureMatches": 1,
+      "greedyProbes": 4,
+      "signatureSha256": "3f09e8752407eb085f411ebea5cb5739018ec9c28a5d038a3cca2ab47c8597b1",
+      "probeTrace": [
+        {
+          "port": 0,
+          "result": -2,
+          "remaining": 1771,
+          "sumSquares": 45343352,
+          "worst": 6080
+        },
+        {
+          "port": 10,
+          "result": -2,
+          "remaining": 210,
+          "sumSquares": 791523,
+          "worst": 694
+        },
+        {
+          "port": 4,
+          "result": 5,
+          "remaining": 17,
+          "sumSquares": 10590,
+          "worst": 80
+        },
+        {
+          "port": 8,
+          "result": 17,
+          "remaining": 1,
+          "sumSquares": 101,
+          "worst": 9
+        }
+      ]
+    },
+    {
+      "id": "blackbox-062",
+      "size": 5,
+      "stars": 4,
+      "canonical": "0,1,14,21",
+      "universe": 12650,
+      "signatureMatches": 1,
+      "greedyProbes": 4,
+      "signatureSha256": "33a7f5d8fea32556068aff452725e5d000434a947285d3716fec061573838385",
+      "probeTrace": [
+        {
+          "port": 0,
+          "result": -1,
+          "remaining": 6080,
+          "sumSquares": 45343352,
+          "worst": 6080
+        },
+        {
+          "port": 5,
+          "result": -1,
+          "remaining": 2816,
+          "sumSquares": 9909372,
+          "worst": 2816
+        },
+        {
+          "port": 14,
+          "result": -1,
+          "remaining": 1265,
+          "sumSquares": 2045378,
+          "worst": 1265
+        },
+        {
+          "port": 13,
+          "result": 3,
+          "remaining": 1,
+          "sumSquares": 388181,
+          "worst": 532
+        }
+      ]
+    },
+    {
+      "id": "blackbox-063",
+      "size": 5,
+      "stars": 4,
+      "canonical": "16,17,18,22",
+      "universe": 12650,
+      "signatureMatches": 1,
+      "greedyProbes": 4,
+      "signatureSha256": "d0616c7adcbce54706e7d87b837a886084d38c84172137f43cf870d3f01a92f3",
+      "probeTrace": [
+        {
+          "port": 0,
+          "result": 15,
+          "remaining": 1330,
+          "sumSquares": 45343352,
+          "worst": 6080
+        },
+        {
+          "port": 4,
+          "result": 5,
+          "remaining": 136,
+          "sumSquares": 479496,
+          "worst": 620
+        },
+        {
+          "port": 9,
+          "result": 19,
+          "remaining": 21,
+          "sumSquares": 4686,
+          "worst": 60
+        },
+        {
+          "port": 8,
+          "result": 18,
+          "remaining": 1,
+          "sumSquares": 91,
+          "worst": 6
+        }
+      ]
+    },
+    {
+      "id": "blackbox-064",
+      "size": 5,
+      "stars": 4,
+      "canonical": "11,13,17,22",
+      "universe": 12650,
+      "signatureMatches": 1,
+      "greedyProbes": 5,
+      "signatureSha256": "2495ffb5afdfc73259f3fe7173f85a8a76b346a23cc0a6369c3c36203e3142e9",
+      "probeTrace": [
+        {
+          "port": 0,
+          "result": 16,
+          "remaining": 969,
+          "sumSquares": 45343352,
+          "worst": 6080
+        },
+        {
+          "port": 6,
+          "result": 4,
+          "remaining": 78,
+          "sumSquares": 240023,
+          "worst": 369
+        },
+        {
+          "port": 9,
+          "result": 19,
+          "remaining": 3,
+          "sumSquares": 1894,
+          "worst": 40
+        },
+        {
+          "port": 1,
+          "result": -2,
+          "remaining": 2,
+          "sumSquares": 5,
+          "worst": 2
+        },
+        {
+          "port": 12,
+          "result": -2,
+          "remaining": 1,
+          "sumSquares": 2,
+          "worst": 1
+        }
+      ]
+    },
+    {
+      "id": "blackbox-065",
+      "size": 5,
+      "stars": 4,
+      "canonical": "1,14,15,19",
+      "universe": 12650,
+      "signatureMatches": 1,
+      "greedyProbes": 5,
+      "signatureSha256": "79ce9ab265ad7bbee16836354a580e6e969b97be0b0377ba9ac626888ecab8c9",
+      "probeTrace": [
+        {
+          "port": 0,
+          "result": -2,
+          "remaining": 1771,
+          "sumSquares": 45343352,
+          "worst": 6080
+        },
+        {
+          "port": 10,
+          "result": -2,
+          "remaining": 210,
+          "sumSquares": 791523,
+          "worst": 694
+        },
+        {
+          "port": 4,
+          "result": -1,
+          "remaining": 80,
+          "sumSquares": 10590,
+          "worst": 80
+        },
+        {
+          "port": 17,
+          "result": 6,
+          "remaining": 2,
+          "sumSquares": 1868,
+          "worst": 40
+        },
+        {
+          "port": 2,
+          "result": -1,
+          "remaining": 1,
+          "sumSquares": 2,
+          "worst": 1
+        }
+      ]
+    },
+    {
+      "id": "blackbox-066",
+      "size": 5,
+      "stars": 4,
+      "canonical": "0,12,13,18",
+      "universe": 12650,
+      "signatureMatches": 1,
+      "greedyProbes": 5,
+      "signatureSha256": "d60ff3a9d5025824cb6099a0cc620540d77ea9821a95dd2edc377b5c082a916e",
+      "probeTrace": [
+        {
+          "port": 0,
+          "result": -1,
+          "remaining": 6080,
+          "sumSquares": 45343352,
+          "worst": 6080
+        },
+        {
+          "port": 5,
+          "result": -1,
+          "remaining": 2816,
+          "sumSquares": 9909372,
+          "worst": 2816
+        },
+        {
+          "port": 14,
+          "result": 9,
+          "remaining": 274,
+          "sumSquares": 2045378,
+          "worst": 1265
+        },
+        {
+          "port": 6,
+          "result": 4,
+          "remaining": 16,
+          "sumSquares": 20182,
+          "worst": 112
+        },
+        {
+          "port": 11,
+          "result": 18,
+          "remaining": 1,
+          "sumSquares": 86,
+          "worst": 8
+        }
+      ]
+    },
+    {
+      "id": "blackbox-067",
+      "size": 5,
+      "stars": 4,
+      "canonical": "1,2,5,10",
+      "universe": 12650,
+      "signatureMatches": 1,
+      "greedyProbes": 5,
+      "signatureSha256": "7e49a4e6dc97798d527c82bf6d9c5a29cd909232b03d273fbb99454615611b97",
+      "probeTrace": [
+        {
+          "port": 0,
+          "result": -2,
+          "remaining": 1771,
+          "sumSquares": 45343352,
+          "worst": 6080
+        },
+        {
+          "port": 10,
+          "result": -1,
+          "remaining": 694,
+          "sumSquares": 791523,
+          "worst": 694
+        },
+        {
+          "port": 8,
+          "result": 11,
+          "remaining": 28,
+          "sumSquares": 114708,
+          "worst": 289
+        },
+        {
+          "port": 7,
+          "result": -1,
+          "remaining": 6,
+          "sumSquares": 162,
+          "worst": 7
+        },
+        {
+          "port": 13,
+          "result": 6,
+          "remaining": 1,
+          "sumSquares": 12,
+          "worst": 3
+        }
+      ]
+    },
+    {
+      "id": "blackbox-068",
+      "size": 5,
+      "stars": 4,
+      "canonical": "1,14,22,23",
+      "universe": 12650,
+      "signatureMatches": 1,
+      "greedyProbes": 6,
+      "signatureSha256": "759c9bde9f1a4e7cd1978f3fd4d973a3541051a0dbb37c5f226ffc091d57ecfe",
+      "probeTrace": [
+        {
+          "port": 0,
+          "result": -2,
+          "remaining": 1771,
+          "sumSquares": 45343352,
+          "worst": 6080
+        },
+        {
+          "port": 10,
+          "result": -1,
+          "remaining": 694,
+          "sumSquares": 791523,
+          "worst": 694
+        },
+        {
+          "port": 8,
+          "result": 4,
+          "remaining": 36,
+          "sumSquares": 114708,
+          "worst": 289
+        },
+        {
+          "port": 3,
+          "result": -2,
+          "remaining": 4,
+          "sumSquares": 464,
+          "worst": 20
+        },
+        {
+          "port": 7,
+          "result": -1,
+          "remaining": 2,
+          "sumSquares": 6,
+          "worst": 2
+        },
+        {
+          "port": 16,
+          "result": -2,
+          "remaining": 1,
+          "sumSquares": 2,
+          "worst": 1
+        }
+      ]
+    },
+    {
+      "id": "blackbox-069",
+      "size": 5,
+      "stars": 4,
+      "canonical": "0,1,12,15",
+      "universe": 12650,
+      "signatureMatches": 1,
+      "greedyProbes": 6,
+      "signatureSha256": "11ed8f2d64e328f1ab106dd106a09f835705ee89342f3dde2a0e1662b2034b3c",
+      "probeTrace": [
+        {
+          "port": 0,
+          "result": -1,
+          "remaining": 6080,
+          "sumSquares": 45343352,
+          "worst": 6080
+        },
+        {
+          "port": 5,
+          "result": -1,
+          "remaining": 2816,
+          "sumSquares": 9909372,
+          "worst": 2816
+        },
+        {
+          "port": 14,
+          "result": 4,
+          "remaining": 375,
+          "sumSquares": 2045378,
+          "worst": 1265
+        },
+        {
+          "port": 6,
+          "result": 3,
+          "remaining": 46,
+          "sumSquares": 22577,
+          "worst": 93
+        },
+        {
+          "port": 9,
+          "result": 11,
+          "remaining": 4,
+          "sumSquares": 606,
+          "worst": 21
+        },
+        {
+          "port": 1,
+          "result": -1,
+          "remaining": 1,
+          "sumSquares": 10,
+          "worst": 3
+        }
+      ]
+    },
+    {
+      "id": "blackbox-070",
+      "size": 5,
+      "stars": 4,
+      "canonical": "1,10,11,16",
+      "universe": 12650,
+      "signatureMatches": 1,
+      "greedyProbes": 6,
+      "signatureSha256": "ee8d4e7ad4fa8089871d6f72c61542bf73ac666091df477713e1a936c90cda33",
+      "probeTrace": [
+        {
+          "port": 0,
+          "result": -2,
+          "remaining": 1771,
+          "sumSquares": 45343352,
+          "worst": 6080
+        },
+        {
+          "port": 10,
+          "result": 19,
+          "remaining": 171,
+          "sumSquares": 791523,
+          "worst": 694
+        },
+        {
+          "port": 4,
+          "result": 14,
+          "remaining": 36,
+          "sumSquares": 7081,
+          "worst": 70
+        },
+        {
+          "port": 3,
+          "result": 13,
+          "remaining": 6,
+          "sumSquares": 226,
+          "worst": 8
+        },
+        {
+          "port": 6,
+          "result": -2,
+          "remaining": 2,
+          "sumSquares": 14,
+          "worst": 3
+        },
+        {
+          "port": 15,
+          "result": -1,
+          "remaining": 1,
+          "sumSquares": 2,
+          "worst": 1
+        }
+      ]
+    },
+    {
+      "id": "blackbox-071",
+      "size": 5,
+      "stars": 4,
+      "canonical": "10,11,12,17",
+      "universe": 12650,
+      "signatureMatches": 1,
+      "greedyProbes": 6,
+      "signatureSha256": "956c4b4fc6011ce25843f89b332fa179f702a2a652cc96c95e83a40de8b16985",
+      "probeTrace": [
+        {
+          "port": 0,
+          "result": 16,
+          "remaining": 969,
+          "sumSquares": 45343352,
+          "worst": 6080
+        },
+        {
+          "port": 6,
+          "result": -1,
+          "remaining": 369,
+          "sumSquares": 240023,
+          "worst": 369
+        },
+        {
+          "port": 15,
+          "result": -1,
+          "remaining": 125,
+          "sumSquares": 35505,
+          "worst": 125
+        },
+        {
+          "port": 9,
+          "result": 19,
+          "remaining": 22,
+          "sumSquares": 3765,
+          "worst": 50
+        },
+        {
+          "port": 8,
+          "result": 13,
+          "remaining": 6,
+          "sumSquares": 134,
+          "worst": 8
+        },
+        {
+          "port": 4,
+          "result": 14,
+          "remaining": 1,
+          "sumSquares": 10,
+          "worst": 2
+        }
+      ]
+    },
+    {
+      "id": "blackbox-072",
+      "size": 5,
+      "stars": 4,
+      "canonical": "11,12,16,17",
+      "universe": 12650,
+      "signatureMatches": 1,
+      "greedyProbes": 6,
+      "signatureSha256": "beabcb3be6b8206c58f7c189cff0a13d0284f559ed6694bcbf04c215190c8d03",
+      "probeTrace": [
+        {
+          "port": 0,
+          "result": 15,
+          "remaining": 1330,
+          "sumSquares": 45343352,
+          "worst": 6080
+        },
+        {
+          "port": 4,
+          "result": 14,
+          "remaining": 165,
+          "sumSquares": 479496,
+          "worst": 620
+        },
+        {
+          "port": 3,
+          "result": 5,
+          "remaining": 36,
+          "sumSquares": 5171,
+          "worst": 45
+        },
+        {
+          "port": 7,
+          "result": -1,
+          "remaining": 8,
+          "sumSquares": 374,
+          "worst": 15
+        },
+        {
+          "port": 9,
+          "result": 19,
+          "remaining": 2,
+          "sumSquares": 16,
+          "worst": 3
+        },
+        {
+          "port": 10,
+          "result": 18,
+          "remaining": 1,
+          "sumSquares": 2,
+          "worst": 1
+        }
+      ]
+    },
+    {
+      "id": "blackbox-073",
+      "size": 5,
+      "stars": 4,
+      "canonical": "0,13,15,21",
+      "universe": 12650,
+      "signatureMatches": 1,
+      "greedyProbes": 7,
+      "signatureSha256": "b1db89945fc4ceab990fc07af02a1620530ac6c0248c108c06a274abd2458a41",
+      "probeTrace": [
+        {
+          "port": 0,
+          "result": -1,
+          "remaining": 6080,
+          "sumSquares": 45343352,
+          "worst": 6080
+        },
+        {
+          "port": 5,
+          "result": -2,
+          "remaining": 785,
+          "sumSquares": 9909372,
+          "worst": 2816
+        },
+        {
+          "port": 9,
+          "result": 13,
+          "remaining": 60,
+          "sumSquares": 155039,
+          "worst": 341
+        },
+        {
+          "port": 3,
+          "result": -1,
+          "remaining": 21,
+          "sumSquares": 950,
+          "worst": 21
+        },
+        {
+          "port": 2,
+          "result": -2,
+          "remaining": 6,
+          "sumSquares": 147,
+          "worst": 10
+        },
+        {
+          "port": 1,
+          "result": -2,
+          "remaining": 2,
+          "sumSquares": 14,
+          "worst": 3
+        },
+        {
+          "port": 11,
+          "result": 19,
+          "remaining": 1,
+          "sumSquares": 2,
+          "worst": 1
+        }
+      ]
+    },
+    {
+      "id": "blackbox-074",
+      "size": 5,
+      "stars": 4,
+      "canonical": "0,6,12,18",
+      "universe": 12650,
+      "signatureMatches": 1,
+      "greedyProbes": 7,
+      "signatureSha256": "9d733cb8041221458d02d13bdf190224517ad194ddbe6fff355ed4fac4fdd2fa",
+      "probeTrace": [
+        {
+          "port": 0,
+          "result": -1,
+          "remaining": 6080,
+          "sumSquares": 45343352,
+          "worst": 6080
+        },
+        {
+          "port": 5,
+          "result": 2,
+          "remaining": 225,
+          "sumSquares": 9909372,
+          "worst": 2816
+        },
+        {
+          "port": 13,
+          "result": -1,
+          "remaining": 81,
+          "sumSquares": 11677,
+          "worst": 81
+        },
+        {
+          "port": 4,
+          "result": 7,
+          "remaining": 19,
+          "sumSquares": 1659,
+          "worst": 24
+        },
+        {
+          "port": 19,
+          "result": 12,
+          "remaining": 7,
+          "sumSquares": 97,
+          "worst": 7
+        },
+        {
+          "port": 18,
+          "result": 11,
+          "remaining": 2,
+          "sumSquares": 13,
+          "worst": 2
+        },
+        {
+          "port": 1,
+          "result": -2,
+          "remaining": 1,
+          "sumSquares": 2,
+          "worst": 1
+        }
+      ]
+    },
+    {
+      "id": "blackbox-075",
+      "size": 5,
+      "stars": 4,
+      "canonical": "0,17,18,20",
+      "universe": 12650,
+      "signatureMatches": 1,
+      "greedyProbes": 7,
+      "signatureSha256": "e17b9a2df4b71cbf72a3ec725ea80243bcefc77ea792bb48376e0ace16785626",
+      "probeTrace": [
+        {
+          "port": 0,
+          "result": -1,
+          "remaining": 6080,
+          "sumSquares": 45343352,
+          "worst": 6080
+        },
+        {
+          "port": 5,
+          "result": -1,
+          "remaining": 2816,
+          "sumSquares": 9909372,
+          "worst": 2816
+        },
+        {
+          "port": 14,
+          "result": -1,
+          "remaining": 1265,
+          "sumSquares": 2045378,
+          "worst": 1265
+        },
+        {
+          "port": 13,
+          "result": 2,
+          "remaining": 28,
+          "sumSquares": 388181,
+          "worst": 532
+        },
+        {
+          "port": 19,
+          "result": 10,
+          "remaining": 6,
+          "sumSquares": 250,
+          "worst": 13
+        },
+        {
+          "port": 6,
+          "result": -2,
+          "remaining": 3,
+          "sumSquares": 18,
+          "worst": 3
+        },
+        {
+          "port": 1,
+          "result": -2,
+          "remaining": 1,
+          "sumSquares": 5,
+          "worst": 2
+        }
+      ]
+    },
+    {
+      "id": "blackbox-076",
+      "size": 5,
+      "stars": 4,
+      "canonical": "0,1,16,17",
+      "universe": 12650,
+      "signatureMatches": 1,
+      "greedyProbes": 7,
+      "signatureSha256": "ee69129fa9051ceba6f95db49c44ea1b7535c200db250f18f164e8ff1799040e",
+      "probeTrace": [
+        {
+          "port": 0,
+          "result": -1,
+          "remaining": 6080,
+          "sumSquares": 45343352,
+          "worst": 6080
+        },
+        {
+          "port": 5,
+          "result": -1,
+          "remaining": 2816,
+          "sumSquares": 9909372,
+          "worst": 2816
+        },
+        {
+          "port": 14,
+          "result": 4,
+          "remaining": 375,
+          "sumSquares": 2045378,
+          "worst": 1265
+        },
+        {
+          "port": 6,
+          "result": -1,
+          "remaining": 93,
+          "sumSquares": 22577,
+          "worst": 93
+        },
+        {
+          "port": 7,
+          "result": 3,
+          "remaining": 18,
+          "sumSquares": 1457,
+          "worst": 25
+        },
+        {
+          "port": 19,
+          "result": 10,
+          "remaining": 3,
+          "sumSquares": 98,
+          "worst": 8
+        },
+        {
+          "port": 1,
+          "result": -1,
+          "remaining": 1,
+          "sumSquares": 5,
+          "worst": 2
+        }
+      ]
+    },
+    {
+      "id": "blackbox-077",
+      "size": 5,
+      "stars": 4,
+      "canonical": "0,1,19,22",
+      "universe": 12650,
+      "signatureMatches": 1,
+      "greedyProbes": 8,
+      "signatureSha256": "d157f74e17bd3b9809ce24e2aebe99c214b541972491113110776ded1a250619",
+      "probeTrace": [
+        {
+          "port": 0,
+          "result": -1,
+          "remaining": 6080,
+          "sumSquares": 45343352,
+          "worst": 6080
+        },
+        {
+          "port": 5,
+          "result": -1,
+          "remaining": 2816,
+          "sumSquares": 9909372,
+          "worst": 2816
+        },
+        {
+          "port": 14,
+          "result": -1,
+          "remaining": 1265,
+          "sumSquares": 2045378,
+          "worst": 1265
+        },
+        {
+          "port": 13,
+          "result": -2,
+          "remaining": 532,
+          "sumSquares": 388181,
+          "worst": 532
+        },
+        {
+          "port": 7,
+          "result": -2,
+          "remaining": 105,
+          "sumSquares": 80866,
+          "worst": 257
+        },
+        {
+          "port": 17,
+          "result": 3,
+          "remaining": 7,
+          "sumSquares": 2945,
+          "worst": 42
+        },
+        {
+          "port": 6,
+          "result": -1,
+          "remaining": 4,
+          "sumSquares": 19,
+          "worst": 4
+        },
+        {
+          "port": 2,
+          "result": -2,
+          "remaining": 1,
+          "sumSquares": 6,
+          "worst": 2
+        }
+      ]
+    },
+    {
+      "id": "blackbox-078",
+      "size": 5,
+      "stars": 4,
+      "canonical": "0,1,7,16",
+      "universe": 12650,
+      "signatureMatches": 1,
+      "greedyProbes": 8,
+      "signatureSha256": "d1d0c69700acbfc543467c19a2e6ab8baceace3ae1615a8c923fc8c39d0f97cd",
+      "probeTrace": [
+        {
+          "port": 0,
+          "result": -1,
+          "remaining": 6080,
+          "sumSquares": 45343352,
+          "worst": 6080
+        },
+        {
+          "port": 5,
+          "result": 3,
+          "remaining": 475,
+          "sumSquares": 9909372,
+          "worst": 2816
+        },
+        {
+          "port": 13,
+          "result": 7,
+          "remaining": 70,
+          "sumSquares": 54333,
+          "worst": 175
+        },
+        {
+          "port": 12,
+          "result": 9,
+          "remaining": 16,
+          "sumSquares": 1284,
+          "worst": 22
+        },
+        {
+          "port": 15,
+          "result": -1,
+          "remaining": 7,
+          "sumSquares": 90,
+          "worst": 7
+        },
+        {
+          "port": 17,
+          "result": -1,
+          "remaining": 4,
+          "sumSquares": 25,
+          "worst": 4
+        },
+        {
+          "port": 18,
+          "result": -1,
+          "remaining": 2,
+          "sumSquares": 8,
+          "worst": 2
+        },
+        {
+          "port": 1,
+          "result": -1,
+          "remaining": 1,
+          "sumSquares": 2,
+          "worst": 1
+        }
+      ]
+    },
+    {
+      "id": "blackbox-079",
+      "size": 5,
+      "stars": 4,
+      "canonical": "1,6,7,15",
+      "universe": 12650,
+      "signatureMatches": 1,
+      "greedyProbes": 8,
+      "signatureSha256": "e30beea37cca8994540072fa2404a54a68232d8360809c04a4ab84ffe3c45c34",
+      "probeTrace": [
+        {
+          "port": 0,
+          "result": -2,
+          "remaining": 1771,
+          "sumSquares": 45343352,
+          "worst": 6080
+        },
+        {
+          "port": 10,
+          "result": -1,
+          "remaining": 694,
+          "sumSquares": 791523,
+          "worst": 694
+        },
+        {
+          "port": 8,
+          "result": -1,
+          "remaining": 289,
+          "sumSquares": 114708,
+          "worst": 289
+        },
+        {
+          "port": 9,
+          "result": 11,
+          "remaining": 36,
+          "sumSquares": 15529,
+          "worst": 68
+        },
+        {
+          "port": 7,
+          "result": 13,
+          "remaining": 6,
+          "sumSquares": 280,
+          "worst": 11
+        },
+        {
+          "port": 3,
+          "result": 5,
+          "remaining": 3,
+          "sumSquares": 14,
+          "worst": 3
+        },
+        {
+          "port": 15,
+          "result": -1,
+          "remaining": 2,
+          "sumSquares": 5,
+          "worst": 2
+        },
+        {
+          "port": 16,
+          "result": -1,
+          "remaining": 1,
+          "sumSquares": 2,
+          "worst": 1
+        }
+      ]
+    },
+    {
+      "id": "blackbox-080",
+      "size": 5,
+      "stars": 4,
+      "canonical": "1,10,15,18",
+      "universe": 12650,
+      "signatureMatches": 1,
+      "greedyProbes": 9,
+      "signatureSha256": "6fc84c4c1ad7fc997fc813a9a771563f66d717f1bf9092187fa744dbdc715440",
+      "probeTrace": [
+        {
+          "port": 0,
+          "result": -2,
+          "remaining": 1771,
+          "sumSquares": 45343352,
+          "worst": 6080
+        },
+        {
+          "port": 10,
+          "result": 19,
+          "remaining": 171,
+          "sumSquares": 791523,
+          "worst": 694
+        },
+        {
+          "port": 4,
+          "result": -1,
+          "remaining": 70,
+          "sumSquares": 7081,
+          "worst": 70
+        },
+        {
+          "port": 13,
+          "result": -1,
+          "remaining": 29,
+          "sumSquares": 1492,
+          "worst": 29
+        },
+        {
+          "port": 7,
+          "result": -2,
+          "remaining": 13,
+          "sumSquares": 367,
+          "worst": 14
+        },
+        {
+          "port": 9,
+          "result": 12,
+          "remaining": 9,
+          "sumSquares": 87,
+          "worst": 9
+        },
+        {
+          "port": 16,
+          "result": 17,
+          "remaining": 5,
+          "sumSquares": 33,
+          "worst": 5
+        },
+        {
+          "port": 3,
+          "result": -2,
+          "remaining": 2,
+          "sumSquares": 13,
+          "worst": 3
+        },
+        {
+          "port": 2,
+          "result": -1,
+          "remaining": 1,
+          "sumSquares": 2,
+          "worst": 1
+        }
+      ]
+    },
+    {
+      "id": "blackbox-081",
+      "size": 5,
+      "stars": 4,
+      "canonical": "0,7,11,16",
+      "universe": 12650,
+      "signatureMatches": 1,
+      "greedyProbes": 9,
+      "signatureSha256": "70f7a1722cd17ff859df0999daae3d8209bf2caf989ad0b8e25944b172e72ab8",
+      "probeTrace": [
+        {
+          "port": 0,
+          "result": -1,
+          "remaining": 6080,
+          "sumSquares": 45343352,
+          "worst": 6080
+        },
+        {
+          "port": 5,
+          "result": 4,
+          "remaining": 620,
+          "sumSquares": 9909372,
+          "worst": 2816
+        },
+        {
+          "port": 9,
+          "result": 19,
+          "remaining": 88,
+          "sumSquares": 100720,
+          "worst": 282
+        },
+        {
+          "port": 8,
+          "result": 12,
+          "remaining": 12,
+          "sumSquares": 1384,
+          "worst": 21
+        },
+        {
+          "port": 15,
+          "result": -1,
+          "remaining": 7,
+          "sumSquares": 66,
+          "worst": 7
+        },
+        {
+          "port": 2,
+          "result": -1,
+          "remaining": 5,
+          "sumSquares": 29,
+          "worst": 5
+        },
+        {
+          "port": 3,
+          "result": -1,
+          "remaining": 3,
+          "sumSquares": 13,
+          "worst": 3
+        },
+        {
+          "port": 10,
+          "result": 18,
+          "remaining": 2,
+          "sumSquares": 5,
+          "worst": 2
+        },
+        {
+          "port": 16,
+          "result": -2,
+          "remaining": 1,
+          "sumSquares": 2,
+          "worst": 1
+        }
+      ]
+    },
+    {
+      "id": "blackbox-082",
+      "size": 5,
+      "stars": 4,
+      "canonical": "0,12,13,14",
+      "universe": 12650,
+      "signatureMatches": 1,
+      "greedyProbes": 9,
+      "signatureSha256": "b3ed5049b6c127ed82f4a420edf9fe4c2a5e908da68be2dd8d524da3cf692cfc",
+      "probeTrace": [
+        {
+          "port": 0,
+          "result": -1,
+          "remaining": 6080,
+          "sumSquares": 45343352,
+          "worst": 6080
+        },
+        {
+          "port": 5,
+          "result": -1,
+          "remaining": 2816,
+          "sumSquares": 9909372,
+          "worst": 2816
+        },
+        {
+          "port": 14,
+          "result": -1,
+          "remaining": 1265,
+          "sumSquares": 2045378,
+          "worst": 1265
+        },
+        {
+          "port": 13,
+          "result": -1,
+          "remaining": 280,
+          "sumSquares": 388181,
+          "worst": 532
+        },
+        {
+          "port": 12,
+          "result": -1,
+          "remaining": 52,
+          "sumSquares": 12642,
+          "worst": 84
+        },
+        {
+          "port": 9,
+          "result": 19,
+          "remaining": 8,
+          "sumSquares": 840,
+          "worst": 22
+        },
+        {
+          "port": 7,
+          "result": -1,
+          "remaining": 3,
+          "sumSquares": 18,
+          "worst": 3
+        },
+        {
+          "port": 1,
+          "result": -2,
+          "remaining": 2,
+          "sumSquares": 5,
+          "worst": 2
+        },
+        {
+          "port": 8,
+          "result": -2,
+          "remaining": 1,
+          "sumSquares": 2,
+          "worst": 1
+        }
+      ]
+    },
+    {
+      "id": "blackbox-083",
+      "size": 5,
+      "stars": 4,
+      "canonical": "0,10,18,20",
+      "universe": 12650,
+      "signatureMatches": 1,
+      "greedyProbes": 10,
+      "signatureSha256": "76a82e268c10a9af7bdb6ed218a39fb1d4ff8490a9b236572a9fb054c762d7ea",
+      "probeTrace": [
+        {
+          "port": 0,
+          "result": -1,
+          "remaining": 6080,
+          "sumSquares": 45343352,
+          "worst": 6080
+        },
+        {
+          "port": 5,
+          "result": -1,
+          "remaining": 2816,
+          "sumSquares": 9909372,
+          "worst": 2816
+        },
+        {
+          "port": 14,
+          "result": -1,
+          "remaining": 1265,
+          "sumSquares": 2045378,
+          "worst": 1265
+        },
+        {
+          "port": 13,
+          "result": -2,
+          "remaining": 532,
+          "sumSquares": 388181,
+          "worst": 532
+        },
+        {
+          "port": 7,
+          "result": -1,
+          "remaining": 257,
+          "sumSquares": 80866,
+          "worst": 257
+        },
+        {
+          "port": 11,
+          "result": -1,
+          "remaining": 100,
+          "sumSquares": 21553,
+          "worst": 105
+        },
+        {
+          "port": 12,
+          "result": 9,
+          "remaining": 5,
+          "sumSquares": 2022,
+          "worst": 37
+        },
+        {
+          "port": 16,
+          "result": -2,
+          "remaining": 3,
+          "sumSquares": 13,
+          "worst": 3
+        },
+        {
+          "port": 8,
+          "result": -1,
+          "remaining": 2,
+          "sumSquares": 5,
+          "worst": 2
+        },
+        {
+          "port": 18,
+          "result": -1,
+          "remaining": 1,
+          "sumSquares": 2,
+          "worst": 1
+        }
+      ]
+    },
+    {
+      "id": "blackbox-084",
+      "size": 5,
+      "stars": 4,
+      "canonical": "0,14,16,24",
+      "universe": 12650,
+      "signatureMatches": 1,
+      "greedyProbes": 12,
+      "signatureSha256": "5ee9631a9be7e56d384028556c90b1935607d4b0c3001d4952a9f9356b9b2819",
+      "probeTrace": [
+        {
+          "port": 0,
+          "result": -1,
+          "remaining": 6080,
+          "sumSquares": 45343352,
+          "worst": 6080
+        },
+        {
+          "port": 5,
+          "result": -1,
+          "remaining": 2816,
+          "sumSquares": 9909372,
+          "worst": 2816
+        },
+        {
+          "port": 14,
+          "result": -1,
+          "remaining": 1265,
+          "sumSquares": 2045378,
+          "worst": 1265
+        },
+        {
+          "port": 13,
+          "result": -2,
+          "remaining": 532,
+          "sumSquares": 388181,
+          "worst": 532
+        },
+        {
+          "port": 7,
+          "result": -1,
+          "remaining": 257,
+          "sumSquares": 80866,
+          "worst": 257
+        },
+        {
+          "port": 11,
+          "result": -1,
+          "remaining": 100,
+          "sumSquares": 21553,
+          "worst": 105
+        },
+        {
+          "port": 12,
+          "result": -1,
+          "remaining": 37,
+          "sumSquares": 2022,
+          "worst": 37
+        },
+        {
+          "port": 19,
+          "result": 10,
+          "remaining": 9,
+          "sumSquares": 447,
+          "worst": 14
+        },
+        {
+          "port": 6,
+          "result": -1,
+          "remaining": 5,
+          "sumSquares": 29,
+          "worst": 5
+        },
+        {
+          "port": 2,
+          "result": -1,
+          "remaining": 3,
+          "sumSquares": 13,
+          "worst": 3
+        },
+        {
+          "port": 15,
+          "result": -1,
+          "remaining": 2,
+          "sumSquares": 5,
+          "worst": 2
+        },
+        {
+          "port": 18,
+          "result": -1,
+          "remaining": 1,
+          "sumSquares": 2,
+          "worst": 1
+        }
+      ]
+    }
+  ]
+}

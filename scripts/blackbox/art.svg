@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900">
+<defs>
+ <linearGradient id="bg" x2="1" y2="1"><stop stop-color="#e8edea"/><stop offset="1" stop-color="#a9bfba"/></linearGradient>
+ <linearGradient id="board" x2="0" y2="1"><stop stop-color="#234657"/><stop offset="1" stop-color="#101f35"/></linearGradient>
+ <radialGradient id="haze"><stop stop-color="#87abae" stop-opacity=".28"/><stop offset="1" stop-color="#203650" stop-opacity="0"/></radialGradient>
+ <linearGradient id="gold"><stop stop-color="#ffe8a4"/><stop offset="1" stop-color="#cf984d"/></linearGradient>
+ <filter id="shadow"><feGaussianBlur stdDeviation="20"/></filter>
+ <pattern id="grid" width="102" height="102" patternUnits="userSpaceOnUse"><path d="M 102 0 H 0 V 102" fill="none" stroke="#afc6c7" stroke-opacity=".22" stroke-width="2"/></pattern>
+ <g id="star"><path d="M0-26 7-7 26 0 7 7 0 26-7 7-26 0-7-7Z" fill="url(#gold)"/><circle r="7" fill="#fff3c5"/></g>
+</defs>
+<rect width="1200" height="900" fill="url(#bg)"/>
+<ellipse cx="620" cy="754" rx="410" ry="83" fill="#244342" opacity=".3" filter="url(#shadow)"/>
+<g transform="translate(267 103) rotate(-7 342 342)">
+ <rect x="-18" y="-4" width="712" height="712" rx="67" fill="#587970"/>
+ <rect width="682" height="682" rx="53" fill="#e7e4cf" stroke="#f8f4de" stroke-width="8"/>
+ <rect x="61" y="61" width="560" height="560" rx="22" fill="url(#board)"/>
+ <rect x="86" y="86" width="510" height="510" fill="url(#grid)"/>
+ <ellipse cx="350" cy="373" rx="260" ry="215" fill="url(#haze)"/>
+ <path d="M239 38V239H443V646" fill="none" stroke="#83c9bf" stroke-width="14" stroke-linecap="round" opacity=".18"/>
+ <path d="M239 38V239H443V646" fill="none" stroke="#a4e3d1" stroke-width="5" stroke-linecap="round" stroke-dasharray="11 13"/>
+ <path d="m231 201 8 14 8-14 M410 231l14 8-14 8 M435 534l8 14 8-14" fill="none" stroke="#cef7e7" stroke-width="5" stroke-linecap="round"/>
+ <circle cx="239" cy="35" r="21" fill="#256a60"/><circle cx="239" cy="35" r="7" fill="#dafff0"/>
+ <circle cx="443" cy="647" r="21" fill="#256a60"/><circle cx="443" cy="647" r="7" fill="#dafff0"/>
+ <g fill="#a6b5a6" stroke="#8b9b8d" stroke-width="2">
+ <circle cx="137" cy="35" r="17"/><circle cx="341" cy="35" r="17"/><circle cx="443" cy="35" r="17"/><circle cx="545" cy="35" r="17"/>
+ <circle cx="137" cy="647" r="17"/><circle cx="239" cy="647" r="17"/><circle cx="341" cy="647" r="17"/><circle cx="545" cy="647" r="17"/>
+ <circle cx="35" cy="137" r="17"/><circle cx="35" cy="239" r="17"/><circle cx="35" cy="341" r="17"/><circle cx="35" cy="443" r="17"/><circle cx="35" cy="545" r="17"/>
+ <circle cx="647" cy="137" r="17"/><circle cx="647" cy="239" r="17"/><circle cx="647" cy="341" r="17"/><circle cx="647" cy="443" r="17"/><circle cx="647" cy="545" r="17"/>
+ </g>
+ <g transform="translate(137 341)"><circle r="36" fill="#dba55b" opacity=".09"/><use href="#star"/></g>
+ <g transform="translate(545 137)"><circle r="39" fill="#dba55b" opacity=".11"/><use href="#star"/></g>
+ <g stroke="#c9dddc" stroke-width="3" opacity=".42" stroke-linecap="round"><path d="m331 435 20 20m0-20-20 20M127 535l20 20m0-20-20 20"/></g>
+ <g fill="#d9e4d6" opacity=".6"><circle cx="170" cy="210" r="2"/><circle cx="515" cy="178" r="2"/><circle cx="389" cy="515" r="2"/><circle cx="490" cy="287" r="2"/><circle cx="181" cy="481" r="2"/></g>
+</g>
+<g transform="translate(1001 197) rotate(14)"><rect width="71" height="372" rx="20" fill="#2f5554"/><rect x="8" y="9" width="55" height="332" rx="14" fill="#597d73"/><path d="M22 360h27l-13.5 41Z" fill="#e5d5ac"/><path d="m30 386 6 15 6-15" fill="#27444a"/><rect x="24" y="29" width="23" height="11" rx="5" fill="#a9c0ae"/></g>
+<g transform="translate(95 620) rotate(10)"><circle cx="64" cy="64" r="68" fill="#f0e9cd"/><circle cx="64" cy="64" r="51" fill="#849d8d"/><circle cx="64" cy="64" r="41" fill="#29494e"/><path d="m64 22 13 42-13 41-13-41Z" fill="url(#gold)"/><circle cx="64" cy="64" r="6" fill="#fff5d3"/></g>
+<g stroke="#eef0d9" stroke-width="4" stroke-linecap="round" opacity=".65"><path d="M121 187v23m-11-11h23M1090 660v23m-11-11h23"/></g>
+</svg>

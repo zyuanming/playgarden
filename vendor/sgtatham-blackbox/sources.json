@@ -1,0 +1,20 @@
+[
+  {
+    "file": "blackbox.c",
+    "url": "https://raw.githubusercontent.com/notpeter/sgtatham-puzzles/a7c7826bce5cbb9b9c337c11b9b7f8b278e76fba/blackbox.c",
+    "sha256": "2b62db49675645b191e2a59e05d9332243ee0bfb16ce40ec45bf9618c7aaa693",
+    "bytes": 48157
+  },
+  {
+    "file": "puzzles.but",
+    "url": "https://raw.githubusercontent.com/notpeter/sgtatham-puzzles/a7c7826bce5cbb9b9c337c11b9b7f8b278e76fba/puzzles.but",
+    "sha256": "8b7e2199fe7c0981814f860a7dcbed5292edc88e39b278412ba8f7e8d9552bd1",
+    "bytes": 142485
+  },
+  {
+    "file": "LICENCE",
+    "url": "https://raw.githubusercontent.com/notpeter/sgtatham-puzzles/a7c7826bce5cbb9b9c337c11b9b7f8b278e76fba/LICENCE",
+    "sha256": "43c5b4a4304e7f9d162cda91028ea83f640cd56341744057b9aeed3f10ae55ab",
+    "bytes": 1333
+  }
+]

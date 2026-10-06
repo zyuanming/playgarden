@@ -1,0 +1,748 @@
+.blackbox-layout {
+  --bb-ink: #253e51;
+  --bb-muted: #536c7c;
+  --bb-night: #142d40;
+  --bb-line: #d2dfe3;
+  --bb-gold: #f9d78d;
+  color: var(--bb-ink);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 285px;
+  gap: 28px;
+  align-items: start;
+}
+.blackbox-layout * {
+  box-sizing: border-box;
+}
+.blackbox-play {
+  min-width: 0;
+  background: #f7faf9;
+  border: 1px solid var(--bb-line);
+  border-radius: 24px;
+  padding: 24px;
+}
+.blackbox-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+.blackbox-chapter {
+  color: #526d7e;
+  font-size: 12px;
+  font-weight: 750;
+  letter-spacing: 0.03em;
+}
+.blackbox-heading h3 {
+  margin: 7px 0 0;
+  font-size: 24px;
+  line-height: 1.3;
+  font-weight: 750;
+}
+.blackbox-level {
+  padding-top: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+  color: var(--bb-muted);
+  font-variant-numeric: tabular-nums;
+}
+.blackbox-lesson {
+  font-size: 14px;
+  line-height: 1.8;
+  margin: 15px 0;
+  color: #466373;
+}
+.blackbox-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+  align-items: center;
+  padding: 13px 0;
+  border-top: 1px solid var(--bb-line);
+  font-size: 13px;
+}
+.blackbox-stats > span {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 8px;
+}
+.blackbox-stats strong {
+  font-size: 24px;
+  font-weight: 750;
+  font-variant-numeric: tabular-nums;
+}
+.blackbox-stats strong small {
+  font-size: 14px;
+  font-weight: 500;
+}
+.blackbox-stats .is-over {
+  color: #9b4128;
+}
+.blackbox-stats .blackbox-state-label {
+  margin-left: auto;
+  color: var(--bb-muted);
+  font-size: 11px;
+}
+.blackbox-instrument {
+  padding: 17px 14px 14px;
+  border-radius: 18px;
+  background: var(--bb-night);
+  color: #e6f0f4;
+  box-shadow: inset 0 0 0 1px #335060;
+}
+.blackbox-window-label {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 6px;
+  max-width: 460px;
+  margin: 0 auto 13px;
+  color: #c0d1dc;
+  font-size: 11px;
+  letter-spacing: 0.035em;
+}
+.blackbox-board {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(var(--blackbox-tracks), minmax(0, 1fr));
+  grid-template-rows: repeat(var(--blackbox-tracks), minmax(0, 1fr));
+  width: 100%;
+  max-width: 460px;
+  aspect-ratio: 1;
+  margin: 0 auto;
+  isolation: isolate;
+}
+.blackbox-corner {
+  display: grid;
+  place-items: center;
+  color: #809caf;
+}
+.blackbox-corner svg {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1;
+}
+.blackbox-grid {
+  min-width: 0;
+  min-height: 0;
+  display: grid;
+  grid-template-rows: repeat(var(--blackbox-size), minmax(0, 1fr));
+  background: radial-gradient(ellipse at 35% 24%, #233e55, #112737 85%);
+  border-radius: 12px;
+  box-shadow: 0 0 0 1px #466273;
+}
+.blackbox-grid-row {
+  display: grid;
+  grid-template-columns: repeat(var(--blackbox-size), minmax(0, 1fr));
+  min-height: 0;
+}
+.blackbox-grid-cell {
+  min-width: 0;
+  min-height: 0;
+}
+.blackbox-layout .blackbox-cell,
+.blackbox-layout .blackbox-port {
+  position: relative;
+  min-width: 44px;
+  min-height: 44px;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  box-shadow: none;
+  transform: none;
+  transition:
+    background 0.15s,
+    box-shadow 0.15s;
+  touch-action: manipulation;
+}
+.blackbox-layout .blackbox-cell {
+  display: grid;
+  place-items: center;
+  background: transparent;
+  border: 1px solid #45607166;
+  border-radius: 6px;
+  color: #9aafbe;
+}
+.blackbox-cell-mark {
+  display: block;
+  font-size: 29px;
+  font-weight: 450;
+  line-height: 1;
+}
+.blackbox-cell:not(.has-star):not(.is-empty) .blackbox-cell-mark {
+  font-size: 25px;
+  color: #92acbd;
+}
+.blackbox-layout .blackbox-cell.has-star {
+  background: #f3cd7819;
+  color: var(--bb-gold);
+}
+.blackbox-layout .blackbox-cell.has-star .blackbox-cell-mark {
+  text-shadow: 0 0 18px #f4d78733;
+}
+.blackbox-layout .blackbox-cell.is-empty {
+  color: #bed0dc;
+}
+.blackbox-layout .blackbox-cell:hover:not(:disabled) {
+  background: #b7d3e21c;
+  box-shadow: inset 0 0 0 1px #a6c1d0;
+  transform: none;
+}
+.blackbox-layout .blackbox-cell:active:not(:disabled) {
+  background: #bfd6df35;
+}
+.blackbox-layout .blackbox-port {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  border: 3px solid transparent;
+  border-radius: 12px;
+  background: transparent;
+  color: #c4d7e1;
+  text-align: center;
+}
+.blackbox-port-name {
+  display: block;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.1;
+  white-space: nowrap;
+}
+.blackbox-port-result {
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.1;
+  white-space: nowrap;
+}
+.blackbox-port:not(.is-observed) .blackbox-port-result {
+  font-size: 17px;
+  color: #93b0c1;
+}
+.blackbox-layout .blackbox-port.is-observed {
+  background: #bfdde91b;
+  color: #e1eff7;
+}
+.blackbox-port-result.is-absorbed {
+  color: #ffbdaf;
+}
+.blackbox-port-result.is-reflected {
+  color: #fae0a2;
+}
+.blackbox-layout .blackbox-port.is-selected {
+  box-shadow: inset 0 0 0 1px #d7edeb;
+  background: #789eac42;
+}
+.blackbox-layout .blackbox-port.is-paired {
+  box-shadow: inset 0 0 0 1px #b3cbd4;
+  background: #648d9e2b;
+}
+.blackbox-layout .blackbox-port:hover:not(:disabled) {
+  color: white;
+  background: #c3deeb28;
+  box-shadow: inset 0 0 0 1px #a6c1d0;
+  transform: none;
+}
+.blackbox-layout .blackbox-cell:disabled,
+.blackbox-layout .blackbox-port:disabled {
+  opacity: 1;
+  cursor: default;
+}
+.blackbox-layout .blackbox-cell.is-hinted,
+.blackbox-layout .blackbox-port.is-hinted {
+  box-shadow: inset 0 0 0 3px var(--bb-gold);
+}
+.blackbox-layout .blackbox-cell:focus-visible,
+.blackbox-layout .blackbox-port:focus-visible {
+  outline: 3px solid #fbe1a2;
+  outline-offset: -3px;
+  z-index: 1;
+}
+.blackbox-signal-key {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 8px 17px;
+  margin: 14px 0 0;
+  color: #c3d4df;
+  font-size: 11px;
+}
+.blackbox-signal-key span {
+  display: inline-flex;
+  gap: 5px;
+  align-items: center;
+  white-space: nowrap;
+}
+.blackbox-signal-key b {
+  font-size: 15px;
+  font-weight: 600;
+  color: #f5e1b5;
+}
+.blackbox-readout {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 7px 12px;
+  min-height: 55px;
+  margin: 14px 0 0;
+  padding: 11px 6px 0;
+  border-top: 1px solid #3d5769;
+  font-size: 13px;
+  line-height: 1.5;
+  text-align: center;
+}
+.blackbox-readout strong {
+  color: #f9e3b4;
+}
+.blackbox-readout small {
+  flex-basis: 100%;
+  color: #b9cbd7;
+  font-size: 11px;
+}
+.blackbox-marking {
+  margin-top: 20px;
+}
+.blackbox-tool-heading {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 5px;
+  margin-bottom: 10px;
+  font-size: 13px;
+}
+.blackbox-tool-heading > span {
+  font-size: 11px;
+  color: var(--bb-muted);
+}
+.blackbox-tools {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+.blackbox-layout .blackbox-tools button {
+  min-width: 0;
+  min-height: 48px;
+  padding: 10px 6px;
+  border: 1px solid #b9cbd3;
+  border-radius: 11px;
+  color: #355267;
+  background: #fff;
+  font-size: 14px;
+  gap: 7px;
+}
+.blackbox-tools button > span {
+  font-size: 19px;
+  line-height: 1;
+}
+.blackbox-layout .blackbox-tools button.is-active {
+  background: #deebe9;
+  color: #143f3b;
+  border: 2px solid #42756c;
+  padding: 9px 5px;
+  font-weight: 750;
+}
+.blackbox-layout .blackbox-tools button:hover:not(:disabled) {
+  transform: none;
+  background: #e7f1ef;
+}
+.blackbox-layout .blackbox-verify {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  width: 100%;
+  min-height: 52px;
+  margin-top: 10px;
+  padding: 12px 15px;
+  border: 1px solid #2f5464;
+  border-radius: 11px;
+  background: #254b5a;
+  color: white;
+  font-size: 15px;
+}
+.blackbox-verify > span {
+  font-size: 11px;
+  color: #d6e7eb;
+  font-weight: 450;
+}
+.blackbox-layout .blackbox-verify:hover:not(:disabled) {
+  background: #193e4d;
+  transform: none;
+}
+.blackbox-layout .blackbox-verify:disabled {
+  opacity: 0.65;
+}
+.blackbox-layout[data-blackbox-won="true"] .blackbox-verify {
+  background: #e0eeea;
+  border-color: #85a99a;
+  color: #255443;
+  opacity: 1;
+}
+.blackbox-layout[data-blackbox-won="true"] .blackbox-verify > span {
+  color: #365f4f;
+}
+.blackbox-layout .blackbox-tools button:focus-visible,
+.blackbox-layout .blackbox-verify:focus-visible,
+.blackbox-layout summary:focus-visible {
+  outline: 3px solid #8e6328;
+  outline-offset: 3px;
+}
+.blackbox-conflict {
+  margin-top: 16px;
+  border: 1px solid #d8b79c;
+  border-radius: 11px;
+  padding: 13px;
+  background: #fff4e8;
+  color: #6d4029;
+}
+.blackbox-conflict > p {
+  font-size: 12px;
+  font-weight: 700;
+  margin: 0 0 11px;
+}
+.blackbox-conflict > div {
+  display: grid;
+  grid-template-columns: 0.7fr 1fr 1fr;
+  gap: 10px;
+}
+.blackbox-conflict > div > span {
+  font-size: 11px;
+  line-height: 1.6;
+}
+.blackbox-conflict strong {
+  display: block;
+  margin-top: 3px;
+  font-size: 13px;
+  font-weight: 750;
+}
+.blackbox-message {
+  margin: 16px 0 10px;
+  font-size: 13px;
+  line-height: 1.8;
+  overflow-wrap: anywhere;
+}
+.blackbox-message.is-won {
+  color: #23583f;
+}
+.blackbox-save {
+  color: var(--bb-muted);
+  font-size: 11px;
+  line-height: 1.8;
+}
+.blackbox-save[data-blackbox-saved="false"] {
+  color: #924122;
+}
+.blackbox-notes {
+  min-width: 0;
+  padding: 20px 0;
+  font-size: 13px;
+  line-height: 1.85;
+}
+.blackbox-notes h3 {
+  font-size: 31px;
+  font-weight: 750;
+  line-height: 1.4;
+  letter-spacing: -0.03em;
+  margin: 0 0 18px;
+}
+.blackbox-notes > p {
+  margin: 0 0 18px;
+  color: #4d6777;
+}
+.blackbox-rules {
+  margin-top: 23px;
+}
+.blackbox-rule {
+  display: grid;
+  grid-template-columns: 92px minmax(0, 1fr);
+  align-items: center;
+  gap: 12px;
+  margin: 0 0 19px;
+}
+.blackbox-rule h4 {
+  font-size: 13px;
+  font-weight: 750;
+  line-height: 1.5;
+  margin: 0 0 5px;
+}
+.blackbox-rule p {
+  color: #536a77;
+  font-size: 11px;
+  line-height: 1.7;
+}
+.blackbox-rule-diagram {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: #e9efee;
+  border-radius: 12px;
+}
+.blackbox-diagram-grid {
+  fill: none;
+  stroke: #c4d3d5;
+  stroke-width: 1;
+}
+.blackbox-diagram-star {
+  text-anchor: middle;
+  font-size: 23px;
+  fill: #8f601c;
+}
+.blackbox-diagram-star.is-secondary {
+  opacity: 0.8;
+}
+.blackbox-diagram-ray {
+  fill: none;
+  stroke: #255c6c;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.blackbox-diagram-stop {
+  fill: #8d3e35;
+}
+.blackbox-diagram-direction {
+  fill: #255c6c;
+}
+.blackbox-diagram-boundary {
+  fill: none;
+  stroke: #738e97;
+  stroke-width: 2;
+  stroke-dasharray: 4 3;
+}
+.blackbox-notes .blackbox-double-note {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  padding: 11px 0;
+  border-top: 1px solid var(--bb-line);
+  margin: 0 0 9px;
+  font-size: 12px;
+  line-height: 1.7;
+}
+.blackbox-double-note > span:first-child {
+  font-size: 23px;
+  line-height: 1.3;
+  color: #48687b;
+}
+.blackbox-help,
+.blackbox-log {
+  border-top: 1px solid var(--bb-line);
+}
+.blackbox-notes summary {
+  min-height: 48px;
+  padding: 13px 0;
+  cursor: pointer;
+  font-weight: 750;
+  line-height: 1.6;
+}
+.blackbox-notes details p {
+  margin: 0 0 15px;
+  font-size: 12px;
+  color: #4b6370;
+}
+.blackbox-help ol {
+  margin: 0 0 14px;
+  padding-left: 20px;
+}
+.blackbox-help li {
+  margin: 7px 0;
+  font-size: 12px;
+  color: #4b6370;
+}
+.blackbox-log summary > span {
+  padding-left: 8px;
+  color: #536e7c;
+  font-size: 12px;
+  font-weight: 500;
+}
+.blackbox-log ol {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 14px;
+}
+.blackbox-log li {
+  display: grid;
+  grid-template-columns: 24px 39px minmax(0, 1fr);
+  gap: 8px;
+  align-items: center;
+  padding: 9px 0;
+  border-bottom: 1px solid #e0e7e7;
+  font-size: 12px;
+}
+.blackbox-log li > span:first-child {
+  font-size: 10px;
+  color: #617986;
+  font-variant-numeric: tabular-nums;
+}
+.game-main[data-game="blackbox"] button:not(.blackbox-cell):not(.blackbox-port),
+.game-main[data-game="blackbox"] select,
+.game-main[data-game="blackbox"] summary {
+  min-height: 48px;
+  min-width: 48px;
+}
+
+@media (max-width: 950px) {
+  .blackbox-layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 18px;
+  }
+  .blackbox-notes {
+    padding: 12px 10px;
+  }
+  .blackbox-notes h3 {
+    font-size: 26px;
+    margin-bottom: 12px;
+  }
+  .blackbox-notes h3 br {
+    display: none;
+  }
+  .blackbox-rules {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+  }
+  .blackbox-rule {
+    grid-template-columns: 1fr;
+    align-content: start;
+    gap: 12px;
+  }
+  .blackbox-rule-diagram {
+    width: 102px;
+  }
+  .blackbox-rule p {
+    font-size: 12px;
+  }
+}
+@media (max-width: 540px) {
+  .game-main[data-game="blackbox"] {
+    padding-inline: 12px;
+  }
+  .blackbox-play {
+    padding: 16px 8px;
+    border-radius: 18px;
+  }
+  .blackbox-heading {
+    padding-inline: 3px;
+  }
+  .blackbox-heading h3 {
+    font-size: 21px;
+  }
+  .blackbox-chapter {
+    font-size: 11px;
+    letter-spacing: 0;
+  }
+  .blackbox-level {
+    font-size: 11px;
+  }
+  .blackbox-lesson {
+    padding-inline: 3px;
+    margin: 12px 0;
+    font-size: 13px;
+  }
+  .blackbox-stats {
+    padding: 11px 3px;
+    gap: 6px 17px;
+    font-size: 12px;
+  }
+  .blackbox-stats strong {
+    font-size: 21px;
+  }
+  .blackbox-stats .blackbox-state-label {
+    font-size: 10px;
+    margin-left: 0;
+  }
+  .blackbox-instrument {
+    padding: 13px 4px 12px;
+    border-radius: 13px;
+  }
+  .blackbox-window-label {
+    padding-inline: 7px;
+    margin-bottom: 9px;
+    font-size: 10px;
+  }
+  .blackbox-layout .blackbox-port {
+    border-width: 2px;
+    border-radius: 9px;
+    gap: 3px;
+  }
+  .blackbox-port-name {
+    font-size: 10px;
+  }
+  .blackbox-port-result {
+    font-size: 12px;
+  }
+  .blackbox-cell-mark {
+    font-size: 27px;
+  }
+  .blackbox-signal-key {
+    gap: 8px 13px;
+    font-size: 10px;
+    margin-top: 11px;
+  }
+  .blackbox-readout {
+    margin-top: 11px;
+    font-size: 12px;
+  }
+  .blackbox-marking {
+    margin-top: 17px;
+    padding-inline: 3px;
+  }
+  .blackbox-message,
+  .blackbox-save {
+    padding-inline: 3px;
+  }
+  .blackbox-rules {
+    display: block;
+    margin-top: 18px;
+  }
+  .blackbox-rule {
+    display: grid;
+    grid-template-columns: 94px minmax(0, 1fr);
+    gap: 15px;
+    margin-bottom: 17px;
+  }
+  .blackbox-rule-diagram {
+    width: 94px;
+  }
+  .blackbox-rule h4 {
+    font-size: 14px;
+  }
+  .blackbox-rule p {
+    font-size: 12px;
+  }
+  .blackbox-notes {
+    padding-inline: 8px;
+  }
+}
+@media (max-width: 360px) {
+  .game-main[data-game="blackbox"] {
+    padding-inline: 6px;
+  }
+  .blackbox-play {
+    padding-inline: 0;
+    border: 0;
+  }
+  .blackbox-instrument {
+    padding-inline: 0;
+  }
+  .blackbox-heading,
+  .blackbox-lesson,
+  .blackbox-stats,
+  .blackbox-marking,
+  .blackbox-message,
+  .blackbox-save {
+    padding-inline: 7px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .blackbox-layout *,
+  .blackbox-layout *::before,
+  .blackbox-layout *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}

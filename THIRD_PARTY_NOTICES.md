@@ -66,3 +66,9 @@ SOFTWARE.
 前缀反转排序是数学机制参考，不引入外部游戏代码、论文图表或商业素材。`src/games/pancake*`、`PancakeKitchen.tsx`、生成器、固定排列题库、说明和 `public/pancake-art.webp` 均为本项目原创，遵循仓库 MIT 许可。卡片图由原创 `scripts/pancake/art.svg` 渲染，不使用外部字体、图片或网络请求。图形仅表达大小不同的煎饼、盘子和翻转方向。
 
 机制背景：W. H. Gates 与 C. H. Papadimitriou，1979，Bounds for sorting by prefix reversal，DOI https://doi.org/10.1016/0012-365X(79)90068-2。引用只说明数学背景，不把论文视为软件或素材许可证。所有最短距离由本仓库自产完整 BFS 与独立 Python 验证器重算。
+
+## 星雾探测（原创 Black Box 规则实现）
+
+规则核对固定到 Simon Tatham's Portable Puzzle Collection 快照 `a7c7826bce5cbb9b9c337c11b9b7f8b278e76fba`。只读参考 `blackbox.c` 与 `puzzles.but` 的 Black Box 章节，用于明确入口、正前吸收与前侧转向的优先级；完整快照文件、来源校验和 MIT 许可保留在 `vendor/sgtatham-blackbox/`，许可同时随生产产物分发为 `public/blackbox-LICENCE.txt`。上游 Black Box 模块由 James Harvey 贡献；机制历史见上游文档，不把商业原版品牌、包装或关卡当作 MIT 素材。
+
+Playgarden 的 TypeScript 游戏规则实现、Python 独立求解器、6 章 84 个 D4 非同构题、中文教程、界面、`scripts/blackbox/art.svg` 与由其渲染的 `public/blackbox-art.webp` 均为原创。本游戏不移植上游生成器或关卡，不载入外部美术、字体、音频，也不执行上游源码。完整上游 MIT 版权及许可文本见本文件前述 Simon Tatham 节和独立 `blackbox-LICENCE.txt`；该声明不会替代许可证正文。

@@ -1,3 +1,4 @@
+import { blackboxLevels } from "../src/games/blackboxLevels";
 import { pancakeLevels } from "../src/games/pancakeLevels";
 import { samegameLevels } from "../src/games/samegameLevels";
 import { slantLevels } from "../src/games/slantLevels";
@@ -87,6 +88,7 @@ import { voxelViewsLevels } from "../src/games/voxelViewsLogic";
 import { cubeNetLevels } from "../src/games/cubeNetLogic";
 const packs = {
   pancake: pancakeLevels,
+  blackbox: blackboxLevels,
   samegame: samegameLevels,
   slant: slantLevels,
   "memory-routes": memoryRoutesLevels,
@@ -189,9 +191,9 @@ describe("Scalable catalog contract", () => {
       }
     }),
   );
-  it("counts only 82 real games and 1944 levels, not the roadmap", () => {
-    expect(games).toHaveLength(82);
-    expect(games.reduce((sum, g) => sum + g.levelCount, 0)).toBe(1944);
+  it("counts only 83 real games and 2028 levels, not the roadmap", () => {
+    expect(games).toHaveLength(83);
+    expect(games.reduce((sum, g) => sum + g.levelCount, 0)).toBe(2028);
   });
 });
 

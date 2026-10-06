@@ -1,0 +1,6647 @@
+{
+  "version": 1,
+  "rules": "boundary-priority-front-then-diagonals-v1",
+  "ports": "N left-to-right, E top-to-bottom, S left-to-right, W top-to-bottom; -1 absorbed, -2 reflected",
+  "selection": "D4-distinct, unique full signatures; structurally stratified with deterministic hash, ordered by greedy evidence trace length. No shortest-probe claim.",
+  "chapters": [
+    {
+      "id": "first-signals",
+      "title": "听懂一颗星",
+      "lesson": "先从北边发射。● 表示光束正面碰到星；↩ 表示返回入口；另一侧的编号表示出口。用交叉证据找一颗星。",
+      "size": 3,
+      "countAtoms": 1,
+      "count": 3
+    },
+    {
+      "id": "two-shadows",
+      "title": "两颗星的影子",
+      "lesson": "正前方有星会优先吸收；仅前侧有星，会在进入那一行前转弯，远离星。换一边探测，别只看一条线。",
+      "size": 4,
+      "countAtoms": 2,
+      "count": 9
+    },
+    {
+      "id": "turn-together",
+      "title": "转弯遇上转弯",
+      "lesson": "两颗星同时在前侧，会让光束掉头。中途可以连续转弯；返回并不说明入口正前方有星。",
+      "size": 4,
+      "countAtoms": 3,
+      "count": 12
+    },
+    {
+      "id": "wider-sky",
+      "title": "把视野放宽",
+      "lesson": "一条贯通的路线同时确定入口和出口。点击已有记录可以回看，不会增加探测数。先选能区别多种猜想的入口。",
+      "size": 5,
+      "countAtoms": 2,
+      "count": 16
+    },
+    {
+      "id": "cross-evidence",
+      "title": "让证据交汇",
+      "lesson": "★ 是你的猜测，× 是空格笔记。它们不改变光束，也不限制提示的候选。发现冲突就撤销标注，再换一个角度。",
+      "size": 5,
+      "countAtoms": 3,
+      "count": 20
+    },
+    {
+      "id": "deep-nebula",
+      "title": "星雾深处",
+      "lesson": "四颗星会遮挡或改变彼此的信号。没有限时或探测上限；验证比较所有边缘响应，任何完全等价的布局都能过关。",
+      "size": 5,
+      "countAtoms": 4,
+      "count": 24
+    }
+  ],
+  "stats": [
+    {
+      "chapter": "first-signals",
+      "universe": 9,
+      "uniqueLayouts": 9,
+      "uniqueD4Classes": 3,
+      "selected": 3,
+      "greedyRange": [
+        2,
+        2
+      ]
+    },
+    {
+      "chapter": "two-shadows",
+      "universe": 120,
+      "uniqueLayouts": 120,
+      "uniqueD4Classes": 21,
+      "selected": 9,
+      "greedyRange": [
+        2,
+        4
+      ]
+    },
+    {
+      "chapter": "turn-together",
+      "universe": 560,
+      "uniqueLayouts": 552,
+      "uniqueD4Classes": 76,
+      "selected": 12,
+      "greedyRange": [
+        3,
+        8
+      ]
+    },
+    {
+      "chapter": "wider-sky",
+      "universe": 300,
+      "uniqueLayouts": 300,
+      "uniqueD4Classes": 49,
+      "selected": 16,
+      "greedyRange": [
+        2,
+        5
+      ]
+    },
+    {
+      "chapter": "cross-evidence",
+      "universe": 2300,
+      "uniqueLayouts": 2284,
+      "uniqueD4Classes": 317,
+      "selected": 20,
+      "greedyRange": [
+        3,
+        9
+      ]
+    },
+    {
+      "chapter": "deep-nebula",
+      "universe": 12650,
+      "uniqueLayouts": 11985,
+      "uniqueD4Classes": 1572,
+      "selected": 24,
+      "greedyRange": [
+        4,
+        12
+      ]
+    }
+  ],
+  "levels": [
+    {
+      "id": "blackbox-001",
+      "title": "听懂一颗星 · 1",
+      "chapter": 0,
+      "size": 3,
+      "atoms": [
+        4
+      ],
+      "signature": [
+        9,
+        -1,
+        3,
+        2,
+        -1,
+        8,
+        11,
+        -1,
+        5,
+        0,
+        -1,
+        6
+      ],
+      "canonical": "4",
+      "probeTrace": [
+        {
+          "port": 1,
+          "result": -1,
+          "candidates": 3,
+          "worst": 3,
+          "partitions": 6
+        },
+        {
+          "port": 0,
+          "result": 9,
+          "candidates": 1,
+          "worst": 1,
+          "partitions": 3
+        }
+      ],
+      "metrics": {
+        "greedyProbes": 2,
+        "edge": 0,
+        "adjacent": 0,
+        "hits": 4,
+        "returns": 0,
+        "through": 8
+      }
+    },
+    {
+      "id": "blackbox-002",
+      "title": "听懂一颗星 · 2",
+      "chapter": 0,
+      "size": 3,
+      "atoms": [
+        1
+      ],
+      "signature": [
+        -2,
+        -1,
+        -2,
+        -1,
+        8,
+        11,
+        10,
+        -1,
+        4,
+        -1,
+        6,
+        5
+      ],
+      "canonical": "1",
+      "probeTrace": [
+        {
+          "port": 1,
+          "result": -1,
+          "candidates": 3,
+          "worst": 3,
+          "partitions": 6
+        },
+        {
+          "port": 0,
+          "result": -2,
+          "candidates": 1,
+          "worst": 1,
+          "partitions": 3
+        }
+      ],
+      "metrics": {
+        "greedyProbes": 2,
+        "edge": 1,
+        "adjacent": 0,
+        "hits": 4,
+        "returns": 2,
+        "through": 6
+      }
+    },
+    {
+      "id": "blackbox-003",
+      "title": "听懂一颗星 · 3",
+      "chapter": 0,
+      "size": 3,
+      "atoms": [
+        0
+      ],
+      "signature": [
+        -1,
+        -2,
+        8,
+        -1,
+        7,
+        11,
+        -1,
+        4,
+        2,
+        -1,
+        -2,
+        5
+      ],
+      "canonical": "0",
+      "probeTrace": [
+        {
+          "port": 1,
+          "result": -2,
+          "candidates": 2,
+          "worst": 3,
+          "partitions": 6
+        },
+        {
+          "port": 0,
+          "result": -1,
+          "candidates": 1,
+          "worst": 1,
+          "partitions": 2
+        }
+      ],
+      "metrics": {
+        "greedyProbes": 2,
+        "edge": 1,
+        "adjacent": 0,
+        "hits": 4,
+        "returns": 2,
+        "through": 6
+      }
+    },
+    {
+      "id": "blackbox-004",
+      "title": "两颗星的影子 · 1",
+      "chapter": 1,
+      "size": 4,
+      "atoms": [
+        1,
+        13
+      ],
+      "signature": [
+        -2,
+        -1,
+        -2,
+        11,
+        -1,
+        6,
+        5,
+        -1,
+        -2,
+        -1,
+        -2,
+        3,
+        -1,
+        14,
+        13,
+        -1
+      ],
+      "canonical": "1,13",
+      "probeTrace": [
+        {
+          "port": 1,
+          "result": -1,
+          "candidates": 45,
+          "worst": 45,
+          "partitions": 11
+        },
+        {
+          "port": 6,
+          "result": 5,
+          "candidates": 1,
+          "worst": 16,
+          "partitions": 10
+        }
+      ],
+      "metrics": {
+        "greedyProbes": 2,
+        "edge": 2,
+        "adjacent": 0,
+        "hits": 6,
+        "returns": 4,
+        "through": 6
+      }
+    },
+    {
+      "id": "blackbox-005",
+      "title": "两颗星的影子 · 2",
+      "chapter": 1,
+      "size": 4,
+      "atoms": [
+        1,
+        4
+      ],
+      "signature": [
+        -2,
+        -1,
+        -2,
+        11,
+        -1,
+        10,
+        9,
+        15,
+        -1,
+        6,
+        5,
+        3,
+        -2,
+        -1,
+        -2,
+        7
+      ],
+      "canonical": "1,4",
+      "probeTrace": [
+        {
+          "port": 1,
+          "result": -1,
+          "candidates": 45,
+          "worst": 45,
+          "partitions": 11
+        },
+        {
+          "port": 6,
+          "result": 9,
+          "candidates": 2,
+          "worst": 16,
+          "partitions": 10
+        },
+        {
+          "port": 0,
+          "result": -2,
+          "candidates": 1,
+          "worst": 1,
+          "partitions": 2
+        }
+      ],
+      "metrics": {
+        "greedyProbes": 3,
+        "edge": 2,
+        "adjacent": 0,
+        "hits": 4,
+        "returns": 4,
+        "through": 8
+      }
+    },
+    {
+      "id": "blackbox-006",
+      "title": "两颗星的影子 · 3",
+      "chapter": 1,
+      "size": 4,
+      "atoms": [
+        0,
+        10
+      ],
+      "signature": [
+        -1,
+        -2,
+        -1,
+        5,
+        -1,
+        3,
+        -1,
+        11,
+        -1,
+        15,
+        -1,
+        7,
+        -1,
+        -2,
+        -1,
+        9
+      ],
+      "canonical": "0,10",
+      "probeTrace": [
+        {
+          "port": 1,
+          "result": -2,
+          "candidates": 30,
+          "worst": 45,
+          "partitions": 11
+        },
+        {
+          "port": 9,
+          "result": 15,
+          "candidates": 2,
+          "worst": 8,
+          "partitions": 10
+        },
+        {
+          "port": 0,
+          "result": -1,
+          "candidates": 1,
+          "worst": 1,
+          "partitions": 2
+        }
+      ],
+      "metrics": {
+        "greedyProbes": 3,
+        "edge": 1,
+        "adjacent": 0,
+        "hits": 8,
+        "returns": 2,
+        "through": 6
+      }
+    },
+    {
+      "id": "blackbox-007",
+      "title": "两颗星的影子 · 4",
+      "chapter": 1,
+      "size": 4,
+      "atoms": [
+        5,
+        6
+      ],
+      "signature": [
+        12,
+        -1,
+        -1,
+        4,
+        3,
+        -1,
+        11,
+        15,
+        14,
+        -1,
+        -1,
+        6,
+        0,
+        -1,
+        8,
+        7
+      ],
+      "canonical": "5,6",
+      "probeTrace": [
+        {
+          "port": 1,
+          "result": -1,
+          "candidates": 45,
+          "worst": 45,
+          "partitions": 11
+        },
+        {
+          "port": 6,
+          "result": 11,
+          "candidates": 2,
+          "worst": 16,
+          "partitions": 10
+        },
+        {
+          "port": 0,
+          "result": 12,
+          "candidates": 1,
+          "worst": 1,
+          "partitions": 2
+        }
+      ],
+      "metrics": {
+        "greedyProbes": 3,
+        "edge": 0,
+        "adjacent": 1,
+        "hits": 6,
+        "returns": 0,
+        "through": 10
+      }
+    },
+    {
+      "id": "blackbox-008",
+      "title": "两颗星的影子 · 5",
+      "chapter": 1,
+      "size": 4,
+      "atoms": [
+        0,
+        1
+      ],
+      "signature": [
+        -1,
+        -1,
+        -2,
+        11,
+        -1,
+        10,
+        14,
+        15,
+        -1,
+        -1,
+        5,
+        3,
+        -1,
+        -2,
+        6,
+        7
+      ],
+      "canonical": "0,1",
+      "probeTrace": [
+        {
+          "port": 1,
+          "result": -1,
+          "candidates": 45,
+          "worst": 45,
+          "partitions": 11
+        },
+        {
+          "port": 6,
+          "result": 14,
+          "candidates": 3,
+          "worst": 16,
+          "partitions": 10
+        },
+        {
+          "port": 3,
+          "result": 11,
+          "candidates": 1,
+          "worst": 1,
+          "partitions": 3
+        }
+      ],
+      "metrics": {
+        "greedyProbes": 3,
+        "edge": 2,
+        "adjacent": 1,
+        "hits": 6,
+        "returns": 2,
+        "through": 8
+      }
+    },
+    {
+      "id": "blackbox-009",
+      "title": "两颗星的影子 · 6",
+      "chapter": 1,
+      "size": 4,
+      "atoms": [
+        1,
+        11
+      ],
+      "signature": [
+        -2,
+        -1,
+        -2,
+        -1,
+        -1,
+        -2,
+        -1,
+        -2,
+        13,
+        -1,
+        15,
+        -1,
+        -1,
+        8,
+        -1,
+        10
+      ],
+      "canonical": "1,11",
+      "probeTrace": [
+        {
+          "port": 1,
+          "result": -1,
+          "candidates": 45,
+          "worst": 45,
+          "partitions": 11
+        },
+        {
+          "port": 6,
+          "result": -1,
+          "candidates": 16,
+          "worst": 16,
+          "partitions": 10
+        },
+        {
+          "port": 10,
+          "result": 15,
+          "candidates": 2,
+          "worst": 5,
+          "partitions": 5
+        },
+        {
+          "port": 0,
+          "result": -2,
+          "candidates": 1,
+          "worst": 1,
+          "partitions": 2
+        }
+      ],
+      "metrics": {
+        "greedyProbes": 4,
+        "edge": 2,
+        "adjacent": 0,
+        "hits": 8,
+        "returns": 4,
+        "through": 4
+      }
+    },
+    {
+      "id": "blackbox-010",
+      "title": "两颗星的影子 · 7",
+      "chapter": 1,
+      "size": 4,
+      "atoms": [
+        0,
+        5
+      ],
+      "signature": [
+        -1,
+        -2,
+        4,
+        11,
+        2,
+        -1,
+        10,
+        15,
+        14,
+        -1,
+        6,
+        3,
+        -1,
+        -2,
+        8,
+        7
+      ],
+      "canonical": "0,5",
+      "probeTrace": [
+        {
+          "port": 1,
+          "result": -2,
+          "candidates": 30,
+          "worst": 45,
+          "partitions": 11
+        },
+        {
+          "port": 9,
+          "result": -1,
+          "candidates": 7,
+          "worst": 8,
+          "partitions": 10
+        },
+        {
+          "port": 8,
+          "result": 14,
+          "candidates": 2,
+          "worst": 2,
+          "partitions": 4
+        },
+        {
+          "port": 0,
+          "result": -1,
+          "candidates": 1,
+          "worst": 1,
+          "partitions": 2
+        }
+      ],
+      "metrics": {
+        "greedyProbes": 4,
+        "edge": 1,
+        "adjacent": 0,
+        "hits": 4,
+        "returns": 2,
+        "through": 10
+      }
+    },
+    {
+      "id": "blackbox-011",
+      "title": "两颗星的影子 · 8",
+      "chapter": 1,
+      "size": 4,
+      "atoms": [
+        1,
+        9
+      ],
+      "signature": [
+        -2,
+        -1,
+        -2,
+        11,
+        -1,
+        -2,
+        -1,
+        10,
+        15,
+        -1,
+        7,
+        3,
+        -1,
+        -2,
+        -1,
+        8
+      ],
+      "canonical": "1,9",
+      "probeTrace": [
+        {
+          "port": 1,
+          "result": -1,
+          "candidates": 45,
+          "worst": 45,
+          "partitions": 11
+        },
+        {
+          "port": 6,
+          "result": -1,
+          "candidates": 16,
+          "worst": 16,
+          "partitions": 10
+        },
+        {
+          "port": 10,
+          "result": 7,
+          "candidates": 5,
+          "worst": 5,
+          "partitions": 5
+        },
+        {
+          "port": 0,
+          "result": -2,
+          "candidates": 1,
+          "worst": 2,
+          "partitions": 4
+        }
+      ],
+      "metrics": {
+        "greedyProbes": 4,
+        "edge": 1,
+        "adjacent": 0,
+        "hits": 6,
+        "returns": 4,
+        "through": 6
+      }
+    },
+    {
+      "id": "blackbox-012",
+      "title": "两颗星的影子 · 9",
+      "chapter": 1,
+      "size": 4,
+      "atoms": [
+        1,
+        5
+      ],
+      "signature": [
+        -2,
+        -1,
+        -2,
+        11,
+        -1,
+        -1,
+        10,
+        15,
+        14,
+        -1,
+        6,
+        3,
+        -1,
+        -1,
+        8,
+        7
+      ],
+      "canonical": "1,5",
+      "probeTrace": [
+        {
+          "port": 1,
+          "result": -1,
+          "candidates": 45,
+          "worst": 45,
+          "partitions": 11
+        },
+        {
+          "port": 6,
+          "result": 10,
+          "candidates": 5,
+          "worst": 16,
+          "partitions": 10
+        },
+        {
+          "port": 14,
+          "result": 8,
+          "candidates": 2,
+          "worst": 2,
+          "partitions": 3
+        },
+        {
+          "port": 0,
+          "result": -2,
+          "candidates": 1,
+          "worst": 1,
+          "partitions": 2
+        }
+      ],
+      "metrics": {
+        "greedyProbes": 4,
+        "edge": 1,
+        "adjacent": 1,
+        "hits": 6,
+        "returns": 2,
+        "through": 8
+      }
+    },
+    {
+      "id": "blackbox-013",
+      "title": "转弯遇上转弯 · 1",
+      "chapter": 2,
+      "size": 4,
+      "atoms": [
+        1,
+        6,
+        8
+      ],
+      "signature": [
+        -2,
+        -1,
+        -2,
+        4,
+        3,
+        -1,
+        11,
+        9,
+        -1,
+        7,
+        -1,
+        6,
+        -1,
+        -2,
+        -1,
+        -2
+      ],
+      "canonical": "1,6,8",
+      "probeTrace": [
+        {
+          "port": 0,
+          "result": -2,
+          "candidates": 91,
+          "worst": 274,
+          "partitions": 6
+        },
+        {
+          "port": 3,
+          "result": 4,
+          "candidates": 10,
+          "worst": 40,
+          "partitions": 6
+        },
+        {
+          "port": 9,
+          "result": 7,
+          "candidates": 1,
+          "worst": 3,
+          "partitions": 5
+        }
+      ],
+      "metrics": {
+        "greedyProbes": 3,
+        "edge": 2,
+        "adjacent": 0,
+        "hits": 6,
+        "returns": 4,
+        "through": 6
+      }
+    },
+    {
+      "id": "blackbox-014",
+      "title": "转弯遇上转弯 · 2",
+      "chapter": 2,
+      "size": 4,
+      "atoms": [
+        1,
+        2,
+        8
+      ],
+      "signature": [
+        -2,
+        -1,
+        -1,
+        -2,
+        -1,
+        11,
+        -1,
+        9,
+        -1,
+        7,
+        -1,
+        5,
+        -1,
+        -2,
+        -1,
+        -2
+      ],
+      "canonical": "1,2,11",
+      "probeTrace": [
+        {
+          "port": 0,
+          "result": -2,
+          "candidates": 91,
+          "worst": 274,
+          "partitions": 6
+        },
+        {
+          "port": 3,
+          "result": -2,
+          "candidates": 12,
+          "worst": 40,
+          "partitions": 6
+        },
+        {
+          "port": 7,
+          "result": 9,
+          "candidates": 1,
+          "worst": 4,
+          "partitions": 6
+        }
+      ],
+      "metrics": {
+        "greedyProbes": 3,
+        "edge": 3,
+        "adjacent": 1,
+        "hits": 8,
+        "returns": 4,
+        "through": 4
+      }
+    },
+    {
+      "id": "blackbox-015",
+      "title": "转弯遇上转弯 · 3",
+      "chapter": 2,
+      "size": 4,
+      "atoms": [
+        1,
+        6,
+        14
+      ],
+      "signature": [
+        -2,
+        -1,
+        -2,
+        4,
+        3,
+        -1,
+        -2,
+        -1,
+        13,
+        -2,
+        -1,
+        -2,
+        -1,
+        8,
+        -2,
+        -1
+      ],
+      "canonical": "1,6,14",
+      "probeTrace": [
+        {
+          "port": 0,
+          "result": -2,
+          "candidates": 91,
+          "worst": 274,
+          "partitions": 6
+        },
+        {
+          "port": 3,
+          "result": 4,
+          "candidates": 10,
+          "worst": 40,
+          "partitions": 6
+        },
+        {
+          "port": 9,
+          "result": -2,
+          "candidates": 3,
+          "worst": 3,
+          "partitions": 5
+        },
+        {
+          "port": 6,
+          "result": -2,
+          "candidates": 1,
+          "worst": 2,
+          "partitions": 2
+        }
+      ],
+      "metrics": {
+        "greedyProbes": 4,
+        "edge": 2,
+        "adjacent": 0,
+        "hits": 6,
+        "returns": 6,
+        "through": 4
+      }
+    },
+    {
+      "id": "blackbox-016",
+      "title": "转弯遇上转弯 · 4",
+      "chapter": 2,
+      "size": 4,
+      "atoms": [
+        1,
+        5,
+        8
+      ],
+      "signature": [
+        -2,
+        -1,
+        -2,
+        11,
+        -1,
+        -1,
+        10,
+        9,
+        -1,
+        7,
+        6,
+        3,
+        -1,
+        -2,
+        -1,
+        -2
+      ],
+      "canonical": "1,5,8",
+      "probeTrace": [
+        {
+          "port": 0,
+          "result": -2,
+          "candidates": 91,
+          "worst": 274,
+          "partitions": 6
+        },
+        {
+          "port": 3,
+          "result": 11,
+          "candidates": 15,
+          "worst": 40,
+          "partitions": 6
+        },
+        {
+          "port": 5,
+          "result": -1,
+          "candidates": 5,
+          "worst": 5,
+          "partitions": 4
+        },
+        {
+          "port": 7,
+          "result": 9,
+          "candidates": 1,
+          "worst": 2,
+          "partitions": 4
+        }
+      ],
+      "metrics": {
+        "greedyProbes": 4,
+        "edge": 2,
+        "adjacent": 1,
+        "hits": 6,
+        "returns": 4,
+        "through": 6
+      }
+    },
+    {
+      "id": "blackbox-017",
+      "title": "转弯遇上转弯 · 5",
+      "chapter": 2,
+      "size": 4,
+      "atoms": [
+        0,
+        6,
+        10
+      ],
+      "signature": [
+        -1,
+        -2,
+        -1,
+        4,
+        3,
+        -1,
+        -1,
+        11,
+        -1,
+        15,
+        -1,
+        7,
+        -1,
+        -2,
+        -1,
+        9
+      ],
+      "canonical": "0,6,10",
+      "probeTrace": [
+        {
+          "port": 0,
+          "result": -1,
+          "candidates": 274,
+          "worst": 274,
+          "partitions": 6
+        },
+        {
+          "port": 4,
+          "result": 3,
+          "candidates": 32,
+          "worst": 126,
+          "partitions": 6
+        },
+        {
+          "port": 7,
+          "result": 11,
+          "candidates": 4,
+          "worst": 15,
+          "partitions": 6
+        },
+        {
+          "port": 12,
+          "result": -1,
+          "candidates": 1,
+          "worst": 2,
+          "partitions": 3
+        }
+      ],
+      "metrics": {
+        "greedyProbes": 4,
+        "edge": 1,
+        "adjacent": 1,
+        "hits": 8,
+        "returns": 2,
+        "through": 6
+      }
+    },
+    {
+      "id": "blackbox-018",
+      "title": "转弯遇上转弯 · 6",
+      "chapter": 2,
+      "size": 4,
+      "atoms": [
+        1,
+        2,
+        5
+      ],
+      "signature": [
+        -2,
+        -1,
+        -1,
+        -2,
+        -1,
+        11,
+        10,
+        15,
+        14,
+        -1,
+        6,
+        5,
+        -1,
+        -1,
+        8,
+        7
+      ],
+      "canonical": "1,2,5",
+      "probeTrace": [
+        {
+          "port": 0,
+          "result": -2,
+          "candidates": 91,
+          "worst": 274,
+          "partitions": 6
+        },
+        {
+          "port": 3,
+          "result": -2,
+          "candidates": 12,
+          "worst": 40,
+          "partitions": 6
+        },
+        {
+          "port": 7,
+          "result": 15,
+          "candidates": 4,
+          "worst": 4,
+          "partitions": 6
+        },
+        {
+          "port": 6,
+          "result": 10,
+          "candidates": 1,
+          "worst": 1,
+          "partitions": 4
+        }
+      ],
+      "metrics": {
+        "greedyProbes": 4,
+        "edge": 2,
+        "adjacent": 2,
+        "hits": 6,
+        "returns": 2,
+        "through": 8
+      }
+    },
+    {
+      "id": "blackbox-019",
+      "title": "转弯遇上转弯 · 7",
+      "chapter": 2,
+      "size": 4,
+      "atoms": [
+        0,
+        2,
+        7
+      ],
+      "signature": [
+        -1,
+        -2,
+        -1,
+        -2,
+        -2,
+        -1,
+        -2,
+        15,
+        -1,
+        -2,
+        14,
+        -1,
+        -1,
+        -2,
+        10,
+        7
+      ],
+      "canonical": "0,2,7",
+      "probeTrace": [
+        {
+          "port": 0,
+          "result": -1,
+          "candidates": 274,
+          "worst": 274,
+          "partitions": 6
+        },
+        {
+          "port": 4,
+          "result": -2,
+          "candidates": 40,
+          "worst": 126,
+          "partitions": 6
+        },
+        {
+          "port": 7,
+          "result": 15,
+          "candidates": 8,
+          "worst": 17,
+          "partitions": 6
+        },
+        {
+          "port": 10,
+          "result": 14,
+          "candidates": 2,
+          "worst": 2,
+          "partitions": 4
+        },
+        {
+          "port": 1,
+          "result": -2,
+          "candidates": 1,
+          "worst": 1,
+          "partitions": 2
+        }
+      ],
+      "metrics": {
+        "greedyProbes": 5,
+        "edge": 3,
+        "adjacent": 0,
+        "hits": 6,
+        "returns": 6,
+        "through": 4
+      }
+    },
+    {
+      "id": "blackbox-020",
+      "title": "转弯遇上转弯 · 8",
+      "chapter": 2,
+      "size": 4,
+      "atoms": [
+        1,
+        5,
+        13
+      ],
+      "signature": [
+        -2,
+        -1,
+        -2,
+        11,
+        -1,
+        -1,
+        -2,
+        -1,
+        -2,
+        -1,
+        -2,
+        3,
+        -1,
+        -1,
+        -2,
+        -1
+      ],
+      "canonical": "1,5,13",
+      "probeTrace": [
+        {
+          "port": 0,
+          "result": -2,
+          "candidates": 91,
+          "worst": 274,
+          "partitions": 6
+        },
+        {
+          "port": 3,
+          "result": 11,
+          "candidates": 15,
+          "worst": 40,
+          "partitions": 6
+        },
+        {
+          "port": 5,
+          "result": -1,
+          "candidates": 5,
+          "worst": 5,
+          "partitions": 4
+        },
+        {
+          "port": 7,
+          "result": -1,
+          "candidates": 2,
+          "worst": 2,
+          "partitions": 4
+        },
+        {
+          "port": 6,
+          "result": -2,
+          "candidates": 1,
+          "worst": 1,
+          "partitions": 2
+        }
+      ],
+      "metrics": {
+        "greedyProbes": 5,
+        "edge": 2,
+        "adjacent": 1,
+        "hits": 8,
+        "returns": 6,
+        "through": 2
+      }
+    },
+    {
+      "id": "blackbox-021",
+      "title": "转弯遇上转弯 · 9",
+      "chapter": 2,
+      "size": 4,
+      "atoms": [
+        0,
+        5,
+        6
+      ],
+      "signature": [
+        -1,
+        -2,
+        -1,
+        4,
+        3,
+        -1,
+        11,
+        15,
+        14,
+        -1,
+        -1,
+        6,
+        -1,
+        -2,
+        8,
+        7
+      ],
+      "canonical": "0,5,6",
+      "probeTrace": [
+        {
+          "port": 0,
+          "result": -1,
+          "candidates": 274,
+          "worst": 274,
+          "partitions": 6
+        },
+        {
+          "port": 4,
+          "result": 3,
+          "candidates": 32,
+          "worst": 126,
+          "partitions": 6
+        },
+        {
+          "port": 7,
+          "result": 15,
+          "candidates": 4,
+          "worst": 15,
+          "partitions": 6
+        },
+        {
+          "port": 9,
+          "result": -1,
+          "candidates": 2,
+          "worst": 2,
+          "partitions": 3
+        },
+        {
+          "port": 1,
+          "result": -2,
+          "candidates": 1,
+          "worst": 1,
+          "partitions": 2
+        }
+      ],
+      "metrics": {
+        "greedyProbes": 5,
+        "edge": 1,
+        "adjacent": 1,
+        "hits": 6,
+        "returns": 2,
+        "through": 8
+      }
+    },
+    {
+      "id": "blackbox-022",
+      "title": "转弯遇上转弯 · 10",
+      "chapter": 2,
+      "size": 4,
+      "atoms": [
+        0,
+        3,
+        5
+      ],
+      "signature": [
+        -1,
+        -2,
+        -2,
+        -1,
+        -1,
+        -2,
+        10,
+        15,
+        14,
+        -1,
+        6,
+        -1,
+        -1,
+        -2,
+        8,
+        7
+      ],
+      "canonical": "0,3,5",
+      "probeTrace": [
+        {
+          "port": 0,
+          "result": -1,
+          "candidates": 274,
+          "worst": 274,
+          "partitions": 6
+        },
+        {
+          "port": 4,
+          "result": -1,
+          "candidates": 126,
+          "worst": 126,
+          "partitions": 6
+        },
+        {
+          "port": 11,
+          "result": -1,
+          "candidates": 56,
+          "worst": 56,
+          "partitions": 6
+        },
+        {
+          "port": 10,
+          "result": 6,
+          "candidates": 3,
+          "worst": 24,
+          "partitions": 8
+        },
+        {
+          "port": 1,
+          "result": -2,
+          "candidates": 2,
+          "worst": 2,
+          "partitions": 2
+        },
+        {
+          "port": 7,
+          "result": 15,
+          "candidates": 1,
+          "worst": 1,
+          "partitions": 2
+        }
+      ],
+      "metrics": {
+        "greedyProbes": 6,
+        "edge": 2,
+        "adjacent": 0,
+        "hits": 6,
+        "returns": 4,
+        "through": 6
+      }
+    },
+    {
+      "id": "blackbox-023",
+      "title": "转弯遇上转弯 · 11",
+      "chapter": 2,
+      "size": 4,
+      "atoms": [
+        0,
+        2,
+        11
+      ],
+      "signature": [
+        -1,
+        -2,
+        -1,
+        -2,
+        -1,
+        -2,
+        -1,
+        -2,
+        -1,
+        -2,
+        15,
+        -1,
+        -1,
+        -2,
+        -1,
+        10
+      ],
+      "canonical": "0,2,11",
+      "probeTrace": [
+        {
+          "port": 0,
+          "result": -1,
+          "candidates": 274,
+          "worst": 274,
+          "partitions": 6
+        },
+        {
+          "port": 4,
+          "result": -1,
+          "candidates": 126,
+          "worst": 126,
+          "partitions": 6
+        },
+        {
+          "port": 11,
+          "result": -1,
+          "candidates": 56,
+          "worst": 56,
+          "partitions": 6
+        },
+        {
+          "port": 10,
+          "result": 15,
+          "candidates": 6,
+          "worst": 24,
+          "partitions": 8
+        },
+        {
+          "port": 2,
+          "result": -1,
+          "candidates": 3,
+          "worst": 3,
+          "partitions": 2
+        },
+        {
+          "port": 3,
+          "result": -2,
+          "candidates": 2,
+          "worst": 2,
+          "partitions": 2
+        },
+        {
+          "port": 9,
+          "result": -2,
+          "candidates": 1,
+          "worst": 1,
+          "partitions": 2
+        }
+      ],
+      "metrics": {
+        "greedyProbes": 7,
+        "edge": 3,
+        "adjacent": 0,
+        "hits": 8,
+        "returns": 6,
+        "through": 2
+      }
+    },
+    {
+      "id": "blackbox-024",
+      "title": "转弯遇上转弯 · 12",
+      "chapter": 2,
+      "size": 4,
+      "atoms": [
+        0,
+        10,
+        11
+      ],
+      "signature": [
+        -1,
+        -2,
+        -1,
+        -1,
+        -1,
+        -2,
+        -1,
+        -2,
+        -1,
+        15,
+        -1,
+        -1,
+        -1,
+        -2,
+        -1,
+        9
+      ],
+      "canonical": "0,10,11",
+      "probeTrace": [
+        {
+          "port": 0,
+          "result": -1,
+          "candidates": 274,
+          "worst": 274,
+          "partitions": 6
+        },
+        {
+          "port": 4,
+          "result": -1,
+          "candidates": 126,
+          "worst": 126,
+          "partitions": 6
+        },
+        {
+          "port": 11,
+          "result": -1,
+          "candidates": 56,
+          "worst": 56,
+          "partitions": 6
+        },
+        {
+          "port": 10,
+          "result": -1,
+          "candidates": 13,
+          "worst": 24,
+          "partitions": 8
+        },
+        {
+          "port": 7,
+          "result": -2,
+          "candidates": 4,
+          "worst": 4,
+          "partitions": 4
+        },
+        {
+          "port": 1,
+          "result": -2,
+          "candidates": 3,
+          "worst": 3,
+          "partitions": 2
+        },
+        {
+          "port": 3,
+          "result": -1,
+          "candidates": 2,
+          "worst": 2,
+          "partitions": 2
+        },
+        {
+          "port": 9,
+          "result": 15,
+          "candidates": 1,
+          "worst": 1,
+          "partitions": 2
+        }
+      ],
+      "metrics": {
+        "greedyProbes": 8,
+        "edge": 2,
+        "adjacent": 1,
+        "hits": 10,
+        "returns": 4,
+        "through": 2
+      }
+    },
+    {
+      "id": "blackbox-025",
+      "title": "把视野放宽 · 1",
+      "chapter": 3,
+      "size": 5,
+      "atoms": [
+        1,
+        14
+      ],
+      "signature": [
+        -2,
+        -1,
+        -2,
+        12,
+        -1,
+        -1,
+        -2,
+        -1,
+        -2,
+        19,
+        16,
+        -1,
+        3,
+        18,
+        -1,
+        -1,
+        10,
+        -1,
+        13,
+        9
+      ],
+      "canonical": "1,14",
+      "probeTrace": [
+        {
+          "port": 2,
+          "result": -2,
+          "candidates": 49,
+          "worst": 98,
+          "partitions": 15
+        },
+        {
+          "port": 12,
+          "result": 3,
+          "candidates": 1,
+          "worst": 10,
+          "partitions": 14
+        }
+      ],
+      "metrics": {
+        "greedyProbes": 2,
+        "edge": 2,
+        "adjacent": 0,
+        "hits": 8,
+        "returns": 4,
+        "through": 8
+      }
+    },
+    {
+      "id": "blackbox-026",
+      "title": "把视野放宽 · 2",
+      "chapter": 3,
+      "size": 5,
+      "atoms": [
+        6,
+        12
+      ],
+      "signature": [
+        15,
+        -1,
+        5,
+        6,
+        14,
+        2,
+        3,
+        -1,
+        13,
+        19,
+        17,
+        18,
+        -1,
+        8,
+        4,
+        0,
+        -1,
+        10,
+        11,
+        9
+      ],
+      "canonical": "12,16",
+      "probeTrace": [
+        {
+          "port": 2,
+          "result": 5,
+          "candidates": 17,
+          "worst": 98,
+          "partitions": 15
+        },
+        {
+          "port": 8,
+          "result": 13,
+          "candidates": 1,
+          "worst": 6,
+          "partitions": 10
+        }
+      ],
+      "metrics": {
+        "greedyProbes": 2,
+        "edge": 0,
+        "adjacent": 0,
+        "hits": 4,
+        "returns": 0,
+        "through": 16
+      }
+    },
+    {
+      "id": "blackbox-027",
+      "title": "把视野放宽 · 3",
+      "chapter": 3,
+      "size": 5,
+      "atoms": [
+        2,
+        17
+      ],
+      "signature": [
+        10,
+        -2,
+        -1,
+        -2,
+        14,
+        -1,
+        7,
+        6,
+        -1,
+        13,
+        0,
+        19,
+        -1,
+        9,
+        4,
+        -1,
+        17,
+        16,
+        -1,
+        11
+      ],
+      "canonical": "10,13",
+      "probeTrace": [
+        {
+          "port": 2,
+          "result": -1,
+          "candidates": 98,
+          "worst": 98,
+          "partitions": 15
+        },
+        {
+          "port": 7,
+          "result": 6,
+          "candidates": 1,
+          "worst": 30,
+          "partitions": 14
+        }
+      ],
+      "metrics": {
+        "greedyProbes": 2,
+        "edge": 1,
+        "adjacent": 0,
+        "hits": 6,
+        "returns": 2,
+        "through": 12
+      }
+    },
+    {
+      "id": "blackbox-028",
+      "title": "把视野放宽 · 4",
+      "chapter": 3,
+      "size": 5,
+      "atoms": [
+        0,
+        8
+      ],
+      "signature": [
+        -1,
+        -2,
+        -1,
+        -1,
+        5,
+        4,
+        -1,
+        14,
+        18,
+        19,
+        -1,
+        -1,
+        17,
+        -1,
+        7,
+        -1,
+        -2,
+        12,
+        8,
+        9
+      ],
+      "canonical": "0,16",
+      "probeTrace": [
+        {
+          "port": 2,
+          "result": -1,
+          "candidates": 98,
+          "worst": 98,
+          "partitions": 15
+        },
+        {
+          "port": 7,
+          "result": 14,
+          "candidates": 3,
+          "worst": 30,
+          "partitions": 14
+        },
+        {
+          "port": 11,
+          "result": -1,
+          "candidates": 1,
+          "worst": 1,
+          "partitions": 3
+        }
+      ],
+      "metrics": {
+        "greedyProbes": 3,
+        "edge": 1,
+        "adjacent": 0,
+        "hits": 8,
+        "returns": 2,
+        "through": 10
+      }
+    },
+    {
+      "id": "blackbox-029",
+      "title": "把视野放宽 · 5",
+      "chapter": 3,
+      "size": 5,
+      "atoms": [
+        1,
+        11
+      ],
+      "signature": [
+        -2,
+        -1,
+        -2,
+        13,
+        14,
+        -1,
+        -2,
+        -1,
+        12,
+        19,
+        18,
+        -1,
+        8,
+        3,
+        4,
+        -1,
+        -2,
+        -1,
+        10,
+        9
+      ],
+      "canonical": "1,11",
+      "probeTrace": [
+        {
+          "port": 2,
+          "result": -2,
+          "candidates": 49,
+          "worst": 98,
+          "partitions": 15
+        },
+        {
+          "port": 12,
+          "result": 8,
+          "candidates": 2,
+          "worst": 10,
+          "partitions": 14
+        },
+        {
+          "port": 0,
+          "result": -2,
+          "candidates": 1,
+          "worst": 1,
+          "partitions": 2
+        }
+      ],
+      "metrics": {
+        "greedyProbes": 3,
+        "edge": 1,
+        "adjacent": 0,
+        "hits": 6,
+        "returns": 4,
+        "through": 10
+      }
+    },
+    {
+      "id": "blackbox-030",
+      "title": "把视野放宽 · 6",
+      "chapter": 3,
+      "size": 5,
+      "atoms": [
+        0,
+        14
+      ],
+      "signature": [
+        -1,
+        -2,
+        12,
+        11,
+        -1,
+        -1,
+        -2,
+        -1,
+        -2,
+        19,
+        -1,
+        3,
+        2,
+        18,
+        -1,
+        -1,
+        -2,
+        -1,
+        13,
+        9
+      ],
+      "canonical": "0,14",
+      "probeTrace": [
+        {
+          "port": 2,
+          "result": 12,
+          "candidates": 45,
+          "worst": 98,
+          "partitions": 15
+        },
+        {
+          "port": 1,
+          "result": -2,
+          "candidates": 9,
+          "worst": 10,
+          "partitions": 9
+        },
+        {
+          "port": 11,
+          "result": 3,
+          "candidates": 1,
+          "worst": 2,
+          "partitions": 8
+        }
+      ],
+      "metrics": {
+        "greedyProbes": 3,
+        "edge": 2,
+        "adjacent": 0,
+        "hits": 8,
+        "returns": 4,
+        "through": 8
+      }
+    },
+    {
+      "id": "blackbox-031",
+      "title": "把视野放宽 · 7",
+      "chapter": 3,
+      "size": 5,
+      "atoms": [
+        6,
+        8
+      ],
+      "signature": [
+        15,
+        -1,
+        -2,
+        -1,
+        5,
+        4,
+        -1,
+        14,
+        18,
+        19,
+        17,
+        -1,
+        -2,
+        -1,
+        7,
+        0,
+        -1,
+        10,
+        8,
+        9
+      ],
+      "canonical": "16,18",
+      "probeTrace": [
+        {
+          "port": 2,
+          "result": -2,
+          "candidates": 49,
+          "worst": 98,
+          "partitions": 15
+        },
+        {
+          "port": 12,
+          "result": -2,
+          "candidates": 9,
+          "worst": 10,
+          "partitions": 14
+        },
+        {
+          "port": 6,
+          "result": -1,
+          "candidates": 1,
+          "worst": 2,
+          "partitions": 6
+        }
+      ],
+      "metrics": {
+        "greedyProbes": 3,
+        "edge": 0,
+        "adjacent": 0,
+        "hits": 6,
+        "returns": 2,
+        "through": 12
+      }
+    },
+    {
+      "id": "blackbox-032",
+      "title": "把视野放宽 · 8",
+      "chapter": 3,
+      "size": 5,
+      "atoms": [
+        1,
+        6
+      ],
+      "signature": [
+        -2,
+        -1,
+        -2,
+        13,
+        14,
+        -1,
+        -1,
+        12,
+        18,
+        19,
+        17,
+        -1,
+        7,
+        3,
+        4,
+        -1,
+        -1,
+        10,
+        8,
+        9
+      ],
+      "canonical": "1,6",
+      "probeTrace": [
+        {
+          "port": 2,
+          "result": -2,
+          "candidates": 49,
+          "worst": 98,
+          "partitions": 15
+        },
+        {
+          "port": 12,
+          "result": 7,
+          "candidates": 2,
+          "worst": 10,
+          "partitions": 14
+        },
+        {
+          "port": 0,
+          "result": -2,
+          "candidates": 1,
+          "worst": 1,
+          "partitions": 2
+        }
+      ],
+      "metrics": {
+        "greedyProbes": 3,
+        "edge": 1,
+        "adjacent": 1,
+        "hits": 6,
+        "returns": 2,
+        "through": 12
+      }
+    },
+    {
+      "id": "blackbox-033",
+      "title": "把视野放宽 · 9",
+      "chapter": 3,
+      "size": 5,
+      "atoms": [
+        6,
+        7
+      ],
+      "signature": [
+        15,
+        -1,
+        -1,
+        5,
+        14,
+        3,
+        -1,
+        13,
+        18,
+        19,
+        17,
+        -1,
+        -1,
+        7,
+        4,
+        0,
+        -1,
+        10,
+        8,
+        9
+      ],
+      "canonical": "11,16",
+      "probeTrace": [
+        {
+          "port": 2,
+          "result": -1,
+          "candidates": 98,
+          "worst": 98,
+          "partitions": 15
+        },
+        {
+          "port": 7,
+          "result": 13,
+          "candidates": 11,
+          "worst": 30,
+          "partitions": 14
+        },
+        {
+          "port": 17,
+          "result": 10,
+          "candidates": 1,
+          "worst": 3,
+          "partitions": 6
+        }
+      ],
+      "metrics": {
+        "greedyProbes": 3,
+        "edge": 0,
+        "adjacent": 1,
+        "hits": 6,
+        "returns": 0,
+        "through": 14
+      }
+    },
+    {
+      "id": "blackbox-034",
+      "title": "把视野放宽 · 10",
+      "chapter": 3,
+      "size": 5,
+      "atoms": [
+        0,
+        24
+      ],
+      "signature": [
+        -1,
+        -2,
+        12,
+        18,
+        -1,
+        -1,
+        11,
+        17,
+        -2,
+        -1,
+        -1,
+        6,
+        2,
+        -2,
+        -1,
+        -1,
+        -2,
+        7,
+        3,
+        -1
+      ],
+      "canonical": "0,24",
+      "probeTrace": [
+        {
+          "port": 2,
+          "result": 12,
+          "candidates": 45,
+          "worst": 98,
+          "partitions": 15
+        },
+        {
+          "port": 1,
+          "result": -2,
+          "candidates": 9,
+          "worst": 10,
+          "partitions": 9
+        },
+        {
+          "port": 11,
+          "result": 6,
+          "candidates": 2,
+          "worst": 2,
+          "partitions": 8
+        },
+        {
+          "port": 3,
+          "result": 18,
+          "candidates": 1,
+          "worst": 1,
+          "partitions": 2
+        }
+      ],
+      "metrics": {
+        "greedyProbes": 4,
+        "edge": 2,
+        "adjacent": 0,
+        "hits": 8,
+        "returns": 4,
+        "through": 8
+      }
+    },
+    {
+      "id": "blackbox-035",
+      "title": "把视野放宽 · 11",
+      "chapter": 3,
+      "size": 5,
+      "atoms": [
+        1,
+        12
+      ],
+      "signature": [
+        -2,
+        -1,
+        -2,
+        6,
+        14,
+        -1,
+        3,
+        -1,
+        13,
+        19,
+        16,
+        18,
+        -1,
+        8,
+        4,
+        -1,
+        10,
+        -1,
+        11,
+        9
+      ],
+      "canonical": "1,12",
+      "probeTrace": [
+        {
+          "port": 2,
+          "result": -2,
+          "candidates": 49,
+          "worst": 98,
+          "partitions": 15
+        },
+        {
+          "port": 12,
+          "result": -1,
+          "candidates": 10,
+          "worst": 10,
+          "partitions": 14
+        },
+        {
+          "port": 11,
+          "result": 18,
+          "candidates": 2,
+          "worst": 2,
+          "partitions": 6
+        },
+        {
+          "port": 0,
+          "result": -2,
+          "candidates": 1,
+          "worst": 1,
+          "partitions": 2
+        }
+      ],
+      "metrics": {
+        "greedyProbes": 4,
+        "edge": 1,
+        "adjacent": 0,
+        "hits": 6,
+        "returns": 2,
+        "through": 12
+      }
+    },
+    {
+      "id": "blackbox-036",
+      "title": "把视野放宽 · 12",
+      "chapter": 3,
+      "size": 5,
+      "atoms": [
+        7,
+        11
+      ],
+      "signature": [
+        16,
+        15,
+        -1,
+        5,
+        14,
+        3,
+        -1,
+        13,
+        12,
+        19,
+        18,
+        -1,
+        8,
+        7,
+        4,
+        1,
+        0,
+        -1,
+        10,
+        9
+      ],
+      "canonical": "11,17",
+      "probeTrace": [
+        {
+          "port": 2,
+          "result": -1,
+          "candidates": 98,
+          "worst": 98,
+          "partitions": 15
+        },
+        {
+          "port": 7,
+          "result": 13,
+          "candidates": 11,
+          "worst": 30,
+          "partitions": 14
+        },
+        {
+          "port": 17,
+          "result": -1,
+          "candidates": 3,
+          "worst": 3,
+          "partitions": 6
+        },
+        {
+          "port": 0,
+          "result": 16,
+          "candidates": 1,
+          "worst": 1,
+          "partitions": 3
+        }
+      ],
+      "metrics": {
+        "greedyProbes": 4,
+        "edge": 0,
+        "adjacent": 0,
+        "hits": 4,
+        "returns": 0,
+        "through": 16
+      }
+    },
+    {
+      "id": "blackbox-037",
+      "title": "把视野放宽 · 13",
+      "chapter": 3,
+      "size": 5,
+      "atoms": [
+        0,
+        1
+      ],
+      "signature": [
+        -1,
+        -1,
+        -2,
+        13,
+        14,
+        -1,
+        12,
+        17,
+        18,
+        19,
+        -1,
+        -1,
+        6,
+        3,
+        4,
+        -1,
+        -2,
+        7,
+        8,
+        9
+      ],
+      "canonical": "0,1",
+      "probeTrace": [
+        {
+          "port": 2,
+          "result": -2,
+          "candidates": 49,
+          "worst": 98,
+          "partitions": 15
+        },
+        {
+          "port": 12,
+          "result": 6,
+          "candidates": 7,
+          "worst": 10,
+          "partitions": 14
+        },
+        {
+          "port": 18,
+          "result": 8,
+          "candidates": 2,
+          "worst": 2,
+          "partitions": 4
+        },
+        {
+          "port": 0,
+          "result": -1,
+          "candidates": 1,
+          "worst": 1,
+          "partitions": 2
+        }
+      ],
+      "metrics": {
+        "greedyProbes": 4,
+        "edge": 2,
+        "adjacent": 1,
+        "hits": 6,
+        "returns": 2,
+        "through": 12
+      }
+    },
+    {
+      "id": "blackbox-038",
+      "title": "把视野放宽 · 14",
+      "chapter": 3,
+      "size": 5,
+      "atoms": [
+        7,
+        12
+      ],
+      "signature": [
+        10,
+        15,
+        -1,
+        5,
+        14,
+        3,
+        -1,
+        -1,
+        13,
+        19,
+        0,
+        18,
+        -1,
+        8,
+        4,
+        1,
+        -1,
+        -1,
+        11,
+        9
+      ],
+      "canonical": "11,12",
+      "probeTrace": [
+        {
+          "port": 2,
+          "result": -1,
+          "candidates": 98,
+          "worst": 98,
+          "partitions": 15
+        },
+        {
+          "port": 7,
+          "result": -1,
+          "candidates": 30,
+          "worst": 30,
+          "partitions": 14
+        },
+        {
+          "port": 11,
+          "result": 18,
+          "candidates": 9,
+          "worst": 9,
+          "partitions": 8
+        },
+        {
+          "port": 3,
+          "result": 5,
+          "candidates": 1,
+          "worst": 4,
+          "partitions": 4
+        }
+      ],
+      "metrics": {
+        "greedyProbes": 4,
+        "edge": 0,
+        "adjacent": 1,
+        "hits": 6,
+        "returns": 0,
+        "through": 14
+      }
+    },
+    {
+      "id": "blackbox-039",
+      "title": "把视野放宽 · 15",
+      "chapter": 3,
+      "size": 5,
+      "atoms": [
+        2,
+        11
+      ],
+      "signature": [
+        16,
+        -2,
+        -1,
+        -2,
+        14,
+        -1,
+        13,
+        -1,
+        12,
+        19,
+        18,
+        -1,
+        8,
+        6,
+        4,
+        -1,
+        0,
+        -1,
+        10,
+        9
+      ],
+      "canonical": "10,17",
+      "probeTrace": [
+        {
+          "port": 2,
+          "result": -1,
+          "candidates": 98,
+          "worst": 98,
+          "partitions": 15
+        },
+        {
+          "port": 7,
+          "result": -1,
+          "candidates": 30,
+          "worst": 30,
+          "partitions": 14
+        },
+        {
+          "port": 11,
+          "result": -1,
+          "candidates": 7,
+          "worst": 9,
+          "partitions": 8
+        },
+        {
+          "port": 1,
+          "result": -2,
+          "candidates": 2,
+          "worst": 2,
+          "partitions": 4
+        },
+        {
+          "port": 0,
+          "result": 16,
+          "candidates": 1,
+          "worst": 1,
+          "partitions": 2
+        }
+      ],
+      "metrics": {
+        "greedyProbes": 5,
+        "edge": 1,
+        "adjacent": 0,
+        "hits": 6,
+        "returns": 2,
+        "through": 12
+      }
+    },
+    {
+      "id": "blackbox-040",
+      "title": "把视野放宽 · 16",
+      "chapter": 3,
+      "size": 5,
+      "atoms": [
+        2,
+        7
+      ],
+      "signature": [
+        10,
+        -2,
+        -1,
+        -2,
+        14,
+        -1,
+        -1,
+        13,
+        18,
+        19,
+        0,
+        17,
+        -1,
+        7,
+        4,
+        -1,
+        -1,
+        11,
+        8,
+        9
+      ],
+      "canonical": "10,11",
+      "probeTrace": [
+        {
+          "port": 2,
+          "result": -1,
+          "candidates": 98,
+          "worst": 98,
+          "partitions": 15
+        },
+        {
+          "port": 7,
+          "result": 13,
+          "candidates": 11,
+          "worst": 30,
+          "partitions": 14
+        },
+        {
+          "port": 17,
+          "result": 11,
+          "candidates": 3,
+          "worst": 3,
+          "partitions": 6
+        },
+        {
+          "port": 0,
+          "result": 10,
+          "candidates": 2,
+          "worst": 2,
+          "partitions": 2
+        },
+        {
+          "port": 1,
+          "result": -2,
+          "candidates": 1,
+          "worst": 1,
+          "partitions": 2
+        }
+      ],
+      "metrics": {
+        "greedyProbes": 5,
+        "edge": 1,
+        "adjacent": 1,
+        "hits": 6,
+        "returns": 2,
+        "through": 12
+      }
+    },
+    {
+      "id": "blackbox-041",
+      "title": "让证据交汇 · 1",
+      "chapter": 4,
+      "size": 5,
+      "atoms": [
+        0,
+        13,
+        19
+      ],
+      "signature": [
+        -1,
+        -2,
+        11,
+        -1,
+        6,
+        -1,
+        4,
+        -2,
+        -1,
+        -2,
+        -1,
+        2,
+        18,
+        19,
+        -1,
+        -1,
+        -2,
+        -1,
+        12,
+        13
+      ],
+      "canonical": "0,13,19",
+      "probeTrace": [
+        {
+          "port": 1,
+          "result": -2,
+          "candidates": 548,
+          "worst": 920,
+          "partitions": 15
+        },
+        {
+          "port": 13,
+          "result": 19,
+          "candidates": 27,
+          "worst": 187,
+          "partitions": 14
+        },
+        {
+          "port": 11,
+          "result": 2,
+          "candidates": 1,
+          "worst": 8,
+          "partitions": 9
+        }
+      ],
+      "metrics": {
+        "greedyProbes": 3,
+        "edge": 2,
+        "adjacent": 0,
+        "hits": 8,
+        "returns": 4,
+        "through": 8
+      }
+    },
+    {
+      "id": "blackbox-042",
+      "title": "让证据交汇 · 2",
+      "chapter": 4,
+      "size": 5,
+      "atoms": [
+        0,
+        13,
+        22
+      ],
+      "signature": [
+        -1,
+        -2,
+        18,
+        -1,
+        6,
+        -1,
+        4,
+        -1,
+        14,
+        -1,
+        -1,
+        -2,
+        -1,
+        -2,
+        8,
+        -1,
+        -2,
+        -1,
+        2,
+        -1
+      ],
+      "canonical": "0,13,22",
+      "probeTrace": [
+        {
+          "port": 1,
+          "result": -2,
+          "candidates": 548,
+          "worst": 920,
+          "partitions": 15
+        },
+        {
+          "port": 13,
+          "result": -2,
+          "candidates": 115,
+          "worst": 187,
+          "partitions": 14
+        },
+        {
+          "port": 6,
+          "result": 4,
+          "candidates": 5,
+          "worst": 34,
+          "partitions": 13
+        },
+        {
+          "port": 2,
+          "result": 18,
+          "candidates": 1,
+          "worst": 2,
+          "partitions": 4
+        }
+      ],
+      "metrics": {
+        "greedyProbes": 4,
+        "edge": 2,
+        "adjacent": 0,
+        "hits": 10,
+        "returns": 4,
+        "through": 6
+      }
+    },
+    {
+      "id": "blackbox-043",
+      "title": "让证据交汇 · 3",
+      "chapter": 4,
+      "size": 5,
+      "atoms": [
+        0,
+        1,
+        7
+      ],
+      "signature": [
+        -1,
+        -1,
+        -2,
+        5,
+        14,
+        3,
+        -1,
+        13,
+        18,
+        19,
+        -1,
+        17,
+        -1,
+        7,
+        4,
+        -1,
+        -2,
+        11,
+        8,
+        9
+      ],
+      "canonical": "0,1,7",
+      "probeTrace": [
+        {
+          "port": 1,
+          "result": -1,
+          "candidates": 920,
+          "worst": 920,
+          "partitions": 15
+        },
+        {
+          "port": 0,
+          "result": -1,
+          "candidates": 195,
+          "worst": 253,
+          "partitions": 6
+        },
+        {
+          "port": 2,
+          "result": -2,
+          "candidates": 58,
+          "worst": 58,
+          "partitions": 14
+        },
+        {
+          "port": 7,
+          "result": 13,
+          "candidates": 1,
+          "worst": 20,
+          "partitions": 13
+        }
+      ],
+      "metrics": {
+        "greedyProbes": 4,
+        "edge": 2,
+        "adjacent": 1,
+        "hits": 6,
+        "returns": 2,
+        "through": 12
+      }
+    },
+    {
+      "id": "blackbox-044",
+      "title": "让证据交汇 · 4",
+      "chapter": 4,
+      "size": 5,
+      "atoms": [
+        1,
+        6,
+        12
+      ],
+      "signature": [
+        -2,
+        -1,
+        -2,
+        6,
+        14,
+        -1,
+        3,
+        -1,
+        13,
+        19,
+        17,
+        18,
+        -1,
+        8,
+        4,
+        -1,
+        -1,
+        10,
+        11,
+        9
+      ],
+      "canonical": "1,6,12",
+      "probeTrace": [
+        {
+          "port": 1,
+          "result": -1,
+          "candidates": 920,
+          "worst": 920,
+          "partitions": 15
+        },
+        {
+          "port": 0,
+          "result": -2,
+          "candidates": 253,
+          "worst": 253,
+          "partitions": 6
+        },
+        {
+          "port": 13,
+          "result": 8,
+          "candidates": 15,
+          "worst": 90,
+          "partitions": 12
+        },
+        {
+          "port": 10,
+          "result": 17,
+          "candidates": 1,
+          "worst": 6,
+          "partitions": 6
+        }
+      ],
+      "metrics": {
+        "greedyProbes": 4,
+        "edge": 1,
+        "adjacent": 1,
+        "hits": 6,
+        "returns": 2,
+        "through": 12
+      }
+    },
+    {
+      "id": "blackbox-045",
+      "title": "让证据交汇 · 5",
+      "chapter": 4,
+      "size": 5,
+      "atoms": [
+        0,
+        9,
+        14
+      ],
+      "signature": [
+        -1,
+        -2,
+        12,
+        -1,
+        -1,
+        -2,
+        -1,
+        -1,
+        -2,
+        19,
+        -1,
+        -1,
+        2,
+        18,
+        -1,
+        -1,
+        -2,
+        -1,
+        13,
+        9
+      ],
+      "canonical": "0,21,22",
+      "probeTrace": [
+        {
+          "port": 1,
+          "result": -2,
+          "candidates": 548,
+          "worst": 920,
+          "partitions": 15
+        },
+        {
+          "port": 13,
+          "result": 18,
+          "candidates": 16,
+          "worst": 187,
+          "partitions": 14
+        },
+        {
+          "port": 11,
+          "result": -1,
+          "candidates": 6,
+          "worst": 6,
+          "partitions": 5
+        },
+        {
+          "port": 17,
+          "result": -1,
+          "candidates": 1,
+          "worst": 2,
+          "partitions": 4
+        }
+      ],
+      "metrics": {
+        "greedyProbes": 4,
+        "edge": 3,
+        "adjacent": 1,
+        "hits": 10,
+        "returns": 4,
+        "through": 6
+      }
+    },
+    {
+      "id": "blackbox-046",
+      "title": "让证据交汇 · 6",
+      "chapter": 4,
+      "size": 5,
+      "atoms": [
+        1,
+        6,
+        7
+      ],
+      "signature": [
+        -2,
+        -1,
+        -2,
+        5,
+        14,
+        3,
+        -1,
+        13,
+        18,
+        19,
+        17,
+        -1,
+        -1,
+        7,
+        4,
+        -1,
+        -1,
+        10,
+        8,
+        9
+      ],
+      "canonical": "1,6,7",
+      "probeTrace": [
+        {
+          "port": 1,
+          "result": -1,
+          "candidates": 920,
+          "worst": 920,
+          "partitions": 15
+        },
+        {
+          "port": 0,
+          "result": -2,
+          "candidates": 253,
+          "worst": 253,
+          "partitions": 6
+        },
+        {
+          "port": 13,
+          "result": 7,
+          "candidates": 12,
+          "worst": 90,
+          "partitions": 12
+        },
+        {
+          "port": 17,
+          "result": 10,
+          "candidates": 1,
+          "worst": 3,
+          "partitions": 6
+        }
+      ],
+      "metrics": {
+        "greedyProbes": 4,
+        "edge": 1,
+        "adjacent": 2,
+        "hits": 6,
+        "returns": 2,
+        "through": 12
+      }
+    },
+    {
+      "id": "blackbox-047",
+      "title": "让证据交汇 · 7",
+      "chapter": 4,
+      "size": 5,
+      "atoms": [
+        1,
+        13,
+        16
+      ],
+      "signature": [
+        -2,
+        -1,
+        -2,
+        -1,
+        6,
+        -1,
+        4,
+        -1,
+        14,
+        12,
+        19,
+        -1,
+        9,
+        -1,
+        8,
+        -1,
+        17,
+        16,
+        -1,
+        10
+      ],
+      "canonical": "1,13,16",
+      "probeTrace": [
+        {
+          "port": 1,
+          "result": -1,
+          "candidates": 920,
+          "worst": 920,
+          "partitions": 15
+        },
+        {
+          "port": 0,
+          "result": -2,
+          "candidates": 253,
+          "worst": 253,
+          "partitions": 6
+        },
+        {
+          "port": 13,
+          "result": -1,
+          "candidates": 90,
+          "worst": 90,
+          "partitions": 12
+        },
+        {
+          "port": 14,
+          "result": 8,
+          "candidates": 15,
+          "worst": 21,
+          "partitions": 6
+        },
+        {
+          "port": 10,
+          "result": 19,
+          "candidates": 1,
+          "worst": 7,
+          "partitions": 6
+        }
+      ],
+      "metrics": {
+        "greedyProbes": 5,
+        "edge": 1,
+        "adjacent": 0,
+        "hits": 8,
+        "returns": 2,
+        "through": 10
+      }
+    },
+    {
+      "id": "blackbox-048",
+      "title": "让证据交汇 · 8",
+      "chapter": 4,
+      "size": 5,
+      "atoms": [
+        0,
+        4,
+        16
+      ],
+      "signature": [
+        -1,
+        -2,
+        7,
+        -2,
+        -1,
+        -1,
+        -2,
+        2,
+        -1,
+        12,
+        19,
+        -1,
+        9,
+        -1,
+        -1,
+        -1,
+        -2,
+        -1,
+        -1,
+        10
+      ],
+      "canonical": "0,18,20",
+      "probeTrace": [
+        {
+          "port": 1,
+          "result": -2,
+          "candidates": 548,
+          "worst": 920,
+          "partitions": 15
+        },
+        {
+          "port": 13,
+          "result": -1,
+          "candidates": 187,
+          "worst": 187,
+          "partitions": 14
+        },
+        {
+          "port": 4,
+          "result": -1,
+          "candidates": 49,
+          "worst": 49,
+          "partitions": 6
+        },
+        {
+          "port": 12,
+          "result": 9,
+          "candidates": 4,
+          "worst": 14,
+          "partitions": 10
+        },
+        {
+          "port": 7,
+          "result": 2,
+          "candidates": 1,
+          "worst": 2,
+          "partitions": 3
+        }
+      ],
+      "metrics": {
+        "greedyProbes": 5,
+        "edge": 2,
+        "adjacent": 0,
+        "hits": 10,
+        "returns": 4,
+        "through": 6
+      }
+    },
+    {
+      "id": "blackbox-049",
+      "title": "让证据交汇 · 9",
+      "chapter": 4,
+      "size": 5,
+      "atoms": [
+        0,
+        2,
+        21
+      ],
+      "signature": [
+        -1,
+        -2,
+        -1,
+        -2,
+        14,
+        -1,
+        13,
+        17,
+        -1,
+        -1,
+        -2,
+        -1,
+        -2,
+        6,
+        4,
+        -1,
+        -2,
+        7,
+        -1,
+        -1
+      ],
+      "canonical": "0,2,21",
+      "probeTrace": [
+        {
+          "port": 1,
+          "result": -2,
+          "candidates": 548,
+          "worst": 920,
+          "partitions": 15
+        },
+        {
+          "port": 13,
+          "result": 6,
+          "candidates": 36,
+          "worst": 187,
+          "partitions": 14
+        },
+        {
+          "port": 12,
+          "result": -2,
+          "candidates": 8,
+          "worst": 10,
+          "partitions": 5
+        },
+        {
+          "port": 17,
+          "result": 7,
+          "candidates": 2,
+          "worst": 2,
+          "partitions": 5
+        },
+        {
+          "port": 10,
+          "result": -2,
+          "candidates": 1,
+          "worst": 1,
+          "partitions": 2
+        }
+      ],
+      "metrics": {
+        "greedyProbes": 5,
+        "edge": 3,
+        "adjacent": 0,
+        "hits": 9,
+        "returns": 5,
+        "through": 6
+      }
+    },
+    {
+      "id": "blackbox-050",
+      "title": "让证据交汇 · 10",
+      "chapter": 4,
+      "size": 5,
+      "atoms": [
+        2,
+        7,
+        11
+      ],
+      "signature": [
+        16,
+        -2,
+        -1,
+        -2,
+        14,
+        -1,
+        -1,
+        13,
+        12,
+        19,
+        18,
+        -1,
+        8,
+        7,
+        4,
+        -1,
+        0,
+        -1,
+        10,
+        9
+      ],
+      "canonical": "10,11,17",
+      "probeTrace": [
+        {
+          "port": 1,
+          "result": -2,
+          "candidates": 548,
+          "worst": 920,
+          "partitions": 15
+        },
+        {
+          "port": 13,
+          "result": 7,
+          "candidates": 30,
+          "worst": 187,
+          "partitions": 14
+        },
+        {
+          "port": 11,
+          "result": -1,
+          "candidates": 11,
+          "worst": 11,
+          "partitions": 5
+        },
+        {
+          "port": 10,
+          "result": 18,
+          "candidates": 3,
+          "worst": 3,
+          "partitions": 4
+        },
+        {
+          "port": 16,
+          "result": 0,
+          "candidates": 1,
+          "worst": 1,
+          "partitions": 3
+        }
+      ],
+      "metrics": {
+        "greedyProbes": 5,
+        "edge": 1,
+        "adjacent": 1,
+        "hits": 6,
+        "returns": 2,
+        "through": 12
+      }
+    },
+    {
+      "id": "blackbox-051",
+      "title": "让证据交汇 · 11",
+      "chapter": 4,
+      "size": 5,
+      "atoms": [
+        6,
+        7,
+        12
+      ],
+      "signature": [
+        15,
+        -1,
+        -1,
+        5,
+        14,
+        3,
+        -1,
+        -1,
+        13,
+        19,
+        17,
+        18,
+        -1,
+        8,
+        4,
+        0,
+        -1,
+        10,
+        11,
+        9
+      ],
+      "canonical": "11,12,16",
+      "probeTrace": [
+        {
+          "port": 1,
+          "result": -1,
+          "candidates": 920,
+          "worst": 920,
+          "partitions": 15
+        },
+        {
+          "port": 0,
+          "result": 15,
+          "candidates": 190,
+          "worst": 253,
+          "partitions": 6
+        },
+        {
+          "port": 8,
+          "result": 13,
+          "candidates": 12,
+          "worst": 77,
+          "partitions": 11
+        },
+        {
+          "port": 18,
+          "result": 11,
+          "candidates": 5,
+          "worst": 5,
+          "partitions": 5
+        },
+        {
+          "port": 3,
+          "result": 5,
+          "candidates": 1,
+          "worst": 2,
+          "partitions": 4
+        }
+      ],
+      "metrics": {
+        "greedyProbes": 5,
+        "edge": 0,
+        "adjacent": 2,
+        "hits": 6,
+        "returns": 0,
+        "through": 14
+      }
+    },
+    {
+      "id": "blackbox-052",
+      "title": "让证据交汇 · 12",
+      "chapter": 4,
+      "size": 5,
+      "atoms": [
+        0,
+        6,
+        18
+      ],
+      "signature": [
+        -1,
+        -2,
+        5,
+        -1,
+        7,
+        2,
+        -1,
+        4,
+        -1,
+        14,
+        17,
+        -1,
+        19,
+        -1,
+        9,
+        -1,
+        -2,
+        10,
+        -1,
+        12
+      ],
+      "canonical": "0,6,18",
+      "probeTrace": [
+        {
+          "port": 1,
+          "result": -2,
+          "candidates": 548,
+          "worst": 920,
+          "partitions": 15
+        },
+        {
+          "port": 13,
+          "result": -1,
+          "candidates": 187,
+          "worst": 187,
+          "partitions": 14
+        },
+        {
+          "port": 4,
+          "result": 7,
+          "candidates": 28,
+          "worst": 49,
+          "partitions": 6
+        },
+        {
+          "port": 11,
+          "result": -1,
+          "candidates": 11,
+          "worst": 11,
+          "partitions": 9
+        },
+        {
+          "port": 10,
+          "result": 17,
+          "candidates": 2,
+          "worst": 3,
+          "partitions": 5
+        },
+        {
+          "port": 0,
+          "result": -1,
+          "candidates": 1,
+          "worst": 1,
+          "partitions": 2
+        }
+      ],
+      "metrics": {
+        "greedyProbes": 6,
+        "edge": 1,
+        "adjacent": 0,
+        "hits": 8,
+        "returns": 2,
+        "through": 10
+      }
+    },
+    {
+      "id": "blackbox-053",
+      "title": "让证据交汇 · 13",
+      "chapter": 4,
+      "size": 5,
+      "atoms": [
+        1,
+        2,
+        22
+      ],
+      "signature": [
+        -2,
+        -1,
+        -1,
+        -2,
+        14,
+        -1,
+        8,
+        17,
+        6,
+        -1,
+        16,
+        -2,
+        -1,
+        -2,
+        4,
+        -1,
+        10,
+        7,
+        -1,
+        -1
+      ],
+      "canonical": "1,2,22",
+      "probeTrace": [
+        {
+          "port": 1,
+          "result": -1,
+          "candidates": 920,
+          "worst": 920,
+          "partitions": 15
+        },
+        {
+          "port": 0,
+          "result": -2,
+          "candidates": 253,
+          "worst": 253,
+          "partitions": 6
+        },
+        {
+          "port": 13,
+          "result": -2,
+          "candidates": 46,
+          "worst": 90,
+          "partitions": 12
+        },
+        {
+          "port": 3,
+          "result": -2,
+          "candidates": 10,
+          "worst": 14,
+          "partitions": 10
+        },
+        {
+          "port": 18,
+          "result": -1,
+          "candidates": 4,
+          "worst": 4,
+          "partitions": 6
+        },
+        {
+          "port": 6,
+          "result": 8,
+          "candidates": 1,
+          "worst": 2,
+          "partitions": 3
+        }
+      ],
+      "metrics": {
+        "greedyProbes": 6,
+        "edge": 3,
+        "adjacent": 1,
+        "hits": 8,
+        "returns": 4,
+        "through": 8
+      }
+    },
+    {
+      "id": "blackbox-054",
+      "title": "让证据交汇 · 14",
+      "chapter": 4,
+      "size": 5,
+      "atoms": [
+        1,
+        6,
+        18
+      ],
+      "signature": [
+        -2,
+        -1,
+        -2,
+        -1,
+        7,
+        -1,
+        -1,
+        4,
+        -1,
+        14,
+        17,
+        -1,
+        19,
+        -1,
+        9,
+        -1,
+        -1,
+        10,
+        -1,
+        12
+      ],
+      "canonical": "1,6,18",
+      "probeTrace": [
+        {
+          "port": 1,
+          "result": -1,
+          "candidates": 920,
+          "worst": 920,
+          "partitions": 15
+        },
+        {
+          "port": 0,
+          "result": -2,
+          "candidates": 253,
+          "worst": 253,
+          "partitions": 6
+        },
+        {
+          "port": 13,
+          "result": -1,
+          "candidates": 90,
+          "worst": 90,
+          "partitions": 12
+        },
+        {
+          "port": 14,
+          "result": 9,
+          "candidates": 18,
+          "worst": 21,
+          "partitions": 6
+        },
+        {
+          "port": 6,
+          "result": -1,
+          "candidates": 8,
+          "worst": 8,
+          "partitions": 7
+        },
+        {
+          "port": 17,
+          "result": 10,
+          "candidates": 1,
+          "worst": 4,
+          "partitions": 4
+        }
+      ],
+      "metrics": {
+        "greedyProbes": 6,
+        "edge": 1,
+        "adjacent": 1,
+        "hits": 10,
+        "returns": 2,
+        "through": 8
+      }
+    },
+    {
+      "id": "blackbox-055",
+      "title": "让证据交汇 · 15",
+      "chapter": 4,
+      "size": 5,
+      "atoms": [
+        0,
+        1,
+        12
+      ],
+      "signature": [
+        -1,
+        -1,
+        -2,
+        6,
+        14,
+        -1,
+        3,
+        -1,
+        13,
+        19,
+        -1,
+        18,
+        -1,
+        8,
+        4,
+        -1,
+        -2,
+        -1,
+        11,
+        9
+      ],
+      "canonical": "0,1,12",
+      "probeTrace": [
+        {
+          "port": 1,
+          "result": -1,
+          "candidates": 920,
+          "worst": 920,
+          "partitions": 15
+        },
+        {
+          "port": 0,
+          "result": -1,
+          "candidates": 195,
+          "worst": 253,
+          "partitions": 6
+        },
+        {
+          "port": 2,
+          "result": -2,
+          "candidates": 58,
+          "worst": 58,
+          "partitions": 14
+        },
+        {
+          "port": 7,
+          "result": -1,
+          "candidates": 20,
+          "worst": 20,
+          "partitions": 13
+        },
+        {
+          "port": 8,
+          "result": 13,
+          "candidates": 2,
+          "worst": 6,
+          "partitions": 6
+        },
+        {
+          "port": 3,
+          "result": 6,
+          "candidates": 1,
+          "worst": 1,
+          "partitions": 2
+        }
+      ],
+      "metrics": {
+        "greedyProbes": 6,
+        "edge": 2,
+        "adjacent": 1,
+        "hits": 8,
+        "returns": 2,
+        "through": 10
+      }
+    },
+    {
+      "id": "blackbox-056",
+      "title": "让证据交汇 · 16",
+      "chapter": 4,
+      "size": 5,
+      "atoms": [
+        0,
+        7,
+        9
+      ],
+      "signature": [
+        -1,
+        -2,
+        -1,
+        -2,
+        -1,
+        -2,
+        -1,
+        -2,
+        18,
+        19,
+        -1,
+        17,
+        -1,
+        -2,
+        -1,
+        -1,
+        -2,
+        11,
+        8,
+        9
+      ],
+      "canonical": "0,11,21",
+      "probeTrace": [
+        {
+          "port": 1,
+          "result": -2,
+          "candidates": 548,
+          "worst": 920,
+          "partitions": 15
+        },
+        {
+          "port": 13,
+          "result": -2,
+          "candidates": 115,
+          "worst": 187,
+          "partitions": 14
+        },
+        {
+          "port": 6,
+          "result": -1,
+          "candidates": 34,
+          "worst": 34,
+          "partitions": 13
+        },
+        {
+          "port": 7,
+          "result": -2,
+          "candidates": 8,
+          "worst": 8,
+          "partitions": 11
+        },
+        {
+          "port": 18,
+          "result": 8,
+          "candidates": 3,
+          "worst": 3,
+          "partitions": 5
+        },
+        {
+          "port": 0,
+          "result": -1,
+          "candidates": 2,
+          "worst": 2,
+          "partitions": 2
+        },
+        {
+          "port": 11,
+          "result": 17,
+          "candidates": 1,
+          "worst": 1,
+          "partitions": 2
+        }
+      ],
+      "metrics": {
+        "greedyProbes": 7,
+        "edge": 2,
+        "adjacent": 0,
+        "hits": 8,
+        "returns": 6,
+        "through": 6
+      }
+    },
+    {
+      "id": "blackbox-057",
+      "title": "让证据交汇 · 17",
+      "chapter": 4,
+      "size": 5,
+      "atoms": [
+        6,
+        12,
+        18
+      ],
+      "signature": [
+        15,
+        -1,
+        5,
+        6,
+        7,
+        2,
+        3,
+        4,
+        -1,
+        14,
+        17,
+        18,
+        19,
+        -1,
+        9,
+        0,
+        -1,
+        10,
+        11,
+        12
+      ],
+      "canonical": "6,12,18",
+      "probeTrace": [
+        {
+          "port": 1,
+          "result": -1,
+          "candidates": 920,
+          "worst": 920,
+          "partitions": 15
+        },
+        {
+          "port": 0,
+          "result": 15,
+          "candidates": 190,
+          "worst": 253,
+          "partitions": 6
+        },
+        {
+          "port": 8,
+          "result": -1,
+          "candidates": 77,
+          "worst": 77,
+          "partitions": 11
+        },
+        {
+          "port": 9,
+          "result": 14,
+          "candidates": 15,
+          "worst": 18,
+          "partitions": 6
+        },
+        {
+          "port": 10,
+          "result": 17,
+          "candidates": 9,
+          "worst": 9,
+          "partitions": 5
+        },
+        {
+          "port": 4,
+          "result": 7,
+          "candidates": 4,
+          "worst": 4,
+          "partitions": 5
+        },
+        {
+          "port": 11,
+          "result": 18,
+          "candidates": 1,
+          "worst": 1,
+          "partitions": 4
+        }
+      ],
+      "metrics": {
+        "greedyProbes": 7,
+        "edge": 0,
+        "adjacent": 0,
+        "hits": 4,
+        "returns": 0,
+        "through": 16
+      }
+    },
+    {
+      "id": "blackbox-058",
+      "title": "让证据交汇 · 18",
+      "chapter": 4,
+      "size": 5,
+      "atoms": [
+        1,
+        16,
+        18
+      ],
+      "signature": [
+        -2,
+        -1,
+        -2,
+        -1,
+        7,
+        -1,
+        -2,
+        4,
+        -1,
+        14,
+        19,
+        -1,
+        -2,
+        -1,
+        9,
+        -1,
+        17,
+        16,
+        -1,
+        10
+      ],
+      "canonical": "1,16,18",
+      "probeTrace": [
+        {
+          "port": 1,
+          "result": -1,
+          "candidates": 920,
+          "worst": 920,
+          "partitions": 15
+        },
+        {
+          "port": 0,
+          "result": -2,
+          "candidates": 253,
+          "worst": 253,
+          "partitions": 6
+        },
+        {
+          "port": 13,
+          "result": -1,
+          "candidates": 90,
+          "worst": 90,
+          "partitions": 12
+        },
+        {
+          "port": 14,
+          "result": 9,
+          "candidates": 18,
+          "worst": 21,
+          "partitions": 6
+        },
+        {
+          "port": 6,
+          "result": -2,
+          "candidates": 4,
+          "worst": 8,
+          "partitions": 7
+        },
+        {
+          "port": 3,
+          "result": -1,
+          "candidates": 2,
+          "worst": 2,
+          "partitions": 3
+        },
+        {
+          "port": 10,
+          "result": 19,
+          "candidates": 1,
+          "worst": 1,
+          "partitions": 2
+        }
+      ],
+      "metrics": {
+        "greedyProbes": 7,
+        "edge": 1,
+        "adjacent": 0,
+        "hits": 8,
+        "returns": 4,
+        "through": 8
+      }
+    },
+    {
+      "id": "blackbox-059",
+      "title": "让证据交汇 · 19",
+      "chapter": 4,
+      "size": 5,
+      "atoms": [
+        1,
+        2,
+        23
+      ],
+      "signature": [
+        -2,
+        -1,
+        -1,
+        -2,
+        8,
+        -1,
+        -1,
+        17,
+        4,
+        -1,
+        16,
+        -1,
+        -2,
+        -1,
+        -2,
+        -1,
+        10,
+        7,
+        -1,
+        -1
+      ],
+      "canonical": "1,2,23",
+      "probeTrace": [
+        {
+          "port": 1,
+          "result": -1,
+          "candidates": 920,
+          "worst": 920,
+          "partitions": 15
+        },
+        {
+          "port": 0,
+          "result": -2,
+          "candidates": 253,
+          "worst": 253,
+          "partitions": 6
+        },
+        {
+          "port": 13,
+          "result": -1,
+          "candidates": 90,
+          "worst": 90,
+          "partitions": 12
+        },
+        {
+          "port": 14,
+          "result": -2,
+          "candidates": 21,
+          "worst": 21,
+          "partitions": 6
+        },
+        {
+          "port": 7,
+          "result": 17,
+          "candidates": 6,
+          "worst": 7,
+          "partitions": 9
+        },
+        {
+          "port": 6,
+          "result": -1,
+          "candidates": 3,
+          "worst": 3,
+          "partitions": 3
+        },
+        {
+          "port": 2,
+          "result": -1,
+          "candidates": 1,
+          "worst": 2,
+          "partitions": 2
+        }
+      ],
+      "metrics": {
+        "greedyProbes": 7,
+        "edge": 3,
+        "adjacent": 1,
+        "hits": 10,
+        "returns": 4,
+        "through": 6
+      }
+    },
+    {
+      "id": "blackbox-060",
+      "title": "让证据交汇 · 20",
+      "chapter": 4,
+      "size": 5,
+      "atoms": [
+        1,
+        10,
+        18
+      ],
+      "signature": [
+        -2,
+        -1,
+        -2,
+        -1,
+        7,
+        -1,
+        -1,
+        4,
+        -1,
+        14,
+        -1,
+        -1,
+        19,
+        -1,
+        9,
+        -1,
+        -2,
+        -1,
+        -2,
+        12
+      ],
+      "canonical": "1,10,18",
+      "probeTrace": [
+        {
+          "port": 1,
+          "result": -1,
+          "candidates": 920,
+          "worst": 920,
+          "partitions": 15
+        },
+        {
+          "port": 0,
+          "result": -2,
+          "candidates": 253,
+          "worst": 253,
+          "partitions": 6
+        },
+        {
+          "port": 13,
+          "result": -1,
+          "candidates": 90,
+          "worst": 90,
+          "partitions": 12
+        },
+        {
+          "port": 14,
+          "result": 9,
+          "candidates": 18,
+          "worst": 21,
+          "partitions": 6
+        },
+        {
+          "port": 6,
+          "result": -1,
+          "candidates": 8,
+          "worst": 8,
+          "partitions": 7
+        },
+        {
+          "port": 17,
+          "result": -1,
+          "candidates": 4,
+          "worst": 4,
+          "partitions": 4
+        },
+        {
+          "port": 2,
+          "result": -2,
+          "candidates": 3,
+          "worst": 3,
+          "partitions": 2
+        },
+        {
+          "port": 4,
+          "result": 7,
+          "candidates": 2,
+          "worst": 2,
+          "partitions": 2
+        },
+        {
+          "port": 10,
+          "result": -1,
+          "candidates": 1,
+          "worst": 1,
+          "partitions": 2
+        }
+      ],
+      "metrics": {
+        "greedyProbes": 9,
+        "edge": 2,
+        "adjacent": 0,
+        "hits": 10,
+        "returns": 4,
+        "through": 6
+      }
+    },
+    {
+      "id": "blackbox-061",
+      "title": "星雾深处 · 1",
+      "chapter": 5,
+      "size": 5,
+      "atoms": [
+        1,
+        2,
+        8,
+        21
+      ],
+      "signature": [
+        -2,
+        -1,
+        -1,
+        -2,
+        5,
+        4,
+        -1,
+        14,
+        17,
+        -1,
+        -2,
+        -1,
+        -2,
+        -1,
+        7,
+        -1,
+        18,
+        8,
+        16,
+        -1
+      ],
+      "canonical": "1,18,21,22",
+      "probeTrace": [
+        {
+          "port": 0,
+          "result": -2,
+          "candidates": 1771,
+          "worst": 6080,
+          "partitions": 7
+        },
+        {
+          "port": 10,
+          "result": -2,
+          "candidates": 210,
+          "worst": 694,
+          "partitions": 6
+        },
+        {
+          "port": 4,
+          "result": 5,
+          "candidates": 17,
+          "worst": 80,
+          "partitions": 7
+        },
+        {
+          "port": 8,
+          "result": 17,
+          "candidates": 1,
+          "worst": 9,
+          "partitions": 6
+        }
+      ],
+      "metrics": {
+        "greedyProbes": 4,
+        "edge": 3,
+        "adjacent": 1,
+        "hits": 8,
+        "returns": 4,
+        "through": 8
+      }
+    },
+    {
+      "id": "blackbox-062",
+      "title": "星雾深处 · 2",
+      "chapter": 5,
+      "size": 5,
+      "atoms": [
+        0,
+        1,
+        14,
+        21
+      ],
+      "signature": [
+        -1,
+        -1,
+        -2,
+        13,
+        -1,
+        -1,
+        -2,
+        -1,
+        -2,
+        -1,
+        -2,
+        -1,
+        -2,
+        3,
+        -1,
+        -1,
+        -2,
+        -1,
+        -1,
+        -1
+      ],
+      "canonical": "0,1,14,21",
+      "probeTrace": [
+        {
+          "port": 0,
+          "result": -1,
+          "candidates": 6080,
+          "worst": 6080,
+          "partitions": 7
+        },
+        {
+          "port": 5,
+          "result": -1,
+          "candidates": 2816,
+          "worst": 2816,
+          "partitions": 7
+        },
+        {
+          "port": 14,
+          "result": -1,
+          "candidates": 1265,
+          "worst": 1265,
+          "partitions": 7
+        },
+        {
+          "port": 13,
+          "result": 3,
+          "candidates": 1,
+          "worst": 532,
+          "partitions": 14
+        }
+      ],
+      "metrics": {
+        "greedyProbes": 4,
+        "edge": 4,
+        "adjacent": 1,
+        "hits": 12,
+        "returns": 6,
+        "through": 2
+      }
+    },
+    {
+      "id": "blackbox-063",
+      "title": "星雾深处 · 3",
+      "chapter": 5,
+      "size": 5,
+      "atoms": [
+        2,
+        6,
+        7,
+        8
+      ],
+      "signature": [
+        15,
+        -2,
+        -1,
+        -2,
+        5,
+        4,
+        -1,
+        14,
+        18,
+        19,
+        17,
+        -1,
+        -1,
+        -1,
+        7,
+        0,
+        -1,
+        10,
+        8,
+        9
+      ],
+      "canonical": "16,17,18,22",
+      "probeTrace": [
+        {
+          "port": 0,
+          "result": 15,
+          "candidates": 1330,
+          "worst": 6080,
+          "partitions": 7
+        },
+        {
+          "port": 4,
+          "result": 5,
+          "candidates": 136,
+          "worst": 620,
+          "partitions": 7
+        },
+        {
+          "port": 9,
+          "result": 19,
+          "candidates": 21,
+          "worst": 60,
+          "partitions": 7
+        },
+        {
+          "port": 8,
+          "result": 18,
+          "candidates": 1,
+          "worst": 6,
+          "partitions": 6
+        }
+      ],
+      "metrics": {
+        "greedyProbes": 4,
+        "edge": 1,
+        "adjacent": 3,
+        "hits": 6,
+        "returns": 2,
+        "through": 12
+      }
+    },
+    {
+      "id": "blackbox-064",
+      "title": "星雾深处 · 4",
+      "chapter": 5,
+      "size": 5,
+      "atoms": [
+        2,
+        7,
+        11,
+        13
+      ],
+      "signature": [
+        16,
+        -2,
+        -1,
+        -2,
+        6,
+        -1,
+        4,
+        -1,
+        14,
+        19,
+        18,
+        -1,
+        -2,
+        -1,
+        8,
+        -1,
+        0,
+        -1,
+        10,
+        9
+      ],
+      "canonical": "11,13,17,22",
+      "probeTrace": [
+        {
+          "port": 0,
+          "result": 16,
+          "candidates": 969,
+          "worst": 6080,
+          "partitions": 7
+        },
+        {
+          "port": 6,
+          "result": 4,
+          "candidates": 78,
+          "worst": 369,
+          "partitions": 10
+        },
+        {
+          "port": 9,
+          "result": 19,
+          "candidates": 3,
+          "worst": 40,
+          "partitions": 7
+        },
+        {
+          "port": 1,
+          "result": -2,
+          "candidates": 2,
+          "worst": 2,
+          "partitions": 2
+        },
+        {
+          "port": 12,
+          "result": -2,
+          "candidates": 1,
+          "worst": 1,
+          "partitions": 2
+        }
+      ],
+      "metrics": {
+        "greedyProbes": 5,
+        "edge": 1,
+        "adjacent": 1,
+        "hits": 7,
+        "returns": 3,
+        "through": 10
+      }
+    },
+    {
+      "id": "blackbox-065",
+      "title": "星雾深处 · 5",
+      "chapter": 5,
+      "size": 5,
+      "atoms": [
+        1,
+        2,
+        19,
+        21
+      ],
+      "signature": [
+        -2,
+        -1,
+        -1,
+        -2,
+        -1,
+        -1,
+        17,
+        -2,
+        -1,
+        -2,
+        -2,
+        -1,
+        -2,
+        -1,
+        -1,
+        -1,
+        18,
+        6,
+        16,
+        -1
+      ],
+      "canonical": "1,14,15,19",
+      "probeTrace": [
+        {
+          "port": 0,
+          "result": -2,
+          "candidates": 1771,
+          "worst": 6080,
+          "partitions": 7
+        },
+        {
+          "port": 10,
+          "result": -2,
+          "candidates": 210,
+          "worst": 694,
+          "partitions": 6
+        },
+        {
+          "port": 4,
+          "result": -1,
+          "candidates": 80,
+          "worst": 80,
+          "partitions": 7
+        },
+        {
+          "port": 17,
+          "result": 6,
+          "candidates": 2,
+          "worst": 40,
+          "partitions": 9
+        },
+        {
+          "port": 2,
+          "result": -1,
+          "candidates": 1,
+          "worst": 1,
+          "partitions": 2
+        }
+      ],
+      "metrics": {
+        "greedyProbes": 5,
+        "edge": 4,
+        "adjacent": 1,
+        "hits": 10,
+        "returns": 6,
+        "through": 4
+      }
+    },
+    {
+      "id": "blackbox-066",
+      "title": "星雾深处 · 6",
+      "chapter": 5,
+      "size": 5,
+      "atoms": [
+        0,
+        12,
+        13,
+        18
+      ],
+      "signature": [
+        -1,
+        -2,
+        -1,
+        -1,
+        6,
+        -1,
+        4,
+        -1,
+        -1,
+        14,
+        -1,
+        18,
+        19,
+        -1,
+        9,
+        -1,
+        -2,
+        -1,
+        11,
+        12
+      ],
+      "canonical": "0,12,13,18",
+      "probeTrace": [
+        {
+          "port": 0,
+          "result": -1,
+          "candidates": 6080,
+          "worst": 6080,
+          "partitions": 7
+        },
+        {
+          "port": 5,
+          "result": -1,
+          "candidates": 2816,
+          "worst": 2816,
+          "partitions": 7
+        },
+        {
+          "port": 14,
+          "result": 9,
+          "candidates": 274,
+          "worst": 1265,
+          "partitions": 7
+        },
+        {
+          "port": 6,
+          "result": 4,
+          "candidates": 16,
+          "worst": 112,
+          "partitions": 8
+        },
+        {
+          "port": 11,
+          "result": 18,
+          "candidates": 1,
+          "worst": 8,
+          "partitions": 5
+        }
+      ],
+      "metrics": {
+        "greedyProbes": 5,
+        "edge": 1,
+        "adjacent": 2,
+        "hits": 10,
+        "returns": 2,
+        "through": 8
+      }
+    },
+    {
+      "id": "blackbox-067",
+      "title": "星雾深处 · 7",
+      "chapter": 5,
+      "size": 5,
+      "atoms": [
+        1,
+        2,
+        5,
+        10
+      ],
+      "signature": [
+        -2,
+        -1,
+        -1,
+        -2,
+        14,
+        -1,
+        13,
+        -1,
+        11,
+        19,
+        -1,
+        8,
+        -1,
+        6,
+        4,
+        -2,
+        -1,
+        -1,
+        -2,
+        9
+      ],
+      "canonical": "1,2,5,10",
+      "probeTrace": [
+        {
+          "port": 0,
+          "result": -2,
+          "candidates": 1771,
+          "worst": 6080,
+          "partitions": 7
+        },
+        {
+          "port": 10,
+          "result": -1,
+          "candidates": 694,
+          "worst": 694,
+          "partitions": 6
+        },
+        {
+          "port": 8,
+          "result": 11,
+          "candidates": 28,
+          "worst": 289,
+          "partitions": 12
+        },
+        {
+          "port": 7,
+          "result": -1,
+          "candidates": 6,
+          "worst": 7,
+          "partitions": 5
+        },
+        {
+          "port": 13,
+          "result": 6,
+          "candidates": 1,
+          "worst": 3,
+          "partitions": 4
+        }
+      ],
+      "metrics": {
+        "greedyProbes": 5,
+        "edge": 4,
+        "adjacent": 2,
+        "hits": 8,
+        "returns": 4,
+        "through": 8
+      }
+    },
+    {
+      "id": "blackbox-068",
+      "title": "星雾深处 · 8",
+      "chapter": 5,
+      "size": 5,
+      "atoms": [
+        1,
+        2,
+        10,
+        23
+      ],
+      "signature": [
+        -2,
+        -1,
+        -1,
+        -2,
+        8,
+        -1,
+        -1,
+        -1,
+        4,
+        -1,
+        -1,
+        -1,
+        -2,
+        -1,
+        -2,
+        -1,
+        -2,
+        -1,
+        -2,
+        -1
+      ],
+      "canonical": "1,14,22,23",
+      "probeTrace": [
+        {
+          "port": 0,
+          "result": -2,
+          "candidates": 1771,
+          "worst": 6080,
+          "partitions": 7
+        },
+        {
+          "port": 10,
+          "result": -1,
+          "candidates": 694,
+          "worst": 694,
+          "partitions": 6
+        },
+        {
+          "port": 8,
+          "result": 4,
+          "candidates": 36,
+          "worst": 289,
+          "partitions": 12
+        },
+        {
+          "port": 3,
+          "result": -2,
+          "candidates": 4,
+          "worst": 20,
+          "partitions": 5
+        },
+        {
+          "port": 7,
+          "result": -1,
+          "candidates": 2,
+          "worst": 2,
+          "partitions": 3
+        },
+        {
+          "port": 16,
+          "result": -2,
+          "candidates": 1,
+          "worst": 1,
+          "partitions": 2
+        }
+      ],
+      "metrics": {
+        "greedyProbes": 6,
+        "edge": 4,
+        "adjacent": 1,
+        "hits": 12,
+        "returns": 6,
+        "through": 2
+      }
+    },
+    {
+      "id": "blackbox-069",
+      "title": "星雾深处 · 9",
+      "chapter": 5,
+      "size": 5,
+      "atoms": [
+        0,
+        1,
+        12,
+        15
+      ],
+      "signature": [
+        -1,
+        -1,
+        -2,
+        6,
+        14,
+        -1,
+        3,
+        -1,
+        13,
+        11,
+        -1,
+        9,
+        -1,
+        8,
+        4,
+        -1,
+        -2,
+        -2,
+        -1,
+        -2
+      ],
+      "canonical": "0,1,12,15",
+      "probeTrace": [
+        {
+          "port": 0,
+          "result": -1,
+          "candidates": 6080,
+          "worst": 6080,
+          "partitions": 7
+        },
+        {
+          "port": 5,
+          "result": -1,
+          "candidates": 2816,
+          "worst": 2816,
+          "partitions": 7
+        },
+        {
+          "port": 14,
+          "result": 4,
+          "candidates": 375,
+          "worst": 1265,
+          "partitions": 7
+        },
+        {
+          "port": 6,
+          "result": 3,
+          "candidates": 46,
+          "worst": 93,
+          "partitions": 9
+        },
+        {
+          "port": 9,
+          "result": 11,
+          "candidates": 4,
+          "worst": 21,
+          "partitions": 5
+        },
+        {
+          "port": 1,
+          "result": -1,
+          "candidates": 1,
+          "worst": 3,
+          "partitions": 2
+        }
+      ],
+      "metrics": {
+        "greedyProbes": 6,
+        "edge": 3,
+        "adjacent": 1,
+        "hits": 8,
+        "returns": 4,
+        "through": 8
+      }
+    },
+    {
+      "id": "blackbox-070",
+      "title": "星雾深处 · 10",
+      "chapter": 5,
+      "size": 5,
+      "atoms": [
+        1,
+        10,
+        11,
+        16
+      ],
+      "signature": [
+        -2,
+        -1,
+        -2,
+        13,
+        14,
+        -1,
+        -2,
+        -1,
+        -1,
+        12,
+        19,
+        -1,
+        9,
+        3,
+        4,
+        -1,
+        -2,
+        -1,
+        -2,
+        10
+      ],
+      "canonical": "1,10,11,16",
+      "probeTrace": [
+        {
+          "port": 0,
+          "result": -2,
+          "candidates": 1771,
+          "worst": 6080,
+          "partitions": 7
+        },
+        {
+          "port": 10,
+          "result": 19,
+          "candidates": 171,
+          "worst": 694,
+          "partitions": 6
+        },
+        {
+          "port": 4,
+          "result": 14,
+          "candidates": 36,
+          "worst": 70,
+          "partitions": 7
+        },
+        {
+          "port": 3,
+          "result": 13,
+          "candidates": 6,
+          "worst": 8,
+          "partitions": 6
+        },
+        {
+          "port": 6,
+          "result": -2,
+          "candidates": 2,
+          "worst": 3,
+          "partitions": 3
+        },
+        {
+          "port": 15,
+          "result": -1,
+          "candidates": 1,
+          "worst": 1,
+          "partitions": 2
+        }
+      ],
+      "metrics": {
+        "greedyProbes": 6,
+        "edge": 2,
+        "adjacent": 2,
+        "hits": 7,
+        "returns": 5,
+        "through": 8
+      }
+    },
+    {
+      "id": "blackbox-071",
+      "title": "星雾深处 · 11",
+      "chapter": 5,
+      "size": 5,
+      "atoms": [
+        2,
+        7,
+        11,
+        12
+      ],
+      "signature": [
+        16,
+        -2,
+        -1,
+        -2,
+        14,
+        -1,
+        -1,
+        -1,
+        13,
+        19,
+        18,
+        -1,
+        -1,
+        8,
+        4,
+        -1,
+        0,
+        -1,
+        10,
+        9
+      ],
+      "canonical": "10,11,12,17",
+      "probeTrace": [
+        {
+          "port": 0,
+          "result": 16,
+          "candidates": 969,
+          "worst": 6080,
+          "partitions": 7
+        },
+        {
+          "port": 6,
+          "result": -1,
+          "candidates": 369,
+          "worst": 369,
+          "partitions": 10
+        },
+        {
+          "port": 15,
+          "result": -1,
+          "candidates": 125,
+          "worst": 125,
+          "partitions": 4
+        },
+        {
+          "port": 9,
+          "result": 19,
+          "candidates": 22,
+          "worst": 50,
+          "partitions": 7
+        },
+        {
+          "port": 8,
+          "result": 13,
+          "candidates": 6,
+          "worst": 8,
+          "partitions": 4
+        },
+        {
+          "port": 4,
+          "result": 14,
+          "candidates": 1,
+          "worst": 2,
+          "partitions": 4
+        }
+      ],
+      "metrics": {
+        "greedyProbes": 6,
+        "edge": 1,
+        "adjacent": 3,
+        "hits": 8,
+        "returns": 2,
+        "through": 10
+      }
+    },
+    {
+      "id": "blackbox-072",
+      "title": "星雾深处 · 12",
+      "chapter": 5,
+      "size": 5,
+      "atoms": [
+        6,
+        7,
+        11,
+        12
+      ],
+      "signature": [
+        15,
+        -1,
+        -1,
+        5,
+        14,
+        3,
+        -1,
+        -1,
+        13,
+        19,
+        18,
+        -1,
+        -1,
+        8,
+        4,
+        0,
+        -1,
+        -1,
+        10,
+        9
+      ],
+      "canonical": "11,12,16,17",
+      "probeTrace": [
+        {
+          "port": 0,
+          "result": 15,
+          "candidates": 1330,
+          "worst": 6080,
+          "partitions": 7
+        },
+        {
+          "port": 4,
+          "result": 14,
+          "candidates": 165,
+          "worst": 620,
+          "partitions": 7
+        },
+        {
+          "port": 3,
+          "result": 5,
+          "candidates": 36,
+          "worst": 45,
+          "partitions": 6
+        },
+        {
+          "port": 7,
+          "result": -1,
+          "candidates": 8,
+          "worst": 15,
+          "partitions": 4
+        },
+        {
+          "port": 9,
+          "result": 19,
+          "candidates": 2,
+          "worst": 3,
+          "partitions": 5
+        },
+        {
+          "port": 10,
+          "result": 18,
+          "candidates": 1,
+          "worst": 1,
+          "partitions": 2
+        }
+      ],
+      "metrics": {
+        "greedyProbes": 6,
+        "edge": 0,
+        "adjacent": 4,
+        "hits": 8,
+        "returns": 0,
+        "through": 12
+      }
+    },
+    {
+      "id": "blackbox-073",
+      "title": "星雾深处 · 13",
+      "chapter": 5,
+      "size": 5,
+      "atoms": [
+        0,
+        3,
+        9,
+        17
+      ],
+      "signature": [
+        -1,
+        -2,
+        -2,
+        -1,
+        -2,
+        -2,
+        -1,
+        -2,
+        -1,
+        13,
+        -1,
+        19,
+        -1,
+        9,
+        -1,
+        -1,
+        -2,
+        -1,
+        -1,
+        11
+      ],
+      "canonical": "0,13,15,21",
+      "probeTrace": [
+        {
+          "port": 0,
+          "result": -1,
+          "candidates": 6080,
+          "worst": 6080,
+          "partitions": 7
+        },
+        {
+          "port": 5,
+          "result": -2,
+          "candidates": 785,
+          "worst": 2816,
+          "partitions": 7
+        },
+        {
+          "port": 9,
+          "result": 13,
+          "candidates": 60,
+          "worst": 341,
+          "partitions": 7
+        },
+        {
+          "port": 3,
+          "result": -1,
+          "candidates": 21,
+          "worst": 21,
+          "partitions": 5
+        },
+        {
+          "port": 2,
+          "result": -2,
+          "candidates": 6,
+          "worst": 10,
+          "partitions": 5
+        },
+        {
+          "port": 1,
+          "result": -2,
+          "candidates": 2,
+          "worst": 3,
+          "partitions": 3
+        },
+        {
+          "port": 11,
+          "result": 19,
+          "candidates": 1,
+          "worst": 1,
+          "partitions": 2
+        }
+      ],
+      "metrics": {
+        "greedyProbes": 7,
+        "edge": 3,
+        "adjacent": 0,
+        "hits": 10,
+        "returns": 6,
+        "through": 4
+      }
+    },
+    {
+      "id": "blackbox-074",
+      "title": "星雾深处 · 14",
+      "chapter": 5,
+      "size": 5,
+      "atoms": [
+        0,
+        6,
+        12,
+        18
+      ],
+      "signature": [
+        -1,
+        -2,
+        5,
+        6,
+        7,
+        2,
+        3,
+        4,
+        -1,
+        14,
+        17,
+        18,
+        19,
+        -1,
+        9,
+        -1,
+        -2,
+        10,
+        11,
+        12
+      ],
+      "canonical": "0,6,12,18",
+      "probeTrace": [
+        {
+          "port": 0,
+          "result": -1,
+          "candidates": 6080,
+          "worst": 6080,
+          "partitions": 7
+        },
+        {
+          "port": 5,
+          "result": 2,
+          "candidates": 225,
+          "worst": 2816,
+          "partitions": 7
+        },
+        {
+          "port": 13,
+          "result": -1,
+          "candidates": 81,
+          "worst": 81,
+          "partitions": 9
+        },
+        {
+          "port": 4,
+          "result": 7,
+          "candidates": 19,
+          "worst": 24,
+          "partitions": 4
+        },
+        {
+          "port": 19,
+          "result": 12,
+          "candidates": 7,
+          "worst": 7,
+          "partitions": 5
+        },
+        {
+          "port": 18,
+          "result": 11,
+          "candidates": 2,
+          "worst": 2,
+          "partitions": 4
+        },
+        {
+          "port": 1,
+          "result": -2,
+          "candidates": 1,
+          "worst": 1,
+          "partitions": 2
+        }
+      ],
+      "metrics": {
+        "greedyProbes": 7,
+        "edge": 1,
+        "adjacent": 0,
+        "hits": 4,
+        "returns": 2,
+        "through": 14
+      }
+    },
+    {
+      "id": "blackbox-075",
+      "title": "星雾深处 · 15",
+      "chapter": 5,
+      "size": 5,
+      "atoms": [
+        0,
+        4,
+        11,
+        16
+      ],
+      "signature": [
+        -1,
+        -2,
+        13,
+        -2,
+        -1,
+        -1,
+        -2,
+        -1,
+        -1,
+        12,
+        19,
+        -1,
+        9,
+        2,
+        -1,
+        -1,
+        -2,
+        -1,
+        -1,
+        10
+      ],
+      "canonical": "0,17,18,20",
+      "probeTrace": [
+        {
+          "port": 0,
+          "result": -1,
+          "candidates": 6080,
+          "worst": 6080,
+          "partitions": 7
+        },
+        {
+          "port": 5,
+          "result": -1,
+          "candidates": 2816,
+          "worst": 2816,
+          "partitions": 7
+        },
+        {
+          "port": 14,
+          "result": -1,
+          "candidates": 1265,
+          "worst": 1265,
+          "partitions": 7
+        },
+        {
+          "port": 13,
+          "result": 2,
+          "candidates": 28,
+          "worst": 532,
+          "partitions": 14
+        },
+        {
+          "port": 19,
+          "result": 10,
+          "candidates": 6,
+          "worst": 13,
+          "partitions": 4
+        },
+        {
+          "port": 6,
+          "result": -2,
+          "candidates": 3,
+          "worst": 3,
+          "partitions": 2
+        },
+        {
+          "port": 1,
+          "result": -2,
+          "candidates": 1,
+          "worst": 2,
+          "partitions": 2
+        }
+      ],
+      "metrics": {
+        "greedyProbes": 7,
+        "edge": 2,
+        "adjacent": 1,
+        "hits": 10,
+        "returns": 4,
+        "through": 6
+      }
+    },
+    {
+      "id": "blackbox-076",
+      "title": "星雾深处 · 16",
+      "chapter": 5,
+      "size": 5,
+      "atoms": [
+        0,
+        1,
+        16,
+        17
+      ],
+      "signature": [
+        -1,
+        -1,
+        -2,
+        7,
+        14,
+        -1,
+        -1,
+        3,
+        -1,
+        13,
+        19,
+        -1,
+        -1,
+        9,
+        4,
+        -1,
+        -2,
+        -1,
+        -1,
+        10
+      ],
+      "canonical": "0,1,16,17",
+      "probeTrace": [
+        {
+          "port": 0,
+          "result": -1,
+          "candidates": 6080,
+          "worst": 6080,
+          "partitions": 7
+        },
+        {
+          "port": 5,
+          "result": -1,
+          "candidates": 2816,
+          "worst": 2816,
+          "partitions": 7
+        },
+        {
+          "port": 14,
+          "result": 4,
+          "candidates": 375,
+          "worst": 1265,
+          "partitions": 7
+        },
+        {
+          "port": 6,
+          "result": -1,
+          "candidates": 93,
+          "worst": 93,
+          "partitions": 9
+        },
+        {
+          "port": 7,
+          "result": 3,
+          "candidates": 18,
+          "worst": 25,
+          "partitions": 9
+        },
+        {
+          "port": 19,
+          "result": 10,
+          "candidates": 3,
+          "worst": 8,
+          "partitions": 4
+        },
+        {
+          "port": 1,
+          "result": -1,
+          "candidates": 1,
+          "worst": 2,
+          "partitions": 2
+        }
+      ],
+      "metrics": {
+        "greedyProbes": 7,
+        "edge": 2,
+        "adjacent": 2,
+        "hits": 10,
+        "returns": 2,
+        "through": 8
+      }
+    },
+    {
+      "id": "blackbox-077",
+      "title": "星雾深处 · 17",
+      "chapter": 5,
+      "size": 5,
+      "atoms": [
+        0,
+        1,
+        19,
+        22
+      ],
+      "signature": [
+        -1,
+        -1,
+        -2,
+        17,
+        -1,
+        -1,
+        -1,
+        -2,
+        -1,
+        -2,
+        -1,
+        -2,
+        -1,
+        -2,
+        -1,
+        -1,
+        -2,
+        3,
+        -1,
+        -1
+      ],
+      "canonical": "0,1,19,22",
+      "probeTrace": [
+        {
+          "port": 0,
+          "result": -1,
+          "candidates": 6080,
+          "worst": 6080,
+          "partitions": 7
+        },
+        {
+          "port": 5,
+          "result": -1,
+          "candidates": 2816,
+          "worst": 2816,
+          "partitions": 7
+        },
+        {
+          "port": 14,
+          "result": -1,
+          "candidates": 1265,
+          "worst": 1265,
+          "partitions": 7
+        },
+        {
+          "port": 13,
+          "result": -2,
+          "candidates": 532,
+          "worst": 532,
+          "partitions": 14
+        },
+        {
+          "port": 7,
+          "result": -2,
+          "candidates": 105,
+          "worst": 257,
+          "partitions": 13
+        },
+        {
+          "port": 17,
+          "result": 3,
+          "candidates": 7,
+          "worst": 42,
+          "partitions": 10
+        },
+        {
+          "port": 6,
+          "result": -1,
+          "candidates": 4,
+          "worst": 4,
+          "partitions": 4
+        },
+        {
+          "port": 2,
+          "result": -2,
+          "candidates": 1,
+          "worst": 2,
+          "partitions": 3
+        }
+      ],
+      "metrics": {
+        "greedyProbes": 8,
+        "edge": 4,
+        "adjacent": 1,
+        "hits": 12,
+        "returns": 6,
+        "through": 2
+      }
+    },
+    {
+      "id": "blackbox-078",
+      "title": "星雾深处 · 18",
+      "chapter": 5,
+      "size": 5,
+      "atoms": [
+        0,
+        1,
+        7,
+        16
+      ],
+      "signature": [
+        -1,
+        -1,
+        -2,
+        5,
+        14,
+        3,
+        -1,
+        13,
+        -1,
+        12,
+        19,
+        -1,
+        9,
+        7,
+        4,
+        -1,
+        -2,
+        -1,
+        -1,
+        10
+      ],
+      "canonical": "0,1,7,16",
+      "probeTrace": [
+        {
+          "port": 0,
+          "result": -1,
+          "candidates": 6080,
+          "worst": 6080,
+          "partitions": 7
+        },
+        {
+          "port": 5,
+          "result": 3,
+          "candidates": 475,
+          "worst": 2816,
+          "partitions": 7
+        },
+        {
+          "port": 13,
+          "result": 7,
+          "candidates": 70,
+          "worst": 175,
+          "partitions": 10
+        },
+        {
+          "port": 12,
+          "result": 9,
+          "candidates": 16,
+          "worst": 22,
+          "partitions": 4
+        },
+        {
+          "port": 15,
+          "result": -1,
+          "candidates": 7,
+          "worst": 7,
+          "partitions": 3
+        },
+        {
+          "port": 17,
+          "result": -1,
+          "candidates": 4,
+          "worst": 4,
+          "partitions": 2
+        },
+        {
+          "port": 18,
+          "result": -1,
+          "candidates": 2,
+          "worst": 2,
+          "partitions": 2
+        },
+        {
+          "port": 1,
+          "result": -1,
+          "candidates": 1,
+          "worst": 1,
+          "partitions": 2
+        }
+      ],
+      "metrics": {
+        "greedyProbes": 8,
+        "edge": 2,
+        "adjacent": 1,
+        "hits": 8,
+        "returns": 2,
+        "through": 10
+      }
+    },
+    {
+      "id": "blackbox-079",
+      "title": "星雾深处 · 19",
+      "chapter": 5,
+      "size": 5,
+      "atoms": [
+        1,
+        6,
+        7,
+        15
+      ],
+      "signature": [
+        -2,
+        -1,
+        -2,
+        5,
+        14,
+        3,
+        -1,
+        13,
+        -1,
+        11,
+        -1,
+        9,
+        -1,
+        7,
+        4,
+        -1,
+        -1,
+        -2,
+        -1,
+        -2
+      ],
+      "canonical": "1,6,7,15",
+      "probeTrace": [
+        {
+          "port": 0,
+          "result": -2,
+          "candidates": 1771,
+          "worst": 6080,
+          "partitions": 7
+        },
+        {
+          "port": 10,
+          "result": -1,
+          "candidates": 694,
+          "worst": 694,
+          "partitions": 6
+        },
+        {
+          "port": 8,
+          "result": -1,
+          "candidates": 289,
+          "worst": 289,
+          "partitions": 12
+        },
+        {
+          "port": 9,
+          "result": 11,
+          "candidates": 36,
+          "worst": 68,
+          "partitions": 6
+        },
+        {
+          "port": 7,
+          "result": 13,
+          "candidates": 6,
+          "worst": 11,
+          "partitions": 5
+        },
+        {
+          "port": 3,
+          "result": 5,
+          "candidates": 3,
+          "worst": 3,
+          "partitions": 3
+        },
+        {
+          "port": 15,
+          "result": -1,
+          "candidates": 2,
+          "worst": 2,
+          "partitions": 2
+        },
+        {
+          "port": 16,
+          "result": -1,
+          "candidates": 1,
+          "worst": 1,
+          "partitions": 2
+        }
+      ],
+      "metrics": {
+        "greedyProbes": 8,
+        "edge": 2,
+        "adjacent": 2,
+        "hits": 8,
+        "returns": 4,
+        "through": 8
+      }
+    },
+    {
+      "id": "blackbox-080",
+      "title": "星雾深处 · 20",
+      "chapter": 5,
+      "size": 5,
+      "atoms": [
+        1,
+        2,
+        9,
+        16
+      ],
+      "signature": [
+        -2,
+        -1,
+        -1,
+        -2,
+        -1,
+        -2,
+        -1,
+        -2,
+        -1,
+        12,
+        19,
+        -1,
+        9,
+        -1,
+        -1,
+        -1,
+        17,
+        16,
+        -1,
+        10
+      ],
+      "canonical": "1,10,15,18",
+      "probeTrace": [
+        {
+          "port": 0,
+          "result": -2,
+          "candidates": 1771,
+          "worst": 6080,
+          "partitions": 7
+        },
+        {
+          "port": 10,
+          "result": 19,
+          "candidates": 171,
+          "worst": 694,
+          "partitions": 6
+        },
+        {
+          "port": 4,
+          "result": -1,
+          "candidates": 70,
+          "worst": 70,
+          "partitions": 7
+        },
+        {
+          "port": 13,
+          "result": -1,
+          "candidates": 29,
+          "worst": 29,
+          "partitions": 6
+        },
+        {
+          "port": 7,
+          "result": -2,
+          "candidates": 13,
+          "worst": 14,
+          "partitions": 4
+        },
+        {
+          "port": 9,
+          "result": 12,
+          "candidates": 9,
+          "worst": 9,
+          "partitions": 4
+        },
+        {
+          "port": 16,
+          "result": 17,
+          "candidates": 5,
+          "worst": 5,
+          "partitions": 3
+        },
+        {
+          "port": 3,
+          "result": -2,
+          "candidates": 2,
+          "worst": 3,
+          "partitions": 2
+        },
+        {
+          "port": 2,
+          "result": -1,
+          "candidates": 1,
+          "worst": 1,
+          "partitions": 2
+        }
+      ],
+      "metrics": {
+        "greedyProbes": 9,
+        "edge": 3,
+        "adjacent": 1,
+        "hits": 10,
+        "returns": 4,
+        "through": 6
+      }
+    },
+    {
+      "id": "blackbox-081",
+      "title": "星雾深处 · 21",
+      "chapter": 5,
+      "size": 5,
+      "atoms": [
+        0,
+        7,
+        8,
+        11
+      ],
+      "signature": [
+        -1,
+        -2,
+        -1,
+        -1,
+        5,
+        4,
+        -1,
+        14,
+        12,
+        19,
+        18,
+        -1,
+        8,
+        -1,
+        7,
+        -1,
+        -2,
+        -1,
+        10,
+        9
+      ],
+      "canonical": "0,7,11,16",
+      "probeTrace": [
+        {
+          "port": 0,
+          "result": -1,
+          "candidates": 6080,
+          "worst": 6080,
+          "partitions": 7
+        },
+        {
+          "port": 5,
+          "result": 4,
+          "candidates": 620,
+          "worst": 2816,
+          "partitions": 7
+        },
+        {
+          "port": 9,
+          "result": 19,
+          "candidates": 88,
+          "worst": 282,
+          "partitions": 7
+        },
+        {
+          "port": 8,
+          "result": 12,
+          "candidates": 12,
+          "worst": 21,
+          "partitions": 6
+        },
+        {
+          "port": 15,
+          "result": -1,
+          "candidates": 7,
+          "worst": 7,
+          "partitions": 3
+        },
+        {
+          "port": 2,
+          "result": -1,
+          "candidates": 5,
+          "worst": 5,
+          "partitions": 2
+        },
+        {
+          "port": 3,
+          "result": -1,
+          "candidates": 3,
+          "worst": 3,
+          "partitions": 2
+        },
+        {
+          "port": 10,
+          "result": 18,
+          "candidates": 2,
+          "worst": 2,
+          "partitions": 2
+        },
+        {
+          "port": 16,
+          "result": -2,
+          "candidates": 1,
+          "worst": 1,
+          "partitions": 2
+        }
+      ],
+      "metrics": {
+        "greedyProbes": 9,
+        "edge": 1,
+        "adjacent": 1,
+        "hits": 8,
+        "returns": 2,
+        "through": 10
+      }
+    },
+    {
+      "id": "blackbox-082",
+      "title": "星雾深处 · 22",
+      "chapter": 5,
+      "size": 5,
+      "atoms": [
+        0,
+        12,
+        13,
+        14
+      ],
+      "signature": [
+        -1,
+        -2,
+        -1,
+        -1,
+        -1,
+        -1,
+        -2,
+        -1,
+        -2,
+        19,
+        -1,
+        18,
+        -1,
+        -1,
+        -1,
+        -1,
+        -2,
+        -1,
+        11,
+        9
+      ],
+      "canonical": "0,12,13,14",
+      "probeTrace": [
+        {
+          "port": 0,
+          "result": -1,
+          "candidates": 6080,
+          "worst": 6080,
+          "partitions": 7
+        },
+        {
+          "port": 5,
+          "result": -1,
+          "candidates": 2816,
+          "worst": 2816,
+          "partitions": 7
+        },
+        {
+          "port": 14,
+          "result": -1,
+          "candidates": 1265,
+          "worst": 1265,
+          "partitions": 7
+        },
+        {
+          "port": 13,
+          "result": -1,
+          "candidates": 280,
+          "worst": 532,
+          "partitions": 14
+        },
+        {
+          "port": 12,
+          "result": -1,
+          "candidates": 52,
+          "worst": 84,
+          "partitions": 14
+        },
+        {
+          "port": 9,
+          "result": 19,
+          "candidates": 8,
+          "worst": 22,
+          "partitions": 4
+        },
+        {
+          "port": 7,
+          "result": -1,
+          "candidates": 3,
+          "worst": 3,
+          "partitions": 4
+        },
+        {
+          "port": 1,
+          "result": -2,
+          "candidates": 2,
+          "worst": 2,
+          "partitions": 2
+        },
+        {
+          "port": 8,
+          "result": -2,
+          "candidates": 1,
+          "worst": 1,
+          "partitions": 2
+        }
+      ],
+      "metrics": {
+        "greedyProbes": 9,
+        "edge": 2,
+        "adjacent": 2,
+        "hits": 12,
+        "returns": 4,
+        "through": 4
+      }
+    },
+    {
+      "id": "blackbox-083",
+      "title": "星雾深处 · 23",
+      "chapter": 5,
+      "size": 5,
+      "atoms": [
+        0,
+        2,
+        4,
+        16
+      ],
+      "signature": [
+        -1,
+        -2,
+        -1,
+        -2,
+        -1,
+        -1,
+        -2,
+        -1,
+        -1,
+        12,
+        19,
+        -1,
+        9,
+        -2,
+        -1,
+        -1,
+        -2,
+        -1,
+        -1,
+        10
+      ],
+      "canonical": "0,10,18,20",
+      "probeTrace": [
+        {
+          "port": 0,
+          "result": -1,
+          "candidates": 6080,
+          "worst": 6080,
+          "partitions": 7
+        },
+        {
+          "port": 5,
+          "result": -1,
+          "candidates": 2816,
+          "worst": 2816,
+          "partitions": 7
+        },
+        {
+          "port": 14,
+          "result": -1,
+          "candidates": 1265,
+          "worst": 1265,
+          "partitions": 7
+        },
+        {
+          "port": 13,
+          "result": -2,
+          "candidates": 532,
+          "worst": 532,
+          "partitions": 14
+        },
+        {
+          "port": 7,
+          "result": -1,
+          "candidates": 257,
+          "worst": 257,
+          "partitions": 13
+        },
+        {
+          "port": 11,
+          "result": -1,
+          "candidates": 100,
+          "worst": 105,
+          "partitions": 10
+        },
+        {
+          "port": 12,
+          "result": 9,
+          "candidates": 5,
+          "worst": 37,
+          "partitions": 12
+        },
+        {
+          "port": 16,
+          "result": -2,
+          "candidates": 3,
+          "worst": 3,
+          "partitions": 2
+        },
+        {
+          "port": 8,
+          "result": -1,
+          "candidates": 2,
+          "worst": 2,
+          "partitions": 2
+        },
+        {
+          "port": 18,
+          "result": -1,
+          "candidates": 1,
+          "worst": 1,
+          "partitions": 2
+        }
+      ],
+      "metrics": {
+        "greedyProbes": 10,
+        "edge": 3,
+        "adjacent": 0,
+        "hits": 11,
+        "returns": 5,
+        "through": 4
+      }
+    },
+    {
+      "id": "blackbox-084",
+      "title": "星雾深处 · 24",
+      "chapter": 5,
+      "size": 5,
+      "atoms": [
+        0,
+        2,
+        16,
+        24
+      ],
+      "signature": [
+        -1,
+        -2,
+        -1,
+        -2,
+        -1,
+        -1,
+        -1,
+        -1,
+        -2,
+        -1,
+        19,
+        -1,
+        -1,
+        -2,
+        -1,
+        -1,
+        -2,
+        -1,
+        -1,
+        10
+      ],
+      "canonical": "0,14,16,24",
+      "probeTrace": [
+        {
+          "port": 0,
+          "result": -1,
+          "candidates": 6080,
+          "worst": 6080,
+          "partitions": 7
+        },
+        {
+          "port": 5,
+          "result": -1,
+          "candidates": 2816,
+          "worst": 2816,
+          "partitions": 7
+        },
+        {
+          "port": 14,
+          "result": -1,
+          "candidates": 1265,
+          "worst": 1265,
+          "partitions": 7
+        },
+        {
+          "port": 13,
+          "result": -2,
+          "candidates": 532,
+          "worst": 532,
+          "partitions": 14
+        },
+        {
+          "port": 7,
+          "result": -1,
+          "candidates": 257,
+          "worst": 257,
+          "partitions": 13
+        },
+        {
+          "port": 11,
+          "result": -1,
+          "candidates": 100,
+          "worst": 105,
+          "partitions": 10
+        },
+        {
+          "port": 12,
+          "result": -1,
+          "candidates": 37,
+          "worst": 37,
+          "partitions": 12
+        },
+        {
+          "port": 19,
+          "result": 10,
+          "candidates": 9,
+          "worst": 14,
+          "partitions": 4
+        },
+        {
+          "port": 6,
+          "result": -1,
+          "candidates": 5,
+          "worst": 5,
+          "partitions": 5
+        },
+        {
+          "port": 2,
+          "result": -1,
+          "candidates": 3,
+          "worst": 3,
+          "partitions": 2
+        },
+        {
+          "port": 15,
+          "result": -1,
+          "candidates": 2,
+          "worst": 2,
+          "partitions": 2
+        },
+        {
+          "port": 18,
+          "result": -1,
+          "candidates": 1,
+          "worst": 1,
+          "partitions": 2
+        }
+      ],
+      "metrics": {
+        "greedyProbes": 12,
+        "edge": 3,
+        "adjacent": 0,
+        "hits": 13,
+        "returns": 5,
+        "through": 2
+      }
+    }
+  ]
+}
