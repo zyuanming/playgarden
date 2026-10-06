@@ -1,0 +1,51 @@
+{
+  "repository": "https://github.com/markstent/runner",
+  "commit": "22a0d0dd74f880025559235bf6139a85316da821",
+  "license": "MIT",
+  "excluded": [
+    "public/avatar.glb",
+    "src/render/avatarModel.ts"
+  ],
+  "files": [
+    {
+      "upstream": "src/player/index.ts",
+      "adapted": "src/vendor/cloudrunner/player/index.ts",
+      "upstreamSha256": "2096fffca81d28a59c2d04facb0717f301beae1d38e0cf52e97069c0dec35f0a"
+    },
+    {
+      "upstream": "src/track/index.ts",
+      "adapted": "src/vendor/cloudrunner/track/index.ts",
+      "upstreamSha256": "386fc8a8308b6f1cf541b777eaf2e528368ac28eb2062198316f29b88b7cc5c0"
+    },
+    {
+      "upstream": "src/collision/index.ts",
+      "adapted": "src/vendor/cloudrunner/collision/index.ts",
+      "upstreamSha256": "8f21622d34fd5512829e303c8be0f38eb98279e32f2752bbbc3e7c79a461d91e"
+    },
+    {
+      "upstream": "src/game/state.ts",
+      "adapted": "src/vendor/cloudrunner/game/state.ts",
+      "upstreamSha256": "98b2a20878f921c1e67d296017cd0aeffa5807914f099a1f672cd41fb5a845a2"
+    },
+    {
+      "upstream": "src/scoring/index.ts",
+      "adapted": "src/vendor/cloudrunner/scoring/index.ts",
+      "upstreamSha256": "e2233779c54859bad08f78ada45b70f922a9621ff64402a3462d2eaee76b9842"
+    },
+    {
+      "upstream": "src/difficulty/index.ts",
+      "adapted": "src/vendor/cloudrunner/difficulty/index.ts",
+      "upstreamSha256": "bd86bd7155ec4ee50124770c62ce1a4a03c3cd6db88058035e878644ac037547"
+    },
+    {
+      "upstream": "src/input/index.ts",
+      "adapted": "src/vendor/cloudrunner/input/index.ts",
+      "upstreamSha256": "9f1935afba98428293f6fbc715c6d0dc200dc3216bf4e89234a6c956a6bf4c7a"
+    },
+    {
+      "upstream": "src/audio/index.ts",
+      "adapted": "src/vendor/cloudrunner/audio/index.ts",
+      "upstreamSha256": "ba6b6f34ebef779935e9dd42a99fbb6e5efdd68e916ae9665b068542e49eb3ba"
+    }
+  ]
+}

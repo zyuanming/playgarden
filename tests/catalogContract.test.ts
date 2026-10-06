@@ -1,3 +1,4 @@
+import { runnerLessons } from "../src/games/cloudrunnerLogic";
 import { xiangqiLevels } from "../src/games/xiangqiLevels";
 import { gomokuLevels } from "../src/games/gomokuLevels";
 import { blackboxLevels } from "../src/games/blackboxLevels";
@@ -91,6 +92,7 @@ import { cubeNetLevels } from "../src/games/cubeNetLogic";
 const packs = {
   gomoku: gomokuLevels,
   xiangqi: xiangqiLevels,
+  cloudrunner: runnerLessons,
   pancake: pancakeLevels,
   blackbox: blackboxLevels,
   samegame: samegameLevels,
@@ -206,8 +208,8 @@ describe("Scalable catalog contract", () => {
       }
     }),
   );
-  it("counts only 85 real games and 2065 levels, not the roadmap", () => {
-    expect(games).toHaveLength(85);
-    expect(games.reduce((sum, g) => sum + g.levelCount, 0)).toBe(2065);
+  it("counts only 86 real games and 2071 levels, not the roadmap", () => {
+    expect(games).toHaveLength(86);
+    expect(games.reduce((sum, g) => sum + g.levelCount, 0)).toBe(2071);
   });
 });

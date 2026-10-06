@@ -136,3 +136,9 @@ INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
 CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
 ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 POSSIBILITY OF SUCH DAMAGE.
+
+## markstent/runner (movement, generator and runner modules, MIT)
+
+Cloudrunner directly adapts eight pure/procedural modules from Mark Stent's runner at commit `22a0d0dd74f880025559235bf6139a85316da821`: player, track, collision, game state, scoring, difficulty, input and audio. Exact original editable files are in `docs/upstream/cloudrunner/`; the fixed-file manifest is in `vendor/cloudrunner/source-manifest.json`. Copyright (c) 2026 Mark Stent. Complete MIT text is preserved in `vendor/cloudrunner/LICENSE`, `docs/upstream/cloudrunner/LICENSE` and `public/cloudrunner-LICENSE.txt`, linked visibly in the game. Upstream portions retain MIT; Playgarden modifications and original route, Canvas art, interface and campaign are GPL-3.0-only.
+
+No avatar.glb, BrainStem/Poser model, avatarModel.ts, external image, font, music or commercial Temple Run asset is included. The title, courier and garden graphics are original procedural artwork. This is an original game inspired by an established runner mechanic, with no affiliation claim. See `docs/cloudrunner.md` for exact adaptations and limitations.

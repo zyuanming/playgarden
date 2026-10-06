@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="480" viewBox="0 0 720 480">
+<!-- SPDX-License-Identifier: GPL-3.0-only; Original Playgarden procedural illustration. -->
+<defs><linearGradient id="sky" x2="0" y2="1"><stop stop-color="#b9d6c9"/><stop offset="1" stop-color="#eee9cf"/></linearGradient></defs>
+<path fill="url(#sky)" d="M0 0h720v480H0z"/><circle fill="#fff1c7" cx="548" cy="100" r="40"/>
+<g fill="#e9eed8"><ellipse cx="130" cy="100" rx="87" ry="9"/><ellipse cx="607" cy="170" rx="90" ry="12"/><ellipse cx="342" cy="63" rx="55" ry="6"/></g>
+<path d="M0 245l88-43 49 28 76-54 62 49 78-32 51 22 88-53 104 56 49-12 75 31v243H0" fill="#a7c4ac"/><path d="M0 337l142-46 124 29 79-47 160 51 125-23 90 34v145H0" fill="#c6d4b6"/>
+<path d="M257 480l60-170 163-106 29 26-136 115 37 135z" fill="#c5a877"/><path d="M221 480l85-182 174-105 42 27-152 117 32 143z" fill="#fff0d0"/><path d="M272 480l48-166 8-5-30 171m44 0-6-150 8-7 25 157" fill="#ddcaa1"/>
+<g><path d="M83 319l67-24 57 30-64 32z" fill="#91ae81"/><path d="M83 319v23l60 36v-21zm60 38 64-32v19l-64 34z" fill="#718f6e"/><path d="M143 313v-70" stroke="#866c47" stroke-width="9"/><ellipse cx="142" cy="237" rx="34" ry="53" fill="#6e9976"/><ellipse cx="143" cy="205" rx="22" ry="39" fill="#86a982"/></g>
+<g><path d="M512 351l67-24 57 30-64 32z" fill="#91ae81"/><path d="M512 351v23l60 36v-21zm60 38 64-32v19l-64 34z" fill="#718f6e"/><path d="M571 347v-70" stroke="#866c47" stroke-width="9"/><ellipse cx="570" cy="271" rx="30" ry="48" fill="#709678"/></g>
+<g fill="#e3ac44" stroke="#fff2c7" stroke-width="3"><circle cx="337" cy="349" r="8"/><circle cx="348" cy="324" r="7"/><circle cx="363" cy="304" r="6"/><circle cx="393" cy="280" r="5"/></g>
+<path d="m390 259 40-22v24l-39 23z" fill="#c36953"/><path d="m390 259 8-8 40-22-8 8z" fill="#eca082"/>
+<ellipse cx="319" cy="427" rx="26" ry="9" fill="#466347" opacity=".2"/>
+<path d="m307 399-6 28m29-28 12 24" fill="none" stroke="#36564d" stroke-width="11" stroke-linecap="round"/>
+<path d="m298 367 38-6 7 43-42 5z" fill="#4d8977"/><path d="m300 372 24 1v27l-23 4z" fill="#c6995c"/>
+<circle cx="317" cy="349" r="16" fill="#e5bb8e"/><path d="M293 343q5-30 27-27 22 4 23 24z" fill="#f3dfb8"/><path d="m285 343 63-6 3 9-64 9z" fill="#dfbd84"/>
+<path d="m300 362 34-6 21 22-32-9z" fill="#dca34e"/>
+<g fill="#416b54"><path d="m462 222-3 10 14-4-8-1z"/><path d="m445 233-3 10 14-4-8-1z"/></g>
+</svg>

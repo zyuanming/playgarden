@@ -14,6 +14,7 @@ import {
   Brain,
   Hash,
   FlaskConical,
+  Footprints,
 } from "lucide-react";
 import { games } from "./lib/registry";
 import { orderCatalog, type CatalogOrder } from "./lib/catalogOrder";
@@ -117,7 +118,7 @@ export default function App() {
           <button
             className="icon-button sound-toggle"
             aria-label={progress.muted ? "开启声音" : "静音"}
-            title="切换通关提示音"
+            title="切换游戏音效"
             onClick={() => setProgress((p) => ({ ...p, muted: !p.muted }))}
           >
             {progress.muted ? <VolumeX size={19} /> : <Volume2 size={19} />}
@@ -135,6 +136,7 @@ export default function App() {
           id={selected}
           onBack={() => setSelected(null)}
           completed={progress.completed[selected]}
+          muted={progress.muted}
           onComplete={(l) => finish(selected, l)}
         />
       ) : (
@@ -214,7 +216,9 @@ export default function App() {
                         ? Hash
                         : g.category === "科学实验"
                           ? FlaskConical
-                          : Box;
+                          : g.category === "动作反应"
+                            ? Footprints
+                            : Box;
               return (
                 <article className="game-card" key={g.id}>
                   <button
@@ -336,4 +340,3 @@ export default function App() {
     </>
   );
 }
-

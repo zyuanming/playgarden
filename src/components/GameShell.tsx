@@ -18,11 +18,13 @@ export function GameShell({
   onBack,
   onComplete,
   completed,
+  muted = false,
 }: {
   id: GameId;
   onBack: () => void;
   onComplete: (level: number) => void;
   completed: number[];
+  muted?: boolean;
 }) {
   const game = games.find((g) => g.id === id)!;
   const [freePlay, setFreePlay] = useState(() => {
@@ -167,7 +169,7 @@ export function GameShell({
               setUndo(0);
             }}
           >
-            自由对弈
+            {game.modeLabels?.free ?? "自由对弈"}
           </button>
           <button
             aria-pressed={!freePlay}
@@ -181,7 +183,7 @@ export function GameShell({
               setUndo(0);
             }}
           >
-            棋形练习
+            {game.modeLabels?.practice ?? "棋形练习"}
           </button>
         </div>
       )}
@@ -209,7 +211,15 @@ export function GameShell({
           <RotateCcw size={17} />
           重来
         </button>
-        <button disabled={paused || won} onClick={() => setUndo((u) => u + 1)}>
+        <button
+          disabled={paused || won || game.allowUndo === false}
+          title={
+            game.allowUndo === false
+              ? "实时跑酷不能撤销；可使用重来"
+              : undefined
+          }
+          onClick={() => setUndo((u) => u + 1)}
+        >
           <Undo2 size={17} />
           撤销
         </button>
@@ -219,7 +229,7 @@ export function GameShell({
         </button>
         <span>
           {freePlay ? (
-            game.freePlayCaption ?? "完整对局"
+            (game.freePlayCaption ?? "完整对局")
           ) : (
             <>
               第 {level + 1} / {game.levelCount} 关
@@ -256,6 +266,7 @@ export function GameShell({
               level={level}
               freePlay={freePlay}
               paused={paused}
+              muted={muted}
               resetToken={reset}
               freshStart={freshStart}
               hintToken={hint}

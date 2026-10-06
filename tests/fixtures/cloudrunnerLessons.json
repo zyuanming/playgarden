@@ -1,0 +1,136 @@
+[
+  {
+    "lesson": 0,
+    "length": 112,
+    "actions": [
+      {
+        "distance": 28,
+        "time": 2,
+        "intent": "left",
+        "reason": "lane",
+        "obstacleOrTurn": 44
+      },
+      {
+        "distance": 64,
+        "time": 4.571428571428571,
+        "intent": "right",
+        "reason": "lane",
+        "obstacleOrTurn": 80
+      }
+    ]
+  },
+  {
+    "lesson": 1,
+    "length": 136,
+    "actions": [
+      {
+        "distance": 41.8,
+        "time": 2.9857142857142853,
+        "intent": "jump",
+        "reason": "vertical",
+        "obstacleOrTurn": 48
+      },
+      {
+        "distance": 93.8,
+        "time": 6.7,
+        "intent": "jump",
+        "reason": "vertical",
+        "obstacleOrTurn": 100
+      }
+    ]
+  },
+  {
+    "lesson": 2,
+    "length": 136,
+    "actions": [
+      {
+        "distance": 42.5,
+        "time": 3.0357142857142856,
+        "intent": "slide",
+        "reason": "vertical",
+        "obstacleOrTurn": 48
+      },
+      {
+        "distance": 94.5,
+        "time": 6.75,
+        "intent": "slide",
+        "reason": "vertical",
+        "obstacleOrTurn": 100
+      }
+    ]
+  },
+  {
+    "lesson": 3,
+    "length": 168,
+    "actions": [
+      {
+        "distance": 76,
+        "time": 5.428571428571429,
+        "intent": "left",
+        "reason": "turn",
+        "obstacleOrTurn": 96
+      }
+    ]
+  },
+  {
+    "lesson": 4,
+    "length": 168,
+    "actions": [
+      {
+        "distance": 76,
+        "time": 5.428571428571429,
+        "intent": "right",
+        "reason": "turn",
+        "obstacleOrTurn": 96
+      }
+    ]
+  },
+  {
+    "lesson": 5,
+    "length": 432,
+    "actions": [
+      {
+        "distance": 24,
+        "time": 1.7142857142857142,
+        "intent": "left",
+        "reason": "lane",
+        "obstacleOrTurn": 40
+      },
+      {
+        "distance": 73.8,
+        "time": 5.271428571428571,
+        "intent": "jump",
+        "reason": "vertical",
+        "obstacleOrTurn": 80
+      },
+      {
+        "distance": 140,
+        "time": 10,
+        "intent": "left",
+        "reason": "turn",
+        "obstacleOrTurn": 160
+      },
+      {
+        "distance": 210.5,
+        "time": 15.035714285714286,
+        "intent": "slide",
+        "reason": "vertical",
+        "obstacleOrTurn": 216
+      },
+      {
+        "distance": 300,
+        "time": 21.428571428571427,
+        "intent": "right",
+        "reason": "turn",
+        "obstacleOrTurn": 320
+      },
+      {
+        "distance": 369.8,
+        "time": 26.414285714285715,
+        "intent": "jump",
+        "reason": "vertical",
+        "obstacleOrTurn": 376
+      }
+    ]
+  }
+]

@@ -12,7 +12,7 @@ GPL permits commercial use. Its source and licensing obligations apply to covere
 
 MIT, BSD-2-Clause, ISC and other third-party notices remain in their original form. Upstream source snapshots, license files, attribution, authors and fixed-version records remain intact. Attributed adaptations separately identify Playgarden modifications and their date; our changes may be GPL-covered while the original portions retain their upstream terms. See THIRD_PARTY_NOTICES.md and the self-contained public THIRD_PARTY_NOTICES.txt for the shipped runtime notices.
 
-The runtime uses React, React DOM and scheduler (MIT), Three.js (MIT), lucide-react (ISC), adapted Slant and open-gomoku sources (MIT), and the Xiangqi rule component (BSD-2-Clause). Referenced Black Box source is retained with its MIT license but is not executed. Toolchain licenses remain their own; their presence does not relicense the tools. External assets, fonts, puzzle collections and future candidate games always need their own review. No Night Patrol noncommercial assets or unlicensed Diver code are added by this change.
+The runtime uses React, React DOM and scheduler (MIT), Three.js (MIT), lucide-react (ISC), adapted Slant and open-gomoku sources (MIT), the Xiangqi rule component (BSD-2-Clause), and the runner modules (MIT). Referenced Black Box source is retained with its MIT license but is not executed. Toolchain licenses remain their own; their presence does not relicense the tools. External assets, fonts, puzzle collections and future candidate games always need their own review. No Night Patrol noncommercial assets or unlicensed Diver code are added by this change.
 
 ## Earlier MIT releases keep their rights
 
@@ -37,7 +37,7 @@ The complete source route also includes the following exact upstream source tree
 | lucide-react 0.468.0 | [lucide-icons/lucide 0.468.0, commit f12b0de](https://github.com/lucide-icons/lucide/tree/f12b0de177fbc2a6795e99be065887e72b237123): packages/lucide-react/src, editable icons/*.svg and release/build scripts; the tagged source uses a version placeholder, and .github/workflows/release.yml sets the release version before build/publish |
 | Vite 7.3.6 emitted preload helper | [vitejs/vite v7.3.6, commit 0a7b53b](https://github.com/vitejs/vite/tree/0a7b53ba230c6e68f502a89864534c607d393ab7): packages/vite/src/node/plugins/modulePreloadPolyfill.ts, importAnalysisBuild.ts and package build configuration |
 
-The complete editable upstream Slant/open-gomoku/Xiangqi source snapshots are already retained in this repository with their fixed-version manifests and full original notices.
+The complete editable upstream Slant/open-gomoku/Xiangqi/runner source snapshots are already retained in this repository with their fixed-version manifests and full original notices.
 
 ## License text provenance
 

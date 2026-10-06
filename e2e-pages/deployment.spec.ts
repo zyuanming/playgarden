@@ -58,7 +58,7 @@ test("production base, every game module, and earned local progress survive depl
     await expect(page.locator(".game-surface")).toBeVisible();
     await expect(page.locator(".game-surface .loading")).toHaveCount(0);
     await expect(page.locator(".module-error")).toHaveCount(0);
-    if (game.freePlay) await page.getByRole("button", { name: "棋形练习", exact: true }).click();
+    if (game.freePlay) await page.getByRole("button", { name: game.modeLabels?.practice ?? "棋形练习", exact: true }).click();
     await expect(page.getByLabel("选择关卡", { exact: true }).locator("option")).toHaveCount(game.levelCount);
     if (game.id === "lights-out") {
       await page.getByLabel("选择关卡", { exact: true }).selectOption("111");

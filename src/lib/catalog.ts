@@ -85,10 +85,17 @@ export const GAME_IDS = [
   "blackbox",
   "gomoku",
   "xiangqi",
+  "cloudrunner",
 ] as const;
 export type GameId = (typeof GAME_IDS)[number];
 export type Category =
-  "逻辑思维" | "编程启蒙" | "空间想象" | "记忆观察" | "数字推理" | "科学实验";
+  | "逻辑思维"
+  | "编程启蒙"
+  | "空间想象"
+  | "记忆观察"
+  | "数字推理"
+  | "科学实验"
+  | "动作反应";
 export const CATEGORIES: readonly string[] = [
   "全部",
   "逻辑思维",
@@ -97,6 +104,7 @@ export const CATEGORIES: readonly string[] = [
   "记忆观察",
   "数字推理",
   "科学实验",
+  "动作反应",
 ];
 export type GameMeta = {
   id: GameId;
@@ -110,6 +118,8 @@ export type GameMeta = {
   resumeKey?: string;
   freePlay?: boolean;
   freePlayCaption?: string;
+  modeLabels?: { free: string; practice: string };
+  allowUndo?: boolean;
   source:
     | { kind: "original"; license: "GPL-3.0-only"; notes: string }
     | {

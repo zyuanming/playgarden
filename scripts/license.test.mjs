@@ -11,7 +11,7 @@ test('GPL text is exactly the official fixed SPDX blob and ships verbatim',()=>{
 });
 test('earlier MIT grant is explicitly historical and upstream grants survive',()=>{
  assert.match(read('docs/licensing-history/MIT-through-0e46980.txt'),/^MIT License\n/);assert.match(read('docs/licensing.md'),/not retroactively withdrawn/);assert.match(read('docs/licensing.md'),/not an offer to dual-license/);
- for(const [upstream,publicPath] of [['vendor/open-gomoku/LICENSE','public/gomoku-LICENSE.txt'],['vendor/sgtatham-slant/LICENCE','public/slant-LICENCE.txt'],['docs/upstream/xiangqi.js/LICENSE','public/xiangqi-LICENSE.txt']])assert.equal(read(upstream).trim(),read(publicPath).trim());
+ for(const [upstream,publicPath] of [['vendor/open-gomoku/LICENSE','public/gomoku-LICENSE.txt'],['vendor/sgtatham-slant/LICENCE','public/slant-LICENCE.txt'],['docs/upstream/xiangqi.js/LICENSE','public/xiangqi-LICENSE.txt'],['vendor/cloudrunner/LICENSE','public/cloudrunner-LICENSE.txt']])assert.equal(read(upstream).trim(),read(publicPath).trim());
  assert.match(read('src/games/gomokuLogic.ts'),/open-gomoku Contributors. MIT/);assert.match(read('src/vendor/xiangqi/xiangqiCore.js'),/Released under the BSD-2-Clause license/);
 });
 test('complete runtime notices are reproducible and correspond to installed locked packages',()=>{
