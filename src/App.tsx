@@ -201,7 +201,10 @@ export default function App() {
           )}
           <p className="catalog-count">
             {visible.length} 款可玩游戏 ·{" "}
-            {visible.reduce((total, game) => total + game.levelCount, 0)} 个关卡
+            {visible.some((game) => game.levelCount > 0) && <>
+              {visible.reduce((total, game) => total + game.levelCount, 0)} 个关卡
+            </>}
+            {visible.some((game) => game.endless) && <>{visible.some((game) => game.levelCount > 0) ? " · " : ""}无尽模式</>}
           </p>
           <section className="game-grid" aria-label="游戏列表">
             {visible.slice(0, visibleLimit).map((g) => {
@@ -266,7 +269,7 @@ export default function App() {
                         <ArrowRight size={19} />
                       </button>
                     </div>
-                    <div
+                    {g.endless ? <div className="card-progress" aria-label="无尽模式，挑战自己的最高分"><small>无尽模式 · 挑战最高分</small></div> : <div
                       className="card-progress"
                       aria-label={`已完成 ${progress.completed[g.id].length} 关`}
                     >
@@ -286,7 +289,7 @@ export default function App() {
                       <small>
                         {progress.completed[g.id].length}/{g.levelCount} 关
                       </small>
-                    </div>
+                    </div>}
                   </div>
                 </article>
               );

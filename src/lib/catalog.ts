@@ -117,6 +117,8 @@ export type GameMeta = {
   artwork: { url: string; position: string; size: string };
   resumeKey?: string;
   freePlay?: boolean;
+  /** One open-ended score game; no finite levels or practice mode. */
+  endless?: boolean;
   freePlayCaption?: string;
   modeLabels?: { free: string; practice: string };
   allowUndo?: boolean;

@@ -1,20 +1,8 @@
 import { test, expect } from "@playwright/test";
 import { openGame, chooseLevel, complete, captureErrors } from "./helpers";
-import { mergeLevels } from "../src/games/mergeLogic";
 import { trafficLevels } from "../src/games/trafficLogic";
 import { arithmeticLevels } from "../src/games/arithmeticLogic";
 import { wordSearchLevels } from "../src/games/wordSearchLogic";
-test("all 12 seeded number merge challenges", async ({ page }, info) => {
-  const errors = captureErrors(page);
-  await openGame(page, "合并花园");
-  for (let level = 0; level < mergeLevels.length; level++) {
-    await chooseLevel(page, level);
-    for (const direction of mergeLevels[level].solution)
-      await page.locator(`[data-merge-direction="${direction}"]`).click();
-    await complete(page, info, "merge", level);
-  }
-  expect(errors).toEqual([]);
-});
 test("all 12 parking escape challenges", async ({ page }, info) => {
   const errors = captureErrors(page);
   await openGame(page, "停车场出口");
