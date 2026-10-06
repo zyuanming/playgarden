@@ -9,4 +9,12 @@ export function parseMergeBest(raw:string|null):number{if(raw===null||!/^\d+$/.t
 export function readMergeBest():number{try{return parseMergeBest(localStorage.getItem(MERGE_BEST_KEY));}catch{return 0;}}
 export function readMergeSave():MergeState|null{try{return parseMergeSave(localStorage.getItem(MERGE_SAVE_KEY));}catch{return null;}}
 /** Separate best record survives restart, undo and corrupted round data. */
-export function saveMerge(state:MergeState,best:number):{best:number;saved:boolean}{const highest=Math.max(best,state.score,readMergeBest());let saved=true;try{localStorage.setItem(MERGE_BEST_KEY,String(highest));}catch{saved=false;}try{localStorage.setItem(MERGE_SAVE_KEY,serializeMergeSave(state));}catch{saved=false;}return {best:highest,saved};}
+export function saveMerge(state:MergeState,best:number):{best:number;saved:boolean}{
+ let stored=0,saved=true,canReadBest=true;
+ try{stored=parseMergeBest(localStorage.getItem(MERGE_BEST_KEY));}catch{saved=false;canReadBest=false;}
+ const highest=Math.max(best,state.score,stored);
+ // If a read fails, do not blindly replace a possibly higher existing record.
+ if(canReadBest)try{localStorage.setItem(MERGE_BEST_KEY,String(highest));}catch{saved=false;}
+ try{localStorage.setItem(MERGE_SAVE_KEY,serializeMergeSave(state));}catch{saved=false;}
+ return {best:highest,saved};
+}

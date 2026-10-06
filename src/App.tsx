@@ -200,7 +200,8 @@ export default function App() {
             </p>
           )}
           <p className="catalog-count">
-            {visible.length} 款可玩游戏 ·{" "}
+            {visible.length} 款可玩游戏
+            {visible.length > 0 && " · "}
             {visible.some((game) => game.levelCount > 0) && <>
               {visible.reduce((total, game) => total + game.levelCount, 0)} 个关卡
             </>}

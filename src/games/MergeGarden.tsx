@@ -61,7 +61,7 @@ function MergeRound({paused,freshStart,hintToken,undoToken,onStatus}:GameProps){
  const tiles=phase==="sliding"?state.motion.map(m=>({id:m.id,index:m.to,value:m.value,from:m.from})):state.tiles.map(t=>({...t,from:t.index}));
  return <div className="puzzle-layout me-game merge-garden merge-classic" data-game="merge" data-merge-phase={phase} data-merge-moves={state.moves} data-merge-over={stuck}>
   <section className="me-playfield" aria-label="2048 无尽模式">
-   <header className="me-heading"><div><span className="mini-label">慢慢合并 · 不限关卡</span><h3>每一步，都有新可能。</h3></div><span className="merge-badge" aria-hidden="true">2048</span></header>
+   <header className="me-heading"><div><span className="mini-label">慢慢合并 · 挑战高分</span><h3>每一步，都有新可能。</h3></div><span className="merge-badge" aria-hidden="true">2048</span></header>
    <div className="me-scorebar"><div><small>本局得分</small><b data-merge-score>{state.score.toLocaleString()}</b>{effects===state.moves&&gain>0&&<span className="merge-gain" key={state.moves} aria-hidden="true">+{gain}</span>}</div><div><small>本机最高分</small><b data-merge-best>{best.toLocaleString()}</b></div><div><small>最大数字</small><b>{largest}</b></div></div>
    <div className="merge-board-wrap"><div ref={boardRef} className="merge-board" role="group" aria-label="2048 棋盘，滑动或方向键移动全部数字" tabIndex={0}
     onKeyDown={event=>{if(event.ctrlKey||event.metaKey||event.altKey)return;const direction=({ArrowUp:"up",ArrowRight:"right",ArrowDown:"down",ArrowLeft:"left",w:"up",d:"right",s:"down",a:"left"} as Record<string,MergeDirection>)[event.key];if(direction){event.preventDefault();if(!event.repeat||!busy.current)execute(direction);}}}
