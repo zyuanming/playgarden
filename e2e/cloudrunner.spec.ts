@@ -4,10 +4,39 @@ import {
   openRunner,
   freezeRunner,
   playLesson,
-  runnerLayout,
   swipe,
 } from "./cloudrunnerJourney";
 import { runnerLessons } from "../src/games/cloudrunnerLogic";
+
+async function runnerLayout(page: import("@playwright/test").Page) {
+  expect(
+    await page.evaluate(
+      () => document.documentElement.scrollWidth <= innerWidth + 1,
+    ),
+  ).toBe(true);
+  const box = await page.locator(".cr-stage").boundingBox();
+  expect(box!.width).toBeGreaterThan(230);
+  expect(box!.height).toBeGreaterThanOrEqual(
+    (page.viewportSize()?.height ?? 900) <= 600 ? 220 : 330,
+  );
+  for (const button of await page.locator(".cr-controls button").all()) {
+    const b = await button.boundingBox();
+    expect(b!.height).toBeGreaterThanOrEqual(44);
+    expect(b!.width).toBeGreaterThanOrEqual(44);
+  }
+  await expect(page.locator(".module-error")).toHaveCount(0);
+}
+async function playfieldInViewport(page: import("@playwright/test").Page) {
+  const size = page.viewportSize()!;
+  const field = await page.locator(".cr-stage").boundingBox(),
+    controls = await page.locator(".cr-controls").boundingBox();
+  expect(field!.y).toBeGreaterThanOrEqual(-1);
+  expect(field!.y + field!.height).toBeLessThanOrEqual(size.height + 1);
+  expect(controls!.y + controls!.height).toBeLessThanOrEqual(size.height + 1);
+  await expect(
+    page.getByRole("button", { name: "暂停奔跑", exact: true }),
+  ).toBeInViewport();
+}
 for (let lesson = 0; lesson < runnerLessons.length; lesson++)
   test(`Cloudrunner lesson ${lesson + 1}: independent control certificate`, async ({
     page,
@@ -16,7 +45,9 @@ for (let lesson = 0; lesson < runnerLessons.length; lesson++)
     const errors: string[] = [];
     page.on("pageerror", (e) => errors.push(e.message));
     await openRunner(page);
-    await expect(page.getByRole("heading", {name:"云迹跑者",exact:true})).toBeVisible();
+    await expect(
+      page.getByRole("heading", { name: "云迹跑者", exact: true }),
+    ).toBeVisible();
     await freezeRunner(page);
     await playLesson(
       page,
@@ -211,4 +242,120 @@ test("云迹跑者 320 px, landscape, reduced motion, and turn mistake", async (
     path: info.outputPath("runner-landscape-failure.png"),
     fullPage: true,
   });
+});
+
+test("云迹跑者 active compact view keeps real controls visible and keyboard focus clear", async ({
+  page,
+}, info) => {
+  const errors: string[] = [];
+  page.on("pageerror", (e) => errors.push(e.message));
+  await openRunner(page);
+  await freezeRunner(page);
+  await page.getByRole("button", { name: "六段入门", exact: true }).click();
+  for (const size of [
+    { width: 320, height: 740 },
+    { width: 740, height: 390 },
+  ]) {
+    await page.setViewportSize(size);
+    await page.getByLabel("选择关卡", { exact: true }).selectOption("3");
+    await page.getByRole("button", { name: "开始这一段", exact: true }).click();
+    await page.clock.runFor(64);
+    await playfieldInViewport(page);
+    await runnerLayout(page);
+    const field = page.getByRole("group", { name: /云路跑道/ });
+    await field.focus();
+    await page.keyboard.press("Tab");
+    await expect(
+      page.getByRole("button", { name: "暂停奔跑", exact: true }),
+    ).toBeFocused();
+    await page.screenshot({
+      path: info.outputPath(`runner-${size.width}-active-focus-viewport.png`),
+    });
+    await page.keyboard.press("Enter");
+    await expect(page.locator(".cloudrunner")).toHaveAttribute(
+      "data-held",
+      "true",
+    );
+    const before = await page
+      .locator(".cloudrunner")
+      .getAttribute("data-distance");
+    await page.clock.runFor(1000);
+    await expect(page.locator(".cloudrunner")).toHaveAttribute(
+      "data-distance",
+      before!,
+    );
+    await page.screenshot({
+      path: info.outputPath(`runner-${size.width}-manual-pause-viewport.png`),
+    });
+    await expect(
+      page.getByRole("button", { name: "回到云路", exact: true }),
+    ).toBeFocused();
+    await page.keyboard.press("Enter");
+    await page.clock.runFor(64);
+    await playfieldInViewport(page);
+    await page.getByRole("button", { name: "跳跃", exact: true }).focus();
+    await expect(
+      page.getByRole("button", { name: "跳跃", exact: true }),
+    ).toBeFocused();
+    await page.screenshot({
+      path: info.outputPath(`runner-${size.width}-button-focus-viewport.png`),
+    });
+  }
+  expect(errors).toEqual([]);
+});
+
+test("云迹跑者 both turns expose the whole courier before mid and after camera rotation", async ({
+  page,
+}, info) => {
+  const errors: string[] = [];
+  page.on("pageerror", (e) => errors.push(e.message));
+  await openRunner(page);
+  await freezeRunner(page);
+  await page.getByRole("button", { name: "六段入门", exact: true }).click();
+  for (const [lesson, direction] of [
+    [3, "左"],
+    [4, "右"],
+  ] as const) {
+    await page
+      .getByLabel("选择关卡", { exact: true })
+      .selectOption(String(lesson));
+    await page.clock.runFor(32);
+    await page.screenshot({
+      path: info.outputPath(`runner-turn-${direction}-ready-viewport.png`),
+    });
+    await page.getByRole("button", { name: "开始这一段", exact: true }).click();
+    await page.clock.runFor(1000);
+    await playfieldInViewport(page);
+    await page.screenshot({
+      path: info.outputPath(`runner-turn-${direction}-running-viewport.png`),
+    });
+    await page.clock.runFor(4400);
+    await page
+      .getByRole("button", { name: `预备${direction}转`, exact: true })
+      .click();
+    await playfieldInViewport(page);
+    await page.screenshot({
+      path: info.outputPath(`runner-turn-${direction}-before-viewport.png`),
+    });
+    await page.clock.runFor(1600);
+    await expect(page.locator(".cloudrunner")).toHaveAttribute(
+      "data-turns",
+      "1",
+    );
+    await playfieldInViewport(page);
+    await page.screenshot({
+      path: info.outputPath(`runner-turn-${direction}-mid-viewport.png`),
+    });
+    await page.clock.runFor(600);
+    await playfieldInViewport(page);
+    await page.screenshot({
+      path: info.outputPath(`runner-turn-${direction}-settled-viewport.png`),
+    });
+    await page.clock.runFor(5000);
+    await expect(page.locator(".cloudrunner")).toHaveAttribute(
+      "data-outcome",
+      "finished",
+    );
+  }
+  expect(errors).toEqual([]);
 });

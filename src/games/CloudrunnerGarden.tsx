@@ -13,6 +13,7 @@ import {
   ArrowUp,
   ArrowDown,
   Play,
+  Pause,
   Flag,
   RotateCcw,
   Route,
@@ -70,6 +71,9 @@ export default function CloudrunnerGarden({
   const [best, setBest] = useState(score.get()),
     [held, setHeld] = useState(false),
     [reduced, setReduced] = useState(false);
+  const [heldMessage, setHeldMessage] = useState(
+    "切走页面或画面短暂卡顿时，我们会停下脚步。",
+  );
   const heldRef = useRef(false),
     pausedRef = useRef(paused),
     mutedRef = useRef(muted),
@@ -90,14 +94,24 @@ export default function CloudrunnerGarden({
   function report(message: string) {
     callback.current.onStatus(message);
   }
-  function stopForInterruption() {
+  function stopForInterruption(
+    message = "切走页面或画面短暂卡顿时，我们会停下脚步。",
+  ) {
     if (current.current.game.phase !== "playing") return;
     heldRef.current = true;
+    setHeldMessage(message);
     setHeld(true);
     pointer.current = null;
     current.current = clearBufferedInput(current.current);
     audio.current?.setMuted(true);
     setState(current.current);
+  }
+  function focusPlayfield() {
+    stage.current?.focus({ preventScroll: true });
+    stage.current?.scrollIntoView?.({
+      block: innerHeight <= 600 ? "start" : "center",
+      behavior: "instant",
+    });
   }
   function start() {
     if (pausedRef.current || document.hidden) return;
@@ -116,7 +130,7 @@ export default function CloudrunnerGarden({
     update(next);
     audio.current?.init();
     audio.current?.setMuted(mutedRef.current);
-    stage.current?.focus({ preventScroll: true });
+    focusPlayfield();
     report(
       freePlay
         ? "出发！收集光点，留意前方障碍和路口。"
@@ -129,7 +143,7 @@ export default function CloudrunnerGarden({
     current.current = clearBufferedInput(current.current);
     setState(current.current);
     audio.current?.setMuted(mutedRef.current);
-    stage.current?.focus({ preventScroll: true });
+    focusPlayfield();
   }
   function intent(move: Intent) {
     if (pausedRef.current || heldRef.current || document.hidden) return;
@@ -195,6 +209,12 @@ export default function CloudrunnerGarden({
       lastDraw: RunnerState | null = null,
       lastWidth = 0,
       lastHeight = 0;
+    if (canvas.current) {
+      drawRunner(canvas.current, current.current, camera.current, 0, reduced);
+      lastDraw = current.current;
+      lastWidth = canvas.current.clientWidth;
+      lastHeight = canvas.current.clientHeight;
+    }
     const loop = (now: number) => {
       if (!alive.current) return;
       const elapsed = last ? (now - last) / 1000 : 0;
@@ -432,12 +452,8 @@ export default function CloudrunnerGarden({
             <div className="cr-sheet">
               <span className="cr-eyebrow">风景会等你</span>
               <h3>已经安全暂停</h3>
-              <p>
-                切走页面或画面短暂卡顿时，
-                <br />
-                我们会停下脚步。
-              </p>
-              <button className="cr-primary" onClick={resume}>
+              <p>{heldMessage}</p>
+              <button className="cr-primary" onClick={resume} autoFocus>
                 <Play size={19} />
                 回到云路
               </button>
@@ -468,7 +484,11 @@ export default function CloudrunnerGarden({
                 </span>
               </div>
               {state.outcome === "finished" ? (
-                <small>用上方“下一关”继续旅程，或点“重来”再跑。</small>
+                <small>
+                  {level < runnerLessons.length - 1
+                    ? "用上方“下一关”继续旅程，或点“重来”再跑。"
+                    : "六段已掌握！可以切换无尽漫游，或返回大厅。"}
+                </small>
               ) : (
                 <button
                   className="cr-primary"
@@ -481,6 +501,23 @@ export default function CloudrunnerGarden({
               )}
             </div>
           </div>
+        )}
+        {state.game.phase === "playing" && !held && !paused && (
+          <button
+            className="cr-pause"
+            aria-label="暂停奔跑"
+            title="暂停奔跑"
+            onClick={() =>
+              stopForInterruption("歇一歇，云路会等你。准备好后再继续。")
+            }
+          >
+            <Pause size={19} />
+          </button>
+        )}
+        {state.game.phase === "playing" && (
+          <span className="cr-live-score">
+            {Math.floor(state.game.distance)} 米 · {state.coins} 光点
+          </span>
         )}
         <span className="cr-lane">
           {state.player.lane === "left"

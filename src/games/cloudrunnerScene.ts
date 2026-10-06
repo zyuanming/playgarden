@@ -102,11 +102,13 @@ export function drawRunner(
       depth,
     };
   }
-  const ink: Ink[] = [];
+  const ink: Ink[] = [],
+    ground: Ink[] = [];
+  let groundPass = true;
   function poly(vertices: Vec[], fill: string, stroke?: string) {
     const p = vertices.map(project);
     if (p.some((v) => v.depth < 1)) return;
-    ink.push({
+    (groundPass ? ground : ink).push({
       depth: p.reduce((n, v) => n + v.depth, 0) / p.length,
       draw: () => {
         ctx.beginPath();
@@ -229,6 +231,7 @@ export function drawRunner(
       "#ead8a8",
     );
   }
+  groundPass = false;
   // Floating gardens and cypress-like topiary, all generated from stable path positions.
   for (
     let d = Math.floor((distance - 18) / 24) * 24;
@@ -273,6 +276,7 @@ export function drawRunner(
       box(d - 0.51, x, 2.6, 0.15, 0.025, ["#e5edd3"], 2.5);
     }
   }
+  groundPass = true;
   const turn = upcomingTurn(state);
   if (turn && turn.z - distance < TURN_NOTICE) {
     const d = turn.z - 9,
@@ -292,6 +296,7 @@ export function drawRunner(
       );
     }
   }
+  groundPass = false;
   if (state.lesson !== null) {
     const finish =
       state.lesson === 0
@@ -371,6 +376,9 @@ export function drawRunner(
     ],
     "#d99b48",
   );
+  // Floor polygons must never cover a raised runner at an orthogonal junction.
+  // Average-depth painter sorting is only used within each layer.
+  ground.sort((a, b) => b.depth - a.depth).forEach((x) => x.draw());
   ink.sort((a, b) => b.depth - a.depth).forEach((x) => x.draw());
   // A subtle near-field vignette keeps the runner readable without external effects.
   const shade = ctx.createLinearGradient(0, h * 0.7, 0, h);
