@@ -192,13 +192,13 @@ function certifyTents(level: TentsLevel) {
 }
 
 describe("original independently certified region and camping levels", () => {
-  it("keeps the classic twelve and appends 188 distinct Shikaku boards", () => {
+  it("keeps each classic twelve and appends 188 distinct boards per game", () => {
     expect(shikakuLevels).toHaveLength(200);
-    expect(tentsLevels).toHaveLength(12);
+    expect(tentsLevels).toHaveLength(200);
     expect(shikakuLevels.slice(0, 12).map((l) => l.size)).toEqual([
       3, 3, 4, 4, 5, 5, 5, 6, 6, 6, 7, 7,
     ]);
-    expect(tentsLevels.map((l) => l.size)).toEqual([
+    expect(tentsLevels.slice(0, 12).map((l) => l.size)).toEqual([
       4, 4, 4, 5, 5, 5, 6, 6, 6, 7, 7, 7,
     ]);
     expect(
@@ -210,7 +210,7 @@ describe("original independently certified region and camping levels", () => {
           JSON.stringify([l.size, l.trees, l.rowCounts, l.columnCounts]),
         ),
       ).size,
-    ).toBe(12);
+    ).toBe(200);
   });
   it.each(shikakuLevels.map((l, i) => [i, l] as const))(
     "Shikaku %i has exactly one independently enumerated rectangle tiling",

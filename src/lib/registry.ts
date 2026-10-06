@@ -449,7 +449,7 @@ export const games: GameDefinition[] = [
     category: "逻辑思维",
     difficulty: "中级",
     tone: "green",
-    levelCount: 12,
+    levelCount: 200,
     artwork: regionNumberArtwork(1),
     source: original,
     component: lazy(() => import("../games/TentsGarden")),

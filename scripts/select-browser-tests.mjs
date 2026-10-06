@@ -91,7 +91,7 @@ export function browserPlan({ sources, changes, full = false }) {
     if (!['A', 'M'].includes(status)) return fullPlan('deleted, renamed, or unknown change');
     if (/^(?:docs\/.*\.md|README\.md|THIRD_PARTY_NOTICES\.md|LICENSE)$/.test(path)) continue;
     if (/^e2e\/.*\.(?:spec|test)\.[cm]?[jt]sx?$/.test(path) && path in sources) { selected.add(path); continue; }
-    if (!/^src\/games\/.*\.(tsx?|css)$/.test(path) || !(path in sources)) return fullPlan('shared, tooling, or unknown path');
+    if (!/^src\/games\/.*\.(tsx?|css|json)$/.test(path) || !(path in sources)) return fullPlan('shared, tooling, or unknown path');
     const consumers = [...dependencies].filter(([, deps]) => deps.has(path));
     const direct = [...witnesses].filter(([, deps]) => deps.has(path)).map(([spec]) => spec);
     for (const spec of direct) selected.add(spec);
@@ -105,7 +105,8 @@ export function browserPlan({ sources, changes, full = false }) {
     }
   }
   if (!all.includes('e2e/current-save-smoke.spec.ts')) return fullPlan('missing shared smoke');
-  const shards = selected.has('e2e/shikaku-campaign.spec.ts') ? [1, 2, 3, 4] : [1];
+  const campaign = ['e2e/shikaku-campaign.spec.ts', 'e2e/tents-campaign.spec.ts'].some(spec => selected.has(spec));
+  const shards = campaign ? [1, 2, 3, 4] : [1];
   return { mode: 'focused', reason: 'changed features plus current-save/shell smoke', files: [...selected].sort(), shards, total: shards.length };
 }
 

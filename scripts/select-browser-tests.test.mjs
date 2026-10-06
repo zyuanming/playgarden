@@ -126,3 +126,42 @@ test('Shikaku expanded campaign keeps every desktop/mobile journey and uses four
   }
   assert.ok(plan(['src/games/regionCamping.css']).files.includes('e2e/region-number.spec.ts'));
 });
+
+test('Tents campaign component, logic, literal JSON and chapter data retain four shards plus current-save smoke', () => {
+  for (const path of ['src/games/TentsGarden.tsx', 'src/games/tentsLogic.ts', 'src/games/tentsLevels.ts', 'src/games/tentsExpansion.ts', 'src/games/tentsExpansionData.json', 'e2e/tents-campaign.spec.ts']) {
+    const selected = plan([path]);
+    assert.equal(selected.mode, 'focused', path);
+    assert.ok(selected.files.includes('e2e/tents-campaign.spec.ts'), path);
+    assert.ok(selected.files.includes('e2e/current-save-smoke.spec.ts'), path);
+    if (!path.startsWith('e2e/')) assert.ok(selected.files.includes('e2e/region-number.spec.ts'), path);
+    assert.deepEqual(selected.shards, [1, 2, 3, 4], path);
+    assert.equal(selected.total, 4, path);
+  }
+});
+
+test('shared camping styles retain Shikaku, Tents and pre-existing number journeys', () => {
+  const selected = plan(['src/games/regionCamping.css']);
+  assert.equal(selected.mode, 'focused');
+  for (const spec of ['e2e/shikaku-campaign.spec.ts', 'e2e/tents-campaign.spec.ts', 'e2e/region-number.spec.ts', 'e2e/current-save-smoke.spec.ts']) assert.ok(selected.files.includes(spec), spec);
+  assert.deepEqual(selected.shards, [1, 2, 3, 4]);
+});
+
+test('unwitnessed or untracked JSON does not silently narrow browser coverage', () => {
+  const fixture = { ...sources, 'src/games/unreferencedData.json': '[]' };
+  assert.equal(browserPlan({ sources: fixture, changes: [{ status: 'A', path: 'src/games/unreferencedData.json' }] }).mode, 'full');
+  assert.equal(plan(['src/games/unknownData.json']).mode, 'full');
+  assert.equal(plan(['tests/fixtures/tentsLegacy.json']).mode, 'full');
+});
+
+test('Tents source defines bounded real-control journeys, chapter screenshots and both unchanged viewport projects', () => {
+  const spec = readFileSync(new URL('../e2e/tents-campaign.spec.ts', import.meta.url), 'utf8');
+  const config = readFileSync(new URL('../playwright.config.ts', import.meta.url), 'utf8');
+  assert.ok(spec.includes('start < 200; start += 5'));
+  assert.ok(spec.includes('tentsChapters.flatMap'));
+  assert.ok(spec.includes('start + Math.floor((count - 1) / 2)'));
+  assert.ok(spec.includes('start + count - 1'));
+  for (const state of ['-start.png', '-won.png', '-keyboard-focus.png', '-paused.png', '-wrong-step-repair.png', '-live-hint.png']) assert.ok(spec.includes(state), state);
+  for (const action of ['采用这一步', '清除这个标记', '下一关', '返回大厅', '继续游戏', '撤销', '重来']) assert.ok(spec.includes(action), action);
+  assert.ok(!/test\.(?:skip|fixme|only)|test\.setTimeout|timeout\s*:/.test(spec));
+  for (const required of ['fullyParallel: true', 'timeout: 120000', 'name: "desktop"', 'name: "mobile"', 'width: 1536', 'width: 390']) assert.ok(config.includes(required), required);
+});

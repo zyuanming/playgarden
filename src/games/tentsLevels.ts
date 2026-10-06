@@ -1,5 +1,10 @@
+import { tentsExpansion } from "./tentsExpansion";
 /** Original MIT puzzles. Certificates are never read by solving, validation, or hints. */
 export type TentsLevel = {
+  id?: string;
+  contentVersion?: number;
+  chapter?: number;
+  objective?: string;
   title: string;
   size: number;
   trees: number[];
@@ -130,4 +135,13 @@ export const tentsLevels: TentsLevel[] = [
     authoringCandidates: 30,
     title: "森林露营家",
   },
+  ...tentsExpansion,
 ];
+
+export const tentsChapters = [
+  { id: 0, title: "经典入门", start: 0, count: 12, objective: "从小营地开始，认识树与帐篷一一配对、行列数量和间距。" },
+  { id: 1, title: "行列与树影", start: 12, count: 28, objective: "先看零行列和已满的行列，再找树旁唯一的空位。" },
+  { id: 2, title: "间距与排除", start: 40, count: 50, objective: "结合帐篷不能接触的规则，比较一行或一列的可行摆法。" },
+  { id: 3, title: "树旁的空间", start: 90, count: 50, objective: "一棵树的候选位置都需要空间；排除会同时挡住它们的格子。" },
+  { id: 4, title: "森林综合挑战", start: 140, count: 60, objective: "交替运用行列数量、间距组合和树旁空间，完成更长的推理链。" },
+] as const;

@@ -1,0 +1,8874 @@
+[
+  {
+    "size": 4,
+    "trees": [
+      0,
+      7,
+      10,
+      13
+    ],
+    "rowCounts": [
+      2,
+      0,
+      1,
+      1
+    ],
+    "columnCounts": [
+      1,
+      1,
+      0,
+      2
+    ],
+    "solution": [
+      1,
+      3,
+      11,
+      12
+    ],
+    "authoringNodes": 5,
+    "authoringCandidates": 6,
+    "id": "tents-counts-001",
+    "contentVersion": 1,
+    "chapter": 1,
+    "objective": "先看零行列和已满的行列，再找树旁唯一的空位。",
+    "title": "行列与树影 01"
+  },
+  {
+    "size": 4,
+    "trees": [
+      1,
+      2,
+      11,
+      14
+    ],
+    "rowCounts": [
+      2,
+      0,
+      0,
+      2
+    ],
+    "columnCounts": [
+      1,
+      1,
+      0,
+      2
+    ],
+    "solution": [
+      0,
+      3,
+      13,
+      15
+    ],
+    "authoringNodes": 5,
+    "authoringCandidates": 4,
+    "id": "tents-counts-002",
+    "contentVersion": 1,
+    "chapter": 1,
+    "objective": "先看零行列和已满的行列，再找树旁唯一的空位。",
+    "title": "行列与树影 02"
+  },
+  {
+    "size": 4,
+    "trees": [
+      3,
+      5,
+      10,
+      13
+    ],
+    "rowCounts": [
+      1,
+      1,
+      0,
+      2
+    ],
+    "columnCounts": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "solution": [
+      1,
+      7,
+      12,
+      14
+    ],
+    "authoringNodes": 5,
+    "authoringCandidates": 7,
+    "id": "tents-counts-003",
+    "contentVersion": 1,
+    "chapter": 1,
+    "objective": "先看零行列和已满的行列，再找树旁唯一的空位。",
+    "title": "行列与树影 03"
+  },
+  {
+    "size": 4,
+    "trees": [
+      1,
+      2,
+      8,
+      11
+    ],
+    "rowCounts": [
+      2,
+      0,
+      1,
+      1
+    ],
+    "columnCounts": [
+      1,
+      1,
+      0,
+      2
+    ],
+    "solution": [
+      0,
+      3,
+      9,
+      15
+    ],
+    "authoringNodes": 5,
+    "authoringCandidates": 6,
+    "id": "tents-counts-004",
+    "contentVersion": 1,
+    "chapter": 1,
+    "objective": "先看零行列和已满的行列，再找树旁唯一的空位。",
+    "title": "行列与树影 04"
+  },
+  {
+    "size": 5,
+    "trees": [
+      3,
+      10,
+      13,
+      19
+    ],
+    "rowCounts": [
+      1,
+      0,
+      1,
+      1,
+      1
+    ],
+    "columnCounts": [
+      1,
+      0,
+      2,
+      0,
+      1
+    ],
+    "solution": [
+      2,
+      12,
+      15,
+      24
+    ],
+    "authoringNodes": 6,
+    "authoringCandidates": 9,
+    "id": "tents-counts-005",
+    "contentVersion": 1,
+    "chapter": 1,
+    "objective": "先看零行列和已满的行列，再找树旁唯一的空位。",
+    "title": "行列与树影 05"
+  },
+  {
+    "size": 5,
+    "trees": [
+      8,
+      15,
+      16,
+      24
+    ],
+    "rowCounts": [
+      0,
+      1,
+      1,
+      2,
+      0
+    ],
+    "columnCounts": [
+      1,
+      0,
+      2,
+      0,
+      1
+    ],
+    "solution": [
+      7,
+      10,
+      17,
+      19
+    ],
+    "authoringNodes": 6,
+    "authoringCandidates": 8,
+    "id": "tents-counts-006",
+    "contentVersion": 1,
+    "chapter": 1,
+    "objective": "先看零行列和已满的行列，再找树旁唯一的空位。",
+    "title": "行列与树影 06"
+  },
+  {
+    "size": 5,
+    "trees": [
+      1,
+      4,
+      8,
+      17
+    ],
+    "rowCounts": [
+      1,
+      2,
+      0,
+      0,
+      1
+    ],
+    "columnCounts": [
+      1,
+      0,
+      2,
+      0,
+      1
+    ],
+    "solution": [
+      0,
+      7,
+      9,
+      22
+    ],
+    "authoringNodes": 6,
+    "authoringCandidates": 8,
+    "id": "tents-counts-007",
+    "contentVersion": 1,
+    "chapter": 1,
+    "objective": "先看零行列和已满的行列，再找树旁唯一的空位。",
+    "title": "行列与树影 07"
+  },
+  {
+    "size": 5,
+    "trees": [
+      0,
+      8,
+      14,
+      22
+    ],
+    "rowCounts": [
+      1,
+      1,
+      1,
+      0,
+      1
+    ],
+    "columnCounts": [
+      1,
+      0,
+      0,
+      3,
+      0
+    ],
+    "solution": [
+      3,
+      5,
+      13,
+      23
+    ],
+    "authoringNodes": 6,
+    "authoringCandidates": 9,
+    "id": "tents-counts-008",
+    "contentVersion": 1,
+    "chapter": 1,
+    "objective": "先看零行列和已满的行列，再找树旁唯一的空位。",
+    "title": "行列与树影 08"
+  },
+  {
+    "size": 5,
+    "trees": [
+      2,
+      20,
+      21,
+      24
+    ],
+    "rowCounts": [
+      0,
+      1,
+      0,
+      2,
+      1
+    ],
+    "columnCounts": [
+      1,
+      0,
+      2,
+      0,
+      1
+    ],
+    "solution": [
+      7,
+      15,
+      19,
+      22
+    ],
+    "authoringNodes": 6,
+    "authoringCandidates": 7,
+    "id": "tents-counts-009",
+    "contentVersion": 1,
+    "chapter": 1,
+    "objective": "先看零行列和已满的行列，再找树旁唯一的空位。",
+    "title": "行列与树影 09"
+  },
+  {
+    "size": 5,
+    "trees": [
+      2,
+      8,
+      11,
+      14,
+      21
+    ],
+    "rowCounts": [
+      2,
+      0,
+      1,
+      1,
+      1
+    ],
+    "columnCounts": [
+      2,
+      1,
+      0,
+      1,
+      1
+    ],
+    "solution": [
+      1,
+      3,
+      10,
+      19,
+      20
+    ],
+    "authoringNodes": 6,
+    "authoringCandidates": 9,
+    "id": "tents-counts-010",
+    "contentVersion": 1,
+    "chapter": 1,
+    "objective": "先看零行列和已满的行列，再找树旁唯一的空位。",
+    "title": "行列与树影 10"
+  },
+  {
+    "size": 5,
+    "trees": [
+      6,
+      14,
+      17,
+      19,
+      21
+    ],
+    "rowCounts": [
+      1,
+      1,
+      0,
+      0,
+      3
+    ],
+    "columnCounts": [
+      1,
+      1,
+      1,
+      0,
+      2
+    ],
+    "solution": [
+      1,
+      9,
+      20,
+      22,
+      24
+    ],
+    "authoringNodes": 6,
+    "authoringCandidates": 7,
+    "id": "tents-counts-011",
+    "contentVersion": 1,
+    "chapter": 1,
+    "objective": "先看零行列和已满的行列，再找树旁唯一的空位。",
+    "title": "行列与树影 11"
+  },
+  {
+    "size": 5,
+    "trees": [
+      8,
+      9,
+      18,
+      21
+    ],
+    "rowCounts": [
+      0,
+      1,
+      1,
+      1,
+      1
+    ],
+    "columnCounts": [
+      1,
+      0,
+      2,
+      0,
+      1
+    ],
+    "solution": [
+      7,
+      14,
+      17,
+      20
+    ],
+    "authoringNodes": 6,
+    "authoringCandidates": 10,
+    "id": "tents-counts-012",
+    "contentVersion": 1,
+    "chapter": 1,
+    "objective": "先看零行列和已满的行列，再找树旁唯一的空位。",
+    "title": "行列与树影 12"
+  },
+  {
+    "size": 5,
+    "trees": [
+      1,
+      3,
+      7,
+      16,
+      21,
+      24
+    ],
+    "rowCounts": [
+      3,
+      0,
+      1,
+      1,
+      1
+    ],
+    "columnCounts": [
+      2,
+      1,
+      1,
+      0,
+      2
+    ],
+    "solution": [
+      0,
+      2,
+      4,
+      11,
+      19,
+      20
+    ],
+    "authoringNodes": 6,
+    "authoringCandidates": 10,
+    "id": "tents-counts-013",
+    "contentVersion": 1,
+    "chapter": 1,
+    "objective": "先看零行列和已满的行列，再找树旁唯一的空位。",
+    "title": "行列与树影 13"
+  },
+  {
+    "size": 5,
+    "trees": [
+      3,
+      4,
+      6,
+      17
+    ],
+    "rowCounts": [
+      1,
+      2,
+      0,
+      0,
+      1
+    ],
+    "columnCounts": [
+      1,
+      0,
+      2,
+      0,
+      1
+    ],
+    "solution": [
+      2,
+      5,
+      9,
+      22
+    ],
+    "authoringNodes": 6,
+    "authoringCandidates": 9,
+    "id": "tents-counts-014",
+    "contentVersion": 1,
+    "chapter": 1,
+    "objective": "先看零行列和已满的行列，再找树旁唯一的空位。",
+    "title": "行列与树影 14"
+  },
+  {
+    "size": 5,
+    "trees": [
+      1,
+      3,
+      10,
+      15,
+      23
+    ],
+    "rowCounts": [
+      2,
+      0,
+      1,
+      0,
+      2
+    ],
+    "columnCounts": [
+      2,
+      1,
+      0,
+      0,
+      2
+    ],
+    "solution": [
+      0,
+      4,
+      11,
+      20,
+      24
+    ],
+    "authoringNodes": 6,
+    "authoringCandidates": 9,
+    "id": "tents-counts-015",
+    "contentVersion": 1,
+    "chapter": 1,
+    "objective": "先看零行列和已满的行列，再找树旁唯一的空位。",
+    "title": "行列与树影 15"
+  },
+  {
+    "size": 5,
+    "trees": [
+      7,
+      13,
+      21,
+      23
+    ],
+    "rowCounts": [
+      1,
+      0,
+      1,
+      1,
+      1
+    ],
+    "columnCounts": [
+      0,
+      1,
+      1,
+      0,
+      2
+    ],
+    "solution": [
+      2,
+      14,
+      16,
+      24
+    ],
+    "authoringNodes": 6,
+    "authoringCandidates": 9,
+    "id": "tents-counts-016",
+    "contentVersion": 1,
+    "chapter": 1,
+    "objective": "先看零行列和已满的行列，再找树旁唯一的空位。",
+    "title": "行列与树影 16"
+  },
+  {
+    "size": 5,
+    "trees": [
+      0,
+      9,
+      20,
+      23
+    ],
+    "rowCounts": [
+      1,
+      0,
+      1,
+      1,
+      1
+    ],
+    "columnCounts": [
+      1,
+      1,
+      1,
+      0,
+      1
+    ],
+    "solution": [
+      1,
+      14,
+      15,
+      22
+    ],
+    "authoringNodes": 8,
+    "authoringCandidates": 9,
+    "id": "tents-counts-017",
+    "contentVersion": 1,
+    "chapter": 1,
+    "objective": "先看零行列和已满的行列，再找树旁唯一的空位。",
+    "title": "行列与树影 17"
+  },
+  {
+    "size": 5,
+    "trees": [
+      1,
+      4,
+      15,
+      16,
+      18,
+      21
+    ],
+    "rowCounts": [
+      2,
+      0,
+      1,
+      2,
+      1
+    ],
+    "columnCounts": [
+      3,
+      0,
+      1,
+      1,
+      1
+    ],
+    "solution": [
+      0,
+      3,
+      10,
+      17,
+      19,
+      20
+    ],
+    "authoringNodes": 9,
+    "authoringCandidates": 10,
+    "id": "tents-counts-018",
+    "contentVersion": 1,
+    "chapter": 1,
+    "objective": "先看零行列和已满的行列，再找树旁唯一的空位。",
+    "title": "行列与树影 18"
+  },
+  {
+    "size": 5,
+    "trees": [
+      1,
+      8,
+      14,
+      17,
+      19
+    ],
+    "rowCounts": [
+      1,
+      1,
+      1,
+      0,
+      2
+    ],
+    "columnCounts": [
+      0,
+      1,
+      1,
+      2,
+      1
+    ],
+    "solution": [
+      3,
+      6,
+      13,
+      22,
+      24
+    ],
+    "authoringNodes": 6,
+    "authoringCandidates": 10,
+    "id": "tents-counts-019",
+    "contentVersion": 1,
+    "chapter": 1,
+    "objective": "先看零行列和已满的行列，再找树旁唯一的空位。",
+    "title": "行列与树影 19"
+  },
+  {
+    "size": 5,
+    "trees": [
+      1,
+      2,
+      14,
+      17,
+      21
+    ],
+    "rowCounts": [
+      1,
+      1,
+      0,
+      1,
+      2
+    ],
+    "columnCounts": [
+      2,
+      0,
+      2,
+      0,
+      1
+    ],
+    "solution": [
+      0,
+      7,
+      19,
+      20,
+      22
+    ],
+    "authoringNodes": 6,
+    "authoringCandidates": 10,
+    "id": "tents-counts-020",
+    "contentVersion": 1,
+    "chapter": 1,
+    "objective": "先看零行列和已满的行列，再找树旁唯一的空位。",
+    "title": "行列与树影 20"
+  },
+  {
+    "size": 5,
+    "trees": [
+      3,
+      9,
+      10,
+      16,
+      24
+    ],
+    "rowCounts": [
+      2,
+      1,
+      0,
+      1,
+      1
+    ],
+    "columnCounts": [
+      1,
+      1,
+      1,
+      0,
+      2
+    ],
+    "solution": [
+      2,
+      4,
+      5,
+      19,
+      21
+    ],
+    "authoringNodes": 6,
+    "authoringCandidates": 9,
+    "id": "tents-counts-021",
+    "contentVersion": 1,
+    "chapter": 1,
+    "objective": "先看零行列和已满的行列，再找树旁唯一的空位。",
+    "title": "行列与树影 21"
+  },
+  {
+    "size": 5,
+    "trees": [
+      3,
+      4,
+      13,
+      18,
+      21
+    ],
+    "rowCounts": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "columnCounts": [
+      1,
+      0,
+      2,
+      0,
+      2
+    ],
+    "solution": [
+      2,
+      9,
+      12,
+      19,
+      20
+    ],
+    "authoringNodes": 6,
+    "authoringCandidates": 11,
+    "id": "tents-counts-022",
+    "contentVersion": 1,
+    "chapter": 1,
+    "objective": "先看零行列和已满的行列，再找树旁唯一的空位。",
+    "title": "行列与树影 22"
+  },
+  {
+    "size": 5,
+    "trees": [
+      3,
+      5,
+      9,
+      14,
+      18,
+      21
+    ],
+    "rowCounts": [
+      2,
+      0,
+      2,
+      0,
+      2
+    ],
+    "columnCounts": [
+      2,
+      0,
+      1,
+      2,
+      1
+    ],
+    "solution": [
+      2,
+      4,
+      10,
+      13,
+      20,
+      23
+    ],
+    "authoringNodes": 10,
+    "authoringCandidates": 8,
+    "id": "tents-counts-023",
+    "contentVersion": 1,
+    "chapter": 1,
+    "objective": "先看零行列和已满的行列，再找树旁唯一的空位。",
+    "title": "行列与树影 23"
+  },
+  {
+    "size": 5,
+    "trees": [
+      4,
+      6,
+      11,
+      15,
+      18,
+      22
+    ],
+    "rowCounts": [
+      2,
+      0,
+      2,
+      0,
+      2
+    ],
+    "columnCounts": [
+      2,
+      1,
+      0,
+      3,
+      0
+    ],
+    "solution": [
+      1,
+      3,
+      10,
+      13,
+      20,
+      23
+    ],
+    "authoringNodes": 6,
+    "authoringCandidates": 7,
+    "id": "tents-counts-024",
+    "contentVersion": 1,
+    "chapter": 1,
+    "objective": "先看零行列和已满的行列，再找树旁唯一的空位。",
+    "title": "行列与树影 24"
+  },
+  {
+    "size": 5,
+    "trees": [
+      2,
+      9,
+      15,
+      16,
+      19
+    ],
+    "rowCounts": [
+      1,
+      1,
+      0,
+      1,
+      2
+    ],
+    "columnCounts": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "solution": [
+      1,
+      8,
+      17,
+      20,
+      24
+    ],
+    "authoringNodes": 11,
+    "authoringCandidates": 10,
+    "id": "tents-counts-025",
+    "contentVersion": 1,
+    "chapter": 1,
+    "objective": "先看零行列和已满的行列，再找树旁唯一的空位。",
+    "title": "行列与树影 25"
+  },
+  {
+    "size": 5,
+    "trees": [
+      3,
+      6,
+      9,
+      11,
+      14,
+      22
+    ],
+    "rowCounts": [
+      2,
+      1,
+      1,
+      1,
+      1
+    ],
+    "columnCounts": [
+      1,
+      1,
+      2,
+      0,
+      2
+    ],
+    "solution": [
+      2,
+      4,
+      5,
+      12,
+      19,
+      21
+    ],
+    "authoringNodes": 7,
+    "authoringCandidates": 13,
+    "id": "tents-counts-026",
+    "contentVersion": 1,
+    "chapter": 1,
+    "objective": "先看零行列和已满的行列，再找树旁唯一的空位。",
+    "title": "行列与树影 26"
+  },
+  {
+    "size": 5,
+    "trees": [
+      0,
+      3,
+      6,
+      12,
+      18,
+      21
+    ],
+    "rowCounts": [
+      1,
+      2,
+      0,
+      2,
+      1
+    ],
+    "columnCounts": [
+      2,
+      0,
+      2,
+      0,
+      2
+    ],
+    "solution": [
+      4,
+      5,
+      7,
+      17,
+      19,
+      20
+    ],
+    "authoringNodes": 6,
+    "authoringCandidates": 11,
+    "id": "tents-counts-027",
+    "contentVersion": 1,
+    "chapter": 1,
+    "objective": "先看零行列和已满的行列，再找树旁唯一的空位。",
+    "title": "行列与树影 27"
+  },
+  {
+    "size": 5,
+    "trees": [
+      9,
+      12,
+      14,
+      15,
+      23
+    ],
+    "rowCounts": [
+      0,
+      1,
+      1,
+      1,
+      2
+    ],
+    "columnCounts": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "solution": [
+      8,
+      11,
+      19,
+      20,
+      22
+    ],
+    "authoringNodes": 9,
+    "authoringCandidates": 13,
+    "id": "tents-counts-028",
+    "contentVersion": 1,
+    "chapter": 1,
+    "objective": "先看零行列和已满的行列，再找树旁唯一的空位。",
+    "title": "行列与树影 28"
+  },
+  {
+    "size": 5,
+    "trees": [
+      7,
+      14,
+      15,
+      16,
+      17,
+      23
+    ],
+    "rowCounts": [
+      1,
+      1,
+      1,
+      0,
+      3
+    ],
+    "columnCounts": [
+      1,
+      1,
+      2,
+      0,
+      2
+    ],
+    "solution": [
+      2,
+      9,
+      11,
+      20,
+      22,
+      24
+    ],
+    "authoringNodes": 6,
+    "authoringCandidates": 10,
+    "id": "tents-spacing-001",
+    "contentVersion": 1,
+    "chapter": 2,
+    "objective": "结合帐篷不能接触的规则，比较一行或一列的可行摆法。",
+    "title": "间距与排除 01"
+  },
+  {
+    "size": 5,
+    "trees": [
+      0,
+      7,
+      8,
+      9,
+      16,
+      23
+    ],
+    "rowCounts": [
+      2,
+      1,
+      1,
+      0,
+      2
+    ],
+    "columnCounts": [
+      1,
+      1,
+      1,
+      1,
+      2
+    ],
+    "solution": [
+      2,
+      4,
+      5,
+      13,
+      21,
+      24
+    ],
+    "authoringNodes": 8,
+    "authoringCandidates": 12,
+    "id": "tents-spacing-002",
+    "contentVersion": 1,
+    "chapter": 2,
+    "objective": "结合帐篷不能接触的规则，比较一行或一列的可行摆法。",
+    "title": "间距与排除 02"
+  },
+  {
+    "size": 5,
+    "trees": [
+      5,
+      9,
+      16,
+      18,
+      24
+    ],
+    "rowCounts": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "columnCounts": [
+      1,
+      1,
+      0,
+      2,
+      1
+    ],
+    "solution": [
+      4,
+      6,
+      13,
+      15,
+      23
+    ],
+    "authoringNodes": 10,
+    "authoringCandidates": 13,
+    "id": "tents-spacing-003",
+    "contentVersion": 1,
+    "chapter": 2,
+    "objective": "结合帐篷不能接触的规则，比较一行或一列的可行摆法。",
+    "title": "间距与排除 03"
+  },
+  {
+    "size": 5,
+    "trees": [
+      1,
+      9,
+      13,
+      16,
+      18
+    ],
+    "rowCounts": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "columnCounts": [
+      1,
+      1,
+      0,
+      1,
+      2
+    ],
+    "solution": [
+      4,
+      6,
+      14,
+      15,
+      23
+    ],
+    "authoringNodes": 8,
+    "authoringCandidates": 13,
+    "id": "tents-spacing-004",
+    "contentVersion": 1,
+    "chapter": 2,
+    "objective": "结合帐篷不能接触的规则，比较一行或一列的可行摆法。",
+    "title": "间距与排除 04"
+  },
+  {
+    "size": 5,
+    "trees": [
+      4,
+      5,
+      12,
+      16,
+      19
+    ],
+    "rowCounts": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "columnCounts": [
+      1,
+      1,
+      0,
+      2,
+      1
+    ],
+    "solution": [
+      3,
+      6,
+      13,
+      15,
+      24
+    ],
+    "authoringNodes": 9,
+    "authoringCandidates": 14,
+    "id": "tents-spacing-005",
+    "contentVersion": 1,
+    "chapter": 2,
+    "objective": "结合帐篷不能接触的规则，比较一行或一列的可行摆法。",
+    "title": "间距与排除 05"
+  },
+  {
+    "size": 5,
+    "trees": [
+      3,
+      5,
+      6,
+      9,
+      17,
+      18
+    ],
+    "rowCounts": [
+      2,
+      1,
+      1,
+      1,
+      1
+    ],
+    "columnCounts": [
+      1,
+      1,
+      1,
+      1,
+      2
+    ],
+    "solution": [
+      0,
+      4,
+      7,
+      14,
+      16,
+      23
+    ],
+    "authoringNodes": 9,
+    "authoringCandidates": 15,
+    "id": "tents-spacing-006",
+    "contentVersion": 1,
+    "chapter": 2,
+    "objective": "结合帐篷不能接触的规则，比较一行或一列的可行摆法。",
+    "title": "间距与排除 06"
+  },
+  {
+    "size": 6,
+    "trees": [
+      10,
+      16,
+      18,
+      22,
+      30,
+      32
+    ],
+    "rowCounts": [
+      0,
+      1,
+      2,
+      1,
+      1,
+      1
+    ],
+    "columnCounts": [
+      2,
+      0,
+      0,
+      2,
+      0,
+      2
+    ],
+    "solution": [
+      11,
+      12,
+      15,
+      23,
+      24,
+      33
+    ],
+    "authoringNodes": 9,
+    "authoringCandidates": 14,
+    "id": "tents-spacing-007",
+    "contentVersion": 1,
+    "chapter": 2,
+    "objective": "结合帐篷不能接触的规则，比较一行或一列的可行摆法。",
+    "title": "间距与排除 07"
+  },
+  {
+    "size": 6,
+    "trees": [
+      2,
+      6,
+      9,
+      16,
+      22,
+      26,
+      28
+    ],
+    "rowCounts": [
+      2,
+      0,
+      2,
+      1,
+      2,
+      0
+    ],
+    "columnCounts": [
+      1,
+      2,
+      0,
+      3,
+      0,
+      1
+    ],
+    "solution": [
+      1,
+      3,
+      12,
+      15,
+      23,
+      25,
+      27
+    ],
+    "authoringNodes": 9,
+    "authoringCandidates": 13,
+    "id": "tents-spacing-008",
+    "contentVersion": 1,
+    "chapter": 2,
+    "objective": "结合帐篷不能接触的规则，比较一行或一列的可行摆法。",
+    "title": "间距与排除 08"
+  },
+  {
+    "size": 6,
+    "trees": [
+      2,
+      4,
+      8,
+      14,
+      16,
+      18,
+      27,
+      35
+    ],
+    "rowCounts": [
+      2,
+      1,
+      2,
+      0,
+      3,
+      0
+    ],
+    "columnCounts": [
+      1,
+      1,
+      1,
+      2,
+      0,
+      3
+    ],
+    "solution": [
+      3,
+      5,
+      7,
+      15,
+      17,
+      24,
+      26,
+      29
+    ],
+    "authoringNodes": 9,
+    "authoringCandidates": 15,
+    "id": "tents-spacing-009",
+    "contentVersion": 1,
+    "chapter": 2,
+    "objective": "结合帐篷不能接触的规则，比较一行或一列的可行摆法。",
+    "title": "间距与排除 09"
+  },
+  {
+    "size": 6,
+    "trees": [
+      4,
+      8,
+      9,
+      21,
+      24,
+      27,
+      33
+    ],
+    "rowCounts": [
+      2,
+      1,
+      0,
+      2,
+      1,
+      1
+    ],
+    "columnCounts": [
+      1,
+      1,
+      1,
+      1,
+      2,
+      1
+    ],
+    "solution": [
+      3,
+      5,
+      7,
+      18,
+      22,
+      26,
+      34
+    ],
+    "authoringNodes": 10,
+    "authoringCandidates": 14,
+    "id": "tents-spacing-010",
+    "contentVersion": 1,
+    "chapter": 2,
+    "objective": "结合帐篷不能接触的规则，比较一行或一列的可行摆法。",
+    "title": "间距与排除 10"
+  },
+  {
+    "size": 6,
+    "trees": [
+      2,
+      9,
+      10,
+      11,
+      13,
+      29,
+      34
+    ],
+    "rowCounts": [
+      3,
+      0,
+      2,
+      0,
+      0,
+      2
+    ],
+    "columnCounts": [
+      1,
+      1,
+      0,
+      2,
+      1,
+      2
+    ],
+    "solution": [
+      1,
+      3,
+      5,
+      12,
+      16,
+      33,
+      35
+    ],
+    "authoringNodes": 7,
+    "authoringCandidates": 12,
+    "id": "tents-spacing-011",
+    "contentVersion": 1,
+    "chapter": 2,
+    "objective": "结合帐篷不能接触的规则，比较一行或一列的可行摆法。",
+    "title": "间距与排除 11"
+  },
+  {
+    "size": 6,
+    "trees": [
+      0,
+      5,
+      7,
+      8,
+      24,
+      25,
+      28,
+      35
+    ],
+    "rowCounts": [
+      1,
+      2,
+      1,
+      1,
+      1,
+      2
+    ],
+    "columnCounts": [
+      1,
+      2,
+      1,
+      1,
+      2,
+      1
+    ],
+    "solution": [
+      1,
+      9,
+      11,
+      13,
+      22,
+      26,
+      30,
+      34
+    ],
+    "authoringNodes": 10,
+    "authoringCandidates": 16,
+    "id": "tents-spacing-012",
+    "contentVersion": 1,
+    "chapter": 2,
+    "objective": "结合帐篷不能接触的规则，比较一行或一列的可行摆法。",
+    "title": "间距与排除 12"
+  },
+  {
+    "size": 6,
+    "trees": [
+      1,
+      4,
+      11,
+      24,
+      25,
+      26,
+      29
+    ],
+    "rowCounts": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      2
+    ],
+    "columnCounts": [
+      1,
+      2,
+      1,
+      0,
+      1,
+      2
+    ],
+    "solution": [
+      5,
+      7,
+      17,
+      19,
+      28,
+      30,
+      32
+    ],
+    "authoringNodes": 15,
+    "authoringCandidates": 17,
+    "id": "tents-spacing-013",
+    "contentVersion": 1,
+    "chapter": 2,
+    "objective": "结合帐篷不能接触的规则，比较一行或一列的可行摆法。",
+    "title": "间距与排除 13"
+  },
+  {
+    "size": 6,
+    "trees": [
+      5,
+      6,
+      17,
+      20,
+      31,
+      35
+    ],
+    "rowCounts": [
+      1,
+      1,
+      1,
+      0,
+      2,
+      1
+    ],
+    "columnCounts": [
+      1,
+      1,
+      1,
+      0,
+      2,
+      1
+    ],
+    "solution": [
+      4,
+      7,
+      16,
+      26,
+      29,
+      30
+    ],
+    "authoringNodes": 9,
+    "authoringCandidates": 13,
+    "id": "tents-spacing-014",
+    "contentVersion": 1,
+    "chapter": 2,
+    "objective": "结合帐篷不能接触的规则，比较一行或一列的可行摆法。",
+    "title": "间距与排除 14"
+  },
+  {
+    "size": 6,
+    "trees": [
+      1,
+      7,
+      9,
+      13,
+      27,
+      28,
+      30,
+      34
+    ],
+    "rowCounts": [
+      1,
+      2,
+      1,
+      1,
+      2,
+      1
+    ],
+    "columnCounts": [
+      3,
+      0,
+      1,
+      2,
+      1,
+      1
+    ],
+    "solution": [
+      0,
+      8,
+      10,
+      12,
+      21,
+      24,
+      29,
+      33
+    ],
+    "authoringNodes": 10,
+    "authoringCandidates": 18,
+    "id": "tents-spacing-015",
+    "contentVersion": 1,
+    "chapter": 2,
+    "objective": "结合帐篷不能接触的规则，比较一行或一列的可行摆法。",
+    "title": "间距与排除 15"
+  },
+  {
+    "size": 6,
+    "trees": [
+      7,
+      8,
+      17,
+      20,
+      24,
+      29,
+      32
+    ],
+    "rowCounts": [
+      1,
+      2,
+      0,
+      1,
+      0,
+      3
+    ],
+    "columnCounts": [
+      2,
+      1,
+      1,
+      1,
+      0,
+      2
+    ],
+    "solution": [
+      2,
+      6,
+      11,
+      19,
+      30,
+      33,
+      35
+    ],
+    "authoringNodes": 14,
+    "authoringCandidates": 13,
+    "id": "tents-spacing-016",
+    "contentVersion": 1,
+    "chapter": 2,
+    "objective": "结合帐篷不能接触的规则，比较一行或一列的可行摆法。",
+    "title": "间距与排除 16"
+  },
+  {
+    "size": 6,
+    "trees": [
+      0,
+      3,
+      4,
+      15,
+      18,
+      29,
+      32
+    ],
+    "rowCounts": [
+      2,
+      1,
+      1,
+      1,
+      0,
+      2
+    ],
+    "columnCounts": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      2
+    ],
+    "solution": [
+      2,
+      5,
+      6,
+      16,
+      19,
+      33,
+      35
+    ],
+    "authoringNodes": 9,
+    "authoringCandidates": 15,
+    "id": "tents-spacing-017",
+    "contentVersion": 1,
+    "chapter": 2,
+    "objective": "结合帐篷不能接触的规则，比较一行或一列的可行摆法。",
+    "title": "间距与排除 17"
+  },
+  {
+    "size": 6,
+    "trees": [
+      3,
+      4,
+      6,
+      20,
+      26,
+      29,
+      32,
+      34
+    ],
+    "rowCounts": [
+      2,
+      1,
+      0,
+      2,
+      1,
+      2
+    ],
+    "columnCounts": [
+      1,
+      2,
+      0,
+      2,
+      0,
+      3
+    ],
+    "solution": [
+      0,
+      5,
+      9,
+      19,
+      23,
+      27,
+      31,
+      35
+    ],
+    "authoringNodes": 9,
+    "authoringCandidates": 16,
+    "id": "tents-spacing-018",
+    "contentVersion": 1,
+    "chapter": 2,
+    "objective": "结合帐篷不能接触的规则，比较一行或一列的可行摆法。",
+    "title": "间距与排除 18"
+  },
+  {
+    "size": 6,
+    "trees": [
+      3,
+      6,
+      11,
+      13,
+      15,
+      24,
+      29
+    ],
+    "rowCounts": [
+      3,
+      0,
+      2,
+      0,
+      2,
+      0
+    ],
+    "columnCounts": [
+      2,
+      1,
+      1,
+      0,
+      2,
+      1
+    ],
+    "solution": [
+      0,
+      2,
+      5,
+      12,
+      16,
+      25,
+      28
+    ],
+    "authoringNodes": 13,
+    "authoringCandidates": 11,
+    "id": "tents-spacing-019",
+    "contentVersion": 1,
+    "chapter": 2,
+    "objective": "结合帐篷不能接触的规则，比较一行或一列的可行摆法。",
+    "title": "间距与排除 19"
+  },
+  {
+    "size": 6,
+    "trees": [
+      10,
+      13,
+      21,
+      22,
+      23,
+      24,
+      30
+    ],
+    "rowCounts": [
+      1,
+      1,
+      1,
+      1,
+      2,
+      1
+    ],
+    "columnCounts": [
+      1,
+      2,
+      0,
+      1,
+      2,
+      1
+    ],
+    "solution": [
+      4,
+      7,
+      16,
+      18,
+      27,
+      29,
+      31
+    ],
+    "authoringNodes": 11,
+    "authoringCandidates": 17,
+    "id": "tents-spacing-020",
+    "contentVersion": 1,
+    "chapter": 2,
+    "objective": "结合帐篷不能接触的规则，比较一行或一列的可行摆法。",
+    "title": "间距与排除 20"
+  },
+  {
+    "size": 6,
+    "trees": [
+      1,
+      4,
+      7,
+      8,
+      16,
+      23,
+      31,
+      32
+    ],
+    "rowCounts": [
+      2,
+      1,
+      2,
+      0,
+      2,
+      1
+    ],
+    "columnCounts": [
+      2,
+      1,
+      1,
+      1,
+      0,
+      3
+    ],
+    "solution": [
+      0,
+      5,
+      9,
+      13,
+      17,
+      26,
+      29,
+      30
+    ],
+    "authoringNodes": 17,
+    "authoringCandidates": 17,
+    "id": "tents-spacing-021",
+    "contentVersion": 1,
+    "chapter": 2,
+    "objective": "结合帐篷不能接触的规则，比较一行或一列的可行摆法。",
+    "title": "间距与排除 21"
+  },
+  {
+    "size": 6,
+    "trees": [
+      9,
+      11,
+      13,
+      16,
+      20,
+      29,
+      31
+    ],
+    "rowCounts": [
+      1,
+      1,
+      2,
+      1,
+      1,
+      1
+    ],
+    "columnCounts": [
+      0,
+      2,
+      1,
+      2,
+      1,
+      1
+    ],
+    "solution": [
+      3,
+      7,
+      15,
+      17,
+      19,
+      28,
+      32
+    ],
+    "authoringNodes": 10,
+    "authoringCandidates": 20,
+    "id": "tents-spacing-022",
+    "contentVersion": 1,
+    "chapter": 2,
+    "objective": "结合帐篷不能接触的规则，比较一行或一列的可行摆法。",
+    "title": "间距与排除 22"
+  },
+  {
+    "size": 6,
+    "trees": [
+      2,
+      9,
+      10,
+      11,
+      13,
+      25,
+      29,
+      32
+    ],
+    "rowCounts": [
+      3,
+      0,
+      2,
+      0,
+      3,
+      0
+    ],
+    "columnCounts": [
+      2,
+      1,
+      1,
+      1,
+      2,
+      1
+    ],
+    "solution": [
+      1,
+      3,
+      5,
+      12,
+      16,
+      24,
+      26,
+      28
+    ],
+    "authoringNodes": 7,
+    "authoringCandidates": 12,
+    "id": "tents-spacing-023",
+    "contentVersion": 1,
+    "chapter": 2,
+    "objective": "结合帐篷不能接触的规则，比较一行或一列的可行摆法。",
+    "title": "间距与排除 23"
+  },
+  {
+    "size": 6,
+    "trees": [
+      1,
+      4,
+      11,
+      14,
+      22,
+      25,
+      28,
+      32
+    ],
+    "rowCounts": [
+      3,
+      0,
+      1,
+      2,
+      1,
+      1
+    ],
+    "columnCounts": [
+      1,
+      2,
+      0,
+      3,
+      0,
+      2
+    ],
+    "solution": [
+      0,
+      3,
+      5,
+      15,
+      19,
+      23,
+      27,
+      31
+    ],
+    "authoringNodes": 11,
+    "authoringCandidates": 18,
+    "id": "tents-spacing-024",
+    "contentVersion": 1,
+    "chapter": 2,
+    "objective": "结合帐篷不能接触的规则，比较一行或一列的可行摆法。",
+    "title": "间距与排除 24"
+  },
+  {
+    "size": 6,
+    "trees": [
+      1,
+      3,
+      6,
+      11,
+      15,
+      25,
+      32,
+      35
+    ],
+    "rowCounts": [
+      2,
+      0,
+      3,
+      0,
+      2,
+      1
+    ],
+    "columnCounts": [
+      3,
+      0,
+      1,
+      1,
+      1,
+      2
+    ],
+    "solution": [
+      0,
+      4,
+      12,
+      14,
+      17,
+      24,
+      29,
+      33
+    ],
+    "authoringNodes": 17,
+    "authoringCandidates": 15,
+    "id": "tents-spacing-025",
+    "contentVersion": 1,
+    "chapter": 2,
+    "objective": "结合帐篷不能接触的规则，比较一行或一列的可行摆法。",
+    "title": "间距与排除 25"
+  },
+  {
+    "size": 6,
+    "trees": [
+      6,
+      9,
+      11,
+      22,
+      25,
+      30
+    ],
+    "rowCounts": [
+      1,
+      1,
+      1,
+      2,
+      0,
+      1
+    ],
+    "columnCounts": [
+      0,
+      3,
+      0,
+      2,
+      0,
+      1
+    ],
+    "solution": [
+      3,
+      7,
+      17,
+      19,
+      21,
+      31
+    ],
+    "authoringNodes": 14,
+    "authoringCandidates": 15,
+    "id": "tents-spacing-026",
+    "contentVersion": 1,
+    "chapter": 2,
+    "objective": "结合帐篷不能接触的规则，比较一行或一列的可行摆法。",
+    "title": "间距与排除 26"
+  },
+  {
+    "size": 6,
+    "trees": [
+      1,
+      8,
+      11,
+      14,
+      18,
+      22,
+      25,
+      31
+    ],
+    "rowCounts": [
+      2,
+      1,
+      1,
+      1,
+      2,
+      1
+    ],
+    "columnCounts": [
+      3,
+      0,
+      2,
+      1,
+      1,
+      1
+    ],
+    "solution": [
+      0,
+      5,
+      9,
+      12,
+      20,
+      24,
+      28,
+      32
+    ],
+    "authoringNodes": 11,
+    "authoringCandidates": 20,
+    "id": "tents-spacing-027",
+    "contentVersion": 1,
+    "chapter": 2,
+    "objective": "结合帐篷不能接触的规则，比较一行或一列的可行摆法。",
+    "title": "间距与排除 27"
+  },
+  {
+    "size": 6,
+    "trees": [
+      5,
+      9,
+      13,
+      25,
+      28,
+      32
+    ],
+    "rowCounts": [
+      1,
+      1,
+      1,
+      0,
+      2,
+      1
+    ],
+    "columnCounts": [
+      1,
+      0,
+      2,
+      1,
+      1,
+      1
+    ],
+    "solution": [
+      3,
+      11,
+      14,
+      24,
+      26,
+      34
+    ],
+    "authoringNodes": 12,
+    "authoringCandidates": 18,
+    "id": "tents-spacing-028",
+    "contentVersion": 1,
+    "chapter": 2,
+    "objective": "结合帐篷不能接触的规则，比较一行或一列的可行摆法。",
+    "title": "间距与排除 28"
+  },
+  {
+    "size": 6,
+    "trees": [
+      6,
+      10,
+      11,
+      20,
+      24,
+      27,
+      33,
+      35
+    ],
+    "rowCounts": [
+      1,
+      1,
+      1,
+      2,
+      1,
+      2
+    ],
+    "columnCounts": [
+      1,
+      2,
+      1,
+      1,
+      1,
+      2
+    ],
+    "solution": [
+      4,
+      7,
+      17,
+      19,
+      21,
+      29,
+      30,
+      32
+    ],
+    "authoringNodes": 20,
+    "authoringCandidates": 18,
+    "id": "tents-spacing-029",
+    "contentVersion": 1,
+    "chapter": 2,
+    "objective": "结合帐篷不能接触的规则，比较一行或一列的可行摆法。",
+    "title": "间距与排除 29"
+  },
+  {
+    "size": 6,
+    "trees": [
+      1,
+      7,
+      16,
+      25,
+      26,
+      27
+    ],
+    "rowCounts": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "columnCounts": [
+      2,
+      1,
+      1,
+      1,
+      1,
+      0
+    ],
+    "solution": [
+      0,
+      10,
+      13,
+      21,
+      24,
+      32
+    ],
+    "authoringNodes": 12,
+    "authoringCandidates": 17,
+    "id": "tents-spacing-030",
+    "contentVersion": 1,
+    "chapter": 2,
+    "objective": "结合帐篷不能接触的规则，比较一行或一列的可行摆法。",
+    "title": "间距与排除 30"
+  },
+  {
+    "size": 6,
+    "trees": [
+      6,
+      10,
+      11,
+      18,
+      24,
+      28,
+      32,
+      34
+    ],
+    "rowCounts": [
+      2,
+      1,
+      1,
+      1,
+      1,
+      2
+    ],
+    "columnCounts": [
+      2,
+      1,
+      0,
+      2,
+      1,
+      2
+    ],
+    "solution": [
+      0,
+      5,
+      9,
+      12,
+      22,
+      25,
+      33,
+      35
+    ],
+    "authoringNodes": 9,
+    "authoringCandidates": 18,
+    "id": "tents-spacing-031",
+    "contentVersion": 1,
+    "chapter": 2,
+    "objective": "结合帐篷不能接触的规则，比较一行或一列的可行摆法。",
+    "title": "间距与排除 31"
+  },
+  {
+    "size": 6,
+    "trees": [
+      1,
+      3,
+      11,
+      15,
+      25,
+      28
+    ],
+    "rowCounts": [
+      3,
+      0,
+      1,
+      0,
+      2,
+      0
+    ],
+    "columnCounts": [
+      1,
+      0,
+      2,
+      0,
+      1,
+      2
+    ],
+    "solution": [
+      0,
+      2,
+      5,
+      16,
+      26,
+      29
+    ],
+    "authoringNodes": 13,
+    "authoringCandidates": 13,
+    "id": "tents-spacing-032",
+    "contentVersion": 1,
+    "chapter": 2,
+    "objective": "结合帐篷不能接触的规则，比较一行或一列的可行摆法。",
+    "title": "间距与排除 32"
+  },
+  {
+    "size": 6,
+    "trees": [
+      3,
+      11,
+      13,
+      14,
+      24,
+      25,
+      26,
+      29
+    ],
+    "rowCounts": [
+      1,
+      1,
+      2,
+      1,
+      1,
+      2
+    ],
+    "columnCounts": [
+      1,
+      2,
+      1,
+      1,
+      2,
+      1
+    ],
+    "solution": [
+      4,
+      7,
+      15,
+      17,
+      19,
+      28,
+      30,
+      32
+    ],
+    "authoringNodes": 14,
+    "authoringCandidates": 20,
+    "id": "tents-spacing-033",
+    "contentVersion": 1,
+    "chapter": 2,
+    "objective": "结合帐篷不能接触的规则，比较一行或一列的可行摆法。",
+    "title": "间距与排除 33"
+  },
+  {
+    "size": 6,
+    "trees": [
+      4,
+      5,
+      19,
+      20,
+      22,
+      30,
+      33,
+      35
+    ],
+    "rowCounts": [
+      1,
+      1,
+      1,
+      2,
+      1,
+      2
+    ],
+    "columnCounts": [
+      1,
+      1,
+      1,
+      2,
+      1,
+      2
+    ],
+    "solution": [
+      3,
+      11,
+      13,
+      21,
+      23,
+      24,
+      32,
+      34
+    ],
+    "authoringNodes": 10,
+    "authoringCandidates": 17,
+    "id": "tents-spacing-034",
+    "contentVersion": 1,
+    "chapter": 2,
+    "objective": "结合帐篷不能接触的规则，比较一行或一列的可行摆法。",
+    "title": "间距与排除 34"
+  },
+  {
+    "size": 6,
+    "trees": [
+      0,
+      8,
+      17,
+      18,
+      21,
+      26,
+      35
+    ],
+    "rowCounts": [
+      1,
+      2,
+      1,
+      1,
+      2,
+      0
+    ],
+    "columnCounts": [
+      1,
+      1,
+      1,
+      2,
+      0,
+      2
+    ],
+    "solution": [
+      2,
+      6,
+      11,
+      15,
+      19,
+      27,
+      29
+    ],
+    "authoringNodes": 14,
+    "authoringCandidates": 21,
+    "id": "tents-spacing-035",
+    "contentVersion": 1,
+    "chapter": 2,
+    "objective": "结合帐篷不能接触的规则，比较一行或一列的可行摆法。",
+    "title": "间距与排除 35"
+  },
+  {
+    "size": 6,
+    "trees": [
+      5,
+      7,
+      15,
+      19,
+      26,
+      28
+    ],
+    "rowCounts": [
+      0,
+      2,
+      0,
+      2,
+      1,
+      1
+    ],
+    "columnCounts": [
+      1,
+      0,
+      2,
+      1,
+      0,
+      2
+    ],
+    "solution": [
+      8,
+      11,
+      18,
+      21,
+      29,
+      32
+    ],
+    "authoringNodes": 15,
+    "authoringCandidates": 16,
+    "id": "tents-spacing-036",
+    "contentVersion": 1,
+    "chapter": 2,
+    "objective": "结合帐篷不能接触的规则，比较一行或一列的可行摆法。",
+    "title": "间距与排除 36"
+  },
+  {
+    "size": 6,
+    "trees": [
+      1,
+      5,
+      9,
+      22,
+      24,
+      32,
+      35
+    ],
+    "rowCounts": [
+      2,
+      1,
+      0,
+      2,
+      1,
+      1
+    ],
+    "columnCounts": [
+      2,
+      0,
+      1,
+      1,
+      1,
+      2
+    ],
+    "solution": [
+      0,
+      3,
+      11,
+      18,
+      23,
+      26,
+      34
+    ],
+    "authoringNodes": 24,
+    "authoringCandidates": 20,
+    "id": "tents-spacing-037",
+    "contentVersion": 1,
+    "chapter": 2,
+    "objective": "结合帐篷不能接触的规则，比较一行或一列的可行摆法。",
+    "title": "间距与排除 37"
+  },
+  {
+    "size": 6,
+    "trees": [
+      3,
+      6,
+      12,
+      17,
+      19,
+      22,
+      27,
+      35
+    ],
+    "rowCounts": [
+      2,
+      1,
+      1,
+      2,
+      1,
+      1
+    ],
+    "columnCounts": [
+      1,
+      2,
+      1,
+      1,
+      1,
+      2
+    ],
+    "solution": [
+      0,
+      2,
+      11,
+      13,
+      21,
+      23,
+      25,
+      34
+    ],
+    "authoringNodes": 9,
+    "authoringCandidates": 19,
+    "id": "tents-spacing-038",
+    "contentVersion": 1,
+    "chapter": 2,
+    "objective": "结合帐篷不能接触的规则，比较一行或一列的可行摆法。",
+    "title": "间距与排除 38"
+  },
+  {
+    "size": 6,
+    "trees": [
+      3,
+      7,
+      12,
+      21,
+      23,
+      28,
+      31,
+      34
+    ],
+    "rowCounts": [
+      1,
+      1,
+      1,
+      2,
+      1,
+      2
+    ],
+    "columnCounts": [
+      3,
+      0,
+      1,
+      1,
+      1,
+      2
+    ],
+    "solution": [
+      4,
+      6,
+      17,
+      18,
+      20,
+      29,
+      30,
+      33
+    ],
+    "authoringNodes": 12,
+    "authoringCandidates": 20,
+    "id": "tents-spacing-039",
+    "contentVersion": 1,
+    "chapter": 2,
+    "objective": "结合帐篷不能接触的规则，比较一行或一列的可行摆法。",
+    "title": "间距与排除 39"
+  },
+  {
+    "size": 6,
+    "trees": [
+      2,
+      5,
+      16,
+      18,
+      20,
+      24,
+      28,
+      33
+    ],
+    "rowCounts": [
+      1,
+      1,
+      2,
+      1,
+      1,
+      2
+    ],
+    "columnCounts": [
+      2,
+      0,
+      2,
+      1,
+      1,
+      2
+    ],
+    "solution": [
+      4,
+      8,
+      12,
+      17,
+      21,
+      29,
+      30,
+      32
+    ],
+    "authoringNodes": 11,
+    "authoringCandidates": 21,
+    "id": "tents-spacing-040",
+    "contentVersion": 1,
+    "chapter": 2,
+    "objective": "结合帐篷不能接触的规则，比较一行或一列的可行摆法。",
+    "title": "间距与排除 40"
+  },
+  {
+    "size": 6,
+    "trees": [
+      4,
+      8,
+      11,
+      12,
+      20,
+      23,
+      31,
+      33
+    ],
+    "rowCounts": [
+      1,
+      2,
+      1,
+      1,
+      1,
+      2
+    ],
+    "columnCounts": [
+      2,
+      1,
+      1,
+      1,
+      0,
+      3
+    ],
+    "solution": [
+      5,
+      6,
+      9,
+      17,
+      19,
+      29,
+      30,
+      32
+    ],
+    "authoringNodes": 13,
+    "authoringCandidates": 21,
+    "id": "tents-spacing-041",
+    "contentVersion": 1,
+    "chapter": 2,
+    "objective": "结合帐篷不能接触的规则，比较一行或一列的可行摆法。",
+    "title": "间距与排除 41"
+  },
+  {
+    "size": 6,
+    "trees": [
+      8,
+      11,
+      12,
+      16,
+      23,
+      27,
+      35
+    ],
+    "rowCounts": [
+      2,
+      0,
+      2,
+      1,
+      1,
+      1
+    ],
+    "columnCounts": [
+      1,
+      0,
+      2,
+      1,
+      1,
+      2
+    ],
+    "solution": [
+      2,
+      5,
+      15,
+      17,
+      18,
+      26,
+      34
+    ],
+    "authoringNodes": 10,
+    "authoringCandidates": 14,
+    "id": "tents-spacing-042",
+    "contentVersion": 1,
+    "chapter": 2,
+    "objective": "结合帐篷不能接触的规则，比较一行或一列的可行摆法。",
+    "title": "间距与排除 42"
+  },
+  {
+    "size": 6,
+    "trees": [
+      2,
+      7,
+      10,
+      14,
+      27,
+      28,
+      30,
+      34
+    ],
+    "rowCounts": [
+      2,
+      1,
+      1,
+      1,
+      1,
+      2
+    ],
+    "columnCounts": [
+      1,
+      2,
+      0,
+      2,
+      1,
+      2
+    ],
+    "solution": [
+      1,
+      3,
+      11,
+      13,
+      22,
+      24,
+      33,
+      35
+    ],
+    "authoringNodes": 9,
+    "authoringCandidates": 18,
+    "id": "tents-spacing-043",
+    "contentVersion": 1,
+    "chapter": 2,
+    "objective": "结合帐篷不能接触的规则，比较一行或一列的可行摆法。",
+    "title": "间距与排除 43"
+  },
+  {
+    "size": 6,
+    "trees": [
+      2,
+      4,
+      12,
+      17,
+      18,
+      29,
+      33
+    ],
+    "rowCounts": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      2
+    ],
+    "columnCounts": [
+      1,
+      2,
+      1,
+      0,
+      1,
+      2
+    ],
+    "solution": [
+      1,
+      10,
+      13,
+      23,
+      24,
+      32,
+      35
+    ],
+    "authoringNodes": 15,
+    "authoringCandidates": 16,
+    "id": "tents-spacing-044",
+    "contentVersion": 1,
+    "chapter": 2,
+    "objective": "结合帐篷不能接触的规则，比较一行或一列的可行摆法。",
+    "title": "间距与排除 44"
+  },
+  {
+    "size": 6,
+    "trees": [
+      5,
+      7,
+      8,
+      20,
+      24,
+      28,
+      32
+    ],
+    "rowCounts": [
+      2,
+      1,
+      0,
+      1,
+      2,
+      1
+    ],
+    "columnCounts": [
+      1,
+      1,
+      1,
+      2,
+      1,
+      1
+    ],
+    "solution": [
+      2,
+      4,
+      6,
+      21,
+      25,
+      29,
+      33
+    ],
+    "authoringNodes": 10,
+    "authoringCandidates": 18,
+    "id": "tents-spacing-045",
+    "contentVersion": 1,
+    "chapter": 2,
+    "objective": "结合帐篷不能接触的规则，比较一行或一列的可行摆法。",
+    "title": "间距与排除 45"
+  },
+  {
+    "size": 6,
+    "trees": [
+      6,
+      10,
+      14,
+      17,
+      18,
+      22,
+      26,
+      29
+    ],
+    "rowCounts": [
+      1,
+      1,
+      1,
+      2,
+      1,
+      2
+    ],
+    "columnCounts": [
+      2,
+      0,
+      2,
+      1,
+      1,
+      2
+    ],
+    "solution": [
+      4,
+      8,
+      12,
+      21,
+      23,
+      24,
+      32,
+      35
+    ],
+    "authoringNodes": 21,
+    "authoringCandidates": 19,
+    "id": "tents-spacing-046",
+    "contentVersion": 1,
+    "chapter": 2,
+    "objective": "结合帐篷不能接触的规则，比较一行或一列的可行摆法。",
+    "title": "间距与排除 46"
+  },
+  {
+    "size": 6,
+    "trees": [
+      4,
+      7,
+      14,
+      15,
+      21,
+      28,
+      31,
+      32
+    ],
+    "rowCounts": [
+      2,
+      1,
+      1,
+      1,
+      1,
+      2
+    ],
+    "columnCounts": [
+      1,
+      2,
+      1,
+      1,
+      2,
+      1
+    ],
+    "solution": [
+      1,
+      5,
+      9,
+      13,
+      22,
+      26,
+      30,
+      34
+    ],
+    "authoringNodes": 10,
+    "authoringCandidates": 17,
+    "id": "tents-spacing-047",
+    "contentVersion": 1,
+    "chapter": 2,
+    "objective": "结合帐篷不能接触的规则，比较一行或一列的可行摆法。",
+    "title": "间距与排除 47"
+  },
+  {
+    "size": 6,
+    "trees": [
+      1,
+      3,
+      4,
+      13,
+      16,
+      21,
+      24,
+      29
+    ],
+    "rowCounts": [
+      2,
+      1,
+      2,
+      1,
+      1,
+      1
+    ],
+    "columnCounts": [
+      3,
+      0,
+      1,
+      1,
+      1,
+      2
+    ],
+    "solution": [
+      0,
+      5,
+      9,
+      12,
+      17,
+      20,
+      28,
+      30
+    ],
+    "authoringNodes": 10,
+    "authoringCandidates": 21,
+    "id": "tents-spacing-048",
+    "contentVersion": 1,
+    "chapter": 2,
+    "objective": "结合帐篷不能接触的规则，比较一行或一列的可行摆法。",
+    "title": "间距与排除 48"
+  },
+  {
+    "size": 6,
+    "trees": [
+      1,
+      6,
+      14,
+      16,
+      24,
+      28,
+      32
+    ],
+    "rowCounts": [
+      2,
+      0,
+      2,
+      0,
+      1,
+      2
+    ],
+    "columnCounts": [
+      2,
+      1,
+      1,
+      2,
+      0,
+      1
+    ],
+    "solution": [
+      0,
+      2,
+      13,
+      15,
+      29,
+      30,
+      33
+    ],
+    "authoringNodes": 21,
+    "authoringCandidates": 16,
+    "id": "tents-spacing-049",
+    "contentVersion": 1,
+    "chapter": 2,
+    "objective": "结合帐篷不能接触的规则，比较一行或一列的可行摆法。",
+    "title": "间距与排除 49"
+  },
+  {
+    "size": 6,
+    "trees": [
+      4,
+      8,
+      9,
+      12,
+      22,
+      24,
+      32,
+      33
+    ],
+    "rowCounts": [
+      2,
+      1,
+      1,
+      1,
+      1,
+      2
+    ],
+    "columnCounts": [
+      2,
+      1,
+      1,
+      1,
+      2,
+      1
+    ],
+    "solution": [
+      3,
+      5,
+      7,
+      16,
+      18,
+      26,
+      30,
+      34
+    ],
+    "authoringNodes": 22,
+    "authoringCandidates": 18,
+    "id": "tents-spacing-050",
+    "contentVersion": 1,
+    "chapter": 2,
+    "objective": "结合帐篷不能接触的规则，比较一行或一列的可行摆法。",
+    "title": "间距与排除 50"
+  },
+  {
+    "size": 6,
+    "trees": [
+      1,
+      5,
+      7,
+      14,
+      18,
+      22,
+      24,
+      31
+    ],
+    "rowCounts": [
+      1,
+      2,
+      1,
+      2,
+      0,
+      2
+    ],
+    "columnCounts": [
+      2,
+      1,
+      2,
+      1,
+      0,
+      2
+    ],
+    "solution": [
+      2,
+      6,
+      11,
+      15,
+      19,
+      23,
+      30,
+      32
+    ],
+    "authoringNodes": 10,
+    "authoringCandidates": 16,
+    "id": "tents-trees-001",
+    "contentVersion": 1,
+    "chapter": 3,
+    "objective": "一棵树的候选位置都需要空间；排除会同时挡住它们的格子。",
+    "title": "树旁的空间 01"
+  },
+  {
+    "size": 6,
+    "trees": [
+      1,
+      4,
+      8,
+      11,
+      12,
+      18,
+      21,
+      35
+    ],
+    "rowCounts": [
+      2,
+      1,
+      2,
+      0,
+      3,
+      0
+    ],
+    "columnCounts": [
+      2,
+      1,
+      0,
+      2,
+      0,
+      3
+    ],
+    "solution": [
+      0,
+      5,
+      9,
+      13,
+      17,
+      24,
+      27,
+      29
+    ],
+    "authoringNodes": 9,
+    "authoringCandidates": 16,
+    "id": "tents-trees-002",
+    "contentVersion": 1,
+    "chapter": 3,
+    "objective": "一棵树的候选位置都需要空间；排除会同时挡住它们的格子。",
+    "title": "树旁的空间 02"
+  },
+  {
+    "size": 6,
+    "trees": [
+      2,
+      6,
+      11,
+      13,
+      21,
+      24,
+      28
+    ],
+    "rowCounts": [
+      2,
+      1,
+      0,
+      2,
+      0,
+      2
+    ],
+    "columnCounts": [
+      2,
+      1,
+      1,
+      0,
+      2,
+      1
+    ],
+    "solution": [
+      0,
+      5,
+      8,
+      19,
+      22,
+      30,
+      34
+    ],
+    "authoringNodes": 8,
+    "authoringCandidates": 15,
+    "id": "tents-trees-003",
+    "contentVersion": 1,
+    "chapter": 3,
+    "objective": "一棵树的候选位置都需要空间；排除会同时挡住它们的格子。",
+    "title": "树旁的空间 03"
+  },
+  {
+    "size": 6,
+    "trees": [
+      2,
+      10,
+      11,
+      12,
+      23,
+      27,
+      30,
+      34
+    ],
+    "rowCounts": [
+      1,
+      2,
+      1,
+      1,
+      2,
+      1
+    ],
+    "columnCounts": [
+      2,
+      0,
+      1,
+      2,
+      1,
+      2
+    ],
+    "solution": [
+      4,
+      6,
+      8,
+      17,
+      21,
+      24,
+      29,
+      33
+    ],
+    "authoringNodes": 18,
+    "authoringCandidates": 20,
+    "id": "tents-trees-004",
+    "contentVersion": 1,
+    "chapter": 3,
+    "objective": "一棵树的候选位置都需要空间；排除会同时挡住它们的格子。",
+    "title": "树旁的空间 04"
+  },
+  {
+    "size": 6,
+    "trees": [
+      5,
+      7,
+      8,
+      22,
+      30,
+      32,
+      35
+    ],
+    "rowCounts": [
+      0,
+      2,
+      1,
+      1,
+      2,
+      1
+    ],
+    "columnCounts": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      2
+    ],
+    "solution": [
+      9,
+      11,
+      13,
+      23,
+      24,
+      26,
+      34
+    ],
+    "authoringNodes": 11,
+    "authoringCandidates": 17,
+    "id": "tents-trees-005",
+    "contentVersion": 1,
+    "chapter": 3,
+    "objective": "一棵树的候选位置都需要空间；排除会同时挡住它们的格子。",
+    "title": "树旁的空间 05"
+  },
+  {
+    "size": 6,
+    "trees": [
+      3,
+      4,
+      6,
+      13,
+      14,
+      23,
+      31,
+      34
+    ],
+    "rowCounts": [
+      2,
+      1,
+      1,
+      1,
+      1,
+      2
+    ],
+    "columnCounts": [
+      3,
+      0,
+      2,
+      1,
+      1,
+      1
+    ],
+    "solution": [
+      0,
+      2,
+      10,
+      12,
+      20,
+      29,
+      30,
+      33
+    ],
+    "authoringNodes": 18,
+    "authoringCandidates": 21,
+    "id": "tents-trees-006",
+    "contentVersion": 1,
+    "chapter": 3,
+    "objective": "一棵树的候选位置都需要空间；排除会同时挡住它们的格子。",
+    "title": "树旁的空间 06"
+  },
+  {
+    "size": 6,
+    "trees": [
+      0,
+      3,
+      11,
+      13,
+      16,
+      20,
+      25,
+      28
+    ],
+    "rowCounts": [
+      2,
+      1,
+      2,
+      0,
+      3,
+      0
+    ],
+    "columnCounts": [
+      2,
+      1,
+      1,
+      1,
+      0,
+      3
+    ],
+    "solution": [
+      1,
+      5,
+      9,
+      12,
+      17,
+      24,
+      26,
+      29
+    ],
+    "authoringNodes": 8,
+    "authoringCandidates": 17,
+    "id": "tents-trees-007",
+    "contentVersion": 1,
+    "chapter": 3,
+    "objective": "一棵树的候选位置都需要空间；排除会同时挡住它们的格子。",
+    "title": "树旁的空间 07"
+  },
+  {
+    "size": 6,
+    "trees": [
+      4,
+      7,
+      15,
+      17,
+      24,
+      25,
+      28,
+      29
+    ],
+    "rowCounts": [
+      2,
+      1,
+      1,
+      2,
+      1,
+      1
+    ],
+    "columnCounts": [
+      1,
+      2,
+      1,
+      2,
+      0,
+      2
+    ],
+    "solution": [
+      1,
+      3,
+      11,
+      14,
+      18,
+      23,
+      27,
+      31
+    ],
+    "authoringNodes": 16,
+    "authoringCandidates": 24,
+    "id": "tents-trees-008",
+    "contentVersion": 1,
+    "chapter": 3,
+    "objective": "一棵树的候选位置都需要空间；排除会同时挡住它们的格子。",
+    "title": "树旁的空间 08"
+  },
+  {
+    "size": 6,
+    "trees": [
+      2,
+      11,
+      12,
+      15,
+      22,
+      25,
+      32
+    ],
+    "rowCounts": [
+      2,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "columnCounts": [
+      1,
+      2,
+      0,
+      1,
+      2,
+      1
+    ],
+    "solution": [
+      3,
+      5,
+      6,
+      16,
+      19,
+      28,
+      31
+    ],
+    "authoringNodes": 10,
+    "authoringCandidates": 20,
+    "id": "tents-trees-009",
+    "contentVersion": 1,
+    "chapter": 3,
+    "objective": "一棵树的候选位置都需要空间；排除会同时挡住它们的格子。",
+    "title": "树旁的空间 09"
+  },
+  {
+    "size": 6,
+    "trees": [
+      1,
+      4,
+      7,
+      9,
+      23,
+      27,
+      35
+    ],
+    "rowCounts": [
+      3,
+      0,
+      2,
+      0,
+      1,
+      1
+    ],
+    "columnCounts": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      2
+    ],
+    "solution": [
+      0,
+      3,
+      5,
+      13,
+      17,
+      26,
+      34
+    ],
+    "authoringNodes": 15,
+    "authoringCandidates": 12,
+    "id": "tents-trees-010",
+    "contentVersion": 1,
+    "chapter": 3,
+    "objective": "一棵树的候选位置都需要空间；排除会同时挡住它们的格子。",
+    "title": "树旁的空间 10"
+  },
+  {
+    "size": 6,
+    "trees": [
+      3,
+      6,
+      11,
+      14,
+      17,
+      24,
+      26,
+      29
+    ],
+    "rowCounts": [
+      1,
+      1,
+      1,
+      2,
+      0,
+      3
+    ],
+    "columnCounts": [
+      2,
+      0,
+      3,
+      0,
+      1,
+      2
+    ],
+    "solution": [
+      2,
+      10,
+      12,
+      20,
+      23,
+      30,
+      32,
+      35
+    ],
+    "authoringNodes": 22,
+    "authoringCandidates": 17,
+    "id": "tents-trees-011",
+    "contentVersion": 1,
+    "chapter": 3,
+    "objective": "一棵树的候选位置都需要空间；排除会同时挡住它们的格子。",
+    "title": "树旁的空间 11"
+  },
+  {
+    "size": 6,
+    "trees": [
+      7,
+      8,
+      11,
+      19,
+      20,
+      23,
+      28,
+      30
+    ],
+    "rowCounts": [
+      1,
+      2,
+      1,
+      1,
+      2,
+      1
+    ],
+    "columnCounts": [
+      2,
+      1,
+      2,
+      1,
+      1,
+      1
+    ],
+    "solution": [
+      2,
+      6,
+      10,
+      14,
+      18,
+      27,
+      29,
+      31
+    ],
+    "authoringNodes": 10,
+    "authoringCandidates": 20,
+    "id": "tents-trees-012",
+    "contentVersion": 1,
+    "chapter": 3,
+    "objective": "一棵树的候选位置都需要空间；排除会同时挡住它们的格子。",
+    "title": "树旁的空间 12"
+  },
+  {
+    "size": 6,
+    "trees": [
+      0,
+      2,
+      13,
+      15,
+      17,
+      23,
+      24,
+      33
+    ],
+    "rowCounts": [
+      1,
+      2,
+      0,
+      2,
+      1,
+      2
+    ],
+    "columnCounts": [
+      2,
+      1,
+      1,
+      2,
+      0,
+      2
+    ],
+    "solution": [
+      3,
+      6,
+      11,
+      19,
+      21,
+      29,
+      30,
+      32
+    ],
+    "authoringNodes": 19,
+    "authoringCandidates": 20,
+    "id": "tents-trees-013",
+    "contentVersion": 1,
+    "chapter": 3,
+    "objective": "一棵树的候选位置都需要空间；排除会同时挡住它们的格子。",
+    "title": "树旁的空间 13"
+  },
+  {
+    "size": 6,
+    "trees": [
+      4,
+      8,
+      11,
+      21,
+      24,
+      27,
+      35
+    ],
+    "rowCounts": [
+      1,
+      1,
+      2,
+      1,
+      1,
+      1
+    ],
+    "columnCounts": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      2
+    ],
+    "solution": [
+      5,
+      7,
+      15,
+      17,
+      18,
+      26,
+      34
+    ],
+    "authoringNodes": 12,
+    "authoringCandidates": 18,
+    "id": "tents-trees-014",
+    "contentVersion": 1,
+    "chapter": 3,
+    "objective": "一棵树的候选位置都需要空间；排除会同时挡住它们的格子。",
+    "title": "树旁的空间 14"
+  },
+  {
+    "size": 6,
+    "trees": [
+      2,
+      16,
+      18,
+      20,
+      24,
+      29,
+      32
+    ],
+    "rowCounts": [
+      1,
+      1,
+      2,
+      1,
+      1,
+      1
+    ],
+    "columnCounts": [
+      1,
+      2,
+      1,
+      1,
+      1,
+      1
+    ],
+    "solution": [
+      1,
+      10,
+      12,
+      14,
+      23,
+      25,
+      33
+    ],
+    "authoringNodes": 8,
+    "authoringCandidates": 20,
+    "id": "tents-trees-015",
+    "contentVersion": 1,
+    "chapter": 3,
+    "objective": "一棵树的候选位置都需要空间；排除会同时挡住它们的格子。",
+    "title": "树旁的空间 15"
+  },
+  {
+    "size": 6,
+    "trees": [
+      0,
+      4,
+      8,
+      14,
+      24,
+      27,
+      34
+    ],
+    "rowCounts": [
+      2,
+      1,
+      1,
+      0,
+      1,
+      2
+    ],
+    "columnCounts": [
+      1,
+      1,
+      1,
+      2,
+      0,
+      2
+    ],
+    "solution": [
+      2,
+      5,
+      6,
+      15,
+      25,
+      33,
+      35
+    ],
+    "authoringNodes": 18,
+    "authoringCandidates": 17,
+    "id": "tents-trees-016",
+    "contentVersion": 1,
+    "chapter": 3,
+    "objective": "一棵树的候选位置都需要空间；排除会同时挡住它们的格子。",
+    "title": "树旁的空间 16"
+  },
+  {
+    "size": 6,
+    "trees": [
+      2,
+      11,
+      12,
+      21,
+      22,
+      25,
+      28
+    ],
+    "rowCounts": [
+      2,
+      0,
+      2,
+      1,
+      1,
+      1
+    ],
+    "columnCounts": [
+      1,
+      1,
+      0,
+      2,
+      1,
+      2
+    ],
+    "solution": [
+      3,
+      5,
+      13,
+      15,
+      23,
+      24,
+      34
+    ],
+    "authoringNodes": 22,
+    "authoringCandidates": 18,
+    "id": "tents-trees-017",
+    "contentVersion": 1,
+    "chapter": 3,
+    "objective": "一棵树的候选位置都需要空间；排除会同时挡住它们的格子。",
+    "title": "树旁的空间 17"
+  },
+  {
+    "size": 7,
+    "trees": [
+      3,
+      7,
+      16,
+      18,
+      19,
+      31,
+      32,
+      41,
+      42
+    ],
+    "rowCounts": [
+      2,
+      1,
+      2,
+      1,
+      1,
+      0,
+      2
+    ],
+    "columnCounts": [
+      1,
+      2,
+      2,
+      0,
+      2,
+      0,
+      2
+    ],
+    "solution": [
+      0,
+      2,
+      11,
+      15,
+      20,
+      25,
+      30,
+      43,
+      48
+    ],
+    "authoringNodes": 11,
+    "authoringCandidates": 22,
+    "id": "tents-trees-018",
+    "contentVersion": 1,
+    "chapter": 3,
+    "objective": "一棵树的候选位置都需要空间；排除会同时挡住它们的格子。",
+    "title": "树旁的空间 18"
+  },
+  {
+    "size": 7,
+    "trees": [
+      1,
+      5,
+      11,
+      14,
+      18,
+      23,
+      27,
+      29,
+      44,
+      45,
+      47
+    ],
+    "rowCounts": [
+      3,
+      0,
+      2,
+      1,
+      2,
+      0,
+      3
+    ],
+    "columnCounts": [
+      1,
+      2,
+      2,
+      1,
+      2,
+      1,
+      2
+    ],
+    "solution": [
+      2,
+      4,
+      6,
+      15,
+      17,
+      26,
+      28,
+      30,
+      43,
+      46,
+      48
+    ],
+    "authoringNodes": 41,
+    "authoringCandidates": 22,
+    "id": "tents-trees-019",
+    "contentVersion": 1,
+    "chapter": 3,
+    "objective": "一棵树的候选位置都需要空间；排除会同时挡住它们的格子。",
+    "title": "树旁的空间 19"
+  },
+  {
+    "size": 7,
+    "trees": [
+      0,
+      4,
+      9,
+      15,
+      18,
+      29,
+      34,
+      36,
+      37,
+      41,
+      47
+    ],
+    "rowCounts": [
+      2,
+      1,
+      2,
+      0,
+      3,
+      0,
+      3
+    ],
+    "columnCounts": [
+      2,
+      2,
+      1,
+      1,
+      1,
+      3,
+      1
+    ],
+    "solution": [
+      1,
+      5,
+      10,
+      14,
+      19,
+      28,
+      30,
+      33,
+      43,
+      46,
+      48
+    ],
+    "authoringNodes": 11,
+    "authoringCandidates": 18,
+    "id": "tents-trees-020",
+    "contentVersion": 1,
+    "chapter": 3,
+    "objective": "一棵树的候选位置都需要空间；排除会同时挡住它们的格子。",
+    "title": "树旁的空间 20"
+  },
+  {
+    "size": 7,
+    "trees": [
+      3,
+      7,
+      13,
+      25,
+      28,
+      34,
+      38,
+      41,
+      43
+    ],
+    "rowCounts": [
+      2,
+      0,
+      2,
+      1,
+      1,
+      1,
+      2
+    ],
+    "columnCounts": [
+      2,
+      1,
+      1,
+      0,
+      2,
+      0,
+      3
+    ],
+    "solution": [
+      2,
+      6,
+      14,
+      18,
+      27,
+      29,
+      39,
+      42,
+      48
+    ],
+    "authoringNodes": 49,
+    "authoringCandidates": 28,
+    "id": "tents-trees-021",
+    "contentVersion": 1,
+    "chapter": 3,
+    "objective": "一棵树的候选位置都需要空间；排除会同时挡住它们的格子。",
+    "title": "树旁的空间 21"
+  },
+  {
+    "size": 7,
+    "trees": [
+      1,
+      5,
+      11,
+      16,
+      20,
+      37,
+      40,
+      42,
+      47
+    ],
+    "rowCounts": [
+      2,
+      1,
+      2,
+      0,
+      2,
+      0,
+      2
+    ],
+    "columnCounts": [
+      1,
+      2,
+      1,
+      1,
+      1,
+      2,
+      1
+    ],
+    "solution": [
+      0,
+      6,
+      10,
+      15,
+      19,
+      30,
+      33,
+      43,
+      46
+    ],
+    "authoringNodes": 17,
+    "authoringCandidates": 23,
+    "id": "tents-trees-022",
+    "contentVersion": 1,
+    "chapter": 3,
+    "objective": "一棵树的候选位置都需要空间；排除会同时挡住它们的格子。",
+    "title": "树旁的空间 22"
+  },
+  {
+    "size": 7,
+    "trees": [
+      6,
+      9,
+      10,
+      19,
+      29,
+      31,
+      36,
+      41,
+      45
+    ],
+    "rowCounts": [
+      2,
+      1,
+      1,
+      2,
+      0,
+      2,
+      1
+    ],
+    "columnCounts": [
+      1,
+      2,
+      1,
+      2,
+      0,
+      2,
+      1
+    ],
+    "solution": [
+      3,
+      5,
+      8,
+      20,
+      22,
+      24,
+      35,
+      40,
+      44
+    ],
+    "authoringNodes": 14,
+    "authoringCandidates": 23,
+    "id": "tents-trees-023",
+    "contentVersion": 1,
+    "chapter": 3,
+    "objective": "一棵树的候选位置都需要空间；排除会同时挡住它们的格子。",
+    "title": "树旁的空间 23"
+  },
+  {
+    "size": 7,
+    "trees": [
+      3,
+      7,
+      12,
+      16,
+      18,
+      21,
+      26,
+      34,
+      40,
+      42
+    ],
+    "rowCounts": [
+      2,
+      2,
+      1,
+      2,
+      1,
+      1,
+      1
+    ],
+    "columnCounts": [
+      2,
+      2,
+      1,
+      0,
+      2,
+      0,
+      3
+    ],
+    "solution": [
+      0,
+      2,
+      11,
+      13,
+      15,
+      25,
+      27,
+      28,
+      41,
+      43
+    ],
+    "authoringNodes": 13,
+    "authoringCandidates": 28,
+    "id": "tents-trees-024",
+    "contentVersion": 1,
+    "chapter": 3,
+    "objective": "一棵树的候选位置都需要空间；排除会同时挡住它们的格子。",
+    "title": "树旁的空间 24"
+  },
+  {
+    "size": 7,
+    "trees": [
+      1,
+      2,
+      11,
+      19,
+      22,
+      27,
+      30,
+      35,
+      41,
+      46
+    ],
+    "rowCounts": [
+      2,
+      1,
+      1,
+      1,
+      2,
+      1,
+      2
+    ],
+    "columnCounts": [
+      2,
+      1,
+      1,
+      2,
+      2,
+      0,
+      2
+    ],
+    "solution": [
+      0,
+      4,
+      9,
+      18,
+      21,
+      31,
+      34,
+      36,
+      45,
+      48
+    ],
+    "authoringNodes": 12,
+    "authoringCandidates": 26,
+    "id": "tents-trees-025",
+    "contentVersion": 1,
+    "chapter": 3,
+    "objective": "一棵树的候选位置都需要空间；排除会同时挡住它们的格子。",
+    "title": "树旁的空间 25"
+  },
+  {
+    "size": 7,
+    "trees": [
+      1,
+      8,
+      10,
+      19,
+      25,
+      26,
+      39,
+      41,
+      42
+    ],
+    "rowCounts": [
+      1,
+      1,
+      2,
+      1,
+      1,
+      1,
+      2
+    ],
+    "columnCounts": [
+      0,
+      2,
+      1,
+      2,
+      1,
+      1,
+      2
+    ],
+    "solution": [
+      2,
+      11,
+      15,
+      20,
+      24,
+      33,
+      38,
+      43,
+      48
+    ],
+    "authoringNodes": 14,
+    "authoringCandidates": 23,
+    "id": "tents-trees-026",
+    "contentVersion": 1,
+    "chapter": 3,
+    "objective": "一棵树的候选位置都需要空间；排除会同时挡住它们的格子。",
+    "title": "树旁的空间 26"
+  },
+  {
+    "size": 7,
+    "trees": [
+      0,
+      2,
+      6,
+      10,
+      21,
+      22,
+      30,
+      34,
+      39,
+      41,
+      43
+    ],
+    "rowCounts": [
+      3,
+      0,
+      2,
+      1,
+      1,
+      1,
+      3
+    ],
+    "columnCounts": [
+      2,
+      2,
+      1,
+      2,
+      1,
+      1,
+      2
+    ],
+    "solution": [
+      1,
+      3,
+      5,
+      15,
+      17,
+      27,
+      28,
+      37,
+      42,
+      46,
+      48
+    ],
+    "authoringNodes": 14,
+    "authoringCandidates": 19,
+    "id": "tents-trees-027",
+    "contentVersion": 1,
+    "chapter": 3,
+    "objective": "一棵树的候选位置都需要空间；排除会同时挡住它们的格子。",
+    "title": "树旁的空间 27"
+  },
+  {
+    "size": 7,
+    "trees": [
+      7,
+      11,
+      14,
+      19,
+      26,
+      27,
+      30,
+      39,
+      42,
+      47
+    ],
+    "rowCounts": [
+      1,
+      1,
+      2,
+      1,
+      2,
+      1,
+      2
+    ],
+    "columnCounts": [
+      2,
+      1,
+      0,
+      1,
+      3,
+      1,
+      2
+    ],
+    "solution": [
+      4,
+      8,
+      18,
+      20,
+      21,
+      31,
+      33,
+      35,
+      46,
+      48
+    ],
+    "authoringNodes": 15,
+    "authoringCandidates": 25,
+    "id": "tents-trees-028",
+    "contentVersion": 1,
+    "chapter": 3,
+    "objective": "一棵树的候选位置都需要空间；排除会同时挡住它们的格子。",
+    "title": "树旁的空间 28"
+  },
+  {
+    "size": 7,
+    "trees": [
+      7,
+      10,
+      20,
+      21,
+      24,
+      31,
+      34,
+      35,
+      39,
+      43
+    ],
+    "rowCounts": [
+      2,
+      1,
+      0,
+      2,
+      2,
+      1,
+      2
+    ],
+    "columnCounts": [
+      3,
+      0,
+      2,
+      1,
+      1,
+      1,
+      2
+    ],
+    "solution": [
+      0,
+      3,
+      13,
+      25,
+      27,
+      28,
+      30,
+      40,
+      42,
+      44
+    ],
+    "authoringNodes": 11,
+    "authoringCandidates": 23,
+    "id": "tents-trees-029",
+    "contentVersion": 1,
+    "chapter": 3,
+    "objective": "一棵树的候选位置都需要空间；排除会同时挡住它们的格子。",
+    "title": "树旁的空间 29"
+  },
+  {
+    "size": 7,
+    "trees": [
+      0,
+      10,
+      18,
+      19,
+      23,
+      35,
+      38,
+      44,
+      47
+    ],
+    "rowCounts": [
+      1,
+      2,
+      0,
+      1,
+      2,
+      1,
+      2
+    ],
+    "columnCounts": [
+      2,
+      1,
+      1,
+      2,
+      1,
+      2,
+      0
+    ],
+    "solution": [
+      3,
+      7,
+      12,
+      25,
+      28,
+      30,
+      40,
+      43,
+      45
+    ],
+    "authoringNodes": 15,
+    "authoringCandidates": 26,
+    "id": "tents-trees-030",
+    "contentVersion": 1,
+    "chapter": 3,
+    "objective": "一棵树的候选位置都需要空间；排除会同时挡住它们的格子。",
+    "title": "树旁的空间 30"
+  },
+  {
+    "size": 7,
+    "trees": [
+      0,
+      3,
+      6,
+      9,
+      22,
+      23,
+      32,
+      33,
+      42,
+      44,
+      47
+    ],
+    "rowCounts": [
+      2,
+      2,
+      1,
+      1,
+      2,
+      0,
+      3
+    ],
+    "columnCounts": [
+      1,
+      2,
+      2,
+      1,
+      2,
+      0,
+      3
+    ],
+    "solution": [
+      2,
+      4,
+      7,
+      13,
+      16,
+      25,
+      29,
+      34,
+      43,
+      45,
+      48
+    ],
+    "authoringNodes": 9,
+    "authoringCandidates": 22,
+    "id": "tents-trees-031",
+    "contentVersion": 1,
+    "chapter": 3,
+    "objective": "一棵树的候选位置都需要空间；排除会同时挡住它们的格子。",
+    "title": "树旁的空间 31"
+  },
+  {
+    "size": 7,
+    "trees": [
+      4,
+      8,
+      19,
+      22,
+      30,
+      32,
+      35,
+      45,
+      47
+    ],
+    "rowCounts": [
+      1,
+      2,
+      0,
+      3,
+      0,
+      1,
+      2
+    ],
+    "columnCounts": [
+      3,
+      0,
+      2,
+      1,
+      1,
+      2,
+      0
+    ],
+    "solution": [
+      3,
+      7,
+      12,
+      21,
+      23,
+      25,
+      40,
+      42,
+      44
+    ],
+    "authoringNodes": 22,
+    "authoringCandidates": 23,
+    "id": "tents-trees-032",
+    "contentVersion": 1,
+    "chapter": 3,
+    "objective": "一棵树的候选位置都需要空间；排除会同时挡住它们的格子。",
+    "title": "树旁的空间 32"
+  },
+  {
+    "size": 7,
+    "trees": [
+      4,
+      12,
+      14,
+      16,
+      26,
+      29,
+      31,
+      35,
+      36,
+      45,
+      47
+    ],
+    "rowCounts": [
+      0,
+      4,
+      0,
+      2,
+      1,
+      1,
+      3
+    ],
+    "columnCounts": [
+      2,
+      1,
+      2,
+      1,
+      2,
+      1,
+      2
+    ],
+    "solution": [
+      7,
+      9,
+      11,
+      13,
+      22,
+      24,
+      33,
+      37,
+      42,
+      46,
+      48
+    ],
+    "authoringNodes": 34,
+    "authoringCandidates": 26,
+    "id": "tents-trees-033",
+    "contentVersion": 1,
+    "chapter": 3,
+    "objective": "一棵树的候选位置都需要空间；排除会同时挡住它们的格子。",
+    "title": "树旁的空间 33"
+  },
+  {
+    "size": 7,
+    "trees": [
+      1,
+      6,
+      7,
+      9,
+      25,
+      29,
+      30,
+      39,
+      42
+    ],
+    "rowCounts": [
+      2,
+      1,
+      2,
+      1,
+      1,
+      1,
+      1
+    ],
+    "columnCounts": [
+      3,
+      1,
+      2,
+      0,
+      1,
+      1,
+      1
+    ],
+    "solution": [
+      0,
+      2,
+      13,
+      14,
+      18,
+      23,
+      28,
+      40,
+      43
+    ],
+    "authoringNodes": 14,
+    "authoringCandidates": 23,
+    "id": "tents-trees-034",
+    "contentVersion": 1,
+    "chapter": 3,
+    "objective": "一棵树的候选位置都需要空间；排除会同时挡住它们的格子。",
+    "title": "树旁的空间 34"
+  },
+  {
+    "size": 7,
+    "trees": [
+      6,
+      7,
+      10,
+      18,
+      23,
+      34,
+      36,
+      44,
+      47
+    ],
+    "rowCounts": [
+      2,
+      1,
+      1,
+      1,
+      1,
+      2,
+      1
+    ],
+    "columnCounts": [
+      1,
+      1,
+      1,
+      2,
+      0,
+      3,
+      1
+    ],
+    "solution": [
+      3,
+      5,
+      8,
+      19,
+      24,
+      33,
+      35,
+      37,
+      48
+    ],
+    "authoringNodes": 18,
+    "authoringCandidates": 27,
+    "id": "tents-trees-035",
+    "contentVersion": 1,
+    "chapter": 3,
+    "objective": "一棵树的候选位置都需要空间；排除会同时挡住它们的格子。",
+    "title": "树旁的空间 35"
+  },
+  {
+    "size": 7,
+    "trees": [
+      4,
+      7,
+      12,
+      22,
+      26,
+      31,
+      38,
+      41,
+      43
+    ],
+    "rowCounts": [
+      1,
+      2,
+      1,
+      1,
+      1,
+      1,
+      2
+    ],
+    "columnCounts": [
+      1,
+      2,
+      0,
+      1,
+      2,
+      0,
+      3
+    ],
+    "solution": [
+      0,
+      11,
+      13,
+      15,
+      27,
+      32,
+      36,
+      45,
+      48
+    ],
+    "authoringNodes": 18,
+    "authoringCandidates": 28,
+    "id": "tents-trees-036",
+    "contentVersion": 1,
+    "chapter": 3,
+    "objective": "一棵树的候选位置都需要空间；排除会同时挡住它们的格子。",
+    "title": "树旁的空间 36"
+  },
+  {
+    "size": 7,
+    "trees": [
+      3,
+      5,
+      14,
+      19,
+      24,
+      27,
+      29,
+      30,
+      36,
+      37,
+      41
+    ],
+    "rowCounts": [
+      2,
+      1,
+      2,
+      1,
+      2,
+      1,
+      2
+    ],
+    "columnCounts": [
+      2,
+      1,
+      1,
+      2,
+      1,
+      0,
+      4
+    ],
+    "solution": [
+      4,
+      6,
+      7,
+      17,
+      20,
+      22,
+      31,
+      34,
+      35,
+      44,
+      48
+    ],
+    "authoringNodes": 18,
+    "authoringCandidates": 24,
+    "id": "tents-trees-037",
+    "contentVersion": 1,
+    "chapter": 3,
+    "objective": "一棵树的候选位置都需要空间；排除会同时挡住它们的格子。",
+    "title": "树旁的空间 37"
+  },
+  {
+    "size": 7,
+    "trees": [
+      5,
+      13,
+      15,
+      21,
+      25,
+      30,
+      34,
+      37,
+      42,
+      47
+    ],
+    "rowCounts": [
+      2,
+      0,
+      3,
+      1,
+      1,
+      1,
+      2
+    ],
+    "columnCounts": [
+      1,
+      2,
+      1,
+      1,
+      2,
+      0,
+      3
+    ],
+    "solution": [
+      4,
+      6,
+      14,
+      16,
+      18,
+      27,
+      29,
+      38,
+      43,
+      48
+    ],
+    "authoringNodes": 14,
+    "authoringCandidates": 26,
+    "id": "tents-trees-038",
+    "contentVersion": 1,
+    "chapter": 3,
+    "objective": "一棵树的候选位置都需要空间；排除会同时挡住它们的格子。",
+    "title": "树旁的空间 38"
+  },
+  {
+    "size": 7,
+    "trees": [
+      1,
+      4,
+      8,
+      12,
+      14,
+      15,
+      19,
+      30,
+      35,
+      38,
+      47
+    ],
+    "rowCounts": [
+      1,
+      3,
+      1,
+      2,
+      1,
+      1,
+      2
+    ],
+    "columnCounts": [
+      2,
+      1,
+      2,
+      2,
+      1,
+      1,
+      2
+    ],
+    "solution": [
+      2,
+      7,
+      11,
+      13,
+      16,
+      21,
+      26,
+      31,
+      36,
+      45,
+      48
+    ],
+    "authoringNodes": 12,
+    "authoringCandidates": 27,
+    "id": "tents-trees-039",
+    "contentVersion": 1,
+    "chapter": 3,
+    "objective": "一棵树的候选位置都需要空间；排除会同时挡住它们的格子。",
+    "title": "树旁的空间 39"
+  },
+  {
+    "size": 7,
+    "trees": [
+      2,
+      11,
+      17,
+      20,
+      21,
+      22,
+      25,
+      36,
+      41,
+      46
+    ],
+    "rowCounts": [
+      2,
+      1,
+      2,
+      1,
+      1,
+      1,
+      2
+    ],
+    "columnCounts": [
+      1,
+      3,
+      1,
+      0,
+      2,
+      1,
+      2
+    ],
+    "solution": [
+      1,
+      4,
+      13,
+      14,
+      16,
+      26,
+      29,
+      39,
+      43,
+      48
+    ],
+    "authoringNodes": 23,
+    "authoringCandidates": 30,
+    "id": "tents-trees-040",
+    "contentVersion": 1,
+    "chapter": 3,
+    "objective": "一棵树的候选位置都需要空间；排除会同时挡住它们的格子。",
+    "title": "树旁的空间 40"
+  },
+  {
+    "size": 7,
+    "trees": [
+      1,
+      3,
+      5,
+      18,
+      22,
+      23,
+      25,
+      34,
+      43,
+      45,
+      48
+    ],
+    "rowCounts": [
+      2,
+      1,
+      1,
+      2,
+      2,
+      0,
+      3
+    ],
+    "columnCounts": [
+      3,
+      0,
+      3,
+      1,
+      1,
+      2,
+      1
+    ],
+    "solution": [
+      0,
+      2,
+      12,
+      17,
+      21,
+      27,
+      30,
+      32,
+      42,
+      44,
+      47
+    ],
+    "authoringNodes": 16,
+    "authoringCandidates": 26,
+    "id": "tents-trees-041",
+    "contentVersion": 1,
+    "chapter": 3,
+    "objective": "一棵树的候选位置都需要空间；排除会同时挡住它们的格子。",
+    "title": "树旁的空间 41"
+  },
+  {
+    "size": 7,
+    "trees": [
+      3,
+      5,
+      8,
+      18,
+      19,
+      23,
+      29,
+      34,
+      46
+    ],
+    "rowCounts": [
+      2,
+      2,
+      1,
+      2,
+      1,
+      0,
+      1
+    ],
+    "columnCounts": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      2,
+      2
+    ],
+    "solution": [
+      2,
+      6,
+      7,
+      11,
+      20,
+      22,
+      24,
+      33,
+      47
+    ],
+    "authoringNodes": 18,
+    "authoringCandidates": 29,
+    "id": "tents-trees-042",
+    "contentVersion": 1,
+    "chapter": 3,
+    "objective": "一棵树的候选位置都需要空间；排除会同时挡住它们的格子。",
+    "title": "树旁的空间 42"
+  },
+  {
+    "size": 7,
+    "trees": [
+      6,
+      8,
+      19,
+      20,
+      23,
+      24,
+      41,
+      44,
+      46
+    ],
+    "rowCounts": [
+      1,
+      1,
+      1,
+      2,
+      1,
+      0,
+      3
+    ],
+    "columnCounts": [
+      0,
+      2,
+      1,
+      2,
+      1,
+      1,
+      2
+    ],
+    "solution": [
+      5,
+      9,
+      18,
+      22,
+      27,
+      31,
+      43,
+      45,
+      48
+    ],
+    "authoringNodes": 23,
+    "authoringCandidates": 20,
+    "id": "tents-trees-043",
+    "contentVersion": 1,
+    "chapter": 3,
+    "objective": "一棵树的候选位置都需要空间；排除会同时挡住它们的格子。",
+    "title": "树旁的空间 43"
+  },
+  {
+    "size": 7,
+    "trees": [
+      7,
+      10,
+      12,
+      16,
+      21,
+      25,
+      30,
+      36,
+      39,
+      43
+    ],
+    "rowCounts": [
+      1,
+      2,
+      1,
+      2,
+      1,
+      1,
+      2
+    ],
+    "columnCounts": [
+      1,
+      2,
+      1,
+      3,
+      1,
+      1,
+      1
+    ],
+    "solution": [
+      3,
+      8,
+      13,
+      17,
+      22,
+      26,
+      31,
+      35,
+      44,
+      46
+    ],
+    "authoringNodes": 16,
+    "authoringCandidates": 28,
+    "id": "tents-trees-044",
+    "contentVersion": 1,
+    "chapter": 3,
+    "objective": "一棵树的候选位置都需要空间；排除会同时挡住它们的格子。",
+    "title": "树旁的空间 44"
+  },
+  {
+    "size": 7,
+    "trees": [
+      1,
+      5,
+      11,
+      14,
+      16,
+      21,
+      27,
+      36,
+      37,
+      40
+    ],
+    "rowCounts": [
+      3,
+      1,
+      2,
+      1,
+      1,
+      1,
+      1
+    ],
+    "columnCounts": [
+      1,
+      2,
+      1,
+      2,
+      1,
+      1,
+      2
+    ],
+    "solution": [
+      2,
+      4,
+      6,
+      7,
+      17,
+      20,
+      22,
+      33,
+      38,
+      43
+    ],
+    "authoringNodes": 12,
+    "authoringCandidates": 29,
+    "id": "tents-trees-045",
+    "contentVersion": 1,
+    "chapter": 3,
+    "objective": "一棵树的候选位置都需要空间；排除会同时挡住它们的格子。",
+    "title": "树旁的空间 45"
+  },
+  {
+    "size": 7,
+    "trees": [
+      0,
+      5,
+      8,
+      10,
+      23,
+      25,
+      28,
+      32,
+      43,
+      48
+    ],
+    "rowCounts": [
+      2,
+      1,
+      1,
+      2,
+      1,
+      2,
+      1
+    ],
+    "columnCounts": [
+      1,
+      3,
+      0,
+      2,
+      1,
+      2,
+      1
+    ],
+    "solution": [
+      1,
+      3,
+      12,
+      15,
+      24,
+      26,
+      29,
+      39,
+      41,
+      42
+    ],
+    "authoringNodes": 25,
+    "authoringCandidates": 30,
+    "id": "tents-trees-046",
+    "contentVersion": 1,
+    "chapter": 3,
+    "objective": "一棵树的候选位置都需要空间；排除会同时挡住它们的格子。",
+    "title": "树旁的空间 46"
+  },
+  {
+    "size": 7,
+    "trees": [
+      1,
+      4,
+      7,
+      12,
+      19,
+      22,
+      23,
+      30,
+      31,
+      40,
+      43
+    ],
+    "rowCounts": [
+      2,
+      2,
+      1,
+      2,
+      1,
+      2,
+      1
+    ],
+    "columnCounts": [
+      2,
+      2,
+      1,
+      2,
+      1,
+      1,
+      2
+    ],
+    "solution": [
+      0,
+      2,
+      11,
+      13,
+      15,
+      24,
+      26,
+      29,
+      38,
+      41,
+      42
+    ],
+    "authoringNodes": 15,
+    "authoringCandidates": 29,
+    "id": "tents-trees-047",
+    "contentVersion": 1,
+    "chapter": 3,
+    "objective": "一棵树的候选位置都需要空间；排除会同时挡住它们的格子。",
+    "title": "树旁的空间 47"
+  },
+  {
+    "size": 7,
+    "trees": [
+      0,
+      20,
+      21,
+      30,
+      33,
+      36,
+      38,
+      48
+    ],
+    "rowCounts": [
+      1,
+      1,
+      0,
+      2,
+      1,
+      1,
+      2
+    ],
+    "columnCounts": [
+      1,
+      2,
+      1,
+      1,
+      0,
+      1,
+      2
+    ],
+    "solution": [
+      1,
+      13,
+      23,
+      26,
+      28,
+      41,
+      43,
+      45
+    ],
+    "authoringNodes": 16,
+    "authoringCandidates": 21,
+    "id": "tents-trees-048",
+    "contentVersion": 1,
+    "chapter": 3,
+    "objective": "一棵树的候选位置都需要空间；排除会同时挡住它们的格子。",
+    "title": "树旁的空间 48"
+  },
+  {
+    "size": 7,
+    "trees": [
+      4,
+      7,
+      10,
+      14,
+      19,
+      23,
+      28,
+      41,
+      45,
+      46
+    ],
+    "rowCounts": [
+      1,
+      1,
+      1,
+      2,
+      1,
+      2,
+      2
+    ],
+    "columnCounts": [
+      2,
+      1,
+      2,
+      1,
+      1,
+      2,
+      1
+    ],
+    "solution": [
+      5,
+      8,
+      17,
+      21,
+      26,
+      30,
+      35,
+      39,
+      44,
+      48
+    ],
+    "authoringNodes": 45,
+    "authoringCandidates": 26,
+    "id": "tents-trees-049",
+    "contentVersion": 1,
+    "chapter": 3,
+    "objective": "一棵树的候选位置都需要空间；排除会同时挡住它们的格子。",
+    "title": "树旁的空间 49"
+  },
+  {
+    "size": 7,
+    "trees": [
+      0,
+      5,
+      10,
+      15,
+      20,
+      28,
+      29,
+      40,
+      42,
+      46
+    ],
+    "rowCounts": [
+      1,
+      2,
+      1,
+      2,
+      1,
+      2,
+      1
+    ],
+    "columnCounts": [
+      2,
+      1,
+      2,
+      1,
+      1,
+      1,
+      2
+    ],
+    "solution": [
+      3,
+      7,
+      12,
+      16,
+      21,
+      27,
+      30,
+      39,
+      41,
+      43
+    ],
+    "authoringNodes": 39,
+    "authoringCandidates": 31,
+    "id": "tents-trees-050",
+    "contentVersion": 1,
+    "chapter": 3,
+    "objective": "一棵树的候选位置都需要空间；排除会同时挡住它们的格子。",
+    "title": "树旁的空间 50"
+  },
+  {
+    "size": 7,
+    "trees": [
+      1,
+      8,
+      9,
+      10,
+      14,
+      19,
+      29,
+      32,
+      40,
+      47
+    ],
+    "rowCounts": [
+      1,
+      2,
+      2,
+      1,
+      2,
+      1,
+      1
+    ],
+    "columnCounts": [
+      2,
+      1,
+      2,
+      1,
+      2,
+      1,
+      1
+    ],
+    "solution": [
+      2,
+      7,
+      11,
+      16,
+      20,
+      21,
+      31,
+      33,
+      36,
+      46
+    ],
+    "authoringNodes": 13,
+    "authoringCandidates": 26,
+    "id": "tents-challenge-001",
+    "contentVersion": 1,
+    "chapter": 4,
+    "objective": "交替运用行列数量、间距组合和树旁空间，完成更长的推理链。",
+    "title": "森林综合挑战 01"
+  },
+  {
+    "size": 7,
+    "trees": [
+      3,
+      5,
+      8,
+      17,
+      22,
+      27,
+      40,
+      45
+    ],
+    "rowCounts": [
+      1,
+      2,
+      0,
+      1,
+      2,
+      1,
+      1
+    ],
+    "columnCounts": [
+      1,
+      1,
+      2,
+      1,
+      1,
+      1,
+      1
+    ],
+    "solution": [
+      2,
+      7,
+      12,
+      24,
+      29,
+      34,
+      39,
+      44
+    ],
+    "authoringNodes": 30,
+    "authoringCandidates": 22,
+    "id": "tents-challenge-002",
+    "contentVersion": 1,
+    "chapter": 4,
+    "objective": "交替运用行列数量、间距组合和树旁空间，完成更长的推理链。",
+    "title": "森林综合挑战 02"
+  },
+  {
+    "size": 7,
+    "trees": [
+      6,
+      8,
+      11,
+      14,
+      24,
+      29,
+      34,
+      37,
+      38,
+      47
+    ],
+    "rowCounts": [
+      2,
+      1,
+      1,
+      2,
+      2,
+      1,
+      1
+    ],
+    "columnCounts": [
+      1,
+      2,
+      1,
+      2,
+      1,
+      2,
+      1
+    ],
+    "solution": [
+      1,
+      5,
+      10,
+      15,
+      25,
+      27,
+      28,
+      30,
+      40,
+      45
+    ],
+    "authoringNodes": 12,
+    "authoringCandidates": 31,
+    "id": "tents-challenge-003",
+    "contentVersion": 1,
+    "chapter": 4,
+    "objective": "交替运用行列数量、间距组合和树旁空间，完成更长的推理链。",
+    "title": "森林综合挑战 03"
+  },
+  {
+    "size": 7,
+    "trees": [
+      0,
+      4,
+      5,
+      15,
+      21,
+      34,
+      35,
+      38,
+      43
+    ],
+    "rowCounts": [
+      2,
+      1,
+      1,
+      0,
+      2,
+      1,
+      2
+    ],
+    "columnCounts": [
+      3,
+      1,
+      1,
+      2,
+      0,
+      1,
+      1
+    ],
+    "solution": [
+      1,
+      3,
+      12,
+      14,
+      28,
+      31,
+      41,
+      42,
+      44
+    ],
+    "authoringNodes": 15,
+    "authoringCandidates": 19,
+    "id": "tents-challenge-004",
+    "contentVersion": 1,
+    "chapter": 4,
+    "objective": "交替运用行列数量、间距组合和树旁空间，完成更长的推理链。",
+    "title": "森林综合挑战 04"
+  },
+  {
+    "size": 7,
+    "trees": [
+      1,
+      3,
+      5,
+      7,
+      13,
+      17,
+      22,
+      37,
+      41,
+      43,
+      46
+    ],
+    "rowCounts": [
+      3,
+      0,
+      2,
+      1,
+      1,
+      1,
+      3
+    ],
+    "columnCounts": [
+      3,
+      1,
+      1,
+      1,
+      2,
+      0,
+      3
+    ],
+    "solution": [
+      0,
+      4,
+      6,
+      14,
+      20,
+      24,
+      29,
+      39,
+      42,
+      44,
+      48
+    ],
+    "authoringNodes": 51,
+    "authoringCandidates": 27,
+    "id": "tents-challenge-005",
+    "contentVersion": 1,
+    "chapter": 4,
+    "objective": "交替运用行列数量、间距组合和树旁空间，完成更长的推理链。",
+    "title": "森林综合挑战 05"
+  },
+  {
+    "size": 7,
+    "trees": [
+      1,
+      4,
+      9,
+      12,
+      16,
+      21,
+      26,
+      32,
+      43,
+      46,
+      48
+    ],
+    "rowCounts": [
+      2,
+      2,
+      1,
+      3,
+      0,
+      2,
+      1
+    ],
+    "columnCounts": [
+      2,
+      1,
+      2,
+      1,
+      2,
+      0,
+      3
+    ],
+    "solution": [
+      0,
+      2,
+      11,
+      13,
+      14,
+      23,
+      25,
+      27,
+      36,
+      41,
+      45
+    ],
+    "authoringNodes": 10,
+    "authoringCandidates": 24,
+    "id": "tents-challenge-006",
+    "contentVersion": 1,
+    "chapter": 4,
+    "objective": "交替运用行列数量、间距组合和树旁空间，完成更长的推理链。",
+    "title": "森林综合挑战 06"
+  },
+  {
+    "size": 7,
+    "trees": [
+      3,
+      13,
+      15,
+      25,
+      26,
+      29,
+      33,
+      36,
+      41,
+      46
+    ],
+    "rowCounts": [
+      2,
+      1,
+      1,
+      2,
+      1,
+      2,
+      1
+    ],
+    "columnCounts": [
+      1,
+      2,
+      0,
+      1,
+      2,
+      1,
+      3
+    ],
+    "solution": [
+      4,
+      6,
+      8,
+      19,
+      22,
+      24,
+      34,
+      35,
+      39,
+      48
+    ],
+    "authoringNodes": 14,
+    "authoringCandidates": 27,
+    "id": "tents-challenge-007",
+    "contentVersion": 1,
+    "chapter": 4,
+    "objective": "交替运用行列数量、间距组合和树旁空间，完成更长的推理链。",
+    "title": "森林综合挑战 07"
+  },
+  {
+    "size": 7,
+    "trees": [
+      2,
+      4,
+      10,
+      18,
+      27,
+      29,
+      32,
+      41,
+      42,
+      45
+    ],
+    "rowCounts": [
+      2,
+      0,
+      2,
+      1,
+      1,
+      2,
+      2
+    ],
+    "columnCounts": [
+      1,
+      2,
+      1,
+      1,
+      1,
+      2,
+      2
+    ],
+    "solution": [
+      1,
+      5,
+      17,
+      19,
+      22,
+      34,
+      35,
+      39,
+      44,
+      48
+    ],
+    "authoringNodes": 16,
+    "authoringCandidates": 26,
+    "id": "tents-challenge-008",
+    "contentVersion": 1,
+    "chapter": 4,
+    "objective": "交替运用行列数量、间距组合和树旁空间，完成更长的推理链。",
+    "title": "森林综合挑战 08"
+  },
+  {
+    "size": 7,
+    "trees": [
+      1,
+      5,
+      7,
+      10,
+      16,
+      22,
+      26,
+      41,
+      43
+    ],
+    "rowCounts": [
+      3,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "columnCounts": [
+      2,
+      2,
+      1,
+      0,
+      2,
+      1,
+      1
+    ],
+    "solution": [
+      0,
+      2,
+      6,
+      11,
+      15,
+      25,
+      29,
+      40,
+      42
+    ],
+    "authoringNodes": 19,
+    "authoringCandidates": 25,
+    "id": "tents-challenge-009",
+    "contentVersion": 1,
+    "chapter": 4,
+    "objective": "交替运用行列数量、间距组合和树旁空间，完成更长的推理链。",
+    "title": "森林综合挑战 09"
+  },
+  {
+    "size": 7,
+    "trees": [
+      1,
+      3,
+      13,
+      15,
+      20,
+      24,
+      28,
+      35,
+      39,
+      48
+    ],
+    "rowCounts": [
+      3,
+      0,
+      1,
+      2,
+      1,
+      1,
+      2
+    ],
+    "columnCounts": [
+      3,
+      1,
+      1,
+      1,
+      1,
+      1,
+      2
+    ],
+    "solution": [
+      0,
+      2,
+      6,
+      14,
+      25,
+      27,
+      29,
+      38,
+      42,
+      47
+    ],
+    "authoringNodes": 33,
+    "authoringCandidates": 26,
+    "id": "tents-challenge-010",
+    "contentVersion": 1,
+    "chapter": 4,
+    "objective": "交替运用行列数量、间距组合和树旁空间，完成更长的推理链。",
+    "title": "森林综合挑战 10"
+  },
+  {
+    "size": 7,
+    "trees": [
+      5,
+      10,
+      13,
+      21,
+      22,
+      26,
+      31,
+      39,
+      45,
+      48
+    ],
+    "rowCounts": [
+      2,
+      1,
+      2,
+      1,
+      1,
+      1,
+      2
+    ],
+    "columnCounts": [
+      1,
+      1,
+      2,
+      1,
+      2,
+      1,
+      2
+    ],
+    "solution": [
+      4,
+      6,
+      9,
+      14,
+      19,
+      24,
+      29,
+      41,
+      44,
+      46
+    ],
+    "authoringNodes": 18,
+    "authoringCandidates": 27,
+    "id": "tents-challenge-011",
+    "contentVersion": 1,
+    "chapter": 4,
+    "objective": "交替运用行列数量、间距组合和树旁空间，完成更长的推理链。",
+    "title": "森林综合挑战 11"
+  },
+  {
+    "size": 7,
+    "trees": [
+      1,
+      4,
+      14,
+      20,
+      31,
+      33,
+      36,
+      40,
+      47
+    ],
+    "rowCounts": [
+      2,
+      1,
+      1,
+      1,
+      1,
+      1,
+      2
+    ],
+    "columnCounts": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      2,
+      2
+    ],
+    "solution": [
+      2,
+      5,
+      7,
+      19,
+      24,
+      34,
+      39,
+      43,
+      48
+    ],
+    "authoringNodes": 28,
+    "authoringCandidates": 27,
+    "id": "tents-challenge-012",
+    "contentVersion": 1,
+    "chapter": 4,
+    "objective": "交替运用行列数量、间距组合和树旁空间，完成更长的推理链。",
+    "title": "森林综合挑战 12"
+  },
+  {
+    "size": 7,
+    "trees": [
+      5,
+      7,
+      10,
+      15,
+      20,
+      22,
+      29,
+      42,
+      46,
+      48
+    ],
+    "rowCounts": [
+      2,
+      1,
+      2,
+      1,
+      1,
+      1,
+      2
+    ],
+    "columnCounts": [
+      3,
+      1,
+      2,
+      1,
+      1,
+      1,
+      1
+    ],
+    "solution": [
+      0,
+      4,
+      9,
+      14,
+      19,
+      23,
+      28,
+      41,
+      43,
+      45
+    ],
+    "authoringNodes": 35,
+    "authoringCandidates": 27,
+    "id": "tents-challenge-013",
+    "contentVersion": 1,
+    "chapter": 4,
+    "objective": "交替运用行列数量、间距组合和树旁空间，完成更长的推理链。",
+    "title": "森林综合挑战 13"
+  },
+  {
+    "size": 7,
+    "trees": [
+      0,
+      9,
+      10,
+      13,
+      22,
+      26,
+      28,
+      31,
+      32,
+      33,
+      37
+    ],
+    "rowCounts": [
+      2,
+      1,
+      1,
+      3,
+      1,
+      2,
+      1
+    ],
+    "columnCounts": [
+      3,
+      0,
+      3,
+      1,
+      1,
+      1,
+      2
+    ],
+    "solution": [
+      3,
+      6,
+      7,
+      16,
+      21,
+      25,
+      27,
+      30,
+      35,
+      40,
+      44
+    ],
+    "authoringNodes": 20,
+    "authoringCandidates": 29,
+    "id": "tents-challenge-014",
+    "contentVersion": 1,
+    "chapter": 4,
+    "objective": "交替运用行列数量、间距组合和树旁空间，完成更长的推理链。",
+    "title": "森林综合挑战 14"
+  },
+  {
+    "size": 7,
+    "trees": [
+      2,
+      6,
+      14,
+      18,
+      25,
+      29,
+      34,
+      35,
+      41,
+      44,
+      45
+    ],
+    "rowCounts": [
+      1,
+      2,
+      1,
+      2,
+      1,
+      1,
+      3
+    ],
+    "columnCounts": [
+      2,
+      2,
+      1,
+      1,
+      2,
+      0,
+      3
+    ],
+    "solution": [
+      1,
+      11,
+      13,
+      15,
+      24,
+      27,
+      28,
+      37,
+      42,
+      46,
+      48
+    ],
+    "authoringNodes": 10,
+    "authoringCandidates": 30,
+    "id": "tents-challenge-015",
+    "contentVersion": 1,
+    "chapter": 4,
+    "objective": "交替运用行列数量、间距组合和树旁空间，完成更长的推理链。",
+    "title": "森林综合挑战 15"
+  },
+  {
+    "size": 7,
+    "trees": [
+      0,
+      3,
+      4,
+      18,
+      24,
+      25,
+      36,
+      40,
+      45
+    ],
+    "rowCounts": [
+      2,
+      1,
+      1,
+      1,
+      1,
+      1,
+      2
+    ],
+    "columnCounts": [
+      1,
+      1,
+      2,
+      1,
+      1,
+      3,
+      0
+    ],
+    "solution": [
+      1,
+      5,
+      10,
+      19,
+      23,
+      32,
+      35,
+      44,
+      47
+    ],
+    "authoringNodes": 22,
+    "authoringCandidates": 22,
+    "id": "tents-challenge-016",
+    "contentVersion": 1,
+    "chapter": 4,
+    "objective": "交替运用行列数量、间距组合和树旁空间，完成更长的推理链。",
+    "title": "森林综合挑战 16"
+  },
+  {
+    "size": 7,
+    "trees": [
+      0,
+      4,
+      9,
+      16,
+      19,
+      30,
+      35,
+      37,
+      39,
+      40,
+      43
+    ],
+    "rowCounts": [
+      2,
+      1,
+      1,
+      1,
+      2,
+      1,
+      3
+    ],
+    "columnCounts": [
+      2,
+      2,
+      1,
+      2,
+      1,
+      2,
+      1
+    ],
+    "solution": [
+      1,
+      5,
+      10,
+      15,
+      26,
+      28,
+      31,
+      41,
+      42,
+      44,
+      46
+    ],
+    "authoringNodes": 46,
+    "authoringCandidates": 27,
+    "id": "tents-challenge-017",
+    "contentVersion": 1,
+    "chapter": 4,
+    "objective": "交替运用行列数量、间距组合和树旁空间，完成更长的推理链。",
+    "title": "森林综合挑战 17"
+  },
+  {
+    "size": 7,
+    "trees": [
+      9,
+      10,
+      13,
+      18,
+      23,
+      30,
+      33,
+      36,
+      39,
+      43,
+      47
+    ],
+    "rowCounts": [
+      1,
+      2,
+      1,
+      1,
+      2,
+      1,
+      3
+    ],
+    "columnCounts": [
+      1,
+      2,
+      1,
+      3,
+      1,
+      1,
+      2
+    ],
+    "solution": [
+      3,
+      8,
+      12,
+      17,
+      22,
+      31,
+      34,
+      35,
+      44,
+      46,
+      48
+    ],
+    "authoringNodes": 14,
+    "authoringCandidates": 26,
+    "id": "tents-challenge-018",
+    "contentVersion": 1,
+    "chapter": 4,
+    "objective": "交替运用行列数量、间距组合和树旁空间，完成更长的推理链。",
+    "title": "森林综合挑战 18"
+  },
+  {
+    "size": 7,
+    "trees": [
+      4,
+      8,
+      11,
+      14,
+      18,
+      24,
+      31,
+      33,
+      35,
+      38,
+      48
+    ],
+    "rowCounts": [
+      2,
+      1,
+      1,
+      2,
+      2,
+      1,
+      2
+    ],
+    "columnCounts": [
+      2,
+      1,
+      2,
+      1,
+      1,
+      3,
+      1
+    ],
+    "solution": [
+      1,
+      5,
+      10,
+      19,
+      21,
+      23,
+      32,
+      34,
+      37,
+      42,
+      47
+    ],
+    "authoringNodes": 15,
+    "authoringCandidates": 29,
+    "id": "tents-challenge-019",
+    "contentVersion": 1,
+    "chapter": 4,
+    "objective": "交替运用行列数量、间距组合和树旁空间，完成更长的推理链。",
+    "title": "森林综合挑战 19"
+  },
+  {
+    "size": 7,
+    "trees": [
+      1,
+      4,
+      9,
+      12,
+      19,
+      28,
+      29,
+      33,
+      36,
+      40,
+      45
+    ],
+    "rowCounts": [
+      2,
+      1,
+      2,
+      1,
+      2,
+      1,
+      2
+    ],
+    "columnCounts": [
+      2,
+      1,
+      2,
+      1,
+      3,
+      0,
+      2
+    ],
+    "solution": [
+      0,
+      3,
+      13,
+      16,
+      18,
+      21,
+      30,
+      32,
+      41,
+      43,
+      46
+    ],
+    "authoringNodes": 21,
+    "authoringCandidates": 27,
+    "id": "tents-challenge-020",
+    "contentVersion": 1,
+    "chapter": 4,
+    "objective": "交替运用行列数量、间距组合和树旁空间，完成更长的推理链。",
+    "title": "森林综合挑战 20"
+  },
+  {
+    "size": 7,
+    "trees": [
+      0,
+      5,
+      20,
+      22,
+      24,
+      28,
+      30,
+      39,
+      40,
+      41,
+      43
+    ],
+    "rowCounts": [
+      1,
+      2,
+      1,
+      1,
+      2,
+      1,
+      3
+    ],
+    "columnCounts": [
+      3,
+      0,
+      1,
+      2,
+      2,
+      1,
+      2
+    ],
+    "solution": [
+      4,
+      7,
+      13,
+      17,
+      21,
+      31,
+      33,
+      35,
+      44,
+      46,
+      48
+    ],
+    "authoringNodes": 13,
+    "authoringCandidates": 28,
+    "id": "tents-challenge-021",
+    "contentVersion": 1,
+    "chapter": 4,
+    "objective": "交替运用行列数量、间距组合和树旁空间，完成更长的推理链。",
+    "title": "森林综合挑战 21"
+  },
+  {
+    "size": 7,
+    "trees": [
+      3,
+      6,
+      7,
+      19,
+      23,
+      27,
+      40,
+      42,
+      45
+    ],
+    "rowCounts": [
+      1,
+      2,
+      1,
+      1,
+      1,
+      1,
+      2
+    ],
+    "columnCounts": [
+      1,
+      1,
+      1,
+      2,
+      0,
+      2,
+      2
+    ],
+    "solution": [
+      5,
+      8,
+      10,
+      20,
+      24,
+      34,
+      35,
+      44,
+      47
+    ],
+    "authoringNodes": 13,
+    "authoringCandidates": 27,
+    "id": "tents-challenge-022",
+    "contentVersion": 1,
+    "chapter": 4,
+    "objective": "交替运用行列数量、间距组合和树旁空间，完成更长的推理链。",
+    "title": "森林综合挑战 22"
+  },
+  {
+    "size": 7,
+    "trees": [
+      4,
+      8,
+      10,
+      12,
+      15,
+      25,
+      30,
+      35,
+      39,
+      48
+    ],
+    "rowCounts": [
+      1,
+      2,
+      1,
+      2,
+      0,
+      2,
+      2
+    ],
+    "columnCounts": [
+      2,
+      1,
+      2,
+      1,
+      1,
+      2,
+      1
+    ],
+    "solution": [
+      5,
+      7,
+      9,
+      19,
+      22,
+      24,
+      37,
+      41,
+      42,
+      46
+    ],
+    "authoringNodes": 18,
+    "authoringCandidates": 28,
+    "id": "tents-challenge-023",
+    "contentVersion": 1,
+    "chapter": 4,
+    "objective": "交替运用行列数量、间距组合和树旁空间，完成更长的推理链。",
+    "title": "森林综合挑战 23"
+  },
+  {
+    "size": 7,
+    "trees": [
+      0,
+      5,
+      9,
+      13,
+      19,
+      24,
+      30,
+      34,
+      35,
+      38,
+      43
+    ],
+    "rowCounts": [
+      3,
+      1,
+      1,
+      1,
+      1,
+      2,
+      2
+    ],
+    "columnCounts": [
+      2,
+      1,
+      2,
+      1,
+      2,
+      1,
+      2
+    ],
+    "solution": [
+      2,
+      4,
+      6,
+      7,
+      17,
+      26,
+      29,
+      39,
+      41,
+      42,
+      44
+    ],
+    "authoringNodes": 27,
+    "authoringCandidates": 25,
+    "id": "tents-challenge-024",
+    "contentVersion": 1,
+    "chapter": 4,
+    "objective": "交替运用行列数量、间距组合和树旁空间，完成更长的推理链。",
+    "title": "森林综合挑战 24"
+  },
+  {
+    "size": 7,
+    "trees": [
+      1,
+      5,
+      7,
+      11,
+      18,
+      27,
+      30,
+      39,
+      43,
+      46
+    ],
+    "rowCounts": [
+      2,
+      1,
+      2,
+      0,
+      2,
+      1,
+      2
+    ],
+    "columnCounts": [
+      3,
+      0,
+      1,
+      1,
+      1,
+      2,
+      2
+    ],
+    "solution": [
+      0,
+      6,
+      10,
+      14,
+      19,
+      32,
+      34,
+      37,
+      42,
+      47
+    ],
+    "authoringNodes": 13,
+    "authoringCandidates": 29,
+    "id": "tents-challenge-025",
+    "contentVersion": 1,
+    "chapter": 4,
+    "objective": "交替运用行列数量、间距组合和树旁空间，完成更长的推理链。",
+    "title": "森林综合挑战 25"
+  },
+  {
+    "size": 7,
+    "trees": [
+      1,
+      4,
+      9,
+      12,
+      21,
+      24,
+      33,
+      42,
+      44,
+      48
+    ],
+    "rowCounts": [
+      2,
+      1,
+      1,
+      1,
+      2,
+      1,
+      2
+    ],
+    "columnCounts": [
+      2,
+      1,
+      0,
+      3,
+      0,
+      3,
+      1
+    ],
+    "solution": [
+      0,
+      5,
+      10,
+      19,
+      22,
+      31,
+      34,
+      35,
+      45,
+      47
+    ],
+    "authoringNodes": 24,
+    "authoringCandidates": 29,
+    "id": "tents-challenge-026",
+    "contentVersion": 1,
+    "chapter": 4,
+    "objective": "交替运用行列数量、间距组合和树旁空间，完成更长的推理链。",
+    "title": "森林综合挑战 26"
+  },
+  {
+    "size": 7,
+    "trees": [
+      2,
+      11,
+      12,
+      13,
+      14,
+      17,
+      22,
+      32,
+      35,
+      39,
+      40
+    ],
+    "rowCounts": [
+      3,
+      0,
+      2,
+      1,
+      2,
+      1,
+      2
+    ],
+    "columnCounts": [
+      1,
+      3,
+      0,
+      2,
+      1,
+      3,
+      1
+    ],
+    "solution": [
+      1,
+      4,
+      6,
+      15,
+      19,
+      24,
+      29,
+      33,
+      38,
+      42,
+      47
+    ],
+    "authoringNodes": 29,
+    "authoringCandidates": 25,
+    "id": "tents-challenge-027",
+    "contentVersion": 1,
+    "chapter": 4,
+    "objective": "交替运用行列数量、间距组合和树旁空间，完成更长的推理链。",
+    "title": "森林综合挑战 27"
+  },
+  {
+    "size": 7,
+    "trees": [
+      0,
+      5,
+      9,
+      13,
+      16,
+      19,
+      24,
+      28,
+      37,
+      40,
+      47
+    ],
+    "rowCounts": [
+      3,
+      1,
+      2,
+      1,
+      1,
+      2,
+      1
+    ],
+    "columnCounts": [
+      2,
+      1,
+      1,
+      2,
+      2,
+      0,
+      3
+    ],
+    "solution": [
+      2,
+      4,
+      6,
+      7,
+      17,
+      20,
+      21,
+      31,
+      36,
+      41,
+      46
+    ],
+    "authoringNodes": 12,
+    "authoringCandidates": 30,
+    "id": "tents-challenge-028",
+    "contentVersion": 1,
+    "chapter": 4,
+    "objective": "交替运用行列数量、间距组合和树旁空间，完成更长的推理链。",
+    "title": "森林综合挑战 28"
+  },
+  {
+    "size": 7,
+    "trees": [
+      0,
+      3,
+      8,
+      13,
+      14,
+      18,
+      22,
+      29,
+      32,
+      40,
+      45
+    ],
+    "rowCounts": [
+      2,
+      2,
+      1,
+      2,
+      1,
+      2,
+      1
+    ],
+    "columnCounts": [
+      2,
+      1,
+      2,
+      1,
+      1,
+      3,
+      1
+    ],
+    "solution": [
+      4,
+      6,
+      7,
+      9,
+      19,
+      21,
+      23,
+      33,
+      36,
+      38,
+      47
+    ],
+    "authoringNodes": 13,
+    "authoringCandidates": 31,
+    "id": "tents-challenge-029",
+    "contentVersion": 1,
+    "chapter": 4,
+    "objective": "交替运用行列数量、间距组合和树旁空间，完成更长的推理链。",
+    "title": "森林综合挑战 29"
+  },
+  {
+    "size": 7,
+    "trees": [
+      0,
+      8,
+      11,
+      20,
+      24,
+      33,
+      36,
+      39,
+      43,
+      46
+    ],
+    "rowCounts": [
+      1,
+      2,
+      1,
+      1,
+      2,
+      1,
+      2
+    ],
+    "columnCounts": [
+      1,
+      3,
+      0,
+      2,
+      1,
+      1,
+      2
+    ],
+    "solution": [
+      1,
+      10,
+      13,
+      15,
+      25,
+      29,
+      34,
+      38,
+      42,
+      47
+    ],
+    "authoringNodes": 14,
+    "authoringCandidates": 32,
+    "id": "tents-challenge-030",
+    "contentVersion": 1,
+    "chapter": 4,
+    "objective": "交替运用行列数量、间距组合和树旁空间，完成更长的推理链。",
+    "title": "森林综合挑战 30"
+  },
+  {
+    "size": 7,
+    "trees": [
+      1,
+      3,
+      6,
+      8,
+      18,
+      29,
+      31,
+      35,
+      39,
+      41,
+      44
+    ],
+    "rowCounts": [
+      2,
+      2,
+      1,
+      1,
+      2,
+      1,
+      2
+    ],
+    "columnCounts": [
+      3,
+      1,
+      2,
+      1,
+      2,
+      0,
+      2
+    ],
+    "solution": [
+      0,
+      2,
+      11,
+      13,
+      15,
+      24,
+      28,
+      34,
+      37,
+      42,
+      46
+    ],
+    "authoringNodes": 18,
+    "authoringCandidates": 37,
+    "id": "tents-challenge-031",
+    "contentVersion": 1,
+    "chapter": 4,
+    "objective": "交替运用行列数量、间距组合和树旁空间，完成更长的推理链。",
+    "title": "森林综合挑战 31"
+  },
+  {
+    "size": 7,
+    "trees": [
+      8,
+      13,
+      17,
+      21,
+      28,
+      30,
+      33,
+      40,
+      43,
+      46
+    ],
+    "rowCounts": [
+      2,
+      1,
+      1,
+      1,
+      2,
+      1,
+      2
+    ],
+    "columnCounts": [
+      2,
+      2,
+      0,
+      3,
+      0,
+      1,
+      2
+    ],
+    "solution": [
+      1,
+      6,
+      10,
+      14,
+      26,
+      29,
+      31,
+      41,
+      42,
+      45
+    ],
+    "authoringNodes": 16,
+    "authoringCandidates": 29,
+    "id": "tents-challenge-032",
+    "contentVersion": 1,
+    "chapter": 4,
+    "objective": "交替运用行列数量、间距组合和树旁空间，完成更长的推理链。",
+    "title": "森林综合挑战 32"
+  },
+  {
+    "size": 7,
+    "trees": [
+      0,
+      2,
+      11,
+      13,
+      22,
+      26,
+      28,
+      37,
+      38,
+      40,
+      45
+    ],
+    "rowCounts": [
+      2,
+      2,
+      1,
+      1,
+      1,
+      2,
+      2
+    ],
+    "columnCounts": [
+      3,
+      0,
+      2,
+      1,
+      2,
+      1,
+      2
+    ],
+    "solution": [
+      4,
+      6,
+      7,
+      9,
+      19,
+      21,
+      31,
+      35,
+      41,
+      44,
+      46
+    ],
+    "authoringNodes": 16,
+    "authoringCandidates": 29,
+    "id": "tents-challenge-033",
+    "contentVersion": 1,
+    "chapter": 4,
+    "objective": "交替运用行列数量、间距组合和树旁空间，完成更长的推理链。",
+    "title": "森林综合挑战 33"
+  },
+  {
+    "size": 7,
+    "trees": [
+      1,
+      2,
+      7,
+      12,
+      23,
+      25,
+      28,
+      35,
+      41,
+      43,
+      46
+    ],
+    "rowCounts": [
+      2,
+      1,
+      2,
+      1,
+      1,
+      1,
+      3
+    ],
+    "columnCounts": [
+      3,
+      1,
+      2,
+      1,
+      1,
+      1,
+      2
+    ],
+    "solution": [
+      0,
+      3,
+      13,
+      14,
+      16,
+      26,
+      29,
+      39,
+      42,
+      44,
+      48
+    ],
+    "authoringNodes": 20,
+    "authoringCandidates": 27,
+    "id": "tents-challenge-034",
+    "contentVersion": 1,
+    "chapter": 4,
+    "objective": "交替运用行列数量、间距组合和树旁空间，完成更长的推理链。",
+    "title": "森林综合挑战 34"
+  },
+  {
+    "size": 7,
+    "trees": [
+      1,
+      3,
+      17,
+      22,
+      30,
+      34,
+      35,
+      38,
+      45
+    ],
+    "rowCounts": [
+      2,
+      0,
+      1,
+      1,
+      1,
+      2,
+      2
+    ],
+    "columnCounts": [
+      1,
+      2,
+      2,
+      1,
+      2,
+      0,
+      1
+    ],
+    "solution": [
+      2,
+      4,
+      15,
+      24,
+      29,
+      39,
+      41,
+      42,
+      44
+    ],
+    "authoringNodes": 43,
+    "authoringCandidates": 23,
+    "id": "tents-challenge-035",
+    "contentVersion": 1,
+    "chapter": 4,
+    "objective": "交替运用行列数量、间距组合和树旁空间，完成更长的推理链。",
+    "title": "森林综合挑战 35"
+  },
+  {
+    "size": 7,
+    "trees": [
+      0,
+      10,
+      11,
+      20,
+      22,
+      23,
+      35,
+      38,
+      39,
+      41,
+      45
+    ],
+    "rowCounts": [
+      2,
+      1,
+      1,
+      2,
+      1,
+      1,
+      3
+    ],
+    "columnCounts": [
+      2,
+      1,
+      2,
+      1,
+      2,
+      1,
+      2
+    ],
+    "solution": [
+      1,
+      3,
+      12,
+      16,
+      21,
+      27,
+      32,
+      37,
+      42,
+      46,
+      48
+    ],
+    "authoringNodes": 31,
+    "authoringCandidates": 27,
+    "id": "tents-challenge-036",
+    "contentVersion": 1,
+    "chapter": 4,
+    "objective": "交替运用行列数量、间距组合和树旁空间，完成更长的推理链。",
+    "title": "森林综合挑战 36"
+  },
+  {
+    "size": 7,
+    "trees": [
+      9,
+      12,
+      14,
+      22,
+      23,
+      26,
+      28,
+      32,
+      37,
+      45,
+      48
+    ],
+    "rowCounts": [
+      1,
+      2,
+      0,
+      3,
+      1,
+      2,
+      2
+    ],
+    "columnCounts": [
+      3,
+      0,
+      2,
+      1,
+      2,
+      1,
+      2
+    ],
+    "solution": [
+      5,
+      7,
+      10,
+      21,
+      25,
+      27,
+      30,
+      35,
+      41,
+      44,
+      46
+    ],
+    "authoringNodes": 19,
+    "authoringCandidates": 27,
+    "id": "tents-challenge-037",
+    "contentVersion": 1,
+    "chapter": 4,
+    "objective": "交替运用行列数量、间距组合和树旁空间，完成更长的推理链。",
+    "title": "森林综合挑战 37"
+  },
+  {
+    "size": 7,
+    "trees": [
+      0,
+      3,
+      13,
+      15,
+      20,
+      21,
+      26,
+      31,
+      40,
+      45
+    ],
+    "rowCounts": [
+      1,
+      2,
+      1,
+      2,
+      2,
+      0,
+      2
+    ],
+    "columnCounts": [
+      2,
+      1,
+      2,
+      1,
+      1,
+      2,
+      1
+    ],
+    "solution": [
+      1,
+      10,
+      12,
+      14,
+      25,
+      27,
+      28,
+      30,
+      44,
+      47
+    ],
+    "authoringNodes": 16,
+    "authoringCandidates": 25,
+    "id": "tents-challenge-038",
+    "contentVersion": 1,
+    "chapter": 4,
+    "objective": "交替运用行列数量、间距组合和树旁空间，完成更长的推理链。",
+    "title": "森林综合挑战 38"
+  },
+  {
+    "size": 7,
+    "trees": [
+      8,
+      11,
+      14,
+      20,
+      25,
+      26,
+      30,
+      34,
+      35,
+      44,
+      47
+    ],
+    "rowCounts": [
+      1,
+      2,
+      0,
+      3,
+      1,
+      2,
+      2
+    ],
+    "columnCounts": [
+      2,
+      1,
+      2,
+      1,
+      2,
+      0,
+      3
+    ],
+    "solution": [
+      1,
+      10,
+      13,
+      21,
+      23,
+      27,
+      32,
+      37,
+      41,
+      42,
+      46
+    ],
+    "authoringNodes": 26,
+    "authoringCandidates": 30,
+    "id": "tents-challenge-039",
+    "contentVersion": 1,
+    "chapter": 4,
+    "objective": "交替运用行列数量、间距组合和树旁空间，完成更长的推理链。",
+    "title": "森林综合挑战 39"
+  },
+  {
+    "size": 7,
+    "trees": [
+      8,
+      10,
+      13,
+      22,
+      31,
+      32,
+      34,
+      37,
+      42,
+      45,
+      48
+    ],
+    "rowCounts": [
+      1,
+      2,
+      0,
+      3,
+      1,
+      2,
+      2
+    ],
+    "columnCounts": [
+      3,
+      0,
+      2,
+      1,
+      2,
+      1,
+      2
+    ],
+    "solution": [
+      3,
+      7,
+      12,
+      21,
+      25,
+      27,
+      30,
+      35,
+      41,
+      44,
+      46
+    ],
+    "authoringNodes": 24,
+    "authoringCandidates": 29,
+    "id": "tents-challenge-040",
+    "contentVersion": 1,
+    "chapter": 4,
+    "objective": "交替运用行列数量、间距组合和树旁空间，完成更长的推理链。",
+    "title": "森林综合挑战 40"
+  },
+  {
+    "size": 7,
+    "trees": [
+      9,
+      12,
+      14,
+      20,
+      24,
+      25,
+      35,
+      40,
+      43,
+      44
+    ],
+    "rowCounts": [
+      1,
+      2,
+      0,
+      2,
+      2,
+      1,
+      2
+    ],
+    "columnCounts": [
+      3,
+      0,
+      1,
+      2,
+      1,
+      1,
+      2
+    ],
+    "solution": [
+      5,
+      7,
+      10,
+      23,
+      27,
+      28,
+      32,
+      41,
+      42,
+      45
+    ],
+    "authoringNodes": 21,
+    "authoringCandidates": 27,
+    "id": "tents-challenge-041",
+    "contentVersion": 1,
+    "chapter": 4,
+    "objective": "交替运用行列数量、间距组合和树旁空间，完成更长的推理链。",
+    "title": "森林综合挑战 41"
+  },
+  {
+    "size": 7,
+    "trees": [
+      0,
+      2,
+      5,
+      18,
+      21,
+      26,
+      30,
+      37,
+      43,
+      46,
+      47
+    ],
+    "rowCounts": [
+      2,
+      1,
+      2,
+      1,
+      1,
+      1,
+      3
+    ],
+    "columnCounts": [
+      2,
+      2,
+      1,
+      2,
+      1,
+      1,
+      2
+    ],
+    "solution": [
+      1,
+      3,
+      12,
+      14,
+      17,
+      27,
+      29,
+      39,
+      42,
+      44,
+      48
+    ],
+    "authoringNodes": 24,
+    "authoringCandidates": 26,
+    "id": "tents-challenge-042",
+    "contentVersion": 1,
+    "chapter": 4,
+    "objective": "交替运用行列数量、间距组合和树旁空间，完成更长的推理链。",
+    "title": "森林综合挑战 42"
+  },
+  {
+    "size": 7,
+    "trees": [
+      4,
+      5,
+      8,
+      9,
+      13,
+      14,
+      27,
+      30,
+      35,
+      39,
+      48
+    ],
+    "rowCounts": [
+      2,
+      1,
+      2,
+      1,
+      2,
+      1,
+      2
+    ],
+    "columnCounts": [
+      2,
+      1,
+      2,
+      0,
+      2,
+      1,
+      3
+    ],
+    "solution": [
+      1,
+      6,
+      11,
+      16,
+      20,
+      21,
+      32,
+      34,
+      37,
+      42,
+      47
+    ],
+    "authoringNodes": 20,
+    "authoringCandidates": 28,
+    "id": "tents-challenge-043",
+    "contentVersion": 1,
+    "chapter": 4,
+    "objective": "交替运用行列数量、间距组合和树旁空间，完成更长的推理链。",
+    "title": "森林综合挑战 43"
+  },
+  {
+    "size": 7,
+    "trees": [
+      1,
+      2,
+      13,
+      28,
+      31,
+      34,
+      37,
+      39,
+      42
+    ],
+    "rowCounts": [
+      1,
+      2,
+      0,
+      1,
+      1,
+      2,
+      2
+    ],
+    "columnCounts": [
+      2,
+      1,
+      2,
+      1,
+      1,
+      1,
+      1
+    ],
+    "solution": [
+      3,
+      8,
+      12,
+      21,
+      30,
+      35,
+      41,
+      44,
+      46
+    ],
+    "authoringNodes": 21,
+    "authoringCandidates": 23,
+    "id": "tents-challenge-044",
+    "contentVersion": 1,
+    "chapter": 4,
+    "objective": "交替运用行列数量、间距组合和树旁空间，完成更长的推理链。",
+    "title": "森林综合挑战 44"
+  },
+  {
+    "size": 7,
+    "trees": [
+      2,
+      7,
+      12,
+      13,
+      15,
+      23,
+      25,
+      38,
+      43,
+      47
+    ],
+    "rowCounts": [
+      2,
+      2,
+      1,
+      2,
+      0,
+      2,
+      1
+    ],
+    "columnCounts": [
+      2,
+      1,
+      1,
+      1,
+      2,
+      1,
+      2
+    ],
+    "solution": [
+      0,
+      6,
+      9,
+      11,
+      14,
+      24,
+      26,
+      36,
+      39,
+      48
+    ],
+    "authoringNodes": 18,
+    "authoringCandidates": 28,
+    "id": "tents-challenge-045",
+    "contentVersion": 1,
+    "chapter": 4,
+    "objective": "交替运用行列数量、间距组合和树旁空间，完成更长的推理链。",
+    "title": "森林综合挑战 45"
+  },
+  {
+    "size": 7,
+    "trees": [
+      1,
+      5,
+      9,
+      12,
+      14,
+      16,
+      19,
+      31,
+      41,
+      42,
+      46
+    ],
+    "rowCounts": [
+      3,
+      1,
+      1,
+      2,
+      1,
+      1,
+      2
+    ],
+    "columnCounts": [
+      3,
+      0,
+      2,
+      2,
+      1,
+      1,
+      2
+    ],
+    "solution": [
+      0,
+      2,
+      4,
+      13,
+      17,
+      21,
+      26,
+      30,
+      35,
+      45,
+      48
+    ],
+    "authoringNodes": 24,
+    "authoringCandidates": 30,
+    "id": "tents-challenge-046",
+    "contentVersion": 1,
+    "chapter": 4,
+    "objective": "交替运用行列数量、间距组合和树旁空间，完成更长的推理链。",
+    "title": "森林综合挑战 46"
+  },
+  {
+    "size": 7,
+    "trees": [
+      1,
+      4,
+      11,
+      14,
+      23,
+      26,
+      27,
+      28,
+      32,
+      36,
+      47
+    ],
+    "rowCounts": [
+      2,
+      1,
+      2,
+      1,
+      1,
+      3,
+      1
+    ],
+    "columnCounts": [
+      2,
+      1,
+      1,
+      2,
+      1,
+      2,
+      2
+    ],
+    "solution": [
+      0,
+      5,
+      10,
+      15,
+      19,
+      24,
+      34,
+      35,
+      37,
+      39,
+      48
+    ],
+    "authoringNodes": 39,
+    "authoringCandidates": 30,
+    "id": "tents-challenge-047",
+    "contentVersion": 1,
+    "chapter": 4,
+    "objective": "交替运用行列数量、间距组合和树旁空间，完成更长的推理链。",
+    "title": "森林综合挑战 47"
+  },
+  {
+    "size": 7,
+    "trees": [
+      0,
+      2,
+      12,
+      22,
+      27,
+      28,
+      31,
+      39,
+      45,
+      48
+    ],
+    "rowCounts": [
+      2,
+      1,
+      0,
+      2,
+      1,
+      2,
+      2
+    ],
+    "columnCounts": [
+      2,
+      1,
+      2,
+      1,
+      1,
+      1,
+      2
+    ],
+    "solution": [
+      1,
+      3,
+      13,
+      21,
+      26,
+      30,
+      35,
+      41,
+      44,
+      46
+    ],
+    "authoringNodes": 17,
+    "authoringCandidates": 24,
+    "id": "tents-challenge-048",
+    "contentVersion": 1,
+    "chapter": 4,
+    "objective": "交替运用行列数量、间距组合和树旁空间，完成更长的推理链。",
+    "title": "森林综合挑战 48"
+  },
+  {
+    "size": 7,
+    "trees": [
+      2,
+      6,
+      10,
+      11,
+      21,
+      27,
+      32,
+      36,
+      44,
+      47
+    ],
+    "rowCounts": [
+      2,
+      1,
+      2,
+      1,
+      2,
+      0,
+      2
+    ],
+    "columnCounts": [
+      1,
+      2,
+      0,
+      3,
+      1,
+      1,
+      2
+    ],
+    "solution": [
+      1,
+      4,
+      13,
+      14,
+      17,
+      26,
+      29,
+      31,
+      45,
+      48
+    ],
+    "authoringNodes": 20,
+    "authoringCandidates": 29,
+    "id": "tents-challenge-049",
+    "contentVersion": 1,
+    "chapter": 4,
+    "objective": "交替运用行列数量、间距组合和树旁空间，完成更长的推理链。",
+    "title": "森林综合挑战 49"
+  },
+  {
+    "size": 7,
+    "trees": [
+      4,
+      8,
+      10,
+      11,
+      19,
+      21,
+      38,
+      39,
+      42,
+      48
+    ],
+    "rowCounts": [
+      2,
+      1,
+      2,
+      1,
+      1,
+      2,
+      1
+    ],
+    "columnCounts": [
+      2,
+      1,
+      0,
+      3,
+      1,
+      2,
+      1
+    ],
+    "solution": [
+      1,
+      3,
+      12,
+      14,
+      17,
+      26,
+      31,
+      35,
+      41,
+      46
+    ],
+    "authoringNodes": 22,
+    "authoringCandidates": 28,
+    "id": "tents-challenge-050",
+    "contentVersion": 1,
+    "chapter": 4,
+    "objective": "交替运用行列数量、间距组合和树旁空间，完成更长的推理链。",
+    "title": "森林综合挑战 50"
+  },
+  {
+    "size": 7,
+    "trees": [
+      1,
+      3,
+      20,
+      21,
+      24,
+      30,
+      33,
+      38,
+      42,
+      45,
+      48
+    ],
+    "rowCounts": [
+      2,
+      1,
+      2,
+      1,
+      2,
+      1,
+      2
+    ],
+    "columnCounts": [
+      2,
+      2,
+      1,
+      2,
+      1,
+      1,
+      2
+    ],
+    "solution": [
+      0,
+      2,
+      13,
+      14,
+      17,
+      26,
+      29,
+      31,
+      41,
+      43,
+      46
+    ],
+    "authoringNodes": 27,
+    "authoringCandidates": 31,
+    "id": "tents-challenge-051",
+    "contentVersion": 1,
+    "chapter": 4,
+    "objective": "交替运用行列数量、间距组合和树旁空间，完成更长的推理链。",
+    "title": "森林综合挑战 51"
+  },
+  {
+    "size": 7,
+    "trees": [
+      0,
+      2,
+      6,
+      19,
+      22,
+      31,
+      34,
+      39,
+      44,
+      47
+    ],
+    "rowCounts": [
+      1,
+      2,
+      1,
+      2,
+      1,
+      0,
+      3
+    ],
+    "columnCounts": [
+      2,
+      1,
+      1,
+      1,
+      1,
+      2,
+      2
+    ],
+    "solution": [
+      5,
+      7,
+      9,
+      20,
+      21,
+      24,
+      33,
+      43,
+      46,
+      48
+    ],
+    "authoringNodes": 15,
+    "authoringCandidates": 26,
+    "id": "tents-challenge-052",
+    "contentVersion": 1,
+    "chapter": 4,
+    "objective": "交替运用行列数量、间距组合和树旁空间，完成更长的推理链。",
+    "title": "森林综合挑战 52"
+  },
+  {
+    "size": 7,
+    "trees": [
+      3,
+      5,
+      7,
+      18,
+      19,
+      24,
+      27,
+      29,
+      39,
+      42,
+      48
+    ],
+    "rowCounts": [
+      3,
+      1,
+      1,
+      2,
+      1,
+      1,
+      2
+    ],
+    "columnCounts": [
+      1,
+      2,
+      1,
+      1,
+      2,
+      1,
+      3
+    ],
+    "solution": [
+      0,
+      2,
+      6,
+      11,
+      20,
+      22,
+      25,
+      34,
+      38,
+      43,
+      47
+    ],
+    "authoringNodes": 11,
+    "authoringCandidates": 27,
+    "id": "tents-challenge-053",
+    "contentVersion": 1,
+    "chapter": 4,
+    "objective": "交替运用行列数量、间距组合和树旁空间，完成更长的推理链。",
+    "title": "森林综合挑战 53"
+  },
+  {
+    "size": 7,
+    "trees": [
+      2,
+      5,
+      7,
+      11,
+      20,
+      21,
+      32,
+      35,
+      36,
+      37,
+      39
+    ],
+    "rowCounts": [
+      3,
+      1,
+      2,
+      0,
+      2,
+      1,
+      2
+    ],
+    "columnCounts": [
+      3,
+      1,
+      2,
+      1,
+      1,
+      2,
+      1
+    ],
+    "solution": [
+      0,
+      4,
+      6,
+      9,
+      14,
+      19,
+      29,
+      31,
+      40,
+      42,
+      44
+    ],
+    "authoringNodes": 20,
+    "authoringCandidates": 25,
+    "id": "tents-challenge-054",
+    "contentVersion": 1,
+    "chapter": 4,
+    "objective": "交替运用行列数量、间距组合和树旁空间，完成更长的推理链。",
+    "title": "森林综合挑战 54"
+  },
+  {
+    "size": 7,
+    "trees": [
+      1,
+      6,
+      14,
+      22,
+      28,
+      31,
+      32,
+      34,
+      41,
+      44
+    ],
+    "rowCounts": [
+      2,
+      1,
+      0,
+      3,
+      1,
+      2,
+      1
+    ],
+    "columnCounts": [
+      3,
+      0,
+      2,
+      1,
+      1,
+      2,
+      1
+    ],
+    "solution": [
+      2,
+      5,
+      7,
+      21,
+      25,
+      27,
+      30,
+      35,
+      40,
+      45
+    ],
+    "authoringNodes": 16,
+    "authoringCandidates": 25,
+    "id": "tents-challenge-055",
+    "contentVersion": 1,
+    "chapter": 4,
+    "objective": "交替运用行列数量、间距组合和树旁空间，完成更长的推理链。",
+    "title": "森林综合挑战 55"
+  },
+  {
+    "size": 7,
+    "trees": [
+      1,
+      6,
+      11,
+      14,
+      21,
+      25,
+      29,
+      34,
+      42,
+      46
+    ],
+    "rowCounts": [
+      2,
+      1,
+      1,
+      1,
+      3,
+      0,
+      2
+    ],
+    "columnCounts": [
+      2,
+      2,
+      1,
+      1,
+      1,
+      2,
+      1
+    ],
+    "solution": [
+      0,
+      5,
+      10,
+      15,
+      27,
+      28,
+      30,
+      32,
+      43,
+      47
+    ],
+    "authoringNodes": 28,
+    "authoringCandidates": 22,
+    "id": "tents-challenge-056",
+    "contentVersion": 1,
+    "chapter": 4,
+    "objective": "交替运用行列数量、间距组合和树旁空间，完成更长的推理链。",
+    "title": "森林综合挑战 56"
+  },
+  {
+    "size": 7,
+    "trees": [
+      0,
+      9,
+      11,
+      16,
+      20,
+      21,
+      25,
+      38,
+      40
+    ],
+    "rowCounts": [
+      1,
+      2,
+      1,
+      1,
+      2,
+      2,
+      0
+    ],
+    "columnCounts": [
+      1,
+      2,
+      1,
+      1,
+      1,
+      1,
+      2
+    ],
+    "solution": [
+      1,
+      10,
+      12,
+      15,
+      27,
+      28,
+      32,
+      37,
+      41
+    ],
+    "authoringNodes": 22,
+    "authoringCandidates": 29,
+    "id": "tents-challenge-057",
+    "contentVersion": 1,
+    "chapter": 4,
+    "objective": "交替运用行列数量、间距组合和树旁空间，完成更长的推理链。",
+    "title": "森林综合挑战 57"
+  },
+  {
+    "size": 7,
+    "trees": [
+      1,
+      4,
+      6,
+      17,
+      19,
+      22,
+      32,
+      34,
+      36,
+      37,
+      40
+    ],
+    "rowCounts": [
+      2,
+      1,
+      2,
+      1,
+      2,
+      1,
+      2
+    ],
+    "columnCounts": [
+      2,
+      1,
+      1,
+      2,
+      1,
+      3,
+      1
+    ],
+    "solution": [
+      3,
+      5,
+      8,
+      18,
+      20,
+      21,
+      31,
+      33,
+      35,
+      44,
+      47
+    ],
+    "authoringNodes": 26,
+    "authoringCandidates": 31,
+    "id": "tents-challenge-058",
+    "contentVersion": 1,
+    "chapter": 4,
+    "objective": "交替运用行列数量、间距组合和树旁空间，完成更长的推理链。",
+    "title": "森林综合挑战 58"
+  },
+  {
+    "size": 7,
+    "trees": [
+      0,
+      10,
+      15,
+      20,
+      25,
+      28,
+      33,
+      36,
+      41,
+      45
+    ],
+    "rowCounts": [
+      1,
+      1,
+      1,
+      2,
+      1,
+      2,
+      2
+    ],
+    "columnCounts": [
+      2,
+      1,
+      1,
+      1,
+      3,
+      0,
+      2
+    ],
+    "solution": [
+      3,
+      7,
+      18,
+      22,
+      27,
+      32,
+      35,
+      37,
+      46,
+      48
+    ],
+    "authoringNodes": 32,
+    "authoringCandidates": 33,
+    "id": "tents-challenge-059",
+    "contentVersion": 1,
+    "chapter": 4,
+    "objective": "交替运用行列数量、间距组合和树旁空间，完成更长的推理链。",
+    "title": "森林综合挑战 59"
+  },
+  {
+    "size": 7,
+    "trees": [
+      1,
+      10,
+      12,
+      20,
+      22,
+      25,
+      30,
+      34,
+      39,
+      42,
+      47
+    ],
+    "rowCounts": [
+      2,
+      1,
+      1,
+      2,
+      1,
+      2,
+      2
+    ],
+    "columnCounts": [
+      2,
+      1,
+      1,
+      2,
+      1,
+      3,
+      1
+    ],
+    "solution": [
+      3,
+      5,
+      8,
+      19,
+      21,
+      24,
+      33,
+      35,
+      37,
+      46,
+      48
+    ],
+    "authoringNodes": 44,
+    "authoringCandidates": 36,
+    "id": "tents-challenge-060",
+    "contentVersion": 1,
+    "chapter": 4,
+    "objective": "交替运用行列数量、间距组合和树旁空间，完成更长的推理链。",
+    "title": "森林综合挑战 60"
+  }
+]

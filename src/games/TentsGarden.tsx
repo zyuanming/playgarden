@@ -12,6 +12,7 @@ import {
   type TentsCell,
   type TentsHint,
 } from "./tentsLogic";
+import { tentsChapters } from "./tentsLevels";
 import "./regionCamping.css";
 function TreeIcon() {
   return (
@@ -61,7 +62,8 @@ function TentsRound({
   onStatus,
 }: GameProps) {
   const config = tentsLevels[level] ?? tentsLevels[0],
-    n = config.size;
+    n = config.size,
+    chapter = tentsChapters[config.chapter ?? 0];
   const [state, setState] = useState(() => createTentsState(config)),
     [cursor, setCursor] = useState(
       () =>
@@ -109,13 +111,13 @@ function TentsRound({
   useEffect(() => {
     if (tokens.current.undoToken === undoToken) return;
     tokens.current.undoToken = undoToken;
-    if (paused) return;
+    if (paused || won) return;
     setState((s) => undoTents(s));
     setHint(null);
     report(
       state.history.length ? "已撤销上一笔标记。" : "还没有可以撤销的标记。",
     );
-  }, [undoToken, paused, state.history.length]);
+  }, [undoToken, paused, won, state.history.length]);
   function edit(index: number, value?: TentsCell) {
     if (paused || won) return;
     if (config.trees.includes(index)) {
@@ -174,9 +176,14 @@ function TentsRound({
             <h3>{config.title}</h3>
           </div>
           <span className="rc-level">
-            {String(tentsLevels.indexOf(config) + 1).padStart(2, "0")} / 12
+            {String(tentsLevels.indexOf(config) + 1).padStart(3, "0")} / {tentsLevels.length}
           </span>
         </header>
+        <p className="rc-campaign" data-tents-chapter={chapter.id}>
+          <strong>{chapter.id === 0 ? "经典入门" : `练习 ${chapter.id} / 4 · ${chapter.title}`}</strong>
+          <br />
+          {chapter.objective}
+        </p>
         <div className="rc-stats">
           <span>
             <strong>{count}</strong> / {config.trees.length} 顶帐篷
@@ -191,7 +198,15 @@ function TentsRound({
             role="group"
             aria-label="林间帐篷棋盘，方向键移动，空格循环标记"
             onKeyDown={(e) => {
-              if (paused || won || e.ctrlKey || e.metaKey || e.altKey) return;
+              if (paused || won) return;
+              if (e.ctrlKey || e.metaKey || e.altKey) {
+                const guarded = [
+                  "Enter", " ", "ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight",
+                  "Delete", "Backspace", "t", "T", "x", "X", "g", "G", "0", "1",
+                ];
+                if (guarded.includes(e.key)) e.preventDefault();
+                return;
+              }
               const delta: Record<string, [number, number]> = {
                 ArrowUp: [-1, 0],
                 ArrowDown: [1, 0],

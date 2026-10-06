@@ -1,0 +1,548 @@
+{
+  "baselineCommit": "d52e1ef7",
+  "independentNodeLimit": 200000,
+  "selfTests": 26,
+  "correctnessAndDiversity": {
+    "ok": true,
+    "failures": [],
+    "levelCount": 200,
+    "source": "public clues only; certificates compared after exhaustive solve",
+    "legacyPreserved": true,
+    "publicD4UniqueCount": 200,
+    "tentLayoutD4UniqueCount": 200,
+    "publicD4Duplicates": [],
+    "tentLayoutD4Duplicates": [],
+    "translationD4UniqueCount": 199,
+    "translationD4Duplicates": [
+      [
+        1,
+        2
+      ]
+    ],
+    "legacyTranslationD4Duplicates": [
+      [
+        1,
+        2
+      ]
+    ],
+    "newTranslationD4Duplicates": [],
+    "summary": {
+      "count": 200,
+      "boardSizes": {
+        "4": 7,
+        "5": 33,
+        "6": 64,
+        "7": 96
+      },
+      "treeCounts": {
+        "3": 2,
+        "4": 15,
+        "5": 14,
+        "6": 17,
+        "7": 25,
+        "8": 34,
+        "9": 21,
+        "10": 34,
+        "11": 38
+      },
+      "zeroLines": {
+        "min": 0,
+        "median": 1.0,
+        "max": 5
+      },
+      "candidateCells": {
+        "min": 3,
+        "median": 18.0,
+        "max": 30
+      },
+      "maxTreeCompetitionComponent": {
+        "min": 1,
+        "median": 2.0,
+        "max": 5
+      },
+      "initialSingleTreeDomains": {
+        "min": 0,
+        "median": 0.0,
+        "max": 5
+      },
+      "withExtraTreeAdjacency": 156,
+      "independentSearchNodes": {
+        "min": 4,
+        "median": 13.0,
+        "max": 41
+      },
+      "rowsOnlyStatuses": {
+        "unique": 52,
+        "multiple": 148
+      },
+      "columnsOnlyStatuses": {
+        "unique": 71,
+        "multiple": 129
+      },
+      "nontrivialRowPairs": {
+        "min": 0,
+        "median": 0.0,
+        "max": 4
+      },
+      "nontrivialColumnPairs": {
+        "min": 0,
+        "median": 0.0,
+        "max": 4
+      },
+      "inconclusiveAblations": 0
+    },
+    "chapterSummaries": [
+      {
+        "range": [
+          1,
+          12
+        ],
+        "count": 12,
+        "boardSizes": {
+          "4": 3,
+          "5": 3,
+          "6": 3,
+          "7": 3
+        },
+        "treeCounts": {
+          "3": 2,
+          "4": 2,
+          "5": 2,
+          "6": 1,
+          "7": 2,
+          "8": 1,
+          "9": 1,
+          "10": 1
+        },
+        "zeroLines": {
+          "min": 0,
+          "median": 2.0,
+          "max": 5
+        },
+        "candidateCells": {
+          "min": 3,
+          "median": 11.5,
+          "max": 23
+        },
+        "maxTreeCompetitionComponent": {
+          "min": 1,
+          "median": 2.0,
+          "max": 3
+        },
+        "initialSingleTreeDomains": {
+          "min": 0,
+          "median": 0.0,
+          "max": 3
+        },
+        "withExtraTreeAdjacency": 5,
+        "independentSearchNodes": {
+          "min": 4,
+          "median": 8.5,
+          "max": 18
+        },
+        "rowsOnlyStatuses": {
+          "unique": 2,
+          "multiple": 10
+        },
+        "columnsOnlyStatuses": {
+          "unique": 3,
+          "multiple": 9
+        },
+        "nontrivialRowPairs": {
+          "min": 0,
+          "median": 1.0,
+          "max": 4
+        },
+        "nontrivialColumnPairs": {
+          "min": 0,
+          "median": 1.0,
+          "max": 2
+        },
+        "inconclusiveAblations": 0
+      },
+      {
+        "range": [
+          13,
+          40
+        ],
+        "count": 28,
+        "boardSizes": {
+          "4": 4,
+          "5": 24
+        },
+        "treeCounts": {
+          "4": 13,
+          "5": 9,
+          "6": 6
+        },
+        "zeroLines": {
+          "min": 1,
+          "median": 3.0,
+          "max": 4
+        },
+        "candidateCells": {
+          "min": 4,
+          "median": 7.0,
+          "max": 12
+        },
+        "maxTreeCompetitionComponent": {
+          "min": 1,
+          "median": 2.0,
+          "max": 4
+        },
+        "initialSingleTreeDomains": {
+          "min": 0,
+          "median": 2.0,
+          "max": 5
+        },
+        "withExtraTreeAdjacency": 16,
+        "independentSearchNodes": {
+          "min": 5,
+          "median": 6.0,
+          "max": 7
+        },
+        "rowsOnlyStatuses": {
+          "unique": 12,
+          "multiple": 16
+        },
+        "columnsOnlyStatuses": {
+          "unique": 16,
+          "multiple": 12
+        },
+        "nontrivialRowPairs": {
+          "min": 0,
+          "median": 0.0,
+          "max": 2
+        },
+        "nontrivialColumnPairs": {
+          "min": 0,
+          "median": 0.0,
+          "max": 2
+        },
+        "inconclusiveAblations": 0
+      },
+      {
+        "range": [
+          41,
+          90
+        ],
+        "count": 50,
+        "boardSizes": {
+          "5": 6,
+          "6": 44
+        },
+        "treeCounts": {
+          "5": 3,
+          "6": 10,
+          "7": 15,
+          "8": 22
+        },
+        "zeroLines": {
+          "min": 0,
+          "median": 1.0,
+          "max": 5
+        },
+        "candidateCells": {
+          "min": 9,
+          "median": 15.0,
+          "max": 20
+        },
+        "maxTreeCompetitionComponent": {
+          "min": 1,
+          "median": 2.0,
+          "max": 4
+        },
+        "initialSingleTreeDomains": {
+          "min": 0,
+          "median": 0.0,
+          "max": 2
+        },
+        "withExtraTreeAdjacency": 39,
+        "independentSearchNodes": {
+          "min": 7,
+          "median": 11.0,
+          "max": 27
+        },
+        "rowsOnlyStatuses": {
+          "unique": 17,
+          "multiple": 33
+        },
+        "columnsOnlyStatuses": {
+          "multiple": 35,
+          "unique": 15
+        },
+        "nontrivialRowPairs": {
+          "min": 0,
+          "median": 0.0,
+          "max": 2
+        },
+        "nontrivialColumnPairs": {
+          "min": 0,
+          "median": 0.0,
+          "max": 3
+        },
+        "inconclusiveAblations": 0
+      },
+      {
+        "range": [
+          91,
+          140
+        ],
+        "count": 50,
+        "boardSizes": {
+          "6": 17,
+          "7": 33
+        },
+        "treeCounts": {
+          "7": 8,
+          "8": 10,
+          "9": 12,
+          "10": 11,
+          "11": 9
+        },
+        "zeroLines": {
+          "min": 0,
+          "median": 2.0,
+          "max": 4
+        },
+        "candidateCells": {
+          "min": 12,
+          "median": 19.0,
+          "max": 28
+        },
+        "maxTreeCompetitionComponent": {
+          "min": 1,
+          "median": 2.0,
+          "max": 5
+        },
+        "initialSingleTreeDomains": {
+          "min": 0,
+          "median": 0.0,
+          "max": 4
+        },
+        "withExtraTreeAdjacency": 41,
+        "independentSearchNodes": {
+          "min": 9,
+          "median": 13.0,
+          "max": 22
+        },
+        "rowsOnlyStatuses": {
+          "multiple": 43,
+          "unique": 7
+        },
+        "columnsOnlyStatuses": {
+          "unique": 16,
+          "multiple": 34
+        },
+        "nontrivialRowPairs": {
+          "min": 0,
+          "median": 0.0,
+          "max": 3
+        },
+        "nontrivialColumnPairs": {
+          "min": 0,
+          "median": 0.0,
+          "max": 4
+        },
+        "inconclusiveAblations": 0
+      },
+      {
+        "range": [
+          141,
+          200
+        ],
+        "count": 60,
+        "boardSizes": {
+          "7": 60
+        },
+        "treeCounts": {
+          "8": 1,
+          "9": 8,
+          "10": 22,
+          "11": 29
+        },
+        "zeroLines": {
+          "min": 0,
+          "median": 1.0,
+          "max": 2
+        },
+        "candidateCells": {
+          "min": 17,
+          "median": 23.0,
+          "max": 30
+        },
+        "maxTreeCompetitionComponent": {
+          "min": 2,
+          "median": 3.0,
+          "max": 5
+        },
+        "initialSingleTreeDomains": {
+          "min": 0,
+          "median": 0.0,
+          "max": 3
+        },
+        "withExtraTreeAdjacency": 55,
+        "independentSearchNodes": {
+          "min": 11,
+          "median": 17.0,
+          "max": 41
+        },
+        "rowsOnlyStatuses": {
+          "multiple": 46,
+          "unique": 14
+        },
+        "columnsOnlyStatuses": {
+          "multiple": 39,
+          "unique": 21
+        },
+        "nontrivialRowPairs": {
+          "min": 0,
+          "median": 0.0,
+          "max": 3
+        },
+        "nontrivialColumnPairs": {
+          "min": 0,
+          "median": 0.0,
+          "max": 3
+        },
+        "inconclusiveAblations": 0
+      }
+    ],
+    "inputSha256": "be1a31eabd344066bca01d074dbd9d62b74e1e97a3d799a5a9050aee4d522e99"
+  },
+  "deductionAudit": {
+    "ok": true,
+    "failures": [],
+    "auditedLevels": 188,
+    "auditedSteps": 2862,
+    "oppositeValueChecks": 3896,
+    "method": "independent local-premise replay, opposite-value exhaustive checks, and parallel weaker-family closures",
+    "chapters": [
+      {
+        "chapter": 1,
+        "count": 28,
+        "traceSteps": {
+          "min": 5,
+          "median": 8.0,
+          "max": 10
+        },
+        "closureStatuses": {
+          "basic": {
+            "solved": 28
+          },
+          "patterns": {
+            "solved": 28
+          },
+          "tree-space": {
+            "solved": 28
+          }
+        },
+        "closureRounds": {
+          "basic": 2.0,
+          "patterns": 2.0,
+          "tree-space": 2.0
+        },
+        "ruleUses": {
+          "line-count": 150,
+          "spacing": 67,
+          "tree-single": 2
+        }
+      },
+      {
+        "chapter": 2,
+        "count": 50,
+        "traceSteps": {
+          "min": 9,
+          "median": 12.5,
+          "max": 17
+        },
+        "closureStatuses": {
+          "basic": {
+            "stalled": 50
+          },
+          "patterns": {
+            "solved": 50
+          },
+          "tree-space": {
+            "solved": 50
+          }
+        },
+        "closureRounds": {
+          "basic": 1.5,
+          "patterns": 5.0,
+          "tree-space": 5.0
+        },
+        "ruleUses": {
+          "line-count": 385,
+          "spacing": 167,
+          "line-pattern": 54,
+          "tree-single": 18
+        }
+      },
+      {
+        "chapter": 3,
+        "count": 50,
+        "traceSteps": {
+          "min": 12,
+          "median": 17.0,
+          "max": 22
+        },
+        "closureStatuses": {
+          "basic": {
+            "stalled": 50
+          },
+          "patterns": {
+            "stalled": 50
+          },
+          "tree-space": {
+            "solved": 50
+          }
+        },
+        "closureRounds": {
+          "basic": 1.0,
+          "patterns": 2.0,
+          "tree-space": 7.0
+        },
+        "ruleUses": {
+          "line-count": 460,
+          "tree-space": 60,
+          "spacing": 245,
+          "tree-single": 26,
+          "line-pattern": 46
+        }
+      },
+      {
+        "chapter": 4,
+        "count": 60,
+        "traceSteps": {
+          "min": 18,
+          "median": 20.0,
+          "max": 24
+        },
+        "closureStatuses": {
+          "basic": {
+            "stalled": 60
+          },
+          "patterns": {
+            "stalled": 60
+          },
+          "tree-space": {
+            "solved": 60
+          }
+        },
+        "closureRounds": {
+          "basic": 1.0,
+          "patterns": 3.0,
+          "tree-space": 8.0
+        },
+        "ruleUses": {
+          "line-pattern": 133,
+          "spacing": 370,
+          "tree-single": 26,
+          "tree-space": 72,
+          "line-count": 581
+        }
+      }
+    ]
+  }
+}

@@ -6,7 +6,7 @@ import {
   formatFraction,
 } from "../src/games/fractionMosaicLogic";
 import { coordinateTreasureLevels } from "../src/games/coordinateTreasureLogic";
-test("all uniquely placed forest tents", async ({ page }, info) => {
+test("classic forest tents selected-cell controls", async ({ page }, info) => {
   const errors = captureErrors(page);
   await openGame(page, "林间帐篷");
   await expect(page.locator('[data-region-game="tents"]')).toBeVisible();
@@ -38,7 +38,8 @@ test("all uniquely placed forest tents", async ({ page }, info) => {
     animations: "disabled",
   });
   await page.getByRole("button", { name: "重来", exact: true }).click();
-  for (let level = 0; level < tentsLevels.length; level++) {
+  // Full 200-board completion lives in five-board tents-campaign journeys.
+  for (const level of [0, 5, 11]) {
     await chooseLevel(page, level);
     for (const cell of tentsLevels[level].solution)
       await page.locator(`[data-tents-cell="${cell}"]`).click();

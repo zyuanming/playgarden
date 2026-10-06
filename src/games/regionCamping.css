@@ -455,3 +455,12 @@
   color: #496148;
   overflow-wrap: anywhere;
 }
+
+/* Tents-only learning context; keep the existing rectangle game's styling. */
+.rc-layout[data-region-game="tents"] .rc-campaign {
+  margin: -4px 0 16px;
+  font-size: 12px;
+  line-height: 1.8;
+  color: #496148;
+  overflow-wrap: anywhere;
+}
