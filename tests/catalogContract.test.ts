@@ -1,3 +1,4 @@
+import { xiangqiLevels } from "../src/games/xiangqiLevels";
 import { gomokuLevels } from "../src/games/gomokuLevels";
 import { blackboxLevels } from "../src/games/blackboxLevels";
 import { pancakeLevels } from "../src/games/pancakeLevels";
@@ -89,6 +90,7 @@ import { voxelViewsLevels } from "../src/games/voxelViewsLogic";
 import { cubeNetLevels } from "../src/games/cubeNetLogic";
 const packs = {
   gomoku: gomokuLevels,
+  xiangqi: xiangqiLevels,
   pancake: pancakeLevels,
   blackbox: blackboxLevels,
   samegame: samegameLevels,
@@ -183,20 +185,29 @@ describe("Scalable catalog contract", () => {
   games.forEach((game) =>
     it(`${game.id} metadata matches its real levels and license`, () => {
       expect(game.levelCount).toBe(packs[game.id].length);
-      expect(game.source.license).toBe("MIT");
+      expect(game.source.license).toBe(
+        game.source.kind === "original"
+          ? "GPL-3.0-only"
+          : game.id === "xiangqi"
+            ? "BSD-2-Clause"
+            : "MIT",
+      );
       expect(game.artwork.url).toMatch(/^\.\/[a-z0-9-]+\.(?:webp|svg)$/);
-      for (const root of ["https://example.test/", "https://example.test/playgarden/"]) {
+      for (const root of [
+        "https://example.test/",
+        "https://example.test/playgarden/",
+      ]) {
         const base = new URL(root);
         const artwork = new URL(game.artwork.url, base);
         expect(artwork.origin).toBe(base.origin);
-        expect(artwork.pathname).toBe(base.pathname + game.artwork.url.slice(2));
+        expect(artwork.pathname).toBe(
+          base.pathname + game.artwork.url.slice(2),
+        );
       }
     }),
   );
-  it("counts only 84 real games and 2052 levels, not the roadmap", () => {
-    expect(games).toHaveLength(84);
-    expect(games.reduce((sum, g) => sum + g.levelCount, 0)).toBe(2052);
+  it("counts only 85 real games and 2065 levels, not the roadmap", () => {
+    expect(games).toHaveLength(85);
+    expect(games.reduce((sum, g) => sum + g.levelCount, 0)).toBe(2065);
   });
 });
-
-

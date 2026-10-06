@@ -1,3 +1,5 @@
+import { LicenseLinks } from "./LicenseLinks";
+import "./gameMode.css";
 import { Suspense, useState, useEffect, useRef } from "react";
 import {
   ArrowLeft,
@@ -217,7 +219,7 @@ export function GameShell({
         </button>
         <span>
           {freePlay ? (
-            "15 × 15 · 完整对局"
+            game.freePlayCaption ?? "完整对局"
           ) : (
             <>
               第 {level + 1} / {game.levelCount} 关
@@ -302,7 +304,7 @@ export function GameShell({
           </a>{" "}
           · 固定版本 {game.source.commit.slice(0, 7)} ·{" "}
           <a href={game.source.notice} target="_blank" rel="noreferrer">
-            完整 MIT 许可
+            完整 {game.source.license} 许可
           </a>
           <br />
           {game.source.notes}
@@ -311,6 +313,7 @@ export function GameShell({
       <p className="privacy-note">
         进度仅保存在当前浏览器。随时休息，不需要赶时间。
       </p>
+      <LicenseLinks />
     </main>
   );
 }

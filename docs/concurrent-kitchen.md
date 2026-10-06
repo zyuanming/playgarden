@@ -1,6 +1,6 @@
 # 并发厨房 / Concurrent Kitchen
 
-Original Playgarden game and artwork, MIT licensed. No external assets or new dependencies.
+Original Playgarden game and artwork, GPL-3.0-only licensed. No external assets or new dependencies.
 
 ## Learning and rules
 

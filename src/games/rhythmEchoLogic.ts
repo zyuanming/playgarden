@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: MIT
+// SPDX-License-Identifier: GPL-3.0-only
 /** A visual motif grammar, shared by equally valid untimed and live modes. */
 export type RhythmInterval = 1 | 2 | 3;
 export type RhythmTransform = "forward" | "reverse" | "rotate" | "lengthen";

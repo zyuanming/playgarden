@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: MIT
+// SPDX-License-Identifier: GPL-3.0-only
 /** Small exact rational values. BigInt cross-products avoid rounded comparisons. */
 export type PhysicsRatio = { numerator: number; denominator: number };
 export function physicsRatio(numerator: number, denominator = 1): PhysicsRatio {

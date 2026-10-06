@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: MIT
+// SPDX-License-Identifier: GPL-3.0-only
 /** Fixed world directions: x east, y south. Face tuple is top, bottom, north, south, west, east. */
 export type RollDirection = "N" | "E" | "S" | "W";
 export type RollOrientation = readonly [

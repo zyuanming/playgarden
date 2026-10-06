@@ -1,4 +1,4 @@
-/** Original MIT Nurikabe: numbered connected islands in a connected sea with no 2×2 sea. */
+/** Original GPL-3.0-only Nurikabe: numbered connected islands in a connected sea with no 2×2 sea. */
 import { nurikabeLevels, type NurikabeLevel } from "./nurikabeLevels";
 import {
   createIslandState,

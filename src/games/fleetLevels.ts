@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: MIT
+// SPDX-License-Identifier: GPL-3.0-only
 // Original authored fleets; explicit counts and clues are independent of verification certificates.
 import type { FleetLevel } from "./fleetLogic";
 export const fleetLevels: readonly FleetLevel[] = [

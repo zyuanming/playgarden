@@ -100,7 +100,7 @@ Keep Light Lab, Robot Routes and Bridge Blocks original. Use Three.js plus origi
 
 [Source](https://github.com/Hextris/hextris) · [License evidence](https://github.com/Hextris/hextris/blob/gh-pages/LICENSE.md)
 
-- Role: Complete 2D rotation puzzle; caution. Optional study of rotational matching; avoid for the current MIT-oriented MVP.
+- Role: Complete 2D rotation puzzle; caution. Optional study of rotational matching; requires explicit license compatibility, asset and source-distribution review before integration.
 - Mobile/format fit: Canvas/mobile design exists, but legacy viewport disables zoom.
 - Maintenance: README says project is not actively maintained.
 - Assets: Vendor libraries, Font Awesome, Exo font, icons and social/store branding require independent review.

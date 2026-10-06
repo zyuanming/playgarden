@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: MIT
+// SPDX-License-Identifier: GPL-3.0-only
 import type { RhythmLevel } from "./rhythmEchoLogic";
 /** Public motifs and transformations define the goal independently of test certificates. */
 export const rhythmEchoLevels: readonly RhythmLevel[] = [

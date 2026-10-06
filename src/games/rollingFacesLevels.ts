@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: MIT
+// SPDX-License-Identifier: GPL-3.0-only
 // Hand-authored bounded boards and face goals. Certificates are shortest BFS witnesses.
 import type { RollingLevel } from "./rollingFacesLogic";
 export const rollingFacesLevels: readonly RollingLevel[] = [

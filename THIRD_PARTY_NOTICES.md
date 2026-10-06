@@ -1,6 +1,6 @@
 # Third-party notices
 
-The original Playgarden code is MIT licensed; see LICENSE. This inventory covers direct dependencies, not a claim that every future candidate game or asset has been audited. Installed packages retain their upstream license files. See package-lock.json for exact resolved versions.
+Current project-authored and validly relicensable Playgarden contributions are licensed GPL-3.0-only; see LICENSE and docs/licensing.md. Previously distributed MIT versions retain their original grants. Third-party components below retain their own licenses and copyrights; this is not a claim of exclusive ownership or a blanket relabeling of those components. This inventory covers direct dependencies, not a claim that every future candidate game or asset has been audited. Installed packages retain their upstream license files. See package-lock.json for exact resolved versions.
 
 | Package                                                   | License    | Upstream                                           |
 | --------------------------------------------------------- | ---------- | -------------------------------------------------- |
@@ -58,12 +58,12 @@ SOFTWARE.
 
 ## 花簇消除（Same Game）
 
-本项目自行实现同类连通消除、重力及空列压紧规则；生成器、100 关题库、中文教学与 `public/samegame-art.webp` 程序化插画均为原创并沿用本项目 MIT 许可。不包含第三方 Same Game 代码、关卡、美术、字体或音频。完整生成与独立验证范围见 `docs/samegame-campaign.md`。
+本项目自行实现同类连通消除、重力及空列压紧规则；生成器、100 关题库、中文教学与 `public/samegame-art.webp` 程序化插画均为原创并沿用本项目 GPL-3.0-only 许可。不包含第三方 Same Game 代码、关卡、美术、字体或音频。完整生成与独立验证范围见 `docs/samegame-campaign.md`。
 
 
 ## 煎饼翻排（原创实现）
 
-前缀反转排序是数学机制参考，不引入外部游戏代码、论文图表或商业素材。`src/games/pancake*`、`PancakeKitchen.tsx`、生成器、固定排列题库、说明和 `public/pancake-art.webp` 均为本项目原创，遵循仓库 MIT 许可。卡片图由原创 `scripts/pancake/art.svg` 渲染，不使用外部字体、图片或网络请求。图形仅表达大小不同的煎饼、盘子和翻转方向。
+前缀反转排序是数学机制参考，不引入外部游戏代码、论文图表或商业素材。`src/games/pancake*`、`PancakeKitchen.tsx`、生成器、固定排列题库、说明和 `public/pancake-art.webp` 均为本项目原创，遵循仓库 GPL-3.0-only 许可。卡片图由原创 `scripts/pancake/art.svg` 渲染，不使用外部字体、图片或网络请求。图形仅表达大小不同的煎饼、盘子和翻转方向。
 
 机制背景：W. H. Gates 与 C. H. Papadimitriou，1979，Bounds for sorting by prefix reversal，DOI https://doi.org/10.1016/0012-365X(79)90068-2。引用只说明数学背景，不把论文视为软件或素材许可证。所有最短距离由本仓库自产完整 BFS 与独立 Python 验证器重算。
 
@@ -104,3 +104,35 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+
+## xiangqi.js (China-chess rules, BSD-2-Clause)
+
+The Chinese-chess rules in `src/vendor/xiangqi/xiangqiCore.js` are adapted from lengyanyu258/xiangqi.js at `f9019ac2303d4b80ef0b82fd0515bfb55a80a62b`. The exact upstream `xiangqi.js` and LICENSE are retained in `docs/upstream/xiangqi.js/`; complete notices are also distributed as `public/xiangqi-LICENSE.txt` and linked in the game. Original upstream credits include Jeff Hlywa and lengyanyu258. Upstream portions retain BSD-2-Clause; Playgarden modifications are GPL-3.0-only. The original BSD grant is not relabeled as MIT or GPL.
+
+Changes: ES-module export and narrow typed API, strict FEN integer/digit validation, no king captures, side-effect-free opponent pseudo-move query, repaired legal perft and attack query. The application supplies its own terminal/adjudication layer, including explicitly labeled casual threefold/120-ply rules, rather than claiming full tournament repetition adjudication. UI, SVG artwork, puzzles, persistence and bounded beginner search are original Playgarden code. No third-party game assets, trackers, fonts, account or online engine services are bundled.
+
+Copyright (c) 2017, Jeff Hlywa (jhlywa@gmail.com)
+Copyright (c) 2019-2023, lengyanyu258 (lengyanyu258@outlook.com)
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are met:
+
+1. Redistributions of source code must retain the above copyright notice,
+   this list of conditions and the following disclaimer.
+2. Redistributions in binary form must reproduce the above copyright notice,
+   this list of conditions and the following disclaimer in the documentation
+   and/or other materials provided with the distribution.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
+LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+POSSIBILITY OF SUCH DAMAGE.

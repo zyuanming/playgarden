@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: MIT
+// SPDX-License-Identifier: GPL-3.0-only
 /** Original finite weighted spatial-cover puzzle. Distances are Manhattan blocks. */
 export type BudgetTownService = "g" | "r" | "w";
 export const BUDGET_TOWN_SERVICES: Record<

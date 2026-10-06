@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: MIT
+// SPDX-License-Identifier: GPL-3.0-only
 import type { FactoryLevel } from "./functionFactoryLogic";
 // Public directed stroke strings are authored fixtures, not derived at runtime from certificates.
 export const functionFactoryLevels: FactoryLevel[] = [

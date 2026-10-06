@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: MIT
+// SPDX-License-Identifier: GPL-3.0-only
 import type { MemoryRouteLevel } from "./memoryRoutesLogic";
 /** Each public walk is authored separately; no answer certificate is imported by runtime. */
 export const memoryRoutesLevels: readonly MemoryRouteLevel[] = [

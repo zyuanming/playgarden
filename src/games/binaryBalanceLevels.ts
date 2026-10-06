@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: MIT
+// SPDX-License-Identifier: GPL-3.0-only
 // Original authored literal clue sets. Certificates are verification fixtures only.
 import type { BinaryLevel } from "./binaryBalanceLogic";
 export const binaryBalanceLevels: BinaryLevel[] = [

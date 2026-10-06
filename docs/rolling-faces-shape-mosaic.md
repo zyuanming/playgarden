@@ -1,6 +1,6 @@
 # 滚面旅程 / 拼片镶嵌
 
-Original MIT modules. No downloaded meshes, textures, images, sounds, runtime network calls, example assets, installs, or additional packages. Three.js uses the project's existing pinned dependency. The modules follow the shared registry and shell contract.
+Original GPL-3.0-only modules. No downloaded meshes, textures, images, sounds, runtime network calls, example assets, installs, or additional packages. Three.js uses the project's existing pinned dependency. The modules follow the shared registry and shell contract.
 
 ## Integration
 

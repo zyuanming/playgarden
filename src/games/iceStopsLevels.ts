@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: MIT
+// SPDX-License-Identifier: GPL-3.0-only
 // Original authored maps. Explicit puzzle data is independent of shortest-path certificates.
 import type { IceLevel } from "./iceStopsLogic";
 export const iceStopsLevels: readonly IceLevel[] = [

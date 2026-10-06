@@ -1,6 +1,6 @@
 # 抛物线靶场 and 电流实验室
 
-Original MIT-licensed educational games with procedural diagrams and no additional dependencies or downloaded assets.
+Original GPL-3.0-only-licensed educational games with procedural diagrams and no additional dependencies or downloaded assets.
 
 ## Integration entry points
 

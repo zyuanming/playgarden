@@ -1,4 +1,4 @@
-/** Original MIT grid-marking infrastructure. Certificates are never imported at runtime. */
+/** Original GPL-3.0-only grid-marking infrastructure. Certificates are never imported at runtime. */
 export type IslandCell = -1 | 0 | 1;
 export type IslandState = { board: IslandCell[]; history: IslandCell[][] };
 export type IslandSearch = {

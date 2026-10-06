@@ -72,4 +72,4 @@ npx playwright test --config=playwright.pages.config.ts
 
 ## 原创与来源
 
-代码、排列生成、教程、交互、SVG/WebP 插画全部原创，MIT。只参考前缀反转排序的数学机制；未复制研究论文图表、外部实现、商业游戏图形或现成关卡。`scripts/pancake/art.svg` 是卡片图的可编辑原创源。背景文献与边界见 THIRD_PARTY_NOTICES.md。
+代码、排列生成、教程、交互、SVG/WebP 插画全部原创，GPL-3.0-only。只参考前缀反转排序的数学机制；未复制研究论文图表、外部实现、商业游戏图形或现成关卡。`scripts/pancake/art.svg` 是卡片图的可编辑原创源。背景文献与边界见 THIRD_PARTY_NOTICES.md。

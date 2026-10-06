@@ -1,6 +1,6 @@
 # Function Factory and Compression Post
 
-Two original MIT-licensed Playgarden modules, with 12 authored levels each. All messages, traces, lesson progression, rules, SVG geometry, CSS shapes and tests were created for this project. They use existing React dependencies and require no assets, installation, service, account or network request.
+Two original GPL-3.0-only-licensed Playgarden modules, with 12 authored levels each. All messages, traces, lesson progression, rules, SVG geometry, CSS shapes and tests were created for this project. They use existing React dependencies and require no assets, installation, service, account or network request.
 
 ## Integration
 

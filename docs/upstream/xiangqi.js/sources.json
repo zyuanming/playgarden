@@ -1,0 +1,20 @@
+[
+  {
+    "file": "xiangqi.js",
+    "bytes": 43260,
+    "sha256": "f2de592d3a81cf79cd36f0d09e6efbb4bdb357082c2d421bf76d2d8eb7c619fe",
+    "url": "https://github.com/lengyanyu258/xiangqi.js/blob/f9019ac2303d4b80ef0b82fd0515bfb55a80a62b/xiangqi.js"
+  },
+  {
+    "file": "LICENSE",
+    "bytes": 1380,
+    "sha256": "48095c80be59c5ab41f730d9fa5291b539495bc818be3d54e6ac9f602ebeaa9e",
+    "url": "https://github.com/lengyanyu258/xiangqi.js/blob/f9019ac2303d4b80ef0b82fd0515bfb55a80a62b/LICENSE"
+  },
+  {
+    "file": "package.json",
+    "bytes": 1036,
+    "sha256": "0829f1f52d16657f1187c906bb57b711a73e8307e778ec8c71992c251f4bae27",
+    "url": "https://github.com/lengyanyu258/xiangqi.js/blob/f9019ac2303d4b80ef0b82fd0515bfb55a80a62b/package.json"
+  }
+]

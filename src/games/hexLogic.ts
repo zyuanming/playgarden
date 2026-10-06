@@ -1,4 +1,4 @@
-/** Original MIT implementation of Hex. No external code or assets. */
+/** Original GPL-3.0-only implementation of Hex. No external code or assets. */
 export type HexPlayer = 1 | 2;
 export type HexPiece = 0 | HexPlayer;
 export type HexBoard = readonly HexPiece[];

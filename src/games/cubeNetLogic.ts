@@ -1,4 +1,4 @@
-/** Original Playgarden labeled cube-net workshop. MIT. Exact integer 90-degree folds. */
+/** Original Playgarden labeled cube-net workshop. GPL-3.0-only. Exact integer 90-degree folds. */
 export type NetVector = [number, number, number];
 export type NetFrame = { u: NetVector; v: NetVector; normal: NetVector };
 export type CubeNetLevel = {

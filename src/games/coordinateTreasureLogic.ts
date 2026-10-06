@@ -1,4 +1,4 @@
-/** Original MIT-licensed finite-resource vector navigation. No timers, randomness or floating-point geometry. */
+/** Original GPL-3.0-only-licensed finite-resource vector navigation. No timers, randomness or floating-point geometry. */
 export type Coordinate = { x: number; y: number };
 export type VectorCard = { dx: number; dy: number; count: number };
 export type CoordinateLevel = {

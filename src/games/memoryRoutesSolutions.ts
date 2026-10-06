@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: MIT
+// SPDX-License-Identifier: GPL-3.0-only
 /** Independent authored certificates for tests/E2E only. Never import in game code. */
 export const memoryRoutesSolutions: readonly (readonly number[])[] = [
   [0, 1, 2],

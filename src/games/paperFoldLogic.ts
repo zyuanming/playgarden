@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: MIT
+// SPDX-License-Identifier: GPL-3.0-only
 /** Cell centres use integer coordinates; crease k lies between centres k-1 and k. */
 export type PaperCrease = {
   id: string;

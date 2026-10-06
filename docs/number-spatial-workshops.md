@@ -1,6 +1,6 @@
 # 分数拼盘 / 坐标寻宝
 
-These two original games and their levels are covered by the repository MIT license (Copyright © 2026 YuanMing). No external source code, assets, runtime packages, network APIs or randomness were added. All copy is Chinese, and both games use the existing `GameProps` shell interface.
+These two original games and their levels are covered by the repository GPL-3.0-only license (Copyright © 2026 YuanMing). No external source code, assets, runtime packages, network APIs or randomness were added. All copy is Chinese, and both games use the existing `GameProps` shell interface.
 
 ## Integration
 

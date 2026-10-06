@@ -1,4 +1,4 @@
-/** Original MIT Playgarden route puzzles. No external game data or assets. */
+/** Original GPL-3.0-only Playgarden route puzzles. No external game data or assets. */
 export type RouteMode = "town-tour" | "postman-routes";
 export type RouteTown = { label: string; x: number; y: number };
 export type RouteRoad = { a: number; b: number; cost: number };

@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: MIT
+// SPDX-License-Identifier: GPL-3.0-only
 /** Original acyclic circuit puzzles. Gate indices only point backwards. */
 export type CircuitOp = "AND" | "OR" | "NOT";
 export type CircuitSource = "A" | "B" | "C" | `g${number}`;

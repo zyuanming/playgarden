@@ -1,6 +1,6 @@
 # Hashi and Slitherlink integration
 
-Original implementation, Chinese teaching copy, UI and 24 original levels under the repository's MIT license. No third-party code, levels, assets, packages or services were added.
+Original implementation, Chinese teaching copy, UI and 24 original levels under the repository's GPL-3.0-only license. No third-party code, levels, assets, packages or services were added.
 
 ## Modules
 

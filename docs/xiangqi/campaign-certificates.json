@@ -1,0 +1,2722 @@
+{
+  "status": "PASS",
+  "source": "/workspace/shared/playgarden-xiangqi/docs/xiangqi/corpus.json",
+  "sourceSha256": "74ca908e334f035d780446119f1b19374fbf184b16fbfde9194eb233ff392ff9",
+  "oracleSha256": "6ad25593ce6b4e125c42c066a022d367982ff8cc392888472f5f260bff1ebcfb",
+  "puzzleCount": 13,
+  "legalMovesExamined": 168,
+  "completeSolutionCount": 21,
+  "chapterCounts": {
+    "1": 6,
+    "2": 3,
+    "3": 4
+  },
+  "objectiveCounts": {
+    "capture": 6,
+    "evade": 3,
+    "mate": 3,
+    "stalemate": 1
+  },
+  "certificates": [
+    {
+      "id": "rook-road",
+      "title": "车走直线",
+      "chapter": 1,
+      "fen": "4k4/9/9/p8/9/4P4/9/9/9/R3K4 r - - 0 1",
+      "objective": "capture",
+      "initialInCheck": false,
+      "initialLegalMoves": [
+        "a0a1",
+        "a0a2",
+        "a0a3",
+        "a0a4",
+        "a0a5",
+        "a0a6",
+        "a0b0",
+        "a0c0",
+        "a0d0",
+        "e0d0",
+        "e0e1",
+        "e0f0",
+        "e4e5"
+      ],
+      "independentSolutions": [
+        "a0a6"
+      ],
+      "declaredSolutions": [
+        "a0a6"
+      ],
+      "allLegalMoveCertificates": [
+        {
+          "move": "a0a1",
+          "movingPiece": "R",
+          "capturedPiece": null,
+          "afterFen": "4k4/9/9/p8/9/4P4/9/9/R8/4K4 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [
+            "a6a5",
+            "e9d9",
+            "e9e8",
+            "e9f9"
+          ],
+          "meetsGoal": false
+        },
+        {
+          "move": "a0a2",
+          "movingPiece": "R",
+          "capturedPiece": null,
+          "afterFen": "4k4/9/9/p8/9/4P4/9/R8/9/4K4 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [
+            "a6a5",
+            "e9d9",
+            "e9e8",
+            "e9f9"
+          ],
+          "meetsGoal": false
+        },
+        {
+          "move": "a0a3",
+          "movingPiece": "R",
+          "capturedPiece": null,
+          "afterFen": "4k4/9/9/p8/9/4P4/R8/9/9/4K4 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [
+            "a6a5",
+            "e9d9",
+            "e9e8",
+            "e9f9"
+          ],
+          "meetsGoal": false
+        },
+        {
+          "move": "a0a4",
+          "movingPiece": "R",
+          "capturedPiece": null,
+          "afterFen": "4k4/9/9/p8/9/R3P4/9/9/9/4K4 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [
+            "a6a5",
+            "e9d9",
+            "e9e8",
+            "e9f9"
+          ],
+          "meetsGoal": false
+        },
+        {
+          "move": "a0a5",
+          "movingPiece": "R",
+          "capturedPiece": null,
+          "afterFen": "4k4/9/9/p8/R8/4P4/9/9/9/4K4 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [
+            "a6a5",
+            "e9d9",
+            "e9e8",
+            "e9f9"
+          ],
+          "meetsGoal": false
+        },
+        {
+          "move": "a0a6",
+          "movingPiece": "R",
+          "capturedPiece": "p",
+          "afterFen": "4k4/9/9/R8/9/4P4/9/9/9/4K4 b - - 0 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [
+            "e9d9",
+            "e9e8",
+            "e9f9"
+          ],
+          "meetsGoal": true
+        },
+        {
+          "move": "a0b0",
+          "movingPiece": "R",
+          "capturedPiece": null,
+          "afterFen": "4k4/9/9/p8/9/4P4/9/9/9/1R2K4 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [
+            "a6a5",
+            "e9d9",
+            "e9e8",
+            "e9f9"
+          ],
+          "meetsGoal": false
+        },
+        {
+          "move": "a0c0",
+          "movingPiece": "R",
+          "capturedPiece": null,
+          "afterFen": "4k4/9/9/p8/9/4P4/9/9/9/2R1K4 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [
+            "a6a5",
+            "e9d9",
+            "e9e8",
+            "e9f9"
+          ],
+          "meetsGoal": false
+        },
+        {
+          "move": "a0d0",
+          "movingPiece": "R",
+          "capturedPiece": null,
+          "afterFen": "4k4/9/9/p8/9/4P4/9/9/9/3RK4 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [
+            "a6a5",
+            "e9e8",
+            "e9f9"
+          ],
+          "meetsGoal": false
+        },
+        {
+          "move": "e0d0",
+          "movingPiece": "K",
+          "capturedPiece": null,
+          "afterFen": "4k4/9/9/p8/9/4P4/9/9/9/R2K5 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [
+            "a6a5",
+            "e9e8",
+            "e9f9"
+          ],
+          "meetsGoal": false
+        },
+        {
+          "move": "e0e1",
+          "movingPiece": "K",
+          "capturedPiece": null,
+          "afterFen": "4k4/9/9/p8/9/4P4/9/9/4K4/R8 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [
+            "a6a5",
+            "e9d9",
+            "e9e8",
+            "e9f9"
+          ],
+          "meetsGoal": false
+        },
+        {
+          "move": "e0f0",
+          "movingPiece": "K",
+          "capturedPiece": null,
+          "afterFen": "4k4/9/9/p8/9/4P4/9/9/9/R4K3 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [
+            "a6a5",
+            "e9d9",
+            "e9e8"
+          ],
+          "meetsGoal": false
+        },
+        {
+          "move": "e4e5",
+          "movingPiece": "P",
+          "capturedPiece": null,
+          "afterFen": "4k4/9/9/p8/4P4/9/9/9/9/R3K4 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [
+            "a6a5",
+            "e9d9",
+            "e9e8",
+            "e9f9"
+          ],
+          "meetsGoal": false
+        }
+      ]
+    },
+    {
+      "id": "cannon-screen",
+      "title": "隔一子，炮才响",
+      "chapter": 1,
+      "fen": "4k4/9/9/1n7/9/4P4/1N7/1C7/9/4K4 r - - 0 1",
+      "objective": "capture",
+      "initialInCheck": false,
+      "initialLegalMoves": [
+        "b2a2",
+        "b2b0",
+        "b2b1",
+        "b2b6",
+        "b2c2",
+        "b2d2",
+        "b2e2",
+        "b2f2",
+        "b2g2",
+        "b2h2",
+        "b2i2",
+        "b3a5",
+        "b3c5",
+        "b3d2",
+        "b3d4",
+        "e0d0",
+        "e0e1",
+        "e0f0",
+        "e4e5"
+      ],
+      "independentSolutions": [
+        "b2b6"
+      ],
+      "declaredSolutions": [
+        "b2b6"
+      ],
+      "allLegalMoveCertificates": [
+        {
+          "move": "b2a2",
+          "movingPiece": "C",
+          "capturedPiece": null,
+          "afterFen": "4k4/9/9/1n7/9/4P4/1N7/C8/9/4K4 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [
+            "b6a4",
+            "b6a8",
+            "b6c4",
+            "b6c8",
+            "b6d5",
+            "b6d7",
+            "e9d9",
+            "e9e8",
+            "e9f9"
+          ],
+          "meetsGoal": false
+        },
+        {
+          "move": "b2b0",
+          "movingPiece": "C",
+          "capturedPiece": null,
+          "afterFen": "4k4/9/9/1n7/9/4P4/1N7/9/9/1C2K4 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [
+            "b6a4",
+            "b6a8",
+            "b6c4",
+            "b6c8",
+            "b6d5",
+            "b6d7",
+            "e9d9",
+            "e9e8",
+            "e9f9"
+          ],
+          "meetsGoal": false
+        },
+        {
+          "move": "b2b1",
+          "movingPiece": "C",
+          "capturedPiece": null,
+          "afterFen": "4k4/9/9/1n7/9/4P4/1N7/9/1C7/4K4 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [
+            "b6a4",
+            "b6a8",
+            "b6c4",
+            "b6c8",
+            "b6d5",
+            "b6d7",
+            "e9d9",
+            "e9e8",
+            "e9f9"
+          ],
+          "meetsGoal": false
+        },
+        {
+          "move": "b2b6",
+          "movingPiece": "C",
+          "capturedPiece": "n",
+          "afterFen": "4k4/9/9/1C7/9/4P4/1N7/9/9/4K4 b - - 0 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [
+            "e9d9",
+            "e9e8",
+            "e9f9"
+          ],
+          "meetsGoal": true
+        },
+        {
+          "move": "b2c2",
+          "movingPiece": "C",
+          "capturedPiece": null,
+          "afterFen": "4k4/9/9/1n7/9/4P4/1N7/2C6/9/4K4 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [
+            "b6a4",
+            "b6a8",
+            "b6c4",
+            "b6c8",
+            "b6d5",
+            "b6d7",
+            "e9d9",
+            "e9e8",
+            "e9f9"
+          ],
+          "meetsGoal": false
+        },
+        {
+          "move": "b2d2",
+          "movingPiece": "C",
+          "capturedPiece": null,
+          "afterFen": "4k4/9/9/1n7/9/4P4/1N7/3C5/9/4K4 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [
+            "b6a4",
+            "b6a8",
+            "b6c4",
+            "b6c8",
+            "b6d5",
+            "b6d7",
+            "e9d9",
+            "e9e8",
+            "e9f9"
+          ],
+          "meetsGoal": false
+        },
+        {
+          "move": "b2e2",
+          "movingPiece": "C",
+          "capturedPiece": null,
+          "afterFen": "4k4/9/9/1n7/9/4P4/1N7/4C4/9/4K4 b - - 1 1",
+          "opponentInCheck": true,
+          "opponentLegalReplies": [
+            "e9d9",
+            "e9f9"
+          ],
+          "meetsGoal": false
+        },
+        {
+          "move": "b2f2",
+          "movingPiece": "C",
+          "capturedPiece": null,
+          "afterFen": "4k4/9/9/1n7/9/4P4/1N7/5C3/9/4K4 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [
+            "b6a4",
+            "b6a8",
+            "b6c4",
+            "b6c8",
+            "b6d5",
+            "b6d7",
+            "e9d9",
+            "e9e8",
+            "e9f9"
+          ],
+          "meetsGoal": false
+        },
+        {
+          "move": "b2g2",
+          "movingPiece": "C",
+          "capturedPiece": null,
+          "afterFen": "4k4/9/9/1n7/9/4P4/1N7/6C2/9/4K4 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [
+            "b6a4",
+            "b6a8",
+            "b6c4",
+            "b6c8",
+            "b6d5",
+            "b6d7",
+            "e9d9",
+            "e9e8",
+            "e9f9"
+          ],
+          "meetsGoal": false
+        },
+        {
+          "move": "b2h2",
+          "movingPiece": "C",
+          "capturedPiece": null,
+          "afterFen": "4k4/9/9/1n7/9/4P4/1N7/7C1/9/4K4 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [
+            "b6a4",
+            "b6a8",
+            "b6c4",
+            "b6c8",
+            "b6d5",
+            "b6d7",
+            "e9d9",
+            "e9e8",
+            "e9f9"
+          ],
+          "meetsGoal": false
+        },
+        {
+          "move": "b2i2",
+          "movingPiece": "C",
+          "capturedPiece": null,
+          "afterFen": "4k4/9/9/1n7/9/4P4/1N7/8C/9/4K4 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [
+            "b6a4",
+            "b6a8",
+            "b6c4",
+            "b6c8",
+            "b6d5",
+            "b6d7",
+            "e9d9",
+            "e9e8",
+            "e9f9"
+          ],
+          "meetsGoal": false
+        },
+        {
+          "move": "b3a5",
+          "movingPiece": "N",
+          "capturedPiece": null,
+          "afterFen": "4k4/9/9/1n7/N8/4P4/9/1C7/9/4K4 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [
+            "b6a4",
+            "b6a8",
+            "b6c4",
+            "b6c8",
+            "b6d5",
+            "b6d7",
+            "e9d9",
+            "e9e8",
+            "e9f9"
+          ],
+          "meetsGoal": false
+        },
+        {
+          "move": "b3c5",
+          "movingPiece": "N",
+          "capturedPiece": null,
+          "afterFen": "4k4/9/9/1n7/2N6/4P4/9/1C7/9/4K4 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [
+            "b6a4",
+            "b6a8",
+            "b6c4",
+            "b6c8",
+            "b6d5",
+            "b6d7",
+            "e9d9",
+            "e9e8",
+            "e9f9"
+          ],
+          "meetsGoal": false
+        },
+        {
+          "move": "b3d2",
+          "movingPiece": "N",
+          "capturedPiece": null,
+          "afterFen": "4k4/9/9/1n7/9/4P4/9/1C1N5/9/4K4 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [
+            "b6a4",
+            "b6a8",
+            "b6c4",
+            "b6c8",
+            "b6d5",
+            "b6d7",
+            "e9d9",
+            "e9e8",
+            "e9f9"
+          ],
+          "meetsGoal": false
+        },
+        {
+          "move": "b3d4",
+          "movingPiece": "N",
+          "capturedPiece": null,
+          "afterFen": "4k4/9/9/1n7/9/3NP4/9/1C7/9/4K4 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [
+            "b6a4",
+            "b6a8",
+            "b6c4",
+            "b6c8",
+            "b6d5",
+            "b6d7",
+            "e9d9",
+            "e9e8",
+            "e9f9"
+          ],
+          "meetsGoal": false
+        },
+        {
+          "move": "e0d0",
+          "movingPiece": "K",
+          "capturedPiece": null,
+          "afterFen": "4k4/9/9/1n7/9/4P4/1N7/1C7/9/3K5 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [
+            "b6a4",
+            "b6a8",
+            "b6c4",
+            "b6c8",
+            "b6d5",
+            "b6d7",
+            "e9e8",
+            "e9f9"
+          ],
+          "meetsGoal": false
+        },
+        {
+          "move": "e0e1",
+          "movingPiece": "K",
+          "capturedPiece": null,
+          "afterFen": "4k4/9/9/1n7/9/4P4/1N7/1C7/4K4/9 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [
+            "b6a4",
+            "b6a8",
+            "b6c4",
+            "b6c8",
+            "b6d5",
+            "b6d7",
+            "e9d9",
+            "e9e8",
+            "e9f9"
+          ],
+          "meetsGoal": false
+        },
+        {
+          "move": "e0f0",
+          "movingPiece": "K",
+          "capturedPiece": null,
+          "afterFen": "4k4/9/9/1n7/9/4P4/1N7/1C7/9/5K3 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [
+            "b6a4",
+            "b6a8",
+            "b6c4",
+            "b6c8",
+            "b6d5",
+            "b6d7",
+            "e9d9",
+            "e9e8"
+          ],
+          "meetsGoal": false
+        },
+        {
+          "move": "e4e5",
+          "movingPiece": "P",
+          "capturedPiece": null,
+          "afterFen": "4k4/9/9/1n7/4P4/9/1N7/1C7/9/4K4 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [
+            "b6a4",
+            "b6a8",
+            "b6c4",
+            "b6c8",
+            "b6d5",
+            "b6d7",
+            "e9d9",
+            "e9e8",
+            "e9f9"
+          ],
+          "meetsGoal": false
+        }
+      ]
+    },
+    {
+      "id": "horse-leg",
+      "title": "马腿在哪一边",
+      "chapter": 1,
+      "fen": "4k4/9/9/9/4P4/2P1r4/2N6/9/9/4K4 r - - 0 1",
+      "objective": "capture",
+      "initialInCheck": true,
+      "initialLegalMoves": [
+        "c3e2",
+        "c3e4",
+        "e0d0",
+        "e0f0"
+      ],
+      "independentSolutions": [
+        "c3e4"
+      ],
+      "declaredSolutions": [
+        "c3e4"
+      ],
+      "allLegalMoveCertificates": [
+        {
+          "move": "c3e2",
+          "movingPiece": "N",
+          "capturedPiece": null,
+          "afterFen": "4k4/9/9/9/4P4/2P1r4/9/4N4/9/4K4 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [
+            "e4c4",
+            "e4d4",
+            "e4e2",
+            "e4e3",
+            "e4e5",
+            "e4f4",
+            "e4g4",
+            "e4h4",
+            "e4i4",
+            "e9d9",
+            "e9e8",
+            "e9f9"
+          ],
+          "meetsGoal": false
+        },
+        {
+          "move": "c3e4",
+          "movingPiece": "N",
+          "capturedPiece": "r",
+          "afterFen": "4k4/9/9/9/4P4/2P1N4/9/9/9/4K4 b - - 0 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [
+            "e9d9",
+            "e9e8",
+            "e9f9"
+          ],
+          "meetsGoal": true
+        },
+        {
+          "move": "e0d0",
+          "movingPiece": "K",
+          "capturedPiece": null,
+          "afterFen": "4k4/9/9/9/4P4/2P1r4/2N6/9/9/3K5 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [
+            "e4c4",
+            "e4d4",
+            "e4e0",
+            "e4e1",
+            "e4e2",
+            "e4e3",
+            "e4e5",
+            "e4f4",
+            "e4g4",
+            "e4h4",
+            "e4i4",
+            "e9e8",
+            "e9f9"
+          ],
+          "meetsGoal": false
+        },
+        {
+          "move": "e0f0",
+          "movingPiece": "K",
+          "capturedPiece": null,
+          "afterFen": "4k4/9/9/9/4P4/2P1r4/2N6/9/9/5K3 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [
+            "e4c4",
+            "e4d4",
+            "e4e0",
+            "e4e1",
+            "e4e2",
+            "e4e3",
+            "e4e5",
+            "e4f4",
+            "e4g4",
+            "e4h4",
+            "e4i4",
+            "e9d9",
+            "e9e8"
+          ],
+          "meetsGoal": false
+        }
+      ]
+    },
+    {
+      "id": "elephant-eye",
+      "title": "相看好自己的半场",
+      "chapter": 1,
+      "fen": "4k4/9/9/9/9/4P4/9/4n4/9/2B1K4 r - - 0 1",
+      "objective": "capture",
+      "initialInCheck": false,
+      "initialLegalMoves": [
+        "c0a2",
+        "c0e2",
+        "e0e1",
+        "e4e5"
+      ],
+      "independentSolutions": [
+        "c0e2"
+      ],
+      "declaredSolutions": [
+        "c0e2"
+      ],
+      "allLegalMoveCertificates": [
+        {
+          "move": "c0a2",
+          "movingPiece": "B",
+          "capturedPiece": null,
+          "afterFen": "4k4/9/9/9/9/4P4/9/B3n4/9/4K4 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [
+            "e2c1",
+            "e2c3",
+            "e2d0",
+            "e2d4",
+            "e2f0",
+            "e2f4",
+            "e2g1",
+            "e2g3",
+            "e9d9",
+            "e9e8",
+            "e9f9"
+          ],
+          "meetsGoal": false
+        },
+        {
+          "move": "c0e2",
+          "movingPiece": "B",
+          "capturedPiece": "n",
+          "afterFen": "4k4/9/9/9/9/4P4/9/4B4/9/4K4 b - - 0 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [
+            "e9d9",
+            "e9e8",
+            "e9f9"
+          ],
+          "meetsGoal": true
+        },
+        {
+          "move": "e0e1",
+          "movingPiece": "K",
+          "capturedPiece": null,
+          "afterFen": "4k4/9/9/9/9/4P4/9/4n4/4K4/2B6 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [
+            "e2c1",
+            "e2c3",
+            "e2d4",
+            "e2f4",
+            "e2g1",
+            "e2g3",
+            "e9d9",
+            "e9e8",
+            "e9f9"
+          ],
+          "meetsGoal": false
+        },
+        {
+          "move": "e4e5",
+          "movingPiece": "P",
+          "capturedPiece": null,
+          "afterFen": "4k4/9/9/9/4P4/9/9/4n4/9/2B1K4 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [
+            "e2c1",
+            "e2c3",
+            "e2d0",
+            "e2d4",
+            "e2f0",
+            "e2f4",
+            "e2g1",
+            "e2g3",
+            "e9d9",
+            "e9e8",
+            "e9f9"
+          ],
+          "meetsGoal": false
+        }
+      ]
+    },
+    {
+      "id": "advisor-palace",
+      "title": "仕守九宫",
+      "chapter": 1,
+      "fen": "4k4/9/9/9/9/4P4/9/9/4r4/3AK4 r - - 0 1",
+      "objective": "capture",
+      "initialInCheck": true,
+      "initialLegalMoves": [
+        "d0e1",
+        "e0e1",
+        "e0f0"
+      ],
+      "independentSolutions": [
+        "d0e1"
+      ],
+      "declaredSolutions": [
+        "d0e1"
+      ],
+      "allLegalMoveCertificates": [
+        {
+          "move": "d0e1",
+          "movingPiece": "A",
+          "capturedPiece": "r",
+          "afterFen": "4k4/9/9/9/9/4P4/9/9/4A4/4K4 b - - 0 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [
+            "e9d9",
+            "e9e8",
+            "e9f9"
+          ],
+          "meetsGoal": true
+        },
+        {
+          "move": "e0e1",
+          "movingPiece": "K",
+          "capturedPiece": "r",
+          "afterFen": "4k4/9/9/9/9/4P4/9/9/4K4/3A5 b - - 0 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [
+            "e9d9",
+            "e9e8",
+            "e9f9"
+          ],
+          "meetsGoal": false
+        },
+        {
+          "move": "e0f0",
+          "movingPiece": "K",
+          "capturedPiece": null,
+          "afterFen": "4k4/9/9/9/9/4P4/9/9/4r4/3A1K3 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [
+            "e1a1",
+            "e1b1",
+            "e1c1",
+            "e1d1",
+            "e1e0",
+            "e1e2",
+            "e1e3",
+            "e1e4",
+            "e1f1",
+            "e1g1",
+            "e1h1",
+            "e1i1",
+            "e9d9",
+            "e9e8"
+          ],
+          "meetsGoal": false
+        }
+      ]
+    },
+    {
+      "id": "pawn-river",
+      "title": "过河兵，向旁边走",
+      "chapter": 1,
+      "fen": "4k4/9/9/9/2Pn5/4P4/9/9/9/4K4 r - - 0 1",
+      "objective": "capture",
+      "initialInCheck": false,
+      "initialLegalMoves": [
+        "c5b5",
+        "c5c6",
+        "c5d5",
+        "e0d0",
+        "e0e1",
+        "e0f0",
+        "e4e5"
+      ],
+      "independentSolutions": [
+        "c5d5"
+      ],
+      "declaredSolutions": [
+        "c5d5"
+      ],
+      "allLegalMoveCertificates": [
+        {
+          "move": "c5b5",
+          "movingPiece": "P",
+          "capturedPiece": null,
+          "afterFen": "4k4/9/9/9/1P1n5/4P4/9/9/9/4K4 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [
+            "d5b4",
+            "d5b6",
+            "d5c3",
+            "d5c7",
+            "d5e3",
+            "d5e7",
+            "d5f4",
+            "d5f6",
+            "e9d9",
+            "e9e8",
+            "e9f9"
+          ],
+          "meetsGoal": false
+        },
+        {
+          "move": "c5c6",
+          "movingPiece": "P",
+          "capturedPiece": null,
+          "afterFen": "4k4/9/9/2P6/3n5/4P4/9/9/9/4K4 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [
+            "d5b4",
+            "d5b6",
+            "d5c3",
+            "d5c7",
+            "d5e3",
+            "d5e7",
+            "d5f4",
+            "d5f6",
+            "e9d9",
+            "e9e8",
+            "e9f9"
+          ],
+          "meetsGoal": false
+        },
+        {
+          "move": "c5d5",
+          "movingPiece": "P",
+          "capturedPiece": "n",
+          "afterFen": "4k4/9/9/9/3P5/4P4/9/9/9/4K4 b - - 0 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [
+            "e9d9",
+            "e9e8",
+            "e9f9"
+          ],
+          "meetsGoal": true
+        },
+        {
+          "move": "e0d0",
+          "movingPiece": "K",
+          "capturedPiece": null,
+          "afterFen": "4k4/9/9/9/2Pn5/4P4/9/9/9/3K5 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [
+            "d5c3",
+            "d5c7",
+            "d5e3",
+            "d5e7",
+            "d5f4",
+            "d5f6",
+            "e9d9",
+            "e9e8",
+            "e9f9"
+          ],
+          "meetsGoal": false
+        },
+        {
+          "move": "e0e1",
+          "movingPiece": "K",
+          "capturedPiece": null,
+          "afterFen": "4k4/9/9/9/2Pn5/4P4/9/9/4K4/9 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [
+            "d5c3",
+            "d5c7",
+            "d5e3",
+            "d5e7",
+            "d5f4",
+            "d5f6",
+            "e9d9",
+            "e9e8",
+            "e9f9"
+          ],
+          "meetsGoal": false
+        },
+        {
+          "move": "e0f0",
+          "movingPiece": "K",
+          "capturedPiece": null,
+          "afterFen": "4k4/9/9/9/2Pn5/4P4/9/9/9/5K3 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [
+            "d5c3",
+            "d5c7",
+            "d5e3",
+            "d5e7",
+            "d5f4",
+            "d5f6",
+            "e9d9",
+            "e9e8"
+          ],
+          "meetsGoal": false
+        },
+        {
+          "move": "e4e5",
+          "movingPiece": "P",
+          "capturedPiece": null,
+          "afterFen": "4k4/9/9/9/2PnP4/9/9/9/9/4K4 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [
+            "d5c3",
+            "d5c7",
+            "d5e3",
+            "d5e7",
+            "e9d9",
+            "e9e8",
+            "e9f9"
+          ],
+          "meetsGoal": false
+        }
+      ]
+    },
+    {
+      "id": "evade-rook",
+      "title": "被车将军了",
+      "chapter": 2,
+      "fen": "4k4/9/9/9/9/4r4/9/9/9/3AK4 r - - 0 1",
+      "objective": "evade",
+      "initialInCheck": true,
+      "initialLegalMoves": [
+        "d0e1",
+        "e0f0"
+      ],
+      "independentSolutions": [
+        "d0e1",
+        "e0f0"
+      ],
+      "declaredSolutions": [
+        "d0e1",
+        "e0f0"
+      ],
+      "allLegalMoveCertificates": [
+        {
+          "move": "d0e1",
+          "movingPiece": "A",
+          "capturedPiece": null,
+          "afterFen": "4k4/9/9/9/9/4r4/9/9/4A4/4K4 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [
+            "e4a4",
+            "e4b4",
+            "e4c4",
+            "e4d4",
+            "e4e1",
+            "e4e2",
+            "e4e3",
+            "e4e5",
+            "e4e6",
+            "e4e7",
+            "e4e8",
+            "e4f4",
+            "e4g4",
+            "e4h4",
+            "e4i4",
+            "e9d9",
+            "e9e8",
+            "e9f9"
+          ],
+          "meetsGoal": true
+        },
+        {
+          "move": "e0f0",
+          "movingPiece": "K",
+          "capturedPiece": null,
+          "afterFen": "4k4/9/9/9/9/4r4/9/9/9/3A1K3 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [
+            "e4a4",
+            "e4b4",
+            "e4c4",
+            "e4d4",
+            "e4e0",
+            "e4e1",
+            "e4e2",
+            "e4e3",
+            "e4e5",
+            "e4e6",
+            "e4e7",
+            "e4e8",
+            "e4f4",
+            "e4g4",
+            "e4h4",
+            "e4i4",
+            "e9d9",
+            "e9e8"
+          ],
+          "meetsGoal": true
+        }
+      ]
+    },
+    {
+      "id": "evade-cannon",
+      "title": "让炮架失效",
+      "chapter": 2,
+      "fen": "4k4/9/9/4c4/9/9/4P4/9/9/2B1K4 r - - 0 1",
+      "objective": "evade",
+      "initialInCheck": true,
+      "initialLegalMoves": [
+        "c0e2",
+        "e0d0",
+        "e0f0"
+      ],
+      "independentSolutions": [
+        "c0e2",
+        "e0d0",
+        "e0f0"
+      ],
+      "declaredSolutions": [
+        "c0e2",
+        "e0d0",
+        "e0f0"
+      ],
+      "allLegalMoveCertificates": [
+        {
+          "move": "c0e2",
+          "movingPiece": "B",
+          "capturedPiece": null,
+          "afterFen": "4k4/9/9/4c4/9/9/4P4/4B4/9/4K4 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [
+            "e6a6",
+            "e6b6",
+            "e6c6",
+            "e6d6",
+            "e6e2",
+            "e6e4",
+            "e6e5",
+            "e6e7",
+            "e6e8",
+            "e6f6",
+            "e6g6",
+            "e6h6",
+            "e6i6",
+            "e9d9",
+            "e9e8",
+            "e9f9"
+          ],
+          "meetsGoal": true
+        },
+        {
+          "move": "e0d0",
+          "movingPiece": "K",
+          "capturedPiece": null,
+          "afterFen": "4k4/9/9/4c4/9/9/4P4/9/9/2BK5 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [
+            "e6a6",
+            "e6b6",
+            "e6c6",
+            "e6d6",
+            "e6e4",
+            "e6e5",
+            "e6e7",
+            "e6e8",
+            "e6f6",
+            "e6g6",
+            "e6h6",
+            "e6i6",
+            "e9e8",
+            "e9f9"
+          ],
+          "meetsGoal": true
+        },
+        {
+          "move": "e0f0",
+          "movingPiece": "K",
+          "capturedPiece": null,
+          "afterFen": "4k4/9/9/4c4/9/9/4P4/9/9/2B2K3 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [
+            "e6a6",
+            "e6b6",
+            "e6c6",
+            "e6d6",
+            "e6e4",
+            "e6e5",
+            "e6e7",
+            "e6e8",
+            "e6f6",
+            "e6g6",
+            "e6h6",
+            "e6i6",
+            "e9d9",
+            "e9e8"
+          ],
+          "meetsGoal": true
+        }
+      ]
+    },
+    {
+      "id": "evade-horse",
+      "title": "躲开马的攻击",
+      "chapter": 2,
+      "fen": "4k4/9/9/9/9/4P4/9/9/2n6/2R1K4 r - - 0 1",
+      "objective": "evade",
+      "initialInCheck": true,
+      "initialLegalMoves": [
+        "c0c1",
+        "e0d0",
+        "e0e1",
+        "e0f0"
+      ],
+      "independentSolutions": [
+        "c0c1",
+        "e0d0",
+        "e0e1",
+        "e0f0"
+      ],
+      "declaredSolutions": [
+        "c0c1",
+        "e0d0",
+        "e0e1",
+        "e0f0"
+      ],
+      "allLegalMoveCertificates": [
+        {
+          "move": "c0c1",
+          "movingPiece": "R",
+          "capturedPiece": "n",
+          "afterFen": "4k4/9/9/9/9/4P4/9/9/2R6/4K4 b - - 0 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [
+            "e9d9",
+            "e9e8",
+            "e9f9"
+          ],
+          "meetsGoal": true
+        },
+        {
+          "move": "e0d0",
+          "movingPiece": "K",
+          "capturedPiece": null,
+          "afterFen": "4k4/9/9/9/9/4P4/9/9/2n6/2RK5 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [
+            "c1a0",
+            "c1a2",
+            "c1b3",
+            "c1d3",
+            "c1e0",
+            "c1e2",
+            "e9e8",
+            "e9f9"
+          ],
+          "meetsGoal": true
+        },
+        {
+          "move": "e0e1",
+          "movingPiece": "K",
+          "capturedPiece": null,
+          "afterFen": "4k4/9/9/9/9/4P4/9/9/2n1K4/2R6 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [
+            "c1a0",
+            "c1a2",
+            "c1b3",
+            "c1d3",
+            "c1e0",
+            "c1e2",
+            "e9d9",
+            "e9e8",
+            "e9f9"
+          ],
+          "meetsGoal": true
+        },
+        {
+          "move": "e0f0",
+          "movingPiece": "K",
+          "capturedPiece": null,
+          "afterFen": "4k4/9/9/9/9/4P4/9/9/2n6/2R2K3 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [
+            "c1a0",
+            "c1a2",
+            "c1b3",
+            "c1d3",
+            "c1e0",
+            "c1e2",
+            "e9d9",
+            "e9e8"
+          ],
+          "meetsGoal": true
+        }
+      ]
+    },
+    {
+      "id": "mate-rooks",
+      "title": "双车织网",
+      "chapter": 3,
+      "fen": "4k4/3R1R3/9/9/9/9/9/9/9/3K5 r - - 0 1",
+      "objective": "mate",
+      "initialInCheck": false,
+      "initialLegalMoves": [
+        "d0d1",
+        "d8a8",
+        "d8b8",
+        "d8c8",
+        "d8d1",
+        "d8d2",
+        "d8d3",
+        "d8d4",
+        "d8d5",
+        "d8d6",
+        "d8d7",
+        "d8d9",
+        "d8e8",
+        "f8e8",
+        "f8f0",
+        "f8f1",
+        "f8f2",
+        "f8f3",
+        "f8f4",
+        "f8f5",
+        "f8f6",
+        "f8f7",
+        "f8f9",
+        "f8g8",
+        "f8h8",
+        "f8i8"
+      ],
+      "independentSolutions": [
+        "d8d9",
+        "d8e8"
+      ],
+      "declaredSolutions": [
+        "d8d9",
+        "d8e8"
+      ],
+      "allLegalMoveCertificates": [
+        {
+          "move": "d0d1",
+          "movingPiece": "K",
+          "capturedPiece": null,
+          "afterFen": "4k4/3R1R3/9/9/9/9/9/9/3K5/9 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [],
+          "meetsGoal": false
+        },
+        {
+          "move": "d8a8",
+          "movingPiece": "R",
+          "capturedPiece": null,
+          "afterFen": "4k4/R4R3/9/9/9/9/9/9/9/3K5 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [],
+          "meetsGoal": false
+        },
+        {
+          "move": "d8b8",
+          "movingPiece": "R",
+          "capturedPiece": null,
+          "afterFen": "4k4/1R3R3/9/9/9/9/9/9/9/3K5 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [],
+          "meetsGoal": false
+        },
+        {
+          "move": "d8c8",
+          "movingPiece": "R",
+          "capturedPiece": null,
+          "afterFen": "4k4/2R2R3/9/9/9/9/9/9/9/3K5 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [],
+          "meetsGoal": false
+        },
+        {
+          "move": "d8d1",
+          "movingPiece": "R",
+          "capturedPiece": null,
+          "afterFen": "4k4/5R3/9/9/9/9/9/9/3R5/3K5 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [],
+          "meetsGoal": false
+        },
+        {
+          "move": "d8d2",
+          "movingPiece": "R",
+          "capturedPiece": null,
+          "afterFen": "4k4/5R3/9/9/9/9/9/3R5/9/3K5 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [],
+          "meetsGoal": false
+        },
+        {
+          "move": "d8d3",
+          "movingPiece": "R",
+          "capturedPiece": null,
+          "afterFen": "4k4/5R3/9/9/9/9/3R5/9/9/3K5 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [],
+          "meetsGoal": false
+        },
+        {
+          "move": "d8d4",
+          "movingPiece": "R",
+          "capturedPiece": null,
+          "afterFen": "4k4/5R3/9/9/9/3R5/9/9/9/3K5 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [],
+          "meetsGoal": false
+        },
+        {
+          "move": "d8d5",
+          "movingPiece": "R",
+          "capturedPiece": null,
+          "afterFen": "4k4/5R3/9/9/3R5/9/9/9/9/3K5 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [],
+          "meetsGoal": false
+        },
+        {
+          "move": "d8d6",
+          "movingPiece": "R",
+          "capturedPiece": null,
+          "afterFen": "4k4/5R3/9/3R5/9/9/9/9/9/3K5 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [],
+          "meetsGoal": false
+        },
+        {
+          "move": "d8d7",
+          "movingPiece": "R",
+          "capturedPiece": null,
+          "afterFen": "4k4/5R3/3R5/9/9/9/9/9/9/3K5 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [],
+          "meetsGoal": false
+        },
+        {
+          "move": "d8d9",
+          "movingPiece": "R",
+          "capturedPiece": null,
+          "afterFen": "3Rk4/5R3/9/9/9/9/9/9/9/3K5 b - - 1 1",
+          "opponentInCheck": true,
+          "opponentLegalReplies": [],
+          "meetsGoal": true
+        },
+        {
+          "move": "d8e8",
+          "movingPiece": "R",
+          "capturedPiece": null,
+          "afterFen": "4k4/4RR3/9/9/9/9/9/9/9/3K5 b - - 1 1",
+          "opponentInCheck": true,
+          "opponentLegalReplies": [],
+          "meetsGoal": true
+        },
+        {
+          "move": "f8e8",
+          "movingPiece": "R",
+          "capturedPiece": null,
+          "afterFen": "4k4/3RR4/9/9/9/9/9/9/9/3K5 b - - 1 1",
+          "opponentInCheck": true,
+          "opponentLegalReplies": [
+            "e9f9"
+          ],
+          "meetsGoal": false
+        },
+        {
+          "move": "f8f0",
+          "movingPiece": "R",
+          "capturedPiece": null,
+          "afterFen": "4k4/3R5/9/9/9/9/9/9/9/3K1R3 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [],
+          "meetsGoal": false
+        },
+        {
+          "move": "f8f1",
+          "movingPiece": "R",
+          "capturedPiece": null,
+          "afterFen": "4k4/3R5/9/9/9/9/9/9/5R3/3K5 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [],
+          "meetsGoal": false
+        },
+        {
+          "move": "f8f2",
+          "movingPiece": "R",
+          "capturedPiece": null,
+          "afterFen": "4k4/3R5/9/9/9/9/9/5R3/9/3K5 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [],
+          "meetsGoal": false
+        },
+        {
+          "move": "f8f3",
+          "movingPiece": "R",
+          "capturedPiece": null,
+          "afterFen": "4k4/3R5/9/9/9/9/5R3/9/9/3K5 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [],
+          "meetsGoal": false
+        },
+        {
+          "move": "f8f4",
+          "movingPiece": "R",
+          "capturedPiece": null,
+          "afterFen": "4k4/3R5/9/9/9/5R3/9/9/9/3K5 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [],
+          "meetsGoal": false
+        },
+        {
+          "move": "f8f5",
+          "movingPiece": "R",
+          "capturedPiece": null,
+          "afterFen": "4k4/3R5/9/9/5R3/9/9/9/9/3K5 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [],
+          "meetsGoal": false
+        },
+        {
+          "move": "f8f6",
+          "movingPiece": "R",
+          "capturedPiece": null,
+          "afterFen": "4k4/3R5/9/5R3/9/9/9/9/9/3K5 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [],
+          "meetsGoal": false
+        },
+        {
+          "move": "f8f7",
+          "movingPiece": "R",
+          "capturedPiece": null,
+          "afterFen": "4k4/3R5/5R3/9/9/9/9/9/9/3K5 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [],
+          "meetsGoal": false
+        },
+        {
+          "move": "f8f9",
+          "movingPiece": "R",
+          "capturedPiece": null,
+          "afterFen": "4kR3/3R5/9/9/9/9/9/9/9/3K5 b - - 1 1",
+          "opponentInCheck": true,
+          "opponentLegalReplies": [
+            "e9f9"
+          ],
+          "meetsGoal": false
+        },
+        {
+          "move": "f8g8",
+          "movingPiece": "R",
+          "capturedPiece": null,
+          "afterFen": "4k4/3R2R2/9/9/9/9/9/9/9/3K5 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [
+            "e9f9"
+          ],
+          "meetsGoal": false
+        },
+        {
+          "move": "f8h8",
+          "movingPiece": "R",
+          "capturedPiece": null,
+          "afterFen": "4k4/3R3R1/9/9/9/9/9/9/9/3K5 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [
+            "e9f9"
+          ],
+          "meetsGoal": false
+        },
+        {
+          "move": "f8i8",
+          "movingPiece": "R",
+          "capturedPiece": null,
+          "afterFen": "4k4/3R4R/9/9/9/9/9/9/9/3K5 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [
+            "e9f9"
+          ],
+          "meetsGoal": false
+        }
+      ]
+    },
+    {
+      "id": "mate-cannon",
+      "title": "炮与马配合",
+      "chapter": 3,
+      "fen": "4ka3/3RN4/C8/9/9/9/9/9/9/3K5 r - - 0 1",
+      "objective": "mate",
+      "initialInCheck": false,
+      "initialLegalMoves": [
+        "a7a0",
+        "a7a1",
+        "a7a2",
+        "a7a3",
+        "a7a4",
+        "a7a5",
+        "a7a6",
+        "a7a8",
+        "a7a9",
+        "a7b7",
+        "a7c7",
+        "a7d7",
+        "a7e7",
+        "a7f7",
+        "a7g7",
+        "a7h7",
+        "a7i7",
+        "d0d1",
+        "d0e0",
+        "d8a8",
+        "d8b8",
+        "d8c8",
+        "d8d1",
+        "d8d2",
+        "d8d3",
+        "d8d4",
+        "d8d5",
+        "d8d6",
+        "d8d7",
+        "d8d9",
+        "e8d6",
+        "e8f6",
+        "e8g7",
+        "e8g9"
+      ],
+      "independentSolutions": [
+        "a7e7"
+      ],
+      "declaredSolutions": [
+        "a7e7"
+      ],
+      "allLegalMoveCertificates": [
+        {
+          "move": "a7a0",
+          "movingPiece": "C",
+          "capturedPiece": null,
+          "afterFen": "4ka3/3RN4/9/9/9/9/9/9/9/C2K5 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [
+            "f9e8"
+          ],
+          "meetsGoal": false
+        },
+        {
+          "move": "a7a1",
+          "movingPiece": "C",
+          "capturedPiece": null,
+          "afterFen": "4ka3/3RN4/9/9/9/9/9/9/C8/3K5 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [
+            "f9e8"
+          ],
+          "meetsGoal": false
+        },
+        {
+          "move": "a7a2",
+          "movingPiece": "C",
+          "capturedPiece": null,
+          "afterFen": "4ka3/3RN4/9/9/9/9/9/C8/9/3K5 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [
+            "f9e8"
+          ],
+          "meetsGoal": false
+        },
+        {
+          "move": "a7a3",
+          "movingPiece": "C",
+          "capturedPiece": null,
+          "afterFen": "4ka3/3RN4/9/9/9/9/C8/9/9/3K5 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [
+            "f9e8"
+          ],
+          "meetsGoal": false
+        },
+        {
+          "move": "a7a4",
+          "movingPiece": "C",
+          "capturedPiece": null,
+          "afterFen": "4ka3/3RN4/9/9/9/C8/9/9/9/3K5 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [
+            "f9e8"
+          ],
+          "meetsGoal": false
+        },
+        {
+          "move": "a7a5",
+          "movingPiece": "C",
+          "capturedPiece": null,
+          "afterFen": "4ka3/3RN4/9/9/C8/9/9/9/9/3K5 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [
+            "f9e8"
+          ],
+          "meetsGoal": false
+        },
+        {
+          "move": "a7a6",
+          "movingPiece": "C",
+          "capturedPiece": null,
+          "afterFen": "4ka3/3RN4/9/C8/9/9/9/9/9/3K5 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [
+            "f9e8"
+          ],
+          "meetsGoal": false
+        },
+        {
+          "move": "a7a8",
+          "movingPiece": "C",
+          "capturedPiece": null,
+          "afterFen": "4ka3/C2RN4/9/9/9/9/9/9/9/3K5 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [
+            "f9e8"
+          ],
+          "meetsGoal": false
+        },
+        {
+          "move": "a7a9",
+          "movingPiece": "C",
+          "capturedPiece": null,
+          "afterFen": "C3ka3/3RN4/9/9/9/9/9/9/9/3K5 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [
+            "f9e8"
+          ],
+          "meetsGoal": false
+        },
+        {
+          "move": "a7b7",
+          "movingPiece": "C",
+          "capturedPiece": null,
+          "afterFen": "4ka3/3RN4/1C7/9/9/9/9/9/9/3K5 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [
+            "f9e8"
+          ],
+          "meetsGoal": false
+        },
+        {
+          "move": "a7c7",
+          "movingPiece": "C",
+          "capturedPiece": null,
+          "afterFen": "4ka3/3RN4/2C6/9/9/9/9/9/9/3K5 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [
+            "f9e8"
+          ],
+          "meetsGoal": false
+        },
+        {
+          "move": "a7d7",
+          "movingPiece": "C",
+          "capturedPiece": null,
+          "afterFen": "4ka3/3RN4/3C5/9/9/9/9/9/9/3K5 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [
+            "f9e8"
+          ],
+          "meetsGoal": false
+        },
+        {
+          "move": "a7e7",
+          "movingPiece": "C",
+          "capturedPiece": null,
+          "afterFen": "4ka3/3RN4/4C4/9/9/9/9/9/9/3K5 b - - 1 1",
+          "opponentInCheck": true,
+          "opponentLegalReplies": [],
+          "meetsGoal": true
+        },
+        {
+          "move": "a7f7",
+          "movingPiece": "C",
+          "capturedPiece": null,
+          "afterFen": "4ka3/3RN4/5C3/9/9/9/9/9/9/3K5 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [
+            "f9e8"
+          ],
+          "meetsGoal": false
+        },
+        {
+          "move": "a7g7",
+          "movingPiece": "C",
+          "capturedPiece": null,
+          "afterFen": "4ka3/3RN4/6C2/9/9/9/9/9/9/3K5 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [
+            "f9e8"
+          ],
+          "meetsGoal": false
+        },
+        {
+          "move": "a7h7",
+          "movingPiece": "C",
+          "capturedPiece": null,
+          "afterFen": "4ka3/3RN4/7C1/9/9/9/9/9/9/3K5 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [
+            "f9e8"
+          ],
+          "meetsGoal": false
+        },
+        {
+          "move": "a7i7",
+          "movingPiece": "C",
+          "capturedPiece": null,
+          "afterFen": "4ka3/3RN4/8C/9/9/9/9/9/9/3K5 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [
+            "f9e8"
+          ],
+          "meetsGoal": false
+        },
+        {
+          "move": "d0d1",
+          "movingPiece": "K",
+          "capturedPiece": null,
+          "afterFen": "4ka3/3RN4/C8/9/9/9/9/9/3K5/9 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [
+            "f9e8"
+          ],
+          "meetsGoal": false
+        },
+        {
+          "move": "d0e0",
+          "movingPiece": "K",
+          "capturedPiece": null,
+          "afterFen": "4ka3/3RN4/C8/9/9/9/9/9/9/4K4 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [
+            "f9e8"
+          ],
+          "meetsGoal": false
+        },
+        {
+          "move": "d8a8",
+          "movingPiece": "R",
+          "capturedPiece": null,
+          "afterFen": "4ka3/R3N4/C8/9/9/9/9/9/9/3K5 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [
+            "f9e8"
+          ],
+          "meetsGoal": false
+        },
+        {
+          "move": "d8b8",
+          "movingPiece": "R",
+          "capturedPiece": null,
+          "afterFen": "4ka3/1R2N4/C8/9/9/9/9/9/9/3K5 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [
+            "f9e8"
+          ],
+          "meetsGoal": false
+        },
+        {
+          "move": "d8c8",
+          "movingPiece": "R",
+          "capturedPiece": null,
+          "afterFen": "4ka3/2R1N4/C8/9/9/9/9/9/9/3K5 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [
+            "f9e8"
+          ],
+          "meetsGoal": false
+        },
+        {
+          "move": "d8d1",
+          "movingPiece": "R",
+          "capturedPiece": null,
+          "afterFen": "4ka3/4N4/C8/9/9/9/9/9/3R5/3K5 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [
+            "e9e8",
+            "f9e8"
+          ],
+          "meetsGoal": false
+        },
+        {
+          "move": "d8d2",
+          "movingPiece": "R",
+          "capturedPiece": null,
+          "afterFen": "4ka3/4N4/C8/9/9/9/9/3R5/9/3K5 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [
+            "e9e8",
+            "f9e8"
+          ],
+          "meetsGoal": false
+        },
+        {
+          "move": "d8d3",
+          "movingPiece": "R",
+          "capturedPiece": null,
+          "afterFen": "4ka3/4N4/C8/9/9/9/3R5/9/9/3K5 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [
+            "e9e8",
+            "f9e8"
+          ],
+          "meetsGoal": false
+        },
+        {
+          "move": "d8d4",
+          "movingPiece": "R",
+          "capturedPiece": null,
+          "afterFen": "4ka3/4N4/C8/9/9/3R5/9/9/9/3K5 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [
+            "e9e8",
+            "f9e8"
+          ],
+          "meetsGoal": false
+        },
+        {
+          "move": "d8d5",
+          "movingPiece": "R",
+          "capturedPiece": null,
+          "afterFen": "4ka3/4N4/C8/9/3R5/9/9/9/9/3K5 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [
+            "e9e8",
+            "f9e8"
+          ],
+          "meetsGoal": false
+        },
+        {
+          "move": "d8d6",
+          "movingPiece": "R",
+          "capturedPiece": null,
+          "afterFen": "4ka3/4N4/C8/3R5/9/9/9/9/9/3K5 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [
+            "e9e8",
+            "f9e8"
+          ],
+          "meetsGoal": false
+        },
+        {
+          "move": "d8d7",
+          "movingPiece": "R",
+          "capturedPiece": null,
+          "afterFen": "4ka3/4N4/C2R5/9/9/9/9/9/9/3K5 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [
+            "e9e8",
+            "f9e8"
+          ],
+          "meetsGoal": false
+        },
+        {
+          "move": "d8d9",
+          "movingPiece": "R",
+          "capturedPiece": null,
+          "afterFen": "3Rka3/4N4/C8/9/9/9/9/9/9/3K5 b - - 1 1",
+          "opponentInCheck": true,
+          "opponentLegalReplies": [
+            "e9e8"
+          ],
+          "meetsGoal": false
+        },
+        {
+          "move": "e8d6",
+          "movingPiece": "N",
+          "capturedPiece": null,
+          "afterFen": "4ka3/3R5/C8/3N5/9/9/9/9/9/3K5 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [
+            "f9e8"
+          ],
+          "meetsGoal": false
+        },
+        {
+          "move": "e8f6",
+          "movingPiece": "N",
+          "capturedPiece": null,
+          "afterFen": "4ka3/3R5/C8/5N3/9/9/9/9/9/3K5 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [
+            "f9e8"
+          ],
+          "meetsGoal": false
+        },
+        {
+          "move": "e8g7",
+          "movingPiece": "N",
+          "capturedPiece": null,
+          "afterFen": "4ka3/3R5/C5N2/9/9/9/9/9/9/3K5 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [
+            "f9e8"
+          ],
+          "meetsGoal": false
+        },
+        {
+          "move": "e8g9",
+          "movingPiece": "N",
+          "capturedPiece": null,
+          "afterFen": "4kaN2/3R5/C8/9/9/9/9/9/9/3K5 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [
+            "f9e8"
+          ],
+          "meetsGoal": false
+        }
+      ]
+    },
+    {
+      "id": "mate-horse",
+      "title": "卧槽马",
+      "chapter": 3,
+      "fen": "4ka3/3R5/9/7N1/9/4P4/9/9/9/4K4 r - - 0 1",
+      "objective": "mate",
+      "initialInCheck": false,
+      "initialLegalMoves": [
+        "d8a8",
+        "d8b8",
+        "d8c8",
+        "d8d0",
+        "d8d1",
+        "d8d2",
+        "d8d3",
+        "d8d4",
+        "d8d5",
+        "d8d6",
+        "d8d7",
+        "d8d9",
+        "d8e8",
+        "d8f8",
+        "d8g8",
+        "d8h8",
+        "d8i8",
+        "e0d0",
+        "e0e1",
+        "e0f0",
+        "e4e5",
+        "h6f5",
+        "h6f7",
+        "h6g4",
+        "h6g8",
+        "h6i4",
+        "h6i8"
+      ],
+      "independentSolutions": [
+        "h6f7",
+        "h6g8"
+      ],
+      "declaredSolutions": [
+        "h6f7",
+        "h6g8"
+      ],
+      "allLegalMoveCertificates": [
+        {
+          "move": "d8a8",
+          "movingPiece": "R",
+          "capturedPiece": null,
+          "afterFen": "4ka3/R8/9/7N1/9/4P4/9/9/9/4K4 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [
+            "e9d9",
+            "f9e8"
+          ],
+          "meetsGoal": false
+        },
+        {
+          "move": "d8b8",
+          "movingPiece": "R",
+          "capturedPiece": null,
+          "afterFen": "4ka3/1R7/9/7N1/9/4P4/9/9/9/4K4 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [
+            "e9d9",
+            "f9e8"
+          ],
+          "meetsGoal": false
+        },
+        {
+          "move": "d8c8",
+          "movingPiece": "R",
+          "capturedPiece": null,
+          "afterFen": "4ka3/2R6/9/7N1/9/4P4/9/9/9/4K4 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [
+            "e9d9",
+            "f9e8"
+          ],
+          "meetsGoal": false
+        },
+        {
+          "move": "d8d0",
+          "movingPiece": "R",
+          "capturedPiece": null,
+          "afterFen": "4ka3/9/9/7N1/9/4P4/9/9/9/3RK4 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [
+            "e9e8",
+            "f9e8"
+          ],
+          "meetsGoal": false
+        },
+        {
+          "move": "d8d1",
+          "movingPiece": "R",
+          "capturedPiece": null,
+          "afterFen": "4ka3/9/9/7N1/9/4P4/9/9/3R5/4K4 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [
+            "e9e8",
+            "f9e8"
+          ],
+          "meetsGoal": false
+        },
+        {
+          "move": "d8d2",
+          "movingPiece": "R",
+          "capturedPiece": null,
+          "afterFen": "4ka3/9/9/7N1/9/4P4/9/3R5/9/4K4 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [
+            "e9e8",
+            "f9e8"
+          ],
+          "meetsGoal": false
+        },
+        {
+          "move": "d8d3",
+          "movingPiece": "R",
+          "capturedPiece": null,
+          "afterFen": "4ka3/9/9/7N1/9/4P4/3R5/9/9/4K4 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [
+            "e9e8",
+            "f9e8"
+          ],
+          "meetsGoal": false
+        },
+        {
+          "move": "d8d4",
+          "movingPiece": "R",
+          "capturedPiece": null,
+          "afterFen": "4ka3/9/9/7N1/9/3RP4/9/9/9/4K4 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [
+            "e9e8",
+            "f9e8"
+          ],
+          "meetsGoal": false
+        },
+        {
+          "move": "d8d5",
+          "movingPiece": "R",
+          "capturedPiece": null,
+          "afterFen": "4ka3/9/9/7N1/3R5/4P4/9/9/9/4K4 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [
+            "e9e8",
+            "f9e8"
+          ],
+          "meetsGoal": false
+        },
+        {
+          "move": "d8d6",
+          "movingPiece": "R",
+          "capturedPiece": null,
+          "afterFen": "4ka3/9/9/3R3N1/9/4P4/9/9/9/4K4 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [
+            "e9e8",
+            "f9e8"
+          ],
+          "meetsGoal": false
+        },
+        {
+          "move": "d8d7",
+          "movingPiece": "R",
+          "capturedPiece": null,
+          "afterFen": "4ka3/9/3R5/7N1/9/4P4/9/9/9/4K4 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [
+            "e9e8",
+            "f9e8"
+          ],
+          "meetsGoal": false
+        },
+        {
+          "move": "d8d9",
+          "movingPiece": "R",
+          "capturedPiece": null,
+          "afterFen": "3Rka3/9/9/7N1/9/4P4/9/9/9/4K4 b - - 1 1",
+          "opponentInCheck": true,
+          "opponentLegalReplies": [
+            "e9d9",
+            "e9e8"
+          ],
+          "meetsGoal": false
+        },
+        {
+          "move": "d8e8",
+          "movingPiece": "R",
+          "capturedPiece": null,
+          "afterFen": "4ka3/4R4/9/7N1/9/4P4/9/9/9/4K4 b - - 1 1",
+          "opponentInCheck": true,
+          "opponentLegalReplies": [
+            "e9d9",
+            "e9e8",
+            "f9e8"
+          ],
+          "meetsGoal": false
+        },
+        {
+          "move": "d8f8",
+          "movingPiece": "R",
+          "capturedPiece": null,
+          "afterFen": "4ka3/5R3/9/7N1/9/4P4/9/9/9/4K4 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [
+            "e9d9",
+            "f9e8"
+          ],
+          "meetsGoal": false
+        },
+        {
+          "move": "d8g8",
+          "movingPiece": "R",
+          "capturedPiece": null,
+          "afterFen": "4ka3/6R2/9/7N1/9/4P4/9/9/9/4K4 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [
+            "e9d9",
+            "f9e8"
+          ],
+          "meetsGoal": false
+        },
+        {
+          "move": "d8h8",
+          "movingPiece": "R",
+          "capturedPiece": null,
+          "afterFen": "4ka3/7R1/9/7N1/9/4P4/9/9/9/4K4 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [
+            "e9d9",
+            "f9e8"
+          ],
+          "meetsGoal": false
+        },
+        {
+          "move": "d8i8",
+          "movingPiece": "R",
+          "capturedPiece": null,
+          "afterFen": "4ka3/8R/9/7N1/9/4P4/9/9/9/4K4 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [
+            "e9d9",
+            "f9e8"
+          ],
+          "meetsGoal": false
+        },
+        {
+          "move": "e0d0",
+          "movingPiece": "K",
+          "capturedPiece": null,
+          "afterFen": "4ka3/3R5/9/7N1/9/4P4/9/9/9/3K5 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [
+            "f9e8"
+          ],
+          "meetsGoal": false
+        },
+        {
+          "move": "e0e1",
+          "movingPiece": "K",
+          "capturedPiece": null,
+          "afterFen": "4ka3/3R5/9/7N1/9/4P4/9/9/4K4/9 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [
+            "f9e8"
+          ],
+          "meetsGoal": false
+        },
+        {
+          "move": "e0f0",
+          "movingPiece": "K",
+          "capturedPiece": null,
+          "afterFen": "4ka3/3R5/9/7N1/9/4P4/9/9/9/5K3 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [
+            "f9e8"
+          ],
+          "meetsGoal": false
+        },
+        {
+          "move": "e4e5",
+          "movingPiece": "P",
+          "capturedPiece": null,
+          "afterFen": "4ka3/3R5/9/7N1/4P4/9/9/9/9/4K4 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [
+            "f9e8"
+          ],
+          "meetsGoal": false
+        },
+        {
+          "move": "h6f5",
+          "movingPiece": "N",
+          "capturedPiece": null,
+          "afterFen": "4ka3/3R5/9/9/5N3/4P4/9/9/9/4K4 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [
+            "f9e8"
+          ],
+          "meetsGoal": false
+        },
+        {
+          "move": "h6f7",
+          "movingPiece": "N",
+          "capturedPiece": null,
+          "afterFen": "4ka3/3R5/5N3/9/9/4P4/9/9/9/4K4 b - - 1 1",
+          "opponentInCheck": true,
+          "opponentLegalReplies": [],
+          "meetsGoal": true
+        },
+        {
+          "move": "h6g4",
+          "movingPiece": "N",
+          "capturedPiece": null,
+          "afterFen": "4ka3/3R5/9/9/9/4P1N2/9/9/9/4K4 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [
+            "f9e8"
+          ],
+          "meetsGoal": false
+        },
+        {
+          "move": "h6g8",
+          "movingPiece": "N",
+          "capturedPiece": null,
+          "afterFen": "4ka3/3R2N2/9/9/9/4P4/9/9/9/4K4 b - - 1 1",
+          "opponentInCheck": true,
+          "opponentLegalReplies": [],
+          "meetsGoal": true
+        },
+        {
+          "move": "h6i4",
+          "movingPiece": "N",
+          "capturedPiece": null,
+          "afterFen": "4ka3/3R5/9/9/9/4P3N/9/9/9/4K4 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [
+            "f9e8"
+          ],
+          "meetsGoal": false
+        },
+        {
+          "move": "h6i8",
+          "movingPiece": "N",
+          "capturedPiece": null,
+          "afterFen": "4ka3/3R4N/9/9/9/4P4/9/9/9/4K4 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [
+            "f9e8"
+          ],
+          "meetsGoal": false
+        }
+      ]
+    },
+    {
+      "id": "stalemate-net",
+      "title": "没被将军，也会输",
+      "chapter": 3,
+      "fen": "3aka3/9/3RC4/4P4/9/9/9/9/9/4K4 r - - 0 1",
+      "objective": "stalemate",
+      "initialInCheck": false,
+      "initialLegalMoves": [
+        "d7a7",
+        "d7b7",
+        "d7c7",
+        "d7d0",
+        "d7d1",
+        "d7d2",
+        "d7d3",
+        "d7d4",
+        "d7d5",
+        "d7d6",
+        "d7d8",
+        "d7d9",
+        "e0d0",
+        "e0e1",
+        "e0f0",
+        "e6d6",
+        "e6f6",
+        "e7e8",
+        "e7f7",
+        "e7g7",
+        "e7h7",
+        "e7i7"
+      ],
+      "independentSolutions": [
+        "d7d8"
+      ],
+      "declaredSolutions": [
+        "d7d8"
+      ],
+      "allLegalMoveCertificates": [
+        {
+          "move": "d7a7",
+          "movingPiece": "R",
+          "capturedPiece": null,
+          "afterFen": "3aka3/9/R3C4/4P4/9/9/9/9/9/4K4 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [
+            "e9e8"
+          ],
+          "meetsGoal": false
+        },
+        {
+          "move": "d7b7",
+          "movingPiece": "R",
+          "capturedPiece": null,
+          "afterFen": "3aka3/9/1R2C4/4P4/9/9/9/9/9/4K4 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [
+            "e9e8"
+          ],
+          "meetsGoal": false
+        },
+        {
+          "move": "d7c7",
+          "movingPiece": "R",
+          "capturedPiece": null,
+          "afterFen": "3aka3/9/2R1C4/4P4/9/9/9/9/9/4K4 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [
+            "e9e8"
+          ],
+          "meetsGoal": false
+        },
+        {
+          "move": "d7d0",
+          "movingPiece": "R",
+          "capturedPiece": null,
+          "afterFen": "3aka3/9/4C4/4P4/9/9/9/9/9/3RK4 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [
+            "e9e8"
+          ],
+          "meetsGoal": false
+        },
+        {
+          "move": "d7d1",
+          "movingPiece": "R",
+          "capturedPiece": null,
+          "afterFen": "3aka3/9/4C4/4P4/9/9/9/9/3R5/4K4 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [
+            "e9e8"
+          ],
+          "meetsGoal": false
+        },
+        {
+          "move": "d7d2",
+          "movingPiece": "R",
+          "capturedPiece": null,
+          "afterFen": "3aka3/9/4C4/4P4/9/9/9/3R5/9/4K4 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [
+            "e9e8"
+          ],
+          "meetsGoal": false
+        },
+        {
+          "move": "d7d3",
+          "movingPiece": "R",
+          "capturedPiece": null,
+          "afterFen": "3aka3/9/4C4/4P4/9/9/3R5/9/9/4K4 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [
+            "e9e8"
+          ],
+          "meetsGoal": false
+        },
+        {
+          "move": "d7d4",
+          "movingPiece": "R",
+          "capturedPiece": null,
+          "afterFen": "3aka3/9/4C4/4P4/9/3R5/9/9/9/4K4 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [
+            "e9e8"
+          ],
+          "meetsGoal": false
+        },
+        {
+          "move": "d7d5",
+          "movingPiece": "R",
+          "capturedPiece": null,
+          "afterFen": "3aka3/9/4C4/4P4/3R5/9/9/9/9/4K4 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [
+            "e9e8"
+          ],
+          "meetsGoal": false
+        },
+        {
+          "move": "d7d6",
+          "movingPiece": "R",
+          "capturedPiece": null,
+          "afterFen": "3aka3/9/4C4/3RP4/9/9/9/9/9/4K4 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [
+            "e9e8"
+          ],
+          "meetsGoal": false
+        },
+        {
+          "move": "d7d8",
+          "movingPiece": "R",
+          "capturedPiece": null,
+          "afterFen": "3aka3/3R5/4C4/4P4/9/9/9/9/9/4K4 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [],
+          "meetsGoal": true
+        },
+        {
+          "move": "d7d9",
+          "movingPiece": "R",
+          "capturedPiece": "a",
+          "afterFen": "3Rka3/9/4C4/4P4/9/9/9/9/9/4K4 b - - 0 1",
+          "opponentInCheck": true,
+          "opponentLegalReplies": [
+            "e9d9",
+            "e9e8"
+          ],
+          "meetsGoal": false
+        },
+        {
+          "move": "e0d0",
+          "movingPiece": "K",
+          "capturedPiece": null,
+          "afterFen": "3aka3/9/3RC4/4P4/9/9/9/9/9/3K5 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [
+            "e9e8"
+          ],
+          "meetsGoal": false
+        },
+        {
+          "move": "e0e1",
+          "movingPiece": "K",
+          "capturedPiece": null,
+          "afterFen": "3aka3/9/3RC4/4P4/9/9/9/9/4K4/9 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [
+            "e9e8"
+          ],
+          "meetsGoal": false
+        },
+        {
+          "move": "e0f0",
+          "movingPiece": "K",
+          "capturedPiece": null,
+          "afterFen": "3aka3/9/3RC4/4P4/9/9/9/9/9/5K3 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [
+            "e9e8"
+          ],
+          "meetsGoal": false
+        },
+        {
+          "move": "e6d6",
+          "movingPiece": "P",
+          "capturedPiece": null,
+          "afterFen": "3aka3/9/3RC4/3P5/9/9/9/9/9/4K4 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [
+            "e9e8"
+          ],
+          "meetsGoal": false
+        },
+        {
+          "move": "e6f6",
+          "movingPiece": "P",
+          "capturedPiece": null,
+          "afterFen": "3aka3/9/3RC4/5P3/9/9/9/9/9/4K4 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [
+            "e9e8"
+          ],
+          "meetsGoal": false
+        },
+        {
+          "move": "e7e8",
+          "movingPiece": "C",
+          "capturedPiece": null,
+          "afterFen": "3aka3/4C4/3R5/4P4/9/9/9/9/9/4K4 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [
+            "d9e8",
+            "e9e8",
+            "f9e8"
+          ],
+          "meetsGoal": false
+        },
+        {
+          "move": "e7f7",
+          "movingPiece": "C",
+          "capturedPiece": null,
+          "afterFen": "3aka3/9/3R1C3/4P4/9/9/9/9/9/4K4 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [
+            "d9e8",
+            "e9e8",
+            "f9e8"
+          ],
+          "meetsGoal": false
+        },
+        {
+          "move": "e7g7",
+          "movingPiece": "C",
+          "capturedPiece": null,
+          "afterFen": "3aka3/9/3R2C2/4P4/9/9/9/9/9/4K4 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [
+            "d9e8",
+            "e9e8",
+            "f9e8"
+          ],
+          "meetsGoal": false
+        },
+        {
+          "move": "e7h7",
+          "movingPiece": "C",
+          "capturedPiece": null,
+          "afterFen": "3aka3/9/3R3C1/4P4/9/9/9/9/9/4K4 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [
+            "d9e8",
+            "e9e8",
+            "f9e8"
+          ],
+          "meetsGoal": false
+        },
+        {
+          "move": "e7i7",
+          "movingPiece": "C",
+          "capturedPiece": null,
+          "afterFen": "3aka3/9/3R4C/4P4/9/9/9/9/9/4K4 b - - 1 1",
+          "opponentInCheck": false,
+          "opponentLegalReplies": [
+            "d9e8",
+            "e9e8",
+            "f9e8"
+          ],
+          "meetsGoal": false
+        }
+      ]
+    }
+  ],
+  "mutationSelfTests": [
+    {
+      "name": "missing solution",
+      "detected": true
+    },
+    {
+      "name": "duplicate solution",
+      "detected": true
+    },
+    {
+      "name": "invented solution",
+      "detected": true
+    },
+    {
+      "name": "wrong capture piece",
+      "detected": true
+    },
+    {
+      "name": "wrong capture target",
+      "detected": true
+    },
+    {
+      "name": "bad FEN",
+      "detected": true
+    },
+    {
+      "name": "false evade claim",
+      "detected": true
+    },
+    {
+      "name": "mate confused with stalemate",
+      "detected": true
+    },
+    {
+      "name": "stalemate confused with mate",
+      "detected": true
+    },
+    {
+      "name": "omitted alternative check evasion",
+      "detected": true
+    }
+  ]
+}

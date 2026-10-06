@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: MIT
+// SPDX-License-Identifier: GPL-3.0-only
 // Twelve original, hand-authored maps. Certificates independently enumerated offline.
 import type { BudgetTownLevel } from "./budgetTownLogic";
 export const budgetTownLevels: BudgetTownLevel[] = [

@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: MIT
+// SPDX-License-Identifier: GPL-3.0-only
 /** Exact, normalized fractions. BigInt is used for every physical comparison. */
 export type LabFraction = Readonly<{ n: bigint; d: bigint }>;
 export function labQ(n: number | bigint, d: number | bigint = 1): LabFraction {

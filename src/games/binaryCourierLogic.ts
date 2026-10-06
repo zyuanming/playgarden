@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: MIT
+// SPDX-License-Identifier: GPL-3.0-only
 /** Original fixed-width register puzzles. Each card is consumed when executed. */
 export type BinaryOp = "SHL" | "SHR" | "AND" | "OR" | "XOR" | "NOT";
 export type BinaryCard = { op: BinaryOp; operand: number; count: number };

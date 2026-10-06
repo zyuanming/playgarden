@@ -1,4 +1,4 @@
-/** Original MIT levels. Authored with a fixed seed; independently certified in tests. */
+/** Original GPL-3.0-only levels. Authored with a fixed seed; independently certified in tests. */
 export type NurikabeLevel = {
   title: string;
   size: number;

@@ -1,6 +1,6 @@
 # Graph optimization games: implementation and certificate notes
 
-All implementation, level layouts, graph weights and explanations in this module are original Playgarden work covered by the repository MIT license. No external source code, assets, services or packages were added.
+All implementation, level layouts, graph weights and explanations in this module are original Playgarden work covered by the repository GPL-3.0-only license. No external source code, assets, services or packages were added.
 
 ## UntangleGarden
 

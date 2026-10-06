@@ -1,6 +1,6 @@
 # Motion and buoyancy laboratories
 
-Original Playgarden implementation, MIT. No imported game source, remote models, assets, fonts, packages, persistent storage, network calls, timers, animation loops, or WebGL dependency.
+Original Playgarden implementation, GPL-3.0-only. No imported game source, remote models, assets, fonts, packages, persistent storage, network calls, timers, animation loops, or WebGL dependency.
 
 ## Files and integration exports
 

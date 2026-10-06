@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: MIT
+// SPDX-License-Identifier: GPL-3.0-only
 /** Deliberately simplified discrete puzzle; never real railway operating guidance. */
 export type RailNode = { label: string; x: number; y: number; next: number[] };
 export type RailPublic = {

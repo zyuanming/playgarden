@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: MIT
+// SPDX-License-Identifier: GPL-3.0-only
 /** Original public-constraint symmetry puzzle. No hidden answer is consulted. */
 export type SymmetryCell = 0 | 1 | null;
 export type SymmetryTransform =

@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: MIT
+// SPDX-License-Identifier: GPL-3.0-only
 export type FleetMark = "unknown" | "ship" | "sea";
 export type FleetFragment =
   "sea" | "ship" | "single" | "N" | "E" | "S" | "W" | "middle-h" | "middle-v";

@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: MIT
+// SPDX-License-Identifier: GPL-3.0-only
 import type { TreeLevel } from "./treeRotationsLogic";
 /** Goals and weights are public literals independent from solution witnesses. */
 export const treeRotationsLevels: readonly TreeLevel[] = [

@@ -1,6 +1,6 @@
 # Symmetry Repair and Probability Bag
 
-Original code and authored curricula, SPDX-License-Identifier: MIT. No external images, audio, runtime dependencies, random judging, or hidden solution certificates.
+Original code and authored curricula, SPDX-License-Identifier: GPL-3.0-only. No external images, audio, runtime dependencies, random judging, or hidden solution certificates.
 
 ## Components and integration
 

@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: MIT
+// SPDX-License-Identifier: GPL-3.0-only
 /** Original, deterministic route-recall puzzles. Runtime uses the public walk only. */
 export type RouteDirection = "N" | "E" | "S" | "W";
 export type MemoryRouteLevel = {

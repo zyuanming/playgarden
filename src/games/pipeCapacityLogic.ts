@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: MIT
+// SPDX-License-Identifier: GPL-3.0-only
 export type PipeNode = { label: string; balance: number; x: number; y: number };
 export type PipeEdge = {
   from: number;

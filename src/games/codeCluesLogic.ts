@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: MIT
+// SPDX-License-Identifier: GPL-3.0-only
 /** Original bounded symbol deduction rules. Hints deliberately accept public data only. */
 export const CODE_SYMBOLS = [
   { glyph: "○", label: "圆" },

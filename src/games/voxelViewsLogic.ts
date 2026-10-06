@@ -1,4 +1,4 @@
-/** Original Playgarden voxel tomography puzzle. MIT. Integer geometry only. */
+/** Original Playgarden voxel tomography puzzle. GPL-3.0-only. Integer geometry only. */
 export type VoxelSide = "front" | "side" | "top";
 export type VoxelLevel = {
   title: string;

@@ -1,0 +1,80 @@
+{
+  "verified": "2026-10-06",
+  "purpose": "Preferred editable source and build instructions for the exact runtime dependencies/preload helper included in the distributed app.",
+  "components": [
+    {
+      "packages": {
+        "react": "19.3.0",
+        "react-dom": "19.3.0",
+        "scheduler": "0.28.0"
+      },
+      "license": "MIT",
+      "source": "https://github.com/react/react/tree/1d34f91dfde6bba84d08b683aaba164c7194dacb",
+      "commit": "1d34f91dfde6bba84d08b683aaba164c7194dacb",
+      "tag": "v19.3.0",
+      "preferredSource": [
+        "packages/react/src",
+        "packages/react-dom/src",
+        "packages/scheduler/src"
+      ],
+      "buildSources": [
+        "scripts/rollup",
+        "package.json",
+        "yarn.lock"
+      ]
+    },
+    {
+      "packages": {
+        "three": "0.180.0"
+      },
+      "license": "MIT",
+      "source": "https://github.com/mrdoob/three.js/tree/0af9729d0c143a86a1d725d6e2c3ad83301f3f34",
+      "commit": "0af9729d0c143a86a1d725d6e2c3ad83301f3f34",
+      "tag": "r180",
+      "preferredSource": [
+        "src"
+      ],
+      "buildSources": [
+        "utils/build/rollup.config.js",
+        "package.json"
+      ]
+    },
+    {
+      "packages": {
+        "lucide-react": "0.468.0"
+      },
+      "license": "ISC",
+      "source": "https://github.com/lucide-icons/lucide/tree/f12b0de177fbc2a6795e99be065887e72b237123",
+      "commit": "f12b0de177fbc2a6795e99be065887e72b237123",
+      "tag": "0.468.0",
+      "preferredSource": [
+        "packages/lucide-react/src",
+        "icons"
+      ],
+      "buildSources": [
+        "scripts",
+        "package.json",
+        ".github/workflows/release.yml"
+      ],
+      "versionNote": "The official tagged .github/workflows/release.yml sets the publication version before building and publishing; source package version 0.0.1 is a placeholder. Official tag/release 0.468.0 resolves to this commit."
+    },
+    {
+      "packages": {
+        "vite": "7.3.6"
+      },
+      "license": "MIT",
+      "source": "https://github.com/vitejs/vite/tree/0a7b53ba230c6e68f502a89864534c607d393ab7",
+      "commit": "0a7b53ba230c6e68f502a89864534c607d393ab7",
+      "tag": "v7.3.6",
+      "preferredSource": [
+        "packages/vite/src/node/plugins/modulePreloadPolyfill.ts",
+        "packages/vite/src/node/plugins/importAnalysisBuild.ts"
+      ],
+      "buildSources": [
+        "packages/vite/package.json",
+        "pnpm-lock.yaml"
+      ],
+      "scope": "Only the emitted preload helper is application runtime code; Vite itself is a build tool."
+    }
+  ]
+}

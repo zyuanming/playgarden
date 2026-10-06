@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: MIT
+// SPDX-License-Identifier: GPL-3.0-only
 /** Independently authored certificates for tests/E2E only; never used by runtime. */
 export const rhythmEchoSolutions: readonly (readonly number[])[] = [
   [1, 1, 1],

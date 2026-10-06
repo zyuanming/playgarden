@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: MIT
+// SPDX-License-Identifier: GPL-3.0-only
 import type { CompressionLevel, PostPacket } from "./compressionPostLogic";
 // Original public messages/dictionaries. Certificates are separate audit fixtures only.
 const level = (

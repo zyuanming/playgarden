@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: MIT
+// SPDX-License-Identifier: GPL-3.0-only
 /** Original resource-bounded Mealy machines. Outputs modify named physical locks. */
 export type LockOutput = {
   door: number;

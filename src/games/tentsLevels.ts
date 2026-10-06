@@ -1,5 +1,5 @@
 import { tentsExpansion } from "./tentsExpansion";
-/** Original MIT puzzles. Certificates are never read by solving, validation, or hints. */
+/** Original GPL-3.0-only puzzles. Certificates are never read by solving, validation, or hints. */
 export type TentsLevel = {
   id?: string;
   contentVersion?: number;

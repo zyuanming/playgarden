@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: MIT
+// SPDX-License-Identifier: GPL-3.0-only
 /** Original offline lossless packet puzzles. Token units are fictional, not byte sizes of a real protocol. */
 export type PostPacket =
   | { kind: "literal"; text: string }

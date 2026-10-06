@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: MIT
+// SPDX-License-Identifier: GPL-3.0-only
 import { useEffect, useRef, useState } from "react";
 import * as THREE from "three";
 import type { PaperBoard, PaperLevel } from "./paperFoldLogic";

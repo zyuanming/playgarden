@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: MIT
+// SPDX-License-Identifier: GPL-3.0-only
 /** A fictional integer energy puzzle, not an operating model for a real grid. */
 export type EnergyPeriod = { renewable: number; demand: number; price: number };
 export type EnergyAction = { generator: number; battery: number };

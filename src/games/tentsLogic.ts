@@ -1,4 +1,4 @@
-/** Original MIT Tents rules. A bijection is required; extra tree adjacency is allowed. */
+/** Original GPL-3.0-only Tents rules. A bijection is required; extra tree adjacency is allowed. */
 import { tentsLevels, type TentsLevel } from "./tentsLevels";
 export { tentsLevels };
 export type { TentsLevel } from "./tentsLevels";

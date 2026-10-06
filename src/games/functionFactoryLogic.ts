@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: MIT
+// SPDX-License-Identifier: GPL-3.0-only
 /** Original finite, non-recursive subroutine synthesis puzzle. Certificates are never read at runtime. */
 export type PenCommand = "F" | "L" | "R";
 export type FunctionCall = "A" | "B";

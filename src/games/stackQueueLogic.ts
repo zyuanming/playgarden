@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: MIT
+// SPDX-License-Identifier: GPL-3.0-only
 /** Original cargo-routing puzzles with distinct LIFO and FIFO storage. */
 export type CargoMove =
   | "input-stack"

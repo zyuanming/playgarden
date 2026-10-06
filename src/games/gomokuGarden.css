@@ -432,28 +432,6 @@
   line-height: 1.8;
   min-height: 46px;
 }
-.game-mode-picker {
-  display: flex;
-  gap: 8px;
-  margin: 0 0 15px;
-}
-.game-mode-picker button {
-  min-height: 44px;
-  padding: 9px 17px;
-  border: 1px solid #d9e3d4;
-  border-radius: 12px;
-  background: #f7f8f2;
-  color: #47623d;
-}
-.game-mode-picker button[aria-pressed="true"] {
-  background: #466c50;
-  color: white;
-  border-color: #466c50;
-}
-.game-mode-picker button:focus-visible {
-  outline: 3px solid #95b885;
-  outline-offset: 3px;
-}
 @media (max-width: 760px) {
   .gomoku-layout {
     grid-template-columns: 1fr;

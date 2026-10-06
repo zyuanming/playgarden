@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: MIT
+// SPDX-License-Identifier: GPL-3.0-only
 /** Original staged compare-exchange puzzles; every edge travels forward in time. */
 export type SortingPair = readonly [number, number];
 export type SortingGates = (SortingPair | null)[][];

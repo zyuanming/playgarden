@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: MIT
+// SPDX-License-Identifier: GPL-3.0-only
 import type { PipeLevel } from "./pipeCapacityLogic";
 // Public goals and capacities are authored independently; certificates are test witnesses only.
 export const pipeCapacityLevels: PipeLevel[] = [

@@ -1,3 +1,7 @@
+/* Playgarden modifications: Copyright (c) 2026 YuanMing.
+ * Modified 2026-10-06; project contributions are GPL-3.0-only.
+ * Upstream portions keep the original license and copyrights below.
+ */
 /* Adapted from Simon Tatham's slant.c: slant_generate and new_game_desc.
  * Snapshot a7c7826bce5cbb9b9c337c11b9b7f8b278e76fba, lines 1001–1232.
  * Copyright (c) 2004–2024 Simon Tatham and contributors. MIT; full notice in

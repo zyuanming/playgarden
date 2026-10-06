@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: MIT
+// SPDX-License-Identifier: GPL-3.0-only
 export type IceDirection = "N" | "E" | "S" | "W";
 export type IcePositions = readonly [number, number, number];
 export type IceMove = { puck: number; direction: IceDirection };

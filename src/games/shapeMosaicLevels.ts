@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: MIT
+// SPDX-License-Identifier: GPL-3.0-only
 // Original hand-drawn letter tilings, stored as region + scrambled piece inventory.
 // The certificate is one valid tiling, not the acceptance criterion.
 import type { MosaicLevel } from "./shapeMosaicLogic";

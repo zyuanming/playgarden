@@ -1,0 +1,19 @@
+Playgarden complete corresponding source
+
+Project license: GPL-3.0-only. Full text: playgarden-COPYING.txt
+Third-party notices and license texts: THIRD_PARTY_NOTICES.txt
+
+The exact build revision is the playgarden-commit meta element in index.html.
+The visible source link in the website points directly to:
+https://github.com/zyuanming/playgarden/tree/REVISION
+Replace REVISION with that exact 40-character value, not a later main revision.
+Use GitHub's Code / Download ZIP or check out that commit with Git.
+
+The tree includes editable source, original puzzle data, generators, scripts,
+public resources, package-lock and build/test/deployment configuration.
+With Node 24: npm ci; npm run typecheck; npm test;
+npm run build -- --base=/playgarden/
+See README.md and docs/licensing.md in that exact tree for details.
+Previously published MIT releases retain their earlier rights.
+Third-party MIT/BSD/ISC notices remain their own; this is not a blanket
+relicensing of upstream authors' contributions.

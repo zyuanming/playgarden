@@ -1,4 +1,4 @@
-/** Original MIT implementation of standard Kakuro rules. */
+/** Original GPL-3.0-only implementation of standard Kakuro rules. */
 import {
   arithmeticHint,
   searchArithmetic,

@@ -123,7 +123,7 @@
       "source": "https://github.com/Hextris/hextris",
       "license": "GPL-3.0-or-later",
       "licenseEvidence": "https://github.com/Hextris/hextris/blob/gh-pages/LICENSE.md",
-      "fit": "Optional study of rotational matching; avoid for the current MIT-oriented MVP.",
+      "fit": "Optional study of rotational matching; requires explicit license compatibility, asset and source-distribution review before integration.",
       "mobile": "Canvas/mobile design exists, but legacy viewport disables zoom.",
       "maintenance": "README says project is not actively maintained.",
       "assets": "Vendor libraries, Font Awesome, Exo font, icons and social/store branding require independent review.",

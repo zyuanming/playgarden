@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: MIT
+// SPDX-License-Identifier: GPL-3.0-only
 /** Exact rational bag events; exhaustive integer composition, no luck-based judging. */
 export type BagCounts = [number, number, number];
 export type Rational = readonly [number, number];

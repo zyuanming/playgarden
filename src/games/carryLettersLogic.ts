@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: MIT
+// SPDX-License-Identifier: GPL-3.0-only
 /** Original letter-addition rules. Certificates are never inputs to play or search. */
 export type CarryMapping = Record<string, number | null>;
 export type CarryProblem = {

@@ -1,0 +1,10 @@
+{
+  "README.md": "a5a5935e982d3301ea14fa226599d1f09fd61c68a55cd455e59e4b890f2f4186",
+  "fen-invalid.json": "4c1f1fe65a8415bb7e854f2f813ddaa1e3bbef08c4dc55a1c048bdd8019351c6",
+  "golden.json": "98b66b8a43eef4b0d7deb8dee982c6155955c381f93867022b9a156d64d62b82",
+  "opening-perft.json": "2433cb448cc3a591d2c8729a1bdccebdb8521290d9c205733d3b9c3e7bb39747",
+  "oracle.py": "6ad25593ce6b4e125c42c066a022d367982ff8cc392888472f5f260bff1ebcfb",
+  "test_oracle.py": "17bb3ad34e15dda23d9c7606cd37be3a13336e927e2a0e9a064c17a8313dc8ab",
+  "verify-runtime.mjs": "6453977706a8eb7126f3b3d593bd6e86f14ecfc3f72dee198f48f343f211b8d8",
+  "verify_campaign.py": "2d240c6c26822735d0c75c2b1e36d549d60362c6caad01404fb895455220d58c"
+}

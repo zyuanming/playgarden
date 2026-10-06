@@ -1,4 +1,4 @@
-/** Original MIT Hitori: duplicate elimination, separated shade, connected white cells. */
+/** Original GPL-3.0-only Hitori: duplicate elimination, separated shade, connected white cells. */
 import { hitoriLevels, type HitoriLevel } from "./hitoriLevels";
 import {
   createIslandState,

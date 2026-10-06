@@ -1,8 +1,8 @@
 # 码符侦探与储能调度
 
-SPDX-License-Identifier: MIT
+SPDX-License-Identifier: GPL-3.0-only
 
-本次模块的 TypeScript、DOM/SVG 插图与关卡均为原创，沿用仓库 MIT 许可证；不含外部图片、音频、字体、角色或运行时网络访问。
+本次模块的 TypeScript、DOM/SVG 插图与关卡均为原创，沿用仓库 GPL-3.0-only 许可证；不含外部图片、音频、字体、角色或运行时网络访问。
 
 ## 接入入口
 

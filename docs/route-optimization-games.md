@@ -1,6 +1,6 @@
 # Route optimization games: original design and validation
 
-Two original MIT-licensed Playgarden games, authored for this repository. All rules code, level graphs, cost assignments, text, SVG road maps, and CSS are new. No external game source, photographs, sprites, copied puzzle data, or third-party assets are used.
+Two original GPL-3.0-only-licensed Playgarden games, authored for this repository. All rules code, level graphs, cost assignments, text, SVG road maps, and CSS are new. No external game source, photographs, sprites, copied puzzle data, or third-party assets are used.
 
 ## Integration contract
 

@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: MIT
+// SPDX-License-Identifier: GPL-3.0-only
 import type { CodeLevel } from "./codeCluesLogic";
 /** Authored public clues and learning certificates; no randomness or imported art. */
 export const codeCluesLevels: CodeLevel[] = [

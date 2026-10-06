@@ -1,3 +1,4 @@
+import { LicenseLinks } from "./components/LicenseLinks";
 import { useState, useEffect } from "react";
 import {
   Search,
@@ -317,6 +318,7 @@ export default function App() {
               </button>
             </div>
           )}
+          <LicenseLinks />
           <footer>
             <span />
             <a

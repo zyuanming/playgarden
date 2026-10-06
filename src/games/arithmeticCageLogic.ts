@@ -1,4 +1,4 @@
-/** Original MIT arithmetic-cage Latin puzzle. Subtraction/division are unordered two-cell operations. */
+/** Original GPL-3.0-only arithmetic-cage Latin puzzle. Subtraction/division are unordered two-cell operations. */
 import {
   arithmeticHint,
   arithmeticPermutations,

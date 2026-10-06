@@ -1,6 +1,6 @@
 # 条件分拣 / 状态机门锁
 
-Original MIT games, levels, procedural SVG graphics and Chinese instructional copy. No third-party assets, packages, network services or randomness. Both components use the existing `GameProps`; catalog, shell, artwork and browser integration belong to the integration owner.
+Original GPL-3.0-only games, levels, procedural SVG graphics and Chinese instructional copy. No third-party assets, packages, network services or randomness. Both components use the existing `GameProps`; catalog, shell, artwork and browser integration belong to the integration owner.
 
 ## Integration
 

@@ -1,4 +1,4 @@
-/** Original MIT Shikaku rules. Search and hints depend only on public clues and current rectangles. */
+/** Original GPL-3.0-only Shikaku rules. Search and hints depend only on public clues and current rectangles. */
 import {
   shikakuLevels,
   type ShikakuLevel,

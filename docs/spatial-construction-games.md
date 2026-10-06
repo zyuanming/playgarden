@@ -1,6 +1,6 @@
 # Spatial construction modules
 
-Original Playgarden source and authored levels, distributed under the repository's MIT license. No external assets, models, puzzle packs, or copied game code.
+Original Playgarden source and authored levels, distributed under the repository's GPL-3.0-only license. No external assets, models, puzzle packs, or copied game code.
 
 ## Integration
 

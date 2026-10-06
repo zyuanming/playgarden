@@ -1,0 +1,178 @@
+[
+  {
+    "id": "rook-road",
+    "title": "车走直线",
+    "chapter": 1,
+    "fen": "4k4/9/9/p8/9/4P4/9/9/9/R3K4 r - - 0 1",
+    "objective": "capture",
+    "goal": "用红车吃掉 a6 的黑卒。",
+    "hint": "车沿横线或竖线走，中间不能越过棋子。",
+    "target": "a6",
+    "piece": "r",
+    "solutions": [
+      "a0a6"
+    ]
+  },
+  {
+    "id": "cannon-screen",
+    "title": "隔一子，炮才响",
+    "chapter": 1,
+    "fen": "4k4/9/9/1n7/9/4P4/1N7/1C7/9/4K4 r - - 0 1",
+    "objective": "capture",
+    "goal": "用红炮吃掉 b6 的黑马。",
+    "hint": "炮吃子时，炮与目标之间必须恰好有一枚棋子。",
+    "target": "b6",
+    "piece": "c",
+    "solutions": [
+      "b2b6"
+    ]
+  },
+  {
+    "id": "horse-leg",
+    "title": "马腿在哪一边",
+    "chapter": 1,
+    "fen": "4k4/9/9/9/4P4/2P1r4/2N6/9/9/4K4 r - - 0 1",
+    "objective": "capture",
+    "goal": "用红马吃掉 e4 的黑车，解除将军。",
+    "hint": "走“日”字。先直走一格的位置是马腿；右侧没有挡子。",
+    "target": "e4",
+    "piece": "n",
+    "solutions": [
+      "c3e4"
+    ]
+  },
+  {
+    "id": "elephant-eye",
+    "title": "相看好自己的半场",
+    "chapter": 1,
+    "fen": "4k4/9/9/9/9/4P4/9/4n4/9/2B1K4 r - - 0 1",
+    "objective": "capture",
+    "goal": "用红相吃掉 e2 的黑马。",
+    "hint": "相走“田”字，中心不能有棋子，也不能越过河界。",
+    "target": "e2",
+    "piece": "b",
+    "solutions": [
+      "c0e2"
+    ]
+  },
+  {
+    "id": "advisor-palace",
+    "title": "仕守九宫",
+    "chapter": 1,
+    "fen": "4k4/9/9/9/9/4P4/9/9/4r4/3AK4 r - - 0 1",
+    "objective": "capture",
+    "goal": "用红仕吃掉 e1 的黑车。",
+    "hint": "仕沿九宫斜线走一格。这里可以吃子解将。",
+    "target": "e1",
+    "piece": "a",
+    "solutions": [
+      "d0e1"
+    ]
+  },
+  {
+    "id": "pawn-river",
+    "title": "过河兵，向旁边走",
+    "chapter": 1,
+    "fen": "4k4/9/9/9/2Pn5/4P4/9/9/9/4K4 r - - 0 1",
+    "objective": "capture",
+    "goal": "用 c5 的红兵吃掉 d5 的黑马。",
+    "hint": "兵过河后可以横走一格；任何时候都不能后退。",
+    "target": "d5",
+    "piece": "p",
+    "solutions": [
+      "c5d5"
+    ]
+  },
+  {
+    "id": "evade-rook",
+    "title": "被车将军了",
+    "chapter": 2,
+    "fen": "4k4/9/9/9/9/4r4/9/9/9/3AK4 r - - 0 1",
+    "objective": "evade",
+    "goal": "走一手合法棋，化解黑车的将军。",
+    "hint": "可以用仕挡住车路，也可以让帅离开攻击线。",
+    "solutions": [
+      "d0e1",
+      "e0f0"
+    ]
+  },
+  {
+    "id": "evade-cannon",
+    "title": "让炮架失效",
+    "chapter": 2,
+    "fen": "4k4/9/9/4c4/9/9/4P4/9/9/2B1K4 r - - 0 1",
+    "objective": "evade",
+    "goal": "走一手合法棋，化解黑炮的将军。",
+    "hint": "多挡一枚棋子，炮就有两个炮架；也可以移动帅。",
+    "solutions": [
+      "c0e2",
+      "e0d0",
+      "e0f0"
+    ]
+  },
+  {
+    "id": "evade-horse",
+    "title": "躲开马的攻击",
+    "chapter": 2,
+    "fen": "4k4/9/9/9/9/4P4/9/9/2n6/2R1K4 r - - 0 1",
+    "objective": "evade",
+    "goal": "走一手合法棋，解除黑马的将军。",
+    "hint": "先找可以吃掉黑马的棋子，再看看帅的安全落点。",
+    "solutions": [
+      "c0c1",
+      "e0d0",
+      "e0e1",
+      "e0f0"
+    ]
+  },
+  {
+    "id": "mate-rooks",
+    "title": "双车织网",
+    "chapter": 3,
+    "fen": "4k4/3R1R3/9/9/9/9/9/9/9/3K5 r - - 0 1",
+    "objective": "mate",
+    "goal": "红方一步将死：将军，同时封住所有应手。",
+    "hint": "一辆车负责将军，另一辆车守住退路；帅也能隔空保护同一路。",
+    "solutions": [
+      "d8d9",
+      "d8e8"
+    ]
+  },
+  {
+    "id": "mate-cannon",
+    "title": "炮与马配合",
+    "chapter": 3,
+    "fen": "4ka3/3RN4/C8/9/9/9/9/9/9/3K5 r - - 0 1",
+    "objective": "mate",
+    "goal": "红方一步将死，让炮找到合适的炮架。",
+    "hint": "让炮来到 e7，借红马做炮架。红车守住将的退路。",
+    "solutions": [
+      "a7e7"
+    ]
+  },
+  {
+    "id": "mate-horse",
+    "title": "卧槽马",
+    "chapter": 3,
+    "fen": "4ka3/3R5/9/7N1/9/4P4/9/9/9/4K4 r - - 0 1",
+    "objective": "mate",
+    "goal": "红方一步将死，让马跃入黑方九宫旁。",
+    "hint": "马到 g8 会攻击 e9；红车已经封住下方的路。",
+    "solutions": [
+      "h6f7",
+      "h6g8"
+    ]
+  },
+  {
+    "id": "stalemate-net",
+    "title": "没被将军，也会输",
+    "chapter": 3,
+    "fen": "3aka3/9/3RC4/4P4/9/9/9/9/9/4K4 r - - 0 1",
+    "objective": "stalemate",
+    "goal": "走一手造成困毙：黑方没有被将军，却无合法棋可走。",
+    "hint": "把红车移到 d8。检查黑将和两个士，是否都无处可去。",
+    "solutions": [
+      "d7d8"
+    ]
+  }
+]

@@ -1,6 +1,6 @@
 # 预算小镇 / BudgetTown
 
-Original MIT game, handcrafted maps, Chinese teaching copy, and procedural SVG town art. No new dependencies, external assets, network calls, demographic scoring, randomness, or real-money advice.
+Original GPL-3.0-only game, handcrafted maps, Chinese teaching copy, and procedural SVG town art. No new dependencies, external assets, network calls, demographic scoring, randomness, or real-money advice.
 
 ## Integration
 

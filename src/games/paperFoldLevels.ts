@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: MIT
+// SPDX-License-Identifier: GPL-3.0-only
 import type { PaperLevel } from "./paperFoldLogic";
 /** Authored public targets are literals, never reconstructed from certificates. */
 export const paperFoldLevels: readonly PaperLevel[] = [

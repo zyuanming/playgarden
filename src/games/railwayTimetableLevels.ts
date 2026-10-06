@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: MIT
+// SPDX-License-Identifier: GPL-3.0-only
 import type { RailLevel } from "./railwayTimetableLogic";
 // Authored directed tracks and targets; certificates are offline test witnesses, never runtime rules.
 export const railwayTimetableLevels: RailLevel[] = [

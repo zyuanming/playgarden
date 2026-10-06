@@ -1,4 +1,4 @@
-/** Original Playgarden weighted graphs, integer costs, and MST engine. MIT licensed. */
+/** Original Playgarden weighted graphs, integer costs, and MST engine. GPL-3.0-only licensed. */
 export type NetworkStation = { label: string; x: number; y: number };
 export type NetworkEdge = { a: number; b: number; cost: number };
 export type MinimumNetworkLevel = {

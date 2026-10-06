@@ -1,3 +1,7 @@
+/* Playgarden modifications: Copyright (c) 2026 YuanMing.
+ * Modified 2026-10-06; project contributions are GPL-3.0-only.
+ * Upstream portions keep the original license and copyrights below.
+ */
 /**
  * Bounded freestyle Gomoku AI, adapted from tombelieber/gomoku board.rs/ai.rs
  * commit 0d8f81e687a04c729b1dfe5b0ce028295528cc17.

@@ -1,6 +1,6 @@
 # IceStops and FleetLogic
 
-Original Playgarden modules and fixtures, MIT licensed. No imported game code, graphics, assets, network service, or package additions. Registry/catalog integration is intentionally outside this module contribution.
+Original Playgarden modules and fixtures, GPL-3.0-only licensed. No imported game code, graphics, assets, network service, or package additions. Registry/catalog integration is intentionally outside this module contribution.
 
 ## Integration
 

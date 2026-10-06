@@ -84,6 +84,7 @@ export const GAME_IDS = [
   "pancake",
   "blackbox",
   "gomoku",
+  "xiangqi",
 ] as const;
 export type GameId = (typeof GAME_IDS)[number];
 export type Category =
@@ -108,11 +109,12 @@ export type GameMeta = {
   artwork: { url: string; position: string; size: string };
   resumeKey?: string;
   freePlay?: boolean;
+  freePlayCaption?: string;
   source:
-    | { kind: "original"; license: "MIT"; notes: string }
+    | { kind: "original"; license: "GPL-3.0-only"; notes: string }
     | {
         kind: "adapted";
-        license: "MIT";
+        license: "MIT" | "BSD-2-Clause";
         notes: string;
         author: string;
         workTitle?: string;

@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: MIT
+// SPDX-License-Identifier: GPL-3.0-only
 // Original equations, literal clues and separately stored verification certificates.
 import type { CarryLevel } from "./carryLettersLogic";
 export const carryLettersLevels: CarryLevel[] = [

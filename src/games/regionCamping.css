@@ -1,4 +1,4 @@
-/* Original MIT, scoped to the two region/camping modules. */
+/* Original GPL-3.0-only, scoped to the two region/camping modules. */
 .rc-layout {
   display: grid;
   grid-template-columns: minmax(0, 1.3fr) minmax(230px, 0.8fr);

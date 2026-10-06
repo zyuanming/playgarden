@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: MIT
+// SPDX-License-Identifier: GPL-3.0-only
 export type SearchTree = {
   key: number;
   left: SearchTree | null;

@@ -1,4 +1,4 @@
-/** Original MIT-licensed fraction planning puzzles. All quantities are exact integer tiles. */
+/** Original GPL-3.0-only-licensed fraction planning puzzles. All quantities are exact integer tiles. */
 export type FractionPiece = { id: string; units: number };
 export type FractionMove =
   | { kind: "join"; first: string; second: string }

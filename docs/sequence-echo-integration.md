@@ -1,6 +1,6 @@
 # Sequence & Echo integration notes
 
-Original MIT games with locally authored levels and CSS visuals. Both use the existing game-shell contract and require no external assets, audio, or extra dependencies.
+Original GPL-3.0-only games with locally authored levels and CSS visuals. Both use the existing game-shell contract and require no external assets, audio, or extra dependencies.
 
 ## Entry points
 

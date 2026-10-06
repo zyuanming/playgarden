@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 440" role="img" aria-label="河畔木棋盘上的红帅与黑马">
+<defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#eef2df"/><stop offset="1" stop-color="#d8e7cc"/></linearGradient><linearGradient id="wood" x2="0" y2="1"><stop stop-color="#f7e5bb"/><stop offset="1" stop-color="#e5c890"/></linearGradient><radialGradient id="piece" cx=".3" cy=".2"><stop stop-color="#fff9e7"/><stop offset="1" stop-color="#f3dfb1"/></radialGradient></defs>
+<rect width="720" height="440" fill="url(#bg)"/><circle cx="625" cy="50" r="135" fill="#c2d8b9" opacity=".5"/><circle cx="80" cy="408" r="105" fill="#c2d8b9" opacity=".5"/>
+<g transform="translate(125 55) rotate(-7 240 170)"><rect x="0" y="8" width="490" height="330" rx="24" fill="#719164" opacity=".16"/><rect width="490" height="320" rx="21" fill="url(#wood)" stroke="#bf9f68" stroke-width="2"/>
+<g stroke="#b39a68" stroke-width="1.5" opacity=".7"><path d="M30 40H460M30 95H460M30 150H460M30 205H460M30 260H460M30 40V260M102 40V260M174 40V260M246 40V260M318 40V260M390 40V260M460 40V260"/><path d="M174 40L318 150M318 40L174 150"/></g>
+<rect x="30" y="164" width="430" height="36" fill="#ead29e"/><text x="245" y="188" text-anchor="middle" font-family="serif" font-size="19" letter-spacing="23" fill="#957c50">楚河漢界</text>
+<g transform="translate(181 100)"><ellipse cy="8" rx="53" ry="52" fill="#8d714a" opacity=".22"/><circle r="52" fill="url(#piece)" stroke="#b9975e" stroke-width="2"/><circle r="43" fill="none" stroke="#a33127" stroke-width="2.5"/><text y="19" text-anchor="middle" font-size="57" font-family="serif" font-weight="bold" fill="#a33127">帥</text></g>
+<g transform="translate(320 241)"><ellipse cy="8" rx="50" ry="49" fill="#8d714a" opacity=".2"/><circle r="50" fill="url(#piece)" stroke="#b9975e" stroke-width="2"/><circle r="41" fill="none" stroke="#2d463a" stroke-width="2.5"/><text y="18" text-anchor="middle" font-size="53" font-family="serif" font-weight="bold" fill="#2d463a">馬</text></g></g>
+<path d="M59 108Q86 75 119 101Q95 125 59 108M632 335Q657 296 680 316Q674 349 632 335" fill="#84aa75"/>
+</svg>

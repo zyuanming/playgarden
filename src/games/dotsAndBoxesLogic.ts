@@ -1,4 +1,4 @@
-/** Original MIT implementation of Dots and Boxes. No external code or assets. */
+/** Original GPL-3.0-only implementation of Dots and Boxes. No external code or assets. */
 export type DotsPlayer = 1 | 2;
 export type DotsPiece = 0 | DotsPlayer;
 export type DotsBoard = {

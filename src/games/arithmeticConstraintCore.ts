@@ -1,4 +1,4 @@
-/** Original MIT finite-domain arithmetic infrastructure. No stored answers enter search. */
+/** Original GPL-3.0-only finite-domain arithmetic infrastructure. No stored answers enter search. */
 export type ArithmeticTable = {
   cells: number[];
   tuples: number[][];

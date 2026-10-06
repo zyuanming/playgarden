@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: MIT
+// SPDX-License-Identifier: GPL-3.0-only
 /** Ideal three-channel light. This deliberately does not model real spectra or pigments. */
 export type Fraction = readonly [number, number];
 export type RGB = readonly [Fraction, Fraction, Fraction];

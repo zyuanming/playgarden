@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: MIT
+// SPDX-License-Identifier: GPL-3.0-only
 /** Original first-match decision-list puzzles; the entire finite domain is tested. */
 export type ParcelShape = "circle" | "square" | "triangle";
 export type ParcelMaterial = "wood" | "glass" | "metal";

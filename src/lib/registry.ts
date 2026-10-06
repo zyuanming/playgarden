@@ -29,7 +29,7 @@ export type GameDefinition = GameMeta & {
 };
 const original = {
   kind: "original",
-  license: "MIT",
+  license: "GPL-3.0-only",
   notes: "原创规则实现、关卡和程序化图形；未复制第三方游戏源码。",
 } as const;
 export const games: GameDefinition[] = [
@@ -1051,6 +1051,7 @@ export const games: GameDefinition[] = [
     tone: "green",
     levelCount: 24,
     freePlay: true,
+    freePlayCaption: "15 × 15 · 完整对局",
     resumeKey: "playgarden.gomoku.v1",
     artwork: { url: "./gomoku-art.svg", position: "50% 50%", size: "cover" },
     source: {
@@ -1061,6 +1062,27 @@ export const games: GameDefinition[] = [
       notes: "规则、估值与搜索内核由固定 Rust 源码改编为 TypeScript；本项目重写界面、教学题库、存档和可取消的离线陪练。",
     },
     component: lazy(() => import("../games/GomokuGarden")),
+  },
+  {
+    id: "xiangqi",
+    title: "中国象棋",
+    subtitle: "隔河对弈，走一步好棋。完整休闲对局与 13 道教学练习。",
+    category: "逻辑思维",
+    difficulty: "中级",
+    tone: "green",
+    levelCount: 13,
+    freePlay: true,
+    freePlayCaption: "9 路 × 10 行 · 休闲对局",
+    resumeKey: "playgarden.xiangqi.v1",
+    artwork: { url: "./xiangqi-art.svg", position: "50% 50%", size: "cover" },
+    source: {
+      kind: "adapted", license: "BSD-2-Clause", author: "lengyanyu258 / Jeff Hlywa", workTitle: "xiangqi.js",
+      url: "https://github.com/lengyanyu258/xiangqi.js/tree/f9019ac2303d4b80ef0b82fd0515bfb55a80a62b",
+      commit: "f9019ac2303d4b80ef0b82fd0515bfb55a80a62b",
+      notice: "./xiangqi-LICENSE.txt",
+      notes: "实际复用并修补 BSD-2-Clause 规则源码；原创界面、题库与离线入门搜索。重复三次/120 手无吃子按休闲约定和棋，不含完整比赛长将长捉裁决。",
+    },
+    component: lazy(() => import("../games/XiangqiGarden")),
   },
 ];
 export const findGame = (id: string) => games.find((game) => game.id === id);

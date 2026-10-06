@@ -1,4 +1,4 @@
-/** Original MIT puzzle infrastructure. All searches use public constraints, never certificates. */
+/** Original GPL-3.0-only puzzle infrastructure. All searches use public constraints, never certificates. */
 export type NetworkSearch = {
   solutions: number[][];
   nodes: number;

@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: MIT
+// SPDX-License-Identifier: GPL-3.0-only
 import { useEffect, useLayoutEffect, useRef, type RefObject } from "react";
 /** Yield to the event loop between bounded generator batches. Aborting clears queued work. */
 export function runLabSearch<T>(

@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: MIT
+// SPDX-License-Identifier: GPL-3.0-only
 /** Original balanced binary-grid implementation; literal clues are the complete problem. */
 export type BinaryCell = 0 | 1 | 2;
 export type BinaryProblem = { size: number; givens: BinaryCell[] };

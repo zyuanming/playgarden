@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: MIT
+// SPDX-License-Identifier: GPL-3.0-only
 import { useEffect, useRef, useState, type RefObject } from "react";
 import type { GameProps } from "../lib/types";
 import {

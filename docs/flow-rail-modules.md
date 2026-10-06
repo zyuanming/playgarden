@@ -1,6 +1,6 @@
 # Pipe Capacity and Railway Timetable
 
-Two original MIT-licensed, dependency-free React game modules, each with twelve authored levels. Procedural SVG graphics are original and use no upstream artwork or puzzle datasets. Both use the existing `GameProps` shell interface and reset through the level/reset-token key.
+Two original GPL-3.0-only-licensed, dependency-free React game modules, each with twelve authored levels. Procedural SVG graphics are original and use no upstream artwork or puzzle datasets. Both use the existing `GameProps` shell interface and reset through the level/reset-token key.
 
 ## Pipe Capacity / 管道配流
 

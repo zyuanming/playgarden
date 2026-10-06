@@ -1,4 +1,4 @@
-/** Original Playgarden levels and exact integer geometry. MIT licensed. */
+/** Original Playgarden levels and exact integer geometry. GPL-3.0-only licensed. */
 export type GardenEdge = readonly [number, number];
 export type GardenPoint = { x: number; y: number };
 export type UntangleLevel = {

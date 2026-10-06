@@ -1,4 +1,4 @@
-/** Original MIT boards. Sums follow row-major starts, across before down. */
+/** Original GPL-3.0-only boards. Sums follow row-major starts, across before down. */
 export type KakuroLevel = {
   title: string;
   lesson: string;

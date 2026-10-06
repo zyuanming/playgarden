@@ -1,4 +1,4 @@
-"""Original MIT Tents campaign authoring v1. Deterministic, offline, Tents-only.
+"""Original GPL-3.0-only Tents campaign authoring v1. Deterministic, offline, Tents-only.
 Run from any directory: python3 scripts/tents/generate.py [--check]
 Only static clues, certificates, and provenance are shipped. The public-clue trace
 uses elementary count/spacing/tree deductions; it never reads a solution.

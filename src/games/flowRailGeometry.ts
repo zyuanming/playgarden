@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: MIT
+// SPDX-License-Identifier: GPL-3.0-only
 /** Presentation-only badge placement. No puzzle rules, targets or witnesses. */
 export type RoutePoint = { x: number; y: number };
 export type RouteBadge = RoutePoint & { anchor: RoutePoint; detached: boolean };

@@ -1,0 +1,44 @@
+[
+  {
+    "url": "https://www.wxf-xiangqi.org/images/wxf-rules/2018_World_XiangQi_Rules_English2018.pdf",
+    "title": "World Xiangqi Rules 2018",
+    "publisher": "World Xiangqi Federation",
+    "accessed": "2026-10-06",
+    "pdfSha256": "2b45534953bbfcca42dc2c52e06be48ff44ebe3bf7237248b12e39576c494cf3",
+    "verifiedPages": "Printed pages 3–8, PDF pages 11–16 (1-based), visually rendered and OCR cross-read",
+    "sections": [
+      "2.1–2.7 piece movement",
+      "2.8 no general capture",
+      "2.9 facing generals",
+      "2.10 check response",
+      "2.11 stalemate",
+      "3.1.A.I–II checkmate/stalemate loss",
+      "3.1.C/H/I repetition responsibility",
+      "3.2.B–D four occurrences when neither side infringes; 50 full moves without capture"
+    ],
+    "note": "Ordinary rules reference. The product threefold/120-plies draw policy intentionally differs."
+  },
+  {
+    "url": "https://www.wxf-xiangqi.org/images/xiangqi-intro/xiangqi-introduction-for-wxf.pdf",
+    "title": "A Short Introduction to Xiangqi",
+    "publisher": "World Xiangqi Federation",
+    "accessed": "2026-10-06",
+    "verifiedPages": "PDF pages 6–14 (1-based)",
+    "note": "Cross-check of piece movement, blocks, river/palace, check and stalemate. For no-general-capture use formal Article 2.8, not the simplified introduction wording."
+  },
+  {
+    "url": "https://www.eglebbk.dds.nl/program/chess-perft.html",
+    "title": "Chess variants perft results",
+    "publisher": "Evert Glebbeek, Sjaak engine author",
+    "accessed": "2026-10-06",
+    "note": "Primary engine-author published start-position counts. Direct open timed out; full indexed page read through web search. Xiangqi depths 1–3: 44,1920,79666."
+  },
+  {
+    "url": "https://github.com/lengyanyu258/xiangqi.js/blob/f9019ac2303d4b80ef0b82fd0515bfb55a80a62b/xiangqi.js",
+    "title": "Fixed upstream Xiangqi source",
+    "commit": "f9019ac2303d4b80ef0b82fd0515bfb55a80a62b",
+    "sha256": "f2de592d3a81cf79cd36f0d09e6efbb4bdb357082c2d421bf76d2d8eb7c619fe",
+    "license": "BSD-2-Clause",
+    "note": "Read from the supplied source-evidence.json. No downloaded upstream code was executed."
+  }
+]

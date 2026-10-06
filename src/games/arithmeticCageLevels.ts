@@ -1,4 +1,4 @@
-/** Original MIT connected cage boards; no imported puzzle collection. */
+/** Original GPL-3.0-only connected cage boards; no imported puzzle collection. */
 export type ArithmeticCage = {
   cells: number[];
   op: "=" | "+" | "−" | "×" | "÷";

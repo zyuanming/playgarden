@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: MIT
+// SPDX-License-Identifier: GPL-3.0-only
 import { useEffect, useMemo, useRef, useState } from "react";
 import type { GameProps } from "../lib/types";
 import { pipeCapacityLevels } from "./pipeCapacityLevels";
