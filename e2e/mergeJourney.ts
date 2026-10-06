@@ -28,4 +28,6 @@ export async function verifyMergeMotion(page:Page,info:TestInfo,prefix='merge'){
  await page.evaluate(()=>document.querySelectorAll('.merge-classic *').forEach(n=>n.getAnimations().forEach(a=>a.finish())));
  await settleMerge(page);await expect(page.locator('[data-merge-score]')).toHaveText('4');await mergeLayout(page);
  await page.screenshot({path:info.outputPath(`${prefix}-settled.png`),animations:'disabled',fullPage:true});
+ // Restore real time before navigation: a frozen clock also freezes React lazy/Suspense work after reload.
+ await page.clock.resume();
 }
