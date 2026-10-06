@@ -138,9 +138,17 @@ test("Xiangqi complete local play, keyboard, flip, zoom, pauses, saved history a
   isMobile,
 }, info) => {
   await open(page);
-  await expect(
-    page.getByText("9 路 × 10 行 · 休闲对局", { exact: true }),
-  ).toBeVisible();
+  const caption = page.getByText("9 路 × 10 行 · 休闲对局", { exact: true });
+  await expect(caption).toHaveText("9 路 × 10 行 · 休闲对局");
+  // Existing narrow-screen shell design hides the secondary toolbar caption.
+  // Verify that design explicitly, while the actual board and rule explanation remain visible.
+  if (isMobile) await expect(caption).toBeHidden();
+  else await expect(caption).toBeVisible();
+  await expect(page.getByRole("grid")).toHaveAttribute("aria-colcount", "9");
+  await expect(page.getByRole("grid")).toHaveAttribute("aria-rowcount", "10");
+  await expect(page.getByRole("grid").getByRole("row")).toHaveCount(10);
+  await expect(page.getByRole("grid").getByRole("gridcell")).toHaveCount(90);
+  await expect(page.getByText("休闲对弈规则", { exact: true })).toBeVisible();
   await expect(
     page.getByText("15 × 15 · 完整对局", { exact: true }),
   ).toHaveCount(0);
