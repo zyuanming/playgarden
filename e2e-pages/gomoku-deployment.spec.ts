@@ -7,10 +7,30 @@ async function enter(page: Page) {
     .click();
   await expect(page.getByRole("grid")).toBeVisible();
 }
-async function play(page: Page, i: number) {
+async function play(page: Page, i: number, screenshot?: string) {
   await page.locator(`[data-gomoku-point="${i}"]`).click();
-  await page.getByRole("button", { name: /^确认落子/ }).click();
+  const confirm = page.getByRole("button", { name: /^确认落子/ });
+  await expect(confirm).toBeEnabled();
+  const ratio = await confirm.evaluate((node) => {
+    const style = getComputedStyle(node);
+    const light = (color: string) => {
+      const values = color
+        .match(/[\d.]+/g)!
+        .slice(0, 3)
+        .map(Number)
+        .map((v) => v / 255)
+        .map((v) => (v <= 0.04045 ? v / 12.92 : ((v + 0.055) / 1.055) ** 2.4));
+      return values[0] * 0.2126 + values[1] * 0.7152 + values[2] * 0.0722;
+    };
+    const a = light(style.color),
+      b = light(style.backgroundColor);
+    return (Math.max(a, b) + 0.05) / (Math.min(a, b) + 0.05);
+  });
+  expect(ratio).toBeGreaterThanOrEqual(4.5);
+  if (screenshot) await page.screenshot({ path: screenshot, fullPage: true });
+  await confirm.click();
 }
+
 test("Gomoku published base, original artwork, license, actual worker, saved game and teaching win", async ({
   page,
   baseURL,
@@ -71,7 +91,11 @@ test("Gomoku published base, original artwork, license, actual worker, saved gam
     path: info.outputPath("gomoku-published-start.png"),
     fullPage: true,
   });
-  await play(page, 112);
+  await play(
+    page,
+    112,
+    info.outputPath("gomoku-published-selected-confirm.png"),
+  );
   await expect(root(page)).toHaveAttribute("data-gomoku-moves", "2");
   expect(workerURLs).toHaveLength(1);
   for (const url of workerURLs) {

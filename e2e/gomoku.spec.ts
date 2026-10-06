@@ -40,6 +40,31 @@ async function layout(page: Page) {
   expect(Math.abs(rect!.width - rect!.height)).toBeLessThan(2);
   await expect(page.locator(".module-error")).toHaveCount(0);
 }
+async function confirmContrast(page: Page) {
+  const button = page.getByRole("button", { name: /^确认落子/ });
+  const result = await button.evaluate((node) => {
+    const s = getComputedStyle(node);
+    const luminance = (color: string) => {
+      const rgb = color
+        .match(/[\d.]+/g)!
+        .slice(0, 3)
+        .map(Number)
+        .map((v) => v / 255)
+        .map((v) => (v <= 0.04045 ? v / 12.92 : ((v + 0.055) / 1.055) ** 2.4));
+      return rgb[0] * 0.2126 + rgb[1] * 0.7152 + rgb[2] * 0.0722;
+    };
+    const a = luminance(s.color),
+      b = luminance(s.backgroundColor);
+    return {
+      ratio: (Math.max(a, b) + 0.05) / (Math.min(a, b) + 0.05),
+      height: node.getBoundingClientRect().height,
+      width: node.getBoundingClientRect().width,
+    };
+  });
+  expect(result.ratio).toBeGreaterThanOrEqual(4.5);
+  expect(result.height).toBeGreaterThanOrEqual(44);
+  expect(result.width).toBeGreaterThanOrEqual(44);
+}
 for (let chapter = 1; chapter <= 4; chapter++)
   test(`Gomoku chapter ${chapter}: every teaching shape through real controls`, async ({
     page,
@@ -73,6 +98,21 @@ for (let chapter = 1; chapter <= 4; chapter++)
         "aria-selected",
         "true",
       );
+      if (index % 6 === 0) {
+        await confirmContrast(page);
+        const confirmation = page.getByRole("button", { name: /^确认落子/ });
+        await confirmation.hover();
+        await confirmContrast(page);
+        await point(page, p.solution).focus();
+        await page.keyboard.press("Tab");
+        await expect(confirmation).toBeFocused();
+        await confirmContrast(page);
+        await page.screenshot({
+          path: info.outputPath(`gomoku-${p.id}-preview-confirm-focus.png`),
+          fullPage: true,
+        });
+      }
+
       await activate(page.getByRole("button", { name: /^确认落子/ }), isMobile);
       if (p.objective === "two") {
         await expect(board(page)).toHaveAttribute(

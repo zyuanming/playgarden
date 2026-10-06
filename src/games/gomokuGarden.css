@@ -173,6 +173,10 @@
   bottom: 50%;
 }
 .gomoku-garden .gomoku-point:hover {
+  transform: none;
+  box-shadow: none;
+}
+.gomoku-garden .gomoku-point:hover:not([aria-disabled="true"]) {
   background: #ffffff30;
 }
 .gomoku-garden .gomoku-point:focus-visible {
@@ -347,7 +351,7 @@
   font-size: 13px;
   font-weight: 650;
 }
-.gomoku-garden .gomoku-panel button.primary {
+.gomoku-garden .gomoku-panel button.gomoku-primary {
   background: var(--gomoku-green);
   color: white;
 }

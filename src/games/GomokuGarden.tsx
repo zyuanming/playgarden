@@ -548,7 +548,7 @@ function GomokuRound({
                 : `准备在 ${pointName(selected)} 落${stoneName(position.turn)}`}
             </p>
             <button
-              className="primary"
+              className="gomoku-primary"
               disabled={locked || selected === null}
               onClick={() => {
                 const index = selectedRef.current;
@@ -666,7 +666,11 @@ function GomokuRound({
                 想法提示
               </button>
               {stage === "retry" && (
-                <button className="primary" disabled={paused} onClick={undo}>
+                <button
+                  className="gomoku-primary"
+                  disabled={paused}
+                  onClick={undo}
+                >
                   撤销，再想一手
                 </button>
               )}
