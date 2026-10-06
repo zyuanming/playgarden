@@ -49,7 +49,7 @@
 @media (max-width:900px) { .pancake-layout {grid-template-columns:minmax(0,1fr);gap:18px;} .pancake-notes {padding:8px 10px;} .pancake-notes h3 br {display:none;} .pancake-notes h3 {font-size:26px;} .pancake-goal {margin:15px auto;} }
 @media (max-width:500px) { .pancake-play {padding:15px 10px;border-radius:18px;} .pancake-heading h3 {font-size:18px;} .pancake-heading > span {font-size:11px;} .pancake-eyebrow {font-size:11px;letter-spacing:0;} .pancake-stats {gap:6px 12px;font-size:12px;} .pancake-layout .pancake-row {grid-template-columns:15px minmax(0,1fr) 53px;padding-inline:3px;gap:3px;min-height:50px;} .pancake-speckles {display:none;} .pancake-preview {padding:12px;} .pancake-preview-order {gap:3px;} .pancake-preview-order > span {font-size:17px;gap:3px;min-width:23px;} }
 @media (prefers-reduced-motion:reduce) { .pancake-layout *, .pancake-layout *::before, .pancake-layout *::after {transition:none!important;animation:none!important;} }
-/* This game's shell controls keep the same 44px touch floor as the stack. */
+/* A 48px floor leaves room above the 44px gate during fractional hover transforms. */
 .game-main[data-game="pancake"] button:not(.pancake-row),
 .game-main[data-game="pancake"] select,
-.game-main[data-game="pancake"] summary { min-height:44px; min-width:44px; }
+.game-main[data-game="pancake"] summary { min-height:48px; min-width:48px; }

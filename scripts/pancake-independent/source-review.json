@@ -5,7 +5,7 @@
     "src/games/pancakeLogic.ts": "d9a2a968a4aa815815c08eb43ef43e0d40faaa37daaa01f2d0e993d1eac39d29",
     "src/games/pancakeStorage.ts": "7ca6a504362813625ec9bb9633efb5c6b12fd36151254c5c789557477e7b025b",
     "src/games/PancakeKitchen.tsx": "4f2230d3522489a8d4a281eac0054d361fd0c3e906c4803522e35a4bb2f699b5",
-    "src/games/pancakeKitchen.css": "a098d2a0cf3522e10d47d8b5979914c90f8b04669c32e0182feafab368551948",
+    "src/games/pancakeKitchen.css": "7d4d1a5089b81a744c3704c36600a5660d7376d55fe9aa32171168b2b4c4a244",
     "src/components/GameShell.tsx": "a5c0ab99fb07dc17967b58ff20ad7944ecfe8c5403585552279c7e28497b9d64",
     "src/lib/types.ts": "ef369ad734fb7bec34db46bc7073d68ed66e84d03f95d8f9f5a6c7e5cce55420",
     "tests/pancakeLogic.test.ts": "6162cc6e54c443727fcb25c7ee9088eb03e31d7a9540131299a5315656c8e067",
@@ -52,6 +52,13 @@
       "status": "resolved_source_review_pending_final_pixels",
       "summary": "Official 997ff96 mobile completion pixels retained actionable select/flip text while the board was locked.",
       "resolution": "The current component makes only five won-dependent presentation substitutions: row text, row accessible label, final-order title, final-order image label and completed instruction. Reversing those substitutions reproduces the previous production file SHA-256; gameplay logic is unchanged. All 120 DOM campaign cases now assert completed wording and absence of actionable old labels."
+    },
+    {
+      "id": "PK-CSS-002",
+      "severity": "minor",
+      "status": "resolved_source_review_pending_ci_pixels",
+      "summary": "Official 997ff96 desktop browser shard logged Hint-button bounding height 43.99998474121094 during hover in two scenarios, just below the unchanged strict >=44px requirement.",
+      "resolution": "Only the existing game-scoped non-row control minimums changed from 44px to 48px, with an explanatory comment. Inverting those two textual changes reproduces the prior CSS SHA-256 exactly. No pancake-row sizing, other-game selector, interaction logic, test comparison or timeout changed."
     }
   ],
   "checked": [
@@ -113,7 +120,7 @@
     {
       "area": "Game-scoped touch targets",
       "result": "passed_source_review_with_browser_verification_pending",
-      "detail": "The new button:not(.pancake-row), select and summary rule is scoped to the pancake game shell. Stack rows retain their existing 52/50px minimum height. Non-row buttons receive a 44px minimum. Actual rendered sizes still require browser verification."
+      "detail": "The final button:not(.pancake-row), select and summary rule is scoped to the pancake game shell. Stack rows retain their existing desktop 52px/small-screen 50px minimum height. Non-row controls now receive 48px minimum height and width, leaving margin above the unchanged strict >=44px browser gate. Actual final-SHA rendered sizes still require browser verification."
     },
     {
       "area": "Campaign documentation math and boundaries",
