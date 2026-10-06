@@ -10,6 +10,8 @@ const certificates = JSON.parse(readFileSync('docs/pancake/campaign.json', 'utf8
 const layer = (page: Page, count: number) => page.locator(`[data-pancake-flip="${count}"]`);
 const stack = (page: Page) => page.locator('[data-pancake-slot]').evaluateAll(nodes => nodes.map(node => Number(node.getAttribute('data-size'))));
 const reversePrefix = (values: number[], count: number) => values.map((_, i) => values[i < count ? count - 1 - i : i]);
+// Shell undo tokens are applied by a React effect after the click has returned.
+const expectStack = (page: Page, expected: number[]) => expect.poll(() => stack(page)).toEqual(expected);
 const confirm = (page: Page) => page.getByRole('button', { name: /^确认翻转/ });
 const cancel = (page: Page) => page.getByRole('button', { name: '取消选择', exact: true });
 const checkpoints = new Set<number>();
@@ -35,7 +37,7 @@ async function realMove(page: Page, count: number) {
   expect(await stack(page)).toEqual(before);
   await expect(layer(page, count)).toHaveAttribute('aria-pressed', 'true');
   await expect(page.getByRole('img', { name: `翻转后从上到下：${reversePrefix(before, count).join('、')}` })).toBeVisible();
-  await confirm(page).click(); expect(await stack(page)).toEqual(reversePrefix(before, count));
+  await confirm(page).click(); await expectStack(page, reversePrefix(before, count));
 }
 async function checkControlSizes(page: Page) {
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
@@ -89,7 +91,7 @@ for (let start = 0; start < 120; start += 5) test(`Pancake genuine completion ${
         await page.screenshot({ path: info.outputPath(`pancake-${index + 1}-preview.png`), fullPage: true, animations: 'disabled' });
       }
       await confirm(page).click();
-      expect(await stack(page)).toEqual(reversePrefix(before, count));
+      await expectStack(page, reversePrefix(before, count));
       await expect(page.locator('[data-pancake-moves]')).toHaveText(String(step + 1));
     }
     expect(await stack(page)).toEqual(Array.from({ length: level.stack.length }, (_, i) => i + 1));
@@ -159,14 +161,14 @@ for (const index of [0, 59, 119]) test(`Pancake ${index + 1} genuine keyboard, m
   await cancel(page).click(); expect(await stack(page)).toEqual(original); await expect(target).toBeFocused();
   await page.keyboard.press('Space'); await expect(target).toHaveAttribute('aria-pressed', 'true');
   await page.screenshot({ path: info.outputPath(`pancake-${index + 1}-keyboard-preview.png`), fullPage: true, animations: 'disabled' });
-  await page.keyboard.press('Space'); expect(await stack(page)).toEqual(reversePrefix(original, count));
+  await page.keyboard.press('Space'); await expectStack(page, reversePrefix(original, count));
   if (proof.solution.length > 1) await expect(target).toBeFocused();
   for (const next of proof.solution.slice(1)) await realMove(page, next);
   await expect(page.locator('[data-pancake-won]')).toHaveAttribute('data-pancake-won', 'true');
   await expect(page.locator('.status')).toHaveClass(/success/);
   await expect(layer(page, 2)).toBeDisabled(); await expect(confirm(page)).toBeDisabled();
   await page.getByRole('button', { name: '重来', exact: true }).click(); await ready(page, index);
-  expect(await stack(page)).toEqual(original); await expect(target).toBeEnabled();
+  await expectStack(page, original); await expect(target).toBeEnabled();
   await expect(page.locator('.status')).not.toHaveClass(/success/);
   expect(errors).toEqual([]);
 });
@@ -190,8 +192,8 @@ for (const index of [2, 59, 119]) test(`Pancake ${index + 1} pause, current-stat
   await page.screenshot({ path: info.outputPath(`pancake-${index + 1}-paused.png`), fullPage: true, animations: 'disabled' });
   await page.getByRole('button', { name: '继续游戏', exact: true }).click();
   expect(await stack(page)).toEqual(original); await expect(target).toHaveAttribute('aria-pressed', 'true');
-  await target.press('Enter'); const current = await stack(page);
-  expect(current).toEqual(reversePrefix(original, count)); await expect(target).toBeFocused();
+  await target.press('Enter'); await expectStack(page, reversePrefix(original, count));
+  const current = await stack(page); await expect(target).toBeFocused();
   const hint = getPancakeHint(current); expect(hint.kind).toBe('move');
   await page.getByRole('button', { name: '提示', exact: true }).click();
   expect(await stack(page)).toEqual(current); await expect(page.locator('[data-pancake-moves]')).toHaveText('1');
@@ -203,21 +205,21 @@ for (const index of [2, 59, 119]) test(`Pancake ${index + 1} pause, current-stat
   }
   await page.screenshot({ path: info.outputPath(`pancake-${index + 1}-current-hint.png`), fullPage: true, animations: 'disabled' });
   await page.getByRole('button', { name: '撤销', exact: true }).click();
-  expect(await stack(page)).toEqual(original); await expect(confirm(page)).toBeDisabled();
+  await expectStack(page, original); await expect(confirm(page)).toBeDisabled();
   await realMove(page, count); expect(await stack(page)).toEqual(current);
   await page.reload(); await enterAfterReload(page, index);
   expect(await stack(page)).toEqual(current); await expect(page.locator('[data-pancake-moves]')).toHaveText('1');
   const saved = await page.evaluate(key => JSON.parse(localStorage.getItem(key)!), `${PANCAKE_RESUME_KEY}.round.${index}`);
   expect(saved.id).toBe(level.id); expect(saved.history).toEqual([original]);
-  await page.getByRole('button', { name: '撤销', exact: true }).click(); expect(await stack(page)).toEqual(original);
+  await page.getByRole('button', { name: '撤销', exact: true }).click(); await expectStack(page, original);
   await realMove(page, count);
   await page.getByRole('button', { name: '重来', exact: true }).click(); await ready(page, index);
-  expect(await stack(page)).toEqual(original); await expect(page.locator('[data-pancake-moves]')).toHaveText('0');
+  await expectStack(page, original); await expect(page.locator('[data-pancake-moves]')).toHaveText('0');
   await realMove(page, count);
   const other = index === 119 ? 2 : 119;
-  await chooseLevel(page, other); await ready(page, other); expect(await stack(page)).toEqual(pancakeLevels[other].stack);
-  await chooseLevel(page, index); await ready(page, index); expect(await stack(page)).toEqual(current);
-  await page.getByRole('button', { name: '撤销', exact: true }).click(); expect(await stack(page)).toEqual(original);
+  await chooseLevel(page, other); await ready(page, other); await expectStack(page, pancakeLevels[other].stack);
+  await chooseLevel(page, index); await ready(page, index); await expectStack(page, current);
+  await page.getByRole('button', { name: '撤销', exact: true }).click(); await expectStack(page, original);
   const summary = page.locator('.pancake-notes summary');
   await summary.focus(); await summary.press('Enter'); await expect(page.locator('.pancake-notes details')).toHaveAttribute('open', '');
   await expect(page.getByText(/Tab 进入煎饼堆/)).toBeVisible();

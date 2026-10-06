@@ -44,12 +44,23 @@ describe('Pancake 120-level real DOM campaign', () => {
       expect(stack()).toEqual(expected);
       expect(moves()).toBe(step + 1);
     }
-    expect(stack()).toEqual(Array.from({ length: level.stack.length }, (_, i) => i + 1));
+    const goal = Array.from({ length: level.stack.length }, (_, i) => i + 1);
+    expect(stack()).toEqual(goal);
     expect(document.querySelector('[data-pancake-won]')?.getAttribute('data-pancake-won')).toBe('true');
+    expect(screen.getByRole('img', { name: `最终从上到下：${goal.join('、')}` })).toBeTruthy();
+    expect(screen.getByText('最终顺序 · 从上到下', { exact: true })).toBeTruthy();
+    expect(screen.getByText('小在上、大在下。本轮已完成，重来可再玩。', { exact: true })).toBeTruthy();
+    expect(screen.getAllByText('已排好', { exact: true })).toHaveLength(level.stack.length);
+    expect(screen.queryByText('选一层，先看会怎样翻', { exact: true })).toBeNull();
+    expect(screen.queryByText('翻到这里', { exact: true })).toBeNull();
     expect(props.onComplete).toHaveBeenCalledTimes(1);
     expect(confirm().disabled).toBe(true);
     expect(cancel().disabled).toBe(true);
-    for (const button of document.querySelectorAll<HTMLButtonElement>('[data-pancake-flip]')) expect(button.disabled).toBe(true);
+    for (const button of document.querySelectorAll<HTMLButtonElement>('[data-pancake-flip]')) {
+      expect(button.disabled).toBe(true);
+      const count = Number(button.getAttribute('data-pancake-flip'));
+      expect(button.getAttribute('aria-label')).toBe(`第 ${count} 层，大小 ${count}，已排好`);
+    }
     fireEvent.click(layer(2)); fireEvent.click(confirm());
     expect(moves()).toBe(proof.solution.length);
     expect(props.onComplete).toHaveBeenCalledTimes(1);

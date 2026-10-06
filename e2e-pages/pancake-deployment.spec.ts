@@ -7,10 +7,13 @@ import { STORAGE_KEY } from '../src/lib/progress';
 const certificates = JSON.parse(readFileSync('docs/pancake/campaign.json', 'utf8')).levels as { id: string; solution: number[] }[];
 const stack = (page: Page) => page.locator('[data-pancake-slot]').evaluateAll(nodes => nodes.map(node => Number(node.getAttribute('data-size'))));
 const reversePrefix = (values: number[], count: number) => values.map((_, i) => values[i < count ? count - 1 - i : i]);
+// Wait for the visible React commit, retaining the full ordered-stack assertion.
+const expectStack = (page: Page, expected: number[]) => expect.poll(() => stack(page)).toEqual(expected);
 
 test('Pancake level 120 survives public-path midgame reload and earns real completion', async ({ page, baseURL }, info) => {
   const index = 119, level = pancakeLevels[index], proof = certificates[index], base = new URL(baseURL!);
   const errors: string[] = [], failedNetwork: string[] = [];
+  const validatedAssetMimes = new Map<string, string>();
   page.on('pageerror', error => errors.push(error.message));
   page.on('console', message => { if (message.type() === 'error') errors.push(message.text()); });
   page.on('requestfailed', request => failedNetwork.push(`${request.url()}: ${request.failure()?.errorText}`));
@@ -18,9 +21,18 @@ test('Pancake level 120 survives public-path midgame reload and earns real compl
     const url = new URL(response.url());
     if (url.origin !== base.origin) return;
     if (response.status() >= 400) failedNetwork.push(`${response.status()} ${url.pathname}`);
+    const css = url.pathname.endsWith('.css'), js = url.pathname.endsWith('.js');
+    if (!css && !js) return;
+    // A 304 has no resource body and may omit Content-Type. Reuse only a MIME
+    // already verified on this exact URL's 200 response in this browser session.
+    if (response.status() === 304) {
+      if (!validatedAssetMimes.has(response.url())) failedNetwork.push(`Unvalidated 304 asset: ${url.pathname}`);
+      return;
+    }
     const mime = response.headers()['content-type'] || '';
-    if (url.pathname.endsWith('.css') && !mime.includes('text/css')) failedNetwork.push(`Invalid CSS MIME ${mime}: ${url.pathname}`);
-    if (url.pathname.endsWith('.js') && !/(?:text|application)\/javascript/.test(mime)) failedNetwork.push(`Invalid JS MIME ${mime}: ${url.pathname}`);
+    const valid = css ? mime.includes('text/css') : /(?:text|application)\/javascript/.test(mime);
+    if (!valid) failedNetwork.push(`Invalid ${css ? 'CSS' : 'JS'} MIME ${mime}: ${url.pathname}`);
+    else if (response.status() === 200) validatedAssetMimes.set(response.url(), mime);
   });
   const response = await page.goto('./'); expect(response?.status()).toBe(200);
   expect(new URL(page.url()).pathname.startsWith(base.pathname)).toBe(true);
@@ -49,7 +61,7 @@ test('Pancake level 120 survives public-path midgame reload and earns real compl
     await expect(target).toHaveAttribute('aria-pressed', 'true');
     await expect(page.getByRole('img', { name: `翻转后从上到下：${reversePrefix(before, count).join('、')}` })).toBeVisible();
     await page.getByRole('button', { name: /^确认翻转/ }).click();
-    expect(await stack(page)).toEqual(reversePrefix(before, count));
+    await expectStack(page, reversePrefix(before, count));
   };
   const accessibleControls = async () => {
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
@@ -84,7 +96,7 @@ test('Pancake level 120 survives public-path midgame reload and earns real compl
   expect(await stack(page)).toEqual(current); await expect(page.locator('[data-pancake-moves]')).toHaveText(String(midpoint));
   // Prove that the refreshed history is functional through the visible undo and flip controls.
   await page.getByRole('button', { name: '撤销', exact: true }).click();
-  expect(await stack(page)).toEqual(stored.history[midpoint - 1]);
+  await expectStack(page, stored.history[midpoint - 1]);
   await clickMove(proof.solution[midpoint - 1]); expect(await stack(page)).toEqual(current);
   await accessibleControls();
   await page.screenshot({ path: info.outputPath('pages-pancake-120-resumed.png'), fullPage: true, animations: 'disabled' });

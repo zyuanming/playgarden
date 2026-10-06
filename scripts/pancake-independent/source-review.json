@@ -1,17 +1,17 @@
 {
-  "reviewType": "Independent source-level review; no browser used",
+  "reviewType": "Independent source-level review with limited supplied-CI-screenshot preflight; no browser operated",
   "status": "passed_source_review",
   "sourceSha256": {
     "src/games/pancakeLogic.ts": "d9a2a968a4aa815815c08eb43ef43e0d40faaa37daaa01f2d0e993d1eac39d29",
     "src/games/pancakeStorage.ts": "7ca6a504362813625ec9bb9633efb5c6b12fd36151254c5c789557477e7b025b",
-    "src/games/PancakeKitchen.tsx": "d7fd613ae3a981095d302300f51d6f5d6d41c8fb4f0e5fed78dd2d2ba56cda21",
+    "src/games/PancakeKitchen.tsx": "4f2230d3522489a8d4a281eac0054d361fd0c3e906c4803522e35a4bb2f699b5",
     "src/games/pancakeKitchen.css": "a098d2a0cf3522e10d47d8b5979914c90f8b04669c32e0182feafab368551948",
     "src/components/GameShell.tsx": "a5c0ab99fb07dc17967b58ff20ad7944ecfe8c5403585552279c7e28497b9d64",
     "src/lib/types.ts": "ef369ad734fb7bec34db46bc7073d68ed66e84d03f95d8f9f5a6c7e5cce55420",
     "tests/pancakeLogic.test.ts": "6162cc6e54c443727fcb25c7ee9088eb03e31d7a9540131299a5315656c8e067",
-    "tests/pancakeKitchen.test.tsx": "d5f751f657ef0bd658df6c87961bed1f3b395fdfa494e352a3af6046632a2fa5",
-    "e2e/pancake-campaign.spec.ts": "e5d53502271ed9aa951db1500800c30c7920c6dde43aa54b20a4ca18d0ef4a17",
-    "e2e-pages/pancake-deployment.spec.ts": "b85d3a58f33e807ec0047f4cb009f6f21f419e6ca0c17f5692e10bbc317c6b38",
+    "tests/pancakeKitchen.test.tsx": "098c324fcf7e6cc75104fa6f81b9b2ad45bc418ed5a7f23ca2c43dc36477c768",
+    "e2e/pancake-campaign.spec.ts": "22d6c99b183c25f1c6d589194ca118516d19c62d3bf3bf7431a67c46a5d62c85",
+    "e2e-pages/pancake-deployment.spec.ts": "73648c2de52899d457ac2090eb6135c5d5171e54fce59b4d1781f4705a2b4a2a",
     "docs/pancake-campaign.md": "b856e171ba5f754532fbe64b3991275a539f9c6276322d098094a3e6caa4a779",
     "playwright.config.ts": "c7d18928a70a5851718f94f79694dcfb784f59f55aafd812aebc779e4e7b2a69",
     "playwright.pages.config.ts": "cfe2d1ac72b2eb6974bc9b057ef0223effdeabd4f541335f4deaefbda5d6b13c"
@@ -45,6 +45,13 @@
       "status": "resolved_source_review",
       "summary": "The game-specific 44px control rule initially overrode the existing 52/50px pancake row minimum height because of higher selector specificity.",
       "resolution": "The added rule now excludes .pancake-row buttons. The existing desktop 52px and small-screen 50px declarations remain effective. The selector is scoped to .game-main[data-game=\"pancake\"], so other game shells are not matched."
+    },
+    {
+      "id": "PK-VISUAL-001",
+      "severity": "minor",
+      "status": "resolved_source_review_pending_final_pixels",
+      "summary": "Official 997ff96 mobile completion pixels retained actionable select/flip text while the board was locked.",
+      "resolution": "The current component makes only five won-dependent presentation substitutions: row text, row accessible label, final-order title, final-order image label and completed instruction. Reversing those substitutions reproduces the previous production file SHA-256; gameplay logic is unchanged. All 120 DOM campaign cases now assert completed wording and absence of actionable old labels."
     }
   ],
   "checked": [
@@ -122,6 +129,16 @@
       "area": "CI typecheck selector correction",
       "result": "passed_minimal_source_diff_review_execution_pending",
       "detail": "The two unsupported Testing Library getByRole exact options were replaced with anchored accessible-name regular expressions for Cancel and Restart. Reversing exactly those two substitutions reproduces the previously reviewed file SHA-256, proving no unrelated test assertions or matching scope changed. getByLabelText retains its supported exact option. CI run 37421824079 stopped at typecheck on these two calls; corrected DOM/browser execution remains unclaimed."
+    },
+    {
+      "area": "Trace-grounded asynchronous stack assertions and 304 MIME",
+      "result": "passed_source_and_trace_review_rerun_pending",
+      "detail": "The supplied official desktop failure expected undo history [8,7,2,4,5,1,6,3] but synchronously read prior [3,6,1,5,4,2,7,8]; the failure pixels show the eventual 3-move undo state. Changed-state checks now use default-deadline expect.poll with full ordered-array equality, without extending test timeouts or changing controls. No-op/preview negative assertions remain immediate. Independently inspected the mobile trace network: index CSS/JS and PancakeKitchen CSS/JS each first returned 200 with valid CSS/JavaScript MIME, then the same exact URLs returned 304 with empty MIME after reload. The corrected test permits an empty-body 304 only after that exact URL had a validated 200 MIME in the same browser session; unknown 304s, invalid initial MIME, HTTP errors and failed requests remain failures."
+    },
+    {
+      "area": "997ff96 supplied-CI pixel preflight",
+      "result": "limited_preflight_not_final_acceptance",
+      "detail": "Viewed desktop opening plus mobile opening/restored/completed PNGs at original size where needed, and official trace frames showing selected 2/8-pancake ranges and desktop resulting-order preview. Eight-row sizes and labels are readable, selection boundaries and public target are clear, and no obvious clipping/overlap is present. Completion copy mismatch was reported and fixed in source. Mobile preview ordering is a nonblocking later-design note. No selected-hint screenshot or desktop completion screenshot was available. New-SHA final screenshots and successful exact-SHA CI remain required."
     }
   ],
   "notCovered": [
