@@ -1,3 +1,4 @@
+import { gomokuLevels } from "../src/games/gomokuLevels";
 import { blackboxLevels } from "../src/games/blackboxLevels";
 import { pancakeLevels } from "../src/games/pancakeLevels";
 import { samegameLevels } from "../src/games/samegameLevels";
@@ -87,6 +88,7 @@ import { sortingNetworkLevels } from "../src/games/sortingNetworkLogic";
 import { voxelViewsLevels } from "../src/games/voxelViewsLogic";
 import { cubeNetLevels } from "../src/games/cubeNetLogic";
 const packs = {
+  gomoku: gomokuLevels,
   pancake: pancakeLevels,
   blackbox: blackboxLevels,
   samegame: samegameLevels,
@@ -182,7 +184,7 @@ describe("Scalable catalog contract", () => {
     it(`${game.id} metadata matches its real levels and license`, () => {
       expect(game.levelCount).toBe(packs[game.id].length);
       expect(game.source.license).toBe("MIT");
-      expect(game.artwork.url).toMatch(/^\.\/[a-z0-9-]+\.webp$/);
+      expect(game.artwork.url).toMatch(/^\.\/[a-z0-9-]+\.(?:webp|svg)$/);
       for (const root of ["https://example.test/", "https://example.test/playgarden/"]) {
         const base = new URL(root);
         const artwork = new URL(game.artwork.url, base);
@@ -191,9 +193,9 @@ describe("Scalable catalog contract", () => {
       }
     }),
   );
-  it("counts only 83 real games and 2028 levels, not the roadmap", () => {
-    expect(games).toHaveLength(83);
-    expect(games.reduce((sum, g) => sum + g.levelCount, 0)).toBe(2028);
+  it("counts only 84 real games and 2052 levels, not the roadmap", () => {
+    expect(games).toHaveLength(84);
+    expect(games.reduce((sum, g) => sum + g.levelCount, 0)).toBe(2052);
   });
 });
 

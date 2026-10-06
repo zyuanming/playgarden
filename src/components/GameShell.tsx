@@ -23,16 +23,53 @@ export function GameShell({
   completed: number[];
 }) {
   const game = games.find((g) => g.id === id)!;
-  const [level, setLevel] = useState(() => {
-    if (game.resumeKey) try {
-      const raw = localStorage.getItem(`${game.resumeKey}.selected`);
-      const saved = raw === null ? -1 : Number(raw);
-      if (Number.isInteger(saved) && saved >= 0 && saved < game.levelCount && !completed.includes(saved)) return saved;
-    } catch { /* Local storage can be disabled. */ }
-    return Array.from({ length: game.levelCount }, (_, i) => i).find(i => !completed.includes(i)) ?? 0;
+  const [freePlay, setFreePlay] = useState(() => {
+    if (!game.freePlay) return false;
+    try {
+      return localStorage.getItem(`${game.resumeKey}.mode`) !== "practice";
+    } catch {
+      return true;
+    }
   });
   useEffect(() => {
-    if (game.resumeKey) try { localStorage.setItem(`${game.resumeKey}.selected`, String(level)); } catch { /* Best-effort resume. */ }
+    if (game.freePlay)
+      try {
+        localStorage.setItem(
+          `${game.resumeKey}.mode`,
+          freePlay ? "free" : "practice",
+        );
+      } catch {
+        /* Best effort. */
+      }
+  }, [game.freePlay, game.resumeKey, freePlay]);
+  const [level, setLevel] = useState(() => {
+    if (game.resumeKey)
+      try {
+        const raw = localStorage.getItem(`${game.resumeKey}.selected`);
+        const saved = raw === null ? -1 : Number(raw);
+        if (
+          Number.isInteger(saved) &&
+          saved >= 0 &&
+          saved < game.levelCount &&
+          !completed.includes(saved)
+        )
+          return saved;
+      } catch {
+        /* Local storage can be disabled. */
+      }
+    return (
+      Array.from({ length: game.levelCount }, (_, i) => i).find(
+        (i) => !completed.includes(i),
+      ) ?? 0
+    );
+  });
+  useEffect(() => {
+    if (game.resumeKey)
+      try {
+        localStorage.setItem(`${game.resumeKey}.selected`, String(level));
+      } catch {
+        /* Best-effort resume. */
+      }
   }, [game.resumeKey, level]);
   const [paused, setPaused] = useState(false);
   const [reset, setReset] = useState(0);
@@ -59,7 +96,13 @@ export function GameShell({
   }, [won]);
   useEffect(() => {
     const listener = (e: KeyboardEvent) => {
-      if (e.key === "Escape" && !e.ctrlKey && !e.metaKey && !e.altKey)
+      if (
+        e.key === "Escape" &&
+        !e.repeat &&
+        !e.ctrlKey &&
+        !e.metaKey &&
+        !e.altKey
+      )
         setPaused((p) => !p);
     };
     window.addEventListener("keydown", listener);
@@ -87,25 +130,59 @@ export function GameShell({
             {game.title}
           </h1>
         </div>
-        <div className="level-picker">
-          <label htmlFor="game-level">选择关卡</label>
-          <select
-            id="game-level"
-            value={level}
-            onChange={(event) => changeLevel(Number(event.target.value))}
-          >
-            {Array.from({ length: game.levelCount }, (_, l) => (
-              <option key={l} value={l}>
-                第 {l + 1} 关{completed.includes(l) ? " · 已完成" : ""}
-              </option>
-            ))}
-          </select>
-          <span>
-            {completed.filter((l) => l < game.levelCount).length}/
-            {game.levelCount} 已完成
-          </span>
-        </div>
+        {!freePlay && (
+          <div className="level-picker">
+            <label htmlFor="game-level">选择关卡</label>
+            <select
+              id="game-level"
+              value={level}
+              onChange={(event) => changeLevel(Number(event.target.value))}
+            >
+              {Array.from({ length: game.levelCount }, (_, l) => (
+                <option key={l} value={l}>
+                  第 {l + 1} 关{completed.includes(l) ? " · 已完成" : ""}
+                </option>
+              ))}
+            </select>
+            <span>
+              {completed.filter((l) => l < game.levelCount).length}/
+              {game.levelCount} 已完成
+            </span>
+          </div>
+        )}
       </div>
+      {game.freePlay && (
+        <div className="game-mode-picker" role="group" aria-label="游玩方式">
+          <button
+            aria-pressed={freePlay}
+            onClick={() => {
+              if (freePlay) return;
+              setFreePlay(true);
+              setWon(false);
+              setPaused(false);
+              setFreshStart(false);
+              setHint(0);
+              setUndo(0);
+            }}
+          >
+            自由对弈
+          </button>
+          <button
+            aria-pressed={!freePlay}
+            onClick={() => {
+              if (!freePlay) return;
+              setFreePlay(false);
+              setWon(false);
+              setPaused(false);
+              setFreshStart(false);
+              setHint(0);
+              setUndo(0);
+            }}
+          >
+            棋形练习
+          </button>
+        </div>
+      )}
       <div className="game-toolbar">
         <button onClick={() => setPaused((p) => !p)}>
           {paused ? <Play size={17} /> : <Pause size={17} />}
@@ -113,7 +190,14 @@ export function GameShell({
         </button>
         <button
           onClick={() => {
-            if (game.resumeKey) try { localStorage.removeItem(`${game.resumeKey}.round.${level}`); } catch { /* The module still receives the reset token. */ }
+            if (game.resumeKey)
+              try {
+                localStorage.removeItem(
+                  `${game.resumeKey}.round.${freePlay ? "free" : level}`,
+                );
+              } catch {
+                /* The module still receives the reset token. */
+              }
             setFreshStart(true);
             setReset((r) => r + 1);
             setWon(false);
@@ -132,7 +216,13 @@ export function GameShell({
           提示
         </button>
         <span>
-          第 {level + 1} / {game.levelCount} 关
+          {freePlay ? (
+            "15 × 15 · 完整对局"
+          ) : (
+            <>
+              第 {level + 1} / {game.levelCount} 关
+            </>
+          )}
         </span>
       </div>
       {won && (
@@ -154,18 +244,31 @@ export function GameShell({
         </div>
       )}
       <div className="game-surface">
-        <GameBoundary key={`${id}:${level}:${reset}`} onBack={onBack}>
+        <GameBoundary
+          key={`${id}:${freePlay}:${level}:${reset}`}
+          onBack={onBack}
+        >
           <Suspense fallback={<p className="loading">正在准备游戏…</p>}>
             <Game
-              key={`${level}:${reset}`}
+              key={`${freePlay}:${level}:${reset}`}
               level={level}
+              freePlay={freePlay}
               paused={paused}
               resetToken={reset}
               freshStart={freshStart}
               hintToken={hint}
               undoToken={undo}
               onComplete={() => {
-                if (game.resumeKey) try { localStorage.setItem(`${game.resumeKey}.selected`, String(Math.min(level + 1, game.levelCount - 1))); } catch { /* Best effort. */ }
+                if (freePlay) return;
+                if (game.resumeKey)
+                  try {
+                    localStorage.setItem(
+                      `${game.resumeKey}.selected`,
+                      String(Math.min(level + 1, game.levelCount - 1)),
+                    );
+                  } catch {
+                    /* Best effort. */
+                  }
                 setWon(true);
                 onComplete(level);
               }}
@@ -191,13 +294,23 @@ export function GameShell({
       >
         <p>{status}</p>
       </div>
-      {game.source.kind === "adapted" && <p className="privacy-note" aria-label="游戏源码来源">
-        改编自 <a href={game.source.url} target="_blank" rel="noreferrer">{game.source.author} 的 Slant</a> · 固定版本 {game.source.commit.slice(0, 7)} · <a href={game.source.notice} target="_blank" rel="noreferrer">完整 MIT 许可</a><br/>{game.source.notes}
-      </p>}
+      {game.source.kind === "adapted" && (
+        <p className="privacy-note" aria-label="游戏源码来源">
+          改编自{" "}
+          <a href={game.source.url} target="_blank" rel="noreferrer">
+            {game.source.author} 的 {game.source.workTitle ?? "Slant"}
+          </a>{" "}
+          · 固定版本 {game.source.commit.slice(0, 7)} ·{" "}
+          <a href={game.source.notice} target="_blank" rel="noreferrer">
+            完整 MIT 许可
+          </a>
+          <br />
+          {game.source.notes}
+        </p>
+      )}
       <p className="privacy-note">
         进度仅保存在当前浏览器。随时休息，不需要赶时间。
       </p>
     </main>
   );
 }
-

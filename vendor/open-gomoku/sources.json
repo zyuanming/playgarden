@@ -1,0 +1,34 @@
+[
+  {
+    "file": "LICENSE",
+    "upstreamPath": "LICENSE",
+    "url": "https://github.com/tombelieber/gomoku/blob/0d8f81e687a04c729b1dfe5b0ce028295528cc17/LICENSE",
+    "bytes": 1081,
+    "sha256": "5c225a104c88026de4793221846f3d188c0a1137909f145448ace6b0c630e16e",
+    "gitBlob": "4940da19048cac4e3d54cbd32d1a7ce0d3368550"
+  },
+  {
+    "file": "board.rs",
+    "upstreamPath": "engine/src/board.rs",
+    "url": "https://github.com/tombelieber/gomoku/blob/0d8f81e687a04c729b1dfe5b0ce028295528cc17/engine/src/board.rs",
+    "bytes": 6768,
+    "sha256": "d35b03fdd0cb7c595dffd61d1d4dac220027e71d33b503f7298d12c32c696f68",
+    "gitBlob": "ba2cc9dc2328afeb9b5c89a43f2ae32af8c0978b"
+  },
+  {
+    "file": "ai.rs",
+    "upstreamPath": "engine/src/ai.rs",
+    "url": "https://github.com/tombelieber/gomoku/blob/0d8f81e687a04c729b1dfe5b0ce028295528cc17/engine/src/ai.rs",
+    "bytes": 10202,
+    "sha256": "1f3e3c8f21405cfc04edaf60116f34af4dd097f41c196be9f99dbada3df431fb",
+    "gitBlob": "c65f2d9b13ddd9946bffdd4e629d6b5868749d07"
+  },
+  {
+    "file": "eval.rs",
+    "upstreamPath": "engine/src/eval.rs",
+    "url": "https://github.com/tombelieber/gomoku/blob/0d8f81e687a04c729b1dfe5b0ce028295528cc17/engine/src/eval.rs",
+    "bytes": 4333,
+    "sha256": "0e4494f43bf78404a74a63b1fde0c9b523b6557f5f0c612f28f79760f84a87c9",
+    "gitBlob": "8801965ec146ee1972b93c61e9e4290402763c46"
+  }
+]

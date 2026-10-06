@@ -1,0 +1,1330 @@
+[
+  {
+    "id": "win-edge",
+    "title": "沿着边线连起来",
+    "chapter": 1,
+    "objective": "win",
+    "goal": "在棋盘上沿找到一手成五的落点。",
+    "hint": "从左上角沿着已有的四颗棋子向右数一格。",
+    "concepts": [
+      "棋盘边缘",
+      "连续四子"
+    ],
+    "moves": [
+      0,
+      210,
+      1,
+      211,
+      2,
+      212,
+      3,
+      215
+    ],
+    "toMove": 1,
+    "solution": 4,
+    "solutions": [
+      4
+    ],
+    "continuation": [
+      4
+    ],
+    "tacticalCells": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "quietSetupCells": [
+      210,
+      211,
+      212,
+      215
+    ],
+    "proof": {
+      "initialOpponentWinningMoves": [],
+      "winningPointsAfterSolution": [],
+      "opponentRepliesVerified": 0
+    }
+  },
+  {
+    "id": "win-vertical-gap",
+    "title": "补上竖线的空位",
+    "chapter": 1,
+    "objective": "win",
+    "goal": "补上一颗棋子，让竖线连成五子。",
+    "hint": "两颗与两颗之间的空位，也是一条线的一部分。",
+    "concepts": [
+      "竖线",
+      "中间断点"
+    ],
+    "moves": [
+      67,
+      0,
+      82,
+      14,
+      112,
+      15,
+      127,
+      29
+    ],
+    "toMove": 1,
+    "solution": 97,
+    "solutions": [
+      97
+    ],
+    "continuation": [
+      97
+    ],
+    "tacticalCells": [
+      67,
+      82,
+      112,
+      127
+    ],
+    "quietSetupCells": [
+      0,
+      14,
+      15,
+      29
+    ],
+    "proof": {
+      "initialOpponentWinningMoves": [],
+      "winningPointsAfterSolution": [],
+      "opponentRepliesVerified": 0
+    }
+  },
+  {
+    "id": "win-diagonal",
+    "title": "斜着数也可以",
+    "chapter": 1,
+    "objective": "win",
+    "goal": "找到左上到右下方向的一手成五。",
+    "hint": "沿斜线数棋子，别把旁边的棋子算进来。",
+    "concepts": [
+      "主斜线",
+      "被挡的一端"
+    ],
+    "moves": [
+      48,
+      13,
+      64,
+      14,
+      96,
+      29,
+      112,
+      32
+    ],
+    "toMove": 1,
+    "solution": 80,
+    "solutions": [
+      80
+    ],
+    "continuation": [
+      80
+    ],
+    "tacticalCells": [
+      32,
+      48,
+      64,
+      96,
+      112
+    ],
+    "quietSetupCells": [
+      13,
+      14,
+      29
+    ],
+    "proof": {
+      "initialOpponentWinningMoves": [],
+      "winningPointsAfterSolution": [],
+      "opponentRepliesVerified": 0
+    }
+  },
+  {
+    "id": "win-corner-diagonal",
+    "title": "角落里的斜线",
+    "chapter": 1,
+    "objective": "win",
+    "goal": "在左下角附近补齐另一种方向的斜线。",
+    "hint": "沿右上到左下的方向找一格空位。",
+    "concepts": [
+      "反斜线",
+      "角落断点"
+    ],
+    "moves": [
+      154,
+      0,
+      168,
+      1,
+      196,
+      2,
+      210,
+      5
+    ],
+    "toMove": 1,
+    "solution": 182,
+    "solutions": [
+      182
+    ],
+    "continuation": [
+      182
+    ],
+    "tacticalCells": [
+      154,
+      168,
+      196,
+      210
+    ],
+    "quietSetupCells": [
+      0,
+      1,
+      2,
+      5
+    ],
+    "proof": {
+      "initialOpponentWinningMoves": [],
+      "winningPointsAfterSolution": [],
+      "opponentRepliesVerified": 0
+    }
+  },
+  {
+    "id": "win-overline",
+    "title": "六颗连起来也获胜",
+    "chapter": 1,
+    "objective": "win",
+    "goal": "一手把两段棋子连成六子。自由规则中，连续五颗或更多都获胜。",
+    "hint": "找三颗和两颗之间的空位。",
+    "concepts": [
+      "自由规则",
+      "长连"
+    ],
+    "moves": [
+      108,
+      0,
+      109,
+      1,
+      110,
+      2,
+      112,
+      5,
+      113,
+      6
+    ],
+    "toMove": 1,
+    "solution": 111,
+    "solutions": [
+      111
+    ],
+    "continuation": [
+      111
+    ],
+    "tacticalCells": [
+      108,
+      109,
+      110,
+      112,
+      113
+    ],
+    "quietSetupCells": [
+      0,
+      1,
+      2,
+      5,
+      6
+    ],
+    "proof": {
+      "initialOpponentWinningMoves": [],
+      "winningPointsAfterSolution": [],
+      "opponentRepliesVerified": 0
+    }
+  },
+  {
+    "id": "win-cross",
+    "title": "一颗连接两条线",
+    "chapter": 1,
+    "objective": "win",
+    "goal": "找出能同时补齐横线和竖线的落点。",
+    "hint": "两条缺一颗的线，共用同一个空位。",
+    "concepts": [
+      "交叉成五",
+      "共享落点"
+    ],
+    "moves": [
+      82,
+      0,
+      97,
+      1,
+      110,
+      13,
+      111,
+      14,
+      113,
+      15,
+      114,
+      16,
+      127,
+      210,
+      142,
+      224
+    ],
+    "toMove": 1,
+    "solution": 112,
+    "solutions": [
+      112
+    ],
+    "continuation": [
+      112
+    ],
+    "tacticalCells": [
+      82,
+      97,
+      110,
+      111,
+      113,
+      114,
+      127,
+      142
+    ],
+    "quietSetupCells": [
+      0,
+      1,
+      13,
+      14,
+      15,
+      16,
+      210,
+      224
+    ],
+    "proof": {
+      "initialOpponentWinningMoves": [],
+      "winningPointsAfterSolution": [],
+      "opponentRepliesVerified": 0
+    }
+  },
+  {
+    "id": "defend-end",
+    "title": "先守住最后一端",
+    "chapter": 2,
+    "objective": "defend",
+    "goal": "对方已经连成四颗。堵住对方下一手的成五点。",
+    "hint": "一端已被你的棋子挡住，检查另一端。",
+    "concepts": [
+      "冲四防守",
+      "已封一端"
+    ],
+    "moves": [
+      0,
+      109,
+      1,
+      110,
+      2,
+      111,
+      108,
+      112
+    ],
+    "toMove": 1,
+    "solution": 113,
+    "solutions": [
+      113
+    ],
+    "continuation": [
+      113
+    ],
+    "tacticalCells": [
+      108,
+      109,
+      110,
+      111,
+      112
+    ],
+    "quietSetupCells": [
+      0,
+      1,
+      2
+    ],
+    "proof": {
+      "initialOpponentWinningMoves": [
+        113
+      ],
+      "winningPointsAfterSolution": [],
+      "opponentRepliesVerified": 0
+    }
+  },
+  {
+    "id": "defend-gap",
+    "title": "别漏掉线中间",
+    "chapter": 2,
+    "objective": "defend",
+    "goal": "挡住对方藏在线中间的一手成五。",
+    "hint": "只盯着两端会漏掉两段之间的空位。",
+    "concepts": [
+      "断四防守",
+      "中间断点"
+    ],
+    "moves": [
+      62,
+      63,
+      77,
+      64,
+      222,
+      66,
+      223,
+      67
+    ],
+    "toMove": 1,
+    "solution": 65,
+    "solutions": [
+      65
+    ],
+    "continuation": [
+      65
+    ],
+    "tacticalCells": [
+      62,
+      63,
+      64,
+      66,
+      67,
+      77
+    ],
+    "quietSetupCells": [
+      222,
+      223
+    ],
+    "proof": {
+      "initialOpponentWinningMoves": [
+        65
+      ],
+      "winningPointsAfterSolution": [],
+      "opponentRepliesVerified": 0
+    }
+  },
+  {
+    "id": "defend-overline",
+    "title": "长线也要及时挡",
+    "chapter": 2,
+    "objective": "defend",
+    "goal": "挡住对方一手连成七子的机会。",
+    "hint": "自由规则中，超过五颗仍然获胜。看两段三子之间。",
+    "concepts": [
+      "长连防守",
+      "规则应用"
+    ],
+    "moves": [
+      0,
+      153,
+      1,
+      154,
+      2,
+      155,
+      5,
+      157,
+      6,
+      158,
+      7,
+      159
+    ],
+    "toMove": 1,
+    "solution": 156,
+    "solutions": [
+      156
+    ],
+    "continuation": [
+      156
+    ],
+    "tacticalCells": [
+      153,
+      154,
+      155,
+      157,
+      158,
+      159
+    ],
+    "quietSetupCells": [
+      0,
+      1,
+      2,
+      5,
+      6,
+      7
+    ],
+    "proof": {
+      "initialOpponentWinningMoves": [
+        156
+      ],
+      "winningPointsAfterSolution": [],
+      "opponentRepliesVerified": 0
+    }
+  },
+  {
+    "id": "defend-shared",
+    "title": "一次守住两个方向",
+    "chapter": 2,
+    "objective": "defend",
+    "goal": "对方的横线和斜线都差一颗。用一手同时挡住它们。",
+    "hint": "两条危险线的空位恰好重合。",
+    "concepts": [
+      "共享防守点",
+      "横斜交叉"
+    ],
+    "moves": [
+      11,
+      80,
+      13,
+      96,
+      14,
+      110,
+      27,
+      111,
+      28,
+      113,
+      29,
+      114,
+      210,
+      128,
+      211,
+      144
+    ],
+    "toMove": 1,
+    "solution": 112,
+    "solutions": [
+      112
+    ],
+    "continuation": [
+      112
+    ],
+    "tacticalCells": [
+      80,
+      96,
+      110,
+      111,
+      113,
+      114,
+      128,
+      144
+    ],
+    "quietSetupCells": [
+      11,
+      13,
+      14,
+      27,
+      28,
+      29,
+      210,
+      211
+    ],
+    "proof": {
+      "initialOpponentWinningMoves": [
+        112
+      ],
+      "winningPointsAfterSolution": [],
+      "opponentRepliesVerified": 0
+    }
+  },
+  {
+    "id": "defend-diagonal-edge",
+    "title": "守住右边的斜线",
+    "chapter": 2,
+    "objective": "defend",
+    "goal": "挡住对方通向棋盘右边的一手成五。",
+    "hint": "对方斜线的一端已经到边界，另一端仍是空位。",
+    "concepts": [
+      "边界防守",
+      "斜向冲四"
+    ],
+    "moves": [
+      88,
+      10,
+      195,
+      26,
+      210,
+      42,
+      211,
+      58
+    ],
+    "toMove": 1,
+    "solution": 74,
+    "solutions": [
+      74
+    ],
+    "continuation": [
+      74
+    ],
+    "tacticalCells": [
+      10,
+      26,
+      42,
+      58,
+      88
+    ],
+    "quietSetupCells": [
+      195,
+      210,
+      211
+    ],
+    "proof": {
+      "initialOpponentWinningMoves": [
+        74
+      ],
+      "winningPointsAfterSolution": [],
+      "opponentRepliesVerified": 0
+    }
+  },
+  {
+    "id": "defend-priority",
+    "title": "先照顾眼前的危险",
+    "chapter": 2,
+    "objective": "defend",
+    "goal": "你也有一段三子，但这一手需要先挡住对方的成五点。",
+    "hint": "对方三颗与一颗之间的空位，比继续延长自己的三子更紧急。",
+    "concepts": [
+      "防守优先",
+      "三加一断四"
+    ],
+    "moves": [
+      14,
+      125,
+      64,
+      126,
+      65,
+      127,
+      66,
+      129
+    ],
+    "toMove": 1,
+    "solution": 128,
+    "solutions": [
+      128
+    ],
+    "continuation": [
+      128
+    ],
+    "tacticalCells": [
+      64,
+      65,
+      66,
+      125,
+      126,
+      127,
+      129
+    ],
+    "quietSetupCells": [
+      14
+    ],
+    "proof": {
+      "initialOpponentWinningMoves": [
+        128
+      ],
+      "winningPointsAfterSolution": [],
+      "opponentRepliesVerified": 0
+    }
+  },
+  {
+    "id": "fork-open-three",
+    "title": "把三子变成两头机会",
+    "chapter": 3,
+    "objective": "fork",
+    "goal": "落一颗后，让下一手有至少两个不同的成五点。",
+    "hint": "把三颗连成两端都空着的四颗。两边都值得看看。",
+    "concepts": [
+      "活四",
+      "两端威胁"
+    ],
+    "moves": [
+      110,
+      0,
+      111,
+      1,
+      112,
+      2
+    ],
+    "toMove": 1,
+    "solution": 113,
+    "solutions": [
+      109,
+      113
+    ],
+    "continuation": [
+      113,
+      109,
+      114
+    ],
+    "tacticalCells": [
+      110,
+      111,
+      112
+    ],
+    "quietSetupCells": [
+      0,
+      1,
+      2
+    ],
+    "proof": {
+      "initialOpponentWinningMoves": [],
+      "winningPointsAfterSolution": [
+        109,
+        114
+      ],
+      "opponentRepliesVerified": 218
+    }
+  },
+  {
+    "id": "fork-fill-gap",
+    "title": "补空位，打开两端",
+    "chapter": 3,
+    "objective": "fork",
+    "goal": "把有空位的三颗，变成两端都能成五的四颗。",
+    "hint": "先补中间的空格，而不是继续向外伸。",
+    "concepts": [
+      "跳三变活四",
+      "内部连接"
+    ],
+    "moves": [
+      109,
+      0,
+      110,
+      1,
+      112,
+      2
+    ],
+    "toMove": 1,
+    "solution": 111,
+    "solutions": [
+      111
+    ],
+    "continuation": [
+      111,
+      108,
+      113
+    ],
+    "tacticalCells": [
+      109,
+      110,
+      112
+    ],
+    "quietSetupCells": [
+      0,
+      1,
+      2
+    ],
+    "proof": {
+      "initialOpponentWinningMoves": [],
+      "winningPointsAfterSolution": [
+        108,
+        113
+      ],
+      "opponentRepliesVerified": 218
+    }
+  },
+  {
+    "id": "fork-two-axes",
+    "title": "横竖各留一个机会",
+    "chapter": 3,
+    "objective": "fork",
+    "goal": "让横线和竖线各出现一个成五点。",
+    "hint": "两段三子向同一处靠近，另一头都已被挡住。",
+    "concepts": [
+      "双冲四",
+      "横竖组合"
+    ],
+    "moves": [
+      67,
+      0,
+      82,
+      14,
+      97,
+      29,
+      109,
+      44,
+      110,
+      52,
+      111,
+      108
+    ],
+    "toMove": 1,
+    "solution": 112,
+    "solutions": [
+      112
+    ],
+    "continuation": [
+      112,
+      113,
+      127
+    ],
+    "tacticalCells": [
+      52,
+      67,
+      82,
+      97,
+      108,
+      109,
+      110,
+      111
+    ],
+    "quietSetupCells": [
+      0,
+      14,
+      29,
+      44
+    ],
+    "proof": {
+      "initialOpponentWinningMoves": [],
+      "winningPointsAfterSolution": [
+        113,
+        127
+      ],
+      "opponentRepliesVerified": 212
+    }
+  },
+  {
+    "id": "fork-straight-diagonal",
+    "title": "横线与斜线一起走",
+    "chapter": 3,
+    "objective": "fork",
+    "goal": "用一颗棋子，同时在横线和斜线留下成五机会。",
+    "hint": "补好横线的空位，也能接上斜线的三颗。",
+    "concepts": [
+      "横斜双威胁",
+      "补空兼延伸"
+    ],
+    "moves": [
+      64,
+      13,
+      80,
+      14,
+      96,
+      48,
+      110,
+      109,
+      111,
+      210,
+      113,
+      211
+    ],
+    "toMove": 1,
+    "solution": 112,
+    "solutions": [
+      112
+    ],
+    "continuation": [
+      112,
+      114,
+      128
+    ],
+    "tacticalCells": [
+      48,
+      64,
+      80,
+      96,
+      109,
+      110,
+      111,
+      113
+    ],
+    "quietSetupCells": [
+      13,
+      14,
+      210,
+      211
+    ],
+    "proof": {
+      "initialOpponentWinningMoves": [],
+      "winningPointsAfterSolution": [
+        114,
+        128
+      ],
+      "opponentRepliesVerified": 212
+    }
+  },
+  {
+    "id": "fork-two-gaps",
+    "title": "两个空位，两份机会",
+    "chapter": 3,
+    "objective": "fork",
+    "goal": "制造两个不同的成五空位，它们可以在线的中间。",
+    "hint": "落在交会处后，横线和竖线仍各缺一颗，但缺的是不同位置。",
+    "concepts": [
+      "双断四",
+      "内部威胁"
+    ],
+    "moves": [
+      82,
+      0,
+      110,
+      14,
+      113,
+      67,
+      114,
+      109,
+      127,
+      210,
+      142,
+      224
+    ],
+    "toMove": 1,
+    "solution": 112,
+    "solutions": [
+      112
+    ],
+    "continuation": [
+      112,
+      97,
+      111
+    ],
+    "tacticalCells": [
+      67,
+      82,
+      109,
+      110,
+      113,
+      114,
+      127,
+      142
+    ],
+    "quietSetupCells": [
+      0,
+      14,
+      210,
+      224
+    ],
+    "proof": {
+      "initialOpponentWinningMoves": [],
+      "winningPointsAfterSolution": [
+        97,
+        111
+      ],
+      "opponentRepliesVerified": 212
+    }
+  },
+  {
+    "id": "fork-three-axes",
+    "title": "同时看见三个方向",
+    "chapter": 3,
+    "objective": "fork",
+    "goal": "在横、竖、斜三个方向留下成五机会。自由规则允许这样落子。",
+    "hint": "三条线都经过中心空位。先数清每一条线。",
+    "concepts": [
+      "三向威胁",
+      "无禁手"
+    ],
+    "moves": [
+      80,
+      14,
+      82,
+      29,
+      96,
+      44,
+      97,
+      64,
+      110,
+      67,
+      111,
+      68,
+      113,
+      89,
+      127,
+      109,
+      128,
+      124
+    ],
+    "toMove": 1,
+    "solution": 112,
+    "solutions": [
+      112
+    ],
+    "continuation": [
+      112,
+      114,
+      142
+    ],
+    "tacticalCells": [
+      64,
+      67,
+      68,
+      80,
+      82,
+      96,
+      97,
+      109,
+      110,
+      111,
+      113,
+      124,
+      127,
+      128
+    ],
+    "quietSetupCells": [
+      14,
+      29,
+      44,
+      89
+    ],
+    "proof": {
+      "initialOpponentWinningMoves": [],
+      "winningPointsAfterSolution": [
+        114,
+        142,
+        144
+      ],
+      "opponentRepliesVerified": 206
+    }
+  },
+  {
+    "id": "two-block-extend",
+    "title": "守住后，两头都有路",
+    "chapter": 4,
+    "objective": "two",
+    "goal": "先挡住竖线，再观察对方的回应，用你的第二手成五。",
+    "hint": "同一个落点，既挡住对方四子，也把你的横线变成两头机会。",
+    "concepts": [
+      "防守兼活四",
+      "实战续着"
+    ],
+    "moves": [
+      38,
+      53,
+      110,
+      68,
+      111,
+      83,
+      112,
+      98
+    ],
+    "toMove": 1,
+    "solution": 113,
+    "solutions": [
+      113
+    ],
+    "continuation": [
+      113,
+      109,
+      114
+    ],
+    "tacticalCells": [
+      38,
+      53,
+      68,
+      83,
+      98,
+      110,
+      111,
+      112
+    ],
+    "quietSetupCells": [],
+    "proof": {
+      "initialOpponentWinningMoves": [
+        113
+      ],
+      "winningPointsAfterSolution": [
+        109,
+        114
+      ],
+      "opponentRepliesVerified": 216
+    }
+  },
+  {
+    "id": "two-block-connect",
+    "title": "补自己的空，也挡对方的线",
+    "chapter": 4,
+    "objective": "two",
+    "goal": "先在交会处化解威胁，再用第二手完成五子。",
+    "hint": "对方竖线的空位，也是你横线中缺的一颗。",
+    "concepts": [
+      "双重作用",
+      "断三变活四"
+    ],
+    "moves": [
+      12,
+      80,
+      109,
+      95,
+      111,
+      125,
+      112,
+      140
+    ],
+    "toMove": 1,
+    "solution": 110,
+    "solutions": [
+      110
+    ],
+    "continuation": [
+      110,
+      108,
+      113
+    ],
+    "tacticalCells": [
+      80,
+      95,
+      109,
+      111,
+      112,
+      125,
+      140
+    ],
+    "quietSetupCells": [
+      12
+    ],
+    "proof": {
+      "initialOpponentWinningMoves": [
+        110
+      ],
+      "winningPointsAfterSolution": [
+        108,
+        113
+      ],
+      "opponentRepliesVerified": 216
+    }
+  },
+  {
+    "id": "two-white-diagonal",
+    "title": "白棋的斜线机会",
+    "chapter": 4,
+    "objective": "two",
+    "goal": "这题轮到白棋。先挡住黑棋横线，再用第二手斜着成五。",
+    "hint": "挡住横线的那一点，也延长了你的斜线。对方只能占一个落点。",
+    "concepts": [
+      "白棋行动",
+      "斜向活四",
+      "防守转攻"
+    ],
+    "moves": [
+      125,
+      80,
+      126,
+      96,
+      127,
+      112,
+      129
+    ],
+    "toMove": 2,
+    "solution": 128,
+    "solutions": [
+      128
+    ],
+    "continuation": [
+      128,
+      64,
+      144
+    ],
+    "tacticalCells": [
+      80,
+      96,
+      112,
+      125,
+      126,
+      127,
+      129
+    ],
+    "quietSetupCells": [],
+    "proof": {
+      "initialOpponentWinningMoves": [
+        128
+      ],
+      "winningPointsAfterSolution": [
+        64,
+        144
+      ],
+      "opponentRepliesVerified": 217
+    }
+  },
+  {
+    "id": "two-counter-two-lines",
+    "title": "守一处，准备两条线",
+    "chapter": 4,
+    "objective": "two",
+    "goal": "化解竖线危险，同时准备横线与反斜线；第二手选仍空着的成五点。",
+    "hint": "危险点旁边有两组你的三子。一次连接，可以准备两个方向。",
+    "concepts": [
+      "防守兼双冲四",
+      "反斜线续着"
+    ],
+    "moves": [
+      70,
+      56,
+      84,
+      67,
+      98,
+      82,
+      109,
+      97,
+      110,
+      108,
+      111,
+      127
+    ],
+    "toMove": 1,
+    "solution": 112,
+    "solutions": [
+      112
+    ],
+    "continuation": [
+      112,
+      113,
+      126
+    ],
+    "tacticalCells": [
+      56,
+      67,
+      70,
+      82,
+      84,
+      97,
+      98,
+      108,
+      109,
+      110,
+      111,
+      127
+    ],
+    "quietSetupCells": [],
+    "proof": {
+      "initialOpponentWinningMoves": [
+        112
+      ],
+      "winningPointsAfterSolution": [
+        113,
+        126
+      ],
+      "opponentRepliesVerified": 212
+    }
+  },
+  {
+    "id": "two-counter-gaps",
+    "title": "对方挡一格，你补另一格",
+    "chapter": 4,
+    "objective": "two",
+    "goal": "先化解斜线威胁，再从两个不同的内部空位中找到第二手成五。",
+    "hint": "第一手落在交会处。下一手的机会分别藏在横线和竖线中间。",
+    "concepts": [
+      "防守兼双断四",
+      "内部空位续着"
+    ],
+    "moves": [
+      67,
+      14,
+      97,
+      80,
+      109,
+      96,
+      110,
+      128,
+      113,
+      144,
+      127,
+      210
+    ],
+    "toMove": 1,
+    "solution": 112,
+    "solutions": [
+      112
+    ],
+    "continuation": [
+      112,
+      82,
+      111
+    ],
+    "tacticalCells": [
+      67,
+      80,
+      96,
+      97,
+      109,
+      110,
+      113,
+      127,
+      128,
+      144
+    ],
+    "quietSetupCells": [
+      14,
+      210
+    ],
+    "proof": {
+      "initialOpponentWinningMoves": [
+        112
+      ],
+      "winningPointsAfterSolution": [
+        82,
+        111
+      ],
+      "opponentRepliesVerified": 212
+    }
+  },
+  {
+    "id": "two-counter-three",
+    "title": "守好这一手，再选成五点",
+    "chapter": 4,
+    "objective": "two",
+    "goal": "先挡住反斜线，再从横、竖、斜的机会中选出第二手成五。",
+    "hint": "三组棋子的形状不一样。落在交会处后，再分别数一次。",
+    "concepts": [
+      "综合防守转攻",
+      "三向机会",
+      "混合线形"
+    ],
+    "moves": [
+      67,
+      70,
+      82,
+      80,
+      96,
+      84,
+      109,
+      98,
+      110,
+      108,
+      111,
+      126,
+      127,
+      195,
+      128,
+      210,
+      144,
+      211
+    ],
+    "toMove": 1,
+    "solution": 112,
+    "solutions": [
+      112
+    ],
+    "continuation": [
+      112,
+      97,
+      113
+    ],
+    "tacticalCells": [
+      67,
+      70,
+      80,
+      82,
+      84,
+      96,
+      98,
+      108,
+      109,
+      110,
+      111,
+      126,
+      127,
+      128,
+      144
+    ],
+    "quietSetupCells": [
+      195,
+      210,
+      211
+    ],
+    "proof": {
+      "initialOpponentWinningMoves": [
+        112
+      ],
+      "winningPointsAfterSolution": [
+        97,
+        113,
+        160
+      ],
+      "opponentRepliesVerified": 206
+    }
+  }
+]

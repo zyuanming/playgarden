@@ -178,6 +178,21 @@
       "dependencies": "No code dependency; media decoding uses browser APIs.",
       "adaptation": "Audition for harshness, trim/normalize levels and pair all sounds with visible feedback.",
       "priority": "Optional"
+    },
+    {
+      "id": "open-gomoku",
+      "name": "open-gomoku",
+      "category": "adapted-game-engine",
+      "kind": "Freestyle Gomoku rule/evaluation/search core",
+      "source": "https://github.com/tombelieber/gomoku",
+      "commit": "0d8f81e687a04c729b1dfe5b0ce028295528cc17",
+      "license": "MIT",
+      "licenseEvidence": "https://github.com/tombelieber/gomoku/blob/0d8f81e687a04c729b1dfe5b0ce028295528cc17/LICENSE",
+      "status": "Actual Rust-to-TypeScript board/evaluation/alpha-beta adaptation. Original UI and 24 exercises. Runtime and browser release gates documented in docs/gomoku-campaign.md.",
+      "assets": "No upstream UI/media/fonts/logo. Original SVG/CSS.",
+      "dependencies": "No added runtime dependencies or upstream WASM. Same-origin cancellable module Worker.",
+      "privacy": "No upstream analytics, remote fonts, accounts, chat, leaderboard or position upload.",
+      "priority": "Implemented, release tied to final commit CI"
     }
   ]
 }

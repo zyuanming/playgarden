@@ -1042,6 +1042,26 @@ export const games: GameDefinition[] = [
     source: original,
     component: lazy(() => import("../games/BlackboxObservatory")),
   },
+  {
+    id: "gomoku",
+    title: "自由五子棋",
+    subtitle: "一黑一白，慢慢想。离线对弈与 24 道棋形练习。",
+    category: "逻辑思维",
+    difficulty: "中级",
+    tone: "green",
+    levelCount: 24,
+    freePlay: true,
+    resumeKey: "playgarden.gomoku.v1",
+    artwork: { url: "./gomoku-art.svg", position: "50% 50%", size: "cover" },
+    source: {
+      kind: "adapted", license: "MIT", author: "open-gomoku Contributors", workTitle: "open-gomoku",
+      url: "https://github.com/tombelieber/gomoku/tree/0d8f81e687a04c729b1dfe5b0ce028295528cc17/engine/src",
+      commit: "0d8f81e687a04c729b1dfe5b0ce028295528cc17",
+      notice: "./gomoku-LICENSE.txt",
+      notes: "规则、估值与搜索内核由固定 Rust 源码改编为 TypeScript；本项目重写界面、教学题库、存档和可取消的离线陪练。",
+    },
+    component: lazy(() => import("../games/GomokuGarden")),
+  },
 ];
 export const findGame = (id: string) => games.find((game) => game.id === id);
 

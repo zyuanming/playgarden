@@ -72,3 +72,35 @@ SOFTWARE.
 规则核对固定到 Simon Tatham's Portable Puzzle Collection 快照 `a7c7826bce5cbb9b9c337c11b9b7f8b278e76fba`。只读参考 `blackbox.c` 与 `puzzles.but` 的 Black Box 章节，用于明确入口、正前吸收与前侧转向的优先级；完整快照文件、来源校验和 MIT 许可保留在 `vendor/sgtatham-blackbox/`，许可同时随生产产物分发为 `public/blackbox-LICENCE.txt`。上游 Black Box 模块由 James Harvey 贡献；机制历史见上游文档，不把商业原版品牌、包装或关卡当作 MIT 素材。
 
 Playgarden 的 TypeScript 游戏规则实现、Python 独立求解器、6 章 84 个 D4 非同构题、中文教程、界面、`scripts/blackbox/art.svg` 与由其渲染的 `public/blackbox-art.webp` 均为原创。本游戏不移植上游生成器或关卡，不载入外部美术、字体、音频，也不执行上游源码。完整上游 MIT 版权及许可文本见本文件前述 Simon Tatham 节和独立 `blackbox-LICENCE.txt`；该声明不会替代许可证正文。
+
+## open-gomoku: actual TypeScript source adaptation
+
+- Upstream: https://github.com/tombelieber/gomoku
+- Fixed commit: `0d8f81e687a04c729b1dfe5b0ce028295528cc17`
+- Copyright (c) 2026 open-gomoku Contributors. MIT License.
+- Actual adapted code: `engine/src/board.rs`, `engine/src/ai.rs`, `engine/src/eval.rs`, now `src/games/gomokuLogic.ts` and `gomokuAi.ts`. Original reference copies and byte hashes: `vendor/open-gomoku/`.
+- Full unchanged permission/disclaimer: `vendor/open-gomoku/LICENSE`, also shipped as `public/gomoku-LICENSE.txt`.
+- Changes: full winning segments, immutable/replay-validated state, exhaustive immediate tactics before truncation, deterministic iterative alpha-beta, budget and cancellable Worker lifecycle. Original UI, SVG/CSS artwork, tutorial corpus, storage and accessibility integration.
+- No upstream web UI, remote fonts, analytics, images, accounts, PWA, package dependencies or WASM binary copied. See `docs/gomoku/port-provenance.md` for function mapping and limitations.
+
+MIT License
+
+Copyright (c) 2026 open-gomoku Contributors
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.

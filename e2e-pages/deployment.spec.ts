@@ -51,13 +51,14 @@ test("production base, every game module, and earned local progress survive depl
     expect(new URL(url!).pathname.startsWith(base.pathname)).toBe(true);
     const artworkResponse = await page.request.get(url!);
     expect(artworkResponse.status()).toBe(200);
-    expect(artworkResponse.headers()["content-type"]).toContain("image/webp");
+    expect(artworkResponse.headers()["content-type"]).toContain(url!.endsWith(".svg") ? "image/svg+xml" : "image/webp");
     await page.evaluate(async (url) => { const image = new Image(); image.src = url; await image.decode(); if (!image.naturalWidth) throw new Error("Empty artwork"); }, url!);
     await artwork.click();
     await expect(page.locator(".game-main")).toHaveAttribute("data-game", game.id);
     await expect(page.locator(".game-surface")).toBeVisible();
     await expect(page.locator(".game-surface .loading")).toHaveCount(0);
     await expect(page.locator(".module-error")).toHaveCount(0);
+    if (game.freePlay) await page.getByRole("button", { name: "棋形练习", exact: true }).click();
     await expect(page.getByLabel("选择关卡", { exact: true }).locator("option")).toHaveCount(game.levelCount);
     if (game.id === "lights-out") {
       await page.getByLabel("选择关卡", { exact: true }).selectOption("111");

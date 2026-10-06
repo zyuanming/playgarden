@@ -1,0 +1,547 @@
+.gomoku-garden {
+  --gomoku-ink: #243c36;
+  --gomoku-muted: #596c61;
+  --gomoku-green: #426c54;
+  --gomoku-wood: #ead4a9;
+  color: var(--gomoku-ink);
+  background: #f7f8f1;
+  border-radius: 20px;
+  padding: clamp(14px, 3vw, 30px);
+  max-width: 1100px;
+  margin: auto;
+}
+.gomoku-garden * {
+  box-sizing: border-box;
+}
+.gomoku-intro {
+  margin: 0 0 20px;
+}
+.gomoku-kicker {
+  font-size: 11px;
+  letter-spacing: 0.13em;
+  font-weight: 750;
+  color: var(--gomoku-green);
+}
+.gomoku-intro h2 {
+  margin: 8px 0;
+  font-size: clamp(22px, 3vw, 30px);
+  letter-spacing: 0.02em;
+}
+.gomoku-intro p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.8;
+  color: var(--gomoku-muted);
+}
+.gomoku-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 232px;
+  gap: 26px;
+  align-items: start;
+}
+.gomoku-play-area {
+  max-width: 620px;
+  width: 100%;
+  margin: auto;
+  min-width: 0;
+}
+.gomoku-turn {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 0 2px 12px;
+  min-height: 36px;
+  flex-wrap: wrap;
+}
+.gomoku-turn strong {
+  font-size: 15px;
+}
+.gomoku-turn > span:last-child {
+  margin-left: auto;
+  color: var(--gomoku-muted);
+  font-size: 12px;
+}
+.gomoku-mini-stone {
+  width: 17px;
+  height: 17px;
+  background: #293d38;
+  border: 1px solid #182c25;
+  border-radius: 50%;
+  box-shadow: 0 2px 3px #16382720;
+  display: inline-block;
+  flex-shrink: 0;
+}
+.gomoku-mini-stone.white {
+  background: #fffdf6;
+  border-color: #a2967f;
+}
+.gomoku-board-frame {
+  background: var(--gomoku-wood);
+  border: 1px solid #c2a271;
+  box-shadow:
+    0 5px 0 #b69a7033,
+    0 14px 26px #52675012;
+  border-radius: 14px;
+  padding: 10px 14px 17px 4px;
+  overflow: hidden;
+}
+.gomoku-coordinates {
+  display: grid;
+  grid-template-columns: repeat(15, minmax(0, 1fr));
+  padding-left: 20px;
+  color: #695735;
+  font-size: 10px;
+  text-align: center;
+  height: 20px;
+  align-items: start;
+  font-weight: 650;
+}
+.gomoku-board-with-rows {
+  display: flex;
+}
+.gomoku-row-numbers {
+  display: grid;
+  grid-template-rows: repeat(15, minmax(0, 1fr));
+  flex: 0 0 20px;
+  text-align: center;
+  color: #695735;
+  font-size: 10px;
+  align-items: center;
+  font-weight: 650;
+}
+.gomoku-board {
+  width: 100%;
+  aspect-ratio: 1;
+  display: grid;
+  grid-template-rows: repeat(15, minmax(0, 1fr));
+  min-width: 0;
+}
+.gomoku-row {
+  display: grid;
+  grid-template-columns: repeat(15, minmax(0, 1fr));
+  min-height: 0;
+}
+.gomoku-garden .gomoku-point {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  box-shadow: none;
+  border-radius: 0;
+  padding: 0;
+  margin: 0;
+  min-width: 0;
+  min-height: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  color: var(--gomoku-ink);
+  touch-action: manipulation;
+  transition: none;
+  isolation: isolate;
+}
+.gomoku-point:before,
+.gomoku-point:after {
+  content: "";
+  position: absolute;
+  background: #a58b5b;
+  z-index: -1;
+}
+.gomoku-point:before {
+  height: 1px;
+  left: 0;
+  right: 0;
+  top: 50%;
+}
+.gomoku-point:after {
+  width: 1px;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+}
+.gomoku-point.left:before {
+  left: 50%;
+}
+.gomoku-point.right:before {
+  right: 50%;
+}
+.gomoku-point.top:after {
+  top: 50%;
+}
+.gomoku-point.bottom:after {
+  bottom: 50%;
+}
+.gomoku-garden .gomoku-point:hover {
+  background: #ffffff30;
+}
+.gomoku-garden .gomoku-point:focus-visible {
+  outline: 3px solid #235c48;
+  outline-offset: -2px;
+  border-radius: 3px;
+  z-index: 3;
+  background: #fff6d470;
+}
+.gomoku-garden .gomoku-point[aria-disabled="true"] {
+  cursor: default;
+  opacity: 1;
+}
+.gomoku-star {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #947b50;
+  top: calc(50% - 1.5px);
+  left: calc(50% - 1.5px);
+  z-index: 0;
+}
+.gomoku-stone {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 83%;
+  height: 83%;
+  position: relative;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 33% 25%,
+    #60726a 0,
+    #31473e 39%,
+    #1c3229 100%
+  );
+  border: 1px solid #12271d;
+  box-shadow: 0 2px 3px #6b502444;
+  z-index: 1;
+  pointer-events: none;
+}
+.gomoku-stone.white {
+  background: radial-gradient(
+    circle at 30% 23%,
+    #fffef9,
+    #fcf9ed 55%,
+    #d2cbb6 100%
+  );
+  border-color: #b4a789;
+}
+.gomoku-stone.ghost {
+  opacity: 0.48;
+  border: 2px dashed #235c48;
+  box-shadow: none;
+}
+.gomoku-point.preview {
+  outline: 2px solid #235c48;
+  outline-offset: -2px;
+}
+.gomoku-stone i {
+  height: 22%;
+  width: 22%;
+  border-radius: 50%;
+  background: #f4d394;
+}
+.gomoku-stone.white i {
+  background: #426c54;
+}
+.gomoku-stone b {
+  position: absolute;
+  font-size: clamp(10px, 1.8vw, 17px);
+  color: #fff0c1;
+  line-height: 1;
+}
+.gomoku-stone.white b {
+  color: #234f39;
+}
+.gomoku-stone:has(b) i {
+  display: none;
+}
+.gomoku-point.winning .gomoku-stone {
+  box-shadow:
+    0 0 0 2px #54855d,
+    0 2px 4px #6b502444;
+}
+.gomoku-confirm {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 16px 0 0;
+}
+.gomoku-confirm p {
+  font-size: 13px;
+  color: var(--gomoku-muted);
+  line-height: 1.5;
+  flex: 1;
+  margin: 0;
+}
+.gomoku-garden .gomoku-confirm button {
+  background: var(--gomoku-green);
+  color: #fff;
+  border: 1px solid var(--gomoku-green);
+  border-radius: 12px;
+  min-height: 46px;
+  padding: 10px 18px;
+  font-size: 14px;
+  white-space: nowrap;
+}
+.gomoku-garden button:disabled {
+  opacity: 0.48;
+  cursor: not-allowed;
+}
+.gomoku-keyboard {
+  font-size: 11px;
+  text-align: center;
+  color: var(--gomoku-muted);
+  margin: 14px 0 0;
+  line-height: 1.7;
+}
+.gomoku-sidebar {
+  display: grid;
+  gap: 14px;
+  min-width: 0;
+}
+.gomoku-panel {
+  background: #fffdf8;
+  border: 1px solid #dce3d6;
+  border-radius: 16px;
+  padding: 17px;
+}
+.gomoku-panel h3 {
+  font-size: 16px;
+  margin: 0 0 13px;
+}
+.gomoku-panel fieldset {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  min-width: 0;
+}
+.gomoku-panel label {
+  display: block;
+  font-size: 12px;
+  color: var(--gomoku-muted);
+  font-weight: 600;
+  margin: 10px 0;
+}
+.gomoku-panel select {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  min-height: 44px;
+  border: 1px solid #d2dcca;
+  background: #f7f8f0;
+  color: var(--gomoku-ink);
+  border-radius: 9px;
+  padding: 9px;
+  font-size: 13px;
+  margin-top: 5px;
+}
+.gomoku-garden .gomoku-panel button {
+  width: 100%;
+  min-height: 44px;
+  margin-top: 8px;
+  border: 1px solid #cbd6c4;
+  background: #edf2e8;
+  color: #2c573e;
+  border-radius: 9px;
+  padding: 8px;
+  font-size: 13px;
+  font-weight: 650;
+}
+.gomoku-garden .gomoku-panel button.primary {
+  background: var(--gomoku-green);
+  color: white;
+}
+.gomoku-panel p {
+  font-size: 13px;
+  line-height: 1.8;
+}
+.gomoku-panel .gomoku-small,
+.gomoku-save {
+  font-size: 11px;
+  line-height: 1.8;
+  color: var(--gomoku-muted);
+  margin-bottom: 0;
+}
+.gomoku-chapter {
+  display: block;
+  font-size: 11px;
+  color: var(--gomoku-green);
+  margin-bottom: 8px;
+  letter-spacing: 0.05em;
+}
+.gomoku-notice {
+  color: #6b542a !important;
+  background: #fff2d9;
+  padding: 8px;
+  border-radius: 8px;
+}
+.gomoku-rules {
+  border: 1px solid #dce3d6;
+  border-radius: 12px;
+  padding: 0 12px;
+  font-size: 12px;
+  background: #f0f4ea;
+}
+.gomoku-rules summary {
+  cursor: pointer;
+  font-weight: 650;
+  min-height: 44px;
+  align-content: center;
+  color: #365641;
+}
+.gomoku-rules ul {
+  padding-left: 17px;
+  line-height: 1.8;
+  margin-top: 0;
+}
+.gomoku-rules li + li {
+  margin-top: 6px;
+}
+.gomoku-legend {
+  display: grid;
+  gap: 7px;
+  font-size: 11px;
+  color: var(--gomoku-muted);
+  line-height: 1.7;
+  padding: 0 3px;
+}
+.gomoku-last-dot {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border: 1px solid #856e3d;
+  background: #ead091;
+  border-radius: 50%;
+  margin: 0 5px 0 1px;
+}
+.gomoku-save {
+  padding: 0 3px;
+  margin-top: 0;
+}
+.gomoku-feedback {
+  padding: 12px 15px;
+  margin: 20px 0 0;
+  background: #e7eee0;
+  border-radius: 11px;
+  color: #3c5e40;
+  font-size: 13px;
+  line-height: 1.8;
+  min-height: 46px;
+}
+.game-mode-picker {
+  display: flex;
+  gap: 8px;
+  margin: 0 0 15px;
+}
+.game-mode-picker button {
+  min-height: 44px;
+  padding: 9px 17px;
+  border: 1px solid #d9e3d4;
+  border-radius: 12px;
+  background: #f7f8f2;
+  color: #47623d;
+}
+.game-mode-picker button[aria-pressed="true"] {
+  background: #466c50;
+  color: white;
+  border-color: #466c50;
+}
+.game-mode-picker button:focus-visible {
+  outline: 3px solid #95b885;
+  outline-offset: 3px;
+}
+@media (max-width: 760px) {
+  .gomoku-layout {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+  .gomoku-sidebar {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 12px;
+  }
+  .gomoku-panel {
+    grid-row: span 3;
+  }
+  .gomoku-garden {
+    padding: 16px;
+  }
+  .gomoku-intro {
+    margin-bottom: 17px;
+  }
+  .gomoku-stone b {
+    font-size: 14px;
+  }
+  .gomoku-feedback {
+    margin-top: 16px;
+  }
+  .gomoku-rules {
+    align-self: start;
+  }
+}
+@media (max-width: 430px) {
+  .gomoku-garden {
+    padding: 12px;
+    border-radius: 14px;
+  }
+  .gomoku-board-frame {
+    padding: 7px 8px 12px 1px;
+    border-radius: 10px;
+  }
+  .gomoku-row-numbers {
+    flex-basis: 16px;
+    font-size: 8px;
+  }
+  .gomoku-coordinates {
+    padding-left: 16px;
+    font-size: 8px;
+    height: 16px;
+  }
+  .gomoku-turn strong {
+    font-size: 13px;
+  }
+  .gomoku-turn {
+    gap: 7px;
+  }
+  .gomoku-confirm {
+    gap: 7px;
+  }
+  .gomoku-confirm p {
+    font-size: 11px;
+  }
+  .gomoku-garden .gomoku-confirm button {
+    font-size: 12px;
+    padding: 10px 12px;
+  }
+  .gomoku-sidebar {
+    grid-template-columns: 1fr;
+  }
+  .gomoku-panel {
+    grid-row: auto;
+  }
+  .gomoku-panel fieldset {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px 10px;
+  }
+  .gomoku-panel label {
+    margin: 3px 0;
+  }
+  .gomoku-panel fieldset > button {
+    grid-column: 1/-1;
+  }
+  .gomoku-stone b {
+    font-size: 10px;
+  }
+  .gomoku-keyboard {
+    font-size: 10px;
+  }
+  .gomoku-turn > span:last-child {
+    font-size: 11px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .gomoku-garden * {
+    transition: none !important;
+    animation: none !important;
+  }
+}

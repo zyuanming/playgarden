@@ -171,3 +171,7 @@ Keep Light Lab, Robot Routes and Bridge Blocks original. Use Three.js plus origi
 5. Test keyboard and touch, zoom, non-color cues, mute, reduced motion, pause and teardown. Do not call a game educational solely because it is a puzzle; state the specific skill it practices.
 6. Keep author logos/trademarks out of hub branding and do not imply endorsement.
 
+
+## 6 October: actual open-gomoku adaptation
+
+The [MIT source](https://github.com/tombelieber/gomoku/tree/0d8f81e687a04c729b1dfe5b0ce028295528cc17/engine/src) at fixed commit `0d8f81e687a04c729b1dfe5b0ce028295528cc17` now supplies the identifiable rule, evaluation and alpha-beta routines for freestyle Gomoku. Rust was statically reviewed and adapted to TypeScript; no upstream binary was run. See [port mapping](gomoku/port-provenance.md) and [game scope and verification](gomoku-campaign.md). This is an implementation record, separate from the older branch-based shortlist above. Complete MIT attribution ships with source and public assets. The original web analytics, fonts, UI and dependencies are excluded.
