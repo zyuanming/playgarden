@@ -59,7 +59,12 @@ for (const index of [0, 49, 99]) test(`Same Game ${index + 1} keyboard, pause, u
   await page.screenshot({ path: info.outputPath(`samegame-${index + 1}-hint.png`), fullPage: true });
   await page.getByRole('button', { name: /^确认消除/ }).click(); const hintedBoard = await board(page); expect(hintedBoard).not.toEqual(initial);
   await page.reload(); await page.getByRole('textbox', { name: '搜索游戏' }).fill('花簇消除'); await page.getByRole('button', { name: '开始玩花簇消除', exact: true }).click();
-  await expect(page.getByLabel('选择关卡', { exact: true })).toHaveValue(String(index)); expect(await board(page)).toEqual(hintedBoard);
+  await expect(page.getByLabel('选择关卡', { exact: true })).toHaveValue(String(index));
+  // The shell mounts before its lazy game. Prove the restored board is ready,
+  // then compare every cell; an empty transient list is not a saved position.
+  await expect(page.locator('.game-surface .loading')).toHaveCount(0);
+  await expect(page.locator('[data-samegame-cell]')).toHaveCount(level.width * level.height);
+  expect(await board(page)).toEqual(hintedBoard);
   const stored = await page.evaluate(key => JSON.parse(localStorage.getItem(key)!), `${SAMEGAME_RESUME_KEY}.round.${index}`); expect(stored.id).toBe(level.id);
   await page.getByRole('button', { name: '撤销', exact: true }).click(); expect(await board(page)).toEqual(initial);
   await target.click(); await target.click(); await page.getByRole('button', { name: '重来', exact: true }).click(); expect(await board(page)).toEqual(initial);
