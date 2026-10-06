@@ -229,7 +229,6 @@ test("Xiangqi interrupted pending AI, late responses and restarts remain harmles
   page,
 }, info) => {
   await page.clock.install({ time: new Date("2026-01-01T00:00:00Z") });
-  await page.clock.pauseAt(new Date("2026-01-02T00:00:00Z"));
   await page.addInitScript(() => {
     const all: unknown[] = [];
     (window as unknown as { xqWorkers: unknown[] }).xqWorkers = all;
@@ -250,6 +249,8 @@ test("Xiangqi interrupted pending AI, late responses and restarts remain harmles
     window.Worker = WorkerMock as unknown as typeof Worker;
   });
   await open(page);
+  // Let the real lazy module finish mounting before freezing only AI timers.
+  await page.clock.pauseAt(new Date("2026-01-02T00:00:00Z"));
   await play(page, "a3a4");
   await page.clock.runFor(300);
   await expect
@@ -297,6 +298,42 @@ test("Xiangqi interrupted pending AI, late responses and restarts remain harmles
           .xqWorkers[1].terminated,
     ),
   ).toBe(true);
+  await play(page, "c3c4");
+  await page.clock.runFor(300);
+  await expect
+    .poll(() =>
+      page.evaluate(
+        () => (window as unknown as { xqWorkers: unknown[] }).xqWorkers.length,
+      ),
+    )
+    .toBe(3);
+  await page.getByRole("button", { name: "重来", exact: true }).click();
+  await expect(root(page)).toHaveAttribute("data-xiangqi-moves", "0");
+  expect(
+    await page.evaluate(
+      () =>
+        (window as unknown as { xqWorkers: { terminated: boolean }[] })
+          .xqWorkers[2].terminated,
+    ),
+  ).toBe(true);
+  await page.evaluate(() => {
+    const w = (
+      window as unknown as {
+        xqWorkers: {
+          request: object;
+          onmessage: (e: { data: object }) => void;
+        }[];
+      }
+    ).xqWorkers[2];
+    w.onmessage({ data: { ...w.request, move: "a6a5" } });
+  });
+  await page.clock.runFor(2000);
+  await expect(root(page)).toHaveAttribute("data-xiangqi-moves", "0");
+  expect(
+    await page.evaluate(
+      () => (window as unknown as { xqWorkers: unknown[] }).xqWorkers.length,
+    ),
+  ).toBe(3);
   await page.screenshot({
     path: info.outputPath("xiangqi-cancelled-clean.png"),
     fullPage: true,
