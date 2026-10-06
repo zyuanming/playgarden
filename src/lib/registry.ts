@@ -1003,6 +1003,19 @@ export const games: GameDefinition[] = [
     },
     component: lazy(() => import("../games/SlantForest")),
   },
+  {
+    id: "samegame",
+    title: "花簇消除",
+    subtitle: "5 章 100 关，借下落与靠拢，让每朵花找到伙伴。",
+    category: "逻辑思维",
+    difficulty: "中级",
+    tone: "green",
+    levelCount: 100,
+    resumeKey: "playgarden.samegame.v1",
+    artwork: { url: "./samegame-art.webp", position: "50% 50%", size: "cover" },
+    source: original,
+    component: lazy(() => import("../games/SameGameGarden")),
+  },
 ];
 export const findGame = (id: string) => games.find((game) => game.id === id);
 

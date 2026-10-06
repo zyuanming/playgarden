@@ -55,3 +55,7 @@ BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
 ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+## 花簇消除（Same Game）
+
+本项目自行实现同类连通消除、重力及空列压紧规则；生成器、100 关题库、中文教学与 `public/samegame-art.webp` 程序化插画均为原创并沿用本项目 MIT 许可。不包含第三方 Same Game 代码、关卡、美术、字体或音频。完整生成与独立验证范围见 `docs/samegame-campaign.md`。

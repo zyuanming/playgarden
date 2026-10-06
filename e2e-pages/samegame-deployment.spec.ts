@@ -1,0 +1,24 @@
+import { test, expect } from '@playwright/test';
+import { readFileSync } from 'node:fs';
+import { samegameLevels } from '../src/games/samegameLevels';
+import { STORAGE_KEY } from '../src/lib/progress';
+const certificates = JSON.parse(readFileSync('docs/samegame/campaign.json', 'utf8')).levels as { id: string; solution: number[] }[];
+test('Same Game final chapter survives public-path reload and earns real completion', async ({ page }, info) => {
+  const errors: string[] = []; page.on('pageerror', error => errors.push(error.message)); page.on('requestfailed', request => errors.push(request.url()));
+  await page.goto('./');
+  if (process.env.GITHUB_SHA) await expect(page.locator('meta[name="playgarden-commit"]')).toHaveAttribute('content', process.env.GITHUB_SHA);
+  const enter = async () => { await page.getByRole('textbox', { name: '搜索游戏' }).fill('花簇消除'); await page.getByRole('button', { name: '开始玩花簇消除', exact: true }).click(); await expect(page.locator('.game-surface .loading')).toHaveCount(0); };
+  await enter(); await page.getByLabel('选择关卡', { exact: true }).selectOption('99');
+  const proof = certificates.find(item => item.id === samegameLevels[99].id)!;
+  const clickMove = async (move: number) => { await page.locator(`[data-samegame-cell="${move}"]`).click(); await page.getByRole('button', { name: /^确认消除/ }).click(); };
+  await clickMove(proof.solution[0]);
+  const current = await page.locator('[data-samegame-cell]').evaluateAll(nodes => nodes.map(node => node.getAttribute('data-value')));
+  await page.reload(); await enter(); await expect(page.getByLabel('选择关卡', { exact: true })).toHaveValue('99');
+  expect(await page.locator('[data-samegame-cell]').evaluateAll(nodes => nodes.map(node => node.getAttribute('data-value')))).toEqual(current);
+  await page.screenshot({ path: info.outputPath('pages-samegame-resumed.png'), fullPage: true });
+  for (const move of proof.solution.slice(1)) await clickMove(move);
+  await expect(page.locator('[data-samegame-won]')).toHaveAttribute('data-samegame-won', 'true'); await expect(page.locator('.status')).toHaveClass(/success/);
+  expect(await page.evaluate(key => JSON.parse(localStorage.getItem(key)!).completed.samegame, STORAGE_KEY)).toContain(99);
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+  await page.screenshot({ path: info.outputPath('pages-samegame-completed.png'), fullPage: true }); expect(errors).toEqual([]);
+});
