@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: GPL-3.0-only
 import {test,expect} from '@playwright/test';
-import {enterMerge,setMergeRound,verifyMergeMotion,settleMerge,swipeMerge,mergeLayout,roundKey,bestKey} from './mergeJourney';
+import {enterMerge,setMergeRound,verifyMergeMotion,settleMerge,freezeMerge,swipeMerge,mergeLayout,roundKey,bestKey} from './mergeJourney';
 import {mergeMove,restoreMergeState,type MergeDirection} from '../src/games/mergeLogic';
 test('2048 actual tile slide midpoint, merge pop, spawn, saved score and restart',async({page},info)=>{
  const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));await page.goto('/');await setMergeRound(page);await enterMerge(page);await verifyMergeMotion(page,info);
@@ -9,7 +9,7 @@ test('2048 actual tile slide midpoint, merge pop, spawn, saved score and restart
  await page.getByRole('button',{name:'重来',exact:true}).click();await expect(page.locator('[data-merge-score]')).toHaveText('0');await expect(page.locator('[data-merge-best]')).toHaveText('4');expect(await page.locator('[data-tile-id]').count()).toBe(2);expect(errors).toEqual([]);
 });
 test('2048 queued keyboard moves, touch swipe, pause/undo and hidden cancellation',async({page},info)=>{
- await page.goto('/');const board=[2,2,4,0,...Array(12).fill(0)];await setMergeRound(page,board);await enterMerge(page);await page.clock.install();await page.clock.pauseAt(new Date());
+ await page.goto('/');const board=[2,2,4,0,...Array(12).fill(0)];await setMergeRound(page,board);await enterMerge(page);await freezeMerge(page);
  const sequence:MergeDirection[]=['left','left','down','right','up'];await page.locator('.merge-board').evaluate((n,dirs)=>{for(const d of dirs)n.dispatchEvent(new KeyboardEvent('keydown',{key:`Arrow${d[0].toUpperCase()+d.slice(1)}`,bubbles:true,cancelable:true}));},sequence);await settleMerge(page,6);
  const expected=sequence.reduce(mergeMove,restoreMergeState({board,score:0,moves:0,seed:21}));const saved=await page.evaluate(key=>JSON.parse(localStorage.getItem(key)!).current,roundKey);expect(saved.board).toEqual(expected.board);expect(saved.score).toBe(expected.score);expect(saved.moves).toBe(expected.moves);
  await page.locator('.merge-board').scrollIntoViewIfNeeded();await swipeMerge(page,-85,0);await settleMerge(page);const afterSwipe=mergeMove(expected,'left');expect(await page.evaluate(key=>JSON.parse(localStorage.getItem(key)!).current.board,roundKey)).toEqual(afterSwipe.board);
@@ -27,8 +27,23 @@ test('2048 legacy favorite and no levels, invalid save, storage denial and modif
 });
 
 test('2048 queued slide preserves the same in-flight merge-pop animation',async({page},info)=>{
- await page.goto('/');await setMergeRound(page,[2,2,4,0,...Array(12).fill(0)]);await enterMerge(page);await page.clock.install();await page.clock.pauseAt(new Date());await page.locator('.merge-board').focus();await page.keyboard.press('ArrowLeft');await page.keyboard.press('ArrowDown');await page.clock.runFor(150);await expect(page.locator('.merge-tile-merged')).toHaveCount(1);
+ await page.goto('/');await setMergeRound(page,[2,2,4,0,...Array(12).fill(0)]);await enterMerge(page);await freezeMerge(page);await page.locator('.merge-board').focus();await page.keyboard.press('ArrowLeft');await page.keyboard.press('ArrowDown');await page.clock.runFor(150);await expect(page.locator('.merge-tile-merged')).toHaveCount(1);
  const inner=await page.locator('.merge-tile-merged').elementHandle();await inner!.evaluate(n=>{const a=n.getAnimations()[0];a.pause();a.currentTime=75;(window as unknown as {mergeTestAnimation:Animation}).mergeTestAnimation=a;});await page.clock.runFor(110);await expect(page.locator('.merge-classic')).toHaveAttribute('data-merge-phase','sliding');
  const retained=await inner!.evaluate(n=>({connected:n.isConnected,animation:n.getAnimations().includes((window as unknown as {mergeTestAnimation:Animation}).mergeTestAnimation),scale:new DOMMatrixReadOnly(getComputedStyle(n).transform).a}));expect(retained.connected).toBe(true);expect(retained.animation).toBe(true);expect(retained.scale).toBeGreaterThan(1.05);
- await page.locator('.merge-tile-position').evaluateAll(nodes=>nodes.forEach(n=>n.getAnimations().forEach(a=>{a.pause();a.currentTime=60;})));await page.screenshot({path:info.outputPath('merge-queued-pop-during-slide.png'),animations:'allow',fullPage:true});await page.clock.runFor(300);await expect(page.locator('.merge-classic')).toHaveAttribute('data-merge-phase','idle');
+ await page.locator('.merge-tile-position').evaluateAll(nodes=>nodes.forEach(n=>n.getAnimations().forEach(a=>{a.pause();a.currentTime=60;})));await page.screenshot({path:info.outputPath('merge-queued-pop-during-slide.png'),animations:'allow',fullPage:true});await settleMerge(page);
+});
+
+test('2048 real-time rapid events finish without lost moves and touch remains responsive',async({page},info)=>{
+ const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));await page.goto('/');const board=[2,2,4,0,...Array(12).fill(0)];await setMergeRound(page,board);await enterMerge(page);await page.locator('.merge-board').scrollIntoViewIfNeeded();
+ // Deliberately no page.clock installation here. Five events arrive in one
+ // real browser task as synthetic DOM input; the app must drain them and
+ // finish its own animations. Other journeys use page.keyboard delivery.
+ const dirs:MergeDirection[]=['left','left','down','right','up'];
+ const started=await page.locator('.merge-board').evaluate((n,sequence)=>{const started=performance.now();for(const d of sequence)n.dispatchEvent(new KeyboardEvent('keydown',{key:`Arrow${d[0].toUpperCase()+d.slice(1)}`,bubbles:true,cancelable:true}));return started;},dirs);
+ const expected=dirs.reduce(mergeMove,restoreMergeState({board,score:0,moves:0,seed:21}));
+ await expect(page.locator('.merge-classic')).toHaveAttribute('data-merge-moves',String(expected.moves),{timeout:3500});await expect(page.locator('.merge-classic')).toHaveAttribute('data-merge-phase','idle',{timeout:3500});
+ expect(await page.evaluate(start=>performance.now()-start,started)).toBeLessThan(3500);
+ const actual=await page.evaluate(key=>JSON.parse(localStorage.getItem(key)!).current,roundKey);expect(actual.board).toEqual(expected.board);expect(actual.score).toBe(expected.score);expect(actual.moves).toBe(expected.moves);
+ const next=mergeMove(expected,'down');expect(next.moves).toBe(expected.moves+1);await swipeMerge(page,0,80);await expect(page.locator('.merge-classic')).toHaveAttribute('data-merge-moves',String(next.moves));await expect(page.locator('.merge-classic')).toHaveAttribute('data-merge-phase','idle');const after=await page.evaluate(key=>JSON.parse(localStorage.getItem(key)!).current,roundKey);expect(after.board).toEqual(next.board);expect(after.score).toBe(next.score);expect(after.moves).toBe(next.moves);
+ await mergeLayout(page);await page.screenshot({path:info.outputPath('merge-real-time-rapid-input.png'),fullPage:true});expect(errors).toEqual([]);
 });

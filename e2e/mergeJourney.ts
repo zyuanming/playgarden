@@ -4,12 +4,28 @@ export const roundKey="playgarden.merge.v1.round.free",bestKey="playgarden.merge
 export const motionBoard=[0,2,0,2,0,4,0,0,...Array(8).fill(0)];
 export async function setMergeRound(page:Page,board=motionBoard,score=0){await page.evaluate(({key,board,score})=>localStorage.setItem(key,JSON.stringify({version:1,current:{board,score,seed:21,moves:0},history:[]})),{key:roundKey,board,score});}
 export async function enterMerge(page:Page){await page.getByRole('textbox',{name:'搜索游戏'}).fill('2048');await page.getByRole('button',{name:'开始玩2048',exact:true}).click();await expect(page.locator('.merge-classic')).toBeVisible();await expect(page.getByLabel('选择关卡',{exact:true})).toHaveCount(0);await expect(page.getByRole('group',{name:'游玩方式'})).toHaveCount(0);}
-export async function settleMerge(page:Page,count=1){for(let i=0;i<count;i++)await page.clock.runFor(280);await expect(page.locator('.merge-classic')).toHaveAttribute('data-merge-phase','idle');}
+export async function freezeMerge(page:Page){
+ // A fixed future pause avoids racing the host clock against the browser clock.
+ await page.clock.install({time:new Date('2026-01-01T00:00:00Z')});
+ await page.clock.pauseAt(new Date('2026-01-01T00:00:01Z'));
+}
+export async function settleMerge(page:Page,count=1){
+ // React installs the next phase timer during its commit. Advance only after
+ // observing that commit, instead of guessing one large fake-time interval.
+ const game=page.locator('.merge-classic');
+ for(let step=0;step<count*2+4;step++){
+  const phase=await game.getAttribute('data-merge-phase');if(phase==='idle')return;
+  expect(['sliding','settling']).toContain(phase);
+  await page.clock.runFor(phase==='sliding'?150:110);
+  await expect(game).not.toHaveAttribute('data-merge-phase',phase!);
+ }
+ await expect(game).toHaveAttribute('data-merge-phase','idle');
+}
 export async function mergeLayout(page:Page){expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1)).toBe(true);for(const button of await page.locator('.merge-controls button').all()){const box=(await button.boundingBox())!;expect(box.width).toBeGreaterThanOrEqual(44);expect(box.height).toBeGreaterThanOrEqual(44);}await expect(page.locator('.module-error')).toHaveCount(0);}
 export async function swipeMerge(page:Page,dx:number,dy:number){const b=(await page.locator('.merge-board').boundingBox())!,x=b.x+b.width/2,y=b.y+b.height/2,session=await page.context().newCDPSession(page);await session.send('Input.dispatchTouchEvent',{type:'touchStart',touchPoints:[{x,y,id:0}]});await session.send('Input.dispatchTouchEvent',{type:'touchMove',touchPoints:[{x:x+dx,y:y+dy,id:0}]});await session.send('Input.dispatchTouchEvent',{type:'touchEnd',touchPoints:[]});await session.detach();}
 /** Measure actual animated geometry at controlled Web Animation times, then save originals. */
 export async function verifyMergeMotion(page:Page,info:TestInfo,prefix='merge'){
- await page.clock.install();await page.clock.pauseAt(new Date());
+ await freezeMerge(page);
  await page.locator('.merge-board').scrollIntoViewIfNeeded();
  const origins=await page.locator('[data-tile-id]').evaluateAll(nodes=>nodes.map(n=>({id:n.getAttribute('data-tile-id'),x:n.getBoundingClientRect().x,y:n.getBoundingClientRect().y})));
  const destination=(await page.locator('[data-merge-cell="0"]').boundingBox())!;
