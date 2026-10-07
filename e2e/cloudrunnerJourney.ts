@@ -24,8 +24,9 @@ export async function openRunner(page: Page, url = "/") {
   await expect(page.locator(".game-surface .loading")).toHaveCount(0);
 }
 export async function freezeRunner(page: Page) {
-  await page.clock.install();
-  await page.clock.pauseAt(new Date());
+  // Use a fixed origin and a strictly later pause, avoiding host/browser clock races.
+  await page.clock.install({ time: new Date("2026-01-01T00:00:00Z") });
+  await page.clock.pauseAt(new Date("2026-01-01T00:00:01Z"));
 }
 export async function runnerLayout(page: Page) {
   expect(

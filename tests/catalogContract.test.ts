@@ -50,7 +50,6 @@ import { lightsOutLevels } from "../src/games/lightsOutLogic";
 import { minesLevels } from "../src/games/minesLogic";
 import { nonogramLevels } from "../src/games/nonogramLogic";
 import { connectLevels } from "../src/games/connectLogic";
-import { mergeLevels } from "../src/games/mergeLogic";
 import { trafficLevels } from "../src/games/trafficLogic";
 import { reversiLevels } from "../src/games/reversiLogic";
 import { boxLevels } from "../src/games/boxLogic";
@@ -176,7 +175,7 @@ const packs = {
   boxes: boxLevels,
   connect: connectLevels,
   reversi: reversiLevels,
-  merge: mergeLevels,
+  merge: [],
   traffic: trafficLevels,
 };
 describe("Scalable catalog contract", () => {
@@ -208,8 +207,8 @@ describe("Scalable catalog contract", () => {
       }
     }),
   );
-  it("counts only 86 real games and 2071 levels, not the roadmap", () => {
+  it("counts only 86 real games and 2059 levels, not the roadmap", () => {
     expect(games).toHaveLength(86);
-    expect(games.reduce((sum, g) => sum + g.levelCount, 0)).toBe(2071);
+    expect(games.reduce((sum, g) => sum + g.levelCount, 0)).toBe(2059);
   });
 });

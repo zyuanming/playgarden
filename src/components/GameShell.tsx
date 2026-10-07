@@ -28,6 +28,7 @@ export function GameShell({
 }) {
   const game = games.find((g) => g.id === id)!;
   const [freePlay, setFreePlay] = useState(() => {
+    if (game.endless) return true;
     if (!game.freePlay) return false;
     try {
       return localStorage.getItem(`${game.resumeKey}.mode`) !== "practice";
@@ -68,7 +69,7 @@ export function GameShell({
     );
   });
   useEffect(() => {
-    if (game.resumeKey)
+    if (game.resumeKey && !game.endless)
       try {
         localStorage.setItem(`${game.resumeKey}.selected`, String(level));
       } catch {
@@ -155,7 +156,7 @@ export function GameShell({
           </div>
         )}
       </div>
-      {game.freePlay && (
+      {game.freePlay && !game.endless && (
         <div className="game-mode-picker" role="group" aria-label="游玩方式">
           <button
             aria-pressed={freePlay}
