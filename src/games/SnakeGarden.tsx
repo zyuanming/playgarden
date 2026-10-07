@@ -41,6 +41,7 @@ export default function SnakeGarden({
   const [available, setAvailable] = useState(loaded.available);
   const [localPause, setLocalPause] = useState(state.phase === "playing");
   const [hidden, setHidden] = useState(document.hidden);
+  const board = useRef<HTMLDivElement>(null);
   const live = useRef(state),
     pointer = useRef<{ id: number; x: number; y: number } | null>(null),
     status = useRef(onStatus);
@@ -128,11 +129,13 @@ export default function SnakeGarden({
     if (paused || hidden) return;
     if (live.current.phase === "ready") commit(startSnake(live.current));
     setLocalPause(false);
+    board.current?.focus({ preventScroll: true });
   }
   function restart() {
     if (paused || hidden) return;
     setLocalPause(false);
     commit(createSnake(Math.floor(Math.random() * 0x100000000)));
+    board.current?.focus({ preventScroll: true });
   }
   function pointerEnd(e: PointerEvent<HTMLDivElement>) {
     const p = pointer.current;
@@ -177,11 +180,13 @@ export default function SnakeGarden({
         </div>
       </div>
       <div
+        ref={board}
         className="snake-board"
         role="group"
         aria-label="贪吃蛇游戏区，方向键或滑动转向"
         tabIndex={0}
         onKeyDown={(e) => {
+          if (e.target !== e.currentTarget) return;
           if (e.ctrlKey || e.metaKey || e.altKey || e.repeat) return;
           const d = keyDirection[e.key];
           if (d !== undefined) {

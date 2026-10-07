@@ -250,14 +250,14 @@
   .snake-garden {
     max-width: 610px;
     display: grid;
-    grid-template-columns: auto minmax(150px, 1fr);
+    grid-template-columns: minmax(0, 1fr) minmax(140px, 0.55fr);
     gap: 5px 14px;
     align-items: center;
   }
   .snake-board {
     grid-column: 1;
     grid-row: 1/5;
-    width: calc(100svh - 40px);
+    width: min(100%, calc(100svh - 40px));
     max-width: 400px;
     margin: 0;
   }
@@ -274,7 +274,9 @@
   }
   .snake-stats {
     grid-column: 2;
-    gap: 14px;
+    gap: 3px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     margin: 0;
   }
   .snake-stats b {
@@ -293,5 +295,12 @@
   }
   .snake-pause {
     padding: 9px;
+  }
+}
+
+@media (orientation: landscape) and (max-height: 500px) {
+  .snake-directions {
+    grid-template-columns: repeat(3, 44px);
+    gap: 2px;
   }
 }

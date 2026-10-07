@@ -1139,5 +1139,16 @@ export const games: GameDefinition[] = [
       notes:"真实移植 MIT 线段相交与挡板反弹规则，修正最早碰撞及迭代边界。原创12关、界面和图形；不含原项目图片或 CC BY-ND 音频。"},
     component: lazy(() => import("../games/BreakoutGarden")),
   },
+  {
+    id:"snake",title:"贪吃蛇花园",subtitle:"吃果实，慢慢长大；给每一次转弯留条路。",
+    category:"动作反应",difficulty:"中级",tone:"green",levelCount:0,endless:true,allowUndo:false,
+    freePlayCaption:"无尽分数局 · 本机最高分",resumeKey:"playgarden.snake.v1",
+    artwork:{url:"./snake-art.svg",position:"50% 50%",size:"cover"},
+    source:{kind:"adapted",license:"MIT",author:"Patrick Gillespie",workTitle:"JavaScript-Snake",
+      url:"https://github.com/patorjk/JavaScript-Snake/tree/7c80eddde2de6af669e6ae5133ba8ae60a8d7fb9",
+      commit:"7c80eddde2de6af669e6ae5133ba8ae60a8d7fb9",notice:"./snake-LICENSE.txt",
+      notes:"实际改编MIT方向编码、移动/尾部腾位及增长碰撞核心；新增安全转向队列、空格枚举食物、原创界面与续玩。不引入上游图片或全局DOM运行时。"},
+    component:lazy(()=>import("../games/SnakeGarden")),
+  },
 ];
 export const findGame = (id: string) => games.find((game) => game.id === id);

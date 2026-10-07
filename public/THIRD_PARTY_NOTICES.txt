@@ -147,6 +147,10 @@ No avatar.glb, BrainStem/Poser model, avatarModel.ts, external image, font, musi
 
 `src/vendor/breakout/geometry.ts` adapts segment intersection from `game.js` and paddle response from `breakout.js` in Jake Gordon's javascript-breakout, commit eed59e2affa9423b93d2ac8ff93061bb88b33284. Full MIT notice: [breakout-LICENSE.txt](./breakout-LICENSE.txt). We changed face selection to compare earliest hits, bounded iteration, and constrained the minimum vertical bounce. Original levels and UI are Playgarden GPL-3.0-only. No upstream sounds (separately CC BY-ND 2.0), artwork, fonts, HTML, DOM shims or runner are included.
 
+## Snake movement core
+
+`src/vendor/snake/core.ts` is adapted from Patrick Gillespie's JavaScript-Snake, fixed commit `7c80eddde2de6af669e6ae5133ba8ae60a8d7fb9`, `src/js/snake.js` setDirection/go/eatFood. Full MIT notice is preserved in `src/vendor/snake/LICENSE.txt` and the distributed [snake-LICENSE.txt](./snake-LICENSE.txt). The adaptation retains direction encoding, tail-vacancy movement and food-growth collision semantics, replaces DOM-linked body nodes with immutable cell IDs, validates a bounded turn queue, and replaces random retries with finite empty-cell selection. Upstream artwork, old DOM runtime and third-party z-index snippet are excluded. Playgarden's original interface and storage integration are GPL-3.0-only.
+
 ## Complete bundled runtime dependency notices
 
 ### react 19.3.0 (MIT)
