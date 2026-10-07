@@ -81,3 +81,30 @@ it('legal visible-state pointer play wins and completes exactly once',()=>{
  expect(root().getAttribute('data-breakout-phase')).toBe('won');expect(value('score')).toBe(30);expect(p.onComplete).toHaveBeenCalledTimes(1);travel(1000);fireEvent.keyDown(stage(),{key:' '});pointer(stage(),'pointermove',{clientX:44,pointerType:'mouse'});expect(p.onComplete).toHaveBeenCalledTimes(1);expect(value('score')).toBe(30);
  r.rerender(<BreakoutGarden {...p} level={1}/>);expect(root().getAttribute('data-breakout-phase')).toBe('ready');expect(value('score')).toBe(0);expect(p.onComplete).toHaveBeenCalledTimes(1);
 },30000);
+it('keyboard beats opposite hover each frame and mouse regains control on release',()=>{
+ render(<BreakoutGarden {...props()}/>);tick();
+ for(const direction of [1,-1]){
+  pointer(stage(),'pointermove',{clientX:200,pointerType:'mouse',buttons:0});
+  const key=direction>0?'ArrowRight':'ArrowLeft';fireEvent.keyDown(stage(),{key});
+  for(let n=0;n<10;n++){const before=value('paddle');pointer(stage(),'pointermove',{clientX:direction>0?44:356,pointerType:'mouse',buttons:0});expect(value('paddle')).toBe(before);tick(16);expect((value('paddle')-before)*direction).toBeGreaterThan(0);}
+  fireEvent.keyUp(stage(),{key});pointer(stage(),'pointermove',{clientX:280,pointerType:'mouse',buttons:0});expect(value('paddle')).toBe(280);travel(32);expect(value('paddle')).toBe(280);
+ }
+});
+it('both arrows retain priority until both released; touch and cancellation still work',()=>{
+ render(<BreakoutGarden {...props()}/>);tick();fireEvent.keyDown(stage(),{key:'ArrowLeft'});fireEvent.keyDown(stage(),{key:'ArrowRight'});pointer(stage(),'pointermove',{clientX:44,pointerType:'mouse',buttons:0});travel(32);expect(value('paddle')).toBe(200);
+ fireEvent.keyUp(stage(),{key:'ArrowRight'});pointer(stage(),'pointermove',{clientX:356,pointerType:'mouse',buttons:0});tick();expect(value('paddle')).toBeLessThan(200);fireEvent.keyUp(stage(),{key:'ArrowLeft'});
+ pointer(stage(),'pointerdown',{clientX:120,pointerType:'touch'});expect(value('paddle')).toBe(120);pointer(stage(),'pointermove',{clientX:310,pointerType:'touch',buttons:1});expect(value('paddle')).toBe(310);pointer(stage(),'pointermove',{clientX:150,pointerType:'touch',buttons:0});expect(value('paddle')).toBe(310);
+ fireEvent.keyDown(stage(),{key:'ArrowLeft'});pointer(stage(),'pointercancel');pointer(stage(),'pointermove',{clientX:250,pointerType:'mouse',buttons:0});expect(value('paddle')).toBe(250);travel(32);expect(value('paddle')).toBe(250);
+});
+it('pause and hidden clear keyboard ownership so mouse works only after explicit resume',()=>{
+ const p=props(),r=render(<BreakoutGarden {...p}/>);start();fireEvent.keyDown(stage(),{key:'ArrowRight'});travel(32);r.rerender(<BreakoutGarden {...p} paused/>);const paused=value('paddle');pointer(stage(),'pointermove',{clientX:44,pointerType:'mouse',buttons:0});expect(value('paddle')).toBe(paused);r.rerender(<BreakoutGarden {...p}/>);pointer(stage(),'pointermove',{clientX:150,pointerType:'mouse',buttons:0});expect(value('paddle')).toBe(150);travel(32);expect(value('paddle')).toBe(150);
+ fireEvent.keyDown(stage(),{key:'ArrowLeft'});hidden(true);hidden(false);pointer(stage(),'pointermove',{clientX:300,pointerType:'mouse',buttons:0});expect(value('paddle')).toBe(150);fireEvent.click(screen.getByRole('button',{name:'继续接球'}));pointer(stage(),'pointermove',{clientX:300,pointerType:'mouse',buttons:0});expect(value('paddle')).toBe(300);travel(32);expect(value('paddle')).toBe(300);
+});
+it('launch guidance matches each level for click and keyboard without repeated status',()=>{
+ const p=props(),r=render(<BreakoutGarden {...p}/>);
+ for(let level=0;level<12;level++){
+  r.rerender(<BreakoutGarden {...p} level={level} resetToken={level+1}/>);const lesson=document.querySelector('.breakout-heading p')!.textContent;expect(p.onStatus).toHaveBeenLastCalledWith(expect.stringContaining('点发球开始'));
+  if(level%2===0)fireEvent.click(screen.getByRole('button',{name:'发球'}));else fireEvent.keyDown(stage(),{key:' '});expect(root().getAttribute('data-breakout-phase')).toBe('playing');expect(p.onStatus).toHaveBeenLastCalledWith(lesson);
+  const calls=p.onStatus.mock.calls.length;fireEvent.keyDown(stage(),{key:' ',repeat:true});expect(p.onStatus.mock.calls.length).toBe(calls);r.rerender(<BreakoutGarden {...p} level={level} resetToken={level+1} paused/>);fireEvent.keyDown(stage(),{key:'Enter'});expect(p.onStatus.mock.calls.length).toBe(calls);
+ }
+});

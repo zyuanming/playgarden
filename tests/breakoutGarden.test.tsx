@@ -142,6 +142,19 @@ it("visibility-only interruption requires explicit continue on return", () => {
 });
 
 it("held keyboard movement owns control over concurrent hover input", () => {
+  vi.spyOn(HTMLElement.prototype, "getBoundingClientRect").mockReturnValue({
+    x: 0,
+    y: 0,
+    left: 0,
+    top: 0,
+    right: 400,
+    bottom: 500,
+    width: 400,
+    height: 500,
+    toJSON() {
+      return {};
+    },
+  });
   render(<BreakoutGarden {...props()} />);
   const stage = screen.getByRole("group");
   fireEvent.keyDown(stage, { key: "ArrowRight" });
