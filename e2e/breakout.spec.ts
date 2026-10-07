@@ -34,6 +34,10 @@ test("breakout keyboard touch cancellation pause reset and narrow layout", async
         .getAttribute("data-breakout-paddle"),
     ),
   ).toBeGreaterThan(200);
+  await page.screenshot({
+    path: info.outputPath("breakout-keyboard-focus.png"),
+    fullPage: true,
+  });
   await page.keyboard.press("Control+Space");
   await expect(page.locator(".breakout-garden")).toHaveAttribute(
     "data-breakout-phase",
@@ -49,6 +53,10 @@ test("breakout keyboard touch cancellation pause reset and narrow layout", async
   expect(
     await page.locator(".breakout-garden").getAttribute("data-breakout-y"),
   ).toBe(y);
+  await page.screenshot({
+    path: info.outputPath("breakout-paused.png"),
+    fullPage: true,
+  });
   await page.getByRole("button", { name: "继续接球", exact: true }).click();
   await page.clock.runFor(200);
   expect(
@@ -73,20 +81,77 @@ test("breakout keyboard touch cancellation pause reset and narrow layout", async
     touchPoints: [],
   });
   await touch.detach();
+  await page.screenshot({
+    path: info.outputPath("breakout-touch-cancel.png"),
+    fullPage: true,
+  });
   await page.clock.runFor(200);
-  for (const width of [320, 390, 740]) {
-    await page.setViewportSize({ width, height: 844 });
+  for (const [width, height] of [
+    [320, 844],
+    [390, 844],
+    [740, 390],
+  ]) {
+    await page.setViewportSize({ width, height });
     expect(
       await page.evaluate(
         () => document.documentElement.scrollWidth <= innerWidth,
       ),
     ).toBe(true);
     await page.screenshot({
-      path: info.outputPath(`breakout-${width}-controls.png`),
+      path: info.outputPath(`breakout-${width}x${height}-controls.png`),
       fullPage: true,
     });
   }
   await page.getByRole("button", { name: "返回游戏大厅", exact: true }).click();
   await page.clock.runFor(1000);
   await expect(page.locator(".breakout-garden")).toHaveCount(0);
+});
+
+test("breakout real misses lead to a visible loss and restart recovers", async ({
+  page,
+}, info) => {
+  const errors: string[] = [];
+  page.on("pageerror", (e) => errors.push(e.message));
+  await openBreakout(page);
+  await freezeBreakout(page);
+  await page.getByLabel("选择关卡", { exact: true }).selectOption("11");
+  await page.locator(".breakout-stage").scrollIntoViewIfNeeded();
+  for (let n = 0; n < 400; n++) {
+    const phase = await page
+      .locator(".breakout-garden")
+      .getAttribute("data-breakout-phase");
+    if (phase === "lost") break;
+    expect(phase).not.toBe("won");
+    if (phase === "ready")
+      await page.getByRole("button", { name: "发球", exact: true }).click();
+    const b = await page.locator(".breakout-stage").boundingBox();
+    if (!b) throw Error("missing board");
+    await page.mouse.move(b.x + 2, b.y + b.height * 0.8);
+    await page.clock.runFor(1000);
+  }
+  await expect(page.locator(".breakout-garden")).toHaveAttribute(
+    "data-breakout-phase",
+    "lost",
+  );
+  await expect(page.locator(".breakout-garden")).toHaveAttribute(
+    "data-breakout-lives",
+    "0",
+  );
+  await page.screenshot({
+    path: info.outputPath("breakout-lost-three-lives.png"),
+    fullPage: true,
+  });
+  await page.getByRole("button", { name: "重来", exact: true }).click();
+  await expect(page.locator(".breakout-garden")).toHaveAttribute(
+    "data-breakout-lives",
+    "3",
+  );
+  await expect(
+    page.getByRole("button", { name: "发球", exact: true }),
+  ).toBeEnabled();
+  await page.screenshot({
+    path: info.outputPath("breakout-restart-after-loss.png"),
+    fullPage: true,
+  });
+  expect(errors).toEqual([]);
 });
