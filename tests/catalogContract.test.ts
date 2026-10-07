@@ -178,7 +178,7 @@ const packs = {
   connect: connectLevels,
   reversi: reversiLevels,
   merge: [],
-  snake: [],
+  snake: [], falling: [],
   traffic: trafficLevels,
 };
 describe("Scalable catalog contract", () => {
@@ -210,8 +210,8 @@ describe("Scalable catalog contract", () => {
       }
     }),
   );
-  it("counts only 88 real games and 2071 levels, not the roadmap", () => {
-    expect(games).toHaveLength(88);
+  it("counts only 89 real games and 2071 levels, not the roadmap", () => {
+    expect(games).toHaveLength(89);
     expect(games.reduce((sum, g) => sum + g.levelCount, 0)).toBe(2071);
   });
 });

@@ -1,0 +1,86 @@
+// @vitest-environment jsdom
+import { it, expect, vi, beforeEach, afterEach } from "vitest";
+import {
+  render,
+  screen,
+  fireEvent,
+  cleanup,
+  act,
+} from "@testing-library/react";
+import FallingGarden from "../src/games/FallingGarden";
+import { FALLING_SAVE, FALLING_BEST } from "../src/games/fallingStorage";
+const props = {
+  level: 0,
+  paused: false,
+  resetToken: 0,
+  hintToken: 0,
+  undoToken: 0,
+  onStatus: vi.fn(),
+  onComplete: vi.fn(),
+};
+beforeEach(() => {
+  localStorage.clear();
+  vi.useFakeTimers();
+});
+afterEach(() => {
+  cleanup();
+  vi.useRealTimers();
+});
+it("real start focuses board; keyboard drop saves and reload waits for explicit continuation", () => {
+  const a = render(<FallingGarden {...props} />);
+  fireEvent.click(screen.getByRole("button", { name: "开始" }));
+  const board = screen.getByRole("group");
+  expect(document.activeElement).toBe(board);
+  fireEvent.keyDown(board, { key: " " });
+  expect(
+    a.container
+      .querySelector(".falling-garden")
+      ?.getAttribute("data-falling-placed"),
+  ).toBe("1");
+  expect(localStorage.getItem(FALLING_SAVE)).toContain('"placed":1');
+  a.unmount();
+  const b = render(<FallingGarden {...props} />);
+  expect(
+    b.container
+      .querySelector(".falling-garden")
+      ?.getAttribute("data-falling-paused"),
+  ).toBe("true");
+  act(() => vi.advanceTimersByTime(2000));
+  expect(
+    b.container
+      .querySelector(".falling-garden")
+      ?.getAttribute("data-falling-placed"),
+  ).toBe("1");
+  fireEvent.click(screen.getByRole("button", { name: "继续" }));
+  expect(document.activeElement).toBe(screen.getByRole("group"));
+});
+it("hidden-only return stays paused and fresh restart retains best", () => {
+  const a = render(<FallingGarden {...props} />);
+  fireEvent.click(screen.getByRole("button", { name: "开始" }));
+  fireEvent.click(screen.getByRole("button", { name: "落到底" }));
+  const best = localStorage.getItem(FALLING_BEST);
+  Object.defineProperty(document, "hidden", {
+    configurable: true,
+    value: true,
+  });
+  fireEvent(document, new Event("visibilitychange"));
+  Object.defineProperty(document, "hidden", {
+    configurable: true,
+    value: false,
+  });
+  fireEvent(document, new Event("visibilitychange"));
+  expect(
+    a.container
+      .querySelector(".falling-garden")
+      ?.getAttribute("data-falling-paused"),
+  ).toBe("true");
+  a.unmount();
+  const b = render(<FallingGarden {...props} freshStart />);
+  expect(
+    b.container
+      .querySelector(".falling-garden")
+      ?.getAttribute("data-falling-score"),
+  ).toBe("0");
+  expect(localStorage.getItem(FALLING_BEST)).toBe(best);
+  delete (document as unknown as Record<string, unknown>).hidden;
+});

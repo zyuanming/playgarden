@@ -29,6 +29,15 @@ export async function verifyMergeMotion(page:Page,info:TestInfo,prefix='merge'){
  await page.locator('.merge-board').scrollIntoViewIfNeeded();
  const origins=await page.locator('[data-tile-id]').evaluateAll(nodes=>nodes.map(n=>({id:n.getAttribute('data-tile-id'),x:n.getBoundingClientRect().x,y:n.getBoundingClientRect().y})));
  const destination=(await page.locator('[data-merge-cell="0"]').boundingBox())!;
+ // Playwright's JS clock does not stop native Web Animation time. Pause the
+ // real translation at creation so a slow protocol roundtrip cannot finish it
+ // before we select the exact 75 ms sample below. Never replace its keyframes.
+ await page.evaluate(()=>{
+  const native=Element.prototype.animate;
+  (window as unknown as {mergeNativeAnimate:typeof native}).mergeNativeAnimate=native;
+  Element.prototype.animate=function(keyframes,options){const animation=native.call(this,keyframes,options);if(this.matches('.merge-tile-position'))animation.pause();return animation;};
+ });
+ try {
  await page.locator('.merge-board').focus();await page.keyboard.press('ArrowLeft');await expect(page.locator('.merge-classic')).toHaveAttribute('data-merge-phase','sliding');
  const frames=await page.evaluate(()=>{
   const nodes=Array.from(document.querySelectorAll<HTMLElement>('.merge-tile-position'));
@@ -41,9 +50,18 @@ export async function verifyMergeMotion(page:Page,info:TestInfo,prefix='merge'){
  const pop=await page.locator('.merge-tile-merged').evaluate(n=>{const a=n.getAnimations()[0];if(!a)throw new Error('Missing merge pop animation');a.pause();a.currentTime=75;return new DOMMatrixReadOnly(getComputedStyle(n).transform).a;});expect(pop).toBeGreaterThan(1.05);
  const spawn=await page.locator('.merge-tile-new').evaluate(n=>{const a=n.getAnimations()[0];if(!a)throw new Error('Missing tile spawn animation');a.pause();a.currentTime=65;return {scale:new DOMMatrixReadOnly(getComputedStyle(n).transform).a,opacity:Number(getComputedStyle(n).opacity)};});expect(spawn.scale).toBeGreaterThan(.3);expect(spawn.scale).toBeLessThanOrEqual(1.1);
  await page.screenshot({path:info.outputPath(`${prefix}-merge-pop-and-spawn.png`),animations:'allow',fullPage:true});
- await page.evaluate(()=>document.querySelectorAll('.merge-classic *').forEach(n=>n.getAnimations().forEach(a=>a.finish())));
+ await page.evaluate(()=>{
+  document.querySelectorAll('.merge-classic *').forEach(n=>n.getAnimations().forEach(a=>a.finish()));
+ });
  await settleMerge(page);await expect(page.locator('[data-merge-score]')).toHaveText('4');await mergeLayout(page);
  await page.screenshot({path:info.outputPath(`${prefix}-settled.png`),animations:'disabled',fullPage:true});
  // Restore real time before navigation: a frozen clock also freezes React lazy/Suspense work after reload.
  await page.clock.resume();
+ } finally {
+  await page.evaluate(()=>{
+   const w=window as unknown as {mergeNativeAnimate?:typeof Element.prototype.animate};
+   if(w.mergeNativeAnimate)Element.prototype.animate=w.mergeNativeAnimate;
+   delete w.mergeNativeAnimate;
+  });
+ }
 }

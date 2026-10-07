@@ -1150,5 +1150,16 @@ export const games: GameDefinition[] = [
       notes:"实际改编MIT方向编码、移动/尾部腾位及增长碰撞核心；新增安全转向队列、空格枚举食物、原创界面与续玩。不引入上游图片或全局DOM运行时。"},
     component:lazy(()=>import("../games/SnakeGarden")),
   },
+  {
+    id:"falling",title:"落块花园",subtitle:"旋转、落下、消除整行，为下一块留出空间。",
+    category:"动作反应",difficulty:"中级",tone:"green",levelCount:0,endless:true,allowUndo:false,
+    freePlayCaption:"无尽落块 · 本机最高分",resumeKey:"playgarden.falling.v1",
+    artwork:{url:"./falling-art.svg",position:"50% 50%",size:"cover"},
+    source:{kind:"adapted",license:"MIT",author:"Jake Gordon and contributors",workTitle:"javascript-tetris",
+      url:"https://github.com/jakesgordon/javascript-tetris/tree/e5c0c42f7dac0f3514a55eff656c6e22e95d68ed",
+      commit:"e5c0c42f7dac0f3514a55eff656c6e22e95d68ed",notice:"./falling-LICENSE.txt",
+      notes:"真实移植MIT位掩码形状、占格碰撞、锁定与消行核心；修正顶部行清除，新增七袋随机、落点轮廓和暂停续玩。原创界面图形，不引入上游纹理、统计库或音频。"},
+    component:lazy(()=>import("../games/FallingGarden")),
+  },
 ];
 export const findGame = (id: string) => games.find((game) => game.id === id);
