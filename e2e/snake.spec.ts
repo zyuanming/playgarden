@@ -32,6 +32,8 @@ test("贪吃蛇花园 eats, accepts immediate keyboard, saves paused and restart
     "data-snake-head",
     head!,
   );
+  // Let React finish lazy-loading after reload; the saved round itself stays paused.
+  await page.clock.resume();
   await page.reload();
   await page.getByRole("textbox", { name: "搜索游戏" }).fill("贪吃蛇花园");
   await page
@@ -45,6 +47,7 @@ test("贪吃蛇花园 eats, accepts immediate keyboard, saves paused and restart
     "data-snake-paused",
     "true",
   );
+  await page.clock.pauseAt(new Date(await page.evaluate(() => Date.now()) + 1000));
   await page
     .locator(".snake-overlay")
     .getByRole("button", { name: "继续", exact: true })
