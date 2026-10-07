@@ -23,6 +23,8 @@ test("breakout keyboard touch cancellation pause reset and narrow layout", async
   await openBreakout(page);
   await freezeBreakout(page);
   const stage = page.locator(".breakout-stage");
+  // Isolate keyboard input from the pointer left over from the lobby button.
+  await page.mouse.move(0, 0);
   await stage.focus();
   await page.keyboard.down("ArrowRight");
   await page.clock.runFor(180);

@@ -140,3 +140,31 @@ it("visibility-only interruption requires explicit continue on return", () => {
     document.querySelector("section")?.getAttribute("data-breakout-y"),
   ).not.toBe(y);
 });
+
+it("held keyboard movement owns control over concurrent hover input", () => {
+  render(<BreakoutGarden {...props()} />);
+  const stage = screen.getByRole("group");
+  fireEvent.keyDown(stage, { key: "ArrowRight" });
+  const event = new Event("pointermove", { bubbles: true });
+  Object.defineProperties(event, {
+    clientX: { value: 0 },
+    pointerType: { value: "mouse" },
+    buttons: { value: 0 },
+  });
+  fireEvent(stage, event);
+  frame();
+  frame(40);
+  expect(
+    Number(
+      document.querySelector("section")?.getAttribute("data-breakout-paddle"),
+    ),
+  ).toBeGreaterThan(200);
+});
+it("launch replaces the ready instruction with the stage guidance", () => {
+  const p = props();
+  render(<BreakoutGarden {...p} />);
+  fireEvent.click(screen.getByText("发球"));
+  expect(p.onStatus).toHaveBeenLastCalledWith(
+    expect.stringContaining("挡板中心让球向上"),
+  );
+});

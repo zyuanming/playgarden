@@ -156,7 +156,12 @@ export default function BreakoutGarden({
     ctx.stroke();
   }, [state]);
   function start() {
-    if (!frozen) commit(launchBreakout(live.current));
+    if (!frozen) {
+      const next = launchBreakout(live.current);
+      if (next !== live.current)
+        callbacks.current.onStatus(breakoutLevels[next.level].lesson);
+      commit(next);
+    }
   }
   const remaining = state.bricks.filter((b) => b.hp > 0).length;
   return (
@@ -224,7 +229,13 @@ export default function BreakoutGarden({
           );
         }}
         onPointerMove={(e) => {
-          if (frozen || (!e.buttons && e.pointerType !== "mouse")) return;
+          if (
+            frozen ||
+            keys.current.left ||
+            keys.current.right ||
+            (!e.buttons && e.pointerType !== "mouse")
+          )
+            return;
           const rect = e.currentTarget.getBoundingClientRect();
           commit(
             movePaddle(
