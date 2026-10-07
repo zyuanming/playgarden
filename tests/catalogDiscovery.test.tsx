@@ -50,9 +50,9 @@ describe("Large-catalog discovery", () => {
     });
     expect(screen.getAllByRole("article")).toHaveLength(1);
   });
-  it("continues a started game from persisted progress", () => {
+  it("continues a started finite-level game from persisted progress", () => {
     const progress = parseProgress(null),
-      last = games.at(-1)!;
+      last = games.filter((game) => game.levelCount > 1).at(-1)!;
     progress.completed[last.id] = [0];
     localStorage.setItem(STORAGE_KEY, JSON.stringify(progress));
     render(<App />);
