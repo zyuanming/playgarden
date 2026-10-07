@@ -150,3 +150,31 @@ No avatar.glb, BrainStem/Poser model, avatarModel.ts, external image, font, musi
 ## Snake movement core
 
 `src/vendor/snake/core.ts` is adapted from Patrick Gillespie's JavaScript-Snake, fixed commit `7c80eddde2de6af669e6ae5133ba8ae60a8d7fb9`, `src/js/snake.js` setDirection/go/eatFood. Full MIT notice is preserved in `src/vendor/snake/LICENSE.txt` and the distributed [snake-LICENSE.txt](./snake-LICENSE.txt). The adaptation retains direction encoding, tail-vacancy movement and food-growth collision semantics, replaces DOM-linked body nodes with immutable cell IDs, validates a bounded turn queue, and replaces random retries with finite empty-cell selection. Upstream artwork, old DOM runtime and third-party z-index snippet are excluded. Playgarden's original interface and storage integration are GPL-3.0-only.
+
+## javascript-tetris / 落块花园
+
+Jake Gordon and contributors; https://github.com/jakesgordon/javascript-tetris/tree/e5c0c42f7dac0f3514a55eff656c6e22e95d68ed
+
+Actual adaptation of bitmask pieces, eachblock, occupied, locking and row removal from index.html. Fixes row-zero omission; original interface and artwork. No texture.jpg or stats.js is included.
+
+Copyright (c) 2011, 2012, 2013, 2014, 2015, 2016 Jake Gordon and contributors
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+

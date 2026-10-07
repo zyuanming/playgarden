@@ -1,9 +1,78 @@
-import {describe,it,expect} from 'vitest';
-import {createFalling,startFalling,actFalling,cells,occupied,clearLines,parseFalling,serializeFalling,ghost} from '../src/vendor/falling/core';
-describe('falling rules',()=>{
- it('uses four occupied cells in every orientation and respects walls',()=>{for(let k=0;k<7;k++)for(let r=0;r<4;r++){const p={kind:k,rotation:r,x:3,y:0};expect(cells(p)).toHaveLength(4);expect(occupied(Array(200).fill(0),p)).toBe(false);}let s=startFalling(createFalling());for(let n=0;n<15;n++)s=actFalling(s,'left');const before=s;expect(actFalling(s,'left')).toBe(before);expect(occupied(s.board,s.piece)).toBe(false);});
- it('hard drop locks, increments score, and produces a collision-free next piece',()=>{const s=startFalling(createFalling(2)),g=ghost(s),n=actFalling(s,'drop');expect(n.placed).toBe(1);expect(n.score).toBe(10);for(const [x,y] of cells(g))expect(n.board[y*10+x]).toBe(s.piece.kind+1);expect(occupied(n.board,n.piece)).toBe(false);});
- it('clears adjacent rows including row zero without leaving stale cells',()=>{const b=Array(200).fill(0);b.fill(1,0,10);b.fill(2,180,200);b[15]=3;const n=clearLines(b);expect(n.cleared).toBe(3);expect(n.board.slice(0,30)).toEqual(Array(30).fill(0));expect(n.board[35]).toBe(3);expect(n.board.filter(Boolean)).toEqual([3]);});
- it('scores a real four-line clear and ends on blocked spawn',()=>{let s=startFalling(createFalling());s={...s,board:Array(200).fill(0),piece:{kind:0,rotation:1,x:2,y:0}};for(let y=16;y<20;y++)for(let x=0;x<10;x++)if(x!==4)s.board[y*10+x]=2;const n=actFalling(s,'drop');expect(n.lines).toBe(4);expect(n.score).toBe(810);const blocked={...startFalling(createFalling()),board:Array(200).fill(0)};for(let y=0;y<4;y++)for(let x=3;x<7;x++)blocked.board[y*10+x]=1;blocked.piece={kind:3,rotation:0,x:0,y:18};for(const [x,y] of cells(blocked.piece))blocked.board[y*10+x]=0;expect(actFalling(blocked,'down').phase).toBe('lost');});
- it('round-trips legal saves and rejects unsafe boards/pieces',()=>{const s=actFalling(startFalling(createFalling()),'drop');expect(parseFalling(serializeFalling(s))).toEqual(s);expect(parseFalling(serializeFalling({...s,board:[1]}))).toBeNull();expect(parseFalling(serializeFalling({...s,piece:{...s.piece,kind:8}}))).toBeNull();});
+import { describe, it, expect } from "vitest";
+import {
+  createFalling,
+  startFalling,
+  actFalling,
+  cells,
+  occupied,
+  clearLines,
+  parseFalling,
+  serializeFalling,
+  ghost,
+} from "../src/vendor/falling/core";
+describe("falling rules", () => {
+  it("uses four occupied cells in every orientation and respects walls", () => {
+    for (let k = 0; k < 7; k++)
+      for (let r = 0; r < 4; r++) {
+        const p = { kind: k, rotation: r, x: 3, y: 0 };
+        expect(cells(p)).toHaveLength(4);
+        expect(occupied(Array(200).fill(0), p)).toBe(false);
+      }
+    let s = startFalling(createFalling());
+    for (let n = 0; n < 15; n++) s = actFalling(s, "left");
+    const before = s;
+    expect(actFalling(s, "left")).toBe(before);
+    expect(occupied(s.board, s.piece)).toBe(false);
+  });
+  it("hard drop locks, increments score, and produces a collision-free next piece", () => {
+    const s = startFalling(createFalling(2)),
+      g = ghost(s),
+      n = actFalling(s, "drop");
+    expect(n.placed).toBe(1);
+    expect(n.score).toBe(10);
+    for (const [x, y] of cells(g))
+      expect(n.board[y * 10 + x]).toBe(s.piece.kind + 1);
+    expect(occupied(n.board, n.piece)).toBe(false);
+  });
+  it("clears adjacent rows including row zero without leaving stale cells", () => {
+    const b = Array(200).fill(0);
+    b.fill(1, 0, 10);
+    b.fill(2, 180, 200);
+    b[15] = 3;
+    const n = clearLines(b);
+    expect(n.cleared).toBe(3);
+    expect(n.board.slice(0, 30)).toEqual(Array(30).fill(0));
+    expect(n.board[35]).toBe(3);
+    expect(n.board.filter(Boolean)).toEqual([3]);
+  });
+  it("scores a real four-line clear and ends on blocked spawn", () => {
+    let s = startFalling(createFalling());
+    s = {
+      ...s,
+      board: Array(200).fill(0),
+      piece: { kind: 0, rotation: 1, x: 2, y: 0 },
+    };
+    for (let y = 16; y < 20; y++)
+      for (let x = 0; x < 10; x++) if (x !== 4) s.board[y * 10 + x] = 2;
+    const n = actFalling(s, "drop");
+    expect(n.lines).toBe(4);
+    expect(n.score).toBe(810);
+    const blocked = {
+      ...startFalling(createFalling()),
+      board: Array(200).fill(0),
+    };
+    for (let y = 0; y < 4; y++)
+      for (let x = 3; x < 7; x++) blocked.board[y * 10 + x] = 1;
+    blocked.piece = { kind: 3, rotation: 0, x: 0, y: 18 };
+    for (const [x, y] of cells(blocked.piece)) blocked.board[y * 10 + x] = 0;
+    expect(actFalling(blocked, "down").phase).toBe("lost");
+  });
+  it("round-trips legal saves and rejects unsafe boards/pieces", () => {
+    const s = actFalling(startFalling(createFalling()), "drop");
+    expect(parseFalling(serializeFalling(s))).toEqual(s);
+    expect(parseFalling(serializeFalling({ ...s, board: [1] }))).toBeNull();
+    expect(
+      parseFalling(serializeFalling({ ...s, piece: { ...s.piece, kind: 8 } })),
+    ).toBeNull();
+  });
 });
