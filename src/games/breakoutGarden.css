@@ -133,3 +133,58 @@
     font-size: 11px;
   }
 }
+/* A real-time court and its controls must fit together in a short viewport. */
+@media (orientation: landscape) and (max-height: 500px) {
+  .breakout-garden {
+    display: grid;
+    grid-template-columns: auto minmax(140px, 1fr);
+    column-gap: 12px;
+    max-width: 580px;
+    align-items: center;
+  }
+  .breakout-stage {
+    grid-column: 1;
+    grid-row: 1 / 5;
+    width: calc((100svh - 40px) * 0.8);
+    max-width: 400px;
+    margin: 0;
+  }
+  .breakout-heading {
+    grid-column: 2;
+    margin: 0;
+  }
+  .breakout-heading > span {
+    display: none;
+  }
+  .breakout-heading h2 {
+    font-size: 18px;
+  }
+  .breakout-heading p {
+    font-size: 12px;
+  }
+  .breakout-stats {
+    grid-column: 2;
+    flex-direction: column;
+    gap: 3px;
+    margin: 5px 0;
+    text-align: center;
+  }
+  .breakout-stats b {
+    font-size: 16px;
+  }
+  .breakout-controls {
+    grid-column: 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5px;
+    margin: 4px 0;
+  }
+  .breakout-controls button {
+    min-width: 0;
+    font-size: 12px;
+    padding: 7px 3px;
+  }
+  .breakout-help {
+    display: none;
+  }
+}

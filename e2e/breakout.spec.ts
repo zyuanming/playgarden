@@ -94,6 +94,20 @@ test("breakout keyboard touch cancellation pause reset and narrow layout", async
     [740, 390],
   ]) {
     await page.setViewportSize({ width, height });
+    if (width > height) {
+      await page.locator(".breakout-garden").scrollIntoViewIfNeeded();
+      const court = await page.locator(".breakout-stage").boundingBox();
+      const controls = await page.locator(".breakout-controls").boundingBox();
+      if (!court || !controls) throw Error("missing landscape controls");
+      expect(court.y).toBeGreaterThanOrEqual(0);
+      expect(court.y + court.height).toBeLessThanOrEqual(height);
+      expect(controls.y).toBeGreaterThanOrEqual(0);
+      expect(controls.y + controls.height).toBeLessThanOrEqual(height);
+      await page.screenshot({
+        path: info.outputPath("breakout-landscape-actual-viewport.png"),
+        fullPage: false,
+      });
+    }
     expect(
       await page.evaluate(
         () => document.documentElement.scrollWidth <= innerWidth,
@@ -156,4 +170,22 @@ test("breakout real misses lead to a visible loss and restart recovers", async (
     fullPage: true,
   });
   expect(errors).toEqual([]);
+});
+
+test("breakout landscape court and controls remain together during real play", async ({
+  page,
+}, info) => {
+  await page.setViewportSize({ width: 740, height: 390 });
+  await openBreakout(page);
+  await freezeBreakout(page);
+  await page.locator(".breakout-garden").scrollIntoViewIfNeeded();
+  const bounds = await page.locator(".breakout-garden").boundingBox();
+  if (!bounds) throw Error("missing landscape game");
+  expect(bounds.height).toBeLessThanOrEqual(390);
+  await playBreakout(page, info, 0);
+  await page.locator(".breakout-garden").scrollIntoViewIfNeeded();
+  await page.screenshot({
+    path: info.outputPath("breakout-landscape-cleared-viewport.png"),
+    fullPage: false,
+  });
 });
