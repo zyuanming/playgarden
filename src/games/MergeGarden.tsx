@@ -58,7 +58,9 @@ function MergeRound({paused,freshStart,hintToken,undoToken,onStatus}:GameProps){
  useEffect(()=>{if(tokens.current.hintToken===hintToken)return;tokens.current.hintToken=hintToken;if(paused)return;const direction=mergeHint(current.current);setHint(direction);setMessage(direction?`可以试试${mergeDirectionLabels[direction]}：兼顾合并与空位。这是一步建议，不保证最终结果。`:"没有可移动的方向了。可以重新开始或撤销。");},[hintToken,paused]);
  useEffect(()=>{if(tokens.current.undoToken===undoToken)return;tokens.current.undoToken=undoToken;if(paused)return;cancelMotion();const previous=current.current,next=undoMerge(previous);current.current=next;setState(next);persist(next);setHint(null);setMessage(next===previous?"还没有可撤销的移动。":"已撤销一步，最高分仍然保留。");},[undoToken,paused]);
  const stuck=isMergeGameOver(state.board),largest=Math.max(...state.board);
- const tiles=phase==="sliding"?state.motion.map(m=>({id:m.id,index:m.to,value:m.value,from:m.from})):state.tiles.map(t=>({...t,from:t.index}));
+ // Stable keys are not enough: moving keyed DOM siblings can restart CSS
+ // animations. Keep their DOM order stable while transforms change positions.
+ const tiles=(phase==="sliding"?state.motion.map(m=>({id:m.id,index:m.to,value:m.value,from:m.from})):state.tiles.map(t=>({...t,from:t.index}))).sort((a,b)=>a.id-b.id);
  return <div className="puzzle-layout me-game merge-garden merge-classic" data-game="merge" data-merge-phase={phase} data-merge-moves={state.moves} data-merge-over={stuck}>
   <section className="me-playfield" aria-label="2048 无尽模式">
    <header className="me-heading"><div><span className="mini-label">慢慢合并 · 挑战高分</span><h3>每一步，都有新可能。</h3></div><span className="merge-badge" aria-hidden="true">2048</span></header>
