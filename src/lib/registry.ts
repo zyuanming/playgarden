@@ -1219,9 +1219,9 @@ export const games: GameDefinition[] = [
       license: "MIT",
       author: "Simon Tatham and contributors",
       workTitle: "Flood",
-      url: "https://github.com/chrisboyle/sgtpuzzles",
+      url: "https://github.com/chrisboyle/sgtpuzzles/tree/d1e10eb57dd80af4999e698a9ab31f546e9a0b9d",
       commit: "d1e10eb57dd80af4999e698a9ab31f546e9a0b9d",
-      notice: "vendor/sgtatham-flood/LICENCE",
+      notice: "./flood-LICENCE.txt",
       notes:
         "实际移植 Flood 的队列填色、完成判定与合法动作检查；原创 100 关、界面、最短路提示与存档。",
     },
