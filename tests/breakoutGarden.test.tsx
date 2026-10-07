@@ -1,17 +1,142 @@
 // @vitest-environment jsdom
 // SPDX-License-Identifier: GPL-3.0-only
-import {afterEach,beforeEach,it,expect,vi} from 'vitest';
-import {render,screen,fireEvent,cleanup,act} from '@testing-library/react';
-import BreakoutGarden from '../src/games/BreakoutGarden';
-import type {GameProps} from '../src/lib/types';
-let callbacks=new Map<number,FrameRequestCallback>();let sequence=0;let now=0;
-beforeEach(()=>{callbacks=new Map();sequence=0;now=0;vi.spyOn(HTMLCanvasElement.prototype,'getContext').mockReturnValue(null);vi.stubGlobal('requestAnimationFrame',(cb:FrameRequestCallback)=>{callbacks.set(++sequence,cb);return sequence;});vi.stubGlobal('cancelAnimationFrame',(n:number)=>callbacks.delete(n));});
-afterEach(()=>{cleanup();vi.restoreAllMocks();vi.unstubAllGlobals();});
-function frame(dt=16){now+=dt;const c=[...callbacks.values()];callbacks.clear();act(()=>c.forEach(cb=>cb(now)));}
-const props=():GameProps=>({level:0,paused:false,resetToken:0,hintToken:0,undoToken:0,onStatus:vi.fn(),onComplete:vi.fn()});
-it('starts only by real input and ignores modified shortcuts',()=>{render(<BreakoutGarden {...props()}/>);const stage=screen.getByRole('group');fireEvent.keyDown(stage,{key:' ',ctrlKey:true});expect(document.querySelector('section')?.getAttribute('data-breakout-phase')).toBe('ready');fireEvent.click(screen.getByText('发球'));expect(document.querySelector('section')?.getAttribute('data-breakout-phase')).toBe('playing');});
-it('keyboard hold moves, blur stops it, and pause freezes frames',()=>{const p=props();const view=render(<BreakoutGarden {...p}/>);const stage=screen.getByRole('group');fireEvent.keyDown(stage,{key:'ArrowRight'});frame();frame(40);const x=document.querySelector('section')?.getAttribute('data-breakout-paddle');expect(Number(x)).toBeGreaterThan(200);fireEvent.blur(stage);frame(40);expect(document.querySelector('section')?.getAttribute('data-breakout-paddle')).toBe(x);fireEvent.click(screen.getByText('发球'));frame(40);view.rerender(<BreakoutGarden {...p} paused/>);const y=document.querySelector('section')?.getAttribute('data-breakout-y');frame(40);expect(document.querySelector('section')?.getAttribute('data-breakout-y')).toBe(y);expect(callbacks.size).toBe(0);});
-it('reset and stage switch restore correct bricks and release pending input',()=>{const p=props();const view=render(<BreakoutGarden {...p}/>);fireEvent.click(screen.getByText('发球'));frame();frame(40);view.rerender(<BreakoutGarden {...p} resetToken={1}/>);expect(document.querySelector('section')?.getAttribute('data-breakout-phase')).toBe('ready');expect(document.querySelectorAll('[data-brick]')).toHaveLength(3);view.rerender(<BreakoutGarden {...p} level={5} resetToken={1}/>);expect(document.querySelectorAll('[data-hp="2"]')).toHaveLength(3);view.unmount();expect(callbacks.size).toBe(0);});
-it('hint reacts to monotonically increasing tokens and cancelled input stops movement',()=>{const p=props();const view=render(<BreakoutGarden {...p}/>);view.rerender(<BreakoutGarden {...p} hintToken={4}/>);expect(p.onStatus).toHaveBeenCalledWith(expect.stringContaining('挡板'));const stage=screen.getByRole('group');fireEvent.keyDown(stage,{key:'ArrowLeft'});fireEvent.pointerCancel(stage);frame();frame(40);expect(document.querySelector('section')?.getAttribute('data-breakout-paddle')).toBe('200');});
+import { afterEach, beforeEach, it, expect, vi } from "vitest";
+import {
+  render,
+  screen,
+  fireEvent,
+  cleanup,
+  act,
+} from "@testing-library/react";
+import BreakoutGarden from "../src/games/BreakoutGarden";
+import type { GameProps } from "../src/lib/types";
+let callbacks = new Map<number, FrameRequestCallback>();
+let sequence = 0;
+let now = 0;
+beforeEach(() => {
+  callbacks = new Map();
+  sequence = 0;
+  now = 0;
+  vi.spyOn(HTMLCanvasElement.prototype, "getContext").mockReturnValue(null);
+  vi.stubGlobal("requestAnimationFrame", (cb: FrameRequestCallback) => {
+    callbacks.set(++sequence, cb);
+    return sequence;
+  });
+  vi.stubGlobal("cancelAnimationFrame", (n: number) => callbacks.delete(n));
+});
+afterEach(() => {
+  cleanup();
+  vi.restoreAllMocks();
+  vi.unstubAllGlobals();
+});
+function frame(dt = 16) {
+  now += dt;
+  const c = [...callbacks.values()];
+  callbacks.clear();
+  act(() => c.forEach((cb) => cb(now)));
+}
+const props = (): GameProps => ({
+  level: 0,
+  paused: false,
+  resetToken: 0,
+  hintToken: 0,
+  undoToken: 0,
+  onStatus: vi.fn(),
+  onComplete: vi.fn(),
+});
+it("starts only by real input and ignores modified shortcuts", () => {
+  render(<BreakoutGarden {...props()} />);
+  const stage = screen.getByRole("group");
+  fireEvent.keyDown(stage, { key: " ", ctrlKey: true });
+  expect(
+    document.querySelector("section")?.getAttribute("data-breakout-phase"),
+  ).toBe("ready");
+  fireEvent.click(screen.getByText("发球"));
+  expect(
+    document.querySelector("section")?.getAttribute("data-breakout-phase"),
+  ).toBe("playing");
+});
+it("keyboard hold moves, blur stops it, and pause freezes frames", () => {
+  const p = props();
+  const view = render(<BreakoutGarden {...p} />);
+  const stage = screen.getByRole("group");
+  fireEvent.keyDown(stage, { key: "ArrowRight" });
+  frame();
+  frame(40);
+  const x = document
+    .querySelector("section")
+    ?.getAttribute("data-breakout-paddle");
+  expect(Number(x)).toBeGreaterThan(200);
+  fireEvent.blur(stage);
+  frame(40);
+  expect(
+    document.querySelector("section")?.getAttribute("data-breakout-paddle"),
+  ).toBe(x);
+  fireEvent.click(screen.getByText("发球"));
+  frame(40);
+  view.rerender(<BreakoutGarden {...p} paused />);
+  const y = document.querySelector("section")?.getAttribute("data-breakout-y");
+  frame(40);
+  expect(
+    document.querySelector("section")?.getAttribute("data-breakout-y"),
+  ).toBe(y);
+  expect(callbacks.size).toBe(0);
+});
+it("reset and stage switch restore correct bricks and release pending input", () => {
+  const p = props();
+  const view = render(<BreakoutGarden {...p} />);
+  fireEvent.click(screen.getByText("发球"));
+  frame();
+  frame(40);
+  view.rerender(<BreakoutGarden {...p} resetToken={1} />);
+  expect(
+    document.querySelector("section")?.getAttribute("data-breakout-phase"),
+  ).toBe("ready");
+  expect(document.querySelectorAll("[data-brick]")).toHaveLength(3);
+  view.rerender(<BreakoutGarden {...p} level={5} resetToken={1} />);
+  expect(document.querySelectorAll('[data-hp="2"]')).toHaveLength(3);
+  view.unmount();
+  expect(callbacks.size).toBe(0);
+});
+it("hint reacts to monotonically increasing tokens and cancelled input stops movement", () => {
+  const p = props();
+  const view = render(<BreakoutGarden {...p} />);
+  view.rerender(<BreakoutGarden {...p} hintToken={4} />);
+  expect(p.onStatus).toHaveBeenCalledWith(expect.stringContaining("挡板"));
+  const stage = screen.getByRole("group");
+  fireEvent.keyDown(stage, { key: "ArrowLeft" });
+  fireEvent.pointerCancel(stage);
+  frame();
+  frame(40);
+  expect(
+    document.querySelector("section")?.getAttribute("data-breakout-paddle"),
+  ).toBe("200");
+});
 
-it('visibility-only interruption requires explicit continue on return',()=>{render(<BreakoutGarden {...props()}/>);fireEvent.click(screen.getByText('发球'));frame();frame(40);Object.defineProperty(document,'hidden',{configurable:true,value:true});fireEvent(document,new Event('visibilitychange'));const y=document.querySelector('section')?.getAttribute('data-breakout-y');Object.defineProperty(document,'hidden',{configurable:true,value:false});fireEvent(document,new Event('visibilitychange'));frame(100);expect(document.querySelector('section')?.getAttribute('data-breakout-y')).toBe(y);fireEvent.click(screen.getByText('继续接球'));frame();frame(40);expect(document.querySelector('section')?.getAttribute('data-breakout-y')).not.toBe(y);});
+it("visibility-only interruption requires explicit continue on return", () => {
+  render(<BreakoutGarden {...props()} />);
+  fireEvent.click(screen.getByText("发球"));
+  frame();
+  frame(40);
+  Object.defineProperty(document, "hidden", {
+    configurable: true,
+    value: true,
+  });
+  fireEvent(document, new Event("visibilitychange"));
+  const y = document.querySelector("section")?.getAttribute("data-breakout-y");
+  Object.defineProperty(document, "hidden", {
+    configurable: true,
+    value: false,
+  });
+  fireEvent(document, new Event("visibilitychange"));
+  frame(100);
+  expect(
+    document.querySelector("section")?.getAttribute("data-breakout-y"),
+  ).toBe(y);
+  fireEvent.click(screen.getByText("继续接球"));
+  frame();
+  frame(40);
+  expect(
+    document.querySelector("section")?.getAttribute("data-breakout-y"),
+  ).not.toBe(y);
+});
