@@ -66,7 +66,9 @@ for (const index of [0, 49, 99]) test(`Same Game ${index + 1} keyboard, pause, u
   await expect(page.locator('[data-samegame-cell]')).toHaveCount(level.width * level.height);
   expect(await board(page)).toEqual(hintedBoard);
   const stored = await page.evaluate(key => JSON.parse(localStorage.getItem(key)!), `${SAMEGAME_RESUME_KEY}.round.${index}`); expect(stored.id).toBe(level.id);
-  await page.getByRole('button', { name: '撤销', exact: true }).click(); expect(await board(page)).toEqual(initial);
+  await page.getByRole('button', { name: '撤销', exact: true }).click();
+  // Undo commits through the game's effect after the shell updates its token.
+  await expect.poll(() => board(page)).toEqual(initial);
   await target.click(); await target.click(); await page.getByRole('button', { name: '重来', exact: true }).click(); expect(await board(page)).toEqual(initial);
   const trap = certificates[index].openingOutcomes.find(outcome => outcome.outcome === 'losing');
   if (trap) {
