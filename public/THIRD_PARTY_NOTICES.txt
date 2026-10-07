@@ -143,6 +143,10 @@ Cloudrunner directly adapts eight pure/procedural modules from Mark Stent's runn
 
 No avatar.glb, BrainStem/Poser model, avatarModel.ts, external image, font, music or commercial Temple Run asset is included. The title, courier and garden graphics are original procedural artwork. This is an original game inspired by an established runner mechanic, with no affiliation claim. See `docs/cloudrunner.md` for exact adaptations and limitations.
 
+## Breakout collision geometry
+
+`src/vendor/breakout/geometry.ts` adapts segment intersection from `game.js` and paddle response from `breakout.js` in Jake Gordon's javascript-breakout, commit eed59e2affa9423b93d2ac8ff93061bb88b33284. Full MIT notice: [breakout-LICENSE.txt](./breakout-LICENSE.txt). We changed face selection to compare earliest hits, bounded iteration, and constrained the minimum vertical bounce. Original levels and UI are Playgarden GPL-3.0-only. No upstream sounds (separately CC BY-ND 2.0), artwork, fonts, HTML, DOM shims or runner are included.
+
 ## Complete bundled runtime dependency notices
 
 ### react 19.3.0 (MIT)

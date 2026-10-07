@@ -1129,5 +1129,15 @@ export const games: GameDefinition[] = [
     },
     component: lazy(() => import("../games/CloudrunnerGarden")),
   },
+  {
+    id: "breakout", title: "反弹砖园", subtitle: "控制挡板落点，让小球反弹清空花园。12 关原创挑战。",
+    category: "动作反应", difficulty: "中级", tone: "orange", levelCount: 12, allowUndo: false,
+    artwork: {url:"./breakout-art.svg",position:"50% 50%",size:"cover"},
+    source: {kind:"adapted",license:"MIT",author:"Jake Gordon and contributors",workTitle:"javascript-breakout",
+      url:"https://github.com/jakesgordon/javascript-breakout/tree/eed59e2affa9423b93d2ac8ff93061bb88b33284",
+      commit:"eed59e2affa9423b93d2ac8ff93061bb88b33284",notice:"./breakout-LICENSE.txt",
+      notes:"真实移植 MIT 线段相交与挡板反弹规则，修正最早碰撞及迭代边界。原创12关、界面和图形；不含原项目图片或 CC BY-ND 音频。"},
+    component: lazy(() => import("../games/BreakoutGarden")),
+  },
 ];
 export const findGame = (id: string) => games.find((game) => game.id === id);
