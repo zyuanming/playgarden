@@ -22,6 +22,9 @@ test("breakout keyboard touch cancellation pause reset and narrow layout", async
 }, info) => {
   await openBreakout(page);
   await freezeBreakout(page);
+  // The clock is installed after mounting; restart through the real control so
+  // the animation loop does not mix its old performance timestamp with it.
+  await page.getByRole("button", { name: "重来", exact: true }).click();
   const stage = page.locator(".breakout-stage");
   // Isolate keyboard input from the pointer left over from the lobby button.
   await page.mouse.move(0, 0);
@@ -36,6 +39,14 @@ test("breakout keyboard touch cancellation pause reset and narrow layout", async
         .getAttribute("data-breakout-paddle"),
     ),
   ).toBeGreaterThan(200);
+  const stoppedAt = await page
+    .locator(".breakout-garden")
+    .getAttribute("data-breakout-paddle");
+  await page.clock.runFor(180);
+  await expect(page.locator(".breakout-garden")).toHaveAttribute(
+    "data-breakout-paddle",
+    stoppedAt!,
+  );
   await page.screenshot({
     path: info.outputPath("breakout-keyboard-focus.png"),
     fullPage: true,
