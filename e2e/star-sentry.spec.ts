@@ -24,6 +24,7 @@ test("Star sentry: real first-stage clear, damage/retry, released holds, pause a
   const touch = info.project.name === "mobile" ? await page.context().newCDPSession(page) : null;
   const keyFor = { left: "ArrowLeft", right: "ArrowRight", fire: "Space" };
   type Control = keyof typeof keyFor;
+  let touchActive = false;
   async function hold(controls: Control[]) {
     if (touch) {
       await root(page).locator(`[data-sentry-control="${controls[0]}"]`).scrollIntoViewIfNeeded();
@@ -34,13 +35,18 @@ test("Star sentry: real first-stage clear, damage/retry, released holds, pause a
         points.push({ id, x: bounds!.x + bounds!.width / 2, y: bounds!.y + bounds!.height / 2 });
       }
       await touch.send("Input.dispatchTouchEvent", { type: "touchStart", touchPoints: points });
+      touchActive = true;
     } else {
       await root(page).locator(".sentry-arena").focus();
       for (const control of controls) await page.keyboard.down(keyFor[control]);
     }
   }
   async function release(cancel = false) {
-    if (touch) await touch.send("Input.dispatchTouchEvent", { type: cancel ? "touchCancel" : "touchEnd", touchPoints: [] });
+    if (touch) {
+      if (!touchActive) return;
+      await touch.send("Input.dispatchTouchEvent", { type: cancel ? "touchCancel" : "touchEnd", touchPoints: [] });
+      touchActive = false;
+    }
     else for (const key of Object.values(keyFor)) await page.keyboard.up(key);
   }
   async function snapshot() {
