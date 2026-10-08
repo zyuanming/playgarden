@@ -1,0 +1,19 @@
+{
+  "repository": "https://github.com/chrisboyle/sgtpuzzles",
+  "commit": "d1e10eb57dd80af4999e698a9ab31f546e9a0b9d",
+  "license": "MIT",
+  "files": [
+    {
+      "path": "magnets.c",
+      "upstreamPath": "app/src/main/jni/magnets.c",
+      "sha256": "ab823aceb8e85de0a06f498b463ca843b7a41abd2d04e296ab0473a67b3e6e44",
+      "gitBlob": "1133b503a079e095cf44950b063721ebf5eb75fd"
+    },
+    {
+      "path": "LICENCE",
+      "upstreamPath": "LICENCE",
+      "sha256": "42ad32e495b10a778fa7c935e07326b40ac8d11b400a0919a623bcf2e048e294",
+      "gitBlob": "b455f53907c16567fad5ca0ff1f007bfad8bcf90"
+    }
+  ]
+}

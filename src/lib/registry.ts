@@ -1273,5 +1273,28 @@ export const games: GameDefinition[] = [
     },
     component: lazy(() => import("../games/GalaxiesGarden")),
   },
+  {
+    id: "magnets",
+    title: "磁极拼图",
+    subtitle: "让磁铁两极相对，同极相离，读懂边缘的数量线索。",
+    category: "逻辑思维",
+    difficulty: "中级",
+    tone: "green",
+    levelCount: 36,
+    resumeKey: "playgarden.magnets.v1",
+    artwork: { url: "./magnets-art.svg", position: "50% 50%", size: "cover" },
+    source: {
+      kind: "adapted",
+      license: "MIT",
+      author: "Simon Tatham and contributors",
+      workTitle: "Magnets",
+      url: "https://github.com/chrisboyle/sgtpuzzles/tree/d1e10eb57dd80af4999e698a9ab31f546e9a0b9d",
+      commit: "d1e10eb57dd80af4999e698a9ab31f546e9a0b9d",
+      notice: "./magnets-LICENCE.txt",
+      notes:
+        "实际移植 Magnets 的成对极性、行列计数与相邻同极完成判定；原创 36 关、界面、当前局面提示与存档。",
+    },
+    component: lazy(() => import("../games/MagnetsGarden")),
+  },
 ];
 export const findGame = (id: string) => games.find((game) => game.id === id);

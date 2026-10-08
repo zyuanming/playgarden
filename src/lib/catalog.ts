@@ -92,6 +92,7 @@ export const GAME_IDS = [
   "flood",
   "akari",
   "galaxies",
+  "magnets",
 ] as const;
 export type GameId = (typeof GAME_IDS)[number];
 export type Category =
