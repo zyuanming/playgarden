@@ -1,3 +1,4 @@
+import { galaxiesLevels } from "../src/games/galaxiesLevels";
 import { akariLevels } from "../src/games/akariLevels";
 import { floodLevels } from "../src/games/floodLevels";
 import { breakoutLevels } from "../src/games/breakoutLogic";
@@ -94,6 +95,7 @@ import { cubeNetLevels } from "../src/games/cubeNetLogic";
 const packs = {
   flood: floodLevels,
   akari: akariLevels,
+  galaxies: galaxiesLevels,
   gomoku: gomokuLevels,
   xiangqi: xiangqiLevels,
   cloudrunner: runnerLessons,
@@ -215,8 +217,8 @@ describe("Scalable catalog contract", () => {
       }
     }),
   );
-  it("counts only 91 real games and 2207 levels, not the roadmap", () => {
-    expect(games).toHaveLength(91);
-    expect(games.reduce((sum, g) => sum + g.levelCount, 0)).toBe(2207);
+  it("counts only 92 real games and 2243 levels, not the roadmap", () => {
+    expect(games).toHaveLength(92);
+    expect(games.reduce((sum, g) => sum + g.levelCount, 0)).toBe(2243);
   });
 });
