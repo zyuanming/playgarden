@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- SPDX-License-Identifier: GPL-3.0-only; original Playgarden SVG geometry. -->
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="640" viewBox="0 0 960 640">
+  <defs><clipPath id="frame"><rect width="960" height="640" rx="32"/></clipPath></defs>
+  <g clip-path="url(#frame)">
+    <rect width="960" height="640" fill="#e9eddb"/>
+    <path d="M0 65Q190 0 400 87T960 65V205Q700 235 480 185T0 217Z" fill="#bed5ab"/>
+    <path d="M0 198Q220 150 490 210T960 190V474Q685 411 485 480T0 452Z" fill="#8ec2c0"/>
+    <g fill="none" stroke="#d4e7d9" stroke-width="5" opacity=".75"><path d="M-30 267q70-25 140 0t140 0t140 0t140 0t140 0t140 0t140 0"/><path d="M-80 415q70-25 140 0t140 0t140 0t140 0t140 0t140 0t140 0"/></g>
+    <g transform="translate(224 296) rotate(-9)"><rect width="470" height="110" rx="48" fill="#ae7d4e" stroke="#74593a" stroke-width="8"/><ellipse cx="33" cy="55" rx="19" ry="37" fill="none" stroke="#795f3e" stroke-width="7"/><path d="M83 37h330M104 75h259" stroke="#dbb580" stroke-width="9" stroke-linecap="round"/></g>
+    <g transform="translate(492 284)"><ellipse cy="53" rx="85" ry="28" fill="#21493c" opacity=".13"/><path d="M-42 15l-45 41M42 15l45 41M-39-17l-42-27M39-17l42-27" stroke="#365d40" stroke-width="20" stroke-linecap="round"/><ellipse rx="66" ry="55" fill="#b0d77d" stroke="#365d40" stroke-width="7"/><circle cx="-36" cy="-45" r="26" fill="#b0d77d" stroke="#365d40" stroke-width="7"/><circle cx="36" cy="-45" r="26" fill="#b0d77d" stroke="#365d40" stroke-width="7"/><circle cx="-36" cy="-46" r="9" fill="#263f32"/><circle cx="36" cy="-46" r="9" fill="#263f32"/><path d="M-19 18q19 20 38 0" stroke="#365d40" stroke-width="6" stroke-linecap="round" fill="none"/></g>
+    <g transform="translate(765 125) rotate(9)"><ellipse rx="92" ry="49" fill="#79ad75" stroke="#477b51" stroke-width="5"/><path d="M0 0l86-22-40 53Z" fill="#bed5ab"/><g fill="#fff0cd"><ellipse cx="-18" cy="-7" rx="13" ry="28"/><ellipse cx="-18" cy="-7" rx="13" ry="28" transform="rotate(60 -18 -7)"/><ellipse cx="-18" cy="-7" rx="13" ry="28" transform="rotate(120 -18 -7)"/></g><circle cx="-18" cy="-7" r="12" fill="#d9a365"/></g>
+    <path d="M0 525Q210 500 440 543T960 539V640H0Z" fill="#53665a"/>
+    <path d="M0 589H960" stroke="#d8dfc3" stroke-width="5" stroke-dasharray="32 29"/>
+    <g transform="translate(99 525) rotate(3)"><rect width="168" height="89" rx="23" fill="#eeae81" stroke="#365042" stroke-width="6"/><rect x="111" y="16" width="38" height="58" rx="9" fill="#5a7969"/><path d="M29 0v-8m105 8v-8M29 88v8m105-8v8" stroke="#294333" stroke-width="13" stroke-linecap="round"/></g>
+    <g stroke="#789362" stroke-width="5" fill="none" stroke-linecap="round"><path d="M110 113l-14-29m14 29 10-38m-10 38 29-13M808 482l-10-25m10 25 10-30m-10 30 26-11"/></g>
+  </g>
+</svg>

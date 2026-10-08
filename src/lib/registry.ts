@@ -1382,5 +1382,14 @@ export const games: GameDefinition[] = [
     source: { kind: "original", license: "GPL-3.0-only", notes: "通用泡泡弹射规则的原创实现：射线碰撞、墙壁反弹、六角吸附、至少三颗同色连组消除与悬空掉落；原创12关、有限队列、落点预览、启发式提示、可撤销存档和矢量图形。无外部游戏代码或素材。" },
     component: lazy(() => import("../games/BubbleShooterGarden")),
   },
+  {
+    id: "frog-crossing", title: "池塘过客",
+    subtitle: "等车流、搭木筏，把每位伙伴送到花叶上。",
+    category: "动作反应", difficulty: "中级", tone: "green",
+    levelCount: 12, resumeKey: "playgarden.frog-crossing.v1", allowUndo: false,
+    artwork: { url: "./frog-crossing-art.svg", position: "center", size: "cover" },
+    source: { kind: "original", license: "GPL-3.0-only", notes: "原创实时过河实现、12 个独立关卡与程序化图形；未复制第三方游戏源码或资源。" },
+    component: lazy(() => import("../games/FrogCrossingGarden")),
+  },
 ];
 export const findGame = (id: string) => games.find((game) => game.id === id);

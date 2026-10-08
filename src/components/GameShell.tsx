@@ -216,7 +216,7 @@ export function GameShell({
           disabled={paused || won || game.allowUndo === false}
           title={
             game.allowUndo === false
-              ? "实时跑酷不能撤销；可使用重来"
+              ? "实时游戏不能撤销；可使用重来"
               : undefined
           }
           onClick={() => setUndo((u) => u + 1)}
