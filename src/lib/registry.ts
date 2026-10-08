@@ -1364,5 +1364,14 @@ export const games: GameDefinition[] = [
     source: { kind: "original", license: "GPL-3.0-only", notes: "通用三值属性规则的原创实现；原创18个教学牌局、四项预览、当前余牌分组提示、可撤销收牌与经过校验的本机存档。与商业SET品牌无关联。" },
     component: lazy(() => import("../games/SetTrio")),
   },
+  {
+    id: "numberlink", title: "彩线连园",
+    subtitle: "连起同符号伙伴，让彩线铺满整座花园。",
+    category: "逻辑思维", difficulty: "中级", tone: "green",
+    levelCount: 15, resumeKey: "playgarden.numberlink.v1",
+    artwork: { url: "./numberlink-art.svg", position: "center", size: "cover" },
+    source: { kind: "original", license: "GPL-3.0-only", notes: "原创配对路径规则实现、15个手作布局与SVG插画；未移植第三方源码，所有规则正确解法均有效。" },
+    component: lazy(() => import("../games/NumberlinkGarden")),
+  },
 ];
 export const findGame = (id: string) => games.find((game) => game.id === id);

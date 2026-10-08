@@ -1,0 +1,27 @@
+<!-- SPDX-License-Identifier: GPL-3.0-only; original Playgarden SVG, 2026-10-08. -->
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="600" viewBox="0 0 960 600" fill="none">
+  <rect width="960" height="600" rx="38" fill="#EAF0DD"/>
+  <circle cx="130" cy="80" r="160" fill="#DAE8C7"/>
+  <circle cx="893" cy="529" r="203" fill="#D3E3BF"/>
+  <path d="M80 340C26 310 55 258 103 285C97 225 159 222 166 265C214 235 245 288 199 320C229 363 180 393 152 355C120 399 68 383 80 340Z" fill="#F5F4CA"/>
+  <path d="M817 170C788 135 820 109 846 136C845 94 895 94 891 132C930 107 951 150 917 165C950 196 917 225 891 198C877 237 838 222 846 190C804 207 789 178 817 170Z" fill="#FFF2CE"/>
+  <rect x="263" y="72" width="446" height="476" rx="37" fill="#B6C8A2"/>
+  <rect x="247" y="55" width="446" height="476" rx="37" fill="#FFFEF3" stroke="#97AD84" stroke-width="5"/>
+  <rect x="283" y="94" width="374" height="398" rx="20" fill="#F2F1DE"/>
+  <g stroke="#D5DEC8" stroke-width="2"><path d="M376 94V492M470 94V492M563 94V492M283 193H657M283 293H657M283 392H657"/></g>
+  <g stroke-linecap="round" stroke-linejoin="round" stroke-width="21">
+    <path d="M329 143H610V243" stroke="#C56B5D"/>
+    <path d="M329 243H516V343H610V442H516" stroke="#548AAD"/>
+    <path d="M329 343V442H423V343" stroke="#70945A"/>
+  </g>
+  <g stroke-width="5">
+    <g fill="#F9DCD2" stroke="#C56B5D"><circle cx="329" cy="143" r="28"/><circle cx="610" cy="243" r="28"/></g>
+    <g fill="#CFE5F0" stroke="#548AAD"><circle cx="329" cy="243" r="28"/><circle cx="516" cy="442" r="28"/></g>
+    <g fill="#E0EBCB" stroke="#70945A"><circle cx="329" cy="343" r="28"/><circle cx="423" cy="343" r="28"/></g>
+  </g>
+  <g fill="#C56B5D"><circle cx="329" cy="143" r="11"/><circle cx="610" cy="243" r="11"/></g>
+  <g fill="#548AAD"><path d="M329 228L344 243L329 258L314 243Z"/><path d="M516 427L531 442L516 457L501 442Z"/></g>
+  <g fill="#70945A"><path d="M329 327L345 353H313Z"/><path d="M423 327L439 353H407Z"/></g>
+  <g stroke="#85A16B" stroke-width="8" stroke-linecap="round"><path d="M179 479V423M176 451C144 450 137 425 151 416C172 410 181 430 176 451ZM182 461C212 463 225 441 212 429C192 421 181 440 182 461Z"/><path d="M773 443V388M770 416C742 418 729 391 746 382C765 376 776 397 770 416ZM777 427C808 428 819 406 805 394C785 389 775 405 777 427Z"/></g>
+  <ellipse cx="182" cy="493" rx="58" ry="13" fill="#B6CBA1"/><ellipse cx="778" cy="458" rx="50" ry="12" fill="#B6CBA1"/>
+</svg>
