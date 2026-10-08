@@ -125,7 +125,7 @@ export function stepBloom(state: BloomState, seconds: number): BloomState {
 }
 const record = (value: unknown): value is Record<string, unknown> => !!value && typeof value === "object" && !Array.isArray(value);
 const finite = (value: unknown): value is number => typeof value === "number" && Number.isFinite(value);
-function safePoint(value: unknown): value is BloomPoint {
+function safePoint(value: unknown): value is BloomPoint & Record<string, unknown> {
   return record(value) && finite(value.x) && finite(value.y) && value.x >= 14 && value.x <= 626 && value.y >= 14 && value.y <= 406;
 }
 export function parseBloom(raw: string | null, level: number): BloomState | null {
