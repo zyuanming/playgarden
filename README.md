@@ -263,6 +263,6 @@ src/
 
 第94款独立玩法：按每格的八向箭头，跨越远近不同的格子，拼接1到终点的完整数字链。可以先接中段，用固定数字推理间隔。原创五章30关，保持MIT完整上游许可。详见[关卡](docs/signpost-campaign.md)与[改编范围](docs/signpost-provenance.md)。
 
-## 胞子争园 / Ataxx
+## 孢子争园 / Ataxx
 
 第95款独立玩法：一步复制、两步跳跃，落点转化八邻域对手。完整本地AI对局与五章30个原创教学/战术练习；不把自由对弈计作额外关卡。详见[30关说明](docs/ataxx-campaign.md)与[MIT来源及改编](docs/ataxx-provenance.md)。

@@ -2,7 +2,7 @@ import {test,expect} from '@playwright/test';
 test('Ataxx exact public build, final lesson, real AI reply and persisted progress',async({page},info)=>{
  const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));const response=await page.goto('./');expect(response?.status()).toBe(200);
  if(process.env.GITHUB_SHA)await expect(page.locator('meta[name="playgarden-commit"]')).toHaveAttribute('content',process.env.GITHUB_SHA);
- await page.getByRole('textbox',{name:'搜索游戏'}).fill('胞子争园');await page.getByRole('button',{name:'开始玩胞子争园',exact:true}).click();await page.getByRole('button',{name:'成长练习',exact:true}).click();await page.getByLabel('选择关卡',{exact:true}).selectOption('29');
+ await page.getByRole('textbox',{name:'搜索游戏'}).fill('孢子争园');await page.getByRole('button',{name:'开始玩孢子争园',exact:true}).click();await page.getByRole('button',{name:'成长练习',exact:true}).click();await page.getByLabel('选择关卡',{exact:true}).selectOption('29');
  const root=page.locator('.ataxx-layout');await expect(root).toHaveAttribute('data-ataxx-id','ataxx-30');await page.screenshot({path:info.outputPath('ataxx-public-start.png'),fullPage:true});
  for(let turn=0;turn<3;turn++){
   if(await root.getAttribute('data-ataxx-phase')==='success')break;

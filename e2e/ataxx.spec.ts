@@ -9,7 +9,7 @@ async function verifyPieces(page:Page){
  expect(await page.locator('.ataxx-rock').evaluateAll(rocks=>rocks.every(e=>{const a=e.getBoundingClientRect(),b=e.parentElement!.getBoundingClientRect();return a.width>=b.width*.35&&a.height>=b.height*.25;}))).toBe(true);
 }
 test('Ataxx actual30 lessons, preview feedback, current-state hints and complete progress',async({page},info)=>{
- test.setTimeout(240000);const errors=captureErrors(page);await openGame(page,'胞子争园');await page.getByRole('button',{name:'成长练习',exact:true}).click();
+ test.setTimeout(240000);const errors=captureErrors(page);await openGame(page,'孢子争园');await page.getByRole('button',{name:'成长练习',exact:true}).click();
  const root=page.locator('.ataxx-layout');
  // A legal but wrong jump must fail the first clone objective; undo is recoverable.
  await choose(page,0,2);await root.getByRole('button',{name:/^确认移动/}).click();await expect(root).toHaveAttribute('data-ataxx-phase','retry');await expect(page.locator('.status')).not.toHaveClass(/success/);await page.getByRole('button',{name:'撤销',exact:true}).click();await expect(root).toHaveAttribute('data-ataxx-history','[]');
@@ -33,13 +33,13 @@ test('Ataxx actual30 lessons, preview feedback, current-state hints and complete
  expect(await page.evaluate(()=>JSON.parse(localStorage.getItem('playgarden.progress.v2')!).completed.ataxx.length)).toBe(30);expect(errors).toEqual([]);
 });
 test('Ataxx full real AI match, cancellation, double confirm, pause, reload and terminal',async({page},info)=>{
- test.setTimeout(300000);const errors=captureErrors(page);await openGame(page,'胞子争园');const root=page.locator('.ataxx-layout'),confirm=root.getByRole('button',{name:/^确认移动/});
+ test.setTimeout(300000);const errors=captureErrors(page);await openGame(page,'孢子争园');const root=page.locator('.ataxx-layout'),confirm=root.getByRole('button',{name:/^确认移动/});
  await expect(root).toHaveAttribute('data-ataxx-id','free');await verifyPieces(page);await page.screenshot({path:info.outputPath('ataxx-free-start.png'),fullPage:true});
  expect(await root.locator('.ataxx-cell').evaluateAll(c=>c.every(e=>e.getBoundingClientRect().width>=44))).toBe(true);
  const first=root.locator('button[data-cell="0"]');await first.focus();await first.press('Control+Enter');await expect(first).toHaveAttribute('aria-pressed','false');await first.press('ArrowRight');await expect(root.locator('button[data-cell="1"]')).toBeFocused();
  await choose(page,0,8,true);await root.getByRole('button',{name:'取消选择'}).click();await expect(root).toHaveAttribute('data-ataxx-history','[]');await expect(root.locator('.preview')).toHaveCount(0);
  await choose(page,0,8);await confirm.dblclick();await page.getByRole('button',{name:'暂停',exact:true}).click();const paused=await root.getAttribute('data-ataxx-history');await page.waitForTimeout(650);await expect(root).toHaveAttribute('data-ataxx-history',paused!);await expect(first).toBeDisabled();await page.getByRole('button',{name:'继续游戏',exact:true}).click();await expect(root).toHaveAttribute('data-ataxx-turn','1');expect(JSON.parse((await root.getAttribute('data-ataxx-history'))!).length).toBe(2);
- const saved=await root.getAttribute('data-ataxx-board');await page.reload();await page.getByRole('textbox',{name:'搜索游戏'}).fill('胞子争园');await page.getByRole('button',{name:/开始玩胞子争园|继续玩胞子争园/}).click();await expect(root).toHaveAttribute('data-ataxx-board',saved!);await page.getByRole('button',{name:'撤销',exact:true}).click();await expect(root).toHaveAttribute('data-ataxx-history','[]');
+ const saved=await root.getAttribute('data-ataxx-board');await page.reload();await page.getByRole('textbox',{name:'搜索游戏'}).fill('孢子争园');await page.getByRole('button',{name:/开始玩孢子争园|继续玩孢子争园/}).click();await expect(root).toHaveAttribute('data-ataxx-board',saved!);await page.getByRole('button',{name:'撤销',exact:true}).click();await expect(root).toHaveAttribute('data-ataxx-history','[]');
  await choose(page,0,8);await confirm.click();await page.getByRole('button',{name:'重来',exact:true}).click();await page.waitForTimeout(650);await expect(root).toHaveAttribute('data-ataxx-history','[]');
  await choose(page,0,8);await confirm.click();await page.getByRole('button',{name:'成长练习',exact:true}).click();await page.waitForTimeout(650);await expect(root).toHaveAttribute('data-ataxx-id','ataxx-01');await expect(root).toHaveAttribute('data-ataxx-history','[]');await page.getByRole('button',{name:'自由对弈',exact:true}).click();await page.getByRole('button',{name:'重来',exact:true}).click();
  let turns=0;

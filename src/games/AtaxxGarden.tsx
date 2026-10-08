@@ -103,7 +103,7 @@ function AtaxxRound({level,freePlay=false,paused,freshStart,hintToken,undoToken,
   function confirm(){const now=state.current;if(now.locked||now.pending===null||!legal(now.p,now.pending))return;const move=now.pending;now.pending=null;commit([...now.history,move]);}
   const canPass=!locked&&legal(p,null);
   return <div className="ataxx-layout" data-ataxx-id={id} data-ataxx-history={JSON.stringify(history)} data-ataxx-board={p.board.join(',')} data-ataxx-turn={p.turn} data-ataxx-phase={phase} data-ataxx-end={end??''} onKeyDown={e=>{if((e.ctrlKey||e.metaKey||e.altKey)&&['Enter',' '].includes(e.key))e.preventDefault();}}>
-    <section className="ataxx-play" aria-label="胞子争园棋局">
+    <section className="ataxx-play" aria-label="孢子争园棋局">
       <header className="ataxx-heading"><div><span className="ataxx-eyebrow">{lesson?`第 ${lesson.chapter+1} 章 · ${chapters[lesson.chapter]}`:'ATAXX · 一盘小小的生长竞赛'}</span><h3>{lesson?.title??'这片花园，由你开局'}</h3></div><span className="ataxx-count">{lesson?`${String(level+1).padStart(2,'0')} / 30`:'7 × 7'}</span></header>
       <p className="ataxx-goal">{intro}</p>
       <div className="ataxx-score" aria-label={`绿方${green}枚，紫方${plum}枚`}><span><i className="ataxx-token green" aria-hidden="true">✦</i>绿方 · 你 <strong>{green}</strong></span><span><strong>{plum}</strong>紫方 · 电脑<i className="ataxx-token plum" aria-hidden="true">◆</i></span></div>

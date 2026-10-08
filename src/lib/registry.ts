@@ -1317,7 +1317,7 @@ export const games: GameDefinition[] = [
   },
   {
     id: "ataxx",
-    title: "胞子争园",
+    title: "孢子争园",
     subtitle: "一步复制，两步跳跃，让孢子在花园里连片生长。",
     category: "逻辑思维", difficulty: "中级", tone: "green",
     levelCount: 30, freePlay: true,
