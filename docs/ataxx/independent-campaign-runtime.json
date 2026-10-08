@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "independentStates": 5827,
+  "decisionStates": 1796,
+  "terminalStates": 4031,
+  "currentGreenHints": 1298,
+  "worstPurpleReplies": 498,
+  "cloneAliases": 3624,
+  "allRootAlternatives": "equal to independent complete sets",
+  "strictMinimumHumanTurns": "2 turns for levels 19–24; 3 for 25–30",
+  "budgetCaps": "40,000 lesson nodes and 18,000 AI nodes (+1 stop sentinel) under malformed and oversized parameters"
+}
