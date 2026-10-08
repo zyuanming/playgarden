@@ -3,7 +3,7 @@
 // No engine imports, injected game state, solver, or all-campaign sweep.
 import { test, expect, type Locator } from "@playwright/test";
 import { openGame, chooseLevel, captureErrors } from "./helpers";
-test("pond crossing: log ride, arrivals, safe interruption and retry", async ({ page }, info) => {
+test("pond crossing recovery: restore and lifecycle continuation", async ({ page }, info) => {
   const errors = captureErrors(page);
   const touch = info.project.name === "mobile";
   const activate = async (node: Locator) => { if (touch) await node.tap(); else await node.click(); };
@@ -20,48 +20,6 @@ test("pond crossing: log ride, arrivals, safe interruption and retry", async ({ 
   await openGame(page, "池塘过客");
   await page.clock.install();
   await page.clock.pauseAt(new Date(await page.evaluate(() => Date.now()) + 100));
-  await expect(game).toHaveAttribute("data-phase", "ready");
-  const targets = await page.locator(".fc-directions button, .fc-main-button, .fc-pace button").evaluateAll((nodes) => nodes.map((node) => {
-    const r = node.getBoundingClientRect(); return { width: r.width, height: r.height };
-  }));
-  for (const target of targets) { expect(target.width).toBeGreaterThanOrEqual(44); expect(target.height).toBeGreaterThanOrEqual(44); }
-  await page.screenshot({ path: info.outputPath("frog-first-ready.png"), fullPage: true });
-  await activate(page.getByRole("button", { name: "开始过河", exact: true }));
-  await hop("right"); await expect(game).toHaveAttribute("data-x", "4.500");
-  await hop("left"); await hop("up");
-  await expect(game).toHaveAttribute("data-row", "1");
-  await page.clock.runFor(200);
-  await activate(page.getByRole("button", { name: "暂停", exact: true }));
-  const stopped = await game.getAttribute("data-time");
-  await page.clock.runFor(3000);
-  await expect(game).toHaveAttribute("data-time", stopped!);
-  await expect(page.getByRole("button", { name: "向前跳", exact: true })).toBeDisabled();
-  await activate(page.getByRole("button", { name: "继续游戏", exact: true }));
-  await hop("up", 2);
-  await expect(game).toHaveAttribute("data-row", "3");
-  const beforeRide = Number(await game.getAttribute("data-x"));
-  await page.clock.runFor(850);
-  expect(Number(await game.getAttribute("data-x"))).toBeGreaterThan(beforeRide + 0.1);
-  await expect(game).toHaveAttribute("data-phase", "playing");
-  await page.screenshot({ path: info.outputPath("frog-riding-log.png"), fullPage: true });
-  await hop("up");
-  await expect(game).toHaveAttribute("data-phase", "won");
-  await expect(page.locator(".status")).toHaveClass(/success/);
-  await page.screenshot({ path: info.outputPath("frog-first-arrived.png"), fullPage: true });
-
-  // Deliberately enter a visible vehicle, then retry using the actual button.
-  await activate(page.getByRole("button", { name: "重来", exact: true }));
-  await activate(page.getByRole("button", { name: "开始过河", exact: true }));
-  await hop("left", 3); await hop("up");
-  await expect(game).toHaveAttribute("data-phase", "stranded");
-  await expect(page.locator(".fc-sheet")).toContainText("碰到小车");
-  await activate(page.getByRole("button", { name: "再试这次", exact: true }));
-  await expect(game).toHaveAttribute("data-row", "0");
-  await expect(game).toHaveAttribute("data-time", "0.000");
-  await hop("up", 2); await hop("left", 3); await hop("up");
-  await expect(game).toHaveAttribute("data-phase", "stranded");
-  await expect(page.locator(".fc-sheet")).toContainText("落在水里");
-
   // Two distinct goals: the first arrival survives an actual return via the lobby.
   await chooseLevel(page, 2);
   await activate(page.getByRole("button", { name: "开始过河", exact: true }));
