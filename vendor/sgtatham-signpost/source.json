@@ -1,0 +1,19 @@
+{
+  "repository": "https://github.com/chrisboyle/sgtpuzzles",
+  "commit": "d1e10eb57dd80af4999e698a9ab31f546e9a0b9d",
+  "license": "MIT",
+  "files": [
+    {
+      "path": "signpost.c",
+      "upstreamPath": "app/src/main/jni/signpost.c",
+      "sha256": "8f7ef0961ec33e00ab8fc17c158b1bd71c1d7f0ba68e7f709404f34515638e9c",
+      "gitBlob": "87ad2d14350a73760d8161cd2c85b40602d961ed"
+    },
+    {
+      "path": "LICENCE",
+      "upstreamPath": "LICENCE",
+      "sha256": "42ad32e495b10a778fa7c935e07326b40ac8d11b400a0919a623bcf2e048e294",
+      "gitBlob": "b455f53907c16567fad5ca0ff1f007bfad8bcf90"
+    }
+  ]
+}
