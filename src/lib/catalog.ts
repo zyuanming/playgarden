@@ -105,6 +105,7 @@ export const GAME_IDS = [
   "bloom-tap",
   "word-ladder",
   "freecell-garden",
+  "star-sentry",
 ] as const;
 export type GameId = (typeof GAME_IDS)[number];
 export type Category =

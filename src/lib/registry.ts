@@ -1436,5 +1436,14 @@ export const games: GameDefinition[] = [
     source: { kind: "original", license: "GPL-3.0-only", notes: "通用 FreeCell 规则的原创单张移动实现；12 个手作教学牌局使用四花色 A–3/4/5/6 小牌组（12–24 张），包含牌列、单张空位、同花色升序归位、全部合法落点预览、可撤销动作重放存档及原创 SVG。并非完整 52 张牌模式；未复制第三方源码或素材。" },
     component: lazy(() => import("../games/FreecellGarden")),
   },
+  {
+    id: "star-sentry", title: "星门守望",
+    subtitle: "横移瞄准，躲开反击，守护十二段宁静归途。",
+    category: "动作反应", difficulty: "初级", tone: "purple",
+    levelCount: 12, allowUndo: false, resumeKey: "playgarden.star-sentry.v1",
+    artwork: { url: "./star-sentry-art.svg", position: "center", size: "cover" },
+    source: { kind: "original", license: "GPL-3.0-only", notes: "原创编队射击实现、12 个有限关卡与程序化 SVG；未复制第三方游戏源码或商业素材。" },
+    component: lazy(() => import("../games/StarSentry")),
+  },
 ];
 export const findGame = (id: string) => games.find((game) => game.id === id);
