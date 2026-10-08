@@ -1373,5 +1373,14 @@ export const games: GameDefinition[] = [
     source: { kind: "original", license: "GPL-3.0-only", notes: "原创配对路径规则实现、15个手作布局与SVG插画；未移植第三方源码，所有规则正确解法均有效。" },
     component: lazy(() => import("../games/NumberlinkGarden")),
   },
+  {
+    id: "bubble-shooter", title: "泡泡弹射",
+    subtitle: "12 关轻轻瞄准，借墙反弹，让同色泡泡相遇。",
+    category: "动作反应", difficulty: "中级", tone: "green",
+    levelCount: 12, resumeKey: "playgarden.bubble-shooter.v1",
+    artwork: { url: "./bubble-shooter-art.svg", position: "50% 50%", size: "cover" },
+    source: { kind: "original", license: "GPL-3.0-only", notes: "通用泡泡弹射规则的原创实现：射线碰撞、墙壁反弹、六角吸附、至少三颗同色连组消除与悬空掉落；原创12关、有限队列、落点预览、启发式提示、可撤销存档和矢量图形。无外部游戏代码或素材。" },
+    component: lazy(() => import("../games/BubbleShooterGarden")),
+  },
 ];
 export const findGame = (id: string) => games.find((game) => game.id === id);

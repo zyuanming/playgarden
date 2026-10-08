@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="640" viewBox="0 0 960 640" role="img" aria-labelledby="title desc">
+<!-- SPDX-License-Identifier: GPL-3.0-only. Original Playgarden vector artwork. -->
+<title id="title">泡泡弹射</title><desc id="desc">柔和纸色背景上的彩色泡泡与一条墙壁反弹的虚线轨迹。</desc>
+<defs><pattern id="dots" width="34" height="34" patternUnits="userSpaceOnUse"><circle cx="17" cy="17" r="1.4" fill="#d7dfce"/></pattern><g id="shine"><path d="M-14-10Q-7-20 7-17" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" opacity=".6"/></g></defs>
+<rect width="960" height="640" fill="#f0eddd"/><rect x="60" y="45" width="840" height="550" rx="42" fill="#fffdf3"/>
+<rect x="90" y="70" width="530" height="490" rx="30" fill="#edf5ed"/><rect x="90" y="70" width="530" height="490" rx="30" fill="url(#dots)"/>
+<path d="M118 432V96H592V432" fill="none" stroke="#b4c9b9" stroke-width="5"/>
+<path d="M354 505L590 360L211 146" fill="none" stroke="#5a8074" stroke-width="4" stroke-dasharray="5 12" stroke-linecap="round"/>
+<circle cx="590" cy="360" r="10" fill="#f3d278" stroke="#ae8a42" stroke-width="2"/>
+<g transform="translate(156 120)"><circle r="31" fill="#cc594f" stroke="#fff" stroke-width="4"/><use href="#shine"/><path d="M0-9L3-2L10 0L3 3L0 10L-3 3L-10 0L-3-2Z" fill="#fff"/></g>
+<g transform="translate(220 120)"><circle r="31" fill="#cc594f" stroke="#fff" stroke-width="4"/><use href="#shine"/><path d="M0-9L3-2L10 0L3 3L0 10L-3 3L-10 0L-3-2Z" fill="#fff"/></g>
+<g transform="translate(188 176)"><circle r="31" fill="#cc594f" fill-opacity=".35" stroke="#4f7368" stroke-dasharray="5 5" stroke-width="3"/><path d="M0-9L3-2L10 0L3 3L0 10L-3 3L-10 0L-3-2Z" fill="#fff"/></g>
+<g transform="translate(412 120)"><circle r="31" fill="#387fac" stroke="#fff" stroke-width="4"/><use href="#shine"/><path d="M-12-3Q-6-9 0-3T12-3M-12 7Q-6 1 0 7T12 7" fill="none" stroke="#fff" stroke-width="3"/></g>
+<g transform="translate(476 120)"><circle r="31" fill="#387fac" stroke="#fff" stroke-width="4"/><use href="#shine"/><path d="M-12-3Q-6-9 0-3T12-3M-12 7Q-6 1 0 7T12 7" fill="none" stroke="#fff" stroke-width="3"/></g>
+<g transform="translate(444 176)"><circle r="31" fill="#378a71" stroke="#fff" stroke-width="4"/><use href="#shine"/><path d="M-10 0H10M0-10V10M-7-7L7 7M-7 7L7-7" stroke="#fff" stroke-width="4" stroke-linecap="round"/></g>
+<g transform="translate(412 232)"><circle r="31" fill="#b8821d" stroke="#fff" stroke-width="4"/><use href="#shine"/><circle r="8" fill="#fff"/></g>
+<g transform="translate(476 232)"><circle r="31" fill="#b8821d" stroke="#fff" stroke-width="4"/><use href="#shine"/><circle r="8" fill="#fff"/></g>
+<ellipse cx="354" cy="539" rx="50" ry="9" fill="#c8d8ca"/><path d="M316 532Q307 480 354 474Q401 480 392 532Z" fill="#244a49"/>
+<path d="M354 501L397 474" stroke="#244a49" stroke-width="23" stroke-linecap="round"/><circle cx="354" cy="501" r="26" fill="#cc594f" stroke="#fff" stroke-width="3"/>
+<g transform="translate(687 132) rotate(9)"><rect width="115" height="98" rx="12" fill="none" stroke="#9eae95" stroke-width="2" stroke-dasharray="5 6"/><circle cx="39" cy="54" r="20" fill="none" stroke="#3b8271" stroke-width="4"/><circle cx="75" cy="54" r="20" fill="none" stroke="#3b8271" stroke-width="4"/><path d="M58 20L62 31L73 35L62 39L58 50L54 39L43 35L54 31Z" fill="#cc594f"/></g>
+<text x="664" y="297" fill="#244a49" font-family="system-ui,sans-serif" font-size="15" font-weight="700" letter-spacing="3">BUBBLE POST</text>
+<text x="661" y="355" fill="#244a49" font-family="system-ui,sans-serif" font-size="36" font-weight="800">轻轻瞄准</text><text x="661" y="404" fill="#244a49" font-family="system-ui,sans-serif" font-size="36" font-weight="800">同色相遇</text>
+<path d="M664 440H800" stroke="#b8c2ac" stroke-width="2"/><text x="664" y="474" fill="#73816c" font-family="system-ui,sans-serif" font-size="15">12 封泡泡来信</text>
+</svg>
