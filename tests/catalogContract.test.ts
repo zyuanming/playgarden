@@ -1,3 +1,4 @@
+import { petalWordLevels } from "../src/games/petalWordsLogic";
 import { starSentryLevels } from "../src/games/starSentryLogic";
 import { freecellGardenLevels } from "../src/games/freecellGardenLevels";
 import { wordLadderLevels } from "../src/games/wordLadderLevels";
@@ -124,6 +125,7 @@ const packs = {
   "word-ladder": wordLadderLevels,
   "freecell-garden": freecellGardenLevels,
   "star-sentry": starSentryLevels,
+  "petal-words": petalWordLevels,
   gomoku: gomokuLevels,
   xiangqi: xiangqiLevels,
   cloudrunner: runnerLessons,
@@ -245,8 +247,8 @@ describe("Scalable catalog contract", () => {
       }
     }),
   );
-  it("counts only 106 real games and 2486 levels, not the roadmap", () => {
-    expect(games).toHaveLength(106);
-    expect(games.reduce((sum, g) => sum + g.levelCount, 0)).toBe(2486);
+  it("counts only 107 real games and 2498 levels, not the roadmap", () => {
+    expect(games).toHaveLength(107);
+    expect(games.reduce((sum, g) => sum + g.levelCount, 0)).toBe(2498);
   });
 });
