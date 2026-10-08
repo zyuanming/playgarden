@@ -1,0 +1,1552 @@
+{
+  "seed": 951008,
+  "origin": "30 original Playgarden lessons; no upstream levels",
+  "levels": [
+    {
+      "size": 3,
+      "board": [
+        1,
+        0,
+        0,
+        0,
+        2,
+        0,
+        0,
+        0,
+        2
+      ],
+      "goal": {
+        "kind": "move",
+        "mode": "clone",
+        "captures": 1
+      },
+      "title": "留下一枚",
+      "tip": "先点绿子，再点相邻空格。复制会留下原位的绿子；落点周围的紫子也变绿。",
+      "chapter": 0,
+      "id": "ataxx-01",
+      "proof": {
+        "winningMoves": [
+          {
+            "from": 0,
+            "to": 1
+          },
+          {
+            "from": 0,
+            "to": 3
+          }
+        ],
+        "line": [
+          {
+            "from": 0,
+            "to": 1
+          }
+        ],
+        "canonicalSha256": "79add3dbbfb8a97dbd45a5f26d511984a019c46c9648c4962d4b71c7d68cf531"
+      }
+    },
+    {
+      "size": 4,
+      "board": [
+        1,
+        -1,
+        0,
+        0,
+        -1,
+        -1,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2
+      ],
+      "goal": {
+        "kind": "move",
+        "mode": "jump",
+        "captures": 1
+      },
+      "title": "越过小石桥",
+      "tip": "跳到横、竖或斜向距离两格的空地。可以跨过石头；原位会空出来。",
+      "chapter": 0,
+      "id": "ataxx-02",
+      "proof": {
+        "winningMoves": [
+          {
+            "from": 0,
+            "to": 2
+          },
+          {
+            "from": 0,
+            "to": 9
+          },
+          {
+            "from": 0,
+            "to": 10
+          }
+        ],
+        "line": [
+          {
+            "from": 0,
+            "to": 2
+          }
+        ],
+        "canonicalSha256": "02c6d343a234f32ac6f872ab8c50b0c39893e1c576e302a41b6a0bbfd44c06e5"
+      }
+    },
+    {
+      "size": 4,
+      "board": [
+        1,
+        0,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        0,
+        2,
+        0,
+        0,
+        0,
+        0,
+        2
+      ],
+      "goal": {
+        "kind": "move",
+        "mode": "clone",
+        "captures": 3
+      },
+      "title": "斜角也算邻居",
+      "tip": "转化影响落点周围的八个格，包括四个斜角。找能同时碰到三枚紫子的落点。",
+      "chapter": 0,
+      "id": "ataxx-03",
+      "proof": {
+        "winningMoves": [
+          {
+            "from": 0,
+            "to": 5
+          }
+        ],
+        "line": [
+          {
+            "from": 0,
+            "to": 5
+          }
+        ],
+        "canonicalSha256": "f9d1d3806a16797b08240adf56fe35f0e277677159cc452f11e8ba98057a81ec"
+      }
+    },
+    {
+      "size": 4,
+      "board": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        2,
+        0,
+        0,
+        0,
+        2,
+        0,
+        0,
+        0,
+        2
+      ],
+      "goal": {
+        "kind": "move",
+        "mode": "jump",
+        "captures": 4
+      },
+      "title": "一跃四邻",
+      "tip": "距离按横、竖位移的较大值算；两格远的斜跳也合法。选落点时看看完整的八邻域。",
+      "chapter": 0,
+      "id": "ataxx-04",
+      "proof": {
+        "winningMoves": [
+          {
+            "from": 0,
+            "to": 10
+          }
+        ],
+        "line": [
+          {
+            "from": 0,
+            "to": 10
+          }
+        ],
+        "canonicalSha256": "84b4b32d5fe85fc6643668491dfb92c62ea4c9c1f83633a0a582926081f7cf0c"
+      }
+    },
+    {
+      "size": 4,
+      "board": [
+        1,
+        0,
+        0,
+        1,
+        0,
+        2,
+        2,
+        0,
+        -1,
+        2,
+        2,
+        0,
+        0,
+        0,
+        0,
+        2
+      ],
+      "goal": {
+        "kind": "move",
+        "captures": 3
+      },
+      "title": "先看落点",
+      "tip": "这次复制或跳跃都可以。先数落点周围的紫子，再找能到达它的绿子。",
+      "chapter": 0,
+      "id": "ataxx-05",
+      "proof": {
+        "winningMoves": [
+          {
+            "from": 3,
+            "to": 11
+          }
+        ],
+        "line": [
+          {
+            "from": 3,
+            "to": 11
+          }
+        ],
+        "canonicalSha256": "f79e7db21a974640b09cbb2f5568771bf26afe7459b2d11072ffcf9825d9232e"
+      }
+    },
+    {
+      "size": 5,
+      "board": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        -1,
+        2,
+        0,
+        0,
+        0,
+        2,
+        2,
+        2,
+        0,
+        0,
+        0,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "goal": {
+        "kind": "move",
+        "mode": "jump",
+        "captures": 1
+      },
+      "title": "隔岸相逢",
+      "tip": "石头只挡落脚，不挡跨越。预览显示将转化的紫子，确认后才真正移动。",
+      "chapter": 0,
+      "id": "ataxx-06",
+      "proof": {
+        "winningMoves": [
+          {
+            "from": 0,
+            "to": 2
+          },
+          {
+            "from": 0,
+            "to": 10
+          }
+        ],
+        "line": [
+          {
+            "from": 0,
+            "to": 2
+          }
+        ],
+        "canonicalSha256": "ea2bcb568b6342a79d252b1a7c16c0968b83ced36668504ddd8e037db547f866"
+      }
+    },
+    {
+      "size": 4,
+      "board": [
+        2,
+        -1,
+        0,
+        2,
+        1,
+        -1,
+        2,
+        1,
+        -1,
+        1,
+        0,
+        2,
+        1,
+        0,
+        2,
+        2
+      ],
+      "chapter": 1,
+      "title": "花心涟漪",
+      "tip": "同一个落点，复制和跳跃可能有不同代价。先选绿子，再点空地预览，最后确认。",
+      "goal": {
+        "kind": "move",
+        "captures": 4
+      },
+      "id": "ataxx-07",
+      "proof": {
+        "winningMoves": [
+          {
+            "from": 4,
+            "to": 10
+          },
+          {
+            "from": 7,
+            "to": 10
+          },
+          {
+            "from": 12,
+            "to": 10
+          }
+        ],
+        "line": [
+          {
+            "from": 4,
+            "to": 10
+          }
+        ],
+        "canonicalSha256": "11dded5d7d010a602f2220deb939a585e9beedea440528b30933878ea1baa31b"
+      }
+    },
+    {
+      "size": 5,
+      "board": [
+        2,
+        2,
+        0,
+        0,
+        2,
+        0,
+        1,
+        0,
+        2,
+        2,
+        -1,
+        2,
+        0,
+        0,
+        1,
+        1,
+        0,
+        2,
+        -1,
+        2,
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      "chapter": 1,
+      "title": "拐角汇合",
+      "tip": "同一个落点，复制和跳跃可能有不同代价。先选绿子，再点空地预览，最后确认。",
+      "goal": {
+        "kind": "move",
+        "captures": 4
+      },
+      "id": "ataxx-08",
+      "proof": {
+        "winningMoves": [
+          {
+            "from": 6,
+            "to": 13
+          },
+          {
+            "from": 14,
+            "to": 13
+          }
+        ],
+        "line": [
+          {
+            "from": 6,
+            "to": 13
+          }
+        ],
+        "canonicalSha256": "cf0057703974891a914e904524c7b41f2936215bc6acc6a656b4c0164daff5b8"
+      }
+    },
+    {
+      "size": 4,
+      "board": [
+        1,
+        -1,
+        0,
+        2,
+        -1,
+        2,
+        1,
+        2,
+        1,
+        -1,
+        0,
+        0,
+        2,
+        1,
+        0,
+        0
+      ],
+      "chapter": 1,
+      "title": "两岸选择",
+      "tip": "同一个落点，复制和跳跃可能有不同代价。先选绿子，再点空地预览，最后确认。",
+      "goal": {
+        "kind": "move",
+        "captures": 3
+      },
+      "id": "ataxx-09",
+      "proof": {
+        "winningMoves": [
+          {
+            "from": 0,
+            "to": 2
+          },
+          {
+            "from": 6,
+            "to": 2
+          },
+          {
+            "from": 8,
+            "to": 2
+          }
+        ],
+        "line": [
+          {
+            "from": 0,
+            "to": 2
+          }
+        ],
+        "canonicalSha256": "e0aed4654ec95ae7c8c284bab610d4f69483261149de20cd10b9a594c72078fb"
+      }
+    },
+    {
+      "size": 5,
+      "board": [
+        2,
+        -1,
+        1,
+        0,
+        1,
+        2,
+        0,
+        2,
+        0,
+        1,
+        -1,
+        0,
+        0,
+        -1,
+        1,
+        2,
+        2,
+        0,
+        2,
+        1,
+        0,
+        -1,
+        0,
+        2,
+        2
+      ],
+      "chapter": 1,
+      "title": "石间穿行",
+      "tip": "同一个落点，复制和跳跃可能有不同代价。先选绿子，再点空地预览，最后确认。",
+      "goal": {
+        "kind": "move",
+        "captures": 4
+      },
+      "id": "ataxx-10",
+      "proof": {
+        "winningMoves": [
+          {
+            "from": 2,
+            "to": 11
+          }
+        ],
+        "line": [
+          {
+            "from": 2,
+            "to": 11
+          }
+        ],
+        "canonicalSha256": "bfb55e9084e6f965d0095b9318d294ba80513a76dddd9a9d9b1ca4bf148efbb7"
+      }
+    },
+    {
+      "size": 4,
+      "board": [
+        0,
+        1,
+        -1,
+        -1,
+        0,
+        0,
+        2,
+        2,
+        0,
+        2,
+        0,
+        1,
+        -1,
+        2,
+        0,
+        1
+      ],
+      "chapter": 1,
+      "title": "外沿包围",
+      "tip": "同一个落点，复制和跳跃可能有不同代价。先选绿子，再点空地预览，最后确认。",
+      "goal": {
+        "kind": "move",
+        "captures": 4
+      },
+      "id": "ataxx-11",
+      "proof": {
+        "winningMoves": [
+          {
+            "from": 1,
+            "to": 10
+          },
+          {
+            "from": 11,
+            "to": 10
+          }
+        ],
+        "line": [
+          {
+            "from": 1,
+            "to": 10
+          }
+        ],
+        "canonicalSha256": "88988f16fae9989a819fa27465800fbbe516d3a3c31a74fee96037a12624d331"
+      }
+    },
+    {
+      "size": 5,
+      "board": [
+        2,
+        0,
+        2,
+        2,
+        2,
+        1,
+        2,
+        2,
+        0,
+        0,
+        2,
+        0,
+        2,
+        -1,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0,
+        2,
+        0,
+        -1,
+        0,
+        1
+      ],
+      "chapter": 1,
+      "title": "整圈转绿",
+      "tip": "同一个落点，复制和跳跃可能有不同代价。先选绿子，再点空地预览，最后确认。",
+      "goal": {
+        "kind": "move",
+        "captures": 5
+      },
+      "id": "ataxx-12",
+      "proof": {
+        "winningMoves": [
+          {
+            "from": 16,
+            "to": 8
+          },
+          {
+            "from": 17,
+            "to": 8
+          }
+        ],
+        "line": [
+          {
+            "from": 16,
+            "to": 8
+          }
+        ],
+        "canonicalSha256": "eddd674a5290a77aa7fc9e713b38b7706afece3750b3a9bde337f08071dc3b97"
+      }
+    },
+    {
+      "size": 4,
+      "board": [
+        1,
+        1,
+        0,
+        2,
+        2,
+        1,
+        2,
+        0,
+        0,
+        1,
+        2,
+        2,
+        0,
+        -1,
+        1,
+        1
+      ],
+      "chapter": 2,
+      "title": "别急着吃",
+      "tip": "紫方会选让你剩下绿子最少的一手。眼前吃得最多，未必回击后留下最多。",
+      "goal": {
+        "kind": "hold",
+        "target": 6
+      },
+      "id": "ataxx-13",
+      "proof": {
+        "winningMoves": [
+          {
+            "from": 1,
+            "to": 2
+          },
+          {
+            "from": 1,
+            "to": 7
+          },
+          {
+            "from": 5,
+            "to": 8
+          }
+        ],
+        "line": [
+          {
+            "from": 1,
+            "to": 2
+          },
+          {
+            "from": 10,
+            "to": 7
+          }
+        ],
+        "canonicalSha256": "69f24032a78ecc1c41e25b1bb8b83a1fa058a88bd225f3813d43e08eee5c7e96"
+      }
+    },
+    {
+      "size": 4,
+      "board": [
+        1,
+        2,
+        1,
+        2,
+        0,
+        2,
+        -1,
+        1,
+        2,
+        -1,
+        2,
+        1,
+        2,
+        2,
+        0,
+        1
+      ],
+      "chapter": 2,
+      "title": "留住退路",
+      "tip": "紫方会选让你剩下绿子最少的一手。眼前吃得最多，未必回击后留下最多。",
+      "goal": {
+        "kind": "hold",
+        "target": 5
+      },
+      "id": "ataxx-14",
+      "proof": {
+        "winningMoves": [
+          {
+            "from": 2,
+            "to": 4
+          }
+        ],
+        "line": [
+          {
+            "from": 2,
+            "to": 4
+          },
+          {
+            "from": 3,
+            "to": 2
+          }
+        ],
+        "canonicalSha256": "5d1911a3fbf37b475c2fcfed7f82866e4d305287f75983ad9cc1dfe3a424592e"
+      }
+    },
+    {
+      "size": 4,
+      "board": [
+        2,
+        2,
+        1,
+        0,
+        1,
+        0,
+        1,
+        2,
+        0,
+        2,
+        2,
+        1,
+        1,
+        2,
+        2,
+        2
+      ],
+      "chapter": 2,
+      "title": "边角守护",
+      "tip": "紫方会选让你剩下绿子最少的一手。眼前吃得最多，未必回击后留下最多。",
+      "goal": {
+        "kind": "hold",
+        "target": 6
+      },
+      "id": "ataxx-15",
+      "proof": {
+        "winningMoves": [
+          {
+            "from": 2,
+            "to": 5
+          },
+          {
+            "from": 12,
+            "to": 5
+          }
+        ],
+        "line": [
+          {
+            "from": 2,
+            "to": 5
+          },
+          {
+            "from": 13,
+            "to": 8
+          }
+        ],
+        "canonicalSha256": "2a43864c3eb98860b1f632a7b3dabde07cdf8c0f919c1ee4a5f991dacf6af8ad"
+      }
+    },
+    {
+      "size": 4,
+      "board": [
+        1,
+        2,
+        2,
+        1,
+        -1,
+        1,
+        2,
+        1,
+        0,
+        1,
+        1,
+        2,
+        0,
+        2,
+        2,
+        1
+      ],
+      "chapter": 2,
+      "title": "诱饵花丛",
+      "tip": "紫方会选让你剩下绿子最少的一手。眼前吃得最多，未必回击后留下最多。",
+      "goal": {
+        "kind": "hold",
+        "target": 6
+      },
+      "id": "ataxx-16",
+      "proof": {
+        "winningMoves": [
+          {
+            "from": 5,
+            "to": 8
+          }
+        ],
+        "line": [
+          {
+            "from": 5,
+            "to": 8
+          },
+          {
+            "from": 6,
+            "to": 12
+          }
+        ],
+        "canonicalSha256": "4e3f6a19ecb18545a42b9b40a7ae3511d7f378760bb3b82f55a5e086587f4c3e"
+      }
+    },
+    {
+      "size": 4,
+      "board": [
+        2,
+        1,
+        0,
+        1,
+        2,
+        0,
+        1,
+        1,
+        2,
+        1,
+        2,
+        2,
+        1,
+        2,
+        2,
+        2
+      ],
+      "chapter": 2,
+      "title": "两处牵制",
+      "tip": "紫方会选让你剩下绿子最少的一手。眼前吃得最多，未必回击后留下最多。",
+      "goal": {
+        "kind": "hold",
+        "target": 6
+      },
+      "id": "ataxx-17",
+      "proof": {
+        "winningMoves": [
+          {
+            "from": 1,
+            "to": 5
+          },
+          {
+            "from": 3,
+            "to": 5
+          },
+          {
+            "from": 7,
+            "to": 5
+          }
+        ],
+        "line": [
+          {
+            "from": 1,
+            "to": 5
+          },
+          {
+            "from": 11,
+            "to": 2
+          }
+        ],
+        "canonicalSha256": "78ebfb70597196e76b3380de7896b46d56be87a1014f00ddfd6a0d7b2f12aa8e"
+      }
+    },
+    {
+      "size": 4,
+      "board": [
+        1,
+        0,
+        2,
+        2,
+        2,
+        -1,
+        0,
+        1,
+        1,
+        -1,
+        2,
+        1,
+        2,
+        2,
+        1,
+        2
+      ],
+      "chapter": 2,
+      "title": "稳住阵地",
+      "tip": "紫方会选让你剩下绿子最少的一手。眼前吃得最多，未必回击后留下最多。",
+      "goal": {
+        "kind": "hold",
+        "target": 6
+      },
+      "id": "ataxx-18",
+      "proof": {
+        "winningMoves": [
+          {
+            "from": 0,
+            "to": 6
+          }
+        ],
+        "line": [
+          {
+            "from": 0,
+            "to": 6
+          },
+          {
+            "from": 4,
+            "to": 1
+          }
+        ],
+        "canonicalSha256": "0670552462e5c1bd3bbfa0cd52f4af2c05f1ae5d53ce4980bf7283ba0a7ef4b7"
+      }
+    },
+    {
+      "size": 3,
+      "board": [
+        0,
+        1,
+        1,
+        0,
+        1,
+        2,
+        -1,
+        2,
+        2
+      ],
+      "chapter": 3,
+      "title": "收拢包围",
+      "tip": "这是一盘可对弈的残局。要考虑所有紫方回击；不能只靠眼前的子数领先。",
+      "goal": {
+        "kind": "win",
+        "turns": 2
+      },
+      "id": "ataxx-19",
+      "proof": {
+        "winningMoves": [
+          {
+            "from": 1,
+            "to": 3
+          }
+        ],
+        "line": [
+          {
+            "from": 1,
+            "to": 3
+          },
+          {
+            "from": 5,
+            "to": 0
+          },
+          {
+            "from": 2,
+            "to": 5
+          }
+        ],
+        "canonicalSha256": "9c496f7029deb185e265a5c78eeb6c794daec0cdfa7ceb6117ea7cb276d4e16c"
+      }
+    },
+    {
+      "size": 4,
+      "board": [
+        1,
+        1,
+        1,
+        1,
+        -1,
+        2,
+        0,
+        2,
+        2,
+        2,
+        2,
+        1,
+        0,
+        2,
+        2,
+        1
+      ],
+      "chapter": 3,
+      "title": "切断回路",
+      "tip": "这是一盘可对弈的残局。要考虑所有紫方回击；不能只靠眼前的子数领先。",
+      "goal": {
+        "kind": "win",
+        "turns": 2
+      },
+      "id": "ataxx-20",
+      "proof": {
+        "winningMoves": [
+          {
+            "from": 1,
+            "to": 6
+          }
+        ],
+        "line": [
+          {
+            "from": 1,
+            "to": 6
+          },
+          {
+            "from": 8,
+            "to": 12
+          }
+        ],
+        "canonicalSha256": "ea24d7ee97f2134228c2d8511e7ec19b9cf6d7bc4752b642e17a0bf35d07ec3a"
+      }
+    },
+    {
+      "size": 4,
+      "board": [
+        -1,
+        1,
+        1,
+        1,
+        0,
+        2,
+        2,
+        1,
+        2,
+        0,
+        2,
+        0,
+        1,
+        -1,
+        2,
+        2
+      ],
+      "chapter": 3,
+      "title": "补上空隙",
+      "tip": "这是一盘可对弈的残局。要考虑所有紫方回击；不能只靠眼前的子数领先。",
+      "goal": {
+        "kind": "win",
+        "turns": 2
+      },
+      "id": "ataxx-21",
+      "proof": {
+        "winningMoves": [
+          {
+            "from": 7,
+            "to": 11
+          },
+          {
+            "from": 12,
+            "to": 9
+          }
+        ],
+        "line": [
+          {
+            "from": 7,
+            "to": 11
+          },
+          {
+            "from": 5,
+            "to": 9
+          },
+          {
+            "from": 1,
+            "to": 4
+          }
+        ],
+        "canonicalSha256": "4fa020b37cee40c1b516ae18d620258d7259e122739d40aaa07923b1f2290177"
+      }
+    },
+    {
+      "size": 3,
+      "board": [
+        0,
+        2,
+        1,
+        2,
+        2,
+        1,
+        2,
+        -1,
+        1
+      ],
+      "chapter": 3,
+      "title": "两步合围",
+      "tip": "这是一盘可对弈的残局。要考虑所有紫方回击；不能只靠眼前的子数领先。",
+      "goal": {
+        "kind": "win",
+        "turns": 2
+      },
+      "id": "ataxx-22",
+      "proof": {
+        "winningMoves": [
+          {
+            "from": 2,
+            "to": 0
+          },
+          {
+            "from": 8,
+            "to": 0
+          }
+        ],
+        "line": [
+          {
+            "from": 2,
+            "to": 0
+          },
+          {
+            "from": 6,
+            "to": 2
+          },
+          {
+            "from": 3,
+            "to": 6
+          }
+        ],
+        "canonicalSha256": "444d209a0816df70958e8db1aa8d5134c4716e9046aef622552620828692d79c"
+      }
+    },
+    {
+      "size": 4,
+      "board": [
+        2,
+        1,
+        1,
+        -1,
+        2,
+        2,
+        2,
+        1,
+        0,
+        2,
+        1,
+        1,
+        2,
+        2,
+        1,
+        2
+      ],
+      "chapter": 3,
+      "title": "转角逆转",
+      "tip": "这是一盘可对弈的残局。要考虑所有紫方回击；不能只靠眼前的子数领先。",
+      "goal": {
+        "kind": "win",
+        "turns": 2
+      },
+      "id": "ataxx-23",
+      "proof": {
+        "winningMoves": [
+          {
+            "from": 1,
+            "to": 8
+          },
+          {
+            "from": 2,
+            "to": 8
+          }
+        ],
+        "line": [
+          {
+            "from": 1,
+            "to": 8
+          },
+          {
+            "from": 0,
+            "to": 1
+          }
+        ],
+        "canonicalSha256": "136a6b1eda449c0d7950ff34b587e952639de9a4ca370cc4dd8d57b50ada7a23"
+      }
+    },
+    {
+      "size": 4,
+      "board": [
+        2,
+        0,
+        2,
+        2,
+        1,
+        2,
+        1,
+        2,
+        2,
+        1,
+        1,
+        1,
+        0,
+        1,
+        1,
+        2
+      ],
+      "chapter": 3,
+      "title": "临门一跃",
+      "tip": "这是一盘可对弈的残局。要考虑所有紫方回击；不能只靠眼前的子数领先。",
+      "goal": {
+        "kind": "win",
+        "turns": 2
+      },
+      "id": "ataxx-24",
+      "proof": {
+        "winningMoves": [
+          {
+            "from": 4,
+            "to": 1
+          }
+        ],
+        "line": [
+          {
+            "from": 4,
+            "to": 1
+          },
+          {
+            "from": 8,
+            "to": 12
+          }
+        ],
+        "canonicalSha256": "75bedc075a98d5670e294113548a6c61a8b6c6432a157be68c242b1d14106c32"
+      }
+    },
+    {
+      "size": 3,
+      "board": [
+        -1,
+        0,
+        0,
+        2,
+        2,
+        1,
+        1,
+        -1,
+        2
+      ],
+      "chapter": 4,
+      "title": "缓一手",
+      "tip": "这是一盘可对弈的残局。要考虑所有紫方回击；不能只靠眼前的子数领先。",
+      "goal": {
+        "kind": "win",
+        "turns": 3
+      },
+      "id": "ataxx-25",
+      "proof": {
+        "winningMoves": [
+          {
+            "from": 5,
+            "to": 1
+          }
+        ],
+        "line": [
+          {
+            "from": 5,
+            "to": 1
+          },
+          {
+            "from": 8,
+            "to": 2
+          },
+          {
+            "from": 6,
+            "to": 8
+          },
+          {
+            "from": 1,
+            "to": 6
+          },
+          {
+            "from": 5,
+            "to": 1
+          }
+        ],
+        "canonicalSha256": "c645985f1651afc453e5513a23c275472d596b246e46f81c96e57d2d90a9d15b"
+      }
+    },
+    {
+      "size": 4,
+      "board": [
+        2,
+        1,
+        2,
+        -1,
+        -1,
+        0,
+        1,
+        2,
+        1,
+        2,
+        2,
+        1,
+        2,
+        2,
+        0,
+        1
+      ],
+      "chapter": 4,
+      "title": "跨区援手",
+      "tip": "这是一盘可对弈的残局。要考虑所有紫方回击；不能只靠眼前的子数领先。",
+      "goal": {
+        "kind": "win",
+        "turns": 3
+      },
+      "id": "ataxx-26",
+      "proof": {
+        "winningMoves": [
+          {
+            "from": 6,
+            "to": 14
+          }
+        ],
+        "line": [
+          {
+            "from": 6,
+            "to": 14
+          },
+          {
+            "from": 0,
+            "to": 5
+          },
+          {
+            "from": 11,
+            "to": 6
+          }
+        ],
+        "canonicalSha256": "d0b6b5c76d39decab892dc40a2ef67b55d4ba8759c69bbeb34d281b8abc27392"
+      }
+    },
+    {
+      "size": 4,
+      "board": [
+        -1,
+        0,
+        2,
+        1,
+        1,
+        -1,
+        -1,
+        2,
+        1,
+        2,
+        2,
+        -1,
+        1,
+        2,
+        0,
+        2
+      ],
+      "chapter": 4,
+      "title": "双翼推进",
+      "tip": "这是一盘可对弈的残局。要考虑所有紫方回击；不能只靠眼前的子数领先。",
+      "goal": {
+        "kind": "win",
+        "turns": 3
+      },
+      "id": "ataxx-27",
+      "proof": {
+        "winningMoves": [
+          {
+            "from": 4,
+            "to": 14
+          }
+        ],
+        "line": [
+          {
+            "from": 4,
+            "to": 14
+          },
+          {
+            "from": 2,
+            "to": 4
+          },
+          {
+            "from": 3,
+            "to": 2
+          },
+          {
+            "from": 4,
+            "to": 1
+          }
+        ],
+        "canonicalSha256": "25db521877f23bc6bfe8f2ae82647035b1305f60d1898ca898638123a4aa3520"
+      }
+    },
+    {
+      "size": 3,
+      "board": [
+        0,
+        1,
+        2,
+        2,
+        2,
+        0,
+        1,
+        1,
+        0
+      ],
+      "chapter": 4,
+      "title": "连环转化",
+      "tip": "这是一盘可对弈的残局。要考虑所有紫方回击；不能只靠眼前的子数领先。",
+      "goal": {
+        "kind": "win",
+        "turns": 3
+      },
+      "id": "ataxx-28",
+      "proof": {
+        "winningMoves": [
+          {
+            "from": 1,
+            "to": 0
+          },
+          {
+            "from": 1,
+            "to": 5
+          }
+        ],
+        "line": [
+          {
+            "from": 1,
+            "to": 0
+          },
+          {
+            "from": 2,
+            "to": 5
+          },
+          {
+            "from": 6,
+            "to": 8
+          },
+          {
+            "from": 1,
+            "to": 6
+          },
+          {
+            "from": 0,
+            "to": 1
+          }
+        ],
+        "canonicalSha256": "a408264e9c0e8d892dcc7b1204c73bc6f37ab975f13cbba616d6104043e6f209"
+      }
+    },
+    {
+      "size": 4,
+      "board": [
+        0,
+        1,
+        2,
+        -1,
+        -1,
+        1,
+        -1,
+        2,
+        2,
+        -1,
+        2,
+        0,
+        2,
+        2,
+        1,
+        2
+      ],
+      "chapter": 4,
+      "title": "以退为进",
+      "tip": "这是一盘可对弈的残局。要考虑所有紫方回击；不能只靠眼前的子数领先。",
+      "goal": {
+        "kind": "win",
+        "turns": 3
+      },
+      "id": "ataxx-29",
+      "proof": {
+        "winningMoves": [
+          {
+            "from": 14,
+            "to": 11
+          }
+        ],
+        "line": [
+          {
+            "from": 14,
+            "to": 11
+          },
+          {
+            "from": 2,
+            "to": 0
+          },
+          {
+            "from": 7,
+            "to": 2
+          }
+        ],
+        "canonicalSha256": "097200e46189763a7f1f2ceb3b570ec09ed22c2c625f136f97ba37a5ce552f3a"
+      }
+    },
+    {
+      "size": 4,
+      "board": [
+        2,
+        2,
+        0,
+        1,
+        -1,
+        2,
+        0,
+        2,
+        1,
+        1,
+        2,
+        -1,
+        1,
+        1,
+        -1,
+        1
+      ],
+      "chapter": 4,
+      "title": "满园生长",
+      "tip": "这是一盘可对弈的残局。要考虑所有紫方回击；不能只靠眼前的子数领先。",
+      "goal": {
+        "kind": "win",
+        "turns": 3
+      },
+      "id": "ataxx-30",
+      "proof": {
+        "winningMoves": [
+          {
+            "from": 3,
+            "to": 6
+          },
+          {
+            "from": 9,
+            "to": 2
+          }
+        ],
+        "line": [
+          {
+            "from": 3,
+            "to": 6
+          },
+          {
+            "from": 0,
+            "to": 2
+          },
+          {
+            "from": 8,
+            "to": 0
+          },
+          {
+            "from": 2,
+            "to": 8
+          },
+          {
+            "from": 1,
+            "to": 2
+          }
+        ],
+        "canonicalSha256": "7b50353c5609ebceab2a34b03e5e9062c2b5bfdbea4c6b3edf0b2451b9975d1f"
+      }
+    }
+  ]
+}

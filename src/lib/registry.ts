@@ -1315,5 +1315,23 @@ export const games: GameDefinition[] = [
     },
     component: lazy(() => import("../games/SignpostGarden")),
   },
+  {
+    id: "ataxx",
+    title: "孢子争园",
+    subtitle: "一步复制，两步跳跃，让孢子在花园里连片生长。",
+    category: "逻辑思维", difficulty: "中级", tone: "green",
+    levelCount: 30, freePlay: true,
+    modeLabels: { free: "自由对弈", practice: "成长练习" },
+    freePlayCaption: "完整 7 × 7 · 本地轻量电脑",
+    resumeKey: "playgarden.ataxx.v1",
+    artwork: { url: "./ataxx-art.svg", position: "50% 50%", size: "cover" },
+    source: {
+      kind: "adapted", license: "MIT", author: "kz04px", workTitle: "libataxx",
+      url: "https://github.com/kz04px/libataxx/tree/4226c26dd11a1f74be708882ece6fd9dc96c767b",
+      commit: "4226c26dd11a1f74be708882ece6fd9dc96c767b", notice: "./ataxx-LICENSE.txt",
+      notes: "实际移植 MIT libataxx 的复制、跳跃、八邻转化、无步跳过及终局规则；原创30关、完整本地AI对局、确认预览与可取消分析。",
+    },
+    component: lazy(() => import("../games/AtaxxGarden")),
+  },
 ];
 export const findGame = (id: string) => games.find((game) => game.id === id);

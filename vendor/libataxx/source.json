@@ -1,0 +1,55 @@
+{
+  "repository": "https://github.com/kz04px/libataxx",
+  "commit": "4226c26dd11a1f74be708882ece6fd9dc96c767b",
+  "license": "MIT",
+  "files": [
+    {
+      "path": "LICENSE",
+      "upstreamPath": "LICENSE",
+      "gitBlob": "0997803cc30af1a2e5270b8c8034265b1be59ac6",
+      "sha256": "8ed54254d98e70d88d332c72bbc965b80cc7acd4f3eeb8b1974dc5566ba36f8a"
+    },
+    {
+      "path": "is_legal_move.cpp",
+      "upstreamPath": "src/is_legal_move.cpp",
+      "gitBlob": "f0853f5e80689758fb0f936e73bce75581c37422",
+      "sha256": "50a8aa8d708c5a3eecb9a0292537fc9198e0a6e06b795f4f8e39a06364986b5a"
+    },
+    {
+      "path": "legal_moves.cpp",
+      "upstreamPath": "src/legal_moves.cpp",
+      "gitBlob": "281b497ac518f322c85639fa95f7d4f899144422",
+      "sha256": "ab20200f68d1be12345183c3ce080b779eb0ff59f4f48c87dc188a515c51deaa"
+    },
+    {
+      "path": "makemove.cpp",
+      "upstreamPath": "src/makemove.cpp",
+      "gitBlob": "b6f7a2f3e5fa830047e3c5b81231fa01c7721a91",
+      "sha256": "1e26ae00286fa5c035aef098ea98eb913c51543d62d8f31b24437f43558638a7"
+    },
+    {
+      "path": "gameover.cpp",
+      "upstreamPath": "src/gameover.cpp",
+      "gitBlob": "d87b1459eebc25890daa25daeab218ef407df201",
+      "sha256": "4342a596a033df8a870cfc213ffe10f80fff9852332dd0e51aa343f945a4ec21"
+    },
+    {
+      "path": "libataxx/position.hpp",
+      "upstreamPath": "src/libataxx/position.hpp",
+      "gitBlob": "9e50adcb5b5a9c4fdad2458925bd4af67a53b370",
+      "sha256": "15680bf442e9db4acd46335660aa0022f7f1efa31473dd898fca2a4f459bea1f"
+    },
+    {
+      "path": "libataxx/move.hpp",
+      "upstreamPath": "src/libataxx/move.hpp",
+      "gitBlob": "325bd2593799174c736521cc9dbf216d53684884",
+      "sha256": "3fa32a072baab37175bbd59eb97d3e96308a9703430ad77905d36479280d9f7d"
+    },
+    {
+      "path": "libataxx/bitboard.hpp",
+      "upstreamPath": "src/libataxx/bitboard.hpp",
+      "gitBlob": "8478f78effd1df5a5e0b6643f3e3d4ab81a353d8",
+      "sha256": "e583ae4df078c788fa8f41a14acfd7119dab1c39714198cdcb5e4abbf57365cd"
+    }
+  ]
+}

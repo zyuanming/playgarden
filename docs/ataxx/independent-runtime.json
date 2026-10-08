@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "oracle": "independent Python 49-bit coordinate-neighborhood model",
+  "fixtureSeed": 9504226,
+  "positions": 1340,
+  "transitions": 49652,
+  "cloneAliases": 23746,
+  "illegalChecks": 16080,
+  "postTerminalMoveChecks": 366680,
+  "boardSizes": [
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "storage": "action-only replay, malformed values, wrong IDs, impossible moves, oversized history/raw string",
+  "sourceCommit": "4226c26dd11a1f74be708882ece6fd9dc96c767b"
+}

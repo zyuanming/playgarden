@@ -1,0 +1,8 @@
+{
+  "src/games/ataxxLogic.ts": "dbe3177eaa096df84f2bbcdb727b0cdbefc65293d358b78b1144410f8f8fd027",
+  "src/games/ataxxSearch.ts": "411a5eb35c79f4ff0ca9fcd595227d1ffd399ae56790482713a112d633cb4b9a",
+  "src/games/ataxxLevels.ts": "02551403c9aeafca02ef31bad03158fa2dc7d1cb369f6ee225c9383133c68dc2",
+  "src/games/ataxx.worker.ts": "9530664b849c2ec1dcbe1f0b68baf3740492dc6577012c575d3240ac5ed215e6",
+  "src/games/AtaxxGarden.tsx": "28540ce8c5033b3a4406b94c629b01f09fcdae463acac390f746e5862e12ed25",
+  "src/games/ataxxGarden.css": "b9ec2085ac5145e63a819c8a3315baf9ad0f9b41f91200a8101d21ef659719d4"
+}

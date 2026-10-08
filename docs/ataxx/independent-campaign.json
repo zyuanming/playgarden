@@ -1,0 +1,868 @@
+{
+  "status": "PASS",
+  "method": "Independent Python 49-bit exhaustive finite-horizon minimax; only initial boards and goal declarations read from product; no author solver or proofs used",
+  "count": 30,
+  "chapters": {
+    "0": 6,
+    "1": 6,
+    "2": 6,
+    "3": 6,
+    "4": 6
+  },
+  "objectiveKinds": {
+    "move": 12,
+    "hold": 6,
+    "win": 12
+  },
+  "d4Distinct": 30,
+  "symmetryDuplicates": [],
+  "positionsWithAlternatives": 16,
+  "allChoicesAcceptable": [],
+  "proofStates": 5797,
+  "elapsedSeconds": 0.116,
+  "levels": [
+    {
+      "id": "ataxx-01",
+      "goal": {
+        "kind": "move",
+        "mode": "clone",
+        "captures": 1
+      },
+      "legalChoices": 6,
+      "winningChoices": 2,
+      "winningActions": [
+        "c:1",
+        "c:3"
+      ],
+      "actionValues": {
+        "c:1": 1,
+        "c:3": 1,
+        "j:0:2": -1,
+        "j:0:5": -1,
+        "j:0:6": -1,
+        "j:0:7": -1
+      },
+      "minimumWinningTurns": null,
+      "adversarialLine": [],
+      "uniqueProofStates": 6
+    },
+    {
+      "id": "ataxx-02",
+      "goal": {
+        "kind": "move",
+        "mode": "jump",
+        "captures": 1
+      },
+      "legalChoices": 4,
+      "winningChoices": 3,
+      "winningActions": [
+        "j:0:2",
+        "j:0:9",
+        "j:0:10"
+      ],
+      "actionValues": {
+        "j:0:2": 1,
+        "j:0:8": -1,
+        "j:0:9": 1,
+        "j:0:10": 1
+      },
+      "minimumWinningTurns": null,
+      "adversarialLine": [],
+      "uniqueProofStates": 4
+    },
+    {
+      "id": "ataxx-03",
+      "goal": {
+        "kind": "move",
+        "mode": "clone",
+        "captures": 3
+      },
+      "legalChoices": 5,
+      "winningChoices": 1,
+      "winningActions": [
+        "c:5"
+      ],
+      "actionValues": {
+        "c:1": -1,
+        "c:4": -1,
+        "c:5": 1,
+        "j:0:6": -1,
+        "j:0:9": -1
+      },
+      "minimumWinningTurns": null,
+      "adversarialLine": [],
+      "uniqueProofStates": 5
+    },
+    {
+      "id": "ataxx-04",
+      "goal": {
+        "kind": "move",
+        "mode": "jump",
+        "captures": 4
+      },
+      "legalChoices": 7,
+      "winningChoices": 1,
+      "winningActions": [
+        "j:0:10"
+      ],
+      "actionValues": {
+        "c:1": -1,
+        "c:4": -1,
+        "c:5": -1,
+        "j:0:2": -1,
+        "j:0:8": -1,
+        "j:0:9": -1,
+        "j:0:10": 1
+      },
+      "minimumWinningTurns": null,
+      "adversarialLine": [],
+      "uniqueProofStates": 7
+    },
+    {
+      "id": "ataxx-05",
+      "goal": {
+        "kind": "move",
+        "captures": 3
+      },
+      "legalChoices": 7,
+      "winningChoices": 1,
+      "winningActions": [
+        "j:3:11"
+      ],
+      "actionValues": {
+        "c:1": -1,
+        "c:2": -1,
+        "c:4": -1,
+        "c:7": -1,
+        "j:0:2": -1,
+        "j:3:1": -1,
+        "j:3:11": 1
+      },
+      "minimumWinningTurns": null,
+      "adversarialLine": [],
+      "uniqueProofStates": 7
+    },
+    {
+      "id": "ataxx-06",
+      "goal": {
+        "kind": "move",
+        "mode": "jump",
+        "captures": 1
+      },
+      "legalChoices": 4,
+      "winningChoices": 2,
+      "winningActions": [
+        "j:0:2",
+        "j:0:10"
+      ],
+      "actionValues": {
+        "c:1": -1,
+        "c:5": -1,
+        "j:0:2": 1,
+        "j:0:10": 1
+      },
+      "minimumWinningTurns": null,
+      "adversarialLine": [],
+      "uniqueProofStates": 4
+    },
+    {
+      "id": "ataxx-07",
+      "goal": {
+        "kind": "move",
+        "captures": 4
+      },
+      "legalChoices": 9,
+      "winningChoices": 3,
+      "winningActions": [
+        "c:10",
+        "j:4:10",
+        "j:12:10"
+      ],
+      "actionValues": {
+        "c:2": -1,
+        "c:10": 1,
+        "c:13": -1,
+        "j:4:2": -1,
+        "j:4:10": 1,
+        "j:4:13": -1,
+        "j:7:13": -1,
+        "j:9:2": -1,
+        "j:12:10": 1
+      },
+      "minimumWinningTurns": null,
+      "adversarialLine": [],
+      "uniqueProofStates": 9
+    },
+    {
+      "id": "ataxx-08",
+      "goal": {
+        "kind": "move",
+        "captures": 4
+      },
+      "legalChoices": 23,
+      "winningChoices": 2,
+      "winningActions": [
+        "c:13",
+        "j:6:13"
+      ],
+      "actionValues": {
+        "c:2": -1,
+        "c:5": -1,
+        "c:7": -1,
+        "c:12": -1,
+        "c:13": 1,
+        "c:16": -1,
+        "c:21": -1,
+        "j:6:3": -1,
+        "j:6:13": 1,
+        "j:6:16": -1,
+        "j:14:2": -1,
+        "j:14:3": -1,
+        "j:14:7": -1,
+        "j:14:12": -1,
+        "j:14:22": -1,
+        "j:14:23": -1,
+        "j:14:24": -1,
+        "j:15:5": -1,
+        "j:15:7": -1,
+        "j:15:12": -1,
+        "j:15:22": -1,
+        "j:20:12": -1,
+        "j:20:22": -1
+      },
+      "minimumWinningTurns": null,
+      "adversarialLine": [],
+      "uniqueProofStates": 23
+    },
+    {
+      "id": "ataxx-09",
+      "goal": {
+        "kind": "move",
+        "captures": 3
+      },
+      "legalChoices": 13,
+      "winningChoices": 3,
+      "winningActions": [
+        "c:2",
+        "j:0:2",
+        "j:8:2"
+      ],
+      "actionValues": {
+        "c:2": 1,
+        "c:10": -1,
+        "c:11": -1,
+        "c:14": -1,
+        "j:0:2": 1,
+        "j:0:10": -1,
+        "j:6:14": -1,
+        "j:6:15": -1,
+        "j:8:2": 1,
+        "j:8:10": -1,
+        "j:8:14": -1,
+        "j:13:11": -1,
+        "j:13:15": -1
+      },
+      "minimumWinningTurns": null,
+      "adversarialLine": [],
+      "uniqueProofStates": 13
+    },
+    {
+      "id": "ataxx-10",
+      "goal": {
+        "kind": "move",
+        "captures": 4
+      },
+      "legalChoices": 16,
+      "winningChoices": 1,
+      "winningActions": [
+        "j:2:11"
+      ],
+      "actionValues": {
+        "c:3": -1,
+        "c:6": -1,
+        "c:8": -1,
+        "j:2:11": 1,
+        "j:2:12": -1,
+        "j:4:12": -1,
+        "j:9:12": -1,
+        "j:9:17": -1,
+        "j:14:3": -1,
+        "j:14:12": -1,
+        "j:14:17": -1,
+        "j:14:22": -1,
+        "j:19:8": -1,
+        "j:19:12": -1,
+        "j:19:17": -1,
+        "j:19:22": -1
+      },
+      "minimumWinningTurns": null,
+      "adversarialLine": [],
+      "uniqueProofStates": 16
+    },
+    {
+      "id": "ataxx-11",
+      "goal": {
+        "kind": "move",
+        "captures": 4
+      },
+      "legalChoices": 9,
+      "winningChoices": 2,
+      "winningActions": [
+        "c:10",
+        "j:1:10"
+      ],
+      "actionValues": {
+        "c:0": -1,
+        "c:4": -1,
+        "c:5": -1,
+        "c:10": 1,
+        "c:14": -1,
+        "j:1:8": -1,
+        "j:1:10": 1,
+        "j:11:5": -1,
+        "j:15:5": -1
+      },
+      "minimumWinningTurns": null,
+      "adversarialLine": [],
+      "uniqueProofStates": 9
+    },
+    {
+      "id": "ataxx-12",
+      "goal": {
+        "kind": "move",
+        "captures": 5
+      },
+      "legalChoices": 17,
+      "winningChoices": 2,
+      "winningActions": [
+        "j:16:8",
+        "j:17:8"
+      ],
+      "actionValues": {
+        "c:1": -1,
+        "c:11": -1,
+        "c:15": -1,
+        "c:18": -1,
+        "c:19": -1,
+        "c:21": -1,
+        "c:23": -1,
+        "j:5:15": -1,
+        "j:16:8": 1,
+        "j:16:18": -1,
+        "j:16:23": -1,
+        "j:17:8": 1,
+        "j:17:9": -1,
+        "j:17:14": -1,
+        "j:17:15": -1,
+        "j:17:19": -1,
+        "j:24:14": -1
+      },
+      "minimumWinningTurns": null,
+      "adversarialLine": [],
+      "uniqueProofStates": 17
+    },
+    {
+      "id": "ataxx-13",
+      "goal": {
+        "kind": "hold",
+        "target": 6
+      },
+      "legalChoices": 15,
+      "winningChoices": 3,
+      "winningActions": [
+        "c:2",
+        "c:8",
+        "j:1:7"
+      ],
+      "actionValues": {
+        "c:2": 0.5,
+        "c:8": 0.5,
+        "c:12": -1.5,
+        "j:0:2": -0.5,
+        "j:0:8": -1.5,
+        "j:1:7": 0.5,
+        "j:1:8": -1.5,
+        "j:5:7": -0.5,
+        "j:5:12": -2.5,
+        "j:9:2": -0.5,
+        "j:9:7": -0.5,
+        "j:14:7": -0.5,
+        "j:14:8": -0.5,
+        "j:14:12": -2.5,
+        "j:15:7": -0.5
+      },
+      "minimumWinningTurns": null,
+      "adversarialLine": [
+        "c:2",
+        "c:7"
+      ],
+      "uniqueProofStates": 114
+    },
+    {
+      "id": "ataxx-14",
+      "goal": {
+        "kind": "hold",
+        "target": 5
+      },
+      "legalChoices": 4,
+      "winningChoices": 1,
+      "winningActions": [
+        "j:2:4"
+      ],
+      "actionValues": {
+        "c:4": -100,
+        "c:14": -100,
+        "j:2:4": 0.5,
+        "j:7:14": -0.5
+      },
+      "minimumWinningTurns": null,
+      "adversarialLine": [
+        "j:2:4",
+        "c:2"
+      ],
+      "uniqueProofStates": 17
+    },
+    {
+      "id": "ataxx-15",
+      "goal": {
+        "kind": "hold",
+        "target": 6
+      },
+      "legalChoices": 8,
+      "winningChoices": 2,
+      "winningActions": [
+        "c:5",
+        "j:12:5"
+      ],
+      "actionValues": {
+        "c:3": -1.5,
+        "c:5": 0.5,
+        "c:8": -2.5,
+        "j:2:8": -2.5,
+        "j:6:8": -2.5,
+        "j:11:3": -2.5,
+        "j:11:5": -0.5,
+        "j:12:5": 0.5
+      },
+      "minimumWinningTurns": null,
+      "adversarialLine": [
+        "c:5",
+        "c:8"
+      ],
+      "uniqueProofStates": 71
+    },
+    {
+      "id": "ataxx-16",
+      "goal": {
+        "kind": "hold",
+        "target": 6
+      },
+      "legalChoices": 6,
+      "winningChoices": 1,
+      "winningActions": [
+        "c:8"
+      ],
+      "actionValues": {
+        "c:8": 0.5,
+        "c:12": -0.5,
+        "j:0:8": -0.5,
+        "j:5:12": -0.5,
+        "j:10:8": -2.5,
+        "j:10:12": -2.5
+      },
+      "minimumWinningTurns": null,
+      "adversarialLine": [
+        "c:8",
+        "j:6:12"
+      ],
+      "uniqueProofStates": 36
+    },
+    {
+      "id": "ataxx-17",
+      "goal": {
+        "kind": "hold",
+        "target": 6
+      },
+      "legalChoices": 6,
+      "winningChoices": 3,
+      "winningActions": [
+        "c:5",
+        "j:3:5",
+        "j:7:5"
+      ],
+      "actionValues": {
+        "c:2": -100,
+        "c:5": 0.5,
+        "j:3:5": 0.5,
+        "j:7:5": 0.5,
+        "j:9:2": -2.5,
+        "j:12:5": -0.5
+      },
+      "minimumWinningTurns": null,
+      "adversarialLine": [
+        "c:5",
+        "j:11:2"
+      ],
+      "uniqueProofStates": 31
+    },
+    {
+      "id": "ataxx-18",
+      "goal": {
+        "kind": "hold",
+        "target": 6
+      },
+      "legalChoices": 8,
+      "winningChoices": 1,
+      "winningActions": [
+        "j:0:6"
+      ],
+      "actionValues": {
+        "c:1": -100,
+        "c:6": -100,
+        "j:0:6": 0.5,
+        "j:7:1": -1.5,
+        "j:8:1": -2.5,
+        "j:8:6": -0.5,
+        "j:11:1": -1.5,
+        "j:14:6": -0.5
+      },
+      "minimumWinningTurns": null,
+      "adversarialLine": [
+        "j:0:6",
+        "c:1"
+      ],
+      "uniqueProofStates": 41
+    },
+    {
+      "id": "ataxx-19",
+      "goal": {
+        "kind": "win",
+        "turns": 2
+      },
+      "legalChoices": 4,
+      "winningChoices": 1,
+      "winningActions": [
+        "c:3"
+      ],
+      "actionValues": {
+        "c:0": -1,
+        "c:3": 1,
+        "j:2:0": -1,
+        "j:2:3": -1
+      },
+      "minimumWinningTurns": 2,
+      "adversarialLine": [
+        "c:3",
+        "j:5:0",
+        "c:5"
+      ],
+      "uniqueProofStates": 33
+    },
+    {
+      "id": "ataxx-20",
+      "goal": {
+        "kind": "win",
+        "turns": 2
+      },
+      "legalChoices": 3,
+      "winningChoices": 1,
+      "winningActions": [
+        "c:6"
+      ],
+      "actionValues": {
+        "c:6": 1,
+        "j:0:6": -1,
+        "j:15:6": -1
+      },
+      "minimumWinningTurns": 2,
+      "adversarialLine": [
+        "c:6",
+        "c:12"
+      ],
+      "uniqueProofStates": 55
+    },
+    {
+      "id": "ataxx-21",
+      "goal": {
+        "kind": "win",
+        "turns": 2
+      },
+      "legalChoices": 12,
+      "winningChoices": 2,
+      "winningActions": [
+        "c:9",
+        "c:11"
+      ],
+      "actionValues": {
+        "c:4": -1,
+        "c:9": 1,
+        "c:11": 1,
+        "j:1:9": -1,
+        "j:1:11": -1,
+        "j:2:4": -1,
+        "j:2:9": -1,
+        "j:2:11": -1,
+        "j:3:9": -1,
+        "j:3:11": -1,
+        "j:7:9": -1,
+        "j:12:4": -1
+      },
+      "minimumWinningTurns": 2,
+      "adversarialLine": [
+        "c:9",
+        "c:11",
+        "c:4"
+      ],
+      "uniqueProofStates": 262
+    },
+    {
+      "id": "ataxx-22",
+      "goal": {
+        "kind": "win",
+        "turns": 2
+      },
+      "legalChoices": 3,
+      "winningChoices": 2,
+      "winningActions": [
+        "j:2:0",
+        "j:8:0"
+      ],
+      "actionValues": {
+        "j:2:0": 1,
+        "j:5:0": -1,
+        "j:8:0": 1
+      },
+      "minimumWinningTurns": 2,
+      "adversarialLine": [
+        "j:2:0",
+        "j:6:2",
+        "c:6"
+      ],
+      "uniqueProofStates": 15
+    },
+    {
+      "id": "ataxx-23",
+      "goal": {
+        "kind": "win",
+        "turns": 2
+      },
+      "legalChoices": 4,
+      "winningChoices": 2,
+      "winningActions": [
+        "j:1:8",
+        "j:2:8"
+      ],
+      "actionValues": {
+        "j:1:8": 1,
+        "j:2:8": 1,
+        "j:10:8": -1,
+        "j:14:8": -1
+      },
+      "minimumWinningTurns": 2,
+      "adversarialLine": [
+        "j:1:8",
+        "c:1"
+      ],
+      "uniqueProofStates": 22
+    },
+    {
+      "id": "ataxx-24",
+      "goal": {
+        "kind": "win",
+        "turns": 2
+      },
+      "legalChoices": 9,
+      "winningChoices": 1,
+      "winningActions": [
+        "c:1"
+      ],
+      "actionValues": {
+        "c:1": 1,
+        "c:12": -1,
+        "j:4:12": -1,
+        "j:6:12": -1,
+        "j:9:1": -1,
+        "j:10:1": -1,
+        "j:10:12": -1,
+        "j:11:1": -1,
+        "j:14:12": -1
+      },
+      "minimumWinningTurns": 2,
+      "adversarialLine": [
+        "c:1",
+        "c:12"
+      ],
+      "uniqueProofStates": 202
+    },
+    {
+      "id": "ataxx-25",
+      "goal": {
+        "kind": "win",
+        "turns": 3
+      },
+      "legalChoices": 4,
+      "winningChoices": 1,
+      "winningActions": [
+        "c:1"
+      ],
+      "actionValues": {
+        "c:1": 1,
+        "c:2": -1,
+        "j:6:1": -1,
+        "j:6:2": -1
+      },
+      "minimumWinningTurns": 3,
+      "adversarialLine": [
+        "c:1",
+        "j:8:2",
+        "j:6:8",
+        "j:1:6",
+        "c:1"
+      ],
+      "uniqueProofStates": 72
+    },
+    {
+      "id": "ataxx-26",
+      "goal": {
+        "kind": "win",
+        "turns": 3
+      },
+      "legalChoices": 6,
+      "winningChoices": 1,
+      "winningActions": [
+        "j:6:14"
+      ],
+      "actionValues": {
+        "c:5": -1,
+        "c:14": -1,
+        "j:6:14": 1,
+        "j:8:14": -1,
+        "j:11:5": -1,
+        "j:15:5": -1
+      },
+      "minimumWinningTurns": 3,
+      "adversarialLine": [
+        "j:6:14",
+        "c:5",
+        "c:6"
+      ],
+      "uniqueProofStates": 1584
+    },
+    {
+      "id": "ataxx-27",
+      "goal": {
+        "kind": "win",
+        "turns": 3
+      },
+      "legalChoices": 6,
+      "winningChoices": 1,
+      "winningActions": [
+        "j:4:14"
+      ],
+      "actionValues": {
+        "c:1": -1,
+        "j:3:1": -1,
+        "j:4:14": 1,
+        "j:8:1": -1,
+        "j:8:14": -1,
+        "j:12:14": -1
+      },
+      "minimumWinningTurns": 3,
+      "adversarialLine": [
+        "j:4:14",
+        "c:1",
+        "c:4"
+      ],
+      "uniqueProofStates": 803
+    },
+    {
+      "id": "ataxx-28",
+      "goal": {
+        "kind": "win",
+        "turns": 3
+      },
+      "legalChoices": 8,
+      "winningChoices": 2,
+      "winningActions": [
+        "c:0",
+        "c:5"
+      ],
+      "actionValues": {
+        "c:0": 1,
+        "c:5": 1,
+        "c:8": -1,
+        "j:1:8": -1,
+        "j:6:0": -1,
+        "j:6:5": -1,
+        "j:6:8": -1,
+        "j:7:0": -1
+      },
+      "minimumWinningTurns": 3,
+      "adversarialLine": [
+        "c:0",
+        "c:5",
+        "j:6:8",
+        "j:1:6",
+        "c:1"
+      ],
+      "uniqueProofStates": 1223
+    },
+    {
+      "id": "ataxx-29",
+      "goal": {
+        "kind": "win",
+        "turns": 3
+      },
+      "legalChoices": 4,
+      "winningChoices": 1,
+      "winningActions": [
+        "c:11"
+      ],
+      "actionValues": {
+        "c:0": -1,
+        "c:11": 1,
+        "j:1:11": -1,
+        "j:5:11": -1
+      },
+      "minimumWinningTurns": 3,
+      "adversarialLine": [
+        "c:11",
+        "j:2:0",
+        "c:2"
+      ],
+      "uniqueProofStates": 446
+    },
+    {
+      "id": "ataxx-30",
+      "goal": {
+        "kind": "win",
+        "turns": 3
+      },
+      "legalChoices": 8,
+      "winningChoices": 2,
+      "winningActions": [
+        "c:6",
+        "j:9:2"
+      ],
+      "actionValues": {
+        "c:2": -1,
+        "c:6": 1,
+        "j:8:2": -1,
+        "j:8:6": -1,
+        "j:9:2": 1,
+        "j:12:6": -1,
+        "j:13:6": -1,
+        "j:15:6": -1
+      },
+      "minimumWinningTurns": 3,
+      "adversarialLine": [
+        "c:6",
+        "j:0:2",
+        "j:8:0",
+        "j:2:8",
+        "c:2"
+      ],
+      "uniqueProofStates": 650
+    }
+  ]
+}
