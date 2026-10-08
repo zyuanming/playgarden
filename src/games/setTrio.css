@@ -1,0 +1,75 @@
+/* SPDX-License-Identifier: GPL-3.0-only */
+.trio-layout { display: grid; grid-template-columns: minmax(0, 1fr) 245px; gap: 24px; width: 100%; max-width: 1000px; margin: 0 auto; color: #283641; }
+.trio-layout * { box-sizing: border-box; }
+.trio-table { min-width: 0; padding: 22px; border-radius: 22px; background: #f7f5ef; border: 1px solid #dedbd0; }
+.trio-heading { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.trio-eyebrow { color: #655240; font-size: 11px; letter-spacing: .07em; font-weight: 800; }
+.trio-heading h3, .trio-notes h3 { margin: 6px 0 14px; font-size: 21px; line-height: 1.35; }
+.trio-number { color: #465c54; font-size: 30px; font-weight: 800; white-space: nowrap; }
+.trio-number small { font-size: 13px; color: #58655e; }
+.trio-progress { display: flex; justify-content: space-between; gap: 7px; padding: 10px 0; border-top: 1px solid #d9ddd4; border-bottom: 1px solid #d9ddd4; color: #53635a; font-size: 12px; }
+.trio-progress strong { font-size: 17px; color: #233f35; }
+.trio-lesson { font-size: 13px; line-height: 1.7; margin: 12px 0 15px; }
+.trio-board { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 9px; max-width: 480px; margin: 0 auto; }
+.trio-card, .trio-empty { position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; min-width: 0; min-height: 111px; padding: 7px 6px 9px; border: 2px solid #d2d7cc; border-radius: 12px; }
+.trio-card { background: #fff; color: #283641; box-shadow: 0 3px 0 #dfe3d9; cursor: pointer; transition: border-color .12s, background-color .12s; }
+.trio-card:not(:disabled):hover { background: #f1f5ed; border-color: #657d63; }
+.trio-layout button:focus-visible, .trio-layout summary:focus-visible { outline: 3px solid #714aa3; outline-offset: 3px; }
+.trio-card.is-selected, .trio-card.is-selected:not(:disabled):hover { border-color: #6c4a90; background: #f1eafa; box-shadow: 0 3px 0 #b9a5d0; }
+.trio-card.is-hinted { border: 2px dashed #4b627f; background: #eef4fa; }
+.trio-card-top { align-self: stretch; display: flex; justify-content: space-between; align-items: center; height: 16px; color: #566655; font-size: 10px; line-height: 1; }
+.trio-card-top small { font-size: 11px; font-variant-numeric: tabular-nums; }
+.trio-card-top b { color: #56327d; font-size: 11px; }
+.trio-symbols { display: block; width: 100%; max-width: 100px; height: 35px; margin: 1px 0 3px; overflow: visible; }
+.trio-color-0 { color: #b53b41; }
+.trio-color-1 { color: #3658a1; }
+.trio-color-2 { color: #167268; }
+.trio-card > strong { font-size: 13px; line-height: 1.45; }
+.trio-card-detail { font-size: 12px; line-height: 1.45; color: #526057; white-space: nowrap; }
+.trio-empty { border: 1px dashed #cbd2c2; background: #edf0e6; color: #627158; box-shadow: none; }
+.trio-empty > span { font-size: 26px; }
+.trio-empty > small { font-size: 12px; }
+.trio-preview { margin-top: 16px; background: #fff; border: 1px solid #d7ddd2; border-radius: 14px; padding: 13px; }
+.trio-preview-title { display: flex; justify-content: space-between; gap: 6px; align-items: center; margin-bottom: 10px; }
+.trio-preview-title strong { font-size: 13px; }
+.trio-preview-title > span { color: #5b665f; font-size: 11px; text-align: right; }
+.trio-checks { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; }
+.trio-checks > span { display: flex; gap: 6px; justify-content: space-between; padding: 7px 9px; border-radius: 7px; background: #f1f3ef; color: #58635b; font-size: 12px; }
+.trio-checks > .is-good { color: #24553d; background: #e9f4e8; }
+.trio-checks > .is-mixed { color: #963521; background: #fff0e9; }
+.trio-actions { display: flex; gap: 8px; margin-top: 12px; }
+.trio-actions button { min-width: 44px; min-height: 44px; border: 1px solid #bdc9b8; border-radius: 9px; padding: 8px 12px; background: #eef2e9; color: #355044; font: inherit; font-size: 13px; font-weight: 700; cursor: pointer; }
+.trio-actions .trio-confirm { flex: 1; background: #355b48; border-color: #355b48; color: white; }
+.trio-layout button:disabled { opacity: 1; cursor: default; }
+.trio-actions button:disabled { background: #e9ece6; color: #63705f; border-color: #d6dccf; }
+.trio-message { min-height: 3.4em; margin: 13px 0 0; color: #42574c; font-size: 12px; line-height: 1.7; }
+.trio-message.has-hint { padding: 10px; background: #eaf0f7; color: #38536d; border-radius: 9px; }
+.trio-notes { padding: 12px 0; font-size: 13px; line-height: 1.8; min-width: 0; }
+.trio-notes p { margin: 12px 0; }
+.trio-notes ul { padding-left: 20px; }
+.trio-notes summary { cursor: pointer; min-height: 44px; padding: 10px 0; color: #3d5d4c; font-weight: 700; }
+.trio-save { padding: 10px 12px; background: #edf3e9; color: #425b36; border-radius: 10px; font-size: 12px; }
+.trio-origin { font-size: 11px; color: #677264; }
+@media (max-width: 800px) {
+  .trio-layout { grid-template-columns: minmax(0, 1fr); gap: 12px; max-width: 560px; }
+  .trio-notes { padding: 8px 5px; }
+  .trio-notes h3 { font-size: 18px; }
+}
+@media (max-width: 430px) {
+  .trio-table { padding: 13px 10px; border-radius: 16px; }
+  .trio-heading h3 { font-size: 17px; }
+  .trio-eyebrow { font-size: 10px; }
+  .trio-number { font-size: 25px; }
+  .trio-progress { font-size: 10px; }
+  .trio-progress strong { font-size: 15px; }
+  .trio-lesson { font-size: 12px; }
+  .trio-board { gap: 7px; }
+  .trio-card, .trio-empty { min-height: 104px; padding: 5px 4px 7px; border-radius: 10px; }
+  .trio-symbols { height: 32px; }
+  .trio-card > strong { font-size: 12px; }
+  .trio-card-detail { font-size: 12px; }
+  .trio-preview { padding: 10px; }
+  .trio-checks > span { padding: 7px; gap: 4px; font-size: 11px; }
+  .trio-actions button { font-size: 12px; padding: 8px; }
+}
+@media (prefers-reduced-motion: reduce) { .trio-card { transition: none; } }

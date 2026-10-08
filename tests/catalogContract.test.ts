@@ -1,3 +1,4 @@
+import { setTrioLevels } from "../src/games/setTrioLevels";
 import { loopoverLevels } from "../src/games/loopoverLevels";
 import { ataxxLevels } from "../src/games/ataxxLevels";
 import { signpostLevels } from "../src/games/signpostLevels";
@@ -104,6 +105,7 @@ const packs = {
   signpost: signpostLevels,
   ataxx: ataxxLevels,
   loopover: loopoverLevels,
+  "set-trio": setTrioLevels,
   gomoku: gomokuLevels,
   xiangqi: xiangqiLevels,
   cloudrunner: runnerLessons,
@@ -225,8 +227,8 @@ describe("Scalable catalog contract", () => {
       }
     }),
   );
-  it("counts only 96 real games and 2357 levels, not the roadmap", () => {
-    expect(games).toHaveLength(96);
-    expect(games.reduce((sum, g) => sum + g.levelCount, 0)).toBe(2357);
+  it("counts only 97 real games and 2375 levels, not the roadmap", () => {
+    expect(games).toHaveLength(97);
+    expect(games.reduce((sum, g) => sum + g.levelCount, 0)).toBe(2375);
   });
 });
