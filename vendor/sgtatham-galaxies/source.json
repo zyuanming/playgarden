@@ -6,7 +6,8 @@
     {
       "path": "galaxies.c",
       "upstreamPath": "app/src/main/jni/galaxies.c",
-      "sha256": "0bce7e53b5acf61e91a6ed033b0a08b801617a42d380c11701ee588bd5ec30bc"
+      "sha256": "8a3b1cc25c55fd7154237421fc934c5a937312db023bff745f6753b71ccece05",
+      "gitBlob": "63b4f5b098221c02e197b866c7d4758eb2aa70bd"
     },
     {
       "path": "LICENCE",

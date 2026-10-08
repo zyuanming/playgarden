@@ -131,6 +131,7 @@ export function changeGalaxies(
     g < -1 ||
     g >= p.centers.length ||
     initialGalaxies(p)[i] >= 0 ||
+    inspectGalaxies(p, state).won ||
     state[i] === g
   )
     return state;
