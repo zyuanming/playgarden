@@ -1,0 +1,75 @@
+/* SPDX-License-Identifier: GPL-3.0-only */
+.fg-layout { --fg-ink: #223e38; --fg-green: #21664f; display: grid; grid-template-columns: minmax(0, 1fr) 250px; gap: 22px; color: var(--fg-ink); align-items: start; }
+.fg-layout * { box-sizing: border-box; }
+.fg-table { min-width: 0; background: #eaf2e9; padding: 22px; border-radius: 24px; border: 1px solid #c3d5c1; }
+.fg-heading { display: flex; justify-content: space-between; gap: 12px; align-items: center; }
+.fg-heading h3 { margin: 7px 0; font-size: clamp(20px, 2.7vw, 28px); }
+.fg-eyebrow { color: #426451; font-size: 11px; font-weight: 800; letter-spacing: 1px; }
+.fg-level { font-size: 29px; font-weight: 800; white-space: nowrap; }
+.fg-level small { font-size: 12px; color: #516859; }
+.fg-lesson { line-height: 1.7; font-size: 14px; margin: 10px 0 14px; }
+.fg-deck { display: flex; flex-wrap: wrap; gap: 5px 16px; padding: 10px 12px; border-radius: 12px; background: #fffdf2; border: 1px solid #e0d9be; font-size: 12px; line-height: 1.6; }
+.fg-stations { display: grid; grid-template-columns: minmax(140px, .8fr) minmax(0, 1.5fr); gap: 16px; margin-top: 14px; }
+.fg-layout h4 { font-size: 12px; margin: 0 0 7px; display: flex; flex-wrap: wrap; gap: 5px; justify-content: space-between; align-items: center; }
+.fg-layout h4 small { font-weight: 500; font-size: 10px; color: #456551; }
+.fg-cells { display: grid; grid-template-columns: repeat(var(--fg-cell-count), minmax(0, 1fr)); gap: 7px; }
+.fg-foundations { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 7px; }
+.fg-station, .fg-parking, .fg-homes { min-width: 0; }
+.fg-place-name { display: block; font-size: 11px; text-align: center; margin-bottom: 5px; }
+.fg-layout button.fg-card-button { width: 100%; min-width: 0; min-height: 104px; display: flex; flex-direction: column; justify-content: space-between; align-items: stretch; padding: 9px 3px 5px; border-radius: 11px; background: #fffef8; border: 2px solid #b6c5b0; color: #243c35; box-shadow: 0 3px 0 #b6c5b03b; cursor: pointer; touch-action: manipulation; }
+.fg-layout button.fg-card-button:hover:not(:disabled) { background: #fff; border-color: #668d72; transform: none; }
+.fg-layout button.fg-card-button:focus-visible, .fg-selection button:focus-visible { outline: 3px solid #365faf; outline-offset: 3px; }
+.fg-layout button.fg-card-button.is-legal { border-color: #277148; background: #effbec; box-shadow: 0 0 0 2px #27714833; }
+.fg-layout button.fg-card-button.is-selected { border-color: #805217; background: #fff0c6; box-shadow: 0 0 0 2px #bb8b3844; }
+.fg-layout button.fg-card-button.is-hinted { border-style: dashed; border-color: #6c438c; }
+.fg-layout button.fg-card-button:disabled { opacity: .74; cursor: default; }
+.fg-face { display: flex; flex-direction: column; align-items: center; gap: 2px; line-height: 1.25; }
+.fg-red { color: #ab3042; }
+.fg-black { color: #263f45; }
+.fg-face strong { font-size: 26px; display: flex; gap: 5px; align-items: center; }
+.fg-face strong span { font-size: 24px; }
+.fg-face small { font-size: 11px; font-weight: 700; }
+.fg-empty { color: #537060; display: flex; flex-direction: column; align-items: center; }
+.fg-empty b { font-size: 28px; line-height: 1.15; }
+.fg-empty small { font-size: 10px; margin-top: 5px; }
+.fg-empty.fg-red { color: #a53b49; }
+.fg-target-tag { font-size: 10px; min-height: 14px; font-weight: 800; line-height: 1.3; color: #285236; margin-top: 4px; overflow-wrap: anywhere; }
+.is-selected .fg-target-tag { color: #75470b; }
+.is-hinted .fg-target-tag { color: #6c438c; }
+.fg-progress { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px; margin: 16px 0; border-top: 1px solid #c6d9c4; padding-top: 12px; font-size: 11px; }
+.fg-columns { display: grid; grid-template-columns: repeat(var(--fg-columns), minmax(0, 1fr)); gap: 10px; align-items: start; }
+.fg-column { min-width: 0; padding: 7px 5px 9px; background: #dbe8d9; border-radius: 13px; }
+.fg-stack { display: flex; flex-direction: column; }
+.fg-covered { min-height: 27px; background: #fffdf3; border: 1px solid #c0cbb9; border-bottom: 0; border-radius: 6px 6px 0 0; padding: 4px 5px 3px; margin-bottom: -2px; }
+.fg-compact { flex-direction: row; justify-content: space-between; gap: 2px; }
+.fg-compact strong, .fg-compact strong span { font-size: 12px; }
+.fg-compact small { font-size: 10px; }
+.fg-selection { display: flex; gap: 12px; align-items: center; justify-content: space-between; margin-top: 17px; }
+.fg-selection p { margin: 0; line-height: 1.6; font-size: 12px; }
+.fg-selection button { min-width: 84px; min-height: 44px; padding: 8px 11px; border: 1px solid #577662; border-radius: 10px; background: #fffdf4; color: #2c4a39; font-size: 12px; font-weight: 750; cursor: pointer; }
+.fg-selection button:disabled { opacity: .5; cursor: default; }
+.fg-message { min-height: 52px; padding: 11px 13px; margin: 13px 0 0; background: #f8fbf5; border-radius: 12px; border: 1px solid #c5d6bf; font-size: 12px; line-height: 1.7; }
+.fg-notes { min-width: 0; border-radius: 21px; padding: 20px; background: #fcf8ef; border: 1px solid #e5dbc7; font-size: 13px; line-height: 1.8; }
+.fg-notes h3 { margin: 7px 0 13px; font-size: 20px; }
+.fg-notes ol { padding-left: 20px; }
+.fg-notes li { margin-bottom: 12px; }
+.fg-notes summary { cursor: pointer; font-weight: 750; }
+.fg-notes .fg-save { padding-top: 10px; border-top: 1px solid #e0d7c6; font-size: 11px; }
+.fg-notes .fg-origin { color: #61685b; font-size: 10px; }
+@media (max-width: 1100px) { .fg-layout { grid-template-columns: minmax(0, 1fr); } .fg-notes { padding: 17px; } }
+@media (max-width: 650px) {
+  .fg-table { padding: 12px; border-radius: 17px; }
+  .fg-stations { grid-template-columns: minmax(0, 1fr); gap: 13px; }
+  .fg-cells { max-width: 300px; }
+  .fg-layout .fg-cells button.fg-card-button { min-height: 94px; }
+  .fg-parking .fg-station { max-width: 120px; }
+  .fg-columns { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px 7px; }
+  .fg-columns.fg-cols-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .fg-column { padding: 7px 5px; }
+  .fg-layout button.fg-card-button { min-height: 102px; }
+  .fg-heading { gap: 8px; }
+  .fg-eyebrow { font-size: 10px; letter-spacing: .4px; }
+  .fg-level { font-size: 24px; }
+  .fg-lesson { font-size: 13px; }
+  .fg-selection { gap: 7px; }
+}
