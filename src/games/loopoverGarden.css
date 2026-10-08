@@ -38,7 +38,7 @@
 .loopover-preview-line b { display: grid; place-items: center; width: 36px; height: 36px; font-size: 17px; border-radius: 9px; }
 .loopover-actions { display: flex; flex-wrap: wrap; gap: 9px; margin: 14px 0; }
 .loopover-actions button { padding: 10px 15px; border-radius: 13px; font-weight: 600; background: #edf1e6; color: #37523b; }
-.loopover-actions button.primary { background: #52774b; color: #fff; flex: 1; }
+.loopover-actions button.primary { background: #52774b; color: #17320c; flex: 1; }
 .loopover-message { font-size: 13px; line-height: 1.7; min-height: 44px; margin: 10px 0; }
 .loopover-save { font-size: 11px; line-height: 1.6; color: #697967; margin-bottom: 0; }
 .loopover-warning { font-size: 13px; line-height: 1.6; color: #884d23; }
