@@ -1,3 +1,4 @@
+import { bloomTapLevels } from "../src/games/bloomTapLogic";
 import { chainBloomStages } from "../src/games/chainBloomLogic";
 import { lunarLandingLevels } from "../src/games/lunarLandingLogic";
 import { crossingStages } from "../src/games/frogCrossingLogic";
@@ -116,6 +117,7 @@ const packs = {
   "frog-crossing": crossingStages,
   "lunar-landing": lunarLandingLevels,
   "chain-bloom": chainBloomStages,
+  "bloom-tap": bloomTapLevels,
   gomoku: gomokuLevels,
   xiangqi: xiangqiLevels,
   cloudrunner: runnerLessons,
@@ -237,8 +239,8 @@ describe("Scalable catalog contract", () => {
       }
     }),
   );
-  it("counts only 102 real games and 2438 levels, not the roadmap", () => {
-    expect(games).toHaveLength(102);
-    expect(games.reduce((sum, g) => sum + g.levelCount, 0)).toBe(2438);
+  it("counts only 103 real games and 2450 levels, not the roadmap", () => {
+    expect(games).toHaveLength(103);
+    expect(games.reduce((sum, g) => sum + g.levelCount, 0)).toBe(2450);
   });
 });

@@ -1409,5 +1409,14 @@ export const games: GameDefinition[] = [
     source: { kind: "original", license: "GPL-3.0-only", notes: "原创连续几何连锁规则实现、12 个手写布局与 SVG 图形；未复制第三方游戏源码或素材。" },
     component: lazy(() => import("../games/ChainBloom")),
   },
+  {
+    id: "bloom-tap", title: "花田快拍",
+    subtitle: "轻点花朵收花信，让红衣瓢虫好好歇一会。",
+    category: "动作反应", difficulty: "初级", tone: "green",
+    levelCount: 12, allowUndo: false, resumeKey: "playgarden.bloom-tap.v1",
+    artwork: { url: "./bloom-tap-art.svg", position: "center", size: "cover" },
+    source: { kind: "original", license: "GPL-3.0-only", notes: "原创九格视觉反应规则、12个手写来客时序与SVG图形；轻点花朵并避开瓢虫，支持悠闲速度和安全暂停。未使用外部代码或素材。" },
+    component: lazy(() => import("../games/BloomTapGarden")),
+  },
 ];
 export const findGame = (id: string) => games.find((game) => game.id === id);
