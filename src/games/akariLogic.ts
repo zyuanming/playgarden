@@ -114,21 +114,22 @@ export function solveAkari(
   p: AkariLevel,
   state: AkariState,
   budget = 20000,
-): { kind: "solution"; cells: number[] } | { kind: "none" } | { kind: "budget" } {
+):
+  | { kind: "solution"; cells: number[] }
+  | { kind: "none" }
+  | { kind: "budget" } {
   const whites = p.board.split("").flatMap((c, i) => (c === "." ? [i] : [])),
     rays = new Map(whites.map((i) => [i, litCells(p, i)]));
-  const clues = p.board
-    .split("")
-    .flatMap((c, i) =>
-      /[0-4]/.test(c)
-        ? [
-            {
-              cells: neighbors(p, i).filter((j) => p.board[j] === "."),
-              target: Number(c),
-            },
-          ]
-        : [],
-    );
+  const clues = p.board.split("").flatMap((c, i) =>
+    /[0-4]/.test(c)
+      ? [
+          {
+            cells: neighbors(p, i).filter((j) => p.board[j] === "."),
+            target: Number(c),
+          },
+        ]
+      : [],
+  );
   let nodes = 0,
     exhausted = false;
   function search(a: number[]): number[] | null {
