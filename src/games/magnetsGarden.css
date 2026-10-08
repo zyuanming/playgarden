@@ -1,0 +1,290 @@
+.magnets-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(220px, 0.8fr);
+  gap: 22px;
+  color: #243d46;
+  max-width: 1030px;
+  margin: auto;
+}
+.magnets-play {
+  padding: 24px;
+  background: #f8f7ef;
+  border: 1px solid #d8e0db;
+  border-radius: 22px;
+  min-width: 0;
+}
+.magnets-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+.magnets-heading h3 {
+  font-size: 25px;
+  margin: 6px 0;
+}
+.magnets-heading > span {
+  font-variant-numeric: tabular-nums;
+  color: #63797b;
+}
+.magnets-eyebrow {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.3px;
+  color: #4d7876;
+}
+.magnets-intro {
+  font-size: 13px;
+  line-height: 1.7;
+  margin: 10px 0;
+}
+.magnets-stats {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  padding: 11px 0;
+}
+.magnets-stats strong {
+  font-size: 19px;
+  color: #315e64;
+}
+.magnets-palette {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  margin: 8px 0 18px;
+}
+.magnets-palette button {
+  background: #fff;
+  border: 1px solid #c4d1cd;
+  border-radius: 11px;
+  min-height: 49px;
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  justify-content: center;
+  color: #254a51;
+  cursor: pointer;
+}
+.magnets-palette b {
+  font-size: 22px;
+}
+.magnets-palette span {
+  font-size: 12px;
+}
+.magnets-palette [aria-pressed="true"] {
+  outline: 2px solid #375e63;
+  outline-offset: 2px;
+  background: #e7f0ea;
+}
+.magnets-frame {
+  display: grid;
+  grid-template-columns: 32px repeat(var(--magnets-width), minmax(0, 1fr)) 32px;
+  gap: 0;
+  max-width: 490px;
+  margin: auto;
+}
+.magnets-row {
+  display: contents;
+}
+.magnets-corner {
+  font-size: 8px;
+  color: #607673;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.magnets-clue {
+  display: flex;
+  min-height: 35px;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  font-size: 15px;
+  font-weight: 800;
+  color: #42686d;
+}
+.magnets-clue small {
+  font-size: 10px;
+  font-weight: 700;
+}
+.magnets-clue.bad {
+  background: #ffe1d7;
+  color: #923b2b;
+  border-radius: 7px;
+}
+.magnets-cell {
+  position: relative;
+  aspect-ratio: 1;
+  border: 3px solid #3c6567;
+  border-radius: 6px;
+  margin: 2px;
+  background: #edf1ea;
+  color: #798c85;
+  min-width: 0;
+  min-height: 0;
+  padding: 0;
+  cursor: pointer;
+  font-size: clamp(19px, 2.6vw, 32px);
+  font-weight: 700;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.magnets-cell.join-right {
+  border-right: 1px dashed #9fb3a9;
+  border-radius: 7px 0 0 7px;
+  margin-right: 0;
+}
+.magnets-cell.join-left {
+  border-left: 0;
+  border-radius: 0 7px 7px 0;
+  margin-left: 0;
+}
+.magnets-cell.join-bottom {
+  border-bottom: 1px dashed #9fb3a9;
+  border-radius: 7px 7px 0 0;
+  margin-bottom: 0;
+}
+.magnets-cell.join-top {
+  border-top: 0;
+  border-radius: 0 0 7px 7px;
+  margin-top: 0;
+}
+.magnets-cell.pole-1 {
+  color: #974d38;
+  background: #f7e0cc;
+}
+.magnets-cell.pole-2 {
+  color: #295e79;
+  background: #dcebf2;
+}
+.magnets-cell.pole-0 {
+  color: #637667;
+  background: #e3e9dc;
+}
+.magnets-cell.conflict {
+  box-shadow: inset 0 0 0 2px #be482f;
+}
+.magnets-cell small {
+  position: absolute;
+  right: 3px;
+  top: 2px;
+  color: #b03022;
+  font-size: 11px;
+}
+.magnets-cell.hint {
+  box-shadow: inset 0 0 0 3px #d3a42c;
+}
+.magnets-cell:focus-visible,
+.magnets-palette button:focus-visible {
+  outline: 3px solid #ad7630;
+  outline-offset: 2px;
+  z-index: 2;
+}
+.magnets-cell:disabled,
+.magnets-palette button:disabled {
+  cursor: default;
+  opacity: 1;
+}
+.magnets-legend {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+  font-size: 10px;
+  color: #657875;
+  margin-top: 13px;
+}
+.magnets-message {
+  font-size: 13px;
+  line-height: 1.8;
+  padding: 13px 15px;
+  margin: 17px 0 0;
+  background: #e7eee4;
+  border-radius: 11px;
+  min-height: 72px;
+}
+.magnets-notes {
+  padding: 25px 22px;
+  background: #eff3ec;
+  border-radius: 20px;
+  align-self: start;
+}
+.magnets-notes h3 {
+  font-size: 20px;
+  line-height: 1.5;
+  margin: 12px 0 17px;
+}
+.magnets-notes ol {
+  padding-left: 19px;
+  font-size: 13px;
+  line-height: 1.85;
+}
+.magnets-notes li {
+  margin: 10px 0;
+}
+.magnets-notes p {
+  font-size: 12px;
+  line-height: 1.85;
+  color: #55716d;
+}
+.magnets-save {
+  border-top: 1px solid #cddad0;
+  padding-top: 14px;
+}
+@media (max-width: 700px) {
+  .magnets-layout {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .magnets-play {
+    padding: 15px 9px;
+  }
+  .magnets-heading {
+    padding: 0 4px;
+  }
+  .magnets-heading h3 {
+    font-size: 21px;
+  }
+  .magnets-intro {
+    font-size: 12px;
+  }
+  .magnets-frame {
+    grid-template-columns: 25px repeat(
+        var(--magnets-width),
+        minmax(0, 1fr)
+      ) 25px;
+  }
+  .magnets-clue {
+    font-size: 13px;
+    min-height: 30px;
+  }
+  .magnets-cell {
+    border-width: 2px;
+    margin: 1px;
+    font-size: 22px;
+  }
+  .magnets-palette {
+    gap: 6px;
+    margin-bottom: 13px;
+  }
+  .magnets-palette button {
+    min-height: 46px;
+  }
+  .magnets-notes {
+    padding: 20px;
+  }
+  .magnets-legend {
+    gap: 9px;
+    font-size: 9px;
+  }
+  .magnets-message {
+    font-size: 12px;
+    padding: 11px;
+  }
+}
