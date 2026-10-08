@@ -4,6 +4,10 @@ import {ataxxLevels} from '../src/games/ataxxLevels';
 import {chooseAI} from '../src/games/ataxxSearch';
 import {start,replay,type Move} from '../src/games/ataxxLogic';
 async function choose(page:Page,from:number,to:number,keyboard=false){const root=page.locator('.ataxx-layout');await root.locator(`button[data-cell="${from}"]`).click();const target=root.locator(`button[data-cell="${to}"]`);if(keyboard){await target.focus();await target.press('Enter');}else await target.click();await expect(root.locator('.preview')).toHaveCount(1);}
+async function verifyPieces(page:Page){
+ expect(await page.locator('.ataxx-piece').evaluateAll(pieces=>pieces.length>0&&pieces.every(e=>{const a=e.getBoundingClientRect(),b=e.parentElement!.getBoundingClientRect();return a.width>=Math.min(40,b.width*.5)&&Math.abs(a.width-a.height)<=1&&a.left>b.left&&a.right<b.right&&a.top>b.top&&a.bottom<b.bottom;}))).toBe(true);
+ expect(await page.locator('.ataxx-rock').evaluateAll(rocks=>rocks.every(e=>{const a=e.getBoundingClientRect(),b=e.parentElement!.getBoundingClientRect();return a.width>=b.width*.35&&a.height>=b.height*.25;}))).toBe(true);
+}
 test('Ataxx actual30 lessons, preview feedback, current-state hints and complete progress',async({page},info)=>{
  test.setTimeout(240000);const errors=captureErrors(page);await openGame(page,'胞子争园');await page.getByRole('button',{name:'成长练习',exact:true}).click();
  const root=page.locator('.ataxx-layout');
@@ -11,7 +15,7 @@ test('Ataxx actual30 lessons, preview feedback, current-state hints and complete
  await choose(page,0,2);await root.getByRole('button',{name:/^确认移动/}).click();await expect(root).toHaveAttribute('data-ataxx-phase','retry');await expect(page.locator('.status')).not.toHaveClass(/success/);await page.getByRole('button',{name:'撤销',exact:true}).click();await expect(root).toHaveAttribute('data-ataxx-history','[]');
  for(let i=0;i<30;i++){
   await chooseLevel(page,i);await page.getByRole('button',{name:'重来',exact:true}).click();await expect(root).toHaveAttribute('data-ataxx-id',ataxxLevels[i].id);const shots=[0,14,29].includes(i);
-  if(shots)await page.screenshot({path:info.outputPath(`ataxx-${i+1}-start.png`),fullPage:true});
+  await verifyPieces(page);if(shots)await page.screenshot({path:info.outputPath(`ataxx-${i+1}-start.png`),fullPage:true});
   for(let greenTurn=0;greenTurn<3;greenTurn++){
    if(await root.getAttribute('data-ataxx-phase')==='success')break;
    await expect(root).toHaveAttribute('data-ataxx-turn','1');
@@ -24,13 +28,13 @@ test('Ataxx actual30 lessons, preview feedback, current-state hints and complete
   await expect(root).toHaveAttribute('data-ataxx-phase','success');await expect(page.locator('.status')).toHaveClass(/success/);
   expect(await root.locator('.ataxx-cell').evaluateAll(cells=>cells.every(c=>{const b=c.getBoundingClientRect();return b.width>=44&&b.height>=44;}))).toBe(true);
   expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
-  if(shots)await page.screenshot({path:info.outputPath(`ataxx-${i+1}-completed.png`),fullPage:true});
+  await verifyPieces(page);if(shots)await page.screenshot({path:info.outputPath(`ataxx-${i+1}-completed.png`),fullPage:true});
  }
  expect(await page.evaluate(()=>JSON.parse(localStorage.getItem('playgarden.progress.v2')!).completed.ataxx.length)).toBe(30);expect(errors).toEqual([]);
 });
 test('Ataxx full real AI match, cancellation, double confirm, pause, reload and terminal',async({page},info)=>{
  test.setTimeout(300000);const errors=captureErrors(page);await openGame(page,'胞子争园');const root=page.locator('.ataxx-layout'),confirm=root.getByRole('button',{name:/^确认移动/});
- await expect(root).toHaveAttribute('data-ataxx-id','free');await page.screenshot({path:info.outputPath('ataxx-free-start.png'),fullPage:true});
+ await expect(root).toHaveAttribute('data-ataxx-id','free');await verifyPieces(page);await page.screenshot({path:info.outputPath('ataxx-free-start.png'),fullPage:true});
  expect(await root.locator('.ataxx-cell').evaluateAll(c=>c.every(e=>e.getBoundingClientRect().width>=44))).toBe(true);
  const first=root.locator('button[data-cell="0"]');await first.focus();await first.press('Control+Enter');await expect(first).toHaveAttribute('aria-pressed','false');await first.press('ArrowRight');await expect(root.locator('button[data-cell="1"]')).toBeFocused();
  await choose(page,0,8,true);await root.getByRole('button',{name:'取消选择'}).click();await expect(root).toHaveAttribute('data-ataxx-history','[]');await expect(root.locator('.preview')).toHaveCount(0);
