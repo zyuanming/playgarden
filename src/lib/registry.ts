@@ -1333,5 +1333,27 @@ export const games: GameDefinition[] = [
     },
     component: lazy(() => import("../games/AtaxxGarden")),
   },
+  {
+    id: "loopover",
+    title: "环移拼盘",
+    subtitle: "18 关行列交织，把一整条线绕回自己的家。",
+    category: "空间想象",
+    difficulty: "中级",
+    tone: "green",
+    levelCount: 18,
+    resumeKey: "playgarden.loopover.v1",
+    artwork: { url: "./loopover-art.svg", position: "50% 50%", size: "cover" },
+    source: {
+      kind: "adapted",
+      license: "MIT",
+      author: "Janis Pritzkau",
+      workTitle: "Loopover",
+      url: "https://github.com/janispritzkau/loopover/blob/e4da7c57841e71beb5035bd4025c66216eec2b69/src/game/board.ts",
+      commit: "e4da7c57841e71beb5035bd4025c66216eec2b69",
+      notice: "./loopover-LICENSE.txt",
+      notes: "实际改编整行、整列循环位移内核；原创中文界面、18 关、预览、提示路线、存档与程序化图形。",
+    },
+    component: lazy(() => import("../games/LoopoverGarden")),
+  },
 ];
 export const findGame = (id: string) => games.find((game) => game.id === id);

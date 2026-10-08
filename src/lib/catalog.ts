@@ -95,6 +95,7 @@ export const GAME_IDS = [
   "magnets",
   "signpost",
   "ataxx",
+  "loopover",
 ] as const;
 export type GameId = (typeof GAME_IDS)[number];
 export type Category =

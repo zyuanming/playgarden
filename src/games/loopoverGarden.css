@@ -1,0 +1,57 @@
+/* SPDX-License-Identifier: GPL-3.0-only */
+.loopover-layout { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(250px, .85fr); gap: 24px; color: #23453d; }
+.loopover-play,.loopover-notes { min-width: 0; border: 1px solid #d8e8df; border-radius: 24px; background: #fffefa; padding: 24px; }
+.loopover-notes { background: #eaf4ed; align-self: start; }
+.loopover-heading { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.loopover-heading h3 { margin: 5px 0 0; font-size: 25px; }
+.loopover-eyebrow { font-size: 12px; font-weight: 700; letter-spacing: .09em; color: #547564; }
+.loopover-counter { border-radius: 100px; background: #edf2e5; padding: 8px 12px; font-size: 12px; white-space: nowrap; }
+.loopover-lesson,.loopover-notes p,.loopover-notes li { line-height: 1.75; font-size: 14px; }
+.loopover-lesson { min-height: 49px; margin: 14px 0; }
+.loopover-stats { display: flex; flex-wrap: wrap; gap: 8px 17px; border-block: 1px solid #e4ebe0; padding: 13px 0; font-size: 12px; }
+.loopover-stats strong { font-size: 16px; }
+.loopover-board-caption { text-align: center; font-size: 12px; color: #5f7163; margin: 22px 0 10px; }
+.loopover-board { display: grid; grid-template-columns: 44px repeat(var(--loop-cols), minmax(0, 1fr)) 44px; gap: 6px; width: 100%; max-width: 465px; margin: auto; align-items: stretch; }
+.loopover-layout button { min-height: 44px; touch-action: manipulation; }
+.loopover-board .loopover-arrow { min-width: 44px; min-height: 44px; padding: 0; border: 1px solid #cdddcf; border-radius: 12px; color: #38624c; background: #f0f4e9; font-size: 23px; line-height: 1; display: grid; place-items: center; }
+.loopover-arrow:hover:not(:disabled),.loopover-arrow.is-selected { background: #d4e8cb; border-color: #6b995c; box-shadow: inset 0 0 0 1px #6b995c; }
+.loopover-layout button:focus-visible,.loopover-layout summary:focus-visible { outline: 3px solid #865cba; outline-offset: 3px; }
+.loopover-layout button:disabled { opacity: .5; cursor: default; }
+.loopover-corner { display: grid; place-items: center; color: #71905f; font-size: 22px; }
+.loopover-tile { border-radius: 12px; border: 1px solid #d8dfd0; color: #294b3c; text-align: center; font-variant-numeric: tabular-nums; }
+.loopover-board .loopover-tile { aspect-ratio: 1; min-height: 44px; display: flex; flex-direction: column; justify-content: center; align-items: center; position: relative; box-shadow: 0 3px 0 #d5decd; }
+.loopover-tile strong { font-size: clamp(20px, 2.3vw, 31px); line-height: 1.1; }
+.loopover-tile > span { font-size: 10px; line-height: 1.4; min-height: 14px; }
+.loopover-tile.tone-0 { background: #dce8a6; }
+.loopover-tile.tone-1 { background: #bfe3d4; }
+.loopover-tile.tone-2 { background: #ffe0aa; }
+.loopover-tile.tone-3 { background: #e4d5eb; }
+.loopover-tile.is-affected { outline: 3px solid #607f43; outline-offset: -3px; transform: translateY(-2px); }
+.loopover-tile.is-home::after { content: ""; position: absolute; width: 4px; height: 4px; border-radius: 50%; background: #365c44; right: 7px; top: 7px; }
+.loopover-preview { margin-top: 23px; background: #f5f6ee; border: 1px dashed #bfcfac; border-radius: 16px; padding: 15px; min-height: 111px; }
+.loopover-preview > strong { display: block; font-size: 14px; }
+.loopover-preview > small { display: block; color: #637560; line-height: 1.6; margin: 6px 0 10px; }
+.loopover-preview > p { line-height: 1.7; font-size: 13px; margin: 10px 0 0; }
+.loopover-preview-line { display: flex; align-items: center; gap: 12px; margin: 8px 0 0; }
+.loopover-preview-line > span { font-size: 12px; flex: 0 0 39px; }
+.loopover-preview-line > div { display: flex; flex-wrap: wrap; gap: 6px; }
+.loopover-preview-line b { display: grid; place-items: center; width: 36px; height: 36px; font-size: 17px; border-radius: 9px; }
+.loopover-actions { display: flex; flex-wrap: wrap; gap: 9px; margin: 14px 0; }
+.loopover-actions button { padding: 10px 15px; border-radius: 13px; font-weight: 600; background: #edf1e6; color: #37523b; }
+.loopover-actions button.primary { background: #52774b; color: #17320c; flex: 1; }
+.loopover-message { font-size: 13px; line-height: 1.7; min-height: 44px; margin: 10px 0; }
+.loopover-save { font-size: 11px; line-height: 1.6; color: #697967; margin-bottom: 0; }
+.loopover-warning { font-size: 13px; line-height: 1.6; color: #884d23; }
+.loopover-notes h3 { font-size: 28px; line-height: 1.5; margin: 12px 0; }
+.loopover-notes ol { padding-left: 20px; }
+.loopover-notes li { margin: 8px 0; }
+.loopover-target { background: #fffef6; padding: 17px; border-radius: 17px; margin: 20px 0; text-align: center; }
+.loopover-target > strong { display: block; font-size: 13px; margin-bottom: 12px; }
+.loopover-target > div { display: grid; gap: 5px; max-width: 220px; margin: auto; }
+.loopover-target .loopover-tile { padding: 8px 4px; border-radius: 8px; font-weight: 700; }
+.loopover-target small { display: block; font-size: 11px; margin-top: 12px; color: #697967; }
+.loopover-notes summary { min-height: 44px; cursor: pointer; padding: 12px 0; font-size: 14px; font-weight: 700; }
+@media(max-width: 900px) { .loopover-layout { grid-template-columns: minmax(0, 1fr); gap: 16px; } .loopover-notes { display: block; } }
+@media(max-width: 520px) { .loopover-play,.loopover-notes { padding: 12px; border-radius: 18px; } .loopover-board { gap: 4px; grid-template-columns: 44px repeat(var(--loop-cols), minmax(0, 1fr)) 44px; } .loopover-heading h3 { font-size: 22px; } .loopover-tile { border-radius: 9px; } .loopover-preview { padding: 12px; } .loopover-stats { column-gap: 12px; } }
+@media(max-width: 380px) { .loopover-play { padding: 8px; } .loopover-board { gap: 1px; } .loopover-board .loopover-arrow { border-radius: 9px; } }
+@media(prefers-reduced-motion: reduce) { .loopover-layout * { transition: none !important; scroll-behavior: auto !important; } }
