@@ -1,0 +1,17 @@
+{
+  "repository": "https://github.com/chrisboyle/sgtpuzzles",
+  "commit": "d1e10eb57dd80af4999e698a9ab31f546e9a0b9d",
+  "license": "MIT",
+  "files": [
+    {
+      "path": "lightup.c",
+      "upstreamPath": "app/src/main/jni/lightup.c",
+      "sha256": "1189eee0871bdb027b0b06fdaf68231778943254d69643320c7cdb37a9f6d323"
+    },
+    {
+      "path": "LICENCE",
+      "upstreamPath": "LICENCE",
+      "sha256": "42ad32e495b10a778fa7c935e07326b40ac8d11b400a0919a623bcf2e048e294"
+    }
+  ]
+}

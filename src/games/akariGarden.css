@@ -1,0 +1,229 @@
+.akari-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 260px;
+  gap: 24px;
+  color: #273c36;
+}
+.akari-play {
+  min-width: 0;
+  border: 1px solid #d5ded1;
+  border-radius: 22px;
+  background: #fcfcf5;
+  padding: 24px;
+}
+.akari-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.akari-heading h3 {
+  margin: 5px 0;
+  font-size: 1.45rem;
+}
+.akari-eyebrow {
+  font-size: 0.76rem;
+  letter-spacing: 0.09em;
+  font-weight: 750;
+  color: #4a6456;
+}
+.akari-heading > span {
+  font-variant-numeric: tabular-nums;
+  color: #526458;
+  white-space: nowrap;
+}
+.akari-play > p {
+  font-size: 0.91rem;
+  line-height: 1.6;
+}
+.akari-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+  border-block: 1px solid #d9e1d5;
+  padding: 12px 0;
+  font-size: 0.86rem;
+}
+.akari-stats strong {
+  font-size: 1.15rem;
+  color: #3c5145;
+}
+.akari-tools {
+  display: flex;
+  gap: 8px;
+  margin: 18px 0;
+}
+.akari-tools button {
+  background: #f6f6ef;
+  color: #30483a;
+  border: 1px solid #bbc9b7;
+  border-radius: 10px;
+  padding: 10px 12px;
+  min-height: 44px;
+}
+.akari-tools button[aria-pressed="true"] {
+  background: #355b47;
+  color: #fff;
+  border-color: #355b47;
+}
+.akari-board {
+  display: grid;
+  grid-template-columns: repeat(var(--akari-size), minmax(0, 1fr));
+  gap: 4px;
+  width: min(100%, 455px);
+  margin: 22px auto;
+  padding: 8px;
+  border-radius: 14px;
+  background: #b3bfb0;
+  border: 1px solid #a2b29d;
+}
+.akari-cell,
+.akari-wall {
+  position: relative;
+  aspect-ratio: 1;
+  min-width: 0;
+  min-height: 0 !important;
+  border-radius: 6px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 !important;
+  border: 1px solid transparent !important;
+  font-size: clamp(1.2rem, 4vw, 1.8rem);
+  line-height: 1;
+  color: #3c493a !important;
+}
+.akari-cell.dark {
+  background: #f3f5f0 !important;
+}
+.akari-cell.lit {
+  background: #fff1b2 !important;
+}
+.akari-cell.bulb {
+  color: #705019 !important;
+  background: #ffdc69 !important;
+}
+.akari-cell.clash {
+  background: #ffe0d1 !important;
+  color: #89341d !important;
+  box-shadow: inset 0 0 0 2px #a13c20;
+}
+.akari-cell b {
+  position: absolute;
+  right: 5px;
+  top: 3px;
+  font-size: 0.75rem;
+}
+.akari-cell small {
+  position: absolute;
+  bottom: 2px;
+  font-size: 0.62rem;
+}
+.akari-cell.hint {
+  box-shadow: inset 0 0 0 3px #4d519c;
+}
+.akari-cell:hover:not(:disabled) {
+  box-shadow: inset 0 0 0 3px #517657;
+  filter: none !important;
+}
+.akari-cell:focus-visible {
+  outline: 3px solid #534dab !important;
+  outline-offset: 1px;
+  z-index: 1;
+}
+.akari-cell:disabled {
+  opacity: 1 !important;
+}
+.akari-wall {
+  background: #334c40;
+  color: #fff !important;
+  flex-direction: column;
+  gap: 3px;
+}
+.akari-wall small {
+  font-size: 0.57rem;
+  color: #e1e9dc;
+}
+.akari-wall.satisfied {
+  box-shadow: inset 0 -3px 0 #afd09a;
+}
+.akari-legend {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 15px;
+  font-size: 0.78rem;
+  color: #586758;
+}
+.akari-message {
+  background: #edf2e8;
+  padding: 12px 14px;
+  border-radius: 10px;
+  min-height: 68px;
+  margin-bottom: 0;
+}
+.akari-notes {
+  background: #edf2e8;
+  border-radius: 20px;
+  padding: 22px;
+  height: fit-content;
+}
+.akari-notes h3 {
+  font-size: 1.2rem;
+  margin: 10px 0 18px;
+}
+.akari-notes ol {
+  padding-left: 20px;
+}
+.akari-notes li,
+.akari-notes p {
+  font-size: 0.88rem;
+  line-height: 1.75;
+  margin-bottom: 12px;
+}
+.akari-save {
+  border-top: 1px solid #cbd8c7;
+  padding-top: 12px;
+  color: #4d6455;
+}
+@media (max-width: 850px) {
+  .akari-layout {
+    grid-template-columns: 1fr;
+  }
+  .akari-play {
+    padding: 16px;
+  }
+  .akari-notes {
+    padding: 18px;
+  }
+}
+@media (max-width: 420px) {
+  .akari-play {
+    padding: 12px;
+  }
+  .akari-heading h3 {
+    font-size: 1.17rem;
+  }
+  .akari-eyebrow {
+    font-size: 0.65rem;
+  }
+  .akari-board {
+    padding: 5px;
+    gap: 3px;
+  }
+  .akari-cell,
+  .akari-wall {
+    border-radius: 4px !important;
+  }
+  .akari-stats {
+    font-size: 0.75rem;
+    gap: 7px 11px;
+  }
+  .akari-tools button {
+    font-size: 0.8rem;
+    padding: 9px 8px;
+  }
+  .akari-wall small {
+    font-size: 0.5rem;
+  }
+}

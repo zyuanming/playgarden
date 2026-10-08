@@ -1227,5 +1227,28 @@ export const games: GameDefinition[] = [
     },
     component: lazy(() => import("../games/FloodGarden")),
   },
+  {
+    id: "akari",
+    title: "灯照花园",
+    subtitle: "放下小灯，照亮每个角落，让光线各行其道。",
+    category: "逻辑思维",
+    difficulty: "中级",
+    tone: "green",
+    levelCount: 36,
+    resumeKey: "playgarden.akari.v1",
+    artwork: { url: "./akari-art.svg", position: "50% 50%", size: "cover" },
+    source: {
+      kind: "adapted",
+      license: "MIT",
+      author: "Simon Tatham and contributors",
+      workTitle: "Light Up",
+      url: "https://github.com/chrisboyle/sgtpuzzles/tree/d1e10eb57dd80af4999e698a9ab31f546e9a0b9d",
+      commit: "d1e10eb57dd80af4999e698a9ab31f546e9a0b9d",
+      notice: "./akari-LICENCE.txt",
+      notes:
+        "实际移植 Light Up 的射线照明、邻灯计数和完整胜利判定；原创 36 关、界面、当前局面提示与存档。",
+    },
+    component: lazy(() => import("../games/AkariGarden")),
+  },
 ];
 export const findGame = (id: string) => games.find((game) => game.id === id);

@@ -32,6 +32,9 @@ export async function verifyMergeMotion(page:Page,info:TestInfo,prefix='merge'){
  // Playwright's JS clock does not stop native Web Animation time. Pause the
  // real translation at creation so a slow protocol roundtrip cannot finish it
  // before we select the exact 75 ms sample below. Never replace its keyframes.
+ // CSS effects use the native animation clock too. Freeze only their play
+ // state before creation; retain the production keyframes, duration and DOM.
+ const cssPause=await page.addStyleTag({content:'.merge-classic .merge-tile-new,.merge-classic .merge-tile-merged{animation-play-state:paused!important}'});
  await page.evaluate(()=>{
   const native=Element.prototype.animate;
   (window as unknown as {mergeNativeAnimate:typeof native}).mergeNativeAnimate=native;
@@ -47,6 +50,9 @@ export async function verifyMergeMotion(page:Page,info:TestInfo,prefix='merge'){
  for(const id of ['2','4']){const source=origins.find(o=>o.id===id)!,frame=frames.find(f=>f.id===id)!;expect(frame.x).toBeGreaterThan(destination.x+.1);expect(frame.x).toBeLessThan(source.x-.1);expect(frame.transform).not.toBe('none');}
  await page.screenshot({path:info.outputPath(`${prefix}-slide-midpoint.png`),animations:'allow',fullPage:true});
  await page.clock.runFor(150);await expect(page.locator('.merge-tile-merged')).toHaveCount(1);
+ // Reproduce a slow protocol roundtrip longer than the 180ms spawn effect.
+ // This is host time, not the paused page JS clock.
+ await new Promise(resolve=>setTimeout(resolve,250));
  const pop=await page.locator('.merge-tile-merged').evaluate(n=>{const a=n.getAnimations()[0];if(!a)throw new Error('Missing merge pop animation');a.pause();a.currentTime=75;return new DOMMatrixReadOnly(getComputedStyle(n).transform).a;});expect(pop).toBeGreaterThan(1.05);
  const spawn=await page.locator('.merge-tile-new').evaluate(n=>{const a=n.getAnimations()[0];if(!a)throw new Error('Missing tile spawn animation');a.pause();a.currentTime=65;return {scale:new DOMMatrixReadOnly(getComputedStyle(n).transform).a,opacity:Number(getComputedStyle(n).opacity)};});expect(spawn.scale).toBeGreaterThan(.3);expect(spawn.scale).toBeLessThanOrEqual(1.1);
  await page.screenshot({path:info.outputPath(`${prefix}-merge-pop-and-spawn.png`),animations:'allow',fullPage:true});
@@ -58,6 +64,7 @@ export async function verifyMergeMotion(page:Page,info:TestInfo,prefix='merge'){
  // Restore real time before navigation: a frozen clock also freezes React lazy/Suspense work after reload.
  await page.clock.resume();
  } finally {
+  await cssPause.evaluate(n=>n.parentNode?.removeChild(n));
   await page.evaluate(()=>{
    const w=window as unknown as {mergeNativeAnimate?:typeof Element.prototype.animate};
    if(w.mergeNativeAnimate)Element.prototype.animate=w.mergeNativeAnimate;
