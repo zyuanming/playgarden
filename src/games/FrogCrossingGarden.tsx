@@ -220,10 +220,10 @@ export default function FrogCrossingGarden({ level, paused, resetToken, freshSta
         </div>
       </div>
       <aside className="fc-notes">
-        <div className="fc-location"><span className={`fc-location-dot ${currentLane?.kind ?? "bank"}`} /> <strong>{where}</strong><span>第 {state.row + 1} / {rows} 行</span></div>
+        <div className="fc-location"><span className={`fc-location-dot fc-${currentLane?.kind ?? "bank"}`} /> <strong>{where}</strong><span>第 {state.row + 1} / {rows} 行</span></div>
         <div className="fc-pace" role="group" aria-label="水流与车流速度"><span>这一程的节奏</span><div><button aria-pressed={pace === 0.7} disabled={paused || held} onClick={() => setPace(0.7)}>悠闲</button><button aria-pressed={pace === 1} disabled={paused || held} onClick={() => setPace(1)}>标准</button></div></div>
         <button className="fc-rest-button" onClick={hold} disabled={locked}><Pause size={17} /> 歇一会儿</button>
-        <ul className="fc-rules"><li><span className="fc-key road" /> 小车要绕开，等空隙再跳</li><li><span className="fc-key river" /> 木筏能搭乘，水面不能落脚</li><li><span className="fc-key bank" /> 草岸很安全，可以慢慢观察</li></ul>
+        <ul className="fc-rules"><li><span className="fc-key fc-road" /> 小车要绕开，等空隙再跳</li><li><span className="fc-key fc-river" /> 木筏能搭乘，水面不能落脚</li><li><span className="fc-key fc-bank" /> 草岸很安全，可以慢慢观察</li></ul>
         <p className="fc-footnote">每片花叶接一位伙伴。失败可无限再试，已到家的伙伴保留；“重来”会清空这一关的停靠。</p>
         <p className="fc-footnote">方向键 / WASD 跳一步 · Esc 暂停<br />无需按住、拖动或抢倒计时</p>
         <p className="fc-storage">{canSave ? "到岸进度仅存当前浏览器；离开后从出发岸继续。" : "浏览器没有保存成功。本次仍可继续，离开后可能需要重新出发。"}</p>

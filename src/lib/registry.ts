@@ -1391,5 +1391,14 @@ export const games: GameDefinition[] = [
     source: { kind: "original", license: "GPL-3.0-only", notes: "原创实时过河实现、12 个独立关卡与程序化图形；未复制第三方游戏源码或资源。" },
     component: lazy(() => import("../games/FrogCrossingGarden")),
   },
+  {
+    id: "lunar-landing", title: "月面着陆",
+    subtitle: "掌握推力与惯性，带着月面小船轻轻落下。",
+    category: "科学实验", difficulty: "中级", tone: "purple",
+    levelCount: 12, allowUndo: false, resumeKey: "playgarden.lunar-landing.v1",
+    artwork: { url: "./lunar-landing-art.svg", position: "center", size: "cover" },
+    source: { kind: "original", license: "GPL-3.0-only", notes: "通用重力、惯性、推力、燃料与低速着陆规则的原创实时实现；原创12个训练场、中文界面与SVG图形。未移植第三方源码或素材；侧风与可变重力是明确标注的虚构训练条件。" },
+    component: lazy(() => import("../games/LunarLanding")),
+  },
 ];
 export const findGame = (id: string) => games.find((game) => game.id === id);

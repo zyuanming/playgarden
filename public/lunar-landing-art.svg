@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="600" viewBox="0 0 900 600" role="img" aria-labelledby="title desc">
+  <title id="title">月面着陆</title><desc id="desc">原创插画：奶油色着陆器在星空中向月面绿色信标平台缓慢下降。</desc>
+  <!-- SPDX-License-Identifier: GPL-3.0-only. Original vector artwork for Playgarden. -->
+  <defs><linearGradient id="sky" x2="0" y2="1"><stop stop-color="#172e43"/><stop offset="1" stop-color="#315166"/></linearGradient><linearGradient id="beam" x2="0" y2="1"><stop stop-color="#c1f1b9" stop-opacity="0"/><stop offset="1" stop-color="#c1f1b9" stop-opacity=".2"/></linearGradient></defs>
+  <path fill="url(#sky)" d="M0 0h900v600H0z"/>
+  <g fill="#aac6cb"><circle cx="90" cy="91" r="3"/><circle cx="167" cy="173" r="2"/><circle cx="298" cy="87" r="2"/><circle cx="517" cy="104" r="3"/><circle cx="645" cy="177" r="2"/><circle cx="824" cy="244" r="3"/><circle cx="126" cy="300" r="2"/><circle cx="744" cy="70" r="2"/><circle cx="50" cy="219" r="2"/><circle cx="613" cy="57" r="2"/></g>
+  <circle cx="721" cy="132" r="53" fill="#bcd9d8"/><path d="M705 81a53 53 0 0 0 17 104 53 53 0 0 1-17-104" fill="#80aeb5"/>
+  <path d="M330 150h240v354H330z" fill="url(#beam)"/>
+  <path d="M0 461 123 431 217 465 302 496 595 496 687 435 782 406 900 460v140H0z" fill="#728b96"/><path d="m0 514 130-32 122 58 158-19 176 22 185-72 129 39v90H0z" fill="#536f7b"/>
+  <path d="M300 495h300" stroke="#ccf4b7" stroke-width="11" stroke-linecap="round"/>
+  <path d="M306 495v-49l30 10-30 10m287 29v-49l-30 10 30 10" stroke="#d1f4bc" stroke-width="4" fill="#b4dca5"/>
+  <path d="M450 351v127" stroke="#c7ddd3" stroke-width="3" stroke-dasharray="7 12" opacity=".6"/>
+  <g transform="translate(450 295)"><path d="M-17 22Q0 124 17 22" fill="#efb76f"/><path d="M-10 22Q0 86 10 22" fill="#fce5a8"/><path d="m-31 4-19 44h-22M31 4l19 44h22" fill="none" stroke="#ebe5c9" stroke-width="9" stroke-linejoin="round"/><path d="m-43 17 8-52 20-26h30l20 26 8 52z" fill="#f0dfad" stroke="#fff3ca" stroke-width="5"/><rect x="-21" y="-40" width="42" height="30" rx="10" fill="#426d7e" stroke="#accfc7" stroke-width="5"/><path d="M-20 24h40" stroke="#80988b" stroke-width="12"/><path d="m0-59 1-30m-8 1h15" stroke="#b9d4cb" stroke-width="4"/></g>
+  <g fill="#b1c5c6" opacity=".65"><ellipse cx="166" cy="563" rx="42" ry="10"/><ellipse cx="721" cy="550" rx="56" ry="13"/></g>
+</svg>

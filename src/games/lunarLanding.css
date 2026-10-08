@@ -1,0 +1,82 @@
+/* SPDX-License-Identifier: GPL-3.0-only */
+.lunar-landing { color: #213b45; max-width: 1060px; margin: 0 auto; min-width: 0; }
+.lunar-landing .lunar-heading { display: flex; gap: 24px; justify-content: space-between; align-items: center; margin-bottom: 14px; }
+.lunar-landing .lunar-heading span { color: #416e75; font-size: 11px; letter-spacing: .16em; font-weight: 800; }
+.lunar-landing .lunar-heading h2 { margin: 5px 0 0; font-size: clamp(20px, 3vw, 28px); }
+.lunar-landing .lunar-heading p { max-width: 460px; margin: 0; font-size: 14px; line-height: 1.65; }
+.lunar-landing .lunar-readouts { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; margin-bottom: 12px; }
+.lunar-landing .lunar-readouts > div { padding: 10px 12px; border: 1px solid #c9d8d4; border-radius: 12px; background: #f2f7f5; display: flex; flex-direction: column; gap: 2px; }
+.lunar-landing .lunar-readouts span { color: #42616b; font-size: 12px; }
+.lunar-landing .lunar-readouts strong { font-size: 24px; font-variant-numeric: tabular-nums; line-height: 1.25; }
+.lunar-landing .lunar-readouts small { color: #49636b; font-size: 11px; }
+.lunar-landing .lunar-readouts [data-safe="false"] { background: #fff0df; border-color: #c29066; }
+.lunar-landing .lunar-readouts [data-safe="false"] strong { color: #8a3d1c; }
+.lunar-landing .lunar-cockpit { display: grid; grid-template-columns: minmax(0, 1fr) 245px; gap: 15px; align-items: start; }
+.lunar-landing .lunar-stage { position: relative; border-radius: 16px; overflow: hidden; min-width: 0; background: #14263a; line-height: 0; }
+.lunar-landing .lunar-stage svg { width: 100%; height: auto; display: block; }
+.lunar-landing .lunar-stage:focus-visible { outline: 3px solid #b47524; outline-offset: 4px; }
+.lunar-landing .lunar-stage-message { position: absolute; top: 13%; left: 9%; right: 9%; background: #eef6f3; color: #203b45; border: 1px solid #d3e3dc; border-radius: 14px; padding: 14px; display: flex; align-items: center; flex-direction: column; gap: 9px; line-height: 1.45; box-shadow: 0 8px 26px #08162244; text-align: center; }
+.lunar-landing .lunar-stage-message strong { font-size: 20px; }
+.lunar-landing .lunar-stage-message span { font-size: 13px; }
+.lunar-landing button { min-width: 44px; min-height: 44px; font: inherit; cursor: pointer; border: 1px solid #b6c9c3; border-radius: 10px; color: #203f46; background: #f0f6f3; box-shadow: none; transform: none; }
+.lunar-landing button:hover:not(:disabled) { color: #16393e; background: #d6e8df; border-color: #4a7870; transform: none; }
+.lunar-landing button:focus-visible { outline: 3px solid #9b610a; outline-offset: 3px; }
+.lunar-landing button:disabled { color: #5b6b6e; background: #e7eeea; border-color: #c7d1ce; opacity: .75; cursor: default; }
+.lunar-landing .lunar-action { background: #d4ef9d; color: #193927; padding: 10px 24px; border-color: #6b874b; font-weight: 800; }
+.lunar-landing .lunar-action:hover:not(:disabled) { color: #15311f; background: #c4e482; }
+.lunar-landing .lunar-console { min-width: 0; display: flex; flex-direction: column; gap: 12px; }
+.lunar-landing .lunar-throttle > span { display: block; font-size: 12px; margin: 0 0 8px; font-weight: 700; }
+.lunar-landing .lunar-throttle > div { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; }
+.lunar-landing .lunar-throttle button { display: flex; flex-direction: column; align-items: center; gap: 2px; padding: 8px 3px; }
+.lunar-landing .lunar-throttle button small { font-size: 11px; }
+.lunar-landing .lunar-throttle button[aria-pressed="true"] { background: #254d58; color: #fff7db; border-color: #254d58; }
+.lunar-landing .lunar-controls { display: grid; grid-template-columns: 1fr 1.2fr 1fr; gap: 6px; }
+.lunar-landing .lunar-hold { touch-action: none; user-select: none; -webkit-user-select: none; -webkit-touch-callout: none; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 10px 3px; min-height: 90px; gap: 3px; }
+.lunar-landing .lunar-hold > span { font-size: 26px; line-height: 1; }
+.lunar-landing .lunar-hold > b { font-size: 13px; white-space: nowrap; }
+.lunar-landing .lunar-hold > small { font-size: 10px; }
+.lunar-landing .lunar-engine { background: #e5efba; border-color: #9ba96a; }
+.lunar-landing .lunar-hold[aria-pressed="true"] { background: #285b67; border-color: #163e48; color: #fff9e4; }
+.lunar-landing .lunar-brake { grid-column: 1 / -1; flex-direction: row; flex-wrap: wrap; gap: 7px; min-height: 51px; }
+.lunar-landing .lunar-brake > span { font-size: 20px; }
+.lunar-landing .lunar-flight-actions { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.lunar-landing .lunar-flight-actions button { font-size: 12px; padding: 8px 13px; }
+.lunar-landing .lunar-flight-actions span { font-size: 11px; color: #4c666d; }
+.lunar-landing .lunar-guidance { background: #edf5f1; border-left: 3px solid #58837a; padding: 10px 12px; font-size: 13px; line-height: 1.6; margin: 14px 0 8px; min-height: 44px; }
+.lunar-landing .lunar-help { font-size: 13px; line-height: 1.65; }
+.lunar-landing .lunar-help summary { min-height: 44px; padding: 10px 3px; cursor: pointer; }
+.lunar-landing .lunar-help p { margin: 8px 0; }
+@media (max-width: 780px) {
+  .lunar-landing .lunar-heading { display: block; margin-bottom: 10px; }
+  .lunar-landing .lunar-heading p { margin-top: 7px; font-size: 12px; }
+  .lunar-landing .lunar-cockpit { grid-template-columns: minmax(0, 1fr); gap: 11px; }
+  .lunar-landing .lunar-console { gap: 9px; }
+  .lunar-landing .lunar-readouts { gap: 5px; }
+  .lunar-landing .lunar-readouts > div { padding: 7px 5px; }
+  .lunar-landing .lunar-readouts span { font-size: 10px; }
+  .lunar-landing .lunar-readouts strong { font-size: 21px; }
+  .lunar-landing .lunar-readouts small { font-size: 9px; }
+  .lunar-landing .lunar-throttle > span { margin-bottom: 5px; }
+  .lunar-landing .lunar-throttle button { flex-direction: row; justify-content: center; gap: 9px; padding: 7px 3px; }
+  .lunar-landing .lunar-hold { min-height: 76px; }
+  .lunar-landing .lunar-brake { min-height: 46px; }
+  .lunar-landing .lunar-stage-message { top: 9%; left: 7%; right: 7%; padding: 10px; gap: 6px; }
+  .lunar-landing .lunar-stage-message strong { font-size: 17px; }
+  .lunar-landing .lunar-stage-message span { font-size: 11px; }
+}
+@media (max-height: 500px) and (min-width: 600px) {
+  .lunar-landing .lunar-heading p, .lunar-landing .lunar-heading span, .lunar-landing .lunar-help, .lunar-landing .lunar-guidance { display: none; }
+  .lunar-landing .lunar-heading { margin-bottom: 6px; }
+  .lunar-landing .lunar-heading h2 { font-size: 17px; margin: 0; }
+  .lunar-landing .lunar-readouts { margin-bottom: 7px; }
+  .lunar-landing .lunar-readouts > div { padding: 4px 8px; flex-direction: row; align-items: baseline; flex-wrap: wrap; gap: 5px; }
+  .lunar-landing .lunar-readouts strong { font-size: 18px; }
+  .lunar-landing .lunar-readouts small { display: none; }
+  .lunar-landing .lunar-cockpit { grid-template-columns: minmax(0, 1fr) 220px; gap: 10px; }
+  .lunar-landing .lunar-stage svg { max-height: 250px; }
+  .lunar-landing .lunar-console { gap: 6px; }
+  .lunar-landing .lunar-hold { min-height: 72px; }
+  .lunar-landing .lunar-brake { min-height: 44px; }
+  .lunar-landing .lunar-flight-actions span { display: none; }
+}
+@media (prefers-reduced-motion: reduce) { .lunar-landing *, .lunar-landing *::before, .lunar-landing *::after { transition: none !important; animation: none !important; } }
