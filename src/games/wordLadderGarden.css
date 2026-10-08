@@ -1,0 +1,66 @@
+/* SPDX-License-Identifier: GPL-3.0-only */
+.wl-game { --wl-ink: #22392f; --wl-leaf: #31654d; --wl-border: #d9e3d8; display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr); gap: 24px; color: var(--wl-ink); width: 100%; }
+.wl-game * { box-sizing: border-box; }
+.wl-game .wl-play, .wl-game .wl-wordbook { min-width: 0; padding: 26px; border: 1px solid var(--wl-border); border-radius: 24px; background: #fffdf5; }
+.wl-game .wl-play { background: radial-gradient(ellipse at top left, #eef3d7 0, transparent 55%), #fffdf5; }
+.wl-game .wl-heading, .wl-game .wl-section-heading { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.wl-game .wl-eyebrow { font-size: 10px; font-weight: 800; letter-spacing: 1.5px; color: #536451; }
+.wl-game h3, .wl-game h4, .wl-game p { margin: 0; }
+.wl-game h3 { margin-top: 7px; font-size: 23px; line-height: 1.4; }
+.wl-game h4 { font-size: 14px; }
+.wl-game .wl-level { flex-shrink: 0; font-size: 12px; border: 1px solid var(--wl-border); padding: 8px 10px; border-radius: 999px; }
+.wl-game .wl-lesson { margin: 15px 0 23px; font-size: 14px; line-height: 1.75; color: #536451; }
+.wl-game .wl-destination { display: grid; grid-template-columns: minmax(0, 1fr) 42px minmax(0, 1fr); align-items: center; text-align: center; gap: 8px; }
+.wl-game .wl-current, .wl-game .wl-target { display: flex; flex-direction: column; gap: 7px; padding: 22px 6px; border-radius: 18px; }
+.wl-game .wl-current { background: #224a3c; color: #fffde9; box-shadow: 0 7px 0 #173b2f; }
+.wl-game .wl-target { background: #f6df9d; border: 1px dashed #9f7838; }
+.wl-game .wl-current > span, .wl-game .wl-target > span { font-size: 12px; }
+.wl-game .wl-current strong, .wl-game .wl-target strong { font: 800 clamp(24px, 3.2vw, 40px) / 1.15 ui-monospace, monospace; letter-spacing: 0.035em; }
+.wl-game .wl-current small, .wl-game .wl-target small { font-size: 12px; }
+.wl-game .wl-bridge { font-size: 20px; color: #687d58; }
+.wl-game .wl-stats { display: flex; flex-wrap: wrap; gap: 10px 18px; padding: 22px 0 17px; font-size: 12px; align-items: center; }
+.wl-game .wl-stats strong { font: 800 19px ui-monospace, monospace; }
+.wl-game .wl-state { color: #516c58; }
+.wl-game .wl-entry { border-top: 1px solid var(--wl-border); padding-top: 20px; }
+.wl-game .wl-entry label { display: block; font-weight: 750; font-size: 14px; margin-bottom: 10px; }
+.wl-game .wl-entry-row { display: flex; gap: 9px; }
+.wl-game .wl-entry input { display: block; min-width: 0; width: 100%; min-height: 52px; border: 2px solid #aabda8; border-radius: 12px; background: #fff; color: var(--wl-ink); padding: 10px 12px; font: 700 22px ui-monospace, monospace; }
+.wl-game .wl-entry input::placeholder { font: 400 13px system-ui, sans-serif; color: #657264; }
+.wl-game .wl-entry input[aria-invalid="true"] { border-color: #a14c31; }
+.wl-game button { min-height: 44px; min-width: 44px; cursor: pointer; font: inherit; }
+.wl-game .wl-submit { flex-shrink: 0; display: flex; align-items: center; gap: 9px; justify-content: center; border: 0; border-radius: 12px; padding: 12px 15px; background: #d9ed89; color: #24352b; font-weight: 800; font-size: 14px; }
+.wl-game button:hover:not(:disabled) { box-shadow: 0 0 0 2px #64804f; }
+.wl-game button:focus-visible, .wl-game input:focus-visible { outline: 3px solid #23674e; outline-offset: 3px; }
+.wl-game button:disabled, .wl-game input:disabled { cursor: default; opacity: 0.65; }
+.wl-game .wl-entry p { margin-top: 10px; color: #5a6b5c; font-size: 12px; line-height: 1.7; }
+.wl-game .wl-message { margin-top: 17px; min-height: 70px; padding: 13px 15px; border: 1px solid #dce4c4; border-radius: 12px; background: #edf2df; color: #354c31; font-size: 13px; line-height: 1.7; overflow-wrap: anywhere; }
+.wl-game .wl-error { border-color: #d6ab91; background: #fff0e4; color: #7d3b23; }
+.wl-game .wl-route { margin-top: 24px; }
+.wl-game .wl-section-heading > span { font-size: 11px; color: #566d5a; }
+.wl-game .wl-route ol { padding: 0; margin: 13px 0 0; display: flex; flex-wrap: wrap; gap: 9px; list-style: none; }
+.wl-game .wl-route li { display: flex; gap: 8px; align-items: center; border: 1px solid #d9dfd0; border-radius: 9px; padding: 8px 10px; background: #fff; }
+.wl-game .wl-route strong { font: 700 17px ui-monospace, monospace; letter-spacing: 1px; }
+.wl-game .wl-route-number { font: 600 10px system-ui, sans-serif; color: #657264; }
+.wl-game .wl-route .wl-at { border-color: #577650; background: #e8eddd; }
+.wl-game .wl-changed { color: #264e40; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 4px; }
+.wl-game .wl-older { margin-top: 9px; font-size: 12px; line-height: 1.7; }
+.wl-game .wl-save { margin-top: 22px; font-size: 11px; line-height: 1.7; color: #657264; }
+.wl-game .wl-save-warning { color: #8c492f; }
+.wl-game .wl-wordbook { background: #f2f4eb; }
+.wl-game .wl-wordbook h3 { font-size: 19px; }
+.wl-game .wl-wordbook > p { margin: 15px 0; font-size: 13px; line-height: 1.8; color: #586b56; }
+.wl-game .wl-book-count { white-space: nowrap; }
+.wl-game .wl-book-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+.wl-game .wl-word { display: flex; flex-direction: column; align-items: center; gap: 5px; padding: 12px 5px 9px; border: 1px solid #d2dcce; border-radius: 11px; background: #fffef7; color: var(--wl-ink); }
+.wl-game .wl-word strong { font: 750 18px ui-monospace, monospace; letter-spacing: 0.025em; }
+.wl-game .wl-word > span { font-size: 11px; line-height: 1.4; }
+.wl-game .wl-word small { font-size: 9px; color: #536a56; }
+.wl-game .wl-neighbor { border-color: #729863; background: #e5edda; }
+.wl-game .wl-word-current { border-color: #315b46; border-style: dashed; }
+.wl-game .wl-selected { outline: 2px solid #866533; outline-offset: 1px; background: #fff1ca; }
+.wl-game .wl-rules { margin-top: 22px; padding-top: 20px; border-top: 1px solid #d1dbcc; }
+.wl-game .wl-rules ol { padding-left: 20px; font-size: 13px; line-height: 1.9; }
+.wl-game .wl-rules p { margin-top: 12px; font-size: 12px; line-height: 1.8; color: #586b56; }
+@media (max-width: 1000px) { .wl-game { grid-template-columns: minmax(0, 1fr); } .wl-game .wl-book-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+@media (max-width: 540px) { .wl-game { gap: 15px; } .wl-game .wl-play, .wl-game .wl-wordbook { padding: 17px; border-radius: 17px; } .wl-game h3 { font-size: 21px; } .wl-game .wl-entry-row { flex-direction: column; } .wl-game .wl-submit { min-height: 48px; } .wl-game .wl-book-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } .wl-game .wl-destination { gap: 5px; grid-template-columns: minmax(0, 1fr) 30px minmax(0, 1fr); } .wl-game .wl-current strong, .wl-game .wl-target strong { font-size: 29px; } .wl-game .wl-section-heading { align-items: flex-start; } }
+@media (prefers-reduced-motion: reduce) { .wl-game *, .wl-game *::before, .wl-game *::after { scroll-behavior: auto; transition: none; animation: none; } }

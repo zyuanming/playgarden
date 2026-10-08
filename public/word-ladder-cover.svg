@@ -1,0 +1,18 @@
+<!-- SPDX-License-Identifier: GPL-3.0-only; Original Playgarden vector artwork. -->
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="640" viewBox="0 0 960 640" role="img" aria-labelledby="title desc">
+  <title id="title">变词小径</title><desc id="desc">CAT、COT、DOT、DOG 四块字母踏脚石，穿过绿叶小径。</desc>
+  <defs><linearGradient id="paper" x2="0" y2="1"><stop stop-color="#ecf0da"/><stop offset="1" stop-color="#d6e2c1"/></linearGradient><pattern id="dots" width="28" height="28" patternUnits="userSpaceOnUse"><circle cx="4" cy="4" r="1.1" fill="#567554" opacity=".14"/></pattern></defs>
+  <rect width="960" height="640" fill="url(#paper)"/><rect width="960" height="640" fill="url(#dots)"/>
+  <path d="M-40 520C150 650 255 220 462 315S675 470 1000 140" fill="none" stroke="#fff9e1" stroke-width="142"/>
+  <path d="M-40 520C150 650 255 220 462 315S675 470 1000 140" fill="none" stroke="#baa772" stroke-width="3" stroke-dasharray="8 15"/>
+  <g fill="#527648"><ellipse cx="132" cy="190" rx="28" ry="72" transform="rotate(-40 132 190)"/><ellipse cx="181" cy="194" rx="22" ry="53" transform="rotate(24 181 194)"/><ellipse cx="800" cy="498" rx="25" ry="65" transform="rotate(-45 800 498)"/><ellipse cx="845" cy="503" rx="23" ry="54" transform="rotate(35 845 503)"/></g>
+  <g stroke="#315842" stroke-width="4" fill="none"><path d="M175 275l-31-85m31 85 5-65M834 568l-29-66m29 66 9-45"/></g>
+  <g font-family="ui-monospace,monospace" font-size="57" font-weight="800" text-anchor="middle">
+    <g transform="translate(155 465) rotate(-8)"><rect x="-97" y="-46" width="194" height="112" rx="24" fill="#193b2f"/><rect x="-97" y="-56" width="194" height="112" rx="24" fill="#295340"/><text y="21" fill="#fff9de">CAT</text></g>
+    <g transform="translate(365 293) rotate(7)"><rect x="-97" y="-46" width="194" height="112" rx="24" fill="#c5b989"/><rect x="-97" y="-56" width="194" height="112" rx="24" fill="#fffbee" stroke="#b7ad83" stroke-width="2"/><text y="21" fill="#295340">COT</text><path d="M-16 32h32" stroke="#7b944c" stroke-width="5"/></g>
+    <g transform="translate(592 381) rotate(-5)"><rect x="-97" y="-46" width="194" height="112" rx="24" fill="#c5b989"/><rect x="-97" y="-56" width="194" height="112" rx="24" fill="#fffbee" stroke="#b7ad83" stroke-width="2"/><text y="21" fill="#295340">DOT</text><path d="M-51 32h32" stroke="#7b944c" stroke-width="5"/></g>
+    <g transform="translate(801 217) rotate(8)"><rect x="-97" y="-46" width="194" height="112" rx="24" fill="#b58f46"/><rect x="-97" y="-56" width="194" height="112" rx="24" fill="#efd184"/><text y="21" fill="#35472e">DOG</text><path d="M19 32h32" stroke="#927032" stroke-width="5"/></g>
+  </g>
+  <g fill="#c99f4e"><circle cx="618" cy="151" r="8"/><circle cx="646" cy="134" r="5"/><circle cx="404" cy="526" r="8"/></g><path d="m833 131 12-26 12 26-27-16h30z" fill="#9d7c3f"/>
+  <text x="55" y="78" font-family="system-ui,sans-serif" font-weight="700" font-size="18" letter-spacing="5" fill="#4d6850">LETTER TRAIL</text>
+</svg>

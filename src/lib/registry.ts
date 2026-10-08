@@ -1418,5 +1418,14 @@ export const games: GameDefinition[] = [
     source: { kind: "original", license: "GPL-3.0-only", notes: "原创九格视觉反应规则、12个手写来客时序与SVG图形；轻点花朵并避开瓢虫，支持悠闲速度和安全暂停。未使用外部代码或素材。" },
     component: lazy(() => import("../games/BloomTapGarden")),
   },
+  {
+    id: "word-ladder", title: "变词小径",
+    subtitle: "每次换一个字母，沿着公开词本走到目标词。",
+    category: "逻辑思维", difficulty: "初级", tone: "green",
+    levelCount: 12, resumeKey: "playgarden.word-ladder.v1",
+    artwork: { url: "./word-ladder-cover.svg", position: "center", size: "cover" },
+    source: { kind: "original", license: "GPL-3.0-only", notes: "经典变词阶梯规则的原创实现；12 关词本、中文释义、界面与 SVG 均为本项目原创，无外部词典、图片或移植源码。" },
+    component: lazy(() => import("../games/WordLadderGarden")),
+  },
 ];
 export const findGame = (id: string) => games.find((game) => game.id === id);
