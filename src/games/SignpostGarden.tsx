@@ -26,7 +26,7 @@ function SignpostRound({level,paused,freshStart,hintToken,undoToken,onComplete,o
   useEffect(()=>{if(tokens.current.hintToken===hintToken)return;tokens.current.hintToken=hintToken;if(blocked)return;setHint(null);const r=solveSignpost(p,state);
     if(r.kind==='budget')report('搜索达到预算，暂时没有可靠建议；这不代表无解。');
     else if(r.kind==='none')report('当前几段连线无法组成完整路线。请撤销最近的尝试，或选中一格并断开出线。');
-    else{const from=state.findIndex((v,i)=>v!==r.state[i]);if(from>=0){setSelected(from);setHint(r.state[from]);report(`搜索当前连线得到兼容完整路线：从${coord(from)}连接到${coord(r.state[from])}。这是搜索建议，点虚线框目标确认，不会自动代填。`);cells.current[r.state[from]]?.focus({preventScroll:true});}}
+    else if(r.kind==='solution'){const from=state.findIndex((v,i)=>v!==r.state[i]);if(from>=0){setSelected(from);setHint(r.state[from]);report(`搜索当前连线得到兼容完整路线：从${coord(from)}连接到${coord(r.state[from])}。这是搜索建议，点虚线框目标确认，不会自动代填。`);cells.current[r.state[from]]?.focus({preventScroll:true});}}
   },[hintToken,blocked,p,state]);
   function save(next:number[]){setHistory(h=>[...h.slice(-499),next]);setHint(null);}
   function click(i:number){
