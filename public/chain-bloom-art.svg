@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="400" viewBox="0 0 640 400" role="img" aria-labelledby="title desc">
+<!-- SPDX-License-Identifier: GPL-3.0-only. Original programmatic vector artwork. -->
+<title id="title">连锁花火</title><desc id="desc">薄荷色花田中，圆形花火依次绽放，连起漂浮的彩色种子。</desc>
+<defs><radialGradient id="sky"><stop stop-color="#fffde9"/><stop offset="1" stop-color="#e0eee0"/></radialGradient><linearGradient id="ground" x2="0" y2="1"><stop stop-color="#d1e2cb"/><stop offset="1" stop-color="#b4d0b2"/></linearGradient></defs>
+<rect width="640" height="400" fill="url(#sky)"/><path d="M0 311Q112 257 253 318T640 290V400H0Z" fill="url(#ground)" opacity=".7"/>
+<g fill="none" stroke="#9bbd96" opacity=".4"><path d="M0 354Q153 307 285 362T640 330"/><path d="M18 373Q123 343 215 373M432 366Q527 337 620 355"/></g>
+<g stroke-width="2"><circle cx="193" cy="224" r="87" fill="#689977" fill-opacity=".12" stroke="#6c9674"/><circle cx="193" cy="224" r="78" fill="none" stroke="#6c9674" opacity=".3"/><circle cx="322" cy="188" r="75" fill="#c98c50" fill-opacity=".12" stroke="#be8b59"/><circle cx="322" cy="188" r="67" fill="none" stroke="#be8b59" opacity=".3"/><circle cx="422" cy="234" r="54" fill="#9275a7" fill-opacity=".1" stroke="#987bb0"/><circle cx="489" cy="183" r="30" fill="#508d9e" fill-opacity=".1" stroke="#6098a6"/></g>
+<g fill="#568667"><path d="M193 209Q205 216 208 224Q201 236 193 239Q181 232 178 224Q185 212 193 209Z"/><circle cx="193" cy="224" r="5" fill="#fff6cf"/></g>
+<g fill="#bb804b"><path d="M322 176Q332 181 334 188Q329 198 322 200Q312 195 310 188Q315 178 322 176Z"/><circle cx="322" cy="188" r="4" fill="#fff4d0"/></g>
+<g fill="#886da0"><path d="M422 224Q430 228 432 234Q428 242 422 244Q414 240 412 234Q416 226 422 224Z"/><circle cx="422" cy="234" r="3" fill="#fff4d0"/></g>
+<g stroke="#fffcdf" stroke-width="3"><circle cx="489" cy="183" r="8" fill="#51869a"/><circle cx="115" cy="140" r="8" fill="#63926e"/><circle cx="254" cy="113" r="8" fill="#b78455"/><circle cx="546" cy="272" r="8" fill="#8e78a1"/><circle cx="353" cy="309" r="8" fill="#729a67"/><circle cx="480" cy="101" r="8" fill="#6997a2"/></g>
+<g stroke="#708965" stroke-linecap="round" stroke-width="2" opacity=".45"><path d="M115 140L103 148M254 113L266 106M546 272L558 279M353 309L345 322M480 101L490 92"/></g>
+<g fill="#829c78" opacity=".55"><circle cx="60" cy="229" r="2"/><circle cx="382" cy="90" r="2"/><circle cx="590" cy="167" r="2"/><circle cx="264" cy="283" r="2"/></g>
+</svg>

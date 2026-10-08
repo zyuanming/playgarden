@@ -1400,5 +1400,14 @@ export const games: GameDefinition[] = [
     source: { kind: "original", license: "GPL-3.0-only", notes: "通用重力、惯性、推力、燃料与低速着陆规则的原创实时实现；原创12个训练场、中文界面与SVG图形。未移植第三方源码或素材；侧风与可变重力是明确标注的虚构训练条件。" },
     component: lazy(() => import("../games/LunarLanding")),
   },
+  {
+    id: "chain-bloom", title: "连锁花火",
+    subtitle: "选一个好时机，让一朵花火接成满园繁星。",
+    category: "动作反应", difficulty: "初级", tone: "green",
+    levelCount: 12, allowUndo: false, resumeKey: "playgarden.chain-bloom.v1",
+    artwork: { url: "./chain-bloom-art.svg", position: "center", size: "cover" },
+    source: { kind: "original", license: "GPL-3.0-only", notes: "原创连续几何连锁规则实现、12 个手写布局与 SVG 图形；未复制第三方游戏源码或素材。" },
+    component: lazy(() => import("../games/ChainBloom")),
+  },
 ];
 export const findGame = (id: string) => games.find((game) => game.id === id);
