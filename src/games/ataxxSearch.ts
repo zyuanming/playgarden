@@ -7,6 +7,8 @@ function ordered(p:Position):Move[]{return moves(p).sort((a,b)=>{
   return gain(b)-gain(a);
 });}
 export function solveLesson(lesson:Lesson,p:Position,history:Move[]=[],maxNodes=40000,milliseconds=200):SearchResult{
+  maxNodes=Number.isFinite(maxNodes)?Math.max(0,Math.min(40000,Math.floor(maxNodes))):40000;
+  milliseconds=Number.isFinite(milliseconds)?Math.max(0,Math.min(200,milliseconds)):200;
   let nodes=0;const until=Date.now()+milliseconds;let budget=false;
   const memo=new Map<string,{value:number;move:Move}>();
   function search(q:Position,h:Move[]):{value:number;move:Move}{
@@ -33,6 +35,8 @@ export function solveLesson(lesson:Lesson,p:Position,history:Move[]=[],maxNodes=
   const result=search(p,history);return budget?{kind:'budget',nodes}:{kind:'answer',...result,nodes,depth:lesson.goal.kind==='win'?lesson.goal.turns*2-1:lesson.goal.kind==='hold'?2:1};
 }
 export function chooseAI(p:Position,maxNodes=18000,milliseconds=180):SearchResult{
+  maxNodes=Number.isFinite(maxNodes)?Math.max(0,Math.min(18000,Math.floor(maxNodes))):18000;
+  milliseconds=Number.isFinite(milliseconds)?Math.max(0,Math.min(180,milliseconds)):180;
   const options=ordered(p);if(!options.length)return {kind:'answer',move:null,value:0,nodes:0,depth:0};
   let nodes=0,stopped=false;const deadline=Date.now()+milliseconds;
   let best={move:options[0],value:0,depth:0};
