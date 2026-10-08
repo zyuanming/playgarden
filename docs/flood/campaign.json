@@ -1,0 +1,2676 @@
+{
+  "generator": "flood-original-901007-v1",
+  "levels": [
+    {
+      "id": "flood-001",
+      "solution": [
+        0,
+        1,
+        2
+      ],
+      "openingDistances": [
+        {
+          "color": 0,
+          "distance": 3
+        },
+        {
+          "color": 1,
+          "distance": 4
+        }
+      ],
+      "visited": 5,
+      "regions": 5,
+      "canonical": "4:0001000110221102"
+    },
+    {
+      "id": "flood-002",
+      "solution": [
+        1,
+        0,
+        2
+      ],
+      "openingDistances": [
+        {
+          "color": 1,
+          "distance": 3
+        },
+        {
+          "color": 2,
+          "distance": 4
+        }
+      ],
+      "visited": 5,
+      "regions": 4,
+      "canonical": "4:0000001100202000"
+    },
+    {
+      "id": "flood-003",
+      "solution": [
+        0,
+        1,
+        2
+      ],
+      "openingDistances": [
+        {
+          "color": 0,
+          "distance": 3
+        },
+        {
+          "color": 1,
+          "distance": 3
+        }
+      ],
+      "visited": 6,
+      "regions": 7,
+      "canonical": "4:0001120222110211"
+    },
+    {
+      "id": "flood-004",
+      "solution": [
+        2,
+        0,
+        1
+      ],
+      "openingDistances": [
+        {
+          "color": 1,
+          "distance": 4
+        },
+        {
+          "color": 2,
+          "distance": 3
+        }
+      ],
+      "visited": 6,
+      "regions": 9,
+      "canonical": "4:0010110221000122"
+    },
+    {
+      "id": "flood-005",
+      "solution": [
+        0,
+        1,
+        2
+      ],
+      "openingDistances": [
+        {
+          "color": 0,
+          "distance": 3
+        },
+        {
+          "color": 2,
+          "distance": 3
+        }
+      ],
+      "visited": 6,
+      "regions": 4,
+      "canonical": "4:0001000222220022"
+    },
+    {
+      "id": "flood-006",
+      "solution": [
+        0,
+        2,
+        0
+      ],
+      "openingDistances": [
+        {
+          "color": 0,
+          "distance": 3
+        },
+        {
+          "color": 2,
+          "distance": 3
+        }
+      ],
+      "visited": 6,
+      "regions": 6,
+      "canonical": "4:0001000111221211"
+    },
+    {
+      "id": "flood-007",
+      "solution": [
+        0,
+        1,
+        2
+      ],
+      "openingDistances": [
+        {
+          "color": 0,
+          "distance": 3
+        },
+        {
+          "color": 1,
+          "distance": 3
+        }
+      ],
+      "visited": 7,
+      "regions": 6,
+      "canonical": "4:0010100000220102"
+    },
+    {
+      "id": "flood-008",
+      "solution": [
+        0,
+        1,
+        2
+      ],
+      "openingDistances": [
+        {
+          "color": 0,
+          "distance": 3
+        },
+        {
+          "color": 1,
+          "distance": 3
+        }
+      ],
+      "visited": 7,
+      "regions": 5,
+      "canonical": "4:0011000112221100"
+    },
+    {
+      "id": "flood-009",
+      "solution": [
+        1,
+        0,
+        2
+      ],
+      "openingDistances": [
+        {
+          "color": 1,
+          "distance": 3
+        },
+        {
+          "color": 2,
+          "distance": 4
+        }
+      ],
+      "visited": 7,
+      "regions": 6,
+      "canonical": "4:0001100121021100"
+    },
+    {
+      "id": "flood-010",
+      "solution": [
+        0,
+        1,
+        2
+      ],
+      "openingDistances": [
+        {
+          "color": 0,
+          "distance": 3
+        },
+        {
+          "color": 2,
+          "distance": 4
+        }
+      ],
+      "visited": 8,
+      "regions": 6,
+      "canonical": "4:0000101222220011"
+    },
+    {
+      "id": "flood-011",
+      "solution": [
+        2,
+        0,
+        1
+      ],
+      "openingDistances": [
+        {
+          "color": 0,
+          "distance": 4
+        },
+        {
+          "color": 2,
+          "distance": 3
+        }
+      ],
+      "visited": 10,
+      "regions": 5,
+      "canonical": "4:0001012111221100"
+    },
+    {
+      "id": "flood-012",
+      "solution": [
+        0,
+        1,
+        2
+      ],
+      "openingDistances": [
+        {
+          "color": 0,
+          "distance": 3
+        },
+        {
+          "color": 2,
+          "distance": 4
+        }
+      ],
+      "visited": 10,
+      "regions": 6,
+      "canonical": "4:0000010111022221"
+    },
+    {
+      "id": "flood-013",
+      "solution": [
+        1,
+        2,
+        0
+      ],
+      "openingDistances": [
+        {
+          "color": 1,
+          "distance": 3
+        },
+        {
+          "color": 2,
+          "distance": 4
+        }
+      ],
+      "visited": 12,
+      "regions": 6,
+      "canonical": "4:0001102212111222"
+    },
+    {
+      "id": "flood-014",
+      "solution": [
+        2,
+        0,
+        1
+      ],
+      "openingDistances": [
+        {
+          "color": 0,
+          "distance": 4
+        },
+        {
+          "color": 2,
+          "distance": 3
+        }
+      ],
+      "visited": 14,
+      "regions": 7,
+      "canonical": "4:0011000111201210"
+    },
+    {
+      "id": "flood-015",
+      "solution": [
+        1,
+        0,
+        1,
+        2
+      ],
+      "openingDistances": [
+        {
+          "color": 1,
+          "distance": 4
+        },
+        {
+          "color": 2,
+          "distance": 5
+        }
+      ],
+      "visited": 6,
+      "regions": 6,
+      "canonical": "4:0001222100022002"
+    },
+    {
+      "id": "flood-016",
+      "solution": [
+        1,
+        0,
+        1,
+        2
+      ],
+      "openingDistances": [
+        {
+          "color": 1,
+          "distance": 4
+        },
+        {
+          "color": 2,
+          "distance": 5
+        }
+      ],
+      "visited": 7,
+      "regions": 5,
+      "canonical": "4:0001210021112110"
+    },
+    {
+      "id": "flood-017",
+      "solution": [
+        1,
+        0,
+        1,
+        2
+      ],
+      "openingDistances": [
+        {
+          "color": 1,
+          "distance": 4
+        },
+        {
+          "color": 2,
+          "distance": 5
+        }
+      ],
+      "visited": 7,
+      "regions": 5,
+      "canonical": "4:0011011011001201"
+    },
+    {
+      "id": "flood-018",
+      "solution": [
+        0,
+        1,
+        0,
+        2
+      ],
+      "openingDistances": [
+        {
+          "color": 0,
+          "distance": 4
+        },
+        {
+          "color": 2,
+          "distance": 4
+        }
+      ],
+      "visited": 11,
+      "regions": 7,
+      "canonical": "4:0011011212012200"
+    },
+    {
+      "id": "flood-019",
+      "solution": [
+        0,
+        2,
+        0,
+        1
+      ],
+      "openingDistances": [
+        {
+          "color": 0,
+          "distance": 4
+        },
+        {
+          "color": 2,
+          "distance": 4
+        }
+      ],
+      "visited": 11,
+      "regions": 9,
+      "canonical": "4:0001000212112100"
+    },
+    {
+      "id": "flood-020",
+      "solution": [
+        0,
+        1,
+        0,
+        2
+      ],
+      "openingDistances": [
+        {
+          "color": 0,
+          "distance": 4
+        },
+        {
+          "color": 1,
+          "distance": 5
+        }
+      ],
+      "visited": 12,
+      "regions": 8,
+      "canonical": "4:0001100210012121"
+    },
+    {
+      "id": "flood-021",
+      "solution": [
+        0,
+        1,
+        2,
+        0
+      ],
+      "openingDistances": [
+        {
+          "color": 0,
+          "distance": 4
+        },
+        {
+          "color": 2,
+          "distance": 5
+        }
+      ],
+      "visited": 7,
+      "regions": 7,
+      "canonical": "5:0001101100011101100212002"
+    },
+    {
+      "id": "flood-022",
+      "solution": [
+        2,
+        0,
+        1,
+        2
+      ],
+      "openingDistances": [
+        {
+          "color": 0,
+          "distance": 5
+        },
+        {
+          "color": 2,
+          "distance": 4
+        }
+      ],
+      "visited": 7,
+      "regions": 8,
+      "canonical": "5:0001010010001112201222110"
+    },
+    {
+      "id": "flood-023",
+      "solution": [
+        1,
+        0,
+        1,
+        2
+      ],
+      "openingDistances": [
+        {
+          "color": 1,
+          "distance": 4
+        },
+        {
+          "color": 2,
+          "distance": 5
+        }
+      ],
+      "visited": 8,
+      "regions": 8,
+      "canonical": "5:0001200222111110100002110"
+    },
+    {
+      "id": "flood-024",
+      "solution": [
+        0,
+        1,
+        0,
+        2
+      ],
+      "openingDistances": [
+        {
+          "color": 0,
+          "distance": 4
+        },
+        {
+          "color": 1,
+          "distance": 5
+        }
+      ],
+      "visited": 9,
+      "regions": 7,
+      "canonical": "5:0000000011001222002111021"
+    },
+    {
+      "id": "flood-025",
+      "solution": [
+        0,
+        2,
+        0,
+        1
+      ],
+      "openingDistances": [
+        {
+          "color": 0,
+          "distance": 4
+        },
+        {
+          "color": 2,
+          "distance": 5
+        }
+      ],
+      "visited": 10,
+      "regions": 10,
+      "canonical": "5:0000122201010100001200102"
+    },
+    {
+      "id": "flood-026",
+      "solution": [
+        2,
+        0,
+        1,
+        0
+      ],
+      "openingDistances": [
+        {
+          "color": 0,
+          "distance": 5
+        },
+        {
+          "color": 2,
+          "distance": 4
+        }
+      ],
+      "visited": 13,
+      "regions": 8,
+      "canonical": "5:0001011011101110012000021"
+    },
+    {
+      "id": "flood-027",
+      "solution": [
+        0,
+        1,
+        0,
+        2
+      ],
+      "openingDistances": [
+        {
+          "color": 0,
+          "distance": 4
+        },
+        {
+          "color": 2,
+          "distance": 5
+        }
+      ],
+      "visited": 15,
+      "regions": 10,
+      "canonical": "5:0000102222012122211120202"
+    },
+    {
+      "id": "flood-028",
+      "solution": [
+        0,
+        1,
+        2,
+        0
+      ],
+      "openingDistances": [
+        {
+          "color": 0,
+          "distance": 4
+        },
+        {
+          "color": 2,
+          "distance": 5
+        }
+      ],
+      "visited": 15,
+      "regions": 8,
+      "canonical": "5:0001000020100021202012220"
+    },
+    {
+      "id": "flood-029",
+      "solution": [
+        0,
+        2,
+        0,
+        1
+      ],
+      "openingDistances": [
+        {
+          "color": 0,
+          "distance": 4
+        },
+        {
+          "color": 2,
+          "distance": 5
+        }
+      ],
+      "visited": 15,
+      "regions": 7,
+      "canonical": "5:0001100020102201022120021"
+    },
+    {
+      "id": "flood-030",
+      "solution": [
+        0,
+        1,
+        0,
+        2
+      ],
+      "openingDistances": [
+        {
+          "color": 0,
+          "distance": 4
+        },
+        {
+          "color": 1,
+          "distance": 5
+        }
+      ],
+      "visited": 15,
+      "regions": 8,
+      "canonical": "5:0001001120112200111102001"
+    },
+    {
+      "id": "flood-031",
+      "solution": [
+        0,
+        2,
+        0,
+        1
+      ],
+      "openingDistances": [
+        {
+          "color": 0,
+          "distance": 4
+        },
+        {
+          "color": 1,
+          "distance": 5
+        }
+      ],
+      "visited": 15,
+      "regions": 8,
+      "canonical": "5:0000102221112112211110122"
+    },
+    {
+      "id": "flood-032",
+      "solution": [
+        2,
+        0,
+        1,
+        2
+      ],
+      "openingDistances": [
+        {
+          "color": 1,
+          "distance": 5
+        },
+        {
+          "color": 2,
+          "distance": 4
+        }
+      ],
+      "visited": 16,
+      "regions": 10,
+      "canonical": "5:0000120012000000121221110"
+    },
+    {
+      "id": "flood-033",
+      "solution": [
+        2,
+        1,
+        0,
+        2
+      ],
+      "openingDistances": [
+        {
+          "color": 0,
+          "distance": 5
+        },
+        {
+          "color": 2,
+          "distance": 4
+        }
+      ],
+      "visited": 19,
+      "regions": 15,
+      "canonical": "5:0010212001001022002000211"
+    },
+    {
+      "id": "flood-034",
+      "solution": [
+        1,
+        2,
+        0,
+        1
+      ],
+      "openingDistances": [
+        {
+          "color": 1,
+          "distance": 4
+        },
+        {
+          "color": 2,
+          "distance": 5
+        }
+      ],
+      "visited": 20,
+      "regions": 10,
+      "canonical": "5:0000010111021111021200200"
+    },
+    {
+      "id": "flood-035",
+      "solution": [
+        1,
+        2,
+        0,
+        1
+      ],
+      "openingDistances": [
+        {
+          "color": 1,
+          "distance": 4
+        },
+        {
+          "color": 2,
+          "distance": 5
+        }
+      ],
+      "visited": 20,
+      "regions": 8,
+      "canonical": "5:0000000101002112211120200"
+    },
+    {
+      "id": "flood-036",
+      "solution": [
+        2,
+        0,
+        1,
+        2
+      ],
+      "openingDistances": [
+        {
+          "color": 0,
+          "distance": 5
+        },
+        {
+          "color": 2,
+          "distance": 4
+        }
+      ],
+      "visited": 27,
+      "regions": 9,
+      "canonical": "5:0000100111221022020111201"
+    },
+    {
+      "id": "flood-037",
+      "solution": [
+        1,
+        0,
+        2,
+        0,
+        1
+      ],
+      "openingDistances": [
+        {
+          "color": 1,
+          "distance": 5
+        },
+        {
+          "color": 2,
+          "distance": 6
+        }
+      ],
+      "visited": 20,
+      "regions": 11,
+      "canonical": "5:0001110021212101122222111"
+    },
+    {
+      "id": "flood-038",
+      "solution": [
+        0,
+        2,
+        0,
+        1,
+        2
+      ],
+      "openingDistances": [
+        {
+          "color": 0,
+          "distance": 5
+        },
+        {
+          "color": 2,
+          "distance": 6
+        }
+      ],
+      "visited": 24,
+      "regions": 10,
+      "canonical": "5:0010100222201002000201100"
+    },
+    {
+      "id": "flood-039",
+      "solution": [
+        1,
+        2,
+        0,
+        1,
+        2
+      ],
+      "openingDistances": [
+        {
+          "color": 1,
+          "distance": 5
+        },
+        {
+          "color": 2,
+          "distance": 6
+        }
+      ],
+      "visited": 24,
+      "regions": 9,
+      "canonical": "5:0000100002222210002022210"
+    },
+    {
+      "id": "flood-040",
+      "solution": [
+        0,
+        2,
+        1,
+        0,
+        2
+      ],
+      "openingDistances": [
+        {
+          "color": 0,
+          "distance": 5
+        },
+        {
+          "color": 2,
+          "distance": 6
+        }
+      ],
+      "visited": 30,
+      "regions": 12,
+      "canonical": "5:0001110210110200202121021"
+    },
+    {
+      "id": "flood-041",
+      "solution": [
+        3,
+        0,
+        1,
+        2,
+        3
+      ],
+      "openingDistances": [
+        {
+          "color": 0,
+          "distance": 6
+        },
+        {
+          "color": 2,
+          "distance": 6
+        },
+        {
+          "color": 3,
+          "distance": 5
+        }
+      ],
+      "visited": 26,
+      "regions": 13,
+      "canonical": "6:001213300001111000133320133120233321"
+    },
+    {
+      "id": "flood-042",
+      "solution": [
+        0,
+        2,
+        3,
+        0,
+        1
+      ],
+      "openingDistances": [
+        {
+          "color": 0,
+          "distance": 5
+        },
+        {
+          "color": 1,
+          "distance": 6
+        },
+        {
+          "color": 3,
+          "distance": 6
+        }
+      ],
+      "visited": 32,
+      "regions": 12,
+      "canonical": "6:000110011112003121222223230022331021"
+    },
+    {
+      "id": "flood-043",
+      "solution": [
+        2,
+        0,
+        1,
+        3,
+        2
+      ],
+      "openingDistances": [
+        {
+          "color": 0,
+          "distance": 6
+        },
+        {
+          "color": 1,
+          "distance": 6
+        },
+        {
+          "color": 2,
+          "distance": 5
+        }
+      ],
+      "visited": 38,
+      "regions": 10,
+      "canonical": "6:001112211003201111001111001122100021"
+    },
+    {
+      "id": "flood-044",
+      "solution": [
+        0,
+        2,
+        0,
+        3,
+        1
+      ],
+      "openingDistances": [
+        {
+          "color": 0,
+          "distance": 5
+        },
+        {
+          "color": 1,
+          "distance": 6
+        },
+        {
+          "color": 3,
+          "distance": 5
+        }
+      ],
+      "visited": 44,
+      "regions": 10,
+      "canonical": "6:000111002113011133303332310132211132"
+    },
+    {
+      "id": "flood-045",
+      "solution": [
+        2,
+        3,
+        0,
+        1,
+        2
+      ],
+      "openingDistances": [
+        {
+          "color": 0,
+          "distance": 6
+        },
+        {
+          "color": 2,
+          "distance": 5
+        },
+        {
+          "color": 3,
+          "distance": 6
+        }
+      ],
+      "visited": 48,
+      "regions": 15,
+      "canonical": "6:000121002002331131021111111120113122"
+    },
+    {
+      "id": "flood-046",
+      "solution": [
+        0,
+        2,
+        1,
+        0,
+        3
+      ],
+      "openingDistances": [
+        {
+          "color": 0,
+          "distance": 5
+        },
+        {
+          "color": 1,
+          "distance": 6
+        },
+        {
+          "color": 3,
+          "distance": 6
+        }
+      ],
+      "visited": 48,
+      "regions": 15,
+      "canonical": "6:000011021032331213221203022221032331"
+    },
+    {
+      "id": "flood-047",
+      "solution": [
+        0,
+        1,
+        0,
+        2,
+        3
+      ],
+      "openingDistances": [
+        {
+          "color": 0,
+          "distance": 5
+        },
+        {
+          "color": 1,
+          "distance": 5
+        },
+        {
+          "color": 2,
+          "distance": 6
+        }
+      ],
+      "visited": 50,
+      "regions": 13,
+      "canonical": "6:000100002110230111120333110333222023"
+    },
+    {
+      "id": "flood-048",
+      "solution": [
+        2,
+        1,
+        3,
+        0,
+        2
+      ],
+      "openingDistances": [
+        {
+          "color": 1,
+          "distance": 6
+        },
+        {
+          "color": 2,
+          "distance": 5
+        },
+        {
+          "color": 3,
+          "distance": 6
+        }
+      ],
+      "visited": 52,
+      "regions": 17,
+      "canonical": "6:000111201202100220201220213222102332"
+    },
+    {
+      "id": "flood-049",
+      "solution": [
+        2,
+        0,
+        1,
+        0,
+        3
+      ],
+      "openingDistances": [
+        {
+          "color": 0,
+          "distance": 6
+        },
+        {
+          "color": 2,
+          "distance": 5
+        },
+        {
+          "color": 3,
+          "distance": 6
+        }
+      ],
+      "visited": 57,
+      "regions": 15,
+      "canonical": "6:000111023030213110211200331202323000"
+    },
+    {
+      "id": "flood-050",
+      "solution": [
+        1,
+        0,
+        1,
+        2,
+        3
+      ],
+      "openingDistances": [
+        {
+          "color": 0,
+          "distance": 6
+        },
+        {
+          "color": 1,
+          "distance": 5
+        },
+        {
+          "color": 3,
+          "distance": 6
+        }
+      ],
+      "visited": 71,
+      "regions": 16,
+      "canonical": "6:001101220111122223311213312123013120"
+    },
+    {
+      "id": "flood-051",
+      "solution": [
+        3,
+        0,
+        1,
+        2,
+        3
+      ],
+      "openingDistances": [
+        {
+          "color": 0,
+          "distance": 6
+        },
+        {
+          "color": 1,
+          "distance": 6
+        },
+        {
+          "color": 3,
+          "distance": 5
+        }
+      ],
+      "visited": 78,
+      "regions": 13,
+      "canonical": "6:000012213022223022113220323300300130"
+    },
+    {
+      "id": "flood-052",
+      "solution": [
+        0,
+        3,
+        0,
+        1,
+        2
+      ],
+      "openingDistances": [
+        {
+          "color": 0,
+          "distance": 5
+        },
+        {
+          "color": 1,
+          "distance": 6
+        },
+        {
+          "color": 3,
+          "distance": 5
+        }
+      ],
+      "visited": 88,
+      "regions": 12,
+      "canonical": "6:000112001122123110112310033322330222"
+    },
+    {
+      "id": "flood-053",
+      "solution": [
+        2,
+        0,
+        1,
+        0,
+        2,
+        3
+      ],
+      "openingDistances": [
+        {
+          "color": 0,
+          "distance": 7
+        },
+        {
+          "color": 1,
+          "distance": 7
+        },
+        {
+          "color": 2,
+          "distance": 6
+        }
+      ],
+      "visited": 36,
+      "regions": 13,
+      "canonical": "6:000122222110123210322200203100221101"
+    },
+    {
+      "id": "flood-054",
+      "solution": [
+        0,
+        3,
+        0,
+        1,
+        0,
+        2
+      ],
+      "openingDistances": [
+        {
+          "color": 0,
+          "distance": 6
+        },
+        {
+          "color": 2,
+          "distance": 6
+        },
+        {
+          "color": 3,
+          "distance": 7
+        }
+      ],
+      "visited": 39,
+      "regions": 13,
+      "canonical": "6:000110201000021110102211202231000133"
+    },
+    {
+      "id": "flood-055",
+      "solution": [
+        0,
+        1,
+        2,
+        0,
+        1,
+        3
+      ],
+      "openingDistances": [
+        {
+          "color": 0,
+          "distance": 6
+        },
+        {
+          "color": 1,
+          "distance": 7
+        },
+        {
+          "color": 3,
+          "distance": 6
+        }
+      ],
+      "visited": 60,
+      "regions": 13,
+      "canonical": "6:000011112122322203222033111211111222"
+    },
+    {
+      "id": "flood-056",
+      "solution": [
+        0,
+        1,
+        0,
+        1,
+        2,
+        3
+      ],
+      "openingDistances": [
+        {
+          "color": 0,
+          "distance": 6
+        },
+        {
+          "color": 1,
+          "distance": 6
+        },
+        {
+          "color": 2,
+          "distance": 7
+        }
+      ],
+      "visited": 60,
+      "regions": 13,
+      "canonical": "6:001112133013113330110000010333213320"
+    },
+    {
+      "id": "flood-057",
+      "solution": [
+        2,
+        3,
+        2,
+        0,
+        1,
+        3
+      ],
+      "openingDistances": [
+        {
+          "color": 0,
+          "distance": 7
+        },
+        {
+          "color": 2,
+          "distance": 6
+        },
+        {
+          "color": 3,
+          "distance": 6
+        }
+      ],
+      "visited": 70,
+      "regions": 17,
+      "canonical": "6:000112003310331131321012131002100122"
+    },
+    {
+      "id": "flood-058",
+      "solution": [
+        2,
+        0,
+        1,
+        3,
+        0,
+        1
+      ],
+      "openingDistances": [
+        {
+          "color": 0,
+          "distance": 7
+        },
+        {
+          "color": 2,
+          "distance": 6
+        },
+        {
+          "color": 3,
+          "distance": 7
+        }
+      ],
+      "visited": 87,
+      "regions": 17,
+      "canonical": "6:000110010212010123111233201330120220"
+    },
+    {
+      "id": "flood-059",
+      "solution": [
+        1,
+        0,
+        1,
+        0,
+        2,
+        3
+      ],
+      "openingDistances": [
+        {
+          "color": 0,
+          "distance": 7
+        },
+        {
+          "color": 1,
+          "distance": 6
+        },
+        {
+          "color": 3,
+          "distance": 7
+        }
+      ],
+      "visited": 110,
+      "regions": 15,
+      "canonical": "6:000011223222033211230002031202322002"
+    },
+    {
+      "id": "flood-060",
+      "solution": [
+        2,
+        3,
+        1,
+        0,
+        2,
+        3
+      ],
+      "openingDistances": [
+        {
+          "color": 1,
+          "distance": 7
+        },
+        {
+          "color": 2,
+          "distance": 6
+        },
+        {
+          "color": 3,
+          "distance": 7
+        }
+      ],
+      "visited": 171,
+      "regions": 16,
+      "canonical": "6:001112233112020000111203133033231002"
+    },
+    {
+      "id": "flood-061",
+      "solution": [
+        0,
+        1,
+        2,
+        0,
+        1,
+        3
+      ],
+      "openingDistances": [
+        {
+          "color": 0,
+          "distance": 6
+        },
+        {
+          "color": 1,
+          "distance": 7
+        },
+        {
+          "color": 2,
+          "distance": 7
+        }
+      ],
+      "visited": 58,
+      "regions": 15,
+      "canonical": "7:0001121222121132111113313333001221322231222233220"
+    },
+    {
+      "id": "flood-062",
+      "solution": [
+        0,
+        2,
+        1,
+        0,
+        2,
+        3
+      ],
+      "openingDistances": [
+        {
+          "color": 0,
+          "distance": 6
+        },
+        {
+          "color": 1,
+          "distance": 7
+        },
+        {
+          "color": 3,
+          "distance": 6
+        }
+      ],
+      "visited": 62,
+      "regions": 19,
+      "canonical": "7:0000100213010010200331313000022000000110000222032"
+    },
+    {
+      "id": "flood-063",
+      "solution": [
+        1,
+        0,
+        3,
+        0,
+        1,
+        2
+      ],
+      "openingDistances": [
+        {
+          "color": 1,
+          "distance": 6
+        },
+        {
+          "color": 2,
+          "distance": 7
+        },
+        {
+          "color": 3,
+          "distance": 7
+        }
+      ],
+      "visited": 68,
+      "regions": 16,
+      "canonical": "7:0000122111212020110000032003303233331220001112112"
+    },
+    {
+      "id": "flood-064",
+      "solution": [
+        2,
+        0,
+        1,
+        3,
+        0,
+        2
+      ],
+      "openingDistances": [
+        {
+          "color": 0,
+          "distance": 7
+        },
+        {
+          "color": 1,
+          "distance": 7
+        },
+        {
+          "color": 2,
+          "distance": 6
+        }
+      ],
+      "visited": 82,
+      "regions": 16,
+      "canonical": "7:0000121111110132223110000010120311022230121200022"
+    },
+    {
+      "id": "flood-065",
+      "solution": [
+        2,
+        0,
+        3,
+        0,
+        1,
+        2
+      ],
+      "openingDistances": [
+        {
+          "color": 0,
+          "distance": 7
+        },
+        {
+          "color": 2,
+          "distance": 6
+        },
+        {
+          "color": 3,
+          "distance": 6
+        }
+      ],
+      "visited": 97,
+      "regions": 16,
+      "canonical": "7:0001012020111300221331023000110000333221113111331"
+    },
+    {
+      "id": "flood-066",
+      "solution": [
+        0,
+        3,
+        1,
+        0,
+        2,
+        3
+      ],
+      "openingDistances": [
+        {
+          "color": 0,
+          "distance": 6
+        },
+        {
+          "color": 1,
+          "distance": 7
+        },
+        {
+          "color": 3,
+          "distance": 7
+        }
+      ],
+      "visited": 98,
+      "regions": 17,
+      "canonical": "7:0001123200311123333111332011122000033020003303132"
+    },
+    {
+      "id": "flood-067",
+      "solution": [
+        2,
+        0,
+        3,
+        0,
+        1,
+        2
+      ],
+      "openingDistances": [
+        {
+          "color": 0,
+          "distance": 7
+        },
+        {
+          "color": 1,
+          "distance": 7
+        },
+        {
+          "color": 2,
+          "distance": 6
+        }
+      ],
+      "visited": 102,
+      "regions": 14,
+      "canonical": "7:0011101201311100011230100022000212201223223223300"
+    },
+    {
+      "id": "flood-068",
+      "solution": [
+        0,
+        3,
+        1,
+        0,
+        2,
+        3
+      ],
+      "openingDistances": [
+        {
+          "color": 0,
+          "distance": 6
+        },
+        {
+          "color": 1,
+          "distance": 7
+        },
+        {
+          "color": 3,
+          "distance": 7
+        }
+      ],
+      "visited": 120,
+      "regions": 20,
+      "canonical": "7:0001100233200311322220333111032101323330030121101"
+    },
+    {
+      "id": "flood-069",
+      "solution": [
+        1,
+        3,
+        1,
+        0,
+        2,
+        3
+      ],
+      "openingDistances": [
+        {
+          "color": 1,
+          "distance": 6
+        },
+        {
+          "color": 2,
+          "distance": 7
+        },
+        {
+          "color": 3,
+          "distance": 7
+        }
+      ],
+      "visited": 193,
+      "regions": 21,
+      "canonical": "7:0001011210321212022220223133132011312223103212311"
+    },
+    {
+      "id": "flood-070",
+      "solution": [
+        1,
+        3,
+        0,
+        2,
+        1,
+        3
+      ],
+      "openingDistances": [
+        {
+          "color": 1,
+          "distance": 6
+        },
+        {
+          "color": 2,
+          "distance": 7
+        },
+        {
+          "color": 3,
+          "distance": 7
+        }
+      ],
+      "visited": 195,
+      "regions": 18,
+      "canonical": "7:0010011111022210003110333323023331130213223222233"
+    },
+    {
+      "id": "flood-071",
+      "solution": [
+        3,
+        2,
+        1,
+        0,
+        2,
+        3
+      ],
+      "openingDistances": [
+        {
+          "color": 0,
+          "distance": 7
+        },
+        {
+          "color": 2,
+          "distance": 7
+        },
+        {
+          "color": 3,
+          "distance": 6
+        }
+      ],
+      "visited": 216,
+      "regions": 20,
+      "canonical": "7:0000012333311023312202301111332010102230320221021"
+    },
+    {
+      "id": "flood-072",
+      "solution": [
+        0,
+        3,
+        1,
+        2,
+        0,
+        3
+      ],
+      "openingDistances": [
+        {
+          "color": 0,
+          "distance": 6
+        },
+        {
+          "color": 2,
+          "distance": 7
+        },
+        {
+          "color": 3,
+          "distance": 7
+        }
+      ],
+      "visited": 243,
+      "regions": 18,
+      "canonical": "7:0000012330011111222022122103333112210220301111000"
+    },
+    {
+      "id": "flood-073",
+      "solution": [
+        1,
+        2,
+        0,
+        2,
+        3,
+        1,
+        0
+      ],
+      "openingDistances": [
+        {
+          "color": 0,
+          "distance": 8
+        },
+        {
+          "color": 1,
+          "distance": 7
+        },
+        {
+          "color": 3,
+          "distance": 7
+        }
+      ],
+      "visited": 81,
+      "regions": 19,
+      "canonical": "7:0100112321011131222110002212000322201022301022132"
+    },
+    {
+      "id": "flood-074",
+      "solution": [
+        1,
+        0,
+        3,
+        1,
+        0,
+        2,
+        3
+      ],
+      "openingDistances": [
+        {
+          "color": 1,
+          "distance": 7
+        },
+        {
+          "color": 2,
+          "distance": 8
+        },
+        {
+          "color": 3,
+          "distance": 8
+        }
+      ],
+      "visited": 122,
+      "regions": 17,
+      "canonical": "7:0010221111122222101222330123220012303310120331033"
+    },
+    {
+      "id": "flood-075",
+      "solution": [
+        0,
+        1,
+        3,
+        2,
+        0,
+        1,
+        3
+      ],
+      "openingDistances": [
+        {
+          "color": 0,
+          "distance": 7
+        },
+        {
+          "color": 1,
+          "distance": 8
+        },
+        {
+          "color": 2,
+          "distance": 8
+        }
+      ],
+      "visited": 131,
+      "regions": 18,
+      "canonical": "7:0000110222212010220332022223211110023323130222313"
+    },
+    {
+      "id": "flood-076",
+      "solution": [
+        0,
+        1,
+        0,
+        3,
+        1,
+        2,
+        0
+      ],
+      "openingDistances": [
+        {
+          "color": 0,
+          "distance": 7
+        },
+        {
+          "color": 1,
+          "distance": 7
+        },
+        {
+          "color": 3,
+          "distance": 8
+        }
+      ],
+      "visited": 165,
+      "regions": 18,
+      "canonical": "7:0000012020111000312310332201223300202123020211033"
+    },
+    {
+      "id": "flood-077",
+      "solution": [
+        1,
+        0,
+        2,
+        0,
+        2,
+        3,
+        1
+      ],
+      "openingDistances": [
+        {
+          "color": 1,
+          "distance": 7
+        },
+        {
+          "color": 2,
+          "distance": 8
+        },
+        {
+          "color": 3,
+          "distance": 8
+        }
+      ],
+      "visited": 208,
+      "regions": 21,
+      "canonical": "7:0001223002000033010030332331122221112210320133332"
+    },
+    {
+      "id": "flood-078",
+      "solution": [
+        0,
+        3,
+        2,
+        0,
+        1,
+        2,
+        3
+      ],
+      "openingDistances": [
+        {
+          "color": 0,
+          "distance": 7
+        },
+        {
+          "color": 2,
+          "distance": 7
+        },
+        {
+          "color": 3,
+          "distance": 8
+        }
+      ],
+      "visited": 227,
+      "regions": 19,
+      "canonical": "7:0001102333013200101003220330300300000332112231211"
+    },
+    {
+      "id": "flood-079",
+      "solution": [
+        1,
+        3,
+        0,
+        2,
+        3,
+        1,
+        2
+      ],
+      "openingDistances": [
+        {
+          "color": 0,
+          "distance": 8
+        },
+        {
+          "color": 1,
+          "distance": 7
+        },
+        {
+          "color": 3,
+          "distance": 8
+        }
+      ],
+      "visited": 247,
+      "regions": 25,
+      "canonical": "7:0011122213200311021233221212223120203302002001200"
+    },
+    {
+      "id": "flood-080",
+      "solution": [
+        0,
+        2,
+        1,
+        2,
+        1,
+        0,
+        3
+      ],
+      "openingDistances": [
+        {
+          "color": 0,
+          "distance": 7
+        },
+        {
+          "color": 2,
+          "distance": 7
+        },
+        {
+          "color": 3,
+          "distance": 8
+        }
+      ],
+      "visited": 411,
+      "regions": 24,
+      "canonical": "7:0001221303122021130301213211000001101100203222311"
+    },
+    {
+      "id": "flood-081",
+      "solution": [
+        0,
+        1,
+        2,
+        0,
+        3,
+        1,
+        4
+      ],
+      "openingDistances": [
+        {
+          "color": 0,
+          "distance": 7
+        },
+        {
+          "color": 1,
+          "distance": 8
+        },
+        {
+          "color": 3,
+          "distance": 8
+        },
+        {
+          "color": 4,
+          "distance": 8
+        }
+      ],
+      "visited": 379,
+      "regions": 21,
+      "canonical": "8:0010002133400120300000113344111104432110042201110432023144322202"
+    },
+    {
+      "id": "flood-082",
+      "solution": [
+        3,
+        2,
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "openingDistances": [
+        {
+          "color": 1,
+          "distance": 8
+        },
+        {
+          "color": 2,
+          "distance": 8
+        },
+        {
+          "color": 3,
+          "distance": 7
+        },
+        {
+          "color": 4,
+          "distance": 8
+        }
+      ],
+      "visited": 638,
+      "regions": 26,
+      "canonical": "8:0001122203002214233220331324224433342224102322234220242221403420"
+    },
+    {
+      "id": "flood-083",
+      "solution": [
+        4,
+        1,
+        4,
+        0,
+        2,
+        1,
+        3
+      ],
+      "openingDistances": [
+        {
+          "color": 0,
+          "distance": 8
+        },
+        {
+          "color": 1,
+          "distance": 8
+        },
+        {
+          "color": 3,
+          "distance": 8
+        },
+        {
+          "color": 4,
+          "distance": 7
+        }
+      ],
+      "visited": 1390,
+      "regions": 26,
+      "canonical": "8:0000110000001020132413201244310011102444121022410214331342433233"
+    },
+    {
+      "id": "flood-084",
+      "solution": [
+        2,
+        3,
+        1,
+        4,
+        2,
+        0,
+        3
+      ],
+      "openingDistances": [
+        {
+          "color": 0,
+          "distance": 8
+        },
+        {
+          "color": 1,
+          "distance": 8
+        },
+        {
+          "color": 2,
+          "distance": 7
+        },
+        {
+          "color": 3,
+          "distance": 8
+        }
+      ],
+      "visited": 1605,
+      "regions": 23,
+      "canonical": "8:0001100002021233013400104331201240022214330001113304444300043343"
+    },
+    {
+      "id": "flood-085",
+      "solution": [
+        0,
+        2,
+        0,
+        2,
+        1,
+        0,
+        3,
+        4
+      ],
+      "openingDistances": [
+        {
+          "color": 0,
+          "distance": 8
+        },
+        {
+          "color": 2,
+          "distance": 9
+        },
+        {
+          "color": 3,
+          "distance": 9
+        },
+        {
+          "color": 4,
+          "distance": 9
+        }
+      ],
+      "visited": 209,
+      "regions": 20,
+      "canonical": "8:0000122200034220333442333033220020000002402003404333400143330001"
+    },
+    {
+      "id": "flood-086",
+      "solution": [
+        1,
+        4,
+        0,
+        1,
+        2,
+        0,
+        3,
+        4
+      ],
+      "openingDistances": [
+        {
+          "color": 0,
+          "distance": 9
+        },
+        {
+          "color": 1,
+          "distance": 8
+        },
+        {
+          "color": 2,
+          "distance": 9
+        },
+        {
+          "color": 4,
+          "distance": 9
+        }
+      ],
+      "visited": 537,
+      "regions": 21,
+      "canonical": "8:0000102340333003233330112311011121440331314402034443020344030013"
+    },
+    {
+      "id": "flood-087",
+      "solution": [
+        0,
+        1,
+        4,
+        2,
+        0,
+        3,
+        1,
+        4
+      ],
+      "openingDistances": [
+        {
+          "color": 0,
+          "distance": 8
+        },
+        {
+          "color": 1,
+          "distance": 8
+        },
+        {
+          "color": 2,
+          "distance": 9
+        },
+        {
+          "color": 3,
+          "distance": 9
+        }
+      ],
+      "visited": 1531,
+      "regions": 25,
+      "canonical": "8:0000012010223120431411102044223202202222031422220333301133103311"
+    },
+    {
+      "id": "flood-088",
+      "solution": [
+        1,
+        3,
+        1,
+        0,
+        2,
+        4,
+        1,
+        3
+      ],
+      "openingDistances": [
+        {
+          "color": 1,
+          "distance": 8
+        },
+        {
+          "color": 2,
+          "distance": 8
+        },
+        {
+          "color": 3,
+          "distance": 9
+        },
+        {
+          "color": 4,
+          "distance": 9
+        }
+      ],
+      "visited": 1778,
+      "regions": 25,
+      "canonical": "8:0000111212000113343311222332113101104023311042233210022144400011"
+    },
+    {
+      "id": "flood-089",
+      "solution": [
+        0,
+        1,
+        3,
+        2,
+        0,
+        1,
+        3,
+        4
+      ],
+      "openingDistances": [
+        {
+          "color": 0,
+          "distance": 8
+        },
+        {
+          "color": 2,
+          "distance": 9
+        },
+        {
+          "color": 3,
+          "distance": 8
+        },
+        {
+          "color": 4,
+          "distance": 8
+        }
+      ],
+      "visited": 1824,
+      "regions": 23,
+      "canonical": "8:0000100022032104110431443200323334422233444110021411122244314202"
+    },
+    {
+      "id": "flood-090",
+      "solution": [
+        2,
+        3,
+        4,
+        0,
+        2,
+        1,
+        3,
+        4
+      ],
+      "openingDistances": [
+        {
+          "color": 0,
+          "distance": 9
+        },
+        {
+          "color": 2,
+          "distance": 8
+        },
+        {
+          "color": 3,
+          "distance": 9
+        },
+        {
+          "color": 4,
+          "distance": 9
+        }
+      ],
+      "visited": 1868,
+      "regions": 30,
+      "canonical": "8:0001221132412223421042413220443023244422143444433303221111032221"
+    },
+    {
+      "id": "flood-091",
+      "solution": [
+        1,
+        4,
+        2,
+        1,
+        3,
+        0,
+        1,
+        4
+      ],
+      "openingDistances": [
+        {
+          "color": 0,
+          "distance": 9
+        },
+        {
+          "color": 1,
+          "distance": 8
+        },
+        {
+          "color": 2,
+          "distance": 9
+        },
+        {
+          "color": 3,
+          "distance": 9
+        }
+      ],
+      "visited": 2333,
+      "regions": 25,
+      "canonical": "8:0012122343122244333221433034113310443032132220021240330032000204"
+    },
+    {
+      "id": "flood-092",
+      "solution": [
+        4,
+        0,
+        2,
+        0,
+        1,
+        2,
+        0,
+        3,
+        4
+      ],
+      "openingDistances": [
+        {
+          "color": 0,
+          "distance": 10
+        },
+        {
+          "color": 1,
+          "distance": 10
+        },
+        {
+          "color": 2,
+          "distance": 10
+        },
+        {
+          "color": 4,
+          "distance": 9
+        }
+      ],
+      "visited": 749,
+      "regions": 27,
+      "canonical": "8:0001232244222301412212210043112400132124021202210124442210244322"
+    },
+    {
+      "id": "flood-093",
+      "solution": [
+        0,
+        3,
+        2,
+        1,
+        0,
+        4,
+        2,
+        3,
+        1
+      ],
+      "openingDistances": [
+        {
+          "color": 0,
+          "distance": 9
+        },
+        {
+          "color": 2,
+          "distance": 9
+        },
+        {
+          "color": 3,
+          "distance": 10
+        },
+        {
+          "color": 4,
+          "distance": 10
+        }
+      ],
+      "visited": 1695,
+      "regions": 29,
+      "canonical": "8:0000111100232344130311112234333323301023340114333400000243440020"
+    },
+    {
+      "id": "flood-094",
+      "solution": [
+        0,
+        1,
+        3,
+        4,
+        1,
+        2,
+        0,
+        3,
+        4
+      ],
+      "openingDistances": [
+        {
+          "color": 0,
+          "distance": 9
+        },
+        {
+          "color": 2,
+          "distance": 10
+        },
+        {
+          "color": 3,
+          "distance": 10
+        },
+        {
+          "color": 4,
+          "distance": 10
+        }
+      ],
+      "visited": 1833,
+      "regions": 29,
+      "canonical": "8:0001022311124030113204043034022233442210333344113134031113330332"
+    },
+    {
+      "id": "flood-095",
+      "solution": [
+        2,
+        0,
+        1,
+        4,
+        0,
+        2,
+        3,
+        1,
+        4
+      ],
+      "openingDistances": [
+        {
+          "color": 1,
+          "distance": 10
+        },
+        {
+          "color": 2,
+          "distance": 9
+        },
+        {
+          "color": 3,
+          "distance": 10
+        },
+        {
+          "color": 4,
+          "distance": 9
+        }
+      ],
+      "visited": 1879,
+      "regions": 30,
+      "canonical": "8:0011012113140324110433032222304432023241000000220044322343303242"
+    },
+    {
+      "id": "flood-096",
+      "solution": [
+        0,
+        1,
+        0,
+        4,
+        1,
+        0,
+        2,
+        3,
+        4
+      ],
+      "openingDistances": [
+        {
+          "color": 0,
+          "distance": 9
+        },
+        {
+          "color": 2,
+          "distance": 10
+        },
+        {
+          "color": 3,
+          "distance": 9
+        },
+        {
+          "color": 4,
+          "distance": 9
+        }
+      ],
+      "visited": 2035,
+      "regions": 27,
+      "canonical": "8:0001101022011134233231331002302340212001113220213131222141211123"
+    },
+    {
+      "id": "flood-097",
+      "solution": [
+        0,
+        1,
+        2,
+        3,
+        0,
+        4,
+        1,
+        2,
+        3
+      ],
+      "openingDistances": [
+        {
+          "color": 0,
+          "distance": 9
+        },
+        {
+          "color": 1,
+          "distance": 10
+        },
+        {
+          "color": 2,
+          "distance": 10
+        },
+        {
+          "color": 3,
+          "distance": 10
+        }
+      ],
+      "visited": 2168,
+      "regions": 27,
+      "canonical": "8:0010231103112340131022011104344110313342100111322221114431144442"
+    },
+    {
+      "id": "flood-098",
+      "solution": [
+        4,
+        0,
+        2,
+        1,
+        3,
+        2,
+        0,
+        1,
+        4
+      ],
+      "openingDistances": [
+        {
+          "color": 0,
+          "distance": 10
+        },
+        {
+          "color": 1,
+          "distance": 10
+        },
+        {
+          "color": 2,
+          "distance": 10
+        },
+        {
+          "color": 4,
+          "distance": 9
+        }
+      ],
+      "visited": 2221,
+      "regions": 31,
+      "canonical": "8:0001213313134422333000223313403214033014001333341101111424431441"
+    },
+    {
+      "id": "flood-099",
+      "solution": [
+        1,
+        4,
+        1,
+        2,
+        3,
+        4,
+        0,
+        1,
+        2
+      ],
+      "openingDistances": [
+        {
+          "color": 0,
+          "distance": 10
+        },
+        {
+          "color": 1,
+          "distance": 9
+        },
+        {
+          "color": 2,
+          "distance": 10
+        },
+        {
+          "color": 4,
+          "distance": 10
+        }
+      ],
+      "visited": 2981,
+      "regions": 29,
+      "canonical": "8:0012113011123032111040341140014422332422312312234003222143033411"
+    },
+    {
+      "id": "flood-100",
+      "solution": [
+        3,
+        2,
+        3,
+        1,
+        0,
+        4,
+        2,
+        1,
+        3
+      ],
+      "openingDistances": [
+        {
+          "color": 1,
+          "distance": 10
+        },
+        {
+          "color": 2,
+          "distance": 10
+        },
+        {
+          "color": 3,
+          "distance": 9
+        },
+        {
+          "color": 4,
+          "distance": 10
+        }
+      ],
+      "visited": 4899,
+      "regions": 31,
+      "canonical": "8:0011002211222130044400302220432224224124113243144132421414111433"
+    }
+  ]
+}

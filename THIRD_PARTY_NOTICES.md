@@ -178,3 +178,43 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 
+
+
+## Flood / 染色花园
+
+Source: https://github.com/chrisboyle/sgtpuzzles/tree/d1e10eb57dd80af4999e698a9ab31f546e9a0b9d
+
+The MIT flood.c queue-fill, completed-grid check and legal-move guards are ported into src/games/floodLogic.ts. Original campaign, exact BFS hints, storage, artwork and UI are Playgarden additions under GPL-3.0-only. No Android, Google Play graphics, upstream sound or artwork is included. Complete unmodified source and licence are retained in vendor/sgtatham-flood/.
+
+This software is copyright (c) 2004-2024 Simon Tatham.
+
+Portions copyright Richard Boulton, James Harvey, Mike Pinna, Jonas
+Kölker, Dariusz Olszewski, Michael Schierl, Lambros Lambrou, Bernd
+Schmidt, Steffen Bauer, Lennard Sprong, Rogier Goossens, Michael
+Quevillon, Asher Gordon, Didi Kohen, Ben Harris, Chris Boyle and
+Phil Tunstall.
+
+The notice below applies to the source as distributed at
+https://github.com/chrisboyle/sgtpuzzles and does not apply to
+the additional graphics distributed in the Google Play Store
+version.
+
+Permission is hereby granted, free of charge, to any person
+obtaining a copy of this software and associated documentation files
+(the "Software"), to deal in the Software without restriction,
+including without limitation the rights to use, copy, modify, merge,
+publish, distribute, sublicense, and/or sell copies of the Software,
+and to permit persons to whom the Software is furnished to do so,
+subject to the following conditions:
+
+The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
+BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
+ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.

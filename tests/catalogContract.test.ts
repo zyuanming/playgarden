@@ -1,3 +1,4 @@
+import { floodLevels } from "../src/games/floodLevels";
 import { breakoutLevels } from "../src/games/breakoutLogic";
 import { runnerLessons } from "../src/games/cloudrunnerLogic";
 import { xiangqiLevels } from "../src/games/xiangqiLevels";
@@ -90,6 +91,7 @@ import { sortingNetworkLevels } from "../src/games/sortingNetworkLogic";
 import { voxelViewsLevels } from "../src/games/voxelViewsLogic";
 import { cubeNetLevels } from "../src/games/cubeNetLogic";
 const packs = {
+  flood: floodLevels,
   gomoku: gomokuLevels,
   xiangqi: xiangqiLevels,
   cloudrunner: runnerLessons,
@@ -178,7 +180,8 @@ const packs = {
   connect: connectLevels,
   reversi: reversiLevels,
   merge: [],
-  snake: [], falling: [],
+  snake: [],
+  falling: [],
   traffic: trafficLevels,
 };
 describe("Scalable catalog contract", () => {
@@ -210,8 +213,8 @@ describe("Scalable catalog contract", () => {
       }
     }),
   );
-  it("counts only 89 real games and 2071 levels, not the roadmap", () => {
-    expect(games).toHaveLength(89);
-    expect(games.reduce((sum, g) => sum + g.levelCount, 0)).toBe(2071);
+  it("counts only 90 real games and 2171 levels, not the roadmap", () => {
+    expect(games).toHaveLength(90);
+    expect(games.reduce((sum, g) => sum + g.levelCount, 0)).toBe(2171);
   });
 });
