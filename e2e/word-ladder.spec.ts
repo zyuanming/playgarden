@@ -59,7 +59,7 @@ test("Word ladder: real spelling, alternate route, error guards, pause, undo and
 
   await page.getByRole("button", { name: "暂停", exact: true }).click();
   await expect(input).toBeDisabled();
-  expect(await root.locator("button").evaluateAll(buttons => buttons.every(button => button.disabled))).toBe(true);
+  expect(await root.locator("button").evaluateAll(buttons => buttons.every(button => (button as HTMLButtonElement).disabled))).toBe(true);
   await expect(root).toHaveAttribute("data-word-ladder-current", "BAT");
   await page.getByRole("button", { name: "继续游戏", exact: true }).click();
   await reenter(page);
