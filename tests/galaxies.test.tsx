@@ -103,6 +103,8 @@ it("uses real DOM for selection, keyboard-safe edit, hint, pause, undo, resume, 
     root = () => view.container.querySelector(".galaxies-layout")!;
   const cell = (j: number) =>
     view.container.querySelector(`button[data-cell="${j}"]`)!;
+  expect(view.container.querySelector(".galaxies-stats")!.textContent).toContain("当前对称");
+  expect(screen.queryAllByLabelText("规则满足")).toHaveLength(0);
   fireEvent.click(screen.getByRole("button", { name: `选择 ${g + 1} 号星心` }));
   fireEvent.click(cell(i));
   const one = root().getAttribute("data-galaxies-state");

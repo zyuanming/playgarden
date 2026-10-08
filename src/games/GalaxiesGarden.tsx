@@ -186,7 +186,7 @@ function GalaxiesRound({
             待归队 <strong>{check.missing}</strong> 格
           </span>
           <span>
-            规则满足{" "}
+            当前对称{" "}
             <strong>{check.completeRegions.filter(Boolean).length}</strong> /{" "}
             {p.centers.length} 区
           </span>
@@ -212,7 +212,7 @@ function GalaxiesRound({
               }}
             >
               <span>✦ {g + 1}</span>
-              {check.completeRegions[g] && (
+              {check.won && check.completeRegions[g] && (
                 <small aria-label="规则满足">✓</small>
               )}
             </button>
@@ -327,7 +327,9 @@ function GalaxiesRound({
           点击或 Enter /
           空格操作，方向键移动焦点。提示仅建议下一格；暂停、撤销与重来在上方。
         </p>
-        <p>填到一半时，星系暂未对称或连通很正常。填满后全部符合规则才过关。</p>
+        <p>
+          「当前对称」也检查连通，只计算已归队的格子。暂未对称或连通很正常；填满后全部符合规则才过关。
+        </p>
         <p className="galaxies-save">
           {saved
             ? "当前星图已保存在本机。保留最近 2000 个局面。"
