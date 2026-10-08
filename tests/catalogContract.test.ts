@@ -1,3 +1,4 @@
+import { lunarLandingLevels } from "../src/games/lunarLandingLogic";
 import { crossingStages } from "../src/games/frogCrossingLogic";
 import { bubbleShooterLevels } from "../src/games/bubbleShooterLevels";
 import { numberlinkLevels } from "../src/games/numberlinkLevels";
@@ -112,6 +113,7 @@ const packs = {
   "numberlink": numberlinkLevels,
   "bubble-shooter": bubbleShooterLevels,
   "frog-crossing": crossingStages,
+  "lunar-landing": lunarLandingLevels,
   gomoku: gomokuLevels,
   xiangqi: xiangqiLevels,
   cloudrunner: runnerLessons,
@@ -233,8 +235,8 @@ describe("Scalable catalog contract", () => {
       }
     }),
   );
-  it("counts only 100 real games and 2414 levels, not the roadmap", () => {
-    expect(games).toHaveLength(100);
-    expect(games.reduce((sum, g) => sum + g.levelCount, 0)).toBe(2414);
+  it("counts only 101 real games and 2426 levels, not the roadmap", () => {
+    expect(games).toHaveLength(101);
+    expect(games.reduce((sum, g) => sum + g.levelCount, 0)).toBe(2426);
   });
 });
