@@ -1,0 +1,17 @@
+{
+  "repository": "https://github.com/chrisboyle/sgtpuzzles",
+  "commit": "d1e10eb57dd80af4999e698a9ab31f546e9a0b9d",
+  "license": "MIT",
+  "files": [
+    {
+      "path": "galaxies.c",
+      "upstreamPath": "app/src/main/jni/galaxies.c",
+      "sha256": "0bce7e53b5acf61e91a6ed033b0a08b801617a42d380c11701ee588bd5ec30bc"
+    },
+    {
+      "path": "LICENCE",
+      "upstreamPath": "LICENCE",
+      "sha256": "42ad32e495b10a778fa7c935e07326b40ac8d11b400a0919a623bcf2e048e294"
+    }
+  ]
+}
