@@ -16,8 +16,6 @@ npm run dev
 打开终端显示的本地地址。生产构建与检查：
 
 ```bash
-npm run typecheck
-npm test
 npm run build
 ```
 
@@ -146,10 +144,10 @@ npx playwright test --config=playwright.pages.config.ts
 - 历史基线（各款 12 关）已通过 TypeScript 类型检查、Vite 生产构建和 2577 项本地逻辑/存储/DOM 自动化测试。本次 112 关重建的实际验收状态以对应 PR 与 GitHub Actions 为准。每个关卡都有可复现的解法验证；数独验证唯一解，花园侦探验证不猜测推理，熄灯谜阵用 GF(2) 求解器验证。
 - 浏览器自动化配置覆盖 1536×1024 桌面窗口和 390×844 触屏模拟窗口。场景覆盖全部 2243 关（Lights Out 按 8 章、矩形花园和林间帐篷按 5 关短批次分开验证，另含高索引当前存档续玩），并检查键盘连续操作、可见线索、滚动区域及关键按钮交互态对比度。每次提交的验收状态、实际截图与独立复核以对应 GitHub Actions 结果及 PR 记录为准。
 - 浏览器测试发现并修复了机器人换关时旧动画帧导致的错误，并加入回归测试。DOM 测试另外覆盖重来、撤销与执行中暂停/恢复。
-- 运行 `npx playwright install chromium` 后可用 `npm run test:e2e` 重现浏览器检查；完整结果和临时截图在 [GitHub Actions](https://github.com/zyuanming/playgarden/actions) 中查看。
+- 运行 `npx playwright install chromium` 后可用 `npm run test:e2e -- e2e/<game>.spec.ts` 只执行完成游戏的一次最终浏览器验证；完整结果和临时截图在 [GitHub Actions](https://github.com/zyuanming/playgarden/actions) 中查看。
 - 尚未验证 Safari、Firefox、真实 iOS/Android 硬件、屏幕阅读器或完整 WCAG 合规性。手机尺寸的 Chromium 测试不等于真机验收。
 - 全量依赖审计在 2026-10-04 报告 0 项漏洞；该结果是时间点检查，不是持续安全保证。
-- CI 对 PR 只检查；main 通过原有质量检查与 Pages 生产构建检查后，才会发布到 GitHub Pages，并对返回的真实公开网址再次运行桌面/手机尺寸 smoke。
+- 当前流程（2026-10-08）：普通提交只做构建、类型和许可检查，暂停单元测试及旧关卡穷举。每款开发完成后仅执行一次该游戏的桌面/手机尺寸 E2E；main 不重复 E2E，只构建发布并核对公网 commit 与关键入口资源。详见 AGENTS.md。
 
 ## 模块结构
 
