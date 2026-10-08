@@ -55,6 +55,7 @@ export function unlinkSignpost(p: SignpostLevel,state:number[],from:number){
   const next=[...state];next[from]=-1;return next;
 }
 export function solveSignpost(p: SignpostLevel,state:number[],budget=50000):{kind:'solution';state:number[];nodes:number}|{kind:'none'|'budget';nodes:number}{
+  const limit=Number.isFinite(budget)?Math.min(50000,Math.max(0,Math.floor(budget))):50000;
   const check=inspectSignpost(p,state);let nodes=0,exceeded=false,answer:number[]|null=null;
   if(!check.valid)return {kind:'none',nodes};
   const n=state.length,anchors=new Map(p.clues.map((v,i)=>[v,i])),start=anchors.get(1);
@@ -62,7 +63,7 @@ export function solveSignpost(p: SignpostLevel,state:number[],budget=50000):{kin
   const edges=state.map((v,i)=>v>=0?[v]:Array.from({length:n},(_,j)=>j).filter(j=>pointsTo(p,i,j)));
   const used=new Set<number>([start]),path=[start];
   function visit(){
-    if(++nodes>Math.max(0,budget)){exceeded=true;return;}
+    if(++nodes>limit){exceeded=true;return;}
     if(path.length===n){answer=initialSignpost(p);for(let k=0;k<n-1;k++)answer[path[k]]=path[k+1];return;}
     const from=path[path.length-1],k=path.length+1;
     for(const to of edges[from]){

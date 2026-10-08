@@ -31,7 +31,8 @@ test('Signpost actual30 touch and keyboard chains, interruptions and persistence
   // Start in the middle to exercise relative chain labels, then join both halves.
   const order=Array.from({length:answer.length-1},(_,k)=>k),mid=Math.floor(order.length/2);order.push(...order.splice(0,mid));
   for(const [j,k] of order.entries()){await link(answer[k],answer[k+1],index===0);if(shots&&j===mid)await page.screenshot({path:info.outputPath(`signpost-${index+1}-mid.png`),fullPage:true});}
-  await expect(root).toHaveAttribute('data-signpost-won','true');await expect(page.locator('.status')).toHaveClass(/success/);await expect(cell(0)).toBeDisabled();expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
+  await expect(root).toHaveAttribute('data-signpost-won','true');
+  expect(await root.locator('.signpost-cell').evaluateAll(cells=>cells.every(c=>{const box=c.getBoundingClientRect(),number=c.querySelector('strong')!.getBoundingClientRect(),arrow=c.querySelector('.signpost-arrow')!.getBoundingClientRect();return box.width>=44&&box.height>=44&&number.right<=arrow.left+1;}))).toBe(true);await expect(page.locator('.status')).toHaveClass(/success/);await expect(cell(0)).toBeDisabled();expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
   if(shots)await page.screenshot({path:info.outputPath(`signpost-${index+1}-completed.png`),fullPage:true});
  }
  expect(errors).toEqual([]);
