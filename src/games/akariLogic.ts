@@ -199,12 +199,7 @@ export function parseAkariSave(
   const initial = () => [Array(p.board.length).fill(0) as number[]];
   try {
     const x = JSON.parse(raw ?? "null");
-    if (
-      x?.id !== p.id ||
-      !Array.isArray(x.history) ||
-      !x.history.length ||
-      x.history.length > 501
-    )
+    if (x?.id !== p.id || !Array.isArray(x.history) || !x.history.length)
       return initial();
     const history = x.history as number[][];
     if (history[0].length !== p.board.length || history[0].some((v) => v !== 0))

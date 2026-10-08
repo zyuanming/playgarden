@@ -82,6 +82,19 @@ describe("Akari rules and campaign", () => {
     expect(
       parseAkariSave(JSON.stringify({ id: p.id, history: [s, next] }), p),
     ).toEqual([s, next]);
+    const longHistory = [s];
+    for (let turn = 0; turn < 501; turn++)
+      longHistory.push(
+        changeAkari(
+          p,
+          longHistory[longHistory.length - 1],
+          i,
+          turn % 2 === 0 ? 1 : 0,
+        ),
+      );
+    expect(
+      parseAkariSave(JSON.stringify({ id: p.id, history: longHistory }), p),
+    ).toEqual(longHistory);
     for (const raw of [
       "{",
       JSON.stringify({ id: "wrong", history: [s, next] }),
