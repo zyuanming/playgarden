@@ -6,7 +6,7 @@
     {
       "path": "lightup.c",
       "upstreamPath": "app/src/main/jni/lightup.c",
-      "sha256": "6a71261c4400fe0da3ff1848d130aef1df95f25ce08c470458577f1f619b8e15"
+      "sha256": "1189eee0871bdb027b0b06fdaf68231778943254d69643320c7cdb37a9f6d323"
     },
     {
       "path": "LICENCE",

@@ -43,6 +43,17 @@ test("Akari real 36-level journey with keyboard, touch, interruption, conflict a
     .click();
   await expect(root).toHaveAttribute("data-akari-state", one!);
   await page.getByRole("button", { name: "重来", exact: true }).click();
+  await cell(1).click();
+  await cell(2).click();
+  await expect(root.locator(".clash")).toHaveCount(2);
+  await page.screenshot({
+    path: info.outputPath("akari-mutual-light-conflict.png"),
+    fullPage: true,
+  });
+  await page.getByRole("button", { name: "重来", exact: true }).click();
+  await cell(1).focus();
+  await cell(1).press("ArrowRight");
+  await expect(cell(2)).toBeFocused();
   for (let index = 0; index < 36; index++) {
     if (index) await chooseLevel(page, index);
     const p = akariLevels[index];
