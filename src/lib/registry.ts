@@ -1296,5 +1296,24 @@ export const games: GameDefinition[] = [
     },
     component: lazy(() => import("../games/MagnetsGarden")),
   },
+  {
+    id: "signpost",
+    title: "箭头路标",
+    subtitle: "顺着方向拼接路线，让每个数字找到自己的驿站。",
+    category: "逻辑思维",
+    difficulty: "中级",
+    tone: "green",
+    levelCount: 30,
+    resumeKey: "playgarden.signpost.v1",
+    artwork: { url: "./signpost-art.svg", position: "50% 50%", size: "cover" },
+    source: {
+      kind: "adapted", license: "MIT", author: "Simon Tatham and contributors",
+      workTitle: "Signpost",
+      url: "https://github.com/chrisboyle/sgtpuzzles/tree/d1e10eb57dd80af4999e698a9ab31f546e9a0b9d",
+      commit: "d1e10eb57dd80af4999e698a9ab31f546e9a0b9d", notice: "./signpost-LICENCE.txt",
+      notes: "移植 Signpost 的八向射线、数字链一致性与完成规则；原创30关、可从中段拼接的界面、当前局面搜索提示与存档。",
+    },
+    component: lazy(() => import("../games/SignpostGarden")),
+  },
 ];
 export const findGame = (id: string) => games.find((game) => game.id === id);

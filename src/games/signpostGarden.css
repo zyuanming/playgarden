@@ -1,0 +1,43 @@
+.signpost-layout { display:grid;grid-template-columns:minmax(0,1.4fr) minmax(220px,.8fr);gap:22px;max-width:1040px;margin:auto;color:#243f45; }
+.signpost-play { padding:24px;background:#fcfaf2;border:1px solid #dae0d4;border-radius:22px;min-width:0; }
+.signpost-heading { display:flex;align-items:center;justify-content:space-between;gap:12px; }
+.signpost-heading h3 { margin:7px 0;font-size:25px; }
+.signpost-heading>span { color:#536d70;font-size:13px;font-variant-numeric:tabular-nums;white-space:nowrap; }
+.signpost-eyebrow { color:#466b68;letter-spacing:1.4px;font-size:11px;font-weight:800; }
+.signpost-intro { font-size:13px;line-height:1.8; }
+.signpost-stats { display:flex;align-items:center;justify-content:space-between;font-size:12px;padding:10px 0; }
+.signpost-stats strong { font-size:21px;color:#23695f; }
+.signpost-toolbar { display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:9px 0 18px; }
+.signpost-toolbar button { min-height:44px;padding:8px 12px;border:1px solid #aebfb5;border-radius:10px;background:#fff;color:#2b5352;font-size:12px;cursor:pointer; }
+.signpost-toolbar button:disabled { color:#63746e;background:#edf0e8;cursor:default;opacity:1; }
+.signpost-toolbar>span { flex:1;min-width:130px;text-align:right;font-size:11px;color:#546963; }
+.signpost-board { display:grid;grid-template-columns:repeat(var(--signpost-width),minmax(0,1fr));gap:8px;max-width:530px;margin:auto; }
+.signpost-cell { position:relative;aspect-ratio:1;border:1px solid #bdccc2;border-radius:13px;background:#fffef9;color:#2c5053;min-width:0;min-height:44px;padding:0;cursor:pointer;display:flex;align-items:center;justify-content:center; }
+.signpost-cell.fixed { border:2px solid #4d7369;background:#edf1e5; }
+.signpost-cell strong { font-size:clamp(18px,2.8vw,29px);font-variant-numeric:tabular-nums;transform:translate(-6px,-1px); }
+.signpost-coordinate { position:absolute;left:7px;top:5px;color:#66786d;font-size:9px;font-weight:500; }
+.signpost-arrow { position:absolute;right:7px;top:42%;font-size:clamp(19px,2.5vw,29px);font-weight:800;line-height:1;color:#3f7268; }
+.signpost-tags { position:absolute;bottom:5px;left:7px;font-size:9px;color:#556e64; }
+.signpost-cell.ray { background:#e2f1eb;border-color:#84aa9c; }
+.signpost-cell.linked { background:#eaf0e8; }
+.signpost-cell.selected { outline:3px solid #326e67;outline-offset:2px;background:#cce2d6;z-index:1; }
+.signpost-cell.hint { outline:3px dashed #a66e25;outline-offset:2px;background:#f8edcf; }
+.signpost-cell:hover:not(:disabled) { box-shadow:inset 0 0 0 2px #7c9a8b; }
+.signpost-cell:focus-visible,.signpost-toolbar button:focus-visible { outline:3px solid #b8782c;outline-offset:3px;z-index:2; }
+.signpost-cell:disabled { opacity:1;cursor:default; }
+.signpost-legend { display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin:15px 0;font-size:10px;color:#576e65; }
+.signpost-message { font-size:13px;line-height:1.85;padding:14px;margin:13px 0 0;border-radius:12px;background:#e8eee0;min-height:77px; }
+.signpost-notes { align-self:start;padding:25px 22px;border-radius:20px;background:#eef2e9; }
+.signpost-notes h3 { font-size:21px;line-height:1.6;margin:13px 0; }
+.signpost-notes ol { font-size:13px;line-height:1.85;padding-left:20px; }
+.signpost-notes li { margin:10px 0; }
+.signpost-notes p { font-size:12px;line-height:1.85;color:#536d61; }
+.signpost-save { border-top:1px solid #cbd7c5;padding-top:13px; }
+.signpost-links { margin-top:15px;font-size:12px;color:#3a5e59; }
+.signpost-links summary { padding:12px 0;cursor:pointer;min-height:44px; }
+.signpost-links ul { margin:0;padding:0;max-height:180px;overflow:auto;list-style:none; }
+.signpost-links li { display:flex;justify-content:space-between;gap:10px;padding:7px;border-bottom:1px solid #dbe2d3; }
+@media(max-width:700px){
+ .signpost-layout{grid-template-columns:1fr;gap:16px}.signpost-play{padding:16px 10px}.signpost-heading h3{font-size:21px}.signpost-heading{padding:0 3px}.signpost-board{gap:6px}.signpost-toolbar{gap:6px}.signpost-toolbar button{padding:7px 10px}.signpost-toolbar>span{min-width:120px}.signpost-cell{border-radius:9px}.signpost-coordinate{top:4px;left:5px;font-size:8px}.signpost-cell strong{font-size:20px;transform:translate(-5px,0)}.signpost-arrow{right:4px;font-size:21px;top:42%}.signpost-tags{font-size:8px;left:4px;bottom:3px}.signpost-notes{padding:21px}.signpost-message{font-size:12px;padding:12px}.signpost-legend{font-size:9px;gap:8px}
+}
+@media(prefers-reduced-motion:reduce){.signpost-layout *{scroll-behavior:auto}}
