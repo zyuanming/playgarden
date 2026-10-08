@@ -1427,5 +1427,14 @@ export const games: GameDefinition[] = [
     source: { kind: "original", license: "GPL-3.0-only", notes: "经典变词阶梯规则的原创实现；12 关词本、中文释义、界面与 SVG 均为本项目原创，无外部词典、图片或移植源码。" },
     component: lazy(() => import("../games/WordLadderGarden")),
   },
+  {
+    id: "freecell-garden", title: "空位纸牌",
+    subtitle: "先留一个空位，再让四种花色依次回家。",
+    category: "逻辑思维", difficulty: "中级", tone: "green",
+    levelCount: 12, resumeKey: "playgarden.freecell-garden.v1",
+    artwork: { url: "./freecell-garden-art.svg", position: "center", size: "cover" },
+    source: { kind: "original", license: "GPL-3.0-only", notes: "通用 FreeCell 规则的原创单张移动实现；12 个手作教学牌局使用四花色 A–3/4/5/6 小牌组（12–24 张），包含牌列、单张空位、同花色升序归位、全部合法落点预览、可撤销动作重放存档及原创 SVG。并非完整 52 张牌模式；未复制第三方源码或素材。" },
+    component: lazy(() => import("../games/FreecellGarden")),
+  },
 ];
 export const findGame = (id: string) => games.find((game) => game.id === id);
