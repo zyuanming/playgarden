@@ -25,6 +25,14 @@ test("Galaxies actual 36-level keyboard and touch journey, errors, pause and res
   await expect(root).toHaveAttribute("data-galaxies-state", s.join(","));
   await expect(cell(i)).toBeFocused();
   await cell(i).press("Enter");
+  await cell(i).click();
+  await expect(root).toHaveAttribute("data-galaxies-state", s.join(","));
+  await cell(i).click();
+  await star(-1).click();
+  await cell(i).click();
+  await expect(root).toHaveAttribute("data-galaxies-state", s.join(","));
+  await star(g).click();
+  await cell(i).click();
   const one = await root.getAttribute("data-galaxies-state");
   await page.getByRole("button", { name: "暂停", exact: true }).click();
   await expect(cell(i)).toBeDisabled();

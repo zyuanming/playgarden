@@ -8,6 +8,8 @@
 
 运行 python3 scripts/galaxies/generate.py --check 重现题库。答案仅在离线 docs/galaxies/campaign.json，未装入运行时关卡。提示按当前所有归队格子进行20000节点预算搜索，只指出下一格并选中建议编号，不代填；无解提示回退，预算用尽不会误报无解。对称或连通暂未满足是中间状态，用户可继续编辑。编号与边界提供非颜色识别。最多保留2000个局面以限制本地存档大小；超出后仍保留最新局面与最近撤销历史。
 
+独立复核另外使用整块对称区域枚举 + exact-cover（不导入作者求解器），确认36关各有唯一完整覆盖且D4互异；按平移与D4合并仍有47种区域形状，包含40个非矩形区域。各章独立搜索节点中位数为10、17、70、137，可编辑格中位数10、16、26、36。这是结构与求解工作量证据，不是人类难度评分。复核器保留于 scripts/galaxies-independent/。
+
 ## 上游实质复用
 
 MIT Simon Tatham and contributors，chrisboyle/sgtpuzzles 固定提交 d1e10eb57dd80af4999e698a9ab31f546e9a0b9d。galaxies.c 的 Git blob 为63b4f5b098221c02e197b866c7d4758eb2aa70bd。完整原文、许可和SHA256保存在 vendor/sgtatham-galaxies/；公开网站随包提供完整许可。

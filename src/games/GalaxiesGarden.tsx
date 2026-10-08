@@ -222,7 +222,11 @@ function GalaxiesRound({
             data-star="-1"
             aria-pressed={selected === -1}
             disabled={blocked}
-            onClick={() => setSelected(-1)}
+            onClick={() => {
+              setSelected(-1);
+              setHint(null);
+              report("已选清除。点可编辑的格子，移除它的归队编号。");
+            }}
           >
             清除
           </button>
@@ -243,7 +247,7 @@ function GalaxiesRound({
               data-cell={i}
               data-owner={g}
               data-fixed={fixed[i] >= 0}
-              className={`galaxies-cell ${g >= 0 ? `galaxies-color color-${g % 8}` : "unassigned"} ${fixed[i] >= 0 ? "fixed" : ""} ${g === selected ? "selected-region" : ""} ${hint === i ? "hint" : ""} ${g >= 0 && opposite(p, g, i) < 0 ? "conflict" : ""}`}
+              className={`galaxies-cell ${g >= 0 ? `galaxies-color color-${g % 8}` : "unassigned"} ${fixed[i] >= 0 ? "fixed" : ""} ${g >= 0 && g === selected ? "selected-region" : ""} ${hint === i ? "hint" : ""} ${g >= 0 && opposite(p, g, i) < 0 ? "conflict" : ""}`}
               style={{
                 borderRightWidth:
                   i % p.size === p.size - 1 || state[i] !== state[i + 1]

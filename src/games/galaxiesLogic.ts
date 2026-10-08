@@ -53,6 +53,18 @@ export function initialGalaxies(p: GalaxiesLevel) {
 /** Regions are represented by cell assignments; their borders are exactly where
  * labels differ. There can be no redundant internal border in this UI. */
 export function inspectGalaxies(p: GalaxiesLevel, state: number[]) {
+  if (
+    state.length !== p.size * p.size ||
+    Array.from(state).some((g) => !Number.isInteger(g) || g < -1 || g >= p.centers.length)
+  ) {
+    return {
+      missing: p.size * p.size,
+      valid: new Set<number>(),
+      invalid: new Set(Array.from({ length: p.size * p.size }, (_, i) => i)),
+      completeRegions: p.centers.map(() => false),
+      won: false,
+    };
+  }
   const n = p.size,
     total = n * n,
     parent = Array.from({ length: total }, (_, i) => i);
