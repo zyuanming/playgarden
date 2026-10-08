@@ -1445,5 +1445,14 @@ export const games: GameDefinition[] = [
     source: { kind: "original", license: "GPL-3.0-only", notes: "原创编队射击实现、12 个有限关卡与程序化 SVG；未复制第三方游戏源码或商业素材。" },
     component: lazy(() => import("../games/StarSentry")),
   },
+  {
+    id: "petal-words", title: "花瓣猜词",
+    subtitle: "猜一个字母，展开所有位置，拼好十二封花信。",
+    category: "逻辑思维", difficulty: "初级", tone: "green",
+    levelCount: 12, resumeKey: "playgarden.petal-words.v1",
+    artwork: { url: "./petal-words-art.svg", position: "center", size: "cover" },
+    source: { kind: "original", license: "GPL-3.0-only", notes: "原创有限字母猜词实现，12封词语花信、中文线索与SVG插画；重复字母一次全开，错误消耗花瓣，支持明示成本的提示和撤销。无外部词典、代码或素材。" },
+    component: lazy(() => import("../games/PetalWords")),
+  },
 ];
 export const findGame = (id: string) => games.find((game) => game.id === id);
