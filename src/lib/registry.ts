@@ -1640,5 +1640,26 @@ export const games: GameDefinition[] = [
     },
     "component": lazy(() => import("../games/FrogSwap"))
   },
+  {
+    "id": "three-morris",
+    "title": "三子移阵",
+    "subtitle": "三颗棋子，沿线移动，连成花行",
+    "category": "逻辑思维",
+    "difficulty": "中级",
+    "tone": "green",
+    "levelCount": 8,
+    "artwork": {
+      "url": "./three-morris-art.svg",
+      "position": "center",
+      "size": "cover"
+    },
+    "allowUndo": true,
+    "source": {
+      "kind": "original",
+      "license": "GPL-3.0-only",
+      "notes": "原创三子棋规则与七层本地搜索、八道战术残局、中文说明及 SVG 插画；未复制第三方源码或关卡。"
+    },
+    "component": lazy(() => import("../games/ThreeMorrisGarden"))
+  },
 ];
 export const findGame = (id: string) => games.find((game) => game.id === id);
