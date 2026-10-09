@@ -1,3 +1,4 @@
+import { cipherLettersLevels } from "../src/games/cipherLettersLogic";
 import { sceneDifferencesLevels } from "../src/games/sceneDifferencesLogic";
 import { soloChessLevels } from "../src/games/soloChessLogic";
 import { foxHoundsLevels } from "../src/games/foxHoundsLogic";
@@ -121,6 +122,7 @@ import { sortingNetworkLevels } from "../src/games/sortingNetworkLogic";
 import { voxelViewsLevels } from "../src/games/voxelViewsLogic";
 import { cubeNetLevels } from "../src/games/cubeNetLogic";
 const packs = {
+  "cipher-letters": cipherLettersLevels,
   "scene-differences": sceneDifferencesLevels,
   "solo-chess": soloChessLevels,
   "fox-hounds": foxHoundsLevels,
@@ -273,8 +275,8 @@ describe("Scalable catalog contract", () => {
       }
     }),
   );
-  it("counts only 120 real games and 2611 levels, not the roadmap", () => {
-    expect(games).toHaveLength(120);
-    expect(games.reduce((sum, g) => sum + g.levelCount, 0)).toBe(2611);
+  it("counts only 121 real games and 2619 levels, not the roadmap", () => {
+    expect(games).toHaveLength(121);
+    expect(games.reduce((sum, g) => sum + g.levelCount, 0)).toBe(2619);
   });
 });

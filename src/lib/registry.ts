@@ -1722,5 +1722,25 @@ export const games: GameDefinition[] = [
     },
     "component": lazy(() => import("../games/SceneDifferences"))
   },
+  {
+    "id": "cipher-letters",
+    "title": "密码花信",
+    "subtitle": "把字母一一对应，解开藏在花信里的英文短句。",
+    "category": "逻辑思维",
+    "difficulty": "中级",
+    "tone": "orange",
+    "levelCount": 8,
+    "artwork": {
+      "url": "./cipher-letters-art.svg",
+      "position": "center",
+      "size": "cover"
+    },
+    "source": {
+      "kind": "original",
+      "license": "GPL-3.0-only",
+      "notes": "原创一一替换密码实现、八封自编英文花信、中文线索与 SVG 插画；无外部引语、词典或游戏源码。"
+    },
+    "component": lazy(() => import("../games/CipherLetters"))
+  },
 ];
 export const findGame = (id: string) => games.find((game) => game.id === id);

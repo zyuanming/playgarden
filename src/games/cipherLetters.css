@@ -1,0 +1,259 @@
+/* SPDX-License-Identifier: GPL-3.0-only */
+.ciph-game {
+  display: grid;
+  grid-template-columns: minmax(0, 1.7fr) minmax(230px, 0.75fr);
+  gap: 24px;
+  color: #4c493a;
+}
+.ciph-desk,
+.ciph-notes {
+  min-width: 0;
+  padding: 24px;
+  border: 1px solid #dedcc8;
+  border-radius: 24px;
+  background: #fffdf3;
+}
+.ciph-desk header {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  align-items: center;
+}
+.ciph-desk header span,
+.ciph-notes > span {
+  font-size: 10px;
+  letter-spacing: 1.6px;
+  color: #96916f;
+  font-weight: 800;
+}
+.ciph-desk h3 {
+  font-size: 26px;
+  margin: 9px 0;
+}
+.ciph-desk header > b {
+  font-size: 33px;
+  color: #9b8453;
+}
+.ciph-desk header small {
+  font-size: 13px;
+}
+.ciph-clue {
+  font-size: 14px;
+  line-height: 1.8;
+  background: #efe9d2;
+  border-radius: 14px;
+  padding: 15px;
+}
+.ciph-letter {
+  padding: 22px 14px;
+  border: 1px solid #dccb9d;
+  border-radius: 15px;
+  background: repeating-linear-gradient(#faf4df 0, #faf4df 31px, #e9dfbd 32px);
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin: 22px 0;
+}
+.ciph-word {
+  display: flex;
+  gap: 3px;
+  max-width: 100%;
+}
+.ciph-word button {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  align-items: center;
+  min-width: 24px;
+  min-height: 54px;
+  background: #ffffff9c;
+  border: 1px solid #ddcda6;
+  border-radius: 6px;
+  padding: 4px;
+  color: #6d6349;
+}
+.ciph-word small {
+  font-size: 10px;
+}
+.ciph-word strong {
+  font:
+    700 21px ui-monospace,
+    monospace;
+}
+.ciph-word button.selected {
+  background: #e8e6bf;
+  border-color: #9a925e;
+}
+.ciph-section {
+  font-size: 12px;
+  color: #8b805f;
+  font-weight: 700;
+  margin: 20px 0 11px;
+}
+.ciph-codes {
+  display: flex;
+  gap: 7px;
+  flex-wrap: wrap;
+}
+.ciph-codes button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 69px;
+  border: 1px solid #d4cfb6;
+  background: #f9f7ec;
+  border-radius: 9px;
+  padding: 7px;
+  color: #635c42;
+  font:
+    700 15px ui-monospace,
+    monospace;
+  cursor: pointer;
+}
+.ciph-codes button > span {
+  font-size: 9px;
+  color: #aaa380;
+}
+.ciph-codes button[aria-pressed="true"] {
+  border: 2px solid #6b8167;
+  background: #e7edda;
+  color: #40563b;
+}
+.ciph-selection {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  margin: 17px 0;
+}
+.ciph-selection button {
+  min-height: 44px;
+  border: 1px solid #ccc5ab;
+  border-radius: 9px;
+  padding: 9px 13px;
+  background: #fffdf1;
+  color: #756142;
+  font-size: 12px;
+  cursor: pointer;
+}
+.ciph-keyboard {
+  display: grid;
+  grid-template-columns: repeat(9, minmax(44px, 1fr));
+  gap: 7px;
+}
+.ciph-keyboard button {
+  min-height: 48px;
+  min-width: 44px;
+  border: 1px solid #cfc6a8;
+  border-radius: 9px;
+  background: #fffbeb;
+  color: #655534;
+  font:
+    bold 17px ui-monospace,
+    monospace;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 3px;
+}
+.ciph-keyboard small {
+  font-size: 8px;
+  min-height: 9px;
+  font-weight: 400;
+  color: #928971;
+}
+.ciph-keyboard .occupied {
+  background: #ece9df;
+  color: #968e76;
+}
+.ciph-game button:disabled {
+  cursor: default;
+  opacity: 0.65;
+}
+.ciph-game button:focus-visible,
+.ciph-keyboard:focus-visible {
+  outline: 3px solid #827097;
+  outline-offset: 2px;
+}
+.ciph-message {
+  padding: 14px;
+  background: #eeeddc;
+  border-radius: 13px;
+  min-height: 68px;
+  font-size: 13px;
+  line-height: 1.75;
+}
+.ciph-notes {
+  background: #eeedde;
+  align-self: start;
+}
+.ciph-notes h3 {
+  font-size: 29px;
+  line-height: 1.45;
+  margin: 17px 0;
+}
+.ciph-notes p,
+.ciph-notes li {
+  font-size: 14px;
+  line-height: 1.8;
+}
+.ciph-notes ol {
+  padding-left: 21px;
+}
+.ciph-notes li {
+  margin-bottom: 12px;
+}
+.ciph-notes summary {
+  min-height: 44px;
+  padding: 12px 0;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.ciph-notes .ciph-fine {
+  font-size: 11px;
+  color: #847f66;
+}
+@media (max-width: 950px) {
+  .ciph-game {
+    grid-template-columns: 1fr;
+  }
+  .ciph-keyboard {
+    grid-template-columns: repeat(9, minmax(44px, 1fr));
+  }
+}
+@media (max-width: 550px) {
+  .ciph-desk,
+  .ciph-notes {
+    padding: 15px;
+  }
+  .ciph-keyboard {
+    grid-template-columns: repeat(6, minmax(44px, 1fr));
+    gap: 6px;
+  }
+  .ciph-letter {
+    padding: 16px 9px;
+    gap: 13px;
+  }
+  .ciph-word {
+    gap: 2px;
+  }
+  .ciph-word button {
+    min-width: 23px;
+    padding: 3px;
+  }
+  .ciph-word strong {
+    font-size: 18px;
+  }
+  .ciph-codes {
+    gap: 6px;
+  }
+  .ciph-desk h3 {
+    font-size: 23px;
+  }
+}
