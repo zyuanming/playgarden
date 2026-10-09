@@ -1495,5 +1495,26 @@ export const games: GameDefinition[] = [
     },
     "component": lazy(() => import("../games/PipeTurns"))
   },
+  {
+    "id": "chomp-garden",
+    "title": "饼干陷阱",
+    "subtitle": "拿走一口，留下最后的苦杏仁",
+    "category": "逻辑思维",
+    "difficulty": "中级",
+    "tone": "orange",
+    "levelCount": 8,
+    "artwork": {
+      "url": "./chomp-garden-art.svg",
+      "position": "center",
+      "size": "cover"
+    },
+    "allowUndo": true,
+    "source": {
+      "kind": "original",
+      "license": "GPL-3.0-only",
+      "notes": "原创 Chomp 规则实现、八张有限教学棋盘、精确本地电脑、中文说明与 SVG 插画；未复制第三方源码或关卡。"
+    },
+    "component": lazy(() => import("../games/ChompGarden"))
+  },
 ];
 export const findGame = (id: string) => games.find((game) => game.id === id);
