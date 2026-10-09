@@ -2068,5 +2068,87 @@ export const games: GameDefinition[] = [
     },
     "component": lazy(() => import("../games/BalanceSculpture"))
   },
+  {
+    "id": "maze-chase",
+    "title": "星豆迷宫",
+    "subtitle": "观察巡逻下一步，收齐星豆，再安全走到出口。",
+    "category": "动作反应",
+    "difficulty": "中级",
+    "tone": "green",
+    "levelCount": 8,
+    "artwork": {
+      "url": "./maze-chase-art.svg",
+      "position": "center",
+      "size": "cover"
+    },
+    "source": {
+      "kind": "original",
+      "license": "GPL-3.0-only",
+      "notes": "原创回合制追逐规则、八张不同拓扑迷宫及 SVG 图画；固定巡逻而非实时追踪 AI，无第三方素材。"
+    },
+    "component": lazy(() => import("../games/MazeChase"))
+  },
+  {
+    "id": "cloud-hop",
+    "title": "云朵弹跳",
+    "subtitle": "在重力中左右飞，真正落上每朵云，跳到云海最高处。",
+    "category": "动作反应",
+    "difficulty": "中级",
+    "tone": "purple",
+    "levelCount": 8,
+    "artwork": {
+      "url": "./cloud-hop-art.svg",
+      "position": "center",
+      "size": "cover"
+    },
+    "source": {
+      "kind": "original",
+      "license": "GPL-3.0-only",
+      "notes": "原创竖向平台跳跃物理、八个建设性云梯课程、小鸟和云景 SVG；无外部素材。"
+    },
+    "allowUndo": false,
+    "component": lazy(() => import("../games/CloudHop"))
+  },
+  {
+    "id": "pinball-garden",
+    "title": "弹珠花台",
+    "subtitle": "用固定左右挡板接住落球，点亮花鼓，完成回击乐章。",
+    "category": "动作反应",
+    "difficulty": "中级",
+    "tone": "green",
+    "levelCount": 8,
+    "artwork": {
+      "url": "./pinball-garden-art.svg",
+      "position": "center",
+      "size": "cover"
+    },
+    "source": {
+      "kind": "original",
+      "license": "GPL-3.0-only",
+      "notes": "原创重力弹珠、固定线段挡板和花鼓碰撞规则、八种球台布局及 SVG；明确采用玩具物理，无第三方素材。"
+    },
+    "allowUndo": false,
+    "component": lazy(() => import("../games/PinballGarden"))
+  },
+  {
+    "id": "jigsaw-garden",
+    "title": "花园拼图",
+    "subtitle": "自由移动互补凹凸拼片，旋转归位，拼回八幅原创小风景。",
+    "category": "空间想象",
+    "difficulty": "初级",
+    "tone": "orange",
+    "levelCount": 8,
+    "artwork": {
+      "url": "./jigsaw-garden-art.svg",
+      "position": "center",
+      "size": "cover"
+    },
+    "source": {
+      "kind": "original",
+      "license": "GPL-3.0-only",
+      "notes": "原创自由摆放图片拼图、互补凹凸边、八幅独立构图 SVG 风景和关卡；无外部图片或第三方源码。"
+    },
+    "component": lazy(() => import("../games/JigsawGarden"))
+  },
 ];
 export const findGame = (id: string) => games.find((game) => game.id === id);
