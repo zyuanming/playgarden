@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
     inputs:
       e2e_file:
-        description: 'One finished game only, e.g. e2e/ataxx.spec.ts; blank means build only'
+        description: 'One to four finished game specs, separated by commas or spaces; blank means build only'
         required: false
         default: ''
         type: string
@@ -17,6 +17,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     timeout-minutes: 10
+    outputs:
+      games: ${{ steps.select.outputs.games }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -25,6 +27,23 @@ jobs:
         with:
           node-version: '24'
           cache: npm
+      - name: Select finished games for one targeted run each
+        id: select
+        if: >-
+          (github.event_name == 'workflow_dispatch' && inputs.e2e_file != '') ||
+          (github.event.action == 'ready_for_review' && contains(github.event.pull_request.body, 'Final E2E:'))
+        env:
+          REQUESTED_FILES: ${{ inputs.e2e_file }}
+        run: |
+          node --input-type=module <<'NODE'
+          import {readFileSync,appendFileSync,existsSync} from 'node:fs';
+          const event=JSON.parse(readFileSync(process.env.GITHUB_EVENT_PATH,'utf8'));
+          const requested=process.env.REQUESTED_FILES || event.pull_request?.body?.match(/^Final E2E:\s*(.+)$/m)?.[1] || '';
+          const files=[...new Set(requested.trim().split(/[\s,]+/).filter(Boolean))];
+          if(files.length<1 || files.length>4 || files.some(file=>!/^e2e\/[a-z0-9-]+\.spec\.ts$/.test(file) || !existsSync(file)))throw Error('Choose one to four existing game specs');
+          const games=files.map(file=>({file,id:file.slice(4,-8)}));
+          appendFileSync(process.env.GITHUB_OUTPUT,`games=${JSON.stringify(games)}\n`);
+          NODE
       - run: npm ci
       # build already performs the license-notice check and TypeScript check.
       # Unit tests and campaign enumeration are intentionally paused.
@@ -51,12 +70,15 @@ jobs:
 
   final-game-e2e:
     needs: build
-    # Small development pushes do not run browser tests. Mark the finished PR
-    # ready with a "Final E2E: e2e/name.spec.ts" line to request exactly one run.
-    # The current Ataxx release already completed its final E2E in run 37776268426.
-    if: >-
-      (github.event_name == 'workflow_dispatch' && inputs.e2e_file != '') ||
-      (github.event.action == 'ready_for_review' && contains(github.event.pull_request.body, 'Final E2E:'))
+    # Development pushes only build. A finished small batch runs each requested
+    # game's desktop/mobile journey once in its own parallel job.
+    if: needs.build.outputs.games != ''
+    name: final-game-e2e (${{ matrix.game.id }})
+    strategy:
+      fail-fast: false
+      max-parallel: 4
+      matrix:
+        game: ${{ fromJSON(needs.build.outputs.games || '[]') }}
     runs-on: ubuntu-latest
     timeout-minutes: 12
     steps:
@@ -68,27 +90,15 @@ jobs:
           node-version: '24'
           cache: npm
       - run: npm ci
-      - name: Select one finished game
-        id: select
-        env:
-          REQUESTED_FILE: ${{ inputs.e2e_file }}
-        run: |
-          node --input-type=module <<'NODE'
-          import {readFileSync,appendFileSync,existsSync} from 'node:fs';
-          const event=JSON.parse(readFileSync(process.env.GITHUB_EVENT_PATH,'utf8'));
-          const file=process.env.REQUESTED_FILE || event.pull_request?.body?.match(/^Final E2E:\s*(e2e\/[a-z0-9-]+\.spec\.ts)\s*$/m)?.[1];
-          if(!file || !/^e2e\/[a-z0-9-]+\.spec\.ts$/.test(file) || !existsSync(file))throw Error('Choose exactly one existing game spec');
-          appendFileSync(process.env.GITHUB_OUTPUT,`file=${file}\n`);
-          NODE
       - run: npx playwright install --with-deps chromium
       - name: Final desktop and touch-size journey for this game only
         run: npm run test:e2e -- "$E2E_FILE"
         env:
-          E2E_FILE: ${{ steps.select.outputs.file }}
+          E2E_FILE: ${{ matrix.game.file }}
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: final-game-evidence
+          name: final-game-evidence-${{ matrix.game.id }}
           path: |
             test-results/**/*.png
             test-results/**/error-context.md

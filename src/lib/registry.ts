@@ -1923,5 +1923,66 @@ export const games: GameDefinition[] = [
     },
     "component": lazy(() => import("../games/DiceCombinations"))
   },
+  {
+    "id": "river-pong",
+    "title": "河畔乒乓",
+    "subtitle": "横向移动球拍，借拍面与边墙，把小球送过对岸。",
+    "category": "动作反应",
+    "difficulty": "中级",
+    "tone": "green",
+    "levelCount": 8,
+    "allowUndo": false,
+    "artwork": {
+      "url": "./river-pong-art.svg",
+      "position": "center",
+      "size": "cover"
+    },
+    "source": {
+      "kind": "original",
+      "license": "GPL-3.0-only",
+      "notes": "原创球拍对打引擎、八个有限计分练习、速度受限的本地电脑与 SVG 插画；无第三方游戏源码或素材。"
+    },
+    "component": lazy(() => import("../games/RiverPong"))
+  },
+  {
+    "id": "hexapawn",
+    "title": "小兵冲线",
+    "subtitle": "向前一步、斜吃一步，与聪明的对手争夺冲线和封锁。",
+    "category": "逻辑思维",
+    "difficulty": "中级",
+    "tone": "green",
+    "levelCount": 8,
+    "artwork": {
+      "url": "./hexapawn-art.svg",
+      "position": "50% 50%",
+      "size": "cover"
+    },
+    "source": {
+      "kind": "original",
+      "license": "GPL-3.0-only",
+      "notes": "原创双向小兵规则、精确本地对弈算法、8 个 3×3/4×4 战术局面与 SVG；有直走、斜吃、冲线和无着法胜负，无第三方棋谱或源码。"
+    },
+    "component": lazy(() => import("../games/Hexapawn"))
+  },
+  {
+    "id": "mini-golf",
+    "title": "草地推杆",
+    "subtitle": "调整角度与力度，绕过花坛，把小球轻轻送进洞口。",
+    "category": "科学实验",
+    "difficulty": "中级",
+    "tone": "green",
+    "levelCount": 8,
+    "artwork": {
+      "url": "./mini-golf-art.svg",
+      "position": "center",
+      "size": "cover"
+    },
+    "source": {
+      "kind": "original",
+      "license": "GPL-3.0-only",
+      "notes": "原创平面推杆、摩擦与反弹模型、八个果岭、轨迹提示及 SVG 图形；无第三方游戏代码或素材。"
+    },
+    "component": lazy(() => import("../games/MiniGolf"))
+  },
 ];
 export const findGame = (id: string) => games.find((game) => game.id === id);
