@@ -1,0 +1,42 @@
+<!doctype html>
+<!-- Playgarden adaptation UI, SPDX-License-Identifier: GPL-3.0-only. -->
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'none'; font-src 'none'; base-uri 'none'; form-action 'none'">
+  <title>Coil · 光迹围球</title>
+  <link rel="stylesheet" href="./style.css">
+  <script defer src="./geometry.js"></script>
+  <script defer src="./coil.js"></script>
+  <script defer src="./bridge.js"></script>
+</head>
+<body data-phase="welcome">
+  <div class="hud" aria-label="本局状态">
+    <div class="energy"><span>能量 <b id="energy-value">100</b></span><meter id="energy-meter" min="0" max="100" value="100">100</meter></div>
+    <div><span>得分</span><b id="score-value">0</b></div>
+    <div><span>最高</span><b id="best-value">0</b></div>
+    <div><span>连击 <b id="multiplier-value">×1</b></span><progress id="multiplier-progress" max="1" value="0" aria-label="下一档倍率进度"></progress></div>
+    <div><span>时间</span><b id="time-value">0 秒</b></div>
+    <button id="pause-button" type="button" disabled>暂停画圈</button>
+  </div>
+  <main id="game">
+    <canvas id="world" tabindex="0" aria-label="画圈游戏区域：移动鼠标或手指，方向键或WASD移动光标。圈住蓝球，避开红色叉号。Escape暂停。"></canvas>
+    <div id="marks" aria-hidden="true"></div>
+    <div id="cursor" hidden aria-hidden="true"></div>
+    <section id="menu" class="overlay" aria-label="开始或重开">
+      <div class="menu-card">
+        <span class="eyebrow">COIL · 无尽挑战</span>
+        <h1>让光迹首尾相交</h1>
+        <p>快速画一圈，让轨迹相交，围住蓝色圆点。红色叉号是炸弹，要留在圈外。</p>
+        <p id="score" hidden>本局得分 <strong>0</strong></p>
+        <button id="start-button" type="button">开始画圈</button>
+        <p class="small">鼠标移动 / 手指画圈<br>方向键或 WASD 移动 · Escape 暂停</p>
+      </div>
+    </section>
+    <div id="paused" class="pause-overlay" hidden>已暂停<br><span>时间、能量与光迹已冻结</span></div>
+  </main>
+  <footer><p id="feedback" role="status">圈住蓝球 +1 能量；蓝球超时或圈中炸弹 −30。</p><p id="storage-note" hidden>浏览器未允许保存，最高分只保留到离开本页。</p></footer>
+</body>
+</html>

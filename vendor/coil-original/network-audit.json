@@ -1,0 +1,133 @@
+{
+  "reviewType": "static source inspection; no runtime requests observed because no project executed",
+  "automaticRemoteRequests": [
+    "fonts.googleapis.com CSS for Molengo",
+    "fonts.googleapis.com CSS for Ubuntu",
+    "www.facebook.com/plugins/like.php iframe",
+    "platform.twitter.com/widgets.js script",
+    "api.flattr.com/js/0.6/load.js script"
+  ],
+  "automaticLocalAssets": [
+    "css/reset.css",
+    "css/main.css",
+    "js/libs/jquery-1.6.2.min.js",
+    "js/header.js",
+    "js/util.js",
+    "js/coil.js",
+    "images/background.jpg",
+    "images/texture.png (only WebGL path)",
+    "favicon.ico (browser conventional lookup)"
+  ],
+  "linksOnly": [
+    "hakim.se author/source",
+    "twitter.com/hakimel profile",
+    "twitter.com/share action"
+  ],
+  "notRequest": "CSS selector a[href=\"http://www.w3counter.com\"] is not a request. Author/shim URLs in comments are not requests.",
+  "allRuntimeRemoteRequestsToRemove": true,
+  "jquery": "Bundled full library contains AJAX/script-injection APIs, but app source does not call them; remove library from runtime.",
+  "audio": "No audio assets or playback APIs found.",
+  "persistence": "No app storage/account/server dependency found.",
+  "matches": [
+    {
+      "file": "index.html",
+      "line": 20,
+      "text": "<link href='http://fonts.googleapis.com/css?family=Molengo' rel='stylesheet' type='text/css'>"
+    },
+    {
+      "file": "index.html",
+      "line": 21,
+      "text": "<link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>"
+    },
+    {
+      "file": "index.html",
+      "line": 157,
+      "text": "Created by <a href=\"http://hakim.se/\">Hakim El Hattab</a> | <a href=\"http://twitter.com/hakimel\">@hakimel</a>"
+    },
+    {
+      "file": "index.html",
+      "line": 164,
+      "text": "<iframe id=\"facebook-button\" src=\"http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fhakim.se%2Fexperiments%2Fhtml5%2Fcoil%2F&layout=box_count&show_faces=false&width=90&action=like&font=arial&colorscheme=light&height=21\" scrolling=\"no\" frameborder=\"0\" style=\"border:none; overflow:hidden; width:55px; height:60px;\" allowTransparency=\"true\"></iframe>"
+    },
+    {
+      "file": "index.html",
+      "line": 166,
+      "text": "<a href=\"http://twitter.com/share\" class=\"twitter-share-button\" data-url=\"http://hakim.se/experiments/html5/coil/\" data-text=\"Use your trail to enclose enemies in this reflex HTML5 game, Coil by @hakimel\" data-count=\"vertical\" data-related=\"hakimel\">Tweet</a>"
+    },
+    {
+      "file": "index.html",
+      "line": 167,
+      "text": "<script type=\"text/javascript\" src=\"http://platform.twitter.com/widgets.js\"></script>"
+    },
+    {
+      "file": "index.html",
+      "line": 170,
+      "text": "<a class=\"FlattrButton\" style=\"display:none;\" href=\"http://hakim.se/experiments/html5/coil/\"></a>"
+    },
+    {
+      "file": "index.html",
+      "line": 196,
+      "text": "<script src=\"js/libs/jquery-1.6.2.min.js\"></script>"
+    },
+    {
+      "file": "index.html",
+      "line": 197,
+      "text": "<script src=\"js/header.js\"></script>"
+    },
+    {
+      "file": "index.html",
+      "line": 198,
+      "text": "<script src=\"js/util.js\"></script>"
+    },
+    {
+      "file": "index.html",
+      "line": 199,
+      "text": "<script src=\"js/coil.js\"></script>"
+    },
+    {
+      "file": "index.html",
+      "line": 207,
+      "text": "s.src = 'http://api.flattr.com/js/0.6/load.js?mode=auto';"
+    },
+    {
+      "file": "css/main.css",
+      "line": 128,
+      "text": "a[href=\"http://www.w3counter.com\"] {"
+    },
+    {
+      "file": "css/main.css",
+      "line": 145,
+      "text": "background: url('../images/background.jpg');"
+    },
+    {
+      "file": "js/coil.js",
+      "line": 5,
+      "text": "* @author Hakim El Hattab (http://hakim.se)"
+    },
+    {
+      "file": "js/coil.js",
+      "line": 229,
+      "text": "effectsTexture = WebGLUtil.loadTexture( context3d, 'images/texture.png', $.proxy( function() {"
+    },
+    {
+      "file": "js/util.js",
+      "line": 46,
+      "text": "texture.image = new Image();"
+    },
+    {
+      "file": "js/util.js",
+      "line": 51,
+      "text": "texture.image.src = path;"
+    },
+    {
+      "file": "js/util.js",
+      "line": 160,
+      "text": "// shim layer with setTimeout fallback from http://paulirish.com/2011/requestanimationframe-for-smart-animating/"
+    },
+    {
+      "file": "js/header.js",
+      "line": 5,
+      "text": "* @author Hakim El Hattab / http://hakim.se"
+    }
+  ]
+}

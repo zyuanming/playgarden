@@ -146,6 +146,7 @@ import { sortingNetworkLevels } from "../src/games/sortingNetworkLogic";
 import { voxelViewsLevels } from "../src/games/voxelViewsLogic";
 import { cubeNetLevels } from "../src/games/cubeNetLogic";
 const packs = {
+  "coil": [],
   "server-survival": serverSurvivalOriginalLevels,
   "perimeter-garden": perimeterGardenLevels,
   "pendulum-push": pendulumPushLevels,
@@ -323,8 +324,8 @@ describe("Scalable catalog contract", () => {
       }
     }),
   );
-  it("counts only 145 real games and 2828 levels, not the roadmap", () => {
-    expect(games).toHaveLength(145);
+  it("counts only 146 real games and 2828 levels, not the roadmap", () => {
+    expect(games).toHaveLength(146);
     expect(games.reduce((sum, g) => sum + g.levelCount, 0)).toBe(2828);
   });
 });

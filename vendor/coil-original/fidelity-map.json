@@ -1,0 +1,264 @@
+{
+  "mode": "one endless game, zero finite levels",
+  "allTopLevelGameFunctions": [
+    {
+      "name": "initialize",
+      "line": 156
+    },
+    {
+      "name": "activate3dEffects",
+      "line": 212
+    },
+    {
+      "name": "disable3dEffects",
+      "line": 259
+    },
+    {
+      "name": "showLagWarning",
+      "line": 269
+    },
+    {
+      "name": "createSprites",
+      "line": 275
+    },
+    {
+      "name": "createEffects",
+      "line": 361
+    },
+    {
+      "name": "start",
+      "line": 367
+    },
+    {
+      "name": "stop",
+      "line": 386
+    },
+    {
+      "name": "reset",
+      "line": 394
+    },
+    {
+      "name": "emitParticles",
+      "line": 422
+    },
+    {
+      "name": "emitEffect",
+      "line": 428
+    },
+    {
+      "name": "notify",
+      "line": 443
+    },
+    {
+      "name": "invalidate",
+      "line": 447
+    },
+    {
+      "name": "adjustScore",
+      "line": 456
+    },
+    {
+      "name": "update",
+      "line": 471
+    },
+    {
+      "name": "clear",
+      "line": 520
+    },
+    {
+      "name": "debug",
+      "line": 531
+    },
+    {
+      "name": "findIntersections",
+      "line": 541
+    },
+    {
+      "name": "solveIntersections",
+      "line": 589
+    },
+    {
+      "name": "updateMeta",
+      "line": 695
+    },
+    {
+      "name": "updatePlayer",
+      "line": 735
+    },
+    {
+      "name": "updateEnemies",
+      "line": 756
+    },
+    {
+      "name": "updateParticles",
+      "line": 839
+    },
+    {
+      "name": "updateEffects",
+      "line": 866
+    },
+    {
+      "name": "renderPlayer",
+      "line": 885
+    },
+    {
+      "name": "renderEnemies",
+      "line": 921
+    },
+    {
+      "name": "renderParticles",
+      "line": 964
+    },
+    {
+      "name": "renderNotifications",
+      "line": 982
+    },
+    {
+      "name": "renderEffects",
+      "line": 1021
+    },
+    {
+      "name": "renderHeader",
+      "line": 1051
+    },
+    {
+      "name": "handleEnemyDeath",
+      "line": 1166
+    },
+    {
+      "name": "handleBombDeath",
+      "line": 1180
+    },
+    {
+      "name": "handleEnemyInClosure",
+      "line": 1188
+    },
+    {
+      "name": "handleBombInClosure",
+      "line": 1213
+    },
+    {
+      "name": "findLineIntersection",
+      "line": 1222
+    },
+    {
+      "name": "onStartButtonClick",
+      "line": 1246
+    },
+    {
+      "name": "onLagWarningButtonClick",
+      "line": 1251
+    },
+    {
+      "name": "onDocumentMouseDownHandler",
+      "line": 1256
+    },
+    {
+      "name": "onDocumentMouseMoveHandler",
+      "line": 1260
+    },
+    {
+      "name": "onDocumentMouseUpHandler",
+      "line": 1271
+    },
+    {
+      "name": "onCanvasTouchStartHandler",
+      "line": 1275
+    },
+    {
+      "name": "onCanvasTouchMoveHandler",
+      "line": 1286
+    },
+    {
+      "name": "onCanvasTouchEndHandler",
+      "line": 1295
+    },
+    {
+      "name": "onWindowResizeHandler",
+      "line": 1299
+    },
+    {
+      "name": "Entity",
+      "line": 1348
+    },
+    {
+      "name": "Player",
+      "line": 1356
+    },
+    {
+      "name": "Enemy",
+      "line": 1372
+    },
+    {
+      "name": "Particle",
+      "line": 1391
+    },
+    {
+      "name": "Notification",
+      "line": 1410
+    },
+    {
+      "name": "Effect",
+      "line": 1424
+    },
+    {
+      "name": "Multiplier",
+      "line": 1435
+    }
+  ],
+  "preserveRulesAndContents": [
+    "createSprites",
+    "adjustScore",
+    "findIntersections",
+    "solveIntersections",
+    "updatePlayer",
+    "updateEnemies",
+    "updateParticles",
+    "renderPlayer",
+    "renderEnemies",
+    "renderParticles",
+    "renderNotifications",
+    "handleEnemyDeath",
+    "handleBombDeath",
+    "handleEnemyInClosure",
+    "handleBombInClosure",
+    "findLineIntersection",
+    "Entity",
+    "Player",
+    "Enemy",
+    "Particle",
+    "Notification",
+    "Multiplier"
+  ],
+  "requiresLifecycleOrUIAdaptation": [
+    "initialize",
+    "start",
+    "stop",
+    "reset",
+    "update",
+    "updateMeta",
+    "renderHeader",
+    "onDocumentMouseMoveHandler",
+    "onCanvasTouchStartHandler",
+    "onCanvasTouchMoveHandler",
+    "onWindowResizeHandler"
+  ],
+  "optionalDecorativePathsCanBeRemoved": [
+    "activate3dEffects",
+    "disable3dEffects",
+    "showLagWarning",
+    "createEffects",
+    "emitEffect",
+    "updateEffects",
+    "renderEffects",
+    "Effect",
+    "onLagWarningButtonClick"
+  ],
+  "criticalNotes": [
+    "Do not change cyan pixel predicate without equivalent collision evidence.",
+    "Do not invent finite campaign levels.",
+    "Declared mover types are never emitted by the original generator.",
+    "Correct implicit globals and initialize after prototype wiring.",
+    "60Hz/pause adaptations must not add catch-up frame simulation."
+  ]
+}
