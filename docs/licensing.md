@@ -46,3 +46,7 @@ The exact GPLv3 text was obtained from the SPDX license-list-data repository, `t
 ## Server Survival original integration
 
 Server Survival code, level definitions and code-generated geometry retain MIT at commit `7804e5969e28267cd33837e023eb46fa65da72b7`. Its complete 25-level campaign and 26-service simulation are retained. The local Three.js r128 and Tailwind v3.4.17 copies keep their own MIT notices and fixed source mappings in `runtime-source-manifest.json`. Full original sources, modifications and generation scripts are included in this commit. Audio and binary upstream artwork are excluded. Playgarden adapters and original card artwork are GPL-3.0-only. See [integration scope](server-survival-original.md) and the complete root/public third-party notices.
+
+## Coil原作无尽画圈游戏
+
+固定上游ea6fd3afae10a6d8a53b07e82be4211619206ede，MIT。完整核心、程序化图形与Point/Region几何来源保留；中文UI、原生输入/生命周期适配、原创SVG为GPL-3.0-only。未清权的三个装饰图、旧jQuery运行时、社交脚本、远程字体不进入站点。完整原文本及源代码专用jQuery MIT保存在vendor/coil-original；具体范围见docs/coil-original.md、THIRD_PARTY_NOTICES.md与runtime-source-manifest.json。

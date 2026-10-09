@@ -2245,5 +2245,32 @@ export const games: GameDefinition[] = [
     },
     "component": lazy(() => import("../games/ServerSurvivalOriginal"))
   },
+  {
+    "id": "coil",
+    "title": "光迹围球",
+    "subtitle": "让光迹首尾相交，圈住蓝球、避开炸弹，挑战更高分。",
+    "category": "动作反应",
+    "difficulty": "中级",
+    "tone": "green",
+    "levelCount": 0,
+    "endless": true,
+    "allowUndo": false,
+    "artwork": {
+      "url": "./coil-original-art.svg",
+      "position": "center",
+      "size": "cover"
+    },
+    "source": {
+      "kind": "adapted",
+      "license": "MIT",
+      "author": "Hakim El Hattab",
+      "workTitle": "Coil（完整原作无尽画圈游戏）",
+      "url": "https://github.com/leereilly/Coil/tree/ea6fd3afae10a6d8a53b07e82be4211619206ede",
+      "commit": "ea6fd3afae10a6d8a53b07e82be4211619206ede",
+      "notice": "./coil-original/LICENSE.txt",
+      "notes": "保留完整原作45点光迹、自交圈球、炸弹、倍率、计分与无尽生成规则。原代码与程序化图形为MIT；Playgarden中文界面、原生输入/生命周期适配和原创SVG为GPL-3.0-only。排除未清权装饰图片、旧jQuery运行时、社交脚本及远程字体。"
+    },
+    "component": lazy(() => import("../games/CoilOriginal"))
+  },
 ];
 export const findGame = (id: string) => games.find((game) => game.id === id);

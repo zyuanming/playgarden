@@ -1,0 +1,48 @@
+{
+  "upstream": "leereilly/Coil",
+  "commit": "ea6fd3afae10a6d8a53b07e82be4211619206ede",
+  "exactTextFiles": 10,
+  "exactTextBytes": 147210,
+  "unchangedCoreFunctions": [
+    "createSprites",
+    "createEffects",
+    "emitParticles",
+    "emitEffect",
+    "notify",
+    "invalidate",
+    "adjustScore",
+    "clear",
+    "debug",
+    "findIntersections",
+    "solveIntersections",
+    "updatePlayer",
+    "updateEnemies",
+    "updateParticles",
+    "renderPlayer",
+    "renderEnemies",
+    "renderParticles",
+    "renderNotifications",
+    "handleBombDeath",
+    "findLineIntersection"
+  ],
+  "instrumentedUnchangedHandlers": [
+    "handleEnemyDeath",
+    "handleEnemyInClosure",
+    "handleBombInClosure"
+  ],
+  "entityAndMultiplierDefinitions": "exact upstream match",
+  "geometry": "exact Point/Region excerpt",
+  "excludedUpstreamBinaryAssets": [
+    "images/background.jpg",
+    "images/texture.png",
+    "favicon.ico"
+  ],
+  "remoteRuntimeDependencies": 0,
+  "browserExecuted": false,
+  "meaning": "Static source/fidelity verification only; no browser or gameplay pass is claimed.",
+  "verifiedUTC": "2026-10-09",
+  "javascriptSyntax": "node --check passed for coil.js, geometry.js, bridge.js",
+  "typecheck": "Passed isolated TypeScript check against existing GameProps and Playwright helpers; no shared files edited",
+  "integrationBuild": "not run; integration owner must run npm run build",
+  "finalE2E": "not run; integration owner must run npm run test:e2e -- e2e/coil-original.spec.ts and review desktop/mobile screenshots"
+}

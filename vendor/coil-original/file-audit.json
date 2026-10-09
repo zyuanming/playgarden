@@ -1,0 +1,139 @@
+[
+  {
+    "path": ".gitignore",
+    "gitBlob": "5053dc6c462c7d7a1c68978d3a4c74b59cf1feb3",
+    "bytes": 33,
+    "licenseEvidence": "metadata",
+    "decision": "No runtime role; preserve text snapshot.",
+    "snapshotIncluded": true,
+    "runtimeUnchanged": false,
+    "sha256": "d269d7b96a5e60b0e0db2db83b762a53599dcb248f41afa8106a7757c54ca351",
+    "physicalPath": "source-snapshot/.gitignore.txt"
+  },
+  {
+    "path": "LICENSE",
+    "gitBlob": "28cfd7d48da73da5656278f0f46fe1e29a6e9242",
+    "bytes": 1075,
+    "licenseEvidence": "MIT / Hakim El Hattab",
+    "decision": "Keep full attribution in adaptation and source.",
+    "snapshotIncluded": true,
+    "runtimeUnchanged": false,
+    "sha256": "7e0ba5d1b1073b5a9fa0f92dce648d4226bb37e02f801539b8dfcf5060aca6a0",
+    "physicalPath": "source-snapshot/LICENSE.txt"
+  },
+  {
+    "path": "README.md",
+    "gitBlob": "c26552095b1fb60540cbcc438584db8f5373741c",
+    "bytes": 398,
+    "licenseEvidence": "MIT / Hakim El Hattab",
+    "decision": "Keep provenance; not runtime.",
+    "snapshotIncluded": true,
+    "runtimeUnchanged": false,
+    "sha256": "ce555bf52aede554deb1ebc187c3ff065ad00b224cae184a91613ebbb6aa5ea1",
+    "physicalPath": "source-snapshot/README.md.txt"
+  },
+  {
+    "path": "css/main.css",
+    "gitBlob": "0c8e1d9020fa8db69ee530d5015641ea4f0780dd",
+    "bytes": 6124,
+    "licenseEvidence": "root MIT code; external font/image rights separate",
+    "decision": "Audit only. Replace with minimal namespaced responsive CSS; remove background image/font names.",
+    "snapshotIncluded": true,
+    "runtimeUnchanged": false,
+    "sha256": "046e49500639621bbdbc411bc3a0558c15341d57e7a3cdce082d8da5eab21f3d",
+    "physicalPath": "source-snapshot/css/main.css.txt"
+  },
+  {
+    "path": "css/reset.css",
+    "gitBlob": "7cf05f8f296045ed0b371a8b6f9773ada87e64f0",
+    "bytes": 863,
+    "licenseEvidence": "root MIT; no separate provenance header",
+    "decision": "Do not reuse. Write minimal local reset.",
+    "snapshotIncluded": true,
+    "runtimeUnchanged": false,
+    "sha256": "3b0601e8a019f6563ea1aa0959c337b1eb77d361e4bb4358468c067d046b4ada",
+    "physicalPath": "source-snapshot/css/reset.css.txt"
+  },
+  {
+    "path": "favicon.ico",
+    "gitBlob": "0c4f8823dd98fe18337754e9832dd54f439d79ce",
+    "bytes": 24038,
+    "licenseEvidence": "Independent asset provenance unconfirmed",
+    "decision": "Exclude. No icon copied.",
+    "snapshotIncluded": false,
+    "runtimeUnchanged": false
+  },
+  {
+    "path": "images/background.jpg",
+    "gitBlob": "0a8ac269c22e7f59c004f104be3447635063601c",
+    "bytes": 14695,
+    "licenseEvidence": "Independent asset provenance unconfirmed",
+    "decision": "Exclude. Replace decorative background with original CSS.",
+    "snapshotIncluded": false,
+    "runtimeUnchanged": false
+  },
+  {
+    "path": "images/texture.png",
+    "gitBlob": "34eba37a00974c9645c44e51065de2ac8d015530",
+    "bytes": 85798,
+    "licenseEvidence": "Independent asset provenance unconfirmed",
+    "decision": "Exclude. Disable optional WebGL effects.",
+    "snapshotIncluded": false,
+    "runtimeUnchanged": false
+  },
+  {
+    "path": "index.html",
+    "gitBlob": "8833b623afd583ecc26e98ec5c1d70ae908a34be",
+    "bytes": 6561,
+    "licenseEvidence": "root MIT code; remote third-party content not covered",
+    "decision": "Audit-only .txt snapshot. Write local-only entry; do not serve upstream HTML.",
+    "snapshotIncluded": true,
+    "runtimeUnchanged": false,
+    "sha256": "76deef059526602851e2f99ebf0a32bb12fcf784d2a2150fe318b9cbb8baaf83",
+    "physicalPath": "source-snapshot/index.html.txt"
+  },
+  {
+    "path": "js/coil.js",
+    "gitBlob": "be3c048ce0efe739b192f4ef135f0a74ee8f7a4e",
+    "bytes": 35242,
+    "licenseEvidence": "Explicit MIT file header + root LICENSE / Hakim El Hattab",
+    "decision": "Reuse entire original game logic and procedural assets; isolate host/UI/lifecycle changes.",
+    "snapshotIncluded": true,
+    "runtimeUnchanged": false,
+    "sha256": "62699373da2b455293ee974e45223e1b24f510bfe5e4119e6d76f63d05b869ef",
+    "physicalPath": "source-snapshot/js/coil.js.txt"
+  },
+  {
+    "path": "js/header.js",
+    "gitBlob": "33fbf3990b9dfd9d4f275fdb130202ae222e315e",
+    "bytes": 1215,
+    "licenseEvidence": "root MIT, explicit author header",
+    "decision": "Exclude expandable promotional header and document listeners.",
+    "snapshotIncluded": true,
+    "runtimeUnchanged": false,
+    "sha256": "9dd02aec8bf9369b7ad49ae7069077c88d47846a52c139e9ab45075715ff6de8",
+    "physicalPath": "source-snapshot/js/header.js.txt"
+  },
+  {
+    "path": "js/libs/jquery-1.6.2.min.js",
+    "gitBlob": "8cdc80eb85d8d90e4cd1dd32059e5c6c63fdf5e5",
+    "bytes": 91555,
+    "licenseEvidence": "MIT or GPLv2; includes MIT/BSD/GPL Sizzle; copyrights John Resig and Dojo Foundation",
+    "decision": "Audit-only snapshot with official jQuery MIT supplement; no runtime use. Replace small DOM/fade interface.",
+    "snapshotIncluded": true,
+    "runtimeUnchanged": false,
+    "sha256": "daa9a7565d6e53d5c8bb9c5117760da97bf488259401444aac11f71abbfa63a6",
+    "physicalPath": "source-snapshot/js/libs/jquery-1.6.2.min.js.txt"
+  },
+  {
+    "path": "js/util.js",
+    "gitBlob": "6468cba024049348ec54021105e411d29923bb3e",
+    "bytes": 4144,
+    "licenseEvidence": "root MIT Point/Region; Paul Irish shim independently attributed",
+    "decision": "Reuse Point/Region only; exclude WebGLUtil, URLUtil, and requestAnimFrame shim; native host rAF instead.",
+    "snapshotIncluded": true,
+    "runtimeUnchanged": false,
+    "sha256": "e0fcb75ab19a0741d9eadd45e799de22158c256ede9231e2eaf60264ea5eae32",
+    "physicalPath": "source-snapshot/js/util.js.txt"
+  }
+]

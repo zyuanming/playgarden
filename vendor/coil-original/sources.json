@@ -1,0 +1,24 @@
+{
+  "name": "Coil original endless drawing game",
+  "version": "ea6fd3afae10a6d8a53b07e82be4211619206ede",
+  "license": "MIT",
+  "source": "https://github.com/leereilly/Coil/tree/ea6fd3afae10a6d8a53b07e82be4211619206ede",
+  "commit": "ea6fd3afae10a6d8a53b07e82be4211619206ede",
+  "preferredSource": [
+    "vendor/coil-original/upstream/js/coil.js",
+    "vendor/coil-original/upstream/js/util.js",
+    "public/coil-original/coil.js",
+    "public/coil-original/geometry.js"
+  ],
+  "buildSources": [
+    "scripts/coil/prepare-adaptation.py",
+    "scripts/coil/native-adapter-fragment.js",
+    "scripts/coil/verify-sources.py"
+  ],
+  "scope": "MIT upstream 2D endless core, exact Point/Region geometry and procedural sprites. Playgarden adapter/UI/new SVG modifications are GPL-3.0-only. Decorative binary artwork, jQuery runtime, social scripts and remote fonts are excluded; jQuery exists only in the non-public source snapshot with its MIT text.",
+  "notices": [
+    "public/coil-original/LICENSE.txt",
+    "vendor/coil-original/upstream/LICENSE",
+    "vendor/coil-original/jquery-MIT-LICENSE.txt"
+  ]
+}

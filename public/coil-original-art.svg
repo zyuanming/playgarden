@@ -1,0 +1,13 @@
+<!-- Original Playgarden artwork, Copyright 2026 Playgarden contributors, GPL-3.0-only. -->
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="640" viewBox="0 0 960 640">
+<defs><radialGradient id="bg"><stop stop-color="#214a51"/><stop offset="1" stop-color="#08202d"/></radialGradient><radialGradient id="orb"><stop stop-color="#c6fff1"/><stop offset=".4" stop-color="#68deda"/><stop offset="1" stop-color="#329ca9"/></radialGradient><linearGradient id="trace" x2="1" y2="1"><stop stop-color="#e8f6cf"/><stop offset=".45" stop-color="#6ce0d5"/><stop offset="1" stop-color="#2e798c"/></linearGradient></defs>
+<path fill="url(#bg)" d="M0 0h960v640H0z"/>
+<g opacity=".13" fill="none" stroke="#7cd6d4"><circle cx="430" cy="345" r="215"/><circle cx="430" cy="345" r="265"/><circle cx="430" cy="345" r="315"/></g>
+<path d="M156 446C255 495 493 578 578 394C648 244 369 206 293 312C211 427 432 507 550 357C619 269 675 200 777 235" fill="none" stroke="#76ece2" stroke-width="22" opacity=".1" stroke-linecap="round"/>
+<path d="M156 446C255 495 493 578 578 394C648 244 369 206 293 312C211 427 432 507 550 357C619 269 675 200 777 235" fill="none" stroke="url(#trace)" stroke-width="5" stroke-linecap="round"/>
+<path d="M298 317C361 226 624 253 565 390C510 487 302 454 282 374Z" fill="#6bf5e9" opacity=".08"/>
+<g fill="url(#orb)" stroke="#d8ffed" stroke-width="2"><circle cx="369" cy="339" r="18"/><circle cx="491" cy="371" r="17"/><circle cx="712" cy="407" r="16"/></g>
+<g fill="#ee7c73"><circle cx="216" cy="224" r="15"/><circle cx="695" cy="145" r="12"/></g>
+<g stroke="#ffe9c5" stroke-width="3" stroke-linecap="round"><path d="m211 219 10 10m0-10-10 10M691 141l8 8m0-8-8 8"/></g>
+<circle cx="777" cy="235" r="8" fill="#fff1b8"/><g fill="#adf0e0" opacity=".5"><circle cx="322" cy="139" r="3"/><circle cx="813" cy="358" r="2"/><circle cx="606" cy="520" r="3"/><circle cx="159" cy="350" r="2"/></g>
+</svg>
