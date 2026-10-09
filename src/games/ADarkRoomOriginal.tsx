@@ -12,21 +12,24 @@ export default function ADarkRoomOriginal({paused, freshStart, hintToken, onStat
   useEffect(()=>{
     const target=frame.current?.contentWindow;
     const send=(type:string,extra:Record<string,unknown>={})=>target?.postMessage({source:'playgarden-host',session,type,...extra},location.origin);
+    const viewport=()=>send('viewport',{height:window.innerHeight});
     callbacks.current.onStatus('从生火开始，逐渐建立村落、探索荒野，修好飞船并离开。这是一段有结局的完整战役，随时可以暂停。');
     const receive=(e:MessageEvent)=>{
       if(e.origin!==location.origin||e.source!==target||e.data?.source!=='playgarden-adr'||e.data.session!==session)return;
       const d=e.data;
       if(d.type==='ready'){
         if(d.revision!=='adr-d6d1c1b-playgarden-1'||d.campaign!==true||d.finiteLevels!==0){setError('战役资源版本不匹配，请重试。');return;}
-        setReady(true);send('pause',{paused:flags.current.paused});
+        setReady(true);viewport();send('pause',{paused:flags.current.paused});
       }else if(d.type==='height'&&Number.isFinite(d.height))setHeight(Math.min(1000,Math.max(560,d.height)));
       else if(d.type==='snapshot'){setSnapshot(d.state);if(!d.state.finished)done.current=false;}
       else if(d.type==='status'&&typeof d.message==='string')callbacks.current.onStatus(d.message);
       else if(d.type==='error')setError('游戏暂时遇到问题：'+String(d.message));
+      else if(d.type==='focus-event'){frame.current?.scrollIntoView({block:'start',behavior:'instant'});viewport();}
       else if(d.type==='complete'&&!done.current){done.current=true;callbacks.current.onStatus(`已穿过大气层，完成这段旅程。本次得分 ${d.score}，累计 ${d.total}；下一周目的继承资源已保存。`);}
     };
     window.addEventListener('message',receive);
-    return()=>{(target as (Window&{__adrDispose?:()=>void})|null)?.__adrDispose?.();send('dispose');window.removeEventListener('message',receive);};
+    window.addEventListener('resize',viewport);
+    return()=>{(target as (Window&{__adrDispose?:()=>void})|null)?.__adrDispose?.();send('dispose');window.removeEventListener('message',receive);window.removeEventListener('resize',viewport);};
   },[session]);
   useEffect(()=>{if(ready)frame.current?.contentWindow?.postMessage({source:'playgarden-host',session,type:'pause',paused},location.origin);},[ready,paused,session]);
   useEffect(()=>{if(hint.current===hintToken)return;hint.current=hintToken;callbacks.current.onStatus('先维持火势，给陌生人时间恢复；村落建立后安排岗位。出发前带足熏肉和水，探索带回的资源可用于改装飞船。');},[hintToken]);

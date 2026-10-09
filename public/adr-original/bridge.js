@@ -4,7 +4,7 @@
   'use strict';
   const session=new URLSearchParams(location.search).get('session')||'';
   const target=location.origin;
-  let heartbeat=0,observer,resizeObserver,disposed=false,active=null,lastModule='',lastHeight=0;
+  let heartbeat=0,observer,resizeObserver,disposed=false,active=null,lastModule='',lastHeight=0,lastEvent=null;
   const held=new Map();const counters={battles:0,deaths:0,crashes:0,homecomings:0,endings:0};
   const send=(type,extra={})=>parent.postMessage({source:'playgarden-adr',session,type,...extra},target);
   const status=message=>send('status',{message});
@@ -23,6 +23,9 @@
   function layout(){
     if(disposed)return;
     const name=moduleName();document.body.dataset.adrModule=name;
+    const eventPanel=document.getElementById('event');
+    if(eventPanel&&eventPanel!==lastEvent){eventPanel.setAttribute('role','dialog');eventPanel.setAttribute('aria-modal','true');eventPanel.tabIndex=-1;eventPanel.focus({preventScroll:true});send('focus-event');}
+    lastEvent=eventPanel;
     const stores=document.getElementById('storesContainer'),main=document.getElementById('main');
     if(stores&&main&&stores.parentElement!==main)main.append(stores);
     const panels={Room:'roomPanel',Outside:'outsidePanel',Path:'pathPanel',Ship:'shipPanel'};
@@ -50,7 +53,8 @@
     const height=Math.min(1000,Math.max(560,document.body.scrollHeight));
     if(height!==lastHeight){lastHeight=height;send('height',{height});}
   }
-  function clearDirections(){for(const {code,repeat} of held.values()){if(repeat)clearInterval(repeat);if(window.Engine)Engine.keyUp({which:code});}held.clear();}
+  function releaseDirection(code){if(window.Engine)Engine.pressed=false;if(window.Space)Space.keyUp({which:code});}
+  function clearDirections(){for(const {code,repeat} of held.values()){if(repeat)clearInterval(repeat);releaseDirection(code);}held.clear();}
   function direction(button,event){
     if(ADRClock.stats().paused||Engine.keyLock)return;
     event.preventDefault();button.setPointerCapture?.(event.pointerId);
@@ -58,7 +62,7 @@
     const repeat=Engine.activeModule===World?setInterval(()=>{if(!Engine.keyLock)Engine.keyDown({which:code});},220):0;
     held.set(event.pointerId,{code,repeat});
   }
-  function endDirection(event){const heldKey=held.get(event.pointerId);if(!heldKey)return;if(heldKey.repeat)clearInterval(heldKey.repeat);held.delete(event.pointerId);Engine.keyUp({which:heldKey.code});}
+  function endDirection(event){const heldKey=held.get(event.pointerId);if(!heldKey)return;if(heldKey.repeat)clearInterval(heldKey.repeat);held.delete(event.pointerId);releaseDirection(heldKey.code);}
   function dispose(){if(disposed)return;disposed=true;clearDirections();ADRClock.real.clear(heartbeat);observer?.disconnect();resizeObserver?.disconnect();window.removeEventListener('message',receive);}
   function recordEnding(score,total){
     const old=readEnding();const result={completed:true,score,total,count:(old?.count||0)+1,completedAt:new ADRClock.real.Date().toISOString()};
@@ -71,7 +75,8 @@
     if(e.data.type==='pause'){
       if(!e.data.paused){ADRClock.pause('blur',false);ADRClock.pause('keyboard',false);}
       ADRClock.pause('host',!!e.data.paused);
-    } else if(e.data.type==='restart'){Engine.confirmDelete();}
+    } else if(e.data.type==='viewport'&&Number.isFinite(e.data.height)){document.documentElement.style.setProperty('--adr-host-height',Math.max(320,Math.min(1600,e.data.height))+'px');}
+    else if(e.data.type==='restart'){Engine.confirmDelete();}
     else if(e.data.type==='dispose')ADRClock.dispose();
   }
   window.addEventListener('message',receive);
@@ -82,7 +87,7 @@
     for(const type of ['pointerup','pointercancel','lostpointercapture'])button.addEventListener(type,endDirection);
     button.addEventListener('pointerleave',endDirection);
     button.addEventListener('keydown',e=>{if(['Enter',' '].includes(e.key)&&!e.repeat){e.preventDefault();Engine.keyDown({which:Number(button.dataset.key)});}});
-    button.addEventListener('keyup',e=>{if(['Enter',' '].includes(e.key)){e.preventDefault();Engine.keyUp({which:Number(button.dataset.key)});}});
+    button.addEventListener('keyup',e=>{if(['Enter',' '].includes(e.key)){e.preventDefault();releaseDirection(Number(button.dataset.key));}});
   });
   document.addEventListener('keydown',e=>{
     if(e.target.matches('.button,.headerButton,.menuBtn,.endGameOption,.upBtn,.dnBtn,.upManyBtn,.dnManyBtn')&&['Enter',' '].includes(e.key)&&!e.repeat){e.preventDefault();if(!e.target.classList.contains('disabled'))e.target.click();}
