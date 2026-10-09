@@ -1,3 +1,4 @@
+import { soloChessLevels } from "../src/games/soloChessLogic";
 import { foxHoundsLevels } from "../src/games/foxHoundsLogic";
 import { threeMorrisLevels } from "../src/games/threeMorrisLogic";
 import { frogSwapLevels } from "../src/games/frogSwapLogic";
@@ -119,6 +120,7 @@ import { sortingNetworkLevels } from "../src/games/sortingNetworkLogic";
 import { voxelViewsLevels } from "../src/games/voxelViewsLogic";
 import { cubeNetLevels } from "../src/games/cubeNetLogic";
 const packs = {
+  "solo-chess": soloChessLevels,
   "fox-hounds": foxHoundsLevels,
   "three-morris": threeMorrisLevels,
   "frog-swap": frogSwapLevels,
@@ -269,8 +271,8 @@ describe("Scalable catalog contract", () => {
       }
     }),
   );
-  it("counts only 118 real games and 2593 levels, not the roadmap", () => {
-    expect(games).toHaveLength(118);
-    expect(games.reduce((sum, g) => sum + g.levelCount, 0)).toBe(2593);
+  it("counts only 119 real games and 2603 levels, not the roadmap", () => {
+    expect(games).toHaveLength(119);
+    expect(games.reduce((sum, g) => sum + g.levelCount, 0)).toBe(2603);
   });
 });

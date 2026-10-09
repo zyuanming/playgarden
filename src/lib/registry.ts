@@ -1682,5 +1682,25 @@ export const games: GameDefinition[] = [
     },
     "component": lazy(() => import("../games/FoxHoundsGarden"))
   },
+  {
+    "id": "solo-chess",
+    "title": "棋子独奏",
+    "subtitle": "每一步必须吃子，让车、象、马和王接力到最后一枚。",
+    "category": "逻辑思维",
+    "difficulty": "中级",
+    "tone": "green",
+    "levelCount": 10,
+    "artwork": {
+      "url": "./solo-chess-art.svg",
+      "position": "50% 50%",
+      "size": "cover"
+    },
+    "source": {
+      "kind": "original",
+      "license": "GPL-3.0-only",
+      "notes": "原创混合棋子吃子谜题实现、10 个关卡及 SVG 插画；使用国际象棋运动几何，无双方对弈、无将军；未复制第三方代码、关卡或素材。"
+    },
+    "component": lazy(() => import("../games/SoloChess"))
+  },
 ];
 export const findGame = (id: string) => games.find((game) => game.id === id);
