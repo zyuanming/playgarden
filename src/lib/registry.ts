@@ -1516,5 +1516,26 @@ export const games: GameDefinition[] = [
     },
     "component": lazy(() => import("../games/ChompGarden"))
   },
+  {
+    "id": "rolling-block",
+    "title": "翻滚石桥",
+    "subtitle": "改变长石柱的姿态，稳稳站上终点",
+    "category": "空间想象",
+    "difficulty": "中级",
+    "tone": "purple",
+    "levelCount": 8,
+    "artwork": {
+      "url": "./rolling-block-art.svg",
+      "position": "center",
+      "size": "cover"
+    },
+    "allowUndo": true,
+    "source": {
+      "kind": "original",
+      "license": "GPL-3.0-only",
+      "notes": "原创长方柱翻滚引擎、八张不同石桥、姿态搜索提示、中文说明与 SVG 插画；未复制第三方源码或关卡。"
+    },
+    "component": lazy(() => import("../games/RollingBlockGarden"))
+  },
 ];
 export const findGame = (id: string) => games.find((game) => game.id === id);
