@@ -1598,5 +1598,26 @@ export const games: GameDefinition[] = [
     },
     "component": lazy(() => import("../games/StarBattle"))
   },
+  {
+    "id": "domino-trail",
+    "title": "骨牌接龙",
+    "subtitle": "让相同点数相接，把所有骨牌排成不断的小径。",
+    "category": "逻辑思维",
+    "difficulty": "中级",
+    "tone": "orange",
+    "levelCount": 8,
+    "allowUndo": true,
+    "artwork": {
+      "url": "./domino-trail-art.svg",
+      "position": "center",
+      "size": "cover"
+    },
+    "source": {
+      "kind": "original",
+      "license": "GPL-3.0-only",
+      "notes": "原创双端骨牌接龙实现、八个有限点数牌局与 SVG 图形；未复制第三方源码或素材。"
+    },
+    "component": lazy(() => import("../games/DominoTrail"))
+  },
 ];
 export const findGame = (id: string) => games.find((game) => game.id === id);
