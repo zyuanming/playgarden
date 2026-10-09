@@ -72,10 +72,11 @@ function ParityRoundView({ level, paused, freshStart, hintToken, undoToken, onCo
   }
   function onPointerUp(event: PointerEvent<HTMLDivElement>) {
     const start = gesture.current; gesture.current = null;
+    if (event.currentTarget.hasPointerCapture(event.pointerId)) event.currentTarget.releasePointerCapture(event.pointerId);
     if (!start || start.id !== event.pointerId || locked) return;
     const dx = event.clientX - start.x, dy = event.clientY - start.y;
     if (Math.max(Math.abs(dx), Math.abs(dy)) < 24) return;
-    suppressClick.current = true; event.preventDefault();
+    suppressClick.current = true;
     move(Math.abs(dx) >= Math.abs(dy) ? dx > 0 ? "r" : "l" : dy > 0 ? "d" : "u");
   }
   useEffect(() => { callbacks.current.onStatus(intro); }, [intro]);

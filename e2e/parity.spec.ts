@@ -81,6 +81,16 @@ async function swipe(page: Page, direction: Direction) {
   const dx = direction === "l" ? -1 : direction === "r" ? 1 : 0;
   const dy = direction === "u" ? -1 : direction === "d" ? 1 : 0;
   const session = await page.context().newCDPSession(page);
+  await page.evaluate(() => {
+    const observed: unknown[] = [];
+    (window as unknown as { parityTouchTrace: unknown[] }).parityTouchTrace = observed;
+    for (const type of ["pointerdown", "pointerup", "pointercancel", "gotpointercapture", "lostpointercapture", "click"]) {
+      document.addEventListener(type, event => {
+        const pointer = event as PointerEvent, target = event.target as HTMLElement;
+        observed.push({ type, target: target.closest("button")?.textContent ?? target.className, x: pointer.clientX, y: pointer.clientY, pointerId: pointer.pointerId, time: performance.now() });
+      }, true);
+    }
+  });
   try {
     // Chromium creates trusted touch/pointer input from this temporary protocol
     // session. This does not dispatch synthetic DOM events or inject game state.
@@ -214,6 +224,7 @@ test("Parity original mode boundaries: continuous moves, recovery, earned wins a
         .toEqual([first.cursor, second.cursor]);
       const saved = await readRound(page, index);
       await activate(shell(page, "提示"), isMobile);
+      if (isMobile && index === 0) console.log("PARITY_TOUCH_TRACE", await page.evaluate(() => (window as unknown as { parityTouchTrace: unknown[] }).parityTouchTrace));
       await expect(page.locator(".status")).toContainText("提示");
       await expectPosition(page, second);
       expect(await readRound(page, index)).toBe(saved);
