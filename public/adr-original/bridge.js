@@ -94,6 +94,9 @@
   }
   const combat=Events.startCombat;
   if(typeof combat==='function')Events.startCombat=function(...args){counters.battles++;return combat.apply(this,args);};
+  // The old fixed-height gradient is absent in the scrolling layout. Retain a
+  // bounded readable history instead of treating its zero height as a cutoff.
+  Notifications.clearHidden=function(){document.querySelectorAll('#notifications .notification').forEach((el,index)=>{if(index>=80)el.remove();});};
   document.getElementById('saveNotify').textContent=_('saved.');
   Engine.init();
   observer=new MutationObserver(()=>layout());

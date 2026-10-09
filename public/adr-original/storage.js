@@ -32,7 +32,11 @@
   function validate(state){
     if(!object(state))throw Error('Save must be a state object');
     if(state.version!==undefined&&state.version!==1.3)throw Error('Use the original v1.3 state format from the 2020 edition');
-    for(const k of Object.keys(state)){if(k==='version')continue;if(!categories.has(k)||!object(state[k]))throw Error('Unknown or malformed state category');}
+    // This original release's Path.updateOutfitting also writes harmless numeric
+    // item mirrors at the root. Accept only those known item names, so genuine
+    // exported v1.3 saves remain loadable without broadening object paths.
+    const mirroredItems=new Set([...Object.keys(window.Room?.Craftables||{}),'cured meat','bullets','grenade','bolas','laser rifle','energy cell','bayonet','charm','medicine']);
+    for(const k of Object.keys(state)){if(k==='version')continue;if(mirroredItems.has(k)&&number(state[k])&&state[k]>=0)continue;if(!categories.has(k)||!object(state[k]))throw Error('Unknown or malformed state category');}
     let nodes=0;
     function walk(v,path,depth){
       if(++nodes>20000||depth>16)throw Error('Save structure is too large');

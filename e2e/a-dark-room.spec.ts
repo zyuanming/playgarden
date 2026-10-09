@@ -68,6 +68,7 @@ test('full original campaign: opening, village, exploration, failure, flight end
   await expect(page.locator('.game-toolbar')).toContainText('完整战役');
   await act(frame.locator('#lightButton'),mobile);expect((await read(frame)).game.fire.value).toBe(3);
   await clock(page,125000);expect((await read(frame)).game.builder.level).toBeGreaterThanOrEqual(3);
+  expect(await frame.locator('#notifications .notification').count()).toBeGreaterThan(0);
   await act(frame.locator('#location_outside'),mobile);await act(frame.locator('#gatherButton'),mobile);
   await act(frame.locator('#location_room'),mobile);
   // The original crafting view refreshes after a normal resource-changing action.
@@ -97,8 +98,9 @@ test('full original campaign: opening, village, exploration, failure, flight end
   expect((await read(frame)).game.workers.hunter).toBe(1);expect((await read(frame)).stores.meat).toBeGreaterThan(meat);
   await page.screenshot({path:info.outputPath('adr-village-checkpoint-real-worker-income.png'),fullPage:true});
   await act(frame.locator('#location_path'),mobile);
-  await act(frame.locator('#outfit_row_cured-meat .upManyBtn'),mobile);await act(frame.locator('#outfit_row_cured-meat .upManyBtn'),mobile);
   await act(frame.locator('#outfit_row_iron-sword .upBtn'),mobile);await act(frame.locator('#outfit_row_torch .upBtn'),mobile);
+  await act(frame.locator('#outfit_row_cured-meat .upManyBtn'),mobile);await act(frame.locator('#outfit_row_cured-meat .upManyBtn'),mobile);
+  expect((await read(frame)).outfit['iron sword']).toBe(1);expect((await read(frame)).outfit.torch).toBe(1);
   await act(frame.locator('#embarkButton'),mobile);let s=await read(frame);expect(s.mapSize).toBe(61);expect(s.module).toBe('World');
   const map=s.game.world.map as string[][],landmarks:number[][]=[];
   for(let x=0;x<61;x++)for(let y=0;y<61;y++)if(map[x][y]==='H')landmarks.push([x,y]);
