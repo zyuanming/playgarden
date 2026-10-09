@@ -1863,5 +1863,25 @@ export const games: GameDefinition[] = [
     },
     "component": lazy(() => import("../games/FallingRocks"))
   },
+  {
+    "id": "pyramid-cards",
+    "title": "金字塔纸牌",
+    "subtitle": "拆开层层覆盖，让露出的纸牌结成十三点搭档。",
+    "category": "逻辑思维",
+    "difficulty": "中级",
+    "tone": "green",
+    "levelCount": 8,
+    "artwork": {
+      "url": "./pyramid-cards-art.svg",
+      "position": "50% 50%",
+      "size": "cover"
+    },
+    "source": {
+      "kind": "original",
+      "license": "GPL-3.0-only",
+      "notes": "原创十三点金字塔规则实现、8 个微型教学牌组及 SVG；非完整随机纸牌局，无第三方代码或牌面素材。"
+    },
+    "component": lazy(() => import("../games/PyramidCards"))
+  },
 ];
 export const findGame = (id: string) => games.find((game) => game.id === id);
