@@ -58,11 +58,15 @@
     if(state.features?.location!==undefined&&(!object(state.features.location)||Object.values(state.features.location).some(v=>typeof v!=='boolean')))throw Error('Invalid locations');
     const world=state.game?.world;
     if(world?.map!==undefined||world?.mask!==undefined||state.features?.location?.world){
-      for(const k of ['map','mask'])if(!Array.isArray(world?.[k])||world[k].length!==61||world[k].some(row=>!Array.isArray(row)||row.length!==61))throw Error('World must remain 61 by 61');
+      if(!Array.isArray(world?.map)||world.map.length!==61||world.map.some(row=>!Array.isArray(row)||row.length!==61))throw Error('World must remain 61 by 61');
+      if(!Array.isArray(world.mask)||world.mask.length!==61||world.mask.some(row=>!Array.isArray(row)||row.length>61))throw Error('Invalid world visibility dimensions');
       if(world.map.some(row=>row.some(v=>typeof v!=='string'||!/^[AICS;,.#HVOYPWBFMU]!?$/.test(v))))throw Error('Invalid world tile');
       if(world.map[30][30]!=='A'||!world.map.some(row=>row.some(c=>c==='W'||c==='W!')))throw Error('Missing original world landmarks');
       // Original undiscovered cells are sparse and serialize as null.
       if(world.mask.some(row=>row.some(v=>v!==null&&typeof v!=='boolean')))throw Error('Invalid world visibility');
+      // The original jQuery deep copy trims trailing holes from visibility rows.
+      // Missing cells mean undiscovered; restore shape without revealing tiles.
+      world.mask=world.mask.map(row=>Array.from({length:61},(_,i)=>row[i]??null));
     }
     if(state.previous?.stores!==undefined&&(!Array.isArray(state.previous.stores)||![0,24].includes(state.previous.stores.length)||state.previous.stores.some(v=>!number(v)||v<0)))throw Error('Invalid inherited stores');
     if(state.wait){
