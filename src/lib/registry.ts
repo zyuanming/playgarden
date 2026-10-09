@@ -1783,5 +1783,25 @@ export const games: GameDefinition[] = [
     },
     "component": lazy(() => import("../games/CloudStack"))
   },
+  {
+    "id": "story-sequence",
+    "title": "故事排序",
+    "subtitle": "移动原创句条，用时间与因果把小故事连接起来。",
+    "category": "逻辑思维",
+    "difficulty": "初级",
+    "tone": "orange",
+    "levelCount": 8,
+    "artwork": {
+      "url": "./story-sequence-art.svg",
+      "position": "50% 50%",
+      "size": "cover"
+    },
+    "source": {
+      "kind": "original",
+      "license": "GPL-3.0-only",
+      "notes": "原创句条排序实现、八篇中文故事、因果反馈与 SVG 图形；未复制第三方源码。"
+    },
+    "component": lazy(() => import("../games/StorySequence"))
+  },
 ];
 export const findGame = (id: string) => games.find((game) => game.id === id);
