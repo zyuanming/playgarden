@@ -26,6 +26,16 @@ test("Original Server Survival: real level 1 and 25, local resources, pause, res
   page,
 }, info) => {
   test.setTimeout(360000);
+  // Reproducible random traffic, service IDs and events; no game state,
+  // objectives, budgets or production randomness are overridden.
+  await page.addInitScript(() => {
+    let seed = 20261009;
+    Math.random = () => {
+      seed = (Math.imul(seed, 1664525) + 1013904223) >>> 0;
+      return seed / 4294967296;
+    };
+  });
+  test.info().annotations.push({ type: "traffic-seed", description: "20261009" });
   const errors = captureErrors(page),
     remoteRequests: string[] = [],
     act = async (l: Locator) => {
@@ -192,11 +202,15 @@ test("Original Server Survival: real level 1 and 25, local resources, pause, res
     fullPage: true,
   });
   await fast();
-  await expect(root).toHaveAttribute("data-server-original-won", "true", {
-    timeout: 185000,
-  });
+  await expect.poll(async () => (await read()).outcome, { timeout: 185000 })
+    .not.toBeNull();
   const finalWin = await read();
+  await test.info().attach("capstone-outcome.json", {
+    body: JSON.stringify({ seed: 20261009, ...finalWin }, null, 2),
+    contentType: "application/json",
+  });
   expect(finalWin.outcome).toBe("win");
+  await expect(root).toHaveAttribute("data-server-original-won", "true");
   expect(finalWin.time).toBeGreaterThanOrEqual(120);
   expect(finalWin.completed.INFERENCE).toBeGreaterThanOrEqual(150);
   expect(finalWin.reputation).toBeGreaterThanOrEqual(55);
