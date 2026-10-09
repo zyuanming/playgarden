@@ -1903,5 +1903,25 @@ export const games: GameDefinition[] = [
     },
     "component": lazy(() => import("../games/GolfCards"))
   },
+  {
+    "id": "dice-combinations",
+    "title": "骰子组合",
+    "subtitle": "保留、重投与分配栏目，在公开固定骰序中拼出高分组合。",
+    "category": "数字推理",
+    "difficulty": "中级",
+    "tone": "orange",
+    "levelCount": 8,
+    "artwork": {
+      "url": "./dice-combinations-art.svg",
+      "position": "50% 50%",
+      "size": "cover"
+    },
+    "source": {
+      "kind": "original",
+      "license": "GPL-3.0-only",
+      "notes": "原创五骰保留重投及栏目分配规则、8 个公开固定骰序教学场景与 SVG；明确非随机，无金钱或下注，无第三方素材。"
+    },
+    "component": lazy(() => import("../games/DiceCombinations"))
+  },
 ];
 export const findGame = (id: string) => games.find((game) => game.id === id);
