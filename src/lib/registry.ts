@@ -1742,5 +1742,25 @@ export const games: GameDefinition[] = [
     },
     "component": lazy(() => import("../games/CipherLetters"))
   },
+  {
+    "id": "crossword-garden",
+    "title": "交叉词园",
+    "subtitle": "读中文线索，把英文单词填进彼此相交的词格。",
+    "category": "逻辑思维",
+    "difficulty": "初级",
+    "tone": "green",
+    "levelCount": 8,
+    "artwork": {
+      "url": "./crossword-garden-art.svg",
+      "position": "50% 50%",
+      "size": "cover"
+    },
+    "source": {
+      "kind": "original",
+      "license": "GPL-3.0-only",
+      "notes": "原创交叉填词规则、八个词格关卡、中文线索与 SVG 图形；未复制第三方源码。"
+    },
+    "component": lazy(() => import("../games/CrosswordGarden"))
+  },
 ];
 export const findGame = (id: string) => games.find((game) => game.id === id);
