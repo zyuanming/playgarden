@@ -103,6 +103,10 @@ async function swipe(page: Page, direction: Direction) {
       });
     }
     await session.send("Input.dispatchTouchEvent", { type: "touchEnd", touchPoints: [] });
+    // Let Chromium finish this trusted gesture before detaching its temporary
+    // input session. Switching immediately to Playwright's session produced
+    // pointerdown/up on the next toolbar tap but no browser-generated click.
+    await page.waitForTimeout(400);
   } finally {
     await session.detach();
   }
