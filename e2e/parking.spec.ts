@@ -20,7 +20,14 @@ test("PARKING original: coin, open-space parking, simultaneous cars, collision a
     const seekingCoin = m.pickups === 0 && gold !== null && gold.x >= car.x - 3 && gold.x < 73;
     const targetX = seekingCoin ? gold!.x : 68;
     const stoppingTravel = Math.max(0, (m.carAngle + Math.PI / 2) * 7);
-    if (!committing && car.x + stoppingTravel < targetX - 1.5) {
+    // Every car shares the steering input. A second car can already be next to
+    // the curb while cars[0] is still changing lanes; protect its turn as well.
+    const trafficBesideFleet = m.cars.some(c => c.y >= 3 && c.x + stoppingTravel > 66 &&
+      m.parkedCars.some(p => Math.abs(p.y - (c.y - 8)) <= 22));
+    if (trafficBesideFleet) {
+      committing = false;
+      await j.hold(false);
+    } else if (!committing && car.x + stoppingTravel < targetX - 1.5) {
       // Observe the actual heading and release before the car becomes horizontal.
       // This is physical button control, with no game-state or physics changes.
       await j.hold(m.carAngle < -Math.PI / 3);
