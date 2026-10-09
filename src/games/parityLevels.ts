@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: GPL-3.0-only
 // Exact MIT story data: Abe Fehr, Parity @ 730ecbd24d4cd821bd236f2a441f4e5e2b22654f.
-import originalLevels from "./parityLevelsData.json";
+import originalLevels from "./parityLevelsData.json" with { type: "json" };
 
 export type ParityDirection = "u" | "d" | "l" | "r";
 export type ParityLevel = {

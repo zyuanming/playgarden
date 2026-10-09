@@ -3,7 +3,7 @@
   "scope": "Static only. No browser, gameplay, screenshot, integration build, CI or deployment result is asserted.",
   "sourceArchiveSha256": "66376a79205208465955c778dcfb85ac8bfc5044ec5b8354cfd371deb2f96e01",
   "upstreamCommit": "3f4847dc8fd7dab3d1c87e6324b9159d92fbd396",
-  "upstreamFilesVerified": 24,
+  "upstreamFilesVerified": 18,
   "firstPartyJavaScriptFiles": 14,
   "firstPartyJavaScriptBytes": 58260,
   "checks": [
@@ -51,5 +51,7 @@
   ],
   "finiteLevels": 0,
   "endless": true,
-  "license": "GPL-3.0-or-later"
+  "license": "GPL-3.0-or-later",
+  "originalRetrievalFilesVerified": 24,
+  "unusedDependencyBundlesExcludedFromFinalTree": 6
 }

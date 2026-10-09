@@ -14,7 +14,7 @@
 - https://github.com/leereilly/games/blob/c67976ddcf6f7aef26dc3884116205ab9ef40f74/README.md 的 Puzzle → Hextris。
 - https://github.com/Hextris/hextris/tree/3f4847dc8fd7dab3d1c87e6324b9159d92fbd396
 
-`vendor/hextris-original/upstream/` 的 24 个原文文件保持原字节，逐个 SHA256 和 Git blob SHA1 核对。它们是隔离审计源，**不是发布运行目录**。原有第三方 vendor 依赖、追踪和广告只存在于这份未运行的快照中；全部不进入可访问运行资源。
+检索时核对 24 个原文文件的 SHA256 和 Git blob SHA1；最终 `vendor/hextris-original/upstream/` 保留 18 份第一方原文，作为公开仓库的源码参考，**不是网站运行目录**。六份未使用的第三方 vendor 依赖曾在初始 PR 中出现，已在合并前从最终源码树删除，只保留来源 hash 与排除记录。原版 HTML 中的历史追踪引用不会执行；公开运行入口已移除全部联网和旧依赖。
 
 ## 保留的完整玩法
 
@@ -54,4 +54,4 @@
 
 静态来源、字节校验、语法和独立组件/E2E 类型检查见 `hextris-static-validation.json`。一个 Playwright spec 包含真实桌面键鼠、真实移动触控，读取观察数据选择落点；仅用固定 LCG 随机种子稳定随机过程。不往引擎塞对象/成绩，不伪造成功存档。独立坏存档用例只注入无效 JSON。
 
-浏览器、真实截图、完整宿主 build、实际 CI 和上线未在此隔离包运行。唯一集成者应注册正确 GPL 来源类型，追加 notices/source manifests，完成 `npm run build`，然后只运行一次 `npm run test:e2e -- e2e/hextris-original.spec.ts`。依据真实失败改动后仅重跑受影响旅程，审阅两端真实截图，再按既定发布流程处理。不要把本包静态检查当成浏览器通过。
+浏览器、真实截图、完整宿主 build、实际 CI 和上线未在此隔离包运行。唯一集成者应注册正确 GPL 来源类型，追加 notices/source manifests，完成 `npm run build`，然后只运行一次 `npm run test:e2e -- e2e/hextris.spec.ts`。依据真实失败改动后仅重跑受影响旅程，审阅两端真实截图，再按既定发布流程处理。不要把本包静态检查当成浏览器通过。

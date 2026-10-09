@@ -30,7 +30,7 @@
     "scripts/hextris/native-adapter.js",
     "scripts/hextris/verify-sources.py"
   ],
-  "scope": "Complete original endless Hextris rules, four colors, circular-adjacency flood fill, combo scoring, six wave generators, original difficulty and procedural Canvas geometry. Original and adapted code GPL-3.0-or-later. Native Chinese shell, pure JSON save validation and system fonts replace imported dependencies. Tracking, score upload, ads, remote scripts/fonts, marketing art and all third-party runtime dependencies excluded. Untouched non-public source quarantine is for provenance only.",
+  "scope": "Complete original endless Hextris rules, four colors, circular-adjacency flood fill, combo scoring, six wave generators, original difficulty and procedural Canvas geometry. Original and adapted code GPL-3.0-or-later. Native Chinese shell, pure JSON save validation and system fonts replace imported dependencies. Tracking, score upload, ads, remote scripts/fonts, marketing art and all third-party runtime dependencies excluded. Eighteen exact first-party originals are retained in the public source repository for provenance, not loaded by the website. Six unused dependency bundles are excluded from the final source tree; original retrieval hashes remain recorded.",
   "notices": [
     "public/hextris-original/LICENSE.txt",
     "vendor/hextris-original/upstream/LICENSE.md",

@@ -123,54 +123,6 @@
       "sha256": "766e0d988ec3b1343d9182dccee2190c742b4d17ee764826bdd488bad95dd4d6"
     },
     {
-      "path": "vendor/hammer.min.js",
-      "bytes": 13710,
-      "git_blob_sha1": "11af03140859cb43e75b217dd792194f87069f58",
-      "expected_git_blob_sha1": "11af03140859cb43e75b217dd792194f87069f58",
-      "matches_upstream": true,
-      "sha256": "f91094848368717989484b6fe060675e4f7ae194f3fe85650aca413b9e987271"
-    },
-    {
-      "path": "vendor/jquery.js",
-      "bytes": 92593,
-      "git_blob_sha1": "a6107ab22b762c3ca5a8f1f535441d919885833f",
-      "expected_git_blob_sha1": "a6107ab22b762c3ca5a8f1f535441d919885833f",
-      "matches_upstream": true,
-      "sha256": "ee120ee3cca09a6e21325332e3294444d16406a355b8b0c33dbd9cc3ea3fbe2c"
-    },
-    {
-      "path": "vendor/js.cookie.js",
-      "bytes": 3242,
-      "git_blob_sha1": "116e62d8cb621ea3cedcfd465e4ca7df61725be4",
-      "expected_git_blob_sha1": "116e62d8cb621ea3cedcfd465e4ca7df61725be4",
-      "matches_upstream": true,
-      "sha256": "dd972387609461c36da7be13326bc22f48a89c3df0aad539c80f16d65046ff72"
-    },
-    {
-      "path": "vendor/jsonfn.min.js",
-      "bytes": 809,
-      "git_blob_sha1": "59a0ea1cda450d82472488ff909d4620b0b59031",
-      "expected_git_blob_sha1": "59a0ea1cda450d82472488ff909d4620b0b59031",
-      "matches_upstream": true,
-      "sha256": "5f0502c3c48812393a14ebc4a51785085903b713a0df8eb8533fafea8bb529a9"
-    },
-    {
-      "path": "vendor/keypress.min.js",
-      "bytes": 9985,
-      "git_blob_sha1": "e004f6a9186d27371473c931b19c13859cb6d061",
-      "expected_git_blob_sha1": "e004f6a9186d27371473c931b19c13859cb6d061",
-      "matches_upstream": true,
-      "sha256": "e3a60e96762936ce21bdb27f95176ef0eeac75b962ccaade28861ab14af8d11d"
-    },
-    {
-      "path": "vendor/sweet-alert.min.js",
-      "bytes": 10424,
-      "git_blob_sha1": "a0c8c3ce5a28b7ecb2f88256d70423721b246837",
-      "expected_git_blob_sha1": "a0c8c3ce5a28b7ecb2f88256d70423721b246837",
-      "matches_upstream": true,
-      "sha256": "ac46ed6a8364a5004cfc46372e42ccde232cee43e6594dd4233a486311c3d439"
-    },
-    {
       "path": "LICENSE.md",
       "bytes": 35178,
       "git_blob_sha1": "16d89e0a34c0bc274e1939e28a3f98ee2b380858",
@@ -195,5 +147,62 @@
       "sha256": "6b4a50382dfeddd36f03b44cc16d9aa15a01b461e7c6463b375ff2210145f4c1"
     }
   ],
-  "sourceUrl": "https://github.com/Hextris/hextris/tree/3f4847dc8fd7dab3d1c87e6324b9159d92fbd396"
+  "sourceUrl": "https://github.com/Hextris/hextris/tree/3f4847dc8fd7dab3d1c87e6324b9159d92fbd396",
+  "excludedUnusedDependencies": [
+    {
+      "path": "vendor/hammer.min.js",
+      "bytes": 13710,
+      "git_blob_sha1": "11af03140859cb43e75b217dd792194f87069f58",
+      "expected_git_blob_sha1": "11af03140859cb43e75b217dd792194f87069f58",
+      "matches_upstream": true,
+      "sha256": "f91094848368717989484b6fe060675e4f7ae194f3fe85650aca413b9e987271",
+      "reason": "Unused legacy dependency excluded from final source tree and runtime; complete redistribution notice not needed by the adapted game. Hash retained as source-review evidence."
+    },
+    {
+      "path": "vendor/jquery.js",
+      "bytes": 92593,
+      "git_blob_sha1": "a6107ab22b762c3ca5a8f1f535441d919885833f",
+      "expected_git_blob_sha1": "a6107ab22b762c3ca5a8f1f535441d919885833f",
+      "matches_upstream": true,
+      "sha256": "ee120ee3cca09a6e21325332e3294444d16406a355b8b0c33dbd9cc3ea3fbe2c",
+      "reason": "Unused legacy dependency excluded from final source tree and runtime; complete redistribution notice not needed by the adapted game. Hash retained as source-review evidence."
+    },
+    {
+      "path": "vendor/js.cookie.js",
+      "bytes": 3242,
+      "git_blob_sha1": "116e62d8cb621ea3cedcfd465e4ca7df61725be4",
+      "expected_git_blob_sha1": "116e62d8cb621ea3cedcfd465e4ca7df61725be4",
+      "matches_upstream": true,
+      "sha256": "dd972387609461c36da7be13326bc22f48a89c3df0aad539c80f16d65046ff72",
+      "reason": "Unused legacy dependency excluded from final source tree and runtime; complete redistribution notice not needed by the adapted game. Hash retained as source-review evidence."
+    },
+    {
+      "path": "vendor/jsonfn.min.js",
+      "bytes": 809,
+      "git_blob_sha1": "59a0ea1cda450d82472488ff909d4620b0b59031",
+      "expected_git_blob_sha1": "59a0ea1cda450d82472488ff909d4620b0b59031",
+      "matches_upstream": true,
+      "sha256": "5f0502c3c48812393a14ebc4a51785085903b713a0df8eb8533fafea8bb529a9",
+      "reason": "Unused legacy dependency excluded from final source tree and runtime; complete redistribution notice not needed by the adapted game. Hash retained as source-review evidence."
+    },
+    {
+      "path": "vendor/keypress.min.js",
+      "bytes": 9985,
+      "git_blob_sha1": "e004f6a9186d27371473c931b19c13859cb6d061",
+      "expected_git_blob_sha1": "e004f6a9186d27371473c931b19c13859cb6d061",
+      "matches_upstream": true,
+      "sha256": "e3a60e96762936ce21bdb27f95176ef0eeac75b962ccaade28861ab14af8d11d",
+      "reason": "Unused legacy dependency excluded from final source tree and runtime; complete redistribution notice not needed by the adapted game. Hash retained as source-review evidence."
+    },
+    {
+      "path": "vendor/sweet-alert.min.js",
+      "bytes": 10424,
+      "git_blob_sha1": "a0c8c3ce5a28b7ecb2f88256d70423721b246837",
+      "expected_git_blob_sha1": "a0c8c3ce5a28b7ecb2f88256d70423721b246837",
+      "matches_upstream": true,
+      "sha256": "ac46ed6a8364a5004cfc46372e42ccde232cee43e6594dd4233a486311c3d439",
+      "reason": "Unused legacy dependency excluded from final source tree and runtime; complete redistribution notice not needed by the adapted game. Hash retained as source-review evidence."
+    }
+  ],
+  "publicationScope": "18 exact first-party originals published; 24 files were inspected. Six unused dependency bundles appeared in initial PR history and were removed from the final tree before merge."
 }

@@ -7,6 +7,9 @@ VENDOR = ROOT / 'vendor/hextris-original'
 records = json.loads((VENDOR / 'retrieval-verification.json').read_text())
 verified = []
 for entry in records:
+    if entry['path'].startswith('vendor/'):
+        assert not (VENDOR / 'upstream' / entry['path']).exists(), 'Excluded unused dependency was restored'
+        continue
     path = VENDOR / 'upstream' / entry['path']
     data = path.read_bytes()
     blob = hashlib.sha1(b'blob ' + str(len(data)).encode() + b'\0' + data).hexdigest()
@@ -14,7 +17,7 @@ for entry in records:
     assert hashlib.sha256(data).hexdigest() == entry['sha256'], path
     assert blob == entry['expected_git_blob_sha1'], path
     verified.append(entry['path'])
-assert len(verified) == 24
+assert len(records) == 24 and len(verified) == 18
 assert (ROOT / 'public/hextris-original/LICENSE.txt').read_bytes() == (VENDOR / 'upstream/LICENSE.md').read_bytes()
 assert 'either version 3 of the License, or' in (VENDOR / 'upstream/README.md').read_text()
 public = ROOT / 'public/hextris-original'
