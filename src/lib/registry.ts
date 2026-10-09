@@ -1843,5 +1843,25 @@ export const games: GameDefinition[] = [
     },
     "component": lazy(() => import("../games/GravityMaze"))
   },
+  {
+    "id": "falling-rocks",
+    "title": "落石矿洞",
+    "subtitle": "从侧面挖开支撑土，躲开落石，采齐宝石安全出洞。",
+    "category": "逻辑思维",
+    "difficulty": "中级",
+    "tone": "orange",
+    "levelCount": 8,
+    "artwork": {
+      "url": "./falling-rocks-art.svg",
+      "position": "50% 50%",
+      "size": "cover"
+    },
+    "source": {
+      "kind": "original",
+      "license": "GPL-3.0-only",
+      "notes": "原创回合制挖掘、落石支撑规则，八个矿洞与 SVG 图形；未复制第三方源码。"
+    },
+    "component": lazy(() => import("../games/FallingRocks"))
+  },
 ];
 export const findGame = (id: string) => games.find((game) => game.id === id);
