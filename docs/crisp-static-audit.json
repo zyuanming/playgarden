@@ -1,9 +1,9 @@
 {
   "status": "PASS_STATIC_ONLY",
-  "verifiedOriginalFiles": 57,
-  "byteIdenticalCompleteGameFiles": 3,
+  "verifiedOriginalFiles": 60,
+  "byteIdenticalCompleteGameFiles": 6,
   "finiteLevelsAdded": 0,
-  "runtimeJavaScriptFiles": 10,
+  "runtimeJavaScriptFiles": 16,
   "networkAndDynamicEvaluationPatterns": "none in shipped JS",
   "iframeScriptReferences": "all local and present",
   "browserValidation": "PENDING parent GitHub desktop/mobile CI",

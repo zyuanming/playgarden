@@ -1,0 +1,39 @@
+{
+  "status": "Static source and Git blob verification only; runtime/browser NOT_RUN",
+  "sharedSources": "source-manifest.json and docs/crisp-runtime-source-addendum.json from first batch remain authoritative; this is an append-only game-source addendum",
+  "files": [
+    {
+      "repo": "abagames/crisp-game-lib-games",
+      "commit": "cfb39d2f988feb5918eb83697145b5a35adabf58",
+      "path": "docs/swingby/main.js",
+      "dest": "upstream/games/docs/swingby/main.js",
+      "url": "https://github.com/abagames/crisp-game-lib-games/blob/cfb39d2f988feb5918eb83697145b5a35adabf58/docs/swingby/main.js",
+      "git_blob_sha1": "fe95d5a3a751fc1cb478e7830d62a23e25f4d733",
+      "expected_bytes": 3368,
+      "sha256": "680c6baa525fd92f12d2f596e661b6536df146d5644a8cd1af51949ab0d74866",
+      "verified_git_blob": true
+    },
+    {
+      "repo": "abagames/crisp-game-lib-games",
+      "commit": "cfb39d2f988feb5918eb83697145b5a35adabf58",
+      "path": "docs/pizzaarrow/main.js",
+      "dest": "upstream/games/docs/pizzaarrow/main.js",
+      "url": "https://github.com/abagames/crisp-game-lib-games/blob/cfb39d2f988feb5918eb83697145b5a35adabf58/docs/pizzaarrow/main.js",
+      "git_blob_sha1": "3fecb759c6819c4aef80a01baf809848ffd84abe",
+      "expected_bytes": 4039,
+      "sha256": "e1380cc364b99f6a9d8c940092c5899bbfa914f225a6df1bca487934dbafb762",
+      "verified_git_blob": true
+    },
+    {
+      "repo": "abagames/crisp-game-lib-games",
+      "commit": "cfb39d2f988feb5918eb83697145b5a35adabf58",
+      "path": "docs/rps/main.js",
+      "dest": "upstream/games/docs/rps/main.js",
+      "url": "https://github.com/abagames/crisp-game-lib-games/blob/cfb39d2f988feb5918eb83697145b5a35adabf58/docs/rps/main.js",
+      "git_blob_sha1": "aa62299769fb528892d1efecf10f89eee9d15a36",
+      "expected_bytes": 3879,
+      "sha256": "8170cb77830b93e5e5b6fea49ada1df6f20bed686f5956971c8a5043c18ca15d",
+      "verified_git_blob": true
+    }
+  ]
+}

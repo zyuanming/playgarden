@@ -103,6 +103,7 @@ jobs:
             test-results/**/*.png
             test-results/**/error-context.md
             test-results/**/trace.zip
+            test-results/**/*.json
           retention-days: 3
 
   pages-deploy:
@@ -191,7 +192,7 @@ jobs:
             if(actual!==expected)throw Error('Hextris resource differs from deployed commit: '+path);
             console.log('Hextris exact resource OK:',path,actual);
           }
-          const crispFiles=['audio.js','engine.js','lifecycle.js','bridge.js','frame.css','LICENSES.txt',...['castn','bamboo','parking'].flatMap(game=>['index.html','main.js','observe.js'].map(file=>game+'/'+file))];
+          const crispFiles=['audio.js','engine.js','lifecycle.js','bridge.js','frame.css','LICENSES.txt',...['castn','bamboo','parking','pizzaarrow','rps','swingby'].flatMap(game=>['index.html','main.js','observe.js'].map(file=>game+'/'+file))];
           for(const file of crispFiles){
             const path='crisp-original/'+file;
             const asset=new URL(path,url),r=await fetch(asset,{cache:'no-store'});

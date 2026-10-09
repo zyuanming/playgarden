@@ -1,0 +1,95 @@
+{
+  "checkedAt": "2026-10-09T15:23:00Z",
+  "status": "STATIC_CHECKS_PASSED_BROWSER_NOT_RUN",
+  "inputArchive": {
+    "path": "open-source-games-integration/cube-composer-preflight-package.tar.gz",
+    "sha256": "5ef788af2e28aba0ba0ab2e488e694ebf94cfe6405207e70fbd3e6600a9053f4",
+    "verified": true
+  },
+  "upstream": {
+    "commit": "a891ffe5de79b072819da04718820d0452b9a201",
+    "sourceFiles": 46,
+    "sourceBytes": 600343,
+    "license": "MIT",
+    "allGitBlobsSha256AndLengths": "PASS"
+  },
+  "levelData": {
+    "levels": 25,
+    "chapters": 6,
+    "chapterCounts": [
+      4,
+      4,
+      5,
+      3,
+      5,
+      4
+    ],
+    "allFieldsMatchStaticPureScriptExtraction": "PASS",
+    "functionOccurrences": 31,
+    "distinctFunctionIds": 28,
+    "allImplementedAndLabeled": "PASS"
+  },
+  "checks": [
+    {
+      "command": "python3 scripts/cube-composer/extract-levels.py --check",
+      "result": "PASS"
+    },
+    {
+      "command": "python3 scripts/cube-composer/verify-sources.py",
+      "result": "PASS"
+    },
+    {
+      "command": "node node_modules/typescript/bin/tsc -p validation/tsconfig.json",
+      "result": "PASS",
+      "scope": "Strict React/core/data/storage and E2E compilation; local copies of existing GameProps/catalog/helper types only"
+    },
+    {
+      "command": "node node_modules/esbuild/bin/esbuild src/games/CubeComposerGame.tsx --bundle --format=esm --platform=browser --external:react --external:react/jsx-runtime --outdir=validation/build --metafile=validation/bundle-meta.json",
+      "result": "PASS",
+      "scope": "Isolated browser ESM + CSS; no server/browser executed"
+    },
+    {
+      "check": "New SVG parses as XML, original public MIT matches, runtime has no network/HTML-injection sites",
+      "result": "PASS"
+    }
+  ],
+  "bundle": {
+    "CubeComposerGame.css": {
+      "bytes": 9074,
+      "sha256": "fcfc44a3d9226143d7e3990b2bfc2fdfe49c12c9b4e1945af0908d3c03a7d410"
+    },
+    "CubeComposerGame.js": {
+      "bytes": 73473,
+      "sha256": "beea94c1884b235751ab253ed17d80ab2e4f5bdf5c1f3e6caaad82eb1d96ce51"
+    }
+  },
+  "notRun": [
+    "integrated npm run build",
+    "targeted desktop/mobile browser journey",
+    "real screenshot review",
+    "GitHub CI",
+    "deployment",
+    "unit suites",
+    "exhaustive solvers",
+    "campaign sweeps",
+    "legacy PureScript/Bower/Gulp execution"
+  ],
+  "e2e": {
+    "spec": "e2e/cube-composer.spec.ts",
+    "testCount": 1,
+    "projects": [
+      "desktop",
+      "mobile"
+    ],
+    "originalCheckpoints": [
+      "0.1",
+      "2.1",
+      "3.1",
+      "4.1",
+      "5.4"
+    ],
+    "method": "Real button/touch/keyboard inputs; hand-derived programs and explicit independent wall expectations; no state/storage/completion injection",
+    "status": "COMPILED_NOT_RUN"
+  },
+  "boundary": "Only isolated cube-composer-adaptation files changed. No parent registry/catalog writes, remote mutation, browser server or socket."
+}

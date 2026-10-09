@@ -62,3 +62,8 @@ Hextris and its separately identified Playgarden offline adapter retain GPL-3.0-
 ## Three ABA Games original one-button games
 
 CAST N, BAMBOO and PARKING retain their complete MIT game scripts and code-generated pixels/audio at fixed commit `cfb39d2f988feb5918eb83697145b5a35adabf58`. The locally bundled crisp-game-lib1.0.2, sounds-some-sounds2.0.0, modified jsfx and mml-iterator retain their separate MIT notices and exact editable sources. Full six-module static comparison establishes the embedded mml parser correspondence; historical npm installation resolution is not claimed. Preferred sources, deterministic offline/lifecycle modifications and all licenses are included in this tree. Each is an independent endless game with zero finite levels. See [rules and sources](crisp-original.md), [mml correspondence](crisp-mml-correspondence.md), and the shared complete notices/source map.
+
+
+PIZZA ARROW, RPS and SWINGBY use the same pinned MIT game/engine/audio sources, complete local notices and original byte-identical scripts. Simple and dark Canvas2D themes share the same isolated engine. Each remains a complete endless game with zero finite levels; see [rules and sources](crisp-second-original.md).
+
+Cube Composer retains all25 original levels and28 function IDs from David Peter’s MIT source at a891ffe5de79b072819da04718820d0452b9a201. The complete original editable rules and data are retained beside the faithful TypeScript translation. The modern Chinese React controls, storage and SVG are GPL-3.0-only; no old dependency bundle or analytics runs. See [rules and sources](cube-composer-original.md).

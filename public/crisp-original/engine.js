@@ -2849,7 +2849,7 @@ l l l
         isDrawingParticleFront = opts.isDrawingParticleFront;
         isDrawingScoreFront = opts.isDrawingScoreFront;
         isSoundEnabled = opts.isSoundEnabled;
-        if (opts.theme !== "simple" || opts.isCapturing || opts.isRewindEnabled || opts.isMinifying) throw new Error("Unsupported optional engine mode");
+        if (!["simple", "dark"].includes(opts.theme) || opts.isCapturing || opts.isRewindEnabled || opts.isMinifying) throw new Error("Unsupported optional engine mode");
         if (!window.__crispAudio.context) { isSoundEnabled = false; loopOptions.isSoundEnabled = false; }
         init$2(_init, _update, loopOptions);
     }

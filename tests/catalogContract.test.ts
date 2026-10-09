@@ -1,3 +1,4 @@
+import { cubeComposerLevels } from "../src/games/cubeComposerLevels";
 import { parityLevels } from "../src/games/parityLevels";
 import { serverSurvivalOriginalLevels } from "../src/games/serverSurvivalOriginalLevels";
 import { perimeterGardenLevels } from "../src/games/perimeterGardenLevels";
@@ -147,6 +148,10 @@ import { sortingNetworkLevels } from "../src/games/sortingNetworkLogic";
 import { voxelViewsLevels } from "../src/games/voxelViewsLogic";
 import { cubeNetLevels } from "../src/games/cubeNetLogic";
 const packs = {
+  "cube-composer": cubeComposerLevels,
+  "swingby": [],
+  "rps": [],
+  "pizzaarrow": [],
   "parking": [],
   "bamboo": [],
   "castn": [],
@@ -332,8 +337,8 @@ describe("Scalable catalog contract", () => {
       }
     }),
   );
-  it("counts only 151 real games and 2928 levels, not the roadmap", () => {
-    expect(games).toHaveLength(151);
-    expect(games.reduce((sum, g) => sum + g.levelCount, 0)).toBe(2928);
+  it("counts only 155 real games and 2953 levels, not the roadmap", () => {
+    expect(games).toHaveLength(155);
+    expect(games.reduce((sum, g) => sum + g.levelCount, 0)).toBe(2953);
   });
 });

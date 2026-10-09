@@ -1,0 +1,25 @@
+{
+  "originalCommit": "a891ffe5de79b072819da04718820d0452b9a201",
+  "sourceFiles": 46,
+  "originalLevels": 25,
+  "chapterCounts": [4, 4, 5, 3, 5, 4],
+  "mapping": [
+    { "original": "upstream/src/Levels/Chapter0.purs .. Chapter5.purs", "adaptation": "src/games/cubeComposerLevelsData.json", "invariant": "Exact IDs, names, difficulties, help, ordered initial/target arrays, raw expressions and chapter function IDs/labels; static parser rechecks every field." },
+    { "original": "upstream/src/Transformer.purs", "adaptation": "src/vendor/cubeComposerCore.ts", "invariant": "Ordered fold and all intermediate states; map replacement, reject plus clearEmpty, top stacking." },
+    { "original": "upstream/src/Levels/Chapter2.purs", "adaptation": "src/vendor/cubeComposerCore.ts:stackEqualColumns", "invariant": "Group only consecutive structurally identical original columns, concatenate each run." },
+    { "original": "upstream/src/Levels/Chapter3.purs", "adaptation": "src/vendor/cubeComposerCore.ts:cxToX/ooToC", "invariant": "Bottom-up, non-overlapping consumption; singleton fallback retained." },
+    { "original": "upstream/src/Levels/Chapter4.purs", "adaptation": "src/vendor/cubeComposerCore.ts:partition", "invariant": "Stable not-containing group followed by stable containing group." },
+    { "original": "upstream/src/Levels/Chapter5.purs", "adaptation": "src/vendor/cubeComposerCore.ts:cubeNumber/toColumn/numbers", "invariant": "1/2/4 low three bits, non-orange=1, negative wrapping, whole-column even filtering." },
+    { "original": "upstream/src/Main.purs", "adaptation": "src/games/CubeComposerGame.tsx + src/vendor/cubeComposerCore.ts:sameCubeWall/validCubeProgram", "invariant": "Each chapter function ID at most once; only complete final wall structural equality wins; all steps inspectable." }
+  ],
+  "intentionalChanges": [
+    "Chinese React UI and new illustrated cover; color-name letters and readable arrays.",
+    "Explicit left-to-right columns and bottom-to-top cube stacks instead of the original reverse-wall isometric camera.",
+    "Native add/remove/reorder buttons and keyboard/touch activation replace Sortable drag-and-drop.",
+    "Site shell free level choice, pause/reset/completion/exit; wins wait for user advance.",
+    "Per-level validated program storage, max 100 edit histories, undo, reversible clear, explanatory hints.",
+    "No old compiler, dependency runtime, analytics, remote fonts or social embeds."
+  ],
+  "browserValidation": "NOT_RUN; planned one targeted desktop/mobile journey in parent GitHub CI",
+  "solverValidation": "NOT_RUN; no unit suites, exhaustive solver or campaign sweeps authorized"
+}

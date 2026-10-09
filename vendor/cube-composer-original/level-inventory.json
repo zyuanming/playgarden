@@ -1,0 +1,1704 @@
+{
+  "note": "Data-only extraction by a local parser, not by executing PureScript or game code. Original source retained as authoritative. Stacks are bottom-to-top; chapter5 numeric expressions expanded only by documented three-bit data encoding. No solving or runtime validation performed.",
+  "finite_levels": 25,
+  "chapters": [
+    {
+      "chapter": 0,
+      "transformers": [
+        {
+          "id": "replaceYbyR",
+          "name": "map {Yellow}↦{Red}"
+        },
+        {
+          "id": "stackY",
+          "name": "map (stack {Yellow})"
+        },
+        {
+          "id": "replaceYbyYR",
+          "name": "map {Yellow}↦[{Red}{Yellow}]"
+        },
+        {
+          "id": "rejectY",
+          "name": "map (reject {Yellow})"
+        }
+      ],
+      "level_count": 4,
+      "levels": [
+        {
+          "id": "0.1",
+          "name": "Transformation",
+          "difficulty": "Easy",
+          "help": "In this game, your goal is to create a sequence of functions which\n                          transforms the colored cubes into the desired pattern (shown above).\n                          To change yellow cubes to red cubes, add the function `replaceYbyR` to your program.\n                          You can do so by clicking on the function or by dragging it to the\n                          program on the right.",
+          "initial": [
+            [
+              "Yellow",
+              "Yellow",
+              "Red"
+            ],
+            [
+              "Yellow",
+              "Red"
+            ],
+            [
+              "Red"
+            ],
+            [
+              "Red"
+            ],
+            [
+              "Yellow",
+              "Red"
+            ],
+            [
+              "Yellow",
+              "Yellow",
+              "Red"
+            ]
+          ],
+          "initial_source_expression": "[[Yellow, Yellow, Red], [Yellow, Red], [Red], [Red], [Yellow, Red], [Yellow, Yellow, Red]]",
+          "target": [
+            [
+              "Red",
+              "Red",
+              "Red"
+            ],
+            [
+              "Red",
+              "Red"
+            ],
+            [
+              "Red"
+            ],
+            [
+              "Red"
+            ],
+            [
+              "Red",
+              "Red"
+            ],
+            [
+              "Red",
+              "Red",
+              "Red"
+            ]
+          ],
+          "target_source_expression": "[[Red, Red, Red], [Red, Red], [Red], [Red], [Red, Red], [Red, Red, Red]]"
+        },
+        {
+          "id": "0.2",
+          "name": "Rejection",
+          "difficulty": "Easy",
+          "help": "To remove all cubes of a specified color, use the <code>reject</code>\n                          function.",
+          "initial": [
+            [
+              "Yellow",
+              "Yellow",
+              "Red"
+            ],
+            [
+              "Yellow",
+              "Red"
+            ],
+            [
+              "Red"
+            ],
+            [
+              "Red"
+            ],
+            [
+              "Yellow",
+              "Red"
+            ],
+            [
+              "Yellow",
+              "Yellow",
+              "Red"
+            ]
+          ],
+          "initial_source_expression": "[[Yellow, Yellow, Red], [Yellow, Red], [Red], [Red], [Yellow, Red], [Yellow, Yellow, Red]]",
+          "target": [
+            [
+              "Red"
+            ],
+            [
+              "Red"
+            ],
+            [
+              "Red"
+            ],
+            [
+              "Red"
+            ],
+            [
+              "Red"
+            ],
+            [
+              "Red"
+            ]
+          ],
+          "target_source_expression": "[[Red], [Red], [Red], [Red], [Red], [Red]]"
+        },
+        {
+          "id": "0.3",
+          "name": "Composition",
+          "difficulty": "Easy",
+          "help": "Most levels require a combination of two or more functions. Try to\n                          add the functions `stackY` and `rejectY` to your program. Note that\n                          you can change the order of the functions by drag and drop. Try to\n                          understand the effect of `stackY` by observing how the cubes change.",
+          "initial": [
+            [
+              "Yellow",
+              "Yellow",
+              "Red"
+            ],
+            [
+              "Yellow",
+              "Red"
+            ],
+            [
+              "Red"
+            ],
+            [
+              "Red"
+            ],
+            [
+              "Yellow",
+              "Red"
+            ],
+            [
+              "Yellow",
+              "Yellow",
+              "Red"
+            ]
+          ],
+          "initial_source_expression": "[[Yellow, Yellow, Red], [Yellow, Red], [Red], [Red], [Yellow, Red], [Yellow, Yellow, Red]]",
+          "target": [
+            [
+              "Red",
+              "Yellow"
+            ],
+            [
+              "Red",
+              "Yellow"
+            ],
+            [
+              "Red",
+              "Yellow"
+            ],
+            [
+              "Red",
+              "Yellow"
+            ],
+            [
+              "Red",
+              "Yellow"
+            ],
+            [
+              "Red",
+              "Yellow"
+            ]
+          ],
+          "target_source_expression": "[[Red, Yellow], [Red, Yellow], [Red, Yellow], [Red, Yellow], [Red, Yellow], [Red, Yellow]]"
+        },
+        {
+          "id": "0.4",
+          "name": "Spanish flag",
+          "difficulty": "Medium",
+          "help": "Try this on your own. You need to compose three\n                          functions.",
+          "initial": [
+            [
+              "Yellow",
+              "Yellow",
+              "Red"
+            ],
+            [
+              "Yellow",
+              "Red"
+            ],
+            [
+              "Red"
+            ],
+            [
+              "Red"
+            ],
+            [
+              "Yellow",
+              "Red"
+            ],
+            [
+              "Yellow",
+              "Yellow",
+              "Red"
+            ]
+          ],
+          "initial_source_expression": "[[Yellow, Yellow, Red], [Yellow, Red], [Red], [Red], [Yellow, Red], [Yellow, Yellow, Red]]",
+          "target": [
+            [
+              "Red",
+              "Yellow",
+              "Red"
+            ],
+            [
+              "Red",
+              "Yellow",
+              "Red"
+            ],
+            [
+              "Red",
+              "Yellow",
+              "Red"
+            ],
+            [
+              "Red",
+              "Yellow",
+              "Red"
+            ],
+            [
+              "Red",
+              "Yellow",
+              "Red"
+            ],
+            [
+              "Red",
+              "Yellow",
+              "Red"
+            ]
+          ],
+          "target_source_expression": "[[Red, Yellow, Red], [Red, Yellow, Red], [Red, Yellow, Red], [Red, Yellow, Red], [Red, Yellow, Red], [Red, Yellow, Red]]"
+        }
+      ]
+    },
+    {
+      "chapter": 1,
+      "transformers": [
+        {
+          "id": "mapYtoYR",
+          "name": "map {Yellow}↦[{Red}{Yellow}]"
+        },
+        {
+          "id": "mapCtoRC",
+          "name": "map {Cyan}↦[{Cyan}{Red}]"
+        },
+        {
+          "id": "rejectY",
+          "name": "map (reject {Yellow})"
+        },
+        {
+          "id": "rejectC",
+          "name": "map (reject {Cyan})"
+        },
+        {
+          "id": "filterContainsR",
+          "name": "filter (contains {Red})"
+        },
+        {
+          "id": "stackR",
+          "name": "map (stack {Red})"
+        },
+        {
+          "id": "mapReverse",
+          "name": "map reverse"
+        }
+      ],
+      "level_count": 4,
+      "levels": [
+        {
+          "id": "1.1",
+          "name": "Mercury",
+          "difficulty": "Easy",
+          "help": "There are some new types of functions in this chapter. We will\n                          introduce them when they are needed. Note that you can always\n                          skip levels and come back later.",
+          "initial": [
+            [
+              "Red",
+              "Red"
+            ],
+            [
+              "Red",
+              "Yellow"
+            ],
+            [
+              "Cyan",
+              "Yellow"
+            ],
+            [
+              "Cyan",
+              "Cyan"
+            ]
+          ],
+          "initial_source_expression": "[[Red, Red], [Red, Yellow], [Cyan, Yellow], [Cyan, Cyan]]",
+          "target": [
+            [
+              "Red",
+              "Red",
+              "Red"
+            ],
+            [
+              "Red",
+              "Yellow",
+              "Red"
+            ],
+            [
+              "Red",
+              "Yellow",
+              "Red"
+            ],
+            [
+              "Red",
+              "Red",
+              "Red"
+            ]
+          ],
+          "target_source_expression": "[[Red, Red, Red], [Red, Yellow, Red], [Red, Yellow, Red], [Red, Red, Red]]"
+        },
+        {
+          "id": "1.2",
+          "name": "Venus",
+          "difficulty": "Medium",
+          "help": "The function `filterContainsR` removes columns without a red cube.",
+          "initial": [
+            [
+              "Red",
+              "Red"
+            ],
+            [
+              "Red",
+              "Yellow"
+            ],
+            [
+              "Cyan",
+              "Yellow"
+            ],
+            [
+              "Cyan",
+              "Cyan"
+            ]
+          ],
+          "initial_source_expression": "[[Red, Red], [Red, Yellow], [Cyan, Yellow], [Cyan, Cyan]]",
+          "target": [
+            [
+              "Red",
+              "Red"
+            ],
+            [
+              "Red",
+              "Red"
+            ]
+          ],
+          "target_source_expression": "[[Red, Red], [Red, Red]]"
+        },
+        {
+          "id": "1.3",
+          "name": "Earth",
+          "difficulty": "Easy",
+          "help": "You can flip each column vertically with `mapReverse`.",
+          "initial": [
+            [
+              "Cyan",
+              "Cyan",
+              "Yellow"
+            ],
+            [
+              "Cyan",
+              "Red"
+            ],
+            [
+              "Cyan",
+              "Red"
+            ],
+            [
+              "Cyan",
+              "Cyan",
+              "Yellow"
+            ]
+          ],
+          "initial_source_expression": "[[Cyan, Cyan, Yellow], [Cyan, Red], [Cyan, Red], [Cyan, Cyan, Yellow]]",
+          "target": [
+            [
+              "Red",
+              "Cyan",
+              "Cyan"
+            ],
+            [
+              "Red",
+              "Cyan"
+            ],
+            [
+              "Red",
+              "Cyan"
+            ],
+            [
+              "Red",
+              "Cyan",
+              "Cyan"
+            ]
+          ],
+          "target_source_expression": "[[Red, Cyan, Cyan], [Red, Cyan], [Red, Cyan], [Red, Cyan, Cyan]]"
+        },
+        {
+          "id": "1.4",
+          "name": "Mars",
+          "difficulty": "Medium",
+          "help": "In case you were wondering: the level names <s>have a rather deep\n                          philosophical meaning</s> are chosen randomly.",
+          "initial": [
+            [
+              "Red",
+              "Red"
+            ],
+            [
+              "Red",
+              "Yellow"
+            ],
+            [
+              "Cyan",
+              "Yellow"
+            ],
+            [
+              "Cyan",
+              "Cyan"
+            ]
+          ],
+          "initial_source_expression": "[[Red, Red], [Red, Yellow], [Cyan, Yellow], [Cyan, Cyan]]",
+          "target": [
+            [
+              "Red",
+              "Red"
+            ],
+            [
+              "Red",
+              "Red"
+            ],
+            [
+              "Red",
+              "Red"
+            ],
+            [
+              "Red",
+              "Red"
+            ]
+          ],
+          "target_source_expression": "[[Red, Red], [Red, Red], [Red, Red], [Red, Red]]"
+        }
+      ]
+    },
+    {
+      "chapter": 2,
+      "transformers": [
+        {
+          "id": "replaceYbyB",
+          "name": "map {Yellow}↦{Brown}"
+        },
+        {
+          "id": "replaceYbyBY",
+          "name": "map {Yellow}↦[{Yellow}{Brown}]"
+        },
+        {
+          "id": "replaceBbyOO",
+          "name": "map {Brown}↦[{Orange}{Orange}]"
+        },
+        {
+          "id": "rejectO",
+          "name": "map (reject {Orange})"
+        },
+        {
+          "id": "stackY",
+          "name": "map (stack {Yellow})"
+        },
+        {
+          "id": "stackEqualColumns",
+          "name": "stackEqualColumns"
+        }
+      ],
+      "level_count": 5,
+      "levels": [
+        {
+          "id": "2.1",
+          "name": "Bricklayer",
+          "difficulty": "Easy",
+          "help": "This chapter introduces a new function `stackEqualColumns`. It\n                          takes <i>adjacent equal columns</i> and stacks them on top of\n                          each other. Try it!",
+          "initial": [
+            [
+              "Brown"
+            ],
+            [
+              "Orange"
+            ],
+            [
+              "Orange"
+            ],
+            [
+              "Yellow"
+            ],
+            [
+              "Yellow"
+            ],
+            [
+              "Yellow"
+            ],
+            [
+              "Orange"
+            ],
+            [
+              "Orange"
+            ],
+            [
+              "Brown"
+            ]
+          ],
+          "initial_source_expression": "[[Brown], [Orange], [Orange], [Yellow], [Yellow], [Yellow], [Orange], [Orange], [Brown]]",
+          "target": [
+            [
+              "Brown"
+            ],
+            [
+              "Orange",
+              "Orange"
+            ],
+            [
+              "Brown",
+              "Brown",
+              "Brown"
+            ],
+            [
+              "Orange",
+              "Orange"
+            ],
+            [
+              "Brown"
+            ]
+          ],
+          "target_source_expression": "[[Brown], [Orange, Orange], [Brown, Brown, Brown], [Orange, Orange], [Brown]]"
+        },
+        {
+          "id": "2.2",
+          "name": "Gizeh",
+          "difficulty": "Medium",
+          "help": "You are on your own now...",
+          "initial": [
+            [
+              "Brown"
+            ],
+            [
+              "Orange"
+            ],
+            [
+              "Orange"
+            ],
+            [
+              "Yellow"
+            ],
+            [
+              "Yellow"
+            ],
+            [
+              "Yellow"
+            ],
+            [
+              "Orange"
+            ],
+            [
+              "Orange"
+            ],
+            [
+              "Brown"
+            ]
+          ],
+          "initial_source_expression": "[[Brown], [Orange], [Orange], [Yellow], [Yellow], [Yellow], [Orange], [Orange], [Brown]]",
+          "target": [
+            [
+              "Brown",
+              "Brown"
+            ],
+            [
+              "Orange",
+              "Brown",
+              "Orange",
+              "Brown"
+            ],
+            [
+              "Brown",
+              "Brown",
+              "Brown",
+              "Brown",
+              "Brown",
+              "Brown"
+            ],
+            [
+              "Orange",
+              "Brown",
+              "Orange",
+              "Brown"
+            ],
+            [
+              "Brown",
+              "Brown"
+            ]
+          ],
+          "target_source_expression": "[[Brown, Brown], [Orange, Brown, Orange, Brown], [Brown, Brown, Brown, Brown, Brown, Brown], [Orange, Brown, Orange, Brown], [Brown, Brown]]"
+        },
+        {
+          "id": "2.3",
+          "name": "Poseidon",
+          "difficulty": "Hard",
+          "help": null,
+          "initial": [
+            [
+              "Brown"
+            ],
+            [
+              "Orange"
+            ],
+            [
+              "Orange"
+            ],
+            [
+              "Yellow"
+            ],
+            [
+              "Yellow"
+            ],
+            [
+              "Yellow"
+            ],
+            [
+              "Orange"
+            ],
+            [
+              "Orange"
+            ],
+            [
+              "Brown"
+            ]
+          ],
+          "initial_source_expression": "[[Brown], [Orange], [Orange], [Yellow], [Yellow], [Yellow], [Orange], [Orange], [Brown]]",
+          "target": [
+            [
+              "Brown",
+              "Brown"
+            ],
+            [
+              "Brown"
+            ],
+            [
+              "Brown",
+              "Brown",
+              "Brown",
+              "Brown"
+            ],
+            [
+              "Brown"
+            ],
+            [
+              "Brown",
+              "Brown"
+            ]
+          ],
+          "target_source_expression": "[[Brown, Brown], [Brown], [Brown, Brown, Brown, Brown], [Brown], [Brown, Brown]]"
+        },
+        {
+          "id": "2.4",
+          "name": "Bowl",
+          "difficulty": "Hard",
+          "help": null,
+          "initial": [
+            [
+              "Brown"
+            ],
+            [
+              "Orange"
+            ],
+            [
+              "Orange"
+            ],
+            [
+              "Brown"
+            ]
+          ],
+          "initial_source_expression": "[[Brown], [Orange], [Orange], [Brown]]",
+          "target": [
+            [
+              "Orange",
+              "Orange",
+              "Orange",
+              "Orange"
+            ],
+            [
+              "Orange",
+              "Orange"
+            ],
+            [
+              "Orange",
+              "Orange"
+            ],
+            [
+              "Orange",
+              "Orange",
+              "Orange",
+              "Orange"
+            ]
+          ],
+          "target_source_expression": "[[Orange, Orange, Orange, Orange], [Orange, Orange], [Orange, Orange], [Orange, Orange, Orange, Orange]]"
+        },
+        {
+          "id": "2.5",
+          "name": "Stamp",
+          "difficulty": "Hard",
+          "help": null,
+          "initial": [
+            [
+              "Brown"
+            ],
+            [
+              "Orange"
+            ],
+            [
+              "Orange"
+            ],
+            [
+              "Yellow"
+            ],
+            [
+              "Yellow"
+            ],
+            [
+              "Yellow"
+            ],
+            [
+              "Orange"
+            ],
+            [
+              "Orange"
+            ],
+            [
+              "Brown"
+            ]
+          ],
+          "initial_source_expression": "[[Brown], [Orange], [Orange], [Yellow], [Yellow], [Yellow], [Orange], [Orange], [Brown]]",
+          "target": [
+            [
+              "Yellow"
+            ],
+            [
+              "Yellow"
+            ],
+            [
+              "Yellow",
+              "Yellow",
+              "Yellow",
+              "Yellow"
+            ],
+            [
+              "Yellow"
+            ],
+            [
+              "Yellow"
+            ]
+          ],
+          "target_source_expression": "[[Yellow], [Yellow], [Yellow, Yellow, Yellow, Yellow], [Yellow], [Yellow]]"
+        }
+      ]
+    },
+    {
+      "chapter": 3,
+      "transformers": [
+        {
+          "id": "mapXtoOX",
+          "name": "map {X}↦[{X}{Orange}]"
+        },
+        {
+          "id": "mapCXtoX",
+          "name": "map [{X}{Cyan}]↦{X}"
+        },
+        {
+          "id": "mapOOtoC",
+          "name": "map [{Orange}{Orange}]↦{Cyan}"
+        },
+        {
+          "id": "mapCtoO",
+          "name": "map {Cyan}↦{Orange}"
+        }
+      ],
+      "level_count": 3,
+      "levels": [
+        {
+          "id": "3.1",
+          "name": "Brick",
+          "difficulty": "Easy",
+          "help": "This chapter introduces wildcard cubes: {X}.",
+          "initial": [
+            [
+              "Cyan",
+              "Orange"
+            ],
+            [
+              "Cyan",
+              "Cyan",
+              "Orange"
+            ],
+            [
+              "Orange",
+              "Orange"
+            ],
+            [
+              "Cyan",
+              "Cyan",
+              "Orange"
+            ],
+            [
+              "Cyan",
+              "Orange"
+            ]
+          ],
+          "initial_source_expression": "[[Cyan, Orange], [Cyan, Cyan, Orange], [Orange, Orange], [Cyan, Cyan, Orange], [Cyan, Orange]]",
+          "target": [
+            [
+              "Cyan"
+            ],
+            [
+              "Cyan",
+              "Orange"
+            ],
+            [
+              "Cyan"
+            ],
+            [
+              "Cyan",
+              "Orange"
+            ],
+            [
+              "Cyan"
+            ]
+          ],
+          "target_source_expression": "[[Cyan], [Cyan, Orange], [Cyan], [Cyan, Orange], [Cyan]]"
+        },
+        {
+          "id": "3.2",
+          "name": "Fort",
+          "difficulty": "Hard",
+          "help": null,
+          "initial": [
+            [
+              "Cyan",
+              "Orange"
+            ],
+            [
+              "Cyan",
+              "Cyan",
+              "Orange"
+            ],
+            [
+              "Orange",
+              "Orange"
+            ],
+            [
+              "Cyan",
+              "Cyan",
+              "Orange"
+            ],
+            [
+              "Cyan",
+              "Orange"
+            ]
+          ],
+          "initial_source_expression": "[[Cyan, Orange], [Cyan, Cyan, Orange], [Orange, Orange], [Cyan, Cyan, Orange], [Cyan, Orange]]",
+          "target": [
+            [
+              "Orange",
+              "Cyan"
+            ],
+            [
+              "Orange",
+              "Orange"
+            ],
+            [
+              "Orange",
+              "Cyan"
+            ],
+            [
+              "Orange",
+              "Orange"
+            ],
+            [
+              "Orange",
+              "Cyan"
+            ]
+          ],
+          "target_source_expression": "[[Orange, Cyan], [Orange, Orange], [Orange, Cyan], [Orange, Orange], [Orange, Cyan]]"
+        },
+        {
+          "id": "3.3",
+          "name": "Castle",
+          "difficulty": "Medium",
+          "help": null,
+          "initial": [
+            [
+              "Orange"
+            ],
+            [
+              "Orange",
+              "Orange"
+            ],
+            [
+              "Orange",
+              "Orange",
+              "Orange"
+            ],
+            [
+              "Orange",
+              "Orange",
+              "Orange",
+              "Orange"
+            ],
+            [
+              "Orange",
+              "Orange",
+              "Orange"
+            ],
+            [
+              "Orange",
+              "Orange"
+            ],
+            [
+              "Orange"
+            ]
+          ],
+          "initial_source_expression": "[[Orange], [Orange, Orange], [Orange, Orange, Orange], [Orange, Orange, Orange, Orange], [Orange, Orange, Orange], [Orange, Orange], [Orange]]",
+          "target": [
+            [
+              "Orange",
+              "Orange"
+            ],
+            [
+              "Orange",
+              "Cyan"
+            ],
+            [
+              "Orange",
+              "Orange"
+            ],
+            [
+              "Orange",
+              "Cyan"
+            ],
+            [
+              "Orange",
+              "Orange"
+            ],
+            [
+              "Orange",
+              "Cyan"
+            ],
+            [
+              "Orange",
+              "Orange"
+            ]
+          ],
+          "target_source_expression": "[[Orange, Orange], [Orange, Cyan], [Orange, Orange], [Orange, Cyan], [Orange, Orange], [Orange, Cyan], [Orange, Orange]]"
+        }
+      ]
+    },
+    {
+      "chapter": 4,
+      "transformers": [
+        {
+          "id": "replaceYbyR",
+          "name": "map {Yellow}↦{Red}"
+        },
+        {
+          "id": "replaceRbyC",
+          "name": "map {Red}↦{Cyan}"
+        },
+        {
+          "id": "replaceCbyY",
+          "name": "map {Cyan}↦{Yellow}"
+        },
+        {
+          "id": "partitionContainsC",
+          "name": "partition (contains {Cyan})"
+        },
+        {
+          "id": "partitionContainsR",
+          "name": "partition (contains {Red})"
+        }
+      ],
+      "level_count": 5,
+      "levels": [
+        {
+          "id": "4.1",
+          "name": "Take sides!",
+          "difficulty": "Easy",
+          "help": "This chapter introduces partitioning. The function `partitionContainsR` reorders the columns\n                          so that the columns which do not contain a red cube are grouped on the left, and the columns\n                          which do are gouped on the right.",
+          "initial": [
+            [
+              "Cyan",
+              "Red"
+            ],
+            [
+              "Cyan",
+              "Cyan"
+            ],
+            [
+              "Red",
+              "Red"
+            ],
+            [
+              "Cyan",
+              "Cyan"
+            ],
+            [
+              "Cyan",
+              "Red"
+            ]
+          ],
+          "initial_source_expression": "[[Cyan, Red], [Cyan, Cyan], [Red, Red], [Cyan, Cyan], [Cyan, Red]]",
+          "target": [
+            [
+              "Cyan",
+              "Cyan"
+            ],
+            [
+              "Cyan",
+              "Cyan"
+            ],
+            [
+              "Cyan",
+              "Red"
+            ],
+            [
+              "Red",
+              "Red"
+            ],
+            [
+              "Cyan",
+              "Red"
+            ]
+          ],
+          "target_source_expression": "[[Cyan, Cyan], [Cyan, Cyan], [Cyan, Red], [Red, Red], [Cyan, Red]]"
+        },
+        {
+          "id": "4.2",
+          "name": "Take sides – again!",
+          "difficulty": "Medium",
+          "help": "Note that within each partition – the columns which don't satisfy the condition and the\n                          columns which do – the order remains the same as it was prior to partitioning.",
+          "initial": [
+            [
+              "Cyan",
+              "Red"
+            ],
+            [
+              "Cyan",
+              "Cyan"
+            ],
+            [
+              "Red",
+              "Red"
+            ],
+            [
+              "Cyan",
+              "Cyan"
+            ],
+            [
+              "Cyan",
+              "Red"
+            ]
+          ],
+          "initial_source_expression": "[[Cyan, Red], [Cyan, Cyan], [Red, Red], [Cyan, Cyan], [Cyan, Red]]",
+          "target": [
+            [
+              "Cyan",
+              "Cyan"
+            ],
+            [
+              "Cyan",
+              "Cyan"
+            ],
+            [
+              "Red",
+              "Red"
+            ],
+            [
+              "Cyan",
+              "Red"
+            ],
+            [
+              "Cyan",
+              "Red"
+            ]
+          ],
+          "target_source_expression": "[[Cyan, Cyan], [Cyan, Cyan], [Red, Red], [Cyan, Red], [Cyan, Red]]"
+        },
+        {
+          "id": "4.3",
+          "name": "Shift",
+          "difficulty": "Medium",
+          "help": "Can you partition this?",
+          "initial": [
+            [
+              "Cyan",
+              "Red"
+            ],
+            [
+              "Red",
+              "Cyan"
+            ],
+            [
+              "Cyan",
+              "Red"
+            ],
+            [
+              "Red",
+              "Cyan"
+            ],
+            [
+              "Cyan",
+              "Red"
+            ]
+          ],
+          "initial_source_expression": "[[Cyan, Red], [Red, Cyan], [Cyan, Red], [Red, Cyan], [Cyan, Red]]",
+          "target": [
+            [
+              "Red",
+              "Cyan"
+            ],
+            [
+              "Cyan",
+              "Red"
+            ],
+            [
+              "Red",
+              "Cyan"
+            ],
+            [
+              "Cyan",
+              "Red"
+            ],
+            [
+              "Red",
+              "Cyan"
+            ]
+          ],
+          "target_source_expression": "[[Red, Cyan], [Cyan, Red], [Red, Cyan], [Cyan, Red], [Red, Cyan]]"
+        },
+        {
+          "id": "4.4",
+          "name": "Robot eyes",
+          "difficulty": "Medium",
+          "help": null,
+          "initial": [
+            [
+              "Brown",
+              "Brown",
+              "Brown"
+            ],
+            [
+              "Brown",
+              "Yellow",
+              "Brown"
+            ],
+            [
+              "Brown",
+              "Brown",
+              "Brown"
+            ],
+            [
+              "Brown",
+              "Yellow",
+              "Brown"
+            ],
+            [
+              "Brown",
+              "Brown",
+              "Brown"
+            ]
+          ],
+          "initial_source_expression": "[[Brown, Brown, Brown], [Brown, Yellow, Brown], [Brown, Brown, Brown], [Brown, Yellow, Brown], [Brown, Brown, Brown]]",
+          "target": [
+            [
+              "Brown",
+              "Brown",
+              "Brown"
+            ],
+            [
+              "Brown",
+              "Brown",
+              "Brown"
+            ],
+            [
+              "Brown",
+              "Brown",
+              "Brown"
+            ],
+            [
+              "Brown",
+              "Yellow",
+              "Brown"
+            ],
+            [
+              "Brown",
+              "Yellow",
+              "Brown"
+            ]
+          ],
+          "target_source_expression": "[[Brown, Brown, Brown], [Brown, Brown, Brown], [Brown, Brown, Brown], [Brown, Yellow, Brown], [Brown, Yellow, Brown]]"
+        },
+        {
+          "id": "4.5",
+          "name": "Mountains",
+          "difficulty": "Hard",
+          "help": null,
+          "initial": [
+            [
+              "Brown",
+              "Brown",
+              "Red",
+              "Red"
+            ],
+            [
+              "Brown",
+              "Brown",
+              "Brown",
+              "Cyan"
+            ],
+            [
+              "Brown",
+              "Yellow",
+              "Yellow",
+              "Yellow"
+            ],
+            [
+              "Brown",
+              "Brown",
+              "Brown",
+              "Red"
+            ],
+            [
+              "Brown",
+              "Brown",
+              "Cyan",
+              "Cyan"
+            ],
+            [
+              "Brown",
+              "Brown",
+              "Yellow",
+              "Yellow"
+            ]
+          ],
+          "initial_source_expression": "[[Brown, Brown, Red, Red], [Brown, Brown, Brown, Cyan], [Brown, Yellow, Yellow, Yellow], [Brown, Brown, Brown, Red], [Brown, Brown, Cyan, Cyan], [Brown, Brown, Yellow, Yellow]]",
+          "target": [
+            [
+              "Brown",
+              "Cyan",
+              "Cyan",
+              "Cyan"
+            ],
+            [
+              "Brown",
+              "Brown",
+              "Cyan",
+              "Cyan"
+            ],
+            [
+              "Brown",
+              "Brown",
+              "Cyan",
+              "Cyan"
+            ],
+            [
+              "Brown",
+              "Brown",
+              "Brown",
+              "Cyan"
+            ],
+            [
+              "Brown",
+              "Brown",
+              "Brown",
+              "Cyan"
+            ],
+            [
+              "Brown",
+              "Brown",
+              "Cyan",
+              "Cyan"
+            ]
+          ],
+          "target_source_expression": "[[Brown, Cyan, Cyan, Cyan], [Brown, Brown, Cyan, Cyan], [Brown, Brown, Cyan, Cyan], [Brown, Brown, Brown, Cyan], [Brown, Brown, Brown, Cyan], [Brown, Brown, Cyan, Cyan]]"
+        }
+      ]
+    },
+    {
+      "chapter": 5,
+      "transformers": [
+        {
+          "id": "mapAdd1",
+          "name": "map (+1)"
+        },
+        {
+          "id": "mapSub1",
+          "name": "map (-1)"
+        },
+        {
+          "id": "mapMul2",
+          "name": "map (×2)"
+        },
+        {
+          "id": "mapPow2",
+          "name": "map (^2)"
+        },
+        {
+          "id": "filterEven",
+          "name": "filter even"
+        }
+      ],
+      "level_count": 4,
+      "levels": [
+        {
+          "id": "5.1",
+          "name": "0b0 .. 0b111",
+          "difficulty": "Medium",
+          "help": "What could be the meaning of the title <code>0b0 .. 0b111</code>?\n                          Read from top to bottom. Calculate modulo eight.",
+          "initial": [
+            [
+              "Orange",
+              "Orange",
+              "Orange"
+            ],
+            [
+              "Brown",
+              "Orange",
+              "Orange"
+            ],
+            [
+              "Orange",
+              "Brown",
+              "Orange"
+            ],
+            [
+              "Brown",
+              "Brown",
+              "Orange"
+            ],
+            [
+              "Orange",
+              "Orange",
+              "Brown"
+            ],
+            [
+              "Brown",
+              "Orange",
+              "Brown"
+            ],
+            [
+              "Orange",
+              "Brown",
+              "Brown"
+            ],
+            [
+              "Brown",
+              "Brown",
+              "Brown"
+            ]
+          ],
+          "initial_source_expression": "map toAStack [0, 1, 2, 3, 4, 5, 6, 7]",
+          "target": [
+            [
+              "Brown",
+              "Orange",
+              "Orange"
+            ],
+            [
+              "Brown",
+              "Brown",
+              "Orange"
+            ],
+            [
+              "Brown",
+              "Orange",
+              "Brown"
+            ],
+            [
+              "Brown",
+              "Brown",
+              "Brown"
+            ],
+            [
+              "Brown",
+              "Orange",
+              "Orange"
+            ],
+            [
+              "Brown",
+              "Brown",
+              "Orange"
+            ],
+            [
+              "Brown",
+              "Orange",
+              "Brown"
+            ],
+            [
+              "Brown",
+              "Brown",
+              "Brown"
+            ]
+          ],
+          "target_source_expression": "map toAStack [1, 3, 5, 7, 1, 3, 5, 7]"
+        },
+        {
+          "id": "5.2",
+          "name": "Odd..",
+          "difficulty": "Easy",
+          "help": null,
+          "initial": [
+            [
+              "Orange",
+              "Orange",
+              "Orange"
+            ],
+            [
+              "Brown",
+              "Orange",
+              "Orange"
+            ],
+            [
+              "Orange",
+              "Brown",
+              "Orange"
+            ],
+            [
+              "Brown",
+              "Brown",
+              "Orange"
+            ],
+            [
+              "Orange",
+              "Orange",
+              "Brown"
+            ],
+            [
+              "Brown",
+              "Orange",
+              "Brown"
+            ],
+            [
+              "Orange",
+              "Brown",
+              "Brown"
+            ],
+            [
+              "Brown",
+              "Brown",
+              "Brown"
+            ]
+          ],
+          "initial_source_expression": "map toAStack [0, 1, 2, 3, 4, 5, 6, 7]",
+          "target": [
+            [
+              "Brown",
+              "Orange",
+              "Orange"
+            ],
+            [
+              "Brown",
+              "Brown",
+              "Orange"
+            ],
+            [
+              "Brown",
+              "Orange",
+              "Brown"
+            ],
+            [
+              "Brown",
+              "Brown",
+              "Brown"
+            ]
+          ],
+          "target_source_expression": "map toAStack [1, 3, 5, 7]"
+        },
+        {
+          "id": "5.3",
+          "name": "Zero",
+          "difficulty": "Hard",
+          "help": null,
+          "initial": [
+            [
+              "Orange",
+              "Orange",
+              "Orange"
+            ],
+            [
+              "Brown",
+              "Orange",
+              "Orange"
+            ],
+            [
+              "Orange",
+              "Brown",
+              "Orange"
+            ],
+            [
+              "Brown",
+              "Brown",
+              "Orange"
+            ],
+            [
+              "Orange",
+              "Orange",
+              "Brown"
+            ],
+            [
+              "Brown",
+              "Orange",
+              "Brown"
+            ],
+            [
+              "Orange",
+              "Brown",
+              "Brown"
+            ],
+            [
+              "Brown",
+              "Brown",
+              "Brown"
+            ]
+          ],
+          "initial_source_expression": "map toAStack [0, 1, 2, 3, 4, 5, 6, 7]",
+          "target": [
+            [
+              "Orange",
+              "Orange",
+              "Orange"
+            ],
+            [
+              "Orange",
+              "Orange",
+              "Orange"
+            ],
+            [
+              "Orange",
+              "Orange",
+              "Orange"
+            ],
+            [
+              "Orange",
+              "Orange",
+              "Orange"
+            ],
+            [
+              "Orange",
+              "Orange",
+              "Orange"
+            ],
+            [
+              "Orange",
+              "Orange",
+              "Orange"
+            ],
+            [
+              "Orange",
+              "Orange",
+              "Orange"
+            ],
+            [
+              "Orange",
+              "Orange",
+              "Orange"
+            ]
+          ],
+          "target_source_expression": "map toAStack [0, 0, 0, 0, 0, 0, 0, 0]"
+        },
+        {
+          "id": "5.4",
+          "name": "Don't panic",
+          "difficulty": "Hard",
+          "help": "This is the last level ... for now. But you can design your own puzzles!\n                          See the <a href=\"https://github.com/sharkdp/cube-composer\">GitHub repository</a>\n                          for more information. I hope you enjoyed the game.",
+          "initial": [
+            [
+              "Orange",
+              "Orange",
+              "Orange"
+            ],
+            [
+              "Brown",
+              "Orange",
+              "Orange"
+            ],
+            [
+              "Orange",
+              "Brown",
+              "Orange"
+            ],
+            [
+              "Brown",
+              "Brown",
+              "Orange"
+            ],
+            [
+              "Orange",
+              "Orange",
+              "Brown"
+            ],
+            [
+              "Brown",
+              "Orange",
+              "Brown"
+            ],
+            [
+              "Orange",
+              "Brown",
+              "Brown"
+            ],
+            [
+              "Brown",
+              "Brown",
+              "Brown"
+            ]
+          ],
+          "initial_source_expression": "map toAStack [0, 1, 2, 3, 4, 5, 6, 7]",
+          "target": [
+            [
+              "Orange",
+              "Orange",
+              "Brown"
+            ],
+            [
+              "Orange",
+              "Brown",
+              "Orange"
+            ],
+            [
+              "Orange",
+              "Orange",
+              "Brown"
+            ],
+            [
+              "Orange",
+              "Brown",
+              "Orange"
+            ],
+            [
+              "Orange",
+              "Orange",
+              "Brown"
+            ],
+            [
+              "Orange",
+              "Brown",
+              "Orange"
+            ],
+            [
+              "Orange",
+              "Orange",
+              "Brown"
+            ],
+            [
+              "Orange",
+              "Brown",
+              "Orange"
+            ]
+          ],
+          "target_source_expression": "map toAStack [4, 2, 4, 2, 4, 2, 4, 2]"
+        }
+      ]
+    }
+  ]
+}

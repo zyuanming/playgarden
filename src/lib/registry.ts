@@ -2407,5 +2407,113 @@ export const games: GameDefinition[] = [
     },
     "component": lazy(() => import("../games/ParkingOriginal"))
   },
+  {
+    "id": "pizzaarrow",
+    "title": "披萨神箭",
+    "subtitle": "慢动作拉弓，切开旋转披萨",
+    "category": "动作反应",
+    "difficulty": "进阶",
+    "tone": "orange",
+    "levelCount": 0,
+    "endless": true,
+    "allowUndo": false,
+    "artwork": {
+      "url": "./crisp-original/pizzaarrow/card.svg",
+      "position": "center",
+      "size": "cover"
+    },
+    "source": {
+      "kind": "adapted",
+      "license": "MIT",
+      "author": "ABA Games",
+      "workTitle": "PIZZA ARROW",
+      "url": "https://github.com/abagames/crisp-game-lib-games/blob/cfb39d2f988feb5918eb83697145b5a35adabf58/docs/pizzaarrow/main.js",
+      "commit": "cfb39d2f988feb5918eb83697145b5a35adabf58",
+      "notice": "./crisp-original/LICENSES.txt",
+      "notes": "完整无尽原作，原 main.js 逐字保留；共享本地引擎、生成像素和合成音乐。有限关卡为 0。"
+    },
+    "component": lazy(() => import("../games/PizzaArrowOriginal"))
+  },
+  {
+    "id": "rps",
+    "title": "猜拳四轨",
+    "subtitle": "四条轨道与三种手势同步轮换",
+    "category": "动作反应",
+    "difficulty": "进阶",
+    "tone": "purple",
+    "levelCount": 0,
+    "endless": true,
+    "allowUndo": false,
+    "artwork": {
+      "url": "./crisp-original/rps/card.svg",
+      "position": "center",
+      "size": "cover"
+    },
+    "source": {
+      "kind": "adapted",
+      "license": "MIT",
+      "author": "ABA Games",
+      "workTitle": "RPS",
+      "url": "https://github.com/abagames/crisp-game-lib-games/blob/cfb39d2f988feb5918eb83697145b5a35adabf58/docs/rps/main.js",
+      "commit": "cfb39d2f988feb5918eb83697145b5a35adabf58",
+      "notice": "./crisp-original/LICENSES.txt",
+      "notes": "完整无尽原作，原 main.js 逐字保留；共享本地引擎、生成像素和合成音乐。有限关卡为 0。"
+    },
+    "component": lazy(() => import("../games/RpsOriginal"))
+  },
+  {
+    "id": "swingby",
+    "title": "引力远航",
+    "subtitle": "侧推转向，飞向离起点更远处",
+    "category": "动作反应",
+    "difficulty": "进阶",
+    "tone": "purple",
+    "levelCount": 0,
+    "endless": true,
+    "allowUndo": false,
+    "artwork": {
+      "url": "./crisp-original/swingby/card.svg",
+      "position": "center",
+      "size": "cover"
+    },
+    "source": {
+      "kind": "adapted",
+      "license": "MIT",
+      "author": "ABA Games",
+      "workTitle": "SWINGBY",
+      "url": "https://github.com/abagames/crisp-game-lib-games/blob/cfb39d2f988feb5918eb83697145b5a35adabf58/docs/swingby/main.js",
+      "commit": "cfb39d2f988feb5918eb83697145b5a35adabf58",
+      "notice": "./crisp-original/LICENSES.txt",
+      "notes": "完整无尽原作，原 main.js 逐字保留；共享本地引擎、生成像素和合成音乐。有限关卡为 0。"
+    },
+    "component": lazy(() => import("../games/SwingbyOriginal"))
+  },
+  {
+    "id": "cube-composer",
+    "title": "方块函数工坊",
+    "subtitle": "把替换、筛选与堆叠排成程序，重现完整原作25面方块墙。",
+    "category": "编程启蒙",
+    "difficulty": "中级",
+    "tone": "orange",
+    "levelCount": 25,
+    "allowUndo": true,
+    "resumeKey": "playgarden.cube-composer.v1",
+    "artwork": {
+      "url": "./cube-composer-art.svg",
+      "position": "center",
+      "size": "cover"
+    },
+    "source": {
+      "kind": "adapted",
+      "license": "MIT",
+      "author": "David Peter (sharkdp)",
+      "workTitle": "Cube Composer（完整原作25关）",
+      "url": "https://github.com/sharkdp/cube-composer/tree/a891ffe5de79b072819da04718820d0452b9a201",
+      "commit": "a891ffe5de79b072819da04718820d0452b9a201",
+      "notice": "./cube-composer-LICENSE.txt",
+      "notes": "完整保留6章25原关的彩色列、函数集与严格二维目标；每个函数只用一次，组合替换、过滤、堆叠、模式匹配、稳定分区与三位模8运算。原核心和数据MIT；Playgarden中文界面、触控/键盘、存档/撤销/提示和新SVG为GPL-3.0-only。无旧编译器运行时、统计、远程字体或社交脚本。"
+    },
+    "component": lazy(() => import("../games/CubeComposerGame"))
+  },
 ];
 export const findGame = (id: string) => games.find((game) => game.id === id);
