@@ -1,0 +1,415 @@
+/* SPDX-License-Identifier: GPL-3.0-only */
+.pend-game {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 280px;
+  gap: 24px;
+  color: #3d554b;
+  width: 100%;
+  min-width: 0;
+}
+.pend-game * {
+  box-sizing: border-box;
+}
+.pend-workbench {
+  min-width: 0;
+  background: #fffdf6;
+  border: 1px solid #ded8c4;
+  border-radius: 24px;
+  padding: 22px;
+  box-shadow: 0 8px 30px #6255350b;
+}
+.pend-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-bottom: 18px;
+}
+.pend-eyebrow {
+  display: block;
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  font-weight: 750;
+  color: #698675;
+  line-height: 1.6;
+}
+.pend-heading h3 {
+  margin: 7px 0 0;
+  font-size: 25px;
+  font-weight: 750;
+  color: #314e44;
+}
+.pend-time {
+  text-align: right;
+  flex-shrink: 0;
+}
+.pend-time strong {
+  font-size: 24px;
+  font-variant-numeric: tabular-nums;
+}
+.pend-time strong small {
+  font-size: 12px;
+  font-weight: 500;
+}
+.pend-time > span {
+  display: block;
+  color: #8c927f;
+  font-size: 10px;
+  margin-top: 4px;
+}
+.pend-scoreboard {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr 1fr;
+  gap: 9px;
+  align-items: center;
+  border-top: 1px solid #ebe6d7;
+  padding: 15px 0;
+  text-align: center;
+}
+.pend-scoreboard > div > span {
+  display: block;
+  font-size: 12px;
+  color: #6b755e;
+}
+.pend-scoreboard > div > strong {
+  display: block;
+  font-size: 26px;
+  margin: 4px 0;
+  font-variant-numeric: tabular-nums;
+}
+.pend-scoreboard strong small {
+  font-size: 13px;
+  color: #949986;
+  font-weight: 500;
+}
+.pend-pips {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+}
+.pend-pips i {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #e2dcc8;
+}
+.pend-pips i.pend-filled {
+  background: #4d8671;
+}
+.pend-scoreboard .pend-phase {
+  border: 1px solid #e4ddc7;
+  padding: 12px 4px;
+  border-radius: 13px;
+  background: #f5f0df;
+}
+.pend-scoreboard .pend-phase > span {
+  font-weight: 750;
+  font-size: 14px;
+  color: #736744;
+}
+.pend-phase > small {
+  display: block;
+  font-size: 10px;
+  color: #8c846c;
+  margin-top: 5px;
+}
+.pend-scoreboard .pend-open {
+  border-color: #a0c1af;
+  background: #e3eee2;
+}
+.pend-scoreboard .pend-open > span {
+  color: #2e6d52;
+}
+.pend-stage {
+  overflow: hidden;
+  border: 1px solid #e6dfc9;
+  border-radius: 20px;
+  touch-action: manipulation;
+}
+.pend-stage svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.pend-gate {
+  fill: #96b79c;
+  opacity: 0.18;
+}
+.pend-stage-open .pend-gate {
+  fill: #87b48e;
+  opacity: 0.42;
+}
+.pend-scale-label {
+  fill: #988f79;
+  font-size: 12px;
+}
+.pend-limit-label {
+  fill: #b55f46;
+  font-size: 12px;
+  font-weight: 700;
+}
+.pend-bell-label {
+  fill: #8b7449;
+  font-size: 13px;
+  font-weight: 650;
+}
+.pend-stage-caption {
+  fill: #8a806b;
+  font-size: 12px;
+}
+.pend-readouts {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1.2fr;
+  gap: 8px;
+  margin-top: 15px;
+  text-align: center;
+}
+.pend-readouts > div {
+  min-width: 0;
+  border-right: 1px solid #e6e4d7;
+}
+.pend-readouts > div:last-child {
+  border-right: 0;
+}
+.pend-readouts span {
+  display: block;
+  color: #89907c;
+  font-size: 11px;
+}
+.pend-readouts strong {
+  display: block;
+  color: #466a59;
+  font-size: 19px;
+  font-variant-numeric: tabular-nums;
+  margin-top: 6px;
+  white-space: nowrap;
+}
+.pend-readouts strong small {
+  font-size: 10px;
+  font-weight: 400;
+}
+.pend-estimate-note {
+  font-size: 10px;
+  color: #8a8e7d;
+  text-align: center;
+  line-height: 1.6;
+  margin: 10px 0 16px;
+}
+.pend-controls {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+.pend-game button {
+  font: inherit;
+  cursor: pointer;
+  touch-action: manipulation;
+  min-width: 44px;
+  min-height: 48px;
+}
+.pend-game button:disabled {
+  cursor: default;
+}
+.pend-push {
+  border: 1px solid #447860;
+  border-radius: 14px;
+  color: #f9f6e9;
+  background: #4b816c;
+  padding: 13px 8px;
+  min-height: 70px !important;
+  box-shadow: 0 3px 0 #305944;
+}
+.pend-push strong {
+  display: block;
+  font-size: 18px;
+}
+.pend-push small {
+  display: block;
+  margin-top: 4px;
+  font-size: 10px;
+  opacity: 0.75;
+}
+.pend-push:enabled:hover {
+  background: #3b715c;
+}
+.pend-push:enabled:active {
+  box-shadow: none;
+  transform: translateY(2px);
+}
+.pend-push:disabled {
+  color: #8d9884;
+  background: #e7ebde;
+  border-color: #d3dccb;
+  box-shadow: none;
+}
+.pend-start {
+  width: 100%;
+  margin-top: 13px;
+  background: #efe2b4;
+  color: #746037;
+  font-weight: 700 !important;
+  border: 1px solid #d7c68f;
+  border-radius: 12px;
+  padding: 12px 14px;
+}
+.pend-start:enabled:hover {
+  background: #e8d59b;
+}
+.pend-start:disabled {
+  background: #f5f2e7;
+  border-color: #e8e4d3;
+  color: #939380;
+}
+.pend-game button:focus-visible,
+.pend-stage:focus-visible,
+.pend-notes summary:focus-visible {
+  outline: 3px solid #a57836;
+  outline-offset: 4px;
+}
+.pend-message {
+  min-height: 3.5em;
+  color: #6e755f;
+  font-size: 12px;
+  line-height: 1.7;
+  margin: 15px 2px 0;
+  overflow-wrap: anywhere;
+}
+.pend-notes {
+  min-width: 0;
+  padding: 19px 2px;
+  font-size: 13px;
+  color: #7a826d;
+  line-height: 1.8;
+  overflow-wrap: anywhere;
+}
+.pend-notes h3 {
+  color: #3c5d4e;
+  font-size: 27px;
+  line-height: 1.35;
+  margin: 15px 0;
+}
+.pend-notes > p {
+  margin: 0 0 18px;
+}
+.pend-notes ol {
+  margin: 16px 0;
+  padding-left: 20px;
+}
+.pend-notes li {
+  margin: 8px 0;
+  padding-left: 2px;
+}
+.pend-rule-card {
+  border-left: 3px solid #c5ac6c;
+  background: #f3eddc;
+  padding: 13px 15px;
+  border-radius: 0 12px 12px 0;
+  margin: 22px 0;
+}
+.pend-rule-card strong {
+  color: #77623d;
+  font-size: 13px;
+}
+.pend-rule-card p {
+  font-size: 12px;
+  margin: 6px 0 0;
+}
+.pend-specs {
+  margin: 0 0 20px;
+  font-size: 11px;
+}
+.pend-specs > div {
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+  border-bottom: 1px solid #e5e4d6;
+  padding: 7px 0;
+}
+.pend-specs dd {
+  margin: 0;
+  color: #526c59;
+  font-weight: 650;
+  font-variant-numeric: tabular-nums;
+}
+.pend-notes details {
+  font-size: 12px;
+}
+.pend-notes summary {
+  cursor: pointer;
+  color: #587561;
+  font-weight: 650;
+  min-height: 44px;
+  padding: 11px 0;
+}
+.pend-notes details p {
+  margin: 8px 0;
+}
+@media (max-width: 960px) {
+  .pend-game {
+    grid-template-columns: minmax(0, 1fr) 240px;
+    gap: 18px;
+  }
+  .pend-workbench {
+    padding: 17px;
+  }
+}
+@media (max-width: 760px) {
+  .pend-game {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 8px;
+  }
+  .pend-notes {
+    padding: 20px 8px;
+  }
+}
+@media (max-width: 430px) {
+  .pend-workbench {
+    padding: 13px;
+    border-radius: 18px;
+  }
+  .pend-heading {
+    gap: 7px;
+    padding-bottom: 12px;
+  }
+  .pend-heading h3 {
+    font-size: 21px;
+  }
+  .pend-eyebrow {
+    font-size: 8px;
+    letter-spacing: 0.1em;
+  }
+  .pend-time strong {
+    font-size: 20px;
+  }
+  .pend-time > span {
+    font-size: 8px;
+  }
+  .pend-scoreboard {
+    gap: 5px;
+    padding: 12px 0;
+  }
+  .pend-scoreboard > div > span {
+    font-size: 10px;
+  }
+  .pend-scoreboard .pend-phase > span {
+    font-size: 12px;
+  }
+  .pend-phase > small {
+    font-size: 9px;
+  }
+  .pend-readouts strong {
+    font-size: 16px;
+  }
+  .pend-readouts span {
+    font-size: 10px;
+  }
+  .pend-readouts strong small {
+    font-size: 8px;
+  }
+  .pend-push strong {
+    font-size: 16px;
+  }
+  .pend-controls {
+    gap: 9px;
+  }
+}

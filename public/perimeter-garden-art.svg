@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- SPDX-License-Identifier: GPL-3.0-only -->
+<!-- Original programmatic vector artwork for Playgarden. No external assets. -->
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="600" viewBox="0 0 960 600" fill="none">
+  <defs>
+    <linearGradient id="perim-bg" x1="0" y1="0" x2="960" y2="600" gradientUnits="userSpaceOnUse"><stop stop-color="#EAF0DA"/><stop offset="1" stop-color="#C9D9B3"/></linearGradient>
+    <pattern id="perim-grid" width="78" height="78" patternUnits="userSpaceOnUse"><rect width="78" height="78" fill="#F3F5E7"/><path d="M78 0H0V78" stroke="#C5D2B4" stroke-width="2"/></pattern>
+    <g id="perim-flower"><path d="M0 17V-2M0 12C-17 12-18 0-3 3M0 7C17 7 17-5 3-1" stroke="#56713E" stroke-width="4" stroke-linecap="round"/><path d="M0-20C-15-33-28-9-11-5C-19 14 10 19 10 1C30 1 21-25 6-16C9-34-13-36-12-18" fill="#F9EBC1"/><circle cx="0" cy="-9" r="7" fill="#AF7437"/></g>
+    <g id="perim-star"><path d="M0-19L6-6L21-5L10 5L13 20L0 12L-13 20L-10 5L-21-5L-6-6Z" fill="#456132"/></g>
+  </defs>
+  <rect width="960" height="600" rx="34" fill="url(#perim-bg)"/>
+  <circle cx="87" cy="85" r="125" fill="#F7F5D5" opacity=".7"/>
+  <path d="M784 516C859 441 909 496 966 402M730 587C831 482 910 561 977 475" stroke="#AFC699" stroke-width="27" stroke-linecap="round" opacity=".5"/>
+  <g transform="translate(247 90) rotate(-5 234 195)">
+    <rect x="-15" y="-15" width="498" height="420" rx="20" fill="#597947" opacity=".16" transform="translate(10 14)"/>
+    <rect x="-15" y="-15" width="498" height="420" rx="20" fill="#DCE6CC" stroke="#A6BD91" stroke-width="3"/>
+    <rect width="468" height="390" fill="url(#perim-grid)"/>
+    <path d="M78 78H390V312H312V390H234V312H78Z" fill="#B8CE91"/>
+    <rect x="234" y="156" width="78" height="78" fill="#D8DBCC"/>
+    <path d="M78 156H390M78 234H390M78 312H312M156 78V312M234 78V390M312 78V312" stroke="#9DB97B" stroke-width="2"/>
+    <path d="M78 78H390V312H312V390H234V312H78ZM234 156H312V234H234Z" stroke="#916029" stroke-width="7" stroke-linejoin="round"/>
+    <path d="M256 177L290 211M290 177L256 211" stroke="#7A8270" stroke-width="5" stroke-linecap="round"/>
+    <use href="#perim-star" transform="translate(117 117)"/><use href="#perim-star" transform="translate(351 273)"/><use href="#perim-star" transform="translate(273 351)"/>
+    <use href="#perim-flower" transform="translate(195 127)"/><use href="#perim-flower" transform="translate(273 126)"/><use href="#perim-flower" transform="translate(351 126)"/>
+    <use href="#perim-flower" transform="translate(117 204)"/><use href="#perim-flower" transform="translate(195 204)"/><use href="#perim-flower" transform="translate(351 204)"/>
+    <use href="#perim-flower" transform="translate(117 282)"/><use href="#perim-flower" transform="translate(195 282)"/><use href="#perim-flower" transform="translate(273 282)"/>
+  </g>
+  <g transform="translate(106 427) rotate(-12)"><rect width="303" height="52" rx="10" fill="#EED6A5" stroke="#BA9356" stroke-width="2"/><path d="M23 0V18M46 0V11M69 0V18M92 0V11M115 0V18M138 0V11M161 0V18M184 0V11M207 0V18M230 0V11M253 0V18M276 0V11" stroke="#936B35" stroke-width="3"/></g>
+  <g transform="translate(752 105) rotate(12)"><rect width="124" height="91" rx="17" fill="#FBF9EC" stroke="#C3D0AF" stroke-width="2"/><path d="M23 30H101M23 58H77" stroke="#90A77A" stroke-width="5" stroke-linecap="round"/><circle cx="97" cy="61" r="9" fill="#BFD398"/></g>
+  <path d="M145 229C92 221 105 175 146 189C143 153 180 165 165 197C206 175 222 218 168 228" fill="#9AB677"/><path d="M153 219V280" stroke="#789359" stroke-width="5" stroke-linecap="round"/>
+</svg>

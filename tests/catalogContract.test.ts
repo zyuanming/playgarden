@@ -1,3 +1,6 @@
+import { perimeterGardenLevels } from "../src/games/perimeterGardenLevels";
+import { pendulumPushLevels } from "../src/games/pendulumPushLogic";
+import { intervalNotesLevels } from "../src/games/intervalNotesLogic";
 import { jigsawGardenLevels } from "../src/games/jigsawGardenLogic";
 import { pinballGardenLevels } from "../src/games/pinballGardenLogic";
 import { cloudHopLevels } from "../src/games/cloudHopLogic";
@@ -142,6 +145,9 @@ import { sortingNetworkLevels } from "../src/games/sortingNetworkLogic";
 import { voxelViewsLevels } from "../src/games/voxelViewsLogic";
 import { cubeNetLevels } from "../src/games/cubeNetLogic";
 const packs = {
+  "perimeter-garden": perimeterGardenLevels,
+  "pendulum-push": pendulumPushLevels,
+  "interval-notes": intervalNotesLevels,
   "jigsaw-garden": jigsawGardenLevels,
   "pinball-garden": pinballGardenLevels,
   "cloud-hop": cloudHopLevels,
@@ -315,8 +321,8 @@ describe("Scalable catalog contract", () => {
       }
     }),
   );
-  it("counts only 141 real games and 2779 levels, not the roadmap", () => {
-    expect(games).toHaveLength(141);
-    expect(games.reduce((sum, g) => sum + g.levelCount, 0)).toBe(2779);
+  it("counts only 144 real games and 2803 levels, not the roadmap", () => {
+    expect(games).toHaveLength(144);
+    expect(games.reduce((sum, g) => sum + g.levelCount, 0)).toBe(2803);
   });
 });

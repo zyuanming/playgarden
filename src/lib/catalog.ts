@@ -141,6 +141,9 @@ export const GAME_IDS = [
   "cloud-hop",
   "pinball-garden",
   "jigsaw-garden",
+  "interval-notes",
+  "pendulum-push",
+  "perimeter-garden",
 ] as const;
 export type GameId = (typeof GAME_IDS)[number];
 export type Category =

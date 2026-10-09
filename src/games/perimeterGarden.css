@@ -1,0 +1,111 @@
+/* SPDX-License-Identifier: GPL-3.0-only */
+.perim-game {
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(250px, .8fr);
+  align-items: start;
+  gap: 24px;
+  color: #294438;
+}
+.perim-game * { box-sizing: border-box; }
+.perim-field {
+  min-width: 0;
+  padding: 25px;
+  border: 1px solid #d5dfca;
+  border-radius: 25px;
+  background: #fdfdf6;
+  box-shadow: 0 12px 35px #264c3710;
+}
+.perim-heading { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.perim-eyebrow { color: #58704c; font-size: 11px; font-weight: 800; letter-spacing: 1.5px; }
+.perim-heading h2 { color: #284838; font-size: 26px; margin: 8px 0 10px; line-height: 1.35; }
+.perim-heading > svg { flex-shrink: 0; color: #57803e; }
+.perim-brief { color: #526049; font-size: 14px; line-height: 1.8; margin: 0 0 18px; }
+.perim-brief strong { color: #354c2d; }
+.perim-meters { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 9px; margin-bottom: 21px; }
+.perim-meters > div { display: grid; gap: 6px; min-width: 0; border: 1px solid #dce2d4; border-radius: 13px; padding: 12px; background: #f3f4eb; }
+.perim-meters > div > span { display: flex; align-items: center; gap: 5px; font-size: 12px; color: #556b50; }
+.perim-meters strong { color: #334b38; font-size: 27px; line-height: 1.15; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.perim-meters small { color: #627057; font-size: 12px; font-weight: 500; }
+.perim-meters em { color: #627057; font-size: 11px; font-style: normal; }
+.perim-meters .perim-met { background: #e6efd8; border-color: #b5cba2; }
+.perim-meters .perim-met em { color: #35632b; font-weight: 700; }
+.perim-board-wrap { width: min(100%, 482px); margin: 0 auto; padding: 6px; border: 1px solid #b6c6a8; border-radius: 11px; background: #e1e8d3; }
+.perim-board { position: relative; display: grid; width: 100%; isolation: isolate; }
+.perim-game .perim-cell {
+  display: grid;
+  position: relative;
+  place-items: center;
+  width: 100%;
+  min-width: 44px;
+  min-height: 44px;
+  height: auto;
+  aspect-ratio: 1;
+  padding: 0;
+  border: 1px solid #d1dcc5;
+  border-radius: 0;
+  background: #f6f8ed;
+  color: #899c7b;
+  cursor: pointer;
+  box-shadow: none;
+  touch-action: manipulation;
+}
+.perim-cell > small { position: absolute; top: 4px; left: 5px; font-size: 9px; line-height: 1; color: #64765b; font-weight: 500; }
+.perim-cell > span { font-family: Arial, sans-serif; font-size: clamp(24px, 3.5vw, 37px); line-height: 1; transform: translateY(3px); }
+.perim-game .perim-planted { background: #cdddab; border-color: #b6c995; color: #466b35; }
+.perim-game .perim-anchor { background: #b7cf90; color: #365628; }
+.perim-game .perim-blocked { background: repeating-linear-gradient(135deg, #e5e5de 0, #e5e5de 6px, #d9dcd2 6px, #d9dcd2 8px); color: #687168; }
+.perim-blocked > span { font-size: 36px; font-weight: 400; }
+.perim-game .perim-hinted { box-shadow: inset 0 0 0 4px #414c8e; }
+.perim-game .perim-hinted:after { content: "?"; position: absolute; right: 4px; top: 2px; color: #293778; font-size: 14px; font-weight: 900; }
+.perim-game .perim-cell:hover:not(:disabled) { filter: brightness(.95); }
+.perim-game .perim-cell:focus-visible { outline: 3px solid #324e9b; outline-offset: -6px; z-index: 2; }
+.perim-game .perim-cell:disabled { opacity: 1; cursor: default; }
+.perim-boundary { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none; z-index: 3; }
+.perim-boundary line { stroke: #986127; stroke-width: .075; stroke-linecap: round; }
+.perim-legend { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin: 15px 0 11px; font-size: 11px; color: #506744; }
+.perim-legend > span { display: flex; align-items: center; gap: 5px; }
+.perim-legend b { font-family: Arial, sans-serif; font-size: 17px; }
+.perim-legend i { width: 18px; height: 4px; border-radius: 3px; background: #986127; }
+.perim-counting { font-size: 12px; line-height: 1.7; color: #607050; text-align: center; margin: 0 0 16px; }
+.perim-counting strong { color: #755024; white-space: nowrap; }
+.perim-feedback { min-height: 77px; border: 1px solid #dae3cd; border-radius: 13px; padding: 13px 15px; margin: 0; background: #eef3e5; color: #445d37; font-size: 13px; line-height: 1.75; }
+.perim-feedback.perim-success { color: #2e5c25; background: #e0eed2; border-color: #b1cb99; font-weight: 700; }
+.perim-notes { min-width: 0; border: 1px solid #d9dfca; border-radius: 25px; padding: 28px; background: #edf0e1; }
+.perim-notes h3 { color: #345135; margin: 15px 0; font-size: 29px; line-height: 1.4; }
+.perim-notes p, .perim-notes li { font-size: 14px; line-height: 1.85; }
+.perim-notes .perim-lesson { padding-bottom: 18px; margin: 0; border-bottom: 1px solid #ccd8bb; }
+.perim-notes ol { padding-left: 21px; margin: 16px 0; }
+.perim-notes li { padding: 5px 0 5px 3px; }
+.perim-formula { border: 1px dashed #c0cdad; border-radius: 16px; padding: 17px; background: #fafbef; text-align: center; margin: 20px 0; }
+.perim-formula span { display: block; font-size: 11px; letter-spacing: 2px; color: #708063; }
+.perim-formula b { display: block; color: #67512c; font-size: 23px; letter-spacing: 1px; margin: 9px 0; font-variant-numeric: tabular-nums; }
+.perim-formula p { margin: 0; font-size: 12px; color: #617351; }
+.perim-notes .perim-small { color: #4c6440; font-size: 12px; margin-bottom: 15px; }
+.perim-notes details { border-top: 1px solid #ced9bc; padding-top: 4px; }
+.perim-notes summary { min-height: 44px; padding: 12px 0; font-size: 13px; font-weight: 700; cursor: pointer; }
+.perim-notes summary:focus-visible { outline: 3px solid #324e9b; outline-offset: 2px; border-radius: 5px; }
+.perim-notes details p { font-size: 12px; margin: 0 0 10px; }
+@media (max-width: 850px) {
+  .perim-game { grid-template-columns: 1fr; gap: 16px; }
+  .perim-notes { padding: 22px; }
+  .perim-notes h3 { font-size: 26px; }
+}
+@media (max-width: 480px) {
+  .perim-field { padding: 17px 4px; border-radius: 19px; }
+  .perim-heading, .perim-brief { margin-left: 5px; margin-right: 5px; }
+  .perim-heading h2 { font-size: 22px; }
+  .perim-eyebrow { font-size: 9px; letter-spacing: 1px; }
+  .perim-heading > svg { width: 28px; }
+  .perim-brief { font-size: 13px; }
+  .perim-meters { gap: 6px; margin-bottom: 15px; }
+  .perim-meters > div { gap: 5px; padding: 10px 8px; }
+  .perim-meters strong { font-size: 24px; }
+  .perim-meters small { font-size: 11px; }
+  .perim-board-wrap { padding: 4px; }
+  .perim-cell > small { font-size: 8px; left: 3px; top: 3px; }
+  .perim-cell > span { font-size: 27px; }
+  .perim-blocked > span { font-size: 32px; }
+  .perim-legend { gap: 11px; font-size: 10px; }
+  .perim-counting { font-size: 11px; }
+  .perim-feedback { padding: 12px; }
+}

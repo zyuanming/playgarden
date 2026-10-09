@@ -1,0 +1,116 @@
+/* SPDX-License-Identifier: GPL-3.0-only */
+.ipn-game {
+  display: grid;
+  grid-template-columns: minmax(0, 1.65fr) minmax(250px, .8fr);
+  gap: 24px;
+  color: #413957;
+  border-radius: 25px;
+  outline-offset: 5px;
+}
+.ipn-game:focus-visible { outline: 3px solid #8775a6; }
+.ipn-workbench, .ipn-guide {
+  min-width: 0;
+  padding: 25px;
+  border: 1px solid #ddd5e6;
+  border-radius: 25px;
+}
+.ipn-workbench { background: #fffcf5; }
+.ipn-guide { align-self: start; background: #f0eaf4; }
+.ipn-heading { display: flex; align-items: center; justify-content: space-between; gap: 14px; }
+.ipn-eyebrow { color: #776889; font-size: 11px; font-weight: 800; letter-spacing: 1.3px; }
+.ipn-heading h3 { font-size: 25px; line-height: 1.4; margin: 8px 0 17px; }
+.ipn-seal { font-family: Georgia, serif; font-size: 49px; color: #846791; transform: rotate(-12deg); }
+.ipn-progress { display: flex; flex-wrap: wrap; align-items: center; gap: 15px; border-top: 1px solid #e8e1de; padding-top: 15px; }
+.ipn-progress > strong { font-size: 28px; font-weight: 800; }
+.ipn-progress small { font-size: 13px; font-weight: 500; color: #766e7a; }
+.ipn-progress > span { margin-left: auto; color: #756981; font-size: 12px; }
+.ipn-progress ol { display: flex; gap: 7px; padding: 0; margin: 0; list-style: none; }
+.ipn-progress li { width: 28px; height: 28px; display: grid; place-items: center; border: 1px solid #d9d0de; border-radius: 50%; background: #f7f2f4; font-size: 12px; }
+.ipn-progress .ipn-current { color: #634979; border-color: #947fa6; background: #e9dff1; }
+.ipn-progress .ipn-done { background: #dce8d8; border-color: #88a47d; color: #355832; }
+.ipn-pair { display: grid; grid-template-columns: minmax(0, 1fr) 30px minmax(0, 1fr); gap: 12px; align-items: center; margin: 23px 0 17px; }
+.ipn-pair > div { display: flex; flex-direction: column; align-items: center; padding: 13px; border: 1px solid #c9c2db; border-radius: 18px; background: #ece8f5; }
+.ipn-pair > div:last-child { background: #e7eee2; border-color: #c2d1b7; }
+.ipn-pair > div > span { font-size: 12px; color: #615477; font-weight: 700; }
+.ipn-pair > div:last-child > span { color: #526547; }
+.ipn-pair strong { font-family: Georgia, "Times New Roman", serif; font-size: 34px; letter-spacing: 1px; line-height: 1.4; }
+.ipn-pair small { color: #635b6e; font-size: 12px; }
+.ipn-pair-arrow { text-align: center; color: #8b7893; font-size: 25px; }
+.ipn-scale { margin: 0; padding: 16px 10px 13px; border-radius: 18px; border: 1px solid #e7ddce; background: #f8f3e8; }
+.ipn-scale-caption { display: flex; flex-wrap: wrap; gap: 8px; justify-content: space-between; padding: 0 6px; }
+.ipn-scale-caption strong { font-size: 13px; }
+.ipn-scale-caption span { font-size: 11px; color: #807064; }
+.ipn-scale svg { display: block; width: 100%; height: auto; margin: 9px 0 5px; overflow: visible; }
+.ipn-contour { fill: none; stroke: #d5c6af; stroke-width: 3; stroke-linejoin: round; }
+.ipn-column { fill: none; stroke: #e2d8c7; stroke-width: 2; stroke-dasharray: 3 6; }
+.ipn-position { fill: #c6b998; }
+.ipn-first-note { fill: #756098; stroke: #fffcf5; stroke-width: 3; }
+.ipn-second-note { fill: #6c8559; stroke: #fffcf5; stroke-width: 3; }
+.ipn-note-letter { text-anchor: middle; fill: white; font: 700 18px system-ui, sans-serif; }
+.ipn-note-name { text-anchor: middle; fill: #4c4259; font: 700 22px system-ui, sans-serif; }
+.ipn-note-index { text-anchor: middle; fill: #756951; font: 15px system-ui, sans-serif; }
+.ipn-diagram-label { fill: #665971; font: 700 16px system-ui, sans-serif; }
+.ipn-diagram-subtitle { fill: #867969; font: 14px system-ui, sans-serif; }
+.ipn-counted .ipn-position { fill: #aa7b36; stroke: #ead39b; stroke-width: 7; }
+.ipn-counted .ipn-column { stroke: #b38d4b; stroke-width: 3; stroke-dasharray: none; }
+.ipn-scale figcaption { padding: 0 6px; font-size: 11px; line-height: 1.7; color: #776953; }
+.ipn-audio-row { display: flex; align-items: center; gap: 14px; margin: 16px 0 21px; }
+.ipn-game .ipn-play { display: flex; flex: 0 0 auto; align-items: center; justify-content: center; gap: 8px; min-width: 124px; min-height: 46px; padding: 9px 13px; border: 1px solid #d1c5dc; border-radius: 12px; background: #f0e9f5; color: #5d4777; font-size: 13px; font-weight: 700; cursor: pointer; touch-action: manipulation; }
+.ipn-play > span { font-size: 21px; line-height: 1; }
+.ipn-audio-note { margin: 0; font-size: 12px; line-height: 1.7; color: #72677f; }
+.ipn-answer-heading { display: flex; flex-wrap: wrap; gap: 8px; justify-content: space-between; align-items: baseline; margin-bottom: 12px; }
+.ipn-answer-heading strong { font-size: 16px; }
+.ipn-answer-heading span { color: #84748a; font-size: 11px; }
+.ipn-answers { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 9px; }
+.ipn-answers button { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; min-width: 0; min-height: 68px; padding: 7px; border: 1px solid #dbd2e1; border-radius: 13px; background: #fffdfa; color: #584769; cursor: pointer; touch-action: manipulation; box-shadow: 0 3px 0 #eee7ee; }
+.ipn-answers button > span { font-size: 11px; color: #8b7c95; }
+.ipn-answers button > strong { font-size: 17px; font-weight: 700; white-space: nowrap; }
+.ipn-answers button:hover:not(:disabled), .ipn-game .ipn-play:hover:not(:disabled) { background: #ede4f3; border-color: #a48db8; }
+.ipn-game button:focus-visible { outline: 3px solid #8e6baf; outline-offset: 3px; }
+.ipn-game button:disabled { cursor: default; opacity: .65; box-shadow: none; }
+.ipn-answers .ipn-hinted { outline: 3px dashed #aa833f; outline-offset: 1px; background: #faf0d9; }
+.ipn-feedback { min-height: 67px; padding: 15px; margin: 20px 0 0; border-radius: 13px; background: #f0ecef; color: #62546c; font-size: 13px; line-height: 1.75; }
+.ipn-feedback.ipn-wrong { background: #f6e8df; color: #82523e; }
+.ipn-feedback.ipn-hint { background: #f8edcf; color: #725621; }
+.ipn-feedback.ipn-success { background: #e6eddb; color: #526839; }
+.ipn-guide h3 { font-size: 28px; line-height: 1.6; margin: 17px 0 15px; font-weight: 700; }
+.ipn-guide p, .ipn-guide li { font-size: 13px; line-height: 1.85; }
+.ipn-guide > p { color: #71647f; }
+.ipn-guide ol { padding-left: 21px; margin: 22px 0; }
+.ipn-guide li { padding-left: 4px; margin: 12px 0; }
+.ipn-rule-card { margin: 22px 0; padding: 18px 16px; border-radius: 14px; border: 1px solid #d9cde2; background: #fcf8f0; text-align: center; }
+.ipn-rule-card > strong { font-size: 14px; }
+.ipn-rule-card > p { font-family: Georgia, serif; font-size: 24px; white-space: nowrap; margin: 14px 0 7px; color: #6a527e; }
+.ipn-rule-card > span { font-size: 12px; color: #7a6b87; }
+.ipn-guide .ipn-scope { border-top: 1px solid #dcd0e5; padding-top: 17px; font-size: 12px; }
+.ipn-footnote { margin-top: 20px; padding: 17px; border-radius: 13px; background: #e5dfed; }
+.ipn-footnote > strong { font-size: 13px; }
+.ipn-footnote p { font-size: 12px; color: #71637e; margin-bottom: 0; }
+.ipn-guide .ipn-keyboard { font-size: 11px; margin: 18px 0 0; }
+@media (max-width: 1000px) {
+  .ipn-game { grid-template-columns: minmax(0, 1fr); }
+  .ipn-guide { padding: 22px; }
+}
+@media (max-width: 520px) {
+  .ipn-game { gap: 17px; }
+  .ipn-workbench, .ipn-guide { padding: 17px 14px; border-radius: 19px; }
+  .ipn-heading h3 { font-size: 21px; }
+  .ipn-seal { font-size: 39px; }
+  .ipn-progress { gap: 10px; }
+  .ipn-progress > span { font-size: 10px; }
+  .ipn-pair { gap: 6px; grid-template-columns: minmax(0, 1fr) 21px minmax(0, 1fr); }
+  .ipn-pair > div { padding: 10px 6px; border-radius: 13px; }
+  .ipn-pair strong { font-size: 31px; }
+  .ipn-scale { padding: 12px 4px; }
+  .ipn-diagram-label { font-size: 22px; }
+  .ipn-diagram-subtitle { display: none; }
+  .ipn-note-name { font-size: 25px; }
+  .ipn-note-index { font-size: 19px; }
+  .ipn-audio-row { gap: 11px; align-items: flex-start; }
+  .ipn-game .ipn-play { min-width: 112px; }
+  .ipn-audio-note { font-size: 11px; }
+  .ipn-answers { gap: 8px; }
+  .ipn-answers button { min-height: 65px; padding: 7px 3px; }
+  .ipn-answers button > strong { font-size: 16px; }
+  .ipn-guide h3 { font-size: 26px; }
+}
