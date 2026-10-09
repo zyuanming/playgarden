@@ -19,7 +19,8 @@ async function importCode(page:Page,frame:Frame,code:string,mobile:boolean,valid
   const navigation=valid?page.waitForEvent('framenavigated',{predicate:f=>f===frame}):undefined;
   await act(frame.locator('#okay'),mobile);if(navigation)await navigation;
   if(valid){await expect.poll(async()=>{try{return (await read(await gameFrame(page))).clock.disposed===false;}catch{return false;}}).toBe(true);await expect(page.locator('.adr-game')).toHaveAttribute('data-adr-ready','true');return gameFrame(page);}
-  await expect(frame.locator('#adr-error')).toContainText('原进度已保留');return frame;
+  await expect(frame.locator('#adr-error')).toContainText('原进度已保留');
+  await clock(page,500);await expect(frame.locator('#event')).toHaveCount(0);return frame;
 }
 const encode=(state:unknown)=>Buffer.from(JSON.stringify(state),'utf8').toString('base64');
 async function settleEvent(page:Page,frame:Frame,mobile:boolean){
@@ -72,7 +73,9 @@ test('full original campaign: opening, village, exploration, failure, flight end
   // The original crafting view refreshes after a normal resource-changing action.
   await act(frame.locator('#stokeButton'),mobile);const wood=(await read(frame)).stores.wood;expect(wood).toBeGreaterThanOrEqual(10);
   await act(frame.locator('[buildThing="trap"]'),mobile);
-  expect((await read(frame)).game.buildings.trap).toBe(1);expect((await read(frame)).stores.wood).toBe(wood-10);
+  expect((await read(frame)).game.buildings.trap).toBe(1);
+  // A two-wood builder income may arrive while the native click waits for animation.
+  expect([wood-10,wood-8]).toContain((await read(frame)).stores.wood);
   await page.screenshot({path:info.outputPath('adr-earned-opening-and-trap.png'),fullPage:true});
   await act(page.getByRole('button',{name:'暂停',exact:true}),mobile);const frozen=await read(frame);await clock(page,10000);
   expect((await read(frame)).clock.now).toBe(frozen.clock.now);expect((await read(frame)).stores).toEqual(frozen.stores);
