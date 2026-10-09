@@ -1,0 +1,15 @@
+/* SPDX-License-Identifier: GPL-3.0-only */
+.crisp-game{width:100%;max-width:850px;margin:auto;color:#264c47}
+.crisp-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:10px}
+.crisp-heading span{font-size:12px;letter-spacing:.1em;font-weight:800;color:#4a7e75}
+.crisp-heading h3{font-size:clamp(18px,3vw,26px);margin:5px 0}
+.crisp-heading b{border-radius:999px;background:#e0ece2;padding:7px 12px;font-size:12px;white-space:nowrap}
+.crisp-intro{font-size:14px;line-height:1.8;margin:8px 0 13px}
+.crisp-score{display:flex;gap:18px;align-items:center;flex-wrap:wrap;border-top:1px solid #d8e4da;padding:10px 0;font-size:13px}
+.crisp-score strong{font-size:18px;margin-left:5px}.crisp-score small{margin-left:auto;color:#648077}
+.crisp-frame-wrap{position:relative;width:100%;overflow:hidden;background:#e0e0e0;border:1px solid #cddbd1;border-radius:14px;max-height:530px;min-height:200px}
+.crisp-parking .crisp-frame-wrap{max-width:530px;margin:auto}
+.crisp-frame-wrap iframe{display:block;border:0;width:100%;height:100%;position:absolute;inset:0}
+.crisp-cover{position:absolute;inset:0;display:grid;place-items:center;background:#f4f6edeF;padding:20px;text-align:center}
+.crisp-help{margin-top:14px;font-size:13px;line-height:1.8}.crisp-help summary{cursor:pointer;font-weight:700}.crisp-help p{margin:10px 0}.crisp-help a{color:#236e65}
+@media(max-width:480px){.crisp-heading{align-items:flex-start}.crisp-heading b{font-size:10px;padding:6px 8px}.crisp-score{gap:10px}.crisp-score small{width:100%;margin-left:0}.crisp-frame-wrap{min-height:180px}.crisp-intro{font-size:13px}}

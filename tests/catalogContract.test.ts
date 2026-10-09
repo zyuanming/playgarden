@@ -147,6 +147,9 @@ import { sortingNetworkLevels } from "../src/games/sortingNetworkLogic";
 import { voxelViewsLevels } from "../src/games/voxelViewsLogic";
 import { cubeNetLevels } from "../src/games/cubeNetLogic";
 const packs = {
+  "parking": [],
+  "bamboo": [],
+  "castn": [],
   "hextris": [],
   "parity": parityLevels,
   "coil": [],
@@ -315,7 +318,7 @@ describe("Scalable catalog contract", () => {
               ? "GPL-3.0-or-later"
               : "MIT",
       );
-      expect(game.artwork.url).toMatch(/^\.\/[a-z0-9-]+\.(?:webp|svg)$/);
+      expect(game.artwork.url).toMatch(/^\.\/(?:[a-z0-9-]+\/)*[a-z0-9-]+\.(?:webp|svg)$/);
       for (const root of [
         "https://example.test/",
         "https://example.test/playgarden/",
@@ -329,8 +332,8 @@ describe("Scalable catalog contract", () => {
       }
     }),
   );
-  it("counts only 148 real games and 2928 levels, not the roadmap", () => {
-    expect(games).toHaveLength(148);
+  it("counts only 151 real games and 2928 levels, not the roadmap", () => {
+    expect(games).toHaveLength(151);
     expect(games.reduce((sum, g) => sum + g.levelCount, 0)).toBe(2928);
   });
 });

@@ -1,0 +1,83 @@
+[
+  {
+    "id": "castn",
+    "title": "抛网捕鱼",
+    "subtitle": "抛网、收网与水位的较量",
+    "category": "动作反应",
+    "difficulty": "中级",
+    "tone": "green",
+    "levelCount": 0,
+    "endless": true,
+    "allowUndo": false,
+    "artwork": {
+      "url": "./crisp-original/castn/card.svg",
+      "position": "center",
+      "size": "cover"
+    },
+    "source": {
+      "kind": "adapted",
+      "license": "MIT",
+      "author": "ABA Games",
+      "workTitle": "CAST N",
+      "url": "https://github.com/abagames/crisp-game-lib-games/blob/cfb39d2f988feb5918eb83697145b5a35adabf58/docs/castn/main.js",
+      "commit": "cfb39d2f988feb5918eb83697145b5a35adabf58",
+      "notice": "./crisp-original/LICENSES.txt",
+      "notes": "保留完整原作的无尽玩法、生成像素与合成音乐；共享本地引擎，原版 main.js 未改写。"
+    },
+    "component": "CastNOriginal"
+  },
+  {
+    "id": "bamboo",
+    "title": "竹林巧收",
+    "subtitle": "把握成熟时机，规划往返路线",
+    "category": "动作反应",
+    "difficulty": "初级",
+    "tone": "green",
+    "levelCount": 0,
+    "endless": true,
+    "allowUndo": false,
+    "artwork": {
+      "url": "./crisp-original/bamboo/card.svg",
+      "position": "center",
+      "size": "cover"
+    },
+    "source": {
+      "kind": "adapted",
+      "license": "MIT",
+      "author": "ABA Games",
+      "workTitle": "BAMBOO",
+      "url": "https://github.com/abagames/crisp-game-lib-games/blob/cfb39d2f988feb5918eb83697145b5a35adabf58/docs/bamboo/main.js",
+      "commit": "cfb39d2f988feb5918eb83697145b5a35adabf58",
+      "notice": "./crisp-original/LICENSES.txt",
+      "notes": "保留完整原作的无尽玩法、生成像素与合成音乐；共享本地引擎，原版 main.js 未改写。"
+    },
+    "component": "BambooOriginal"
+  },
+  {
+    "id": "parking",
+    "title": "同步泊车",
+    "subtitle": "一键同步转向，停好整支车队",
+    "category": "动作反应",
+    "difficulty": "进阶",
+    "tone": "orange",
+    "levelCount": 0,
+    "endless": true,
+    "allowUndo": false,
+    "artwork": {
+      "url": "./crisp-original/parking/card.svg",
+      "position": "center",
+      "size": "cover"
+    },
+    "source": {
+      "kind": "adapted",
+      "license": "MIT",
+      "author": "ABA Games",
+      "workTitle": "PARKING",
+      "url": "https://github.com/abagames/crisp-game-lib-games/blob/cfb39d2f988feb5918eb83697145b5a35adabf58/docs/parking/main.js",
+      "commit": "cfb39d2f988feb5918eb83697145b5a35adabf58",
+      "notice": "./crisp-original/LICENSES.txt",
+      "notes": "保留完整原作的无尽玩法、生成像素与合成音乐；共享本地引擎，原版 main.js 未改写。"
+    },
+    "component": "ParkingOriginal"
+  }
+]

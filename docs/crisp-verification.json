@@ -1,0 +1,39 @@
+{
+  "date": "2026-10-09",
+  "passed": [
+    "57 original source files: byte counts, Git blobs, SHA-256",
+    "3 public original game files byte-identical",
+    "10 shipped JS files parsed without evaluation",
+    "TypeScript strict components and E2E",
+    "esbuild component compilation",
+    "Vite production build: 32 modules",
+    "Deterministic transformation reproduced byte-for-byte",
+    "All local frame script references resolve",
+    "No shipped external-network or dynamic-evaluation patterns",
+    "Independent static review: all reported blockers fixed"
+  ],
+  "pending": [
+    "Parent integration build",
+    "Desktop and mobile real-input GitHub E2E",
+    "Real screenshots and audio-output listening"
+  ],
+  "notRun": [
+    "Local browser",
+    "Upstream game execution",
+    "Upstream npm/build/install scripts",
+    "Unit tests or exhaustive solver sweeps"
+  ],
+  "tools": {
+    "typescript": "5.9.3",
+    "vite": "7.3.6",
+    "esbuild": "0.28.2"
+  },
+  "transformationOutputHashes": {
+    "public/crisp-original/engine.js": "63ff7fb874c98103cb13b868a4b3da398cdab0443bae9bf6159c2e430ac3e838",
+    "public/crisp-original/audio.js": "a15e4a57d55c2674305c71af58431fad092b52d8ed244bb3838b6dca4ab0c688",
+    "public/crisp-original/castn/index.html": "dccef73de6dfe12f3238c7a62f2fa52621284726e38870cc19448724523c55bd",
+    "public/crisp-original/bamboo/index.html": "eac63448a71e92ea14ee427f60f5b594418c0ca17e36e07e015534b24a0ad64b",
+    "public/crisp-original/parking/index.html": "91773dcb94c5e976c252ebac894ba94e6d98c8a1b81adcb384d517ad2e03dd66",
+    "docs/crisp-transform-map.json": "15228bc47b5fd3fcd84bf69648b90619220f5ecd4ea1ed9894cd8b9bc575c780"
+  }
+}

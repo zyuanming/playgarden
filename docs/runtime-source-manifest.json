@@ -210,6 +210,86 @@
         "vendor/hextris-original/upstream/README.md",
         "vendor/hextris-original/jquery-MIT-LICENSE.txt"
       ]
+    },
+    {
+      "name": "CAST N, BAMBOO, PARKING original endless games",
+      "version": "cfb39d2f988feb5918eb83697145b5a35adabf58",
+      "license": "MIT",
+      "source": "https://github.com/abagames/crisp-game-lib-games/tree/cfb39d2f988feb5918eb83697145b5a35adabf58",
+      "preferredSource": [
+        "vendor/crisp-original/upstream/games/docs/castn/main.js",
+        "vendor/crisp-original/upstream/games/docs/bamboo/main.js",
+        "vendor/crisp-original/upstream/games/docs/parking/main.js"
+      ],
+      "buildSources": [
+        "scripts/crisp/prepare.py"
+      ],
+      "scope": "Three complete byte-identical independent original game scripts. Original physics, scoring, difficulty, input-driven replay, pixel characters and procedural geometry preserved. Zero finite levels."
+    },
+    {
+      "name": "crisp-game-lib",
+      "version": "1.0.2 / 60cb278eda8ac9eff201742f3f095fed3df66dbb",
+      "license": "MIT",
+      "source": "https://github.com/abagames/crisp-game-lib/tree/60cb278eda8ac9eff201742f3f095fed3df66dbb",
+      "preferredSource": [
+        "vendor/crisp-original/upstream/engine/src",
+        "vendor/crisp-original/upstream/engine/docs/bundle.js",
+        "public/crisp-original/engine.js"
+      ],
+      "buildSources": [
+        "scripts/crisp/prepare.py",
+        "scripts/crisp/engine-lifecycle.js"
+      ],
+      "scope": "One shared local engine. Explicit RAF/listener/input lifecycle, run identity and read-only snapshots added. Optional theme/capture/rewind/minifier modes rejected; URL loader and debug fetch removed. Gameplay functions unchanged."
+    },
+    {
+      "name": "sounds-some-sounds",
+      "version": "2.0.0 / a896c5686d11c9b0fd092dd48ba89aea298028d8",
+      "license": "MIT",
+      "source": "https://github.com/abagames/sounds-some-sounds/tree/a896c5686d11c9b0fd092dd48ba89aea298028d8",
+      "preferredSource": [
+        "vendor/crisp-original/upstream/audio/src",
+        "vendor/crisp-original/upstream/audio/build/index.js",
+        "public/crisp-original/audio.js"
+      ],
+      "buildSources": [
+        "scripts/crisp/prepare.py",
+        "public/crisp-original/lifecycle.js"
+      ],
+      "scope": "Original generated music and sound effects with one supplied AudioContext and common master gain. Hidden sample-rate context and optional unmanaged-context fallback removed. Exact source bundle retained. No original build scripts/install hooks run."
+    },
+    {
+      "name": "jsfx embedded modified waveform synthesizer",
+      "version": "ABA Games vendored source in sounds-some-sounds 2.0.0; license record d35fabbf39b4a6d95c1b3c473f4112dd89905f9c",
+      "license": "MIT",
+      "source": "https://github.com/abagames/sounds-some-sounds/blob/a896c5686d11c9b0fd092dd48ba89aea298028d8/lib/jsfx/index.js",
+      "preferredSource": [
+        "vendor/crisp-original/upstream/audio/lib/jsfx/index.js",
+        "vendor/crisp-original/third-party/jsfx/LICENSE-MIT",
+        "public/crisp-original/audio.js"
+      ],
+      "buildSources": [
+        "scripts/crisp/prepare.py"
+      ],
+      "scope": "ABA modified jsfx carries Egon Elbre 2017 MIT text and original modification header. Seven fixed dynamic Function oscillators are expanded into exact literal functions, retaining formulas and operation order. Shared noise sample state explicitly declared; unused audio navigation disabled."
+    },
+    {
+      "name": "mml-iterator embedded parser and iterator",
+      "version": "1.1.0 corresponding source verified by full static comparison; historical npm resolution not asserted",
+      "license": "MIT",
+      "source": "https://github.com/mohayonao/mml-iterator/tree/7e76ab2734521eeb59a7ac4f94c2634502be1475",
+      "preferredSource": [
+        "vendor/crisp-original/third-party/mml-iterator/src",
+        "vendor/crisp-original/third-party/mml-iterator/package.json",
+        "vendor/crisp-original/upstream/audio/build/index.js",
+        "scripts/crisp/class-scaffolding.js"
+      ],
+      "buildSources": [
+        "vendor/crisp-original/third-party/mml-iterator/.babelrc",
+        "scripts/crisp/prepare.py",
+        "scripts/crisp/prove-mml-correspondence.mjs"
+      ],
+      "scope": "Six fixed official editable source files and generated class scaffolding correspond to every embedded module, with 65 exact normalized-AST comparisons and all 24 top-level statements accounted for. Shipped mml bytes remain unchanged inside the original pinned audio bundle. Proof and exact transformations are in docs/crisp-mml-correspondence.json and .md. The absent original lockfile limits historical installation provenance, not preferred editable-source correspondence. Existing Nao Yonamine MIT author/template records and full permission text remain unchanged."
     }
   ]
 }

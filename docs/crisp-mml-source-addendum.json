@@ -1,0 +1,60 @@
+{
+  "repo": "mohayonao/mml-iterator",
+  "commit": "7e76ab2734521eeb59a7ac4f94c2634502be1475",
+  "version": "1.1.0",
+  "files": [
+    {
+      "path": "vendor/crisp-original/third-party/mml-iterator/.babelrc",
+      "url": "https://github.com/mohayonao/mml-iterator/blob/7e76ab2734521eeb59a7ac4f94c2634502be1475/.babelrc",
+      "sha256": "475405a7e2044194e6a683b6f10a3d9de725eb1ac229c0eab6602edac33d31f0",
+      "git_blob_sha1": "2b701791ef72645bf7899a07d2e59a27f90fcf40",
+      "bytes": 416
+    },
+    {
+      "path": "vendor/crisp-original/third-party/mml-iterator/src/DefaultParams.js",
+      "url": "https://github.com/mohayonao/mml-iterator/blob/7e76ab2734521eeb59a7ac4f94c2634502be1475/src/DefaultParams.js",
+      "sha256": "4c070e34d79c4c1ef992f7efa34ecc73e988b2e86240952983ab8d24587aad74",
+      "git_blob_sha1": "e62f5cad09c07744fe8a66bda1b53571ed04a6cf",
+      "bytes": 110
+    },
+    {
+      "path": "vendor/crisp-original/third-party/mml-iterator/src/MMLIterator.js",
+      "url": "https://github.com/mohayonao/mml-iterator/blob/7e76ab2734521eeb59a7ac4f94c2634502be1475/src/MMLIterator.js",
+      "sha256": "39ef8bff41a370c8c72294e92adbb502b858f36ca6298938a5d2a4bfcdc50f1f",
+      "git_blob_sha1": "4bc64000cf9917b3c20bf4700411104f169e3759",
+      "bytes": 5339
+    },
+    {
+      "path": "vendor/crisp-original/third-party/mml-iterator/src/MMLParser.js",
+      "url": "https://github.com/mohayonao/mml-iterator/blob/7e76ab2734521eeb59a7ac4f94c2634502be1475/src/MMLParser.js",
+      "sha256": "a69f0a71ceda6d38d82cc15ef80dadb3a3ebf301030cb24608fe3fbaf9c19ad5",
+      "git_blob_sha1": "5d4dd71ecaf92a0d0430b8aa6f3f9e861e99c757",
+      "bytes": 5472
+    },
+    {
+      "path": "vendor/crisp-original/third-party/mml-iterator/src/Scanner.js",
+      "url": "https://github.com/mohayonao/mml-iterator/blob/7e76ab2734521eeb59a7ac4f94c2634502be1475/src/Scanner.js",
+      "sha256": "ff60270f604c75704e83b229853bbf5d59dade3b2788f9201ce9ed53994671be",
+      "git_blob_sha1": "5c9461adb4fc560974c60bdba61d69c4d02f00d0",
+      "bytes": 1267
+    },
+    {
+      "path": "vendor/crisp-original/third-party/mml-iterator/src/Syntax.js",
+      "url": "https://github.com/mohayonao/mml-iterator/blob/7e76ab2734521eeb59a7ac4f94c2634502be1475/src/Syntax.js",
+      "sha256": "2867933b5a1ac28000bbbcc066d201a8f06df33a33774569ac228a4f2d206dca",
+      "git_blob_sha1": "a468329bf57d30e991bc28fdef4a00b73352be0f",
+      "bytes": 317
+    },
+    {
+      "path": "vendor/crisp-original/third-party/mml-iterator/src/index.js",
+      "url": "https://github.com/mohayonao/mml-iterator/blob/7e76ab2734521eeb59a7ac4f94c2634502be1475/src/index.js",
+      "sha256": "850fc0238f060bd6f00486bc48351cc3596abd28fb469d4b5cff5a55f8ed0a40",
+      "git_blob_sha1": "1856b37ffb9bedb24727c14fa1e5673b516ee584",
+      "bytes": 43
+    }
+  ],
+  "mapping": "The six fixed official mml-iterator 1.1.0 source files at 7e76ab2734521eeb59a7ac4f94c2634502be1475 are the exact preferred editable source corresponding to every embedded mml module under the fully enumerated Babel/bundler transformations. Complete static comparison accounts for all 47 class methods, constructors, constants, free helpers, generated scaffolds and all 24 embedded top-level statements. The shipped block is byte-identical to the original audio block. Historical npm lockfile resolution is not claimed.",
+  "staticComparison": "Archived mml-iterator 1.1.0 source corresponds to the embedded implementation on static comparison: ordered method sets Scanner 8, MMLParser 21, MMLIterator 18; Syntax/DefaultParams constants and representative parsing, duration and loop methods match expected Babel translation.",
+  "correspondenceProof": "docs/crisp-mml-correspondence.json",
+  "correspondenceMethod": "scripts/crisp/prove-mml-correspondence.mjs"
+}
