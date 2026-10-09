@@ -1,0 +1,45 @@
+{
+  "upstreamCommit": "730ecbd24d4cd821bd236f2a441f4e5e2b22654f",
+  "preservedExactFirstPartyFiles": 19,
+  "preservedExactFirstPartyBytes": 64069,
+  "excludedUnusedThirdPartyOrMixedBundles": 6,
+  "originalLevels": 100,
+  "ordinaryLevels": 50,
+  "blackWhiteLevels": 50,
+  "originalInstructionRecordsPreservedInSource": 8,
+  "originalSolutionMetadataPreserved": 80,
+  "runtimeLevelDataEqualsOriginalRecords": true,
+  "publicMITMatchesUpstream": true,
+  "runtimeNetworkOrThirdPartyScripts": 0,
+  "gameplayOrSolversExecutedByThisCheck": false,
+  "verifiedUTC": "2026-10-09",
+  "preflightArchive": {
+    "bytes": 394466,
+    "sha256": "bc8391054d02af0b688473f3b4f8df8a4bdc7e529e8c9f71205211cd017d9647",
+    "all25RetrievedTextGitBlobsRechecked": true
+  },
+  "typecheck": "Passed isolated strict TypeScript against actual existing GameProps, helpers and installed dependencies; shared project files unchanged.",
+  "componentBuild": "Passed isolated esbuild browser ESM production bundle and CSS compilation; not an integrated application build.",
+  "integrationBuild": "PENDING integration owner npm run build",
+  "browserExecution": "NOT RUN: sole integration owner will use targeted CI",
+  "screenshotReview": "PENDING actual desktop/mobile/320px screenshots",
+  "production": "NOT DEPLOYED",
+  "unitSuites": "NOT RUN per instruction",
+  "campaignSolverSweeps": "NOT RUN per instruction",
+  "boundedE2ePlanning": {
+    "levels": [
+      1,
+      50,
+      51,
+      100
+    ],
+    "ordinaryFirstRoute": "rrdd",
+    "ordinaryLastRoute": "rllurrlruddllurrulld",
+    "blackWhiteFirstRoute": "uuddluududludd",
+    "blackWhiteLastRoute": "luldudrldrulrurlrldd",
+    "meaning": "Authored real-input routes; first/last original solutions and two bounded introductory plans independently checked; not browser evidence."
+  },
+  "e2e": "e2e/parity.spec.ts",
+  "meaning": "Static checks pass only. Real gameplay, visual acceptance and production status remain pending.",
+  "svg": "Valid XML; original editable vector art; no external asset links."
+}

@@ -1,3 +1,4 @@
+import { parityLevels } from "../src/games/parityLevels";
 import { serverSurvivalOriginalLevels } from "../src/games/serverSurvivalOriginalLevels";
 import { perimeterGardenLevels } from "../src/games/perimeterGardenLevels";
 import { pendulumPushLevels } from "../src/games/pendulumPushLogic";
@@ -146,6 +147,8 @@ import { sortingNetworkLevels } from "../src/games/sortingNetworkLogic";
 import { voxelViewsLevels } from "../src/games/voxelViewsLogic";
 import { cubeNetLevels } from "../src/games/cubeNetLogic";
 const packs = {
+  "hextris": [],
+  "parity": parityLevels,
   "coil": [],
   "server-survival": serverSurvivalOriginalLevels,
   "perimeter-garden": perimeterGardenLevels,
@@ -308,7 +311,9 @@ describe("Scalable catalog contract", () => {
           ? "GPL-3.0-only"
           : game.id === "xiangqi"
             ? "BSD-2-Clause"
-            : "MIT",
+            : game.id === "hextris"
+              ? "GPL-3.0-or-later"
+              : "MIT",
       );
       expect(game.artwork.url).toMatch(/^\.\/[a-z0-9-]+\.(?:webp|svg)$/);
       for (const root of [
@@ -324,8 +329,8 @@ describe("Scalable catalog contract", () => {
       }
     }),
   );
-  it("counts only 146 real games and 2828 levels, not the roadmap", () => {
-    expect(games).toHaveLength(146);
-    expect(games.reduce((sum, g) => sum + g.levelCount, 0)).toBe(2828);
+  it("counts only 148 real games and 2928 levels, not the roadmap", () => {
+    expect(games).toHaveLength(148);
+    expect(games.reduce((sum, g) => sum + g.levelCount, 0)).toBe(2928);
   });
 });

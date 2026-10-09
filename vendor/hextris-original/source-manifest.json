@@ -1,0 +1,208 @@
+{
+  "commit": "3f4847dc8fd7dab3d1c87e6324b9159d92fbd396",
+  "preflightArchiveSha256": "66376a79205208465955c778dcfb85ac8bfc5044ec5b8354cfd371deb2f96e01",
+  "upstreamFiles": [
+    {
+      "path": "js/Block.js",
+      "bytes": 5951,
+      "git_blob_sha1": "a7f21c962e5492a3a0a83454de5897ed6e526fbc",
+      "expected_git_blob_sha1": "a7f21c962e5492a3a0a83454de5897ed6e526fbc",
+      "matches_upstream": true,
+      "sha256": "8dc16633cf4443126d66b2b4851d113067a8dfe52c85db30531c8920c039110c"
+    },
+    {
+      "path": "js/Hex.js",
+      "bytes": 5005,
+      "git_blob_sha1": "1705efdc201a2a1206744678d2824758211cdace",
+      "expected_git_blob_sha1": "1705efdc201a2a1206744678d2824758211cdace",
+      "matches_upstream": true,
+      "sha256": "021ac309917508afea58295ce8db7205768f39da38bbc6147adb2c5cc3240ff0"
+    },
+    {
+      "path": "js/Text.js",
+      "bytes": 600,
+      "git_blob_sha1": "dfc08cb646f844ca5acbb83d643bf0c15c2fe170",
+      "expected_git_blob_sha1": "dfc08cb646f844ca5acbb83d643bf0c15c2fe170",
+      "matches_upstream": true,
+      "sha256": "7eb73bf9f10b97f2fb00d5af182ba8f649723cc82fdcae66b131eafc2d754a75"
+    },
+    {
+      "path": "js/checking.js",
+      "bytes": 2894,
+      "git_blob_sha1": "800013709ce62a37fb4e666089b25827082ba12e",
+      "expected_git_blob_sha1": "800013709ce62a37fb4e666089b25827082ba12e",
+      "matches_upstream": true,
+      "sha256": "9f8761f25c184013fbbaf29d0e6141e3064c0b103132c6f97a1c93d8e0595821"
+    },
+    {
+      "path": "js/comboTimer.js",
+      "bytes": 2230,
+      "git_blob_sha1": "b514906bc27d254019343871883a602811465d63",
+      "expected_git_blob_sha1": "b514906bc27d254019343871883a602811465d63",
+      "matches_upstream": true,
+      "sha256": "90c9df8009abb46fd92d51a9631e4e67a9fd2095080a373a7c0e8ff1fc599a9b"
+    },
+    {
+      "path": "js/initialization.js",
+      "bytes": 6898,
+      "git_blob_sha1": "a22adf86fc5da17c5461429ac38640d2192c8bfc",
+      "expected_git_blob_sha1": "a22adf86fc5da17c5461429ac38640d2192c8bfc",
+      "matches_upstream": true,
+      "sha256": "6db0722340b9f7955810769425c8c8283629f59889b952a18cfb665cf0fe0134"
+    },
+    {
+      "path": "js/input.js",
+      "bytes": 4952,
+      "git_blob_sha1": "190f66f1c0892135086c5e41a53b9fbc61aba9d4",
+      "expected_git_blob_sha1": "190f66f1c0892135086c5e41a53b9fbc61aba9d4",
+      "matches_upstream": true,
+      "sha256": "ec27fdd24caf206db1cc2cb0ea35115f72861ae5ff2a31df915bad452f18532c"
+    },
+    {
+      "path": "js/main.js",
+      "bytes": 9891,
+      "git_blob_sha1": "5d8aae3659ddb4b979611a19df539311b0c9afc4",
+      "expected_git_blob_sha1": "5d8aae3659ddb4b979611a19df539311b0c9afc4",
+      "matches_upstream": true,
+      "sha256": "1ad07186e9d76379f97f2c037caa8f06e39c0541c1bf1a26fbdae88ed2844c43"
+    },
+    {
+      "path": "js/math.js",
+      "bytes": 318,
+      "git_blob_sha1": "3946bb463fcf11bdafba7b6fc83b08c714f1dcaa",
+      "expected_git_blob_sha1": "3946bb463fcf11bdafba7b6fc83b08c714f1dcaa",
+      "matches_upstream": true,
+      "sha256": "032789a4e1b7f509dd0d1f70becc6dd8de1429b9d36c12bce64de5fe320afc9e"
+    },
+    {
+      "path": "js/render.js",
+      "bytes": 3525,
+      "git_blob_sha1": "7aafb33537cce71dead7a659a631f307172a7b12",
+      "expected_git_blob_sha1": "7aafb33537cce71dead7a659a631f307172a7b12",
+      "matches_upstream": true,
+      "sha256": "bcf83391093e3980abd1e12fdfcc6364735c2d79f0fe74006905e1d83e537c13"
+    },
+    {
+      "path": "js/save-state.js",
+      "bytes": 1343,
+      "git_blob_sha1": "2a3f36ccaa2d590c468ebefd8b0ef7b294033354",
+      "expected_git_blob_sha1": "2a3f36ccaa2d590c468ebefd8b0ef7b294033354",
+      "matches_upstream": true,
+      "sha256": "22ab1cb924fc3e7be06222e449c338385832cd7b6067ec1cbae3955b700675c6"
+    },
+    {
+      "path": "js/update.js",
+      "bytes": 1840,
+      "git_blob_sha1": "ab57878450e57976a41b03267de065035f714214",
+      "expected_git_blob_sha1": "ab57878450e57976a41b03267de065035f714214",
+      "matches_upstream": true,
+      "sha256": "f6983acf1cee3e09d1f71d6ddfe1badba4ee4394734d8a99cb231db249a87c1a"
+    },
+    {
+      "path": "js/view.js",
+      "bytes": 7422,
+      "git_blob_sha1": "91a772f088342ba3f3fb051d842b181538f61816",
+      "expected_git_blob_sha1": "91a772f088342ba3f3fb051d842b181538f61816",
+      "matches_upstream": true,
+      "sha256": "02ab0e8c634b21306a44977c25461f137019763e8bda6ddbdaca10b0b51af2cf"
+    },
+    {
+      "path": "js/wavegen.js",
+      "bytes": 5391,
+      "git_blob_sha1": "a4e85ff77c84676339c41f7024625364b34abb4c",
+      "expected_git_blob_sha1": "a4e85ff77c84676339c41f7024625364b34abb4c",
+      "matches_upstream": true,
+      "sha256": "05c9b4f996ea32f0aabf1e99ce4cb9ab8fe4cc4596dde9b2c06f63c8400e8150"
+    },
+    {
+      "path": "style/style.css",
+      "bytes": 7978,
+      "git_blob_sha1": "b57f23e858e90018e602dcb4e2766ab8c635a73b",
+      "expected_git_blob_sha1": "b57f23e858e90018e602dcb4e2766ab8c635a73b",
+      "matches_upstream": true,
+      "sha256": "766e0d988ec3b1343d9182dccee2190c742b4d17ee764826bdd488bad95dd4d6"
+    },
+    {
+      "path": "LICENSE.md",
+      "bytes": 35178,
+      "git_blob_sha1": "16d89e0a34c0bc274e1939e28a3f98ee2b380858",
+      "expected_git_blob_sha1": "16d89e0a34c0bc274e1939e28a3f98ee2b380858",
+      "matches_upstream": true,
+      "sha256": "ccb349b4132ed7737f25e5adebfe61f3d52dca33708df1e50352320438d1d4c2"
+    },
+    {
+      "path": "README.md",
+      "bytes": 1802,
+      "git_blob_sha1": "271c5601e3abcdd6bf0567eb6d88417dea45cbee",
+      "expected_git_blob_sha1": "271c5601e3abcdd6bf0567eb6d88417dea45cbee",
+      "matches_upstream": true,
+      "sha256": "383ac7de93cc0f085ef6d5ffeb08f95e1baf599d33772afd6c51958187f75eaf"
+    },
+    {
+      "path": "index.html",
+      "bytes": 11710,
+      "git_blob_sha1": "30c7be64dbd0d55772fc41d799e69e85cb3bfd35",
+      "expected_git_blob_sha1": "30c7be64dbd0d55772fc41d799e69e85cb3bfd35",
+      "matches_upstream": true,
+      "sha256": "6b4a50382dfeddd36f03b44cc16d9aa15a01b461e7c6463b375ff2210145f4c1"
+    }
+  ],
+  "sourceUrl": "https://github.com/Hextris/hextris/tree/3f4847dc8fd7dab3d1c87e6324b9159d92fbd396",
+  "excludedUnusedDependencies": [
+    {
+      "path": "vendor/hammer.min.js",
+      "bytes": 13710,
+      "git_blob_sha1": "11af03140859cb43e75b217dd792194f87069f58",
+      "expected_git_blob_sha1": "11af03140859cb43e75b217dd792194f87069f58",
+      "matches_upstream": true,
+      "sha256": "f91094848368717989484b6fe060675e4f7ae194f3fe85650aca413b9e987271",
+      "reason": "Unused legacy dependency excluded from final source tree and runtime; complete redistribution notice not needed by the adapted game. Hash retained as source-review evidence."
+    },
+    {
+      "path": "vendor/jquery.js",
+      "bytes": 92593,
+      "git_blob_sha1": "a6107ab22b762c3ca5a8f1f535441d919885833f",
+      "expected_git_blob_sha1": "a6107ab22b762c3ca5a8f1f535441d919885833f",
+      "matches_upstream": true,
+      "sha256": "ee120ee3cca09a6e21325332e3294444d16406a355b8b0c33dbd9cc3ea3fbe2c",
+      "reason": "Unused legacy dependency excluded from final source tree and runtime; complete redistribution notice not needed by the adapted game. Hash retained as source-review evidence."
+    },
+    {
+      "path": "vendor/js.cookie.js",
+      "bytes": 3242,
+      "git_blob_sha1": "116e62d8cb621ea3cedcfd465e4ca7df61725be4",
+      "expected_git_blob_sha1": "116e62d8cb621ea3cedcfd465e4ca7df61725be4",
+      "matches_upstream": true,
+      "sha256": "dd972387609461c36da7be13326bc22f48a89c3df0aad539c80f16d65046ff72",
+      "reason": "Unused legacy dependency excluded from final source tree and runtime; complete redistribution notice not needed by the adapted game. Hash retained as source-review evidence."
+    },
+    {
+      "path": "vendor/jsonfn.min.js",
+      "bytes": 809,
+      "git_blob_sha1": "59a0ea1cda450d82472488ff909d4620b0b59031",
+      "expected_git_blob_sha1": "59a0ea1cda450d82472488ff909d4620b0b59031",
+      "matches_upstream": true,
+      "sha256": "5f0502c3c48812393a14ebc4a51785085903b713a0df8eb8533fafea8bb529a9",
+      "reason": "Unused legacy dependency excluded from final source tree and runtime; complete redistribution notice not needed by the adapted game. Hash retained as source-review evidence."
+    },
+    {
+      "path": "vendor/keypress.min.js",
+      "bytes": 9985,
+      "git_blob_sha1": "e004f6a9186d27371473c931b19c13859cb6d061",
+      "expected_git_blob_sha1": "e004f6a9186d27371473c931b19c13859cb6d061",
+      "matches_upstream": true,
+      "sha256": "e3a60e96762936ce21bdb27f95176ef0eeac75b962ccaade28861ab14af8d11d",
+      "reason": "Unused legacy dependency excluded from final source tree and runtime; complete redistribution notice not needed by the adapted game. Hash retained as source-review evidence."
+    },
+    {
+      "path": "vendor/sweet-alert.min.js",
+      "bytes": 10424,
+      "git_blob_sha1": "a0c8c3ce5a28b7ecb2f88256d70423721b246837",
+      "expected_git_blob_sha1": "a0c8c3ce5a28b7ecb2f88256d70423721b246837",
+      "matches_upstream": true,
+      "sha256": "ac46ed6a8364a5004cfc46372e42ccde232cee43e6594dd4233a486311c3d439",
+      "reason": "Unused legacy dependency excluded from final source tree and runtime; complete redistribution notice not needed by the adapted game. Hash retained as source-review evidence."
+    }
+  ],
+  "publicationScope": "18 exact first-party originals published; 24 files were inspected. Six unused dependency bundles appeared in initial PR history and were removed from the final tree before merge."
+}

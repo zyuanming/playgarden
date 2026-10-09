@@ -1,0 +1,41 @@
+{
+  "scope": "static source/resource audit; no browser observed yet",
+  "deletedFromRuntime": [
+    {
+      "file": "js/main.js",
+      "sink": "$.get to naked IPv4 score endpoint",
+      "resolution": "Entire checkGameOver replaced with local-only finishGame"
+    },
+    {
+      "file": "js/main.js",
+      "sink": "dynamic remote a.js script",
+      "resolution": "Loader not selected for generated engine"
+    },
+    {
+      "file": "js/initialization.js",
+      "sink": "Google Analytics loader and pageview",
+      "resolution": "Entire initializer replaced"
+    },
+    {
+      "file": "index.html",
+      "sink": "Ads, GA, Google Fonts, social sharing, store badges, third-party dependencies",
+      "resolution": "Entire HTML/CSS replaced with local resources"
+    },
+    {
+      "file": "vendor/jsonfn.min.js",
+      "sink": "eval during function deserialization",
+      "resolution": "Not a runtime dependency; strict JSON schema/constructor restoration instead"
+    }
+  ],
+  "publicResourceAllowlist": [
+    "./style.css",
+    "./hextris.js"
+  ],
+  "CSP": "default none; script/style self; connect/font/media/frame/worker/object none",
+  "runtimeNetworkingAPIs": [],
+  "storageKeys": [
+    "playgarden.hextris.original.save.v1",
+    "playgarden.hextris.original.records.v1"
+  ],
+  "postMessage": "only same-origin parent, event.source and random instance session verified; pause/hint/dispose only"
+}

@@ -1,0 +1,159 @@
+{
+  "upstreamSnapshot": [
+    {
+      "path": "vendor/hextris-original/upstream/LICENSE.md",
+      "bytes": 35178,
+      "sha256": "ccb349b4132ed7737f25e5adebfe61f3d52dca33708df1e50352320438d1d4c2",
+      "scope": "exact editable upstream source; excluded from web runtime"
+    },
+    {
+      "path": "vendor/hextris-original/upstream/README.md",
+      "bytes": 1802,
+      "sha256": "383ac7de93cc0f085ef6d5ffeb08f95e1baf599d33772afd6c51958187f75eaf",
+      "scope": "exact editable upstream source; excluded from web runtime"
+    },
+    {
+      "path": "vendor/hextris-original/upstream/index.html",
+      "bytes": 11710,
+      "sha256": "6b4a50382dfeddd36f03b44cc16d9aa15a01b461e7c6463b375ff2210145f4c1",
+      "scope": "exact editable upstream source; excluded from web runtime"
+    },
+    {
+      "path": "vendor/hextris-original/upstream/js/Block.js",
+      "bytes": 5951,
+      "sha256": "8dc16633cf4443126d66b2b4851d113067a8dfe52c85db30531c8920c039110c",
+      "scope": "exact editable upstream source; excluded from web runtime"
+    },
+    {
+      "path": "vendor/hextris-original/upstream/js/Hex.js",
+      "bytes": 5005,
+      "sha256": "021ac309917508afea58295ce8db7205768f39da38bbc6147adb2c5cc3240ff0",
+      "scope": "exact editable upstream source; excluded from web runtime"
+    },
+    {
+      "path": "vendor/hextris-original/upstream/js/Text.js",
+      "bytes": 600,
+      "sha256": "7eb73bf9f10b97f2fb00d5af182ba8f649723cc82fdcae66b131eafc2d754a75",
+      "scope": "exact editable upstream source; excluded from web runtime"
+    },
+    {
+      "path": "vendor/hextris-original/upstream/js/checking.js",
+      "bytes": 2894,
+      "sha256": "9f8761f25c184013fbbaf29d0e6141e3064c0b103132c6f97a1c93d8e0595821",
+      "scope": "exact editable upstream source; excluded from web runtime"
+    },
+    {
+      "path": "vendor/hextris-original/upstream/js/comboTimer.js",
+      "bytes": 2230,
+      "sha256": "90c9df8009abb46fd92d51a9631e4e67a9fd2095080a373a7c0e8ff1fc599a9b",
+      "scope": "exact editable upstream source; excluded from web runtime"
+    },
+    {
+      "path": "vendor/hextris-original/upstream/js/initialization.js",
+      "bytes": 6898,
+      "sha256": "6db0722340b9f7955810769425c8c8283629f59889b952a18cfb665cf0fe0134",
+      "scope": "exact editable upstream source; excluded from web runtime"
+    },
+    {
+      "path": "vendor/hextris-original/upstream/js/input.js",
+      "bytes": 4952,
+      "sha256": "ec27fdd24caf206db1cc2cb0ea35115f72861ae5ff2a31df915bad452f18532c",
+      "scope": "exact editable upstream source; excluded from web runtime"
+    },
+    {
+      "path": "vendor/hextris-original/upstream/js/main.js",
+      "bytes": 9891,
+      "sha256": "1ad07186e9d76379f97f2c037caa8f06e39c0541c1bf1a26fbdae88ed2844c43",
+      "scope": "exact editable upstream source; excluded from web runtime"
+    },
+    {
+      "path": "vendor/hextris-original/upstream/js/math.js",
+      "bytes": 318,
+      "sha256": "032789a4e1b7f509dd0d1f70becc6dd8de1429b9d36c12bce64de5fe320afc9e",
+      "scope": "exact editable upstream source; excluded from web runtime"
+    },
+    {
+      "path": "vendor/hextris-original/upstream/js/render.js",
+      "bytes": 3525,
+      "sha256": "bcf83391093e3980abd1e12fdfcc6364735c2d79f0fe74006905e1d83e537c13",
+      "scope": "exact editable upstream source; excluded from web runtime"
+    },
+    {
+      "path": "vendor/hextris-original/upstream/js/save-state.js",
+      "bytes": 1343,
+      "sha256": "22ab1cb924fc3e7be06222e449c338385832cd7b6067ec1cbae3955b700675c6",
+      "scope": "exact editable upstream source; excluded from web runtime"
+    },
+    {
+      "path": "vendor/hextris-original/upstream/js/update.js",
+      "bytes": 1840,
+      "sha256": "f6983acf1cee3e09d1f71d6ddfe1badba4ee4394734d8a99cb231db249a87c1a",
+      "scope": "exact editable upstream source; excluded from web runtime"
+    },
+    {
+      "path": "vendor/hextris-original/upstream/js/view.js",
+      "bytes": 7422,
+      "sha256": "02ab0e8c634b21306a44977c25461f137019763e8bda6ddbdaca10b0b51af2cf",
+      "scope": "exact editable upstream source; excluded from web runtime"
+    },
+    {
+      "path": "vendor/hextris-original/upstream/js/wavegen.js",
+      "bytes": 5391,
+      "sha256": "05c9b4f996ea32f0aabf1e99ce4cb9ab8fe4cc4596dde9b2c06f63c8400e8150",
+      "scope": "exact editable upstream source; excluded from web runtime"
+    },
+    {
+      "path": "vendor/hextris-original/upstream/style/style.css",
+      "bytes": 7978,
+      "sha256": "766e0d988ec3b1343d9182dccee2190c742b4d17ee764826bdd488bad95dd4d6",
+      "scope": "exact editable upstream source; excluded from web runtime"
+    }
+  ],
+  "publicRuntimeDependencies": [],
+  "excludedAssets": [
+    "all upstream bitmap/SVG art",
+    "all upstream font files",
+    "all third-party runtime dependencies",
+    "all marketing/social/analytics/ad scripts"
+  ],
+  "originalCanvasCodeLicense": "GPL-3.0-or-later",
+  "newCardLicense": "GPL-3.0-or-later",
+  "excludedUnusedDependencies": [
+    {
+      "path": "vendor/hextris-original/upstream/vendor/hammer.min.js",
+      "bytes": 13710,
+      "sha256": "f91094848368717989484b6fe060675e4f7ae194f3fe85650aca413b9e987271",
+      "scope": "not retained in final published source tree or runtime; original retrieval hash evidence only"
+    },
+    {
+      "path": "vendor/hextris-original/upstream/vendor/jquery.js",
+      "bytes": 92593,
+      "sha256": "ee120ee3cca09a6e21325332e3294444d16406a355b8b0c33dbd9cc3ea3fbe2c",
+      "scope": "not retained in final published source tree or runtime; original retrieval hash evidence only"
+    },
+    {
+      "path": "vendor/hextris-original/upstream/vendor/js.cookie.js",
+      "bytes": 3242,
+      "sha256": "dd972387609461c36da7be13326bc22f48a89c3df0aad539c80f16d65046ff72",
+      "scope": "not retained in final published source tree or runtime; original retrieval hash evidence only"
+    },
+    {
+      "path": "vendor/hextris-original/upstream/vendor/jsonfn.min.js",
+      "bytes": 809,
+      "sha256": "5f0502c3c48812393a14ebc4a51785085903b713a0df8eb8533fafea8bb529a9",
+      "scope": "not retained in final published source tree or runtime; original retrieval hash evidence only"
+    },
+    {
+      "path": "vendor/hextris-original/upstream/vendor/keypress.min.js",
+      "bytes": 9985,
+      "sha256": "e3a60e96762936ce21bdb27f95176ef0eeac75b962ccaade28861ab14af8d11d",
+      "scope": "not retained in final published source tree or runtime; original retrieval hash evidence only"
+    },
+    {
+      "path": "vendor/hextris-original/upstream/vendor/sweet-alert.min.js",
+      "bytes": 10424,
+      "sha256": "ac46ed6a8364a5004cfc46372e42ccde232cee43e6594dd4233a486311c3d439",
+      "scope": "not retained in final published source tree or runtime; original retrieval hash evidence only"
+    }
+  ]
+}

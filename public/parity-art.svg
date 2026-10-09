@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="400" viewBox="0 0 640 400" role="img" aria-label="步步同数：青色框沿黑白数字棋盘移动">
+  <!-- SPDX-License-Identifier: GPL-3.0-only. Original Playgarden vector artwork. -->
+  <rect width="640" height="400" fill="#e9eee3"/>
+  <circle cx="565" cy="40" r="180" fill="#dbe6d3"/>
+  <circle cx="44" cy="430" r="160" fill="#d5e2d7"/>
+  <g transform="translate(198 68) rotate(-7 132 132)">
+    <rect x="-10" y="-10" width="284" height="284" rx="22" fill="#33473d"/>
+    <g fill="#e3e6d8">
+      <rect width="84" height="84" rx="8"/><rect x="90" width="84" height="84" rx="8"/><rect x="180" width="84" height="84" rx="8"/>
+      <rect y="90" width="84" height="84" rx="8"/><rect x="90" y="90" width="84" height="84" rx="8"/><rect x="180" y="90" width="84" height="84" rx="8"/>
+      <rect y="180" width="84" height="84" rx="8"/><rect x="90" y="180" width="84" height="84" rx="8"/><rect x="180" y="180" width="84" height="84" rx="8"/>
+    </g>
+    <g fill="#293c32"><rect x="90" width="84" height="84" rx="8"/><rect y="90" width="84" height="84" rx="8"/><rect x="180" y="90" width="84" height="84" rx="8"/><rect x="90" y="180" width="84" height="84" rx="8"/></g>
+    <g font-family="system-ui,sans-serif" font-size="40" text-anchor="middle" font-weight="600" fill="#334b3e"><text x="42" y="56">0</text><text x="222" y="56">0</text><text x="132" y="146">−2</text><text x="42" y="236">0</text><text x="222" y="236">0</text></g>
+    <g font-family="system-ui,sans-serif" font-size="40" text-anchor="middle" font-weight="600" fill="#dce6d7"><text x="132" y="56">3</text><text x="42" y="146">3</text><text x="222" y="146">3</text><text x="132" y="236">2</text></g>
+    <rect x="181" y="181" width="82" height="82" rx="8" fill="none" stroke="#2697a1" stroke-width="5"/>
+  </g>
+  <g fill="none" stroke="#588878" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M103 218v-61h39m-10-10 10 10-10 10"/><path d="M537 151v70h-39m10-10-10 10 10 10"/></g>
+</svg>

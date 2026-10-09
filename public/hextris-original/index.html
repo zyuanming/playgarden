@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'none'; connect-src 'none'; media-src 'none'; object-src 'none'; frame-src 'none'; worker-src 'none'; base-uri 'none'; form-action 'none'">
+  <title>六向彩环 · Hextris</title>
+  <link rel="stylesheet" href="./style.css">
+  <script src="./hextris.js" defer></script>
+</head>
+<body>
+  <main class="game-shell" aria-label="六向彩环游戏">
+    <header class="hud"><div><span>本局得分</span><strong id="score">0</strong></div><div><span>最高纪录</span><strong id="best">0</strong></div><div><span>连击 / 波形</span><strong><b id="combo">×1</b> <small id="wave">随机</small></strong></div></header>
+    <div class="board">
+      <canvas id="canvas" tabindex="0" aria-label="六向彩环画布，左右方向键旋转，下键加速"></canvas>
+      <section id="welcome" class="cover" aria-label="开始游戏">
+        <div class="cover-card"><p class="eyebrow">HEXTRIS · 无尽挑战</p><h1>转动六边形<br>接住每一种色彩</h1><p>让相邻的同色彩块连成 3 块，<br>在外环装满前，把它们消掉。</p><button id="resume-save" class="primary" hidden>继续存档</button><button id="start" class="primary">开始新局</button><small>左右旋转 · 同色相连 · 连击加分</small></div>
+      </section>
+      <section id="pause-cover" class="cover" hidden aria-label="暂停中"><div class="cover-card"><p class="eyebrow">慢一点，也没关系</p><h2>游戏已暂停</h2><p>彩块、生成节奏与连击时间都已冻结。</p><button id="resume" class="primary">继续游戏</button></div></section>
+      <section id="lost" class="cover" hidden aria-label="本局结束"><div class="cover-card"><p class="eyebrow">再试一次，找到节奏</p><h2>彩块超出外环</h2><p class="result">本局得分 <strong id="final-score">0</strong></p><p>本机前三：<span id="best-list">还没有记录</span></p><button id="restart" class="primary">再来一局</button></div></section>
+      <section id="help-panel" class="cover" hidden aria-label="玩法说明"><div class="cover-card help-card"><h2>把同色接在一起</h2><p>左右方向键 / A、D，或轻触画布左右两侧，旋转中央六边形。</p><p>同一边上下相邻、左右两边同层相邻的同色彩块，连到 3 块及以上就会消除。跨越第六边与第一边也相邻。</p><p>得分 = 消除块数的平方 × 连击倍率。在彩色外环计时条消退前再次消除，连击倍率加一。</p><p>按住下键 / S 或“加速”可四倍加速。任意一边超出外环就结束；触屏 7 层，桌面 8 层。六种波形随进程变化，难度会逐渐增加。</p><p>保存后可离开，再次进入选择“继续存档”。浏览器切到后台会自动暂停。</p><button id="close-help" class="primary">关闭说明</button></div></section>
+    </div>
+    <nav class="controls" aria-label="游戏操作"><button id="left" aria-label="向左旋转"><span aria-hidden="true">↶</span> 左转</button><button id="boost" aria-label="按住加速"><span aria-hidden="true">⇣</span> 按住加速</button><button id="right" aria-label="向右旋转">右转 <span aria-hidden="true">↷</span></button></nav>
+    <nav class="tools" aria-label="进度与说明"><button id="pause">暂停</button><button id="save">保存并暂停</button><button id="help" aria-expanded="false" aria-controls="help-panel">玩法</button></nav>
+    <p id="message" role="status">向左或向右转动六边形，让同色彩块相连。</p>
+    <p id="storage-note" hidden>本机存储不可用，退出后进度可能无法保留。</p>
+  </main>
+</body>
+</html>
