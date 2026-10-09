@@ -133,6 +133,10 @@ export const GAME_IDS = [
   "river-pong",
   "hexapawn",
   "mini-golf",
+  "fence-race",
+  "amazon-garden",
+  "dual-rescue",
+  "balance-sculpture",
 ] as const;
 export type GameId = (typeof GAME_IDS)[number];
 export type Category =

@@ -1984,5 +1984,89 @@ export const games: GameDefinition[] = [
     },
     "component": lazy(() => import("../games/MiniGolf"))
   },
+  {
+    "id": "fence-race",
+    "title": "围栏竞走",
+    "subtitle": "走一步，筑一墙，为彼此留路，为自己争先。",
+    "category": "逻辑思维",
+    "difficulty": "中级",
+    "tone": "green",
+    "levelCount": 8,
+    "allowUndo": true,
+    "artwork": {
+      "url": "./fence-race-art.svg",
+      "position": "center",
+      "size": "cover"
+    },
+    "source": {
+      "kind": "original",
+      "license": "GPL-3.0-only",
+      "notes": "原创 5×5 围栏竞走变体、八课残局、局部电脑与 SVG；无第三方源码或关卡。"
+    },
+    "component": lazy(() => import("../games/FenceRace"))
+  },
+  {
+    "id": "amazon-garden",
+    "title": "箭羽争地",
+    "subtitle": "一步一箭，划出花园，给自己留下转身的余地。",
+    "category": "逻辑思维",
+    "difficulty": "中级",
+    "tone": "purple",
+    "levelCount": 8,
+    "allowUndo": true,
+    "artwork": {
+      "url": "./amazon-garden-art.svg",
+      "position": "center",
+      "size": "cover"
+    },
+    "source": {
+      "kind": "original",
+      "license": "GPL-3.0-only",
+      "notes": "原创 5×5 单子 Amazons 教学变体、八个战术布局、局部电脑与 SVG；无第三方源码或关卡。"
+    },
+    "component": lazy(() => import("../games/AmazonGarden"))
+  },
+  {
+    "id": "dual-rescue",
+    "title": "双伴救援",
+    "subtitle": "一位涉水，一位走热地，替伙伴打开回家的门。",
+    "category": "逻辑思维",
+    "difficulty": "中级",
+    "tone": "green",
+    "levelCount": 8,
+    "allowUndo": true,
+    "artwork": {
+      "url": "./dual-rescue-art.svg",
+      "position": "center",
+      "size": "cover"
+    },
+    "source": {
+      "kind": "original",
+      "license": "GPL-3.0-only",
+      "notes": "原创互补能力合作规划、八张开关踏板地图、有限状态提示与 SVG；无第三方代码或关卡。"
+    },
+    "component": lazy(() => import("../games/DualRescue"))
+  },
+  {
+    "id": "balance-sculpture",
+    "title": "平衡雕塑",
+    "subtitle": "让每层承住上方的重量，搭出轻巧悬挑的雕塑。",
+    "category": "科学实验",
+    "difficulty": "进阶",
+    "tone": "orange",
+    "levelCount": 8,
+    "allowUndo": true,
+    "artwork": {
+      "url": "./balance-sculpture-art.svg",
+      "position": "center",
+      "size": "cover"
+    },
+    "source": {
+      "kind": "original",
+      "license": "GPL-3.0-only",
+      "notes": "原创逐界面合重心静力模型、八个有限积木悬挑谜题、偏心配重与 SVG；无第三方源码或素材。"
+    },
+    "component": lazy(() => import("../games/BalanceSculpture"))
+  },
 ];
 export const findGame = (id: string) => games.find((game) => game.id === id);
