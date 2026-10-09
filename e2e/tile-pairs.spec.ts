@@ -22,7 +22,7 @@ test('layered matching first/final and recoverable shell controls',async({page},
   await act(page.getByRole('button',{name:'提示',exact:true}));await expect(page.locator('.tp-tile.hinted')).toHaveCount(2);
   for(const id of first)await act(tile(id));await act(page.getByRole('button',{name:'重来',exact:true}));await expect(game).toHaveAttribute('data-pairs','0');
   for(const level of [0,7]){
-    if(level){await chooseLevel(page,level);await page.screenshot({path:info.outputPath('tile-pairs-final-start.png'),fullPage:true});}const all=await readTiles(page);const plan=solution(all);expect(plan).not.toBeNull();
+    if(level){await chooseLevel(page,level);await expect(page.locator('.status')).toContainText('找两张相同的自由牌');await page.screenshot({path:info.outputPath('tile-pairs-final-start.png'),fullPage:true});}const all=await readTiles(page);const plan=solution(all);expect(plan).not.toBeNull();
     for(const pair of plan!)for(const id of pair){await expect(tile(id)).toHaveAttribute('data-free','true');await act(tile(id));}
     await expect(game).toHaveAttribute('data-won','true');await expect(page.locator('[data-pair-tile]')).toHaveCount(0);await expect(page.locator('.status')).toHaveClass(/success/);await expect(page.getByRole('button',{name:'撤销',exact:true})).toBeDisabled();
     expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);await page.screenshot({path:info.outputPath(`tile-pairs-${level+1}-won.png`),fullPage:true});

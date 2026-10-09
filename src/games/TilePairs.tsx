@@ -8,6 +8,7 @@ function Round({level,paused,hintToken,undoToken,onStatus,onComplete}:GameProps)
   const puzzle=tilePairsLevels[level]??tilePairsLevels[0];const [pairs,setPairs]=useState<number[][]>([]),[selected,setSelected]=useState<number|null>(null),[hint,setHint]=useState<number[]>([]),[message,setMessage]=useState('找两张相同的自由牌：顶上没有牌，并且左边或右边至少一侧空着。');
   const callbacks=useRef({onStatus,onComplete});callbacks.current={onStatus,onComplete};const tokens=useRef({hintToken,undoToken}),done=useRef(false);const removed=pairs.flat(),won=removed.length===puzzle.tiles.length,locked=paused||won;
   function report(s:string){setMessage(s);callbacks.current.onStatus(s);}
+  useEffect(()=>{callbacks.current.onStatus('找两张相同的自由牌：顶上没有牌，并且左边或右边至少一侧空着。');},[]);
   useEffect(()=>{if(won&&!paused&&!done.current){done.current=true;report('满庭清爽！所有牌都用相同的自由牌配对收好了。');callbacks.current.onComplete();}},[won,paused]);
   useEffect(()=>{if(tokens.current.hintToken===hintToken)return;tokens.current.hintToken=hintToken;if(locked)return;const plan=solvePairs(puzzle.tiles,removed);setHint(plan?.[0]??[]);report(plan?.length?`试试发光的两张“${pairSymbols[puzzle.tiles[plan[0][0]].symbol]}”。它们都没有被压住，并有空的一侧。`:'这次搜索没有找到清空路径。请撤销上一对，换一种配法。');},[hintToken,locked]);
   useEffect(()=>{if(tokens.current.undoToken===undoToken)return;tokens.current.undoToken=undoToken;if(locked)return;setPairs(pairs.slice(0,-1));setSelected(null);setHint([]);report(pairs.length?'上一对牌已经放回原位。':'还没有收起的牌。');},[undoToken,locked]);
