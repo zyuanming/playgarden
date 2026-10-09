@@ -131,7 +131,12 @@ function ParityRoundView({ level, paused, freshStart, hintToken, undoToken, onCo
       <div ref={boardRef} className={`parity-board ${blackWhite ? "is-black-white" : "is-vanilla"} ${won ? "is-won" : ""}`}
         role="group" aria-label="3 行 3 列数字棋盘，青色边框是当前位置，可用方向键移动" tabIndex={0}
         onPointerDown={onPointerDown} onPointerMove={onPointerMove} onPointerUp={onPointerUp}
-        onPointerCancel={() => { gesture.current = null; }} onLostPointerCapture={() => { gesture.current = null; }}
+        onPointerCancel={() => { gesture.current = null; }} onLostPointerCapture={event => {
+          // Touch starts with implicit capture on the child cell. Moving capture
+          // to the board emits a bubbled loss from that cell; the board still
+          // owns this gesture and must receive its final swipe direction.
+          if (event.target === event.currentTarget && !event.currentTarget.hasPointerCapture(event.pointerId)) gesture.current = null;
+        }}
         onPointerLeave={event => { if (!event.currentTarget.hasPointerCapture(event.pointerId)) gesture.current = null; }}
         onClickCapture={event => { if (suppressClick.current && event.detail > 0) { suppressClick.current = false; event.preventDefault(); event.stopPropagation(); } }}>
         {round.values.map((value, index) => {
