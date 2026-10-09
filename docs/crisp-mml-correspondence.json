@@ -1,0 +1,1074 @@
+{
+  "status": "PASS_FULL_STATIC_CORRESPONDENCE",
+  "runtimeChanged": false,
+  "gameExecuted": false,
+  "proofScriptSha256": "a3a8addc9ce2db15c27b64449eb1051ea937da018e65bdd09ff488dde89a4f86",
+  "originalAudioSha256": "ce6f6304e1cdc9c0bc2f46eee2bdd428355728850c194fc0b9172d7ebb56014f",
+  "shippedAudioSha256": "a15e4a57d55c2674305c71af58431fad092b52d8ed244bb3838b6dca4ab0c688",
+  "shippedEmbeddedBlockByteIdentical": true,
+  "embeddedBlockSha256": "8a218460ff4a85afaa008da5034f29ed773818c05ced76fab0e23b09ba917e7e",
+  "embeddedBlock": {
+    "startLine": 25,
+    "endLine": 681
+  },
+  "preferredSource": {
+    "repository": "https://github.com/mohayonao/mml-iterator",
+    "commit": "7e76ab2734521eeb59a7ac4f94c2634502be1475",
+    "version": "1.1.0"
+  },
+  "completeModules": [
+    {
+      "file": "Syntax.js",
+      "sha256": "2867933b5a1ac28000bbbcc066d201a8f06df33a33774569ac228a4f2d206dca"
+    },
+    {
+      "file": "DefaultParams.js",
+      "sha256": "4c070e34d79c4c1ef992f7efa34ecc73e988b2e86240952983ab8d24587aad74"
+    },
+    {
+      "file": "Scanner.js",
+      "sha256": "ff60270f604c75704e83b229853bbf5d59dade3b2788f9201ce9ed53994671be"
+    },
+    {
+      "file": "MMLParser.js",
+      "sha256": "a69f0a71ceda6d38d82cc15ef80dadb3a3ebf301030cb24608fe3fbaf9c19ad5"
+    },
+    {
+      "file": "MMLIterator.js",
+      "sha256": "39ef8bff41a370c8c72294e92adbb502b858f36ca6298938a5d2a4bfcdc50f1f"
+    },
+    {
+      "file": "index.js",
+      "sha256": "850fc0238f060bd6f00486bc48351cc3596abd28fb469d4b5cff5a55f8ed0a40"
+    }
+  ],
+  "moduleMapping": [
+    {
+      "sourceFile": "Syntax.js",
+      "bundleBindings": [
+        {
+          "binding": "Syntax$2",
+          "startLine": 25,
+          "endLine": 38
+        }
+      ]
+    },
+    {
+      "sourceFile": "DefaultParams.js",
+      "bundleBindings": [
+        {
+          "binding": "DefaultParams$1",
+          "startLine": 39,
+          "endLine": 46
+        }
+      ]
+    },
+    {
+      "sourceFile": "Scanner.js",
+      "bundleBindings": [
+        {
+          "binding": "_createClass$2",
+          "startLine": 47,
+          "endLine": 65
+        },
+        {
+          "binding": "_classCallCheck$2",
+          "startLine": 66,
+          "endLine": 70
+        },
+        {
+          "binding": "Scanner$1",
+          "startLine": 71,
+          "endLine": 141
+        },
+        {
+          "binding": "Scanner_1",
+          "startLine": 142,
+          "endLine": 142
+        }
+      ]
+    },
+    {
+      "sourceFile": "MMLParser.js",
+      "bundleBindings": [
+        {
+          "binding": "_createClass$1",
+          "startLine": 143,
+          "endLine": 161
+        },
+        {
+          "binding": "_classCallCheck$1",
+          "startLine": 162,
+          "endLine": 166
+        },
+        {
+          "binding": "Syntax$1",
+          "startLine": 167,
+          "endLine": 167
+        },
+        {
+          "binding": "Scanner",
+          "startLine": 168,
+          "endLine": 168
+        },
+        {
+          "binding": "NOTE_INDEXES",
+          "startLine": 169,
+          "endLine": 169
+        },
+        {
+          "binding": "MMLParser$1",
+          "startLine": 170,
+          "endLine": 443
+        },
+        {
+          "binding": "MMLParser_1",
+          "startLine": 444,
+          "endLine": 444
+        }
+      ]
+    },
+    {
+      "sourceFile": "MMLIterator.js",
+      "bundleBindings": [
+        {
+          "binding": "_createClass",
+          "startLine": 445,
+          "endLine": 463
+        },
+        {
+          "binding": "_classCallCheck",
+          "startLine": 464,
+          "endLine": 468
+        },
+        {
+          "binding": "Syntax",
+          "startLine": 469,
+          "endLine": 469
+        },
+        {
+          "binding": "DefaultParams",
+          "startLine": 470,
+          "endLine": 470
+        },
+        {
+          "binding": "MMLParser",
+          "startLine": 471,
+          "endLine": 471
+        },
+        {
+          "binding": "ITERATOR",
+          "startLine": 472,
+          "endLine": 472
+        },
+        {
+          "binding": "MMLIterator",
+          "startLine": 473,
+          "endLine": 665
+        },
+        {
+          "binding": "arrayToIterator",
+          "startLine": 666,
+          "endLine": 676
+        },
+        {
+          "binding": "isNoteEvent",
+          "startLine": 677,
+          "endLine": 679
+        },
+        {
+          "binding": "MMLIterator_1",
+          "startLine": 680,
+          "endLine": 680
+        }
+      ]
+    },
+    {
+      "sourceFile": "index.js",
+      "bundleBindings": [
+        {
+          "binding": "lib",
+          "startLine": 681,
+          "endLine": 681
+        }
+      ]
+    }
+  ],
+  "checkedRecords": [
+    {
+      "label": "Syntax exported constants",
+      "sourceFile": "Syntax.js",
+      "source": {
+        "startLine": 1,
+        "endLine": 14
+      },
+      "bundle": {
+        "startLine": 25,
+        "endLine": 38
+      },
+      "canonicalSha256": "aa1f81a864ee912cda8934e2c96125e23d19db8b1a3f4f50be524aaf1f2fcb09"
+    },
+    {
+      "label": "DefaultParams exported constants",
+      "sourceFile": "DefaultParams.js",
+      "source": {
+        "startLine": 1,
+        "endLine": 8
+      },
+      "bundle": {
+        "startLine": 39,
+        "endLine": 46
+      },
+      "canonicalSha256": "ef144da554c10eb761b8bceec0d3da592a02322e99f0b0ca90c93ec6f9a9fc07"
+    },
+    {
+      "label": "Scanner.constructor params",
+      "sourceFile": "Scanner.js",
+      "source": {
+        "startLine": 4,
+        "endLine": 4
+      },
+      "bundle": {
+        "startLine": 72,
+        "endLine": 72
+      },
+      "canonicalSha256": "8427f79bb110939aee609df68323982062dc670019e8b60d53169cebf9d53047"
+    },
+    {
+      "label": "Scanner.constructor body",
+      "sourceFile": "Scanner.js",
+      "source": {
+        "startLine": 4,
+        "endLine": 7
+      },
+      "bundle": {
+        "startLine": 72,
+        "endLine": 76
+      },
+      "canonicalSha256": "c7b7a4daf6494a9c7a4ee8881d280f27f861c36f43b2e124daf9de1b3252359c"
+    },
+    {
+      "label": "Scanner.hasNext",
+      "sourceFile": "Scanner.js",
+      "source": {
+        "startLine": 9,
+        "endLine": 11
+      },
+      "bundle": {
+        "startLine": 79,
+        "endLine": 81
+      },
+      "canonicalSha256": "a21992b8bdad9cc070477c243fe6f3b6e3b5861be2457d23c430d2c50ce2d27d"
+    },
+    {
+      "label": "Scanner.peek",
+      "sourceFile": "Scanner.js",
+      "source": {
+        "startLine": 13,
+        "endLine": 15
+      },
+      "bundle": {
+        "startLine": 84,
+        "endLine": 86
+      },
+      "canonicalSha256": "57e07522090bb0abe1d7431befc1ed69e3139cd917b9d634b10f72c47a1cb829"
+    },
+    {
+      "label": "Scanner.next",
+      "sourceFile": "Scanner.js",
+      "source": {
+        "startLine": 17,
+        "endLine": 19
+      },
+      "bundle": {
+        "startLine": 89,
+        "endLine": 91
+      },
+      "canonicalSha256": "93661f04abdb0894739c46c3ae3679337376fd81ab821507e5862a63f3c523cc"
+    },
+    {
+      "label": "Scanner.forward",
+      "sourceFile": "Scanner.js",
+      "source": {
+        "startLine": 21,
+        "endLine": 25
+      },
+      "bundle": {
+        "startLine": 94,
+        "endLine": 98
+      },
+      "canonicalSha256": "7a58267ba5754786d966aa7b6ee4516478956e715c37f86d8953338eebc67b6f"
+    },
+    {
+      "label": "Scanner.match",
+      "sourceFile": "Scanner.js",
+      "source": {
+        "startLine": 27,
+        "endLine": 32
+      },
+      "bundle": {
+        "startLine": 101,
+        "endLine": 106
+      },
+      "canonicalSha256": "f5ba20b54b2cb0ed2386cd9b8f17c73428b7d3578f4db6004485c7b4322f982e"
+    },
+    {
+      "label": "Scanner.expect",
+      "sourceFile": "Scanner.js",
+      "source": {
+        "startLine": 34,
+        "endLine": 39
+      },
+      "bundle": {
+        "startLine": 109,
+        "endLine": 114
+      },
+      "canonicalSha256": "5dee4545fd601787ab0ca870ad51456cc7d983913ad1e181e996bb97e2c609e5"
+    },
+    {
+      "label": "Scanner.scan",
+      "sourceFile": "Scanner.js",
+      "source": {
+        "startLine": 41,
+        "endLine": 61
+      },
+      "bundle": {
+        "startLine": 117,
+        "endLine": 132
+      },
+      "canonicalSha256": "ed1a40da8ad219a7bb5749ffb4e20b209062a3ba499930d9719e7d5387cd3bc6"
+    },
+    {
+      "label": "Scanner.throwUnexpectedToken",
+      "sourceFile": "Scanner.js",
+      "source": {
+        "startLine": 63,
+        "endLine": 67
+      },
+      "bundle": {
+        "startLine": 135,
+        "endLine": 138
+      },
+      "canonicalSha256": "2ae276efcb79e901e90047553a8a5c82bd6ebc4568ec29e19a6f664e46fa9bcb"
+    },
+    {
+      "label": "MMLParser.constructor params",
+      "sourceFile": "MMLParser.js",
+      "source": {
+        "startLine": 8,
+        "endLine": 8
+      },
+      "bundle": {
+        "startLine": 171,
+        "endLine": 171
+      },
+      "canonicalSha256": "8427f79bb110939aee609df68323982062dc670019e8b60d53169cebf9d53047"
+    },
+    {
+      "label": "MMLParser.constructor body",
+      "sourceFile": "MMLParser.js",
+      "source": {
+        "startLine": 8,
+        "endLine": 10
+      },
+      "bundle": {
+        "startLine": 171,
+        "endLine": 174
+      },
+      "canonicalSha256": "965b05e5456df6e57a668f86c7060d1553361da4bb3c4032c3dd6903ae840b02"
+    },
+    {
+      "label": "MMLParser.parse",
+      "sourceFile": "MMLParser.js",
+      "source": {
+        "startLine": 12,
+        "endLine": 20
+      },
+      "bundle": {
+        "startLine": 177,
+        "endLine": 184
+      },
+      "canonicalSha256": "5ba0319b2ae25c23f1c70f867667d1806e74270c94a4883b8ef76ec565a5f061"
+    },
+    {
+      "label": "MMLParser.advance",
+      "sourceFile": "MMLParser.js",
+      "source": {
+        "startLine": 22,
+        "endLine": 58
+      },
+      "bundle": {
+        "startLine": 187,
+        "endLine": 221
+      },
+      "canonicalSha256": "ffa716412ff5a9ce28011e2ba669732a93d20eee4c56fb556ee04fb65545fa43"
+    },
+    {
+      "label": "MMLParser.readNote",
+      "sourceFile": "MMLParser.js",
+      "source": {
+        "startLine": 60,
+        "endLine": 66
+      },
+      "bundle": {
+        "startLine": 224,
+        "endLine": 230
+      },
+      "canonicalSha256": "8206cd9cc95828b85c8b0cfd8a5710208394888255c5af2efce808c41ac87752"
+    },
+    {
+      "label": "MMLParser.readChord",
+      "sourceFile": "MMLParser.js",
+      "source": {
+        "startLine": 68,
+        "endLine": 106
+      },
+      "bundle": {
+        "startLine": 233,
+        "endLine": 267
+      },
+      "canonicalSha256": "f4f7602272b9eb4afd8cd04d8ea1af625f38b1aaa3f9bc67541bf5431ab50fda"
+    },
+    {
+      "label": "MMLParser.readRest",
+      "sourceFile": "MMLParser.js",
+      "source": {
+        "startLine": 108,
+        "endLine": 115
+      },
+      "bundle": {
+        "startLine": 270,
+        "endLine": 276
+      },
+      "canonicalSha256": "1e352657f47f421af711f14765923e8bcd3c1f79cc54ef2558e9b549c78b3bbe"
+    },
+    {
+      "label": "MMLParser.readOctave",
+      "sourceFile": "MMLParser.js",
+      "source": {
+        "startLine": 117,
+        "endLine": 124
+      },
+      "bundle": {
+        "startLine": 279,
+        "endLine": 285
+      },
+      "canonicalSha256": "138c4dd31128bcd9926ff54918c034a1089c11e09db6d5597c22d65d5a6c9e8f"
+    },
+    {
+      "label": "MMLParser.readOctaveShift",
+      "sourceFile": "MMLParser.js",
+      "source": {
+        "startLine": 126,
+        "endLine": 134
+      },
+      "bundle": {
+        "startLine": 288,
+        "endLine": 295
+      },
+      "canonicalSha256": "28501c6b99226f26bffd82938e4e83f5dd87f20c6206566a5729a43cac63b26c"
+    },
+    {
+      "label": "MMLParser.readNoteLength",
+      "sourceFile": "MMLParser.js",
+      "source": {
+        "startLine": 136,
+        "endLine": 143
+      },
+      "bundle": {
+        "startLine": 298,
+        "endLine": 304
+      },
+      "canonicalSha256": "eb2d16016f8895f636a5e1adcc5e0e899180923843297be1f8beab830b8819b7"
+    },
+    {
+      "label": "MMLParser.readNoteQuantize",
+      "sourceFile": "MMLParser.js",
+      "source": {
+        "startLine": 145,
+        "endLine": 152
+      },
+      "bundle": {
+        "startLine": 307,
+        "endLine": 313
+      },
+      "canonicalSha256": "33f137eb0eb6f4482d02d2a7766f9c1e3f3033b06d5d0f401662d7fbf2fd9005"
+    },
+    {
+      "label": "MMLParser.readNoteVelocity",
+      "sourceFile": "MMLParser.js",
+      "source": {
+        "startLine": 154,
+        "endLine": 161
+      },
+      "bundle": {
+        "startLine": 316,
+        "endLine": 322
+      },
+      "canonicalSha256": "980ded259dcfdcb503a29006a8113313b288cc52323ffddd4668855ddaadc1f8"
+    },
+    {
+      "label": "MMLParser.readTempo",
+      "sourceFile": "MMLParser.js",
+      "source": {
+        "startLine": 163,
+        "endLine": 170
+      },
+      "bundle": {
+        "startLine": 325,
+        "endLine": 331
+      },
+      "canonicalSha256": "62cff105ce0f7d2bf21e0b4703b943c7f8c1cdb273a3f6dbda32a947bf2f7bbe"
+    },
+    {
+      "label": "MMLParser.readInfiniteLoop",
+      "sourceFile": "MMLParser.js",
+      "source": {
+        "startLine": 172,
+        "endLine": 178
+      },
+      "bundle": {
+        "startLine": 334,
+        "endLine": 339
+      },
+      "canonicalSha256": "e27959f29fc95789629ace0a92993d60a36e68eb4d4c23c241cbebbf586105b5"
+    },
+    {
+      "label": "MMLParser.readLoop",
+      "sourceFile": "MMLParser.js",
+      "source": {
+        "startLine": 180,
+        "endLine": 203
+      },
+      "bundle": {
+        "startLine": 342,
+        "endLine": 359
+      },
+      "canonicalSha256": "188a508f2b053f003b2d3676fe60f4284133bd7ab24f24a6fbf98e919affdc89"
+    },
+    {
+      "label": "MMLParser._readUntil",
+      "sourceFile": "MMLParser.js",
+      "source": {
+        "startLine": 205,
+        "endLine": 213
+      },
+      "bundle": {
+        "startLine": 362,
+        "endLine": 370
+      },
+      "canonicalSha256": "e9c1645d220a39a0682a510b4bce4a9525684d5ec557ad2ed7ece20d0d1500b9"
+    },
+    {
+      "label": "MMLParser._readArgument",
+      "sourceFile": "MMLParser.js",
+      "source": {
+        "startLine": 215,
+        "endLine": 219
+      },
+      "bundle": {
+        "startLine": 373,
+        "endLine": 376
+      },
+      "canonicalSha256": "496cdceb5721a5c3007d27741c342ccf255fdcdb01f16c74f8aa044b62a86769"
+    },
+    {
+      "label": "MMLParser._readNoteNumber",
+      "sourceFile": "MMLParser.js",
+      "source": {
+        "startLine": 221,
+        "endLine": 225
+      },
+      "bundle": {
+        "startLine": 379,
+        "endLine": 382
+      },
+      "canonicalSha256": "63db22edbd05b49afdd8fb6e01803f9634facd9fd50f325da3053f71f62b029e"
+    },
+    {
+      "label": "MMLParser._readAccidental",
+      "sourceFile": "MMLParser.js",
+      "source": {
+        "startLine": 227,
+        "endLine": 235
+      },
+      "bundle": {
+        "startLine": 385,
+        "endLine": 393
+      },
+      "canonicalSha256": "cda8f178d74e06a5d4861e9a7cfc4c987315b9df944a5ff36bc9f2c0b2fb73e0"
+    },
+    {
+      "label": "MMLParser._readDot",
+      "sourceFile": "MMLParser.js",
+      "source": {
+        "startLine": 237,
+        "endLine": 246
+      },
+      "bundle": {
+        "startLine": 396,
+        "endLine": 403
+      },
+      "canonicalSha256": "51d74de206e0b3379511d7af4c1b16e0b3976fa8cd0e862207f163baacdae580"
+    },
+    {
+      "label": "MMLParser._readLength",
+      "sourceFile": "MMLParser.js",
+      "source": {
+        "startLine": 248,
+        "endLine": 261
+      },
+      "bundle": {
+        "startLine": 406,
+        "endLine": 415
+      },
+      "canonicalSha256": "c45c45c5b32a79db394eda173fdf8a72307d0ac948ed3d84a10788f4bb135968"
+    },
+    {
+      "label": "MMLParser._readTie",
+      "sourceFile": "MMLParser.js",
+      "source": {
+        "startLine": 263,
+        "endLine": 272
+      },
+      "bundle": {
+        "startLine": 418,
+        "endLine": 425
+      },
+      "canonicalSha256": "73752f99fa798d3ee84eac8ce5a952d55883d001b8b84a30b1f83e42fb2995b9"
+    },
+    {
+      "label": "MMLParser._readLoopExit",
+      "sourceFile": "MMLParser.js",
+      "source": {
+        "startLine": 274,
+        "endLine": 290
+      },
+      "bundle": {
+        "startLine": 428,
+        "endLine": 440
+      },
+      "canonicalSha256": "0899e2432f4e96645edf42904f2eb05b530cbf23088dfdc0ce59d3311c336475"
+    },
+    {
+      "label": "MMLParser local constant NOTE_INDEXES",
+      "sourceFile": "MMLParser.js",
+      "source": {
+        "startLine": 5,
+        "endLine": 5
+      },
+      "bundle": {
+        "startLine": 169,
+        "endLine": 169
+      },
+      "canonicalSha256": "5964badf2e288da5928124ee6548ca50bac647338a4934c06ce7f72a455477f2"
+    },
+    {
+      "label": "MMLIterator.constructor params",
+      "sourceFile": "MMLIterator.js",
+      "source": {
+        "startLine": 9,
+        "endLine": 9
+      },
+      "bundle": {
+        "startLine": 474,
+        "endLine": 474
+      },
+      "canonicalSha256": "8427f79bb110939aee609df68323982062dc670019e8b60d53169cebf9d53047"
+    },
+    {
+      "label": "MMLIterator.constructor body",
+      "sourceFile": "MMLIterator.js",
+      "source": {
+        "startLine": 9,
+        "endLine": 24
+      },
+      "bundle": {
+        "startLine": 474,
+        "endLine": 489
+      },
+      "canonicalSha256": "95d6f3b6f64941b5f547a5b074bca0686c65cbc3ecb3b1b2f111a33ac13babf9"
+    },
+    {
+      "label": "MMLIterator.hasNext",
+      "sourceFile": "MMLIterator.js",
+      "source": {
+        "startLine": 26,
+        "endLine": 28
+      },
+      "bundle": {
+        "startLine": 492,
+        "endLine": 494
+      },
+      "canonicalSha256": "1206cb866ad1952ec9c6090cd4e9c033418492244df6bf7e8dcec97ca70470a6"
+    },
+    {
+      "label": "MMLIterator.next",
+      "sourceFile": "MMLIterator.js",
+      "source": {
+        "startLine": 30,
+        "endLine": 53
+      },
+      "bundle": {
+        "startLine": 497,
+        "endLine": 515
+      },
+      "canonicalSha256": "2613df4e564ecbff2754060ad99a4bd9c2b29a913f482a00a22fd77c16d60448"
+    },
+    {
+      "label": "MMLIterator.[ITERATOR]",
+      "sourceFile": "MMLIterator.js",
+      "source": {
+        "startLine": 55,
+        "endLine": 57
+      },
+      "bundle": {
+        "startLine": 518,
+        "endLine": 520
+      },
+      "canonicalSha256": "1233168678ba5c4cfb4b8495250a2202174855ea104390460c894d34da514e41"
+    },
+    {
+      "label": "MMLIterator._forward",
+      "sourceFile": "MMLIterator.js",
+      "source": {
+        "startLine": 59,
+        "endLine": 73
+      },
+      "bundle": {
+        "startLine": 523,
+        "endLine": 533
+      },
+      "canonicalSha256": "4cf2fb5f9847d834840def8af3881470172b6d266eb9982ddf57bc4825af7370"
+    },
+    {
+      "label": "MMLIterator._calcDuration",
+      "sourceFile": "MMLIterator.js",
+      "source": {
+        "startLine": 75,
+        "endLine": 102
+      },
+      "bundle": {
+        "startLine": 536,
+        "endLine": 561
+      },
+      "canonicalSha256": "69d52b5bace5a22b780568f0684c25e683b49db0288c959d9b963279ee8ed8a5"
+    },
+    {
+      "label": "MMLIterator._calcNoteNumber",
+      "sourceFile": "MMLIterator.js",
+      "source": {
+        "startLine": 104,
+        "endLine": 106
+      },
+      "bundle": {
+        "startLine": 564,
+        "endLine": 566
+      },
+      "canonicalSha256": "65727921964875d6f94e1e5b4619da93abbc27abb80e2fd8ff27cbcdcd174058"
+    },
+    {
+      "label": "MMLIterator.[Syntax.Note]",
+      "sourceFile": "MMLIterator.js",
+      "source": {
+        "startLine": 108,
+        "endLine": 121
+      },
+      "bundle": {
+        "startLine": 569,
+        "endLine": 583
+      },
+      "canonicalSha256": "35cead2598086b2d9b3973305f31244ea9a6c0504c5e0cf498edf460dfbe9c8e"
+    },
+    {
+      "label": "MMLIterator.[Syntax.Rest]",
+      "sourceFile": "MMLIterator.js",
+      "source": {
+        "startLine": 123,
+        "endLine": 127
+      },
+      "bundle": {
+        "startLine": 586,
+        "endLine": 589
+      },
+      "canonicalSha256": "e44aaf3020f451dde4b21dc6bccc0e69fc2ca7d9015e2120ab654f447d988563"
+    },
+    {
+      "label": "MMLIterator.[Syntax.Octave]",
+      "sourceFile": "MMLIterator.js",
+      "source": {
+        "startLine": 129,
+        "endLine": 131
+      },
+      "bundle": {
+        "startLine": 592,
+        "endLine": 594
+      },
+      "canonicalSha256": "96f3db0000db4c977224f3a862a2cb31a5e3d11654da2d409b3c5943d64ea537"
+    },
+    {
+      "label": "MMLIterator.[Syntax.OctaveShift]",
+      "sourceFile": "MMLIterator.js",
+      "source": {
+        "startLine": 133,
+        "endLine": 137
+      },
+      "bundle": {
+        "startLine": 597,
+        "endLine": 600
+      },
+      "canonicalSha256": "a216644663ec567bf4ea9ec8459bb7a214bdc4e5437d7d6fe2839f451c2b3d25"
+    },
+    {
+      "label": "MMLIterator.[Syntax.NoteLength]",
+      "sourceFile": "MMLIterator.js",
+      "source": {
+        "startLine": 139,
+        "endLine": 143
+      },
+      "bundle": {
+        "startLine": 603,
+        "endLine": 608
+      },
+      "canonicalSha256": "c9df6a0627c2f56e8522e2aba4ed8539a78f63687d2a491c943dea692194387e"
+    },
+    {
+      "label": "MMLIterator.[Syntax.NoteVelocity]",
+      "sourceFile": "MMLIterator.js",
+      "source": {
+        "startLine": 145,
+        "endLine": 147
+      },
+      "bundle": {
+        "startLine": 611,
+        "endLine": 613
+      },
+      "canonicalSha256": "78968bab4b2b30d38c97075e44e2c87a75b8e1037369735548e9af19417e49b6"
+    },
+    {
+      "label": "MMLIterator.[Syntax.NoteQuantize]",
+      "sourceFile": "MMLIterator.js",
+      "source": {
+        "startLine": 149,
+        "endLine": 151
+      },
+      "bundle": {
+        "startLine": 616,
+        "endLine": 618
+      },
+      "canonicalSha256": "a67462412f5cfa0b2602f4b9d001d56bdefe548c971f6e2a17c8326be43e94a8"
+    },
+    {
+      "label": "MMLIterator.[Syntax.Tempo]",
+      "sourceFile": "MMLIterator.js",
+      "source": {
+        "startLine": 153,
+        "endLine": 155
+      },
+      "bundle": {
+        "startLine": 621,
+        "endLine": 623
+      },
+      "canonicalSha256": "0d62f92aaef308d1bfe6f524d03cce5c7f9b1aab7eefbec471eb17e0a502fff3"
+    },
+    {
+      "label": "MMLIterator.[Syntax.InfiniteLoop]",
+      "sourceFile": "MMLIterator.js",
+      "source": {
+        "startLine": 157,
+        "endLine": 159
+      },
+      "bundle": {
+        "startLine": 626,
+        "endLine": 628
+      },
+      "canonicalSha256": "9134fc047ef2cf6b49722da93968eda51d29de116fd7f6f58b0f0d66e8936443"
+    },
+    {
+      "label": "MMLIterator.[Syntax.LoopBegin]",
+      "sourceFile": "MMLIterator.js",
+      "source": {
+        "startLine": 161,
+        "endLine": 167
+      },
+      "bundle": {
+        "startLine": 631,
+        "endLine": 636
+      },
+      "canonicalSha256": "22beb2f4f3c58bff6e0f2c99114d2c0e4749d8d412ca0d2fbaaf6410a93873f7"
+    },
+    {
+      "label": "MMLIterator.[Syntax.LoopExit]",
+      "sourceFile": "MMLIterator.js",
+      "source": {
+        "startLine": 169,
+        "endLine": 179
+      },
+      "bundle": {
+        "startLine": 639,
+        "endLine": 646
+      },
+      "canonicalSha256": "e7bfe22489f055a66a04222e7a51779c2858ca9fb6adb5855a45aef1bd5a368d"
+    },
+    {
+      "label": "MMLIterator.[Syntax.LoopEnd]",
+      "sourceFile": "MMLIterator.js",
+      "source": {
+        "startLine": 181,
+        "endLine": 198
+      },
+      "bundle": {
+        "startLine": 649,
+        "endLine": 662
+      },
+      "canonicalSha256": "313cb6974a631349e4709c868b06f5c49a8d4a09629c6efe4214f587ceec0d48"
+    },
+    {
+      "label": "MMLIterator local constant ITERATOR",
+      "sourceFile": "MMLIterator.js",
+      "source": {
+        "startLine": 6,
+        "endLine": 6
+      },
+      "bundle": {
+        "startLine": 472,
+        "endLine": 472
+      },
+      "canonicalSha256": "6dd584868917621b735b1d91f20e6631548c13d997807854ae9fcb9db81e990d"
+    },
+    {
+      "label": "MMLIterator helper arrayToIterator",
+      "sourceFile": "MMLIterator.js",
+      "source": {
+        "startLine": 201,
+        "endLine": 212
+      },
+      "bundle": {
+        "startLine": 666,
+        "endLine": 676
+      },
+      "canonicalSha256": "1957e25780ea86a81b4255ca1eb637ef21d82d0deec92d0a1ce50b80307d8a49"
+    },
+    {
+      "label": "MMLIterator helper isNoteEvent",
+      "sourceFile": "MMLIterator.js",
+      "source": {
+        "startLine": 214,
+        "endLine": 216
+      },
+      "bundle": {
+        "startLine": 677,
+        "endLine": 679
+      },
+      "canonicalSha256": "5e98cb9e3dd174fc4bd8ed93a6fef0781fa83e893ad1c59bb0d9a251efff0e32"
+    },
+    {
+      "label": "class descriptor helper $2",
+      "sourceFile": "reviewed-class-scaffolding.js",
+      "source": {
+        "startLine": 5,
+        "endLine": 20
+      },
+      "bundle": {
+        "startLine": 47,
+        "endLine": 65
+      },
+      "canonicalSha256": "d2d3abef0ec3ca956f7404e17758d3bfe2b64051ba3d02f77ea870f03dee4142"
+    },
+    {
+      "label": "class constructor guard $2",
+      "sourceFile": "reviewed-class-scaffolding.js",
+      "source": {
+        "startLine": 21,
+        "endLine": 25
+      },
+      "bundle": {
+        "startLine": 66,
+        "endLine": 70
+      },
+      "canonicalSha256": "64f1d6b5728a3d42e1d740c1f0d610b852d798de3a7b2390c8619654d6077bd9"
+    },
+    {
+      "label": "class descriptor helper $1",
+      "sourceFile": "reviewed-class-scaffolding.js",
+      "source": {
+        "startLine": 5,
+        "endLine": 20
+      },
+      "bundle": {
+        "startLine": 143,
+        "endLine": 161
+      },
+      "canonicalSha256": "d2d3abef0ec3ca956f7404e17758d3bfe2b64051ba3d02f77ea870f03dee4142"
+    },
+    {
+      "label": "class constructor guard $1",
+      "sourceFile": "reviewed-class-scaffolding.js",
+      "source": {
+        "startLine": 21,
+        "endLine": 25
+      },
+      "bundle": {
+        "startLine": 162,
+        "endLine": 166
+      },
+      "canonicalSha256": "64f1d6b5728a3d42e1d740c1f0d610b852d798de3a7b2390c8619654d6077bd9"
+    },
+    {
+      "label": "class descriptor helper ",
+      "sourceFile": "reviewed-class-scaffolding.js",
+      "source": {
+        "startLine": 5,
+        "endLine": 20
+      },
+      "bundle": {
+        "startLine": 445,
+        "endLine": 463
+      },
+      "canonicalSha256": "d2d3abef0ec3ca956f7404e17758d3bfe2b64051ba3d02f77ea870f03dee4142"
+    },
+    {
+      "label": "class constructor guard ",
+      "sourceFile": "reviewed-class-scaffolding.js",
+      "source": {
+        "startLine": 21,
+        "endLine": 25
+      },
+      "bundle": {
+        "startLine": 464,
+        "endLine": 468
+      },
+      "canonicalSha256": "64f1d6b5728a3d42e1d740c1f0d610b852d798de3a7b2390c8619654d6077bd9"
+    }
+  ],
+  "checkedBundleTopLevelStatements": 24,
+  "totalBundleTopLevelStatements": 24,
+  "wiring": {
+    "Scanner_1": "Scanner$1",
+    "Syntax$1": "Syntax$2",
+    "Scanner": "Scanner_1",
+    "MMLParser_1": "MMLParser$1",
+    "Syntax": "Syntax$2",
+    "DefaultParams": "DefaultParams$1",
+    "MMLParser": "MMLParser_1",
+    "MMLIterator_1": "MMLIterator",
+    "lib": "MMLIterator_1"
+  },
+  "compilerScaffolding": {
+    "source": "scripts/crisp/class-scaffolding.js",
+    "sha256": "b7949c6f10e7b0a28dc6655f8e6f0ffc9aec4f143e7be1fc9fc6e67bab306e8b",
+    "copies": 3
+  },
+  "normalization": [
+    "whitespace/comments and grouping parentheses",
+    "const/let lowered to var without changing declaration/reference order",
+    "Babel class constructors, descriptor arrays and non-enumerable prototype helper",
+    "arrow functions lowered to functions and declared lexical-this aliases",
+    "object shorthand and concise object methods",
+    "single Scanner template literal lowered to string concatenation",
+    "numeric unary + on literals",
+    "empty default branch removed",
+    "known Rollup/Babel local alpha-renames"
+  ],
+  "conclusion": "Every source module, class constructor, method, local constant, free helper and embedded top-level statement is accounted for. Bodies compare exactly under the documented finite AST normalization, and import/export wiring and generated class helpers are independently checked. This establishes exact preferred editable-source correspondence; it does not assert unavailable historical npm lockfile resolution."
+}

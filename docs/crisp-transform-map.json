@@ -1,0 +1,130 @@
+{
+  "gameplay": "All three main.js files copied byte-for-byte; no gameplay changes.",
+  "patches": [
+    {
+      "change": "Own listeners, inputs, RAF, pause/restart/dispose and read-only state",
+      "before_sha256": "f1eecee2ebc2a6fe4935355aca2b59618a1a70b0b83c89c07673f597e4957e49",
+      "after_sha256": "54ea5433f462fa89d41f8933010c2d4ac92811f160f91352edc4fdd9fe7a908d"
+    },
+    {
+      "change": "Track canvas resize listener",
+      "before_sha256": "d172c11b11a78070e74fece9b62b0054cb31b62ce7a185d297189ee3a954be09",
+      "after_sha256": "970bb7ffe195d0c98911ab5e0bbb481827e58f9a6318883c07c89b1cf52afcf3"
+    },
+    {
+      "change": "Restrict genuine keyboard input and release independent held keys",
+      "before_sha256": "70b9d632a93771c6976a3d70121fbd0503504bdac8bc5406e82f6b00ac195b64",
+      "after_sha256": "d85f0bfe468432d1b3f672c341b161c5c906e976384141b3618f3684e98bc26f"
+    },
+    {
+      "change": "Use real Pointer Events; capture, cancel and leaving canvas release held input",
+      "before_sha256": "ca2d5fad66fb3c22ce8306733df0a8186261dc85406e7e786db80ef9d4e853ba",
+      "after_sha256": "5b8522f7349551fe6d6049c59ea05c1369e86e57ecb77ff4d630511661ab4943"
+    },
+    {
+      "change": "Resume the owned AudioContext in the actual input gesture",
+      "before_sha256": "19c00f1ee8ae7c073f63583037e7563aa71625454f0ff13745014075cdf00a2c",
+      "after_sha256": "667473ef0b0265e93c105027b79ce2f2fd8d0bb86bf04ba6ff8b1e6f03dedfa1"
+    },
+    {
+      "change": "Cancellable RAF and full simulation freeze",
+      "before_sha256": "fe702951512aa9a7b6175599ecefbf853920cf87d41b9dcf43b04f171deaf3c8",
+      "after_sha256": "602239d6d8a20a2483b76734a96e481fd0856628052300236d77d3f9ef180141"
+    },
+    {
+      "change": "Observe run identity including same-phase restart",
+      "before_sha256": "7de8bebddb11ba6eb0bc7a982123dd0501afaf030ee80437aae1bff3f160a789",
+      "after_sha256": "5aff244ae3e0274043ed6763357aab30a6505932a6d31dd5d582d3173e46e57f"
+    },
+    {
+      "change": "Read-only observation after complete original frame",
+      "before_sha256": "f6e58b588ebaf39046d0cb6a68d23e10ceae45cc79669600cbdae4e4d5f0e007",
+      "after_sha256": "8873988c94e0fa8b4cb2afdf2a0495ce9963ee0e65f04ee0d88aea2836860a0c"
+    },
+    {
+      "change": "Pass the one owned audio context",
+      "before_sha256": "6ff3b76d289daf75d5f3f8f39e46b57a4a9f717d6ed7326af92cfc7e011a280a",
+      "after_sha256": "ac828cc7e1b860b246a777456654b624bb45b8824de078338868193916a9532b"
+    },
+    {
+      "change": "Reject optional modes that require omitted dependencies; graceful unavailable audio",
+      "before_sha256": "68da36866186016d27a0134bf0e2631d21c0a6bb52572ebaed914c98fb323f78",
+      "after_sha256": "4ee1490d73217c96f402b3bd8f462adf8993affd1b34e4fe98649de8ab5d93d2"
+    },
+    {
+      "change": "Remove URL-based script loader and remote debug minifier",
+      "before_sha256": "7f3bfde4df9f14ae3827b43479c9fb0918f0a3467f60d05d8c325cd43c654c74",
+      "after_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "change": "Remove loader export",
+      "before_sha256": "4bce2172d6537201599ba019f2b7fdca40f00a342bc50530cb5c5934432e86b2",
+      "after_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "change": "Publish bounded lifecycle interface, no state setters",
+      "before_sha256": "57b9871af99e290abf412cb9e1bd7d8896775f0776d73f6214909c84f851f4b5",
+      "after_sha256": "d429e09cce336a09d509636587ec43878074c5b2e1699ec97e087c410fa05574"
+    },
+    {
+      "change": "Remove otherwise leaked jsfx sample-rate AudioContext",
+      "before_sha256": "216253264b15066ba8f4921813f8e4e14188a7f1457b89199137fe5dc6599c55",
+      "after_sha256": "2318c7305d42b78b3c8b66b9d50751924cc0112e8cc2823021990228020f84ce"
+    },
+    {
+      "change": "Remove optional unmanaged AudioContext fallback",
+      "before_sha256": "b59ab56bcc84db1c9c0c3cf71cac8307c538f156a8edea3f6fd6403f2fd893a2",
+      "after_sha256": "e68b6b050dfdb60f2ef0cefe20de62e639ee708d9a22657ffbe2cbfe615c101e"
+    },
+    {
+      "change": "Route every generated and cached voice through controlled master gain",
+      "before_sha256": "7ad1f24bfd2ea4617442b1f2f9b684cc2fd4f7eb7d026f1128b8a8e52fa7361f",
+      "after_sha256": "0e96fc4be7c9146ae715840b596af8d83fd3c91f59255e1332bdb57cff7d7974"
+    },
+    {
+      "change": "Statically expand fixed unoise oscillator without dynamic evaluation",
+      "before_sha256": "82ef32bfb218090f93be989ce14bec7c9802d3e5dd8d42340b6c05200f6f7654",
+      "after_sha256": "799903cb494d6110f0ca761497a8a6d64ec2307aefacbc395a3a0067faf21eac"
+    },
+    {
+      "change": "Statically expand fixed sine oscillator without dynamic evaluation",
+      "before_sha256": "10f26560e35434756b30c1d4c405fd10c3e55edf91bff5ae2f73781c2e4cc807",
+      "after_sha256": "3b4022c3cd70d553676d618785445004a5c5a23bf05d724efd09f4b2429088ed"
+    },
+    {
+      "change": "Statically expand fixed saw oscillator without dynamic evaluation",
+      "before_sha256": "e5fa103b5e8b2bf8b25e0d9ed29efc44c9495343df9bbeb27d9ed9818928bbc0",
+      "after_sha256": "3d00ee3745fe7eb1b224e73dca15fe7e6b5211a5558256742d3b5c30213ec515"
+    },
+    {
+      "change": "Statically expand fixed triangle oscillator without dynamic evaluation",
+      "before_sha256": "c1115010037cb38296e98eb9923fe6430efb0eca8f89e7f9547c46b7ddd67cc5",
+      "after_sha256": "bf4ec3e4fbf4b7034562d86e42684c22f0cd89d4031a8bbf5d94129421fcad3f"
+    },
+    {
+      "change": "Statically expand fixed square oscillator without dynamic evaluation",
+      "before_sha256": "3f342d943cc1055bf46448700ec2fa69e7120847e1fddf4834263742cf4c0856",
+      "after_sha256": "4ecf3658219bc37defe1e75a3da191cafa471c3e8eb885f89bd0868d0d339199"
+    },
+    {
+      "change": "Statically expand fixed synth oscillator without dynamic evaluation",
+      "before_sha256": "517a451e191c547a5eb8d09f9708babfdcb9fe387bb35176d026d9811bd3199c",
+      "after_sha256": "1134146fff18c051eff2c837f825be12f45213ca78a6740d3a129e2a07aa0545"
+    },
+    {
+      "change": "Statically expand fixed noise oscillator without dynamic evaluation",
+      "before_sha256": "bcaba8a13ded4ab44f5856d99feab74d62c6910b98108cb61a43d343d1af8610",
+      "after_sha256": "643985f448f994c1f6f2bf03c4846d894394dc9be593afe0aa1ca9ccacd249bd"
+    },
+    {
+      "change": "Remove dynamic compiler; explicitly scope original noise sample state",
+      "before_sha256": "c06b82debef90c75310ac7ba87b3012088e070251060a7e241cad79203683cfe",
+      "after_sha256": "e732bb42d9dd5bf668504f50513c09cf898a4972878baa9354ba2e7f61b3ccbb"
+    },
+    {
+      "change": "Disable unused audio navigation helper",
+      "before_sha256": "155978b28e755fffe969d3381b7e20e402c0ead4289d119c8b155c6eb5809049",
+      "after_sha256": "9339ccbc57aa9c22a3a8f35dd8de76914fe3c00c70409db62d0fe5ba27840274"
+    }
+  ]
+}
