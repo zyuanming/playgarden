@@ -1,0 +1,187 @@
+/* SPDX-License-Identifier: GPL-3.0-only */
+.gl-game {
+  display: grid;
+  grid-template-columns: minmax(0, 1.55fr) minmax(235px, 0.75fr);
+  gap: 24px;
+  color: #38554b;
+}
+.gl-field,
+.gl-notes {
+  min-width: 0;
+  padding: 23px;
+  border: 1px solid #d5e2d7;
+  background: #fafcf1;
+  border-radius: 24px;
+}
+.gl-field header {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: center;
+}
+.gl-field header span,
+.gl-notes > span {
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  color: #83977e;
+  font-weight: 800;
+}
+.gl-field h3 {
+  font-size: 26px;
+  margin: 9px 0;
+}
+.gl-field header > b {
+  font-size: 33px;
+  color: #739178;
+}
+.gl-field header small {
+  font-size: 13px;
+}
+.gl-field p,
+.gl-notes p,
+.gl-notes li {
+  font-size: 14px;
+  line-height: 1.8;
+}
+.gl-meter {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  font-size: 12px;
+  color: #71866e;
+  margin: 17px 0;
+}
+.gl-board {
+  position: relative;
+  display: grid;
+  width: 100%;
+  max-width: 560px;
+  margin: auto;
+  background: #dce8d7;
+  border: 1px solid #c2d1b8;
+  border-radius: 18px;
+  gap: 3px;
+  padding: 3px;
+}
+.gl-board button {
+  position: relative;
+  min-width: 0;
+  min-height: 0;
+  padding: 1px;
+  background: #fffced;
+  border: 1px solid #b8c6ad;
+  border-bottom: 3px solid #a6b698;
+  border-radius: 7px;
+  color: #53754f;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+}
+.gl-board button strong {
+  font-size: clamp(17px, 3vw, 31px);
+  font-weight: 500;
+}
+.gl-board button small {
+  font-size: 8px;
+  color: #899b7e;
+}
+.gl-board button.gl-empty {
+  background: #cbdcc345;
+  border-color: transparent;
+}
+.gl-board button.selected {
+  outline: 3px solid #6d9872;
+  outline-offset: -2px;
+}
+.gl-board button.hinted {
+  background: #f8e9b9;
+  border-color: #c1a46a;
+}
+.gl-board button:disabled {
+  cursor: default;
+  opacity: 1;
+}
+.gl-board button:focus-visible {
+  outline: 3px solid #87719d;
+  outline-offset: 0;
+  z-index: 2;
+}
+.gl-board > svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  opacity: 0.8;
+  z-index: 3;
+}
+.gl-message {
+  padding: 14px;
+  border-radius: 13px;
+  background: #e9efdf;
+  min-height: 66px;
+}
+.gl-notes {
+  background: #e9f0e2;
+  align-self: start;
+}
+.gl-notes h3 {
+  font-size: 30px;
+  line-height: 1.4;
+  margin: 17px 0;
+}
+.gl-notes ol {
+  padding-left: 22px;
+}
+.gl-notes li {
+  margin: 13px 0;
+}
+.gl-notes summary {
+  min-height: 44px;
+  padding: 12px 0;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+}
+@media (max-width: 850px) {
+  .gl-game {
+    grid-template-columns: 1fr;
+  }
+  .gl-field,
+  .gl-notes {
+    padding: 17px;
+  }
+  .gl-field h3 {
+    font-size: 23px;
+  }
+}
+@media (max-width: 480px) {
+  .gl-field {
+    padding: 14px 0;
+  }
+  .gl-field header,
+  .gl-field > p,
+  .gl-meter {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .gl-board {
+    border-radius: 12px;
+    gap: 2px;
+    padding: 1px;
+  }
+  .gl-board button {
+    border-radius: 5px;
+  }
+  .gl-board button small {
+    font-size: 7px;
+  }
+  .gl-board button strong {
+    font-size: 20px;
+  }
+}
+
+@media(max-width:480px){.gl-board{gap:0;padding:0;border:0;box-shadow:inset 0 0 0 1px #c2d1b8}}
