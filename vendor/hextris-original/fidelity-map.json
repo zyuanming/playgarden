@@ -1,0 +1,186 @@
+{
+  "upstreamCommit": "3f4847dc8fd7dab3d1c87e6324b9159d92fbd396",
+  "runtime": "public/hextris-original/hextris.js",
+  "reproducibleTransform": "scripts/hextris/prepare-adaptation.py",
+  "adapter": "scripts/hextris/native-adapter.js",
+  "finiteLevels": 0,
+  "endless": true,
+  "sourceFiles": [
+    {
+      "file": "js/math.js",
+      "status": "byte-exact complete file in generated runtime",
+      "functions": [
+        "rotatePoint",
+        "randInt"
+      ]
+    },
+    {
+      "file": "js/wavegen.js",
+      "status": "byte-exact complete file in generated runtime",
+      "functions": [
+        "blockDestroyed",
+        "waveGen",
+        "waveGen.update",
+        "waveGen.randomGeneration",
+        "waveGen.computeDifficulty",
+        "waveGen.circleGeneration",
+        "waveGen.halfCircleGeneration",
+        "waveGen.crosswiseGeneration",
+        "waveGen.spiralGeneration",
+        "waveGen.doubleGeneration",
+        "waveGen.setRandom",
+        "waveGen.shouldChangePattern"
+      ]
+    },
+    {
+      "file": "js/update.js",
+      "status": "byte-exact complete file in generated runtime",
+      "functions": [
+        "update"
+      ]
+    },
+    {
+      "file": "js/comboTimer.js",
+      "status": "byte-exact complete file in generated runtime",
+      "functions": [
+        "drawTimer",
+        "calcSide",
+        "drawSide"
+      ]
+    },
+    {
+      "file": "js/Text.js",
+      "status": "byte-exact complete file in generated runtime",
+      "functions": [
+        "Text",
+        "Text.draw",
+        "fadeUpAndOut"
+      ]
+    },
+    {
+      "file": "js/Hex.js",
+      "status": "gameplay retained; two observational changes",
+      "exactFunctions": [
+        "Hex.shake",
+        "Hex.doesBlockCollide",
+        "Hex.draw",
+        "arrayToColor"
+      ],
+      "modifiedFunctions": {
+        "Hex.addBlock": "Append metrics.placed++ after original collision/attachment logic.",
+        "Hex.rotate": "Remove old development history logging, append metrics.rotations++; original rate limiter, rotation math, target angles unchanged."
+      }
+    },
+    {
+      "file": "js/Block.js",
+      "status": "original shape/physics and animation retained",
+      "modifiedFunctions": {
+        "Block.incrementOpacity": "Replace raw localStorage save calls with safe saveGame().",
+        "Block.draw": "Same safe save hook; remove repeated settings.scale/prevScale adjustment because native scaleCanvas performs it exactly once on resize, including paused views.",
+        "findCenterOfBlocks": "Replace repeated negative-angle normalization with mathematically equivalent constant-time positive modulo, bounding work for untrusted saved angles."
+      },
+      "exactFunctions": [
+        "Block.getIndex"
+      ]
+    },
+    {
+      "file": "js/checking.js",
+      "status": "original ring flood fill and scoring preserved",
+      "exactFunctions": [
+        "search",
+        "floodFill"
+      ],
+      "modifiedFunctions": {
+        "consolidateBlocks": "Only append cleared-piece and clear-event observation counters after original score += adder."
+      }
+    },
+    {
+      "file": "js/view.js",
+      "status": "keep geometry; replace UI",
+      "exactFunctions": [
+        "easeOutCubic",
+        "clearGameBoard",
+        "drawPolygon"
+      ],
+      "modifiedFunctions": {
+        "renderText": "Exo default replaced with system-ui/sans-serif.",
+        "drawScoreboard": "Replace font-glyph play screen with system-font center score/Chinese welcome label."
+      },
+      "replacedFunctions": {
+        "toggleClass": "Native DOM state, hidden and dataset updates.",
+        "showText": "Chinese semantic HTML overlays.",
+        "setMainMenu": "Native welcome state and React iframe lifecycle.",
+        "hideText": "Native hidden attributes.",
+        "gameOverDisplay": "finishGame records real result and shows local Chinese ending. Post-loss decorative motion stops.",
+        "updateHighScores": "publish renders local top-three scores.",
+        "pause": "setPaused freezes RAF/input/time immediately without animation timers."
+      }
+    },
+    {
+      "file": "js/render.js",
+      "status": "original board/block/timer/hex/text render retained",
+      "modifiedFunctions": {
+        "render": "Remove beginning English/font-dependent instructions and old opaque pause rectangle; native Chinese HTML covers supply them. Draw ordering and geometry unchanged."
+      },
+      "replacedFunctions": {
+        "renderBeginningText": "Persistent Chinese HTML instructions and Help.",
+        "drawKey": "Native semantic buttons and keyboard help, no FontAwesome glyphs."
+      }
+    },
+    {
+      "file": "js/main.js",
+      "status": "extract capacity rule; replace unsafe shell",
+      "exactFunctions": [
+        "isInfringing"
+      ],
+      "modifiedFunctions": {
+        "addNewBlock": "Preserve speedModifier multiplication and original Block construction; remove development history logging; add spawn observation count."
+      },
+      "replacedFunctions": {
+        "scaleCanvas": "Native bounding rect/devicePixelRatio and one-time geometry scaling.",
+        "setBottomContainer": "Responsive flex CSS.",
+        "set_score_pos": "Responsive flex CSS.",
+        "toggleDevTools": "Removed developer-only UI.",
+        "resumeGame": "Native startFresh/resumeSavedGame/setPaused.",
+        "checkVisualElements": "Native publish/HTML hidden attributes.",
+        "hideUIElements": "Native publish/HTML hidden attributes.",
+        "init": "Native trusted constructors with safe optional saved-data copy.",
+        "exportHistory": "Removed developer-only UI.",
+        "setStartScreen": "Native welcome without active RAF.",
+        "animLoop": "Tracked RAF; original render then update order and 60Hz/rush dt; freeze paused/hidden; cap discontinuity at50ms; original loss test.",
+        "enableRestart": "Native button immediately available after logical loss, no timer.",
+        "checkGameOver": "Native isInfringing/finishGame retains capacity/top-three, removes naked-IP upload.",
+        "showHelp": "Native Chinese Help, pauses safely."
+      },
+      "removedTopLevelCode": "Delete entire hextris.io/a.js dynamic script loader."
+    },
+    {
+      "file": "js/initialization.js",
+      "status": "replaced by configure/startFresh/bootstrap",
+      "preserved": "Original four colors, Hex/base-block dimensions, desktop/mobile speeds, generation and row counts, combo constants.",
+      "removed": "jQuery bootstrap, GA injection, global history overwrite, generic localStorage names, old body-wide event bindings/timers.",
+      "modified": "Actual touch/narrow viewport platform detection; instance-local globals; original constructors."
+    },
+    {
+      "file": "js/input.js",
+      "status": "replaced by native scoped listeners",
+      "preserved": "Left/A +1 and right/D -1 rotation, down/S 4x acceleration, left/right canvas taps, pause/restart/help controls.",
+      "improved": "Paired input Set prevents stuck speed/multiple keyup division; pointer capture and cancel reset; all listeners torn down.",
+      "excluded": "Dormant unrendered colorBlindBtn handler, development key, obsolete ray-casting helper and third-party keypress dependency."
+    },
+    {
+      "file": "js/save-state.js",
+      "status": "fully replaced",
+      "preserved": "Midround resume, local top-three score sorting, save/reset existence UI.",
+      "replacedFunctions": [
+        "exportSaveState",
+        "descaleBlock",
+        "writeHighScores",
+        "clearSaveState",
+        "isStateSaved"
+      ],
+      "replacement": "Strict versioned plain JSON, numeric/array/key limits, trusted Hex/Block/waveGen reconstruction, six-name wave whitelist; no functions serialized, no eval. Preserve combo/deletion/positions/platform and normalize dimensions; omit temporary text/shake/development history."
+    }
+  ],
+  "nativeFunctions": "All functions in scripts/hextris/native-adapter.js are newly authored replacements or observation/lifecycle/storage helpers; none permit gameplay injection."
+}

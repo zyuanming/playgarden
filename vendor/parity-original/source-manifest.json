@@ -1,0 +1,220 @@
+{
+  "upstream": "abejfehr/parity",
+  "commit": "730ecbd24d4cd821bd236f2a441f4e5e2b22654f",
+  "tree": "f96ab16590e74ece650284f009be2096c6eb8b64",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2014 Abe Fehr",
+  "source": "https://github.com/abejfehr/parity/tree/730ecbd24d4cd821bd236f2a441f4e5e2b22654f",
+  "preservedFiles": [
+    {
+      "path": "DESIGN-DOC.md",
+      "bytes": 1597,
+      "git_blob_sha1": "e03fd0a6abfbfd28565d741440b95b8cc6fc69b6",
+      "expected_git_blob_sha1": "e03fd0a6abfbfd28565d741440b95b8cc6fc69b6",
+      "matches_upstream": true,
+      "sha256": "939b059875da7298cea4ff79a545a30aae4f3a1936a6cee71f4f8b9039109b28"
+    },
+    {
+      "path": "LICENSE.txt",
+      "bytes": 1075,
+      "git_blob_sha1": "f06969051171c6a2edf3f2098951c71f34a42ba3",
+      "expected_git_blob_sha1": "f06969051171c6a2edf3f2098951c71f34a42ba3",
+      "matches_upstream": true,
+      "sha256": "306353ffb80c42bacb6864811e8bc4515d4abb4dad10ec36c3a607e8c720a725"
+    },
+    {
+      "path": "README.md",
+      "bytes": 926,
+      "git_blob_sha1": "a55c39160b34c19f523a132295c3a5fbc57a489b",
+      "expected_git_blob_sha1": "a55c39160b34c19f523a132295c3a5fbc57a489b",
+      "matches_upstream": true,
+      "sha256": "83d92a674344ad3147e9df6992b596747d6eb5e984e95f87e1a56dcec4dc7b52"
+    },
+    {
+      "path": "gruntfile.js",
+      "bytes": 2148,
+      "git_blob_sha1": "99fa341d29c3343d1df159df88746adf54cf7a77",
+      "expected_git_blob_sha1": "99fa341d29c3343d1df159df88746adf54cf7a77",
+      "matches_upstream": true,
+      "sha256": "7b0d5ee8daf870ba30a009f3aab912c9ed802d0c8033893bbd1eca7e707080a9"
+    },
+    {
+      "path": "index.html",
+      "bytes": 4788,
+      "git_blob_sha1": "41361283219bfdea47a55bfdf65a531567589712",
+      "expected_git_blob_sha1": "41361283219bfdea47a55bfdf65a531567589712",
+      "matches_upstream": true,
+      "sha256": "ffca8eb1b664573cfac73aaf54c78745c0b2350d9b89f39ec40000e4f09ea8fb"
+    },
+    {
+      "path": "package.json",
+      "bytes": 380,
+      "git_blob_sha1": "0eb78408a69bb21f9e86484799c81dd4dff51084",
+      "expected_git_blob_sha1": "0eb78408a69bb21f9e86484799c81dd4dff51084",
+      "matches_upstream": true,
+      "sha256": "65a6a5e0355ba2b4a58006fb3a71cd371da64a47796f73adcf7b42e3c06fe698"
+    },
+    {
+      "path": "scripts/core.js",
+      "bytes": 1214,
+      "git_blob_sha1": "25afd3d4d63101b9d25948a0ab6b75aea77f76f6",
+      "expected_git_blob_sha1": "25afd3d4d63101b9d25948a0ab6b75aea77f76f6",
+      "matches_upstream": true,
+      "sha256": "2641a7ba628b938ca7f33a92b865aef9872a77f812048b8bfd4900b1410273e9"
+    },
+    {
+      "path": "scripts/modules/Board.js",
+      "bytes": 7059,
+      "git_blob_sha1": "2692f9e0ee317efdf7008c99c450b05ab2fe2cee",
+      "expected_git_blob_sha1": "2692f9e0ee317efdf7008c99c450b05ab2fe2cee",
+      "matches_upstream": true,
+      "sha256": "4b78ac084817b3d45521bc4e8e0088bc59b33fbbaa42a7c981d47194f2cd1523"
+    },
+    {
+      "path": "scripts/modules/Keyboard.js",
+      "bytes": 895,
+      "git_blob_sha1": "a60d770f096990986e3b1bc65e0d417d5af9c5f6",
+      "expected_git_blob_sha1": "a60d770f096990986e3b1bc65e0d417d5af9c5f6",
+      "matches_upstream": true,
+      "sha256": "bb17373449d9bb290c7a6bba1b796ddda5e159dd0619fc20264e248c5823a28c"
+    },
+    {
+      "path": "scripts/modules/Manager.js",
+      "bytes": 549,
+      "git_blob_sha1": "a7af8482bc23b021ac34f504e876521087a760fc",
+      "expected_git_blob_sha1": "a7af8482bc23b021ac34f504e876521087a760fc",
+      "matches_upstream": true,
+      "sha256": "5c6eaac4202e7d13f4dd508024028a8f4b663537af32ca1d445c81dd07957c7e"
+    },
+    {
+      "path": "scripts/modules/Overlay.js",
+      "bytes": 2096,
+      "git_blob_sha1": "a78b9fdfbab1bd4faeed22385d63ca8a077d6ae4",
+      "expected_git_blob_sha1": "a78b9fdfbab1bd4faeed22385d63ca8a077d6ae4",
+      "matches_upstream": true,
+      "sha256": "4ed41ccb20be72e6bfacfb0a6beca6375a76abfa3f5b6388a3557c6ba93e107d"
+    },
+    {
+      "path": "scripts/modules/Selector.js",
+      "bytes": 1560,
+      "git_blob_sha1": "18930bab8d98ec4e29a3aa464f6593bb02cb7f17",
+      "expected_git_blob_sha1": "18930bab8d98ec4e29a3aa464f6593bb02cb7f17",
+      "matches_upstream": true,
+      "sha256": "53f61f14f94f82d392bf2906431a20ac787f982c45ba7ebba30a1bc70929950a"
+    },
+    {
+      "path": "scripts/modules/StateData.js",
+      "bytes": 2020,
+      "git_blob_sha1": "9045ba4cb56753716d3e1d050fe6cc1831dc0865",
+      "expected_git_blob_sha1": "9045ba4cb56753716d3e1d050fe6cc1831dc0865",
+      "matches_upstream": true,
+      "sha256": "abf90b134732b1d98dda3c268344306dd6f98d2e65215635553d04f575d50ff2"
+    },
+    {
+      "path": "scripts/modules/Story.js",
+      "bytes": 3263,
+      "git_blob_sha1": "6370eb68557f3c0eb13cfa9eddbb8424b3452d11",
+      "expected_git_blob_sha1": "6370eb68557f3c0eb13cfa9eddbb8424b3452d11",
+      "matches_upstream": true,
+      "sha256": "cd5b13fde6ddb699cc3bdecb1cedd9eb0b1911008c58a7c4e67fb6516c393752"
+    },
+    {
+      "path": "scripts/modules/Swipe.js",
+      "bytes": 986,
+      "git_blob_sha1": "ee71c6034c9a42c409c16c6bf61c080eba35abee",
+      "expected_git_blob_sha1": "ee71c6034c9a42c409c16c6bf61c080eba35abee",
+      "matches_upstream": true,
+      "sha256": "cffe5a7881dab693180ae1bc506685e15f9863ea4a1635954c06591ea84f2232"
+    },
+    {
+      "path": "scripts/modules/Window.js",
+      "bytes": 724,
+      "git_blob_sha1": "7469136ea27ffb5eae5236bc77e354b6f802ec56",
+      "expected_git_blob_sha1": "7469136ea27ffb5eae5236bc77e354b6f802ec56",
+      "matches_upstream": true,
+      "sha256": "9c26bcabbdc98d81c91aedb20d09d82573c4ff672089b42950b79c41af0b1c0f"
+    },
+    {
+      "path": "story.json",
+      "bytes": 28026,
+      "git_blob_sha1": "7d01dfb8f092fecbd5d8053b91242e5cb8b9c1e1",
+      "expected_git_blob_sha1": "7d01dfb8f092fecbd5d8053b91242e5cb8b9c1e1",
+      "matches_upstream": true,
+      "sha256": "b53cd0bc9fbb767bad4c6986e145ad8a9fb85094209f3a9dcd6941e5e9d90760"
+    },
+    {
+      "path": "styles/mobile.css",
+      "bytes": 115,
+      "git_blob_sha1": "d90df580bad4c4045d808e247fb0d376389914e9",
+      "expected_git_blob_sha1": "d90df580bad4c4045d808e247fb0d376389914e9",
+      "matches_upstream": true,
+      "sha256": "c089fe07b67a98cde6f66b8ee9b36d0a2df9800a1e0783472b90440a037ffb4c"
+    },
+    {
+      "path": "styles/style.css",
+      "bytes": 4648,
+      "git_blob_sha1": "1495407931c065665a2c8d0f78a1d42625c94937",
+      "expected_git_blob_sha1": "1495407931c065665a2c8d0f78a1d42625c94937",
+      "matches_upstream": true,
+      "sha256": "7b4dabdfeb5ed9aff205b98696ba7693e9c8c4f61c20251982bf0cc6c01f4c28"
+    }
+  ],
+  "excludedFiles": [
+    {
+      "path": "scripts/lib/jquery-2.1.1.min.js",
+      "bytes": 84245,
+      "git_blob_sha1": "e5ace116b6f53cfec96eb5175ecd36f727ad4047",
+      "expected_git_blob_sha1": "e5ace116b6f53cfec96eb5175ecd36f727ad4047",
+      "matches_upstream": true,
+      "sha256": "874706b2b1311a0719b5267f7d1cf803057e367e94ae1ff7bf78c5450d30f5d4",
+      "reason": "Unused third-party jQuery runtime; native React implementation needs none of it."
+    },
+    {
+      "path": "scripts/lib/jquery-ui.min.js",
+      "bytes": 239564,
+      "git_blob_sha1": "17eab79039b4e711a2ff52615417efb38c7c1dba",
+      "expected_git_blob_sha1": "17eab79039b4e711a2ff52615417efb38c7c1dba",
+      "matches_upstream": true,
+      "sha256": "7ab17d7c830048456601619d3a6422eb5e419b1d0bfef58d8b1c533435d2e054",
+      "reason": "Unused third-party library, not listed in the original production concat."
+    },
+    {
+      "path": "scripts/lib/jquery.touchSwipe.min.js",
+      "bytes": 11417,
+      "git_blob_sha1": "f053f10bf356f5a85f337a679f6d392db1f2121d",
+      "expected_git_blob_sha1": "f053f10bf356f5a85f337a679f6d392db1f2121d",
+      "matches_upstream": true,
+      "sha256": "0ab340987711378e8cb5582b1f97f6938037712213396d8e7c7f8fa7b1ab4e5a",
+      "reason": "Unused third-party gesture library; native Pointer Events replace it."
+    },
+    {
+      "path": "scripts/production.js",
+      "bytes": 116039,
+      "git_blob_sha1": "78b04700a2143d39316c54f899850c5ab8dc0c48",
+      "expected_git_blob_sha1": "78b04700a2143d39316c54f899850c5ab8dc0c48",
+      "matches_upstream": true,
+      "sha256": "ec8b34e5e9f467de67c0bfb5f620133bd49a89384b19884d151090fcaa333f95",
+      "reason": "Generated mixed bundle includes excluded third-party code; preferred first-party source is preserved."
+    },
+    {
+      "path": "scripts/production.min.js",
+      "bytes": 103195,
+      "git_blob_sha1": "672f9ef7dafbe75904ed79ecc8091a6c4102380c",
+      "expected_git_blob_sha1": "672f9ef7dafbe75904ed79ecc8091a6c4102380c",
+      "matches_upstream": true,
+      "sha256": "bc8a04afa1f07f2fd3e2e40dcdde0fe951185d97e3704e8420159cfc82f48ce5",
+      "reason": "Generated minified mixed bundle includes excluded third-party code; not shipped."
+    },
+    {
+      "path": "scripts/require.js",
+      "bytes": 15219,
+      "git_blob_sha1": "be103a74e37af06f4a97c4a376e364fbd0a4ac64",
+      "expected_git_blob_sha1": "be103a74e37af06f4a97c4a376e364fbd0a4ac64",
+      "matches_upstream": true,
+      "sha256": "adea132a1d1a148c5313a315d4389300981c48df4e3dcd42577e7f30be7d3ab9",
+      "reason": "Unused third-party AMD loader; Vite handles local modules."
+    }
+  ],
+  "allPreflightTextBlobsRechecked": true,
+  "deployedUpstreamThirdPartyFiles": []
+}

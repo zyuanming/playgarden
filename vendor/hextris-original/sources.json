@@ -1,0 +1,40 @@
+{
+  "name": "Hextris original endless six-direction puzzle",
+  "version": "3f4847dc8fd7dab3d1c87e6324b9159d92fbd396",
+  "license": "GPL-3.0-or-later",
+  "source": "https://github.com/Hextris/hextris/tree/3f4847dc8fd7dab3d1c87e6324b9159d92fbd396",
+  "commit": "3f4847dc8fd7dab3d1c87e6324b9159d92fbd396",
+  "preferredSource": [
+    "vendor/hextris-original/upstream/js/Block.js",
+    "vendor/hextris-original/upstream/js/Hex.js",
+    "vendor/hextris-original/upstream/js/Text.js",
+    "vendor/hextris-original/upstream/js/checking.js",
+    "vendor/hextris-original/upstream/js/comboTimer.js",
+    "vendor/hextris-original/upstream/js/initialization.js",
+    "vendor/hextris-original/upstream/js/input.js",
+    "vendor/hextris-original/upstream/js/main.js",
+    "vendor/hextris-original/upstream/js/math.js",
+    "vendor/hextris-original/upstream/js/render.js",
+    "vendor/hextris-original/upstream/js/save-state.js",
+    "vendor/hextris-original/upstream/js/update.js",
+    "vendor/hextris-original/upstream/js/view.js",
+    "vendor/hextris-original/upstream/js/wavegen.js",
+    "public/hextris-original/hextris.js",
+    "public/hextris-original/index.html",
+    "public/hextris-original/style.css",
+    "src/games/HextrisOriginal.tsx",
+    "src/games/hextrisOriginal.css"
+  ],
+  "buildSources": [
+    "scripts/hextris/prepare-adaptation.py",
+    "scripts/hextris/native-adapter.js",
+    "scripts/hextris/verify-sources.py"
+  ],
+  "scope": "Complete original endless Hextris rules, four colors, circular-adjacency flood fill, combo scoring, six wave generators, original difficulty and procedural Canvas geometry. Original and adapted code GPL-3.0-or-later. Native Chinese shell, pure JSON save validation and system fonts replace imported dependencies. Tracking, score upload, ads, remote scripts/fonts, marketing art and all third-party runtime dependencies excluded. Untouched non-public source quarantine is for provenance only.",
+  "notices": [
+    "public/hextris-original/LICENSE.txt",
+    "vendor/hextris-original/upstream/LICENSE.md",
+    "vendor/hextris-original/upstream/README.md",
+    "vendor/hextris-original/jquery-MIT-LICENSE.txt"
+  ]
+}

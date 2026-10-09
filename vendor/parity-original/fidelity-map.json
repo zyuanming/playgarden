@@ -1,0 +1,88 @@
+{
+  "commit": "730ecbd24d4cd821bd236f2a441f4e5e2b22654f",
+  "status": "static source/data mapping; no browser pass claimed",
+  "maps": [
+    {
+      "upstream": "scripts/modules/Board.js:render",
+      "adaptation": [
+        "src/vendor/parityCore.ts:createParityBoard",
+        "src/games/parityLevels.ts"
+      ],
+      "preserved": "row-major nine values and initial selected x/y without adding to start"
+    },
+    {
+      "upstream": "scripts/modules/Board.js:left/up/right/down/select",
+      "adaptation": [
+        "src/vendor/parityCore.ts:parityAdjacent",
+        "src/vendor/parityCore.ts:parityDestination",
+        "src/vendor/parityCore.ts:stepParity"
+      ],
+      "preserved": "bounds, orthogonal adjacency, update arrival cursor before +/-1, fixed black/white coloring"
+    },
+    {
+      "upstream": "scripts/modules/Board.js:isWin",
+      "adaptation": [
+        "src/vendor/parityCore.ts:parityWon",
+        "src/games/ParityGame.tsx:completion effect"
+      ],
+      "preserved": "all nine displayed values equal; single completion callback with inputs locked after win"
+    },
+    {
+      "upstream": "story.json:100 level records",
+      "adaptation": [
+        "src/games/parityLevelsData.json",
+        "src/games/parityLevels.ts",
+        "scripts/parity/extract-levels.py"
+      ],
+      "preserved": "all 100 original records compare structurally equal to filtered source; 50 vanilla, 50 b&w; exact nine values, colors, starts and 80 optional solution arrays"
+    },
+    {
+      "upstream": "story.json:8 instruction records; scripts/modules/Story.js",
+      "adaptation": [
+        "src/games/ParityGame.tsx",
+        "existing src/components/GameShell.tsx"
+      ],
+      "preserved": "all gameplay tutorial meanings, 100-stage ordering and ending; original instructions retained in vendor source",
+      "changed": "Chinese persistent instructions and Playgarden freely selectable practice replace original overlays/played-level menu; completion is explicit next action; Facebook ending removed"
+    },
+    {
+      "upstream": "scripts/modules/Keyboard.js; scripts/modules/Swipe.js",
+      "adaptation": [
+        "src/games/ParityGame.tsx:scoped keyboard and pointer handlers"
+      ],
+      "preserved": "arrow/directional swipe moves continuous selector",
+      "changed": "native events replace jQuery/TouchSwipe; adds tappable adjacent cells, direction buttons and WASD; prevents repeated arrow keys; 24px swipe threshold; honors shell pause"
+    },
+    {
+      "upstream": "scripts/modules/StateData.js",
+      "adaptation": [
+        "src/games/parityStorage.ts",
+        "existing shell progress persistence"
+      ],
+      "changed": "namespaced localStorage legal-arrival replay replaces cookie played-level storage; corrupted storage is safe; no saved win flag trusted"
+    },
+    {
+      "upstream": "styles/style.css:.cell/.black/.white/.dSelected",
+      "adaptation": [
+        "src/games/parityGame.css",
+        "public/parity-art.svg"
+      ],
+      "preserved": "numeric 3x3 grid, dark/light fixed tiles and teal selected outline",
+      "changed": "original responsive Playgarden CSS/SVG, system fonts, visible +/-1 and current-position labels; no binary/image/font sources used"
+    },
+    {
+      "upstream": "scripts/modules/Board.js:reset",
+      "adaptation": [
+        "src/games/ParityGame.tsx:keyed remount",
+        "src/games/parityStorage.ts:freshParityRound"
+      ],
+      "preserved": "exact initial values and selection",
+      "changed": "shell reset uses freshStart to survive storage failures; legal undo and non-mutating explanatory hints are new Playgarden conveniences"
+    },
+    {
+      "upstream": "index.html:Facebook, Google Analytics, Google Fonts; production bundles",
+      "adaptation": [],
+      "changed": "omitted from runtime entirely; six unused library/mixed bundles not redistributed; no upstream scripts executed"
+    }
+  ]
+}

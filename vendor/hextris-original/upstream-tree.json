@@ -1,0 +1,669 @@
+{
+  "sha": "f6d6c8067593b1245e7c82373d877e5aa3933ebd",
+  "url": "https://api.github.com/repos/Hextris/hextris/git/trees/f6d6c8067593b1245e7c82373d877e5aa3933ebd",
+  "tree": [
+    {
+      "path": ".github",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "a3f004474ac18b8daaac74450ffa86f1ca102cd4",
+      "url": "https://api.github.com/repos/Hextris/hextris/git/trees/a3f004474ac18b8daaac74450ffa86f1ca102cd4"
+    },
+    {
+      "path": ".github/FUNDING.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "847a843be19dbfa06f866e6e31bed952745b1f69",
+      "size": 67,
+      "url": "https://api.github.com/repos/Hextris/hextris/git/blobs/847a843be19dbfa06f866e6e31bed952745b1f69"
+    },
+    {
+      "path": ".gitignore",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ec8869062ee0a4b2c45900967841fc6bfaa7640b",
+      "size": 33,
+      "url": "https://api.github.com/repos/Hextris/hextris/git/blobs/ec8869062ee0a4b2c45900967841fc6bfaa7640b"
+    },
+    {
+      "path": "CNAME",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "33c78d089a1ba138e149b1a93e9361855cb005fc",
+      "size": 10,
+      "url": "https://api.github.com/repos/Hextris/hextris/git/blobs/33c78d089a1ba138e149b1a93e9361855cb005fc"
+    },
+    {
+      "path": "LICENSE.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "16d89e0a34c0bc274e1939e28a3f98ee2b380858",
+      "size": 35178,
+      "url": "https://api.github.com/repos/Hextris/hextris/git/blobs/16d89e0a34c0bc274e1939e28a3f98ee2b380858"
+    },
+    {
+      "path": "README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "271c5601e3abcdd6bf0567eb6d88417dea45cbee",
+      "size": 1802,
+      "url": "https://api.github.com/repos/Hextris/hextris/git/blobs/271c5601e3abcdd6bf0567eb6d88417dea45cbee"
+    },
+    {
+      "path": "a.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8b137891791fe96927ad78e64b0aad7bded08bdc",
+      "size": 1,
+      "url": "https://api.github.com/repos/Hextris/hextris/git/blobs/8b137891791fe96927ad78e64b0aad7bded08bdc"
+    },
+    {
+      "path": "favicon.ico",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "74ac8ae9152e0c17b20d7d8330f41957eef56eae",
+      "size": 99678,
+      "url": "https://api.github.com/repos/Hextris/hextris/git/blobs/74ac8ae9152e0c17b20d7d8330f41957eef56eae"
+    },
+    {
+      "path": "images",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "676da4197a6a08ae2a341bcc527c2430de6b753e",
+      "url": "https://api.github.com/repos/Hextris/hextris/git/trees/676da4197a6a08ae2a341bcc527c2430de6b753e"
+    },
+    {
+      "path": "images/android.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9a50affda395c98ed77c3dff9321d00bd6bf32e7",
+      "size": 9614,
+      "url": "https://api.github.com/repos/Hextris/hextris/git/blobs/9a50affda395c98ed77c3dff9321d00bd6bf32e7"
+    },
+    {
+      "path": "images/appstore.svg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ac111e597468639d8b15841555758351c62cecd7",
+      "size": 12353,
+      "url": "https://api.github.com/repos/Hextris/hextris/git/blobs/ac111e597468639d8b15841555758351c62cecd7"
+    },
+    {
+      "path": "images/btn_back.svg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b0f77f0107aceb7fe1950d0f4df055f47f288c7b",
+      "size": 1210,
+      "url": "https://api.github.com/repos/Hextris/hextris/git/blobs/b0f77f0107aceb7fe1950d0f4df055f47f288c7b"
+    },
+    {
+      "path": "images/btn_facebook.svg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7e68661458b6360100b6232d0e3ffd194042737c",
+      "size": 1630,
+      "url": "https://api.github.com/repos/Hextris/hextris/git/blobs/7e68661458b6360100b6232d0e3ffd194042737c"
+    },
+    {
+      "path": "images/btn_help.svg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "26a452f62b14f7737d9c9d6f607e7619511e4377",
+      "size": 3174,
+      "url": "https://api.github.com/repos/Hextris/hextris/git/blobs/26a452f62b14f7737d9c9d6f607e7619511e4377"
+    },
+    {
+      "path": "images/btn_pause.svg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "dd9470add341e1dca7bd8509668572f35934ac1b",
+      "size": 1179,
+      "url": "https://api.github.com/repos/Hextris/hextris/git/blobs/dd9470add341e1dca7bd8509668572f35934ac1b"
+    },
+    {
+      "path": "images/btn_restart.svg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "efc6b01388c84ce4c362cfee222d4deb070b276f",
+      "size": 1579,
+      "url": "https://api.github.com/repos/Hextris/hextris/git/blobs/efc6b01388c84ce4c362cfee222d4deb070b276f"
+    },
+    {
+      "path": "images/btn_resume.svg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2fdb66e60db493f7fc4ee5959868bed9c0b24e4d",
+      "size": 1119,
+      "url": "https://api.github.com/repos/Hextris/hextris/git/blobs/2fdb66e60db493f7fc4ee5959868bed9c0b24e4d"
+    },
+    {
+      "path": "images/btn_share.svg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0622e81c40f29288c624b7b3417d119c3fb128d1",
+      "size": 1253,
+      "url": "https://api.github.com/repos/Hextris/hextris/git/blobs/0622e81c40f29288c624b7b3417d119c3fb128d1"
+    },
+    {
+      "path": "images/btn_twitter.svg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "96db7202b091832266ab96ad0dc9147f0e343d4f",
+      "size": 2526,
+      "url": "https://api.github.com/repos/Hextris/hextris/git/blobs/96db7202b091832266ab96ad0dc9147f0e343d4f"
+    },
+    {
+      "path": "images/facebook-opengraph.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6f4303326b34c3f55d8e5495dd55cb4d706fc0f0",
+      "size": 18133,
+      "url": "https://api.github.com/repos/Hextris/hextris/git/blobs/6f4303326b34c3f55d8e5495dd55cb4d706fc0f0"
+    },
+    {
+      "path": "images/icon_arrows.svg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "88341d899b5e05d92ac726f7ae98bd8c1945a72b",
+      "size": 1110,
+      "url": "https://api.github.com/repos/Hextris/hextris/git/blobs/88341d899b5e05d92ac726f7ae98bd8c1945a72b"
+    },
+    {
+      "path": "images/icons",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "baf50f4520a6d574c0d8e0f336bf15a7703ad75e",
+      "url": "https://api.github.com/repos/Hextris/hextris/git/trees/baf50f4520a6d574c0d8e0f336bf15a7703ad75e"
+    },
+    {
+      "path": "images/icons/apple-touch-120.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d347855b90bd95d9e6d1555e59afbe7ef7ffe92f",
+      "size": 1879,
+      "url": "https://api.github.com/repos/Hextris/hextris/git/blobs/d347855b90bd95d9e6d1555e59afbe7ef7ffe92f"
+    },
+    {
+      "path": "images/icons/apple-touch-152.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "db72a1385a486f721845e42629937a59cca698e2",
+      "size": 2546,
+      "url": "https://api.github.com/repos/Hextris/hextris/git/blobs/db72a1385a486f721845e42629937a59cca698e2"
+    },
+    {
+      "path": "images/icons/apple-touch-167.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "bfcdde6b343aa39814fe97d59744a2512946c6f0",
+      "size": 2625,
+      "url": "https://api.github.com/repos/Hextris/hextris/git/blobs/bfcdde6b343aa39814fe97d59744a2512946c6f0"
+    },
+    {
+      "path": "images/icons/apple-touch-180.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9fcbe4a43f115c64cbcbee444262181564771784",
+      "size": 3023,
+      "url": "https://api.github.com/repos/Hextris/hextris/git/blobs/9fcbe4a43f115c64cbcbee444262181564771784"
+    },
+    {
+      "path": "images/icons/apple-touch-512.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4762d7d11c161d8e4ca93845c64f7d2796056df4",
+      "size": 9820,
+      "url": "https://api.github.com/repos/Hextris/hextris/git/blobs/4762d7d11c161d8e4ca93845c64f7d2796056df4"
+    },
+    {
+      "path": "images/icons/apple-touch.svg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7dff7eddf9a077b888e59bca5f218f8b0887fe3d",
+      "size": 685,
+      "url": "https://api.github.com/repos/Hextris/hextris/git/blobs/7dff7eddf9a077b888e59bca5f218f8b0887fe3d"
+    },
+    {
+      "path": "images/icons/maskable-192.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "31a703a438fe117f762470bfee99dc5be4045cfc",
+      "size": 2376,
+      "url": "https://api.github.com/repos/Hextris/hextris/git/blobs/31a703a438fe117f762470bfee99dc5be4045cfc"
+    },
+    {
+      "path": "images/icons/maskable-192.webp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "63736677adb11e1ca2858c262ac2b60769e77300",
+      "size": 1614,
+      "url": "https://api.github.com/repos/Hextris/hextris/git/blobs/63736677adb11e1ca2858c262ac2b60769e77300"
+    },
+    {
+      "path": "images/icons/maskable-512.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "31ed1805c74a9ede53b20181b1a3d9b3426b3d09",
+      "size": 8416,
+      "url": "https://api.github.com/repos/Hextris/hextris/git/blobs/31ed1805c74a9ede53b20181b1a3d9b3426b3d09"
+    },
+    {
+      "path": "images/icons/maskable-512.webp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6cfe8a7355642488680b73a2ac567dc4108dd46b",
+      "size": 4418,
+      "url": "https://api.github.com/repos/Hextris/hextris/git/blobs/6cfe8a7355642488680b73a2ac567dc4108dd46b"
+    },
+    {
+      "path": "images/icons/maskable.svg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "df759094d86515648a81467ca6f0f6785b2e105d",
+      "size": 693,
+      "url": "https://api.github.com/repos/Hextris/hextris/git/blobs/df759094d86515648a81467ca6f0f6785b2e105d"
+    },
+    {
+      "path": "images/icons/transparent-192.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "848d57ccc624e940ed68ea8774a69d8c7ca5dac6",
+      "size": 4091,
+      "url": "https://api.github.com/repos/Hextris/hextris/git/blobs/848d57ccc624e940ed68ea8774a69d8c7ca5dac6"
+    },
+    {
+      "path": "images/icons/transparent-192.webp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "790d3473ba13d12c83952b955fcfa907daced910",
+      "size": 2830,
+      "url": "https://api.github.com/repos/Hextris/hextris/git/blobs/790d3473ba13d12c83952b955fcfa907daced910"
+    },
+    {
+      "path": "images/icons/transparent-512.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4ed4299fd97c728c7bf25b1030d93d90bea1eb78",
+      "size": 13320,
+      "url": "https://api.github.com/repos/Hextris/hextris/git/blobs/4ed4299fd97c728c7bf25b1030d93d90bea1eb78"
+    },
+    {
+      "path": "images/icons/transparent-512.webp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9b35a14bec231a9576765d6b59a17fcf640e7335",
+      "size": 6352,
+      "url": "https://api.github.com/repos/Hextris/hextris/git/blobs/9b35a14bec231a9576765d6b59a17fcf640e7335"
+    },
+    {
+      "path": "images/icons/transparent.svg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "523049ae1eb9398de8d98c7ad9a2439f8d2eae9f",
+      "size": 618,
+      "url": "https://api.github.com/repos/Hextris/hextris/git/blobs/523049ae1eb9398de8d98c7ad9a2439f8d2eae9f"
+    },
+    {
+      "path": "images/twitter-opengraph.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ce78a935b4a9bd8c66675bae3660f013a401c78a",
+      "size": 17258,
+      "url": "https://api.github.com/repos/Hextris/hextris/git/blobs/ce78a935b4a9bd8c66675bae3660f013a401c78a"
+    },
+    {
+      "path": "index.html",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "30c7be64dbd0d55772fc41d799e69e85cb3bfd35",
+      "size": 11710,
+      "url": "https://api.github.com/repos/Hextris/hextris/git/blobs/30c7be64dbd0d55772fc41d799e69e85cb3bfd35"
+    },
+    {
+      "path": "js",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "eafcc5d88df1d254c934b1373fbd24fb82945f19",
+      "url": "https://api.github.com/repos/Hextris/hextris/git/trees/eafcc5d88df1d254c934b1373fbd24fb82945f19"
+    },
+    {
+      "path": "js/Block.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a7f21c962e5492a3a0a83454de5897ed6e526fbc",
+      "size": 5951,
+      "url": "https://api.github.com/repos/Hextris/hextris/git/blobs/a7f21c962e5492a3a0a83454de5897ed6e526fbc"
+    },
+    {
+      "path": "js/Hex.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1705efdc201a2a1206744678d2824758211cdace",
+      "size": 5005,
+      "url": "https://api.github.com/repos/Hextris/hextris/git/blobs/1705efdc201a2a1206744678d2824758211cdace"
+    },
+    {
+      "path": "js/Text.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "dfc08cb646f844ca5acbb83d643bf0c15c2fe170",
+      "size": 600,
+      "url": "https://api.github.com/repos/Hextris/hextris/git/blobs/dfc08cb646f844ca5acbb83d643bf0c15c2fe170"
+    },
+    {
+      "path": "js/checking.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "800013709ce62a37fb4e666089b25827082ba12e",
+      "size": 2894,
+      "url": "https://api.github.com/repos/Hextris/hextris/git/blobs/800013709ce62a37fb4e666089b25827082ba12e"
+    },
+    {
+      "path": "js/comboTimer.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b514906bc27d254019343871883a602811465d63",
+      "size": 2230,
+      "url": "https://api.github.com/repos/Hextris/hextris/git/blobs/b514906bc27d254019343871883a602811465d63"
+    },
+    {
+      "path": "js/initialization.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a22adf86fc5da17c5461429ac38640d2192c8bfc",
+      "size": 6898,
+      "url": "https://api.github.com/repos/Hextris/hextris/git/blobs/a22adf86fc5da17c5461429ac38640d2192c8bfc"
+    },
+    {
+      "path": "js/input.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "190f66f1c0892135086c5e41a53b9fbc61aba9d4",
+      "size": 4952,
+      "url": "https://api.github.com/repos/Hextris/hextris/git/blobs/190f66f1c0892135086c5e41a53b9fbc61aba9d4"
+    },
+    {
+      "path": "js/main.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5d8aae3659ddb4b979611a19df539311b0c9afc4",
+      "size": 9891,
+      "url": "https://api.github.com/repos/Hextris/hextris/git/blobs/5d8aae3659ddb4b979611a19df539311b0c9afc4"
+    },
+    {
+      "path": "js/math.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3946bb463fcf11bdafba7b6fc83b08c714f1dcaa",
+      "size": 318,
+      "url": "https://api.github.com/repos/Hextris/hextris/git/blobs/3946bb463fcf11bdafba7b6fc83b08c714f1dcaa"
+    },
+    {
+      "path": "js/render.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7aafb33537cce71dead7a659a631f307172a7b12",
+      "size": 3525,
+      "url": "https://api.github.com/repos/Hextris/hextris/git/blobs/7aafb33537cce71dead7a659a631f307172a7b12"
+    },
+    {
+      "path": "js/save-state.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2a3f36ccaa2d590c468ebefd8b0ef7b294033354",
+      "size": 1343,
+      "url": "https://api.github.com/repos/Hextris/hextris/git/blobs/2a3f36ccaa2d590c468ebefd8b0ef7b294033354"
+    },
+    {
+      "path": "js/update.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ab57878450e57976a41b03267de065035f714214",
+      "size": 1840,
+      "url": "https://api.github.com/repos/Hextris/hextris/git/blobs/ab57878450e57976a41b03267de065035f714214"
+    },
+    {
+      "path": "js/view.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "91a772f088342ba3f3fb051d842b181538f61816",
+      "size": 7422,
+      "url": "https://api.github.com/repos/Hextris/hextris/git/blobs/91a772f088342ba3f3fb051d842b181538f61816"
+    },
+    {
+      "path": "js/wavegen.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a4e85ff77c84676339c41f7024625364b34abb4c",
+      "size": 5391,
+      "url": "https://api.github.com/repos/Hextris/hextris/git/blobs/a4e85ff77c84676339c41f7024625364b34abb4c"
+    },
+    {
+      "path": "manifest.webmanifest",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9961b396a376e62dd74333bb8f3947db893b1e30",
+      "size": 1642,
+      "url": "https://api.github.com/repos/Hextris/hextris/git/blobs/9961b396a376e62dd74333bb8f3947db893b1e30"
+    },
+    {
+      "path": "style",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "bb4871c97d1547eadb3c1504a88ee1ca87a2af1d",
+      "url": "https://api.github.com/repos/Hextris/hextris/git/trees/bb4871c97d1547eadb3c1504a88ee1ca87a2af1d"
+    },
+    {
+      "path": "style/fa",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "f5ee27060273260c65f38992acedf85d3c74e448",
+      "url": "https://api.github.com/repos/Hextris/hextris/git/trees/f5ee27060273260c65f38992acedf85d3c74e448"
+    },
+    {
+      "path": "style/fa/css",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "4914731eca055ddae19eeddea418e47b10a25690",
+      "url": "https://api.github.com/repos/Hextris/hextris/git/trees/4914731eca055ddae19eeddea418e47b10a25690"
+    },
+    {
+      "path": "style/fa/css/font-awesome.css",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "78f1021045356cba68c3c7c6e022e4b9060e0bc8",
+      "size": 25167,
+      "url": "https://api.github.com/repos/Hextris/hextris/git/blobs/78f1021045356cba68c3c7c6e022e4b9060e0bc8"
+    },
+    {
+      "path": "style/fa/css/font-awesome.min.css",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2ed777e6e126d3401af2934d89f0e567aae86ac9",
+      "size": 20734,
+      "url": "https://api.github.com/repos/Hextris/hextris/git/blobs/2ed777e6e126d3401af2934d89f0e567aae86ac9"
+    },
+    {
+      "path": "style/fa/fonts",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "613f29da41739c9e20d6eb4decb5a0964f347478",
+      "url": "https://api.github.com/repos/Hextris/hextris/git/trees/613f29da41739c9e20d6eb4decb5a0964f347478"
+    },
+    {
+      "path": "style/fa/fonts/FontAwesome.otf",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3461e3fce6a37f2321ecbe64707f04c0a4f05424",
+      "size": 75188,
+      "url": "https://api.github.com/repos/Hextris/hextris/git/blobs/3461e3fce6a37f2321ecbe64707f04c0a4f05424"
+    },
+    {
+      "path": "style/fa/fonts/fontawesome-webfont.eot",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "6cfd56609567bc9db55186415c694d1d32808fc2",
+      "size": 72449,
+      "url": "https://api.github.com/repos/Hextris/hextris/git/blobs/6cfd56609567bc9db55186415c694d1d32808fc2"
+    },
+    {
+      "path": "style/fa/fonts/fontawesome-webfont.svg",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "a9f84695031139c2542f582e9312310f2186ff58",
+      "size": 253487,
+      "url": "https://api.github.com/repos/Hextris/hextris/git/blobs/a9f84695031139c2542f582e9312310f2186ff58"
+    },
+    {
+      "path": "style/fa/fonts/fontawesome-webfont.ttf",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "5cd6cff6d6f6cf438a882e366420dbcc5dddd3f1",
+      "size": 141564,
+      "url": "https://api.github.com/repos/Hextris/hextris/git/blobs/5cd6cff6d6f6cf438a882e366420dbcc5dddd3f1"
+    },
+    {
+      "path": "style/fa/fonts/fontawesome-webfont.woff",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "9eaecb37996e205f1027fce2df59fbaa500657a8",
+      "size": 83760,
+      "url": "https://api.github.com/repos/Hextris/hextris/git/blobs/9eaecb37996e205f1027fce2df59fbaa500657a8"
+    },
+    {
+      "path": "style/fonts",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "d7750b1f5e4c0ec670f3bbce32ec2ce18f4e020b",
+      "url": "https://api.github.com/repos/Hextris/hextris/git/trees/d7750b1f5e4c0ec670f3bbce32ec2ce18f4e020b"
+    },
+    {
+      "path": "style/fonts/Exo2-ExtraLight.otf",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4b6bd42ee4c399a3fbda870dcf7417a2cf6d8cfb",
+      "size": 64996,
+      "url": "https://api.github.com/repos/Hextris/hextris/git/blobs/4b6bd42ee4c399a3fbda870dcf7417a2cf6d8cfb"
+    },
+    {
+      "path": "style/fonts/Exo2-Regular.otf",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b3fec6e50cceb89a9ac18016c19cc37a75675774",
+      "size": 65552,
+      "url": "https://api.github.com/repos/Hextris/hextris/git/blobs/b3fec6e50cceb89a9ac18016c19cc37a75675774"
+    },
+    {
+      "path": "style/fonts/Exo2-SemiBold.otf",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "106a3990e1d4ecab1160beb02d366c834ec6ec77",
+      "size": 68732,
+      "url": "https://api.github.com/repos/Hextris/hextris/git/blobs/106a3990e1d4ecab1160beb02d366c834ec6ec77"
+    },
+    {
+      "path": "style/fonts/Lovelo.otf",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "a3d05340365d8281b5c3aad2ae1146444129ccac",
+      "size": 33284,
+      "url": "https://api.github.com/repos/Hextris/hextris/git/blobs/a3d05340365d8281b5c3aad2ae1146444129ccac"
+    },
+    {
+      "path": "style/fonts/QuattrocentoSans-Regular.ttf",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2cde4db88d5beeb8d279da1f8309bdbd3abfbfca",
+      "size": 98340,
+      "url": "https://api.github.com/repos/Hextris/hextris/git/blobs/2cde4db88d5beeb8d279da1f8309bdbd3abfbfca"
+    },
+    {
+      "path": "style/fonts/roboto.woff",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3be8671f927e65946cdffb45aecfb482886b4084",
+      "size": 15660,
+      "url": "https://api.github.com/repos/Hextris/hextris/git/blobs/3be8671f927e65946cdffb45aecfb482886b4084"
+    },
+    {
+      "path": "style/rrssb.css",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "e7499d96521be2304f9e344226916a5fd98d4082",
+      "size": 10978,
+      "url": "https://api.github.com/repos/Hextris/hextris/git/blobs/e7499d96521be2304f9e344226916a5fd98d4082"
+    },
+    {
+      "path": "style/style.css",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b57f23e858e90018e602dcb4e2766ab8c635a73b",
+      "size": 7978,
+      "url": "https://api.github.com/repos/Hextris/hextris/git/blobs/b57f23e858e90018e602dcb4e2766ab8c635a73b"
+    },
+    {
+      "path": "vendor",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "94acd73690016bff7c056714a82023a1bd086d36",
+      "url": "https://api.github.com/repos/Hextris/hextris/git/trees/94acd73690016bff7c056714a82023a1bd086d36"
+    },
+    {
+      "path": "vendor/hammer.min.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "11af03140859cb43e75b217dd792194f87069f58",
+      "size": 13710,
+      "url": "https://api.github.com/repos/Hextris/hextris/git/blobs/11af03140859cb43e75b217dd792194f87069f58"
+    },
+    {
+      "path": "vendor/jquery.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a6107ab22b762c3ca5a8f1f535441d919885833f",
+      "size": 92593,
+      "url": "https://api.github.com/repos/Hextris/hextris/git/blobs/a6107ab22b762c3ca5a8f1f535441d919885833f"
+    },
+    {
+      "path": "vendor/js.cookie.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "116e62d8cb621ea3cedcfd465e4ca7df61725be4",
+      "size": 3242,
+      "url": "https://api.github.com/repos/Hextris/hextris/git/blobs/116e62d8cb621ea3cedcfd465e4ca7df61725be4"
+    },
+    {
+      "path": "vendor/jsonfn.min.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "59a0ea1cda450d82472488ff909d4620b0b59031",
+      "size": 809,
+      "url": "https://api.github.com/repos/Hextris/hextris/git/blobs/59a0ea1cda450d82472488ff909d4620b0b59031"
+    },
+    {
+      "path": "vendor/keypress.min.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e004f6a9186d27371473c931b19c13859cb6d061",
+      "size": 9985,
+      "url": "https://api.github.com/repos/Hextris/hextris/git/blobs/e004f6a9186d27371473c931b19c13859cb6d061"
+    },
+    {
+      "path": "vendor/rrssb.min.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "45c021d2191725e63b3b48429992a71bbb508f24",
+      "size": 4972,
+      "url": "https://api.github.com/repos/Hextris/hextris/git/blobs/45c021d2191725e63b3b48429992a71bbb508f24"
+    },
+    {
+      "path": "vendor/sweet-alert.min.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a0c8c3ce5a28b7ecb2f88256d70423721b246837",
+      "size": 10424,
+      "url": "https://api.github.com/repos/Hextris/hextris/git/blobs/a0c8c3ce5a28b7ecb2f88256d70423721b246837"
+    }
+  ],
+  "truncated": false
+}

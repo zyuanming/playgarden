@@ -50,3 +50,11 @@ Server Survival code, level definitions and code-generated geometry retain MIT a
 ## Coil原作无尽画圈游戏
 
 固定上游ea6fd3afae10a6d8a53b07e82be4211619206ede，MIT。完整核心、程序化图形与Point/Region几何来源保留；中文UI、原生输入/生命周期适配、原创SVG为GPL-3.0-only。未清权的三个装饰图、旧jQuery运行时、社交脚本、远程字体不进入站点。完整原文本及源代码专用jQuery MIT保存在vendor/coil-original；具体范围见docs/coil-original.md、THIRD_PARTY_NOTICES.md与runtime-source-manifest.json。
+
+## Parity complete original campaign
+
+Parity retains its MIT core and all 100 original levels at commit `730ecbd24d4cd821bd236f2a441f4e5e2b22654f`. The exact 19 first-party files, full original story data and license are included under vendor/parity-original. Playgarden UI, legal-route persistence, undo, hints and original SVG are GPL-3.0-only. No third-party legacy bundles, tracking, remote fonts or binary artwork enter runtime. See [the integration scope](parity-original.md) and the complete third-party notices/source map.
+
+## Hextris original endless game
+
+Hextris and its separately identified Playgarden offline adapter retain GPL-3.0-or-later at upstream commit `3f4847dc8fd7dab3d1c87e6324b9159d92fbd396`. The original 24 text files, complete license, exact transformation and modification map are included. The public runtime uses original procedural Canvas geometry and system fonts, with no upstream art/audio/third-party runtime. Remote score upload, tracking, advertising and eval-based saves are removed; saves are validated pure JSON. See [the integration scope](hextris-original.md), notices and the corresponding-source map. This does not change the GPL-3.0-only grant for unrelated project contributions.

@@ -146,6 +146,8 @@ export const GAME_IDS = [
   "perimeter-garden",
   "server-survival",
   "coil",
+  "parity",
+  "hextris",
 ] as const;
 export type GameId = (typeof GAME_IDS)[number];
 export type Category =
@@ -186,7 +188,7 @@ export type GameMeta = {
     | { kind: "original"; license: "GPL-3.0-only"; notes: string }
     | {
         kind: "adapted";
-        license: "MIT" | "BSD-2-Clause";
+        license: "MIT" | "BSD-2-Clause" | "GPL-3.0-or-later";
         notes: string;
         author: string;
         workTitle?: string;

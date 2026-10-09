@@ -1,0 +1,55 @@
+{
+  "asOf": "2026-10-09",
+  "scope": "Static only. No browser, gameplay, screenshot, integration build, CI or deployment result is asserted.",
+  "sourceArchiveSha256": "66376a79205208465955c778dcfb85ac8bfc5044ec5b8354cfd371deb2f96e01",
+  "upstreamCommit": "3f4847dc8fd7dab3d1c87e6324b9159d92fbd396",
+  "upstreamFilesVerified": 24,
+  "firstPartyJavaScriptFiles": 14,
+  "firstPartyJavaScriptBytes": 58260,
+  "checks": [
+    {
+      "name": "source length/SHA256/Git blob SHA1 and exact GPL copy",
+      "result": "passed",
+      "command": "python3 scripts/hextris/verify-sources.py"
+    },
+    {
+      "name": "reproducible pinned-source transform",
+      "result": "passed",
+      "command": "python3 scripts/hextris/prepare-adaptation.py --check"
+    },
+    {
+      "name": "JavaScript syntax",
+      "result": "passed",
+      "command": "node --check public/hextris-original/hextris.js"
+    },
+    {
+      "name": "runtime unresolved identifier diagnostics",
+      "result": "passed",
+      "details": "TypeScript allowJs/checkJs static diagnostics 2304/2552/2581: 0. Not a full typed-JS proof."
+    },
+    {
+      "name": "React component and targeted Playwright spec typecheck",
+      "result": "passed",
+      "details": "TypeScript strict noEmit isolated fixture, current GameProps and current E2E helpers; unrelated GameId re-export omitted, rest byte-identical."
+    },
+    {
+      "name": "independent static review",
+      "result": "passed after fixes",
+      "details": "Five concrete findings fixed and rechecked; no other high-confidence defect reported."
+    },
+    {
+      "name": "static network/dynamic-code/resource audit",
+      "result": "passed",
+      "details": "No network API/eval/Function/JSONfn/dynamic script; only local script/css and restrictive CSP."
+    }
+  ],
+  "pending": [
+    "Full registered-host build",
+    "One targeted desktop/mobile E2E invocation",
+    "Actual screenshot review",
+    "CI and deployment identity/resources verification"
+  ],
+  "finiteLevels": 0,
+  "endless": true,
+  "license": "GPL-3.0-or-later"
+}

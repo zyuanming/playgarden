@@ -2272,5 +2272,59 @@ export const games: GameDefinition[] = [
     },
     "component": lazy(() => import("../games/CoilOriginal"))
   },
+  {
+    "id": "parity",
+    "title": "步步同数",
+    "subtitle": "走入相邻格，让九个数字相遇；挑战完整原作100关。",
+    "category": "数字推理",
+    "difficulty": "中级",
+    "tone": "green",
+    "levelCount": 100,
+    "allowUndo": true,
+    "resumeKey": "playgarden.parity.v1",
+    "artwork": {
+      "url": "./parity-art.svg",
+      "position": "center",
+      "size": "cover"
+    },
+    "source": {
+      "kind": "adapted",
+      "license": "MIT",
+      "author": "Abe Fehr",
+      "workTitle": "Parity（完整原作100关）",
+      "url": "https://github.com/abejfehr/parity/tree/730ecbd24d4cd821bd236f2a441f4e5e2b22654f",
+      "commit": "730ecbd24d4cd821bd236f2a441f4e5e2b22654f",
+      "notice": "./parity-LICENSE.txt",
+      "notes": "原生移植原作3×3连续行走、落点白+1/黑−1与九格同数规则；完整保留50普通关和50黑白关的原始数值、顺序、起点与颜色。原核心/数据MIT；Playgarden中文界面、输入/暂停/存档/撤销/教学提示与新SVG为GPL-3.0-only。无旧库、社交、统计脚本或远程字体。"
+    },
+    "component": lazy(() => import("../games/ParityGame"))
+  },
+  {
+    "id": "hextris",
+    "title": "六向彩环",
+    "subtitle": "旋转六边形接住彩块，让同色相连消除，守住外环并延续连击。",
+    "category": "动作反应",
+    "difficulty": "中级",
+    "tone": "green",
+    "levelCount": 0,
+    "endless": true,
+    "allowUndo": false,
+    "artwork": {
+      "url": "./hextris-original-art.svg",
+      "position": "center",
+      "size": "cover"
+    },
+    "source": {
+      "kind": "adapted",
+      "license": "GPL-3.0-or-later",
+      "author": "Logan Engstrom、Garrett Finucane、Noah Moroze、Michael Yang",
+      "workTitle": "Hextris（完整原作无尽六向消除游戏）",
+      "url": "https://github.com/Hextris/hextris/tree/3f4847dc8fd7dab3d1c87e6324b9159d92fbd396",
+      "commit": "3f4847dc8fd7dab3d1c87e6324b9159d92fbd396",
+      "notice": "./hextris-original/LICENSE.txt",
+      "notes": "完整保留原六向旋转落块、环状同色洪泛、计分连击、六种波形、难度与无尽失败规则。原代码与本站中文离线适配/自绘SVG均GPL-3.0-or-later；禁用远程追踪/广告，纯JSON安全存档；无导入美术、字体、音频或第三方运行库。"
+    },
+    "component": lazy(() => import("../games/HextrisOriginal"))
+  },
 ];
 export const findGame = (id: string) => games.find((game) => game.id === id);
