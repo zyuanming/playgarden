@@ -1,0 +1,16 @@
+{
+  "candidates": 483,
+  "generated": 473,
+  "upstreamCustomClasses": [
+    "active",
+    "event-active-bar",
+    "glass-panel",
+    "hud-tab",
+    "hud-tabs",
+    "key-hint",
+    "pulse-green",
+    "service-btn",
+    "time-btn",
+    "tooltip"
+  ]
+}

@@ -2212,5 +2212,38 @@ export const games: GameDefinition[] = [
     },
     "component": lazy(() => import("../games/PerimeterGarden"))
   },
+  {
+    "id": "server-survival",
+    "title": "云端守护站",
+    "subtitle": "从第一台服务器到AI浪潮，亲手建设可靠的云端机房。",
+    "category": "编程启蒙",
+    "difficulty": "进阶",
+    "tone": "green",
+    "levelCount": 25,
+    "artwork": {
+      "url": "./server-survival-art.svg",
+      "position": "center",
+      "size": "cover"
+    },
+    "resumeKey": "playgarden.server-survival.full",
+    "freePlay": true,
+    "freePlayCaption": "原作生存与自由沙盒",
+    "modeLabels": {
+      "free": "生存 / 沙盒",
+      "practice": "原作25关"
+    },
+    "allowUndo": false,
+    "source": {
+      "kind": "adapted",
+      "license": "MIT",
+      "author": "Kostyantyn Pshenychnyy 与贡献者",
+      "workTitle": "Server Survival（原作25关本地集成）",
+      "url": "https://github.com/pshenok/server-survival/tree/7804e5969e28267cd33837e023eb46fa65da72b7",
+      "commit": "7804e5969e28267cd33837e023eb46fa65da72b7",
+      "notice": "./server-survival-full/LICENSE.txt",
+      "notes": "保留原作全部25关、26类服务和生存/沙盒核心模拟；本地Three r128与静态CSS。项目新增中文外壳、键盘/触屏建设台及SVG遵循GPL-3.0-only；不含上游音频或远程CDN。"
+    },
+    "component": lazy(() => import("../games/ServerSurvivalOriginal"))
+  },
 ];
 export const findGame = (id: string) => games.find((game) => game.id === id);

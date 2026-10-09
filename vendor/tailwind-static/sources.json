@@ -1,0 +1,27 @@
+{
+  "repository": "https://github.com/tailwindlabs/tailwindcss",
+  "commit": "4f9f603e12b51cc53b8a09c7739b8f88c8eb87eb",
+  "version": "3.4.17",
+  "usage": "Unmodified palette and preflight sources; project-authored finite static CSS generator. No Tailwind script runs in the browser.",
+  "license": "MIT",
+  "files": [
+    {
+      "path": "LICENSE",
+      "bytes": 1071,
+      "gitBlobSha1": "d6a82290738a9f78946cbcb4594535d6984086dd",
+      "sha256": "60e0b68c0f35c078eef3a5d29419d0b03ff84ec1df9c3f9d6e39a519a5ae7985"
+    },
+    {
+      "path": "colors.js",
+      "bytes": 6096,
+      "gitBlobSha1": "0764bfa96b637f4782714d43945884fe7c540e36",
+      "sha256": "28907aa147f4ca19fb3c07bd21e88aac459df8a533e629530eb8b384bcae760d"
+    },
+    {
+      "path": "preflight.css",
+      "bytes": 7805,
+      "gitBlobSha1": "04b9d1424a32ea876d61d6a6d0fd355f18c0b4e4",
+      "sha256": "1d85e5cc0262f68a4f1313c4754a61c7ff56da4cc24866e76bcde9d4e467feac"
+    }
+  ]
+}

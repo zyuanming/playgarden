@@ -1,5 +1,5 @@
 {
-  "verified": "2026-10-06",
+  "verified": "2026-10-09",
   "purpose": "Preferred editable source and build instructions for the exact runtime dependencies/preload helper included in the distributed app.",
   "components": [
     {
@@ -75,6 +75,52 @@
         "pnpm-lock.yaml"
       ],
       "scope": "Only the emitted preload helper is application runtime code; Vite itself is a build tool."
+    }
+  ],
+  "vendoredComponents": [
+    {
+      "name": "Server Survival",
+      "version": "7804e5969e28267cd33837e023eb46fa65da72b7",
+      "license": "MIT",
+      "source": "https://github.com/pshenok/server-survival/tree/7804e5969e28267cd33837e023eb46fa65da72b7",
+      "preferredSource": [
+        "vendor/server-survival-full/upstream",
+        "public/server-survival-full"
+      ],
+      "buildSources": [
+        "scripts/server-survival",
+        "src/games/ServerSurvivalOriginal.tsx"
+      ],
+      "scope": "Self-hosted original simulation and all 25 campaign levels; audio excluded."
+    },
+    {
+      "name": "Three.js (isolated Server Survival renderer)",
+      "version": "r128",
+      "license": "MIT",
+      "source": "https://github.com/mrdoob/three.js/tree/d4aa9e00ea29808534a3e082f602c544e5f2419c",
+      "preferredSource": [
+        "src/ at fixed upstream commit",
+        "vendor/three-r128/three.js"
+      ],
+      "buildSources": [
+        "utils/build/rollup.config.js at fixed upstream commit",
+        "package.json at fixed upstream commit"
+      ],
+      "scope": "Static original r128 renderer separate from the host npm three 0.180.0."
+    },
+    {
+      "name": "Tailwind CSS static preflight and colors",
+      "version": "3.4.17",
+      "license": "MIT",
+      "source": "https://github.com/tailwindlabs/tailwindcss/tree/4f9f603e12b51cc53b8a09c7739b8f88c8eb87eb",
+      "preferredSource": [
+        "vendor/tailwind-static/preflight.css",
+        "vendor/tailwind-static/colors.js"
+      ],
+      "buildSources": [
+        "scripts/server-survival/generate-utilities.py"
+      ],
+      "scope": "Static CSS; no browser CDN or Tailwind runtime."
     }
   ]
 }

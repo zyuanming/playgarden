@@ -144,6 +144,7 @@ export const GAME_IDS = [
   "interval-notes",
   "pendulum-push",
   "perimeter-garden",
+  "server-survival",
 ] as const;
 export type GameId = (typeof GAME_IDS)[number];
 export type Category =

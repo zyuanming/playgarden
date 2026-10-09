@@ -1,3 +1,4 @@
+import { serverSurvivalOriginalLevels } from "../src/games/serverSurvivalOriginalLevels";
 import { perimeterGardenLevels } from "../src/games/perimeterGardenLevels";
 import { pendulumPushLevels } from "../src/games/pendulumPushLogic";
 import { intervalNotesLevels } from "../src/games/intervalNotesLogic";
@@ -145,6 +146,7 @@ import { sortingNetworkLevels } from "../src/games/sortingNetworkLogic";
 import { voxelViewsLevels } from "../src/games/voxelViewsLogic";
 import { cubeNetLevels } from "../src/games/cubeNetLogic";
 const packs = {
+  "server-survival": serverSurvivalOriginalLevels,
   "perimeter-garden": perimeterGardenLevels,
   "pendulum-push": pendulumPushLevels,
   "interval-notes": intervalNotesLevels,
@@ -321,8 +323,8 @@ describe("Scalable catalog contract", () => {
       }
     }),
   );
-  it("counts only 144 real games and 2803 levels, not the roadmap", () => {
-    expect(games).toHaveLength(144);
-    expect(games.reduce((sum, g) => sum + g.levelCount, 0)).toBe(2803);
+  it("counts only 145 real games and 2828 levels, not the roadmap", () => {
+    expect(games).toHaveLength(145);
+    expect(games.reduce((sum, g) => sum + g.levelCount, 0)).toBe(2828);
   });
 });

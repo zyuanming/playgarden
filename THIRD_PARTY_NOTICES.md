@@ -436,3 +436,86 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+## Server Survival: full original local integration
+
+Server Survival original full-game integration uses the upstream MIT sources at pshenok/server-survival commit 7804e5969e28267cd33837e023eb46fa65da72b7 (Copyright (c) 2025 Kostyantyn Pshenychnyy). All 25 original levels, 26 services and original objectives are retained. Exact source snapshots and attribution: vendor/server-survival-full/. Full public license: server-survival-full/LICENSE.txt. Code-generated geometry and embedded SVG remain under the same source license; all upstream audio and binary artwork are excluded. Playgarden adapters, edits and original SVG card are GPL-3.0-only. No upstream music, sound effect, font or third-party game-site dependency is conveyed.
+
+This isolated game additionally ships Three.js r128, MIT, Copyright 2010-2021 Three.js Authors, fixed commit d4aa9e00ea29808534a3e082f602c544e5f2419c. This is separate from the host's existing r180 dependency. Full public license: server-survival-full/LICENSE-three.txt. Official minified and uncompressed builds, hashes and source mapping: vendor/three-r128/. Preferred editable source and build configuration: https://github.com/mrdoob/three.js/tree/d4aa9e00ea29808534a3e082f602c544e5f2419c (src/, package.json, utils/build/rollup.config.js).
+
+The game's static CSS includes Tailwind CSS v3.4.17 MIT preflight and colors, fixed commit 4f9f603e12b51cc53b8a09c7739b8f88c8eb87eb, Copyright (c) Tailwind Labs, Inc. Full public license: server-survival-full/LICENSE-tailwind.txt. Unmodified original sources and generated CSS build script: vendor/tailwind-static/ and scripts/server-survival/generate-utilities.py. No Tailwind CDN/runtime is loaded. Preferred editable source: https://github.com/tailwindlabs/tailwindcss/tree/4f9f603e12b51cc53b8a09c7739b8f88c8eb87eb.
+
+### Server Survival MIT license
+
+MIT License
+
+Copyright (c) 2025 Kostyantyn Pshenychnyy
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+
+### Three.js r128 MIT license
+
+The MIT License
+
+Copyright © 2010-2021 three.js authors
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+
+
+### Tailwind CSS v3.4.17 MIT license
+
+MIT License
+
+Copyright (c) Tailwind Labs, Inc.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+

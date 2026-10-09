@@ -1,0 +1,609 @@
+{
+  "repository": "https://github.com/pshenok/server-survival",
+  "commit": "7804e5969e28267cd33837e023eb46fa65da72b7",
+  "license": "MIT",
+  "files": [
+    {
+      "path": "LICENSE",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f383c51c58ed7cc0de4e3c69c3a362f6b906fab1",
+      "size": 1079,
+      "url": "https://api.github.com/repos/pshenok/server-survival/git/blobs/f383c51c58ed7cc0de4e3c69c3a362f6b906fab1"
+    },
+    {
+      "path": "README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "709c0e73a699742785f1d02add2999e7b65ed707",
+      "size": 18997,
+      "url": "https://api.github.com/repos/pshenok/server-survival/git/blobs/709c0e73a699742785f1d02add2999e7b65ed707"
+    },
+    {
+      "path": "game.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "67ba535ea16793370a551c25a4d7522a35895c6a",
+      "size": 73987,
+      "url": "https://api.github.com/repos/pshenok/server-survival/git/blobs/67ba535ea16793370a551c25a4d7522a35895c6a"
+    },
+    {
+      "path": "index.html",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "03807de6824dafa29fb5e25677d8ff523d4eb19e",
+      "size": 112307,
+      "url": "https://api.github.com/repos/pshenok/server-survival/git/blobs/03807de6824dafa29fb5e25677d8ff523d4eb19e"
+    },
+    {
+      "path": "package.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1af23873916a4741df1e31b3162211be6202936c",
+      "size": 589,
+      "url": "https://api.github.com/repos/pshenok/server-survival/git/blobs/1af23873916a4741df1e31b3162211be6202936c"
+    },
+    {
+      "path": "src/achievements/achievements.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "10a9aef1b01aab53820714a681c3c6c102227427",
+      "size": 14824,
+      "url": "https://api.github.com/repos/pshenok/server-survival/git/blobs/10a9aef1b01aab53820714a681c3c6c102227427"
+    },
+    {
+      "path": "src/achievements/definitions.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "670b2f8df056625cb687f306412732d97e0f2122",
+      "size": 13006,
+      "url": "https://api.github.com/repos/pshenok/server-survival/git/blobs/670b2f8df056625cb687f306412732d97e0f2122"
+    },
+    {
+      "path": "src/achievements/ui.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "32cbcec5cded1fe3bf48451a89c56a788b9518e8",
+      "size": 6021,
+      "url": "https://api.github.com/repos/pshenok/server-survival/git/blobs/32cbcec5cded1fe3bf48451a89c56a788b9518e8"
+    },
+    {
+      "path": "src/campaign/campaign.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "77345b6754490f36e046f4080cc79740feb65d53",
+      "size": 15433,
+      "url": "https://api.github.com/repos/pshenok/server-survival/git/blobs/77345b6754490f36e046f4080cc79740feb65d53"
+    },
+    {
+      "path": "src/campaign/diagram.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "bc942bebc22649873f324da87c33304a13285cab",
+      "size": 4244,
+      "url": "https://api.github.com/repos/pshenok/server-survival/git/blobs/bc942bebc22649873f324da87c33304a13285cab"
+    },
+    {
+      "path": "src/campaign/levels.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "568f18fa52d5c0dfa7a480324231ca3a506c4fb6",
+      "size": 46648,
+      "url": "https://api.github.com/repos/pshenok/server-survival/git/blobs/568f18fa52d5c0dfa7a480324231ca3a506c4fb6"
+    },
+    {
+      "path": "src/campaign/objectives.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a924e93872e0f4db60cee39376bd4ebd268268bb",
+      "size": 7895,
+      "url": "https://api.github.com/repos/pshenok/server-survival/git/blobs/a924e93872e0f4db60cee39376bd4ebd268268bb"
+    },
+    {
+      "path": "src/config.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d24e3c0e55f777455d6e83610a9db97738e663ea",
+      "size": 42735,
+      "url": "https://api.github.com/repos/pshenok/server-survival/git/blobs/d24e3c0e55f777455d6e83610a9db97738e663ea"
+    },
+    {
+      "path": "src/core/actions.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "498920ee29b4402e94d29a9bd13a6f71069bb9a1",
+      "size": 24020,
+      "url": "https://api.github.com/repos/pshenok/server-survival/git/blobs/498920ee29b4402e94d29a9bd13a6f71069bb9a1"
+    },
+    {
+      "path": "src/core/economy.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "62c6a061254dfd1d594e3a0032d9d03d9131e678",
+      "size": 14156,
+      "url": "https://api.github.com/repos/pshenok/server-survival/git/blobs/62c6a061254dfd1d594e3a0032d9d03d9131e678"
+    },
+    {
+      "path": "src/core/events.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1295d1d650676fa8c0a617ef2b27fc237f8b9461",
+      "size": 30380,
+      "url": "https://api.github.com/repos/pshenok/server-survival/git/blobs/1295d1d650676fa8c0a617ef2b27fc237f8b9461"
+    },
+    {
+      "path": "src/core/failure-reasons.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e8d98af36c149dac19670f3213690d8da8cdc196",
+      "size": 4324,
+      "url": "https://api.github.com/repos/pshenok/server-survival/git/blobs/e8d98af36c149dac19670f3213690d8da8cdc196"
+    },
+    {
+      "path": "src/core/hints.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c7cc30f99dd3f1a6ef9aaf1535abb7245df38171",
+      "size": 6700,
+      "url": "https://api.github.com/repos/pshenok/server-survival/git/blobs/c7cc30f99dd3f1a6ef9aaf1535abb7245df38171"
+    },
+    {
+      "path": "src/core/metrics.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d008e9843ec51ce0574b567555e035a024cd8ffd",
+      "size": 12999,
+      "url": "https://api.github.com/repos/pshenok/server-survival/git/blobs/d008e9843ec51ce0574b567555e035a024cd8ffd"
+    },
+    {
+      "path": "src/entities/Request.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ee6ea15c595f7e4bf62017913fb64b6f141231f5",
+      "size": 6198,
+      "url": "https://api.github.com/repos/pshenok/server-survival/git/blobs/ee6ea15c595f7e4bf62017913fb64b6f141231f5"
+    },
+    {
+      "path": "src/entities/Service.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ac629d83a482dadef518c92d8991ed169790bb82",
+      "size": 45453,
+      "url": "https://api.github.com/repos/pshenok/server-survival/git/blobs/ac629d83a482dadef518c92d8991ed169790bb82"
+    },
+    {
+      "path": "src/i18n.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d7cb2047c131f65d22d9f928b70aa8de6c349773",
+      "size": 4660,
+      "url": "https://api.github.com/repos/pshenok/server-survival/git/blobs/d7cb2047c131f65d22d9f928b70aa8de6c349773"
+    },
+    {
+      "path": "src/input/handlers.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1454fa86cdbd121840c3f8897b58e2fe967513bb",
+      "size": 51368,
+      "url": "https://api.github.com/repos/pshenok/server-survival/git/blobs/1454fa86cdbd121840c3f8897b58e2fe967513bb"
+    },
+    {
+      "path": "src/locales/de.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "08ad025f5302a1b964bc41fea0570b8c6f2773a3",
+      "size": 83798,
+      "url": "https://api.github.com/repos/pshenok/server-survival/git/blobs/08ad025f5302a1b964bc41fea0570b8c6f2773a3"
+    },
+    {
+      "path": "src/locales/en.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "09f3d3b5958f106f2677ea9b3308055b38ae6724",
+      "size": 77964,
+      "url": "https://api.github.com/repos/pshenok/server-survival/git/blobs/09f3d3b5958f106f2677ea9b3308055b38ae6724"
+    },
+    {
+      "path": "src/locales/fr.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "09f5012ea20bdad2508952e263d7543d8ad3b9cd",
+      "size": 87938,
+      "url": "https://api.github.com/repos/pshenok/server-survival/git/blobs/09f5012ea20bdad2508952e263d7543d8ad3b9cd"
+    },
+    {
+      "path": "src/locales/hi.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "913760f45f0583356416570c8721c42b2db3a535",
+      "size": 117929,
+      "url": "https://api.github.com/repos/pshenok/server-survival/git/blobs/913760f45f0583356416570c8721c42b2db3a535"
+    },
+    {
+      "path": "src/locales/it.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "517501d9165af9b14e9738f732fb321f989b19eb",
+      "size": 86397,
+      "url": "https://api.github.com/repos/pshenok/server-survival/git/blobs/517501d9165af9b14e9738f732fb321f989b19eb"
+    },
+    {
+      "path": "src/locales/ko.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f13cfe2357448f2671596dfd82d96e2a6c57f1c7",
+      "size": 90115,
+      "url": "https://api.github.com/repos/pshenok/server-survival/git/blobs/f13cfe2357448f2671596dfd82d96e2a6c57f1c7"
+    },
+    {
+      "path": "src/locales/nep.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3f437fc0dcb4426e14e13960f1bdf890f2dc368f",
+      "size": 150542,
+      "url": "https://api.github.com/repos/pshenok/server-survival/git/blobs/3f437fc0dcb4426e14e13960f1bdf890f2dc368f"
+    },
+    {
+      "path": "src/locales/pt-BR.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6f16f27b0da5fd84b908dc401114f197e253cd28",
+      "size": 86318,
+      "url": "https://api.github.com/repos/pshenok/server-survival/git/blobs/6f16f27b0da5fd84b908dc401114f197e253cd28"
+    },
+    {
+      "path": "src/locales/ru.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "62a3001d67c03b6398c7d15210c515d6a2d14b79",
+      "size": 109882,
+      "url": "https://api.github.com/repos/pshenok/server-survival/git/blobs/62a3001d67c03b6398c7d15210c515d6a2d14b79"
+    },
+    {
+      "path": "src/locales/uk.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6d358af3a761b80c6a8ffb205bf30b8623698ec3",
+      "size": 115066,
+      "url": "https://api.github.com/repos/pshenok/server-survival/git/blobs/6d358af3a761b80c6a8ffb205bf30b8623698ec3"
+    },
+    {
+      "path": "src/locales/zh.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a73ed4618641ec7b560f2d0e7c90bc47dec4959e",
+      "size": 78177,
+      "url": "https://api.github.com/repos/pshenok/server-survival/git/blobs/a73ed4618641ec7b560f2d0e7c90bc47dec4959e"
+    },
+    {
+      "path": "src/main.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d45b6bc8b8eb57bf1a63d10e0ebcd1d2295b24f0",
+      "size": 158,
+      "url": "https://api.github.com/repos/pshenok/server-survival/git/blobs/d45b6bc8b8eb57bf1a63d10e0ebcd1d2295b24f0"
+    },
+    {
+      "path": "src/persistence/save-load.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d9299bf5cf3bc7bbe42d06871ba457b50708f8f5",
+      "size": 20024,
+      "url": "https://api.github.com/repos/pshenok/server-survival/git/blobs/d9299bf5cf3bc7bbe42d06871ba457b50708f8f5"
+    },
+    {
+      "path": "src/services/SoundService.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "998e88c9b42fcd8a9d8457a58bec659a26ab9b20",
+      "size": 6562,
+      "url": "https://api.github.com/repos/pshenok/server-survival/git/blobs/998e88c9b42fcd8a9d8457a58bec659a26ab9b20"
+    },
+    {
+      "path": "src/sim/autoscaling.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0f78910cf2058a78af2862795c3666c686a9cf94",
+      "size": 12680,
+      "url": "https://api.github.com/repos/pshenok/server-survival/git/blobs/0f78910cf2058a78af2862795c3666c686a9cf94"
+    },
+    {
+      "path": "src/sim/circuit-breaker.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b3e08c862f0ed5e33ded4ee5b1dbd1e0b132ebd6",
+      "size": 9239,
+      "url": "https://api.github.com/repos/pshenok/server-survival/git/blobs/b3e08c862f0ed5e33ded4ee5b1dbd1e0b132ebd6"
+    },
+    {
+      "path": "src/sim/dlq.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d5e1e8a46801b17441c9a5c7edad1130e5787747",
+      "size": 4935,
+      "url": "https://api.github.com/repos/pshenok/server-survival/git/blobs/d5e1e8a46801b17441c9a5c7edad1130e5787747"
+    },
+    {
+      "path": "src/sim/gpu.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e7cfc28d55fc60f6bb5dee4ca0e780d5eb0e7b9c",
+      "size": 8524,
+      "url": "https://api.github.com/repos/pshenok/server-survival/git/blobs/e7cfc28d55fc60f6bb5dee4ca0e780d5eb0e7b9c"
+    },
+    {
+      "path": "src/sim/handlers/apigw.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3b4c3e38d5bd332228eabab195f6951c023dc70b",
+      "size": 2958,
+      "url": "https://api.github.com/repos/pshenok/server-survival/git/blobs/3b4c3e38d5bd332228eabab195f6951c023dc70b"
+    },
+    {
+      "path": "src/sim/handlers/cache.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "062589f9ca1d02b39cd9e669d4ce53aa62e0a401",
+      "size": 3507,
+      "url": "https://api.github.com/repos/pshenok/server-survival/git/blobs/062589f9ca1d02b39cd9e669d4ce53aa62e0a401"
+    },
+    {
+      "path": "src/sim/handlers/cdn.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e730787dc12a2b6af4b67875ce54830fd8b318c8",
+      "size": 1548,
+      "url": "https://api.github.com/repos/pshenok/server-survival/git/blobs/e730787dc12a2b6af4b67875ce54830fd8b318c8"
+    },
+    {
+      "path": "src/sim/handlers/compute.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cc43560f85acf07d2e0173aa07370aa6c46afe54",
+      "size": 5860,
+      "url": "https://api.github.com/repos/pshenok/server-survival/git/blobs/cc43560f85acf07d2e0173aa07370aa6c46afe54"
+    },
+    {
+      "path": "src/sim/handlers/db.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4b63f52ab35aef66979fa2b1fcacd5a628e88502",
+      "size": 633,
+      "url": "https://api.github.com/repos/pshenok/server-survival/git/blobs/4b63f52ab35aef66979fa2b1fcacd5a628e88502"
+    },
+    {
+      "path": "src/sim/handlers/dns.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2dba9ca0f27afeb1018e36ce514ad0d0045a4c1c",
+      "size": 1562,
+      "url": "https://api.github.com/repos/pshenok/server-survival/git/blobs/2dba9ca0f27afeb1018e36ce514ad0d0045a4c1c"
+    },
+    {
+      "path": "src/sim/handlers/index.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e07b619ad058c2d8c6cc68f826ddbdd6041b78a2",
+      "size": 5255,
+      "url": "https://api.github.com/repos/pshenok/server-survival/git/blobs/e07b619ad058c2d8c6cc68f826ddbdd6041b78a2"
+    },
+    {
+      "path": "src/sim/handlers/nosql.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "54e0952cfa8509710041fa4b3652f5fdd1f5ef4c",
+      "size": 781,
+      "url": "https://api.github.com/repos/pshenok/server-survival/git/blobs/54e0952cfa8509710041fa4b3652f5fdd1f5ef4c"
+    },
+    {
+      "path": "src/sim/handlers/notify.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "01fc8beca14506b96c02177021639942e19fd735",
+      "size": 1282,
+      "url": "https://api.github.com/repos/pshenok/server-survival/git/blobs/01fc8beca14506b96c02177021639942e19fd735"
+    },
+    {
+      "path": "src/sim/handlers/pubsub.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "003603ba725203c5ceaf1d9e0e3173465124ca5e",
+      "size": 2639,
+      "url": "https://api.github.com/repos/pshenok/server-survival/git/blobs/003603ba725203c5ceaf1d9e0e3173465124ca5e"
+    },
+    {
+      "path": "src/sim/handlers/replica.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b667dfd90485f2bd74b9f596d87af63d89ac6423",
+      "size": 1054,
+      "url": "https://api.github.com/repos/pshenok/server-survival/git/blobs/b667dfd90485f2bd74b9f596d87af63d89ac6423"
+    },
+    {
+      "path": "src/sim/handlers/s3.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "58758c1b7a18109b414124fc5b2c086d1517c217",
+      "size": 696,
+      "url": "https://api.github.com/repos/pshenok/server-survival/git/blobs/58758c1b7a18109b414124fc5b2c086d1517c217"
+    },
+    {
+      "path": "src/sim/handlers/search.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2bf35f7601d01f596766708f4692f39ddc9b884e",
+      "size": 571,
+      "url": "https://api.github.com/repos/pshenok/server-survival/git/blobs/2bf35f7601d01f596766708f4692f39ddc9b884e"
+    },
+    {
+      "path": "src/sim/handlers/serverless.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6a50fe1c976589b10771cf9e1da5eb786ccb3725",
+      "size": 1203,
+      "url": "https://api.github.com/repos/pshenok/server-survival/git/blobs/6a50fe1c976589b10771cf9e1da5eb786ccb3725"
+    },
+    {
+      "path": "src/sim/handlers/sqs.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "dbbc56d15f150a9e3ca45139ea48b2079226d603",
+      "size": 1811,
+      "url": "https://api.github.com/repos/pshenok/server-survival/git/blobs/dbbc56d15f150a9e3ca45139ea48b2079226d603"
+    },
+    {
+      "path": "src/sim/handlers/warehouse.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9640abf247cd07f84d007243191f6ec0e761f601",
+      "size": 1700,
+      "url": "https://api.github.com/repos/pshenok/server-survival/git/blobs/9640abf247cd07f84d007243191f6ec0e761f601"
+    },
+    {
+      "path": "src/sim/infgw.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "eca9f296091df658c2e7190fb70ca073a0da13ec",
+      "size": 7056,
+      "url": "https://api.github.com/repos/pshenok/server-survival/git/blobs/eca9f296091df658c2e7190fb70ca073a0da13ec"
+    },
+    {
+      "path": "src/sim/power.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3b2cbfb122f175189aeb5eb6ab01a8b0e909989c",
+      "size": 2465,
+      "url": "https://api.github.com/repos/pshenok/server-survival/git/blobs/3b2cbfb122f175189aeb5eb6ab01a8b0e909989c"
+    },
+    {
+      "path": "src/sim/retry.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "87e48ba700cd4a2d7d0acd003758d0dad4f53d60",
+      "size": 5185,
+      "url": "https://api.github.com/repos/pshenok/server-survival/git/blobs/87e48ba700cd4a2d7d0acd003758d0dad4f53d60"
+    },
+    {
+      "path": "src/sim/scheduler.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0ccad1621392a6b63c370509a4a23fe8d19001d1",
+      "size": 2640,
+      "url": "https://api.github.com/repos/pshenok/server-survival/git/blobs/0ccad1621392a6b63c370509a4a23fe8d19001d1"
+    },
+    {
+      "path": "src/sim/stream.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d6acd9bfd6dffd204ac96568a1bdfcfed5c5ad40",
+      "size": 5465,
+      "url": "https://api.github.com/repos/pshenok/server-survival/git/blobs/d6acd9bfd6dffd204ac96568a1bdfcfed5c5ad40"
+    },
+    {
+      "path": "src/sim/topology.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9ca1f0649a47fe982f0cad2c2eb6a38873c2cb18",
+      "size": 24000,
+      "url": "https://api.github.com/repos/pshenok/server-survival/git/blobs/9ca1f0649a47fe982f0cad2c2eb6a38873c2cb18"
+    },
+    {
+      "path": "src/state.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3d746c7c622fcaa9b9f8bf7f3eb98d081e8534d4",
+      "size": 4833,
+      "url": "https://api.github.com/repos/pshenok/server-survival/git/blobs/3d746c7c622fcaa9b9f8bf7f3eb98d081e8534d4"
+    },
+    {
+      "path": "src/tutorial.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "73db1fef085e7d8b183f444fb3b06b81da8bc1b0",
+      "size": 20347,
+      "url": "https://api.github.com/repos/pshenok/server-survival/git/blobs/73db1fef085e7d8b183f444fb3b06b81da8bc1b0"
+    },
+    {
+      "path": "src/ui/campaign-ui.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "961592c2fae002a3af410e06d3aa8e0e3af69196",
+      "size": 21352,
+      "url": "https://api.github.com/repos/pshenok/server-survival/git/blobs/961592c2fae002a3af410e06d3aa8e0e3af69196"
+    },
+    {
+      "path": "src/ui/failure-badges.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "990ec8b35b873f875b00c3d3e15bf772bf54b804",
+      "size": 11149,
+      "url": "https://api.github.com/repos/pshenok/server-survival/git/blobs/990ec8b35b873f875b00c3d3e15bf772bf54b804"
+    },
+    {
+      "path": "src/ui/hud-tabs.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2273a61d2c54223d2118214b1065fdf5422d6a08",
+      "size": 1842,
+      "url": "https://api.github.com/repos/pshenok/server-survival/git/blobs/2273a61d2c54223d2118214b1065fdf5422d6a08"
+    },
+    {
+      "path": "src/ui/link-feedback.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c24b35bd7ffb44fe0cc805c9d2332feb190d956d",
+      "size": 4779,
+      "url": "https://api.github.com/repos/pshenok/server-survival/git/blobs/c24b35bd7ffb44fe0cc805c9d2332feb190d956d"
+    },
+    {
+      "path": "src/ui/metrics-panel.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "73de5cbf9759896965a3ac7d6a1197929bbf32c1",
+      "size": 8213,
+      "url": "https://api.github.com/repos/pshenok/server-survival/git/blobs/73de5cbf9759896965a3ac7d6a1197929bbf32c1"
+    },
+    {
+      "path": "src/ui/share.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "637492a82da213add0bd69f329ccedecc3400cc6",
+      "size": 14489,
+      "url": "https://api.github.com/repos/pshenok/server-survival/git/blobs/637492a82da213add0bd69f329ccedecc3400cc6"
+    },
+    {
+      "path": "src/ui/toolbar.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "643b7480ff041d279cc7ddd51b124acd84aa31a5",
+      "size": 19319,
+      "url": "https://api.github.com/repos/pshenok/server-survival/git/blobs/643b7480ff041d279cc7ddd51b124acd84aa31a5"
+    },
+    {
+      "path": "style.css",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "65ee4547945dc063349f0533eaa418e0e2b4b255",
+      "size": 9031,
+      "url": "https://api.github.com/repos/pshenok/server-survival/git/blobs/65ee4547945dc063349f0533eaa418e0e2b4b255"
+    }
+  ],
+  "modifiedRuntimePaths": [
+    "game.js",
+    "index.html",
+    "src/achievements/achievements.js",
+    "src/campaign/campaign.js",
+    "src/i18n.js",
+    "src/input/handlers.js",
+    "src/persistence/save-load.js",
+    "src/services/SoundService.js",
+    "src/sim/topology.js",
+    "src/tutorial.js",
+    "src/ui/campaign-ui.js",
+    "src/ui/failure-badges.js",
+    "src/ui/toolbar.js"
+  ],
+  "excludedAssets": "All upstream audio and the README GIF. No binary artwork is needed by the runtime.",
+  "modificationDate": "2026-10-09",
+  "modificationLicense": "GPL-3.0-only (upstream portions retain MIT)"
+}
