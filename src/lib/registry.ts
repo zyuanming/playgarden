@@ -1619,5 +1619,26 @@ export const games: GameDefinition[] = [
     },
     "component": lazy(() => import("../games/DominoTrail"))
   },
+  {
+    "id": "frog-swap",
+    "title": "青蛙换岸",
+    "subtitle": "只向前走或跳过异色伙伴，让两队青蛙交换岸边。",
+    "category": "逻辑思维",
+    "difficulty": "中级",
+    "tone": "green",
+    "levelCount": 9,
+    "allowUndo": true,
+    "artwork": {
+      "url": "./frog-swap-art.svg",
+      "position": "center",
+      "size": "cover"
+    },
+    "source": {
+      "kind": "original",
+      "license": "GPL-3.0-only",
+      "notes": "原创蛙蟾换位规则实现、九个教学队形与 SVG 图形；未复制第三方源码或素材。"
+    },
+    "component": lazy(() => import("../games/FrogSwap"))
+  },
 ];
 export const findGame = (id: string) => games.find((game) => game.id === id);

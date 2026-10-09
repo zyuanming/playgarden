@@ -1,0 +1,248 @@
+/* SPDX-License-Identifier: GPL-3.0-only */
+.fs-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 250px;
+  gap: 24px;
+  color: #2f5550;
+}
+.fs-pond {
+  padding: 26px;
+  border: 1px solid #b7d8d2;
+  background: linear-gradient(160deg, #e1f0e4, #c8e4e2);
+  border-radius: 25px;
+  min-width: 0;
+}
+.fs-pond header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.fs-pond header span,
+.fs-guide > span {
+  font-size: 10px;
+  letter-spacing: 1.9px;
+  color: #60978a;
+}
+.fs-pond h3,
+.fs-guide h3 {
+  margin: 7px 0;
+  font-size: 25px;
+}
+.fs-pond header > b {
+  font-size: 34px;
+  color: #6fa896;
+}
+.fs-pond header small {
+  font-size: 13px;
+}
+.fs-pond > p {
+  line-height: 1.7;
+}
+.fs-directions {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  font-size: 12px;
+  padding: 12px;
+  background: #ffffff75;
+  border-radius: 12px;
+}
+.fs-directions span {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+.fs-directions i {
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+}
+.fs-green {
+  background: #4f9967;
+}
+.fs-gold {
+  background: #d6a34e;
+}
+.fs-stones {
+  display: grid;
+  gap: 18px 9px;
+  margin: 32px 0 18px;
+  isolation: isolate;
+  align-items: center;
+}
+.fs-stone {
+  position: relative;
+  min-width: 44px;
+  min-height: 105px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background: #f5f5de !important;
+  border: 2px solid #adbd9d !important;
+  border-radius: 45% 47% 35% 35% !important;
+  box-shadow: 0 6px 0 #7aaea158;
+  padding: 8px 3px 4px !important;
+  cursor: pointer;
+  gap: 2px;
+  color: #36664f;
+}
+.fs-stone small {
+  position: absolute;
+  top: -14px;
+  font-size: 11px;
+  border-radius: 20px;
+  background: #fbffeb;
+  border: 1px solid #a6c6b1;
+  min-width: 22px;
+  min-height: 22px;
+  display: grid;
+  place-items: center;
+}
+.fs-frog {
+  width: min(100%, 72px);
+  height: 58px;
+  display: block;
+}
+.fs-frog.east {
+  color: #5b9b69;
+}
+.fs-frog.west {
+  color: #d1a45a;
+}
+.fs-stone strong {
+  font-size: 11px;
+  font-weight: 500;
+}
+.fs-empty {
+  min-height: 58px;
+  display: grid;
+  place-items: center;
+  font-size: 12px;
+  color: #8eaa99;
+}
+.fs-stone.selected {
+  outline: 3px solid #397962;
+  outline-offset: 2px;
+  background: #eef9d6 !important;
+}
+.fs-stone.target {
+  border-style: dashed !important;
+  border-color: #488b67 !important;
+  background: #f4ffdf !important;
+}
+.fs-stone.target .fs-empty {
+  color: #386e48;
+}
+.fs-stone.hinted {
+  box-shadow:
+    0 0 0 3px #d2a04b,
+    0 6px 0 #7aaea158;
+}
+.fs-stone:focus-visible {
+  outline: 3px solid #8363a0;
+  outline-offset: 3px;
+}
+.fs-stone:disabled {
+  cursor: default;
+  opacity: 1;
+}
+.fs-reading {
+  font-size: 12px;
+  color: #577b70;
+}
+.fs-goal {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  padding: 14px;
+  background: #ffffff70;
+  border-radius: 12px;
+  font-size: 12px;
+}
+.fs-goal > div {
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+.fs-goal b {
+  font-size: 11px;
+  font-weight: 500;
+  border-radius: 50%;
+  padding: 5px;
+}
+.fs-east {
+  background: #d0e8c8;
+  color: #326147;
+}
+.fs-west {
+  background: #f0deb4;
+  color: #876129;
+}
+.fs-gap {
+  border: 1px dashed #9eb7a8;
+  color: #7a9386;
+}
+.fs-message {
+  padding: 15px;
+  background: #fffced;
+  border-radius: 13px;
+  min-height: 70px;
+  font-size: 14px;
+}
+.fs-foot {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  color: #65867a;
+  gap: 10px;
+}
+.fs-guide {
+  padding: 24px 5px;
+  line-height: 1.85;
+  font-size: 14px;
+}
+.fs-guide ol {
+  padding-left: 20px;
+}
+.fs-guide details {
+  padding: 14px;
+  background: #f2f5ea;
+  border-radius: 12px;
+}
+.fs-guide summary {
+  cursor: pointer;
+}
+@media (max-width: 900px) {
+  .fs-layout {
+    grid-template-columns: 1fr;
+  }
+  .fs-pond {
+    padding: 18px 13px;
+  }
+  .fs-guide {
+    padding: 6px;
+  }
+  .fs-stones {
+    gap: 21px 6px;
+  }
+  .fs-stone {
+    min-height: 91px;
+    padding: 8px 1px 4px !important;
+  }
+  .fs-frog {
+    height: 52px;
+  }
+  .fs-stone strong {
+    font-size: 10px;
+  }
+  .fs-empty {
+    min-height: 52px;
+  }
+  .fs-directions {
+    font-size: 11px;
+    padding: 10px;
+  }
+}
