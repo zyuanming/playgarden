@@ -1558,5 +1558,25 @@ export const games: GameDefinition[] = [
     },
     "component": lazy(() => import("../games/TilePairs"))
   },
+  {
+    "id": "matchstick-equations",
+    "title": "火柴等式",
+    "subtitle": "拿起一根，放下一个答案：移动火柴修好数码等式。",
+    "category": "数字推理",
+    "difficulty": "中级",
+    "tone": "orange",
+    "levelCount": 10,
+    "artwork": {
+      "url": "./matchstick-equations-art.svg",
+      "position": "50% 50%",
+      "size": "cover"
+    },
+    "source": {
+      "kind": "original",
+      "license": "GPL-3.0-only",
+      "notes": "原创七段火柴移动规则实现、十个教学关卡与 SVG 图形；未复制第三方源码。"
+    },
+    "component": lazy(() => import("../games/MatchstickEquations"))
+  },
 ];
 export const findGame = (id: string) => games.find((game) => game.id === id);

@@ -1,3 +1,4 @@
+import { matchstickEquationsLevels } from "../src/games/matchstickEquationsLogic";
 import { tilePairsLevels } from "../src/games/tilePairsLogic";
 import { rollingBlockLevels } from "../src/games/rollingBlockLogic";
 import { chompGardenLevels } from "../src/games/chompGardenLogic";
@@ -113,6 +114,7 @@ import { sortingNetworkLevels } from "../src/games/sortingNetworkLogic";
 import { voxelViewsLevels } from "../src/games/voxelViewsLogic";
 import { cubeNetLevels } from "../src/games/cubeNetLogic";
 const packs = {
+  "matchstick-equations": matchstickEquationsLevels,
   "tile-pairs": tilePairsLevels,
   "rolling-block": rollingBlockLevels,
   "chomp-garden": chompGardenLevels,
@@ -257,8 +259,8 @@ describe("Scalable catalog contract", () => {
       }
     }),
   );
-  it("counts only 112 real games and 2540 levels, not the roadmap", () => {
-    expect(games).toHaveLength(112);
-    expect(games.reduce((sum, g) => sum + g.levelCount, 0)).toBe(2540);
+  it("counts only 113 real games and 2550 levels, not the roadmap", () => {
+    expect(games).toHaveLength(113);
+    expect(games.reduce((sum, g) => sum + g.levelCount, 0)).toBe(2550);
   });
 });
