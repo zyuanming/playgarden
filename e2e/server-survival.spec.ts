@@ -28,8 +28,13 @@ test("Original Server Survival: real level 1 and 25, local resources, pause, res
   test.setTimeout(360000);
   const errors = captureErrors(page),
     remoteRequests: string[] = [],
-    act = async (l: Locator) =>
-      info.project.name === "mobile" ? l.tap() : l.click();
+    act = async (l: Locator) => {
+      // Fixed controls use the iframe viewport; reveal that viewport in the
+      // outer scrollable page before Playwright scrolls the inner control.
+      if (await l.evaluate((element) => !!element.ownerDocument.defaultView?.frameElement))
+        await page.locator('iframe[title="Server Survival 原作"]').scrollIntoViewIfNeeded();
+      return info.project.name === "mobile" ? l.tap() : l.click();
+    };
   page.on("request", (request) => {
     const url = new URL(request.url());
     if (
