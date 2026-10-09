@@ -1,0 +1,200 @@
+/* SPDX-License-Identifier: GPL-3.0-only */
+.sd-game {
+  display: grid;
+  grid-template-columns: minmax(0, 1.7fr) minmax(230px, 0.75fr);
+  gap: 24px;
+  color: #354b3d;
+}
+.sd-workbench,
+.sd-notes {
+  min-width: 0;
+  border: 1px solid #d9e3cb;
+  border-radius: 24px;
+  background: #fffcf2;
+  padding: 24px;
+}
+.sd-workbench header {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: center;
+}
+.sd-workbench header span,
+.sd-notes > span {
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  color: #7b8863;
+  font-weight: 800;
+}
+.sd-workbench h3 {
+  font-size: 26px;
+  margin: 8px 0;
+}
+.sd-workbench header > b {
+  font-size: 35px;
+  color: #668861;
+}
+.sd-workbench header small {
+  font-size: 15px;
+}
+.sd-workbench > p,
+.sd-notes p,
+.sd-notes li {
+  font-size: 14px;
+  line-height: 1.85;
+}
+.sd-scenes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin: 24px 0;
+}
+.sd-scenes figure {
+  margin: 0;
+  min-width: 0;
+}
+.sd-scenes figcaption {
+  text-align: center;
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+.sd-picture {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 6px;
+  padding: 8px;
+  border: 1px solid #bdcbb5;
+  border-radius: 17px;
+}
+.sd-picture button {
+  position: relative;
+  min-width: 0;
+  min-height: 64px;
+  padding: 2px;
+  border: 1px solid #ffffffa6;
+  background: #ffffff72;
+  border-radius: 9px;
+  aspect-ratio: 1;
+  cursor: pointer;
+  color: #4b6752;
+  touch-action: manipulation;
+}
+.sd-picture svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.sd-picture button > small {
+  position: absolute;
+  top: 3px;
+  left: 4px;
+  font-size: 10px;
+  line-height: 1;
+}
+.sd-picture button.sd-found {
+  border: 3px solid #6a985f;
+  background: #edf5d6;
+}
+.sd-check {
+  position: absolute;
+  right: 1px;
+  top: 1px;
+  display: grid;
+  place-items: center;
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  font-size: 12px;
+  color: white;
+  background: #5c8953;
+}
+.sd-picture button.sd-hinted {
+  outline: 3px dashed #c39744;
+  outline-offset: 1px;
+}
+.sd-picture button:focus-visible {
+  outline: 3px solid #735394;
+  outline-offset: 2px;
+}
+.sd-picture button:disabled {
+  cursor: default;
+  opacity: 1;
+}
+.sd-message {
+  padding: 14px;
+  background: #edf1df;
+  border-radius: 13px;
+  min-height: 68px;
+}
+.sd-notes {
+  background: #ecf0e0;
+  align-self: start;
+}
+.sd-notes h3 {
+  font-size: 29px;
+  line-height: 1.5;
+  margin: 15px 0;
+}
+.sd-notes ol {
+  padding-left: 22px;
+}
+.sd-notes li {
+  margin: 12px 0;
+}
+.sd-notes summary {
+  min-height: 44px;
+  cursor: pointer;
+  padding: 12px 0;
+  font-size: 13px;
+  font-weight: 700;
+}
+@media (max-width: 850px) {
+  .sd-game {
+    grid-template-columns: 1fr;
+  }
+  .sd-workbench,
+  .sd-notes {
+    padding: 17px;
+  }
+  .sd-scenes {
+    gap: 10px;
+  }
+  .sd-picture {
+    gap: 3px;
+    padding: 4px;
+  }
+  .sd-workbench h3 {
+    font-size: 23px;
+  }
+}
+@media (max-width: 480px) {
+  .sd-workbench {
+    padding: 14px 8px;
+  }
+  .sd-scenes {
+    gap: 8px;
+  }
+  .sd-picture {
+    border-radius: 11px;
+  }
+  .sd-picture button {
+    min-height: 51px;
+  }
+  .sd-scenes figcaption {
+    font-size: 11px;
+  }
+  .sd-picture button > small {
+    font-size: 8px;
+    top: 2px;
+    left: 2px;
+  }
+  .sd-workbench > p {
+    font-size: 13px;
+  }
+  .sd-check {
+    width: 13px;
+    height: 13px;
+    font-size: 10px;
+  }
+}
