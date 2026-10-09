@@ -24,7 +24,7 @@ export default function ADarkRoomOriginal({paused, freshStart, hintToken, onStat
       else if(d.type==='snapshot'){setSnapshot(d.state);if(!d.state.finished)done.current=false;}
       else if(d.type==='status'&&typeof d.message==='string')callbacks.current.onStatus(d.message);
       else if(d.type==='error')setError('游戏暂时遇到问题：'+String(d.message));
-      else if(d.type==='focus-event'){frame.current?.scrollIntoView({block:'start',behavior:'instant'});viewport();}
+      else if(d.type==='focus-event'||d.type==='focus-stage'){frame.current?.scrollIntoView({block:'start',behavior:'instant'});viewport();}
       else if(d.type==='complete'&&!done.current){done.current=true;callbacks.current.onStatus(`已穿过大气层，完成这段旅程。本次得分 ${d.score}，累计 ${d.total}；下一周目的继承资源已保存。`);}
     };
     window.addEventListener('message',receive);

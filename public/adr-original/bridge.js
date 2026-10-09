@@ -4,7 +4,7 @@
   'use strict';
   const session=new URLSearchParams(location.search).get('session')||'';
   const target=location.origin;
-  let heartbeat=0,observer,resizeObserver,disposed=false,active=null,lastModule='',lastHeight=0,lastEvent=null;
+  let heartbeat=0,observer,resizeObserver,disposed=false,active=null,lastModule='',lastHeight=0,lastEvent=null,lastMapPosition='';
   const held=new Map();const counters={battles:0,deaths:0,crashes:0,homecomings:0,endings:0};
   const send=(type,extra={})=>parent.postMessage({source:'playgarden-adr',session,type,...extra},target);
   const status=message=>send('status',{message});
@@ -39,6 +39,9 @@
     }
     const world=document.getElementById('map');
     if(world&&!world.parentElement.classList.contains('adr-map-scroll')){const scroll=document.createElement('div');scroll.className='adr-map-scroll';scroll.tabIndex=0;scroll.setAttribute('aria-label','完整世界地图，可左右滚动');world.before(scroll);scroll.append(world);}
+    const position=name==='World'&&World.curPos?World.curPos.join(','):'';
+    if(world&&position&&position!==lastMapPosition){const player=[...world.querySelectorAll('.landmark')].find(el=>el.firstChild?.textContent==='@');if(player){const scroll=world.parentElement,p=player.getBoundingClientRect(),r=scroll.getBoundingClientRect();scroll.scrollLeft+=p.left-r.left-scroll.clientWidth/2;scroll.scrollTop+=p.top-r.top-scroll.clientHeight/2;}}
+    lastMapPosition=position;
     document.querySelectorAll('.button,.headerButton,.menuBtn,.endGameOption,.upBtn,.dnBtn,.upManyBtn,.dnManyBtn').forEach(el=>{
       if(!el.hasAttribute('role'))el.setAttribute('role','button');
       el.tabIndex=el.classList.contains('disabled')?-1:0;
@@ -49,7 +52,7 @@
         el.setAttribute('aria-label',(el.matches('.upBtn,.upManyBtn')?'增加':'减少')+title+(el.matches('.upManyBtn,.dnManyBtn')?' 多个':' 一个'));
       }
     });
-    if(name!==lastModule){lastModule=name;status(document.title+'。进度自动保存在此浏览器。');}
+    if(name!==lastModule){lastModule=name;status(document.title+'。进度自动保存在此浏览器。');if(['World','Space'].includes(name))send('focus-stage');}
     const height=Math.min(1000,Math.max(560,document.body.scrollHeight));
     if(height!==lastHeight){lastHeight=height;send('height',{height});}
   }

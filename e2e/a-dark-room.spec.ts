@@ -11,7 +11,7 @@ async function read(frame:Frame):Promise<any>{return frame.evaluate(()=> (window
 const active=(frame:Frame,selector:string)=>frame.locator(selector).filter({visible:true});
 async function act(control:Locator,mobile:boolean){await expect(control).toBeVisible();if(mobile)await control.tap();else await control.click();}
 async function clock(page:Page,ms:number){await page.clock.runFor(ms);}
-async function showSave(frame:Frame,mobile:boolean){await act(frame.locator('.menu > .menuBtn').filter({hasText:/保存|save\./}).first(),mobile);}
+async function showSave(frame:Frame,mobile:boolean){await expect(frame.locator('#event')).toHaveCount(0);await act(frame.locator('.menu > .menuBtn').filter({hasText:/保存|save\./}).first(),mobile);}
 async function importCode(page:Page,frame:Frame,code:string,mobile:boolean,valid=true){
   await showSave(frame,mobile);await act(frame.locator('#import'),mobile);await act(frame.locator('#yes'),mobile);
   const editor=frame.locator('#description textarea');await editor.fill(code);
