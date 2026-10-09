@@ -26,7 +26,12 @@
     context = null; destination = null;
   }
   function gain() {
-    if (destination && context.state !== "closed") destination.gain.setValueAtTime(disposed || muted || paused || !unlocked ? 0 : 1, context.currentTime);
+    if (destination && context.state !== "closed") {
+      // A scheduled step may not render before suspend(). The value setter also
+      // updates AudioParam's current-value slot immediately, including while paused.
+      destination.gain.cancelScheduledValues(0);
+      destination.gain.value = disposed || muted || paused || !unlocked ? 0 : 1;
+    }
   }
   function reconcile() {
     gain();

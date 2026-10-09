@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: GPL-3.0-only
-import { expect, type Page, type TestInfo } from "@playwright/test";
+import { expect, type Page, type TestInfo, type Locator } from "@playwright/test";
 import { openGame, captureErrors } from "./helpers";
-export type Live<M> = { phase: string; run: number; ticks: number; frames: number; score: number; best: number; runs: number; paused: boolean; pressed: boolean; replaying: boolean; difficulty: number; audio: { state: string; gain: number; muted: boolean; unlocked: boolean; voices: number }; mechanics: M };
+export type Live<M> = { phase: string; run: number; ticks: number; frames: number; score: number; best: number; runs: number; paused: boolean; hostPaused: boolean; localPaused: boolean; pressed: boolean; replaying: boolean; difficulty: number; audio: { state: string; gain: number; muted: boolean; unlocked: boolean; voices: number }; mechanics: M };
 export async function crispJourney<M>(page: Page, info: TestInfo, game: string, title: string) {
   const mobile = info.project.name === "mobile", errors = captureErrors(page), remote: string[] = [];
   const origin = new URL(String(info.project.use.baseURL || "http://127.0.0.1:4173")).origin;
@@ -21,11 +21,12 @@ export async function crispJourney<M>(page: Page, info: TestInfo, game: string, 
   await page.screenshot({ path: info.outputPath(`${game}-title.png`), fullPage: true });
   const cdp = mobile ? await page.context().newCDPSession(page) : null;
   let down = false;
+  const act = (locator: Locator) => mobile ? locator.tap() : locator.click();
   const point = async () => { const b = (await canvas.boundingBox())!; return { x: b.x + b.width * .5, y: b.y + b.height * .5 }; };
   async function hold(value: boolean) {
     if (down === value) return;
-    await iframe.scrollIntoViewIfNeeded();
     if (value) {
+      await iframe.scrollIntoViewIfNeeded();
       const p = await point();
       if (cdp) await cdp.send("Input.dispatchTouchEvent", { type: "touchStart", touchPoints: [{ ...p, id: 1 }] });
       else { await page.mouse.move(p.x, p.y); await page.mouse.down(); }
@@ -40,27 +41,45 @@ export async function crispJourney<M>(page: Page, info: TestInfo, game: string, 
   await expect.poll(async () => (await read()).audio.state).toBe("running");
   await expect.poll(async () => (await read()).audio.voices).toBeGreaterThan(0);
   async function pauseAndSound() {
-    await hold(true);
-    await expect.poll(async () => (await read()).pressed).toBe(true);
-    await page.getByRole("button", { name: "暂停", exact: true }).click();
-    await hold(false);
+    if (mobile) {
+      // Complete one real touch stream before tapping another target. Mixing a
+      // mouse click into a held CDP touch produced a second compatibility click
+      // on touchEnd in CI, toggling the host pause button back to running.
+      await hold(true);
+      await expect.poll(async () => (await read()).pressed).toBe(true);
+      await cdp!.send("Input.dispatchTouchEvent", { type: "touchCancel", touchPoints: [] });
+      down = false;
+      await expect.poll(async () => (await read()).pressed).toBe(false);
+      await act(page.getByRole("button", { name: "暂停", exact: true }));
+    } else {
+      // A held keyboard key plus a mouse toolbar click is a coherent physical
+      // gesture and proves that pause/blur releases internal held-key state.
+      await canvas.focus();
+      await page.keyboard.down("Enter");
+      await expect.poll(async () => (await read()).pressed).toBe(true);
+      await act(page.getByRole("button", { name: "暂停", exact: true }));
+      await page.keyboard.up("Enter");
+    }
+    await expect(page.getByRole("button", { name: "继续游戏", exact: true })).toBeVisible();
+    await expect.poll(async () => (await read()).hostPaused).toBe(true);
     await expect.poll(async () => (await read()).paused).toBe(true);
     await expect.poll(async () => (await read()).audio.state).toBe("suspended");
     const frozen = await read();
     await page.waitForTimeout(650);
     const after = await read();
     expect(after.frames).toBe(frozen.frames); expect(after.ticks).toBe(frozen.ticks); expect(JSON.stringify(after.mechanics)).toBe(JSON.stringify(frozen.mechanics)); expect(after.pressed).toBe(false); expect(after.audio.gain).toBe(0);
-    await page.getByRole("button", { name: "继续游戏", exact: true }).click();
+    await act(page.getByRole("button", { name: "继续游戏", exact: true }));
+    await expect.poll(async () => (await read()).hostPaused).toBe(false);
     await expect.poll(async () => (await read()).frames).toBeGreaterThan(frozen.frames);
     const soundOff = page.getByRole("button", { name: "静音", exact: true });
-    if (await soundOff.count()) await soundOff.click();
+    if (await soundOff.count()) await act(soundOff);
     await expect.poll(async () => (await read()).audio.gain).toBe(0);
     // Sound controls may blur the frame; resume the explicit in-frame pause overlay.
     const overlay = frame.locator("#crisp-pause");
-    if (await overlay.isVisible()) { if (mobile) await overlay.tap(); else await overlay.click(); }
+    if (await overlay.isVisible()) { await act(overlay); }
     await expect.poll(async () => (await read()).paused).toBe(false);
-    await page.getByRole("button", { name: "开启声音", exact: true }).click();
-    if (await overlay.isVisible()) { if (mobile) await overlay.tap(); else await overlay.click(); }
+    await act(page.getByRole("button", { name: "开启声音", exact: true }));
+    if (await overlay.isVisible()) { await act(overlay); }
     await expect.poll(async () => (await read()).audio.gain).toBe(1);
     await expect.poll(async () => (await read()).audio.state).toBe("running");
     if (mobile) {
@@ -92,7 +111,7 @@ export async function crispJourney<M>(page: Page, info: TestInfo, game: string, 
     await expect.poll(async () => (await read()).phase).toBe("inGame");
     expect((await read()).run).toBeGreaterThan(lost.run);
     expect((await read()).score).toBe(0);
-    await page.getByRole("button", { name: "重来", exact: true }).click();
+    await act(page.getByRole("button", { name: "重来", exact: true }));
     await expect(root).toHaveAttribute("data-crisp-ready", "true");
     await expect.poll(async () => (await read()).phase).toBe("title");
     expect((await read()).score).toBe(0); expect((await read()).best).toBeGreaterThanOrEqual(lost.score);
@@ -103,7 +122,7 @@ export async function crispJourney<M>(page: Page, info: TestInfo, game: string, 
       const w = (el as HTMLIFrameElement).contentWindow as Window & { __crispEngine: { snapshot: () => unknown }; __crispAudio: { snapshot: () => unknown } };
       (window as unknown as { crispPrevious: unknown }).crispPrevious = { engine: w.__crispEngine, audio: w.__crispAudio };
     });
-    await page.getByRole("button", { name: "返回游戏大厅", exact: true }).click();
+    await act(page.getByRole("button", { name: "返回游戏大厅", exact: true }));
     await expect(iframe).toHaveCount(0);
     const old = () => page.evaluate(() => {
       const p = (window as unknown as { crispPrevious: { engine: { snapshot: () => { disposed: boolean; frames: number; listenerCount: number; rafPending: boolean } }; audio: { snapshot: () => { state: string; voices: number; gain: number } } } }).crispPrevious;
