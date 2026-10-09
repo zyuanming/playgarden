@@ -68,7 +68,7 @@ function CoilRound({ paused, hintToken, undoToken, onStatus }: GameProps) {
   }, [undoToken]);
   return (
     <section className="coil-game" data-coil-game data-coil-ready={ready} data-coil-phase={snapshot?.phase ?? "loading"}>
-      <header className="coil-heading"><div><span>COIL · 光迹围球</span><h3>一圈光，抓住转瞬即逝的蓝球</h3></div><b>无尽挑战</b></header>
+      <header className="coil-heading"><div><span>COIL · 光迹围球</span><h3>让光迹围住蓝球</h3></div><b>无尽挑战</b></header>
       <p className="coil-intro">移动鼠标或手指画圈，让光迹相交。蓝球即将超时会变黄，红色叉号是炸弹。也可用方向键或 WASD 移动。</p>
       <div className={`coil-frame-wrap${paused ? " coil-host-paused" : ""}`}>
         <iframe ref={frame} src={src} title="Coil 光迹围球原作" className="coil-frame" tabIndex={paused ? -1 : 0} aria-hidden={paused} />

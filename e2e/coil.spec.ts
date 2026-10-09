@@ -73,26 +73,31 @@ test("Coil original: actual loops, bombs, natural loss, frozen pause, restart, r
     await expect.poll(async () => (await read()).paused).toBe(false);
   }
   const cdp = mobile ? await page.context().newCDPSession(page) : null;
-  const drawLoop = async (x: number, y: number, radius = 43) => {
+  const drawLoop = async (x: number, y: number, radius = 34) => {
     await iframe.scrollIntoViewIfNeeded();
     await canvas.scrollIntoViewIfNeeded();
     const box = (await canvas.boundingBox())!;
     const live = await read();
-    const point = (angle: number) => ({
-      x: box.x + (x + Math.cos(angle) * radius) * box.width / live.width,
-      y: box.y + (y + Math.sin(angle) * radius) * box.height / live.height,
+    const point = (dx: number, dy: number) => ({
+      x: box.x + (x + dx * radius) * box.width / live.width,
+      y: box.y + (y + dy * radius) * box.height / live.height,
     });
-    const first = point(0);
-    if (cdp) await cdp.send("Input.dispatchTouchEvent", { type: "touchStart", touchPoints: [{ ...first, id: 1 }] });
-    else { await page.mouse.move(first.x, first.y); await page.mouse.down(); }
-    // Let the original 0.4 interpolation settle at the entry point first.
-    await page.waitForTimeout(100);
-    // A little over one revolution crosses the actual 45-point trail.
-    for (let n = 1; n <= 33; n++) {
-      const p = point(n / 26 * Math.PI * 2);
+    const move = async (p: { x: number; y: number }) => {
       if (cdp) await cdp.send("Input.dispatchTouchEvent", { type: "touchMove", touchPoints: [{ ...p, id: 1 }] });
       else await page.mouse.move(p.x, p.y);
-      await page.waitForTimeout(12);
+    };
+    const first = point(1, 1);
+    if (cdp) await cdp.send("Input.dispatchTouchEvent", { type: "touchStart", touchPoints: [{ ...first, id: 1 }] });
+    else { await page.mouse.move(first.x, first.y); await page.mouse.down(); }
+    await page.waitForTimeout(140);
+    // The original trail is only 45 simulation frames long. Thirty-three traced
+    // API moves took 1.5 seconds in CI, so their tail vanished before closure.
+    // Draw a five-segment lasso within that window. The eastward overshoot and
+    // final upward stroke explicitly cross the entry edge after interpolation.
+    // Each hold lets the original 0.4 interpolation draw several real frames.
+    for (const [dx, dy] of [[1, -1], [-1, -1], [-1, 1], [1.35, 1], [1.35, -0.5]]) {
+      await move(point(dx, dy));
+      await page.waitForTimeout(70);
     }
     if (cdp) await cdp.send("Input.dispatchTouchEvent", { type: "touchEnd", touchPoints: [] });
     else await page.mouse.up();
@@ -105,7 +110,7 @@ test("Coil original: actual loops, bombs, natural loss, frozen pause, restart, r
     await expect.poll(async () => {
       const state = await read();
       target = state.enemies.find((e) => e.type === 1 && e.alive && e.age < 65 &&
-        state.enemies.every((b) => b.type !== 2 || Math.hypot(e.x - b.x, e.y - b.y) > 67));
+        state.enemies.every((b) => b.type !== 2 || Math.hypot(e.x - b.x, e.y - b.y) > 70));
       return !!target;
     }, { timeout: 9000 }).toBe(true);
     const captures = (await read()).captures;
