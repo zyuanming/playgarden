@@ -1,0 +1,21 @@
+<!-- SPDX-License-Identifier: GPL-3.0-only; original programmatic artwork. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520" fill="none">
+  <rect width="800" height="520" fill="#eae1f0"/>
+  <circle cx="673" cy="110" r="148" fill="#f7efdc"/>
+  <circle cx="91" cy="481" r="200" fill="#d6dfcd"/>
+  <path d="M91 403H171V365H251V327H331V289H411V251H491V213H571V175H651V137H723" stroke="#a88ab8" stroke-width="8" stroke-linejoin="round"/>
+  <path d="M131 405V457M211 367V457M291 329V457M371 291V457M451 253V457M531 215V457M611 177V457M691 139V457" stroke="#b7a4c1" stroke-width="3" stroke-dasharray="4 12"/>
+  <g fill="#fcf8ef" stroke="#c3b6ce" stroke-width="3">
+    <circle cx="131" cy="387" r="13"/><circle cx="211" cy="349" r="13"/><circle cx="291" cy="311" r="13"/><circle cx="371" cy="273" r="13"/>
+    <circle cx="451" cy="235" r="13"/><circle cx="531" cy="197" r="13"/><circle cx="611" cy="159" r="13"/><circle cx="691" cy="121" r="13"/>
+  </g>
+  <circle cx="211" cy="340" r="35" fill="#7e659b" stroke="#fcf8ef" stroke-width="8"/>
+  <circle cx="531" cy="188" r="35" fill="#778f60" stroke="#fcf8ef" stroke-width="8"/>
+  <path d="M232 304C279 181 410 105 508 154" stroke="#b09ac1" stroke-width="4" stroke-dasharray="5 11"/>
+  <path d="M490 144L512 155L493 172" stroke="#b09ac1" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <g fill="#fffaf1" font-family="sans-serif" font-size="27" font-weight="700" text-anchor="middle"><text x="211" y="350">A</text><text x="531" y="198">B</text></g>
+  <g fill="#7a648a"><path d="M137 156V104L174 95V143" stroke="#7a648a" stroke-width="7" stroke-linecap="round"/><ellipse cx="126" cy="160" rx="17" ry="12" transform="rotate(-20 126 160)"/><ellipse cx="163" cy="147" rx="17" ry="12" transform="rotate(-20 163 147)"/></g>
+  <path d="M673 319L679 333L694 337L679 341L673 356L668 341L653 337L668 333Z" fill="#ac9768"/>
+  <circle cx="726" cy="278" r="5" fill="#bca67f"/>
+  <circle cx="329" cy="92" r="5" fill="#9c87ae"/>
+</svg>

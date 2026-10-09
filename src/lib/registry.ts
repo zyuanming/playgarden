@@ -2150,5 +2150,67 @@ export const games: GameDefinition[] = [
     },
     "component": lazy(() => import("../games/JigsawGarden"))
   },
+  {
+    "id": "interval-notes",
+    "title": "音程阶梯",
+    "subtitle": "看音名、听两音，把起点和终点一起数进音程。",
+    "category": "科学实验",
+    "difficulty": "初级",
+    "tone": "purple",
+    "levelCount": 8,
+    "artwork": {
+      "url": "./interval-notes-art.svg",
+      "position": "50% 50%",
+      "size": "cover"
+    },
+    "source": {
+      "kind": "original",
+      "license": "GPL-3.0-only",
+      "notes": "原创音程级数辨认规则、八课三题练习、公开音阶位置图、正弦波合成与 SVG 图形；未复制第三方源码或录音。"
+    },
+    "component": lazy(() => import("../games/IntervalNotes"))
+  },
+  {
+    "id": "pendulum-push",
+    "title": "摆钟节拍",
+    "subtitle": "在摆锤经过中央时轻推，让左右钟声接力，别让摆幅失控。",
+    "category": "科学实验",
+    "difficulty": "中级",
+    "tone": "orange",
+    "levelCount": 8,
+    "allowUndo": false,
+    "artwork": {
+      "url": "./pendulum-push-art.svg",
+      "position": "50% 50%",
+      "size": "cover"
+    },
+    "source": {
+      "kind": "original",
+      "license": "GPL-3.0-only",
+      "notes": "原创阻尼摆钟物理、定向脉冲规则、八个节拍关卡与 SVG 图形；未复制第三方游戏源码或素材。"
+    },
+    "component": lazy(() => import("../games/PendulumPush"))
+  },
+  {
+    "id": "perimeter-garden",
+    "title": "周长花园",
+    "subtitle": "连接花格，设计面积与周长刚好的花圃",
+    "category": "数字推理",
+    "difficulty": "中级",
+    "tone": "green",
+    "levelCount": 8,
+    "artwork": {
+      "url": "./perimeter-garden-art.svg",
+      "position": "center",
+      "size": "cover"
+    },
+    "allowUndo": true,
+    "source": {
+      "kind": "original",
+      "license": "GPL-3.0-only",
+      "notes": "原创面积与周长连通花圃规则实现、八张手工关卡、逐段围栏图示、中文说明与 SVG 插画；未复制第三方源码、关卡或素材。提示示例不是胜利判定。"
+    },
+    "component": lazy(() => import("../games/PerimeterGarden"))
+  },
 ];
 export const findGame = (id: string) => games.find((game) => game.id === id);
