@@ -1,0 +1,40 @@
+{
+  "original_commit": "d6d1c1b9875bb4764cdb950e8cf65ba51847f0e9",
+  "verified_original_files": 37,
+  "runtime_gameplay_modules": 19,
+  "byte_identical_gameplay_modules": [
+    "script/world.js",
+    "script/scoring.js",
+    "script/events.js",
+    "script/ship.js",
+    "script/room.js",
+    "script/outside.js",
+    "script/path.js",
+    "script/notifications.js",
+    "script/Button.js",
+    "script/prestige.js",
+    "script/header.js",
+    "script/events/setpieces.js",
+    "script/events/room.js",
+    "script/events/outside.js",
+    "script/events/encounters.js",
+    "script/events/global.js"
+  ],
+  "modified_modules": [
+    "engine.js",
+    "space.js",
+    "state_manager.js"
+  ],
+  "world_dimensions": [
+    61,
+    61
+  ],
+  "original_ending_ascent_ms": 60000,
+  "original_translation_entries": 786,
+  "finite_levels": 0,
+  "campaign": true,
+  "pure_endless": false,
+  "jquery": "3.7.1",
+  "network": "local resources only; CSP denies connections and inline/eval scripts",
+  "game_execution": "not part of these static checks"
+}

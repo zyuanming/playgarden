@@ -155,6 +155,7 @@ export const GAME_IDS = [
   "rps",
   "swingby",
   "cube-composer",
+  "a-dark-room",
 ] as const;
 export type GameId = (typeof GAME_IDS)[number];
 export type Category =
@@ -188,6 +189,8 @@ export type GameMeta = {
   freePlay?: boolean;
   /** One open-ended score game; no finite levels or practice mode. */
   endless?: boolean;
+  /** A complete campaign with an ending, without enumerated finite levels. */
+  campaign?: boolean;
   freePlayCaption?: string;
   modeLabels?: { free: string; practice: string };
   allowUndo?: boolean;
@@ -195,7 +198,7 @@ export type GameMeta = {
     | { kind: "original"; license: "GPL-3.0-only"; notes: string }
     | {
         kind: "adapted";
-        license: "MIT" | "BSD-2-Clause" | "GPL-3.0-or-later";
+        license: "MIT" | "BSD-2-Clause" | "GPL-3.0-or-later" | "MPL-2.0";
         notes: string;
         author: string;
         workTitle?: string;

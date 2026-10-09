@@ -2515,5 +2515,33 @@ export const games: GameDefinition[] = [
     },
     "component": lazy(() => import("../games/CubeComposerGame"))
   },
+  {
+    "id": "a-dark-room",
+    "title": "小黑屋远行",
+    "subtitle": "从房间的一簇火光出发，建起村落，穿越荒野，走向完整原作的星海结局。",
+    "category": "逻辑思维",
+    "difficulty": "进阶",
+    "tone": "purple",
+    "levelCount": 0,
+    "campaign": true,
+    "allowUndo": false,
+    "freePlayCaption": "完整战役 · 自动存档",
+    "artwork": {
+      "url": "./a-dark-room-art.svg",
+      "position": "center",
+      "size": "cover"
+    },
+    "source": {
+      "kind": "adapted",
+      "license": "MPL-2.0",
+      "author": "Michael Townsend、doublespeak games 与贡献者",
+      "workTitle": "A Dark Room（2020-08-16完整无音频战役）",
+      "url": "https://github.com/doublespeakgames/adarkroom/tree/d6d1c1b9875bb4764cdb950e8cf65ba51847f0e9",
+      "commit": "d6d1c1b9875bb4764cdb950e8cf65ba51847f0e9",
+      "notice": "./adr-original/LICENSES.txt",
+      "notes": "保留完整房间/村落、61×61世界、全部事件、九种武器、造船/升空结局及继承。原作MPL-2.0；本地jQuery/Color各保留MIT。本站安全存档、暂停卸载、响应式触屏与中文外壳GPL-3.0-only。固定2020原版无音频，不冒充当前最新版。完整战役，无编号关卡，不计纯无尽。"
+    },
+    "component": lazy(() => import("../games/ADarkRoomOriginal"))
+  },
 ];
 export const findGame = (id: string) => games.find((game) => game.id === id);

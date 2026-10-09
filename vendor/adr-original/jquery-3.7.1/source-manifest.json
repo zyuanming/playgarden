@@ -1,0 +1,32 @@
+[
+  {
+    "path": "LICENSE.txt",
+    "mode": "100644",
+    "type": "blob",
+    "sha": "f642c3f7a77a5833bc3dfee643ad8ca6387b23e7",
+    "size": 1097,
+    "url": "https://api.github.com/repos/jquery/jquery/git/blobs/f642c3f7a77a5833bc3dfee643ad8ca6387b23e7",
+    "commit": "f79d5f1a337528940ab7029d4f8bbba72326f269",
+    "sha256": "d4db9ebe6f29f5168eac45ad713f055623ac5d0dcd5ba92da23d650ae012020d"
+  },
+  {
+    "path": "dist/jquery.js",
+    "mode": "100644",
+    "type": "blob",
+    "sha": "1a86433c223039bda5f68f8b6ef10d15e5e0eff7",
+    "size": 285314,
+    "url": "https://api.github.com/repos/jquery/jquery/git/blobs/1a86433c223039bda5f68f8b6ef10d15e5e0eff7",
+    "commit": "f79d5f1a337528940ab7029d4f8bbba72326f269",
+    "sha256": "78a85aca2f0b110c29e0d2b137e09f0a1fb7a8e554b499f740d6744dc8962cfe"
+  },
+  {
+    "path": "dist/jquery.min.js",
+    "mode": "100644",
+    "type": "blob",
+    "sha": "7f37b5d99122b4928505d1e0ac5ca7279edd56ed",
+    "size": 87533,
+    "url": "https://api.github.com/repos/jquery/jquery/git/blobs/7f37b5d99122b4928505d1e0ac5ca7279edd56ed",
+    "commit": "f79d5f1a337528940ab7029d4f8bbba72326f269",
+    "sha256": "fc9a93dd241f6b045cbff0481cf4e1901becd0e12fb45166a8f17f95823f0b1a"
+  }
+]
