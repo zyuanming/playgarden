@@ -6,8 +6,9 @@ test("PARKING original: coin, open-space parking, simultaneous cars, collision a
   test.setTimeout(120000);
   const j = await crispJourney<Parking>(page, info, "parking", "同步泊车");
   await j.pauseAndSound();
-  // Physical steering with feedback from the visible vehicles. Aim toward a reachable coin,
-  // then turn into a gap; release early to account for gradual original steering recovery.
+  // Cruise toward a reachable coin, then approach the curb before committing to a gap.
+  // Shallow steering pulses preserve forward travel: a sustained turn across the whole
+  // road lets the original scrolling carry the car past the bottom before it can park.
   const until = Date.now() + 55000;
   let committing = false;
   while (Date.now() < until) {
@@ -16,9 +17,17 @@ test("PARKING original: coin, open-space parking, simultaneous cars, collision a
     const car = m.cars[0];
     if (!car || car.y < 5) { committing = false; await j.hold(false); await page.waitForTimeout(60); continue; }
     const gold = m.gold;
-    if (!committing && m.pickups === 0 && gold && gold.y < car.y + 3 && gold.x >= car.x - 3 && gold.x < 73) {
-      const stoppingTravel = Math.max(0, (m.carAngle + Math.PI / 2) * 7);
-      await j.hold(car.x + stoppingTravel < gold.x - 1.5);
+    const seekingCoin = m.pickups === 0 && gold !== null && gold.x >= car.x - 3 && gold.x < 73;
+    const targetX = seekingCoin ? gold!.x : 68;
+    const stoppingTravel = Math.max(0, (m.carAngle + Math.PI / 2) * 7);
+    if (!committing && car.x + stoppingTravel < targetX - 1.5) {
+      // Observe the actual heading and release before the car becomes horizontal.
+      // This is physical button control, with no game-state or physics changes.
+      await j.hold(m.carAngle < -Math.PI / 3);
+    } else if (!committing && seekingCoin) {
+      // If the first coin passed during the lifecycle checks, cruise in its lane.
+      // The original game replaces missed coins; do not rush into a long crossing.
+      await j.hold(false);
     } else {
       const gap = m.parkedCars.every(p => Math.abs(p.y - (car.y - 8)) > 22);
       if (gap || committing) { committing = true; await j.hold(true); }
