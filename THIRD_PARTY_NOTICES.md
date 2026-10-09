@@ -1360,3 +1360,57 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 Complete static comparison establishes exact mml-iterator 1.1.0 preferred editable-source correspondence for the shipped embedded parser, independently of the original ^1.1.0 dependency declaration. All module bodies, imports/exports and generated class scaffolding are accounted for in docs/crisp-mml-correspondence.json. Historical npm installation resolution remains unclaimed; runtime bytes and MIT notices are unchanged.
+
+
+# PIZZA ARROW / RPS / SWINGBY notices addendum
+
+Three complete original games by ABA Games (2021), MIT.
+Fixed original source commit: `cfb39d2f988feb5918eb83697145b5a35adabf58`.
+
+- PIZZA ARROW (披萨神箭): https://github.com/abagames/crisp-game-lib-games/blob/cfb39d2f988feb5918eb83697145b5a35adabf58/docs/pizzaarrow/main.js
+- RPS (猜拳四轨): https://github.com/abagames/crisp-game-lib-games/blob/cfb39d2f988feb5918eb83697145b5a35adabf58/docs/rps/main.js
+- SWINGBY (引力远航): https://github.com/abagames/crisp-game-lib-games/blob/cfb39d2f988feb5918eb83697145b5a35adabf58/docs/swingby/main.js
+
+The public scripts are byte-identical to the preferred editable sources under `vendor/crisp-original/upstream/games/docs/`. Full original programmatic art, pixel glyphs, endless generation, scoring, failure and replay are retained. The three card SVGs are newly authored Playgarden illustrations, not gameplay screenshots. Playgarden Chinese interface, observer instrumentation, illustrations and E2E use GPL-3.0-only.
+
+The existing shared crisp-game-lib 1.0.2, sounds-some-sounds 2.0.0, modified jsfx and mml-iterator runtime/source/license records remain unchanged and required. This addendum does not replace their complete notices or corresponding sources in the first batch. No additional external art, font or sampled audio is introduced. A tiny shared guard change allows the original Canvas2D dark theme alongside simple, without allowing Pixi or optional network helpers.
+
+## Complete original-game MIT notice
+
+MIT License
+
+Copyright (c) 2021 ABA Games
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+
+
+## Cube Composer / 方块函数工坊（完整 25 原关卡）
+
+Original work: Cube Composer by David Peter (sharkdp), Copyright (c) 2015–2016 David Peter.
+
+- Source: https://github.com/sharkdp/cube-composer/tree/a891ffe5de79b072819da04718820d0452b9a201
+- Fixed commit: `a891ffe5de79b072819da04718820d0452b9a201`
+- License: MIT. Full unmodified notice: `public/cube-composer-LICENSE.txt`, also preserved in `vendor/cube-composer-original/upstream/LICENSE`.
+- Adapted scope: all 6 chapters / 25 original puzzles, exact initial and target ordered cube arrays, chapter function sets, map/filter/list-pattern/stable-partition/three-bit arithmetic rules, one-use-per-function composition, intermediate states, and exact structural win comparison.
+- Preferred original sources: `vendor/cube-composer-original/upstream/src/Transformer.purs`, `src/Levels/Chapter0.purs` through `Chapter5.purs`, `src/Main.purs`, `src/Types.purs`, and `src/Levels.purs`. All 46 retained original text files are byte/hash/Git-blob verified.
+- Runtime adaptation: `src/vendor/cubeComposerCore.ts` retains MIT attribution; exact original data is in `src/games/cubeComposerLevelsData.json`. Playgarden's Chinese React interface, native controls, local save/undo, accessibility text, scripts and new `public/cube-composer-art.svg` are GPL-3.0-only.
+- Upstream source and old dependency/build manifests are retained as evidence, not executed or bundled. No legacy PureScript/Bower/Gulp runtime or third-party libraries, analytics, remote fonts, social widgets or iframes are loaded.
+- Data equality/source checks: `scripts/cube-composer/extract-levels.py --check` and `scripts/cube-composer/verify-sources.py`. Source/data preservation is not a claim that gameplay or deployment testing has run.
+

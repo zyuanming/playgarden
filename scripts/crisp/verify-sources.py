@@ -6,7 +6,7 @@ ROOT=Path(__file__).resolve().parents[2]
 V=ROOT/'vendor/crisp-original'
 def digest(data): return hashlib.sha256(data).hexdigest()
 count=0
-for record in json.loads((V/'source-manifest.json').read_text())['files']:
+for record in json.loads((V/'source-manifest.json').read_text())['files'] + json.loads((V/'second-games-source-manifest.json').read_text())['files']:
     p=V/record['dest']; data=p.read_bytes()
     assert len(data)==record['expected_bytes'],p
     assert digest(data)==record['sha256'],p
@@ -17,7 +17,7 @@ for record in json.loads((ROOT/'docs/crisp-mml-source-addendum.json').read_text(
     assert len(data)==record['bytes'] and digest(data)==record['sha256']
     assert hashlib.sha1(b'blob '+str(len(data)).encode()+b'\0'+data).hexdigest()==record['git_blob_sha1']
     count+=1
-for game in ['castn','bamboo','parking']:
+for game in ['castn','bamboo','parking','pizzaarrow','rps','swingby']:
     assert (ROOT/f'public/crisp-original/{game}/main.js').read_bytes()==(V/f'upstream/games/docs/{game}/main.js').read_bytes()
 runtime=list((ROOT/'public/crisp-original').rglob('*.js'))
 for file in runtime:
@@ -32,6 +32,6 @@ for html in (ROOT/'public/crisp-original').rglob('index.html'):
     assert "connect-src 'none'" in source and "script-src 'self'" in source
 assert 'new Function' not in (ROOT/'public/crisp-original/audio.js').read_text()
 assert 'new AudioContext()' not in (ROOT/'public/crisp-original/audio.js').read_text()
-report={'status':'PASS_STATIC_ONLY','verifiedOriginalFiles':count,'byteIdenticalCompleteGameFiles':3,'finiteLevelsAdded':0,'runtimeJavaScriptFiles':len(runtime),'networkAndDynamicEvaluationPatterns':'none in shipped JS','iframeScriptReferences':'all local and present','browserValidation':'PENDING parent GitHub desktop/mobile CI','screenshots':'PENDING real browser evidence'}
+report={'status':'PASS_STATIC_ONLY','verifiedOriginalFiles':count,'byteIdenticalCompleteGameFiles':6,'finiteLevelsAdded':0,'runtimeJavaScriptFiles':len(runtime),'networkAndDynamicEvaluationPatterns':'none in shipped JS','iframeScriptReferences':'all local and present','browserValidation':'PENDING parent GitHub desktop/mobile CI','screenshots':'PENDING real browser evidence'}
 (ROOT/'docs/crisp-static-audit.json').write_text(json.dumps(report,indent=2)+'\n')
 print(json.dumps(report,indent=2))

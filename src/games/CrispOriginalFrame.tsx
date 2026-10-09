@@ -2,9 +2,11 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import type { GameProps } from "../lib/types";
 import "./crispOriginal.css";
+import { crispSecondGames } from "./crispSecondGames";
 
-export type CrispId = "castn" | "bamboo" | "parking";
+export type CrispId = "castn" | "bamboo" | "parking" | keyof typeof crispSecondGames;
 const games = {
+  ...crispSecondGames,
   castn: {
     title: "抛网捕鱼", original: "CAST N", headline: "等鱼入网，再一把收回",
     intro: "按住鼠标、空格或画布蓄力，松开抛网，落入鱼群后再点一下收网。蓝鱼加分，红鱼会让水位猛涨。",

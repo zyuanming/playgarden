@@ -1,0 +1,448 @@
+{
+  "sha": "a891ffe5de79b072819da04718820d0452b9a201",
+  "url": "https://api.github.com/repos/sharkdp/cube-composer/git/trees/a891ffe5de79b072819da04718820d0452b9a201",
+  "tree": [
+    {
+      "path": ".github",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "ef4b011e11969211f948d2d34d9d5d944e6bb90d",
+      "url": "https://api.github.com/repos/sharkdp/cube-composer/git/trees/ef4b011e11969211f948d2d34d9d5d944e6bb90d"
+    },
+    {
+      "path": ".github/FUNDING.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "31426b3694213aa8abc78776a009648db849336d",
+      "size": 16,
+      "url": "https://api.github.com/repos/sharkdp/cube-composer/git/blobs/31426b3694213aa8abc78776a009648db849336d"
+    },
+    {
+      "path": ".gitignore",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6763a1e540dd549bb559aa475c2a49b15ccfd27b",
+      "size": 74,
+      "url": "https://api.github.com/repos/sharkdp/cube-composer/git/blobs/6763a1e540dd549bb559aa475c2a49b15ccfd27b"
+    },
+    {
+      "path": ".htaccess",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "125b1e0c0c4b9802d412efad0efbbf60e120e2a4",
+      "size": 176,
+      "url": "https://api.github.com/repos/sharkdp/cube-composer/git/blobs/125b1e0c0c4b9802d412efad0efbbf60e120e2a4"
+    },
+    {
+      "path": ".travis.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2cc977bfdb2c1a2f3814c396e5ed1beeee23f074",
+      "size": 151,
+      "url": "https://api.github.com/repos/sharkdp/cube-composer/git/blobs/2cc977bfdb2c1a2f3814c396e5ed1beeee23f074"
+    },
+    {
+      "path": "LICENSE",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b0cc1d12202826fe1cdec22f2d20f6aef6acaa6b",
+      "size": 1083,
+      "url": "https://api.github.com/repos/sharkdp/cube-composer/git/blobs/b0cc1d12202826fe1cdec22f2d20f6aef6acaa6b"
+    },
+    {
+      "path": "README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b8c82bc35d8dfe672179a3054301acd53ac2a47e",
+      "size": 2660,
+      "url": "https://api.github.com/repos/sharkdp/cube-composer/git/blobs/b8c82bc35d8dfe672179a3054301acd53ac2a47e"
+    },
+    {
+      "path": "bower.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "bfe8491da611a87ead0052f3300345dd79edbb39",
+      "size": 763,
+      "url": "https://api.github.com/repos/sharkdp/cube-composer/git/blobs/bfe8491da611a87ead0052f3300345dd79edbb39"
+    },
+    {
+      "path": "cli",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "a688232ef316e5c9660155469052fbb2a7458483",
+      "url": "https://api.github.com/repos/sharkdp/cube-composer/git/trees/a688232ef316e5c9660155469052fbb2a7458483"
+    },
+    {
+      "path": "cli/Solver.purs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f0119f228d7c89ec00f9c284724d05717e479bbe",
+      "size": 1389,
+      "url": "https://api.github.com/repos/sharkdp/cube-composer/git/blobs/f0119f228d7c89ec00f9c284724d05717e479bbe"
+    },
+    {
+      "path": "cli/cli.purs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5dc5b3c0eed962448f5013d78c58d8598e63c79e",
+      "size": 1194,
+      "url": "https://api.github.com/repos/sharkdp/cube-composer/git/blobs/5dc5b3c0eed962448f5013d78c58d8598e63c79e"
+    },
+    {
+      "path": "css",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "2f4622ebf8305b654132375b4e50cd0658265073",
+      "url": "https://api.github.com/repos/sharkdp/cube-composer/git/trees/2f4622ebf8305b654132375b4e50cd0658265073"
+    },
+    {
+      "path": "css/main.less",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f60b2fdc4df50ffb34a97914de638c93136d59e9",
+      "size": 4907,
+      "url": "https://api.github.com/repos/sharkdp/cube-composer/git/blobs/f60b2fdc4df50ffb34a97914de638c93136d59e9"
+    },
+    {
+      "path": "docs",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "ba1ae550daf8e7918b97bb5ce4af3ea154e1ee12",
+      "url": "https://api.github.com/repos/sharkdp/cube-composer/git/trees/ba1ae550daf8e7918b97bb5ce4af3ea154e1ee12"
+    },
+    {
+      "path": "docs/DOMHelper.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "38b64d1896dd747dd09e6c6fd437c51359818761",
+      "size": 1995,
+      "url": "https://api.github.com/repos/sharkdp/cube-composer/git/blobs/38b64d1896dd747dd09e6c6fd437c51359818761"
+    },
+    {
+      "path": "docs/Helper.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d01c3cce978a18f21878bc678ebd2bd2cc2e1df0",
+      "size": 1084,
+      "url": "https://api.github.com/repos/sharkdp/cube-composer/git/blobs/d01c3cce978a18f21878bc678ebd2bd2cc2e1df0"
+    },
+    {
+      "path": "docs/Levels.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "72d8edbad77df9be89cbe4e1f1ca32ff6d3bf02a",
+      "size": 1108,
+      "url": "https://api.github.com/repos/sharkdp/cube-composer/git/blobs/72d8edbad77df9be89cbe4e1f1ca32ff6d3bf02a"
+    },
+    {
+      "path": "docs/Sortable.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a46d00917db1d7b49dbe401547f15cee9b365b61",
+      "size": 294,
+      "url": "https://api.github.com/repos/sharkdp/cube-composer/git/blobs/a46d00917db1d7b49dbe401547f15cee9b365b61"
+    },
+    {
+      "path": "docs/Storage.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3e99312ee7ff933c5ae524710738713f2ea358f0",
+      "size": 1165,
+      "url": "https://api.github.com/repos/sharkdp/cube-composer/git/blobs/3e99312ee7ff933c5ae524710738713f2ea358f0"
+    },
+    {
+      "path": "docs/Transformer.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ca7505ec2715c23e9d97dfe2bcca3e176800ea66",
+      "size": 1254,
+      "url": "https://api.github.com/repos/sharkdp/cube-composer/git/blobs/ca7505ec2715c23e9d97dfe2bcca3e176800ea66"
+    },
+    {
+      "path": "docs/Types.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "39df8152c571b152d9e6fb99e74bddf44e27e610",
+      "size": 1186,
+      "url": "https://api.github.com/repos/sharkdp/cube-composer/git/blobs/39df8152c571b152d9e6fb99e74bddf44e27e610"
+    },
+    {
+      "path": "docs/Unsafe.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "006d8c37472bd61c00842bb5c0f1ff5f0f2dca80",
+      "size": 119,
+      "url": "https://api.github.com/repos/sharkdp/cube-composer/git/blobs/006d8c37472bd61c00842bb5c0f1ff5f0f2dca80"
+    },
+    {
+      "path": "gulpfile.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d6b7852b1ae4da62bd1a94fd898a98d988eea932",
+      "size": 3184,
+      "url": "https://api.github.com/repos/sharkdp/cube-composer/git/blobs/d6b7852b1ae4da62bd1a94fd898a98d988eea932"
+    },
+    {
+      "path": "img",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "b4c5493517f9383c12e6b9a85b04ce81977240a6",
+      "url": "https://api.github.com/repos/sharkdp/cube-composer/git/trees/b4c5493517f9383c12e6b9a85b04ce81977240a6"
+    },
+    {
+      "path": "img/cube-composer.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "dfc7d9fe83e15e3973021ce5bcf35f70d2a0013f",
+      "size": 5080,
+      "url": "https://api.github.com/repos/sharkdp/cube-composer/git/blobs/dfc7d9fe83e15e3973021ce5bcf35f70d2a0013f"
+    },
+    {
+      "path": "img/cube-composer.svg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f70cddc85582ea6eb2d44eb26bc9afb86823e187",
+      "size": 12087,
+      "url": "https://api.github.com/repos/sharkdp/cube-composer/git/blobs/f70cddc85582ea6eb2d44eb26bc9afb86823e187"
+    },
+    {
+      "path": "img/favicon-196.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2258ac73b1891b8e22d005a44552a8c8e80a67dc",
+      "size": 5820,
+      "url": "https://api.github.com/repos/sharkdp/cube-composer/git/blobs/2258ac73b1891b8e22d005a44552a8c8e80a67dc"
+    },
+    {
+      "path": "img/favicon-32.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "facd28dbe40d2140f8d9e6a545616a27fce791d5",
+      "size": 1060,
+      "url": "https://api.github.com/repos/sharkdp/cube-composer/git/blobs/facd28dbe40d2140f8d9e6a545616a27fce791d5"
+    },
+    {
+      "path": "img/favicon.svg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6caaed48f5594d84c51a3a632661c76fe54ad551",
+      "size": 6013,
+      "url": "https://api.github.com/repos/sharkdp/cube-composer/git/blobs/6caaed48f5594d84c51a3a632661c76fe54ad551"
+    },
+    {
+      "path": "index.html",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "350dee5dc10b0a1a18407742fa4d9c4ae1169005",
+      "size": 2900,
+      "url": "https://api.github.com/repos/sharkdp/cube-composer/git/blobs/350dee5dc10b0a1a18407742fa4d9c4ae1169005"
+    },
+    {
+      "path": "package-lock.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0c92d26298825b5d03ebd2321021a0f08c1d891f",
+      "size": 506623,
+      "url": "https://api.github.com/repos/sharkdp/cube-composer/git/blobs/0c92d26298825b5d03ebd2321021a0f08c1d891f"
+    },
+    {
+      "path": "package.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "95d07ad56efdf2195dc4ac89a8a7ccf26da3b2dc",
+      "size": 545,
+      "url": "https://api.github.com/repos/sharkdp/cube-composer/git/blobs/95d07ad56efdf2195dc4ac89a8a7ccf26da3b2dc"
+    },
+    {
+      "path": "src",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "28562230d9c6f231e7b6d9899700e8adc64b470e",
+      "url": "https://api.github.com/repos/sharkdp/cube-composer/git/trees/28562230d9c6f231e7b6d9899700e8adc64b470e"
+    },
+    {
+      "path": "src/Analytics.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a490c174e36bf751627602abc0bdb6e284d489af",
+      "size": 226,
+      "url": "https://api.github.com/repos/sharkdp/cube-composer/git/blobs/a490c174e36bf751627602abc0bdb6e284d489af"
+    },
+    {
+      "path": "src/Analytics.purs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9351ec35826115ccb51e8fac316090e471ab351d",
+      "size": 446,
+      "url": "https://api.github.com/repos/sharkdp/cube-composer/git/blobs/9351ec35826115ccb51e8fac316090e471ab351d"
+    },
+    {
+      "path": "src/DOMHelper.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a0e4dd7efdcdb7b21d20cbce66ee11625d33d355",
+      "size": 1066,
+      "url": "https://api.github.com/repos/sharkdp/cube-composer/git/blobs/a0e4dd7efdcdb7b21d20cbce66ee11625d33d355"
+    },
+    {
+      "path": "src/DOMHelper.purs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a8a7f1b2438ae4b1cc6e293daf0881aca132ecd1",
+      "size": 3112,
+      "url": "https://api.github.com/repos/sharkdp/cube-composer/git/blobs/a8a7f1b2438ae4b1cc6e293daf0881aca132ecd1"
+    },
+    {
+      "path": "src/Helper.purs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e225657a6908c7740916b44a942c3410896e8514",
+      "size": 1341,
+      "url": "https://api.github.com/repos/sharkdp/cube-composer/git/blobs/e225657a6908c7740916b44a942c3410896e8514"
+    },
+    {
+      "path": "src/Levels.purs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8429475037f6a3b9784c17229301a2e3944376a0",
+      "size": 2128,
+      "url": "https://api.github.com/repos/sharkdp/cube-composer/git/blobs/8429475037f6a3b9784c17229301a2e3944376a0"
+    },
+    {
+      "path": "src/Levels",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "27e412a64b7c67b3c8ab394c7a5248b1a1c1d78d",
+      "url": "https://api.github.com/repos/sharkdp/cube-composer/git/trees/27e412a64b7c67b3c8ab394c7a5248b1a1c1d78d"
+    },
+    {
+      "path": "src/Levels/Chapter0.purs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6b5ecc06305ed5ee25d4154869e2366c55b394fd",
+      "size": 3228,
+      "url": "https://api.github.com/repos/sharkdp/cube-composer/git/blobs/6b5ecc06305ed5ee25d4154869e2366c55b394fd"
+    },
+    {
+      "path": "src/Levels/Chapter1.purs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5b18832c2ec90a9d8ed5dc2d7b4466dc7a55e926",
+      "size": 2899,
+      "url": "https://api.github.com/repos/sharkdp/cube-composer/git/blobs/5b18832c2ec90a9d8ed5dc2d7b4466dc7a55e926"
+    },
+    {
+      "path": "src/Levels/Chapter2.purs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2ce492238d3c3cf0d7bb3cf1a3a7fb6a529d5ca8",
+      "size": 3354,
+      "url": "https://api.github.com/repos/sharkdp/cube-composer/git/blobs/2ce492238d3c3cf0d7bb3cf1a3a7fb6a529d5ca8"
+    },
+    {
+      "path": "src/Levels/Chapter3.purs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4728c798794d88c8e69a92ab8089a96314348376",
+      "size": 2319,
+      "url": "https://api.github.com/repos/sharkdp/cube-composer/git/blobs/4728c798794d88c8e69a92ab8089a96314348376"
+    },
+    {
+      "path": "src/Levels/Chapter4.purs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "23e10e18afb3712845675c6bce4c4e75c1422245",
+      "size": 3524,
+      "url": "https://api.github.com/repos/sharkdp/cube-composer/git/blobs/23e10e18afb3712845675c6bce4c4e75c1422245"
+    },
+    {
+      "path": "src/Levels/Chapter5.purs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4f7ae414a4ef7307a90c4a40ddb1bd8034ad1c90",
+      "size": 2946,
+      "url": "https://api.github.com/repos/sharkdp/cube-composer/git/blobs/4f7ae414a4ef7307a90c4a40ddb1bd8034ad1c90"
+    },
+    {
+      "path": "src/ListHelper.purs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7d23bfe18eca9242a75a88328c90a317e33cbedc",
+      "size": 198,
+      "url": "https://api.github.com/repos/sharkdp/cube-composer/git/blobs/7d23bfe18eca9242a75a88328c90a317e33cbedc"
+    },
+    {
+      "path": "src/Main.purs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "316b58c39ca80c782113ecd10f3ace84e7cc77a4",
+      "size": 14521,
+      "url": "https://api.github.com/repos/sharkdp/cube-composer/git/blobs/316b58c39ca80c782113ecd10f3ace84e7cc77a4"
+    },
+    {
+      "path": "src/Sortable.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "33b0f91c017c7ff841c91eb0f0ad0caaedea67f8",
+      "size": 272,
+      "url": "https://api.github.com/repos/sharkdp/cube-composer/git/blobs/33b0f91c017c7ff841c91eb0f0ad0caaedea67f8"
+    },
+    {
+      "path": "src/Sortable.purs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "02f1ca5af8508fe1f42b29c906f86ba7c27c1c30",
+      "size": 434,
+      "url": "https://api.github.com/repos/sharkdp/cube-composer/git/blobs/02f1ca5af8508fe1f42b29c906f86ba7c27c1c30"
+    },
+    {
+      "path": "src/Storage.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8c3cbfcb44b7a38b78bba3351fc9bfcca4592fa4",
+      "size": 463,
+      "url": "https://api.github.com/repos/sharkdp/cube-composer/git/blobs/8c3cbfcb44b7a38b78bba3351fc9bfcca4592fa4"
+    },
+    {
+      "path": "src/Storage.purs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c27170264812ed13f4fc0bb324765f61744bb2e0",
+      "size": 1601,
+      "url": "https://api.github.com/repos/sharkdp/cube-composer/git/blobs/c27170264812ed13f4fc0bb324765f61744bb2e0"
+    },
+    {
+      "path": "src/Transformer.purs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5f9c7ff4e41be54c997171809c4806edce416dc6",
+      "size": 1585,
+      "url": "https://api.github.com/repos/sharkdp/cube-composer/git/blobs/5f9c7ff4e41be54c997171809c4806edce416dc6"
+    },
+    {
+      "path": "src/Types.purs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "31d38b2aa4ee71907fee41fe543ce64cc20eb571",
+      "size": 2326,
+      "url": "https://api.github.com/repos/sharkdp/cube-composer/git/blobs/31d38b2aa4ee71907fee41fe543ce64cc20eb571"
+    },
+    {
+      "path": "src/Unsafe.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f2fcb0f27e8869d43c31ef7cc3ae9016488b3ffc",
+      "size": 284,
+      "url": "https://api.github.com/repos/sharkdp/cube-composer/git/blobs/f2fcb0f27e8869d43c31ef7cc3ae9016488b3ffc"
+    },
+    {
+      "path": "src/Unsafe.purs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "eebd9dec6372bb22fd3bf4de22a0274f450ec5e7",
+      "size": 100,
+      "url": "https://api.github.com/repos/sharkdp/cube-composer/git/blobs/eebd9dec6372bb22fd3bf4de22a0274f450ec5e7"
+    }
+  ],
+  "truncated": false
+}

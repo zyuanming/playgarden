@@ -1,0 +1,20 @@
+{
+  "vendoredComponents": [
+    {
+      "name": "PIZZA ARROW, RPS, SWINGBY original endless games",
+      "version": "cfb39d2f988feb5918eb83697145b5a35adabf58",
+      "license": "MIT",
+      "source": "https://github.com/abagames/crisp-game-lib-games/tree/cfb39d2f988feb5918eb83697145b5a35adabf58",
+      "preferredSource": [
+        "vendor/crisp-original/upstream/games/docs/pizzaarrow/main.js",
+        "vendor/crisp-original/upstream/games/docs/rps/main.js",
+        "vendor/crisp-original/upstream/games/docs/swingby/main.js"
+      ],
+      "buildSources": [
+        "scripts/crisp/prepare.py"
+      ],
+      "scope": "Three complete original game scripts copied byte-for-byte. Preserve original slow-motion pizza sector cuts and expanding arrow counts; coupled four-lane/three-gesture RPS, multiplier and freeze; SWINGBY distance-from-origin score, gravity, collision damage and recovery. Zero finite levels. Existing shared engine/audio/license sources remain authoritative; no new runtime dependencies."
+    }
+  ],
+  "sharedRuntimeChange": "Extend the single shared Canvas2D theme whitelist from simple to simple/dark; original dark theme requires no Pixi. Retain capture, rewind and minifier exclusions. Rebuild with existing deterministic prepare.py; refresh shared transform-map."
+}

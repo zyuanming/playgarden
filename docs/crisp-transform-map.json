@@ -1,5 +1,5 @@
 {
-  "gameplay": "All three main.js files copied byte-for-byte; no gameplay changes.",
+  "gameplay": "All six main.js files copied byte-for-byte; no gameplay changes.",
   "patches": [
     {
       "change": "Own listeners, inputs, RAF, pause/restart/dispose and read-only state",
@@ -49,7 +49,7 @@
     {
       "change": "Reject optional modes that require omitted dependencies; graceful unavailable audio",
       "before_sha256": "68da36866186016d27a0134bf0e2631d21c0a6bb52572ebaed914c98fb323f78",
-      "after_sha256": "4ee1490d73217c96f402b3bd8f462adf8993affd1b34e4fe98649de8ab5d93d2"
+      "after_sha256": "d89313c9d0ae0368dd11d8c6f8f3dd45ead96477b51f995282cc83c7e89cc578"
     },
     {
       "change": "Remove URL-based script loader and remote debug minifier",

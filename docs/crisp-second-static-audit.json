@@ -1,0 +1,19 @@
+{
+  "status": "PASS_STATIC_ONLY",
+  "preflightSha256": "4d39f49251c2a432ddebddcc29733870d9ce337cffed6f8bd1373884c07c7c2e",
+  "verifiedPreflightOriginalFiles": 50,
+  "byteIdenticalGameFiles": 3,
+  "finiteLevelsAdded": 0,
+  "gameJavaScriptSyntax": "PASS node --check, no execution",
+  "svgXmlSyntax": "PASS 3 original SVG files",
+  "scriptReferences": "6 fixed local scripts per game; existing shared files required",
+  "networkPatterns": "none in new shipped JavaScript",
+  "isolatedStrictTypecheck": "PASS all three wrappers/config/specs against current shared references",
+  "isolatedViteBuild": "PASS fixture imports all three wrappers; no site registration",
+  "browserDesktop": "NOT_RUN",
+  "browserMobile": "NOT_RUN",
+  "actualScreenshots": "NOT_CAPTURED; authored Playwright capture steps only",
+  "upstreamInstallOrRun": "NOT_RUN",
+  "unitTestsOrCampaignSweeps": "NOT_RUN",
+  "publicCountAssigned": false
+}

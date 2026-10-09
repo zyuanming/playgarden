@@ -240,7 +240,7 @@
         "scripts/crisp/prepare.py",
         "scripts/crisp/engine-lifecycle.js"
       ],
-      "scope": "One shared local engine. Explicit RAF/listener/input lifecycle, run identity and read-only snapshots added. Optional theme/capture/rewind/minifier modes rejected; URL loader and debug fetch removed. Gameplay functions unchanged."
+      "scope": "One shared local engine. Explicit RAF/listener/input lifecycle, run identity and read-only snapshots added. Only simple/dark Canvas2D themes allowed; other optional theme/capture/rewind/minifier modes rejected; URL loader and debug fetch removed. Gameplay functions unchanged."
     },
     {
       "name": "sounds-some-sounds",
@@ -290,6 +290,51 @@
         "scripts/crisp/prove-mml-correspondence.mjs"
       ],
       "scope": "Six fixed official editable source files and generated class scaffolding correspond to every embedded module, with 65 exact normalized-AST comparisons and all 24 top-level statements accounted for. Shipped mml bytes remain unchanged inside the original pinned audio bundle. Proof and exact transformations are in docs/crisp-mml-correspondence.json and .md. The absent original lockfile limits historical installation provenance, not preferred editable-source correspondence. Existing Nao Yonamine MIT author/template records and full permission text remain unchanged."
+    },
+    {
+      "name": "PIZZA ARROW, RPS, SWINGBY original endless games",
+      "version": "cfb39d2f988feb5918eb83697145b5a35adabf58",
+      "license": "MIT",
+      "source": "https://github.com/abagames/crisp-game-lib-games/tree/cfb39d2f988feb5918eb83697145b5a35adabf58",
+      "preferredSource": [
+        "vendor/crisp-original/upstream/games/docs/pizzaarrow/main.js",
+        "vendor/crisp-original/upstream/games/docs/rps/main.js",
+        "vendor/crisp-original/upstream/games/docs/swingby/main.js"
+      ],
+      "buildSources": [
+        "scripts/crisp/prepare.py"
+      ],
+      "scope": "Three complete original game scripts copied byte-for-byte. Preserve original slow-motion pizza sector cuts and expanding arrow counts; coupled four-lane/three-gesture RPS, multiplier and freeze; SWINGBY distance-from-origin score, gravity, collision damage and recovery. Zero finite levels. Existing shared engine/audio/license sources remain authoritative; no new runtime dependencies."
+    },
+    {
+      "name": "Cube Composer complete original 25-level campaign",
+      "version": "a891ffe5de79b072819da04718820d0452b9a201",
+      "license": "MIT",
+      "source": "https://github.com/sharkdp/cube-composer/tree/a891ffe5de79b072819da04718820d0452b9a201",
+      "commit": "a891ffe5de79b072819da04718820d0452b9a201",
+      "preferredSource": [
+        "vendor/cube-composer-original/upstream/src/Transformer.purs",
+        "vendor/cube-composer-original/upstream/src/Levels.purs",
+        "vendor/cube-composer-original/upstream/src/Levels/Chapter0.purs",
+        "vendor/cube-composer-original/upstream/src/Levels/Chapter1.purs",
+        "vendor/cube-composer-original/upstream/src/Levels/Chapter2.purs",
+        "vendor/cube-composer-original/upstream/src/Levels/Chapter3.purs",
+        "vendor/cube-composer-original/upstream/src/Levels/Chapter4.purs",
+        "vendor/cube-composer-original/upstream/src/Levels/Chapter5.purs",
+        "vendor/cube-composer-original/upstream/src/Main.purs",
+        "src/vendor/cubeComposerCore.ts",
+        "src/games/cubeComposerLevelsData.json",
+        "src/games/cubeComposerLevels.ts"
+      ],
+      "buildSources": [
+        "scripts/cube-composer/extract-levels.py",
+        "scripts/cube-composer/verify-sources.py"
+      ],
+      "scope": "MIT original ordered 2D cube transformations, exact-composition win rules and all 25 original levels across six chapters; 46 editable original text files retained verbatim. Playgarden React/UI/storage/undo/hints/new SVG are GPL-3.0-only. Upstream build/dependency manifests, old Analytics and DOM code are inert source evidence; no legacy runtime or third-party libraries are executed or bundled.",
+      "notices": [
+        "public/cube-composer-LICENSE.txt",
+        "vendor/cube-composer-original/upstream/LICENSE"
+      ]
     }
   ]
 }

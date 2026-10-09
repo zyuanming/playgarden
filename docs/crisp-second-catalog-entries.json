@@ -1,0 +1,83 @@
+[
+  {
+    "id": "pizzaarrow",
+    "title": "披萨神箭",
+    "subtitle": "慢动作拉弓，切开旋转披萨",
+    "category": "动作反应",
+    "difficulty": "进阶",
+    "tone": "orange",
+    "levelCount": 0,
+    "endless": true,
+    "allowUndo": false,
+    "artwork": {
+      "url": "./crisp-original/pizzaarrow/card.svg",
+      "position": "center",
+      "size": "cover"
+    },
+    "source": {
+      "kind": "adapted",
+      "license": "MIT",
+      "author": "ABA Games",
+      "workTitle": "PIZZA ARROW",
+      "url": "https://github.com/abagames/crisp-game-lib-games/blob/cfb39d2f988feb5918eb83697145b5a35adabf58/docs/pizzaarrow/main.js",
+      "commit": "cfb39d2f988feb5918eb83697145b5a35adabf58",
+      "notice": "./crisp-original/LICENSES.txt",
+      "notes": "完整无尽原作，原 main.js 逐字保留；共享本地引擎、生成像素和合成音乐。有限关卡为 0。"
+    },
+    "component": "PizzaArrowOriginal"
+  },
+  {
+    "id": "rps",
+    "title": "猜拳四轨",
+    "subtitle": "四条轨道与三种手势同步轮换",
+    "category": "动作反应",
+    "difficulty": "进阶",
+    "tone": "purple",
+    "levelCount": 0,
+    "endless": true,
+    "allowUndo": false,
+    "artwork": {
+      "url": "./crisp-original/rps/card.svg",
+      "position": "center",
+      "size": "cover"
+    },
+    "source": {
+      "kind": "adapted",
+      "license": "MIT",
+      "author": "ABA Games",
+      "workTitle": "RPS",
+      "url": "https://github.com/abagames/crisp-game-lib-games/blob/cfb39d2f988feb5918eb83697145b5a35adabf58/docs/rps/main.js",
+      "commit": "cfb39d2f988feb5918eb83697145b5a35adabf58",
+      "notice": "./crisp-original/LICENSES.txt",
+      "notes": "完整无尽原作，原 main.js 逐字保留；共享本地引擎、生成像素和合成音乐。有限关卡为 0。"
+    },
+    "component": "RpsOriginal"
+  },
+  {
+    "id": "swingby",
+    "title": "引力远航",
+    "subtitle": "侧推转向，飞向离起点更远处",
+    "category": "动作反应",
+    "difficulty": "进阶",
+    "tone": "purple",
+    "levelCount": 0,
+    "endless": true,
+    "allowUndo": false,
+    "artwork": {
+      "url": "./crisp-original/swingby/card.svg",
+      "position": "center",
+      "size": "cover"
+    },
+    "source": {
+      "kind": "adapted",
+      "license": "MIT",
+      "author": "ABA Games",
+      "workTitle": "SWINGBY",
+      "url": "https://github.com/abagames/crisp-game-lib-games/blob/cfb39d2f988feb5918eb83697145b5a35adabf58/docs/swingby/main.js",
+      "commit": "cfb39d2f988feb5918eb83697145b5a35adabf58",
+      "notice": "./crisp-original/LICENSES.txt",
+      "notes": "完整无尽原作，原 main.js 逐字保留；共享本地引擎、生成像素和合成音乐。有限关卡为 0。"
+    },
+    "component": "SwingbyOriginal"
+  }
+]

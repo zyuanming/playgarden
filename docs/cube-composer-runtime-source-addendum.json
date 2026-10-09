@@ -1,0 +1,24 @@
+{
+  "name": "Cube Composer complete original 25-level campaign",
+  "version": "a891ffe5de79b072819da04718820d0452b9a201",
+  "license": "MIT",
+  "source": "https://github.com/sharkdp/cube-composer/tree/a891ffe5de79b072819da04718820d0452b9a201",
+  "commit": "a891ffe5de79b072819da04718820d0452b9a201",
+  "preferredSource": [
+    "vendor/cube-composer-original/upstream/src/Transformer.purs",
+    "vendor/cube-composer-original/upstream/src/Levels.purs",
+    "vendor/cube-composer-original/upstream/src/Levels/Chapter0.purs",
+    "vendor/cube-composer-original/upstream/src/Levels/Chapter1.purs",
+    "vendor/cube-composer-original/upstream/src/Levels/Chapter2.purs",
+    "vendor/cube-composer-original/upstream/src/Levels/Chapter3.purs",
+    "vendor/cube-composer-original/upstream/src/Levels/Chapter4.purs",
+    "vendor/cube-composer-original/upstream/src/Levels/Chapter5.purs",
+    "vendor/cube-composer-original/upstream/src/Main.purs",
+    "src/vendor/cubeComposerCore.ts",
+    "src/games/cubeComposerLevelsData.json",
+    "src/games/cubeComposerLevels.ts"
+  ],
+  "buildSources": ["scripts/cube-composer/extract-levels.py", "scripts/cube-composer/verify-sources.py"],
+  "scope": "MIT original ordered 2D cube transformations, exact-composition win rules and all 25 original levels across six chapters; 46 editable original text files retained verbatim. Playgarden React/UI/storage/undo/hints/new SVG are GPL-3.0-only. Upstream build/dependency manifests, old Analytics and DOM code are inert source evidence; no legacy runtime or third-party libraries are executed or bundled.",
+  "notices": ["public/cube-composer-LICENSE.txt", "vendor/cube-composer-original/upstream/LICENSE"]
+}

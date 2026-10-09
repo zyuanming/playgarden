@@ -6,7 +6,7 @@ ROOT = Path(__file__).resolve().parents[2]
 V = ROOT / 'vendor/crisp-original'
 OUT = ROOT / 'public/crisp-original'
 patches = []
-for source_record in json.loads((V/'source-manifest.json').read_text())['files']:
+for source_record in json.loads((V/'source-manifest.json').read_text())['files'] + json.loads((V/'second-games-source-manifest.json').read_text())['files']:
     original_bytes = (V/source_record['dest']).read_bytes()
     assert len(original_bytes) == source_record['expected_bytes']
     assert hashlib.sha256(original_bytes).hexdigest() == source_record['sha256']
@@ -81,7 +81,7 @@ engine=replace(engine,'    function initInGame() {','    function initInGame() {
 engine=replace(engine,'        _update$1();','        _update$1();\n        pgFrames++;\n        if (window.__crispAfterFrame) window.__crispAfterFrame();', 'Read-only observation after complete original frame')
 engine=replace(engine,'            sss.init(seed);','            sss.init(seed, window.__crispAudio.context);', 'Pass the one owned audio context')
 engine=replace(engine,'  isSoundEnabled: opts.isSoundEnabled,','  isSoundEnabled: opts.isSoundEnabled,', 'identity guard') if False else engine
-engine=replace(engine,'        if (opts.isMinifying) {\n            showMinifiedScript();\n        }','        if (opts.theme !== "simple" || opts.isCapturing || opts.isRewindEnabled || opts.isMinifying) throw new Error("Unsupported optional engine mode");\n        if (!window.__crispAudio.context) { isSoundEnabled = false; loopOptions.isSoundEnabled = false; }', 'Reject optional modes that require omitted dependencies; graceful unavailable audio')
+engine=replace(engine,'        if (opts.isMinifying) {\n            showMinifiedScript();\n        }','        if (!["simple", "dark"].includes(opts.theme) || opts.isCapturing || opts.isRewindEnabled || opts.isMinifying) throw new Error("Unsupported optional engine mode");\n        if (!window.__crispAudio.context) { isSoundEnabled = false; loopOptions.isSoundEnabled = false; }', 'Reject optional modes that require omitted dependencies; graceful unavailable audio')
 engine=span(engine,'    function addGameScript() {','    exports.inp = void 0;', '', 'Remove URL-based script loader and remote debug minifier')
 engine=replace(engine,'    exports.addGameScript = addGameScript;\n','', 'Remove loader export')
 engine=replace(engine,'    Object.defineProperty(exports, \'__esModule\', { value: true });','    exports.__crispEngine = Object.freeze({ pause: pgPause, release: pgRelease, restart: pgRestart, dispose: pgDispose, snapshot: pgSnapshot });\n    Object.defineProperty(exports, \'__esModule\', { value: true });', 'Publish bounded lifecycle interface, no state setters')
@@ -103,7 +103,7 @@ for m in matches:
 audio=replace(audio,generator[0],'    var __noiseLast = 0;', 'Remove dynamic compiler; explicitly scope original noise sample state')
 audio=replace(audio,'      document.location.href = audio.src;','      throw new Error("Audio download is not part of this game");','Disable unused audio navigation helper')
 (OUT/'audio.js').write_text('// MIT: ABA Games 2022, Egon Elbre 2017, Nao Yonamine. See LICENSES.txt.\n'+audio)
-for game in ['castn','bamboo','parking']:
+for game in ['castn','bamboo','parking','pizzaarrow','rps','swingby']:
     dest=OUT/game; dest.mkdir(exist_ok=True)
     shutil.copyfile(V/f'upstream/games/docs/{game}/main.js',dest/'main.js')
     (dest/'index.html').write_text('''<!doctype html>
@@ -118,5 +118,5 @@ for label,path in [('Original games','upstream/games/LICENSE.txt'),('crisp-game-
 licenses.append('Modified jsfx attribution, verbatim from original source:\n'+'\n'.join((V/'upstream/audio/lib/jsfx/index.js').read_text().splitlines()[:7]))
 licenses.append((OUT/'THIRD-PARTY-NOTICES.md').read_text())
 (OUT/'LICENSES.txt').write_text('\n\n'.join(licenses))
-(ROOT/'docs/crisp-transform-map.json').write_text(json.dumps({'gameplay':'All three main.js files copied byte-for-byte; no gameplay changes.','patches':patches},ensure_ascii=False,indent=2)+'\n')
+(ROOT/'docs/crisp-transform-map.json').write_text(json.dumps({'gameplay':'All six main.js files copied byte-for-byte; no gameplay changes.','patches':patches},ensure_ascii=False,indent=2)+'\n')
 print('Prepared original game files and deterministic engine/audio adaptation.')
