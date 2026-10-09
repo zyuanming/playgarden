@@ -1537,5 +1537,26 @@ export const games: GameDefinition[] = [
     },
     "component": lazy(() => import("../games/RollingBlockGarden"))
   },
+  {
+    "id": "tile-pairs",
+    "title": "叠牌寻对",
+    "subtitle": "先找自由的一侧，再把相同花牌成对收起。",
+    "category": "空间想象",
+    "difficulty": "中级",
+    "tone": "green",
+    "levelCount": 8,
+    "allowUndo": true,
+    "artwork": {
+      "url": "./tile-pairs-art.svg",
+      "position": "center",
+      "size": "cover"
+    },
+    "source": {
+      "kind": "original",
+      "license": "GPL-3.0-only",
+      "notes": "原创麻将接龙自由牌判定、八个叠牌教学布局与 SVG 图形；未复制第三方源码或素材。"
+    },
+    "component": lazy(() => import("../games/TilePairs"))
+  },
 ];
 export const findGame = (id: string) => games.find((game) => game.id === id);
