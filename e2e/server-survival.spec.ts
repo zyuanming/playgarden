@@ -197,6 +197,17 @@ test("Original Server Survival: real level 1 and 25, local resources, pause, res
       async () => (await read()).services.find((s) => s.id === gpu.id)?.tier,
     )
     .toBe(2);
+  // The observed API Heavy + Traffic Burst combination overloaded the T1
+  // SQL failover pair. Spend the actual remaining budget on both DBs;
+  // purchases still count toward the original net-profit win condition.
+  for (const index of [5, 6]) {
+    const database = (await read()).services[index];
+    expect(database.type).toBe("db");
+    await frame.locator("#pg-edit-node").selectOption(database.id);
+    await act(frame.getByRole("button", { name: "升级选中服务", exact: true }));
+    await expect.poll(async () => (await read()).services[index].tier).toBe(2);
+  }
+  expect((await read()).money).toBe(0);
   await page.screenshot({
     path: info.outputPath("server-original-final-ai-build.png"),
     fullPage: true,
