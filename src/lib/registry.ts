@@ -1883,5 +1883,25 @@ export const games: GameDefinition[] = [
     },
     "component": lazy(() => import("../games/PyramidCards"))
   },
+  {
+    "id": "golf-cards",
+    "title": "逐张纸牌",
+    "subtitle": "让相邻点数接力，珍惜有限储备，清空整条纸牌长廊。",
+    "category": "逻辑思维",
+    "difficulty": "中级",
+    "tone": "purple",
+    "levelCount": 8,
+    "artwork": {
+      "url": "./golf-cards-art.svg",
+      "position": "50% 50%",
+      "size": "cover"
+    },
+    "source": {
+      "kind": "original",
+      "license": "GPL-3.0-only",
+      "notes": "原创邻数废牌接龙规则实现、8 个公开储备顺序的微型教学牌组与 SVG；A/K 不循环，无第三方代码或牌面。"
+    },
+    "component": lazy(() => import("../games/GolfCards"))
+  },
 ];
 export const findGame = (id: string) => games.find((game) => game.id === id);
