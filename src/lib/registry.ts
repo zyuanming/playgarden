@@ -1661,5 +1661,26 @@ export const games: GameDefinition[] = [
     },
     "component": lazy(() => import("../games/ThreeMorrisGarden"))
   },
+  {
+    "id": "fox-hounds",
+    "title": "林间追逐",
+    "subtitle": "狐狸能后退，猎犬只能向前",
+    "category": "逻辑思维",
+    "difficulty": "中级",
+    "tone": "green",
+    "levelCount": 8,
+    "artwork": {
+      "url": "./fox-hounds-art.svg",
+      "position": "center",
+      "size": "cover"
+    },
+    "allowUndo": true,
+    "source": {
+      "kind": "original",
+      "license": "GPL-3.0-only",
+      "notes": "原创狐狸猎犬对弈引擎、六层本地电脑、八道有限逃脱残局、中文说明及 SVG 插画；未复制第三方源码或关卡。"
+    },
+    "component": lazy(() => import("../games/FoxHoundsGarden"))
+  },
 ];
 export const findGame = (id: string) => games.find((game) => game.id === id);
