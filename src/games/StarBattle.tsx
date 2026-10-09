@@ -63,6 +63,6 @@ function StarBattleRound({ level, paused, hintToken, undoToken, onComplete, onSt
       <div className="sb-regions" aria-label="区域星星数量">{Array.from({ length: n }, (_, region) => { const count = stars.filter((cell) => config.regions[cell] === region).length; return <span key={region} className={count === 1 ? "sb-region-done" : count > 1 ? "sb-region-error" : ""}><b>{String.fromCharCode(65 + region)}</b> {count}/1 {count === 1 && <Check size={12} aria-hidden="true" />}</span>; })}</div>
       <p className={`sb-feedback ${won ? "sb-success" : ""}`} role="status">{paused ? "星图已暂停，所有标记都留在原处。" : message}</p>
     </section>
-    <aside className="sb-notes"><span className="sb-eyebrow">一颗星，三个约束</span><h3>为每片夜空，<br />留一颗星星。</h3><p>{config.lesson}</p><ol><li>每一行、每一列都恰好放一颗星星。</li><li>每个粗线围起、同字母的区域也恰好放一颗。</li><li>两颗星星不能上下、左右相邻，也不能斜着相邻。</li></ol><div className="sb-distance" aria-hidden="true"><span>× × ×</span><span>× ★ ×</span><span>× × ×</span></div><p className="sb-small">星星四周的八格都要留空。无需填满所有叉号；任何满足全部规则的安排都算完成。提示会根据当前标记重新寻找可行安排。</p></aside>
+    <aside className="sb-notes"><span className="sb-eyebrow">一颗星，三个约束</span><h3>为每片夜空，<br />留一颗星星。</h3><p>{config.lesson}</p><ol><li>每一行、每一列都恰好放一颗星星。</li><li>每个粗线围起、同字母的区域也恰好放一颗。</li><li>两颗星星不能上下、左右相邻，也不能斜着相邻。</li></ol><div className="sb-distance" aria-hidden="true">{Array.from({length:9},(_,i)=><span key={i}>{i===4?'★':'×'}</span>)}</div><p className="sb-small">星星四周的八格都要留空。无需填满所有叉号；任何满足全部规则的安排都算完成。提示会根据当前标记重新寻找可行安排。</p></aside>
   </div>;
 }

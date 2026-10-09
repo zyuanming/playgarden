@@ -14,6 +14,10 @@ test("star regions: real first and final solutions, notes, pause, undo and resta
   const noOverflow = async () => expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
   await openGame(page, "星星布阵");
   await expect(game).toHaveAttribute("data-star-battle-won", "false");
+  const neighbors = await page.locator(".sb-distance > span").evaluateAll(nodes => nodes.map(node => { const r=node.getBoundingClientRect(); return {x:Math.round(r.x+r.width/2),y:Math.round(r.y+r.height/2)}; }));
+  expect(neighbors).toHaveLength(9);
+  expect(new Set(neighbors.map(p=>p.x)).size).toBe(3);
+  expect(new Set(neighbors.map(p=>p.y)).size).toBe(3);
   await page.screenshot({ path: info.outputPath("star-battle-first-start.png"), fullPage: true, animations: "disabled" });
   const first = starBattleLevels[0].solution[0];
   if (touch) await cell(first).tap();
