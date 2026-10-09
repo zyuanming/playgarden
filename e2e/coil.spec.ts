@@ -93,9 +93,9 @@ test("Coil original: actual loops, bombs, natural loss, frozen pause, restart, r
     // The original trail is only 45 simulation frames long. Thirty-three traced
     // API moves took 1.5 seconds in CI, so their tail vanished before closure.
     // Draw a five-segment lasso within that window. The eastward overshoot and
-    // final upward stroke explicitly cross the entry edge after interpolation.
+    // final inward diagonal explicitly crosses the entry edge after interpolation.
     // Each hold lets the original 0.4 interpolation draw several real frames.
-    for (const [dx, dy] of [[1, -1], [-1, -1], [-1, 1], [1.35, 1], [1.35, -0.5]]) {
+    for (const [dx, dy] of [[1, -1], [-1, -1], [-1, 1], [1.35, 1], [0, -0.5]]) {
       await move(point(dx, dy));
       await page.waitForTimeout(70);
     }
