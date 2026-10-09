@@ -1,3 +1,4 @@
+import { gravityMazeLevels } from "../src/games/gravityMazeLogic";
 import { gardenLinksLevels } from "../src/games/gardenLinksLogic";
 import { storySequenceLevels } from "../src/games/storySequenceLogic";
 import { cloudStackLevels } from "../src/games/cloudStackLogic";
@@ -126,6 +127,7 @@ import { sortingNetworkLevels } from "../src/games/sortingNetworkLogic";
 import { voxelViewsLevels } from "../src/games/voxelViewsLogic";
 import { cubeNetLevels } from "../src/games/cubeNetLogic";
 const packs = {
+  "gravity-maze": gravityMazeLevels,
   "garden-links": gardenLinksLevels,
   "story-sequence": storySequenceLevels,
   "cloud-stack": cloudStackLevels,
@@ -283,8 +285,8 @@ describe("Scalable catalog contract", () => {
       }
     }),
   );
-  it("counts only 125 real games and 2651 levels, not the roadmap", () => {
-    expect(games).toHaveLength(125);
-    expect(games.reduce((sum, g) => sum + g.levelCount, 0)).toBe(2651);
+  it("counts only 126 real games and 2659 levels, not the roadmap", () => {
+    expect(games).toHaveLength(126);
+    expect(games.reduce((sum, g) => sum + g.levelCount, 0)).toBe(2659);
   });
 });
