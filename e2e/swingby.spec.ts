@@ -177,7 +177,11 @@ test("SWINGBY original: right-turn flight, distance score, collision recovery an
     expect(lost!.mechanics.collisionFrames).toBeGreaterThan(recovery.mechanics.collisionFrames);
     expect(lost!.mechanics.healingFrames).toBeGreaterThan(0);
     expect(lost!.mechanics.starGenerations).toBeGreaterThan(0);
-    expect(lost!.difficulty).toBeGreaterThanOrEqual(recovery.difficulty);
+    // The original engine resets ticks in initGameOver(), then derives its
+    // public difficulty from those game-over ticks. The actual collision event
+    // retains the last in-game difficulty; compare that within the same run.
+    expect(lost!.run).toBe(recovery.run);
+    expect(lost!.mechanics.lastCollision!.difficulty).toBeGreaterThanOrEqual(recovery.difficulty);
     expect(lost!.replaying).toBe(false);
     assertDistance(lost!);
     await j.hold(false);

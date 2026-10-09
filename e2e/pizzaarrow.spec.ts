@@ -37,6 +37,7 @@ test("PIZZA ARROW original: slow draw, area cut, increasing arrows, auto-release
   await expect.poll(async () => (await j.read()).phase).toBe("title");
   await j.tap();
   await expect.poll(async () => (await j.read()).phase).toBe("inGame");
+  const redTouch = info.project.name === "mobile" ? await page.context().newCDPSession(page) : null;
 
   async function aim(automatic: boolean, red = false) {
     await j.hold(false);
@@ -45,25 +46,43 @@ test("PIZZA ARROW original: slow draw, area cut, increasing arrows, auto-release
       expect(s.phase).toBe("inGame");
       return m.nextPizzaTicks < 0 && !m.arrow && m.pizza?.y === 50;
     }, { timeout: 6000, intervals: [20] }).toBe(true);
+    // Prepare the pointer before watching the rotating target. Scrolling,
+    // measuring and moving after alignment consumed several live desktop
+    // frames in the failed trace. Actual down/up events still drive the game.
+    await j.canvas.scrollIntoViewIfNeeded();
+    const bounds = (await j.canvas.boundingBox())!;
+    const point = { x: bounds.x + bounds.width / 2, y: bounds.y + bounds.height / 2 };
+    if (red && !redTouch) await page.mouse.move(point.x, point.y);
+    const redHold = async (value: boolean) => {
+      if (redTouch) await redTouch.send("Input.dispatchTouchEvent", {
+        type: value ? "touchStart" : "touchEnd", touchPoints: value ? [{ ...point, id: 7 }] : [],
+      });
+      else if (value) await page.mouse.down();
+      else await page.mouse.up();
+    };
     await expect.poll(async () => {
       const m = (await j.read()).mechanics, p = m.pizza!;
       // Aim midway within the remaining edible arc, or centrally through its gap.
       // Gap shots meet the original inner red arc after travelling farther left.
       const target = red ? wrap((p.to + p.from + tau) / 2) : (p.from + p.to) / 2;
       const drawFrames = Math.max(1, Math.ceil(Math.log(.19 / Math.max(.191, m.gameSpeed - .05)) / Math.log(.9)));
-      const turn = shotRotation(m.gameSpeed, drawFrames, automatic, red ? 38 : 53);
+      // A red shot must pass the outer yellow rim and the inner red arc.
+      // Center that whole corridor in the gap instead of aiming only at its end.
+      const turn = red
+        ? (shotRotation(m.gameSpeed, drawFrames, automatic, 53) + shotRotation(m.gameSpeed, drawFrames, automatic, 38)) / 2
+        : shotRotation(m.gameSpeed, drawFrames, automatic, 53);
       return difference(wrap(-p.angle - turn), target) < .17;
     }, { timeout: 8000, intervals: [15] }).toBe(true);
     const before = await j.read();
-    await j.hold(true);
+    if (red) await redHold(true); else await j.hold(true);
     if (automatic) {
       await expect.poll(async () => (await j.read()).mechanics.autoShots, { timeout: 3500, intervals: [20] }).toBeGreaterThan(before.mechanics.autoShots);
-      await j.hold(false);
+      if (red) await redHold(false); else await j.hold(false);
     } else {
       await expect.poll(async () => (await j.read()).mechanics.gameSpeed, { timeout: 1200, intervals: [15] }).toBeLessThan(.24);
       const slow = await j.read();
       expect(slow.mechanics.arrow?.vx).toBe(1);
-      await j.hold(false);
+      if (red) await redHold(false); else await j.hold(false);
     }
     return before;
   }
@@ -102,4 +121,5 @@ test("PIZZA ARROW original: slow draw, area cut, increasing arrows, auto-release
   expect(lost.mechanics.redLosses).toBeGreaterThan(0);
   expect(lost.mechanics.glancingHits).toBe(lost.mechanics.yellowHits - lost.mechanics.splits);
   await j.finish(lost);
+  await redTouch?.detach();
 });
