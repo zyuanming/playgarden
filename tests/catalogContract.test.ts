@@ -1,3 +1,4 @@
+import { gardenLinksLevels } from "../src/games/gardenLinksLogic";
 import { storySequenceLevels } from "../src/games/storySequenceLogic";
 import { cloudStackLevels } from "../src/games/cloudStackLogic";
 import { crosswordGardenLevels } from "../src/games/crosswordGardenLogic";
@@ -125,6 +126,7 @@ import { sortingNetworkLevels } from "../src/games/sortingNetworkLogic";
 import { voxelViewsLevels } from "../src/games/voxelViewsLogic";
 import { cubeNetLevels } from "../src/games/cubeNetLogic";
 const packs = {
+  "garden-links": gardenLinksLevels,
   "story-sequence": storySequenceLevels,
   "cloud-stack": cloudStackLevels,
   "crossword-garden": crosswordGardenLevels,
@@ -281,8 +283,8 @@ describe("Scalable catalog contract", () => {
       }
     }),
   );
-  it("counts only 124 real games and 2643 levels, not the roadmap", () => {
-    expect(games).toHaveLength(124);
-    expect(games.reduce((sum, g) => sum + g.levelCount, 0)).toBe(2643);
+  it("counts only 125 real games and 2651 levels, not the roadmap", () => {
+    expect(games).toHaveLength(125);
+    expect(games.reduce((sum, g) => sum + g.levelCount, 0)).toBe(2651);
   });
 });

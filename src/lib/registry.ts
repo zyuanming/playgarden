@@ -1803,5 +1803,25 @@ export const games: GameDefinition[] = [
     },
     "component": lazy(() => import("../games/StorySequence"))
   },
+  {
+    "id": "garden-links",
+    "title": "花径连连看",
+    "subtitle": "画一条最多拐两次弯的空路，把相同花牌连起来。",
+    "category": "逻辑思维",
+    "difficulty": "中级",
+    "tone": "green",
+    "levelCount": 8,
+    "artwork": {
+      "url": "./garden-links-art.svg",
+      "position": "center",
+      "size": "cover"
+    },
+    "source": {
+      "kind": "original",
+      "license": "GPL-3.0-only",
+      "notes": "原创两次转弯连线消牌规则、八个固定布局、当前局面搜索提示与 SVG 插画；无第三方源码或素材。"
+    },
+    "component": lazy(() => import("../games/GardenLinks"))
+  },
 ];
 export const findGame = (id: string) => games.find((game) => game.id === id);
