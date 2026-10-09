@@ -1,0 +1,164 @@
+/* SPDX-License-Identifier: GPL-3.0-only */
+.mg-game {
+  display: grid;
+  grid-template-columns: minmax(0, 1.65fr) minmax(230px, 0.75fr);
+  gap: 24px;
+  color: #425c3d;
+}
+.mg-green,
+.mg-notes {
+  min-width: 0;
+  padding: 24px;
+  border: 1px solid #d7e0c8;
+  border-radius: 24px;
+  background: #fcfdf1;
+}
+.mg-green header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+.mg-green header span,
+.mg-notes > span {
+  font-size: 10px;
+  letter-spacing: 1.4px;
+  font-weight: 800;
+  color: #839573;
+}
+.mg-green h3 {
+  font-size: 26px;
+  margin: 8px 0;
+}
+.mg-green header > b {
+  font-size: 35px;
+  color: #729466;
+}
+.mg-green header small {
+  font-size: 13px;
+}
+.mg-green > p,
+.mg-notes p,
+.mg-notes li {
+  font-size: 14px;
+  line-height: 1.8;
+}
+.mg-course {
+  margin: 23px 0 19px;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid #a5ba8c;
+  box-shadow: 0 5px 0 #d4dfc0;
+}
+.mg-course svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.mg-settings {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+  align-items: end;
+}
+.mg-settings label {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  font-size: 11px;
+  color: #7a8663;
+  min-width: 0;
+}
+.mg-settings input {
+  width: 100%;
+  min-width: 0;
+  min-height: 46px;
+  border: 1px solid #b8c6a4;
+  border-radius: 10px;
+  padding: 8px;
+  background: #fffef5;
+  color: #48613d;
+  font:
+    700 19px ui-monospace,
+    monospace;
+}
+.mg-shoot {
+  min-height: 46px;
+  padding: 9px 10px;
+  border: 1px solid #a0b482;
+  border-bottom: 4px solid #879d6a;
+  border-radius: 11px;
+  background: #dfeab8;
+  color: #416137;
+  font-size: 17px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.mg-settings :disabled {
+  opacity: 0.65;
+  cursor: default;
+}
+.mg-settings :focus-visible {
+  outline: 3px solid #a89054;
+  outline-offset: 2px;
+}
+.mg-green .mg-angles {
+  font-size: 11px;
+  text-align: center;
+  color: #8b9778;
+  margin: 13px 0;
+}
+.mg-message {
+  padding: 14px;
+  border-radius: 13px;
+  background: #edf1dd;
+  min-height: 69px;
+}
+.mg-notes {
+  align-self: start;
+  background: #eaf0df;
+}
+.mg-notes h3 {
+  font-size: 30px;
+  line-height: 1.5;
+  margin: 17px 0;
+}
+.mg-notes ol {
+  padding-left: 22px;
+}
+.mg-notes li {
+  margin: 12px 0;
+}
+.mg-notes summary {
+  min-height: 44px;
+  padding: 12px 0;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+}
+@media (max-width: 850px) {
+  .mg-game {
+    grid-template-columns: 1fr;
+  }
+  .mg-green,
+  .mg-notes {
+    padding: 17px;
+  }
+  .mg-green h3 {
+    font-size: 23px;
+  }
+}
+@media (max-width: 450px) {
+  .mg-settings {
+    gap: 7px;
+  }
+  .mg-settings label {
+    font-size: 10px;
+  }
+  .mg-shoot {
+    font-size: 15px;
+  }
+  .mg-settings input {
+    font-size: 17px;
+  }
+}

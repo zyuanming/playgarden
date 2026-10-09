@@ -1,0 +1,142 @@
+/* SPDX-License-Identifier: GPL-3.0-only */
+.rp-game {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(250px, 0.8fr);
+  gap: 24px;
+  color: #365648;
+}
+.rp-court,
+.rp-notes {
+  min-width: 0;
+  background: #fbfcf2;
+  border: 1px solid #d1dfcf;
+  border-radius: 24px;
+  padding: 24px;
+}
+.rp-court header {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  align-items: center;
+}
+.rp-court header span,
+.rp-notes > span {
+  font-size: 10px;
+  letter-spacing: 1.8px;
+  font-weight: 800;
+  color: #879879;
+}
+.rp-court h3 {
+  font-size: 26px;
+  margin: 8px 0;
+}
+.rp-court header > b {
+  font-size: 35px;
+  color: #70917b;
+  white-space: nowrap;
+}
+.rp-court header small {
+  font-size: 22px;
+  color: #b0bea2;
+}
+.rp-meter {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  font-size: 12px;
+  margin: 18px 0;
+  color: #7b8a6d;
+}
+.rp-board {
+  width: min(100%, 350px);
+  margin: auto;
+  touch-action: pan-y;
+  cursor: crosshair;
+  outline: none;
+  border-radius: 22px;
+}
+.rp-board svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  user-select: none;
+}
+.rp-board:focus-visible {
+  outline: 3px solid #b39a55;
+  outline-offset: 3px;
+}
+.rp-serve {
+  display: block;
+  min-width: 180px;
+  min-height: 49px;
+  margin: 17px auto 0;
+  border: 1px solid #9eb68c;
+  border-bottom: 4px solid #869d70;
+  border-radius: 12px;
+  background: #ddebba;
+  color: #41613c;
+  font-size: 16px;
+  font-weight: 800;
+  cursor: pointer;
+}
+.rp-serve:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+.rp-serve:focus-visible {
+  outline: 3px solid #937aa8;
+  outline-offset: 2px;
+}
+.rp-message {
+  font-size: 13px;
+  line-height: 1.85;
+  padding: 14px;
+  background: #eaf0dc;
+  border-radius: 13px;
+  min-height: 66px;
+}
+.rp-notes {
+  background: #e8efe0;
+  align-self: start;
+}
+.rp-notes h3 {
+  font-size: 30px;
+  line-height: 1.5;
+  margin: 17px 0;
+}
+.rp-notes p,
+.rp-notes li {
+  font-size: 14px;
+  line-height: 1.85;
+}
+.rp-notes ol {
+  padding-left: 22px;
+}
+.rp-notes li {
+  margin: 12px 0;
+}
+.rp-notes summary {
+  min-height: 44px;
+  padding: 12px 0;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+}
+@media (max-width: 830px) {
+  .rp-game {
+    grid-template-columns: 1fr;
+  }
+  .rp-court,
+  .rp-notes {
+    padding: 17px;
+  }
+  .rp-board {
+    max-width: 320px;
+  }
+  .rp-court h3 {
+    font-size: 23px;
+  }
+  .rp-meter {
+    font-size: 11px;
+  }
+}
