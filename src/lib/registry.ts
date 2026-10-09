@@ -1823,5 +1823,25 @@ export const games: GameDefinition[] = [
     },
     "component": lazy(() => import("../games/GardenLinks"))
   },
+  {
+    "id": "gravity-maze",
+    "title": "重力回廊",
+    "subtitle": "旋转重力，拾取钥匙、打开门，让小球安全回家。",
+    "category": "空间想象",
+    "difficulty": "中级",
+    "tone": "purple",
+    "levelCount": 8,
+    "artwork": {
+      "url": "./gravity-maze-art.svg",
+      "position": "50% 50%",
+      "size": "cover"
+    },
+    "source": {
+      "kind": "original",
+      "license": "GPL-3.0-only",
+      "notes": "原创重力转向、钥匙门与落点规则，八个地图及 SVG 图形；未复制第三方源码。"
+    },
+    "component": lazy(() => import("../games/GravityMaze"))
+  },
 ];
 export const findGame = (id: string) => games.find((game) => game.id === id);
