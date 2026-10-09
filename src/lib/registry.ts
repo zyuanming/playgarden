@@ -1475,5 +1475,25 @@ export const games: GameDefinition[] = [
     },
     "component": lazy(() => import("../games/ColorTubes"))
   },
+  {
+    "id": "pipe-turns",
+    "title": "水管转转",
+    "subtitle": "旋转弯管与三通，让每朵花喝到水，不留一个漏口。",
+    "category": "空间想象",
+    "difficulty": "中级",
+    "tone": "green",
+    "levelCount": 10,
+    "artwork": {
+      "url": "./pipe-turns-art.svg",
+      "position": "50% 50%",
+      "size": "cover"
+    },
+    "source": {
+      "kind": "original",
+      "license": "GPL-3.0-only",
+      "notes": "原创水管方向规则实现、十个网络关卡与 SVG 图形；未复制第三方源码。"
+    },
+    "component": lazy(() => import("../games/PipeTurns"))
+  },
 ];
 export const findGame = (id: string) => games.find((game) => game.id === id);
