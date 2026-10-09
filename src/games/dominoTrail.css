@@ -1,0 +1,209 @@
+/* SPDX-License-Identifier: GPL-3.0-only */
+.dt-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 250px;
+  gap: 24px;
+  color: #4c4435;
+}
+.dt-workbench {
+  background: linear-gradient(130deg, #f4ecd8, #e7dbc3);
+  border: 1px solid #ddccad;
+  border-radius: 25px;
+  padding: 26px;
+  min-width: 0;
+}
+.dt-workbench header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.dt-workbench header span,
+.dt-guide > span {
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: #9b8256;
+}
+.dt-workbench h3,
+.dt-guide h3 {
+  font-size: 25px;
+  margin: 6px 0;
+}
+.dt-workbench header > b {
+  font-size: 32px;
+  color: #b18f50;
+}
+.dt-workbench header small {
+  font-size: 13px;
+}
+.dt-workbench > p {
+  line-height: 1.7;
+}
+.dt-meta {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  background: #ffffff80;
+  padding: 12px;
+  border-radius: 12px;
+  font-size: 12px;
+}
+.dt-trail {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  min-height: 145px;
+  padding: 24px 0;
+}
+.dt-chain-item {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  align-items: center;
+}
+.dt-chain-item > small {
+  color: #9a8869;
+  font-size: 9px;
+}
+.dt-domino {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 94px;
+  height: 48px;
+  background: #fffdf2 !important;
+  color: #476052;
+  border: 1px solid #b9b09a !important;
+  border-radius: 8px !important;
+  box-shadow: 1px 4px 0 #b8aa8c;
+  padding: 3px !important;
+  flex-shrink: 0;
+}
+.dt-domino svg {
+  width: 40px;
+  height: 40px;
+  fill: currentColor;
+}
+.dt-domino i {
+  height: 32px;
+  width: 1px;
+  background: #d8cdb7;
+  display: block;
+  flex-shrink: 0;
+}
+.dt-ends {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  border-top: 1px dashed #bdaa84;
+  padding-top: 18px;
+}
+.dt-ends button {
+  min-height: 48px;
+  border: 1px solid #a89162 !important;
+  border-radius: 12px !important;
+  background: #fff9e8 !important;
+  padding: 9px 12px !important;
+  color: #685839;
+  cursor: pointer;
+  font-size: 13px;
+}
+.dt-ends button b {
+  padding: 3px 6px;
+  background: #e6d2a5;
+  border-radius: 5px;
+}
+.dt-ends > span {
+  font-size: 11px;
+  color: #8b7654;
+}
+.dt-workbench h4 {
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 13px;
+}
+.dt-workbench h4 small {
+  color: #95815d;
+}
+.dt-rack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  min-height: 56px;
+}
+.dt-rack button {
+  cursor: pointer;
+  min-height: 48px;
+}
+.dt-domino.selected {
+  outline: 3px solid #568872;
+  outline-offset: 1px;
+  transform: translateY(-4px);
+  background: #edf6e8 !important;
+}
+.dt-layout .hinted {
+  box-shadow: 0 0 0 3px #dfb34a !important;
+}
+.dt-layout button:focus-visible {
+  outline: 3px solid #8c69ab;
+  outline-offset: 4px;
+}
+.dt-layout button:disabled {
+  cursor: default;
+}
+.dt-message {
+  background: #fffbed;
+  border-radius: 13px;
+  padding: 15px;
+  min-height: 68px;
+  font-size: 14px;
+  margin-top: 24px;
+}
+.dt-guide {
+  padding: 24px 5px;
+  font-size: 14px;
+  line-height: 1.85;
+}
+.dt-guide ol {
+  padding-left: 21px;
+}
+.dt-guide details {
+  padding: 14px;
+  background: #f7f3e8;
+  border-radius: 12px;
+}
+.dt-guide summary {
+  cursor: pointer;
+}
+@media (max-width: 900px) {
+  .dt-layout {
+    grid-template-columns: 1fr;
+  }
+  .dt-workbench {
+    padding: 18px 13px;
+  }
+  .dt-guide {
+    padding: 6px;
+  }
+  .dt-trail {
+    gap: 7px;
+  }
+  .dt-chain-item .dt-domino {
+    width: 78px;
+    height: 44px;
+  }
+  .dt-chain-item .dt-domino svg {
+    width: 34px;
+    height: 34px;
+  }
+  .dt-ends button {
+    padding: 9px 8px !important;
+  }
+  .dt-rack {
+    gap: 12px 9px;
+  }
+}

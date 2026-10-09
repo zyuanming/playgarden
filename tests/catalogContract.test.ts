@@ -1,3 +1,4 @@
+import { dominoTrailLevels } from "../src/games/dominoTrailLogic";
 import { starBattleLevels } from "../src/games/starBattleLogic";
 import { matchstickEquationsLevels } from "../src/games/matchstickEquationsLogic";
 import { tilePairsLevels } from "../src/games/tilePairsLogic";
@@ -115,6 +116,7 @@ import { sortingNetworkLevels } from "../src/games/sortingNetworkLogic";
 import { voxelViewsLevels } from "../src/games/voxelViewsLogic";
 import { cubeNetLevels } from "../src/games/cubeNetLogic";
 const packs = {
+  "domino-trail": dominoTrailLevels,
   "star-battle": starBattleLevels,
   "matchstick-equations": matchstickEquationsLevels,
   "tile-pairs": tilePairsLevels,
@@ -261,8 +263,8 @@ describe("Scalable catalog contract", () => {
       }
     }),
   );
-  it("counts only 114 real games and 2560 levels, not the roadmap", () => {
-    expect(games).toHaveLength(114);
-    expect(games.reduce((sum, g) => sum + g.levelCount, 0)).toBe(2560);
+  it("counts only 115 real games and 2568 levels, not the roadmap", () => {
+    expect(games).toHaveLength(115);
+    expect(games.reduce((sum, g) => sum + g.levelCount, 0)).toBe(2568);
   });
 });
