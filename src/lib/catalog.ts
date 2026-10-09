@@ -122,6 +122,7 @@ export const GAME_IDS = [
   "scene-differences",
   "cipher-letters",
   "crossword-garden",
+  "cloud-stack",
 ] as const;
 export type GameId = (typeof GAME_IDS)[number];
 export type Category =

@@ -1762,5 +1762,26 @@ export const games: GameDefinition[] = [
     },
     "component": lazy(() => import("../games/CrosswordGarden"))
   },
+  {
+    "id": "cloud-stack",
+    "title": "云端叠楼",
+    "subtitle": "看准重合的一瞬间，让每一层都稳稳留下来。",
+    "category": "动作反应",
+    "difficulty": "中级",
+    "tone": "green",
+    "levelCount": 8,
+    "allowUndo": false,
+    "artwork": {
+      "url": "./cloud-stack-art.svg",
+      "position": "center",
+      "size": "cover"
+    },
+    "source": {
+      "kind": "original",
+      "license": "GPL-3.0-only",
+      "notes": "原创实时重叠裁切叠楼玩法、八个有限训练场与 SVG 插画；无第三方源码或素材。"
+    },
+    "component": lazy(() => import("../games/CloudStack"))
+  },
 ];
 export const findGame = (id: string) => games.find((game) => game.id === id);
