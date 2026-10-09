@@ -42,3 +42,7 @@ The complete editable upstream Slant/open-gomoku/Xiangqi/runner source snapshots
 ## License text provenance
 
 The exact GPLv3 text was obtained from the SPDX license-list-data repository, `text/GPL-3.0-only.txt`, Git blob `f6cdd22a6c1fbc887e08a215cb4beb3c47048041`: https://github.com/spdx/license-list-data/blob/main/text/GPL-3.0-only.txt . Its concluding “How to Apply” section is a general FSF template; the project's actual grant is expressly version 3 only as stated here. Do not change the license's verbatim text to edit that template.
+
+## Server Survival original integration
+
+Server Survival code, level definitions and code-generated geometry retain MIT at commit `7804e5969e28267cd33837e023eb46fa65da72b7`. Its complete 25-level campaign and 26-service simulation are retained. The local Three.js r128 and Tailwind v3.4.17 copies keep their own MIT notices and fixed source mappings in `runtime-source-manifest.json`. Full original sources, modifications and generation scripts are included in this commit. Audio and binary upstream artwork are excluded. Playgarden adapters and original card artwork are GPL-3.0-only. See [integration scope](server-survival-original.md) and the complete root/public third-party notices.

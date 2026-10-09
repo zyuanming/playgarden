@@ -1,0 +1,33 @@
+{
+  "repository": "https://github.com/mrdoob/three.js",
+  "version": "r128",
+  "tagObject": "3a5058266c4c8c353f2f2d926d03c897a52afa48",
+  "commit": "d4aa9e00ea29808534a3e082f602c544e5f2419c",
+  "license": "MIT",
+  "copyright": "2010-2021 Three.js Authors",
+  "upstreamSource": "https://github.com/mrdoob/three.js/tree/d4aa9e00ea29808534a3e082f602c544e5f2419c/src",
+  "upstreamBuildConfiguration": "https://github.com/mrdoob/three.js/blob/d4aa9e00ea29808534a3e082f602c544e5f2419c/utils/build/rollup.config.js",
+  "files": [
+    {
+      "path": "three.js",
+      "upstreamPath": "build/three.js",
+      "bytes": 1143038,
+      "gitBlobSha1": "11c38a4471bc3c1d83809d524268506f3e903f56",
+      "sha256": "ffb3e7d06010b75b3ab9ee862085e75073f028986116e454615fdfe69dd66084"
+    },
+    {
+      "path": "three.min.js",
+      "upstreamPath": "build/three.min.js",
+      "bytes": 603445,
+      "gitBlobSha1": "b14f47c0908bab15e890b468d53bb07db0be3a18",
+      "sha256": "9274bbcec8d96168626c732b5d31c775aa8cfb7eaa0599bec0c175908a2c1ce2"
+    },
+    {
+      "path": "LICENSE",
+      "upstreamPath": "LICENSE",
+      "bytes": 1081,
+      "gitBlobSha1": "5303437e406ed22d8cb0b4c12398870792a25878",
+      "sha256": "7dddf7c5b8fd10ee654db8857d75d104b5557889aa5a91fc4ca545ea7c07062f"
+    }
+  ]
+}

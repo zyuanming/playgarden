@@ -27,6 +27,9 @@ for(const component of sources.components){
  }
  text+=component.source+'\nPreferred editable source: '+component.preferredSource.join(', ')+'\nBuild sources: '+component.buildSources.join(', ')+'\n\n';
 }
+for(const component of sources.vendoredComponents ?? []){
+ text+=component.name+' '+component.version+' ('+component.license+')\n'+component.source+'\nPreferred editable source: '+component.preferredSource.join(', ')+'\nBuild sources: '+component.buildSources.join(', ')+'\n'+component.scope+'\n\n';
+}
 const output='public/THIRD_PARTY_NOTICES.txt';
 if(check){if(readFileSync(output,'utf8')!==text)throw new Error('Public third-party notices are stale; run node scripts/sync-license-notices.mjs');}
 else writeFileSync(output,text);
