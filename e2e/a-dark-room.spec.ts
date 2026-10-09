@@ -68,8 +68,10 @@ test('full original campaign: opening, village, exploration, failure, flight end
   await act(frame.locator('#lightButton'),mobile);expect((await read(frame)).game.fire.value).toBe(3);
   await clock(page,125000);expect((await read(frame)).game.builder.level).toBeGreaterThanOrEqual(3);
   await act(frame.locator('#location_outside'),mobile);await act(frame.locator('#gatherButton'),mobile);
-  const wood=(await read(frame)).stores.wood;expect(wood).toBeGreaterThanOrEqual(10);
-  await act(frame.locator('#location_room'),mobile);await act(frame.locator('[buildThing="trap"]'),mobile);
+  await act(frame.locator('#location_room'),mobile);
+  // The original builder reveals crafting on her first ten-second wood income.
+  await clock(page,11000);const wood=(await read(frame)).stores.wood;expect(wood).toBeGreaterThanOrEqual(10);
+  await act(frame.locator('[buildThing="trap"]'),mobile);
   expect((await read(frame)).game.buildings.trap).toBe(1);expect((await read(frame)).stores.wood).toBe(wood-10);
   await page.screenshot({path:info.outputPath('adr-earned-opening-and-trap.png'),fullPage:true});
   await act(page.getByRole('button',{name:'暂停',exact:true}),mobile);const frozen=await read(frame);await clock(page,10000);
