@@ -1,3 +1,4 @@
+import { chompGardenLevels } from "../src/games/chompGardenLogic";
 import { pipeTurnsLevels } from "../src/games/pipeTurnsLogic";
 import { colorTubesLevels } from "../src/games/colorTubesLogic";
 import { petalWordLevels } from "../src/games/petalWordsLogic";
@@ -110,6 +111,7 @@ import { sortingNetworkLevels } from "../src/games/sortingNetworkLogic";
 import { voxelViewsLevels } from "../src/games/voxelViewsLogic";
 import { cubeNetLevels } from "../src/games/cubeNetLogic";
 const packs = {
+  "chomp-garden": chompGardenLevels,
   "pipe-turns": pipeTurnsLevels,
   "color-tubes": colorTubesLevels,
   flood: floodLevels,
@@ -251,8 +253,8 @@ describe("Scalable catalog contract", () => {
       }
     }),
   );
-  it("counts only 109 real games and 2516 levels, not the roadmap", () => {
-    expect(games).toHaveLength(109);
-    expect(games.reduce((sum, g) => sum + g.levelCount, 0)).toBe(2516);
+  it("counts only 110 real games and 2524 levels, not the roadmap", () => {
+    expect(games).toHaveLength(110);
+    expect(games.reduce((sum, g) => sum + g.levelCount, 0)).toBe(2524);
   });
 });
