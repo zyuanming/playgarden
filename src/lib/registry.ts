@@ -1578,5 +1578,25 @@ export const games: GameDefinition[] = [
     },
     "component": lazy(() => import("../games/MatchstickEquations"))
   },
+  {
+    "id": "star-battle",
+    "title": "星星布阵",
+    "subtitle": "每行、每列、每片区域一颗星，彼此留出距离。",
+    "category": "逻辑思维",
+    "difficulty": "中级",
+    "tone": "green",
+    "levelCount": 10,
+    "artwork": {
+      "url": "./star-battle-art.svg",
+      "position": "50% 50%",
+      "size": "cover"
+    },
+    "source": {
+      "kind": "original",
+      "license": "GPL-3.0-only",
+      "notes": "原创规则实现、10 份区域星图、中文界面和 SVG 插画；经典星星布阵规则，未复制第三方源码、关卡或素材。"
+    },
+    "component": lazy(() => import("../games/StarBattle"))
+  },
 ];
 export const findGame = (id: string) => games.find((game) => game.id === id);

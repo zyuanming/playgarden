@@ -1,3 +1,4 @@
+import { starBattleLevels } from "../src/games/starBattleLogic";
 import { matchstickEquationsLevels } from "../src/games/matchstickEquationsLogic";
 import { tilePairsLevels } from "../src/games/tilePairsLogic";
 import { rollingBlockLevels } from "../src/games/rollingBlockLogic";
@@ -114,6 +115,7 @@ import { sortingNetworkLevels } from "../src/games/sortingNetworkLogic";
 import { voxelViewsLevels } from "../src/games/voxelViewsLogic";
 import { cubeNetLevels } from "../src/games/cubeNetLogic";
 const packs = {
+  "star-battle": starBattleLevels,
   "matchstick-equations": matchstickEquationsLevels,
   "tile-pairs": tilePairsLevels,
   "rolling-block": rollingBlockLevels,
@@ -259,8 +261,8 @@ describe("Scalable catalog contract", () => {
       }
     }),
   );
-  it("counts only 113 real games and 2550 levels, not the roadmap", () => {
-    expect(games).toHaveLength(113);
-    expect(games.reduce((sum, g) => sum + g.levelCount, 0)).toBe(2550);
+  it("counts only 114 real games and 2560 levels, not the roadmap", () => {
+    expect(games).toHaveLength(114);
+    expect(games.reduce((sum, g) => sum + g.levelCount, 0)).toBe(2560);
   });
 });
