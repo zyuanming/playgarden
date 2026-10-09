@@ -1,3 +1,4 @@
+import { colorTubesLevels } from "../src/games/colorTubesLogic";
 import { petalWordLevels } from "../src/games/petalWordsLogic";
 import { starSentryLevels } from "../src/games/starSentryLogic";
 import { freecellGardenLevels } from "../src/games/freecellGardenLevels";
@@ -108,6 +109,7 @@ import { sortingNetworkLevels } from "../src/games/sortingNetworkLogic";
 import { voxelViewsLevels } from "../src/games/voxelViewsLogic";
 import { cubeNetLevels } from "../src/games/cubeNetLogic";
 const packs = {
+  "color-tubes": colorTubesLevels,
   flood: floodLevels,
   akari: akariLevels,
   galaxies: galaxiesLevels,
@@ -247,8 +249,8 @@ describe("Scalable catalog contract", () => {
       }
     }),
   );
-  it("counts only 107 real games and 2498 levels, not the roadmap", () => {
-    expect(games).toHaveLength(107);
-    expect(games.reduce((sum, g) => sum + g.levelCount, 0)).toBe(2498);
+  it("counts only 108 real games and 2506 levels, not the roadmap", () => {
+    expect(games).toHaveLength(108);
+    expect(games.reduce((sum, g) => sum + g.levelCount, 0)).toBe(2506);
   });
 });

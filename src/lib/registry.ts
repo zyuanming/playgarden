@@ -1454,5 +1454,26 @@ export const games: GameDefinition[] = [
     source: { kind: "original", license: "GPL-3.0-only", notes: "原创有限字母猜词实现，12封词语花信、中文线索与SVG插画；重复字母一次全开，错误消耗花瓣，支持明示成本的提示和撤销。无外部词典、代码或素材。" },
     component: lazy(() => import("../games/PetalWords")),
   },
+  {
+    "id": "color-tubes",
+    "title": "彩珠归管",
+    "subtitle": "借用空管，把彩珠整理成一管一种颜色。",
+    "category": "逻辑思维",
+    "difficulty": "中级",
+    "tone": "green",
+    "levelCount": 8,
+    "allowUndo": true,
+    "artwork": {
+      "url": "./color-tubes-art.svg",
+      "position": "center",
+      "size": "cover"
+    },
+    "source": {
+      "kind": "original",
+      "license": "GPL-3.0-only",
+      "notes": "原创彩珠分类规则实现、八个教学布局与 SVG 图形；未复制第三方源码或素材。"
+    },
+    "component": lazy(() => import("../games/ColorTubes"))
+  },
 ];
 export const findGame = (id: string) => games.find((game) => game.id === id);
