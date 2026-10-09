@@ -1702,5 +1702,25 @@ export const games: GameDefinition[] = [
     },
     "component": lazy(() => import("../games/SoloChess"))
   },
+  {
+    "id": "scene-differences",
+    "title": "找不同花园",
+    "subtitle": "并排看两幅小花园，找出悄悄发生的五处变化。",
+    "category": "记忆观察",
+    "difficulty": "初级",
+    "tone": "green",
+    "levelCount": 8,
+    "artwork": {
+      "url": "./scene-differences-art.svg",
+      "position": "center",
+      "size": "cover"
+    },
+    "source": {
+      "kind": "original",
+      "license": "GPL-3.0-only",
+      "notes": "原创场景差异规则、八幅配对花园、SVG物件和中文说明；没有外部图片或游戏源码。"
+    },
+    "component": lazy(() => import("../games/SceneDifferences"))
+  },
 ];
 export const findGame = (id: string) => games.find((game) => game.id === id);
