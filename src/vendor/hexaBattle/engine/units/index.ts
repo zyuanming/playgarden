@@ -1,0 +1,18 @@
+// Original Hexa Battle, Copyright (c) 2017 Giacomo Tagliabue, MIT.
+// Playgarden: strict types and resistance underflow correction; see vendor/hexa-battle-original.
+export { default as archer } from './archer'
+export { default as barbarian } from './barbarian'
+export { default as bat } from './bat'
+export { default as catapult } from './catapult'
+export { default as cleric } from './cleric'
+export { default as demon } from './demon'
+export { default as dragon } from './dragon'
+export { default as giant } from './giant'
+export { default as horseman } from './horseman'
+export { default as knight } from './knight'
+export { default as mage } from './mage'
+export { default as orc } from './orc'
+export { default as orcArcher } from './orcArcher'
+export { default as spider } from './spider'
+export { default as troll } from './troll'
+export { default as warrior } from './warrior'
