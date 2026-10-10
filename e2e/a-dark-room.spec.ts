@@ -96,6 +96,8 @@ test('full original campaign: opening, village, exploration, failure, flight end
   const hunters=frame.locator('.workerRow').filter({has:frame.locator('.row_key').filter({hasText:/猎人|hunter/})});
   await act(hunters.locator('.upBtn'),mobile);const meat=(await read(frame)).stores.meat;await clock(page,11000);
   expect((await read(frame)).game.workers.hunter).toBe(1);expect((await read(frame)).stores.meat).toBeGreaterThan(meat);
+  await expect(frame.locator('[id="village"]')).toHaveCount(1);
+  for(const item of ['hut','lodge','trap'])await expect(frame.locator(`[id="building_row_${item}"]`)).toHaveCount(1);
   await page.screenshot({path:info.outputPath('adr-village-checkpoint-real-worker-income.png'),fullPage:true});
   await act(frame.locator('#location_path'),mobile);
   await act(frame.locator('#outfit_row_iron-sword .upBtn'),mobile);await act(frame.locator('#outfit_row_torch .upBtn'),mobile);
@@ -109,7 +111,11 @@ test('full original campaign: opening, village, exploration, failure, flight end
   // If the house branch was quiet, walk nearby until one real encounter occurs.
   for(let i=0;i<16&&(await read(frame)).counters.battles===0;i++){await step(page,frame,i%2?1:-1,0,mobile);await settleEvent(page,frame,mobile);}
   expect((await read(frame)).counters.battles).toBeGreaterThan(0);
+  const supplies=await frame.locator('#bagspace-world').boundingBox();expect(supplies!.width).toBeGreaterThan(200);
+  await expect(frame.locator('#supply_water')).toBeVisible();
+  expect(await frame.locator('#bagspace-world').evaluate(el=>el.scrollWidth<=el.clientWidth)).toBe(true);
   await page.screenshot({path:info.outputPath('adr-original-world-and-earned-exploration.png'),fullPage:true});
+  if(mobile){await page.locator('iframe').evaluate(el=>el.scrollIntoView({block:'start'}));await page.screenshot({path:info.outputPath('adr-world-mobile-viewport.png')});}
   await travel(page,frame,[30,30],mobile);expect((await read(frame)).module).toBe('Path');expect((await read(frame)).counters.homecomings).toBeGreaterThan(0);
   await showSave(frame,mobile);await act(frame.locator('#export'),mobile);const exported=await frame.locator('#description textarea').inputValue();
   expect(JSON.parse(Buffer.from(exported,'base64').toString('utf8')).game.world.map).toHaveLength(61);
@@ -136,10 +142,13 @@ test('full original campaign: opening, village, exploration, failure, flight end
   s=await read(frame);expect(s.flight.x).toBeGreaterThan(350);expect(s.flight.y).toBeLessThan(350);expect(s.flight.directions).toEqual([false,false,false,false]);
   await act(page.getByRole('button',{name:'暂停',exact:true}),mobile);const flightPause=await read(frame);await clock(page,5000);
   expect((await read(frame)).flight).toEqual(flightPause.flight);await act(page.getByRole('button',{name:'继续游戏',exact:true}),mobile);
+  if(mobile){await page.locator('iframe').evaluate(el=>el.scrollIntoView({block:'start'}));const view=await frame.locator('#adr-space-viewport').boundingBox(),keys=await frame.locator('#adr-directions').boundingBox();expect(view!.y).toBeGreaterThanOrEqual(0);expect(keys!.y+keys!.height).toBeLessThanOrEqual(page.viewportSize()!.height);await page.screenshot({path:info.outputPath('adr-flight-mobile-viewport.png')});}
   await page.screenshot({path:info.outputPath('adr-original-flight-and-touch-controls.png'),fullPage:true});
   for(let i=0;i<90&&!(await read(frame)).finished;i++)await clock(page,1000);
   s=await read(frame);expect(s.finished).toBe(true);expect(s.counters.endings).toBe(1);expect(s.ending.total).toBeGreaterThan(0);
   await expect(page.locator('.adr-victory')).toContainText('旅程完成');
+  // The original ending fades in for 1500 ms after setting GAME_OVER.
+  await clock(page,1600);await expect(frame.locator('.endGameOption')).toHaveCSS('opacity','1');
   await page.screenshot({path:info.outputPath('adr-real-ending-and-prestige.png'),fullPage:true});
   await act(frame.locator('.endGameOption').first(),mobile);await act(frame.locator('#yes'),mobile);
   frame=await gameFrame(page);await expect.poll(async()=>{try{return (await read(frame)).module;}catch{return 'loading';}}).toBe('Room');

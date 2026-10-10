@@ -30,12 +30,15 @@
     if(stores&&main&&stores.parentElement!==main)main.append(stores);
     const panels={Room:'roomPanel',Outside:'outsidePanel',Path:'pathPanel',Ship:'shipPanel'};
     document.querySelectorAll('#locationSlider > .location').forEach(el=>el.classList.toggle('adr-active',el.id===panels[name]));
-    document.getElementById('adr-directions').hidden=!['World','Space'].includes(name)||Engine.GAME_OVER;
+    const directions=document.getElementById('adr-directions'),wrapper=document.getElementById('wrapper');
+    if(directions.parentElement!==wrapper)wrapper.append(directions);
+    directions.hidden=!['World','Space'].includes(name)||Engine.GAME_OVER;
     const space=document.getElementById('spacePanel');
     if(space){
       let viewport=document.getElementById('adr-space-viewport');
       if(!viewport){viewport=document.createElement('div');viewport.id='adr-space-viewport';space.before(viewport);viewport.append(space);}
-      const width=Math.min(700,document.getElementById('wrapper').clientWidth);viewport.style.height=width+'px';space.style.transform='scale('+(width/700)+')';
+      const hostHeight=parseFloat(document.documentElement.style.getPropertyValue('--adr-host-height'))||innerHeight;
+      const width=Math.min(700,wrapper.clientWidth,Math.max(220,hostHeight-180));viewport.style.height=width+'px';space.style.transform='scale('+(width/700)+')';
     }
     const world=document.getElementById('map');
     if(world&&!world.parentElement.classList.contains('adr-map-scroll')){const scroll=document.createElement('div');scroll.className='adr-map-scroll';scroll.tabIndex=0;scroll.setAttribute('aria-label','完整世界地图，可左右滚动');world.before(scroll);scroll.append(world);}
@@ -105,6 +108,11 @@
   // The old fixed-height gradient is absent in the scrolling layout. Retain a
   // bounded readable history instead of treating its zero height as a cutoff.
   Notifications.clearHidden=function(){document.querySelectorAll('#notifications .notification').forEach((el,index)=>{if(index>=80)el.remove();});};
+  // Adding a newly unlocked worker synchronously emits a state change while
+  // the original village view is still detached. Finish that render before
+  // handling later updates, avoiding duplicate panels without changing state.
+  const updateVillage=Outside.updateVillage;let drawingVillage=false;
+  Outside.updateVillage=function(...args){if(drawingVillage)return;drawingVillage=true;try{return updateVillage.apply(this,args);}finally{drawingVillage=false;}};
   document.getElementById('saveNotify').textContent=_('saved.');
   Engine.init();
   observer=new MutationObserver(()=>layout());
