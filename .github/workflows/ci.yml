@@ -162,6 +162,7 @@ jobs:
           const hexahedralChunks=new Set();
           const asteroidsChunks=new Set();
           const beatrixChunks=new Set();
+          const vikingChunks=new Set();
           for(const asset of paths){
             if(asset.origin!==new URL(url).origin)continue;
             const r=await fetch(asset);if(!r.ok)throw Error(`Missing entry resource: ${asset.pathname}`);
@@ -169,6 +170,7 @@ jobs:
             console.log('Entry resource OK:',asset.pathname);
             for(const match of text.matchAll(/\.\/HexaBattleGame-[a-zA-Z0-9_-]+\.js/g))hexaChunks.add(new URL(match[0],asset).href);
             for(const match of text.matchAll(/\.\/HexahedralGame-[a-zA-Z0-9_-]+\.js/g))hexahedralChunks.add(new URL(match[0],asset).href);
+            for(const match of text.matchAll(/\.\/VikingGame-[a-zA-Z0-9_-]+\.js/g))vikingChunks.add(new URL(match[0],asset).href);
             for(const match of text.matchAll(/\.\/BeatrixGame-[a-zA-Z0-9_-]+\.js/g))beatrixChunks.add(new URL(match[0],asset).href);
             for(const match of text.matchAll(/\.\/AsteroidsGame-[a-zA-Z0-9_-]+\.js/g))asteroidsChunks.add(new URL(match[0],asset).href);
           }
@@ -176,6 +178,9 @@ jobs:
           for(const asset of hexaChunks){const r=await fetch(asset,{cache:'no-store'});if(!r.ok)throw Error('Missing public Hexa Battle runtime');const text=await r.text();if(text.length<1000||/^\s*<!doctype html/i.test(text))throw Error('Invalid Hexa Battle runtime');console.log('Hexa Battle runtime OK:',asset);}
           if(hexahedralChunks.size!==1)throw Error('Missing Hexahedral runtime from public application entry');
           for(const asset of hexahedralChunks){const r=await fetch(asset,{cache:'no-store'});if(!r.ok)throw Error('Missing public Hexahedral runtime');const text=await r.text();if(text.length<1000||/^\s*<!doctype html/i.test(text))throw Error('Invalid Hexahedral runtime');console.log('Hexahedral runtime OK:',asset);}
+          if(vikingChunks.size!==1)throw Error('Missing Viking runtime from public entry');
+          for(const asset of vikingChunks){const r=await fetch(asset,{cache:'no-store'});if(!r.ok)throw Error('Missing public Viking runtime');const text=await r.text();if(text.length<1000||/^\s*<!doctype html/i.test(text))throw Error('Invalid Viking runtime');console.log('Viking runtime OK:',asset);}
+          for(const path of ['viking-LICENSE.txt','viking-art.svg']){const r=await fetch(new URL(path,url),{cache:'no-store'});if(!r.ok)throw Error('Missing public Viking resource: '+path);const digest=bytes=>createHash('sha256').update(bytes).digest('hex');if(digest(Buffer.from(await r.arrayBuffer()))!==digest(readFileSync('public/'+path)))throw Error('Viking resource mismatch: '+path);console.log('Viking exact resource OK:',path);}
           if(beatrixChunks.size!==1)throw Error('Missing Beatrix runtime from public entry');
           for(const asset of beatrixChunks){const r=await fetch(asset,{cache:'no-store'});if(!r.ok)throw Error('Missing public Beatrix runtime');const text=await r.text();if(text.length<1000||/^\s*<!doctype html/i.test(text))throw Error('Invalid Beatrix runtime');console.log('Beatrix runtime OK:',asset);}
           for(const path of ['beatrix-LICENSE.txt','beatrix-art.svg']){const r=await fetch(new URL(path,url),{cache:'no-store'});if(!r.ok)throw Error('Missing public Beatrix resource: '+path);const digest=bytes=>createHash('sha256').update(bytes).digest('hex');if(digest(Buffer.from(await r.arrayBuffer()))!==digest(readFileSync('public/'+path)))throw Error('Beatrix resource mismatch: '+path);console.log('Beatrix exact resource OK:',path);}

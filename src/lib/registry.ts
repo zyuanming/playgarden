@@ -2652,5 +2652,32 @@ export const games: GameDefinition[] = [
   },
   "component": lazy(() => import("../games/BeatrixGame"))
 },
+{
+  "id": "viking",
+  "title": "维京倒行记",
+  "subtitle": "倒着走过昨夜的足迹，在完整原作7日地图中修复物件、寻找出口。",
+  "category": "逻辑思维",
+  "difficulty": "中级",
+  "tone": "orange",
+  "levelCount": 7,
+  "allowUndo": true,
+  "resumeKey": "playgarden.viking.v1",
+  "artwork": {
+    "url": "./viking-art.svg",
+    "position": "center",
+    "size": "cover"
+  },
+  "source": {
+    "kind": "adapted",
+    "license": "MIT",
+    "author": "Cong",
+    "workTitle": "Drunken Viking（完整原作7日）",
+    "url": "https://github.com/cxong/DrunkenViking/tree/356d8e19f27060e3330de73fa1e0c68accfc5c79",
+    "commit": "356d8e19f27060e3330de73fa1e0c68accfc5c79",
+    "notice": "./viking-LICENSE.txt",
+    "notes": "完整保留7张20×15原地图、物件复原障碍、墙面碰触、独立百分比评分及正向指令回放。原源码/地图MIT；本站中文React、输入存储和原创SVG为GPL-3.0-only。未使用原图片、音频、字体或Phaser；同一屋舍的七日布局不冒充七种场景。"
+  },
+  component: lazy(() => import("../games/VikingGame"))
+},
 ];
 export const findGame = (id: string) => games.find((game) => game.id === id);
