@@ -2,7 +2,7 @@ import { expect, test, type Page, type Frame, type CDPSession } from '@playwrigh
 import { readFileSync } from 'node:fs';
 import { openGame, chooseLevel, captureErrors } from './helpers';
 type Actor = { x: number; y: number; vx: number; vy: number; wasHuman: boolean; opened: boolean };
-type Reading = { phase: string; paused: boolean; level: number; lives: number; ammo: number; hasKey: boolean; hasGun: boolean; availableLevel: number; frames: number; elapsed: number; hint: string; player: (Actor & { form: string; grounded: boolean; wasZombie: boolean }) | null; objects: Record<string, Actor[]>; inputs: Record<string, boolean>; summary: { level: number; stars: number; health: { collected: number }; zombies: { healed: number; available: number } } | null };
+type Reading = { phase: string; paused: boolean; level: number; lives: number; ammo: number; hasKey: boolean; hasGun: boolean; availableLevel: number; frames: number; elapsed: number; hint: string; player: (Actor & { direction: 'left' | 'right'; form: string; grounded: boolean; wasZombie: boolean }) | null; objects: Record<string, Actor[]>; inputs: Record<string, boolean>; summary: { level: number; stars: number; health: { collected: number }; zombies: { healed: number; available: number } } | null };
 type Input = 'left' | 'right' | 'action' | 'fire';
 const read = (frame: Frame) => frame.evaluate(() => (window as unknown as { __healRead: () => Reading }).__healRead());
 
@@ -97,7 +97,8 @@ test('six-stage original: earned first, middle and final routes with touch and l
     const initial = (await read(frame)).player!;
     if (Math.abs(initial.x - x) < 5) return;
     const direction: Input = initial.x < x ? 'right' : 'left';
-    const deadline = Date.now() + Math.abs(x - initial.x) / 300 * 1000 + 1800;
+    let deadline = Date.now() + Math.abs(x - initial.x) / 300 * 1000 + 1800;
+    let combatTime = 0;
     let hoppedOverGuard = false;
     let s = await read(frame);
     while (s.player && (direction === 'right' ? s.player.x < x : s.player.x > x) && Date.now() < deadline) {
@@ -112,7 +113,15 @@ test('six-stage original: earned first, middle and final routes with touch and l
         hoppedOverGuard = true;
         s = await read(frame); continue;
       }
-      const next: Input[] = shoot && s.hasGun && enemyAhead ? [direction, 'fire'] : [direction];
+      if (shoot && s.hasGun && enemyAhead) {
+        // Stop at range, heal through the original projectile/cooldown, then
+        // advance. Running into an enemy while waiting for a shot is unsafe.
+        const began = Date.now(); await healNearby();
+        const spent = Date.now() - began; combatTime += spent;
+        expect(combatTime, 'bounded real combat between walking segments').toBeLessThan(12000);
+        deadline += spent; s = await read(frame); continue;
+      }
+      const next: Input[] = [direction];
       if (next.join() !== pressed.join()) await setInputs(next);
       await page.waitForTimeout(20); s = await read(frame);
     }
@@ -125,13 +134,39 @@ test('six-stage original: earned first, middle and final routes with touch and l
     await ground(targetY); await setInputs([]);
   }
   async function healNearby() {
+    await setInputs([]);
     let state = await read(frame);
     if (!state.hasGun || state.ammo === 0 || !state.player) return;
-    const p = state.player;
-    const enemy = state.objects.Zombie.filter(z => Math.abs(z.y - p.y) < 30 && Math.abs(z.x - p.x) < 440).sort((a, b) => Math.abs(a.x - p.x) - Math.abs(b.x - p.x))[0];
+    let p = state.player;
+    let enemy = state.objects.Zombie.filter(z => Math.abs(z.y - p.y) < 30 && Math.abs(z.x - p.x) < 440).sort((a, b) => Math.abs(a.x - p.x) - Math.abs(b.x - p.x))[0];
     if (!enemy) return;
-    const direction: Input = enemy.x < p.x ? 'left' : 'right';
-    await setInputs([direction]); await page.waitForTimeout(35); await setInputs(['fire']); await page.waitForTimeout(600); await setInputs([]);
+    let direction: Input = enemy.x < p.x ? 'left' : 'right';
+    // Turning is a real movement input. At close range first create room on
+    // this same authored platform, rather than walking into the enemy to aim.
+    if (p.direction !== direction && Math.abs(enemy.x - p.x) < 150) {
+      const bounds = platformAt(state.level, p.x, p.y);
+      const away = enemy.x < p.x ? 1 : -1;
+      const retreat = Math.max(bounds.left, Math.min(bounds.right, p.x + away * 120));
+      expect(Math.abs(retreat - enemy.x), 'safe physical room before turning').toBeGreaterThan(100);
+      await move(retreat);
+      state = await read(frame); p = state.player!;
+      enemy = state.objects.Zombie.filter(z => Math.abs(z.y - p.y) < 30 && Math.abs(z.x - p.x) < 440).sort((a, b) => Math.abs(a.x - p.x) - Math.abs(b.x - p.x))[0];
+      if (!enemy) return;
+      direction = enemy.x < p.x ? 'left' : 'right';
+    }
+    if (p.direction !== direction) {
+      await setInputs([direction]);
+      await waitFor(s => s.player?.direction === direction, 'physical aim direction', 700);
+      await setInputs([]);
+    }
+    const beforeShot = await read(frame), targetX = enemy.x, targetY = enemy.y, reinfected = enemy.wasHuman;
+    await setInputs(['fire']);
+    await waitFor(s => s.ammo < beforeShot.ammo &&
+      !s.objects.Zombie.some(z => Math.abs(z.y - targetY) < 30 && Math.abs(z.x - targetX) < 130) &&
+      (reinfected ? s.objects.DeadZombie : s.objects.Human).some(h => Math.abs(h.y - targetY) < 30 && Math.abs(h.x - targetX) < 130),
+    'actual projectile consumes ammo and resolves the nearby zombie by its original rule', 1500);
+    await setInputs([]);
+    expect((await read(frame)).player?.form, 'healing from rest avoids contact infection').toBe('human');
   }
   function platformAt(level: number, x: number, y: number) {
     // Read the authored collision map only to choose a safe place to step off
@@ -151,18 +186,45 @@ test('six-stage original: earned first, middle and final routes with touch and l
     await move(x);
     let state = await read(frame);
     const bounds = platformAt(state.level, x, y), deadline = Date.now() + 6000;
+    let landingX: number | null = null;
     while (!(state.player && Math.abs(state.player.y - y) < 4 && state.player.grounded) && Date.now() < deadline) {
       const p = state.player;
       if (!p || state.phase === 'gameover' || p.form !== 'human') throw Error('Actual death or infection while dropping onto the authored platform');
-      // Original characters are solid. Waiting motionless on a zombie is not
-      // a landing: it repeatedly damages the player. Step toward the platform
-      // interior using normal input, then heal it from the same floor height.
-      if (p.grounded && state.objects.Zombie.some(z => Math.abs(p.y - (z.y - 100)) < 6 && Math.abs(z.y - y) < 20 && Math.abs(z.x - p.x) < 65)) {
-        const direction = p.x > (bounds.left + bounds.right) / 2 ? -1 : 1;
-        await move(Math.max(bounds.left, Math.min(bounds.right, p.x + direction * 115)), true);
+      const threats = state.objects.Zombie.filter(z => Math.abs(z.y - y) < 20);
+      if (!p.grounded && p.y < y - 100 && threats.some(z => Math.abs(z.x - p.x) < 220)) {
+        // Read-only prediction uses the original 980px/s² gravity and 330px/s
+        // steering speed. Pick reachable clear space before head contact;
+        // all movement is still performed through the real controls.
+        const seconds = (-p.vy + Math.sqrt(p.vy * p.vy + 2 * 980 * (y - 100 - p.y))) / 980;
+        const reach = Math.max(0, seconds - .12) * 330;
+        const low = Math.max(bounds.left, p.x - reach), high = Math.min(bounds.right, p.x + reach);
+        if (low <= high) {
+          const candidates = [low, high, Math.max(low, Math.min(high, p.x))];
+          // Allow an enemy to reverse: subtract its full possible travel from
+          // present separation. Recheck on every observation, retaining a
+          // previous target only while it still provides a 95px body margin.
+          const clearance = (at: number) => Math.min(...threats.map(z => Math.abs(at - z.x) - Math.abs(z.vx) * seconds));
+          const previous = landingX === null ? null : Math.max(low, Math.min(high, landingX));
+          const best = candidates.sort((a, b) => clearance(b) - clearance(a))[0];
+          landingX = previous !== null && clearance(previous) >= 95 ? previous : best;
+          // If no reachable point yet has that margin, keep physically evading
+          // and re-evaluating within this bounded drop; this is not accepted as
+          // a safe landing. The human form + actual floor check below still
+          // decides success, and the head-contact recovery remains available.
+        }
       }
+      // A solid-body contact may still occur if an enemy reverses at an edge.
+      // Physically clear its head toward the platform interior, never accept
+      // that contact as a completed floor landing.
+      if (p.grounded && threats.some(z => Math.abs(p.y - (z.y - 100)) < 6 && Math.abs(z.x - p.x) < 65)) {
+        const direction = p.x > (bounds.left + bounds.right) / 2 ? -1 : 1;
+        landingX = Math.max(bounds.left, Math.min(bounds.right, p.x + direction * 180));
+      }
+      const steering: Input[] = landingX === null || Math.abs(p.x - landingX) < 6 ? [] : [p.x < landingX ? 'right' : 'left'];
+      if (steering.join() !== pressed.join()) await setInputs(steering);
       await page.waitForTimeout(20); state = await read(frame);
     }
+    await setInputs([]);
     expect(!!state.player && Math.abs(state.player.y - y) < 4 && state.player.grounded, 'physical landing after clearing an enemy').toBe(true);
     await healNearby();
   }
