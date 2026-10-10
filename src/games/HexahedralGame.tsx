@@ -7,14 +7,16 @@ import './hexahedral.css';
 export default function HexahedralGame(props:GameProps){return <HexahedralRoundView key={`${props.level}:${props.resetToken}`} {...props}/>;}
 function HexahedralRoundView({level,paused,freshStart,hintToken,onComplete,onStatus}:GameProps){
  const puzzle=hexahedralLevels[level]||hexahedralLevels[0],n=puzzle.rows.length;
- const [round,setRound]=useState(()=>freshStart?freshHexahedral(puzzle):loadHexahedral(puzzle)),[message,setMessage]=useState('从白色棋子出发，每次走到相邻方块，落脚方块就会升降翻转。'),[saved,setSaved]=useState(true);
+ const [round,setRound]=useState(()=>freshStart?freshHexahedral(puzzle):loadHexahedral(puzzle)),[message,setMessage]=useState(()=>round.result==='won'?`第${level+1}关完成！这一关的所有方块都已压下。`:round.result==='lost'?'步数用完了，还有升起的方块。点“重新尝试”回到原起点。':round.history.length?`已恢复本关进度：走了 ${round.history.length} 步，还可走 ${puzzle.maxMoves-round.history.length} 步。`:'从白色棋子出发，每次走到相邻方块，落脚方块就会升降翻转。'),[saved,setSaved]=useState(true);
  const state=useRef(round),callbacks=useRef({onComplete,onStatus}),notified=useRef(false),hint=useRef(hintToken);callbacks.current={onComplete,onStatus};
  const locked=paused||round.result!=='playing',remaining=[...round.tiles].filter(c=>c==='0').length;
- function report(text:string){setMessage(text);callbacks.current.onStatus(text);}
+ function report(text:string){setMessage(text);}
  function arrive(to:number){if(paused||state.current.result!=='playing')return;const next=stepHexahedral(puzzle,state.current,to);if(next===state.current){report('只能走到上下左右相邻的完整方块，不能斜走、跳格或走入缺口。');return;}state.current=next;setRound(next);if(next.result==='lost')report('步数用完了，还有升起的方块。点“重新尝试”回到原起点。');else if(next.result==='won')report(level===29?'第30关完成！这一关的所有方块都已压下。':'所有方块都已压下！可以前往下一关。');else report(`走了 ${next.history.length} 步，还可走 ${puzzle.maxMoves-next.history.length} 步。再次走进同一方块会把它重新升起。`);}
  function move(dr:number,dc:number){const row=Math.floor(state.current.cursor/n)+dr,col=state.current.cursor%n+dc;if(row<0||row>=n||col<0||col>=n){if(!locked)report('这里是边缘，请换一个方向。');return;}arrive(row*n+col);}
  function key(event:KeyboardEvent){const directions:Record<string,[number,number]>={ArrowUp:[-1,0],ArrowDown:[1,0],ArrowLeft:[0,-1],ArrowRight:[0,1]};const d=directions[event.key];if(!d)return;event.preventDefault();if(!event.repeat&&!event.altKey&&!event.ctrlKey&&!event.metaKey)move(...d);}
  function restart(){if(paused)return;const next=freshHexahedral(puzzle);state.current=next;setRound(next);notified.current=false;report('已回到原作起点，步数与所有方块一并恢复。');}
+ // Synchronize this puzzle's fresh/restored feedback when a new level mounts.
+ useEffect(()=>{callbacks.current.onStatus(message);},[message]);
  useEffect(()=>{setSaved(saveHexahedral(puzzle,round));},[puzzle,round]);
  useEffect(()=>{if(round.result==='won'&&!paused&&!notified.current){notified.current=true;callbacks.current.onComplete();}},[round.result,paused]);
  useEffect(()=>{if(hint.current===hintToken)return;hint.current=hintToken;if(paused)return;report(`还剩 ${remaining} 个升起方块、${puzzle.maxMoves-round.history.length} 步。每个升起方块还需被踩奇数次，每个压下方块需被踩偶数次；先规划回头的位置。`);},[hintToken,paused,remaining,puzzle.maxMoves,round.history.length]);
