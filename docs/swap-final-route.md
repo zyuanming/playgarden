@@ -1,6 +1,6 @@
 # Swap final puzzle: source-derived physical route
 
-Status: **static reasoning only; not played or tested**. This is a proposed physical-input route for original puzzle 24 (array index 23), followed by the authored credits record. No engine, simulation, solver, proof sweep, or upstream dependency was executed to derive it.
+Status: **desktop earned the original final goal in the first physical-input CI run; corrected desktop/mobile journeys await rerun**. This is the source-derived route for original puzzle 24 (array index 23), followed by the authored credits record. The route was initially derived by reading the pinned source without executing an engine, simulation, solver, proof sweep, or upstream dependency. The real browser evidence and remaining validation limits are below.
 
 The adaptation's extra starting pause must be dismissed before this route begins; dismissing that UI pause is not a puzzle phase advance or an earned completion. Use ordinary direction holds/releases and Swap. Observe position, stored autonomous direction, and gate contact instead of assuming fixed frame counts.
 
@@ -48,4 +48,8 @@ The essential final move is closing gate `25` behind A; leaving it open sends A 
 
 The lower room has no lava along the described perimeter, so waiting another orbit is valid. The route does not require swapping into a blue tile, steering a controlled body through a blue barrier, exploiting the commented-out experimental map, skipping a level, or mutating game state.
 
-This is a source-grounded route proposal, not a proof of exact input timings or a completed playthrough. Continuous offsets, acceleration, braking, duplicate-plate update order, and the preserved original gate scan order must be checked through the intended physical-input E2E. Direction predicates and safe pose checks should gate every swap. No additional logical-route blocker was found in this static review.
+The [first CI run](https://github.com/zyuanming/playgarden/actions/runs/38051994852) reached `won` on desktop at tick 982 with zero deaths and gate `25` closed. A's center was `(1.4913, 2.3839)` in grid units: its upper collision corners already occupied goal cell `(1,1)`. The original collision box extends `gridSize/2 - 5` pixels from the center. Therefore the ending assertion must check actual corner contact with the goal, rather than require the center to enter row 1. The first run stopped at that overstrict assertion, before finishing the credits/persistence checks.
+
+Mobile failed during the first move onto upper `10`. The touch helper repeatedly scrolled and re-located controls between directional holds, adding 0.2–0.5 seconds to reversals while the puzzle kept ticking. Its braking corrections never settled before B's first southbound capture window; B continued to `(7,3)`, turned north, and hit lava `(7,2)` at tick 111. The corrected helper reads visible touch coordinates before a gesture, sends immediate physical touch transitions, and lets the original friction settle before correcting an overshoot. No game timing, movement, AI, gate, lava, or goal rules were changed.
+
+These trace findings do not establish a passing corrected journey. The affected desktop/mobile E2E must be rerun to verify the input repair, credits rendering, and earned-state persistence. Continuous offsets, acceleration, braking, duplicate-plate update order, and the preserved original gate scan order remain covered by the intended physical-input journey; direction predicates and safe pose checks gate its swaps.

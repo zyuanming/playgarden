@@ -1,4 +1,5 @@
 import { expect, test, type Page, type Frame, type CDPSession } from '@playwright/test';
+import { readFileSync } from 'node:fs';
 import { openGame, chooseLevel, captureErrors } from './helpers';
 type Actor = { x: number; y: number; vx: number; vy: number; wasHuman: boolean; opened: boolean };
 type Reading = { phase: string; paused: boolean; level: number; lives: number; ammo: number; hasKey: boolean; hasGun: boolean; availableLevel: number; frames: number; elapsed: number; hint: string; player: (Actor & { form: string; grounded: boolean; wasZombie: boolean }) | null; objects: Record<string, Actor[]>; inputs: Record<string, boolean>; summary: { level: number; stars: number; health: { collected: number }; zombies: { healed: number; available: number } } | null };
@@ -63,15 +64,21 @@ test('six-stage original: earned first, middle and final routes with touch and l
   const cdp: CDPSession | null = mobile ? await page.context().newCDPSession(page) : null;
   const keys: Record<Input, string> = { left: 'ArrowLeft', right: 'ArrowRight', action: 'ArrowUp', fire: 'Space' };
   let pressed: Input[] = [];
+  let touchCenters: Record<Input, { x: number; y: number; id: number }>;
   async function setInputs(next: Input[]) {
     if (mobile) {
-      if (pressed.length) await cdp!.send('Input.dispatchTouchEvent', { type: 'touchEnd', touchPoints: [] });
-      if (next.length) {
+      // Measure before a gesture starts. Releasing Jump must not release the
+      // steering finger for several layout/scroll round trips during ascent.
+      if (!pressed.length && next.length) {
         await frame.locator('.controls').scrollIntoViewIfNeeded();
-        const points = [];
-        for (let i = 0; i < next.length; i++) { const box = (await frame.locator(`[data-input="${next[i]}"]`).boundingBox())!; points.push({ x: box.x + box.width / 2, y: box.y + box.height / 2, id: i + 1 }); }
-        await cdp!.send('Input.dispatchTouchEvent', { type: 'touchStart', touchPoints: points });
+        const entries = await Promise.all((Object.keys(keys) as Input[]).map(async (input, i) => {
+          const box = (await frame.locator(`[data-input="${input}"]`).boundingBox())!;
+          return [input, { x: box.x + box.width / 2, y: box.y + box.height / 2, id: i + 1 }] as const;
+        }));
+        touchCenters = Object.fromEntries(entries) as typeof touchCenters;
       }
+      if (pressed.length) await cdp!.send('Input.dispatchTouchEvent', { type: 'touchEnd', touchPoints: [] });
+      if (next.length) await cdp!.send('Input.dispatchTouchEvent', { type: 'touchStart', touchPoints: next.map(input => touchCenters[input]) });
     } else {
       for (const input of pressed) if (!next.includes(input)) await page.keyboard.up(keys[input]);
       for (const input of next) if (!pressed.includes(input)) await page.keyboard.down(keys[input]);
@@ -114,7 +121,39 @@ test('six-stage original: earned first, middle and final routes with touch and l
     const direction: Input = enemy.x < p.x ? 'left' : 'right';
     await setInputs([direction]); await page.waitForTimeout(35); await setInputs(['fire']); await page.waitForTimeout(600); await setInputs([]);
   }
-  async function drop(x: number, y: number) { await move(x); await ground(y); await healNearby(); }
+  function platformAt(level: number, x: number, y: number) {
+    // Read the authored collision map only to choose a safe place to step off
+    // a moving enemy's head. This never changes a tile, actor or game clock.
+    const xml = readFileSync(`public/heal-em-all/data/level${level}.tmx`, 'utf8');
+    const width = Number(xml.match(/<map[^>]* width="(\d+)"/)![1]);
+    const layer = xml.match(/<layer name="collision"[\s\S]*?<data>([\s\S]*?)<\/data>/)![1];
+    const tiles = [...layer.matchAll(/<tile gid="(\d+)"\s*\/>/g)].map(m => Number(m[1]));
+    const row = Math.round((y + 50) / 70), cell = Math.floor(x / 70);
+    expect(tiles[row * width + cell], 'authored drop target has a supporting tile').toBeGreaterThan(0);
+    let left = cell, right = cell;
+    while (left > 0 && tiles[row * width + left - 1]) left--;
+    while (right + 1 < width && tiles[row * width + right + 1]) right++;
+    return { left: left * 70 + 45, right: (right + 1) * 70 - 45 };
+  }
+  async function drop(x: number, y: number) {
+    await move(x);
+    let state = await read(frame);
+    const bounds = platformAt(state.level, x, y), deadline = Date.now() + 6000;
+    while (!(state.player && Math.abs(state.player.y - y) < 4 && state.player.grounded) && Date.now() < deadline) {
+      const p = state.player;
+      if (!p || state.phase === 'gameover') throw Error('Actual death while dropping onto the authored platform');
+      // Original characters are solid. Waiting motionless on a zombie is not
+      // a landing: it repeatedly damages the player. Step toward the platform
+      // interior using normal input, then heal it from the same floor height.
+      if (p.grounded && Math.abs(p.y - (y - 100)) < 6 && state.objects.Zombie.some(z => Math.abs(z.y - y) < 5 && Math.abs(z.x - p.x) < 65)) {
+        const direction = p.x > (bounds.left + bounds.right) / 2 ? -1 : 1;
+        await move(Math.max(bounds.left, Math.min(bounds.right, p.x + direction * 115)), true);
+      }
+      await page.waitForTimeout(20); state = await read(frame);
+    }
+    expect(!!state.player && Math.abs(state.player.y - y) < 4 && state.player.grounded, 'physical landing after clearing an enemy').toBe(true);
+    await healNearby();
+  }
   async function cross(launchX: number, direction: 'left' | 'right', dropX: number) {
     await healNearby(); await move(launchX, true); await jump(direction, 1280); await drop(dropX, 1490);
   }

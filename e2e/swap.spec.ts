@@ -7,22 +7,40 @@ const read=(page:Page)=>page.evaluate(()=>(window as unknown as {__swapRead:()=>
 async function controller(page:Page,info:TestInfo){
  const mobile=info.project.name==='mobile',cdp:CDPSession|null=mobile?await page.context().newCDPSession(page):null;
  let held:SwapDirection|null=null;
+ let touchPoints:Record<string,{x:number;y:number}>|null=null;
+ // Read visible control geometry once, before a gesture. Re-locating every turn lets
+ // the real-time puzzle advance while a stale steering decision waits on scrolling.
+ async function prepareTouch(){
+  if(!cdp||touchPoints)return;
+  const controls=page.locator('.sw-controls');await controls.scrollIntoViewIfNeeded();
+  touchPoints=await controls.locator('[data-sw-direction],.sw-swap').evaluateAll(buttons=>Object.fromEntries(buttons.map(button=>{
+   const r=button.getBoundingClientRect(),name=button.getAttribute('data-sw-direction')??'swap';
+   if(r.width===0||r.height===0||r.top<0||r.bottom>innerHeight||r.left<0||r.right>innerWidth)throw Error(`Control ${name} is outside the viewport`);
+   return [name,{x:r.x+r.width/2,y:r.y+r.height/2}];
+  })));
+ }
  const key={up:'ArrowUp',down:'ArrowDown',left:'ArrowLeft',right:'ArrowRight'};
- const act=async(name:string)=>{const b=page.getByRole('button',{name,exact:true});if(mobile)await b.tap();else await b.click();};
+ const act=async(name:string)=>{touchPoints=null;const b=page.getByRole('button',{name,exact:true});if(mobile)await b.tap();else await b.click();};
  async function release(cancel=false){if(!held)return;if(cdp)await cdp.send('Input.dispatchTouchEvent',{type:cancel?'touchCancel':'touchEnd',touchPoints:[]});else await page.keyboard.up(key[held]);held=null;}
- async function hold(d:SwapDirection|null){if(held===d)return;await release();if(!d)return;if(cdp){const button=page.locator(`[data-sw-direction="${d}"]`);await button.scrollIntoViewIfNeeded();const r=await button.boundingBox();if(!r)throw Error('Direction button missing');await cdp.send('Input.dispatchTouchEvent',{type:'touchStart',touchPoints:[{x:r.x+r.width/2,y:r.y+r.height/2}]});}else{await page.locator('.sw-stage').focus();await page.keyboard.down(key[d]);}held=d;}
- async function ticks(n=1){const s=await read(page);if(s.result!=='playing')return;await page.waitForFunction(({tick})=>{const v=(window as unknown as {__swapRead:()=>View}).__swapRead();return v.result!=='playing'||v.ticks>=tick;},{tick:s.ticks+n},{polling:'raf',timeout:10000});}
+ async function hold(d:SwapDirection|null){if(held===d)return;if(d)await prepareTouch();await release();if(!d)return;if(cdp){await cdp.send('Input.dispatchTouchEvent',{type:'touchStart',touchPoints:[touchPoints![d]]});}else{await page.locator('.sw-stage').focus();await page.keyboard.down(key[d]);}held=d;}
+ async function ticks(n=1,observed?:View){const s=observed??await read(page);if(s.result!=='playing')return;await page.waitForFunction(({tick})=>{const v=(window as unknown as {__swapRead:()=>View}).__swapRead();return v.result!=='playing'||v.ticks>=tick;},{tick:s.ticks+n},{polling:'raf',timeout:10000});}
  async function move(axis:'x'|'y',cell:number){
-  const start=await read(page),id=start.actors[0].id,target=(cell+.5)*start.gridSize;
+  await prepareTouch();
+  const start=await read(page),id=start.actors[0].id,target=(cell+.5)*start.gridSize;let settling=false;
   for(let frames=0;frames<420;frames++){
    const s=await read(page);if(s.result==='won'){await release();return;}expect(s.result).toBe('playing');expect(s.actors[0].id).toBe(id);
    const v=axis==='x'?s.motion.vx:s.motion.vy,error=target-s.actors[0][axis];
    if(Math.abs(error)<3&&Math.abs(v)<.08){await release();return;}
-   const coast=error-v/.6;await hold(Math.abs(coast)<2?null:axis==='x'?coast>0?'right':'left':coast>0?'down':'up');await ticks();
+   const coast=error-v/.6;
+   if(settling&&Math.abs(v)<.08)settling=false;
+   // Let the original friction finish braking before correcting an overshoot.
+   // The coast and settled-position tolerances are the same physical 3 pixels.
+   if(Math.abs(coast)<3||v*error>0&&Math.sign(coast)!==Math.sign(error))settling=true;
+   await hold(settling?null:axis==='x'?coast>0?'right':'left':coast>0?'down':'up');await ticks(1,s);
   }
   await release();throw Error(`Could not reach original coordinate ${axis}=${cell}`);
  }
- return {act,hold,release,ticks,move,swap:async()=>{await release();await act('⇄ 切换伙伴');},start:async()=>act('开始行动'),dispose:async()=>{await release();await cdp?.detach();}};
+ return {act,hold,release,ticks,move,swap:async()=>{await prepareTouch();await release();if(cdp){await cdp.send('Input.dispatchTouchEvent',{type:'touchStart',touchPoints:[touchPoints!.swap]});await cdp.send('Input.dispatchTouchEvent',{type:'touchEnd',touchPoints:[]});}else await act('⇄ 切换伙伴');},start:async()=>{await act('开始行动');await prepareTouch();},dispose:async()=>{await release();await cdp?.detach();}};
 }
 
 test('original first maps: earned goal, saves, inertial controls, cancellation, failure and unload',async({page},info)=>{
@@ -83,7 +101,12 @@ test('original final level 24: two left-turn partners, six gates, and actual cre
  await c.move('y',9.25);
  await until(s=>{const a=body(s,A);return a.vx===-7&&a.y/s.gridSize>5.2&&a.y/s.gridSize<5.8&&a.x/s.gridSize<3.5&&s.gates.find(g=>g.x===2&&g.y===5)?.touching===true;},'A occupies gate25, holding it open');
  // Release15 while the gate is occupied. It closes after A exits, becoming the wall that turns A north.
- await c.move('y',9);await expect(game).toHaveAttribute('data-sw-result','won',{timeout:15000});const won=await read(page);expect(won.deaths).toBe(0);expect(body(won,A).x/won.gridSize).toBeLessThan(2);expect(body(won,A).y/won.gridSize).toBeLessThan(2);expect(won.gates.find(g=>g.x===2&&g.y===5)?.open).toBe(false);
+ await c.move('y',9);await expect(game).toHaveAttribute('data-sw-result','won',{timeout:15000});const won=await read(page);expect(won.deaths).toBe(0);
+ // Upstream world.collide checks four corners inset 5px, so the first real goal
+ // contact occurs before the actor's center enters the goal cell (1,1).
+ const goalActor=body(won,A),g=won.gridSize,radius=g/2-5;
+ const contactCells=[-1,1].flatMap(dx=>[-1,1].map(dy=>({x:Math.round((goalActor.x+dx*radius-g/2)/g),y:Math.round((goalActor.y+dy*radius-g/2)/g)})));
+ expect(contactCells).toContainEqual({x:1,y:1});expect(won.gates.find(g=>g.x===2&&g.y===5)?.open).toBe(false);
  await expect(page.locator('.sw-ending')).toBeVisible();await expect(page.locator('.sw-ending')).toContainText('Noah Moroze and Michael Yang');await expect(page.locator('.status')).toHaveClass(/success/);await page.screenshot({path:info.outputPath('swap-original-final-earned-credits.png'),fullPage:true});
  // Actual earned final state persists; selecting the last level alone never earns the ending.
  await c.act('返回游戏大厅');await openGame(page,'伙伴换位');await chooseLevel(page,23);await expect(game).toHaveAttribute('data-sw-result','won');await expect(page.locator('.sw-ending')).toBeVisible();await c.act('重置本关');await expect(game).toHaveAttribute('data-sw-result','playing');await expect(page.locator('.sw-ending')).toHaveCount(0);expect((await read(page)).actors[0].x/(await read(page)).gridSize).toBe(9.5);
