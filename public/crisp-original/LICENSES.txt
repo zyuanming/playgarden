@@ -108,7 +108,7 @@ Modified jsfx attribution, verbatim from original source:
 //  - setRandomFunc
 //  - webkitAudioContext
 
-# Third-party notices for the selected six games
+# Third-party notices for the selected games
 
 Keep the original notices in upstream/games/LICENSE.txt (ABA Games 2021), upstream/engine/LICENSE.txt (ABA Games 2019), upstream/audio/LICENSE.txt (ABA Games 2022), and third-party/jsfx/LICENSE-MIT (Egon Elbre 2017). Keep the modification attribution at the top of upstream/audio/lib/jsfx/index.js.
 

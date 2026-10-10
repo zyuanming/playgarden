@@ -1,0 +1,61 @@
+{
+  "allUpstreamLicenses": "MIT",
+  "sourceManifest": "vendor/crisp-original/cardq-source-manifest.json",
+  "sharedManifest": "vendor/crisp-original/source-manifest.json",
+  "components": [
+    {
+      "component": "CARD Q code and procedural card art",
+      "repository": "abagames/crisp-game-lib-games",
+      "commit": "cfb39d2f988feb5918eb83697145b5a35adabf58",
+      "source": "vendor/crisp-original/upstream/games/docs/cardq/main.js",
+      "license": "vendor/crisp-original/cardq-LICENSE.txt",
+      "shipped": "public/crisp-original/cardq/main.js",
+      "modifications": "None; CRLF bytes preserved"
+    },
+    {
+      "component": "crisp-game-lib 1.0.2",
+      "repository": "abagames/crisp-game-lib",
+      "commit": "60cb278eda8ac9eff201742f3f095fed3df66dbb",
+      "source": "vendor/crisp-original/upstream/engine/",
+      "license": "vendor/crisp-original/upstream/engine/LICENSE.txt",
+      "shipped": "public/crisp-original/engine.js",
+      "modifications": "Existing shared audited lifecycle adapter only; this package makes no engine edits"
+    },
+    {
+      "component": "sounds-some-sounds",
+      "repository": "abagames/sounds-some-sounds",
+      "commit": "a896c5686d11c9b0fd092dd48ba89aea298028d8",
+      "source": "vendor/crisp-original/upstream/audio/",
+      "license": "vendor/crisp-original/upstream/audio/LICENSE.txt",
+      "shipped": "public/crisp-original/audio.js",
+      "modifications": "Existing shared lifecycle integration reused; no changes"
+    },
+    {
+      "component": "jsfx",
+      "repository": "loov/jsfx",
+      "commit": "d35fabbf39b4a6d95c1b3c473f4112dd89905f9c",
+      "source": "vendor/crisp-original/upstream/audio/lib/jsfx/index.js",
+      "license": "vendor/crisp-original/third-party/jsfx/LICENSE-MIT",
+      "modifications": "ABA Games original modifier attribution preserved in existing audio source"
+    },
+    {
+      "component": "mml-iterator 1.1.0",
+      "repository": "mohayonao/mml-iterator",
+      "commit": "7e76ab2734521eeb59a7ac4f94c2634502be1475",
+      "source": "vendor/crisp-original/third-party/mml-iterator/",
+      "licenseEvidence": "vendor/crisp-original/third-party/mml-license-site/users/mohayonao.json and licenses/MIT.ejs; upstream package.json and README",
+      "licenseHostCommit": "73ebb8ca1e2280883e92498e18fcdb1c633c226c",
+      "fullPermissionText": "public/crisp-original/LICENSES.txt"
+    }
+  ],
+  "newHostFilesLicense": "GPL-3.0-only",
+  "newHostFiles": [
+    "src/games/CardQOriginal.tsx",
+    "src/games/crispCardQ.ts",
+    "public/crisp-original/cardq/index.html",
+    "public/crisp-original/cardq/observe.js",
+    "public/crisp-original/cardq/card.svg",
+    "e2e/cardq.spec.ts"
+  ],
+  "assets": "Original upstream programmatic cards, sprite for rank 10, generated BGM and SFX reused. Catalog SVG is original Playgarden art. No external assets, fonts, CDN, tracking or runtime traffic."
+}

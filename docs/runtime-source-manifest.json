@@ -462,6 +462,57 @@
         "package-lock.json"
       ],
       "scope": "All seven original20x15 maps, six original layers, restored-object collision, wall repair, permissive scores and direction-based forward replay. New native Chinese UI, validated input-history saves and original SVG; no original media, fonts or Phaser redistributed."
+    },
+    {
+      "name": "The Pond complete original endless game",
+      "version": "68fa8b542bff6c405cce83a6bd433e16e7b4e7f6",
+      "license": "GPL-3.0-or-later",
+      "source": "https://github.com/Zolmeister/pond/tree/68fa8b542bff6c405cce83a6bd433e16e7b4e7f6",
+      "preferredSource": [
+        "vendor/pond-original/upstream",
+        "src/vendor/pondCore.ts",
+        "src/games/PondGame.tsx"
+      ],
+      "buildSources": [
+        "scripts/pond/verify-sources.py",
+        "package-lock.json"
+      ],
+      "scope": "Original procedural fish, six-circle contact, raster particle growth, AI feeding, four-color transfer, ten-segment bars, ten-orb cycles and infinite zone spawning. Native instance host repairs lifecycle/input/bookkeeping bugs; uniform desktop particle density across devices. No imported media or third-party loader."
+    },
+    {
+      "name": "CARD Q complete original endless game",
+      "version": "cfb39d2f988feb5918eb83697145b5a35adabf58",
+      "license": "MIT",
+      "source": "https://github.com/abagames/crisp-game-lib-games/blob/cfb39d2f988feb5918eb83697145b5a35adabf58/docs/cardq/main.js",
+      "preferredSource": [
+        "vendor/crisp-original/upstream/games/docs/cardq/main.js",
+        "public/crisp-original/cardq/main.js",
+        "public/crisp-original/cardq/observe.js",
+        "src/games/crispCardQ.ts"
+      ],
+      "buildSources": [
+        "scripts/cardq/verify-sources.py",
+        "docs/cardq-source-map.json",
+        "package-lock.json"
+      ],
+      "scope": "Original main preserved byte-for-byte: five-column two-pile real-time card race, AI pressure, wrapped ranks, combo points, refill and shuffles. Existing audited Crisp engine/audio and complete source/licenses are reused; no new runtime dependencies."
+    },
+    {
+      "name": "BlicblockJS complete original six-color endless game",
+      "version": "05bafeedb8684e478cda9061e98406acff8d9a83",
+      "license": "MIT",
+      "source": "https://github.com/cheshire137/blicblock-js/tree/05bafeedb8684e478cda9061e98406acff8d9a83",
+      "preferredSource": [
+        "vendor/blicblock-original/upstream",
+        "src/vendor/blicblockOriginal.ts",
+        "src/vendor/blicblockRuntime.ts",
+        "src/games/BlicblockGame.tsx"
+      ],
+      "buildSources": [
+        "scripts/blicblock/verify-sources.py",
+        "package-lock.json"
+      ],
+      "scope": "Literal original compiled gameplay bodies plus editable CoffeeScript. Native dependency adapter replaces Angular registration and remote high-score service. Original six colors, seven tetromino families, gravity/cascades, score/speed, loss and four uncounted practice layouts preserved. No new runtime dependencies."
     }
   ]
 }
