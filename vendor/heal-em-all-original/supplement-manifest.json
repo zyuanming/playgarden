@@ -1,0 +1,30 @@
+[
+  {
+    "path": "licenses/Quintus-MIT.txt",
+    "source": "https://github.com/cykod/Quintus/blob/b6da4d0fcd786b162144ace7d7844541b4993808/MIT-LICENSE.txt",
+    "gitSha1": "72997a4e18f077564c521d1e6829f8724321d377",
+    "sha256": "68309012968ca1859c4d74a7648041add34bb23db4ca4526fd2c3cd0779612f8",
+    "bytes": 1076
+  },
+  {
+    "path": "licenses/Underscore-MIT.txt",
+    "source": "https://github.com/jashkenas/underscore/blob/87cac5bd057ceafd6f779b1df33de61ca21b5e1d/LICENSE",
+    "gitSha1": "61d28c08e87390c81eac892c4fa3117cadf3411e",
+    "sha256": "f659472f9d43a054698ef88bfd5925c12ddc117cac42be6a42b269a6ceccd2e9",
+    "bytes": 1078
+  },
+  {
+    "path": "licenses/CC-BY-4.0.txt",
+    "source": "https://github.com/spdx/license-list-data/blob/31ba1a50e5397e00a304dbadc76531740e89ee48/text/CC-BY-4.0.txt",
+    "gitSha1": "13ca539f377dc705af32b8d2ce89262298ea2f06",
+    "sha256": "d557539df68e771cc1eedcc91d13f70fca930e508d11eedcafa4b15db49e3744",
+    "bytes": 17023
+  },
+  {
+    "path": "audit-reference/index.html",
+    "source": "https://github.com/krzysu/game-off-2013/blob/66950cda39d2b91f114dcf1a0b0307972f24a68f/app/index.html",
+    "gitSha1": "ff6106543f2d1dc0175b0ca3f4a5dfe771dade58",
+    "sha256": "734200706e54d29c6d4fba2b988f4772ba328f817782081c5554f94908bd8506",
+    "bytes": 3348
+  }
+]

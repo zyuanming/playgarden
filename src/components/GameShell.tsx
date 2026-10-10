@@ -286,6 +286,9 @@ export function GameShell({
                 setWon(true);
                 onComplete(level);
               }}
+              onLevelChange={(nextLevel) => {
+                if (Number.isInteger(nextLevel) && nextLevel >= 0 && nextLevel < game.levelCount && nextLevel !== level) changeLevel(nextLevel);
+              }}
               onStatus={setStatus}
             />
           </Suspense>

@@ -1,0 +1,646 @@
+{
+  "repository": "krzysu/game-off-2013",
+  "commit": "66950cda39d2b91f114dcf1a0b0307972f24a68f",
+  "tree": "6b85be69c8239fe502ab47ab8acfeac0a70eb3a2",
+  "files": [
+    {
+      "path": "upstream/LICENSE",
+      "upstreamPath": "LICENSE",
+      "bytes": 35149,
+      "gitSha1": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7",
+      "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+      "source": "https://github.com/krzysu/game-off-2013/blob/66950cda39d2b91f114dcf1a0b0307972f24a68f/LICENSE",
+      "license": "GPL-3.0-only"
+    },
+    {
+      "path": "upstream/README.md",
+      "upstreamPath": "README.md",
+      "bytes": 1698,
+      "gitSha1": "2ddf935baca1e447e1380384ae510cb5f1f875ed",
+      "sha256": "46280d07aad8c72c4e04d281af955250bef47bc9c4ce0c031a41950388396bcd",
+      "source": "https://github.com/krzysu/game-off-2013/blob/66950cda39d2b91f114dcf1a0b0307972f24a68f/README.md",
+      "license": "GPL-3.0-only"
+    },
+    {
+      "path": "upstream/app/data/bullet.json",
+      "upstreamPath": "app/data/bullet.json",
+      "bytes": 111,
+      "gitSha1": "89aee0b2399968049591cc1035e7751cddac799f",
+      "sha256": "00228957982d9d718165c501e5b2bf1e3280740da819a3d3a5e7944a95bb7388",
+      "source": "https://github.com/krzysu/game-off-2013/blob/66950cda39d2b91f114dcf1a0b0307972f24a68f/app/data/bullet.json",
+      "license": "GPL-3.0-only"
+    },
+    {
+      "path": "upstream/app/data/characters.json",
+      "upstreamPath": "app/data/characters.json",
+      "bytes": 581,
+      "gitSha1": "ef6159bb75fab6287d0c907aa282413d44384631",
+      "sha256": "79065a4ac359b1487984ba3476174a4868fcfe4c22c1796375cb58490f9076ca",
+      "source": "https://github.com/krzysu/game-off-2013/blob/66950cda39d2b91f114dcf1a0b0307972f24a68f/app/data/characters.json",
+      "license": "GPL-3.0-only"
+    },
+    {
+      "path": "upstream/app/data/hud.json",
+      "upstreamPath": "app/data/hud.json",
+      "bytes": 1581,
+      "gitSha1": "4dffcec7d25f0537c6c85b7ab3b907fea3faf583",
+      "sha256": "fcb5ad18ce9fc4b9594f57126cb6f7e4bbe424c8d2706737eff416332191c523",
+      "source": "https://github.com/krzysu/game-off-2013/blob/66950cda39d2b91f114dcf1a0b0307972f24a68f/app/data/hud.json",
+      "license": "GPL-3.0-only"
+    },
+    {
+      "path": "upstream/app/data/items.json",
+      "upstreamPath": "app/data/items.json",
+      "bytes": 683,
+      "gitSha1": "291b5f273bf0869b5a81d2d85ea77110a8cd4c3e",
+      "sha256": "e1148f9c4afb3852c6b080b1552e460025a131dc0647007c174ca7a39d62f665",
+      "source": "https://github.com/krzysu/game-off-2013/blob/66950cda39d2b91f114dcf1a0b0307972f24a68f/app/data/items.json",
+      "license": "GPL-3.0-only"
+    },
+    {
+      "path": "upstream/app/data/level1.tmx",
+      "upstreamPath": "app/data/level1.tmx",
+      "bytes": 25601,
+      "gitSha1": "842e5a4b305ff82d810a805fae61051e3f384dfd",
+      "sha256": "f32dbdd1eca37f4f7a33087e2a37c86efd48f6a88ec16d3ba56faf3298287c0c",
+      "source": "https://github.com/krzysu/game-off-2013/blob/66950cda39d2b91f114dcf1a0b0307972f24a68f/app/data/level1.tmx",
+      "license": "GPL-3.0-only"
+    },
+    {
+      "path": "upstream/app/data/level2.tmx",
+      "upstreamPath": "app/data/level2.tmx",
+      "bytes": 26086,
+      "gitSha1": "0c6e43133740d3e556fc83526075260a9f28681d",
+      "sha256": "793683ee96a35a920c606716a4fa87ea64ae4441b8e5cd8b40c1afa452219761",
+      "source": "https://github.com/krzysu/game-off-2013/blob/66950cda39d2b91f114dcf1a0b0307972f24a68f/app/data/level2.tmx",
+      "license": "GPL-3.0-only"
+    },
+    {
+      "path": "upstream/app/data/level3.tmx",
+      "upstreamPath": "app/data/level3.tmx",
+      "bytes": 61697,
+      "gitSha1": "0ccfd628cfa633d70c5194cee448ee15c02cfa6a",
+      "sha256": "f0b032dd1a1cd1d3b1129a0bd6f506fa983442c22ac2cf695a0b5715157f9114",
+      "source": "https://github.com/krzysu/game-off-2013/blob/66950cda39d2b91f114dcf1a0b0307972f24a68f/app/data/level3.tmx",
+      "license": "GPL-3.0-only"
+    },
+    {
+      "path": "upstream/app/data/level4.tmx",
+      "upstreamPath": "app/data/level4.tmx",
+      "bytes": 178869,
+      "gitSha1": "271b49b82d65bed55e42f7e62d9d6bbce5722462",
+      "sha256": "ffd1c642ae012114cf897843099fa3b3009faa7ab68a828beeb98ca3a7ebfe61",
+      "source": "https://github.com/krzysu/game-off-2013/blob/66950cda39d2b91f114dcf1a0b0307972f24a68f/app/data/level4.tmx",
+      "license": "GPL-3.0-only"
+    },
+    {
+      "path": "upstream/app/data/level5.tmx",
+      "upstreamPath": "app/data/level5.tmx",
+      "bytes": 179523,
+      "gitSha1": "a03568f4ab72f4b0a7c1743e885cb7494a9092dd",
+      "sha256": "f6d5aa6e2c6b86e194c23244c78fbb52ca4e6f47e57cf6132c65c90b771767bf",
+      "source": "https://github.com/krzysu/game-off-2013/blob/66950cda39d2b91f114dcf1a0b0307972f24a68f/app/data/level5.tmx",
+      "license": "GPL-3.0-only"
+    },
+    {
+      "path": "upstream/app/data/level6.tmx",
+      "upstreamPath": "app/data/level6.tmx",
+      "bytes": 180831,
+      "gitSha1": "ebaa97fad5da5c31f56d87ebd5630ae55a47ae85",
+      "sha256": "460e97da1fe985840a2679bcf8fb4b2ffecfa485f4111f63a8fdcaf856b58037",
+      "source": "https://github.com/krzysu/game-off-2013/blob/66950cda39d2b91f114dcf1a0b0307972f24a68f/app/data/level6.tmx",
+      "license": "GPL-3.0-only"
+    },
+    {
+      "path": "upstream/app/data/others.json",
+      "upstreamPath": "app/data/others.json",
+      "bytes": 991,
+      "gitSha1": "794e14dac25ed9d9447b2e81ecabde70b9e40c59",
+      "sha256": "e29d83f6f5efb7022be10acadf376a3dba1264bcbd5984eeed8b95ecfb8f2c11",
+      "source": "https://github.com/krzysu/game-off-2013/blob/66950cda39d2b91f114dcf1a0b0307972f24a68f/app/data/others.json",
+      "license": "GPL-3.0-only"
+    },
+    {
+      "path": "upstream/app/images/bg.gif",
+      "upstreamPath": "app/images/bg.gif",
+      "bytes": 44365,
+      "gitSha1": "6ca891d0174fa6355bbceb8008ae895a0aa63a38",
+      "sha256": "9fdc7b2445f25256d749555036067851858caab8e81a548dbc3706fcbaef540c",
+      "source": "https://github.com/krzysu/game-off-2013/blob/66950cda39d2b91f114dcf1a0b0307972f24a68f/app/images/bg.gif",
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "upstream/app/images/bullet.png",
+      "upstreamPath": "app/images/bullet.png",
+      "bytes": 597,
+      "gitSha1": "f1470b95c483774b3d447ff40ecfe68e2f664906",
+      "sha256": "28b28d0d19d90520d219104bc6c8f268963868d25e4f4e938da56b9c08264975",
+      "source": "https://github.com/krzysu/game-off-2013/blob/66950cda39d2b91f114dcf1a0b0307972f24a68f/app/images/bullet.png",
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "upstream/app/images/characters.png",
+      "upstreamPath": "app/images/characters.png",
+      "bytes": 103599,
+      "gitSha1": "8738e74ced7a6f353d6c95d3910881f884e558e2",
+      "sha256": "fc996d063fed180ec12cf970d22e55e78336ea37829fa4b2d2cefbc5267599eb",
+      "source": "https://github.com/krzysu/game-off-2013/blob/66950cda39d2b91f114dcf1a0b0307972f24a68f/app/images/characters.png",
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "upstream/app/images/gradient-top.png",
+      "upstreamPath": "app/images/gradient-top.png",
+      "bytes": 10506,
+      "gitSha1": "ef7b48f8a32326d977ae01aab8b1923a73dd9c12",
+      "sha256": "2afbc46b393ec1beab832aed7bfb452a7044f06f9870b3a437b614f0010be430",
+      "source": "https://github.com/krzysu/game-off-2013/blob/66950cda39d2b91f114dcf1a0b0307972f24a68f/app/images/gradient-top.png",
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "upstream/app/images/hud.png",
+      "upstreamPath": "app/images/hud.png",
+      "bytes": 20577,
+      "gitSha1": "7dc558d049cd6c6cc0a0da16b0eea61297bc8839",
+      "sha256": "f20e9bf926f4371dcd82d17918e3fa454ce49040a160ce254cc873538b015ef5",
+      "source": "https://github.com/krzysu/game-off-2013/blob/66950cda39d2b91f114dcf1a0b0307972f24a68f/app/images/hud.png",
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "upstream/app/images/items.png",
+      "upstreamPath": "app/images/items.png",
+      "bytes": 8986,
+      "gitSha1": "aa4b4b81dab126da461d96ef6e60716c2004b61f",
+      "sha256": "c92ec2c5b86d509e765b7246253db78137b4d15da03cb0872036c3c7a0fecd59",
+      "source": "https://github.com/krzysu/game-off-2013/blob/66950cda39d2b91f114dcf1a0b0307972f24a68f/app/images/items.png",
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "upstream/app/images/map_tiles.png",
+      "upstreamPath": "app/images/map_tiles.png",
+      "bytes": 14147,
+      "gitSha1": "45b88722297e03cd9802f3462cd1353392eeccf9",
+      "sha256": "964fa895613603793a1d3716ddb0d6c960e8d7250ccbac69d496b7c10a55e7c3",
+      "source": "https://github.com/krzysu/game-off-2013/blob/66950cda39d2b91f114dcf1a0b0307972f24a68f/app/images/map_tiles.png",
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "upstream/app/images/others.png",
+      "upstreamPath": "app/images/others.png",
+      "bytes": 26264,
+      "gitSha1": "546ef152c5cd25d4952b5ddb591bd09ad9d72d90",
+      "sha256": "e89d8bc5c06466138f7ca5d05a01b221e9f9414238cfb482c10a8ec8355b1cad",
+      "source": "https://github.com/krzysu/game-off-2013/blob/66950cda39d2b91f114dcf1a0b0307972f24a68f/app/images/others.png",
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "upstream/app/scripts/game.js",
+      "upstreamPath": "app/scripts/game.js",
+      "bytes": 75743,
+      "gitSha1": "0c66fe4d1dccea6b1bcfbc4bcdd0f17ef931f0f3",
+      "sha256": "c53899d6cd62a8a20aedae5455bcc7e9b65269af3f3a187969052a3588268235",
+      "source": "https://github.com/krzysu/game-off-2013/blob/66950cda39d2b91f114dcf1a0b0307972f24a68f/app/scripts/game.js",
+      "license": "GPL-3.0-only"
+    },
+    {
+      "path": "upstream/app/scripts/game/audio_manager.coffee",
+      "upstreamPath": "app/scripts/game/audio_manager.coffee",
+      "bytes": 903,
+      "gitSha1": "dbc7c32c49775b0c6bde4f8eef60aeaa885757ad",
+      "sha256": "537f8de60da063779d1ecb2235d4a5fba0a32232eaa88c2792678867505dfd51",
+      "source": "https://github.com/krzysu/game-off-2013/blob/66950cda39d2b91f114dcf1a0b0307972f24a68f/app/scripts/game/audio_manager.coffee",
+      "license": "GPL-3.0-only"
+    },
+    {
+      "path": "upstream/app/scripts/game/components/gun.coffee",
+      "upstreamPath": "app/scripts/game/components/gun.coffee",
+      "bytes": 1202,
+      "gitSha1": "9f1248114672bea08724604bedf0b9c17f0c2b16",
+      "sha256": "d1fd6c409b63046c1bae405433feb9771d9b818e7e5056326cc63033966e7f84",
+      "source": "https://github.com/krzysu/game-off-2013/blob/66950cda39d2b91f114dcf1a0b0307972f24a68f/app/scripts/game/components/gun.coffee",
+      "license": "GPL-3.0-only"
+    },
+    {
+      "path": "upstream/app/scripts/game/components/zombie_ai.coffee",
+      "upstreamPath": "app/scripts/game/components/zombie_ai.coffee",
+      "bytes": 2468,
+      "gitSha1": "7e4a971d7d142e9d941e03b15140f86a44179489",
+      "sha256": "4d5f278d9513dafa549c7d9f7e1f09e514fc4cae6e6a88113011036b1c3966a2",
+      "source": "https://github.com/krzysu/game-off-2013/blob/66950cda39d2b91f114dcf1a0b0307972f24a68f/app/scripts/game/components/zombie_ai.coffee",
+      "license": "GPL-3.0-only"
+    },
+    {
+      "path": "upstream/app/scripts/game/init.coffee",
+      "upstreamPath": "app/scripts/game/init.coffee",
+      "bytes": 6126,
+      "gitSha1": "f454dbe150bd71b230f9505b34658cb9a6b67609",
+      "sha256": "443de636deb2ab669e0fba7b195bbe216f7d7b006190cb7f21a3f554bff65cf0",
+      "source": "https://github.com/krzysu/game-off-2013/blob/66950cda39d2b91f114dcf1a0b0307972f24a68f/app/scripts/game/init.coffee",
+      "license": "GPL-3.0-only"
+    },
+    {
+      "path": "upstream/app/scripts/game/load.coffee",
+      "upstreamPath": "app/scripts/game/load.coffee",
+      "bytes": 932,
+      "gitSha1": "0942564159a2220b16db1c12970b154292086929",
+      "sha256": "274a8b7b09a04e75c2115bd699567630dea15aeca0f0b9c1223767e7d7795d3a",
+      "source": "https://github.com/krzysu/game-off-2013/blob/66950cda39d2b91f114dcf1a0b0307972f24a68f/app/scripts/game/load.coffee",
+      "license": "GPL-3.0-only"
+    },
+    {
+      "path": "upstream/app/scripts/game/scenes/controls.coffee",
+      "upstreamPath": "app/scripts/game/scenes/controls.coffee",
+      "bytes": 2581,
+      "gitSha1": "e81d052d153f4852bfe008b271e6c6a40654cbe0",
+      "sha256": "f21e9ee78f731707f9c42e298894b85848c01105b40b76911cefb5f24942e102",
+      "source": "https://github.com/krzysu/game-off-2013/blob/66950cda39d2b91f114dcf1a0b0307972f24a68f/app/scripts/game/scenes/controls.coffee",
+      "license": "GPL-3.0-only"
+    },
+    {
+      "path": "upstream/app/scripts/game/scenes/end.coffee",
+      "upstreamPath": "app/scripts/game/scenes/end.coffee",
+      "bytes": 946,
+      "gitSha1": "dff6fbbf310732e2a3f44910f38e87646faad3d3",
+      "sha256": "15d8e0ec6338c8049133eec62258341bd21e8901fa54b1dc0663d01b7e982830",
+      "source": "https://github.com/krzysu/game-off-2013/blob/66950cda39d2b91f114dcf1a0b0307972f24a68f/app/scripts/game/scenes/end.coffee",
+      "license": "GPL-3.0-only"
+    },
+    {
+      "path": "upstream/app/scripts/game/scenes/game_over.coffee",
+      "upstreamPath": "app/scripts/game/scenes/game_over.coffee",
+      "bytes": 905,
+      "gitSha1": "695d8c527e849afb907c4de7092718cd2670ef22",
+      "sha256": "56255d4222dd3e3be7588a9bf1772b7614e8b11f1f8c9ea6bedea44dde843869",
+      "source": "https://github.com/krzysu/game-off-2013/blob/66950cda39d2b91f114dcf1a0b0307972f24a68f/app/scripts/game/scenes/game_over.coffee",
+      "license": "GPL-3.0-only"
+    },
+    {
+      "path": "upstream/app/scripts/game/scenes/hud.coffee",
+      "upstreamPath": "app/scripts/game/scenes/hud.coffee",
+      "bytes": 1886,
+      "gitSha1": "1fd20c8cbd3194ff6f5b87ef291428524d2ca0f1",
+      "sha256": "a9d7b80d363d54cb5e839b57f4381b006c2bdf97fa7b99a5071b36965d3a6d15",
+      "source": "https://github.com/krzysu/game-off-2013/blob/66950cda39d2b91f114dcf1a0b0307972f24a68f/app/scripts/game/scenes/hud.coffee",
+      "license": "GPL-3.0-only"
+    },
+    {
+      "path": "upstream/app/scripts/game/scenes/level1.coffee",
+      "upstreamPath": "app/scripts/game/scenes/level1.coffee",
+      "bytes": 1246,
+      "gitSha1": "d125aa7519e760b101d71e824ac3d03cc764dfa7",
+      "sha256": "a91e15dbec06b7331280fc58000dd77b172042bb7c228d636ca08461ab2dc988",
+      "source": "https://github.com/krzysu/game-off-2013/blob/66950cda39d2b91f114dcf1a0b0307972f24a68f/app/scripts/game/scenes/level1.coffee",
+      "license": "GPL-3.0-only"
+    },
+    {
+      "path": "upstream/app/scripts/game/scenes/level2.coffee",
+      "upstreamPath": "app/scripts/game/scenes/level2.coffee",
+      "bytes": 1584,
+      "gitSha1": "638d56252b7300d53966b9650326475a6d7873cd",
+      "sha256": "410a0670b5ea69bac2c7ea7a80c26b735eca1f19e00221d5d40f7c455b65c1cb",
+      "source": "https://github.com/krzysu/game-off-2013/blob/66950cda39d2b91f114dcf1a0b0307972f24a68f/app/scripts/game/scenes/level2.coffee",
+      "license": "GPL-3.0-only"
+    },
+    {
+      "path": "upstream/app/scripts/game/scenes/level3.coffee",
+      "upstreamPath": "app/scripts/game/scenes/level3.coffee",
+      "bytes": 1834,
+      "gitSha1": "08828c4020b04c3880e80b732ae5568a090e3db9",
+      "sha256": "ce555511e6c7c4e608dddf065180a5b26e5ef1e3793868bff8a7ca119c11ef97",
+      "source": "https://github.com/krzysu/game-off-2013/blob/66950cda39d2b91f114dcf1a0b0307972f24a68f/app/scripts/game/scenes/level3.coffee",
+      "license": "GPL-3.0-only"
+    },
+    {
+      "path": "upstream/app/scripts/game/scenes/level4.coffee",
+      "upstreamPath": "app/scripts/game/scenes/level4.coffee",
+      "bytes": 2863,
+      "gitSha1": "bc28cfb692f571d2ed3cc91e1cb99dd4ac4d9ea3",
+      "sha256": "7906683c10c7188fab4ecaeba7c6256e8691d9e5a8795d36fcf3d84643fabb12",
+      "source": "https://github.com/krzysu/game-off-2013/blob/66950cda39d2b91f114dcf1a0b0307972f24a68f/app/scripts/game/scenes/level4.coffee",
+      "license": "GPL-3.0-only"
+    },
+    {
+      "path": "upstream/app/scripts/game/scenes/level5.coffee",
+      "upstreamPath": "app/scripts/game/scenes/level5.coffee",
+      "bytes": 3075,
+      "gitSha1": "50ca13fa6ae158b2bd244db2e4879817b1a2a555",
+      "sha256": "a2d9d89da91d1fac887f745e22a5933aa3c65a20ae29695473099520364a1b33",
+      "source": "https://github.com/krzysu/game-off-2013/blob/66950cda39d2b91f114dcf1a0b0307972f24a68f/app/scripts/game/scenes/level5.coffee",
+      "license": "GPL-3.0-only"
+    },
+    {
+      "path": "upstream/app/scripts/game/scenes/level6.coffee",
+      "upstreamPath": "app/scripts/game/scenes/level6.coffee",
+      "bytes": 3388,
+      "gitSha1": "af04b805bde97cac9d8efd902bb0a133a9e90684",
+      "sha256": "84aabe13352b6e58805ee312f7b1e14caeb3ed48d20fe9a7939819961956972f",
+      "source": "https://github.com/krzysu/game-off-2013/blob/66950cda39d2b91f114dcf1a0b0307972f24a68f/app/scripts/game/scenes/level6.coffee",
+      "license": "GPL-3.0-only"
+    },
+    {
+      "path": "upstream/app/scripts/game/scenes/level_select.coffee",
+      "upstreamPath": "app/scripts/game/scenes/level_select.coffee",
+      "bytes": 1931,
+      "gitSha1": "476f0da114a3252427b397d502bdd42eeb0a3933",
+      "sha256": "08f23271001dd39f35d9ab5bdfdae2a188acf5f58a5aebb7e7147924e424f3cc",
+      "source": "https://github.com/krzysu/game-off-2013/blob/66950cda39d2b91f114dcf1a0b0307972f24a68f/app/scripts/game/scenes/level_select.coffee",
+      "license": "GPL-3.0-only"
+    },
+    {
+      "path": "upstream/app/scripts/game/scenes/level_summary.coffee",
+      "upstreamPath": "app/scripts/game/scenes/level_summary.coffee",
+      "bytes": 4630,
+      "gitSha1": "887b08124381d2b688c2acd4773e438703bdfbb6",
+      "sha256": "d2d2a5dbd2e6208c53f3aa76fa80c3d1c2c13472ea00bf3cf9b00dc3414c7a5d",
+      "source": "https://github.com/krzysu/game-off-2013/blob/66950cda39d2b91f114dcf1a0b0307972f24a68f/app/scripts/game/scenes/level_summary.coffee",
+      "license": "GPL-3.0-only"
+    },
+    {
+      "path": "upstream/app/scripts/game/scenes/start.coffee",
+      "upstreamPath": "app/scripts/game/scenes/start.coffee",
+      "bytes": 897,
+      "gitSha1": "5dc74d8082e4a82eba4b3671330eecf67a7da3d5",
+      "sha256": "e4ffffcf86f1beedd66767e78d5c07b0a37b512032b24048182ef91d8d22d7c0",
+      "source": "https://github.com/krzysu/game-off-2013/blob/66950cda39d2b91f114dcf1a0b0307972f24a68f/app/scripts/game/scenes/start.coffee",
+      "license": "GPL-3.0-only"
+    },
+    {
+      "path": "upstream/app/scripts/game/sprites/background.coffee",
+      "upstreamPath": "app/scripts/game/sprites/background.coffee",
+      "bytes": 867,
+      "gitSha1": "32204cb63052bc668581aa166f1a0afed6b16f2a",
+      "sha256": "98243eb921175f2e609d071b1dc13bf059387f2cb66c713071934b2b96211039",
+      "source": "https://github.com/krzysu/game-off-2013/blob/66950cda39d2b91f114dcf1a0b0307972f24a68f/app/scripts/game/sprites/background.coffee",
+      "license": "GPL-3.0-only"
+    },
+    {
+      "path": "upstream/app/scripts/game/sprites/characters/dead_zombie.coffee",
+      "upstreamPath": "app/scripts/game/sprites/characters/dead_zombie.coffee",
+      "bytes": 488,
+      "gitSha1": "e36cd52a87ebb522d068fcaba681798d5e111313",
+      "sha256": "5299265df9a8bee1bae3f292c5e14913abd623a891a574478caef42f9ec10233",
+      "source": "https://github.com/krzysu/game-off-2013/blob/66950cda39d2b91f114dcf1a0b0307972f24a68f/app/scripts/game/sprites/characters/dead_zombie.coffee",
+      "license": "GPL-3.0-only"
+    },
+    {
+      "path": "upstream/app/scripts/game/sprites/characters/human.coffee",
+      "upstreamPath": "app/scripts/game/sprites/characters/human.coffee",
+      "bytes": 1302,
+      "gitSha1": "d4307ffd82688e65b7f282742619eb3c0318d2ec",
+      "sha256": "46d50d5316b888077a9548e06a7690c38629d30a8c9deaa8596a36122ebe84f0",
+      "source": "https://github.com/krzysu/game-off-2013/blob/66950cda39d2b91f114dcf1a0b0307972f24a68f/app/scripts/game/sprites/characters/human.coffee",
+      "license": "GPL-3.0-only"
+    },
+    {
+      "path": "upstream/app/scripts/game/sprites/characters/player.coffee",
+      "upstreamPath": "app/scripts/game/sprites/characters/player.coffee",
+      "bytes": 3992,
+      "gitSha1": "feaf35c4de0f0281196b950933dde1c63e4994be",
+      "sha256": "be58ab7d7bf7eb72ead984f845500e35c1374764790a44af6a96ce28567a9255",
+      "source": "https://github.com/krzysu/game-off-2013/blob/66950cda39d2b91f114dcf1a0b0307972f24a68f/app/scripts/game/sprites/characters/player.coffee",
+      "license": "GPL-3.0-only"
+    },
+    {
+      "path": "upstream/app/scripts/game/sprites/characters/zombie.coffee",
+      "upstreamPath": "app/scripts/game/sprites/characters/zombie.coffee",
+      "bytes": 1687,
+      "gitSha1": "7cdebaacf152ddfe6a779cf3fc316b5f71345efe",
+      "sha256": "5ec7c1c47f8d5c87966d7396a82886a0ddacdea9bc718f4311cc63ccf461af1f",
+      "source": "https://github.com/krzysu/game-off-2013/blob/66950cda39d2b91f114dcf1a0b0307972f24a68f/app/scripts/game/sprites/characters/zombie.coffee",
+      "license": "GPL-3.0-only"
+    },
+    {
+      "path": "upstream/app/scripts/game/sprites/characters/zombie_player.coffee",
+      "upstreamPath": "app/scripts/game/sprites/characters/zombie_player.coffee",
+      "bytes": 2517,
+      "gitSha1": "e121628a16d5c7f0c012e0a2e75084e9f1950cd9",
+      "sha256": "3ef5e0bc5261aeec39b2fb105bab4fd439fe5e6ad1dc5bc3a5198c6133b54549",
+      "source": "https://github.com/krzysu/game-off-2013/blob/66950cda39d2b91f114dcf1a0b0307972f24a68f/app/scripts/game/sprites/characters/zombie_player.coffee",
+      "license": "GPL-3.0-only"
+    },
+    {
+      "path": "upstream/app/scripts/game/sprites/hud/bullets_counter.coffee",
+      "upstreamPath": "app/scripts/game/sprites/hud/bullets_counter.coffee",
+      "bytes": 374,
+      "gitSha1": "4a20f1a0b51c80848556edcbf3b816f6a6457d42",
+      "sha256": "58a8bc1ae2695b9ca7137e1dad2e6a6d5eed89c3a9744acb4587d66b6d28a54f",
+      "source": "https://github.com/krzysu/game-off-2013/blob/66950cda39d2b91f114dcf1a0b0307972f24a68f/app/scripts/game/sprites/hud/bullets_counter.coffee",
+      "license": "GPL-3.0-only"
+    },
+    {
+      "path": "upstream/app/scripts/game/sprites/hud/bullets_img.coffee",
+      "upstreamPath": "app/scripts/game/sprites/hud/bullets_img.coffee",
+      "bytes": 145,
+      "gitSha1": "cfa27658842a83c504f1d246e33778e5a4c63b7d",
+      "sha256": "42423e3d358ee17a4a46184d98ea00eda136cbc53bc5ac0f311cd6d4c84fbc5e",
+      "source": "https://github.com/krzysu/game-off-2013/blob/66950cda39d2b91f114dcf1a0b0307972f24a68f/app/scripts/game/sprites/hud/bullets_img.coffee",
+      "license": "GPL-3.0-only"
+    },
+    {
+      "path": "upstream/app/scripts/game/sprites/hud/enemies_avatar.coffee",
+      "upstreamPath": "app/scripts/game/sprites/hud/enemies_avatar.coffee",
+      "bytes": 201,
+      "gitSha1": "3ed434d57674ef06cea985ebb12c49fc1130e8a3",
+      "sha256": "3c1b7986b142ea8dc96b8646f466c23281514de1d6fdf2217c8b61e3a0947887",
+      "source": "https://github.com/krzysu/game-off-2013/blob/66950cda39d2b91f114dcf1a0b0307972f24a68f/app/scripts/game/sprites/hud/enemies_avatar.coffee",
+      "license": "GPL-3.0-only"
+    },
+    {
+      "path": "upstream/app/scripts/game/sprites/hud/enemies_counter.coffee",
+      "upstreamPath": "app/scripts/game/sprites/hud/enemies_counter.coffee",
+      "bytes": 380,
+      "gitSha1": "ed69c7eba804afddb28cad98ed8656b6fb6d60de",
+      "sha256": "cc6835044ed8d593660075149510e01596cf4eaa9b2c02590ee9221775103367",
+      "source": "https://github.com/krzysu/game-off-2013/blob/66950cda39d2b91f114dcf1a0b0307972f24a68f/app/scripts/game/sprites/hud/enemies_counter.coffee",
+      "license": "GPL-3.0-only"
+    },
+    {
+      "path": "upstream/app/scripts/game/sprites/hud/health_counter.coffee",
+      "upstreamPath": "app/scripts/game/sprites/hud/health_counter.coffee",
+      "bytes": 362,
+      "gitSha1": "5db30d5bbe67dad35047806f06a2b322a7381b8a",
+      "sha256": "918acbabb3aff995a5544d52b44680e43c234bd94e7a1b22d8b773c7f4a9f1c6",
+      "source": "https://github.com/krzysu/game-off-2013/blob/66950cda39d2b91f114dcf1a0b0307972f24a68f/app/scripts/game/sprites/hud/health_counter.coffee",
+      "license": "GPL-3.0-only"
+    },
+    {
+      "path": "upstream/app/scripts/game/sprites/hud/health_img.coffee",
+      "upstreamPath": "app/scripts/game/sprites/hud/health_img.coffee",
+      "bytes": 193,
+      "gitSha1": "c5c097294aba74b89a093e757b92a3fbd35ccc2e",
+      "sha256": "1a43a63b1b903e25c54a53709cc4f5f6d550d91dc8073bffbf3fe19433004701",
+      "source": "https://github.com/krzysu/game-off-2013/blob/66950cda39d2b91f114dcf1a0b0307972f24a68f/app/scripts/game/sprites/hud/health_img.coffee",
+      "license": "GPL-3.0-only"
+    },
+    {
+      "path": "upstream/app/scripts/game/sprites/hud/info_label.coffee",
+      "upstreamPath": "app/scripts/game/sprites/hud/info_label.coffee",
+      "bytes": 1459,
+      "gitSha1": "8e567a84a8599c18409c738124cec8acd2fae485",
+      "sha256": "3a5f06af3ef7c774107e4fca15a83d3ef6791f920bbebe2629acf2758944a89a",
+      "source": "https://github.com/krzysu/game-off-2013/blob/66950cda39d2b91f114dcf1a0b0307972f24a68f/app/scripts/game/sprites/hud/info_label.coffee",
+      "license": "GPL-3.0-only"
+    },
+    {
+      "path": "upstream/app/scripts/game/sprites/hud/inventory_key.coffee",
+      "upstreamPath": "app/scripts/game/sprites/hud/inventory_key.coffee",
+      "bytes": 329,
+      "gitSha1": "9f49f9df37ce40cf211b6258d5c6e7182d801706",
+      "sha256": "3c043444edd62a36404a5f17ecb3342099e3c8cf14998a87692e3c86228006f0",
+      "source": "https://github.com/krzysu/game-off-2013/blob/66950cda39d2b91f114dcf1a0b0307972f24a68f/app/scripts/game/sprites/hud/inventory_key.coffee",
+      "license": "GPL-3.0-only"
+    },
+    {
+      "path": "upstream/app/scripts/game/sprites/hud/linear_gradient.coffee",
+      "upstreamPath": "app/scripts/game/sprites/hud/linear_gradient.coffee",
+      "bytes": 314,
+      "gitSha1": "997c89cd941f378185a8a59e371c5a43a80d844b",
+      "sha256": "292eafbcfb811f045ae2f63578a9a49537f9f073c0106605a5f4849452e9fa9c",
+      "source": "https://github.com/krzysu/game-off-2013/blob/66950cda39d2b91f114dcf1a0b0307972f24a68f/app/scripts/game/sprites/hud/linear_gradient.coffee",
+      "license": "GPL-3.0-only"
+    },
+    {
+      "path": "upstream/app/scripts/game/sprites/hud/player_avatar.coffee",
+      "upstreamPath": "app/scripts/game/sprites/hud/player_avatar.coffee",
+      "bytes": 292,
+      "gitSha1": "49407e665a8ecc3d6aeac616396cb32122d9777d",
+      "sha256": "84f1d2920e0c7dfca5a2f350259e206a5436ec5b3064f6f594543ce7c2b5d952",
+      "source": "https://github.com/krzysu/game-off-2013/blob/66950cda39d2b91f114dcf1a0b0307972f24a68f/app/scripts/game/sprites/hud/player_avatar.coffee",
+      "license": "GPL-3.0-only"
+    },
+    {
+      "path": "upstream/app/scripts/game/sprites/hud/radial_gradient.coffee",
+      "upstreamPath": "app/scripts/game/sprites/hud/radial_gradient.coffee",
+      "bytes": 545,
+      "gitSha1": "d607510bc6616c144ada762bd442805b6d381069",
+      "sha256": "0a5d5df0741360ad6d2ae857ebd3f6d296b5be0895faf03d7e2dff9f7ea86f03",
+      "source": "https://github.com/krzysu/game-off-2013/blob/66950cda39d2b91f114dcf1a0b0307972f24a68f/app/scripts/game/sprites/hud/radial_gradient.coffee",
+      "license": "GPL-3.0-only"
+    },
+    {
+      "path": "upstream/app/scripts/game/sprites/items/bullet.coffee",
+      "upstreamPath": "app/scripts/game/sprites/items/bullet.coffee",
+      "bytes": 1021,
+      "gitSha1": "f9851b2db613e216985f05538139b9527a63193e",
+      "sha256": "54610d069c52de86f8254e9d3fa3bf54e2e2e3d6885c997744a8bebc097e1727",
+      "source": "https://github.com/krzysu/game-off-2013/blob/66950cda39d2b91f114dcf1a0b0307972f24a68f/app/scripts/game/sprites/items/bullet.coffee",
+      "license": "GPL-3.0-only"
+    },
+    {
+      "path": "upstream/app/scripts/game/sprites/items/door.coffee",
+      "upstreamPath": "app/scripts/game/sprites/items/door.coffee",
+      "bytes": 914,
+      "gitSha1": "8acde959871baed13fd2e5019f8ab7dce570252c",
+      "sha256": "a9b92ee9eb6105e3ae66a4cd43f729d66d25e44de904aa7f607906c06f4f9821",
+      "source": "https://github.com/krzysu/game-off-2013/blob/66950cda39d2b91f114dcf1a0b0307972f24a68f/app/scripts/game/sprites/items/door.coffee",
+      "license": "GPL-3.0-only"
+    },
+    {
+      "path": "upstream/app/scripts/game/sprites/items/exit_sign.coffee",
+      "upstreamPath": "app/scripts/game/sprites/items/exit_sign.coffee",
+      "bytes": 208,
+      "gitSha1": "5732645d766873783b644e09a0a49a46379160bb",
+      "sha256": "56d3e101d42146150056d6dc94698523b3e1301d7a96fe024d1d54ec5ccfa052",
+      "source": "https://github.com/krzysu/game-off-2013/blob/66950cda39d2b91f114dcf1a0b0307972f24a68f/app/scripts/game/sprites/items/exit_sign.coffee",
+      "license": "GPL-3.0-only"
+    },
+    {
+      "path": "upstream/app/scripts/game/sprites/items/gun.coffee",
+      "upstreamPath": "app/scripts/game/sprites/items/gun.coffee",
+      "bytes": 636,
+      "gitSha1": "eb8b550fe09b75a49f4eae783b972022178caca1",
+      "sha256": "e8134a50e46cda97c88cd23308f65e191436af1063f19a9d341bc879aeda888c",
+      "source": "https://github.com/krzysu/game-off-2013/blob/66950cda39d2b91f114dcf1a0b0307972f24a68f/app/scripts/game/sprites/items/gun.coffee",
+      "license": "GPL-3.0-only"
+    },
+    {
+      "path": "upstream/app/scripts/game/sprites/items/heart.coffee",
+      "upstreamPath": "app/scripts/game/sprites/items/heart.coffee",
+      "bytes": 472,
+      "gitSha1": "02d494bb9df96b52651a5a8222250d48685e20ea",
+      "sha256": "c39403b8795fed94f1d4d05b352dffd894f08a9b5ccc3535266cf037adafa0ec",
+      "source": "https://github.com/krzysu/game-off-2013/blob/66950cda39d2b91f114dcf1a0b0307972f24a68f/app/scripts/game/sprites/items/heart.coffee",
+      "license": "GPL-3.0-only"
+    },
+    {
+      "path": "upstream/app/scripts/game/sprites/items/key.coffee",
+      "upstreamPath": "app/scripts/game/sprites/items/key.coffee",
+      "bytes": 681,
+      "gitSha1": "db0de75c516107c183e1dbde24b5ecdb6013b880",
+      "sha256": "7dbf0fc99ad44ffb8a3f1b8d5d5503c17d40c9d63d365cd74681024fcf290609",
+      "source": "https://github.com/krzysu/game-off-2013/blob/66950cda39d2b91f114dcf1a0b0307972f24a68f/app/scripts/game/sprites/items/key.coffee",
+      "license": "GPL-3.0-only"
+    },
+    {
+      "path": "upstream/app/scripts/game/sprites/ui/audio_button.coffee",
+      "upstreamPath": "app/scripts/game/sprites/ui/audio_button.coffee",
+      "bytes": 750,
+      "gitSha1": "bdf85f2ed742c6ce92170000cfa0810ae20e3ebf",
+      "sha256": "34320cf76d09ee2e6c99306675608babdb7aab3dcd75928498fd69c6c13182e6",
+      "source": "https://github.com/krzysu/game-off-2013/blob/66950cda39d2b91f114dcf1a0b0307972f24a68f/app/scripts/game/sprites/ui/audio_button.coffee",
+      "license": "GPL-3.0-only"
+    },
+    {
+      "path": "upstream/app/scripts/game/sprites/ui/authors.coffee",
+      "upstreamPath": "app/scripts/game/sprites/ui/authors.coffee",
+      "bytes": 277,
+      "gitSha1": "d1dc33bf0fce2e8b3441be06fb0fe63f3dcde79b",
+      "sha256": "89be2573dd65aca726a4410bc362ba3763d1ac15bbe20025663e5525837d6f49",
+      "source": "https://github.com/krzysu/game-off-2013/blob/66950cda39d2b91f114dcf1a0b0307972f24a68f/app/scripts/game/sprites/ui/authors.coffee",
+      "license": "GPL-3.0-only"
+    },
+    {
+      "path": "upstream/app/scripts/game/sprites/ui/level_button.coffee",
+      "upstreamPath": "app/scripts/game/sprites/ui/level_button.coffee",
+      "bytes": 667,
+      "gitSha1": "519011afd146fb0333be280e3e65b5942bbbcf77",
+      "sha256": "15562ab0d67e5104f8893b2939124392007fac3ab3212a553597d243695af18c",
+      "source": "https://github.com/krzysu/game-off-2013/blob/66950cda39d2b91f114dcf1a0b0307972f24a68f/app/scripts/game/sprites/ui/level_button.coffee",
+      "license": "GPL-3.0-only"
+    },
+    {
+      "path": "upstream/app/scripts/game/sprites/ui/level_score_img.coffee",
+      "upstreamPath": "app/scripts/game/sprites/ui/level_score_img.coffee",
+      "bytes": 211,
+      "gitSha1": "7b33bb62d6864e41e8063b4d7f8b6ba2cc09a8d4",
+      "sha256": "e3ccd737d26cfc8724412209d5c2d8259ec939d774adb3ee5de412e39db98306",
+      "source": "https://github.com/krzysu/game-off-2013/blob/66950cda39d2b91f114dcf1a0b0307972f24a68f/app/scripts/game/sprites/ui/level_score_img.coffee",
+      "license": "GPL-3.0-only"
+    },
+    {
+      "path": "upstream/app/scripts/game/sprites/ui/level_score_img_small.coffee",
+      "upstreamPath": "app/scripts/game/sprites/ui/level_score_img_small.coffee",
+      "bytes": 169,
+      "gitSha1": "aad919bfba0c3a3dbda053516b982c0289cb6a60",
+      "sha256": "3b319ee8994d6cc8fd2409006bf59a9d9f252dd6692ac19a038cdf5198c3ee08",
+      "source": "https://github.com/krzysu/game-off-2013/blob/66950cda39d2b91f114dcf1a0b0307972f24a68f/app/scripts/game/sprites/ui/level_score_img_small.coffee",
+      "license": "GPL-3.0-only"
+    },
+    {
+      "path": "upstream/app/scripts/game/sprites/ui/menu_button.coffee",
+      "upstreamPath": "app/scripts/game/sprites/ui/menu_button.coffee",
+      "bytes": 392,
+      "gitSha1": "ab7f4a6481d2aec09c1e94ee5a7cde1f3d126db1",
+      "sha256": "747e86be5ef22bd227b44bfa4de8f00fd17ae4696dcf08480ea1e5b2fc759e44",
+      "source": "https://github.com/krzysu/game-off-2013/blob/66950cda39d2b91f114dcf1a0b0307972f24a68f/app/scripts/game/sprites/ui/menu_button.coffee",
+      "license": "GPL-3.0-only"
+    },
+    {
+      "path": "upstream/app/scripts/game/sprites/ui/pause_button.coffee",
+      "upstreamPath": "app/scripts/game/sprites/ui/pause_button.coffee",
+      "bytes": 1094,
+      "gitSha1": "5b47604a668c4addc3e40cc28f06547537335518",
+      "sha256": "fcc913e822c5042a03a8cf1b30fbbf81059e1c9e06abc8d5ab7ebff879e59286",
+      "source": "https://github.com/krzysu/game-off-2013/blob/66950cda39d2b91f114dcf1a0b0307972f24a68f/app/scripts/game/sprites/ui/pause_button.coffee",
+      "license": "GPL-3.0-only"
+    },
+    {
+      "path": "upstream/app/scripts/lib/quintus-all.js",
+      "upstreamPath": "app/scripts/lib/quintus-all.js",
+      "bytes": 141565,
+      "gitSha1": "5ba9ca97004dfd44c7d6aacc953d36c160aa5d58",
+      "sha256": "6d1f228f5c97ad14318c90ddfb599f1d60c59956c5addbe93d84699d9cc824a0",
+      "source": "https://github.com/krzysu/game-off-2013/blob/66950cda39d2b91f114dcf1a0b0307972f24a68f/app/scripts/lib/quintus-all.js",
+      "license": "MIT"
+    }
+  ]
+}

@@ -2094,3 +2094,54 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+## Swap — complete original 24-puzzle campaign and credits
+
+Swap by Noah Moroze and Michael Yang. Original code, authored levels/tips and procedural Canvas graphics licensed CC-BY-SA-4.0. Fixed source: https://github.com/nmoroze/swap/tree/a3cfb7d2d59d37dd3778d5de685a206cca4f1206 . Exact full legal text: public/swap-LICENSE.txt and vendor/swap-original/upstream/LICENSE; original README attribution also retained.
+
+Adapted for Playgarden on 2026-10-10. Adapter contributions GPL-3.0-only, pursuant to the one-way CC-BY-SA-4.0/GPLv3 compatibility listed at https://creativecommons.org/compatible-licenses/ . Untouched originals remain CC-BY-SA-4.0. Changes are identified in vendor/swap-original/NOTICE.md and source-map.json: per-mount engine scope; 30Hz pause/dispose/terminal lifecycle; responsive 640-coordinate Canvas; Chinese UI; held keyboard/touch input; strictly validated per-level saves; out-of-range guard; original pressure-switch scan order and inertial collision behavior preserved. Preferred editable original and adapted source ships in this repository.
+
+The original separately credited music, images, Font Awesome, Open Sans, Keypress and external AddThis/page shell are not distributed. The adaptation has no audio track or remote runtime dependencies. All 24 authored puzzle maps are preserved; the 25th goal-free SWAP tableau is the ending and is not included in the level count.
+
+## Heal’em All complete original six-stage campaign
+
+Heal'em All — Playgarden adaptation, 2026-10-10
+
+Original game: copyright 2013 Krzysztof Urbas and Paweł Madeja.
+Programming/story: Krzysztof Urbas. Graphics: Paweł Madeja.
+Fixed source: https://github.com/krzysu/game-off-2013/tree/66950cda39d2b91f114dcf1a0b0307972f24a68f
+
+First-party code, maps and data: GPL-3.0-only.
+Full license: LICENSE.txt
+Playgarden adaptation source (bridge, host, integration scripts): GPL-3.0-only.
+Provided without warranty. See the full license for the terms.
+
+All seven runtime PNGs are unmodified Paweł Madeja artwork from the pinned
+upstream app/images directory, licensed under Creative Commons Attribution 4.0.
+License: https://creativecommons.org/licenses/by/4.0/
+Full legal terms: licenses/CC-BY-4.0.txt
+Presentation/scale/cropping in the game is controlled by the original spritesheets.
+
+Quintus engine: (c) 2012 Pascal Rettig, Cykod LLC, used under MIT.
+The upstream full MIT license separately states Copyright 2011 Cykod LLC;
+both notices are retained. Full terms: licenses/Quintus-MIT.txt.
+Embedded Underscore helpers: (c) 2009–2012 Jeremy Ashkenas, DocumentCloud Inc., MIT.
+Full terms: licenses/Underscore-MIT.txt.
+John Resig Simple JavaScript Inheritance: Copyright 2008 John Resig, MIT.
+Full terms and source-header provenance: licenses/Resig-MIT.txt.
+
+Modifications: Chinese accessible HTML menus, touch controls and HUD; isolated
+960×640 logical canvas; owned input, loading, RAF and disposal; pause on blur;
+validated namespaced progress; read-only observations; local-only resources;
+nonnegative empty ammunition; local game-specific infection-form hint.
+Six original maps, spawns, random arrangements, physics, healing/reinfection,
+alternate form, key/door objectives, lives, stars and complete ending retained.
+The original soundtrack is excluded because per-file authorization was unclear.
+No trackers, online fonts, social embeds, diagnostics or upstream build tools run.
+
+Corresponding source: source.zip, distributed alongside this notice.
+It includes all 48 original CoffeeScript modules (preferred form), the exact
+compiled upstream game, maps, original engine/art, complete licenses/manifests,
+adapted JavaScript/React source and reproducible adaptation instructions.
+
+Full license files and corresponding source are distributed under public/heal-em-all/. The original seven PNGs are unmodified; the catalog card uses new GPL-3.0-only vector geometry.

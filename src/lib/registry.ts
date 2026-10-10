@@ -2849,5 +2849,61 @@ export const games: GameDefinition[] = [
 ,
   component: lazy(() => import("../games/ZopGame"))
 },
+{
+  "id": "swap",
+  "title": "伙伴换位",
+  "subtitle": "切换控制权，让六种自动伙伴穿过开关、危地与蓝色隔墙；完整原作24关。",
+  "category": "逻辑思维",
+  "difficulty": "进阶",
+  "tone": "purple",
+  "levelCount": 24,
+  "resumeKey": "playgarden.swap.v1",
+  "artwork": {
+    "url": "./swap-art.svg",
+    "position": "center",
+    "size": "cover"
+  },
+  "source": {
+    "kind": "adapted",
+    "license": "CC-BY-SA-4.0",
+    "author": "Noah Moroze and Michael Yang",
+    "workTitle": "Swap（完整原作24关及结尾）",
+    "url": "https://github.com/nmoroze/swap/tree/a3cfb7d2d59d37dd3778d5de685a206cca4f1206",
+    "commit": "a3cfb7d2d59d37dd3778d5de685a206cca4f1206",
+    "notice": "./swap-LICENSE.txt",
+    "notes": "24个真实谜题加不计关数的原作感谢场景；完整保留30Hz惯性运动、六种AI、控制权队列、任何伙伴触发目标/失败、压力开关和只挡控制者的蓝墙。原代码、关卡和程序图形CC-BY-SA-4.0；本站GPL-3.0-only适配保留原署名和许可，并标记中文UI、移动操作、生命周期和校验存档等修改。未使用原音乐、字体、Keypress、Font Awesome、旧HTML或远程脚本。"
+  },
+  "allowUndo": false
+,
+  component: lazy(() => import("../games/SwapGame"))
+},
+{
+  "id": "heal-em-all",
+  "title": "治愈所有人",
+  "subtitle": "带着有限的解药穿过六张原作地图，救助伙伴并找到最后一扇门。",
+  "category": "动作反应",
+  "difficulty": "进阶",
+  "tone": "green",
+  "levelCount": 6,
+  "allowUndo": false,
+  "resumeKey": "playgarden.heal-em-all.v1",
+  "artwork": {
+    "url": "./heal-em-all/card.svg",
+    "position": "center",
+    "size": "cover"
+  },
+  "source": {
+    "kind": "adapted",
+    "license": "GPL-3.0-only",
+    "author": "Krzysztof Urbas and Paweł Madeja",
+    "workTitle": "Heal’em All（完整原作六关及结局）",
+    "url": "https://github.com/krzysu/game-off-2013/tree/66950cda39d2b91f114dcf1a0b0307972f24a68f",
+    "commit": "66950cda39d2b91f114dcf1a0b0307972f24a68f",
+    "notice": "./heal-em-all/LICENSE.txt",
+    "notes": "六张原地图、原平台物理、治愈与再次感染、感染形态、有限弹药、钥匙出口和星级完整保留。代码GPL-3.0-only；Paweł Madeja原美术CC-BY-4.0；Quintus及内嵌工具MIT。中文界面、触屏与隔离生命周期为本站适配；原音乐因逐文件授权不明而省略。"
+  }
+,
+  component: lazy(() => import("../games/HealEmAllOriginal"))
+},
 ];
 export const findGame = (id: string) => games.find((game) => game.id === id);

@@ -1,3 +1,4 @@
+import { swapMaps } from "../src/vendor/swapMaps";
 import { VIKING_LEVELS } from "../src/vendor/vikingLevelData";
 import { BEATRIX_LEVELS } from "../src/vendor/beatrixCore";
 import { hexahedralLevels } from "../src/games/hexahedralLevels";
@@ -151,6 +152,8 @@ import { sortingNetworkLevels } from "../src/games/sortingNetworkLogic";
 import { voxelViewsLevels } from "../src/games/voxelViewsLogic";
 import { cubeNetLevels } from "../src/games/cubeNetLogic";
 const packs = {
+  "swap": swapMaps.slice(0,24),
+  "heal-em-all": [1,2,3,4,5,6],
   "pond": [],
   "blicblock": [],
   "cardq": [],
@@ -332,7 +335,11 @@ describe("Scalable catalog contract", () => {
       expect(game.source.license).toBe(
         game.source.kind === "original"
           ? "GPL-3.0-only"
-          : game.id === "xiangqi"
+          : game.id === "swap"
+            ? "CC-BY-SA-4.0"
+            : game.id === "heal-em-all"
+              ? "GPL-3.0-only"
+              : game.id === "xiangqi"
             ? "BSD-2-Clause"
             : game.id === "a-dark-room"
               ? "MPL-2.0"
@@ -354,8 +361,8 @@ describe("Scalable catalog contract", () => {
       }
     }),
   );
-  it("counts only 167 real games and 3002 levels, not the roadmap", () => {
-    expect(games).toHaveLength(167);
-    expect(games.reduce((sum, g) => sum + g.levelCount, 0)).toBe(3002);
+  it("counts only 169 real games and 3032 levels, not the roadmap", () => {
+    expect(games).toHaveLength(169);
+    expect(games.reduce((sum, g) => sum + g.levelCount, 0)).toBe(3032);
   });
 });

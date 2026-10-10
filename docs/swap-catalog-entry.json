@@ -1,0 +1,27 @@
+{
+  "id": "swap",
+  "title": "伙伴换位",
+  "subtitle": "切换控制权，让六种自动伙伴穿过开关、危地与蓝色隔墙；完整原作24关。",
+  "category": "逻辑思维",
+  "difficulty": "进阶",
+  "tone": "purple",
+  "levelCount": 24,
+  "resumeKey": "playgarden.swap.v1",
+  "artwork": {
+    "url": "./swap-art.svg",
+    "position": "center",
+    "size": "cover"
+  },
+  "source": {
+    "kind": "adapted",
+    "license": "CC-BY-SA-4.0",
+    "author": "Noah Moroze and Michael Yang",
+    "workTitle": "Swap（完整原作24关及结尾）",
+    "url": "https://github.com/nmoroze/swap/tree/a3cfb7d2d59d37dd3778d5de685a206cca4f1206",
+    "commit": "a3cfb7d2d59d37dd3778d5de685a206cca4f1206",
+    "notice": "./swap-LICENSE.txt",
+    "notes": "24个真实谜题加不计关数的原作感谢场景；完整保留30Hz惯性运动、六种AI、控制权队列、任何伙伴触发目标/失败、压力开关和只挡控制者的蓝墙。原代码、关卡和程序图形CC-BY-SA-4.0；本站GPL-3.0-only适配保留原署名和许可，并标记中文UI、移动操作、生命周期和校验存档等修改。未使用原音乐、字体、Keypress、Font Awesome、旧HTML或远程脚本。"
+  },
+  "component": "../games/SwapGame",
+  "allowUndo": false
+}

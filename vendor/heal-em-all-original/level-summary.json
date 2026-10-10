@@ -1,0 +1,128 @@
+[
+  {
+    "level": "level1.tmx",
+    "dimensions": [
+      30,
+      21
+    ],
+    "layers": [
+      {
+        "name": "collision",
+        "width": 30,
+        "height": 21,
+        "tiles": 630
+      },
+      {
+        "name": "foreground",
+        "width": 30,
+        "height": 21,
+        "tiles": 630
+      }
+    ]
+  },
+  {
+    "level": "level2.tmx",
+    "dimensions": [
+      30,
+      21
+    ],
+    "layers": [
+      {
+        "name": "collision",
+        "width": 30,
+        "height": 21,
+        "tiles": 630
+      },
+      {
+        "name": "foreground",
+        "width": 30,
+        "height": 21,
+        "tiles": 630
+      }
+    ]
+  },
+  {
+    "level": "level3.tmx",
+    "dimensions": [
+      50,
+      31
+    ],
+    "layers": [
+      {
+        "name": "collision",
+        "width": 50,
+        "height": 31,
+        "tiles": 1550
+      },
+      {
+        "name": "foreground",
+        "width": 50,
+        "height": 31,
+        "tiles": 1550
+      }
+    ]
+  },
+  {
+    "level": "level4.tmx",
+    "dimensions": [
+      100,
+      46
+    ],
+    "layers": [
+      {
+        "name": "collision",
+        "width": 100,
+        "height": 46,
+        "tiles": 4600
+      },
+      {
+        "name": "foreground",
+        "width": 100,
+        "height": 46,
+        "tiles": 4600
+      }
+    ]
+  },
+  {
+    "level": "level5.tmx",
+    "dimensions": [
+      100,
+      46
+    ],
+    "layers": [
+      {
+        "name": "collision",
+        "width": 100,
+        "height": 46,
+        "tiles": 4600
+      },
+      {
+        "name": "foreground",
+        "width": 100,
+        "height": 46,
+        "tiles": 4600
+      }
+    ]
+  },
+  {
+    "level": "level6.tmx",
+    "dimensions": [
+      100,
+      46
+    ],
+    "layers": [
+      {
+        "name": "collision",
+        "width": 100,
+        "height": 46,
+        "tiles": 4600
+      },
+      {
+        "name": "foreground",
+        "width": 100,
+        "height": 46,
+        "tiles": 4600
+      }
+    ]
+  }
+]
