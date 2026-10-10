@@ -16,6 +16,7 @@ for path in paths:
  text=text.replace('performAction(target) {','performAction(target: Hex) {')
  text=text.replace('modify(unit: Unit)\n','modify(unit: Unit): void\n')
  text=text.replace('generateLevel(number)', 'generateLevel(number: number)')
+ text=text.replace('function cellsInMap(size: number) {', 'function cellsInMap(size: number): number {')
  text=text.replace('(payload) => Promise<void>', '(payload: any) => Promise<void>')
  text=text.replace('emit(eventName: string, payload)', 'emit(eventName: string, payload: any)')
  text=text.replace('damage -= this.resistance','damage = Math.max(0, damage - this.resistance)')

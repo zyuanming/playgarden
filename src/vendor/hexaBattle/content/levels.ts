@@ -22,7 +22,7 @@ const STARTING_ENEMY_VALUE = 10
 const MIN_MAP_SIZE = 5
 const MAX_MAP_SIZE = 10
 
-function cellsInMap(size: number) {
+function cellsInMap(size: number): number {
   // XXX there might be a better way to calculate this, but yolo
   if (size === 1) {
     return 1
