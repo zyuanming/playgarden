@@ -102,6 +102,7 @@ test('six-stage original: earned first, middle and final routes with touch and l
     let s = await read(frame);
     while (s.player && (direction === 'right' ? s.player.x < x : s.player.x > x) && Date.now() < deadline) {
       const p = s.player, enemyAhead = s.objects.Zombie.some(z => Math.abs(z.y - p.y) < 30 && Math.abs(z.x - p.x) < 430 && (direction === 'right' ? z.x > p.x : z.x < p.x));
+      expect(p.form, 'positive route must remain human').toBe('human');
       // The final gun is guarded by a solid moving zombie. Before acquiring
       // ammunition, pushing into that body cannot work: jump over it using
       // the real controls, then land on the original gun pickup.
@@ -152,11 +153,11 @@ test('six-stage original: earned first, middle and final routes with touch and l
     const bounds = platformAt(state.level, x, y), deadline = Date.now() + 6000;
     while (!(state.player && Math.abs(state.player.y - y) < 4 && state.player.grounded) && Date.now() < deadline) {
       const p = state.player;
-      if (!p || state.phase === 'gameover') throw Error('Actual death while dropping onto the authored platform');
+      if (!p || state.phase === 'gameover' || p.form !== 'human') throw Error('Actual death or infection while dropping onto the authored platform');
       // Original characters are solid. Waiting motionless on a zombie is not
       // a landing: it repeatedly damages the player. Step toward the platform
       // interior using normal input, then heal it from the same floor height.
-      if (p.grounded && Math.abs(p.y - (y - 100)) < 6 && state.objects.Zombie.some(z => Math.abs(z.y - y) < 5 && Math.abs(z.x - p.x) < 65)) {
+      if (p.grounded && state.objects.Zombie.some(z => Math.abs(p.y - (z.y - 100)) < 6 && Math.abs(z.y - y) < 20 && Math.abs(z.x - p.x) < 65)) {
         const direction = p.x > (bounds.left + bounds.right) / 2 ? -1 : 1;
         await move(Math.max(bounds.left, Math.min(bounds.right, p.x + direction * 115)), true);
       }
