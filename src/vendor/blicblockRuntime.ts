@@ -34,7 +34,7 @@ export function createBlicblockRuntime(changed:(s:BlicSnapshot)=>void,mode=0){
  core=instantiateBlicblockOriginal({scope,root:{collapse:{nav:true},$watch:()=>{}},interval,timeout:(fn:()=>void,delay:number)=>schedule(fn,delay,false),params:mode?{cascade_count:String(mode)}:{},restart:()=>{},storage:{
   get:(name:string)=>name==='high_score'&&best>0?{value:best}:undefined,
   set:(name:string,value:{value:number})=>{if(name!=='high_score'||!Number.isSafeInteger(value.value)||value.value<0)return;best=Math.max(best,value.value);try{localStorage.setItem(STORAGE_KEY,String(best));storageOK=true;}catch{storageOK=false;}},
- }});
+ }}) as unknown as Original;
  digest();
  return {
   snapshot,
