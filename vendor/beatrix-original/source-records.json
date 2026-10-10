@@ -1,0 +1,91 @@
+{
+  "repository": "cxong/Beatrix",
+  "commit": "059b74a3e9d9ec2bffee0a72ba8a53be107fe8b3",
+  "files": [
+    {
+      "path": "LICENSE",
+      "sha": "2e322873c6f6ed41f75ac221e15f2de4b5f2f6a0",
+      "size": 1070,
+      "sha256": "4df84facbff405f330f3d6c55f54a6f5c697e0aaa2f926ff7d772a7937f9c7d6"
+    },
+    {
+      "path": "README.md",
+      "sha": "12bf896dfd56d616cdf4a4908df4a6daf21e4124",
+      "size": 192,
+      "sha256": "6efd384ef96c3e8f053f459005dc2e26a47a5a5389c64ace1f2a0725968ccd25"
+    },
+    {
+      "path": "index.html",
+      "sha": "c615c9cde048041f9ab1b6474ad5ccb44478797e",
+      "size": 1380,
+      "sha256": "ccd321fd4e33d1648772cae23cb84e763eab88ba88ba6b919fb1e388662046e7"
+    },
+    {
+      "path": "scripts/beat.js",
+      "sha": "55746f21acf0470c5f82a804c305f8036fcb17e1",
+      "size": 765,
+      "sha256": "c552587f7806db95f9a55f52f362f3359b2d67059dd996570a7a756163d95264"
+    },
+    {
+      "path": "scripts/boot.js",
+      "sha": "e8d066c9b54e1f84ac14c9628d3f6eefccf58bbe",
+      "size": 322,
+      "sha256": "8d9e3dad1a2951ce392b183a3ce332cb3c047a6e137baf9a873f7aadec2620c4"
+    },
+    {
+      "path": "scripts/drum.js",
+      "sha": "eba99953b32f79c89cc4fb3fa0786051b48461df",
+      "size": 3266,
+      "sha256": "b3bd5e223ca8d62ec4a751a251cf2a55dadb6182b2321b39507a32407a4a1dc7"
+    },
+    {
+      "path": "scripts/graphics.js",
+      "sha": "37646da5e03149ab79a83d9826ba9f0aee30b1cc",
+      "size": 833,
+      "sha256": "693fba6d16c029636d63064e725e7b066e87b05c29ea454b14c62af6d6438ae5"
+    },
+    {
+      "path": "scripts/indicator.js",
+      "sha": "ccf7cb8f61bc2f9d723f01971f381e13ae0e365b",
+      "size": 711,
+      "sha256": "e81b133b7d16abb457409da1a1acfb615f2d138637d2cc7a573021c0c21290ee"
+    },
+    {
+      "path": "scripts/main.js",
+      "sha": "576f5136ab295349d7b39724194b6e86ca325f9e",
+      "size": 14019,
+      "sha256": "e5257fe87a3ba52fbe4d0e75c43dc7ea8190239687f045d8e21e67244833b122"
+    },
+    {
+      "path": "scripts/preload.js",
+      "sha": "2413aca79d4fc239c2012ff60af64b549090ff2d",
+      "size": 1797,
+      "sha256": "f0cacd6352d4ca15c64e0b81dbddcab8fa71482814274925a6d43bbe18ada491"
+    },
+    {
+      "path": "scripts/levels/0.js",
+      "sha": "16d4783da1dfd97adb7e4972f7670007aa3898be",
+      "size": 10115,
+      "sha256": "397c54ab4f27556172c72ea276f208267a4919b863807be4fe0a0deb3e1731d3"
+    },
+    {
+      "path": "scripts/levels/1.js",
+      "sha": "962a83b6799bc8b8a21def3d82b6fdd699d5fa4e",
+      "size": 2631,
+      "sha256": "165cc78875f9d01139dee4a783e522f9419ad185760408c701b907888154811f"
+    },
+    {
+      "path": "scripts/levels/2.js",
+      "sha": "a14b7319b0ce441a62d9c4d573b3fb4d45c855c7",
+      "size": 6931,
+      "sha256": "e983459480c5ea00847740ae7634a9e2eb43a18c58ea39768dda048c812a2bbc"
+    },
+    {
+      "path": "scripts/levels/3.js",
+      "sha": "d49705b1fd64f3fc096936d8f1afdec7a97637f9",
+      "size": 7186,
+      "sha256": "1021b2c6a9bae1de69b5610a5668bfabf6918da792be7744f3ec06a464341be8"
+    }
+  ],
+  "directoryEntry": "* [Beatrix](https://github.com/cxong/Beatrix) - Music game where you arrange the drums to catch the beats and play the right rhythm. [Play it now!](http://gamejolt.com/games/puzzle/beatrix/27454/)"
+}

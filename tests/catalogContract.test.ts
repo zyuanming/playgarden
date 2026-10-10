@@ -1,3 +1,4 @@
+import { BEATRIX_LEVELS } from "../src/vendor/beatrixCore";
 import { hexahedralLevels } from "../src/games/hexahedralLevels";
 import { cubeComposerLevels } from "../src/games/cubeComposerLevels";
 import { parityLevels } from "../src/games/parityLevels";
@@ -149,6 +150,7 @@ import { sortingNetworkLevels } from "../src/games/sortingNetworkLogic";
 import { voxelViewsLevels } from "../src/games/voxelViewsLogic";
 import { cubeNetLevels } from "../src/games/cubeNetLogic";
 const packs = {
+  "beatrix": BEATRIX_LEVELS,
   "asteroids": [],
   "hexahedral": hexahedralLevels,
   "hexa-battle": [],
@@ -344,8 +346,8 @@ describe("Scalable catalog contract", () => {
       }
     }),
   );
-  it("counts only 156 real games and 2953 levels, not the roadmap", () => {
-    expect(games).toHaveLength(156);
-    expect(games.reduce((sum, g) => sum + g.levelCount, 0)).toBe(2953);
+  it("counts only 160 real games and 2995 levels, not the roadmap", () => {
+    expect(games).toHaveLength(160);
+    expect(games.reduce((sum, g) => sum + g.levelCount, 0)).toBe(2995);
   });
 });
