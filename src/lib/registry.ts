@@ -2626,5 +2626,31 @@ export const games: GameDefinition[] = [
   },
   "component": lazy(() => import("../games/AsteroidsGame"))
 },
+{
+  "id": "beatrix",
+  "title": "鼓点迷径",
+  "subtitle": "移动鼓面、引导节拍，奏出完整原作12段多声部谜题。",
+  "category": "逻辑思维",
+  "difficulty": "进阶",
+  "tone": "green",
+  "levelCount": 12,
+  "allowUndo": true,
+  "artwork": {
+    "url": "./beatrix-art.svg",
+    "position": "center",
+    "size": "cover"
+  },
+  "source": {
+    "kind": "adapted",
+    "license": "MIT",
+    "author": "Cong",
+    "workTitle": "Beatrix（完整原作12关）",
+    "url": "https://github.com/cxong/Beatrix/tree/059b74a3e9d9ec2bffee0a72ba8a53be107fe8b3",
+    "commit": "059b74a3e9d9ec2bffee0a72ba8a53be107fe8b3",
+    "notice": "./beatrix-LICENSE.txt",
+    "notes": "完整保留32×32原地图、12个目标节拍、固定源、方向鼓、延迟与折返、多声部精确匹配。原核心和数据MIT；本站中文UI、触屏摆放、存档、原创合成音色与SVG为GPL-3.0-only。未使用原录音样本、图片、字体或Phaser。"
+  },
+  "component": lazy(() => import("../games/BeatrixGame"))
+},
 ];
 export const findGame = (id: string) => games.find((game) => game.id === id);

@@ -427,6 +427,24 @@
         "package-lock.json"
       ],
       "scope": "Complete inertia, torus collision, three-stage fragmentation, UFO, three-life respawn and endless waves. Explicit first-party excerpt excludes borrowed third-party text-renderer and animation shim; no upstream font/audio/jQuery redistributed. Native input, paused simulation clock and scoped best score."
+    },
+    {
+      "name": "Beatrix complete original 12-puzzle campaign",
+      "version": "059b74a3e9d9ec2bffee0a72ba8a53be107fe8b3",
+      "license": "MIT",
+      "source": "https://github.com/cxong/Beatrix/tree/059b74a3e9d9ec2bffee0a72ba8a53be107fe8b3",
+      "preferredSource": [
+        "vendor/beatrix-original/upstream",
+        "src/vendor/beatrixCore.ts",
+        "src/vendor/beatrixLevelData.ts",
+        "src/vendor/beatrixAudio.ts",
+        "src/games/BeatrixGame.tsx"
+      ],
+      "buildSources": [
+        "scripts/beatrix/verify-sources.py",
+        "package-lock.json"
+      ],
+      "scope": "All 12 original 32x32 layouts, drum types, emitter directions/periods, BPM and exact polyphonic target rhythms. Live editing, delayed and reflecting pulses, fixed-phase multiset matches. Original procedural audio and native touch UI; no upstream samples, images, fonts or Phaser redistributed."
     }
   ]
 }
