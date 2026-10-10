@@ -445,6 +445,23 @@
         "package-lock.json"
       ],
       "scope": "All 12 original 32x32 layouts, drum types, emitter directions/periods, BPM and exact polyphonic target rhythms. Live editing, delayed and reflecting pulses, fixed-phase multiset matches. Original procedural audio and native touch UI; no upstream samples, images, fonts or Phaser redistributed."
+    },
+    {
+      "name": "Drunken Viking complete original seven-day campaign",
+      "version": "356d8e19f27060e3330de73fa1e0c68accfc5c79",
+      "license": "MIT",
+      "source": "https://github.com/cxong/DrunkenViking/tree/356d8e19f27060e3330de73fa1e0c68accfc5c79",
+      "preferredSource": [
+        "vendor/viking-original/upstream",
+        "src/vendor/vikingCore.ts",
+        "src/vendor/vikingLevelData.ts",
+        "src/games/VikingGame.tsx"
+      ],
+      "buildSources": [
+        "scripts/viking/verify-sources.py",
+        "package-lock.json"
+      ],
+      "scope": "All seven original20x15 maps, six original layers, restored-object collision, wall repair, permissive scores and direction-based forward replay. New native Chinese UI, validated input-history saves and original SVG; no original media, fonts or Phaser redistributed."
     }
   ]
 }

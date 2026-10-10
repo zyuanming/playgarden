@@ -1,3 +1,4 @@
+import { VIKING_LEVELS } from "../src/vendor/vikingLevelData";
 import { BEATRIX_LEVELS } from "../src/vendor/beatrixCore";
 import { hexahedralLevels } from "../src/games/hexahedralLevels";
 import { cubeComposerLevels } from "../src/games/cubeComposerLevels";
@@ -150,6 +151,7 @@ import { sortingNetworkLevels } from "../src/games/sortingNetworkLogic";
 import { voxelViewsLevels } from "../src/games/voxelViewsLogic";
 import { cubeNetLevels } from "../src/games/cubeNetLogic";
 const packs = {
+  "viking": VIKING_LEVELS,
   "beatrix": BEATRIX_LEVELS,
   "asteroids": [],
   "hexahedral": hexahedralLevels,

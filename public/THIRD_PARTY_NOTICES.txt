@@ -1958,6 +1958,34 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
+## Drunken Viking / 维京倒行记（完整原作7日）
+
+Source: https://github.com/cxong/DrunkenViking/tree/356d8e19f27060e3330de73fa1e0c68accfc5c79
+
+All seven original20x15 maps, original direction-based replay, restoration obstacles, pickup/outfit semantics and permissive exit scores are preserved. New TypeScript, Chinese translation, React/input/scoped saves and SVG are GPL-3.0-only. Every original image, recording, font and Phaser file is excluded. Exact original first-party text snapshots and preferred editable TMX maps are retained in vendor/viking-original/upstream.
+
+The MIT License (MIT)
+
+Copyright (c) 2014 Cong
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
 ## Complete bundled runtime dependency notices
 
 ### react 19.3.0 (MIT)
@@ -4340,4 +4368,10 @@ https://github.com/cxong/Beatrix/tree/059b74a3e9d9ec2bffee0a72ba8a53be107fe8b3
 Preferred editable source: vendor/beatrix-original/upstream, src/vendor/beatrixCore.ts, src/vendor/beatrixLevelData.ts, src/vendor/beatrixAudio.ts, src/games/BeatrixGame.tsx
 Build sources: scripts/beatrix/verify-sources.py, package-lock.json
 All 12 original 32x32 layouts, drum types, emitter directions/periods, BPM and exact polyphonic target rhythms. Live editing, delayed and reflecting pulses, fixed-phase multiset matches. Original procedural audio and native touch UI; no upstream samples, images, fonts or Phaser redistributed.
+
+Drunken Viking complete original seven-day campaign 356d8e19f27060e3330de73fa1e0c68accfc5c79 (MIT)
+https://github.com/cxong/DrunkenViking/tree/356d8e19f27060e3330de73fa1e0c68accfc5c79
+Preferred editable source: vendor/viking-original/upstream, src/vendor/vikingCore.ts, src/vendor/vikingLevelData.ts, src/games/VikingGame.tsx
+Build sources: scripts/viking/verify-sources.py, package-lock.json
+All seven original20x15 maps, six original layers, restored-object collision, wall repair, permissive scores and direction-based forward replay. New native Chinese UI, validated input-history saves and original SVG; no original media, fonts or Phaser redistributed.
 

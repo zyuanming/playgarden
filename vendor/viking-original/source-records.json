@@ -1,0 +1,325 @@
+{
+  "repository": "https://github.com/cxong/DrunkenViking",
+  "commit": "356d8e19f27060e3330de73fa1e0c68accfc5c79",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2014 Cong",
+  "originalLevelCount": 7,
+  "sourceChain": [
+    {
+      "repository": "https://github.com/bobeff/open-source-games",
+      "commit": "3a9ab8fc892a2cdadf8989a72ba7624a11e39cec",
+      "section": "Other lists",
+      "linksTo": "https://github.com/leereilly/games"
+    },
+    {
+      "repository": "https://github.com/leereilly/games",
+      "commit": "c67976ddcf6f7aef26dc3884116205ab9ef40f74",
+      "section": "Browser-Based / Puzzle",
+      "linksTo": "https://github.com/cxong/DrunkenViking"
+    }
+  ],
+  "files": [
+    {
+      "path": "LICENSE",
+      "sha": "2e322873c6f6ed41f75ac221e15f2de4b5f2f6a0",
+      "bytes": 1070,
+      "source": "https://raw.githubusercontent.com/cxong/DrunkenViking/356d8e19f27060e3330de73fa1e0c68accfc5c79/LICENSE",
+      "verifiedGitBlobSha": "2e322873c6f6ed41f75ac221e15f2de4b5f2f6a0",
+      "sha256": "4df84facbff405f330f3d6c55f54a6f5c697e0aaa2f926ff7d772a7937f9c7d6"
+    },
+    {
+      "path": "README.md",
+      "sha": "43dd584c6e6ca2fb8983b1aa781b3ceb1dbe8f22",
+      "bytes": 348,
+      "source": "https://raw.githubusercontent.com/cxong/DrunkenViking/356d8e19f27060e3330de73fa1e0c68accfc5c79/README.md",
+      "verifiedGitBlobSha": "43dd584c6e6ca2fb8983b1aa781b3ceb1dbe8f22",
+      "sha256": "12a57b44f848e4163079b4be7dc9362a67a1071fb1cade366de1fce9d60c4c16"
+    },
+    {
+      "path": "index.html",
+      "sha": "a5776fc3ea9d1e5ed38346cf887b96aeee6a6440",
+      "bytes": 1381,
+      "source": "https://raw.githubusercontent.com/cxong/DrunkenViking/356d8e19f27060e3330de73fa1e0c68accfc5c79/index.html",
+      "verifiedGitBlobSha": "a5776fc3ea9d1e5ed38346cf887b96aeee6a6440",
+      "sha256": "b10d5c76216c2de36f78cf2f40ea6eaaf02e16a0882d99c959a4df98d8104c3e"
+    },
+    {
+      "path": "scripts/boot.js",
+      "sha": "0f801f503ad31fbbf8545efcaf2c87a96cdf2d7d",
+      "bytes": 683,
+      "source": "https://raw.githubusercontent.com/cxong/DrunkenViking/356d8e19f27060e3330de73fa1e0c68accfc5c79/scripts/boot.js",
+      "verifiedGitBlobSha": "0f801f503ad31fbbf8545efcaf2c87a96cdf2d7d",
+      "sha256": "e1b57f087c31e5daead9b5a1adec955604f04a9011da605468d34c5d2546bc4a"
+    },
+    {
+      "path": "scripts/dialog.js",
+      "sha": "a87e637ae665e7855df98a287f5ac415850b534c",
+      "bytes": 1172,
+      "source": "https://raw.githubusercontent.com/cxong/DrunkenViking/356d8e19f27060e3330de73fa1e0c68accfc5c79/scripts/dialog.js",
+      "verifiedGitBlobSha": "a87e637ae665e7855df98a287f5ac415850b534c",
+      "sha256": "8ad94759a1f4ebe7e1104420c6c0c99eeba65c9126521fcbf9e6ee824e71afa0"
+    },
+    {
+      "path": "scripts/graphics.js",
+      "sha": "846e62277f053dd2dfce109d928d987ee99459c5",
+      "bytes": 834,
+      "source": "https://raw.githubusercontent.com/cxong/DrunkenViking/356d8e19f27060e3330de73fa1e0c68accfc5c79/scripts/graphics.js",
+      "verifiedGitBlobSha": "846e62277f053dd2dfce109d928d987ee99459c5",
+      "sha256": "984e40d44174fee5701fe17712d57005d7ef3fba1189716ecb36ff07c63b5c68"
+    },
+    {
+      "path": "scripts/index.js",
+      "sha": "a7079f4d286e51ea53623b535ccb2c6d0c33ca38",
+      "bytes": 457,
+      "source": "https://raw.githubusercontent.com/cxong/DrunkenViking/356d8e19f27060e3330de73fa1e0c68accfc5c79/scripts/index.js",
+      "verifiedGitBlobSha": "a7079f4d286e51ea53623b535ccb2c6d0c33ca38",
+      "sha256": "5e576c08e9df00bce1656c23a8e39b374e5423fdbd54c7efcdd673f299d316ee"
+    },
+    {
+      "path": "scripts/levels.js",
+      "sha": "5efb0cd3253e9b69cd999b340f01620b993d9ab4",
+      "bytes": 1464,
+      "source": "https://raw.githubusercontent.com/cxong/DrunkenViking/356d8e19f27060e3330de73fa1e0c68accfc5c79/scripts/levels.js",
+      "verifiedGitBlobSha": "5efb0cd3253e9b69cd999b340f01620b993d9ab4",
+      "sha256": "9f925edcdd81984c4f3de4b107ddd295e179a125b2ea3ab601bd6a747b73860a"
+    },
+    {
+      "path": "scripts/main.js",
+      "sha": "8b428fc75dd8ae738f3c33c0ef33ad20f49f42c1",
+      "bytes": 9365,
+      "source": "https://raw.githubusercontent.com/cxong/DrunkenViking/356d8e19f27060e3330de73fa1e0c68accfc5c79/scripts/main.js",
+      "verifiedGitBlobSha": "8b428fc75dd8ae738f3c33c0ef33ad20f49f42c1",
+      "sha256": "7de2b25f59b4dd3ab1c3e408ffb0c6e81a83ab5887e466f5a3d160bfd7b2dff3"
+    },
+    {
+      "path": "scripts/map.js",
+      "sha": "a6462b64268f54f84a765913d7554eabd69955d9",
+      "bytes": 5342,
+      "source": "https://raw.githubusercontent.com/cxong/DrunkenViking/356d8e19f27060e3330de73fa1e0c68accfc5c79/scripts/map.js",
+      "verifiedGitBlobSha": "a6462b64268f54f84a765913d7554eabd69955d9",
+      "sha256": "ec319b8384ca865803607a3fe24eab86705b1d6ab94e490f3e34936b6ec27076"
+    },
+    {
+      "path": "scripts/player.js",
+      "sha": "75c9b44becc660243036649cd250ba2c74621994",
+      "bytes": 2209,
+      "source": "https://raw.githubusercontent.com/cxong/DrunkenViking/356d8e19f27060e3330de73fa1e0c68accfc5c79/scripts/player.js",
+      "verifiedGitBlobSha": "75c9b44becc660243036649cd250ba2c74621994",
+      "sha256": "1463f1425f4d031fa352338e2cfb77c3c93bc4bca48824f14fa3ccf964c6f014"
+    },
+    {
+      "path": "scripts/preload.js",
+      "sha": "2e2ec96bb6ad5e541ca58f1435fd5895844518ec",
+      "bytes": 3258,
+      "source": "https://raw.githubusercontent.com/cxong/DrunkenViking/356d8e19f27060e3330de73fa1e0c68accfc5c79/scripts/preload.js",
+      "verifiedGitBlobSha": "2e2ec96bb6ad5e541ca58f1435fd5895844518ec",
+      "sha256": "d52da7683aa281b71d7f2d8c7b62556f3358a5aea8afe0dc7db2df26780ace1d"
+    },
+    {
+      "path": "scripts/scorecard.js",
+      "sha": "7a7dcce64b9379a2afdbf26f4245f3242bc91e0d",
+      "bytes": 817,
+      "source": "https://raw.githubusercontent.com/cxong/DrunkenViking/356d8e19f27060e3330de73fa1e0c68accfc5c79/scripts/scorecard.js",
+      "verifiedGitBlobSha": "7a7dcce64b9379a2afdbf26f4245f3242bc91e0d",
+      "sha256": "bbe85beaf24cb1d379edabe9d80fba4c01d8431a682d2fe9ee4cd4a097970be0"
+    },
+    {
+      "path": "scripts/title.js",
+      "sha": "edb3084d130ce11048d043983d7e72186686ffe2",
+      "bytes": 2340,
+      "source": "https://raw.githubusercontent.com/cxong/DrunkenViking/356d8e19f27060e3330de73fa1e0c68accfc5c79/scripts/title.js",
+      "verifiedGitBlobSha": "edb3084d130ce11048d043983d7e72186686ffe2",
+      "sha256": "136c9a5ac1ba57fc204d3e98d29cf84141c611b98f54a1051096f17fa1766ae9"
+    },
+    {
+      "path": "scripts/levels/level1.json",
+      "sha": "bffc6fdd317c04ef1ab0c2d5d047395a0826a518",
+      "bytes": 9009,
+      "source": "https://raw.githubusercontent.com/cxong/DrunkenViking/356d8e19f27060e3330de73fa1e0c68accfc5c79/scripts/levels/level1.json",
+      "verifiedGitBlobSha": "bffc6fdd317c04ef1ab0c2d5d047395a0826a518",
+      "sha256": "d9206f4b663ac8ba68ef2b70d4d9cdcc388c603dce2ffddf709a543d10a7fd13"
+    },
+    {
+      "path": "scripts/levels/level2.json",
+      "sha": "b6f424898295f8ddf25ac516e6449b252515419d",
+      "bytes": 9029,
+      "source": "https://raw.githubusercontent.com/cxong/DrunkenViking/356d8e19f27060e3330de73fa1e0c68accfc5c79/scripts/levels/level2.json",
+      "verifiedGitBlobSha": "b6f424898295f8ddf25ac516e6449b252515419d",
+      "sha256": "9c92492dbb3a1ebcf42468c1d2c7b31875148c477a8ea4169cd803e44e5d3aea"
+    },
+    {
+      "path": "scripts/levels/level3.json",
+      "sha": "5c84dde89acee1517829550b811ec666d5b72dbd",
+      "bytes": 9018,
+      "source": "https://raw.githubusercontent.com/cxong/DrunkenViking/356d8e19f27060e3330de73fa1e0c68accfc5c79/scripts/levels/level3.json",
+      "verifiedGitBlobSha": "5c84dde89acee1517829550b811ec666d5b72dbd",
+      "sha256": "516d2a4601b2fde1d03562dad20f1a6e3416199d30f98be760b93395e0f85b01"
+    },
+    {
+      "path": "scripts/levels/level4.json",
+      "sha": "f93212917b4669a0d7d8e855916c794e2a8769fe",
+      "bytes": 9036,
+      "source": "https://raw.githubusercontent.com/cxong/DrunkenViking/356d8e19f27060e3330de73fa1e0c68accfc5c79/scripts/levels/level4.json",
+      "verifiedGitBlobSha": "f93212917b4669a0d7d8e855916c794e2a8769fe",
+      "sha256": "e5104b80465a67932eef37cc3092e2c1f086dc4498fad535028ce13ffa334c7f"
+    },
+    {
+      "path": "scripts/levels/level5.json",
+      "sha": "323023c16efac5e1dfe96041b8e55f8778ff1e08",
+      "bytes": 9083,
+      "source": "https://raw.githubusercontent.com/cxong/DrunkenViking/356d8e19f27060e3330de73fa1e0c68accfc5c79/scripts/levels/level5.json",
+      "verifiedGitBlobSha": "323023c16efac5e1dfe96041b8e55f8778ff1e08",
+      "sha256": "0ab70c3a26d9e23b98be33506a8ac2c349c416b85e53305bc8eb4e9aa14dc043"
+    },
+    {
+      "path": "scripts/levels/level6.json",
+      "sha": "dc875d1d756c0aedfc83233f7d5d1c531a659d34",
+      "bytes": 9100,
+      "source": "https://raw.githubusercontent.com/cxong/DrunkenViking/356d8e19f27060e3330de73fa1e0c68accfc5c79/scripts/levels/level6.json",
+      "verifiedGitBlobSha": "dc875d1d756c0aedfc83233f7d5d1c531a659d34",
+      "sha256": "7bd32f7cd776c6d3869efafa9eb2c2a8d04fe18e35a9ae7ca375c0afb930a389"
+    },
+    {
+      "path": "scripts/levels/level7.json",
+      "sha": "fac22b3aea92587de35459acbde3b3ee73ecaf7e",
+      "bytes": 9193,
+      "source": "https://raw.githubusercontent.com/cxong/DrunkenViking/356d8e19f27060e3330de73fa1e0c68accfc5c79/scripts/levels/level7.json",
+      "verifiedGitBlobSha": "fac22b3aea92587de35459acbde3b3ee73ecaf7e",
+      "sha256": "6b21ad167b5fe74ce4f8036b59408bb62282e9c8b7a2521e7f73d8b9fe70ee09"
+    },
+    {
+      "path": "scripts/levels/level1.tmx",
+      "sha": "bd19df7efa48aa4add4bb03a3f46592479091029",
+      "bytes": 36098,
+      "source": "https://raw.githubusercontent.com/cxong/DrunkenViking/356d8e19f27060e3330de73fa1e0c68accfc5c79/scripts/levels/level1.tmx",
+      "verifiedGitBlobSha": "bd19df7efa48aa4add4bb03a3f46592479091029",
+      "sha256": "82dcbf7b5fdf221f3a19f07ec84a1c68dee2ad0192414dee53b7986c0e990e6e"
+    },
+    {
+      "path": "scripts/levels/level2.tmx",
+      "sha": "07349c741c95c9b02fdc86105203def78c7d0f47",
+      "bytes": 36118,
+      "source": "https://raw.githubusercontent.com/cxong/DrunkenViking/356d8e19f27060e3330de73fa1e0c68accfc5c79/scripts/levels/level2.tmx",
+      "verifiedGitBlobSha": "07349c741c95c9b02fdc86105203def78c7d0f47",
+      "sha256": "d1bb4e9f4bb83c8ddf0c3974febebc3c8c4e77c816d4f512f0ad4314e039f646"
+    },
+    {
+      "path": "scripts/levels/level3.tmx",
+      "sha": "495f48c9e98d952795081f8fef92dbb441b6a7b5",
+      "bytes": 36107,
+      "source": "https://raw.githubusercontent.com/cxong/DrunkenViking/356d8e19f27060e3330de73fa1e0c68accfc5c79/scripts/levels/level3.tmx",
+      "verifiedGitBlobSha": "495f48c9e98d952795081f8fef92dbb441b6a7b5",
+      "sha256": "f9d275502231c8dfe8428228fcdd806d3babb1829815d540474f1d2676cf29e7"
+    },
+    {
+      "path": "scripts/levels/level4.tmx",
+      "sha": "05e16f4143ee0bba7b1f5307560642c91feb4ff9",
+      "bytes": 36125,
+      "source": "https://raw.githubusercontent.com/cxong/DrunkenViking/356d8e19f27060e3330de73fa1e0c68accfc5c79/scripts/levels/level4.tmx",
+      "verifiedGitBlobSha": "05e16f4143ee0bba7b1f5307560642c91feb4ff9",
+      "sha256": "2204751a5f54624c98a4427b08eff081f8e9e9c7e483cc3b9ba4722c931321f3"
+    },
+    {
+      "path": "scripts/levels/level5.tmx",
+      "sha": "20d314bc8881ed4644ee55e337cf2b8c924adcd5",
+      "bytes": 36172,
+      "source": "https://raw.githubusercontent.com/cxong/DrunkenViking/356d8e19f27060e3330de73fa1e0c68accfc5c79/scripts/levels/level5.tmx",
+      "verifiedGitBlobSha": "20d314bc8881ed4644ee55e337cf2b8c924adcd5",
+      "sha256": "d1c0140c4aff5ae55aab3e82385744f87845d53acf3804c78cd33c5930f66cf8"
+    },
+    {
+      "path": "scripts/levels/level6.tmx",
+      "sha": "d3e5e09f913886bc8f3ccac8d6d00bf78e5aad56",
+      "bytes": 36189,
+      "source": "https://raw.githubusercontent.com/cxong/DrunkenViking/356d8e19f27060e3330de73fa1e0c68accfc5c79/scripts/levels/level6.tmx",
+      "verifiedGitBlobSha": "d3e5e09f913886bc8f3ccac8d6d00bf78e5aad56",
+      "sha256": "54812ba9caedee33e3555092a157d8bb75ab24eea130507472d429ec2060c5d9"
+    },
+    {
+      "path": "scripts/levels/level7.tmx",
+      "sha": "1490d5d4941a0a653642f8be6f6ecec135cc1582",
+      "bytes": 36282,
+      "source": "https://raw.githubusercontent.com/cxong/DrunkenViking/356d8e19f27060e3330de73fa1e0c68accfc5c79/scripts/levels/level7.tmx",
+      "verifiedGitBlobSha": "1490d5d4941a0a653642f8be6f6ecec135cc1582",
+      "sha256": "650c3d1827f811ae89c25b92589aedfea9f8b8a3cb3efb6e8b9d5103b68e35f5"
+    }
+  ],
+  "excluded": [
+    "All binaries: images, sounds, font, screenshots, logos",
+    "Bundled phaser.min.js"
+  ],
+  "researchOnly": true,
+  "filesVerified": true,
+  "levelStatistics": [
+    {
+      "level": 1,
+      "width": 20,
+      "height": 15,
+      "walls": 133,
+      "restorableObjects": 22,
+      "pickupCells": 7,
+      "wallMountedObjects": 5,
+      "bedIndex": 174
+    },
+    {
+      "level": 2,
+      "width": 20,
+      "height": 15,
+      "walls": 131,
+      "restorableObjects": 25,
+      "pickupCells": 7,
+      "wallMountedObjects": 4,
+      "bedIndex": 174
+    },
+    {
+      "level": 3,
+      "width": 20,
+      "height": 15,
+      "walls": 132,
+      "restorableObjects": 23,
+      "pickupCells": 6,
+      "wallMountedObjects": 4,
+      "bedIndex": 174
+    },
+    {
+      "level": 4,
+      "width": 20,
+      "height": 15,
+      "walls": 129,
+      "restorableObjects": 27,
+      "pickupCells": 7,
+      "wallMountedObjects": 4,
+      "bedIndex": 174
+    },
+    {
+      "level": 5,
+      "width": 20,
+      "height": 15,
+      "walls": 125,
+      "restorableObjects": 39,
+      "pickupCells": 7,
+      "wallMountedObjects": 4,
+      "bedIndex": 174
+    },
+    {
+      "level": 6,
+      "width": 20,
+      "height": 15,
+      "walls": 127,
+      "restorableObjects": 40,
+      "pickupCells": 7,
+      "wallMountedObjects": 4,
+      "bedIndex": 174
+    },
+    {
+      "level": 7,
+      "width": 20,
+      "height": 15,
+      "walls": 124,
+      "restorableObjects": 63,
+      "pickupCells": 7,
+      "wallMountedObjects": 4,
+      "bedIndex": 174
+    }
+  ]
+}
