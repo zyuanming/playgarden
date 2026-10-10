@@ -50,7 +50,12 @@ export default function createLevel(
       let tempPos
       // determines if the next cell should be anywhere else or attached to
       // the previous one
-      const cellFinder = Math.random() > CLUSTERING_PROBABILITY
+      // A fully surrounded pit has no ground neighbor. The original retries
+      // that impossible selection forever; resume elsewhere without changing
+      // terrain count, map size or opponent budget.
+      const hasGroundNeighbor = curCell.pos.neighbors.filter(map.isIn)
+        .some(pos => map.cellAt(pos).terrain === Terrain.Ground)
+      const cellFinder = Math.random() > CLUSTERING_PROBABILITY || !hasGroundNeighbor
         ? () => getRandomCell(map)
         : () => {
           tempPos = getRandomNeighbor(map, curCell.pos)

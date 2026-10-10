@@ -67,7 +67,7 @@ test('complete tactical rules: earned battle, recruit, skills, defeat, pause and
  await act(page.getByRole('button',{name:'撤回营地',exact:true}),mobile);await act(page.getByRole('button',{name:'确认',exact:true}),mobile);
  await loadCheckpoint(page,{version:1,campaign,battle:{size:5,epoch:0,terrain:[],units:[unit('warrior',0,0,0,1,3),unit('dragon',1,1,0,20,4)]}},mobile);
  await act(page.getByRole('button',{name:'结束回合',exact:true}),mobile);await idle(page);expect((await snapshot(page)).result).toBe('loss');await page.screenshot({path:info.outputPath('hb-real-defeat-and-retry.png'),fullPage:true});await act(page.getByRole('button',{name:'返回营地',exact:true}),mobile);expect((await snapshot(page)).campaign).toEqual(campaign);
- await act(page.getByRole('button',{name:'开始战斗',exact:true}),mobile);await act(page.getByRole('button',{name:'结束回合',exact:true}),mobile);
+ await act(page.getByRole('button',{name:'开始战斗',exact:true}),mobile);s=await snapshot(page);expect(s.map).toEqual({size:6,pits:18});expect(s.units.filter((u:any)=>u.side===s.player)).toHaveLength(campaign.party.length);const enemyBudget=s.units.filter((u:any)=>u.side!==s.player).reduce((n:number,u:any)=>n+u.cost,0);expect(enemyBudget).toBeLessThanOrEqual(60);expect(enemyBudget).toBeGreaterThan(55);await act(page.getByRole('button',{name:'结束回合',exact:true}),mobile);
  const readHandle=await page.evaluateHandle(()=>(window as unknown as {__hbRead:()=>unknown}).__hbRead);
  await act(page.getByRole('button',{name:'返回游戏大厅',exact:true}),mobile);expect(await readHandle.evaluate(fn=>(fn as ()=>any)())).toMatchObject({disposed:true,timers:0});
  await openGame(page,'六角远征');await expect(page.locator('[data-hb-ready]')).toBeVisible();expect((await snapshot(page)).campaign).toEqual(campaign);

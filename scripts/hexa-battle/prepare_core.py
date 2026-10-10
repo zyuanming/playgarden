@@ -20,6 +20,12 @@ for path in paths:
  text=text.replace('(payload) => Promise<void>', '(payload: any) => Promise<void>')
  text=text.replace('emit(eventName: string, payload)', 'emit(eventName: string, payload: any)')
  text=text.replace('damage -= this.resistance','damage = Math.max(0, damage - this.resistance)')
+ text=text.replace('      const cellFinder = Math.random() > CLUSTERING_PROBABILITY', '''      // A fully surrounded pit has no ground neighbor. The original retries
+      // that impossible selection forever; resume elsewhere without changing
+      // terrain count, map size or opponent budget.
+      const hasGroundNeighbor = curCell.pos.neighbors.filter(map.isIn)
+        .some(pos => map.cellAt(pos).terrain === Terrain.Ground)
+      const cellFinder = Math.random() > CLUSTERING_PROBABILITY || !hasGroundNeighbor''')
  header='// Original Hexa Battle, Copyright (c) 2017 Giacomo Tagliabue, MIT.\n// Playgarden: strict types and resistance underflow correction; see vendor/hexa-battle-original.\n'
  p=dest/rel;p.parent.mkdir(parents=True,exist_ok=True);p.write_text(header+text)
 ai=(source/'src/ai/unitAi.ts').read_text().replace("import OpponentAi from './opponentAi'", "import type { StrategyContext } from './strategyContext'").replace('protected ai: OpponentAi','protected ai: StrategyContext')
