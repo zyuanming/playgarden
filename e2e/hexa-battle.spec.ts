@@ -50,7 +50,7 @@ test('complete tactical rules: earned battle, recruit, skills, defeat, pause and
  s=await fightFirstBattle(page,mobile);expect(s.result).toBe('win');
  await page.screenshot({path:info.outputPath('hb-earned-battle-victory.png'),fullPage:true});
  await act(page.getByRole('button',{name:'返回营地',exact:true}),mobile);s=await snapshot(page);expect(s.campaign.depth).toBe(1);expect(s.campaign.money).toBe(2);expect(s.campaign.wins).toBe(1);expect(s.campaign.party.length).toBeLessThanOrEqual(4);
- const earned=s.campaign;await page.reload();await expect(page.locator('[data-hb-ready]')).toBeVisible();expect((await snapshot(page)).campaign).toEqual(earned);
+ const earned=s.campaign;await page.reload();await openGame(page,'六角远征');await expect(page.locator('[data-hb-ready]')).toBeVisible();expect((await snapshot(page)).campaign).toEqual(earned);
  // An explicit later-depth camp fixture checks the original recruitment prices.
  await loadCheckpoint(page,{version:1,campaign,battle:null},mobile);await act(page.getByRole('button',{name:'招募队员',exact:true}),mobile);
  const knight=page.locator('.hb-shop button').filter({has:page.locator('b').filter({hasText:/^骑士$/})});await act(knight,mobile);await expect(page.getByRole('button',{name:'确认招募',exact:true})).toBeEnabled();
@@ -62,7 +62,7 @@ test('complete tactical rules: earned battle, recruit, skills, defeat, pause and
  await cell(page,-1,-1,mobile);await act(page.getByRole('button',{name:/3\. 火球/}),mobile);await cell(page,3,-1,mobile);s=await snapshot(page);expect(s.units.find((u:any)=>u.type==='orc').hp).toBe(2);expect(s.units.find((u:any)=>u.type==='troll').hp).toBe(9);expect(s.units.find((u:any)=>u.type==='mage').mana).toBe(5);
  await page.screenshot({path:info.outputPath('hb-heal-and-area-skill-checkpoint.png'),fullPage:true});
  const stored=await page.evaluate(k=>localStorage.getItem(k),key);await loadCheckpoint(page,'{"version":1,"campaign":{"depth":-1}}',mobile);expect(await page.evaluate(k=>localStorage.getItem(k),key)).toBe(stored);await expect(page.locator('.hb-status')).toContainText('未导入');
- await act(page.getByRole('button',{name:'结束回合',exact:true}),mobile);await act(page.getByRole('button',{name:'暂停',exact:true}),mobile);s=await snapshot(page);await page.waitForTimeout(600);expect((await snapshot(page)).units).toEqual(s.units);await act(page.getByRole('button',{name:'继续游戏',exact:true}),mobile);await idle(page);
+ await act(page.getByRole('button',{name:'结束回合',exact:true}),mobile);await act(page.getByRole('button',{name:'暂停',exact:true}),mobile);s=await snapshot(page);expect(s.paused).toBe(true);expect(s.busy).toBe(true);await page.waitForTimeout(600);expect((await snapshot(page)).units).toEqual(s.units);await act(page.getByRole('button',{name:'继续游戏',exact:true}),mobile);await idle(page);
  // A fragile imported party loses by the original enemy action, then can retry.
  await act(page.getByRole('button',{name:'撤回营地',exact:true}),mobile);await act(page.getByRole('button',{name:'确认',exact:true}),mobile);
  await loadCheckpoint(page,{version:1,campaign,battle:{size:5,epoch:0,terrain:[],units:[unit('warrior',0,0,0,1,3),unit('dragon',1,1,0,20,4)]}},mobile);
