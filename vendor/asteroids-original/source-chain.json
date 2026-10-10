@@ -1,0 +1,21 @@
+{
+  "chain": [
+    {
+      "repository": "bobeff/open-source-games",
+      "readmeGitBlob": "0a54e0898d52ffa31f83f843b66aee458c5a49b8",
+      "matchingEntries": [
+        "- **[Games on GitHub](https://github.com/leereilly/games)**"
+      ]
+    },
+    {
+      "repository": "leereilly/games",
+      "readmeGitBlob": "6c1dd472d6c789fcf8cfc0d721f7538c2ead1158",
+      "matchingEntries": [
+        "* [Asteroids](http://github.com/dmcinnes/HTML5-Asteroids) - Pure JavaScript asteroids. [Play it now!](http://dougmcinnes.com/html-5-asteroids/)"
+      ]
+    }
+  ],
+  "candidate": "https://github.com/dmcinnes/HTML5-Asteroids/tree/930301cbda83ed3b120f64b801d937d077ee2da0",
+  "catalogBaseline": "e05f9b9e0c6b1ddf4f65b4ed1e14c48f0f4b8798",
+  "duplicateReview": "158 unique IDs; no rotational inertia torus fragmentation/UFO combat; Star Sentry,LunarLanding,SWINGBY differ"
+}

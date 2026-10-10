@@ -1,0 +1,743 @@
+{
+  "schemaVersion": 1,
+  "auditedAt": "2026-10-10",
+  "candidate": {
+    "proposedGameNumber": 159,
+    "work": "HTML5-Asteroids",
+    "author": "Doug McInnes",
+    "repository": "https://github.com/dmcinnes/HTML5-Asteroids",
+    "commit": "930301cbda83ed3b120f64b801d937d077ee2da0",
+    "source": "game.js",
+    "sourceGitBlob": "4f0a717597015ad140a1e9528e52be836ced2d4d",
+    "sourceSha256": "e43597fb5325f1b043429b978bc2828b15ae2427d4e1176f24d54fc4395a370f"
+  },
+  "review": {
+    "method": "Read-only pinned GitHub source and local catalog/static-code inspection. No upstream code was installed or executed.",
+    "licenseScope": "MIT evidence covers first-party code; borrowed renderer/shim, font, WAV files, and legacy dependencies are excluded from runtime.",
+    "finiteLevels": 0,
+    "endless": true
+  },
+  "coordinateSystem": {
+    "desktop": {
+      "width": 780,
+      "height": 540,
+      "source": "index.html:20"
+    },
+    "iPad": {
+      "width": 1020,
+      "height": 660,
+      "source": "ipad.js:9"
+    },
+    "unusedDefaults": {
+      "width": 800,
+      "height": 600,
+      "source": "game.js:876-877"
+    },
+    "x": "right",
+    "y": "down",
+    "angleDegrees": true,
+    "shipForwardAngle": "rot - 90",
+    "delta": "elapsed milliseconds / 30",
+    "gridCellSize": 60,
+    "desktopGrid": {
+      "columns": 13,
+      "rows": 9
+    },
+    "source": "game.js:38,47-53,1024-1033,1146-1149"
+  },
+  "timingAndOrder": {
+    "frameOrder": [
+      "Execute FSM using Date.now()",
+      "Compute delta=elapsed/30",
+      "Run sprites in array order: ship, ten player bullets, three alien bullets, big alien, then asteroids/explosions and appended fragments",
+      "Splice sprites marked reap immediately; appended sprites can run during same frame",
+      "Draw score, reserve lives, optional framerate; schedule next frame unless paused"
+    ],
+    "motionOrder": [
+      "Skip invisible sprite",
+      "Clear transformed-point cache",
+      "preMove",
+      "velocity += acceleration*delta",
+      "position += velocity*delta",
+      "rotation += rotational velocity*delta",
+      "wrap rotation by one ±360 step",
+      "postMove",
+      "Update spatial grid",
+      "Draw and collide"
+    ],
+    "wallClockTimers": [
+      "UFO appearances",
+      "Interwave wait",
+      "Respawn wait",
+      "Game-over wait"
+    ],
+    "deltaTimers": [
+      "Ship shot cooldown",
+      "UFO shot cooldown",
+      "Projectile lifetime",
+      "Explosion growth"
+    ],
+    "source": "game.js:115-192,914-1017,1127-1193"
+  },
+  "controls": {
+    "left": {
+      "key": "ArrowLeft",
+      "effect": "rotational velocity -6; wins when both left and right held"
+    },
+    "right": {
+      "key": "ArrowRight",
+      "effect": "rotational velocity +6"
+    },
+    "thrust": {
+      "key": "ArrowUp",
+      "effect": "acceleration 0.5 toward heading; otherwise zero acceleration and inertial coast"
+    },
+    "fire": {
+      "key": "Space",
+      "effect": "Start from waiting; hold to fire during ship visibility"
+    },
+    "pause": {
+      "key": "P",
+      "effect": "Toggle loop pause"
+    },
+    "mute": {
+      "key": "M",
+      "effect": "Toggle original audio muted flag; initially muted"
+    },
+    "debug": {
+      "F": "Toggle displayed FPS",
+      "G": "Hold to show grid and occupied cells"
+    },
+    "unused": [
+      "ArrowDown",
+      "H",
+      "KEY_STATUS.keyDown"
+    ],
+    "touch": "Original ipad.js supports thrust, left, right and fire buttons only on detected iPad; any document touch sets gameStart. Modern pointer controls replace this adapter.",
+    "source": "game.js:6-36,386-435,1197-1214; ipad.js"
+  },
+  "shapes": {
+    "ship": [
+      [
+        -5,
+        4
+      ],
+      [
+        0,
+        -12
+      ],
+      [
+        5,
+        4
+      ]
+    ],
+    "exhaust": [
+      [
+        -3,
+        6
+      ],
+      [
+        0,
+        11
+      ],
+      [
+        3,
+        6
+      ]
+    ],
+    "asteroid": [
+      [
+        -10,
+        0
+      ],
+      [
+        -5,
+        7
+      ],
+      [
+        -3,
+        4
+      ],
+      [
+        1,
+        10
+      ],
+      [
+        5,
+        4
+      ],
+      [
+        10,
+        0
+      ],
+      [
+        5,
+        -6
+      ],
+      [
+        2,
+        -10
+      ],
+      [
+        -4,
+        -10
+      ],
+      [
+        -4,
+        -5
+      ]
+    ],
+    "ufoBody": [
+      [
+        -20,
+        0
+      ],
+      [
+        -12,
+        -4
+      ],
+      [
+        12,
+        -4
+      ],
+      [
+        20,
+        0
+      ],
+      [
+        12,
+        4
+      ],
+      [
+        -12,
+        4
+      ],
+      [
+        -20,
+        0
+      ],
+      [
+        20,
+        0
+      ]
+    ],
+    "ufoTop": [
+      [
+        -8,
+        -4
+      ],
+      [
+        -6,
+        -6
+      ],
+      [
+        6,
+        -6
+      ],
+      [
+        8,
+        -4
+      ]
+    ],
+    "ufoBottom": [
+      [
+        8,
+        4
+      ],
+      [
+        6,
+        6
+      ],
+      [
+        -6,
+        6
+      ],
+      [
+        -8,
+        4
+      ]
+    ],
+    "notes": [
+      "Collision geometry uses main ship/asteroid/UFO body polygon only, excluding exhaust and decorative top/bottom.",
+      "Flat numeric points.reverse() reverses coordinate order AND exchanges x/y within points. It is not equivalent to reversing an array of [x,y] pairs."
+    ],
+    "source": "game.js:368-378,451-475,638-649"
+  },
+  "ship": {
+    "startPosition": "center",
+    "startRotation": 0,
+    "startVelocity": [
+      0,
+      0
+    ],
+    "startingReserveLives": 2,
+    "startingTotalLives": 3,
+    "noGraceInvulnerability": true,
+    "acceleration": 0.5,
+    "turnSpeed": 6,
+    "softSpeedThreshold": 8,
+    "softSpeedMultiplier": 0.95,
+    "softLimiter": "Applied per rendered preMove when speed>8, before current-frame acceleration; is not a strict clamp and is refresh-rate dependent.",
+    "dragWhenBelowThreshold": 0,
+    "exhaustChanceVisible": 0.9,
+    "bulletPool": 10,
+    "shotCooldownDelta": 10,
+    "shotCooldownMsNominal": 300,
+    "shotOriginOffset": 4,
+    "shotVelocity": "heading unit vector*6 + ship velocity",
+    "cooldownOnFullPool": "Cooldown resets to10 even when no inactive bullet can be found.",
+    "collision": [
+      "Hide ship",
+      "Create explosion at other object's coordinates",
+      "Change FSM to player_died",
+      "Remove ship from grid",
+      "Decrement reserveLives"
+    ],
+    "source": "game.js:368-449,938,946-955,1079-1085"
+  },
+  "projectiles": {
+    "player": {
+      "name": "bullet",
+      "pool": 10,
+      "initialTime": 0,
+      "speed": 6,
+      "inheritsShipVelocity": true,
+      "appearance": "2px diagonal cross centered on point"
+    },
+    "alien": {
+      "name": "alienbullet",
+      "pool": 3,
+      "speed": 6,
+      "inheritsUfoVelocity": false,
+      "direction": "Uniform random angle on full circle",
+      "appearance": "2px line from current position to current position minus velocity"
+    },
+    "shared": {
+      "collisionGeometry": "A single point at projectile center",
+      "wrapX": true,
+      "wrapY": true,
+      "drawSeamDuplicates": false,
+      "lifetimeDelta": 50,
+      "lifetimeComparison": ">",
+      "lifetimeNominalMs": 1500,
+      "onHit": "time=0, invisible, remove grid link",
+      "onExpiry": "time=0, invisible; original leaves stale grid link"
+    },
+    "noProjectileProjectileCollisions": true,
+    "noPlayerBulletSelfDamage": true,
+    "noAlienBulletUfoDamage": true,
+    "source": "game.js:409-427,528-545,575-636"
+  },
+  "asteroids": {
+    "initialLargeCount": 2,
+    "largeCountMaximum": 12,
+    "largeCountPerWaveIncrease": 1,
+    "scaleStages": [
+      6,
+      2,
+      0.6666666666666666
+    ],
+    "childrenPerSplit": 3,
+    "childScaleDivisor": 3,
+    "splitIfNewScaleGreaterThan": 0.5,
+    "scoreByStage": [
+      20,
+      60,
+      180
+    ],
+    "scoreRule": "120/current scale only for player bullet; no score for ship/UFO/alien bullet.",
+    "hitsPerInitialLargeIfAllPlayerDestroyed": 13,
+    "pointsPerInitialLargeIfAllPlayerDestroyed": 1820,
+    "largeSpawn": {
+      "x": "Uniform [0,width)",
+      "y": "Uniform [0,height)",
+      "safety": "Repeat random position until the toroidal 3×3 grid neighborhood is free of visible ship, player bullet, big alien, alien bullet; other asteroids do not block.",
+      "velocityX": "Uniform [-2,2)",
+      "velocityY": "Uniform [-2,2)",
+      "rotationVelocity": "Uniform [-1,1)",
+      "initialRotation": 0,
+      "reverseFlatPointsProbability": 0.5
+    },
+    "fragmentSpawn": {
+      "parentScaleMutatedBeforeCopy": true,
+      "parentPositionInherited": true,
+      "parentRotationInherited": true,
+      "velocityX": "Uniform [-3,3)",
+      "velocityY": "Uniform [-3,3)",
+      "rotationVelocity": "Uniform [-1,1)",
+      "reverseFlatPointsProbability": 0.5,
+      "preAdvanceDelta": "child scale*3; integrates new velocity and spin before being appended"
+    },
+    "onHit": "Score if player bullet; divide scale by3; spawn3 children if new scale>0.5; explosion at other object's coordinates; die/reap original.",
+    "wrapX": true,
+    "wrapY": true,
+    "drawSeamDuplicates": true,
+    "asteroidAsteroidCollisions": false,
+    "source": "game.js:638-679,886-904,937-940,972-983"
+  },
+  "ufo": {
+    "count": 1,
+    "kind": "bigalien only; no small UFO",
+    "score": 200,
+    "scoreOnlyPlayerBullet": true,
+    "startSide": "50% each",
+    "leftSpawnX": -20,
+    "rightSpawnX": "width+20",
+    "spawnY": "Uniform [0,height)",
+    "horizontalVelocityMagnitude": 1.5,
+    "verticalVelocityMagnitudeWhenAvoiding": 1,
+    "initialVerticalVelocity": 0,
+    "wrapY": true,
+    "wrapX": false,
+    "drawHorizontalSeamDuplicates": false,
+    "drawVerticalSeamDuplicates": true,
+    "offscreenExit": "Hide and reposition after x crosses opposite ±20 margin.",
+    "firstArrivalMs": "30000 + 30000*random, scheduled at new run start",
+    "laterArrivalMs": "30000*random, scheduled immediately on activation; timer may be overdue by exit/death.",
+    "activationGuard": "Only FSM run, only when currently invisible, strict now>nextBigAlienTime.",
+    "steering": {
+      "firstFrame": "preMove returns if no currentNode yet, so no steering or fire until positioned in grid.",
+      "lookAbove": [
+        "north",
+        "northeast",
+        "northwest"
+      ],
+      "lookBelow": [
+        "south",
+        "southeast",
+        "southwest"
+      ],
+      "measure": "Count nonempty cells (not sprites); original nextSprite includes any sprite class and can contain stale hidden members.",
+      "moreAbove": "vy=+1",
+      "moreBelow": "vy=-1",
+      "tie": "1% chance each rendered frame to negate current vy; zero stays zero."
+    },
+    "shooting": {
+      "pool": 3,
+      "cooldownDelta": 22,
+      "cooldownNominalMs": 660,
+      "initialCounter": 0,
+      "heading": "Uniform random full-circle direction, not aimed at ship",
+      "speed": 6,
+      "origin": "UFO center",
+      "inheritedVelocity": false,
+      "cooldownOnFullPool": "Reset22 even if pool full"
+    },
+    "newPositionDoesNotReset": [
+      "vy",
+      "bulletCounter",
+      "existing alien bullets"
+    ],
+    "onHit": "Award200 only for player bullet; explosion at other object; hide and reposition. Original does not clear its grid link.",
+    "source": "game.js:451-573,942,966-970"
+  },
+  "collisions": {
+    "broadPhase": "Sprite center's toroidal grid cell plus 8 neighbors, each cell storing linked sprites.",
+    "narrowPhase": "For each allowed other sprite, test each other transformed vertex against current sprite's path; Firefox fallback uses odd/even ray casting. Mutual collidable polygon classes normally test both directions when each runs, but no explicit edge intersection test.",
+    "dispatchOrder": [
+      "other.collision(this)",
+      "this.collision(other)"
+    ],
+    "pairs": [
+      {
+        "a": "ship",
+        "b": "asteroid",
+        "result": "Ship dies; asteroid splits or is destroyed; no points"
+      },
+      {
+        "a": "ship",
+        "b": "bigalien",
+        "result": "Ship dies; UFO disappears/repositions; no points"
+      },
+      {
+        "a": "ship",
+        "b": "alienbullet",
+        "result": "Ship dies; alien bullet consumed"
+      },
+      {
+        "a": "asteroid",
+        "b": "bullet",
+        "result": "Asteroid splits/dies; bullet consumed;20/60/180 points"
+      },
+      {
+        "a": "asteroid",
+        "b": "bigalien",
+        "result": "Asteroid splits/dies; UFO disappears/repositions; no points"
+      },
+      {
+        "a": "asteroid",
+        "b": "alienbullet",
+        "result": "Asteroid splits/dies; alien bullet consumed; no points"
+      },
+      {
+        "a": "bigalien",
+        "b": "bullet",
+        "result": "UFO disappears/repositions; player bullet consumed;200 points"
+      }
+    ],
+    "excludedPairs": [
+      "asteroid/asteroid",
+      "bullet/ship",
+      "bullet/bullet",
+      "bullet/alienbullet",
+      "alienbullet/alienbullet",
+      "alienbullet/bigalien",
+      "explosion/anything"
+    ],
+    "seams": "Ship and asteroids are drawn/tested at neighboring canvas copies in border cells; UFO only vertical copies; bullets move across seams but have no drawn copies.",
+    "wrapRule": "When coordinate>edge set0; when<0 setedge. Original drops overshoot rather than modulo preserving it.",
+    "spawnClearance": "Same3×3 grid neighborhood and allowed collision names. No distance-based invulnerability, shield or temporary grace period.",
+    "source": "game.js:115-169,248-364,384,478,655",
+    "ufoPlayerBulletSeamRule": "UFO-versus-player-bullet collision wraps vertically only. Neither class has a horizontal duplicate, and player bullets do not perform an outgoing collision search. Ship/UFO and asteroid/UFO can still collide across horizontal seams through the ship/asteroid duplicate passes."
+  },
+  "fsm": {
+    "boot": {
+      "action": "Spawn5 moving attract-mode asteroids; set waiting."
+    },
+    "waiting": {
+      "action": "Show start prompt; world still updates.",
+      "onStart": "Clear space/gameStart and set start."
+    },
+    "start": {
+      "action": "Kill existing asteroids; hide player bullets and UFO; reset score0, reserves2, large count2; spawn wave; schedule first UFO; set spawn_ship.",
+      "originalLeak": "Does not clear alien bullets or pooled timer ages/counters."
+    },
+    "spawn_ship": {
+      "action": "Set ship center each frame; wait until3×3 collision neighborhood clear; reset rot/vx/vy; show ship; set run."
+    },
+    "run": {
+      "waveCompletion": "If no asteroid entries remain, set new_level; no requirement to destroy UFO or projectiles.",
+      "ufo": "Activate invisible UFO when deadline passed; schedule next deadline at activation."
+    },
+    "new_level": {
+      "durationMs": 1000,
+      "comparison": ">",
+      "action": "Continue sprite simulation; then increment large count to cap12, spawn, return run."
+    },
+    "player_died": {
+      "ifReserveLivesLessThanZero": "Set end_game.",
+      "otherwise": "Continue sprite simulation, wait>1000 ms, then spawn_ship."
+    },
+    "end_game": {
+      "durationMs": 5000,
+      "comparison": ">",
+      "action": "Show GAME OVER; continue sprite simulation; clear touch start flag each frame; return waiting after timer."
+    }
+  },
+  "scoringAndPersistence": {
+    "scoreStarts": 0,
+    "scoring": [
+      "20 large asteroid",
+      "60 medium asteroid",
+      "180 small asteroid",
+      "200 UFO"
+    ],
+    "requiresPlayerBullet": true,
+    "scoreCanContinueAfterShipDeath": true,
+    "extraLivesAwarded": false,
+    "highScoreStorage": false,
+    "runSave": false,
+    "finiteLevelCount": 0,
+    "winState": false,
+    "source": "game.js:550-555,657-660,914-1017,1162-1174"
+  },
+  "presentation": {
+    "background": "Original desktop white canvas/black vector strokes",
+    "score": "top right",
+    "lifeDisplay": "Reserve ship icons only (starts2)",
+    "explosion": {
+      "rays": 5,
+      "randomAngles": "Uniform full circle",
+      "eachRay": "unit vector to twice unit vector",
+      "initialScale": 1,
+      "growthPerDelta": 1,
+      "removeAboveScale": 8,
+      "approxLifetimeMs": 210,
+      "wrap": false
+    },
+    "audio": {
+      "initialMuted": true,
+      "sources": [
+        "39459__THE_bizniss__laser.wav",
+        "51467__smcameron__missile_explosion.wav"
+      ],
+      "replacement": "Planned modern adapter is silent; no upstream audio redistributed."
+    },
+    "source": "game.js:681-719,841-869,1162-1189"
+  },
+  "completenessRequirements": [
+    "Endless wave clearing with all3 asteroid sizes,3-way fragmentation and cap12 large rocks; report zero finite levels.",
+    "Full thrust/rotation/inertial movement, toroidal playfield, inherited player bullet velocity, finite pools and lifetimes.",
+    "Seven collision pairs including UFO-vs-rock and alien-bullet-vs-rock, not merely ship/rock and player shooting.",
+    "Single large UFO with side entry/exit, cell-based vertical steering, random shots, correct first/subsequent deadlines and200 score.",
+    "Three total ship lives with safe-center respawn, death/interwave waits and game-over/restart.",
+    "Exact20/60/180 asteroid scoring only on player shots; no invented extra lives or victory.",
+    "Distinguish adaptation UI, pointer/keyboard lifecycle, timer/collision repairs and silent audio from original gameplay.",
+    "Retain pinned upstream attribution and full MIT in distributed derivative materials; do not ship excluded dependencies/assets."
+  ],
+  "originalHazardsAndRecommendedDecisions": [
+    {
+      "id": "collision-after-death",
+      "lines": "263-287,438-445,608-612",
+      "finding": "checkCollision checks other.visible but not this.visible; a first collision can remove/hide this while candidate traversal continues. Ship/projectile callbacks dereference currentNode without guarding null.",
+      "impact": "Possible repeated death/score/split callbacks or null dereference with multiple overlaps.",
+      "decision": "Fix: each pair once; stop dead sprite processing immediately; make removal/death idempotent.",
+      "evidence": "Direct static control-flow risk; not runtime reproduced."
+    },
+    {
+      "id": "linked-grid-staleness",
+      "lines": "550-555,599-606,664,927-935",
+      "finding": "UFO hide/reposition and projectile expiry do not unlink spatial members; restart hides player bullets/UFO without cleanup. Fragment clone carries source sprite's currentNode/nextSprite until updated.",
+      "impact": "Stale occupancy, changed UFO steering/clearance and unregistered fragments until cell change.",
+      "decision": "Fix: rebuild occupancy from active sprites or correctly index each fresh entity."
+    },
+    {
+      "id": "vertex-only-polygon-tests",
+      "lines": "272-307",
+      "finding": "Vertex containment misses pure edge crossings when neither polygon contains a tested vertex; broadphase neighboring cells can also miss marginal overlaps of large polygons.",
+      "impact": "Geometric collision gaps.",
+      "decision": "Use current independent geometry with explicit seam offsets; if adding edge-edge intersections, document collision robustness fix."
+    },
+    {
+      "id": "cached-seam-geometry",
+      "lines": "131-166,283,319-331",
+      "finding": "Seam drawing temporarily changes x/y without clearing cached transformed points; Firefox fallback can use center-copy points for duplicate-copy collision.",
+      "impact": "Browser-dependent seam collision.",
+      "decision": "Fix: compute fresh toroidal geometry."
+    },
+    {
+      "id": "restart-leaks",
+      "lines": "927-945",
+      "finding": "start does not clear alien bullets, bullet ages, ship shot counter, UFO counter/vertical motion or every lifecycle flag.",
+      "impact": "State may leak between runs.",
+      "decision": "Fix complete reset; preserve UFO vy/counter between appearances within a run unless intentionally changed."
+    },
+    {
+      "id": "pause-wall-clock",
+      "lines": "942,969,974-1007,1188-1208",
+      "finding": "Physics stops while paused, but Date.now-based deadlines keep elapsing; only lastFrame resets on unpause.",
+      "impact": "Respawn/wave/UFO/game-over can fire immediately after pause.",
+      "decision": "Fix by using paused simulation clock; retain nominal1000/5000/30000 timers."
+    },
+    {
+      "id": "uncapped-delta",
+      "lines": "178-186,353-363,1146-1149",
+      "finding": "Large elapsed values produce giant movement/rotation steps; one-wrap logic loses overshoot.",
+      "impact": "Tunnelled collisions or destabilized state after slow/background frames.",
+      "decision": "Use bounded/substepped dt and clear/freeze on visibility loss; disclose timing repair."
+    },
+    {
+      "id": "frame-dependent-soft-drag",
+      "lines": "431-435",
+      "finding": "Velocity multiplies.95 once per rendered frame above8, regardless of delta; thrust then adds acceleration.",
+      "impact": "Different high-speed behavior at different refresh rates.",
+      "decision": "Preserve source constants; if normalizing to fixed simulation frequency, describe choice. Do not silently substitute hard speed clamp."
+    },
+    {
+      "id": "shared-fsm-timer",
+      "lines": "972-1007",
+      "finding": "new_level, player_died and end_game share FSM.timer. A death during interwave delay may inherit an already running timer.",
+      "impact": "Shortened death/game-over delays.",
+      "decision": "Separate phase timers when transitioning."
+    },
+    {
+      "id": "input-lifecycle",
+      "lines": "24-36,1197-1214; ipad.js",
+      "finding": "Global key listeners have no blur cleanup; key-repeat toggles pause/mute/FPS; touch adapter clears shared key state and handles only iPad.",
+      "impact": "Stuck controls or repeated toggles; poor modern multi-pointer behavior.",
+      "decision": "Use scoped keyboard/pointer state, edge-trigger toggles, release/cancel/blur cleanup."
+    },
+    {
+      "id": "unbounded-clearance-search",
+      "lines": "886-895",
+      "finding": "Asteroid spawn retries random positions until a3×3 neighborhood is empty, without a limit.",
+      "impact": "Could stall if no valid region remains.",
+      "decision": "Use bounded sampling plus deterministic safe-cell fallback or deferred spawn; do not place unsafe rock as hidden shortcut."
+    },
+    {
+      "id": "original-quirks-to-preserve",
+      "finding": "Two reserve icons/three total lives; no grace invulnerability; random shooting; activation-based UFO timer; inherited UFO vy/cooldown across appearances; player shots can score during death wait; flat numeric coordinate reversal; no asteroid/asteroid collision.",
+      "decision": "Keep unless clearly labeled intentional adaptation change."
+    }
+  ],
+  "licensing": {
+    "rootLicense": {
+      "name": "MIT",
+      "copyright": "Copyright (c) 2010 Doug McInnes",
+      "file": "reference/LICENSE.txt",
+      "sourceUrl": "https://github.com/dmcinnes/HTML5-Asteroids/blob/930301cbda83ed3b120f64b801d937d077ee2da0/LICENSE",
+      "required": "Retain complete copyright and permission notice in copies/substantial portions."
+    },
+    "firstPartyExcerpt": {
+      "file": "game.first-party-only.js.txt",
+      "map": "extraction-map.json",
+      "sha256": "1c4c536fd4abc5a731425e62231472f152ab3c7cee3c9fd27962cfadbf498d73",
+      "description": "Exact concatenation of original ranges1-769,840-1112,1126-1217; no rewritten lines. Intentionally non-executable audit archive."
+    },
+    "excluded": [
+      {
+        "path": "game.js:770-839",
+        "name": "typeface-0.14.js borrowed Text renderer",
+        "status": "Explicit third-party code. No exact license proof obtained; removed."
+      },
+      {
+        "path": "game.js:1113-1125",
+        "name": "Paul Irish rAF shim",
+        "status": "Explicit third-party code. No exact copied revision license proof obtained; removed."
+      },
+      {
+        "path": "jquery-1.4.1.min.js",
+        "gitBlob": "0c7294c90a06a0df5e434e169048c198826eb25a",
+        "status": "Header explicitly says John Resig2010 MIT-or-GPLv2 plus Sizzle Dojo2010 MIT/BSD/GPL. Not downloaded to output or redistributed; no runtime dependency."
+      },
+      {
+        "path": "vector_battle_regular.typeface.js",
+        "gitBlob": "f2c239cfc06fc68672d24745e57bb3b67b8f991b",
+        "status": "Font asset rights not established; not downloaded or redistributed."
+      },
+      {
+        "path": "39459__THE_bizniss__laser.wav",
+        "gitBlob": "6ec60f3d3b6da81b4dc6b2a8b27dcf4df6e73d4f",
+        "status": "Asset-specific rights not established; not downloaded or redistributed."
+      },
+      {
+        "path": "51467__smcameron__missile_explosion.wav",
+        "gitBlob": "4d9c864a1e7f8a5ca5d05f22d591e792bf759947",
+        "status": "Asset-specific rights not established; not downloaded or redistributed."
+      }
+    ],
+    "auditReferences": [
+      "reference/README.md.txt",
+      "reference/index.html.txt",
+      "reference/ipad.js.txt"
+    ],
+    "scopeCaveat": "First-party attribution is inferred from repository MIT, Doug McInnes header and absence of other explicit borrowing notices in reviewed first-party files. Root license must not be generalized to separately attributed code/assets. This static audit does not establish commercial Asteroids trademark clearance."
+  },
+  "uniqueness": {
+    "catalogCountAtAudit": 158,
+    "duplicateIds": 0,
+    "asteroidsEntryAlreadyPresent": false,
+    "catalogFile": "playgarden-release/src/lib/catalog.ts",
+    "closest": [
+      {
+        "id": "star-sentry",
+        "source": "playgarden-release/src/games/starSentryLogic.ts",
+        "rules": "Horizontal-only fixed-y formation shooter, finite12 authored stages, shelters, shields and telegraphed volleys.",
+        "distinct": "No rotation/inertial freeflight, toroidal traversal, rock splitting or UFO wave ecology."
+      },
+      {
+        "id": "lunar-landing",
+        "source": "playgarden-release/src/lib/registry.ts:1396-1403",
+        "rules": "Finite12 gravity/fuel/low-speed-landing stages.",
+        "distinct": "Landing goals and terrain/fuel constraints; no combat, asteroid branching or endless waves."
+      },
+      {
+        "id": "swingby",
+        "source": "playgarden-release/public/crisp-original/swingby/main.js",
+        "rules": "One-button perpendicular thrust with stellar attraction, changing scrolling starfield, distance-from-origin score and accumulated contact damage.",
+        "distinct": "No firing, destructible targets, finite ammunition pools, three-life respawn or cleared asteroid waves."
+      }
+    ],
+    "verdict": "Mechanically distinct from closest existing entries; not a reskin or catalog inflation if full mechanics are carried through."
+  }
+}

@@ -2598,5 +2598,33 @@ export const games: GameDefinition[] = [
     },
     "component": lazy(() => import("../games/HexahedralGame"))
   },
+{
+  "id": "asteroids",
+  "title": "小行星航场",
+  "subtitle": "旋转推进，在环绕星空中击碎层层分裂的陨石。",
+  "category": "动作反应",
+  "difficulty": "进阶",
+  "tone": "green",
+  "levelCount": 0,
+  "endless": true,
+  "allowUndo": false,
+  "freePlayCaption": "无尽飞行 · 本机最高分",
+  "artwork": {
+    "url": "./asteroids-art.svg",
+    "position": "center",
+    "size": "cover"
+  },
+  "source": {
+    "kind": "adapted",
+    "license": "MIT",
+    "author": "Doug McInnes",
+    "workTitle": "HTML5-Asteroids（完整无尽规则）",
+    "url": "https://github.com/dmcinnes/HTML5-Asteroids/tree/930301cbda83ed3b120f64b801d937d077ee2da0",
+    "commit": "930301cbda83ed3b120f64b801d937d077ee2da0",
+    "notice": "./asteroids-LICENSE.txt",
+    "notes": "完整保留780×540惯性飞行、三级三分裂陨石、随机射击飞碟、三艘飞船、原计分和无限递进波次。原第一方核心MIT；本站纯TypeScript适配/中文React界面/输入存储/原创卡片GPL-3.0-only。未再分发原音效、矢量字体、借用字体渲染与动画垫片或旧jQuery。"
+  },
+  "component": lazy(() => import("../games/AsteroidsGame"))
+},
 ];
 export const findGame = (id: string) => games.find((game) => game.id === id);
