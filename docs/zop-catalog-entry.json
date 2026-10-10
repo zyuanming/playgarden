@@ -1,0 +1,29 @@
+{
+  "id": "zop",
+  "title": "连点成环",
+  "subtitle": "用一分钟画出同色链条，闭环一笔带走全盘同色。",
+  "category": "记忆观察",
+  "difficulty": "中级",
+  "tone": "purple",
+  "levelCount": 0,
+  "endless": true,
+  "allowUndo": false,
+  "resumeKey": "playgarden.zop.best.v1",
+  "freePlayCaption": "60秒完整挑战",
+  "artwork": {
+    "url": "./zop-art.svg",
+    "position": "center",
+    "size": "cover"
+  },
+  "source": {
+    "kind": "adapted",
+    "license": "MIT",
+    "author": "Zolmeister",
+    "workTitle": "Zop",
+    "url": "https://github.com/Zolmeister/Zop",
+    "commit": "fafaa4751df64634aee48d942062617c21acfb26",
+    "notice": "./zop-LICENSE.txt",
+    "notes": "保留原6×6五色连线、回退、闭环全色消除、补色与重力、60秒计分和重开。原Canvas核心封装；新增中文宿主、触屏坐标、暂停卸载与独立存储。0有限关卡。"
+  },
+  "component": "ZopGame"
+}

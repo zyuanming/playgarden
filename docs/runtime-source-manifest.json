@@ -513,6 +513,56 @@
         "package-lock.json"
       ],
       "scope": "Literal original compiled gameplay bodies plus editable CoffeeScript. Native dependency adapter replaces Angular registration and remote high-score service. Original six colors, seven tetromino families, gravity/cascades, score/speed, loss and four uncounted practice layouts preserved. No new runtime dependencies."
+    },
+    {
+      "name": "MAKE MAZE complete original endless game",
+      "version": "cfb39d2f988feb5918eb83697145b5a35adabf58",
+      "license": "MIT",
+      "source": "https://github.com/abagames/crisp-game-lib-games/blob/cfb39d2f988feb5918eb83697145b5a35adabf58/docs/makemaze/main.js",
+      "preferredSource": [
+        "vendor/crisp-original/upstream/games/docs/makemaze/main.js",
+        "public/crisp-original/makemaze/main.js",
+        "public/crisp-original/makemaze/observe.js",
+        "src/games/crispMakeMaze.ts"
+      ],
+      "buildSources": [
+        "scripts/makemaze/verify-sources.py",
+        "docs/makemaze-source-map.json",
+        "package-lock.json"
+      ],
+      "scope": "Complete byte-identical 16×18 scrolling wall-edit original, handed automatic collectors, gold multipliers, flood-fill escape detection, angry wall demolition, escape penalties and missed-gold loss. Existing audited Crisp engine/audio and complete editable source/licenses reused. No finite levels or new runtime dependencies."
+    },
+    {
+      "name": "COUNT original endless observation and timing game",
+      "version": "cfb39d2f988feb5918eb83697145b5a35adabf58",
+      "license": "MIT",
+      "source": "https://github.com/abagames/crisp-game-lib-games/blob/cfb39d2f988feb5918eb83697145b5a35adabf58/docs/count/main.js",
+      "preferredSource": [
+        "vendor/crisp-original/upstream/games/docs/count/main.js"
+      ],
+      "buildSources": [
+        "public/crisp-original/count-observe/index.html",
+        "public/crisp-original/count-observe/observe.js",
+        "scripts/count-observe/verify-sources.py"
+      ],
+      "scope": "Complete byte-identical original, with generated shape/color rounds, size distractors, automatic counter, precise physical stop, answer reveal, correct-next-turn and wrong/end rules. Original nine sprites, procedural audio and disabled replay configuration retained. Zero finite levels. Shared audited engine/audio sources remain required."
+    },
+    {
+      "name": "Zop complete original timed connection game",
+      "version": "fafaa4751df64634aee48d942062617c21acfb26",
+      "license": "MIT",
+      "source": "https://github.com/Zolmeister/Zop/tree/fafaa4751df64634aee48d942062617c21acfb26",
+      "preferredSource": [
+        "vendor/zop-original/upstream",
+        "src/vendor/zopOriginal.ts",
+        "src/vendor/zopRuntime.ts",
+        "src/games/ZopGame.tsx"
+      ],
+      "buildSources": [
+        "scripts/zop/verify-sources.py",
+        "package-lock.json"
+      ],
+      "scope": "Original Canvas selection/backtracking/closed-loop, scoring, refill and gravity bodies retained. Full 60-second score challenge; isolated lifecycle/pointer/storage adapter replaces obsolete framework, routing and network shell. Zero finite levels, no new dependency or imported media."
     }
   ]
 }

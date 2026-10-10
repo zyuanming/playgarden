@@ -1,7 +1,8 @@
 // SPDX-License-Identifier: GPL-3.0-only
 (() => {
   const game = location.pathname.split("/").at(-2);
-  const names = { cardq: "纸牌争先", castn: "抛网捕鱼", bamboo: "竹林巧收", parking: "同步泊车", pizzaarrow: "披萨神箭", rps: "猜拳四轨", swingby: "引力远航" };
+  const supportsReplay = window.options?.isReplayEnabled === true;
+  const names = { makemaze: "迷墙导金", "count-observe": "数形定格", cardq: "纸牌争先", castn: "抛网捕鱼", bamboo: "竹林巧收", parking: "同步泊车", pizzaarrow: "披萨神箭", rps: "猜拳四轨", swingby: "引力远航" };
   if (!(game in names)) throw new Error("Unknown original game");
   const session = new URLSearchParams(location.search).get("session") || "";
   const engine = window.__crispEngine, audio = window.__crispAudio;
@@ -22,7 +23,7 @@
     if (live.phase === "gameOver" && lastPhase !== "gameOver" && !live.replaying) {
       runs++; best = Math.max(best, Math.floor(live.score));
       try { localStorage.setItem(key, JSON.stringify({ best, runs })); } catch {}
-      send("status", { message: `本局 ${Math.floor(live.score)} 分，最高 ${best} 分。点击画布再来一局；稍候会回放刚才的操作。` });
+      send("status", { message: `本局 ${Math.floor(live.score)} 分，最高 ${best} 分。点击画布再来一局；${supportsReplay ? "稍候会回放刚才的操作。" : "稍候返回标题页。"}` });
     }
     if (live.phase === "inGame" && lastPhase !== "inGame") {
       send("status", { message: `${names[game]}已开始。${window.__crispHint}` });

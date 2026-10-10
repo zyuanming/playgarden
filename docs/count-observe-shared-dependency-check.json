@@ -1,0 +1,51 @@
+{
+  "kind": "Static bytes checked; no upstream executed",
+  "manifests": [
+    {
+      "manifest": "vendor/crisp-original/source-manifest.json",
+      "filesVerified": 50
+    },
+    {
+      "manifest": "vendor/crisp-original/cardq-source-manifest.json",
+      "filesVerified": 2
+    },
+    {
+      "manifest": "vendor/crisp-original/second-games-source-manifest.json",
+      "filesVerified": 3
+    }
+  ],
+  "licenses": [
+    {
+      "path": "vendor/crisp-original/upstream/games/LICENSE.txt",
+      "sha256": "ddc67bc26d4cbf406256e3848129869020bc8bc4631078b8955c1f758eee88ae"
+    },
+    {
+      "path": "vendor/crisp-original/upstream/engine/LICENSE.txt",
+      "sha256": "1aa5e08f6a0fdc0c1646ae61f1d1b60e03e6995801faaa79d64e217ee92531b1"
+    },
+    {
+      "path": "vendor/crisp-original/upstream/audio/LICENSE.txt",
+      "sha256": "52ca6d86736a899b1e235eea0b7ff064f7dff44133f1dc317169feca6ab8af0e"
+    },
+    {
+      "path": "vendor/crisp-original/third-party/jsfx/LICENSE-MIT",
+      "sha256": "f03ca91a3e505e98f30dbf52ec71b26ef9db4da1978c6f940c88114139b65aad"
+    },
+    {
+      "path": "vendor/crisp-original/third-party/mml-iterator/package.json",
+      "sha256": "ba6f834c69c8c0d3717ac54ffc434b3e0d1c9492b19a74c3c6f0e86315894c44"
+    },
+    {
+      "path": "vendor/crisp-original/third-party/mml-iterator/README.md",
+      "sha256": "bb4f8a9d51b3dbb16838db0ce9cb6075f104f8a1e3ae5703ba33b62b8d24dba8"
+    },
+    {
+      "path": "vendor/crisp-original/third-party/mml-license-site/users/mohayonao.json",
+      "sha256": "b32fa0663bb53109e9053a1b38d48b48bd4ada79dbc8d325ec89acfa11c1bde2"
+    },
+    {
+      "path": "vendor/crisp-original/third-party/mml-license-site/licenses/MIT.ejs",
+      "sha256": "8da0718efb1113714c9765943807cd24d83162bf601b023cb919ae4a9c216c3a"
+    }
+  ]
+}

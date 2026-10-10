@@ -1,0 +1,42 @@
+{
+  "upstream": "https://github.com/Zolmeister/Zop",
+  "commit": "fafaa4751df64634aee48d942062617c21acfb26",
+  "files": [
+    {
+      "candidate": "zop",
+      "path": "LICENSE",
+      "bytes": 1077,
+      "gitBlob": "ac422a61f49618863b0baca80e479608edd2c64b",
+      "sha256": "44cd0d163441289fdc61f3b64417335f68aeddab947bf2c1eb1c16e51713810c",
+      "redistribution": "first-party-source-snapshot",
+      "localPath": "upstream/LICENSE"
+    },
+    {
+      "candidate": "zop",
+      "path": "README.md",
+      "bytes": 231,
+      "gitBlob": "f55847fc1302e251e048093164047ecdee5c9881",
+      "sha256": "3a1ec44e1e9dba0d16bc5a94096be44456bec719c154e2872a086a2cc5d56f6a",
+      "redistribution": "first-party-source-snapshot",
+      "localPath": "upstream/README.md"
+    },
+    {
+      "candidate": "zop",
+      "path": "src/components/game/index.js",
+      "bytes": 9870,
+      "gitBlob": "c90f7e8fa44495d54df56a4c423b875d16ca6e52",
+      "sha256": "276cceb9390a1280e119cdc551dd641f125779387babd01580b71f2c5fd71ec2",
+      "redistribution": "first-party-source-snapshot",
+      "localPath": "upstream/src/components/game/index.js"
+    },
+    {
+      "candidate": "zop",
+      "path": "src/models/score.coffee",
+      "bytes": 517,
+      "gitBlob": "7d9a9412d6d966b57f98ab9cee85da7db13a6ac0",
+      "sha256": "e4dceb57f14a6ad7ad46e31c097a97ff94a9a2a1031b05df4056f1353192fbc4",
+      "redistribution": "first-party-source-snapshot",
+      "localPath": "upstream/src/models/score.coffee"
+    }
+  ]
+}

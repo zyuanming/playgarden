@@ -1,0 +1,43 @@
+{
+  "status": "PASS_STATIC_ONLY",
+  "checks": [
+    {
+      "command": [
+        "node",
+        "--check",
+        "/workspace/scratch/15f4a1368659/makemaze-adaptation/public/crisp-original/makemaze/main.js"
+      ],
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "node",
+        "--check",
+        "/workspace/scratch/15f4a1368659/makemaze-adaptation/public/crisp-original/makemaze/observe.js"
+      ],
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python",
+        "/workspace/scratch/15f4a1368659/makemaze-adaptation/scripts/makemaze/verify-sources.py",
+        "--shared-root",
+        "/workspace/scratch/15f4a1368659/playgarden-release"
+      ],
+      "exitCode": 0,
+      "stdout": "MAKE MAZE: exact original CRLF main, Git blobs, full MIT notice, local-only assets and zero finite levels verified. No gameplay executed.\n",
+      "stderr": ""
+    }
+  ],
+  "jsonFiles": "all parsed",
+  "gameplay": "NOT_RUN",
+  "typescriptBuild": "NOT_RUN",
+  "browserE2E": "NOT_RUN",
+  "screenshots": "NOT_CREATED",
+  "dependenciesInstalled": false,
+  "sharedCheckoutModified": false
+}

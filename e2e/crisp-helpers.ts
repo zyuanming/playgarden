@@ -95,10 +95,11 @@ export async function crispJourney<M>(page: Page, info: TestInfo, game: string, 
     }
     await expect.poll(async () => (await read()).pressed).toBe(false);
   }
-  async function finish(lost: Live<M>) {
+  async function finish(lost: Live<M>, options: {requirePositiveScore?: boolean} = {}) {
     await hold(false);
     expect(lost.replaying).toBe(false);
-    expect(lost.score).toBeGreaterThan(0);
+    if (options.requirePositiveScore !== false) expect(lost.score).toBeGreaterThan(0);
+    expect(lost.runs).toBeGreaterThan(0);
     expect(lost.best).toBeGreaterThanOrEqual(lost.score);
     await expect(page.locator(".status")).not.toHaveClass(/success/);
     await page.screenshot({ path: info.outputPath(`${game}-natural-loss.png`), fullPage: true });
@@ -134,6 +135,7 @@ export async function crispJourney<M>(page: Page, info: TestInfo, game: string, 
     await openGame(page, title);
     await expect(root).toHaveAttribute("data-crisp-ready", "true");
     expect((await read()).best).toBeGreaterThanOrEqual(lost.score);
+    expect((await read()).runs).toBe(lost.runs);
     await page.screenshot({ path: info.outputPath(`${game}-best-restored.png`), fullPage: true });
     expect(errors).toEqual([]); expect(remote).toEqual([]);
     await cdp?.detach();

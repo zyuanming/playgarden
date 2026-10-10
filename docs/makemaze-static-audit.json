@@ -1,0 +1,28 @@
+{
+  "status": "PASS_STATIC_BEFORE_EXECUTION",
+  "game": "makemaze",
+  "completeOriginalMain": "byte-identical, original CRLF",
+  "sourceBlob": "2c14b61efc3364a92eb45e0a0932fd88aa2dc72b",
+  "finiteLevels": 0,
+  "endless": true,
+  "gameplayDistinctness": "Editable scrolling 16×18 maze; autonomous handed wall-following collectors, gold score multiplier, flood-fill down-exit detection, angry downward wall-breaking, negative escape scores and scroll acceleration, missed-gold loss. No finite maze corpus or renamed variant.",
+  "reviewedGameSource": "Complete main reviewed before any game execution: arithmetic, original Vector/grid operations, input, drawing, particles, score/audio and original game termination only. No IO, imports, eval, DOM, storage or timers.",
+  "runtime": "Existing audited local crisp-game-lib 1.0.2 and sounds-some-sounds 2.0.0 with lifecycle integration. No new library or installer.",
+  "dependencyReview": "Read existing source map, source manifests, complete shipped licenses and engine/audio/mml package metadata; reuse pinned engine/audio/jsfx/mml sources and existing source correspondence.",
+  "optionalModes": "Default simple canvas theme. Procedural characters, BGM and SFX active; replay and front-drawn score enabled. No Pixi/GIF/minify/rewind mode.",
+  "network": "Original main has no external IO. All iframe references are local; CSP blocks all connections.",
+  "upstreamKnownQuirksPreserved": [
+    "checkDownExit performs exactly nine paired scan sweeps rather than an unbounded graph traversal; its original reachable-path decision is unchanged.",
+    "The scrolling update shifts at most one grid row per frame, including the unusually fast opening scroll and accumulated escape scroll.",
+    "A held pointer can toggle a revisited cell after visiting a different one. Only the previous cell is suppressed, and gold-bearing cells cannot be edited.",
+    "Escapes decrement an elevated multiplier before deducting that multiplier; a run with genuinely collected gold may finish at zero or below. Best score records the final run, not its highest intermediate score."
+  ],
+  "testing": "Only static integrity/syntax/XML checks performed here. Single targeted real desktop/mobile E2E authored for parent CI. No upstream game execution, installation, unit tests, old solvers or artificial outcomes.",
+  "syntax": "PASS: node --check parsed both original main and observer without executing them",
+  "svg": "PASS: XML parse via static source checker",
+  "build": "NOT_RUN: isolated files are not registered in integration checkout",
+  "browserE2E": "NOT_RUN: final parent CI required; real-input strategy must be validated there",
+  "browserScreenshots": "NOT_CREATED: no browser execution here",
+  "sourceIntegrity": "PASS: original main and full MIT byte counts, SHA-256, Git blob hashes, CRLF and runtime/vendor equality",
+  "resourceIntegrity": "PASS: iframe resources resolve locally against staging/shared root; CSP blocks external connections"
+}

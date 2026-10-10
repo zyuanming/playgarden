@@ -2045,6 +2045,56 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
+# MAKE MAZE source notice
+
+MAKE MAZE (迷墙导金) is by ABA Games, copyright 2021, MIT licensed. The complete original source is preserved byte for byte from `abagames/crisp-game-lib-games` commit `cfb39d2f988feb5918eb83697145b5a35adabf58`, path `docs/makemaze/main.js`, Git blob `2c14b61efc3364a92eb45e0a0932fd88aa2dc72b`. Both the shipped main and source archive preserve all 7,651 bytes including CRLF line endings. Full original permission text is at `vendor/crisp-original/makemaze-LICENSE.txt` and in the existing shipped `public/crisp-original/LICENSES.txt`.
+
+The game uses the existing local crisp-game-lib 1.0.2 renderer/input/replay implementation, sounds-some-sounds 2.0.0 procedural music and effects, jsfx, and mml-iterator 1.1.0. Retain their existing full source archives, build correspondence, copyright notices and complete MIT permissions under `vendor/crisp-original` and `public/crisp-original/LICENSES.txt`. The component commits and license paths are mapped in `docs/makemaze-source-map.json`. No new runtime library is added.
+
+New Playgarden work comprises Chinese instructions, the thin React host selection, an observer returning copies only, an iframe document, original catalog SVG, a static integrity checker and one targeted browser journey. These additions are GPL-3.0-only. Original wall/collector/gold pixel patterns, particles, generated BGM and sound effects remain the upstream programmatic assets.
+
+This is the complete original endless game: 16×18 scrolling editable walls, handed automatic wall-following collectors, gold multipliers, downward-exit detection, red angry collectors breaking walls, escape penalties with scroll acceleration, and loss when an uncollected gold scrolls above the screen. It adds zero finite levels. There is no finite campaign or final victory, and no gameplay or difficulty patch.
+
+Original quirks are deliberately preserved: downward-exit detection uses nine paired scan sweeps; at most one board row shifts in a frame, including the rapid opening scroll; only the previous edited cell is suppressed during a held gesture; and escape deductions can make a genuinely earned-gold run finish at zero or negative score. Best score records the final run score rather than its highest intermediate score. The test therefore proves actual gold awards separately from the final record.
+
+# COUNT source notice
+
+COUNT (数形定格) is by ABA Games, copyright 2021, MIT licensed. The entire original `docs/count/main.js` is preserved byte for byte from `abagames/crisp-game-lib-games` commit `cfb39d2f988feb5918eb83697145b5a35adabf58`, Git blob `dd4e90ef23c2cadb2a4650fc43082d7dc59bbdbb`: 4,005 bytes, including 218 original CRLF line endings. The exact full MIT license is in `vendor/crisp-original/count-observe-LICENSE.txt` and is already included in `public/crisp-original/LICENSES.txt`.
+
+This is a complete endless observation game with **0 finite levels**. The player counts objects matching any of the visible target shape/color icons, ignores size distractors, and stops an automatic counter at the correct total. Correct stops score one point; the original shows only target objects and the answer, then generates a new procedural turn. Incorrect or overdue stops reveal the answer and end the run. This is distinct from Bloom Tap's nine-cell whack-a-mole and matching-pair rules. No finite campaign, invented level count or final victory is claimed.
+
+The nine original pixel sprites, layout, difficulty, timing, sounds and procedural background music are retained. COUNT only sets `isPlayingBgm: true`. It does not enable the engine's optional input replay. This adaptation does not add replay; the shared host must respect `supportsReplay: false` when explaining end-of-run behavior.
+
+The game reuses local crisp-game-lib 1.0.2, sounds-some-sounds 2.0.0, modified jsfx and mml-iterator. Preserve every full existing upstream source archive, full permission notice and source correspondence record under `vendor/crisp-original/` and `public/crisp-original/LICENSES.txt`. The source map lists commits and exact license paths. The missing historic npm lockfile limitation for mml-iterator remains disclosed in the shared source correspondence; no exact historic install resolution is claimed.
+
+New Playgarden Chinese instructions, thin React selection, iframe, read-only observer, catalog SVG, source checker and real-input browser journey use GPL-3.0-only. No new runtime dependency, external asset, install hook or network endpoint is introduced. The observer forwards original update and drawing calls unchanged and returns detached state/event copies. It does not alter random choices, object matching, input, counters, scores or outcomes.
+
+## Zop
+
+Source: https://github.com/Zolmeister/Zop at `fafaa4751df64634aee48d942062617c21acfb26`. The original complete Canvas gameplay core and approved first-party source snapshots are MIT ©2015 Zolmeister. Host additions are GPL-3.0-only. No old framework packages, fonts, tracker or sharing shell are included.
+
+The MIT License (MIT)
+
+Copyright (c) 2015 Zolmeister
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
 ## Complete bundled runtime dependency notices
 
 ### react 19.3.0 (MIT)
@@ -4451,4 +4501,22 @@ https://github.com/cheshire137/blicblock-js/tree/05bafeedb8684e478cda9061e98406a
 Preferred editable source: vendor/blicblock-original/upstream, src/vendor/blicblockOriginal.ts, src/vendor/blicblockRuntime.ts, src/games/BlicblockGame.tsx
 Build sources: scripts/blicblock/verify-sources.py, package-lock.json
 Literal original compiled gameplay bodies plus editable CoffeeScript. Native dependency adapter replaces Angular registration and remote high-score service. Original six colors, seven tetromino families, gravity/cascades, score/speed, loss and four uncounted practice layouts preserved. No new runtime dependencies.
+
+MAKE MAZE complete original endless game cfb39d2f988feb5918eb83697145b5a35adabf58 (MIT)
+https://github.com/abagames/crisp-game-lib-games/blob/cfb39d2f988feb5918eb83697145b5a35adabf58/docs/makemaze/main.js
+Preferred editable source: vendor/crisp-original/upstream/games/docs/makemaze/main.js, public/crisp-original/makemaze/main.js, public/crisp-original/makemaze/observe.js, src/games/crispMakeMaze.ts
+Build sources: scripts/makemaze/verify-sources.py, docs/makemaze-source-map.json, package-lock.json
+Complete byte-identical 16×18 scrolling wall-edit original, handed automatic collectors, gold multipliers, flood-fill escape detection, angry wall demolition, escape penalties and missed-gold loss. Existing audited Crisp engine/audio and complete editable source/licenses reused. No finite levels or new runtime dependencies.
+
+COUNT original endless observation and timing game cfb39d2f988feb5918eb83697145b5a35adabf58 (MIT)
+https://github.com/abagames/crisp-game-lib-games/blob/cfb39d2f988feb5918eb83697145b5a35adabf58/docs/count/main.js
+Preferred editable source: vendor/crisp-original/upstream/games/docs/count/main.js
+Build sources: public/crisp-original/count-observe/index.html, public/crisp-original/count-observe/observe.js, scripts/count-observe/verify-sources.py
+Complete byte-identical original, with generated shape/color rounds, size distractors, automatic counter, precise physical stop, answer reveal, correct-next-turn and wrong/end rules. Original nine sprites, procedural audio and disabled replay configuration retained. Zero finite levels. Shared audited engine/audio sources remain required.
+
+Zop complete original timed connection game fafaa4751df64634aee48d942062617c21acfb26 (MIT)
+https://github.com/Zolmeister/Zop/tree/fafaa4751df64634aee48d942062617c21acfb26
+Preferred editable source: vendor/zop-original/upstream, src/vendor/zopOriginal.ts, src/vendor/zopRuntime.ts, src/games/ZopGame.tsx
+Build sources: scripts/zop/verify-sources.py, package-lock.json
+Original Canvas selection/backtracking/closed-loop, scoring, refill and gravity bodies retained. Full 60-second score challenge; isolated lifecycle/pointer/storage adapter replaces obsolete framework, routing and network shell. Zero finite levels, no new dependency or imported media.
 

@@ -1,0 +1,27 @@
+{
+  "status": "PASS_STATIC_BEFORE_EXECUTION",
+  "files": [
+    {
+      "repo": "abagames/crisp-game-lib-games",
+      "commit": "cfb39d2f988feb5918eb83697145b5a35adabf58",
+      "path": "docs/count/main.js",
+      "dest": "upstream/games/docs/count/main.js",
+      "url": "https://github.com/abagames/crisp-game-lib-games/blob/cfb39d2f988feb5918eb83697145b5a35adabf58/docs/count/main.js",
+      "git_blob_sha1": "dd4e90ef23c2cadb2a4650fc43082d7dc59bbdbb",
+      "expected_bytes": 4005,
+      "sha256": "ec91d8a76b3a2d3af6ad800d10eb5610a0409663f8e7a137ea2a2cca7445187e",
+      "verified_git_blob": true
+    },
+    {
+      "repo": "abagames/crisp-game-lib-games",
+      "commit": "cfb39d2f988feb5918eb83697145b5a35adabf58",
+      "path": "LICENSE.txt",
+      "dest": "count-observe-LICENSE.txt",
+      "url": "https://github.com/abagames/crisp-game-lib-games/blob/cfb39d2f988feb5918eb83697145b5a35adabf58/LICENSE.txt",
+      "git_blob_sha1": "f2f5ff8c0a45d37ec9c300848121cd36c99999d8",
+      "expected_bytes": 1066,
+      "sha256": "ddc67bc26d4cbf406256e3848129869020bc8bc4631078b8955c1f758eee88ae",
+      "verified_git_blob": true
+    }
+  ]
+}

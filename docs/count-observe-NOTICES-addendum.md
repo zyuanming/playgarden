@@ -1,0 +1,11 @@
+# COUNT source notice
+
+COUNT (数形定格) is by ABA Games, copyright 2021, MIT licensed. The entire original `docs/count/main.js` is preserved byte for byte from `abagames/crisp-game-lib-games` commit `cfb39d2f988feb5918eb83697145b5a35adabf58`, Git blob `dd4e90ef23c2cadb2a4650fc43082d7dc59bbdbb`: 4,005 bytes, including 218 original CRLF line endings. The exact full MIT license is in `vendor/crisp-original/count-observe-LICENSE.txt` and is already included in `public/crisp-original/LICENSES.txt`.
+
+This is a complete endless observation game with **0 finite levels**. The player counts objects matching any of the visible target shape/color icons, ignores size distractors, and stops an automatic counter at the correct total. Correct stops score one point; the original shows only target objects and the answer, then generates a new procedural turn. Incorrect or overdue stops reveal the answer and end the run. This is distinct from Bloom Tap's nine-cell whack-a-mole and matching-pair rules. No finite campaign, invented level count or final victory is claimed.
+
+The nine original pixel sprites, layout, difficulty, timing, sounds and procedural background music are retained. COUNT only sets `isPlayingBgm: true`. It does not enable the engine's optional input replay. This adaptation does not add replay; the shared host must respect `supportsReplay: false` when explaining end-of-run behavior.
+
+The game reuses local crisp-game-lib 1.0.2, sounds-some-sounds 2.0.0, modified jsfx and mml-iterator. Preserve every full existing upstream source archive, full permission notice and source correspondence record under `vendor/crisp-original/` and `public/crisp-original/LICENSES.txt`. The source map lists commits and exact license paths. The missing historic npm lockfile limitation for mml-iterator remains disclosed in the shared source correspondence; no exact historic install resolution is claimed.
+
+New Playgarden Chinese instructions, thin React selection, iframe, read-only observer, catalog SVG, source checker and real-input browser journey use GPL-3.0-only. No new runtime dependency, external asset, install hook or network endpoint is introduced. The observer forwards original update and drawing calls unchanged and returns detached state/event copies. It does not alter random choices, object matching, input, counters, scores or outcomes.
