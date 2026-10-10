@@ -167,6 +167,8 @@ export const GAME_IDS = [
   "makemaze",
   "count-observe",
   "zop",
+  "swap",
+  "heal-em-all",
 ] as const;
 export type GameId = (typeof GAME_IDS)[number];
 export type Category =
@@ -209,7 +211,7 @@ export type GameMeta = {
     | { kind: "original"; license: "GPL-3.0-only"; notes: string }
     | {
         kind: "adapted";
-        license: "MIT" | "BSD-2-Clause" | "GPL-3.0-or-later" | "MPL-2.0";
+        license: "MIT" | "BSD-2-Clause" | "GPL-3.0-or-later" | "MPL-2.0" | "CC-BY-SA-4.0" | "GPL-3.0-only";
         notes: string;
         author: string;
         workTitle?: string;

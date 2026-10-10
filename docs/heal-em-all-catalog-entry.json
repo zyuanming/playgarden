@@ -1,0 +1,27 @@
+{
+  "id": "heal-em-all",
+  "title": "治愈所有人",
+  "subtitle": "带着有限的解药穿过六张原作地图，救助伙伴并找到最后一扇门。",
+  "category": "动作反应",
+  "difficulty": "进阶",
+  "tone": "green",
+  "levelCount": 6,
+  "allowUndo": false,
+  "resumeKey": "playgarden.heal-em-all.v1",
+  "artwork": {
+    "url": "./heal-em-all/card.svg",
+    "position": "center",
+    "size": "cover"
+  },
+  "source": {
+    "kind": "adapted",
+    "license": "GPL-3.0-only",
+    "author": "Krzysztof Urbas and Paweł Madeja",
+    "workTitle": "Heal’em All（完整原作六关及结局）",
+    "url": "https://github.com/krzysu/game-off-2013/tree/66950cda39d2b91f114dcf1a0b0307972f24a68f",
+    "commit": "66950cda39d2b91f114dcf1a0b0307972f24a68f",
+    "notice": "./heal-em-all/LICENSE.txt",
+    "notes": "六张原地图、原平台物理、治愈与再次感染、感染形态、有限弹药、钥匙出口和星级完整保留。代码GPL-3.0-only；Paweł Madeja原美术CC-BY-4.0；Quintus及内嵌工具MIT。中文界面、触屏与隔离生命周期为本站适配；原音乐因逐文件授权不明而省略。"
+  },
+  "component": "../games/HealEmAllOriginal"
+}

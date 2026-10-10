@@ -11,6 +11,8 @@ export type GameProps = {
   hintToken: number;
   undoToken: number;
   onComplete: () => void;
+  /** Request a host-owned, zero-based level selection; does not earn completion. */
+  onLevelChange?: (level: number) => void;
   onStatus: (text: string) => void;
 };
 export type Point = { x: number; y: number };

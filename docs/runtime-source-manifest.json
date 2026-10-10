@@ -563,6 +563,54 @@
         "package-lock.json"
       ],
       "scope": "Original Canvas selection/backtracking/closed-loop, scoring, refill and gravity bodies retained. Full 60-second score challenge; isolated lifecycle/pointer/storage adapter replaces obsolete framework, routing and network shell. Zero finite levels, no new dependency or imported media."
+    },
+    {
+      "name": "Swap original complete game and authored campaign",
+      "version": "a3cfb7d2d59d37dd3778d5de685a206cca4f1206",
+      "license": "CC-BY-SA-4.0; GPL-3.0-only adapter contributions",
+      "source": "https://github.com/nmoroze/swap/tree/a3cfb7d2d59d37dd3778d5de685a206cca4f1206",
+      "preferredSource": [
+        "vendor/swap-original/upstream/js/ai.js",
+        "vendor/swap-original/upstream/js/draw.js",
+        "vendor/swap-original/upstream/js/levels.js",
+        "vendor/swap-original/upstream/js/player.js",
+        "vendor/swap-original/upstream/js/tile.js",
+        "vendor/swap-original/upstream/js/world.js",
+        "src/vendor/swapRuntime.ts",
+        "src/vendor/swapMaps.ts",
+        "src/vendor/swapState.ts",
+        "src/games/SwapGame.tsx",
+        "src/games/swapText.ts",
+        "src/games/swap.css"
+      ],
+      "buildSources": [
+        "scripts/swap/prepare.py",
+        "scripts/swap/verify-sources.py",
+        "vendor/swap-original/source-map.json",
+        "vendor/swap-original/source-manifest.json"
+      ],
+      "scope": "Original first-party mechanics, 24 authored puzzles, uncounted credits tableau and Canvas primitive artwork under CC-BY-SA-4.0. Original notice and exact legal text retained. GPLv3-compatible adaptation adds isolated lifecycle, input/React host and validated saves. No separate music, font, icon, input library or original network-enabled shell."
+    },
+    {
+      "name": "Heal’em All complete six-stage game, original art and Quintus engine",
+      "version": "66950cda39d2b91f114dcf1a0b0307972f24a68f",
+      "license": "GPL-3.0-only first party and adapter; CC-BY-4.0 artwork; MIT Quintus and embedded helpers",
+      "source": "https://github.com/krzysu/game-off-2013/tree/66950cda39d2b91f114dcf1a0b0307972f24a68f",
+      "preferredSource": [
+        "vendor/heal-em-all-original/upstream/app/scripts/game",
+        "vendor/heal-em-all-original/upstream/app/scripts/lib/quintus-all.js",
+        "vendor/heal-em-all-original/upstream/app/data",
+        "vendor/heal-em-all-original/upstream/app/images",
+        "public/heal-em-all/bridge.js",
+        "src/games/HealEmAllOriginal.tsx"
+      ],
+      "buildSources": [
+        "scripts/heal-em-all/adapt.py",
+        "scripts/heal-em-all/verify-sources.py",
+        "public/heal-em-all/source.zip",
+        "package-lock.json"
+      ],
+      "scope": "Complete original six maps, generated game body and licensed art retained with scoped input/loading/RAF/storage, accessible Chinese menus and original ending. Full preferred CoffeeScript and engine source retained; no soundtrack, tracker, font service or upstream build scripts executed."
     }
   ]
 }

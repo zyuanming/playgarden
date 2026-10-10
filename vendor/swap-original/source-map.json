@@ -1,0 +1,49 @@
+{
+  "upstream": "nmoroze/swap",
+  "commit": "a3cfb7d2d59d37dd3778d5de685a206cca4f1206",
+  "upstreamLicense": "CC-BY-SA-4.0",
+  "adapterLicense": "GPL-3.0-only",
+  "changed": "2026-10-10",
+  "files": [
+    {
+      "upstream": "js/tile.js",
+      "adapted": "src/vendor/swapRuntime.ts",
+      "marker": "BEGIN upstream/js/tile.js"
+    },
+    {
+      "upstream": "js/ai.js",
+      "adapted": "src/vendor/swapRuntime.ts",
+      "marker": "BEGIN upstream/js/ai.js"
+    },
+    {
+      "upstream": "js/player.js",
+      "adapted": "src/vendor/swapRuntime.ts",
+      "marker": "BEGIN upstream/js/player.js"
+    },
+    {
+      "upstream": "js/draw.js",
+      "adapted": "src/vendor/swapRuntime.ts",
+      "marker": "BEGIN upstream/js/draw.js"
+    },
+    {
+      "upstream": "js/world.js",
+      "adapted": "src/vendor/swapRuntime.ts",
+      "marker": "BEGIN upstream/js/world.js"
+    },
+    {
+      "upstream": "js/levels.js",
+      "adapted": "src/vendor/swapMaps.ts",
+      "changes": "var levels renamed to exported swapMaps; every active and commented map, tip, coordinate preserved"
+    }
+  ],
+  "changes": [
+    "Instance closure replaces global singletons; reset switch arrays; declare factory local.",
+    "Host owns a 30Hz interval, pause, start/retry, terminal stopping, disposal, direct level choice.",
+    "Original canvas geometry remains 640 logical pixels; CSS only scales display.",
+    "Original physics, per-corner collision, six AI behaviors, queue and pressure-switch scan order retained.",
+    "Identity fields and strictly validated serialized snapshots added; readonly detached observer.",
+    "DOM lookup/innerHTML/dialogue overlay replaced with scoped canvas and host accessible text.",
+    "Guard out-of-range tile lookups with a wall; stop tick immediately after first actual terminal collision.",
+    "No Keypress, Font Awesome, Open Sans, AddThis, music, external assets, skip completion or cheat."
+  ]
+}

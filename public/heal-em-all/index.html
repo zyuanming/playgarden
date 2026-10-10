@@ -1,0 +1,8 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'self'; font-src 'none'; media-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'"><title>治愈所有人 · Heal’em All</title><link rel="stylesheet" href="./style.css"></head>
+<body><main id="game" data-phase="loading"><div id="loading" role="status">正在准备六关旅程…</div><div id="menu" hidden></div><div id="play" hidden>
+<header class="hud"><b id="level-label"></b><span id="form"></span><span id="lives"></span><span id="ammo"></span><span id="key"></span><span id="saved"></span></header>
+<div class="stage"><canvas id="heal-canvas" width="960" height="640" tabindex="0" aria-label="治愈所有人平台地图，方向键移动，向上或X跳跃，空格或Z发射治愈弹"></canvas><div id="pause-cover" hidden><b>已暂停</b><button id="resume">继续冒险</button></div></div>
+<p id="hint" role="status"></p><div class="controls" aria-label="触屏操作"><div><button data-input="left" aria-label="向左移动">◀</button><button data-input="right" aria-label="向右移动">▶</button></div><div><button data-input="action" aria-label="跳跃或进入出口">跳跃<br><small>进入出口</small></button><button data-input="fire" aria-label="发射治愈弹">治愈弹</button></div></div>
+<nav class="tools"><button id="pause">暂停冒险</button><button id="retry">重试本关</button><button id="levels">关卡地图</button></nav></div><p id="save-warning" hidden>浏览器无法保存进度；本次冒险仍可继续。</p><p id="error" role="alert" hidden></p></main>
+<script src="./quintus.js"></script><script src="./bridge.js"></script><script src="./game.js"></script></body></html>

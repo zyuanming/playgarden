@@ -1,0 +1,97 @@
+{
+  "repository": "nmoroze/swap",
+  "commit": "a3cfb7d2d59d37dd3778d5de685a206cca4f1206",
+  "tree": "6dfb1c6e88500cda604dd76aa012770701dc8664",
+  "files": [
+    {
+      "path": "upstream/LICENSE",
+      "upstreamPath": "LICENSE",
+      "bytes": 20132,
+      "gitSha1": "2e72ca1121b413a67745f02f679eb5caef6c7bef",
+      "sha256": "bae5ccc863235f984a52c07d011e48a86c0c12f923be2dedd8624c7abdc22c6c",
+      "source": "https://github.com/nmoroze/swap/blob/a3cfb7d2d59d37dd3778d5de685a206cca4f1206/LICENSE",
+      "approved": true
+    },
+    {
+      "path": "upstream/README.md",
+      "upstreamPath": "README.md",
+      "bytes": 2678,
+      "gitSha1": "b8e1ee6190885dd69be27512a26f3664d9fac64f",
+      "sha256": "9cf6f210c52cea7232c05cb61cc3a7f4102c6520de9cdedcc34a512d0b1f05a5",
+      "source": "https://github.com/nmoroze/swap/blob/a3cfb7d2d59d37dd3778d5de685a206cca4f1206/README.md",
+      "approved": true
+    },
+    {
+      "path": "upstream/js/ai.js",
+      "upstreamPath": "js/ai.js",
+      "bytes": 2941,
+      "gitSha1": "7ee6ee3b4b834f78bbde2d11088370aa0688aa1e",
+      "sha256": "75d6a12486388e98fcfe7136fda7413836b96638f293db7794dee9ef1e510e9f",
+      "source": "https://github.com/nmoroze/swap/blob/a3cfb7d2d59d37dd3778d5de685a206cca4f1206/js/ai.js",
+      "approved": true
+    },
+    {
+      "path": "upstream/js/draw.js",
+      "upstreamPath": "js/draw.js",
+      "bytes": 3537,
+      "gitSha1": "7840bbbd05cb809ba10f4ec12d711a795fe55266",
+      "sha256": "d5c1588df246eb6ae42eea18abd2aa9c262b9fbcda60158f0a6feaa17c936c64",
+      "source": "https://github.com/nmoroze/swap/blob/a3cfb7d2d59d37dd3778d5de685a206cca4f1206/js/draw.js",
+      "approved": true
+    },
+    {
+      "path": "upstream/js/levels.js",
+      "upstreamPath": "js/levels.js",
+      "bytes": 13957,
+      "gitSha1": "827153870f8fc2974a22ef804372b74f65506715",
+      "sha256": "49667d8cb68c48fe048f9b0ffe246151703d004dbb45afa1e182b9265fcc3b88",
+      "source": "https://github.com/nmoroze/swap/blob/a3cfb7d2d59d37dd3778d5de685a206cca4f1206/js/levels.js",
+      "approved": true
+    },
+    {
+      "path": "upstream/js/player.js",
+      "upstreamPath": "js/player.js",
+      "bytes": 2770,
+      "gitSha1": "8aef507dbc5e29458628e78fb7934c5641bcb025",
+      "sha256": "dec18f5eb5c2e848214027dc637a011949c229e9b98b9e09dce092228b8e1240",
+      "source": "https://github.com/nmoroze/swap/blob/a3cfb7d2d59d37dd3778d5de685a206cca4f1206/js/player.js",
+      "approved": true
+    },
+    {
+      "path": "upstream/js/tile.js",
+      "upstreamPath": "js/tile.js",
+      "bytes": 2839,
+      "gitSha1": "9b7325c5c3010d2a9c2c989e3b9932c41a6c47f1",
+      "sha256": "e40d1b5cc58a9fc9a6a13aa992d059e584551739d0444362f760e2b222f510ce",
+      "source": "https://github.com/nmoroze/swap/blob/a3cfb7d2d59d37dd3778d5de685a206cca4f1206/js/tile.js",
+      "approved": true
+    },
+    {
+      "path": "upstream/js/world.js",
+      "upstreamPath": "js/world.js",
+      "bytes": 4615,
+      "gitSha1": "93b4ee73a3698232167e7ac0be51986c393421b7",
+      "sha256": "984aed3685ccd20be4207551d8b8f59ebf0f62f9ef6df4d3e01d40e86872786c",
+      "source": "https://github.com/nmoroze/swap/blob/a3cfb7d2d59d37dd3778d5de685a206cca4f1206/js/world.js",
+      "approved": true
+    },
+    {
+      "path": "audit-reference/js/input.js",
+      "upstreamPath": "js/input.js",
+      "bytes": 2421,
+      "gitSha1": "b1a068337fb0172e94bd9fe598209df29878e195",
+      "sha256": "4418475d5f22fa6bff915f91d3b7d010f7b4adf844f40490ae203a9ebee0ffb3",
+      "source": "https://github.com/nmoroze/swap/blob/a3cfb7d2d59d37dd3778d5de685a206cca4f1206/js/input.js",
+      "approved": false
+    },
+    {
+      "path": "audit-reference/index.html",
+      "upstreamPath": "index.html",
+      "bytes": 3440,
+      "gitSha1": "a13e0a0b98b0d9aac2ed6a24589b964b7f3bc9ad",
+      "sha256": "9236746d7cb5bd59b6fdca92b55fcfd3eed7fcd21af8bdba7e37e4c1e8b0fc5f",
+      "source": "https://github.com/nmoroze/swap/blob/a3cfb7d2d59d37dd3778d5de685a206cca4f1206/index.html",
+      "approved": false
+    }
+  ]
+}
