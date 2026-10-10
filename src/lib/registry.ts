@@ -2571,5 +2571,32 @@ export const games: GameDefinition[] = [
     },
     "component": lazy(() => import("../games/HexaBattleGame"))
   },
+  {
+    "id": "hexahedral",
+    "title": "踏格方阵",
+    "subtitle": "踩下再升起，30关原版步数谜题",
+    "category": "空间想象",
+    "difficulty": "中级",
+    "tone": "purple",
+    "levelCount": 30,
+    "resumeKey": "playgarden.hexahedral.v1",
+    "allowUndo": false,
+    "artwork": {
+      "url": "./hexahedral-art.svg",
+      "position": "center",
+      "size": "cover"
+    },
+    "source": {
+      "kind": "adapted",
+      "license": "MIT",
+      "author": "Matthew Miner",
+      "workTitle": "Hexahedral（完整30关）",
+      "url": "https://github.com/mminer/hexahedral/tree/a2641001e13afe15ca8488be7d739203471fee77",
+      "commit": "a2641001e13afe15ca8488be7d739203471fee77",
+      "notice": "./hexahedral-LICENSE.txt",
+      "notes": "原30关地图、起点、缺口、步数预算和走入翻转规则完整保留。原核心及关卡MIT；本站React界面、存档与自绘方块为GPL-3.0-only。未使用第三方原音效或旧依赖。"
+    },
+    "component": lazy(() => import("../games/HexahedralGame"))
+  },
 ];
 export const findGame = (id: string) => games.find((game) => game.id === id);
