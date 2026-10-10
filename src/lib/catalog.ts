@@ -158,6 +158,7 @@ export const GAME_IDS = [
   "a-dark-room",
   "hexa-battle",
   "hexahedral",
+  "asteroids",
 ] as const;
 export type GameId = (typeof GAME_IDS)[number];
 export type Category =

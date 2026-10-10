@@ -1,0 +1,105 @@
+{
+  "repository": "dmcinnes/HTML5-Asteroids",
+  "commit": "930301cbda83ed3b120f64b801d937d077ee2da0",
+  "upstreamUrl": "https://github.com/dmcinnes/HTML5-Asteroids/tree/930301cbda83ed3b120f64b801d937d077ee2da0",
+  "retainedRanges": [
+    {
+      "originalStart": 1,
+      "originalEnd": 769,
+      "excerptStart": 1,
+      "excerptEnd": 769,
+      "bytes": 19963,
+      "sha256": "b1f1a22b02e2844ed89cc45032cc01bb61fc7871df7936f554d58683b93656da",
+      "gitBlobSha1": "e494ac27d1b4fb34a45159915205c54784f659f4"
+    },
+    {
+      "originalStart": 840,
+      "originalEnd": 1112,
+      "excerptStart": 770,
+      "excerptEnd": 1042,
+      "bytes": 6900,
+      "sha256": "2b38ea92099ffc95a7b6ced5ec3fa6bb83a1cdd850f44f8014975ed31a94e123",
+      "gitBlobSha1": "1727db4c5964f324c52f17039f5b3c829da74598"
+    },
+    {
+      "originalStart": 1126,
+      "originalEnd": 1217,
+      "excerptStart": 1043,
+      "excerptEnd": 1134,
+      "bytes": 2149,
+      "sha256": "a5fd658ae8d4ae74560615bf3a96122606b9f08545d2bde150d40feab453d485",
+      "gitBlobSha1": "d8897aca6765fab12878bc4c9923fe1278507c72"
+    }
+  ],
+  "removedRanges": [
+    {
+      "start": 770,
+      "end": 839,
+      "name": "Borrowed typeface-0.14.js Text renderer",
+      "reason": "Explicit third-party attribution; exact borrowed-version terms not established; omitted.",
+      "bytes": 1685,
+      "sha256": "d42f2a6e63e9176a2b7f2d3b223a2f80230ff78941d2164d901112509bf6fffc",
+      "gitBlobSha1": "c7a667e6689765df6c76ed33e54a679057de672c"
+    },
+    {
+      "start": 1113,
+      "end": 1125,
+      "name": "Paul Irish requestAnimationFrame shim",
+      "reason": "Explicit third-party attribution; exact copied revision terms not established; omitted.",
+      "bytes": 576,
+      "sha256": "582a20f7432c8e659064efa1b9b03defc35eb8c6a2596fbe6bfd6a02a68f9a0b",
+      "gitBlobSha1": "e3c74b720a417fd30b168d0a8d9b0f2eba668368"
+    }
+  ],
+  "original": {
+    "path": "game.js",
+    "lineCount": 1217,
+    "bytes": 31273,
+    "sha256": "e43597fb5325f1b043429b978bc2828b15ae2427d4e1176f24d54fc4395a370f",
+    "gitBlobSha1": "4f0a717597015ad140a1e9528e52be836ced2d4d"
+  },
+  "excerpt": {
+    "path": "game.first-party-only.js.txt",
+    "lineCount": 1134,
+    "bytes": 29012,
+    "sha256": "1c4c536fd4abc5a731425e62231472f152ab3c7cee3c9fd27962cfadbf498d73",
+    "gitBlobSha1": "0b94fdd361c73643c85e97d37fbd210243591583",
+    "intendedUse": "Non-executable archival first-party excerpt; Text renderer and rAF shim omitted. Remaining references to omitted code/assets are source evidence, not a runnable distribution."
+  },
+  "references": [
+    {
+      "originalPath": "LICENSE",
+      "savedPath": "reference/LICENSE.txt",
+      "sourceUrl": "https://github.com/dmcinnes/HTML5-Asteroids/blob/930301cbda83ed3b120f64b801d937d077ee2da0/LICENSE",
+      "bytes": 1087,
+      "sha256": "e0fc2b086d3f3d54ec6a5e36a63a6418f832f3629c4dedc57446fa9b52f22b6a",
+      "gitBlobSha1": "974c548833c6f6777b750f97a4563e4ad32d1d84"
+    },
+    {
+      "originalPath": "README.md",
+      "savedPath": "reference/README.md.txt",
+      "sourceUrl": "https://github.com/dmcinnes/HTML5-Asteroids/blob/930301cbda83ed3b120f64b801d937d077ee2da0/README.md",
+      "bytes": 173,
+      "sha256": "ec857d0cfa3839d6c32a30ac28f0aa7366a03d8c4e5d4d261c65cb265de5cadf",
+      "gitBlobSha1": "eed3c02c03ed140fd342fa20f19e331e7b8ca3b7"
+    },
+    {
+      "originalPath": "index.html",
+      "savedPath": "reference/index.html.txt",
+      "sourceUrl": "https://github.com/dmcinnes/HTML5-Asteroids/blob/930301cbda83ed3b120f64b801d937d077ee2da0/index.html",
+      "bytes": 1177,
+      "sha256": "ad2fc18dde55ff56583ded46f634e110195f96b15176155155eb29ffe62b33bf",
+      "gitBlobSha1": "8aa618d29cb07f6ab7cc23ff18559c38bc66fda6"
+    },
+    {
+      "originalPath": "ipad.js",
+      "savedPath": "reference/ipad.js.txt",
+      "sourceUrl": "https://github.com/dmcinnes/HTML5-Asteroids/blob/930301cbda83ed3b120f64b801d937d077ee2da0/ipad.js",
+      "bytes": 1367,
+      "sha256": "a1b4ffa6ff17a92c17690c4731cf2c76087b0b397fabe924a57eb90c34c7ae49",
+      "gitBlobSha1": "03e026916b66b004f77ac586e7956ca76aace9aa"
+    }
+  ],
+  "license": "MIT; Copyright (c) 2010 Doug McInnes; full notice retained in reference/LICENSE.txt",
+  "scopeNote": "Root MIT is treated as evidence for first-party code only. No font, WAV, or jQuery file has been saved. Exact referenced third-party borrowed blocks are omitted from the archived excerpt."
+}

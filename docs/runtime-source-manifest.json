@@ -411,6 +411,22 @@
         "package-lock.json"
       ],
       "scope": "Complete original30 level layouts, starting positions, gaps and move budgets; original landing-toggle win-before-exhaustion rules. New accessible top-view interface and validated move-history saves; no original third-party sound assets or legacy runtime dependencies."
+    },
+    {
+      "name": "HTML5-Asteroids complete first-party endless game",
+      "version": "930301cbda83ed3b120f64b801d937d077ee2da0",
+      "license": "MIT",
+      "source": "https://github.com/dmcinnes/HTML5-Asteroids/tree/930301cbda83ed3b120f64b801d937d077ee2da0",
+      "preferredSource": [
+        "vendor/asteroids-original",
+        "src/vendor/asteroidsCore.ts",
+        "src/games/AsteroidsGame.tsx"
+      ],
+      "buildSources": [
+        "scripts/asteroids/verify-sources.py",
+        "package-lock.json"
+      ],
+      "scope": "Complete inertia, torus collision, three-stage fragmentation, UFO, three-life respawn and endless waves. Explicit first-party excerpt excludes borrowed third-party text-renderer and animation shim; no upstream font/audio/jQuery redistributed. Native input, paused simulation clock and scoped best score."
     }
   ]
 }

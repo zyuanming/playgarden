@@ -149,6 +149,7 @@ import { sortingNetworkLevels } from "../src/games/sortingNetworkLogic";
 import { voxelViewsLevels } from "../src/games/voxelViewsLogic";
 import { cubeNetLevels } from "../src/games/cubeNetLogic";
 const packs = {
+  "asteroids": [],
   "hexahedral": hexahedralLevels,
   "hexa-battle": [],
   "a-dark-room": [],

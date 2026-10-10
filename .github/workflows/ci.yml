@@ -158,6 +158,7 @@ jobs:
           if(paths.length<2)throw Error('Missing application entry resources');
           const hexaChunks=new Set();
           const hexahedralChunks=new Set();
+          const asteroidsChunks=new Set();
           for(const asset of paths){
             if(asset.origin!==new URL(url).origin)continue;
             const r=await fetch(asset);if(!r.ok)throw Error(`Missing entry resource: ${asset.pathname}`);
@@ -165,13 +166,17 @@ jobs:
             console.log('Entry resource OK:',asset.pathname);
             for(const match of text.matchAll(/\.\/HexaBattleGame-[a-zA-Z0-9_-]+\.js/g))hexaChunks.add(new URL(match[0],asset).href);
             for(const match of text.matchAll(/\.\/HexahedralGame-[a-zA-Z0-9_-]+\.js/g))hexahedralChunks.add(new URL(match[0],asset).href);
+            for(const match of text.matchAll(/\.\/AsteroidsGame-[a-zA-Z0-9_-]+\.js/g))asteroidsChunks.add(new URL(match[0],asset).href);
           }
           if(hexaChunks.size!==1)throw Error('Missing Hexa Battle runtime from public application entry');
           for(const asset of hexaChunks){const r=await fetch(asset,{cache:'no-store'});if(!r.ok)throw Error('Missing public Hexa Battle runtime');const text=await r.text();if(text.length<1000||/^\s*<!doctype html/i.test(text))throw Error('Invalid Hexa Battle runtime');console.log('Hexa Battle runtime OK:',asset);}
           if(hexahedralChunks.size!==1)throw Error('Missing Hexahedral runtime from public application entry');
           for(const asset of hexahedralChunks){const r=await fetch(asset,{cache:'no-store'});if(!r.ok)throw Error('Missing public Hexahedral runtime');const text=await r.text();if(text.length<1000||/^\s*<!doctype html/i.test(text))throw Error('Invalid Hexahedral runtime');console.log('Hexahedral runtime OK:',asset);}
+          if(asteroidsChunks.size!==1)throw Error('Missing Asteroids runtime from public entry');
+          for(const asset of asteroidsChunks){const r=await fetch(asset,{cache:'no-store'});if(!r.ok)throw Error('Missing public Asteroids runtime');const text=await r.text();if(text.length<1000||/^\s*<!doctype html/i.test(text))throw Error('Invalid Asteroids runtime');console.log('Asteroids runtime OK:',asset);}
           const {readFileSync}=await import('node:fs');
           const {createHash}=await import('node:crypto');
+          for(const path of ['asteroids-LICENSE.txt','asteroids-art.svg']){const r=await fetch(new URL(path,url),{cache:'no-store'});if(!r.ok)throw Error('Missing public Asteroids resource: '+path);const digest=bytes=>createHash('sha256').update(bytes).digest('hex');if(digest(Buffer.from(await r.arrayBuffer()))!==digest(readFileSync('public/'+path)))throw Error('Asteroids resource mismatch: '+path);console.log('Asteroids exact resource OK:',path);}
           for(const path of ['hexahedral-LICENSE.txt','hexahedral-art.svg']){const r=await fetch(new URL(path,url),{cache:'no-store'});if(!r.ok)throw Error('Missing public Hexahedral resource: '+path);const digest=bytes=>createHash('sha256').update(bytes).digest('hex');if(digest(Buffer.from(await r.arrayBuffer()))!==digest(readFileSync('public/'+path)))throw Error('Hexahedral resource mismatch: '+path);console.log('Hexahedral exact resource OK:',path);}
           for(const path of ['hexa-battle-LICENSE.txt','hexa-battle-art.svg']){const r=await fetch(new URL(path,url),{cache:'no-store'});if(!r.ok)throw Error('Missing public Hexa Battle resource: '+path);const digest=bytes=>createHash('sha256').update(bytes).digest('hex');if(digest(Buffer.from(await r.arrayBuffer()))!==digest(readFileSync('public/'+path)))throw Error('Hexa Battle resource mismatch: '+path);console.log('Hexa Battle exact resource OK:',path);}
           const serverFiles=['index.html','pg-bridge.js','three-local.js','style.css','utilities.css','src/campaign/levels.js','LICENSE.txt','LICENSE-three.txt','LICENSE-tailwind.txt'];
