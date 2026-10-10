@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: GPL-3.0-only
 (() => {
   const game = location.pathname.split("/").at(-2);
-  const names = { castn: "抛网捕鱼", bamboo: "竹林巧收", parking: "同步泊车", pizzaarrow: "披萨神箭", rps: "猜拳四轨", swingby: "引力远航" };
+  const names = { cardq: "纸牌争先", castn: "抛网捕鱼", bamboo: "竹林巧收", parking: "同步泊车", pizzaarrow: "披萨神箭", rps: "猜拳四轨", swingby: "引力远航" };
   if (!(game in names)) throw new Error("Unknown original game");
   const session = new URLSearchParams(location.search).get("session") || "";
   const engine = window.__crispEngine, audio = window.__crispAudio;

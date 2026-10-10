@@ -1,0 +1,27 @@
+{
+  "status": "PASS_STATIC_BEFORE_EXECUTION",
+  "files": [
+    {
+      "repo": "abagames/crisp-game-lib-games",
+      "commit": "cfb39d2f988feb5918eb83697145b5a35adabf58",
+      "path": "docs/cardq/main.js",
+      "dest": "upstream/games/docs/cardq/main.js",
+      "url": "https://github.com/abagames/crisp-game-lib-games/blob/cfb39d2f988feb5918eb83697145b5a35adabf58/docs/cardq/main.js",
+      "git_blob_sha1": "4fc0a9d5ff569e572c3856b25e476f8a5924337c",
+      "expected_bytes": 8114,
+      "sha256": "9e2dcc5779e9714a4f38a7f8700bd99cc1d417aa36898c19d8fdf605bd376e38",
+      "verified_git_blob": true
+    },
+    {
+      "repo": "abagames/crisp-game-lib-games",
+      "commit": "cfb39d2f988feb5918eb83697145b5a35adabf58",
+      "path": "LICENSE.txt",
+      "dest": "cardq-LICENSE.txt",
+      "url": "https://github.com/abagames/crisp-game-lib-games/blob/cfb39d2f988feb5918eb83697145b5a35adabf58/LICENSE.txt",
+      "git_blob_sha1": "f2f5ff8c0a45d37ec9c300848121cd36c99999d8",
+      "expected_bytes": 1066,
+      "sha256": "ddc67bc26d4cbf406256e3848129869020bc8bc4631078b8955c1f758eee88ae",
+      "verified_git_blob": true
+    }
+  ]
+}

@@ -151,6 +151,9 @@ import { sortingNetworkLevels } from "../src/games/sortingNetworkLogic";
 import { voxelViewsLevels } from "../src/games/voxelViewsLogic";
 import { cubeNetLevels } from "../src/games/cubeNetLogic";
 const packs = {
+  "pond": [],
+  "blicblock": [],
+  "cardq": [],
   "viking": VIKING_LEVELS,
   "beatrix": BEATRIX_LEVELS,
   "asteroids": [],

@@ -2679,5 +2679,89 @@ export const games: GameDefinition[] = [
   },
   component: lazy(() => import("../games/VikingGame"))
 },
+{
+  "id": "pond",
+  "title": "彩游池塘",
+  "subtitle": "吃下小鱼的颜色，在连续池塘中慢慢长大",
+  "category": "动作反应",
+  "difficulty": "中级",
+  "tone": "green",
+  "levelCount": 0,
+  "endless": true,
+  "allowUndo": false,
+  "artwork": {
+    "url": "./pond-art.svg",
+    "position": "center",
+    "size": "cover"
+  },
+  "source": {
+    "kind": "adapted",
+    "license": "GPL-3.0-or-later",
+    "author": "Zolmeister",
+    "workTitle": "The Pond（完整无尽原作）",
+    "url": "https://github.com/Zolmeister/pond/tree/68fa8b542bff6c405cce83a6bd433e16e7b4e7f6",
+    "commit": "68fa8b542bff6c405cce83a6bd433e16e7b4e7f6",
+    "notice": "./pond-LICENSE.txt",
+    "notes": "完整复用原程序化鱼形、六圆碰撞、惯性游动、大小捕食、像素微粒成长和色条/圆环循环。原源码GPL-3.0-or-later，中文宿主与新卡图GPL-3.0-only；不计有限关卡。"
+  }
+,
+  component: lazy(() => import("../games/PondGame"))
+},
+{
+  "id": "cardq",
+  "title": "纸牌争先",
+  "subtitle": "两张中央牌，五列手牌，与对手争先接牌",
+  "category": "动作反应",
+  "difficulty": "进阶",
+  "tone": "green",
+  "levelCount": 0,
+  "endless": true,
+  "allowUndo": false,
+  "artwork": {
+    "url": "./crisp-original/cardq/card.svg",
+    "position": "center",
+    "size": "cover"
+  },
+  "source": {
+    "kind": "adapted",
+    "license": "MIT",
+    "author": "ABA Games",
+    "workTitle": "CARD Q",
+    "url": "https://github.com/abagames/crisp-game-lib-games/blob/cfb39d2f988feb5918eb83697145b5a35adabf58/docs/cardq/main.js",
+    "commit": "cfb39d2f988feb5918eb83697145b5a35adabf58",
+    "notice": "./crisp-original/LICENSES.txt",
+    "notes": "完整无尽原作，原 main.js 逐字保留；复用本地 crisp-game-lib 1.0.2、原像素牌面和生成音效音乐。有限关卡为 0。中文界面、只读观察和生命周期适配为本站新增。"
+  }
+,
+  component: lazy(() => import("../games/CardQOriginal"))
+},
+{
+  "id": "blicblock",
+  "title": "六色拼落",
+  "subtitle": "单个落块拼出同色四格，借重力连续消除",
+  "category": "动作反应",
+  "difficulty": "中级",
+  "tone": "purple",
+  "levelCount": 0,
+  "endless": true,
+  "allowUndo": false,
+  "artwork": {
+    "url": "./blicblock-art.svg",
+    "position": "center",
+    "size": "cover"
+  },
+  "source": {
+    "kind": "adapted",
+    "license": "MIT",
+    "author": "Sarah Vessels",
+    "workTitle": "BlicblockJS（完整六色无尽原作）",
+    "url": "https://github.com/cheshire137/blicblock-js/tree/05bafeedb8684e478cda9061e98406acff8d9a83",
+    "commit": "05bafeedb8684e478cda9061e98406acff8d9a83",
+    "notice": "./blicblock-LICENSE.txt",
+    "notes": "直接复用MIT原作Block、Tetromino和MainCtrl完整规则：六色单块、5×7棋盘、七类四格形、重力连锁和加速。四个原连锁练习不计关卡，中文离线宿主GPL-3.0-only。"
+  }
+,
+  component: lazy(() => import("../games/BlicblockGame"))
+},
 ];
 export const findGame = (id: string) => games.find((game) => game.id === id);

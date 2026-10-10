@@ -1,0 +1,20 @@
+{
+  "status": "PASS_STATIC_BEFORE_EXECUTION",
+  "game": "cardq",
+  "completeOriginalMain": "byte-identical",
+  "sourceBlob": "4fc0a9d5ff569e572c3856b25e476f8a5924337c",
+  "finiteLevels": 0,
+  "endless": true,
+  "gameplayDistinctness": "Realtime competitive two-pile card race, five queues per side, rank wrapping, shared pile contention, automatic reshuffles, combo score and moving loss boundary. Existing Golf Cards is finite turn-based one-pile clearing with no A/K wrap.",
+  "reviewedGameSource": "Full source reviewed: drawing, pure arithmetic, generated queues, input, score and audio calls only; no eval, network, DOM writes, timers, storage or imports",
+  "runtime": "reuse existing local crisp-game-lib 1.0.2 and sounds-some-sounds with lifecycle patch",
+  "optionalModes": "default simple theme; no Pixi, GIF capture, rewind or minify mode",
+  "upstreamKnownQuirksPreserved": [
+    "isPlayerPlacable remains false because of the original duplicate isPlacable assignment; original AI timing is preserved."
+  ],
+  "testing": "JS syntax/static/source verification only at preflight; targeted desktop/mobile E2E authored separately",
+  "syntax": "PASS node --check for original main and observer",
+  "svg": "PASS XML parse",
+  "build": "NOT_RUN: project node_modules absent",
+  "browserE2E": "NOT_RUN: final CI integration required"
+}

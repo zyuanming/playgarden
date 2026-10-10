@@ -1,0 +1,27 @@
+{
+  "id": "cardq",
+  "title": "纸牌争先",
+  "subtitle": "两张中央牌，五列手牌，与对手争先接牌",
+  "category": "动作反应",
+  "difficulty": "进阶",
+  "tone": "green",
+  "levelCount": 0,
+  "endless": true,
+  "allowUndo": false,
+  "artwork": {
+    "url": "./crisp-original/cardq/card.svg",
+    "position": "center",
+    "size": "cover"
+  },
+  "source": {
+    "kind": "adapted",
+    "license": "MIT",
+    "author": "ABA Games",
+    "workTitle": "CARD Q",
+    "url": "https://github.com/abagames/crisp-game-lib-games/blob/cfb39d2f988feb5918eb83697145b5a35adabf58/docs/cardq/main.js",
+    "commit": "cfb39d2f988feb5918eb83697145b5a35adabf58",
+    "notice": "./crisp-original/LICENSES.txt",
+    "notes": "完整无尽原作，原 main.js 逐字保留；复用本地 crisp-game-lib 1.0.2、原像素牌面和生成音效音乐。有限关卡为 0。中文界面、只读观察和生命周期适配为本站新增。"
+  },
+  "component": "CardQOriginal"
+}

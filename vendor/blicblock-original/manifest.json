@@ -1,0 +1,63 @@
+{
+  "repository": "https://github.com/cheshire137/blicblock-js",
+  "commit": "05bafeedb8684e478cda9061e98406acff8d9a83",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2014 Sarah Vessels",
+  "files": [
+    {
+      "path": "LICENSE.txt",
+      "sha256": "14f5fbd67c28e2e887ff2abf71c901ab405d0e36bab39f0189d2a480d91e61ee",
+      "git_blob_sha1": "fddfb9648e0ae9426b6d742b4c156bdee100495a"
+    },
+    {
+      "path": "README.md",
+      "sha256": "47e2e26b57c68759778fc267c2a784464057174991513a59d80d957f1bcebc1c",
+      "git_blob_sha1": "efc8c6a446b77d960506f63e9f691873093ae238"
+    },
+    {
+      "path": "client/app/scripts/app.coffee",
+      "sha256": "3b3322eb61cd736ed637046e0e5c80fbc222b32a7fd97606e2795801f60f2cb8",
+      "git_blob_sha1": "b3eb66007a8bf294ca69d600aa94a9800f6acd69"
+    },
+    {
+      "path": "client/app/scripts/controllers/main.coffee",
+      "sha256": "440d4cfdbfefa59fea59985d2fcc6bd60942d2382a34ce7b08ac62310cde57ac",
+      "git_blob_sha1": "e5737e7499bbeac2292e836d765ec93d5c2d7429"
+    },
+    {
+      "path": "client/app/scripts/models/block.coffee",
+      "sha256": "c4844b9cb55bb87654bb4bfae45d9a6bb3eab6693655efc64c4bf83d76d517fb",
+      "git_blob_sha1": "6cf614a2701a625778259438051e6191a5945498"
+    },
+    {
+      "path": "client/app/scripts/services/config.coffee",
+      "sha256": "4ecca3ae399f7288caf0b564e78956ada33b7b01e358341e888ecfd0446af5a2",
+      "git_blob_sha1": "806841f64dbb0aab012696484611013e7f0d6ef6"
+    },
+    {
+      "path": "client/app/scripts/services/tetromino.coffee",
+      "sha256": "10eb62e33a46324d42219fb06a02bbc16fb89cefccf786b5418cade12940fb19",
+      "git_blob_sha1": "9b7072d60ebe7f8fef3bb69b887d894f9f2eab75"
+    },
+    {
+      "path": "client/app/styles/main.scss",
+      "sha256": "e5044b9b9ea8dbde65ea478dba31638132885a132ba8aa26bcb1a6de08043198",
+      "git_blob_sha1": "dfd13390bd0467aef8c208dd479c3ada1970363d"
+    },
+    {
+      "path": "client/app/views/help.html",
+      "sha256": "99ce15465bde1df52b058253174809caf438c9a29eababbf5a8f8a9cd532d32a",
+      "git_blob_sha1": "e33decfd58d21d286864c7bbd696111d03ba6a10"
+    },
+    {
+      "path": "client/app/views/main.html",
+      "sha256": "4b993821618587c8a46cfd9afd5a4cb9a15b502e47b99c5f26b133a80fe411ba",
+      "git_blob_sha1": "491f727c5da5144f8793ca096689e9498be25b91"
+    },
+    {
+      "path": "public/scripts/scripts.433fc63d.js",
+      "sha256": "3875c9b72f7e1b79941c235e2cbc39bbd443901289053809955208174036df9d",
+      "git_blob_sha1": "1c08443f8c7a1351da0cc7eeee2ea4a614c684ff"
+    }
+  ]
+}
