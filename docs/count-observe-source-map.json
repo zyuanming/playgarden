@@ -1,0 +1,69 @@
+{
+  "allUpstreamLicenses": "MIT",
+  "sourceManifest": "vendor/crisp-original/count-observe-source-manifest.json",
+  "sharedManifest": "vendor/crisp-original/source-manifest.json",
+  "sourceChain": {
+    "existingDiscoveryRecord": "vendor/crisp-original/source-chain/awesome-open-source-games-README.md:145 links ABA Games' 111-one-button-games-in-2021 collection",
+    "existingCollectionRecord": "vendor/crisp-original/source-chain/111-games/README.md links the shared crisp-game-lib-games repository through game URLs",
+    "directGameRecord": "Fixed crisp-game-lib-games commit docs/count/main.js retrieved through GitHub Contents; expected blob and complete bytes verified",
+    "caveat": "COUNT itself is not listed in the archived 111-game README. It was selected from the same pinned upstream repository, not falsely attributed as a listed collection entry.",
+    "upstreamRepositoryGuide": "vendor/crisp-original/upstream/games/README.md explains docs/<game>/main.js as each complete game source"
+  },
+  "components": [
+    {
+      "component": "COUNT code and nine procedural pixel sprites",
+      "repository": "abagames/crisp-game-lib-games",
+      "commit": "cfb39d2f988feb5918eb83697145b5a35adabf58",
+      "source": "vendor/crisp-original/upstream/games/docs/count/main.js",
+      "license": "vendor/crisp-original/count-observe-LICENSE.txt",
+      "shipped": "public/crisp-original/count-observe/main.js",
+      "modifications": "None; exact 4005 bytes and 218 CRLF line endings preserved"
+    },
+    {
+      "component": "crisp-game-lib 1.0.2",
+      "repository": "abagames/crisp-game-lib",
+      "commit": "60cb278eda8ac9eff201742f3f095fed3df66dbb",
+      "source": "vendor/crisp-original/upstream/engine/",
+      "license": "vendor/crisp-original/upstream/engine/LICENSE.txt",
+      "shipped": "public/crisp-original/engine.js",
+      "modifications": "Existing audited lifecycle adapter reused unchanged; no new engine or replay changes"
+    },
+    {
+      "component": "sounds-some-sounds 2.0.0",
+      "repository": "abagames/sounds-some-sounds",
+      "commit": "a896c5686d11c9b0fd092dd48ba89aea298028d8",
+      "source": "vendor/crisp-original/upstream/audio/",
+      "license": "vendor/crisp-original/upstream/audio/LICENSE.txt",
+      "shipped": "public/crisp-original/audio.js",
+      "modifications": "Existing single AudioContext and master-gain lifecycle integration reused unchanged"
+    },
+    {
+      "component": "jsfx modified by ABA Games",
+      "repository": "loov/jsfx",
+      "commit": "d35fabbf39b4a6d95c1b3c473f4112dd89905f9c",
+      "source": "vendor/crisp-original/upstream/audio/lib/jsfx/index.js",
+      "license": "vendor/crisp-original/third-party/jsfx/LICENSE-MIT",
+      "modifications": "Existing source modifier attribution and literal-oscillator transformation retained"
+    },
+    {
+      "component": "mml-iterator 1.1.0",
+      "repository": "mohayonao/mml-iterator",
+      "commit": "7e76ab2734521eeb59a7ac4f94c2634502be1475",
+      "source": "vendor/crisp-original/third-party/mml-iterator/",
+      "licenseEvidence": "vendor/crisp-original/third-party/mml-license-site/users/mohayonao.json and licenses/MIT.ejs; original package.json and README",
+      "licenseHostCommit": "73ebb8ca1e2280883e92498e18fcdb1c633c226c",
+      "fullPermissionText": "public/crisp-original/LICENSES.txt",
+      "correspondence": "docs/crisp-mml-correspondence.json; exact historical npm resolution is not asserted"
+    }
+  ],
+  "existingRuntimeTransformMap": "docs/crisp-transform-map.json",
+  "existingRuntimeSourceMap": "docs/crisp-runtime-source-addendum.json",
+  "newHostFilesLicense": "GPL-3.0-only",
+  "newHostFiles": [
+    "src/games/CountObserveOriginal.tsx", "src/games/crispCountObserve.ts",
+    "public/crisp-original/count-observe/index.html", "public/crisp-original/count-observe/observe.js",
+    "public/crisp-original/count-observe/card.svg", "e2e/count-observe.spec.ts",
+    "scripts/count-observe/verify-sources.py"
+  ],
+  "assets": "Nine unchanged pixel sprites cover red/green/blue circles, squares and triangles. Original procedural BGM/SFX are retained. New catalog SVG is Playgarden artwork. No external image, font, audio sample, CDN or tracking."
+}

@@ -1,0 +1,23 @@
+{
+  "id": "count-observe",
+  "title": "数形定格",
+  "subtitle": "认准形状与颜色，等计数器走到答案再停",
+  "category": "记忆观察",
+  "difficulty": "初级",
+  "tone": "green",
+  "levelCount": 0,
+  "endless": true,
+  "allowUndo": false,
+  "artwork": { "url": "./crisp-original/count-observe/card.svg", "position": "center", "size": "cover" },
+  "source": {
+    "kind": "adapted",
+    "license": "MIT",
+    "author": "ABA Games",
+    "workTitle": "COUNT",
+    "url": "https://github.com/abagames/crisp-game-lib-games/blob/cfb39d2f988feb5918eb83697145b5a35adabf58/docs/count/main.js",
+    "commit": "cfb39d2f988feb5918eb83697145b5a35adabf58",
+    "notice": "./crisp-original/LICENSES.txt",
+    "notes": "完整无尽原作，原 main.js 的 CRLF 字节全部保留；复用本地 crisp-game-lib 1.0.2、原九种像素图形与生成音乐音效。有限关卡为 0；原作没有开启操作回放。中文说明、只读观察和生命周期适配为本站新增。"
+  },
+  "component": "CountObserveOriginal"
+}

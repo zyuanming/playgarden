@@ -2,13 +2,17 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import type { GameProps } from "../lib/types";
 import "./crispOriginal.css";
+import { crispMakeMaze } from "./crispMakeMaze";
+import { crispCountObserve } from "./crispCountObserve";
 import { crispCardQ } from "./crispCardQ";
 import { crispSecondGames } from "./crispSecondGames";
 
-export type CrispId = "castn" | "bamboo" | "parking" | keyof typeof crispSecondGames | keyof typeof crispCardQ;
+export type CrispId = "castn" | "bamboo" | "parking" | keyof typeof crispSecondGames | keyof typeof crispCardQ | keyof typeof crispMakeMaze | keyof typeof crispCountObserve;
 const games = {
   ...crispSecondGames,
   ...crispCardQ,
+  ...crispMakeMaze,
+  ...crispCountObserve,
   castn: {
     title: "抛网捕鱼", original: "CAST N", headline: "等鱼入网，再一把收回",
     intro: "按住鼠标、空格或画布蓄力，松开抛网，落入鱼群后再点一下收网。蓝鱼加分，红鱼会让水位猛涨。",
@@ -35,6 +39,7 @@ export default function CrispOriginalFrame(props: GameProps & { game: CrispId })
 }
 function CrispRound({ game, paused, muted = false, hintToken, undoToken, onStatus }: GameProps & { game: CrispId }) {
   const config = games[game];
+  const supportsReplay = !("supportsReplay" in config) || config.supportsReplay !== false;
   const frame = useRef<HTMLIFrameElement>(null);
   const status = useRef(onStatus);
   const flags = useRef({ paused, muted });
@@ -96,8 +101,8 @@ function CrispRound({ game, paused, muted = false, hintToken, undoToken, onStatu
     {error && <p role="alert">{error}</p>}
     <details className="crisp-help"><summary>玩法、操作与开源说明</summary>
       <p>{config.rule}</p><p>{config.lesson}</p>
-      <p>空格、回车和触摸都使用相同的一键操作。按住后移出画布会松开；离开窗口会自动暂停，点击画布中的继续提示恢复。声音由上方声音开关控制，首次操作后启用。本机最高分只记录真实玩家对局，自动回放不重复提交成绩。</p>
-      <p>本作没有有限关卡，也不保存进行中的一局。结束后可以点击画布再玩，稍候会回放上一局操作；“重来”返回全新标题页。回放不是恢复存档。</p>
+      <p>空格、回车和触摸都使用相同的一键操作。按住后移出画布会松开；离开窗口会自动暂停，点击画布中的继续提示恢复。声音由上方声音开关控制，首次操作后启用。{supportsReplay ? "本机最高分只记录真实玩家对局，自动回放不重复提交成绩。" : "本机最高分只记录真实结束的对局。"}</p>
+      <p>本作没有有限关卡，也不保存进行中的一局。{supportsReplay ? "结束后可以点击画布再玩，稍候会回放上一局操作；“重来”返回全新标题页。回放不是恢复存档。" : "结束后可以点击画布再玩；稍候返回标题页。“重来”返回全新标题页。"}</p>
       <p>ABA Games 原作（2021），保留完整玩法、像素图形、物理、难度和生成音乐。游戏、crisp-game-lib、sounds-some-sounds、jsfx 与 mml-iterator 的许可均为 MIT；本站中文界面和生命周期适配按 GPL-3.0-only 提供。<a href="./crisp-original/LICENSES.txt" target="_blank" rel="noreferrer">查看第三方署名与许可</a>，以及<a href="./crisp-original/PLAYGARDEN-COPYING.txt" target="_blank" rel="noreferrer">本站适配 GPL 许可</a>。</p>
     </details>
   </section>;

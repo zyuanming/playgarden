@@ -164,6 +164,9 @@ export const GAME_IDS = [
   "pond",
   "blicblock",
   "cardq",
+  "makemaze",
+  "count-observe",
+  "zop",
 ] as const;
 export type GameId = (typeof GAME_IDS)[number];
 export type Category =

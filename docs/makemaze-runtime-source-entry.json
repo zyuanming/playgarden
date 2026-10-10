@@ -1,0 +1,18 @@
+{
+  "name": "MAKE MAZE complete original endless game",
+  "version": "cfb39d2f988feb5918eb83697145b5a35adabf58",
+  "license": "MIT",
+  "source": "https://github.com/abagames/crisp-game-lib-games/blob/cfb39d2f988feb5918eb83697145b5a35adabf58/docs/makemaze/main.js",
+  "preferredSource": [
+    "vendor/crisp-original/upstream/games/docs/makemaze/main.js",
+    "public/crisp-original/makemaze/main.js",
+    "public/crisp-original/makemaze/observe.js",
+    "src/games/crispMakeMaze.ts"
+  ],
+  "buildSources": [
+    "scripts/makemaze/verify-sources.py",
+    "docs/makemaze-source-map.json",
+    "package-lock.json"
+  ],
+  "scope": "Complete byte-identical 16×18 scrolling wall-edit original, handed automatic collectors, gold multipliers, flood-fill escape detection, angry wall demolition, escape penalties and missed-gold loss. Existing audited Crisp engine/audio and complete editable source/licenses reused. No finite levels or new runtime dependencies."
+}

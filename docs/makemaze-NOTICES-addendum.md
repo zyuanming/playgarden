@@ -1,0 +1,11 @@
+# MAKE MAZE source notice
+
+MAKE MAZE (迷墙导金) is by ABA Games, copyright 2021, MIT licensed. The complete original source is preserved byte for byte from `abagames/crisp-game-lib-games` commit `cfb39d2f988feb5918eb83697145b5a35adabf58`, path `docs/makemaze/main.js`, Git blob `2c14b61efc3364a92eb45e0a0932fd88aa2dc72b`. Both the shipped main and source archive preserve all 7,651 bytes including CRLF line endings. Full original permission text is at `vendor/crisp-original/makemaze-LICENSE.txt` and in the existing shipped `public/crisp-original/LICENSES.txt`.
+
+The game uses the existing local crisp-game-lib 1.0.2 renderer/input/replay implementation, sounds-some-sounds 2.0.0 procedural music and effects, jsfx, and mml-iterator 1.1.0. Retain their existing full source archives, build correspondence, copyright notices and complete MIT permissions under `vendor/crisp-original` and `public/crisp-original/LICENSES.txt`. The component commits and license paths are mapped in `docs/makemaze-source-map.json`. No new runtime library is added.
+
+New Playgarden work comprises Chinese instructions, the thin React host selection, an observer returning copies only, an iframe document, original catalog SVG, a static integrity checker and one targeted browser journey. These additions are GPL-3.0-only. Original wall/collector/gold pixel patterns, particles, generated BGM and sound effects remain the upstream programmatic assets.
+
+This is the complete original endless game: 16×18 scrolling editable walls, handed automatic wall-following collectors, gold multipliers, downward-exit detection, red angry collectors breaking walls, escape penalties with scroll acceleration, and loss when an uncollected gold scrolls above the screen. It adds zero finite levels. There is no finite campaign or final victory, and no gameplay or difficulty patch.
+
+Original quirks are deliberately preserved: downward-exit detection uses nine paired scan sweeps; at most one board row shifts in a frame, including the rapid opening scroll; only the previous edited cell is suppressed during a held gesture; and escape deductions can make a genuinely earned-gold run finish at zero or negative score. Best score records the final run score rather than its highest intermediate score. The test therefore proves actual gold awards separately from the final record.

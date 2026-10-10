@@ -2763,5 +2763,91 @@ export const games: GameDefinition[] = [
 ,
   component: lazy(() => import("../games/BlicblockGame"))
 },
+{
+  "id": "makemaze",
+  "title": "迷墙导金",
+  "subtitle": "画墙引路，让自动行进的小人收集金币",
+  "category": "动作反应",
+  "difficulty": "进阶",
+  "tone": "purple",
+  "levelCount": 0,
+  "endless": true,
+  "allowUndo": false,
+  "artwork": {
+    "url": "./crisp-original/makemaze/card.svg",
+    "position": "center",
+    "size": "cover"
+  },
+  "source": {
+    "kind": "adapted",
+    "license": "MIT",
+    "author": "ABA Games",
+    "workTitle": "MAKE MAZE",
+    "url": "https://github.com/abagames/crisp-game-lib-games/blob/cfb39d2f988feb5918eb83697145b5a35adabf58/docs/makemaze/main.js",
+    "commit": "cfb39d2f988feb5918eb83697145b5a35adabf58",
+    "notice": "./crisp-original/LICENSES.txt",
+    "notes": "完整无尽原作，原 main.js 逐字保留；复用本地 crisp-game-lib 1.0.2、原程序化像素图形和生成音效音乐。有限关卡为 0。中文界面、只读观察和生命周期适配为本站新增。"
+  }
+,
+  component: lazy(() => import("../games/MakeMazeOriginal"))
+},
+{
+  "id": "count-observe",
+  "title": "数形定格",
+  "subtitle": "认准形状与颜色，等计数器走到答案再停",
+  "category": "记忆观察",
+  "difficulty": "初级",
+  "tone": "green",
+  "levelCount": 0,
+  "endless": true,
+  "allowUndo": false,
+  "artwork": {
+    "url": "./crisp-original/count-observe/card.svg",
+    "position": "center",
+    "size": "cover"
+  },
+  "source": {
+    "kind": "adapted",
+    "license": "MIT",
+    "author": "ABA Games",
+    "workTitle": "COUNT",
+    "url": "https://github.com/abagames/crisp-game-lib-games/blob/cfb39d2f988feb5918eb83697145b5a35adabf58/docs/count/main.js",
+    "commit": "cfb39d2f988feb5918eb83697145b5a35adabf58",
+    "notice": "./crisp-original/LICENSES.txt",
+    "notes": "完整无尽原作，原 main.js 的 CRLF 字节全部保留；复用本地 crisp-game-lib 1.0.2、原九种像素图形与生成音乐音效。有限关卡为 0；原作没有开启操作回放。中文说明、只读观察和生命周期适配为本站新增。"
+  }
+,
+  component: lazy(() => import("../games/CountObserveOriginal"))
+},
+{
+  "id": "zop",
+  "title": "连点成环",
+  "subtitle": "用一分钟画出同色链条，闭环一笔带走全盘同色。",
+  "category": "记忆观察",
+  "difficulty": "中级",
+  "tone": "purple",
+  "levelCount": 0,
+  "endless": true,
+  "allowUndo": false,
+  "resumeKey": "playgarden.zop.best.v1",
+  "freePlayCaption": "60秒完整挑战",
+  "artwork": {
+    "url": "./zop-art.svg",
+    "position": "center",
+    "size": "cover"
+  },
+  "source": {
+    "kind": "adapted",
+    "license": "MIT",
+    "author": "Zolmeister",
+    "workTitle": "Zop",
+    "url": "https://github.com/Zolmeister/Zop",
+    "commit": "fafaa4751df64634aee48d942062617c21acfb26",
+    "notice": "./zop-LICENSE.txt",
+    "notes": "保留原6×6五色连线、回退、闭环全色消除、补色与重力、60秒计分和重开。原Canvas核心封装；新增中文宿主、触屏坐标、暂停卸载与独立存储。0有限关卡。"
+  }
+,
+  component: lazy(() => import("../games/ZopGame"))
+},
 ];
 export const findGame = (id: string) => games.find((game) => game.id === id);

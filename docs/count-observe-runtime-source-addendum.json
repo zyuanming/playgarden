@@ -1,0 +1,13 @@
+{
+  "vendoredComponents": [
+    {
+      "name": "COUNT original endless observation and timing game",
+      "version": "cfb39d2f988feb5918eb83697145b5a35adabf58",
+      "license": "MIT",
+      "source": "https://github.com/abagames/crisp-game-lib-games/blob/cfb39d2f988feb5918eb83697145b5a35adabf58/docs/count/main.js",
+      "preferredSource": ["vendor/crisp-original/upstream/games/docs/count/main.js"],
+      "buildSources": ["public/crisp-original/count-observe/index.html", "public/crisp-original/count-observe/observe.js", "scripts/count-observe/verify-sources.py"],
+      "scope": "Complete byte-identical original, with generated shape/color rounds, size distractors, automatic counter, precise physical stop, answer reveal, correct-next-turn and wrong/end rules. Original nine sprites, procedural audio and disabled replay configuration retained. Zero finite levels. Shared audited engine/audio sources remain required."
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+# Zop / 连点成环
+
+Complete original timed score game, with zero enumerated finite levels. Source is Zolmeister/Zop at `fafaa4751df64634aee48d942062617c21acfb26`, MIT ©2015 Zolmeister. The exact four approved source/license snapshots are under `vendor/zop-original/upstream` with per-file Git blob/SHA256 records.
+
+The original canvas initialization, restart, drawing/gravity, adjacency, collision, selection/backtracking, closed-loop and clear/refill bodies are reused. New code encapsulates former bare globals and replaces only the old Zorium/footer/router/Score dependencies with a React-owned canvas, a namespaced best score and a final-result overlay. The original five colors, 6×6 board, random refill, one point per uniquely removed square, loop-color exclusion and bounce physics remain. A loop still clears every square of its color. Every round runs for 60 active seconds; no authored levels are invented.
+
+The old page-origin touch math and resize reload are replaced by scaled canvas coordinates with captured pointer input. Canvas logical dimensions stay 420×540 and CSS scales them to the available width. System fonts replace the referenced font family; there are no copied image, audio or font assets. A host icon uses equivalent geometric marks. Keyboard selection is an additional equivalent input method.
+
+The host owns a single RAF. Pausing, visibility loss and blur freeze the clock and cancel incomplete selections. Restart resets score/time/board within the same engine without starting another RAF. Unmount cancels RAF/listeners and disposes the original per-instance state. There is no original soundtrack. `playgarden.zop.best.v1` stores only a completed round's best score, never sends it over the network and leaves all other storage keys untouched. The observer exposes detached copies only.
+
+Excluded from redistribution/runtime: old Zorium and zorium-paper packages, page loader, Footer/GameOver sharing wrappers, Google Fonts, Google Analytics, Clay SDK and development server. Only source/license files listed by the checked manifest are redistributed. New host code uses GPL-3.0-only with upstream MIT retained.
+
+The targeted test uses an ordinary LCG seed and genuine mouse/touch trajectories. It derives pairs and visible 2×2 loops from the displayed board, earns a normal clear and a full-color loop, checks invalid movement/backtracking/cancellation, waits for the real 60-second timeout, and verifies pause/restart/storage/unmount. It never writes score/board/outcome, accelerates the clock or executes a separate rules engine. Desktop/mobile screenshots must be opened before publication. The static package is not itself evidence of a browser pass.

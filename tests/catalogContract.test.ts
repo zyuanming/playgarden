@@ -154,6 +154,9 @@ const packs = {
   "pond": [],
   "blicblock": [],
   "cardq": [],
+  "makemaze": [],
+  "count-observe": [],
+  "zop": [],
   "viking": VIKING_LEVELS,
   "beatrix": BEATRIX_LEVELS,
   "asteroids": [],
@@ -351,8 +354,8 @@ describe("Scalable catalog contract", () => {
       }
     }),
   );
-  it("counts only 160 real games and 2995 levels, not the roadmap", () => {
-    expect(games).toHaveLength(160);
-    expect(games.reduce((sum, g) => sum + g.levelCount, 0)).toBe(2995);
+  it("counts only 167 real games and 3002 levels, not the roadmap", () => {
+    expect(games).toHaveLength(167);
+    expect(games.reduce((sum, g) => sum + g.levelCount, 0)).toBe(3002);
   });
 });

@@ -1,0 +1,27 @@
+{
+  "status": "PASS_STATIC_BEFORE_EXECUTION",
+  "files": [
+    {
+      "repo": "abagames/crisp-game-lib-games",
+      "commit": "cfb39d2f988feb5918eb83697145b5a35adabf58",
+      "path": "docs/makemaze/main.js",
+      "dest": "upstream/games/docs/makemaze/main.js",
+      "url": "https://github.com/abagames/crisp-game-lib-games/blob/cfb39d2f988feb5918eb83697145b5a35adabf58/docs/makemaze/main.js",
+      "git_blob_sha1": "2c14b61efc3364a92eb45e0a0932fd88aa2dc72b",
+      "expected_bytes": 7651,
+      "sha256": "bd3e88383dfca4ef3c3d8a52a9ec927b5d9511a2ace10c09a4de7fd80ad9fc46",
+      "verified_git_blob": true
+    },
+    {
+      "repo": "abagames/crisp-game-lib-games",
+      "commit": "cfb39d2f988feb5918eb83697145b5a35adabf58",
+      "path": "LICENSE.txt",
+      "dest": "makemaze-LICENSE.txt",
+      "url": "https://github.com/abagames/crisp-game-lib-games/blob/cfb39d2f988feb5918eb83697145b5a35adabf58/LICENSE.txt",
+      "git_blob_sha1": "f2f5ff8c0a45d37ec9c300848121cd36c99999d8",
+      "expected_bytes": 1066,
+      "sha256": "ddc67bc26d4cbf406256e3848129869020bc8bc4631078b8955c1f758eee88ae",
+      "verified_git_blob": true
+    }
+  ]
+}

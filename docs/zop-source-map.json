@@ -1,0 +1,24 @@
+{
+  "id": "zop",
+  "upstream": "https://github.com/Zolmeister/Zop",
+  "commit": "fafaa4751df64634aee48d942062617c21acfb26",
+  "license": "MIT",
+  "originalGame": "src/components/game/index.js",
+  "runtime": [
+    "src/vendor/zopOriginal.ts",
+    "src/vendor/zopRuntime.ts",
+    "src/games/ZopGame.tsx",
+    "src/games/zop.css"
+  ],
+  "sourceSnapshots": "vendor/zop-original/upstream/",
+  "sourceManifest": "vendor/zop-original/source-manifest.json",
+  "publicLicense": "public/zop-LICENSE.txt",
+  "dependencies": [],
+  "finiteLevels": 0,
+  "mode": "complete 60-second score challenge",
+  "directoryChain": [
+    "https://github.com/bobeff/open-source-games",
+    "https://github.com/leereilly/games",
+    "https://github.com/Zolmeister/Zop"
+  ]
+}
