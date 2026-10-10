@@ -394,6 +394,23 @@
         "package-lock.json"
       ],
       "scope": "Complete original 16 unit types, 13 concrete action families, AI and procedural dungeon/recruitment/survivor progression. New responsive Chinese UI and validated scoped storage; original image assets and legacy UI dependencies omitted. Resistance underflow fixed; no finite numbered levels."
+    },
+    {
+      "name": "Hexahedral complete original30-puzzle campaign",
+      "version": "a2641001e13afe15ca8488be7d739203471fee77",
+      "license": "MIT",
+      "source": "https://github.com/mminer/hexahedral/tree/a2641001e13afe15ca8488be7d739203471fee77",
+      "preferredSource": [
+        "vendor/hexahedral-original/upstream",
+        "src/vendor/hexahedralCore.ts",
+        "src/games/hexahedralLevels.ts",
+        "src/games/HexahedralGame.tsx"
+      ],
+      "buildSources": [
+        "scripts/hexahedral/verify-sources.py",
+        "package-lock.json"
+      ],
+      "scope": "Complete original30 level layouts, starting positions, gaps and move budgets; original landing-toggle win-before-exhaustion rules. New accessible top-view interface and validated move-history saves; no original third-party sound assets or legacy runtime dependencies."
     }
   ]
 }

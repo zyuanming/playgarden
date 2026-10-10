@@ -157,6 +157,7 @@ export const GAME_IDS = [
   "cube-composer",
   "a-dark-room",
   "hexa-battle",
+  "hexahedral",
 ] as const;
 export type GameId = (typeof GAME_IDS)[number];
 export type Category =
