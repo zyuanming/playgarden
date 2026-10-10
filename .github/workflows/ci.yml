@@ -146,6 +146,8 @@ jobs:
           PAGE_URL: ${{ steps.deployment.outputs.page_url }}
         run: |
           node --input-type=module <<'NODE'
+          const {readFileSync}=await import('node:fs');
+          const {createHash}=await import('node:crypto');
           const url=process.env.PAGE_URL,sha=process.env.GITHUB_SHA;
           let html='';
           for(let attempt=0;attempt<12;attempt++){
@@ -179,8 +181,6 @@ jobs:
           for(const path of ['beatrix-LICENSE.txt','beatrix-art.svg']){const r=await fetch(new URL(path,url),{cache:'no-store'});if(!r.ok)throw Error('Missing public Beatrix resource: '+path);const digest=bytes=>createHash('sha256').update(bytes).digest('hex');if(digest(Buffer.from(await r.arrayBuffer()))!==digest(readFileSync('public/'+path)))throw Error('Beatrix resource mismatch: '+path);console.log('Beatrix exact resource OK:',path);}
           if(asteroidsChunks.size!==1)throw Error('Missing Asteroids runtime from public entry');
           for(const asset of asteroidsChunks){const r=await fetch(asset,{cache:'no-store'});if(!r.ok)throw Error('Missing public Asteroids runtime');const text=await r.text();if(text.length<1000||/^\s*<!doctype html/i.test(text))throw Error('Invalid Asteroids runtime');console.log('Asteroids runtime OK:',asset);}
-          const {readFileSync}=await import('node:fs');
-          const {createHash}=await import('node:crypto');
           for(const path of ['asteroids-LICENSE.txt','asteroids-art.svg']){const r=await fetch(new URL(path,url),{cache:'no-store'});if(!r.ok)throw Error('Missing public Asteroids resource: '+path);const digest=bytes=>createHash('sha256').update(bytes).digest('hex');if(digest(Buffer.from(await r.arrayBuffer()))!==digest(readFileSync('public/'+path)))throw Error('Asteroids resource mismatch: '+path);console.log('Asteroids exact resource OK:',path);}
           for(const path of ['hexahedral-LICENSE.txt','hexahedral-art.svg']){const r=await fetch(new URL(path,url),{cache:'no-store'});if(!r.ok)throw Error('Missing public Hexahedral resource: '+path);const digest=bytes=>createHash('sha256').update(bytes).digest('hex');if(digest(Buffer.from(await r.arrayBuffer()))!==digest(readFileSync('public/'+path)))throw Error('Hexahedral resource mismatch: '+path);console.log('Hexahedral exact resource OK:',path);}
           for(const path of ['hexa-battle-LICENSE.txt','hexa-battle-art.svg']){const r=await fetch(new URL(path,url),{cache:'no-store'});if(!r.ok)throw Error('Missing public Hexa Battle resource: '+path);const digest=bytes=>createHash('sha256').update(bytes).digest('hex');if(digest(Buffer.from(await r.arrayBuffer()))!==digest(readFileSync('public/'+path)))throw Error('Hexa Battle resource mismatch: '+path);console.log('Hexa Battle exact resource OK:',path);}
