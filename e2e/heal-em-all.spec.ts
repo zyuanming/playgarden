@@ -204,7 +204,7 @@ test('six-stage original: earned first, middle and final routes with touch and l
           // present separation. Recheck on every observation, retaining a
           // previous target only while it still provides a 95px body margin.
           const clearance = (at: number) => Math.min(...threats.map(z => Math.abs(at - z.x) - Math.abs(z.vx) * seconds));
-          const previous = landingX === null ? null : Math.max(low, Math.min(high, landingX));
+          const previous: number | null = landingX === null ? null : Math.max(low, Math.min(high, landingX));
           const best = candidates.sort((a, b) => clearance(b) - clearance(a))[0];
           landingX = previous !== null && clearance(previous) >= 95 ? previous : best;
           // If no reachable point yet has that margin, keep physically evading
