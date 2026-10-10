@@ -65,17 +65,30 @@ test('six-stage original: earned first, middle and final routes with touch and l
   const keys: Record<Input, string> = { left: 'ArrowLeft', right: 'ArrowRight', action: 'ArrowUp', fire: 'Space' };
   let pressed: Input[] = [];
   let touchCenters: Record<Input, { x: number; y: number; id: number }>;
+  let touchGeometry: { frame: Frame; box: string } | null = null;
   async function setInputs(next: Input[]) {
     if (mobile) {
       // Measure before a gesture starts. Releasing Jump must not release the
       // steering finger for several layout/scroll round trips during ascent.
       if (!pressed.length && next.length) {
-        await frame.locator('.controls').scrollIntoViewIfNeeded();
-        const entries = await Promise.all((Object.keys(keys) as Input[]).map(async (input, i) => {
-          const box = (await frame.locator(`[data-input="${input}"]`).boundingBox())!;
-          return [input, { x: box.x + box.width / 2, y: box.y + box.height / 2, id: i + 1 }] as const;
-        }));
-        touchCenters = Object.fromEntries(entries) as typeof touchCenters;
+        let controls = await frame.locator('.controls').boundingBox();
+        const viewport = page.viewportSize()!;
+        if (!controls || controls.x < 0 || controls.y < 0 || controls.x + controls.width > viewport.width || controls.y + controls.height > viewport.height) {
+          await frame.locator('.controls').scrollIntoViewIfNeeded();
+          controls = await frame.locator('.controls').boundingBox();
+        }
+        expect(controls, 'actual touch controls have visible geometry').not.toBeNull();
+        const geometry = JSON.stringify(controls);
+        // A close patrol keeps moving while layout is measured. Reuse button
+        // centers only after verifying the same frame and unchanged real box.
+        if (touchGeometry?.frame !== frame || touchGeometry.box !== geometry) {
+          const entries = await Promise.all((Object.keys(keys) as Input[]).map(async (input, i) => {
+            const box = (await frame.locator(`[data-input="${input}"]`).boundingBox())!;
+            return [input, { x: box.x + box.width / 2, y: box.y + box.height / 2, id: i + 1 }] as const;
+          }));
+          touchCenters = Object.fromEntries(entries) as typeof touchCenters;
+          touchGeometry = { frame, box: geometry };
+        }
       }
       if (pressed.length) await cdp!.send('Input.dispatchTouchEvent', { type: 'touchEnd', touchPoints: [] });
       if (next.length) await cdp!.send('Input.dispatchTouchEvent', { type: 'touchStart', touchPoints: next.map(input => touchCenters[input]) });
@@ -136,6 +149,7 @@ test('six-stage original: earned first, middle and final routes with touch and l
   async function healNearby() {
     await setInputs([]);
     let state = await read(frame);
+    expect(state.player?.form, 'combat begins with the real human player').toBe('human');
     if (!state.hasGun || state.ammo === 0 || !state.player) return;
     let p = state.player;
     let enemy = state.objects.Zombie.filter(z => Math.abs(z.y - p.y) < 30 && Math.abs(z.x - p.x) < 440).sort((a, b) => Math.abs(a.x - p.x) - Math.abs(b.x - p.x))[0];
@@ -147,8 +161,24 @@ test('six-stage original: earned first, middle and final routes with touch and l
       const bounds = platformAt(state.level, p.x, p.y);
       const away = enemy.x < p.x ? 1 : -1;
       const retreat = Math.max(bounds.left, Math.min(bounds.right, p.x + away * 120));
-      expect(Math.abs(retreat - enemy.x), 'safe physical room before turning').toBeGreaterThan(100);
-      await move(retreat);
+      if (Math.abs(retreat - enemy.x) > 100) {
+        await move(retreat);
+      } else {
+        // At an edge there is no room to walk away. Jump vertically before
+        // steering over the original solid enemy toward the platform interior.
+        // Await observed clearance, so a ceiling or failed jump fails honestly.
+        const floor = p.y;
+        const inward = enemy.x > p.x ? 1 : -1;
+        const landing = Math.max(bounds.left, Math.min(bounds.right, enemy.x + inward * 180));
+        expect(hasJumpHeadroom(state.level, p.x, landing, floor), 'original tiles leave the whole recovery hop corridor clear').toBe(true);
+        await setInputs(['action']);
+        await waitFor(s => !!s.player && s.player.form === 'human' && s.player.y < floor - 125 && s.player.vy < 0,
+          'real vertical jump clears the nearby enemy before steering', 1000);
+        await setInputs([]);
+        await move(landing);
+        await ground(floor);
+        expect((await read(frame)).player?.form, 'edge recovery lands as a human on the same platform').toBe('human');
+      }
       state = await read(frame); p = state.player!;
       enemy = state.objects.Zombie.filter(z => Math.abs(z.y - p.y) < 30 && Math.abs(z.x - p.x) < 440).sort((a, b) => Math.abs(a.x - p.x) - Math.abs(b.x - p.x))[0];
       if (!enemy) return;
@@ -181,6 +211,20 @@ test('six-stage original: earned first, middle and final routes with touch and l
     while (left > 0 && tiles[row * width + left - 1]) left--;
     while (right + 1 < width && tiles[row * width + right + 1]) right++;
     return { left: left * 70 + 45, right: (right + 1) * 70 - 45 };
+  }
+  function hasJumpHeadroom(level: number, fromX: number, toX: number, floor: number) {
+    const xml = readFileSync(`public/heal-em-all/data/level${level}.tmx`, 'utf8');
+    const width = Number(xml.match(/<map[^>]* width="(\d+)"/)![1]);
+    const layer = xml.match(/<layer name="collision"[\s\S]*?<data>([\s\S]*?)<\/data>/)![1];
+    const tiles = [...layer.matchAll(/<tile gid="(\d+)"\s*\/>/g)].map(m => Number(m[1]));
+    // Original jump rise is 660²/(2*980), with a 50px half-height and 25px
+    // body half-width. This conservative swept rectangle excludes upper
+    // bridges that could turn a same-platform recovery into a different route.
+    const top = Math.floor((floor - 660 * 660 / (2 * 980) - 50) / 70);
+    const bottom = Math.floor((floor - 50) / 70);
+    const left = Math.floor((Math.min(fromX, toX) - 25) / 70), right = Math.floor((Math.max(fromX, toX) + 25) / 70);
+    for (let row = top; row <= bottom; row++) for (let col = left; col <= right; col++) if (tiles[row * width + col]) return false;
+    return true;
   }
   async function drop(x: number, y: number) {
     await move(x);
@@ -230,6 +274,30 @@ test('six-stage original: earned first, middle and final routes with touch and l
   }
   async function cross(launchX: number, direction: 'left' | 'right', dropX: number) {
     await healNearby(); await move(launchX, true); await jump(direction, 1280); await drop(dropX, 1490);
+  }
+  async function crossLongGap() {
+    await move(1800, true);
+    const bounds = platformAt((await read(frame)).level, 1400, 1490);
+    // This gap is crossed at the same floor height. Landing on a patrol's
+    // head causes real contact damage before ground() can run. Wait on the
+    // launch platform and heal it with original projectiles when it patrols
+    // into range. A full authored 470px patrol can take about 16 seconds.
+    const deadline = Date.now() + 22000;
+    let state = await read(frame);
+    const destinationEnemies = (s: Reading) => s.objects.Zombie.filter(z => Math.abs(z.y - 1490) < 20 && z.x >= bounds.left - 45 && z.x <= bounds.right + 45);
+    while (destinationEnemies(state).length && Date.now() < deadline) {
+      const nearest = destinationEnemies(state).sort((a, b) => b.x - a.x)[0];
+      if (state.player && Math.abs(nearest.x - state.player.x) < 430) await healNearby();
+      else await page.waitForTimeout(40);
+      state = await read(frame);
+      expect(state.player?.form, 'gap launch stays human while waiting for the real patrol').toBe('human');
+    }
+    expect(destinationEnemies(state), 'the destination patrol is actually cleared before the long jump').toHaveLength(0);
+    await setInputs(['left', 'action']); await page.waitForTimeout(120); await setInputs(['left']);
+    await waitFor(s => !!s.player && s.player.x <= 1400, 'same-height long gap');
+    await setInputs([]); await ground(1490);
+    expect((await read(frame)).player?.form, 'long gap lands as a human').toBe('human');
+    await healNearby();
   }
   async function exitDoor() {
     const door = (await read(frame)).objects.Door[0];
@@ -307,8 +375,7 @@ test('six-stage original: earned first, middle and final routes with touch and l
   await move(6615); expect((await read(frame)).hasKey).toBe(true);
   await page.screenshot({ path: info.outputPath('heal-middle-earned-key.png'), fullPage: true });
   for (const [launch, landing] of [[6600, 6000], [5760, 5170], [4920, 4380], [4150, 3640], [3520, 2940], [2680, 2100]]) await cross(launch, 'left', landing);
-  await move(1800, true); await setInputs(['left', 'action']); await page.waitForTimeout(120); await setInputs(['left']);
-  await waitFor(s => !!s.player && s.player.x <= 1400, 'same-height long gap'); await setInputs([]); await ground(1490); await healNearby();
+  await crossLongGap();
   await cross(1140, 'left', 500); await exitDoor();
   expect((await read(frame)).summary?.level).toBe(4);
   await page.screenshot({ path: info.outputPath('heal-middle-earned-exit.png'), fullPage: true });
@@ -320,8 +387,7 @@ test('six-stage original: earned first, middle and final routes with touch and l
   await drop(4770, 860); await drop(4870, 1070); await move(5200, true); await drop(5310, 1280); await drop(5600, 1490);
   await cross(5860, 'right', 6500); await move(6615); expect((await read(frame)).hasKey).toBe(true);
   for (const [launch, landing] of [[6600, 6000], [5760, 5170], [4920, 4380], [4080, 3640], [3520, 2940], [2680, 2100]]) await cross(launch, 'left', landing);
-  await move(1800, true); await setInputs(['left', 'action']); await page.waitForTimeout(120); await setInputs(['left']);
-  await waitFor(s => !!s.player && s.player.x <= 1400, 'final same-height long gap'); await setInputs([]); await ground(1490); await healNearby();
+  await crossLongGap();
   await cross(1140, 'left', 500); await exitDoor();
   state = await read(frame); expect(state.summary?.level).toBe(6); expect(state.availableLevel).toBe(7);
   await frame.getByRole('button', { name: '查看旅程结局', exact: true }).click();
