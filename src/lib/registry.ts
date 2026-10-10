@@ -2543,5 +2543,33 @@ export const games: GameDefinition[] = [
     },
     "component": lazy(() => import("../games/ADarkRoomOriginal"))
   },
+  {
+    "id": "hexa-battle",
+    "title": "六角远征",
+    "subtitle": "组建队伍，在六角地牢中走位、施法，把生还者带到更深处。",
+    "category": "逻辑思维",
+    "difficulty": "进阶",
+    "tone": "green",
+    "levelCount": 0,
+    "endless": true,
+    "allowUndo": false,
+    "freePlayCaption": "无尽远征 · 自动存档",
+    "artwork": {
+      "url": "./hexa-battle-art.svg",
+      "position": "center",
+      "size": "cover"
+    },
+    "source": {
+      "kind": "adapted",
+      "license": "MIT",
+      "author": "Giacomo Tagliabue",
+      "workTitle": "Hexa Battle（完整原作规则）",
+      "url": "https://github.com/itajaja/hb/tree/fe97718def25736a4000e93efca6894530ba0c86",
+      "commit": "fe97718def25736a4000e93efca6894530ba0c86",
+      "notice": "./hexa-battle-LICENSE.txt",
+      "notes": "完整保留8种人类、8种怪物、13类技能、六角路径、原AI和递进地图/奖励/招募/生还者循环。无限递进，无有限关卡。原核心MIT；本站中文React界面、存档/暂停/退出适配和重绘棋子为GPL-3.0-only。未使用原game-icons素材、旧UI依赖或外部联网。"
+    },
+    "component": lazy(() => import("../games/HexaBattleGame"))
+  },
 ];
 export const findGame = (id: string) => games.find((game) => game.id === id);

@@ -156,14 +156,19 @@ jobs:
           }
           const paths=[...html.matchAll(/(?:src|href)="([^"]+\.(?:js|css))"/g)].map(m=>new URL(m[1],url));
           if(paths.length<2)throw Error('Missing application entry resources');
+          const hexaChunks=new Set();
           for(const asset of paths){
             if(asset.origin!==new URL(url).origin)continue;
             const r=await fetch(asset);if(!r.ok)throw Error(`Missing entry resource: ${asset.pathname}`);
             const text=await r.text();if(text.length<100 || /^\s*<!doctype html/i.test(text))throw Error(`Invalid entry resource: ${asset.pathname}`);
             console.log('Entry resource OK:',asset.pathname);
+            for(const match of text.matchAll(/\.\/HexaBattleGame-[a-zA-Z0-9_-]+\.js/g))hexaChunks.add(new URL(match[0],asset).href);
           }
+          if(hexaChunks.size!==1)throw Error('Missing Hexa Battle runtime from public application entry');
+          for(const asset of hexaChunks){const r=await fetch(asset,{cache:'no-store'});if(!r.ok)throw Error('Missing public Hexa Battle runtime');const text=await r.text();if(text.length<1000||/^\s*<!doctype html/i.test(text))throw Error('Invalid Hexa Battle runtime');console.log('Hexa Battle runtime OK:',asset);}
           const {readFileSync}=await import('node:fs');
           const {createHash}=await import('node:crypto');
+          for(const path of ['hexa-battle-LICENSE.txt','hexa-battle-art.svg']){const r=await fetch(new URL(path,url),{cache:'no-store'});if(!r.ok)throw Error('Missing public Hexa Battle resource: '+path);const digest=bytes=>createHash('sha256').update(bytes).digest('hex');if(digest(Buffer.from(await r.arrayBuffer()))!==digest(readFileSync('public/'+path)))throw Error('Hexa Battle resource mismatch: '+path);console.log('Hexa Battle exact resource OK:',path);}
           const serverFiles=['index.html','pg-bridge.js','three-local.js','style.css','utilities.css','src/campaign/levels.js','LICENSE.txt','LICENSE-three.txt','LICENSE-tailwind.txt'];
           for(const file of serverFiles){
             const path='server-survival-full/'+file;

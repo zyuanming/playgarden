@@ -377,6 +377,23 @@
         "vendor/adr-original/jquery-color-2.1.2/package.json"
       ],
       "scope": "Readable official source executed directly; local color interpolation for original flight animations."
+    },
+    {
+      "name": "Hexa Battle complete original tactical rules",
+      "version": "fe97718def25736a4000e93efca6894530ba0c86",
+      "license": "MIT",
+      "source": "https://github.com/itajaja/hb/tree/fe97718def25736a4000e93efca6894530ba0c86",
+      "preferredSource": [
+        "vendor/hexa-battle-original/upstream",
+        "src/vendor/hexaBattle",
+        "src/games/hexaBattleController.ts",
+        "src/games/HexaBattleGame.tsx"
+      ],
+      "buildSources": [
+        "scripts/hexa-battle/prepare_core.py",
+        "package-lock.json"
+      ],
+      "scope": "Complete original 16 unit types, 13 concrete action families, AI and procedural dungeon/recruitment/survivor progression. New responsive Chinese UI and validated scoped storage; original image assets and legacy UI dependencies omitted. Resistance underflow fixed; no finite numbered levels."
     }
   ]
 }
