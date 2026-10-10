@@ -98,15 +98,26 @@ test('six-stage original: earned first, middle and final routes with touch and l
     if (Math.abs(initial.x - x) < 5) return;
     const direction: Input = initial.x < x ? 'right' : 'left';
     const deadline = Date.now() + Math.abs(x - initial.x) / 300 * 1000 + 1800;
+    let hoppedOverGuard = false;
     let s = await read(frame);
     while (s.player && (direction === 'right' ? s.player.x < x : s.player.x > x) && Date.now() < deadline) {
       const p = s.player, enemyAhead = s.objects.Zombie.some(z => Math.abs(z.y - p.y) < 30 && Math.abs(z.x - p.x) < 430 && (direction === 'right' ? z.x > p.x : z.x < p.x));
+      // The final gun is guarded by a solid moving zombie. Before acquiring
+      // ammunition, pushing into that body cannot work: jump over it using
+      // the real controls, then land on the original gun pickup.
+      const unarmedGuard = shoot && !s.hasGun && p.grounded && s.objects.Zombie.some(z => Math.abs(z.y - p.y) < 15 && Math.abs(z.x - p.x) < 145 && (direction === 'right' ? z.x > p.x : z.x < p.x));
+      if (unarmedGuard) {
+        await setInputs([direction, 'action']); await page.waitForTimeout(120); await setInputs([direction]);
+        hoppedOverGuard = true;
+        s = await read(frame); continue;
+      }
       const next: Input[] = shoot && s.hasGun && enemyAhead ? [direction, 'fire'] : [direction];
       if (next.join() !== pressed.join()) await setInputs(next);
       await page.waitForTimeout(20); s = await read(frame);
     }
     await setInputs([]);
     expect(!!s.player && (direction === 'right' ? s.player.x >= x : s.player.x <= x), `walk ${direction} to ${x}: ${JSON.stringify(s.player)}`).toBe(true);
+    if (hoppedOverGuard) await ground(initial.y);
   }
   async function jump(direction: 'left' | 'right', targetY: number) {
     await setInputs([direction, 'action']); await page.waitForTimeout(120); await setInputs([direction]);
@@ -242,6 +253,7 @@ test('six-stage original: earned first, middle and final routes with touch and l
   await selectFixtureLevel(5); await ground(1490);
   for (const [launch, y] of [[3480, 1280], [3830, 1070], [4320, 860], [4600, 650]]) { await move(launch); await jump('right', y); }
   await move(5040, true); expect((await read(frame)).hasGun).toBe(true); await healNearby();
+  await page.screenshot({ path: info.outputPath('heal-final-earned-guarded-gun.png'), fullPage: true });
   await drop(4770, 860); await drop(4870, 1070); await move(5200, true); await drop(5310, 1280); await drop(5600, 1490);
   await cross(5860, 'right', 6500); await move(6615); expect((await read(frame)).hasKey).toBe(true);
   for (const [launch, landing] of [[6600, 6000], [5760, 5170], [4920, 4380], [4080, 3640], [3520, 2940], [2680, 2100]]) await cross(launch, 'left', landing);
