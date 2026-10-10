@@ -335,6 +335,48 @@
         "public/cube-composer-LICENSE.txt",
         "vendor/cube-composer-original/upstream/LICENSE"
       ]
+    },
+    {
+      "name": "A Dark Room",
+      "version": "d6d1c1b9875bb4764cdb950e8cf65ba51847f0e9 (2020-08-16)",
+      "license": "MPL-2.0; additionally GPL-3.0-only in the combined work under MPL §3.3",
+      "source": "https://github.com/doublespeakgames/adarkroom/tree/d6d1c1b9875bb4764cdb950e8cf65ba51847f0e9",
+      "preferredSource": [
+        "vendor/adr-original/upstream",
+        "public/adr-original"
+      ],
+      "buildSources": [
+        "scripts/adr/prepare.mjs",
+        "scripts/adr/verify-sources.py",
+        "src/games/ADarkRoomOriginal.tsx"
+      ],
+      "scope": "Complete original campaign, original 61x61 world, events, combat, spacecraft and ending. No finite numbered levels. Original2020 edition is silent."
+    },
+    {
+      "name": "jQuery",
+      "version": "3.7.1",
+      "license": "MIT",
+      "source": "https://github.com/jquery/jquery/tree/f79d5f1a337528940ab7029d4f8bbba72326f269",
+      "preferredSource": [
+        "vendor/adr-original/jquery-3.7.1/jquery.js"
+      ],
+      "buildSources": [
+        "vendor/adr-original/jquery-3.7.1/source-manifest.json"
+      ],
+      "scope": "Official fixed distribution, local to the A Dark Room iframe. No dependency install."
+    },
+    {
+      "name": "jQuery Color",
+      "version": "2.1.2",
+      "license": "MIT",
+      "source": "https://github.com/jquery/jquery-color/tree/9e5e04c1c4ee66427fbe04cfce8155b76748ca64",
+      "preferredSource": [
+        "vendor/adr-original/jquery-color-2.1.2/jquery.color.js"
+      ],
+      "buildSources": [
+        "vendor/adr-original/jquery-color-2.1.2/package.json"
+      ],
+      "scope": "Readable official source executed directly; local color interpolation for original flight animations."
     }
   ]
 }

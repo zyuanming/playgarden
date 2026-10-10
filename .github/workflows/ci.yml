@@ -202,5 +202,15 @@ jobs:
             if(actual!==expected)throw Error('Crisp resource differs from deployed commit: '+path);
             console.log('Crisp exact resource OK:',path,actual);
           }
+          const adrFiles=["LICENSES.txt","bridge.js","css/dark.css","css/main.css","css/outside.css","css/path.css","css/room.css","css/ship.css","css/space.css","css/world.css","css/zh_cn.css","dictionary.js","index.html","lib/jquery.color.js","lib/jquery.js","lifecycle.js","responsive.css","script/Button.js","script/engine.js","script/events.js","script/events/encounters.js","script/events/global.js","script/events/outside.js","script/events/room.js","script/events/setpieces.js","script/header.js","script/notifications.js","script/outside.js","script/path.js","script/prestige.js","script/room.js","script/scoring.js","script/ship.js","script/space.js","script/state_manager.js","script/world.js","storage.js"];
+          for(const file of adrFiles){
+            const path='adr-original/'+file;
+            const asset=new URL(path,url),r=await fetch(asset,{cache:'no-store'});
+            if(!r.ok)throw Error('Missing local A Dark Room resource: '+path);
+            const digest=bytes=>createHash('sha256').update(bytes).digest('hex');
+            const actual=digest(Buffer.from(await r.arrayBuffer())),expected=digest(readFileSync('public/'+path));
+            if(actual!==expected)throw Error('A Dark Room resource differs from deployed commit: '+path);
+            console.log('A Dark Room exact resource OK:',path,actual);
+          }
           console.log('Public commit and entry verified:',sha,url);
           NODE

@@ -67,3 +67,8 @@ CAST N, BAMBOO and PARKING retain their complete MIT game scripts and code-gener
 PIZZA ARROW, RPS and SWINGBY use the same pinned MIT game/engine/audio sources, complete local notices and original byte-identical scripts. Simple and dark Canvas2D themes share the same isolated engine. Each remains a complete endless game with zero finite levels; see [rules and sources](crisp-second-original.md).
 
 Cube Composer retains all25 original levels and28 function IDs from David Peter’s MIT source at a891ffe5de79b072819da04718820d0452b9a201. The complete original editable rules and data are retained beside the faithful TypeScript translation. The modern Chinese React controls, storage and SVG are GPL-3.0-only; no old dependency bundle or analytics runs. See [rules and sources](cube-composer-original.md).
+
+
+## A Dark Room (2020 campaign)
+
+Original and modified game files remain available under MPL-2.0 with complete preferred sources and notices. When combined with Playgarden, the MPL-covered portions are additionally distributed under GPL-3.0-only pursuant to MPL §3.3. This does not remove their MPL availability. The separate Playgarden adapter is GPL-3.0-only. Local jQuery 3.7.1 and jQuery Color 2.1.2 preserve MIT with fixed editable upstream copies. No ambiguous gesture, translation formatter or Base64 helper is redistributed. See [full scope and verification](a-dark-room-original.md).

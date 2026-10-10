@@ -148,6 +148,7 @@ import { sortingNetworkLevels } from "../src/games/sortingNetworkLogic";
 import { voxelViewsLevels } from "../src/games/voxelViewsLogic";
 import { cubeNetLevels } from "../src/games/cubeNetLogic";
 const packs = {
+  "a-dark-room": [],
   "cube-composer": cubeComposerLevels,
   "swingby": [],
   "rps": [],
@@ -319,7 +320,9 @@ describe("Scalable catalog contract", () => {
           ? "GPL-3.0-only"
           : game.id === "xiangqi"
             ? "BSD-2-Clause"
-            : game.id === "hextris"
+            : game.id === "a-dark-room"
+              ? "MPL-2.0"
+              : game.id === "hextris"
               ? "GPL-3.0-or-later"
               : "MIT",
       );
@@ -337,8 +340,8 @@ describe("Scalable catalog contract", () => {
       }
     }),
   );
-  it("counts only 155 real games and 2953 levels, not the roadmap", () => {
-    expect(games).toHaveLength(155);
+  it("counts only 156 real games and 2953 levels, not the roadmap", () => {
+    expect(games).toHaveLength(156);
     expect(games.reduce((sum, g) => sum + g.levelCount, 0)).toBe(2953);
   });
 });

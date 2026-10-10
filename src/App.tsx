@@ -270,7 +270,7 @@ export default function App() {
                         <ArrowRight size={19} />
                       </button>
                     </div>
-                    {g.endless ? <div className="card-progress" aria-label="无尽模式，挑战自己的最高分"><small>无尽模式 · 挑战最高分</small></div> : <div
+                    {g.campaign ? <div className="card-progress" aria-label="完整战役，可通关"><small>完整战役 · 自动存档</small></div> : g.endless ? <div className="card-progress" aria-label="无尽模式，挑战自己的最高分"><small>无尽模式 · 挑战最高分</small></div> : <div
                       className="card-progress"
                       aria-label={`已完成 ${progress.completed[g.id].length} 关`}
                     >

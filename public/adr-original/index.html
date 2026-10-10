@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'none'; font-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+<title>A Dark Room · 小黑屋</title>
+<link rel="stylesheet" href="css/main.css"><link rel="stylesheet" href="css/room.css"><link rel="stylesheet" href="css/outside.css"><link rel="stylesheet" href="css/path.css"><link rel="stylesheet" href="css/world.css"><link rel="stylesheet" href="css/ship.css"><link rel="stylesheet" href="css/space.css"><link rel="stylesheet" href="css/zh_cn.css"><link rel="stylesheet" href="responsive.css">
+<script src="lifecycle.js"></script><script src="dictionary.js"></script><script src="storage.js"></script>
+<script src="lib/jquery.js"></script><script src="lib/jquery.color.js"></script>
+<script src="script/Button.js"></script><script src="script/engine.js"></script><script src="script/state_manager.js"></script><script src="script/header.js"></script><script src="script/notifications.js"></script><script src="script/events.js"></script><script src="script/room.js"></script><script src="script/outside.js"></script><script src="script/world.js"></script><script src="script/path.js"></script><script src="script/ship.js"></script><script src="script/space.js"></script><script src="script/prestige.js"></script><script src="script/scoring.js"></script>
+<script src="script/events/global.js"></script><script src="script/events/room.js"></script><script src="script/events/outside.js"></script><script src="script/events/encounters.js"></script><script src="script/events/setpieces.js"></script>
+</head><body>
+<div id="adr-error" role="alert" hidden></div>
+<div id="wrapper"><div id="saveNotify"></div><div id="content"><div id="outerSlider"><div id="main"><div id="header"></div></div></div></div></div>
+<div id="adr-directions" role="group" aria-label="探索与飞行方向" hidden><button data-key="38" aria-label="向上">↑</button><div><button data-key="37" aria-label="向左">←</button><button data-key="40" aria-label="向下">↓</button><button data-key="39" aria-label="向右">→</button></div><small>探索可点按或长按；飞行按住移动，松开停止。</small></div>
+<div id="adr-pause" hidden><p>已暂停，资源、战斗与飞行时间已冻结。</p><button id="adr-resume">继续游戏</button></div>
+<script src="bridge.js"></script>
+</body></html>

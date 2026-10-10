@@ -1,0 +1,21 @@
+{
+  "repository": "jquery/jquery-color",
+  "commit": "9e5e04c1c4ee66427fbe04cfce8155b76748ca64",
+  "files": [
+    {
+      "path": "MIT-LICENSE.txt",
+      "sha": "ae85d89361a3c6fc2b215753a9cf48562a978b8b",
+      "size": 1099
+    },
+    {
+      "path": "jquery.color.js",
+      "sha": "64a0b0717b1ebafcbf9c9c20930e56cf25372938",
+      "size": 16256
+    },
+    {
+      "path": "package.json",
+      "sha": "2e8099aa8266e0e1af1dd6e7d30a348b64ccc54e",
+      "size": 999
+    }
+  ]
+}
