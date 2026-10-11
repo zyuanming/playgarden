@@ -70,6 +70,11 @@ test('32 original Diner puzzles: editor matching, alternatives, native transitio
   await page.waitForTimeout(650);
   await expect(page.locator('[data-diner-phase]')).toHaveAttribute('data-diner-phase', 'incorrect');
   await expect(input).toBeDisabled();
+  const resumeBox = await frame.locator('#resume-game').boundingBox();
+  expect(resumeBox).not.toBeNull();
+  expect(resumeBox!.y).toBeGreaterThanOrEqual(0);
+  expect(resumeBox!.y + resumeBox!.height).toBeLessThanOrEqual(page.viewportSize()!.height);
+  await screenshot('diner-incorrect-paused-visible-resume.png');
   await activate(frame.locator('#resume-game')); await playable();
   await run('[for*=]');
   await expect(frame.locator('#result')).toContainText('还不对');

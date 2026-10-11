@@ -68,7 +68,8 @@
     $('#pause-game').text(localPaused ? '继续练习' : '暂停练习');
     document.querySelector('.left-col').inert = paused();
     document.querySelector('.right-col').inert = paused();
-    controls(); save();
+    controls(); save(); height();
+    if (localPaused && !hostPaused && !hidden) document.getElementById('paused-cover').scrollIntoView({ block: 'nearest', inline: 'nearest' });
   }
   function ready() {
     if (!loaded || disposed) return;
@@ -168,6 +169,9 @@
       (data.finalEnding === undefined && data.ending === true && data.currentLevel === 31));
   }
   function bind() {
+    // A fixed cover would center its resume button inside the tall iframe,
+    // beyond a phone viewport. Keep the resume panel outside the inert columns.
+    $('#paused-cover').insertBefore('.left-col');
     $('#selector').on('input.playgarden', function () { drafts[currentLevel] = String($(this).val()).slice(0, 1024); save(); });
     // Replace optional note animation with a synchronous, height-observable toggle.
     $('.note-toggle').off('click').on('click.playgarden', function () { $('.note').toggle(); height(); });
