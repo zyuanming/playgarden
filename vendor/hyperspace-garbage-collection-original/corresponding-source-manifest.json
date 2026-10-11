@@ -29,8 +29,8 @@
     },
     {
       "path": "e2e/hyperspace-garbage-collection.spec.ts",
-      "bytes": 21859,
-      "sha256": "3fb1a290d68a15e0eb146fe898bc1103380b52ced6cb5c747161d92de25d0b5a"
+      "bytes": 22702,
+      "sha256": "e2807b249a0f9345ce2142c07f7cf2af0aaf6fccce43a36d9f2a85b4badd5c82"
     },
     {
       "path": "public/hyperspace-garbage-collection/ADAPTATION.md",
@@ -69,8 +69,8 @@
     },
     {
       "path": "public/hyperspace-garbage-collection/adapter.js",
-      "bytes": 15181,
-      "sha256": "a1c201298503dd0f04e971b94119977c796c93af1bab0d7acd1f66c166f3078e"
+      "bytes": 15193,
+      "sha256": "4f423b764f274789e63e69706a92964734ef9162ad261292709f0631e6ce7f47"
     },
     {
       "path": "public/hyperspace-garbage-collection/card.svg",
@@ -355,7 +355,7 @@
     {
       "path": "public/hyperspace-garbage-collection/runtime-manifest.json",
       "bytes": 12294,
-      "sha256": "c230fb5e1fcb1f9dba11f54346f1b062a23db9e18e1fab40239f962ca894ef23"
+      "sha256": "b36329852e0889113ef1577724edffd63750545efb6067aea1654c45c09ab19e"
     },
     {
       "path": "scripts/hyperspace-garbage-collection/adapt.py",

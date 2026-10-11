@@ -38,8 +38,8 @@
     },
     {
       "path": "public/hyperspace-garbage-collection/adapter.js",
-      "bytes": 15181,
-      "sha256": "a1c201298503dd0f04e971b94119977c796c93af1bab0d7acd1f66c166f3078e"
+      "bytes": 15193,
+      "sha256": "4f423b764f274789e63e69706a92964734ef9162ad261292709f0631e6ce7f47"
     },
     {
       "path": "public/hyperspace-garbage-collection/card.svg",

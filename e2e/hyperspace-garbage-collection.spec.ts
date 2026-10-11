@@ -10,6 +10,7 @@ type Reading = {
   triggers: (Body & { active: boolean; capturedId: number | null })[]; doors: (Body & { open: boolean; pending: boolean })[];
   debris: (Body & { age: number; lifetime: number | null; captured: boolean })[];
   emitters: (Point & { firing: boolean; time: number })[]; walls: Point[][];
+  lasers: (Point & { material: number; endpoint: Point | null })[];
   emitted: number; expired: number; annihilated: number; text: string;
 };
 const read = (frame: Frame) => frame.evaluate(() => (window as unknown as { __hgcRead: () => Reading }).__hgcRead());
@@ -54,7 +55,7 @@ function navigator(walls: Point[][]) {
     for (let i = 1; i <= steps; i++) if (!clear({ x: a.x + (b.x - a.x) * i / steps, y: a.y + (b.y - a.y) * i / steps }, margin)) return false;
     return true;
   }
-  return function route(from: Point, to: Point): Point[] {
+  const route = function(from: Point, to: Point): Point[] {
     if (visible(from, to)) return [to];
     const start = nearest(from), end = nearest(to), previous = new Map<number, number>(), scores = new Map([[start, 0]]);
     // A fine grid models the original three-unit player radius through the
@@ -91,6 +92,7 @@ function navigator(walls: Point[][]) {
     }
     throw new Error(`Original geometry has no route from ${JSON.stringify(from)} to ${JSON.stringify(to)}`);
   };
+  return Object.assign(route, { visible });
 }
 
 // This is ordinary pointer/touch dispatch. All frame.evaluate calls below are
@@ -160,13 +162,14 @@ test('four authored physics stages: earned first, middle and final captures, iso
     await joystick.set(((vx - p.vx) * 8 + 2 * p.vx) / 113.18, ((vy - p.vy) * 8 + 2 * p.vy) / 113.18);
     await advance();
   }
-  async function go(target: Point, tolerance = 1.7) {
+  async function go(target: Point, tolerance = 1.7, stopWhen?: (state: Reading) => boolean) {
     const stop = Date.now() + 30000;
     let path = route((await read(frame)).player, target);
     while (Date.now() < stop) {
       const s = await read(frame); if (s.phase !== 'playing') break;
+      if (stopWhen?.(s)) { await joystick.release(); return; }
       if (distance(s.player, target) < tolerance && Math.hypot(s.player.vx, s.player.vy) < 9) { await joystick.set(0, 0); return; }
-      while (path.length > 1 && distance(s.player, path[0]) < 0.65) path.shift();
+      while (path.length > 1 && (distance(s.player, path[0]) < 0.65 || route.visible(s.player, path[1], 3.05))) path.shift();
       await drive(path[0], { x: 0, y: 0 }, path.length > 1 && distance(s.player, path[0]) < 4 ? 8 : 28);
     }
     const s = await read(frame);
@@ -183,7 +186,7 @@ test('four authored physics stages: earned first, middle and final captures, iso
     const already = (await read(frame)).triggers[index];
     if (already.active) { expect(already.capturedId).not.toBeNull(); return; }
     await switchTo((await read(frame)).triggers[index].material);
-    await go(staging);
+    await go(staging, 1.7, s => s.triggers[index].active);
     const until = Date.now() + budget;
     let chosen = -1, targetPath: Point[] = [], routeAt = 0;
     while (Date.now() < until) {
@@ -237,7 +240,6 @@ test('four authored physics stages: earned first, middle and final captures, iso
   // remaining at the initial corridor. Expiration cannot complete a trigger.
   await expect.poll(async () => (await read(frame)).expired, { timeout: 12000 }).toBeGreaterThan(0);
   expect((await read(frame)).triggers.every(t => !t.active)).toBe(true); expect(await earned()).toEqual([]);
-  await go({ x: 5, y: -35 });
   await capture(0, { x: -2, y: -42 }, { x: 5, y: -35 }); await enterDoor();
   await expect.poll(earned).toEqual([0]);
   await expect(frame.getByRole('button', { name: '下一关', exact: true })).toBeEnabled();
@@ -272,13 +274,30 @@ test('four authored physics stages: earned first, middle and final captures, iso
   await page.screenshot({ path: info.outputPath('hgc-middle-two-captures.png'), fullPage: true });
   await activate('下一关'); ({ frame, joystick, route } = await acquire(frame.url())); await start(); expect((await read(frame)).level).toBe(3);
 
-  // Final original map: shepherd the first stream through the bends. The
-  // second emitter and trigger occupy a chamber narrower than the player; its
-  // original stream captures naturally. Do not invent a route into that cell.
-  // Both real captures and the door delay still precede the original ending.
-  await capture(0, { x: -37, y: -9 }, { x: -38, y: -17 }, 90000);
-  await expect.poll(async () => (await read(frame)).triggers[1].active, { timeout: 15000 }).toBe(true);
-  expect((await read(frame)).triggers[1].capturedId).not.toBeNull();
+  // The original final puzzle uses the player's matching matter as a laser
+  // shield. The untouched streams then survive their authored bends/lifetimes.
+  // Merely waiting without shielding cannot earn either capture.
+  for (const [index, material, position] of [
+    [0, 4, { x: -49, y: 21 }],
+    [1, 2, { x: 15, y: -18 }],
+  ] as const) {
+    await switchTo(material);
+    await go(position);
+    let shieldObserved = false;
+    const deadline = Date.now() + 65000;
+    while (Date.now() < deadline) {
+      const s = await read(frame);
+      const beam = s.lasers.find(l => l.material === material);
+      if (beam?.endpoint && distance(beam.endpoint, s.player) <= 3.2) shieldObserved = true;
+      if (s.triggers[index].active && shieldObserved) break;
+      await drive(position);
+    }
+    const s = await read(frame);
+    expect(shieldObserved, 'Matching player must physically stop the original laser').toBe(true);
+    expect(s.triggers[index].active, `Original stream capture ${index}; ${JSON.stringify(s)}`).toBe(true);
+    expect(s.triggers[index].capturedId).not.toBeNull();
+    await joystick.release();
+  }
   await enterDoor(); await expect.poll(earned).toEqual([0, 2, 3]);
   expect((await read(frame)).text).toBe('the end');
   await expect(page.locator('[data-hgc-earned]')).toHaveAttribute('data-hgc-earned', '3');
