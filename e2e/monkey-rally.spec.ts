@@ -15,10 +15,12 @@ test('original eight puzzles: physical first/middle/final routes, interruption a
   let frame: Frame;
   async function acquire() {
     await expect(page.locator('[data-monkey-ready]')).toHaveAttribute('data-monkey-ready', 'true');
-    frame = page.frames().find(f => f.url().includes('/monkey-rally/index.html'))!;
-    await expect.poll(async () => (await read(frame)).scene).toBe('game');
+    const next = page.frames().find(f => f.url().includes('/monkey-rally/index.html'));
+    if (!next) throw new Error('Ready Monkey frame is missing');
+    await expect.poll(async () => (await read(next)).scene).toBe('game');
+    return next;
   }
-  await acquire();
+  frame = await acquire();
   const earned = () => page.evaluate(() => JSON.parse(localStorage.getItem('playgarden.progress.v2') || '{}').completed?.['monkey-rally'] || []);
   expect(await earned()).toEqual([]);
   const unrelatedBefore = await page.evaluate(() => Object.fromEntries(Object.entries(localStorage).filter(([key]) => !key.includes('monkey-rally') && !key.startsWith('playgarden'))));
@@ -35,7 +37,7 @@ test('original eight puzzles: physical first/middle/final routes, interruption a
       else await page.keyboard.press(keys[direction]);
     }
   }
-  async function select(index: number) { await chooseLevel(page, index); await acquire(); }
+  async function select(index: number) { await chooseLevel(page, index); frame = await acquire(); }
   async function phase(value: string, timeout = 20000) { await expect.poll(async () => (await read(frame)).phase, { timeout }).toBe(value); }
 
   // Original illustrated title and all ten panels remain visible and captioned.
@@ -73,7 +75,7 @@ test('original eight puzzles: physical first/middle/final routes, interruption a
   expect((await read(frame)).slideCount).toBe(6);
   await page.screenshot({ path: info.outputPath('monkey-first-earned-win.png'), fullPage: true });
   await action('前往下一关');
-  await expect(page.getByLabel('选择关卡', { exact: true })).toHaveValue('1'); await acquire();
+  await expect(page.getByLabel('选择关卡', { exact: true })).toHaveValue('1'); frame = await acquire();
   expect((await read(frame)).level).toBe(2);
   expect((await read(frame)).completed).not.toContain(2);
 
@@ -126,13 +128,13 @@ test('original eight puzzles: physical first/middle/final routes, interruption a
   await action('八关选择');
   await expect(frame.getByRole('button', { name: '开始第 8 关 ✓', exact: true })).toBeVisible();
   await action('开始第 8 关 ✓');
-  await expect(page.getByLabel('选择关卡', { exact: true })).toHaveValue('7'); await acquire();
+  await expect(page.getByLabel('选择关卡', { exact: true })).toHaveValue('7'); frame = await acquire();
   expect((await read(frame)).completed).not.toContain(4);
   expect((await read(frame)).queue).toEqual([]);
-  await openGame(page, '猴子救援'); await acquire();
+  await openGame(page, '猴子救援'); frame = await acquire();
   expect((await read(frame)).completed).toEqual(expect.arrayContaining([1, 5, 8]));
   await expect.poll(earned).toEqual([0, 4, 7]);
-  await page.reload(); await openGame(page, '猴子救援'); await acquire();
+  await page.reload(); await openGame(page, '猴子救援'); frame = await acquire();
   expect((await read(frame)).completed).toEqual(expect.arrayContaining([1, 5, 8]));
   await expect.poll(earned).toEqual([0, 4, 7]);
   // CI's configured webServer is Vite dev, and src/main.tsx wraps App in
@@ -147,7 +149,7 @@ test('original eight puzzles: physical first/middle/final routes, interruption a
     await expect(page.locator('iframe[title="猴子救援原作八关"]')).toHaveCount(1);
     // The first two exits deliberately do not wait for the child's ready event.
   }
-  await acquire();
+  frame = await acquire();
   expect(new URL(frame.url()).searchParams.get('session')).not.toBe(oldSession);
   expect((await read(frame)).queue).toEqual([]);
 

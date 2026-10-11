@@ -3,8 +3,8 @@
   "files": [
     {
       "path": "e2e/monkey-rally.spec.ts",
-      "bytes": 13522,
-      "sha256": "0d05e93c63363f997073aa214d3cd5f4c05a69f98bcb9be71b811137ab6448c0"
+      "bytes": 13663,
+      "sha256": "64a8c29dd7cbdc6bb2dd968c16a43c6010dd321b077b844ddd8614ebfb8463d5"
     },
     {
       "path": "public/monkey-rally/LICENSE.txt",
