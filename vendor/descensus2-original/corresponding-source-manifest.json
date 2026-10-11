@@ -1,0 +1,1081 @@
+{
+  "upstreamCommit": "750003f12815a756ebd18634e88620c1050a1ec5",
+  "scope": "Complete editable original and adapted game, cleared assets, exact licensed vendor binaries and bounded patch, host, targeted test and build/packaging tools. Shared framework source is mapped in repository root.",
+  "files": [
+    {
+      "path": "docs/descensus-2-source-map.json",
+      "bytes": 1739,
+      "sha256": "b54e8af3438f06f2f8cc29071ee41939b821ef1caa30d569865883183299632b"
+    },
+    {
+      "path": "e2e/descensus-2.spec.ts",
+      "bytes": 17061,
+      "sha256": "d00b66c36676594ac601e1496908ff8d75d324af6e84a64164a8bdef2596264f"
+    },
+    {
+      "path": "public/descensus-2/NOTICE.txt",
+      "bytes": 72414,
+      "sha256": "089b049363bc00ec9113531f010c384e515f4d0c979a1efda712993e6f38b716"
+    },
+    {
+      "path": "public/descensus-2/adapter.js",
+      "bytes": 6080,
+      "sha256": "bff8f6dceedd45d0cdc71f7f8bd91c58ca1bf36b1067c4bc568514a47986764c"
+    },
+    {
+      "path": "public/descensus-2/assets.js",
+      "bytes": 922356,
+      "sha256": "8fa9302fa0650b809d3439a8019462b3a54846d2e8bae7ea5cd3ab43c5b91a72"
+    },
+    {
+      "path": "public/descensus-2/card.svg",
+      "bytes": 53256,
+      "sha256": "f24823cf487f4771f78f54f7821ae2838bff089c153f7af61a27cdba79b7858c"
+    },
+    {
+      "path": "public/descensus-2/game.js",
+      "bytes": 102930,
+      "sha256": "759461193dfe80e67dd8e7d6b6ad82d41308e749cfe54e1bb0009f12a0459a5a"
+    },
+    {
+      "path": "public/descensus-2/img/ball-reflections.png",
+      "bytes": 12208,
+      "sha256": "c04031fb03685a9bdd1a4ca2928d4319c6f4e7c6f32b7b4cc4bec086a2a35cfb"
+    },
+    {
+      "path": "public/descensus-2/img/ball.png",
+      "bytes": 18345,
+      "sha256": "d38deb455d7b2d25442dd6a7576e2284e4987a1f7f24eb8f3643567fb9542c10"
+    },
+    {
+      "path": "public/descensus-2/img/bar.png",
+      "bytes": 3254,
+      "sha256": "a88561650585bcbd29f7dc21b01af0072be8f7a6ebd93141ee22a9164d8d2f96"
+    },
+    {
+      "path": "public/descensus-2/img/brick.png",
+      "bytes": 15678,
+      "sha256": "1ede983ac00879dbbbbb42c61e78c9579abae8a8b5b13c86248f65b804b4d31d"
+    },
+    {
+      "path": "public/descensus-2/img/clouds.jpg",
+      "bytes": 82980,
+      "sha256": "a6383a94e481b4e4a7604133e62a3abaa84247c2a7eb84506c50fd23c5ea9975"
+    },
+    {
+      "path": "public/descensus-2/img/girder.png",
+      "bytes": 27857,
+      "sha256": "6e31ce1c9448994a47890fcad7abcba08450fb39724adc5f02ca167321f1ca6b"
+    },
+    {
+      "path": "public/descensus-2/img/ground.png",
+      "bytes": 203999,
+      "sha256": "dc5306584c7ec2594f3fe77a2963c06fe5f51989db2280d9478efbf6f114e7d6"
+    },
+    {
+      "path": "public/descensus-2/img/help-hand.png",
+      "bytes": 43671,
+      "sha256": "522c7620c73c8411943beda46a3877fc18043c11205b4eb6a4072250d3b72b37"
+    },
+    {
+      "path": "public/descensus-2/img/paper.jpg",
+      "bytes": 133211,
+      "sha256": "be19d1686b9304bfe3bcee5cc252bd1711dd871e7b9c866c29b4b86875e06989"
+    },
+    {
+      "path": "public/descensus-2/img/plus-1-life.png",
+      "bytes": 16957,
+      "sha256": "62071f73482dc1a3b05e88eaaf7fe6c34181c3d76626bb39c2273e1fa4e70d5b"
+    },
+    {
+      "path": "public/descensus-2/img/saw-small.png",
+      "bytes": 13738,
+      "sha256": "3e40dc37b5e36e15eec3eebae19ecc1294760e5074d690b1b650e0d37be290e7"
+    },
+    {
+      "path": "public/descensus-2/img/saw.png",
+      "bytes": 21087,
+      "sha256": "0dd235836826ffc7f998283e2ee4a0996fe7659467085b4fd28ee762f4b87c37"
+    },
+    {
+      "path": "public/descensus-2/img/seesaw.png",
+      "bytes": 490,
+      "sha256": "d0f1ac1a61b63ab07fe5c02ad8b1e6e8892cc281d555b1d9834018d8030bf8ca"
+    },
+    {
+      "path": "public/descensus-2/img/spinner.png",
+      "bytes": 2025,
+      "sha256": "20fe621d2d14885728e28a5dcbadd70574a262337fc91bb96536a98b737cd8cc"
+    },
+    {
+      "path": "public/descensus-2/img/time-bar-time.png",
+      "bytes": 1066,
+      "sha256": "2a10835b15d8e5cb56f6a76dac9dc9d4b542c9e61350179d41f7b3d80e8d00f3"
+    },
+    {
+      "path": "public/descensus-2/img/time-bar.png",
+      "bytes": 1140,
+      "sha256": "aef3d1ff8e899481accee70fc2e13d86a5908b6223709f74f90db729807ec536"
+    },
+    {
+      "path": "public/descensus-2/img/two-by-four.png",
+      "bytes": 465,
+      "sha256": "91b232d40643fbd8bdb45c61044bd2a5489e29071771e04e199bd4c98cbc40ac"
+    },
+    {
+      "path": "public/descensus-2/img/wind-left.png",
+      "bytes": 46749,
+      "sha256": "a9499ad4f6c7636e6bf5913d1e38668a7d6ee47d8e67d043f357e0e8cd746a8d"
+    },
+    {
+      "path": "public/descensus-2/img/wind-right.png",
+      "bytes": 46156,
+      "sha256": "c9a570f90f26883174850e2a3d5c28a0fa6a33cb126ca32d70aa0332de012d3d"
+    },
+    {
+      "path": "public/descensus-2/index.html",
+      "bytes": 1450,
+      "sha256": "53d59e1922c43e66fde1ff850328b63a073d5ed7bf76e0403482cd637d25b7c5"
+    },
+    {
+      "path": "public/descensus-2/lib/MersenneTwister.js",
+      "bytes": 6983,
+      "sha256": "4c008b4c57eb74eb075c905a78c38e140e666ef4847705b1c9516345a6805009"
+    },
+    {
+      "path": "public/descensus-2/lib/p2.min.js",
+      "bytes": 121978,
+      "sha256": "73488d7e272871799149a4f20d7cb30134fc98592f22a36c008bf6eddf4c5846"
+    },
+    {
+      "path": "public/descensus-2/lib/pixi.min.js",
+      "bytes": 407791,
+      "sha256": "e94161a7ee7593d9e0701782f33b57a8c25934d78a32cb2e77d14ee66733e88c"
+    },
+    {
+      "path": "public/descensus-2/licenses/CC0-1.0.txt",
+      "bytes": 7048,
+      "sha256": "a2010f343487d3f7618affe54f789f5487602331c0a8d03f49e9a7c547cf0499"
+    },
+    {
+      "path": "public/descensus-2/licenses/DefinitelyTyped-MIT.txt",
+      "bytes": 1167,
+      "sha256": "0a48f63d7d32a49d196dce4b2e0cbc236c2cc8fef42cb20e005e4d5f813cc8f6"
+    },
+    {
+      "path": "public/descensus-2/licenses/Descensus2-MIT.txt",
+      "bytes": 1067,
+      "sha256": "b0f061567f2477c1d53ce109d5d3443d0f49d325a17d44602094aa7d460fb28f"
+    },
+    {
+      "path": "public/descensus-2/licenses/FXAA-BSD-3-Clause.txt",
+      "bytes": 1704,
+      "sha256": "67a8af54cf28e7334304335d117ba39c1fb48dd218dcef4473cfdb5cebc9bfee"
+    },
+    {
+      "path": "public/descensus-2/licenses/GPL-3.0.txt",
+      "bytes": 34674,
+      "sha256": "fb981668c18a279e285fc4d83fba1e836cc84dd4daa73c9697d3cfd2d8aca6e0"
+    },
+    {
+      "path": "public/descensus-2/licenses/MersenneTwister-BSD-3-Clause.txt",
+      "bytes": 1498,
+      "sha256": "7452b4f1bc64efab802f2ee3484ca88753e4393a9885cbf6aacff9e0da17eddd"
+    },
+    {
+      "path": "public/descensus-2/licenses/Node-shims-MIT.txt",
+      "bytes": 1133,
+      "sha256": "2196d3c9a86bd2fb76fa4fa0f2d1df4aa8412143ab258b177c496bd458c8bf75"
+    },
+    {
+      "path": "public/descensus-2/licenses/PIXI-MIT.txt",
+      "bytes": 1093,
+      "sha256": "3c0b3f2f70edb23c5ff2b63758b749de727e99c02089838ada710e58932cd8ba"
+    },
+    {
+      "path": "public/descensus-2/licenses/PolyK-MIT.txt",
+      "bytes": 1312,
+      "sha256": "1340cb3d8eb39d65cd195fd325d4220cbe19fa6fd6949205044afeb1dc1f2261"
+    },
+    {
+      "path": "public/descensus-2/licenses/bit-twiddle-MIT.txt",
+      "bytes": 1082,
+      "sha256": "e67aed7df22dc8031e4fcf5338fe91cb33e3817e5c58a99a2a2802eea9069791"
+    },
+    {
+      "path": "public/descensus-2/licenses/earcut-ISC.txt",
+      "bytes": 725,
+      "sha256": "6c7e3e75cd5368e6a552a2e94db1a50080c0b2972d1d2364144227b047a6e18c"
+    },
+    {
+      "path": "public/descensus-2/licenses/eventemitter3-MIT.txt",
+      "bytes": 1082,
+      "sha256": "3aecc12b1cb28832b5f65ab64291de96568c3f236a74d646281b4491f7bcadbf"
+    },
+    {
+      "path": "public/descensus-2/licenses/glMatrix-BSD-2-Clause.txt",
+      "bytes": 1332,
+      "sha256": "b432d963101e682808253ba05e67b28280116d79a7d0713cadc261a6a7e8d526"
+    },
+    {
+      "path": "public/descensus-2/licenses/isMobile-0.4.0-CC0-notice.txt",
+      "bytes": 365,
+      "sha256": "d616f2d1e383c941b906310d7c5142520d6c516b2a6aeae54529dc2277a3db14"
+    },
+    {
+      "path": "public/descensus-2/licenses/mini-signals-MIT.txt",
+      "bytes": 1086,
+      "sha256": "07f9a37334ffe0050d63659021cc62e8745709b40048d597f7750fe7afdda3af"
+    },
+    {
+      "path": "public/descensus-2/licenses/node-process-MIT.txt",
+      "bytes": 1098,
+      "sha256": "59a400d04c5078579acc27ddd6452c1bdf763f9506e01364700935fbb1a7c91b"
+    },
+    {
+      "path": "public/descensus-2/licenses/normalize-MIT.txt",
+      "bytes": 1098,
+      "sha256": "89a9a9ace8be9e79bdc962823479bf980e4a14777ebe51b37e669f658e6f25ef"
+    },
+    {
+      "path": "public/descensus-2/licenses/object-assign-MIT.txt",
+      "bytes": 1117,
+      "sha256": "5c932d88256b4ab958f64a856fa48e8bd1f55bc1d96b8149c65689e0c61789d3"
+    },
+    {
+      "path": "public/descensus-2/licenses/p2-MIT.txt",
+      "bytes": 1146,
+      "sha256": "15e9e6dcafc17dc701a5ea7bb3c2ea746386d85740f4ca4dc6880e7407850ad3"
+    },
+    {
+      "path": "public/descensus-2/licenses/parse-uri-MIT.txt",
+      "bytes": 1084,
+      "sha256": "7ace2e75c11a8479938862cc38c56701d2b82ac79dd52a150c763ff7a1a4d36b"
+    },
+    {
+      "path": "public/descensus-2/licenses/parseUri-original-attribution.txt",
+      "bytes": 266,
+      "sha256": "92b4a54dfb63af1f4ee67201999ae832e6851c44340f4b84307ab2f724490953"
+    },
+    {
+      "path": "public/descensus-2/licenses/path-browserify-MIT.txt",
+      "bytes": 1071,
+      "sha256": "a22b9d5763f574e5db347c30acc0b33eaf4846767c03d2e27d012e864e79a824"
+    },
+    {
+      "path": "public/descensus-2/licenses/pixi-gl-core-README.md",
+      "bytes": 1486,
+      "sha256": "c6a44e794b6f6ecc89ab5f1f0c01c194883c8312edb1f7bc616cf36c1c061cdf"
+    },
+    {
+      "path": "public/descensus-2/licenses/pixi-gl-core-package.json",
+      "bytes": 1656,
+      "sha256": "17116b695284f25efb9c353be99207adcd212eb15889ab1cf434503ee1410b95"
+    },
+    {
+      "path": "public/descensus-2/licenses/poly-decomp-MIT.txt",
+      "bytes": 1080,
+      "sha256": "aa92b836949eb315e062592a9fdd660e6a301477e771305160f492dd3ee8a066"
+    },
+    {
+      "path": "public/descensus-2/licenses/punycode-MIT.txt",
+      "bytes": 1077,
+      "sha256": "483acb265f182907d1caf6cff9c16c96f31325ed23792832cc5d8b12d5f88c8a"
+    },
+    {
+      "path": "public/descensus-2/licenses/resource-loader-MIT.txt",
+      "bytes": 1077,
+      "sha256": "859c3d24560c2159d22676c0968b2a9ffa862e70c28a4e55104dc0e01d58fac9"
+    },
+    {
+      "path": "public/descensus-2/runtime-manifest.json",
+      "bytes": 9902,
+      "sha256": "6781b3ffbaa9bb5a2a16b09f4215c8d6c43e0c4d76c52b78ccca53a970e164f5"
+    },
+    {
+      "path": "public/descensus-2/style.css",
+      "bytes": 1633,
+      "sha256": "95302421afe2821f77174216d8b747bdc6a7e9bab533484c150a3de1cfc4dc75"
+    },
+    {
+      "path": "scripts/descensus-2/build-runtime.mjs",
+      "bytes": 2341,
+      "sha256": "3408fbd4c50928585de309f7ef3e1faa7711887d425119483eb6768c9aa88d80"
+    },
+    {
+      "path": "scripts/descensus-2/generate-timber.py",
+      "bytes": 875,
+      "sha256": "553e27a3566c52e7bbedee8ba313541a0fbccf066a3da7daba40331e68b3600d"
+    },
+    {
+      "path": "scripts/descensus-2/package-source.py",
+      "bytes": 1989,
+      "sha256": "2007af7dab42405c4d0308ee679c281f5c545ab9769a50cc84503c2276eee076"
+    },
+    {
+      "path": "scripts/descensus-2/verify-sources.py",
+      "bytes": 5451,
+      "sha256": "359a099a5dd6ab087ba3bd4716f9111543355ec93b5c5d6a14bf17107aee0aae"
+    },
+    {
+      "path": "src/games/Descensus2.tsx",
+      "bytes": 7296,
+      "sha256": "ccf5bcbb944f33e89a7a4d58fff0a1ec08a10c4c5d4436075b280b6eae8af9c1"
+    },
+    {
+      "path": "src/games/descensus2.css",
+      "bytes": 1312,
+      "sha256": "1cf89f125888748f1389ba7dbf3c0b924664c1e6d5a61f622d5c83f2910aba23"
+    },
+    {
+      "path": "vendor/descensus2-original/CHANGES.md",
+      "bytes": 1897,
+      "sha256": "f9aeab830456a59bc4e988e5608f10cb1d4e280bc6f4b1b1755f283928722b12"
+    },
+    {
+      "path": "vendor/descensus2-original/adapted/Assets/ISounds.ts",
+      "bytes": 306,
+      "sha256": "b99363196874bec431ce254c7ca15b2c28a77c91fa22e035b891bd7436e75ee3"
+    },
+    {
+      "path": "vendor/descensus2-original/adapted/Assets/ITextures.ts",
+      "bytes": 527,
+      "sha256": "b24aade9e52e61a8e5a37dd67d83cda6dbabd5c83528048a8ebff5f7e26edcb5"
+    },
+    {
+      "path": "vendor/descensus2-original/adapted/Assets/loadFonts.ts",
+      "bytes": 90,
+      "sha256": "de10b0e3e0adefd5683f245187ba4fe660c48b1df8056b86cbe0b00f21f8e5d7"
+    },
+    {
+      "path": "vendor/descensus2-original/adapted/Assets/loadSounds.ts",
+      "bytes": 137,
+      "sha256": "ec5f728ebb7e8591957b17212ac436e19777f465ea420eff327050f0291295d0"
+    },
+    {
+      "path": "vendor/descensus2-original/adapted/Assets/loadTextures.ts",
+      "bytes": 2030,
+      "sha256": "3b7a99473cecc55a120d346ff7609cfcb26483274ab5d97abb8376c7c2eb82fa"
+    },
+    {
+      "path": "vendor/descensus2-original/adapted/Bar.ts",
+      "bytes": 5897,
+      "sha256": "96d92b2c0b36d0ccabe484cf15763bba67d9e9404f854280c9f5697475a7129b"
+    },
+    {
+      "path": "vendor/descensus2-original/adapted/Bus.ts",
+      "bytes": 755,
+      "sha256": "925f1c4aa4cd7c10fb05815e6803077326e2ff3b1b521e692557730421b3a71f"
+    },
+    {
+      "path": "vendor/descensus2-original/adapted/Color.ts",
+      "bytes": 116,
+      "sha256": "579bc5841d0877d6c59ab5cefa2b2cd891d2ea8eb6d86f83ca89d89f6dafcad5"
+    },
+    {
+      "path": "vendor/descensus2-original/adapted/Game/GameState.ts",
+      "bytes": 137,
+      "sha256": "e67fbcec8ca5ad0bcaa3d6e11ce7feb6949b571e31b7c8a0c2f683a5d94b41fe"
+    },
+    {
+      "path": "vendor/descensus2-original/adapted/Game/IGameWonStats.ts",
+      "bytes": 91,
+      "sha256": "ed81f32e38b05d9c64727469a0233bd0c2d2f4f3873df607328e21cb1b748f3a"
+    },
+    {
+      "path": "vendor/descensus2-original/adapted/Game/gameLoop.ts",
+      "bytes": 14437,
+      "sha256": "6e0cde84bfdbd8b79dd2d987c3cba11ffecc91402fcd637326803cd8982d1e74"
+    },
+    {
+      "path": "vendor/descensus2-original/adapted/Pixi/IPixiGraph.ts",
+      "bytes": 651,
+      "sha256": "334f2223d523f963089446d4e6e06b50fc6110e168e53a9f09727ed63e5b192b"
+    },
+    {
+      "path": "vendor/descensus2-original/adapted/Pixi/PixiRenderer.ts",
+      "bytes": 1560,
+      "sha256": "7dcaf175c162ca68201dd3d572ea795493006d72e5d5e10d5b177bca77bcec86"
+    },
+    {
+      "path": "vendor/descensus2-original/adapted/Pixi/buildNavContainer.ts",
+      "bytes": 15414,
+      "sha256": "e9e76e0574d052b451d7343d3b308f43db4bde6ef80a8ad05680a8f1fd5b9d65"
+    },
+    {
+      "path": "vendor/descensus2-original/adapted/Pixi/buildPixiGraph.ts",
+      "bytes": 3153,
+      "sha256": "48e4ba51722f2a6b0d03a02ac01edfce6cd922a176dc169bca32cc24a482d991"
+    },
+    {
+      "path": "vendor/descensus2-original/adapted/Sound/ISounds.ts",
+      "bytes": 281,
+      "sha256": "0f6f264e351a2bb85305590f107f849b3f5158d3c4aa77f8d1edf157a7b9a138"
+    },
+    {
+      "path": "vendor/descensus2-original/adapted/Sound/soundPlayer.ts",
+      "bytes": 1933,
+      "sha256": "30cad075c8ccb3fa48bdd77d215174ef16b802b1b58a64480ce19d2bc7042335"
+    },
+    {
+      "path": "vendor/descensus2-original/adapted/Terrain/Objects/Brick.ts",
+      "bytes": 986,
+      "sha256": "99972dd43c7cf14ff9a403624f6657cbda7d7b39971d2b9fba9741f36c3fad88"
+    },
+    {
+      "path": "vendor/descensus2-original/adapted/Terrain/Objects/FreeSaw.ts",
+      "bytes": 1182,
+      "sha256": "df540126a63b776e654f33b7c5c64b96f34b5bafbc974dbdcea15fbfe2265915"
+    },
+    {
+      "path": "vendor/descensus2-original/adapted/Terrain/Objects/Girder.ts",
+      "bytes": 990,
+      "sha256": "97c9ecad39535e8303c29882bdcf30581046432f7da048407b85bed356b3f5dd"
+    },
+    {
+      "path": "vendor/descensus2-original/adapted/Terrain/Objects/Plus1Life.ts",
+      "bytes": 1092,
+      "sha256": "030a20a1fa080d4f96f582ba8ea564b8c93ccc78a41e6b09429ee7f33697ea69"
+    },
+    {
+      "path": "vendor/descensus2-original/adapted/Terrain/Objects/Saw.ts",
+      "bytes": 1466,
+      "sha256": "8a535744912b11c20506eac205550d87a9de1d242363581f08eadf265ce10df4"
+    },
+    {
+      "path": "vendor/descensus2-original/adapted/Terrain/Objects/SawSnake.ts",
+      "bytes": 2129,
+      "sha256": "370ad4e8c7d498c9852608a75e1f71c9e64c3d6639030ec8522df33003ef1766"
+    },
+    {
+      "path": "vendor/descensus2-original/adapted/Terrain/Objects/SawSpinner.ts",
+      "bytes": 2244,
+      "sha256": "46fb29584da27187d139759483c39e6b94fe90a1ef4bfdb68671e14da95f3d56"
+    },
+    {
+      "path": "vendor/descensus2-original/adapted/Terrain/Objects/Seesaw.ts",
+      "bytes": 1397,
+      "sha256": "4251dd208840e84c6bf0f495616f204ef4b5c04b7ebfccb994ecb2f3ef9ad032"
+    },
+    {
+      "path": "vendor/descensus2-original/adapted/Terrain/Objects/ShapeOptions.ts",
+      "bytes": 180,
+      "sha256": "cd5c88624a80ec133f99c343c75b627b3d878088803c3df398123b3c066ca369"
+    },
+    {
+      "path": "vendor/descensus2-original/adapted/Terrain/Objects/Snake.ts",
+      "bytes": 3144,
+      "sha256": "8f7ab808cf924d7e95f49c87b4d7ca14a470a5906eca38f23d76620ab4413f5d"
+    },
+    {
+      "path": "vendor/descensus2-original/adapted/Terrain/Objects/Spinner.ts",
+      "bytes": 1870,
+      "sha256": "103372e0072f7cd41d6dd1382741bfb9d045f34ced7129034ede31e36e7cecf6"
+    },
+    {
+      "path": "vendor/descensus2-original/adapted/Terrain/Objects/TerrainObject.ts",
+      "bytes": 3826,
+      "sha256": "44e61b5b62bfdd9aaf6f1222ee792f352a1345573e93e0a06014ee3952d4ea9e"
+    },
+    {
+      "path": "vendor/descensus2-original/adapted/Terrain/Objects/TerrainObjectType.ts",
+      "bytes": 209,
+      "sha256": "d614766de25676daf2f5ee4f04fc79798a0d8a9514d8f3343ec1119731305b31"
+    },
+    {
+      "path": "vendor/descensus2-original/adapted/Terrain/Objects/terrainObjectKit.ts",
+      "bytes": 873,
+      "sha256": "bfeca575a90f0b68bc52f8fb1f5ffd92a5194d026c70e26f7429ef43701083c9"
+    },
+    {
+      "path": "vendor/descensus2-original/adapted/Terrain/terrainBuilder.ts",
+      "bytes": 14761,
+      "sha256": "2e7a7b4133bd727a57a6be947b9e39efb678e2e6349cf33e73857d1d07a2ac38"
+    },
+    {
+      "path": "vendor/descensus2-original/adapted/Terrain/terrainUtil.ts",
+      "bytes": 2335,
+      "sha256": "c30460b554f8e3d7ccaf441acfcca7f69ecc373947472694d9a5735620eac3bf"
+    },
+    {
+      "path": "vendor/descensus2-original/adapted/Utility/blendColors.ts",
+      "bytes": 774,
+      "sha256": "3c2682af9389faddab89d2cc71b4b30fbccb3f97bce1c70cd7537588409b7c93"
+    },
+    {
+      "path": "vendor/descensus2-original/adapted/Utility/gameClock.ts",
+      "bytes": 226,
+      "sha256": "f599cf3725a86297acc5b1c2119ce4994a2694e7569eedc499d979bfe9eac554"
+    },
+    {
+      "path": "vendor/descensus2-original/adapted/Utility/randomUtil.ts",
+      "bytes": 929,
+      "sha256": "712667b61334459765f126aaca5b026c4697b907c751edd7b477d1c791990907"
+    },
+    {
+      "path": "vendor/descensus2-original/adapted/Utility/timer.ts",
+      "bytes": 1214,
+      "sha256": "65f2c01224abc357bc663d3f104910b93d309c237f2df6e200284cfd64d66951"
+    },
+    {
+      "path": "vendor/descensus2-original/adapted/Utility/tintUtil.ts",
+      "bytes": 915,
+      "sha256": "18e8117ef4d850db20e9967a863263556c2203e4097dc326acd7812d2e2c0be8"
+    },
+    {
+      "path": "vendor/descensus2-original/adapted/ball.ts",
+      "bytes": 2049,
+      "sha256": "04abc6ffb10160c33c8ec0f32b95eaeab5dc98c7cbe1c3ccc77d3f0921a9564d"
+    },
+    {
+      "path": "vendor/descensus2-original/adapted/deviceReady.ts",
+      "bytes": 244,
+      "sha256": "f31d21251e25537aa8f62763666ee7c2fb75705c22030b0eeeb8c6bff28379e1"
+    },
+    {
+      "path": "vendor/descensus2-original/adapted/ground.ts",
+      "bytes": 1190,
+      "sha256": "e36f0eba7c16d441b86bf44c03f3fb740d63ad64e8d9ea4a14dda2079fae4624"
+    },
+    {
+      "path": "vendor/descensus2-original/adapted/index.ts",
+      "bytes": 1789,
+      "sha256": "90cce27e83241e53706cc0dec46df648bf57c7482fbab3619dfe29819404103b"
+    },
+    {
+      "path": "vendor/descensus2-original/adapted/p2/IContactEvent.ts",
+      "bytes": 94,
+      "sha256": "d9bb14d7581970463ee5c478f27a02778ef00f7f46b6d71010542e8dfda22a44"
+    },
+    {
+      "path": "vendor/descensus2-original/adapted/p2/createWorld.ts",
+      "bytes": 2774,
+      "sha256": "fcbd3d31827459bded4a59a3204acbbba5fca525aa15806281da2eb20dfdab92"
+    },
+    {
+      "path": "vendor/descensus2-original/adapted/p2/materials.ts",
+      "bytes": 156,
+      "sha256": "0de72bbdd6d003af1d558a46211de86e9b8ee31651cd495230a9d84bfb1752bb"
+    },
+    {
+      "path": "vendor/descensus2-original/adapted/p2/p2Util.ts",
+      "bytes": 1288,
+      "sha256": "c26e5e7e1efb007ff905377fe2a3be26b506f2a73c783950a39dc9934c5a385d"
+    },
+    {
+      "path": "vendor/descensus2-original/pixi-csp-patch.json",
+      "bytes": 1275,
+      "sha256": "9b649a40958faa3ba6da3ebd0647e4d152ff9a00efc7aaac5194733370e6ab38"
+    },
+    {
+      "path": "vendor/descensus2-original/upstream/LICENSE",
+      "bytes": 1067,
+      "sha256": "b0f061567f2477c1d53ce109d5d3443d0f49d325a17d44602094aa7d460fb28f"
+    },
+    {
+      "path": "vendor/descensus2-original/upstream/LICENSES/CC0-1.0.txt",
+      "bytes": 7048,
+      "sha256": "a2010f343487d3f7618affe54f789f5487602331c0a8d03f49e9a7c547cf0499"
+    },
+    {
+      "path": "vendor/descensus2-original/upstream/LICENSES/DefinitelyTyped-MIT.txt",
+      "bytes": 1167,
+      "sha256": "0a48f63d7d32a49d196dce4b2e0cbc236c2cc8fef42cb20e005e4d5f813cc8f6"
+    },
+    {
+      "path": "vendor/descensus2-original/upstream/LICENSES/FXAA-BSD-3-Clause.txt",
+      "bytes": 1704,
+      "sha256": "67a8af54cf28e7334304335d117ba39c1fb48dd218dcef4473cfdb5cebc9bfee"
+    },
+    {
+      "path": "vendor/descensus2-original/upstream/LICENSES/MersenneTwister-BSD-3-Clause.txt",
+      "bytes": 1498,
+      "sha256": "7452b4f1bc64efab802f2ee3484ca88753e4393a9885cbf6aacff9e0da17eddd"
+    },
+    {
+      "path": "vendor/descensus2-original/upstream/LICENSES/Node-shims-MIT.txt",
+      "bytes": 1133,
+      "sha256": "2196d3c9a86bd2fb76fa4fa0f2d1df4aa8412143ab258b177c496bd458c8bf75"
+    },
+    {
+      "path": "vendor/descensus2-original/upstream/LICENSES/PIXI-MIT.txt",
+      "bytes": 1093,
+      "sha256": "3c0b3f2f70edb23c5ff2b63758b749de727e99c02089838ada710e58932cd8ba"
+    },
+    {
+      "path": "vendor/descensus2-original/upstream/LICENSES/PolyK-MIT.txt",
+      "bytes": 1312,
+      "sha256": "1340cb3d8eb39d65cd195fd325d4220cbe19fa6fd6949205044afeb1dc1f2261"
+    },
+    {
+      "path": "vendor/descensus2-original/upstream/LICENSES/bit-twiddle-MIT.txt",
+      "bytes": 1082,
+      "sha256": "e67aed7df22dc8031e4fcf5338fe91cb33e3817e5c58a99a2a2802eea9069791"
+    },
+    {
+      "path": "vendor/descensus2-original/upstream/LICENSES/earcut-ISC.txt",
+      "bytes": 725,
+      "sha256": "6c7e3e75cd5368e6a552a2e94db1a50080c0b2972d1d2364144227b047a6e18c"
+    },
+    {
+      "path": "vendor/descensus2-original/upstream/LICENSES/eventemitter3-MIT.txt",
+      "bytes": 1082,
+      "sha256": "3aecc12b1cb28832b5f65ab64291de96568c3f236a74d646281b4491f7bcadbf"
+    },
+    {
+      "path": "vendor/descensus2-original/upstream/LICENSES/glMatrix-BSD-2-Clause.txt",
+      "bytes": 1332,
+      "sha256": "b432d963101e682808253ba05e67b28280116d79a7d0713cadc261a6a7e8d526"
+    },
+    {
+      "path": "vendor/descensus2-original/upstream/LICENSES/isMobile-0.4.0-CC0-notice.txt",
+      "bytes": 365,
+      "sha256": "d616f2d1e383c941b906310d7c5142520d6c516b2a6aeae54529dc2277a3db14"
+    },
+    {
+      "path": "vendor/descensus2-original/upstream/LICENSES/mini-signals-MIT.txt",
+      "bytes": 1086,
+      "sha256": "07f9a37334ffe0050d63659021cc62e8745709b40048d597f7750fe7afdda3af"
+    },
+    {
+      "path": "vendor/descensus2-original/upstream/LICENSES/node-process-MIT.txt",
+      "bytes": 1098,
+      "sha256": "59a400d04c5078579acc27ddd6452c1bdf763f9506e01364700935fbb1a7c91b"
+    },
+    {
+      "path": "vendor/descensus2-original/upstream/LICENSES/normalize-MIT.txt",
+      "bytes": 1098,
+      "sha256": "89a9a9ace8be9e79bdc962823479bf980e4a14777ebe51b37e669f658e6f25ef"
+    },
+    {
+      "path": "vendor/descensus2-original/upstream/LICENSES/object-assign-MIT.txt",
+      "bytes": 1117,
+      "sha256": "5c932d88256b4ab958f64a856fa48e8bd1f55bc1d96b8149c65689e0c61789d3"
+    },
+    {
+      "path": "vendor/descensus2-original/upstream/LICENSES/p2-MIT.txt",
+      "bytes": 1146,
+      "sha256": "15e9e6dcafc17dc701a5ea7bb3c2ea746386d85740f4ca4dc6880e7407850ad3"
+    },
+    {
+      "path": "vendor/descensus2-original/upstream/LICENSES/parse-uri-MIT.txt",
+      "bytes": 1084,
+      "sha256": "7ace2e75c11a8479938862cc38c56701d2b82ac79dd52a150c763ff7a1a4d36b"
+    },
+    {
+      "path": "vendor/descensus2-original/upstream/LICENSES/parseUri-original-attribution.txt",
+      "bytes": 266,
+      "sha256": "92b4a54dfb63af1f4ee67201999ae832e6851c44340f4b84307ab2f724490953"
+    },
+    {
+      "path": "vendor/descensus2-original/upstream/LICENSES/path-browserify-MIT.txt",
+      "bytes": 1071,
+      "sha256": "a22b9d5763f574e5db347c30acc0b33eaf4846767c03d2e27d012e864e79a824"
+    },
+    {
+      "path": "vendor/descensus2-original/upstream/LICENSES/pixi-gl-core-README.md",
+      "bytes": 1486,
+      "sha256": "c6a44e794b6f6ecc89ab5f1f0c01c194883c8312edb1f7bc616cf36c1c061cdf"
+    },
+    {
+      "path": "vendor/descensus2-original/upstream/LICENSES/pixi-gl-core-package.json",
+      "bytes": 1656,
+      "sha256": "17116b695284f25efb9c353be99207adcd212eb15889ab1cf434503ee1410b95"
+    },
+    {
+      "path": "vendor/descensus2-original/upstream/LICENSES/poly-decomp-MIT.txt",
+      "bytes": 1080,
+      "sha256": "aa92b836949eb315e062592a9fdd660e6a301477e771305160f492dd3ee8a066"
+    },
+    {
+      "path": "vendor/descensus2-original/upstream/LICENSES/punycode-MIT.txt",
+      "bytes": 1077,
+      "sha256": "483acb265f182907d1caf6cff9c16c96f31325ed23792832cc5d8b12d5f88c8a"
+    },
+    {
+      "path": "vendor/descensus2-original/upstream/LICENSES/resource-loader-MIT.txt",
+      "bytes": 1077,
+      "sha256": "859c3d24560c2159d22676c0968b2a9ffa862e70c28a4e55104dc0e01d58fac9"
+    },
+    {
+      "path": "vendor/descensus2-original/upstream/README.md",
+      "bytes": 498,
+      "sha256": "3168bcc0027063a990e770cd6459983635442a373cafc4f5d468a60104b0549d"
+    },
+    {
+      "path": "vendor/descensus2-original/upstream/TypeScriptDefinitions/MersenneTwister.d.ts",
+      "bytes": 119,
+      "sha256": "9e1c8f93751874a12caa85dd4c9cd46d72370ab3c7feda1713b690f700584c06"
+    },
+    {
+      "path": "vendor/descensus2-original/upstream/TypeScriptDefinitions/Window.d.ts",
+      "bytes": 48,
+      "sha256": "dc0e87933240fd020b7274e89e7d02c211804e987791eeebde80180a122974f7"
+    },
+    {
+      "path": "vendor/descensus2-original/upstream/TypeScriptDefinitions/p2.d.ts",
+      "bytes": 27007,
+      "sha256": "5a01530ca02d7f218ba66a9596457a7af8ff7b8299bed66c7fc90fd88ed48ccf"
+    },
+    {
+      "path": "vendor/descensus2-original/upstream/TypeScriptDefinitions/pixi.js.d.ts",
+      "bytes": 95323,
+      "sha256": "dd64ac2546c52bbb151b54ce85186be25fef1eea1054e774107aaa772e72f5b4"
+    },
+    {
+      "path": "vendor/descensus2-original/upstream/package.json",
+      "bytes": 658,
+      "sha256": "dbec926c500321c93112ae5de68294b7e49d4fc0fb12efaef1c9c8b007cffd93"
+    },
+    {
+      "path": "vendor/descensus2-original/upstream/replacements/MersenneTwister.js",
+      "bytes": 6983,
+      "sha256": "4c008b4c57eb74eb075c905a78c38e140e666ef4847705b1c9516345a6805009"
+    },
+    {
+      "path": "vendor/descensus2-original/upstream/src/css/default.css",
+      "bytes": 177,
+      "sha256": "53eaa5899c45828808a16c59f6158e0c352f36925ed6bef92cc0c8bdb1a8f89f"
+    },
+    {
+      "path": "vendor/descensus2-original/upstream/src/css/normalize.css",
+      "bytes": 7279,
+      "sha256": "d65bf66f0c26374e0550145b264b5dbdfb7e6b78c48e2e68453583878bc30801"
+    },
+    {
+      "path": "vendor/descensus2-original/upstream/src/img/ball-reflections.png",
+      "bytes": 12208,
+      "sha256": "c04031fb03685a9bdd1a4ca2928d4319c6f4e7c6f32b7b4cc4bec086a2a35cfb"
+    },
+    {
+      "path": "vendor/descensus2-original/upstream/src/img/ball.png",
+      "bytes": 18345,
+      "sha256": "d38deb455d7b2d25442dd6a7576e2284e4987a1f7f24eb8f3643567fb9542c10"
+    },
+    {
+      "path": "vendor/descensus2-original/upstream/src/img/bar.png",
+      "bytes": 3254,
+      "sha256": "a88561650585bcbd29f7dc21b01af0072be8f7a6ebd93141ee22a9164d8d2f96"
+    },
+    {
+      "path": "vendor/descensus2-original/upstream/src/img/brick.png",
+      "bytes": 15678,
+      "sha256": "1ede983ac00879dbbbbb42c61e78c9579abae8a8b5b13c86248f65b804b4d31d"
+    },
+    {
+      "path": "vendor/descensus2-original/upstream/src/img/clouds.jpg",
+      "bytes": 82980,
+      "sha256": "a6383a94e481b4e4a7604133e62a3abaa84247c2a7eb84506c50fd23c5ea9975"
+    },
+    {
+      "path": "vendor/descensus2-original/upstream/src/img/girder.png",
+      "bytes": 27857,
+      "sha256": "6e31ce1c9448994a47890fcad7abcba08450fb39724adc5f02ca167321f1ca6b"
+    },
+    {
+      "path": "vendor/descensus2-original/upstream/src/img/ground.png",
+      "bytes": 203999,
+      "sha256": "dc5306584c7ec2594f3fe77a2963c06fe5f51989db2280d9478efbf6f114e7d6"
+    },
+    {
+      "path": "vendor/descensus2-original/upstream/src/img/help-hand.png",
+      "bytes": 43671,
+      "sha256": "522c7620c73c8411943beda46a3877fc18043c11205b4eb6a4072250d3b72b37"
+    },
+    {
+      "path": "vendor/descensus2-original/upstream/src/img/paper.jpg",
+      "bytes": 133211,
+      "sha256": "be19d1686b9304bfe3bcee5cc252bd1711dd871e7b9c866c29b4b86875e06989"
+    },
+    {
+      "path": "vendor/descensus2-original/upstream/src/img/plus-1-life.png",
+      "bytes": 16957,
+      "sha256": "62071f73482dc1a3b05e88eaaf7fe6c34181c3d76626bb39c2273e1fa4e70d5b"
+    },
+    {
+      "path": "vendor/descensus2-original/upstream/src/img/saw-small.png",
+      "bytes": 13738,
+      "sha256": "3e40dc37b5e36e15eec3eebae19ecc1294760e5074d690b1b650e0d37be290e7"
+    },
+    {
+      "path": "vendor/descensus2-original/upstream/src/img/saw.png",
+      "bytes": 21087,
+      "sha256": "0dd235836826ffc7f998283e2ee4a0996fe7659467085b4fd28ee762f4b87c37"
+    },
+    {
+      "path": "vendor/descensus2-original/upstream/src/img/time-bar-time.png",
+      "bytes": 1066,
+      "sha256": "2a10835b15d8e5cb56f6a76dac9dc9d4b542c9e61350179d41f7b3d80e8d00f3"
+    },
+    {
+      "path": "vendor/descensus2-original/upstream/src/img/time-bar.png",
+      "bytes": 1140,
+      "sha256": "aef3d1ff8e899481accee70fc2e13d86a5908b6223709f74f90db729807ec536"
+    },
+    {
+      "path": "vendor/descensus2-original/upstream/src/img/wind-left.png",
+      "bytes": 46749,
+      "sha256": "a9499ad4f6c7636e6bf5913d1e38668a7d6ee47d8e67d043f357e0e8cd746a8d"
+    },
+    {
+      "path": "vendor/descensus2-original/upstream/src/img/wind-right.png",
+      "bytes": 46156,
+      "sha256": "c9a570f90f26883174850e2a3d5c28a0fa6a33cb126ca32d70aa0332de012d3d"
+    },
+    {
+      "path": "vendor/descensus2-original/upstream/src/index.html",
+      "bytes": 910,
+      "sha256": "27e338df05f0a7684cadb3b252604c872091c81ac294ea441c19a46112e479d1"
+    },
+    {
+      "path": "vendor/descensus2-original/upstream/src/js/Assets/ISounds.ts",
+      "bytes": 306,
+      "sha256": "b99363196874bec431ce254c7ca15b2c28a77c91fa22e035b891bd7436e75ee3"
+    },
+    {
+      "path": "vendor/descensus2-original/upstream/src/js/Assets/ITextures.ts",
+      "bytes": 527,
+      "sha256": "b24aade9e52e61a8e5a37dd67d83cda6dbabd5c83528048a8ebff5f7e26edcb5"
+    },
+    {
+      "path": "vendor/descensus2-original/upstream/src/js/Assets/loadFonts.ts",
+      "bytes": 288,
+      "sha256": "470b411ccbd61e438fe1a02f74f4b48be34c5389cf7a8796681b3ea37f4f0dd1"
+    },
+    {
+      "path": "vendor/descensus2-original/upstream/src/js/Assets/loadSounds.ts",
+      "bytes": 1324,
+      "sha256": "68bec0c752c4cde4af963ab6266bf0ab502cadebfbbbff99f460abf9523075a5"
+    },
+    {
+      "path": "vendor/descensus2-original/upstream/src/js/Assets/loadTextures.ts",
+      "bytes": 1282,
+      "sha256": "9fd79280fee21bbdb3fd4de83b94ebfdc20fa06ca46a356cce6c21dfae2f0ae6"
+    },
+    {
+      "path": "vendor/descensus2-original/upstream/src/js/Bar.ts",
+      "bytes": 4918,
+      "sha256": "d82dfc0cd9af441d36081b55a4db97dc1e38d8fe6f9435d1e75d25ed44ca7c66"
+    },
+    {
+      "path": "vendor/descensus2-original/upstream/src/js/Bus.ts",
+      "bytes": 755,
+      "sha256": "925f1c4aa4cd7c10fb05815e6803077326e2ff3b1b521e692557730421b3a71f"
+    },
+    {
+      "path": "vendor/descensus2-original/upstream/src/js/Color.ts",
+      "bytes": 116,
+      "sha256": "579bc5841d0877d6c59ab5cefa2b2cd891d2ea8eb6d86f83ca89d89f6dafcad5"
+    },
+    {
+      "path": "vendor/descensus2-original/upstream/src/js/Game/GameState.ts",
+      "bytes": 137,
+      "sha256": "e67fbcec8ca5ad0bcaa3d6e11ce7feb6949b571e31b7c8a0c2f683a5d94b41fe"
+    },
+    {
+      "path": "vendor/descensus2-original/upstream/src/js/Game/IGameWonStats.ts",
+      "bytes": 91,
+      "sha256": "ed81f32e38b05d9c64727469a0233bd0c2d2f4f3873df607328e21cb1b748f3a"
+    },
+    {
+      "path": "vendor/descensus2-original/upstream/src/js/Game/gameLoop.ts",
+      "bytes": 11968,
+      "sha256": "97c6d0383874fb0b79b1066f21750cd87c4cff0e74a3fdea552c729bac61ff27"
+    },
+    {
+      "path": "vendor/descensus2-original/upstream/src/js/Pixi/IPixiGraph.ts",
+      "bytes": 651,
+      "sha256": "334f2223d523f963089446d4e6e06b50fc6110e168e53a9f09727ed63e5b192b"
+    },
+    {
+      "path": "vendor/descensus2-original/upstream/src/js/Pixi/PixiRenderer.ts",
+      "bytes": 1318,
+      "sha256": "05851910021644954d1db5439132bf070a43d9be2f647f2bab2b5c0ac7ee69a6"
+    },
+    {
+      "path": "vendor/descensus2-original/upstream/src/js/Pixi/buildNavContainer.ts",
+      "bytes": 15222,
+      "sha256": "5163203044e699d7492f30baa4262362aef2410981f52891f81a7fd0769f6afd"
+    },
+    {
+      "path": "vendor/descensus2-original/upstream/src/js/Pixi/buildPixiGraph.ts",
+      "bytes": 3143,
+      "sha256": "295bd28bd366b3c26be0cd35e26d9a6811c47624d0dbb228f3cc671bc295c073"
+    },
+    {
+      "path": "vendor/descensus2-original/upstream/src/js/Sound/ISounds.ts",
+      "bytes": 281,
+      "sha256": "0f6f264e351a2bb85305590f107f849b3f5158d3c4aa77f8d1edf157a7b9a138"
+    },
+    {
+      "path": "vendor/descensus2-original/upstream/src/js/Sound/soundPlayer.ts",
+      "bytes": 1928,
+      "sha256": "69f2738b8d55546fe9580c1986abd8fe5091e65e644b641699e57e5d2c88ed3b"
+    },
+    {
+      "path": "vendor/descensus2-original/upstream/src/js/Terrain/Objects/Brick.ts",
+      "bytes": 979,
+      "sha256": "bdfc5dfd6f1a3309888b5436be3fb3ebb46bcec1a1681da3e39994d42250d2bd"
+    },
+    {
+      "path": "vendor/descensus2-original/upstream/src/js/Terrain/Objects/FreeSaw.ts",
+      "bytes": 1175,
+      "sha256": "010b510b0ce50d9f8b87518941330d48947c4988f4b4fffb5928d3259c468af5"
+    },
+    {
+      "path": "vendor/descensus2-original/upstream/src/js/Terrain/Objects/Girder.ts",
+      "bytes": 983,
+      "sha256": "b41cc570acdd02d87dabe78920aab34274fcb2746ab7d4f46923a60edd747cfb"
+    },
+    {
+      "path": "vendor/descensus2-original/upstream/src/js/Terrain/Objects/Plus1Life.ts",
+      "bytes": 1085,
+      "sha256": "0c336100b20443637efde9d966c050fcf8f53721a9e8db17178c704dff2ea094"
+    },
+    {
+      "path": "vendor/descensus2-original/upstream/src/js/Terrain/Objects/Saw.ts",
+      "bytes": 1459,
+      "sha256": "aaa1fab4bf3205dca36769bea47c53d653879fb2e99bfc8173a71d739efe09bd"
+    },
+    {
+      "path": "vendor/descensus2-original/upstream/src/js/Terrain/Objects/SawSnake.ts",
+      "bytes": 2122,
+      "sha256": "79f553c77d489376ee342ebe9f42f78ef63d1fbc04618a7809a3e26772322095"
+    },
+    {
+      "path": "vendor/descensus2-original/upstream/src/js/Terrain/Objects/SawSpinner.ts",
+      "bytes": 2237,
+      "sha256": "1b6adc66b3e3be626a9d9bf787071fbf2b61ebc018dd606d0c8e99f5eed2e5e0"
+    },
+    {
+      "path": "vendor/descensus2-original/upstream/src/js/Terrain/Objects/Seesaw.ts",
+      "bytes": 1390,
+      "sha256": "1b806fcb1281182bb65100e4bc203d4118f8c0bdcea8ec454cd3041a276db77a"
+    },
+    {
+      "path": "vendor/descensus2-original/upstream/src/js/Terrain/Objects/ShapeOptions.ts",
+      "bytes": 180,
+      "sha256": "cd5c88624a80ec133f99c343c75b627b3d878088803c3df398123b3c066ca369"
+    },
+    {
+      "path": "vendor/descensus2-original/upstream/src/js/Terrain/Objects/Snake.ts",
+      "bytes": 3092,
+      "sha256": "5b783ab7e21df9f0791f512340e11d3e9a298955b1d7029aed7c04e8782bc1f5"
+    },
+    {
+      "path": "vendor/descensus2-original/upstream/src/js/Terrain/Objects/Spinner.ts",
+      "bytes": 1863,
+      "sha256": "73ec1a1504df7c5cd0aa29129641e813f70466738d753bf39e27494a75cf2d92"
+    },
+    {
+      "path": "vendor/descensus2-original/upstream/src/js/Terrain/Objects/TerrainObject.ts",
+      "bytes": 3819,
+      "sha256": "c0cbf0b693d012964e95f06e598269c9c95ee1fefa1e5875a59cc09b47f351de"
+    },
+    {
+      "path": "vendor/descensus2-original/upstream/src/js/Terrain/Objects/TerrainObjectType.ts",
+      "bytes": 209,
+      "sha256": "d614766de25676daf2f5ee4f04fc79798a0d8a9514d8f3343ec1119731305b31"
+    },
+    {
+      "path": "vendor/descensus2-original/upstream/src/js/Terrain/Objects/terrainObjectKit.ts",
+      "bytes": 876,
+      "sha256": "15349cd771f391271f83fdff60da4c2b88edb6b29b4c4bb8164b0eb55c58b376"
+    },
+    {
+      "path": "vendor/descensus2-original/upstream/src/js/Terrain/terrainBuilder.ts",
+      "bytes": 14754,
+      "sha256": "8736ea0706ace35bfe2513200c75d16749645c960dc027caaa2eb9d6f277be0e"
+    },
+    {
+      "path": "vendor/descensus2-original/upstream/src/js/Terrain/terrainUtil.ts",
+      "bytes": 2338,
+      "sha256": "b8ec1a97405b4737d35ea7ecebdd8c23338af57b1c6d65be5c7977ff86bb60e8"
+    },
+    {
+      "path": "vendor/descensus2-original/upstream/src/js/Utility/blendColors.ts",
+      "bytes": 774,
+      "sha256": "3c2682af9389faddab89d2cc71b4b30fbccb3f97bce1c70cd7537588409b7c93"
+    },
+    {
+      "path": "vendor/descensus2-original/upstream/src/js/Utility/randomUtil.ts",
+      "bytes": 932,
+      "sha256": "99bc9ce0a1a62ffd47835dba13973679de2dc91758ee90a27d2e74d056f7f981"
+    },
+    {
+      "path": "vendor/descensus2-original/upstream/src/js/Utility/timer.ts",
+      "bytes": 1217,
+      "sha256": "246e5ada1d87c9d78423e99670f4890b096d1034065c5d003d10d6e08f58d49e"
+    },
+    {
+      "path": "vendor/descensus2-original/upstream/src/js/Utility/tintUtil.ts",
+      "bytes": 915,
+      "sha256": "18e8117ef4d850db20e9967a863263556c2203e4097dc326acd7812d2e2c0be8"
+    },
+    {
+      "path": "vendor/descensus2-original/upstream/src/js/ball.ts",
+      "bytes": 1920,
+      "sha256": "ec4c21d68e8cbd3e945debb2380a6335e10fca3c961aa95d8215f18b63b76a2c"
+    },
+    {
+      "path": "vendor/descensus2-original/upstream/src/js/deviceReady.ts",
+      "bytes": 244,
+      "sha256": "f31d21251e25537aa8f62763666ee7c2fb75705c22030b0eeeb8c6bff28379e1"
+    },
+    {
+      "path": "vendor/descensus2-original/upstream/src/js/ground.ts",
+      "bytes": 1178,
+      "sha256": "19d41ce495cd669247ecdb6b839070cacb1ab0df2c96cbf396ecb5a90b40fcd9"
+    },
+    {
+      "path": "vendor/descensus2-original/upstream/src/js/index.ts",
+      "bytes": 1621,
+      "sha256": "50e5b86f965a7ae078d2f7aa4a7ac94244d6c71e583f75b17164fcb2fd1fe7cb"
+    },
+    {
+      "path": "vendor/descensus2-original/upstream/src/js/lib/p2/p2.min.js",
+      "bytes": 121978,
+      "sha256": "73488d7e272871799149a4f20d7cb30134fc98592f22a36c008bf6eddf4c5846"
+    },
+    {
+      "path": "vendor/descensus2-original/upstream/src/js/lib/pixi/pixi.min.js",
+      "bytes": 407114,
+      "sha256": "d4db1ab70ec539a8b0422a4b42e77179806061fb64455bf58945801bd9dca971"
+    },
+    {
+      "path": "vendor/descensus2-original/upstream/src/js/p2/IContactEvent.ts",
+      "bytes": 94,
+      "sha256": "d9bb14d7581970463ee5c478f27a02778ef00f7f46b6d71010542e8dfda22a44"
+    },
+    {
+      "path": "vendor/descensus2-original/upstream/src/js/p2/createWorld.ts",
+      "bytes": 2774,
+      "sha256": "fcbd3d31827459bded4a59a3204acbbba5fca525aa15806281da2eb20dfdab92"
+    },
+    {
+      "path": "vendor/descensus2-original/upstream/src/js/p2/materials.ts",
+      "bytes": 156,
+      "sha256": "0de72bbdd6d003af1d558a46211de86e9b8ee31651cd495230a9d84bfb1752bb"
+    },
+    {
+      "path": "vendor/descensus2-original/upstream/src/js/p2/p2Util.ts",
+      "bytes": 1288,
+      "sha256": "c26e5e7e1efb007ff905377fe2a3be26b506f2a73c783950a39dc9934c5a385d"
+    },
+    {
+      "path": "vendor/descensus2-original/upstream/tsconfig.json",
+      "bytes": 265,
+      "sha256": "5d79ce6d2bee370cfb27643f03e2f2230e4e602ed90a4601f3e53ff591dea537"
+    },
+    {
+      "path": "vendor/descensus2-original/upstream/webpack.config.js",
+      "bytes": 2102,
+      "sha256": "2ef9c85b4f3aa5cb9f55c3732561e0fb780855d77a0bbaa1a90a58ca666a1bff"
+    },
+    {
+      "path": "vendor/descensus2-original/upstream-allowlist.json",
+      "bytes": 40323,
+      "sha256": "dad30f311e08beb069a0bf81dd80bd90e247c08c45b81d63c729fdc1ae6a49d4"
+    }
+  ]
+}

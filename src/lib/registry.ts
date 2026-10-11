@@ -3040,5 +3040,34 @@ component: lazy(() => import("../games/HyperspaceGarbageCollection"))
     },
     "component": lazy(() => import("../games/Avabranch"))
   },
+{
+  "id": "descensus-2",
+  "title": "千米降落",
+  "subtitle": "画木条改变弹跳，穿过锯片与风区，完成1000米旅程。",
+  "category": "动作反应",
+  "difficulty": "进阶",
+  "tone": "orange",
+  "levelCount": 0,
+  "campaign": true,
+  "campaignCaption": "1000米旅程 · 仅保存完成纪录",
+  "allowUndo": false,
+  "artwork": {
+    "url": "./descensus-2/card.svg",
+    "position": "center",
+    "size": "cover"
+  },
+  "source": {
+    "kind": "adapted",
+    "license": "MIT",
+    "author": "Tom W Hall",
+    "workTitle": "Descensus 2（完整1000米连续旅程）",
+    "url": "https://github.com/TomWHall/Descensus2/tree/750003f12815a756ebd18634e88620c1050a1ec5",
+    "commit": "750003f12815a756ebd18634e88620c1050a1ec5",
+    "notice": "./descensus-2/NOTICE.txt",
+    "notes": "保留原TypeScript、p2/Pixi引擎、10类地形、六段风区、画线弹跳、五条生命、100米限时点及真实地面证书；完整有限旅程，0个编号关卡。MIT原作及各依赖声明独立保留；16张原图沿用，3张木纹与字体改为原创纹理和系统字体，保留浏览器无声版。本站宿主与修复GPL-3.0-only。"
+  }
+,
+component: lazy(() => import("../games/Descensus2"))
+},
 ];
 export const findGame = (id: string) => games.find((game) => game.id === id);

@@ -756,6 +756,27 @@
         "docs/avabranch-source-map.json"
       ],
       "scope": "Complete MIT first-party Canvas endless rules, four lives, group/independent steering, merger, collisions, four revival/stat pickups, score and restart. Zero finite levels. New Chinese opaque iframe host, safe storage, multitouch controls, paused clocks and card art are GPL-3.0-only. No audio, remote fonts, unknown images, analytics, Crafty or jQuery."
+    },
+    {
+      "name": "Descensus 2 complete original 1000-metre descent",
+      "version": "750003f12815a756ebd18634e88620c1050a1ec5",
+      "license": "MIT original; p2/Pixi bundled MIT/BSD/CC0 notices; BSD-3-Clause MersenneTwister; GPL-3.0-only Playgarden changes",
+      "source": "https://github.com/TomWHall/Descensus2/tree/750003f12815a756ebd18634e88620c1050a1ec5",
+      "preferredSource": [
+        "vendor/descensus2-original/upstream",
+        "vendor/descensus2-original/adapted",
+        "public/descensus-2/adapter.js",
+        "src/games/Descensus2.tsx",
+        "vendor/descensus2-original/pixi-csp-patch.json"
+      ],
+      "buildSources": [
+        "scripts/descensus-2/build-runtime.mjs",
+        "scripts/descensus-2/generate-timber.py",
+        "scripts/descensus-2/package-source.py",
+        "scripts/descensus-2/verify-sources.py",
+        "docs/descensus-2-source-map.json"
+      ],
+      "scope": "Complete finite1000m journey with0enumeratedlevels: original physics, ten terrain classes, six wind zones, bars, lives, timeout, death/restart and genuine ground certificate. Sixteen original cleared images and three new textures. Local opaque iframe and complete licenses/sourceZIP; no remote assets, analytics, bitmap font, audio or unreviewed upstream dependencies."
     }
   ]
 }

@@ -2820,3 +2820,31 @@ No uncleared music, fonts, images, analytics or unused Crafty/jQuery are include
 Full component notices: `public/avabranch/NOTICE.txt`.
 Exact corresponding source: `public/avabranch/source.zip`.
 Complete final file digests: `vendor/avabranch-original/distribution-manifest.json`.
+
+## Descensus 2 complete original descent
+
+Tom W Hall, fixed commit 750003f12815a756ebd18634e88620c1050a1ec5. Source: https://github.com/TomWHall/Descensus2/tree/750003f12815a756ebd18634e88620c1050a1ec5
+
+MIT License
+
+Copyright (c) 2017 Tom W Hall
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+Original TypeScript/p2/Pixi rules and sixteen cleared raster images retained. Three wood textures are newly generated at original dimensions; system serif text replaces the omitted bitmap font. Browser remains silent. Pinned readable MersenneTwister v0.2.3 is BSD-3-Clause; no assertion of exact parity with unidentified prior minification. p2, Pixi and their bundled MIT/BSD/CC0 components retain all notices in public/descensus-2/NOTICE.txt and licenses/. Two bounded Pixi uniform accessor closures replace dynamic code generation. Original and adapted editable code, complete notices, build tools and targeted test: public/descensus-2/source.zip. New Playgarden host, Chinese UI, lifecycle repairs, textures and packaging are GPL-3.0-only. Complete1000m campaign, zero numbered levels. No omitted audio, Constantia bitmap font, Mayang wood images, favicon or unclear MT minification is redistributed.

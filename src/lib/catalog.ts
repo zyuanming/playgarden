@@ -174,6 +174,7 @@ export const GAME_IDS = [
   "css-diner",
   "hyperspace-garbage-collection",
   "avabranch",
+  "descensus-2",
 ] as const;
 export type GameId = (typeof GAME_IDS)[number];
 export type Category =
@@ -209,6 +210,7 @@ export type GameMeta = {
   endless?: boolean;
   /** A complete campaign with an ending, without enumerated finite levels. */
   campaign?: boolean;
+  campaignCaption?: string;
   freePlayCaption?: string;
   modeLabels?: { free: string; practice: string };
   allowUndo?: boolean;
