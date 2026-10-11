@@ -4,7 +4,7 @@ import {test,expect,type Frame,type Locator} from '@playwright/test';
 import {openGame,captureErrors} from './helpers';
 import {writeFileSync} from 'node:fs';
 import {createHash} from 'node:crypto';
-import checkpoints from './fixtures/gridland-earned-round20.json' with {type:'json'};
+import checkpoints from './fixtures/gridland-earned-round21.json' with {type:'json'};
 // Explicit key screenshots, failure screenshots, ordinary-input logs and authentic
 // saves replace per-action DOM trace snapshots (round2 produced a 2.66 GB trace).
 test.use({trace:'off'});
@@ -30,7 +30,7 @@ function rank(s:Live,m:ReturnType<typeof moves>[number],enemy:boolean){
  }return score;
 }
 
-type Tactics={combatReady:boolean;dragonPresent:boolean;priority:string|null;maxShield:number;maxSword:number;swordDamage:number;work:boolean;loot:boolean;monster:{kind:string;hp:number;damage:number}|null;monsterCount:number;frozen:boolean};
+type Tactics={combatReady:boolean;dragonPresent:boolean;lichPresent:boolean;priority:string|null;maxShield:number;maxSword:number;swordDamage:number;work:boolean;loot:boolean;monster:{kind:string;hp:number;damage:number}|null;monsterCount:number;frozen:boolean};
 async function tactics(frame:Frame):Promise<Tactics>{
  return frame.evaluate(()=>{
   type Entity={hp:()=>number;getDamage:()=>number;options:{monsterClass:string};carrying:unknown;action:{block?:unknown;building?:unknown}|null};
@@ -43,7 +43,7 @@ async function tactics(frame:Frame):Promise<Tactics>{
   // Read-only observation of the actual visible work/combat, never invoke actions.
   const pending=state.buildings.filter(b=>!b.built&&!b.obsolete);
   const work=!!hero?.carrying||!!hero?.action?.block||!!hero?.action?.building||pending.some(b=>Object.values(b.requiredResources).every(n=>n<=0)||state.stores.some(v=>!v.gone&&v._quantity>=30&&b.requiredResources[v.options.type.className]>0));
-  return {combatReady:w.canMove(),dragonPresent:!!document.querySelector('.dragon'),priority:state.prioritizedBuilding,maxShield:state.maxShield(),maxSword:state.maxSword(),swordDamage:state.swordDamage(),work,loot:!!w.findClosestLoot(),monster:monster?{kind:monster.options.monsterClass,hp:monster.hp(),damage:monster.getDamage()}:null,monsterCount:document.querySelectorAll('.monster .healthBar:not(.hidden)').length,frozen:w.hasEffect('freezeTime')};
+  return {combatReady:w.canMove(),dragonPresent:!!document.querySelector('.dragon'),lichPresent:!!document.querySelector('.monster.lich .healthBar:not(.hidden)'),priority:state.prioritizedBuilding,maxShield:state.maxShield(),maxSword:state.maxSword(),swordDamage:state.swordDamage(),work,loot:!!w.findClosestLoot(),monster:monster?{kind:monster.options.monsterClass,hp:monster.hp(),damage:monster.getDamage()}:null,monsterCount:document.querySelectorAll('.monster .healthBar:not(.hidden)').length,frozen:w.hasEffect('freezeTime')};
  });
 }
 function buildingTarget(s:Live){
@@ -220,17 +220,21 @@ test('Gridland original campaign: real matches, progression, saves, dragon and l
     // Keep earned mana for the original day/night spell when ordinary
     // enemies overwhelm depleted gear. This normal UI action saves the day's
     // real gains; it does not count as a kill or the required dragon ending.
+    // A healthy lich fight is the original route to the dragon item. In
+    // round21, changing to day discarded live liches (and any uncollected loot).
+    // Use the visible 15-second freeze spell instead; low-health retreat stays.
+    const freeze=!t.frozen&&(t.monster?.kind==='dragon'||(t.lichPresent&&s.health>s.maxHealth*.4));
     const retreat=!!t.monster&&!t.dragonPresent&&t.monster.kind!=='dragon'&&
-     (s.health<=s.maxHealth*.4||(t.monsterCount>=2&&(needed.shield||needed.sword)));
-    if(s.mana>=3&&(retreat||(t.monster?.kind==='dragon'&&!t.frozen))){
-     const spell=retreat?'phaseChange':'freezeTime';
+     (s.health<=s.maxHealth*.4||(!t.lichPresent&&t.monsterCount>=2&&(needed.shield||needed.sword)));
+    if(s.mana>=3&&(freeze||retreat)){
+     const spell=freeze?'freezeTime':'phaseChange';
      note('spell',s,{name:spell,tactics:t});await act(game.locator('.magic > .button'));await act(game.locator(`.spell.${spell}`));
-     if(retreat)await expect.poll(async()=>{const c=await read(game);return !c.night&&c.day>s.day;}).toBe(true);
+     if(spell==='phaseChange')await expect.poll(async()=>{const c=await read(game);return !c.night&&c.day>s.day;}).toBe(true);
      else await expect.poll(async()=> (await tactics(game)).frozen).toBe(true);
      const cast=await read(game);expect(cast.counts.CAST||0).toBe((s.counts.CAST||0)+1);
      // A retreat can turn an already-running mana cascade into daytime income.
      // Freeze stays at night, so its exact expenditure is also observable.
-     if(!retreat)expect(cast.mana).toBe(s.mana-3);
+     if(spell==='freezeTime')expect(cast.mana).toBe(s.mana-3);
      note('spell-confirmed',cast,{name:spell});continue;
     }
     if(!t.monster&&s.items.callDragon&&s.health>s.maxHealth*.8&&s.level>=7){await item('callDragon');continue;}
