@@ -4,7 +4,7 @@ import {test,expect,type Frame,type Locator} from '@playwright/test';
 import {openGame,captureErrors} from './helpers';
 import {writeFileSync} from 'node:fs';
 import {createHash} from 'node:crypto';
-import checkpoints from './fixtures/gridland-earned-round21.json' with {type:'json'};
+import checkpoints from './fixtures/gridland-earned-round22.json' with {type:'json'};
 // Explicit key screenshots, failure screenshots, ordinary-input logs and authentic
 // saves replace per-action DOM trace snapshots (round2 produced a 2.66 GB trace).
 test.use({trace:'off'});
@@ -58,8 +58,15 @@ function buildingTarget(s:Live){
  })[0];
 }
 function equipmentNeeded(s:Live,t:Tactics){
- const strength=s.level<7?1:Math.floor((s.level-1)/3);
- return {shield:s.hero!.shield<=Math.floor(t.maxShield/3),sword:s.hero!.sword===0&&!!t.monster&&t.monster.hp>strength};
+ const strength=s.level<7?1:Math.floor((s.level-1)/3),enemy=t.monster;
+ // Account for remaining sword charges, rather than assuming two armed hits.
+ // Dragon's original armour subtracts two from each actual hit.
+ const hit=(armed:boolean)=>Math.max(0,strength+(armed?t.swordDamage:0)-(enemy?.kind==='dragon'?2:0));
+ const twoHits=hit(s.hero!.sword>0)+hit(s.hero!.sword>1);
+ const shortFight=!!enemy&&t.monsterCount<=2&&enemy.hp<=twoHits&&s.health>s.maxHealth*.6;
+ // Round22 refilled at 7/24 shield against a 2HP warlock with 5 damage.
+ // Observe combat again every250ms; keep ordinary potions/low-health retreat.
+ return {shield:!!enemy&&!shortFight&&s.hero!.shield<enemy.damage,sword:!!enemy&&!shortFight&&s.hero!.sword===0&&enemy.hp>hit(false)};
 }
 function seekDragonRune(s:Live,t:Tactics){
  // A tactical choice, not a game unlock: these are the actually earned gear
