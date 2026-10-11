@@ -7,3 +7,9 @@ test-results/
 *.tsbuildinfo
 
 evidence-parts/
+
+# Exact original Monkey Rally images are materialized from the verified local ZIP.
+public/monkey-rally/assets/**/*.png
+public/monkey-rally/assets/**/*.jpg
+vendor/monkey-rally-original/upstream/src/assets/**/*.png
+vendor/monkey-rally-original/upstream/src/assets/**/*.jpg

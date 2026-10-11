@@ -1,0 +1,39 @@
+{
+  "id": "flexbox-froggy",
+  "upstreamCommit": "9a6feab850a56cbe9ad90f3afcc95e88335bbec8",
+  "countedLevels": 24,
+  "endingCounted": false,
+  "endingFrogCount": 25,
+  "upstreamManifest": "vendor/flexbox-froggy-original/source-manifest.json",
+  "distributionManifest": "vendor/flexbox-froggy-original/distribution-manifest.json",
+  "sourceArchive": "public/flexbox-froggy/source.zip",
+  "mappings": [
+    {
+      "original": "upstream/js/game.js",
+      "runtime": "public/flexbox-froggy/js/game.js",
+      "method": "scripts/flexbox-froggy/adapt.py: exact replacement anchors; retained original renderer, menu, docs, CSS insertion and positional/color comparator; owned lifecycle seams and one-to-one checker hardening"
+    },
+    {
+      "original": "upstream/js/{levels,docs,messages}.js",
+      "runtime": "public/flexbox-froggy/js/{levels,docs,messages}.js",
+      "method": "byte-for-byte, full multilingual data"
+    },
+    {
+      "original": "upstream/css/style.css and images/*.svg",
+      "runtime": "public/flexbox-froggy/css/style.css and images/*.svg",
+      "method": "byte-for-byte; adapter.css adds responsive presentation without rewriting board rules"
+    },
+    {
+      "original": "upstream/third-party",
+      "runtime": "public/flexbox-froggy/third-party",
+      "method": "byte-for-byte readable dependency distributions and full licenses"
+    }
+  ],
+  "excluded": [
+    "original index.html with advertising/analytics",
+    "remote fonts",
+    "promotional images/favicon/ads.txt/CNAME",
+    "audit-reference and transfer metadata"
+  ],
+  "validation": "Static hashes, reproducibility, syntax and source/license checks only in preparation. Parent must run the single targeted desktop/mobile Playwright journey after independent review and inspect screenshots."
+}

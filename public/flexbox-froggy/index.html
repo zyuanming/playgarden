@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self'; font-src 'none'; connect-src 'none'; object-src 'none'; frame-src 'none'; base-uri 'none'; form-action 'none'">
+  <title>Flexbox Froggy · 弹性盒子青蛙</title>
+  <link rel="stylesheet" href="third-party/animate.css/animate.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="adapter.css">
+</head>
+<body>
+  <section id="sidebar">
+    <header class="header">
+      <h1 class="title">Flexbox Froggy</h1>
+      <div id="level-counter">
+        <button type="button" class="arrow left" aria-label="上一课"><span class="triangle"></span></button>
+        <button type="button" id="level-indicator" aria-label="选择原作课程"><span id="labelLevel" class="translate">关卡</span> <span class="current">1</span> <span id="labelOf" class="translate">/</span> <span class="total">24</span> ▾</button>
+        <button type="button" class="arrow right" aria-label="下一课"><span class="triangle"></span></button>
+      </div>
+    </header>
+    <div id="levelsWrapper" class="tooltip"><div id="levels"></div><button type="button" id="labelReset" class="translate">重置练习记录</button></div>
+    <div class="local-toolbar">
+      <button type="button" id="pause-game">暂停练习</button>
+      <button type="button" id="retry-game">重试本关</button>
+      <button type="button" id="labelSettings" class="toggle translate">设置</button>
+    </div>
+    <div id="settings"><div class="tooltip">
+      <section><label id="labelLanguage" class="translate" for="language">语言</label><select id="language"></select></section>
+      <section><h4 id="labelDifficulty" class="translate">难度</h4><div id="difficulty">
+        <label><input type="radio" name="difficulty" value="easy" checked><span id="labelDifficultyEasy" class="translate">初学</span></label>
+        <label><input type="radio" name="difficulty" value="medium"><span id="labelDifficultyMedium" class="translate">隐藏说明</span></label>
+        <label><input type="radio" name="difficulty" value="hard"><span id="labelDifficultyHard" class="translate">隐藏说明、随机练习</span></label>
+      </div></section>
+      <section><h4 id="labelColorblind" class="translate">颜色辅助</h4><div id="colorblind">
+        <label><input type="radio" name="colorblind" value="false" checked><span id="labelColorblindOff" class="translate">关闭</span></label>
+        <label><input type="radio" name="colorblind" value="true"><span id="labelColorblindOn" class="translate">开启</span></label>
+      </div></section>
+    </div></div>
+    <div id="reset-confirm" hidden><p>清空本游戏的练习草稿与荷叶标记？大厅已经获得的通关记录会保留。</p><button type="button" id="reset-yes">清空练习记录</button><button type="button" id="reset-no">保留记录</button></div>
+    <div id="instructions"></div>
+    <div id="editor">
+      <label for="code" class="editor-label">CSS 编辑区 · 点击说明中的属性可查看帮助</label>
+      <div id="css"><div class="line-numbers" aria-hidden="true">1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10</div><pre id="before"></pre><textarea id="code" aria-label="CSS 声明" autocapitalize="none" autocomplete="off" autocorrect="off" spellcheck="false" maxlength="4096"></textarea><pre id="after"></pre></div>
+      <button type="button" id="next" class="translate disabled">下一关</button>
+    </div>
+    <p id="result" role="status" aria-live="polite">让同色青蛙落在对应荷叶上。</p>
+    <div id="share" aria-label="原作结局"><p id="ending-progress"></p><button type="button" id="return-final">返回最后一课</button><button type="button" id="review-lessons">复习课程</button></div>
+    <p class="credits">Thomas Park · Codepip<br>原作代码与课程 MIT · 青蛙与荷叶图像 CC-BY-3.0<br>简体中文翻译 Tim Guo · Playgarden 本地适配</p>
+  </section>
+  <section id="view" aria-label="青蛙与荷叶布局"><div id="board"><div id="pond"></div><div id="background"></div></div></section>
+  <div id="paused-cover" hidden><p>练习已暂停</p><button type="button" id="resume-game">继续练习</button></div>
+  <script src="third-party/jquery/dist/jquery.js"></script>
+  <script src="js/levels.js"></script><script src="js/docs.js"></script><script src="js/messages.js"></script><script src="js/game.js"></script><script src="adapter.js"></script>
+</body>
+</html>

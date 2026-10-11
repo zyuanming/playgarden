@@ -1,0 +1,4 @@
+Nonsense by Josh Faul. Source: https://github.com/jocafa/Nonsense/blob/f79032f7aace8aedaf72e009c9d1f6134e242a38/README.md
+
+License
+Do whatever you want with this code. The consequenses of your actions are your own responsibility.

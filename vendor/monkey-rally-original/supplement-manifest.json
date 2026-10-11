@@ -1,0 +1,103 @@
+[
+  {
+    "path": "licenses/Phaser-MIT.txt",
+    "bytes": 1099,
+    "gitBlobSha1": "fa6f41455b4653b0e772d70a3ad33d2f06e2df8a",
+    "sha256": "3f7bb924831dec491ac313b703b1ba90b4d1193ff07b54901639a818d9ebfad3",
+    "source": "https://github.com/phaserjs/phaser/blob/d9ffd6afd47f198a197e129723f15f6aa5538231/license.txt"
+  },
+  {
+    "path": "licenses/Pixi-MIT.txt",
+    "bytes": 1079,
+    "gitBlobSha1": "991e7ad56fc203d447d5947c4d8df29740a92ab7",
+    "sha256": "0a0e40b8cfc89ec3676ec8ab03944413c86a6ec55de606ba5f71ef5ed22c1ab5",
+    "source": "https://github.com/pixijs/pixijs/blob/a4ea181f2307976abba6e5c501fd1881a797b0dd/LICENSE"
+  },
+  {
+    "path": "licenses/Tween-MIT.txt",
+    "bytes": 1166,
+    "gitBlobSha1": "0de4f0b667617bcd4a7619c1a0c6b29a8d229442",
+    "sha256": "c95fecd88f2709bfc34e4d1f1ccc36d17048990e6ba26c283cfecdef0432936b",
+    "source": "https://github.com/tweenjs/tween.js/blob/6f0bf16f1dfe33ff676017df97e6db5103240aa3/LICENSE"
+  },
+  {
+    "path": "licenses/Signals-header.txt",
+    "bytes": 213,
+    "gitBlobSha1": "39719cebc483dc387aceca15f35c01fc3e8e790a",
+    "sha256": "7c6143da8a2813e59fa6f3edb446b270e3a012f57a1bb1e4389ccf772865504f",
+    "source": "https://github.com/millermedeiros/js-signals/blob/1a82bdd4097941bb010ab4a5757a67da460ce2f4/src/license.txt"
+  },
+  {
+    "path": "licenses/EventDispatcher-MIT.txt",
+    "bytes": 1068,
+    "gitBlobSha1": "8e4a9190b3fdb9e2573f32546cc37ba1060c9fbf",
+    "sha256": "f6be4a43cdb6a751010711ed619162fcba3628739f0cbb9020141253857ed204",
+    "source": "https://github.com/mrdoob/eventdispatcher.js/blob/5c644cc05ccc9c048c94fcc509fe09a0834e5ad9/LICENSE"
+  },
+  {
+    "path": "audit-reference/Nonsense-README.md",
+    "bytes": 2532,
+    "gitBlobSha1": "33805eec0cf807f331e24c9b28ae1e19c3fc165e",
+    "sha256": "637dadc6868c6f5bbea07c2e72374af19b4cfb04f51bdcdee0472b59bc34adf1",
+    "source": "https://github.com/jocafa/Nonsense/blob/f79032f7aace8aedaf72e009c9d1f6134e242a38/README.md",
+    "scope": "audit-reference-only"
+  },
+  {
+    "path": "licenses/jQuery-2013-MIT.txt",
+    "bytes": 1099,
+    "gitBlobSha1": "957f26d3e3b5ae3922f2f220263c51ab220088d4",
+    "sha256": "244779275ccf7def02a7724a707dfe8787f83afd5ccb6498b42296ae42484940",
+    "source": "https://github.com/jquery/jquery/blob/16b079b164d62bd807c612806842a13bf9b04d17/MIT-LICENSE.txt"
+  },
+  {
+    "path": "audit-reference/Alea-license-evidence.md",
+    "bytes": 2424,
+    "gitBlobSha1": "e7caacae14b77242e7ed99cddcaca6025b9d893e",
+    "sha256": "caeb6b25b9cd1e17410e8b4981077a8e776bb116f4d0adc679811ee94b38df3a",
+    "source": "https://github.com/nquinlan/better-random-numbers-for-javascript-mirror/blob/a6824ff9fa4dd101beb6061de466f358ec50ede1/LICENSE.md"
+  },
+  {
+    "path": "audit-reference/EventTarget-2011-source.js",
+    "bytes": 695,
+    "gitBlobSha1": "fac3ff2f4b220da275ec79b651fa747041d9b72b",
+    "sha256": "32d60c0b571ebc46a589091c6ecaa4b6fb97322763f1ab4a721b12affbc9ed40",
+    "source": "https://github.com/mrdoob/eventdispatcher.js/blob/5c644cc05ccc9c048c94fcc509fe09a0834e5ad9/src/EventTarget.js"
+  },
+  {
+    "path": "upstream/src/css/main.css",
+    "bytes": 216,
+    "gitBlobSha1": "d7225e3a458e2c8fd5204a6cc006646563d97eaa",
+    "sha256": "ef6d95cf7cb48a6f351797598f53d193bbe8999db7764de2e3e1c3a334d1bc71",
+    "source": "https://github.com/antila/ludum-dare-28/blob/79abaad33db0e0b5bddf4500800de881e2bc738c/src/css/main.css"
+  },
+  {
+    "path": "licenses/Alea-MIT.txt",
+    "bytes": 1083,
+    "sha256": "9f233fd692b74b35ed8d9b51ba5d119cc3e349de80c807e23aef9f8375418da4",
+    "kind": "notice extracted or assembled; see ENGINE-AUDIT.md"
+  },
+  {
+    "path": "licenses/Nonsense-permission.txt",
+    "bytes": 230,
+    "sha256": "2acf1e19fcc38f9b85d8160ab8036828b719020cd98b047e9fe9afd1f56011fd",
+    "kind": "notice extracted or assembled; see ENGINE-AUDIT.md"
+  },
+  {
+    "path": "licenses/Signals-MIT.txt",
+    "bytes": 1176,
+    "sha256": "88e6878e3cbcf9c028d6a88f51c9063631299b02c3151b6e814ff33bfad863ac",
+    "kind": "notice extracted or assembled; see ENGINE-AUDIT.md"
+  },
+  {
+    "path": "licenses/PolyK-MIT.txt",
+    "bytes": 1231,
+    "sha256": "238ca1d8b6b30ddd1c67db875f6906cb57dd337a91e77b0897a232b241a1a5c9",
+    "kind": "notice extracted or assembled; see ENGINE-AUDIT.md"
+  },
+  {
+    "path": "licenses/QuadTree-MIT.txt",
+    "bytes": 1101,
+    "sha256": "4b80993537e9e4d7ebfaf2e7280bf539e1ae1ca7dd41908bab8d04a80bd9b69e",
+    "kind": "notice extracted or assembled; see ENGINE-AUDIT.md"
+  }
+]

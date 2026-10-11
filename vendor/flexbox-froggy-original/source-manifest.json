@@ -1,0 +1,216 @@
+{
+  "note": "Only this whitelist and public-package are cleared for use as a source package. Adapter changes/runtime QA still required. Never publish audit-reference or transport files.",
+  "files": [
+    {
+      "path": "upstream/LICENSE",
+      "bytes": 1079,
+      "sha256": "db9d0cca08a4a6a184421fbb2a34127631ba2bbdd1303e33bbee26fca3b25f33",
+      "gitBlobSha1": "7b30748510cde28e5468368a9240af8d774dff5b",
+      "upstreamPath": "LICENSE",
+      "source": "https://github.com/thomaspark/flexboxfroggy/blob/9a6feab850a56cbe9ad90f3afcc95e88335bbec8/LICENSE"
+    },
+    {
+      "path": "upstream/README.md",
+      "bytes": 4227,
+      "sha256": "26d47e3d6e401cde909f70cd2b7c41019af09b82b61fcc38b79b93ca52693517",
+      "gitBlobSha1": "f6957ebb90ea61217e7cb3794b21e058b9cbca77",
+      "upstreamPath": "README.md",
+      "source": "https://github.com/thomaspark/flexboxfroggy/blob/9a6feab850a56cbe9ad90f3afcc95e88335bbec8/README.md"
+    },
+    {
+      "path": "upstream/css/style.css",
+      "bytes": 12672,
+      "sha256": "b8377af9ff7e27ab12ef73d7a2fd358ce08e43740bc29369248844fc8cc9387b",
+      "gitBlobSha1": "8d37c932806bbad05383b419f640ef011bb4c083",
+      "upstreamPath": "css/style.css",
+      "source": "https://github.com/thomaspark/flexboxfroggy/blob/9a6feab850a56cbe9ad90f3afcc95e88335bbec8/css/style.css"
+    },
+    {
+      "path": "upstream/images/frog-green-color-assist.svg",
+      "bytes": 2064,
+      "sha256": "5d76ac9668ed31c913bb2bf81b49ff3535bd98620dafa610d99857877439efe5",
+      "gitBlobSha1": "17c92c00e85be38ef9edec848caf033a69d9d72d",
+      "upstreamPath": "images/frog-green-color-assist.svg",
+      "source": "https://github.com/thomaspark/flexboxfroggy/blob/9a6feab850a56cbe9ad90f3afcc95e88335bbec8/images/frog-green-color-assist.svg"
+    },
+    {
+      "path": "upstream/images/frog-green.svg",
+      "bytes": 2453,
+      "sha256": "229d05340d1272bb49cc2aea000475478563386ed430e19865f56bfb8f139964",
+      "gitBlobSha1": "587b1bcf66c5aa7b8d90b82f9588edc45f18c668",
+      "upstreamPath": "images/frog-green.svg",
+      "source": "https://github.com/thomaspark/flexboxfroggy/blob/9a6feab850a56cbe9ad90f3afcc95e88335bbec8/images/frog-green.svg"
+    },
+    {
+      "path": "upstream/images/frog-red-color-assist.svg",
+      "bytes": 3978,
+      "sha256": "1beb036c30c841ad558f652c1bfbac544e7003705436134b68217f5d9dac1fe9",
+      "gitBlobSha1": "8119efe65781b0661b39dcd4829a189ba1027c9f",
+      "upstreamPath": "images/frog-red-color-assist.svg",
+      "source": "https://github.com/thomaspark/flexboxfroggy/blob/9a6feab850a56cbe9ad90f3afcc95e88335bbec8/images/frog-red-color-assist.svg"
+    },
+    {
+      "path": "upstream/images/frog-red.svg",
+      "bytes": 2449,
+      "sha256": "86810495e939fe775d435332c4a0f5e86ca5927c52a5031e7a4a0d3d5f8ff72d",
+      "gitBlobSha1": "f4e8b49d8e62f1a726ea5160c109b2450f9c75a7",
+      "upstreamPath": "images/frog-red.svg",
+      "source": "https://github.com/thomaspark/flexboxfroggy/blob/9a6feab850a56cbe9ad90f3afcc95e88335bbec8/images/frog-red.svg"
+    },
+    {
+      "path": "upstream/images/frog-yellow-color-assist.svg",
+      "bytes": 4730,
+      "sha256": "cb78d636fac44192dc87501c8e1fdda43f1923defb96a6d77ebd98a86301d7c9",
+      "gitBlobSha1": "0e708e53ad62f9c4b8eb112ec61211a57c2d6778",
+      "upstreamPath": "images/frog-yellow-color-assist.svg",
+      "source": "https://github.com/thomaspark/flexboxfroggy/blob/9a6feab850a56cbe9ad90f3afcc95e88335bbec8/images/frog-yellow-color-assist.svg"
+    },
+    {
+      "path": "upstream/images/frog-yellow.svg",
+      "bytes": 2598,
+      "sha256": "dd061fcc720848c5fca36c8dd54d5b644f61f18db777bd34d0b4a0365a13c1d1",
+      "gitBlobSha1": "79ac9b06e2fb8baf67afeed481a9bad2e3d7fa50",
+      "upstreamPath": "images/frog-yellow.svg",
+      "source": "https://github.com/thomaspark/flexboxfroggy/blob/9a6feab850a56cbe9ad90f3afcc95e88335bbec8/images/frog-yellow.svg"
+    },
+    {
+      "path": "upstream/images/lilypad-green-color-assist.svg",
+      "bytes": 1416,
+      "sha256": "5fef0cfacf5d2f8717e9eb84f40803c75ccec686b95820ca290424aff5018fef",
+      "gitBlobSha1": "9fa45d209eb55017365812d254d267dc64a448e2",
+      "upstreamPath": "images/lilypad-green-color-assist.svg",
+      "source": "https://github.com/thomaspark/flexboxfroggy/blob/9a6feab850a56cbe9ad90f3afcc95e88335bbec8/images/lilypad-green-color-assist.svg"
+    },
+    {
+      "path": "upstream/images/lilypad-green.svg",
+      "bytes": 1637,
+      "sha256": "931b0b561f1ed8fc18159eacbc01a0748616f1b0b8588c57ebeb17769e019de2",
+      "gitBlobSha1": "c48c849e9da4f5a7588f4c8bc87ca8720c1fb3f8",
+      "upstreamPath": "images/lilypad-green.svg",
+      "source": "https://github.com/thomaspark/flexboxfroggy/blob/9a6feab850a56cbe9ad90f3afcc95e88335bbec8/images/lilypad-green.svg"
+    },
+    {
+      "path": "upstream/images/lilypad-red-color-assist.svg",
+      "bytes": 2527,
+      "sha256": "44ee6ca2fe48ab4c5106b0da5421ed7bfa717d7a684663b6a9818b4eb81c927a",
+      "gitBlobSha1": "2e417a11d612cf201a61b60a9617a2a0a3e57266",
+      "upstreamPath": "images/lilypad-red-color-assist.svg",
+      "source": "https://github.com/thomaspark/flexboxfroggy/blob/9a6feab850a56cbe9ad90f3afcc95e88335bbec8/images/lilypad-red-color-assist.svg"
+    },
+    {
+      "path": "upstream/images/lilypad-red.svg",
+      "bytes": 1652,
+      "sha256": "68bf0c8784e8b74ca0288148db503949cca4120d7bae72ffe6e61eab14109c6c",
+      "gitBlobSha1": "6cec0abe76830b213ba405b6f0e63cad22dbf65b",
+      "upstreamPath": "images/lilypad-red.svg",
+      "source": "https://github.com/thomaspark/flexboxfroggy/blob/9a6feab850a56cbe9ad90f3afcc95e88335bbec8/images/lilypad-red.svg"
+    },
+    {
+      "path": "upstream/images/lilypad-yellow-color-assist.svg",
+      "bytes": 2261,
+      "sha256": "40beb61bf4e53e91fcb7bb8b007828494430bfdfc1a113e16a9d179a69f795b6",
+      "gitBlobSha1": "b98838aac2ec668680877bed987b593d1c654c58",
+      "upstreamPath": "images/lilypad-yellow-color-assist.svg",
+      "source": "https://github.com/thomaspark/flexboxfroggy/blob/9a6feab850a56cbe9ad90f3afcc95e88335bbec8/images/lilypad-yellow-color-assist.svg"
+    },
+    {
+      "path": "upstream/images/lilypad-yellow.svg",
+      "bytes": 1658,
+      "sha256": "0684e4c1b8d38613660b321fbdfa06ccf05afe209cad9cb6f1f937d11eeb4ba1",
+      "gitBlobSha1": "d985ef9fc1db600f36dcc2e8509a77010466beb0",
+      "upstreamPath": "images/lilypad-yellow.svg",
+      "source": "https://github.com/thomaspark/flexboxfroggy/blob/9a6feab850a56cbe9ad90f3afcc95e88335bbec8/images/lilypad-yellow.svg"
+    },
+    {
+      "path": "upstream/js/docs.js",
+      "bytes": 95098,
+      "sha256": "77a61f6f42d57e8a4549648f19e6cd3926581329cf79ca2ad5bade94f25ea639",
+      "gitBlobSha1": "465114d1f99d4a367c5e8e89abd8d99b5bdc1ede",
+      "upstreamPath": "js/docs.js",
+      "source": "https://github.com/thomaspark/flexboxfroggy/blob/9a6feab850a56cbe9ad90f3afcc95e88335bbec8/js/docs.js"
+    },
+    {
+      "path": "upstream/js/game.js",
+      "bytes": 15492,
+      "sha256": "830824192a0690d728b6ba50871137c0c7768cddec228668424919c742b36156",
+      "gitBlobSha1": "fdeab20a6023b98963996c88e03a1479bd8330ce",
+      "upstreamPath": "js/game.js",
+      "source": "https://github.com/thomaspark/flexboxfroggy/blob/9a6feab850a56cbe9ad90f3afcc95e88335bbec8/js/game.js"
+    },
+    {
+      "path": "upstream/js/levels.js",
+      "bytes": 641978,
+      "sha256": "a37500d98aa9b9588050a8ca310ca92bef03740ddab51e09bdc65cb99f0124cc",
+      "gitBlobSha1": "0afd25e4108aa494f36e8c34f8520acc494f126d",
+      "upstreamPath": "js/levels.js",
+      "source": "https://github.com/thomaspark/flexboxfroggy/blob/9a6feab850a56cbe9ad90f3afcc95e88335bbec8/js/levels.js"
+    },
+    {
+      "path": "upstream/js/messages.js",
+      "bytes": 36407,
+      "sha256": "b600762cb1e85d40ef3d32613ade2ee325b2525bf4f358d8ab0aae2b826d5ce6",
+      "gitBlobSha1": "af007d1140cb91d0e5ce947fda074790db233d65",
+      "upstreamPath": "js/messages.js",
+      "source": "https://github.com/thomaspark/flexboxfroggy/blob/9a6feab850a56cbe9ad90f3afcc95e88335bbec8/js/messages.js"
+    },
+    {
+      "path": "upstream/licenses/Animate-MIT.txt",
+      "bytes": 1232,
+      "sha256": "cbfb91f71cc779a3aa497da81696960a656282a7ca04c2f2698bc1e0df7631c7",
+      "gitBlobSha1": "3c3a9a2d99bd33bd53ab2f0c44b6acce21e50777",
+      "upstreamPath": "licenses/Animate-MIT.txt",
+      "source": "See supplement-manifest.json"
+    },
+    {
+      "path": "upstream/licenses/CC-BY-3.0.txt",
+      "bytes": 19467,
+      "sha256": "e6bc9e9c474700b708f568bac9e5a8a9bcb2b1dad53442f5ba449fcb848b8e76",
+      "gitBlobSha1": "1a16e05564d2aaa880bbe9e506a0a0226d8742cc",
+      "upstreamPath": "licenses/CC-BY-3.0.txt",
+      "source": "See supplement-manifest.json"
+    },
+    {
+      "path": "upstream/third-party/animate.css/README.md",
+      "bytes": 4622,
+      "sha256": "aee312c5458319f9acb51e30e80b6cf84dafd51978e9c3d6f6ceadfcee7a16c8",
+      "gitBlobSha1": "250a2154fb649595f4acb6f440462950544c54f8",
+      "upstreamPath": "node_modules/animate.css/README.md",
+      "source": "https://github.com/thomaspark/flexboxfroggy/blob/9a6feab850a56cbe9ad90f3afcc95e88335bbec8/node_modules/animate.css/README.md"
+    },
+    {
+      "path": "upstream/third-party/animate.css/animate.css",
+      "bytes": 71108,
+      "sha256": "d44da5fc59ec94a8a4e6b556caeeec506d03821b1e29cef8d950a32955c5619b",
+      "gitBlobSha1": "54fa40e170bb51480880ddb0bf17267d196c295e",
+      "upstreamPath": "node_modules/animate.css/animate.css",
+      "source": "https://github.com/thomaspark/flexboxfroggy/blob/9a6feab850a56cbe9ad90f3afcc95e88335bbec8/node_modules/animate.css/animate.css"
+    },
+    {
+      "path": "upstream/third-party/jquery/LICENSE.txt",
+      "bytes": 1095,
+      "sha256": "1ff603118efdb313799567cb4a408594954384f40843ca6f29c596f5b1f8907d",
+      "gitBlobSha1": "e3dbacb999cef3718b1c4cc83d9aa45f869256a6",
+      "upstreamPath": "node_modules/jquery/LICENSE.txt",
+      "source": "https://github.com/thomaspark/flexboxfroggy/blob/9a6feab850a56cbe9ad90f3afcc95e88335bbec8/node_modules/jquery/LICENSE.txt"
+    },
+    {
+      "path": "upstream/third-party/jquery/dist/jquery.js",
+      "bytes": 287630,
+      "sha256": "416a3b2c3bf16d64f6b5b6d0f7b079df2267614dd6847fc2f3271b4409233c37",
+      "gitBlobSha1": "50937333b99a5e168ac9e8292b22edd7e96c3e6a",
+      "upstreamPath": "node_modules/jquery/dist/jquery.js",
+      "source": "https://github.com/thomaspark/flexboxfroggy/blob/9a6feab850a56cbe9ad90f3afcc95e88335bbec8/node_modules/jquery/dist/jquery.js"
+    },
+    {
+      "path": "upstream/third-party/jquery/external/sizzle/LICENSE.txt",
+      "bytes": 1605,
+      "sha256": "a078a8f80016416042c2e5f04dbb7f499f0f6deebb086511f3a3b72633a2d761",
+      "gitBlobSha1": "88fcd178b2d37f872481d686d1ddcdd3b4929648",
+      "upstreamPath": "node_modules/jquery/external/sizzle/LICENSE.txt",
+      "source": "https://github.com/thomaspark/flexboxfroggy/blob/9a6feab850a56cbe9ad90f3afcc95e88335bbec8/node_modules/jquery/external/sizzle/LICENSE.txt"
+    }
+  ],
+  "repository": "https://github.com/thomaspark/flexboxfroggy",
+  "commit": "9a6feab850a56cbe9ad90f3afcc95e88335bbec8",
+  "levelCount": 24
+}

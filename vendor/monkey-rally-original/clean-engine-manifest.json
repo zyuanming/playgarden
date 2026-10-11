@@ -1,0 +1,56 @@
+{
+  "source": "antila/ludum-dare-28@79abaad33db0e0b5bddf4500800de881e2bc738c:src/js/lib/phaser.js",
+  "originalGitBlobSha1": "b7fa9843ee2f4e8afb56f252dd39361b8c9f8318",
+  "originalBytes": 1156613,
+  "sourceSha256": "194c8117875440faa84a6e446ad5b56b806e06420c16636cf41c9671e3095b76",
+  "path": "clean-source/src/js/lib/phaser.js",
+  "bytes": 1155631,
+  "sha256": "2659d5886eff76a5802376f478701234b6200ab207a57cb6aa2d5ef89e4330b6",
+  "gitBlobSha1": "d8d8e1a2aa4b411bb8baa82f5156c7f0b3c2100d",
+  "replacements": [
+    {
+      "helper": "String padding: replace restrictive WebToolkit implementation",
+      "removedBytes": 1384,
+      "removedSha256": "ac11b432ebd4b1b9e7a24492cd02e2b69580cebb02ea2f4c0456c4ab84c5da3e",
+      "replacementBytes": 778,
+      "replacementSha256": "1bf19d0770af2623972794c82bd8d0087bdf4e6acfcf094863c6c643bea1fb60"
+    },
+    {
+      "helper": "Polygon containment: replace unpinned third-party snippet",
+      "removedBytes": 552,
+      "removedSha256": "d6dd719cf6cba69daa34801dd6438b417fee3d50db51425cffac93d1b84502ca",
+      "replacementBytes": 676,
+      "replacementSha256": "82b08336db10707a1c2251411ba82d7c40292d81eef1a56c59f5a4e6b358f871"
+    },
+    {
+      "helper": "Ellipse path 1: replace copied Stack Overflow Bezier body",
+      "removedBytes": 848,
+      "removedSha256": "38db8a103e4888944e543793ceac5597bc0f72b5ae57a462a87e8894c82bdb1b",
+      "replacementBytes": 273,
+      "replacementSha256": "14c90291bf55b7eafbcabf99257c70b9fb00e77f026073fcce62c009f8c982b6"
+    },
+    {
+      "helper": "Ellipse path 2: replace copied Stack Overflow Bezier body",
+      "removedBytes": 846,
+      "removedSha256": "e0393af75a206a757e8a844743ef7420dbfdc424112ccf954739f6efc2d62163",
+      "replacementBytes": 273,
+      "replacementSha256": "14c90291bf55b7eafbcabf99257c70b9fb00e77f026073fcce62c009f8c982b6"
+    },
+    {
+      "helper": "Font height: replace copied Stack Overflow DOM measurement",
+      "removedBytes": 815,
+      "removedSha256": "23a5c07d9603c6fcd4569b85374a8ca122eee48a40876896b49f2d50fcf93a6d",
+      "replacementBytes": 614,
+      "replacementSha256": "5e7477d412ff102c711fef0bfec2ae4345d6c27dc207b96e39dcb71031f243fc"
+    },
+    {
+      "helper": "UUID: replace unpinned Gist expression",
+      "removedBytes": 450,
+      "removedSha256": "4aae9aebb7b5ce4f4f48e695583aa3f47763008e7682ebdf73537dbfeb9d14fd",
+      "replacementBytes": 889,
+      "replacementSha256": "e109bcfff7b400e20cff2aa4c1ef1cd02c2b9f3dcfa88101af6be035e7723315"
+    }
+  ],
+  "upstreamBytesRetained": 1151718,
+  "runtimeExecuted": false
+}

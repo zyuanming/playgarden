@@ -1,0 +1,112 @@
+{
+  "game": "css-diner",
+  "commit": "566aaa01314caddc7a9034d793250cf2b8f12a4e",
+  "levelCount": 32,
+  "files": [
+    {
+      "path": "public/css-diner/LICENSE",
+      "sha256": "bef1747eda88b9ed46e94830b0d978c3499dad5dfe38d364971760881901dadd",
+      "license": "MPL-2.0",
+      "source": "https://github.com/flukeout/css-diner/blob/566aaa01314caddc7a9034d793250cf2b8f12a4e/LICENSE",
+      "relationship": "exact cleared bytes"
+    },
+    {
+      "path": "public/css-diner/NOTICE.md",
+      "sha256": "1373bb917b84a6e0f2b25131fe5cb59d2994f6bef3d4e7064bcb1e9d37ad3e3c",
+      "license": "Component license documentation; no replacement grant",
+      "source": "Original provenance and modification notice authored for this source package.",
+      "relationship": "exact cleared bytes"
+    },
+    {
+      "path": "public/css-diner/NOTICE.txt",
+      "sha256": "4ac87cfd0ba8d23493525b14fba93c8369406f1be43b707c878f0ea01cd228ef",
+      "license": "Component license documentation; no replacement grant",
+      "source": "Playgarden adaptation authored 2026-10-10",
+      "relationship": "standalone addition"
+    },
+    {
+      "path": "public/css-diner/README.md",
+      "sha256": "fda3636c4ffb6356bfff7ed8a8cc6bfe109039cb537199b0aaa3c86bb770a75c",
+      "license": "MPL-2.0",
+      "source": "https://github.com/flukeout/css-diner/blob/566aaa01314caddc7a9034d793250cf2b8f12a4e/README.md",
+      "relationship": "exact cleared bytes"
+    },
+    {
+      "path": "public/css-diner/adapter.css",
+      "sha256": "2d667c4ae374ffc6f1c1dd85da1ceda8bfc2b707f0f89653f5b85b5427e423eb",
+      "license": "GPL-3.0-only",
+      "source": "Playgarden adaptation authored 2026-10-10",
+      "relationship": "standalone addition"
+    },
+    {
+      "path": "public/css-diner/adapter.js",
+      "sha256": "c31ea88af4b6435508323549cd4a1250864cb89eecbfea5f54e1a3aa8902524c",
+      "license": "GPL-3.0-only",
+      "source": "Playgarden adaptation authored 2026-10-10",
+      "relationship": "standalone addition"
+    },
+    {
+      "path": "public/css-diner/css/style.css",
+      "sha256": "84bce308d60f87630d6fe35c4eb2850b928e9aa79e1b2fc9c0f47ff871e40378",
+      "license": "MPL-2.0",
+      "source": "https://github.com/flukeout/css-diner/blob/566aaa01314caddc7a9034d793250cf2b8f12a4e/css/style.css",
+      "relationship": "exact cleared bytes"
+    },
+    {
+      "path": "public/css-diner/index.html",
+      "sha256": "dda20599ffab0bdaafe4137f5f892049d3fba15731c238fa288a885fa6fa881f",
+      "license": "MPL-2.0",
+      "source": "https://github.com/flukeout/css-diner/blob/566aaa01314caddc7a9034d793250cf2b8f12a4e/index.html",
+      "relationship": "modified covered source"
+    },
+    {
+      "path": "public/css-diner/js/jquery.js",
+      "sha256": "ce0343e1d6f489768eeefe022c12181c6a0822e756239851310acf076d23d10c",
+      "license": "MIT",
+      "source": "https://github.com/jquery/jquery/blob/91cd1587ed4a1d4f3834227e8eb3cc30cb385409/dist/jquery.js",
+      "relationship": "exact cleared bytes"
+    },
+    {
+      "path": "public/css-diner/js/levels.js",
+      "sha256": "a3758d9db768e4568cd9bfcb0afefdcec32eda684711c9c2bf6fc36678ff3daa",
+      "license": "MPL-2.0",
+      "source": "https://github.com/flukeout/css-diner/blob/566aaa01314caddc7a9034d793250cf2b8f12a4e/js/levels.js",
+      "relationship": "exact cleared bytes"
+    },
+    {
+      "path": "public/css-diner/js/restaurant.js",
+      "sha256": "89fd60bb95ee7ec35ed43fcf62b92f7f8b2657b83bfd741f8a5f66e7269b4cab",
+      "license": "MPL-2.0",
+      "source": "https://github.com/flukeout/css-diner/blob/566aaa01314caddc7a9034d793250cf2b8f12a4e/js/restaurant.js",
+      "relationship": "modified covered source"
+    },
+    {
+      "path": "public/css-diner/licenses/Playgarden-GPL-3.0.txt",
+      "sha256": "fb981668c18a279e285fc4d83fba1e836cc84dd4daa73c9697d3cfd2d8aca6e0",
+      "license": "GPL-3.0-only",
+      "source": "Playgarden adaptation authored 2026-10-10",
+      "relationship": "standalone addition"
+    },
+    {
+      "path": "public/css-diner/licenses/jquery-MIT.txt",
+      "sha256": "44254c9a91a4647b9192584f17b2d27bf43696ba1ea16b0e88ac7bd6bf0780f1",
+      "license": "MIT",
+      "source": "https://github.com/jquery/jquery/blob/91cd1587ed4a1d4f3834227e8eb3cc30cb385409/MIT-LICENSE.txt",
+      "relationship": "exact cleared bytes"
+    },
+    {
+      "path": "public/css-diner/licenses/sizzle-MIT.txt",
+      "sha256": "244779275ccf7def02a7724a707dfe8787f83afd5ccb6498b42296ae42484940",
+      "license": "MIT",
+      "source": "https://github.com/jquery/sizzle/blob/0fd151739d05648118002914c7a638411bbd0dbe/MIT-LICENSE.txt",
+      "relationship": "exact cleared bytes"
+    },
+    {
+      "path": "public/css-diner/zh.js",
+      "sha256": "57d875212dfe9d887fe5df73e8ae4f65533a1d59b59ff0670c5a06cc9bd3479e",
+      "license": "MPL-2.0",
+      "source": "Playgarden adaptation authored 2026-10-10",
+      "relationship": "modified covered source"
+    }
+  ]
+}

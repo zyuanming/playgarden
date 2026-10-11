@@ -1,0 +1,30 @@
+/* SPDX-License-Identifier: GPL-3.0-only */
+:root { color-scheme: light; font: 15px/1.45 system-ui, sans-serif; color: #17363b; background: #eef7f4; }
+* { box-sizing: border-box; }
+body { margin: 0; }
+main { width: 100%; overflow: hidden; padding: 10px; }
+nav,.directions,.actions { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+nav { margin-bottom: 9px; }
+button { min-width: 46px; min-height: 46px; padding: 8px 13px; border: 1px solid #729b94; border-radius: 10px; background: #fff; color: #17363b; font: inherit; cursor: pointer; touch-action: manipulation; }
+button:hover:not(:disabled) { background: #dcefe9; }
+button:disabled { opacity: .5; cursor: default; }
+button:focus-visible,main:focus-visible { outline: 3px solid #ac5413; outline-offset: 2px; }
+#stage-wrap { position: relative; width: 100%; aspect-ratio: 16 / 9; border-radius: 12px; overflow: hidden; background: #173f46; }
+#stage { position: absolute; inset: 0; }
+#stage canvas { display: block; width: 100% !important; height: 100% !important; margin: 0 !important; }
+#pause-cover { position: absolute; inset: 0; place-items: center; background: #123b46bb; color: white; font-size: 26px; font-weight: 750; }
+#pause-cover:not([hidden]) { display: grid; }
+#caption { margin: 10px 0; min-height: 22px; }
+#scene-controls { display: flex; flex-wrap: wrap; gap: 8px; }
+#controls { padding: 10px; background: #e1f0e8; border-radius: 12px; }
+#controls[hidden] { display: none; }
+.directions button { flex: 1; min-width: 65px; font-weight: 700; }
+.actions { margin-top: 8px; }
+#play { background: #176951; color: white; }
+#queue-label { font-size: 13px; }
+#queue { display: flex; flex-wrap: wrap; gap: 5px; max-height: 152px; overflow: auto; list-style: none; padding: 0; margin: 8px 0; min-height: 46px; }
+#queue li { display: inline-flex; }
+#queue button { min-width: 47px; padding: 4px 7px; }
+#queue button[data-consumed="true"] { background: #cbddd6; }
+.help { margin: 8px 0 0; font-size: 13px; }
+@media (max-width: 500px) { main { padding: 5px; } nav { gap: 5px; } nav button { padding: 6px 9px; font-size: 13px; } .actions button { padding: 7px 10px; font-size: 13px; } }

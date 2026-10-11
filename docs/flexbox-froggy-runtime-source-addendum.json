@@ -1,0 +1,37 @@
+{
+  "name": "Flexbox Froggy complete original 24-lesson course",
+  "version": "9a6feab850a56cbe9ad90f3afcc95e88335bbec8",
+  "license": "MIT; artwork CC-BY-3.0; Playgarden adapter GPL-3.0-only",
+  "source": "https://github.com/thomaspark/flexboxfroggy/tree/9a6feab850a56cbe9ad90f3afcc95e88335bbec8",
+  "commit": "9a6feab850a56cbe9ad90f3afcc95e88335bbec8",
+  "preferredSource": [
+    "vendor/flexbox-froggy-original/upstream/js/game.js",
+    "vendor/flexbox-froggy-original/upstream/js/levels.js",
+    "vendor/flexbox-froggy-original/upstream/js/docs.js",
+    "vendor/flexbox-froggy-original/upstream/js/messages.js",
+    "vendor/flexbox-froggy-original/upstream/css/style.css",
+    "vendor/flexbox-froggy-original/upstream/images",
+    "vendor/flexbox-froggy-original/upstream/third-party/jquery/dist/jquery.js",
+    "vendor/flexbox-froggy-original/upstream/third-party/animate.css/animate.css",
+    "public/flexbox-froggy/adapter.js",
+    "public/flexbox-froggy/adapter.css",
+    "public/flexbox-froggy/index.html",
+    "src/games/FlexboxFroggy.tsx",
+    "src/games/flexboxFroggy.css"
+  ],
+  "buildSources": [
+    "scripts/flexbox-froggy/adapt.py",
+    "scripts/flexbox-froggy/package-source.py",
+    "scripts/flexbox-froggy/verify-sources.py"
+  ],
+  "scope": "24 original challenge objects, complete multilingual lessons and help, native Flexbox/color-position checker and original uncounted 25-frog ending. Twelve unmodified separately licensed SVGs. Readable jQuery 3.5.1, embedded Sizzle and Animate.css 3.4.0; no dependency installation or upstream build. Opaque sandbox with validated local bridge, original engine plus cancellable lifecycle seams.",
+  "notices": [
+    "public/flexbox-froggy/NOTICE.txt",
+    "public/flexbox-froggy/LICENSE",
+    "public/flexbox-froggy/licenses/CC-BY-3.0.txt",
+    "public/flexbox-froggy/licenses/Animate-MIT.txt",
+    "public/flexbox-froggy/licenses/Playgarden-GPL-3.0.txt",
+    "public/flexbox-froggy/third-party/jquery/LICENSE.txt",
+    "public/flexbox-froggy/third-party/jquery/external/sizzle/LICENSE.txt"
+  ]
+}

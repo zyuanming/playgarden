@@ -1,0 +1,212 @@
+{
+  "game": "css-diner",
+  "commit": "566aaa01314caddc7a9034d793250cf2b8f12a4e",
+  "archive": "public/css-diner/source.zip",
+  "archiveExclusions": [
+    "distribution-manifest.json (hashes the archive externally)",
+    "source.zip (the archive itself)",
+    "HANDOFF.md (integration status, not runtime source)"
+  ],
+  "files": [
+    {
+      "path": "docs/css-diner-catalog-entry.json",
+      "bytes": 1135,
+      "sha256": "6b84e82656770bdc6a8e72e0c6189093bdd7cfdb58d5bc918cb00e5af9b097cf"
+    },
+    {
+      "path": "docs/css-diner-covered-modifications.patch",
+      "bytes": 20895,
+      "sha256": "210bd8ab909c7441b514e23fb8ad8169fa32b3befa7d6b70209593b4ece40183"
+    },
+    {
+      "path": "docs/css-diner-host-contract.ts",
+      "bytes": 518,
+      "sha256": "9c6c468d4593c882f9bff8b2c927d240bf479f465c178448c2e852a71b0eabeb"
+    },
+    {
+      "path": "docs/css-diner-notice-addendum.md",
+      "bytes": 1978,
+      "sha256": "63aa12d8d63c4912b50db5a877b4ab0b949d5eabce2d511d535e6a4aae6daa4d"
+    },
+    {
+      "path": "docs/css-diner-review-fixes.md",
+      "bytes": 3679,
+      "sha256": "cb049399419556db57d3059248738c1a9daacc53e26eddbd1013f426e6240292"
+    },
+    {
+      "path": "docs/css-diner-runtime-source-addendum.json",
+      "bytes": 1698,
+      "sha256": "640d46ada113f9d5d75a6d0230afe8564ecf4c5e1046b22d93c25938a62c8ae5"
+    },
+    {
+      "path": "docs/css-diner-source-map.json",
+      "bytes": 4921,
+      "sha256": "c13c73d0791260d813a52e3648f6d632b7fc851b47cf571033a0eed1e18fa0cd"
+    },
+    {
+      "path": "docs/css-diner-validation.md",
+      "bytes": 4087,
+      "sha256": "0a40472a606dea6e3c43cb636af185e3fe3c677d1ba3c387a983c82f66d5bd2d"
+    },
+    {
+      "path": "e2e/css-diner.spec.ts",
+      "bytes": 15574,
+      "sha256": "5d0ddfd15c400931a0138768677ec4d28906fcea898c05b14ad29e83b43f51c2"
+    },
+    {
+      "path": "public/css-diner/LICENSE",
+      "bytes": 15977,
+      "sha256": "bef1747eda88b9ed46e94830b0d978c3499dad5dfe38d364971760881901dadd"
+    },
+    {
+      "path": "public/css-diner/NOTICE.md",
+      "bytes": 2075,
+      "sha256": "1373bb917b84a6e0f2b25131fe5cb59d2994f6bef3d4e7064bcb1e9d37ad3e3c"
+    },
+    {
+      "path": "public/css-diner/NOTICE.txt",
+      "bytes": 58501,
+      "sha256": "4ac87cfd0ba8d23493525b14fba93c8369406f1be43b707c878f0ea01cd228ef"
+    },
+    {
+      "path": "public/css-diner/README.md",
+      "bytes": 2529,
+      "sha256": "fda3636c4ffb6356bfff7ed8a8cc6bfe109039cb537199b0aaa3c86bb770a75c"
+    },
+    {
+      "path": "public/css-diner/adapter.css",
+      "bytes": 8322,
+      "sha256": "2d667c4ae374ffc6f1c1dd85da1ceda8bfc2b707f0f89653f5b85b5427e423eb"
+    },
+    {
+      "path": "public/css-diner/adapter.js",
+      "bytes": 14859,
+      "sha256": "c31ea88af4b6435508323549cd4a1250864cb89eecbfea5f54e1a3aa8902524c"
+    },
+    {
+      "path": "public/css-diner/css/style.css",
+      "bytes": 22382,
+      "sha256": "84bce308d60f87630d6fe35c4eb2850b928e9aa79e1b2fc9c0f47ff871e40378"
+    },
+    {
+      "path": "public/css-diner/index.html",
+      "bytes": 5868,
+      "sha256": "dda20599ffab0bdaafe4137f5f892049d3fba15731c238fa288a885fa6fa881f"
+    },
+    {
+      "path": "public/css-diner/js/jquery.js",
+      "bytes": 282944,
+      "sha256": "ce0343e1d6f489768eeefe022c12181c6a0822e756239851310acf076d23d10c"
+    },
+    {
+      "path": "public/css-diner/js/levels.js",
+      "bytes": 22987,
+      "sha256": "a3758d9db768e4568cd9bfcb0afefdcec32eda684711c9c2bf6fc36678ff3daa"
+    },
+    {
+      "path": "public/css-diner/js/restaurant.js",
+      "bytes": 16266,
+      "sha256": "89fd60bb95ee7ec35ed43fcf62b92f7f8b2657b83bfd741f8a5f66e7269b4cab"
+    },
+    {
+      "path": "public/css-diner/licenses/Playgarden-GPL-3.0.txt",
+      "bytes": 34674,
+      "sha256": "fb981668c18a279e285fc4d83fba1e836cc84dd4daa73c9697d3cfd2d8aca6e0"
+    },
+    {
+      "path": "public/css-diner/licenses/jquery-MIT.txt",
+      "bytes": 1099,
+      "sha256": "44254c9a91a4647b9192584f17b2d27bf43696ba1ea16b0e88ac7bd6bf0780f1"
+    },
+    {
+      "path": "public/css-diner/licenses/sizzle-MIT.txt",
+      "bytes": 1099,
+      "sha256": "244779275ccf7def02a7724a707dfe8787f83afd5ccb6498b42296ae42484940"
+    },
+    {
+      "path": "public/css-diner/zh.js",
+      "bytes": 8212,
+      "sha256": "57d875212dfe9d887fe5df73e8ae4f65533a1d59b59ff0670c5a06cc9bd3479e"
+    },
+    {
+      "path": "scripts/css-diner/package-source.py",
+      "bytes": 1924,
+      "sha256": "4bc7a0c3e396adcefced2f8c339dfb9e554da1e3ac3c1d758058037c929e315a"
+    },
+    {
+      "path": "scripts/css-diner/verify-sources.py",
+      "bytes": 6040,
+      "sha256": "9c671bb3db850d3a3a8671169f20aedecb7744c149659675d7420d4c02f25221"
+    },
+    {
+      "path": "src/games/CssDiner.tsx",
+      "bytes": 11576,
+      "sha256": "3b24cafd9d2a2a02d118abc791388fb0a208e52d62c79e03c7f1224d86d69817"
+    },
+    {
+      "path": "src/games/cssDiner.css",
+      "bytes": 1217,
+      "sha256": "0b69462ec929f800f27d516187a678cc1c77deb27e45ab55cad39abfd89b3e96"
+    },
+    {
+      "path": "vendor/css-diner-original/cleared/LICENSE",
+      "bytes": 15977,
+      "sha256": "bef1747eda88b9ed46e94830b0d978c3499dad5dfe38d364971760881901dadd"
+    },
+    {
+      "path": "vendor/css-diner-original/cleared/NOTICE.md",
+      "bytes": 2075,
+      "sha256": "1373bb917b84a6e0f2b25131fe5cb59d2994f6bef3d4e7064bcb1e9d37ad3e3c"
+    },
+    {
+      "path": "vendor/css-diner-original/cleared/README.md",
+      "bytes": 2529,
+      "sha256": "fda3636c4ffb6356bfff7ed8a8cc6bfe109039cb537199b0aaa3c86bb770a75c"
+    },
+    {
+      "path": "vendor/css-diner-original/cleared/css/style.css",
+      "bytes": 22382,
+      "sha256": "84bce308d60f87630d6fe35c4eb2850b928e9aa79e1b2fc9c0f47ff871e40378"
+    },
+    {
+      "path": "vendor/css-diner-original/cleared/index.html",
+      "bytes": 5026,
+      "sha256": "7885a4948841d02c2847d7c1f10973616e60764005d7b380fae844d802eac42b"
+    },
+    {
+      "path": "vendor/css-diner-original/cleared/js/jquery.js",
+      "bytes": 282944,
+      "sha256": "ce0343e1d6f489768eeefe022c12181c6a0822e756239851310acf076d23d10c"
+    },
+    {
+      "path": "vendor/css-diner-original/cleared/js/levels.js",
+      "bytes": 22987,
+      "sha256": "a3758d9db768e4568cd9bfcb0afefdcec32eda684711c9c2bf6fc36678ff3daa"
+    },
+    {
+      "path": "vendor/css-diner-original/cleared/js/restaurant.js",
+      "bytes": 15852,
+      "sha256": "938480373f064123b89ffd99d1a40ac5d40cf5f0ab9efe1bc30689059f33f69e"
+    },
+    {
+      "path": "vendor/css-diner-original/cleared/licenses/jquery-MIT.txt",
+      "bytes": 1099,
+      "sha256": "44254c9a91a4647b9192584f17b2d27bf43696ba1ea16b0e88ac7bd6bf0780f1"
+    },
+    {
+      "path": "vendor/css-diner-original/cleared/licenses/sizzle-MIT.txt",
+      "bytes": 1099,
+      "sha256": "244779275ccf7def02a7724a707dfe8787f83afd5ccb6498b42296ae42484940"
+    },
+    {
+      "path": "vendor/css-diner-original/publication-manifest.json",
+      "bytes": 7036,
+      "sha256": "4c756ce0c027bd9fd6991c8c8eba962db39a89afd331730f84a03c5af1d960d4"
+    },
+    {
+      "path": "public/css-diner/source.zip",
+      "bytes": 294326,
+      "sha256": "ec397c299ce2f0f16edbe81803f1b9e6a63e50110531d16c7a9063b19cb5cba5"
+    }
+  ]
+}

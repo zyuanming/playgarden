@@ -1,0 +1,27 @@
+{
+  "id": "flexbox-froggy",
+  "title": "弹性盒子青蛙",
+  "subtitle": "写下真正的 Flexbox 布局，让青蛙们回到同色荷叶。完整保留原作 24 课。",
+  "category": "编程启蒙",
+  "difficulty": "中级",
+  "tone": "green",
+  "levelCount": 24,
+  "allowUndo": false,
+  "resumeKey": "playgarden.flexbox-froggy.v1",
+  "artwork": {
+    "url": "./flexbox-froggy/images/frog-green.svg",
+    "position": "center",
+    "size": "contain"
+  },
+  "source": {
+    "kind": "adapted",
+    "license": "MIT",
+    "author": "Thomas Park / Codepip",
+    "workTitle": "Flexbox Froggy（完整原作 24 课及结局）",
+    "url": "https://github.com/thomaspark/flexboxfroggy/tree/9a6feab850a56cbe9ad90f3afcc95e88335bbec8",
+    "commit": "9a6feab850a56cbe9ad90f3afcc95e88335bbec8",
+    "notice": "./flexbox-froggy/NOTICE.txt",
+    "notes": "原作完整 24 课、中文课程、属性帮助、实际浏览器 Flexbox 位置与颜色校验及结局保留。代码与文字 MIT；Thomas Park 青蛙/荷叶原图单独为 CC-BY-3.0，未经修改；jQuery/Sizzle 与 Animate.css 为 MIT。本站宿主与隔离适配 GPL-3.0-only。自由选择不会自动获得通关，全部 24 课分别完成才算完整课程通关。"
+  },
+  "component": "../games/FlexboxFroggy"
+}

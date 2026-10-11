@@ -1,0 +1,87 @@
+<!doctype html>
+<!-- SPDX-License-Identifier: MPL-2.0
+  CSS Diner by @flukeout and contributors. Modified 2026-10-10 for Playgarden:
+  local-only resources, accessible controls, responsive layout and Chinese text.
+  The original table/editor/sidebar structure is retained. See NOTICE.txt. -->
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'none'; font-src 'none'; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <title>CSS 选择器餐厅 · 32 道原作谜题</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="adapter.css">
+  <script src="js/jquery.js" defer></script>
+  <script src="js/levels.js" defer></script>
+  <script src="js/restaurant.js" defer></script>
+  <script src="zh.js" defer></script>
+  <script src="adapter.js" defer></script>
+</head>
+<body>
+  <main class="left-col">
+    <header>CSS Diner <span>选择器餐厅</span><div class="logo"><plate><apple></apple></plate></div></header>
+    <h2 class="order"></h2>
+    <p class="table-guide">选中有金色边框、正在晃动的目标。点击食物或 HTML 可以查看标签。</p>
+    <div class="local-toolbar">
+      <button id="pause-game" type="button">暂停练习</button>
+      <button id="retry-game" type="button">重试本关</button>
+      <button class="note-toggle" type="button">玩法说明</button>
+    </div>
+    <div class="note">
+      <h3>用选择器点一道菜</h3>
+      <p>CSS 选择器决定哪些 HTML 元素应用样式。例如 p 选中全部段落；plate 选中全部盘子。</p>
+      <p>在编辑区输入选择器，再按 Enter 或“运行选择器”。需要选中全部目标，并且不多选。等价的有效选择器也能过关。</p>
+      <p>观察标签的嵌套、class、id 和 for 属性。桌上的图形和下方 HTML 是同一份原作关卡数据。输入 1 到 32 的数字可跳关，跳关不会获得完成记录。</p>
+      <button id="close-note" type="button">知道了</button>
+    </div>
+    <div class="game-scroll" tabindex="0" aria-label="餐桌，可横向滚动查看全部食物">
+      <div class="game-wrapper">
+        <div class="table-wrapper">
+          <div class="table-surface"></div><div class="nametags"></div><div class="table"></div>
+        </div>
+        <div class="table-edge"><div class="table-leg"></div><div class="table-leg"></div></div>
+      </div>
+    </div>
+    <p id="result" role="status" aria-live="polite">餐桌准备中…</p>
+    <section id="ending" hidden aria-label="原作结局">
+      <p id="ending-progress"></p>
+      <button id="review-game" type="button">选择其他关卡</button>
+      <button id="retry-final" type="button">再做最后一关</button>
+    </section>
+    <div class="editor">
+      <div class="editor-pane">
+        <div class="input-header"><div class="file-name">style.css</div>CSS 编辑器</div>
+        <div class="file-window css-view">
+          <div class="line-numbers" aria-hidden="true">1<br>2<br>3<br>4<br>5<br>6<br>7<br>8</div>
+          <label for="selector">CSS 选择器</label>
+          <input id="selector" class="input-strobe" type="text" placeholder="输入 CSS 选择器" maxlength="1024" autocomplete="off" autocapitalize="off" spellcheck="false" enterkeyhint="go">
+          <button class="enter-button" type="button">运行选择器</button>
+          <div class="code-context">{<br>  /* 样式会应用到你选中的元素 */<br>}</div>
+          <p class="help">按 Enter 运行。输入关卡编号可以自由跳关。</p>
+        </div>
+      </div>
+      <div class="editor-pane html-view">
+        <div class="input-header"><div class="file-name">table.html</div>HTML 查看器</div>
+        <div class="file-window"><div class="markup" aria-label="本关 HTML"></div></div>
+      </div>
+    </div>
+    <p class="what-is-this">CSS Diner 原作：@flukeout 与贡献者。代码、关卡与 CSS 绘制图形：MPL-2.0。jQuery / Sizzle：MIT。完整署名和源码位于游戏外层说明。</p>
+    <div class="helper" role="status"></div>
+  </main>
+  <aside class="right-col" aria-label="选择器帮助和关卡">
+    <div class="help-wrapper">
+      <h1 class="level-header"><span class="level-text"></span><span class="checkmark" aria-hidden="true"></span></h1>
+      <div class="level-nav"><button class="previous" type="button" aria-label="上一关">←</button><button class="next" type="button" aria-label="下一关">→</button></div>
+      <div class="level-progress"><div class="progress"></div></div>
+      <div class="display-help"><h3 class="selector-name"></h3><h2 class="title"></h2><h3 class="syntax"></h3><div class="hint"></div><h4 class="examples-title">示例</h4><div class="examples"></div></div>
+      <details id="original-help"><summary>原作英文说明与示例</summary><div id="original-help-content"></div></details>
+    </div>
+    <button class="level-menu-toggle-wrapper" type="button" aria-expanded="false" aria-controls="level-menu">选择关卡</button>
+    <div class="level-menu" id="level-menu">
+      <h2>32 道原作谜题</h2><div class="levels"></div><button class="reset-progress" type="button">清空餐厅记录</button>
+    </div>
+    <section id="reset-confirm" hidden><p>清空这家餐厅的草稿、尝试记录和勾选标记？大厅已经获得的历史通关记录会保留。</p><button id="reset-yes" type="button">确认清空餐厅记录</button><button id="reset-no" type="button">保留记录</button></section>
+  </aside>
+  <div id="paused-cover" hidden><p>已暂停，餐桌和倒计时都已停住。</p><button id="resume-game" type="button">继续练习</button></div>
+</body>
+</html>
