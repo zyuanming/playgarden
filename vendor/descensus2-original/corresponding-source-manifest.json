@@ -9,8 +9,8 @@
     },
     {
       "path": "e2e/descensus-2.spec.ts",
-      "bytes": 18340,
-      "sha256": "14f8b74fbd20400592bd4613c84d3941715cb2c39d5c9ac6cc480d5be140a6ba"
+      "bytes": 20760,
+      "sha256": "84de5b21b2d0aac45318deeb3644acc780d5eafef0a1494f6671c9e4141e3331"
     },
     {
       "path": "public/descensus-2/NOTICE.txt",
@@ -19,8 +19,8 @@
     },
     {
       "path": "public/descensus-2/adapter.js",
-      "bytes": 6080,
-      "sha256": "bff8f6dceedd45d0cdc71f7f8bd91c58ca1bf36b1067c4bc568514a47986764c"
+      "bytes": 6131,
+      "sha256": "c211c634f9c1867b0e6659d52e2f4155870056a5ff7801a7d0a4a4d560589fb3"
     },
     {
       "path": "public/descensus-2/assets.js",
@@ -290,7 +290,7 @@
     {
       "path": "public/descensus-2/runtime-manifest.json",
       "bytes": 9902,
-      "sha256": "d5a185beabfad1acfc83bb66c1424a2c6ea76492918f1ff73dfb0b5226652545"
+      "sha256": "a523ff68b3b165f6575d48a61e0042deb1bd8bc8cd909c23953ea5e367f4e7a7"
     },
     {
       "path": "public/descensus-2/style.css",
@@ -329,8 +329,8 @@
     },
     {
       "path": "vendor/descensus2-original/CHANGES.md",
-      "bytes": 2356,
-      "sha256": "aca3da8910c5815b2e5af51b16d5bbc6f78b7c5b267f7d83e16ec9f70df51e5a"
+      "bytes": 2516,
+      "sha256": "08be075aee4dcbc29dcb9ada43504f930b77272451de6324a0aa8a511c34e102"
     },
     {
       "path": "vendor/descensus2-original/adapted/Assets/ISounds.ts",

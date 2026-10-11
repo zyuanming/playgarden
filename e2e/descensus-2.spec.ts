@@ -37,9 +37,15 @@ function plan(s:Live){
  return best;
 }
 
-function decide(s:Live,lastAction:string|number=""){
- if(s.state!=="Active")return {action:null,lastAction};
+function createController(){
+ let lastAction:string|number='',stallY=1000,stallAt=0,escapeUntil=0,escapeDir=1,lastDir=1;
+ return function decide(s:Live){
+ if(s.state!=="Active")return {action:null,lastAction,controllerState:{stallY,stallAt,escapeUntil,escapeDir,lastDir}};
   const p=plan(s); let action:number[]|null=null;
+  if(s.ball.position[1]<stallY-2){stallY=s.ball.position[1];stallAt=s.timeElapsed;}
+  if(s.timeElapsed>escapeUntil && s.timeElapsed-stallAt>2000){escapeDir=p.dir||lastDir||Math.sign(s.ball.velocity[0])||1;escapeUntil=s.timeElapsed+1800;stallAt=s.timeElapsed;stallY=s.ball.position[1];}
+  if(s.timeElapsed<escapeUntil){p.dir=escapeDir;p.tx=escapeDir*Math.max(2.9,s.ball.velocity[0]*escapeDir);p.kind='escape';}
+  if(p.dir)lastDir=p.dir;
   const cx=s.camera.x+s.ball.position[0]*64,cy=s.camera.y-s.ball.position[1]*64;
   const [x,y]=s.ball.position,[vx,vy]=s.ball.velocity;
   const threats=s.bodies.filter(b=>b.fatal).map(b=>{let near=Infinity,tnear=0; for(let t=0;t<=.4;t+=.05){let d=Math.hypot(b.position[0]-x+(b.velocity[0]-vx)*t,b.position[1]-y+(b.velocity[1]-vy)*t);if(d<near){near=d;tnear=t;}}return {b,near,tnear};}).sort((a,b)=>a.near-b.near);
@@ -53,7 +59,9 @@ function decide(s:Live,lastAction:string|number=""){
    action=[cx+dx,cy-128,cx+dx,cy+128];
   }else if(lastAction){action=[32,100,64,100];}
 
- return {action,plan:p,lastAction:action?(p.kind||p.dir):""};
+ lastAction=action?(p.kind||p.dir):"";
+ return {action,plan:p,lastAction,controllerState:{stallY,stallAt,escapeUntil,escapeDir,lastDir}};
+ };
 }
 
 
@@ -70,17 +78,24 @@ test('Descensus 2 original: genuine 1000m journey, loss, timer, bar physics, pau
  const iframe=page.locator('iframe[title="Descensus 2 千米降落完整旅程"]'),frame=page.frameLocator('iframe[title="Descensus 2 千米降落完整旅程"]'),canvas=frame.locator('#viewport');
  let gameFrame:Frame|null=null;
  const read=async()=>{if(!gameFrame||gameFrame.isDetached())gameFrame=await (await iframe.elementHandle())!.contentFrame();if(!gameFrame)throw Error('No game frame');return await gameFrame.evaluate(()=> (window as unknown as {__descensusRead:()=>Live}).__descensusRead());};
- const cdp=mobile?await page.context().newCDPSession(page):null;
+ const cdp=await page.context().newCDPSession(page);
+ const waitWall=(ms:number)=>new Promise<void>(resolve=>setTimeout(resolve,ms));
+ let drawBox:{x:number;y:number;width:number;height:number}|null=null;
+ const gestures:unknown[]=[];
  async function draw(x1:number,y1:number,x2:number,y2:number,cancel=false){
-  const box=(await canvas.boundingBox())!;const point=(x:number,y:number)=>({x:box.x+Math.max(16,Math.min(1008,x))*box.width/1024,y:box.y+Math.max(16,Math.min(1776,y))*box.height/1792});const a=point(x1,y1),b=point(x2,y2);
-  if(cdp)await cdp.send('Input.dispatchTouchEvent',{type:'touchStart',touchPoints:[{...a,id:1}]});
-  else{await page.mouse.move(a.x,a.y);await page.mouse.down();}
-  for(let k=1;k<=3;k++){
-   const q={x:a.x+(b.x-a.x)*k/3,y:a.y+(b.y-a.y)*k/3};
-   if(cdp)await cdp.send('Input.dispatchTouchEvent',{type:'touchMove',touchPoints:[{...q,id:1}]});else await page.mouse.move(q.x,q.y);
-   await page.waitForTimeout(16);
-  }
-  if(cdp)await cdp.send('Input.dispatchTouchEvent',{type:cancel?'touchCancel':'touchEnd',touchPoints:[]});else await page.mouse.up();
+  const box=drawBox??(await canvas.boundingBox())!;const point=(x:number,y:number)=>({x:box.x+Math.max(16,Math.min(1008,x))*box.width/1024,y:box.y+Math.max(16,Math.min(1776,y))*box.height/1792});const a=point(x1,y1),b=point(x2,y2);
+  const began=Date.now(),sent:{type:string;at:number}[]=[],pending:Promise<string|null>[]=[];
+  // These are ordinary native input events. Schedule the gesture in wall time,
+  // without adding one browser protocol acknowledgement delay after each point.
+  const touch=(type:'touchStart'|'touchMove'|'touchCancel'|'touchEnd',points:{x:number;y:number;id:number}[])=>{sent.push({type,at:Date.now()-began});pending.push(cdp.send('Input.dispatchTouchEvent',{type,touchPoints:points}).then(()=>null,e=>String(e)));};
+  const mouse=(type:'mouseMoved'|'mousePressed'|'mouseReleased',p:{x:number;y:number},buttons:number)=>{sent.push({type,at:Date.now()-began});pending.push(cdp.send('Input.dispatchMouseEvent',{type,...p,button:buttons||type==='mouseReleased'?'left':'none',buttons,clickCount:type==='mousePressed'||type==='mouseReleased'?1:0,pointerType:'mouse'}).then(()=>null,e=>String(e)));};
+  if(mobile)touch('touchStart',[{...a,id:1}]);else{mouse('mouseMoved',a,0);mouse('mousePressed',a,1);}
+  const due=16-(Date.now()-began);if(due>0)await waitWall(due);
+  if(mobile)touch('touchMove',[{...b,id:1}]);else mouse('mouseMoved',b,1);
+  const remaining=48-(Date.now()-began);if(remaining>0)await waitWall(remaining);
+  if(mobile)touch(cancel?'touchCancel':'touchEnd',[]);else mouse('mouseReleased',b,0);
+  const results=await Promise.all(pending);gestures.push({began,ends:Date.now(),sent,from:a,to:b,box});
+  const error=results.find(Boolean);if(error)throw Error(error);
  }
  async function tapCanvas(x:number,y:number){const box=(await canvas.boundingBox())!;const position={x:x*box.width/1024,y:y*box.height/1792};if(mobile)await canvas.tap({position});else await canvas.click({position});}
  async function start(){await openGame(page,'千米降落');await expect(page.locator('[data-descensus-ready]')).toHaveAttribute('data-descensus-ready','true');await expect(iframe).toHaveAttribute('sandbox','allow-scripts');await canvas.scrollIntoViewIfNeeded();await act(frame.locator('#start'));await expect.poll(async()=>(await read()).state).toBe('Active');}
@@ -105,27 +120,28 @@ test('Descensus 2 original: genuine 1000m journey, loss, timer, bar physics, pau
  // Let the unchanged game fail naturally with no steering, then observe its automatic restart.
  const lossTypes=new Set<string>(),negative:unknown[]=[];let firstLoss:Live|null=null,invincible=false,seenLost=false;const negativeDeadline=Date.now()+180000;
  while(Date.now()<negativeDeadline){const s=await read();if(s.lastLoss)lossTypes.add(s.lastLoss);negative.push({state:s.state,height:s.height,lives:s.lives,loss:s.lastLoss,lossCount:s.lossCount,resetCount:s.resetCount,invincible:s.isInvincible});
-  if(s.lossCount&&!firstLoss){firstLoss=s;expect(s.lives).toBeLessThan(5);await page.screenshot({path:info.outputPath('descensus-natural-loss.png'),fullPage:true});}
-  invincible ||= s.isInvincible;seenLost ||= s.state==='Lost';if(s.resetCount>1)break;await page.waitForTimeout(100);
+  if(s.lossCount&&!firstLoss){firstLoss=s;expect(s.lives).toBeLessThan(5);expect(s.state).toBe('Dying');await act(page.getByRole('heading',{name:'千米降落',exact:true}));await expect.poll(()=>frame.locator('body').evaluate(()=>document.hasFocus())).toBe(false);await expect.poll(async()=>(await read()).paused).toBe(true);const injured=await read();expect(injured.state).toBe('Dying');await waitWall(500);expect(await read()).toEqual(injured);await page.screenshot({path:info.outputPath('descensus-natural-loss.png'),fullPage:true});await act(frame.locator('#resume'));await expect.poll(async()=>(await read()).paused).toBe(false);}
+  invincible ||= s.isInvincible;seenLost ||= s.state==='Lost';if(s.resetCount>1)break;await waitWall(100);
  }
  console.log(info.project.name,'natural loss and restart', (await read()).resetCount);
  await info.attach('natural-loss-and-restart.json',{body:JSON.stringify(negative),contentType:'application/json'});
  expect(firstLoss).not.toBeNull();expect(invincible).toBe(true);expect(seenLost).toBe(true);expect((await read()).resetCount).toBe(2);expect((await read()).lives).toBe(5);
  // A new original round: no RNG override, save injection, teleport or life edits.
  await act(page.getByRole('button',{name:'重来',exact:true}));await expect(page.locator('[data-descensus-ready]')).toHaveAttribute('data-descensus-ready','true');await act(frame.locator('#start'));await expect.poll(async()=>(await read()).state).toBe('Active');await canvas.scrollIntoViewIfNeeded();
- const trace:unknown[]=[],cycles:unknown[]=[],shots=new Set<string>(),terrain=new Set<number>(),checkpointValues=new Set<number>(),windZonesSeen=new Set<number>();const windZones=[[600,575],[500,475],[350,325],[275,250],[100,75],[75,50]];let priorCheckpoint=900;let lastAction:string|number='',minHeight=1000;const journeyDeadline=Date.now()+360000;
+ drawBox=(await canvas.boundingBox())!;expect(drawBox.y).toBeGreaterThanOrEqual(-1);expect(drawBox.y+drawBox.height).toBeLessThanOrEqual(page.viewportSize()!.height+1);
+ const trace:unknown[]=[],cycles:unknown[]=[],shots=new Set<string>(),terrain=new Set<number>(),checkpointValues=new Set<number>(),windZonesSeen=new Set<number>();const windZones=[[600,575],[500,475],[350,325],[275,250],[100,75],[75,50]];let priorCheckpoint=900;const decide=createController();let minHeight=1000;const journeyDeadline=Date.now()+360000;
  try{
   while(Date.now()<journeyDeadline){const begun=Date.now(),s=await read();minHeight=Math.min(minHeight,s.height);checkpointValues.add(s.nextCheckpointHeight);if(s.lastLoss)lossTypes.add(s.lastLoss);if(s.nextCheckpointHeight<priorCheckpoint){expect(s.timeSinceLastCheckpoint,'Crossing100m resets the original30s clock').toBeLessThan(1000);priorCheckpoint=s.nextCheckpointHeight;}windZones.forEach(([top,bottom],i)=>{if(s.ball.position[1]<=top&&s.ball.position[1]>=bottom&&(i%2===0?s.wind.left:s.wind.right))windZonesSeen.add(i);});s.bodies.forEach(b=>{if(b.type!==undefined)terrain.add(b.type);});
    if(s.state==='Won')break;
    expect(s.resetCount,'Do not silently retry a lost journey').toBe(1);expect(s.state,'Original lives must survive this ordinary-input route').not.toBe('Lost');
    expect(s.paused,'The full journey must advance without test-time pauses').toBe(false);
-   const decision=decide(s,lastAction);lastAction=decision.lastAction;
-   trace.push({wall:begun,state:s.state,frame:s.frames,height:s.height,lives:s.lives,t:s.timeElapsed,timer:s.timeSinceLastCheckpoint,checkpoint:s.nextCheckpointHeight,loss:s.lastLoss,lossCount:s.lossCount,invincible:s.isInvincible,ball:s.ball,wind:s.wind,action:decision.action});
+   const decision=decide(s);
+   trace.push({wall:begun,state:s.state,frame:s.frames,height:s.height,lives:s.lives,t:s.timeElapsed,timer:s.timeSinceLastCheckpoint,checkpoint:s.nextCheckpointHeight,loss:s.lastLoss,lossCount:s.lossCount,invincible:s.isInvincible,ball:s.ball,wind:s.wind,action:decision.action,controller:decision.controllerState});
    if(decision.action)await draw(...decision.action as [number,number,number,number]);
    for(const [label,height] of [['first',900],['middle',500],['last',75]] as const)if(s.height<=height&&!shots.has(label)&&s.state==='Active'){
     shots.add(label);console.log(info.project.name,'genuine journey',label,s.height,s.lives,s.timeElapsed);await page.screenshot({path:info.outputPath('descensus-'+label+'.png'),fullPage:true});
    }
-   await page.waitForTimeout(Math.max(0,100-(Date.now()-begun)));cycles.push({wallMs:Date.now()-begun,observedGameMs:s.timeElapsed,frame:s.frames});
+   const rest=100-(Date.now()-begun);if(rest>0)await waitWall(rest);cycles.push({wallMs:Date.now()-begun,observedGameMs:s.timeElapsed,frame:s.frames});
   }
   const won=await read();console.log(info.project.name,'journey terminal',won.state,won.height,won.lives,won.resetCount);trace.push({final:won});expect(won.state).toBe('Won');expect(won.wonCount).toBe(1);expect(won.resetCount).toBe(1);expect(won.ball.position[1]).toBeLessThan(2);expect(won.lives).toBeGreaterThan(0);expect(minHeight).toBeLessThan(10);
   expect(checkpointValues.size).toBeGreaterThanOrEqual(9);expect(terrain.size).toBeGreaterThanOrEqual(8);expect(shots.size).toBe(3);expect(windZonesSeen.size).toBe(6);expect([...lossTypes].sort()).toEqual(['saw','timeout']);
@@ -139,7 +155,7 @@ test('Descensus 2 original: genuine 1000m journey, loss, timer, bar physics, pau
   for(const control of ['#start','#pause','#menu'])expect((await frame.locator(control).boundingBox())!.height).toBeGreaterThanOrEqual(44);
   expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);expect(await frame.locator('body').evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
   await iframe.scrollIntoViewIfNeeded();await page.screenshot({path:info.outputPath('descensus-saved-record.png'),fullPage:true});
- }finally{await info.attach('original-input-journey.json',{body:JSON.stringify({trace,cycles,terrain:[...terrain],checkpoints:[...checkpointValues],windZones:[...windZonesSeen],lossTypes:[...lossTypes],minHeight}),contentType:'application/json'});}
+ }finally{await info.attach('original-input-journey.json',{body:JSON.stringify({trace,cycles,gestures,terrain:[...terrain],checkpoints:[...checkpointValues],windZones:[...windZonesSeen],lossTypes:[...lossTypes],minHeight}),contentType:'application/json'});}
  expect(remote).toEqual([]);expect(failed).toEqual([]);expect(errors).toEqual([]);
  await act(page.getByRole('button',{name:'返回游戏大厅',exact:true}));await expect(iframe).toHaveCount(0);
 });
