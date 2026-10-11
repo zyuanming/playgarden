@@ -153,10 +153,14 @@ test('original eight puzzles: physical first/middle/final routes, interruption a
 
   // Reentry preserves only earned stage marks. A victory callback interrupted
   // by navigation cannot grant a new selected puzzle completion.
-  await select(0); await queue('UR'); await action('执行序列'); await phase('celebrating');
+  await select(0); await queue('UR'); await action('执行序列');
+  // This is a transient 550 ms window. The default poll grows to 1000 ms and
+  // can skip it entirely; observe frequently, then navigate through the UI.
+  await expect.poll(async () => (await read(frame)).phase, { intervals: [15], timeout: 5000 }).toBe('celebrating');
   await select(3); await page.waitForTimeout(750);
   expect((await read(frame)).completed).not.toContain(4);
   expect((await read(frame)).phase).toBe('editing');
+  await expect.poll(earned).toEqual([0, 4, 7]);
   await action('八关选择');
   await expect(frame.getByRole('button', { name: '开始第 8 关 ✓', exact: true })).toBeVisible();
   await action('开始第 8 关 ✓');

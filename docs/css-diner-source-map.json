@@ -33,14 +33,14 @@
     },
     {
       "path": "public/css-diner/adapter.css",
-      "sha256": "504f5fa07983bb704c2317303b26362ce06a410826da913ca76027129a7d12e6",
+      "sha256": "36c9b84f7b2efe7b5bb37b6b5abe8670aac2fff249a0dfd22feb611429cdcc25",
       "license": "GPL-3.0-only",
       "source": "Playgarden adaptation authored 2026-10-10",
       "relationship": "standalone addition"
     },
     {
       "path": "public/css-diner/adapter.js",
-      "sha256": "b18fddf4de91f18dbca167b25c215fca57a2404b1188d6e06c913628491bd98f",
+      "sha256": "e75dde8a150e114fca88d0356a8be1b4d77fc9157128721531ad83cfcd66d21e",
       "license": "GPL-3.0-only",
       "source": "Playgarden adaptation authored 2026-10-10",
       "relationship": "standalone addition"

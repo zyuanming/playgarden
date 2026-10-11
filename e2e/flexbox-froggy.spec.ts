@@ -71,10 +71,23 @@ test('complete original Froggy: physical CSS, first/middle/final, isolation and 
   expect(await completed()).toEqual([0]);
   await choose(16);
   // Saved CSS is rechecked by the original board, then the retry clears it.
+  await expect(frame.locator('#code')).toHaveValue('align-self: flex-end; order: 2;');
   await solved();
   await activate(frame.locator('#retry-game'));
   await expect(frame.locator('#code')).toHaveValue('');
   await expect(frame.locator('#next')).toHaveClass(/disabled/);
+  // The host's reset recreates the same lesson with freshStart. Typed drafts
+  // queued just before that boundary must not override the new empty attempt.
+  const beforeResetSrc = await page.locator('iframe[title="弹性盒子青蛙完整课程"]').getAttribute('src');
+  await expect.poll(completed).toEqual([0, 16]);
+  await typeCSS('align-self: fle');
+  await activate(page.getByRole('button', { name: '重来', exact: true }));
+  await expect(page.locator('iframe[title="弹性盒子青蛙完整课程"]')).not.toHaveAttribute('src', beforeResetSrc!);
+  await ready();
+  await expect(frame.locator('#code')).toHaveValue('');
+  await expect(frame.locator('#next')).toHaveClass(/disabled/);
+  await expect.poll(completed).toEqual([0, 16]);
+  await page.screenshot({ path: info.outputPath('froggy-host-reset-preserves-earned.png'), fullPage: true });
   await typeCSS('align-self: flex-end; order: 2;');
   await solved();
   await expect.poll(completed).toEqual([0, 16]);

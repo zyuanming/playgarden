@@ -182,6 +182,7 @@
     $('.table').on('mouseover.playgarden click.playgarden', '*', function (event) {
       if (paused()) return; event.stopPropagation();
       $('.helper').insertAfter('.game-scroll'); hideTooltip(); showTooltip($(this)); height();
+      if (event.type === 'click') document.querySelector('.helper').scrollIntoView({ block: 'nearest', inline: 'nearest' });
     });
     $('.markup').on('mouseover.playgarden focusin.playgarden click.playgarden', '> div *', function (event) {
       if (paused()) return; event.stopPropagation();

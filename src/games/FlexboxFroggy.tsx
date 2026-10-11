@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: GPL-3.0-only
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import type { GameProps } from '../lib/types';
 import names from './flexboxFroggyLevels.json';
 import './flexboxFroggy.css';
@@ -8,6 +8,9 @@ const KEY = 'playgarden.flexbox-froggy.v1.state';
 type Saved = { answers: Record<string, string>; solved: string[]; colorblind: 'true' | 'false'; language: string; difficulty: string; ending: boolean; earnedEnding: boolean };
 type Snapshot = Saved & { level: number; phase: string; paused: boolean; correct: boolean };
 let memory: Saved | null = null;
+// A keyed round can unmount while its last input snapshots are still queued.
+// Its replacement waits for that posted-message queue to drain before booting.
+let pendingSaves: Promise<void> = Promise.resolve();
 function clean(value: unknown): Saved {
   const data = value && typeof value === 'object' ? value as Partial<Saved> : {};
   const answers: Record<string, string> = {};
@@ -36,8 +39,7 @@ function FroggyRound({ level, paused, freshStart, hintToken, undoToken, onComple
   const latest = useRef({ level, paused, freshStart, onComplete, onStatus, onLevelChange });
   latest.current = { level, paused, freshStart, onComplete, onStatus, onLevelChange };
   const session = useMemo(() => crypto.randomUUID(), []);
-  const initial = useRef(read());
-  const saved = useRef(initial.current);
+  const saved = useRef(read());
   const tokens = useRef({ hintToken, undoToken });
   const completed = useRef(false);
   const effectEpoch = useRef(0);
@@ -53,24 +55,43 @@ function FroggyRound({ level, paused, freshStart, hintToken, undoToken, onComple
     // The receiver verifies the real parent origin, source window and session.
     frame.current?.contentWindow?.postMessage({ source: 'playgarden-host', session, type, ...extra }, '*');
   }
-  function initialize() { send('init', { level: latest.current.level, state: initial.current, paused: latest.current.paused, freshStart: !!latest.current.freshStart }); }
-  useEffect(() => {
+  function initialize() {
+    const target = frame.current?.contentWindow;
+    void pendingSaves.then(() => {
+      if (!target || frame.current?.contentWindow !== target) return;
+      // Read at the handshake, after the previous round's input messages, not
+      // during a concurrent React render that may precede their delivery.
+      const state = read();
+      send('init', { level: latest.current.level, state, paused: latest.current.paused, freshStart: !!latest.current.freshStart });
+    });
+  }
+  useLayoutEffect(() => {
     const epoch = ++effectEpoch.current;
     const target = frame.current?.contentWindow;
     let alive = true, booted = false;
+    const drainToken = crypto.randomUUID();
+    let finishDrain: (() => void) | undefined;
     latest.current.onStatus('写下 CSS，让青蛙落在同色荷叶上。24 课完整保留，点击属性可以查看帮助。');
     const timeout = window.setTimeout(() => { if (alive && !booted) setError('课程还没有加载成功，请点击顶部“重来”。'); }, 15000);
     const receive = (event: MessageEvent) => {
       const data = event.data;
-      if (!alive || event.source !== target || event.origin !== 'null' || data?.source !== 'playgarden-flexbox-froggy' || data.session !== session) return;
+      if (!alive && event.source === window && event.origin === location.origin && data?.source === 'playgarden-froggy-drain' && data.token === drainToken) {
+        window.removeEventListener('message', receive); finishDrain?.(); return;
+      }
+      if (event.source !== target || event.origin !== 'null' || data?.source !== 'playgarden-flexbox-froggy' || data.session !== session) return;
+      if (data.type === 'snapshot' && data.state?.level === latest.current.level) {
+        const next = clean(data.state);
+        saved.current = next; persist(next);
+        if (alive) setSnapshot({ ...next, level: data.state.level, phase: ['playing', 'navigating', 'ending'].includes(data.state.phase) ? data.state.phase : 'playing', paused: !!data.state.paused, correct: !!data.state.correct });
+        return;
+      }
+      // A removed round may finish saving already-posted drafts, but must never
+      // award completion, navigate, or change the new round's visible status.
+      if (!alive) return;
       if (data.type === 'hello') initialize();
       else if (data.type === 'ready') {
         if (data.revision !== 'flexbox-froggy-9a6feab-playgarden-1' || data.levelCount !== 24) { setError('课程资源版本不一致，请重新加载。'); return; }
         booted = true; clearTimeout(timeout); setReady(true); setError('');
-      } else if (data.type === 'snapshot' && data.state?.level === latest.current.level) {
-        const next = clean(data.state);
-        saved.current = next; persist(next);
-        setSnapshot({ ...next, level: data.state.level, phase: ['playing', 'navigating', 'ending'].includes(data.state.phase) ? data.state.phase : 'playing', paused: !!data.state.paused, correct: !!data.state.correct });
       } else if (data.type === 'complete' && data.level === latest.current.level && !completed.current && !latest.current.paused) {
         completed.current = true; latest.current.onComplete();
       } else if (data.type === 'navigate' && Number.isInteger(data.level) && data.level >= 0 && data.level < 24) {
@@ -82,13 +103,23 @@ function FroggyRound({ level, paused, freshStart, hintToken, undoToken, onComple
     };
     window.addEventListener('message', receive);
     return () => {
-      alive = false; clearTimeout(timeout); persist(saved.current);
+      alive = false; clearTimeout(timeout);
+      // Layout cleanup installs the gate during the removal commit, before a
+      // replacement iframe can fire load/hello and request initialization.
+      const drained = new Promise<void>(resolve => { finishDrain = resolve; });
+      pendingSaves = Promise.all([pendingSaves, drained]).then(() => undefined);
       // React development StrictMode replays effects without removing the
       // iframe. Dispose only if another setup did not reclaim this session.
       queueMicrotask(() => {
-        if (effectEpoch.current === epoch) target?.postMessage({ source: 'playgarden-host', session, type: 'dispose' }, '*');
+        if (effectEpoch.current !== epoch) {
+          window.removeEventListener('message', receive); finishDrain?.(); return;
+        }
+        target?.postMessage({ source: 'playgarden-host', session, type: 'dispose' }, '*');
+        // The iframe has been removed. This marker uses the same posted-message
+        // task source as its already-sent snapshots, so it runs after them.
+        // It also bounds listener cleanup without a timing-dependent sleep.
+        window.postMessage({ source: 'playgarden-froggy-drain', token: drainToken }, location.origin);
       });
-      window.removeEventListener('message', receive);
     };
     // Mount owns the session; current callbacks and level come from latest.
     // eslint-disable-next-line react-hooks/exhaustive-deps

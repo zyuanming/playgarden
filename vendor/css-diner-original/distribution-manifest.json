@@ -41,7 +41,7 @@
     {
       "path": "docs/css-diner-source-map.json",
       "bytes": 4921,
-      "sha256": "d61fa6b4a2dbdd7e26a4cae57c79df5a4d9e24de78b8ceafc59c0cbd459742ee"
+      "sha256": "7c1d797c6398dc7646b1c6eda0beb1521af3aab5cf11a9dd02c6aef408822abb"
     },
     {
       "path": "docs/css-diner-validation.md",
@@ -75,13 +75,13 @@
     },
     {
       "path": "public/css-diner/adapter.css",
-      "bytes": 8202,
-      "sha256": "504f5fa07983bb704c2317303b26362ce06a410826da913ca76027129a7d12e6"
+      "bytes": 8227,
+      "sha256": "36c9b84f7b2efe7b5bb37b6b5abe8670aac2fff249a0dfd22feb611429cdcc25"
     },
     {
       "path": "public/css-diner/adapter.js",
-      "bytes": 14373,
-      "sha256": "b18fddf4de91f18dbca167b25c215fca57a2404b1188d6e06c913628491bd98f"
+      "bytes": 14498,
+      "sha256": "e75dde8a150e114fca88d0356a8be1b4d77fc9157128721531ad83cfcd66d21e"
     },
     {
       "path": "public/css-diner/css/style.css",
@@ -205,8 +205,8 @@
     },
     {
       "path": "public/css-diner/source.zip",
-      "bytes": 294161,
-      "sha256": "a29c7b6a3c074a6f408aecb544200fd74401dc55756e8071b9f4da3b266f0949"
+      "bytes": 294176,
+      "sha256": "68698a1e146c10d309320a0395161a7f73603c1faa7d153fcc6b4712c3d8096d"
     }
   ]
 }

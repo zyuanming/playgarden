@@ -29,8 +29,8 @@
     },
     {
       "path": "e2e/flexbox-froggy.spec.ts",
-      "bytes": 10484,
-      "sha256": "47616ca91c9c3fc22f79f0fb9088538beacd138b140456a7ec3fd53a5708eb35"
+      "bytes": 11425,
+      "sha256": "c18dfcdfe0c4c4b0c173bdc5624ef3aa74065dcaccceedcd21f87c1ed58dcea6"
     },
     {
       "path": "public/flexbox-froggy/LICENSE",
@@ -204,8 +204,8 @@
     },
     {
       "path": "src/games/FlexboxFroggy.tsx",
-      "bytes": 9942,
-      "sha256": "5d0d362d54d0abeeb184db5db99955149d2e1672a2ed95f50bce0a41c83b9d37"
+      "bytes": 11688,
+      "sha256": "522598ca155a7ffc2d68dcc71b13ff5fb5c63d09bad2399c1eee33eddb6f2d3c"
     },
     {
       "path": "src/games/flexboxFroggy.css",
@@ -219,8 +219,8 @@
     },
     {
       "path": "vendor/flexbox-froggy-original/CHANGES.md",
-      "bytes": 7824,
-      "sha256": "be63e9bdc6b5402082c38295c42789e609ef6ca2605ec97e415762f13eabcea4"
+      "bytes": 8442,
+      "sha256": "890547866c15c422a064d39592ade0d96f17d997c09c38d58f24f87dbe8a0d67"
     },
     {
       "path": "vendor/flexbox-froggy-original/level-summary.json",
@@ -379,8 +379,8 @@
     },
     {
       "path": "public/flexbox-froggy/source.zip",
-      "bytes": 763510,
-      "sha256": "c89973536c3a79ec506e3eb2512574b2a50d5a5db4829c3ec2a7efabf09c25f5"
+      "bytes": 764559,
+      "sha256": "c0f815174754c81c66adaefed4a6d362e8b1bb2bd6fc0a8bc3e458b86b2fba4b"
     }
   ]
 }
