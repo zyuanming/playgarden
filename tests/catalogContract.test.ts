@@ -152,6 +152,8 @@ import { sortingNetworkLevels } from "../src/games/sortingNetworkLogic";
 import { voxelViewsLevels } from "../src/games/voxelViewsLogic";
 import { cubeNetLevels } from "../src/games/cubeNetLogic";
 const packs = {
+  "hyperspace-garbage-collection": [1,2,3,4],
+  "avabranch": [],
   "css-diner": Array.from({length:32}, (_,i) => i+1),
   "flexbox-froggy": Array.from({length:24}, (_,i) => i+1),
   "monkey-rally": [1,2,3,4,5,6,7,8],
@@ -366,8 +368,8 @@ describe("Scalable catalog contract", () => {
       }
     }),
   );
-  it("counts only 172 real games and 3096 levels, not the roadmap", () => {
-    expect(games).toHaveLength(172);
-    expect(games.reduce((sum, g) => sum + g.levelCount, 0)).toBe(3096);
+  it("counts only 174 real games and 3100 levels, not the roadmap", () => {
+    expect(games).toHaveLength(174);
+    expect(games.reduce((sum, g) => sum + g.levelCount, 0)).toBe(3100);
   });
 });

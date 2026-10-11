@@ -703,6 +703,59 @@
         "public/css-diner/licenses/sizzle-MIT.txt",
         "public/css-diner/licenses/Playgarden-GPL-3.0.txt"
       ]
+    },
+    {
+      "name": "Hyperspace Garbage Collection complete original four-stage physics game",
+      "version": "f5b93cbb57f653be4455f9dd5c130463b11abe2a",
+      "license": "MIT first-party code/maps/procedural artwork; zlib Box2dWeb; MIT RequireJS/text; GPL-3.0-only Playgarden changes",
+      "source": "https://github.com/razh/game-off-2013/tree/f5b93cbb57f653be4455f9dd5c130463b11abe2a",
+      "commit": "f5b93cbb57f653be4455f9dd5c130463b11abe2a",
+      "preferredSource": [
+        "vendor/hyperspace-garbage-collection-original/cleared",
+        "public/hyperspace-garbage-collection/adapter.js",
+        "public/hyperspace-garbage-collection/adapter.css",
+        "public/hyperspace-garbage-collection/index.html",
+        "public/hyperspace-garbage-collection/js/playgarden-clock.js",
+        "src/games/HyperspaceGarbageCollection.tsx",
+        "src/games/hyperspaceGarbageCollection.css"
+      ],
+      "buildSources": [
+        "scripts/hyperspace-garbage-collection/adapt.py",
+        "scripts/hyperspace-garbage-collection/package-source.py",
+        "scripts/hyperspace-garbage-collection/verify-sources.py"
+      ],
+      "scope": "Four unchanged authored JSON maps and original uncounted ending; original Box2D/AMD/Canvas gameplay, 102 wall polygons, 12 lasers, 7 emitters, 3 beams, 6 capture triggers and 4 doors. Cleared 64-file input only. Fixed-step scheduling, opaque iframe and local map modules. No MP3, external fonts or excluded mixed-permission color helpers.",
+      "notices": [
+        "public/hyperspace-garbage-collection/NOTICE.txt",
+        "public/hyperspace-garbage-collection/LICENSE",
+        "public/hyperspace-garbage-collection/licenses/box2dweb-zlib.txt",
+        "public/hyperspace-garbage-collection/licenses/requirejs-2.1.9.txt",
+        "public/hyperspace-garbage-collection/licenses/requirejs-text-2.0.10.txt",
+        "public/hyperspace-garbage-collection/licenses/GPL-3.0.txt"
+      ]
+    },
+    {
+      "name": "Avabranch complete original endless multi-line survival game",
+      "version": "4ab326b4a24d796328963da35c0d8d193d728496",
+      "license": "MIT; new Playgarden adaptation GPL-3.0-only",
+      "source": "https://github.com/Zolmeister/avabranch/tree/4ab326b4a24d796328963da35c0d8d193d728496",
+      "preferredSource": [
+        "vendor/avabranch-original/upstream",
+        "vendor/avabranch-original/silent-base",
+        "public/avabranch/adapter.js",
+        "public/avabranch/js/controls.js",
+        "src/games/Avabranch.tsx",
+        "public/avabranch/source.zip"
+      ],
+      "buildSources": [
+        "scripts/avabranch/adapt.py",
+        "scripts/avabranch/package-source.py",
+        "scripts/avabranch/verify-sources.py",
+        "vendor/avabranch-original/source-manifest.json",
+        "vendor/avabranch-original/distribution-manifest.json",
+        "docs/avabranch-source-map.json"
+      ],
+      "scope": "Complete MIT first-party Canvas endless rules, four lives, group/independent steering, merger, collisions, four revival/stat pickups, score and restart. Zero finite levels. New Chinese opaque iframe host, safe storage, multitouch controls, paused clocks and card art are GPL-3.0-only. No audio, remote fonts, unknown images, analytics, Crafty or jQuery."
     }
   ]
 }

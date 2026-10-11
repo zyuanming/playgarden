@@ -2793,3 +2793,30 @@ jQuery 1.11.0, including Sizzle 1.10.16: MIT, ©2005,2014 / ©2013 jQuery Founda
 Only the ten hash-allowlisted handoff files were incorporated. Optional analytics, social sharing and its separately attributed popup snippet, scrollbar JS/CSS, icons, external fonts and nametag texture remain excluded. No upstream installer, dependency tree or runtime was executed locally.
 
 Full exact licenses and original README are embedded in `public/css-diner/NOTICE.txt`; individual license files remain available. `public/css-diner/source.zip` contains complete editable original-cleared and modified sources, host/bridge sources, provenance, change patches, packaging scripts and the targeted E2E source. It is deterministic and every distributed file is recorded by size and SHA-256 in `vendor/css-diner-original/distribution-manifest.json`.
+
+### Hyperspace Garbage Collection (four original stages and ending)
+
+Original author razh, MIT; pinned commit `f5b93cbb57f653be4455f9dd5c130463b11abe2a`. Full original maps, material-dependent Box2D transport, finite-lived debris, matching capture triggers, lasers, tractor beams, doors, procedural Canvas art and original ending are retained. Box2dWeb 2.1.a.3 is zlib; RequireJS 2.1.9 and its source-only text 2.0.10 plugin use their MIT grants. The cleared source subset excludes the unverified audio and mixed-permission helpers. Playgarden host, lifecycle changes, scheduler, controls and original SVG cover are GPL-3.0-only. Full grants: `public/hyperspace-garbage-collection/NOTICE.txt`; source closure and changes: its `source.zip` and `ADAPTATION.md`.
+
+## Avabranch — complete original endless four-line survival game
+
+Original: Zolmeister, Copyright (c) 2013, MIT.
+Pinned source: https://github.com/Zolmeister/avabranch/tree/4ab326b4a24d796328963da35c0d8d193d728496
+
+Preserves the original Canvas renderer, four colored lives (red/yellow initially
+alive), group/independent steering, mean-position merge animation, collision,
+four color-specific revival/stat pickups, ten-second difficulty progression,
+frame-rounded scoring, natural loss and restart. This is endless with zero
+finite authored levels; the difficulty counter is not a campaign level count.
+
+Original preferred editable sources and full MIT license are in
+`vendor/avabranch-original/upstream/`. Approved silent inputs and exact original
+file records are in `silent-base/` and `source-manifest.json`. Reproducible edits
+are in `scripts/avabranch/adapt.py` and `DERIVATION.patch`. New Chinese host,
+multitouch mapping UI, lifecycle/storage bridge, CSS, scripts, E2E and original
+SVG card are GPL-3.0-only. Original-derived core files retain MIT notices.
+
+No uncleared music, fonts, images, analytics or unused Crafty/jQuery are included.
+Full component notices: `public/avabranch/NOTICE.txt`.
+Exact corresponding source: `public/avabranch/source.zip`.
+Complete final file digests: `vendor/avabranch-original/distribution-manifest.json`.

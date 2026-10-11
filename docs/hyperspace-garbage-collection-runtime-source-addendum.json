@@ -1,0 +1,30 @@
+{
+  "name": "Hyperspace Garbage Collection complete original four-stage physics game",
+  "version": "f5b93cbb57f653be4455f9dd5c130463b11abe2a",
+  "license": "MIT first-party code/maps/procedural artwork; zlib Box2dWeb; MIT RequireJS/text; GPL-3.0-only Playgarden changes",
+  "source": "https://github.com/razh/game-off-2013/tree/f5b93cbb57f653be4455f9dd5c130463b11abe2a",
+  "commit": "f5b93cbb57f653be4455f9dd5c130463b11abe2a",
+  "preferredSource": [
+    "vendor/hyperspace-garbage-collection-original/cleared",
+    "public/hyperspace-garbage-collection/adapter.js",
+    "public/hyperspace-garbage-collection/adapter.css",
+    "public/hyperspace-garbage-collection/index.html",
+    "public/hyperspace-garbage-collection/js/playgarden-clock.js",
+    "src/games/HyperspaceGarbageCollection.tsx",
+    "src/games/hyperspaceGarbageCollection.css"
+  ],
+  "buildSources": [
+    "scripts/hyperspace-garbage-collection/adapt.py",
+    "scripts/hyperspace-garbage-collection/package-source.py",
+    "scripts/hyperspace-garbage-collection/verify-sources.py"
+  ],
+  "scope": "Four unchanged authored JSON maps and original uncounted ending; original Box2D/AMD/Canvas gameplay, 102 wall polygons, 12 lasers, 7 emitters, 3 beams, 6 capture triggers and 4 doors. Cleared 64-file input only. Fixed-step scheduling, opaque iframe and local map modules. No MP3, external fonts or excluded mixed-permission color helpers.",
+  "notices": [
+    "public/hyperspace-garbage-collection/NOTICE.txt",
+    "public/hyperspace-garbage-collection/LICENSE",
+    "public/hyperspace-garbage-collection/licenses/box2dweb-zlib.txt",
+    "public/hyperspace-garbage-collection/licenses/requirejs-2.1.9.txt",
+    "public/hyperspace-garbage-collection/licenses/requirejs-text-2.0.10.txt",
+    "public/hyperspace-garbage-collection/licenses/GPL-3.0.txt"
+  ]
+}

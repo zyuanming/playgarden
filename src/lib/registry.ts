@@ -2989,5 +2989,56 @@ export const games: GameDefinition[] = [
 ,
  component: lazy(() => import("../games/CssDiner"))
 },
+{
+  "id": "hyperspace-garbage-collection",
+  "title": "反物质清运站",
+  "subtitle": "在零重力中推送短命碎屑，切换物质，借牵引束与激光完成原作四关清运。",
+  "category": "科学实验",
+  "difficulty": "进阶",
+  "tone": "purple",
+  "levelCount": 4,
+  "allowUndo": false,
+  "resumeKey": "playgarden.hyperspace-garbage-collection.v1",
+  "artwork": {
+    "url": "./hyperspace-garbage-collection/card.svg",
+    "position": "center",
+    "size": "cover"
+  },
+  "source": {
+    "kind": "adapted",
+    "license": "MIT",
+    "author": "razh",
+    "workTitle": "Hyperspace Garbage Collection（原作四关及未计关的结局）",
+    "url": "https://github.com/razh/game-off-2013/tree/f5b93cbb57f653be4455f9dd5c130463b11abe2a",
+    "commit": "f5b93cbb57f653be4455f9dd5c130463b11abe2a",
+    "notice": "./hyperspace-garbage-collection/NOTICE.txt",
+    "notes": "完整保留四张作者地图、物质/反物质实时碰撞、有限寿命碎屑、牵引束、选择性激光、捕获机关、出口及原作结局；采用原 AMD/Box2D/Canvas 引擎。第一方 MIT，Box2dWeb zlib，RequireJS MIT；本站隔离宿主与生命周期修复 GPL-3.0-only。音频省略，封面为本站原创示意。"
+  }
+,
+component: lazy(() => import("../games/HyperspaceGarbageCollection"))
+},
+{
+    "id": "avabranch",
+    "title": "四线分流",
+    "subtitle": "合流躲避，分流抢分；同时保护四种颜色的生命。",
+    "category": "动作反应",
+    "difficulty": "中级",
+    "tone": "green",
+    "levelCount": 0,
+    "endless": true,
+    "allowUndo": false,
+    "artwork": { "url": "./avabranch-art.svg", "position": "center", "size": "cover" },
+    "source": {
+      "kind": "adapted",
+      "license": "MIT",
+      "author": "Zolmeister",
+      "workTitle": "Avabranch（完整原作无尽多线生存）",
+      "url": "https://github.com/Zolmeister/avabranch/tree/4ab326b4a24d796328963da35c0d8d193d728496",
+      "commit": "4ab326b4a24d796328963da35c0d8d193d728496",
+      "notice": "./avabranch/NOTICE.txt",
+      "notes": "保留原作Canvas、四种彩线生命、合流/独立操作、20帧聚拢、障碍碰撞、四类复活或属性道具、10秒难度递增与逐帧计分。零个有限关卡。原作MIT；新增中文宿主、多指触控、时钟/存储隔离和原创SVG为GPL-3.0-only。排除未清权音乐、字体、装饰图和未使用的Crafty/jQuery。"
+    },
+    "component": lazy(() => import("../games/Avabranch"))
+  },
 ];
 export const findGame = (id: string) => games.find((game) => game.id === id);

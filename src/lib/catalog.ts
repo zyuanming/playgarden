@@ -172,6 +172,8 @@ export const GAME_IDS = [
   "flexbox-froggy",
   "monkey-rally",
   "css-diner",
+  "hyperspace-garbage-collection",
+  "avabranch",
 ] as const;
 export type GameId = (typeof GAME_IDS)[number];
 export type Category =
