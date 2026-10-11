@@ -13,8 +13,8 @@
     },
     {
       "path": "e2e/gridland.spec.ts",
-      "bytes": 10244,
-      "sha256": "af30923d6bf51fca8f231c6481c22d94df5f99a23f4d5a2ed041059ec3e7f14b",
+      "bytes": 10604,
+      "sha256": "cf0d7721be29cf1d1ce1c21f06a46ab8b5009335fd937afe16d198752d9340f7",
       "license": "GPL-3.0-only"
     },
     {
@@ -1117,8 +1117,8 @@
     },
     {
       "path": "public/gridland-original/source.zip",
-      "bytes": 734439,
-      "sha256": "33a795eec0ac87df7a9d6aa989d4fddaf2416bed4405e68d2b60bd21fe26c380",
+      "bytes": 734509,
+      "sha256": "208082b1fb612b81b553fdd282510764a84e18a724683741b37d711cce0cc6ec",
       "license": "MPL-2.0 / MIT / GPL-3.0-only per member"
     }
   ]

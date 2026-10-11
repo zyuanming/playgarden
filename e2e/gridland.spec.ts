@@ -5,7 +5,7 @@ import {openGame,captureErrors} from './helpers';
 import {writeFileSync} from 'node:fs';
 type Tile={row:number;col:number;type:string};
 type Live={started:boolean;day:number;night:boolean;level:number;xp:number;health:number;maxHealth:number;gem:number;mana:number;canMove:boolean;finished:boolean;casual:boolean;rows:number;columns:number;tiles:Tile[];items:Record<string,number>;counts:Record<string,number>;stores:{type:string;quantity:number}[];buildings:{type:string;built:boolean;obsolete:boolean;required:Record<string,number>}[];hero:{x:number;hp:number;shield:number;sword:number}|null;clock:{paused:boolean;now:number;timers:number};initCount:number};
-async function read(frame:Frame):Promise<Live>{return frame.evaluate(()=> (window as Window&{__gridlandRead:()=>Live}).__gridlandRead());}
+async function read(frame:Frame):Promise<Live>{return frame.evaluate(()=> (window as unknown as Window&{__gridlandRead:()=>Live}).__gridlandRead());}
 function moves(s:Live){
  const map=new Map(s.tiles.map(t=>[`${t.row},${t.col}`,t.type])),out:{a:Tile;b:Tile;gains:Record<string,number>}[]=[];
  for(const a of s.tiles)for(const [dr,dc] of [[0,1],[1,0]]){const b=s.tiles.find(t=>t.row===a.row+dr&&t.col===a.col+dc);if(!b||a.type===b.type)continue;
@@ -86,5 +86,10 @@ test('Gridland original campaign: real matches, progression, original failure, s
   await page.getByRole('button',{name:'返回游戏大厅',exact:true}).click();await expect(iframe).toHaveCount(0);
 
   expect(outside).toEqual([]);expect(errors).toEqual([]);expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
- }finally{writeFileSync(info.outputPath('gridland-ordinary-inputs.json'),JSON.stringify({mobile,log,final:await read(game).catch(()=>null),errors,outside},null,2));}
+ }finally{
+  const earned=await game.evaluate(()=>Object.fromEntries(Object.entries(localStorage).filter(([k])=>k.startsWith('playgarden:gridland:v1:')))).catch(()=>null);
+  writeFileSync(info.outputPath('gridland-earned-checkpoint.json'),JSON.stringify({source:'Unmodified browser save earned by the ordinary inputs in this run',saves:earned},null,2));
+  writeFileSync(info.outputPath('gridland-ordinary-inputs.json'),JSON.stringify({mobile,log,final:await read(game).catch(()=>null),errors,outside},null,2));
+ }
+
 });
