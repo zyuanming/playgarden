@@ -4,7 +4,7 @@ import {test,expect,type Frame,type Locator} from '@playwright/test';
 import {openGame,captureErrors} from './helpers';
 import {writeFileSync} from 'node:fs';
 import {createHash} from 'node:crypto';
-import checkpoints from './fixtures/gridland-earned-round14.json' with {type:'json'};
+import checkpoints from './fixtures/gridland-earned-round15.json' with {type:'json'};
 // Explicit key screenshots, failure screenshots, ordinary-input logs and authentic
 // saves replace per-action DOM trace snapshots (round2 produced a 2.66 GB trace).
 test.use({trace:'off'});
@@ -30,20 +30,20 @@ function rank(s:Live,m:ReturnType<typeof moves>[number],enemy:boolean){
  }return score;
 }
 
-type Tactics={priority:string|null;maxShield:number;maxSword:number;swordDamage:number;work:boolean;loot:boolean;monster:{kind:string;hp:number;damage:number}|null;monsterCount:number;frozen:boolean};
+type Tactics={combatReady:boolean;dragonPresent:boolean;priority:string|null;maxShield:number;maxSword:number;swordDamage:number;work:boolean;loot:boolean;monster:{kind:string;hp:number;damage:number}|null;monsterCount:number;frozen:boolean};
 async function tactics(frame:Frame):Promise<Tactics>{
  return frame.evaluate(()=>{
   type Entity={hp:()=>number;getDamage:()=>number;options:{monsterClass:string};carrying:unknown;action:{block?:unknown;building?:unknown}|null};
   type Building={built:boolean;obsolete:boolean;requiredResources:Record<string,number>};
   type Store={gone:boolean;_quantity:number;options:{type:{className:string}}};
   const req=(window as unknown as {require:(name:string)=>unknown}).require;
-  const w=req('app/world') as {getDude:()=>Entity;findClosestMonster:()=>Entity|null;findClosestLoot:()=>unknown;hasEffect:(name:string)=>boolean};
+  const w=req('app/world') as {canMove:()=>boolean;getDude:()=>Entity;findClosestMonster:()=>Entity|null;findClosestLoot:()=>unknown;hasEffect:(name:string)=>boolean};
   const state=req('app/gamestate') as {prioritizedBuilding:string|null;maxShield:()=>number;maxSword:()=>number;swordDamage:()=>number;buildings:Building[];stores:Store[]};
   const hero=w.getDude(),monster=w.findClosestMonster();
   // Read-only observation of the actual visible work/combat, never invoke actions.
   const pending=state.buildings.filter(b=>!b.built&&!b.obsolete);
   const work=!!hero?.carrying||!!hero?.action?.block||!!hero?.action?.building||pending.some(b=>Object.values(b.requiredResources).every(n=>n<=0)||state.stores.some(v=>!v.gone&&v._quantity>=30&&b.requiredResources[v.options.type.className]>0));
-  return {priority:state.prioritizedBuilding,maxShield:state.maxShield(),maxSword:state.maxSword(),swordDamage:state.swordDamage(),work,loot:!!w.findClosestLoot(),monster:monster?{kind:monster.options.monsterClass,hp:monster.hp(),damage:monster.getDamage()}:null,monsterCount:document.querySelectorAll('.monster .healthBar:not(.hidden)').length,frozen:w.hasEffect('freezeTime')};
+  return {combatReady:w.canMove(),dragonPresent:!!document.querySelector('.dragon'),priority:state.prioritizedBuilding,maxShield:state.maxShield(),maxSword:state.maxSword(),swordDamage:state.swordDamage(),work,loot:!!w.findClosestLoot(),monster:monster?{kind:monster.options.monsterClass,hp:monster.hp(),damage:monster.getDamage()}:null,monsterCount:document.querySelectorAll('.monster .healthBar:not(.hidden)').length,frozen:w.hasEffect('freezeTime')};
  });
 }
 function buildingTarget(s:Live){
@@ -131,7 +131,16 @@ test('Gridland natural defeat and ordinary rebirth restore tile and carrying ani
   expect(await game.locator('.tile.hidden[role="button"],.tile.pooled[role="button"]').count()).toBe(0);
   const move=moves(renewed)[0];for(const t of[move.a,move.b])await act(game.getByRole('button',{name:`第${t.row+1}行第${t.col+1}列 ${t.type}`,exact:true}));
   await expect.poll(async()=> (await read(game)).counts.SWAPPED||0).toBeGreaterThan(renewed.counts.SWAPPED||0);
-  await expect.poll(async()=>boardReady(await read(game))).toBe(true);await page.screenshot({path:info.outputPath('gridland-rebirth-match.png'),fullPage:false});expect(errors).toEqual([]);
+  // Each original drawMatch takes 400ms and recursively checks new matches.
+  // Real CHAIN31 already exceeds the default 5s assertion budget. Observe each
+  // changing state, but require the same strict settled-board condition.
+  const settlingStarted=Date.now();let lastSettling='';
+  await expect.poll(async()=>{
+   const state=await read(game),identity=JSON.stringify({ready:boardReady(state),tiles:state.tiles,swapped:state.counts.SWAPPED,chain:state.counts.CHAIN});
+   if(identity!==lastSettling){log.push({kind:'rebirth-settling',elapsed:Date.now()-settlingStarted,state});lastSettling=identity;}
+   return boardReady(state);
+  },{timeout:30000,intervals:[100,200,400]}).toBe(true);
+  await page.screenshot({path:info.outputPath('gridland-rebirth-match.png'),fullPage:false});expect(errors).toEqual([]);
  }finally{
   const saves=await game.evaluate(()=>Object.fromEntries(Object.entries(localStorage).filter(([k])=>k.startsWith('playgarden:gridland:v1:')))).catch(()=>null);
   writeFileSync(info.outputPath('gridland-defeat-journey.json'),JSON.stringify({mobile,log,witnessedZero,final:await read(game).catch(()=>null),saves,errors},null,2));
@@ -177,8 +186,12 @@ test('Gridland original campaign: real matches, progression, saves, dragon and l
  try{
   while(Date.now()-began<8*60*1000){
    const s=await read(game);if(s.finished)break;
-   if(!boardReady(s)){await page.waitForTimeout(120);continue;}
-   const t=await tactics(game),phase=`${s.day}-${s.night}-${s.initCount}`;
+   if(!s.started||s.health<=0||!s.hero){await page.waitForTimeout(120);continue;}
+   const t=await tactics(game);
+   // The original inventory requires World.canMove(), not a settled board.
+   // Do not withhold available potions/magic while cascading tiles animate.
+   if(!t.combatReady){await page.waitForTimeout(120);continue;}
+   const phase=`${s.day}-${s.night}-${s.initCount}`;
    if(phase!==lastPhase){note('phase',s,{tactics:t,buildings:s.buildings});await shot(`gridland-phase-${phase}.png`);lastPhase=phase;}
    const item=async(name:string)=>{note('item',s,{name,tactics:t});await act(game.locator(`.inventory .${name}`));await page.waitForTimeout(150);};
    if(s.night&&s.health<=s.maxHealth/2&&s.items.healthPotion){await item('healthPotion');continue;}
@@ -197,21 +210,28 @@ test('Gridland original campaign: real matches, progression, saves, dragon and l
     const needed=equipmentNeeded(s,t);
     if(t.monster&&s.items.equipment&&(needed.shield||needed.sword)){await item('equipment');continue;}
     if(!t.monster&&t.loot){await waitForPlay('pick-up-earned-loot',s,t);continue;}
-    // Round11's earned mobile run died twice against upgraded ranged/fast
-    // elementals while carrying zero mana. Use the original visible magic UI
-    // after ordinary daytime mana matches; no resource or combat-state writes.
-    const freezeThreat=!!t.monster&&(['lich','dragon','fireElemental','waterElemental'].includes(t.monster.kind)||t.monsterCount>=2);
-    if(freezeThreat&&s.mana>=3&&!t.frozen){
-     note('spell',s,{name:'freezeTime',tactics:t});await act(game.locator('.magic > .button'));await act(game.locator('.spell.freezeTime'));
-     await expect.poll(async()=> (await tactics(game)).frozen).toBe(true);
-     const cast=await read(game);expect(cast.mana).toBe(s.mana-3);expect(cast.counts.CAST||0).toBe((s.counts.CAST||0)+1);
-     note('spell-confirmed',cast,{name:'freezeTime'});continue;
+    // Keep earned mana for the original day/night spell when ordinary
+    // enemies overwhelm depleted gear. This normal UI action saves the day's
+    // real gains; it does not count as a kill or the required dragon ending.
+    const retreat=!!t.monster&&!t.dragonPresent&&t.monster.kind!=='dragon'&&
+     (s.health<=s.maxHealth*.4||(t.monsterCount>=2&&(needed.shield||needed.sword)));
+    if(s.mana>=3&&(retreat||(t.monster?.kind==='dragon'&&!t.frozen))){
+     const spell=retreat?'phaseChange':'freezeTime';
+     note('spell',s,{name:spell,tactics:t});await act(game.locator('.magic > .button'));await act(game.locator(`.spell.${spell}`));
+     if(retreat)await expect.poll(async()=>{const c=await read(game);return !c.night&&c.day>s.day;}).toBe(true);
+     else await expect.poll(async()=> (await tactics(game)).frozen).toBe(true);
+     const cast=await read(game);expect(cast.counts.CAST||0).toBe((s.counts.CAST||0)+1);
+     // A retreat can turn an already-running mana cascade into daytime income.
+     // Freeze stays at night, so its exact expenditure is also observable.
+     if(!retreat)expect(cast.mana).toBe(s.mana-3);
+     note('spell-confirmed',cast,{name:spell});continue;
     }
     if(!t.monster&&s.items.callDragon&&s.health>s.maxHealth*.8&&s.level>=7){await item('callDragon');continue;}
     // Refilling after every single hit creates avoidable cascade spawns. Let
     // actual combat finish; replenish only exhausted weapon/low remaining shield.
     if(t.monster&&!needed.shield&&!needed.sword){await waitForPlay('fight-before-refilling-equipment',s,t);continue;}
    }
+   if(!boardReady(s)){await page.waitForTimeout(120);continue;}
    const choices=moves(s).sort((a,b)=>campaignRank(s,b,t)-campaignRank(s,a,t));if(!choices.length){await page.waitForTimeout(200);continue;}
    let m=choices[0];if(!Number.isFinite(campaignRank(s,m,t))||(t.monster&&campaignRank(s,m,t)<50)){
     const needed=equipmentNeeded(s,t);
