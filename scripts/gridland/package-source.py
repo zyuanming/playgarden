@@ -6,7 +6,7 @@ ROOT=Path(__file__).resolve().parents[2];PUBLIC=ROOT/'public/gridland-original';
 files=[]
 for d in [PUBLIC,VENDOR,ROOT/'scripts/gridland']:
  files += [p for p in d.rglob('*') if p.is_file() and p not in [ZIP,MANIFEST] and '__pycache__' not in p.parts]
-files += [ROOT/x for x in ['src/games/GridlandOriginal.tsx','src/games/gridlandOriginal.css','e2e/gridland.spec.ts','e2e/fixtures/gridland-earned-round2.json','e2e/fixtures/gridland-earned-round4.json','e2e/fixtures/gridland-earned-round5.json','docs/gridland-adaptation.md']]
+files += [ROOT/x for x in ['src/games/GridlandOriginal.tsx','src/games/gridlandOriginal.css','e2e/gridland.spec.ts','e2e/fixtures/gridland-earned-round2.json','e2e/fixtures/gridland-earned-round4.json','e2e/fixtures/gridland-earned-round5.json','e2e/fixtures/gridland-earned-round6.json','docs/gridland-adaptation.md']]
 files=sorted(set(files));records=[]
 for p in files:
  rel=str(p.relative_to(ROOT));b=p.read_bytes();license='GPL-3.0-only'

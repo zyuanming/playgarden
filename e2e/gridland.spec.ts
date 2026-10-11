@@ -4,7 +4,7 @@ import {test,expect,type Frame,type Locator} from '@playwright/test';
 import {openGame,captureErrors} from './helpers';
 import {writeFileSync} from 'node:fs';
 import {createHash} from 'node:crypto';
-import checkpoints from './fixtures/gridland-earned-round5.json' with {type:'json'};
+import checkpoints from './fixtures/gridland-earned-round6.json' with {type:'json'};
 // Explicit key screenshots, failure screenshots, ordinary-input logs and authentic
 // saves replace per-action DOM trace snapshots (round2 produced a 2.66 GB trace).
 test.use({trace:'off'});
@@ -162,7 +162,7 @@ test('Gridland original campaign: real matches, progression, saves, dragon and l
    const t=await tactics(game),phase=`${s.day}-${s.night}-${s.initCount}`;
    if(phase!==lastPhase){note('phase',s,{tactics:t,buildings:s.buildings});await shot(`gridland-phase-${phase}.png`);lastPhase=phase;}
    const item=async(name:string)=>{note('item',s,{name,tactics:t});await act(game.locator(`.inventory .${name}`));await page.waitForTimeout(150);};
-   if(s.health<=s.maxHealth/2&&s.items.healthPotion){await item('healthPotion');continue;}
+   if(s.night&&s.health<=s.maxHealth/2&&s.items.healthPotion){await item('healthPotion');continue;}
    if(!s.night){
     const target=buildingTarget(s);
     if(target&&t.priority!==target.type){
