@@ -139,6 +139,12 @@ test('Grid Garden: all 28 authored lessons, touch help, interruption and earned 
   await expect(frame.locator('#result')).toContainText('已解开 1 / 28 课', { timeout: 6000 });
   await expect(host).toHaveAttribute('data-grid-garden-phase', 'playing');
   await expect(frame.locator('#code')).toBeVisible();
+  await expect(frame.locator('#levelsWrapper')).toBeVisible();
+  // The menu changes iframe height and causes a layout recheck. A subsequent
+  // ordinary edit/check must keep the incomplete-course status as well.
+  await typeCSS(inventory.levels[27].uiSolution);
+  await solved();
+  await expect(frame.locator('#result')).toContainText('已解开 1 / 28 课');
   expect(await earnedEnding()).toBe(false);
   expect(await completed()).toEqual([27]);
   await screenshot('final-only-not-course-clear');

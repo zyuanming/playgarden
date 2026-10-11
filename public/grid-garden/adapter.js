@@ -106,7 +106,10 @@
     correct = game.compare();
     $('#next').attr('aria-disabled', String(!correct));
     if (correct) {
-      result('水和除草区域都覆盖正确了！可以进入下一课。');
+      // Resize/resume rechecks must retain the truthful final-course status.
+      result(game.level === levels.length - 1 && game.solved.length < levels.length
+        ? '已解开 ' + game.solved.length + ' / 28 课。请继续完成其他课程。'
+        : '水和除草区域都覆盖正确了！可以进入下一课。');
       if (!reported) { reported = true; save(); send('complete', { level: game.level }); }
     } else result('还没有全部覆盖正确。试试另一种网格布局；点击属性可查看帮助。');
     save(); return correct;
