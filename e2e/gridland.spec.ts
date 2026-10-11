@@ -4,7 +4,7 @@ import {test,expect,type Frame,type Locator} from '@playwright/test';
 import {openGame,captureErrors} from './helpers';
 import {writeFileSync} from 'node:fs';
 import {createHash} from 'node:crypto';
-import checkpoints from './fixtures/gridland-earned-round13.json' with {type:'json'};
+import checkpoints from './fixtures/gridland-earned-round14.json' with {type:'json'};
 // Explicit key screenshots, failure screenshots, ordinary-input logs and authentic
 // saves replace per-action DOM trace snapshots (round2 produced a 2.66 GB trace).
 test.use({trace:'off'});
@@ -94,6 +94,17 @@ function campaignRank(s:Live,m:ReturnType<typeof moves>[number],t:Tactics){
  return score;
 }
 
+function emergencyRefillRank(s:Live,m:ReturnType<typeof moves>[number],t:Tactics){
+ const needed=equipmentNeeded(s,t),g=m.gains;
+ // Only used when no safe refill exists. A mixed legal match may be risky,
+ // but indefinite waiting with depleted gear exhausted all potions in round14.
+ // Prefer the missing weapon/shield, then fewer and milder visible threats.
+ const refill=(needed.sword&&g.stone?250:0)+(needed.shield&&g.wood?220:0);
+ const threats=Object.entries(g).filter(([k])=>!['wood','stone'].includes(k));
+ const risk=threats.reduce((v,[k,n])=>v+100+n*(k==='mana'?25:k==='cloth'?8:k==='clay'?6:3),0);
+ return refill-risk-Math.max(m.a.row,m.b.row)/100;
+}
+
 test('Gridland natural defeat and ordinary rebirth restore tile and carrying animations',async({page},info)=>{
  test.setTimeout(4*60*1000);const mobile=info.project.name==='mobile',errors=captureErrors(page),log:unknown[]=[];
  const act=async(l:Locator)=>mobile?l.tap():l.click();
@@ -157,7 +168,7 @@ test('Gridland original campaign: real matches, progression, saves, dragon and l
  await page.getByRole('button',{name:'暂停',exact:true}).click();const frozen=await read(game);await page.waitForTimeout(1800);expect((await read(game)).clock.now).toBe(frozen.clock.now);
  await page.getByRole('button',{name:'继续',exact:true}).click();await expect.poll(async()=> (await read(game)).clock.paused).toBe(false);
  let screenshotDay=false,screenshotMagic=false,transitionChecked=false,lastPhase='',lastWait='',lastWaitAt=0;const began=Date.now();
- const note=(kind:string,s:Live,extra:Record<string,unknown>={})=>log.push({elapsed:Date.now()-began,kind,day:s.day,night:s.night,level:s.level,hp:s.health,gem:s.gem,mana:s.mana,items:s.items,...extra});
+ const note=(kind:string,s:Live,extra:Record<string,unknown>={})=>log.push({elapsed:Date.now()-began,kind,day:s.day,night:s.night,level:s.level,hp:s.health,gem:s.gem,mana:s.mana,items:s.items,hero:s.hero,...extra});
  const shot=async(name:string)=>{await page.locator('.gridland-game').evaluate(el=>el.scrollIntoView({block:'start'}));await page.screenshot({path:info.outputPath(name),fullPage:false});};
  const waitForPlay=async(reason:string,s:Live,t:Tactics)=>{
   if(lastWait!==reason||Date.now()-lastWaitAt>5000){note('wait',s,{reason,tactics:t});lastWait=reason;lastWaitAt=Date.now();}
@@ -202,7 +213,15 @@ test('Gridland original campaign: real matches, progression, saves, dragon and l
     if(t.monster&&!needed.shield&&!needed.sword){await waitForPlay('fight-before-refilling-equipment',s,t);continue;}
    }
    const choices=moves(s).sort((a,b)=>campaignRank(s,b,t)-campaignRank(s,a,t));if(!choices.length){await page.waitForTimeout(200);continue;}
-   const m=choices[0];if(!Number.isFinite(campaignRank(s,m,t))||(t.monster&&campaignRank(s,m,t)<50)){await waitForPlay('fight-without-spawning-more-enemies',s,t);continue;}
+   let m=choices[0];if(!Number.isFinite(campaignRank(s,m,t))||(t.monster&&campaignRank(s,m,t)<50)){
+    const needed=equipmentNeeded(s,t);
+    if(t.monster&&(needed.shield||needed.sword)){
+     const refills=choices.filter(c=>(needed.sword&&c.gains.stone)||(needed.shield&&c.gains.wood));
+     const candidates=refills.length?refills:choices;
+     m=[...candidates].sort((a,b)=>emergencyRefillRank(s,b,t)-emergencyRefillRank(s,a,t))[0];
+     note(refills.length?'emergency-refill-choice':'break-deadlock',s,{tactics:t,needed,legalChoices:choices.length,refillChoices:refills.length,reason:refills.length?'match-missing-equipment':'no-visible-equipment-match-clear-a-legal-line',choices:choices.map(c=>({a:c.a,b:c.b,gains:c.gains,score:emergencyRefillRank(s,c,t)})),selected:{a:m.a,b:m.b,gains:m.gains}});
+    }else{await waitForPlay('fight-without-spawning-more-enemies',s,t);continue;}
+   }
    note('swap',s,{tactics:t,a:m.a,b:m.b,gains:m.gains});lastWait='';
    for(const t of[m.a,m.b])await act(game.getByRole('button',{name:`第${t.row+1}行第${t.col+1}列 ${t.type}`,exact:true}));
    if(!transitionChecked){
