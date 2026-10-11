@@ -8,6 +8,8 @@ Adaptation changes: system-serif Pixi text and Chinese menus, three generated ti
 
 Lifecycle fixes: hidden-page state guard; monotonic active clock for snake motors; bar settlement advances only during physics; interrupted drags and pointer ownership reset; one life loss per Active transition; post-step timer processing cannot override a contact transition; restart clears stale flags and held input. The entire iframe is disposed on exit. Records track completed journeys only.
 
+Rendering: the WebGL backing surface matches the initial displayed size and device pixel density, capped at the original resolution. The original 1024×1792 logical camera, menus and input coordinates remain exact. CSS still fits the same aspect ratio after orientation changes; the renderer's resolution remains fixed until the iframe is recreated. This reduces unnecessary downsampling and software-GPU work without changing physics, clocks or difficulty.
+
 Common import case/interface changes are syntax-only. Editable altered modules:
 
 - Assets/loadFonts.ts

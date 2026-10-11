@@ -181,7 +181,7 @@ function processInvincibility(deltaTime: number): void {
 
 function setScroll(ballBodyPositionX: number, ballBodyPositionY: number, containerPosition: PIXI.Point): void {
   // Focus on the ball
-  containerPosition.x = (pixiRenderer.width / 2) - (ballBodyPositionX * 64);
+  containerPosition.x = (pixiRenderer.screen.width / 2) - (ballBodyPositionX * 64);
   containerPosition.y = 640 + (ballBodyPositionY * 64);
 
   // Position parallax background

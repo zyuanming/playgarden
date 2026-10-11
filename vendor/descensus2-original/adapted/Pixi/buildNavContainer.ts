@@ -21,8 +21,8 @@ interface ITextOptions {
 
 const version = '1.0.0.0';
 
-const width = pixiRenderer.width;
-const height = pixiRenderer.height;
+const width = pixiRenderer.screen.width;
+const height = pixiRenderer.screen.height;
 const xCenter = width / 2;
 
 const tinyTextStyle = getTextStyle(0.5);

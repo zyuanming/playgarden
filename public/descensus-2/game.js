@@ -479,7 +479,7 @@ function processInvincibility(deltaTime) {
     }
 }
 function setScroll(ballBodyPositionX, ballBodyPositionY, containerPosition) {
-    containerPosition.x = pixiRenderer.width / 2 - ballBodyPositionX * 64;
+    containerPosition.x = pixiRenderer.screen.width / 2 - ballBodyPositionX * 64;
     containerPosition.y = 640 + ballBodyPositionY * 64;
     const backgroundPosition = pixiGraph.background.position;
     backgroundPosition.x = (containerPosition.x + 10000000) / 2 % 1024;
@@ -772,13 +772,21 @@ const heightUnits = 28;
 const pixelsPerUnit = 64;
 const width = widthUnits * pixelsPerUnit;
 const height = heightUnits * pixelsPerUnit;
+const playfield = document.getElementById('playfield');
+const fit = Math.min(playfield.clientWidth / width, playfield.clientHeight / height);
+const backingWidth = Math.min(width, Math.max(4, Math.ceil(width * fit * (window.devicePixelRatio || 1) / 4) * 4));
+const resolution = backingWidth / width;
 const rendererOptions = {
     transparent: false,
-    backgroundColor: 0x000000
+    backgroundColor: 0x000000,
+    resolution
 };
 const renderer = new PIXI.WebGLRenderer(width, height, rendererOptions);
 const view = renderer.view;
 view.id = 'viewport';
+view.dataset.logicalWidth = String(width);
+view.dataset.logicalHeight = String(height);
+view.dataset.renderResolution = String(resolution);
 view.style.display = 'none';
 view.style.marginLeft = 'auto';
 view.style.marginRight = 'auto';
@@ -802,7 +810,7 @@ function resize(renderer) {
     const windowHeight = document.getElementById('playfield').clientHeight;
     const view = renderer.view;
     const windowRatio = windowWidth / windowHeight;
-    const pixiRatio = renderer.width / renderer.height;
+    const pixiRatio = width / height;
     if (windowRatio > pixiRatio) {
         view.style.width = Math.floor(windowHeight * pixiRatio) + 'px';
         view.style.height = windowHeight + 'px';
@@ -820,8 +828,8 @@ const pixiRenderer = require("Pixi/PixiRenderer").default;
 const blendColors = require("Utility/blendColors").default;
 const Bus = require("Bus").default;
 const version = '1.0.0.0';
-const width = pixiRenderer.width;
-const height = pixiRenderer.height;
+const width = pixiRenderer.screen.width;
+const height = pixiRenderer.screen.height;
 const xCenter = width / 2;
 const tinyTextStyle = getTextStyle(0.5);
 const smallTextStyle = getTextStyle(0.6);

@@ -85,7 +85,7 @@ test('Descensus 2 original: genuine 1000m journey, loss, timer, bar physics, pau
  async function tapCanvas(x:number,y:number){const box=(await canvas.boundingBox())!;const position={x:x*box.width/1024,y:y*box.height/1792};if(mobile)await canvas.tap({position});else await canvas.click({position});}
  async function start(){await openGame(page,'千米降落');await expect(page.locator('[data-descensus-ready]')).toHaveAttribute('data-descensus-ready','true');await expect(iframe).toHaveAttribute('sandbox','allow-scripts');await canvas.scrollIntoViewIfNeeded();await act(frame.locator('#start'));await expect.poll(async()=>(await read()).state).toBe('Active');}
  await page.goto('/');await page.getByRole('textbox',{name:'搜索游戏'}).fill('千米降落');await expect(page.getByText('1000米旅程 · 仅保存完成纪录',{exact:true})).toBeVisible();await page.getByRole('textbox',{name:'搜索游戏'}).fill('小黑屋远行');await expect(page.getByText('完整战役 · 自动存档',{exact:true})).toBeVisible();
- await openGame(page,'千米降落');await expect(page.locator('[data-descensus-ready]')).toHaveAttribute('data-descensus-ready','true');await expect(page.getByLabel('选择关卡',{exact:true})).toHaveCount(0);await canvas.scrollIntoViewIfNeeded();await page.screenshot({path:info.outputPath('descensus-intro.png'),fullPage:true});
+ await openGame(page,'千米降落');await expect(page.locator('[data-descensus-ready]')).toHaveAttribute('data-descensus-ready','true');await expect(page.getByLabel('选择关卡',{exact:true})).toHaveCount(0);const pixels=await canvas.evaluate(el=>{const c=el as HTMLCanvasElement;return{width:c.width,height:c.height,logicalWidth:c.dataset.logicalWidth,logicalHeight:c.dataset.logicalHeight};});expect(pixels.logicalWidth).toBe('1024');expect(pixels.logicalHeight).toBe('1792');expect(pixels.width).toBeGreaterThan(100);expect(pixels.width).toBeLessThanOrEqual(1024);expect(pixels.height/pixels.width).toBe(1792/1024);await info.attach('render-surface.json',{body:JSON.stringify(pixels),contentType:'application/json'});await canvas.scrollIntoViewIfNeeded();await page.screenshot({path:info.outputPath('descensus-intro.png'),fullPage:true});
  await act(frame.locator('#start'));await expect.poll(async()=>(await read()).state).toBe('Active');expect((await read()).lives).toBe(5);
  // A real canvas gesture creates original p2 geometry; touch cancellation releases it.
  await draw(100,1050,900,1050,mobile);await expect.poll(async()=>(await read()).bar.width).toBeGreaterThan(.25);expect((await read()).bar.finalized).toBe(true);expect((await read()).bar.pointer).toBe(null);
@@ -101,7 +101,7 @@ test('Descensus 2 original: genuine 1000m journey, loss, timer, bar physics, pau
  await tapCanvas(512,1000);await expect.poll(()=>frame.locator('body').evaluate(()=>document.hasFocus())).toBe(true);
  await act(page.getByRole('heading',{name:'千米降落',exact:true}));await expect.poll(()=>frame.locator('body').evaluate(()=>document.hasFocus())).toBe(false);await expect.poll(async()=>(await read()).paused).toBe(true);const blurred=await read();await page.waitForTimeout(500);expect(await read()).toEqual(blurred);await act(frame.locator('#resume'));await expect.poll(async()=>(await read()).paused).toBe(false);
  // Fresh actual iframe, original seed and five lives. No state/RNG overrides.
- await page.getByRole('button',{name:'返回大厅',exact:true}).click();await expect(iframe).toHaveCount(0);await start();
+ await page.getByRole('button',{name:'返回游戏大厅',exact:true}).click();await expect(iframe).toHaveCount(0);await start();
  // Let the unchanged game fail naturally with no steering, then observe its automatic restart.
  const lossTypes=new Set<string>(),negative:unknown[]=[];let firstLoss:Live|null=null,invincible=false,seenLost=false;const negativeDeadline=Date.now()+180000;
  while(Date.now()<negativeDeadline){const s=await read();if(s.lastLoss)lossTypes.add(s.lastLoss);negative.push({state:s.state,height:s.height,lives:s.lives,loss:s.lastLoss,lossCount:s.lossCount,resetCount:s.resetCount,invincible:s.isInvincible});
@@ -113,7 +113,7 @@ test('Descensus 2 original: genuine 1000m journey, loss, timer, bar physics, pau
  expect(firstLoss).not.toBeNull();expect(invincible).toBe(true);expect(seenLost).toBe(true);expect((await read()).resetCount).toBe(2);expect((await read()).lives).toBe(5);
  // A new original round: no RNG override, save injection, teleport or life edits.
  await act(page.getByRole('button',{name:'重来',exact:true}));await expect(page.locator('[data-descensus-ready]')).toHaveAttribute('data-descensus-ready','true');await act(frame.locator('#start'));await expect.poll(async()=>(await read()).state).toBe('Active');await canvas.scrollIntoViewIfNeeded();
- const trace:unknown[]=[],shots=new Set<string>(),terrain=new Set<number>(),checkpointValues=new Set<number>(),windZonesSeen=new Set<number>();const windZones=[[600,575],[500,475],[350,325],[275,250],[100,75],[75,50]];let priorCheckpoint=900;let lastAction:string|number='',minHeight=1000;const journeyDeadline=Date.now()+360000;
+ const trace:unknown[]=[],cycles:unknown[]=[],shots=new Set<string>(),terrain=new Set<number>(),checkpointValues=new Set<number>(),windZonesSeen=new Set<number>();const windZones=[[600,575],[500,475],[350,325],[275,250],[100,75],[75,50]];let priorCheckpoint=900;let lastAction:string|number='',minHeight=1000;const journeyDeadline=Date.now()+360000;
  try{
   while(Date.now()<journeyDeadline){const begun=Date.now(),s=await read();minHeight=Math.min(minHeight,s.height);checkpointValues.add(s.nextCheckpointHeight);if(s.lastLoss)lossTypes.add(s.lastLoss);if(s.nextCheckpointHeight<priorCheckpoint){expect(s.timeSinceLastCheckpoint,'Crossing100m resets the original30s clock').toBeLessThan(1000);priorCheckpoint=s.nextCheckpointHeight;}windZones.forEach(([top,bottom],i)=>{if(s.ball.position[1]<=top&&s.ball.position[1]>=bottom&&(i%2===0?s.wind.left:s.wind.right))windZonesSeen.add(i);});s.bodies.forEach(b=>{if(b.type!==undefined)terrain.add(b.type);});
    if(s.state==='Won')break;
@@ -125,7 +125,7 @@ test('Descensus 2 original: genuine 1000m journey, loss, timer, bar physics, pau
    for(const [label,height] of [['first',900],['middle',500],['last',75]] as const)if(s.height<=height&&!shots.has(label)&&s.state==='Active'){
     shots.add(label);console.log(info.project.name,'genuine journey',label,s.height,s.lives,s.timeElapsed);await page.screenshot({path:info.outputPath('descensus-'+label+'.png'),fullPage:true});
    }
-   await page.waitForTimeout(Math.max(0,100-(Date.now()-begun)));
+   await page.waitForTimeout(Math.max(0,100-(Date.now()-begun)));cycles.push({wallMs:Date.now()-begun,observedGameMs:s.timeElapsed,frame:s.frames});
   }
   const won=await read();console.log(info.project.name,'journey terminal',won.state,won.height,won.lives,won.resetCount);trace.push({final:won});expect(won.state).toBe('Won');expect(won.wonCount).toBe(1);expect(won.resetCount).toBe(1);expect(won.ball.position[1]).toBeLessThan(2);expect(won.lives).toBeGreaterThan(0);expect(minHeight).toBeLessThan(10);
   expect(checkpointValues.size).toBeGreaterThanOrEqual(9);expect(terrain.size).toBeGreaterThanOrEqual(8);expect(shots.size).toBe(3);expect(windZonesSeen.size).toBe(6);expect([...lossTypes].sort()).toEqual(['saw','timeout']);
@@ -133,13 +133,13 @@ test('Descensus 2 original: genuine 1000m journey, loss, timer, bar physics, pau
   await page.screenshot({path:info.outputPath('descensus-ground-certificate.png'),fullPage:true});await iframe.scrollIntoViewIfNeeded();await page.screenshot({path:info.outputPath('descensus-certificate-viewport.png')});
   const record=await page.evaluate(()=>JSON.parse(localStorage.getItem('playgarden.descensus2.v1.records')||'null'));expect(record.completed).toBe(1);expect(record.bestTime).toBe(won.timeElapsed);expect(record.lastLives).toBe(won.lives);
   await tapCanvas(512,1792*.92);await expect.poll(async()=>(await read()).state).toBe('Active');expect((await read()).resetCount).toBe(2);expect((await read()).lives).toBe(5);await expect(frame.locator('#records')).toContainText('已完成 1 次');
-  await act(page.getByRole('button',{name:'返回大厅',exact:true}));await expect(iframe).toHaveCount(0);await openGame(page,'千米降落');await expect(page.locator('[data-descensus-ready]')).toHaveAttribute('data-descensus-ready','true');await expect(frame.locator('#records')).toContainText('已完成 1 次');
+  await act(page.getByRole('button',{name:'返回游戏大厅',exact:true}));await expect(iframe).toHaveCount(0);await openGame(page,'千米降落');await expect(page.locator('[data-descensus-ready]')).toHaveAttribute('data-descensus-ready','true');await expect(frame.locator('#records')).toContainText('已完成 1 次');
   expect((await read()).state).toBe('Intro');await page.reload();await openGame(page,'千米降落');await expect(page.locator('[data-descensus-ready]')).toHaveAttribute('data-descensus-ready','true');await expect(frame.locator('#records')).toContainText('已完成 1 次');
   expect(await page.evaluate(()=>JSON.parse(localStorage.getItem('playgarden.descensus2.v1.records')||'null'))).toEqual(record);
   for(const control of ['#start','#pause','#menu'])expect((await frame.locator(control).boundingBox())!.height).toBeGreaterThanOrEqual(44);
   expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);expect(await frame.locator('body').evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
   await iframe.scrollIntoViewIfNeeded();await page.screenshot({path:info.outputPath('descensus-saved-record.png'),fullPage:true});
- }finally{await info.attach('original-input-journey.json',{body:JSON.stringify({trace,terrain:[...terrain],checkpoints:[...checkpointValues],windZones:[...windZonesSeen],lossTypes:[...lossTypes],minHeight}),contentType:'application/json'});}
+ }finally{await info.attach('original-input-journey.json',{body:JSON.stringify({trace,cycles,terrain:[...terrain],checkpoints:[...checkpointValues],windZones:[...windZonesSeen],lossTypes:[...lossTypes],minHeight}),contentType:'application/json'});}
  expect(remote).toEqual([]);expect(failed).toEqual([]);expect(errors).toEqual([]);
- await act(page.getByRole('button',{name:'返回大厅',exact:true}));await expect(iframe).toHaveCount(0);
+ await act(page.getByRole('button',{name:'返回游戏大厅',exact:true}));await expect(iframe).toHaveCount(0);
 });

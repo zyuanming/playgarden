@@ -9,8 +9,8 @@
     },
     {
       "path": "e2e/descensus-2.spec.ts",
-      "bytes": 17700,
-      "sha256": "62006fcd799f498c81988c7e1c09dc3ff0a546be8886b8c2b74d19259602644f"
+      "bytes": 18340,
+      "sha256": "14f8b74fbd20400592bd4613c84d3941715cb2c39d5c9ac6cc480d5be140a6ba"
     },
     {
       "path": "public/descensus-2/NOTICE.txt",
@@ -34,8 +34,8 @@
     },
     {
       "path": "public/descensus-2/game.js",
-      "bytes": 102930,
-      "sha256": "759461193dfe80e67dd8e7d6b6ad82d41308e749cfe54e1bb0009f12a0459a5a"
+      "bytes": 103388,
+      "sha256": "a8cab57cfb05d714bde06d906e4017f5e6faeb6c806539e7ec2c75df6c77ac99"
     },
     {
       "path": "public/descensus-2/img/ball-reflections.png",
@@ -290,7 +290,7 @@
     {
       "path": "public/descensus-2/runtime-manifest.json",
       "bytes": 9902,
-      "sha256": "6781b3ffbaa9bb5a2a16b09f4215c8d6c43e0c4d76c52b78ccca53a970e164f5"
+      "sha256": "d5a185beabfad1acfc83bb66c1424a2c6ea76492918f1ff73dfb0b5226652545"
     },
     {
       "path": "public/descensus-2/style.css",
@@ -329,8 +329,8 @@
     },
     {
       "path": "vendor/descensus2-original/CHANGES.md",
-      "bytes": 1897,
-      "sha256": "f9aeab830456a59bc4e988e5608f10cb1d4e280bc6f4b1b1755f283928722b12"
+      "bytes": 2356,
+      "sha256": "aca3da8910c5815b2e5af51b16d5bbc6f78b7c5b267f7d83e16ec9f70df51e5a"
     },
     {
       "path": "vendor/descensus2-original/adapted/Assets/ISounds.ts",
@@ -384,8 +384,8 @@
     },
     {
       "path": "vendor/descensus2-original/adapted/Game/gameLoop.ts",
-      "bytes": 14437,
-      "sha256": "6e0cde84bfdbd8b79dd2d987c3cba11ffecc91402fcd637326803cd8982d1e74"
+      "bytes": 14445,
+      "sha256": "fed6490ba37c95145032119f05475211ecdefe416eee6f5e60cde90289c1e4ba"
     },
     {
       "path": "vendor/descensus2-original/adapted/Pixi/IPixiGraph.ts",
@@ -394,13 +394,13 @@
     },
     {
       "path": "vendor/descensus2-original/adapted/Pixi/PixiRenderer.ts",
-      "bytes": 1560,
-      "sha256": "7dcaf175c162ca68201dd3d572ea795493006d72e5d5e10d5b177bca77bcec86"
+      "bytes": 2392,
+      "sha256": "45058fdbd51107fefcdca7dae6fb9c993317c59995495b3c3f139ca4504d9aad"
     },
     {
       "path": "vendor/descensus2-original/adapted/Pixi/buildNavContainer.ts",
-      "bytes": 15414,
-      "sha256": "e9e76e0574d052b451d7343d3b308f43db4bde6ef80a8ad05680a8f1fd5b9d65"
+      "bytes": 15429,
+      "sha256": "4bf35f9dbfb29fe07694d23d81c3435c6ab9dae9af38181df5f497c46fb26243"
     },
     {
       "path": "vendor/descensus2-original/adapted/Pixi/buildPixiGraph.ts",

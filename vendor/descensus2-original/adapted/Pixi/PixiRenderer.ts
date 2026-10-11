@@ -4,11 +4,23 @@ const pixelsPerUnit = 64;
 const width = widthUnits * pixelsPerUnit;
 const height = heightUnits * pixelsPerUnit;
 
-const rendererOptions = { transparent: false, backgroundColor: 0x000000 };
+// Match the initial displayed pixel density instead of drawing a 1024px-wide
+// surface that the browser immediately downsamples to roughly 320–390px.
+// Keep the original logical world/menu coordinates; only the backing pixels vary.
+// Resolution stays fixed for this renderer's lifetime, so Pixi's root target and
+// InteractionManager use the same value. Resize/orientation still resize CSS.
+const playfield = document.getElementById('playfield');
+const fit = Math.min(playfield.clientWidth / width, playfield.clientHeight / height);
+const backingWidth = Math.min(width, Math.max(4, Math.ceil(width * fit * (window.devicePixelRatio || 1) / 4) * 4));
+const resolution = backingWidth / width;
+const rendererOptions = { transparent: false, backgroundColor: 0x000000, resolution };
 const renderer = new PIXI.WebGLRenderer(width, height, rendererOptions);
 
 const view = renderer.view;
 view.id = 'viewport';
+view.dataset.logicalWidth = String(width);
+view.dataset.logicalHeight = String(height);
+view.dataset.renderResolution = String(resolution);
 view.style.display = 'none';
 view.style.marginLeft = 'auto';
 view.style.marginRight = 'auto';
@@ -27,7 +39,7 @@ function resize(renderer: PIXI.WebGLRenderer): void {
 
   const view = renderer.view;
   const windowRatio = windowWidth / windowHeight;
-  const pixiRatio = renderer.width / renderer.height;
+  const pixiRatio = width / height;
 
   if (windowRatio > pixiRatio) {
     // Screen is wider than the renderer
