@@ -24,6 +24,12 @@
       "license": "GPL-3.0-only"
     },
     {
+      "path": "e2e/fixtures/gridland-earned-round12.json",
+      "bytes": 20841,
+      "sha256": "b5a5173531f0fb846df6c0ab64e640344ea0aed3aa609db423a4b72b1ccdf999",
+      "license": "GPL-3.0-only"
+    },
+    {
       "path": "e2e/fixtures/gridland-earned-round2.json",
       "bytes": 8390,
       "sha256": "93b07aa9dc49291ad8185d26aa6071efd02d4fbcac9a65777ffaca43feed3075",
@@ -67,8 +73,8 @@
     },
     {
       "path": "e2e/gridland.spec.ts",
-      "bytes": 23317,
-      "sha256": "357723afab89c8c1ec69fa9434aaf075937009a4d6cee2a42fdcd031be979056",
+      "bytes": 23962,
+      "sha256": "d622f68efb6958ff285f0a10e18d1c19dbd6fa2d04704fdd91d0af5d92038910",
       "license": "GPL-3.0-only"
     },
     {
@@ -625,8 +631,8 @@
     },
     {
       "path": "scripts/gridland/package-source.py",
-      "bytes": 2336,
-      "sha256": "8b0bc899e0e01c714088ea503ab2e790369665379e16cba8288cd3ced5bbdf59",
+      "bytes": 2380,
+      "sha256": "e47dcd9d01f2afc0eb70c5657bb513262af54a7349c0065f3a6e7df80d49e222",
       "license": "GPL-3.0-only"
     },
     {
@@ -1171,8 +1177,8 @@
     },
     {
       "path": "public/gridland-original/source.zip",
-      "bytes": 756692,
-      "sha256": "65c25d07476d6373de5bf7641585a7f328044d7e448dcc593f927b0e350fac93",
+      "bytes": 759177,
+      "sha256": "9c9f9330cbb6a9cd874aa55a38184147ec9c46443f9546f13f9a5cfa7f26fa93",
       "license": "MPL-2.0 / MIT / GPL-3.0-only per member"
     }
   ]

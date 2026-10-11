@@ -4,7 +4,7 @@ import {test,expect,type Frame,type Locator} from '@playwright/test';
 import {openGame,captureErrors} from './helpers';
 import {writeFileSync} from 'node:fs';
 import {createHash} from 'node:crypto';
-import checkpoints from './fixtures/gridland-earned-round11.json' with {type:'json'};
+import checkpoints from './fixtures/gridland-earned-round12.json' with {type:'json'};
 // Explicit key screenshots, failure screenshots, ordinary-input logs and authentic
 // saves replace per-action DOM trace snapshots (round2 produced a 2.66 GB trace).
 test.use({trace:'off'});
@@ -13,11 +13,11 @@ type Live={started:boolean;day:number;night:boolean;level:number;xp:number;healt
 async function read(frame:Frame):Promise<Live>{return frame.evaluate(()=> (window as unknown as Window&{__gridlandRead:()=>Live}).__gridlandRead());}
 function boardReady(s:Live){return s.canMove&&s.tiles.length===s.rows*s.columns&&new Set(s.tiles.map(t=>`${t.row},${t.col}`)).size===s.tiles.length;}
 function moves(s:Live){
- const map=new Map(s.tiles.map(t=>[`${t.row},${t.col}`,t.type])),out:{a:Tile;b:Tile;gains:Record<string,number>}[]=[];
+ const map=new Map(s.tiles.map(t=>[`${t.row},${t.col}`,t.type])),out:{a:Tile;b:Tile;gains:Record<string,number>;longest:number}[]=[];
  for(const a of s.tiles)for(const [dr,dc] of [[0,1],[1,0]]){const b=s.tiles.find(t=>t.row===a.row+dr&&t.col===a.col+dc);if(!b||a.type===b.type)continue;
- const board=new Map(map);board.set(`${a.row},${a.col}`,b.type);board.set(`${b.row},${b.col}`,a.type);const matched=new Map<string,string>();
- for(let row=0;row<s.rows;row++)for(let col=0;col<s.columns;col++){const key=`${row},${col}`,type=board.get(key);if(!type)continue;for(const [vr,vc] of [[0,1],[1,0]]){const line:string[]=[];for(let n=0;board.get(`${row+n*vr},${col+n*vc}`)===type;n++)line.push(`${row+n*vr},${col+n*vc}`);if(line.length>=3)line.forEach(k=>matched.set(k,type));}}
- if(matched.size){const gains:Record<string,number>={};for(const type of matched.values())gains[type]=(gains[type]||0)+1;out.push({a,b,gains});}
+ const board=new Map(map);board.set(`${a.row},${a.col}`,b.type);board.set(`${b.row},${b.col}`,a.type);const matched=new Map<string,string>();let longest=0;
+ for(let row=0;row<s.rows;row++)for(let col=0;col<s.columns;col++){const key=`${row},${col}`,type=board.get(key);if(!type)continue;for(const [vr,vc] of [[0,1],[1,0]]){const line:string[]=[];for(let n=0;board.get(`${row+n*vr},${col+n*vc}`)===type;n++)line.push(`${row+n*vr},${col+n*vc}`);if(line.length>=3){longest=Math.max(longest,line.length);line.forEach(k=>matched.set(k,type));}}}
+ if(matched.size){const gains:Record<string,number>={};for(const type of matched.values())gains[type]=(gains[type]||0)+1;out.push({a,b,gains,longest});}
  }return out;
 }
 function rank(s:Live,m:ReturnType<typeof moves>[number],enemy:boolean){
@@ -68,7 +68,11 @@ function campaignRank(s:Live,m:ReturnType<typeof moves>[number],t:Tactics){
    if(k==='grain')score+=n*(s.health<s.maxHealth-4?130:1);
    else if(k==='mana')score+=n*(s.gem===4&&s.mana<3?110:1);
    else {const stored=s.stores.filter(x=>x.type===k).reduce((v,x)=>v+x.quantity,0),needed=(target?.required[k]||0)*30-stored;score+=n*(needed>0?70:3);}
-  }return score;
+  }
+  // Original gameboard creates mana tiles from daytime lines of four or more.
+  // Favor those visible opportunities while healthy, before trying to collect mana.
+  if(s.gem===4&&s.mana<3&&s.health>s.maxHealth*.75&&m.longest>=4)score+=500;
+  return score;
  }
  const spawn=Object.keys(gain).filter(k=>!['wood','stone'].includes(k));
  // Keep one fight at a time. Mixed matches must not trade a gear refill for
@@ -80,6 +84,10 @@ function campaignRank(s:Live,m:ReturnType<typeof moves>[number],t:Tactics){
  if(!t.monster&&spawn.length){
   score+=20-80*(spawn.length-1);
   if(gain.mana)score+=s.level>=7&&t.swordDamage>=3&&!s.items.callDragon?180:-1000;
+  // House grain summons 7HP/1-damage haunted armour; upgraded clay/cloth
+  // summon the stronger elementals observed in round12's two real deaths.
+  const houseArmour=s.buildings.some(b=>b.type==='house'&&b.built)&&!s.buildings.some(b=>['fort','castle'].includes(b.type)&&b.built);
+  if(gain.grain&&houseArmour)score+=40;
   if(gain.clay)score+=15;
   if(gain.cloth)score+=5;
  }
