@@ -4,7 +4,7 @@ import {test,expect,type Frame,type Locator} from '@playwright/test';
 import {openGame,captureErrors} from './helpers';
 import {writeFileSync} from 'node:fs';
 import {createHash} from 'node:crypto';
-import checkpoints from './fixtures/gridland-earned-round2.json' with {type:'json'};
+import checkpoints from './fixtures/gridland-earned-round4.json' with {type:'json'};
 // Explicit key screenshots, failure screenshots, ordinary-input logs and authentic
 // saves replace per-action DOM trace snapshots (round2 produced a 2.66 GB trace).
 test.use({trace:'off'});
@@ -48,9 +48,18 @@ async function tactics(frame:Frame):Promise<Tactics>{
 }
 function buildingTarget(s:Live){
  const order=['blacksmith','sawmill','bricklayer','weaver','blacksmith2','sawmill2','bricklayer2','weaver2','blacksmith3','sawmill3'];
- return s.buildings.filter(b=>!b.built&&!b.obsolete&&Object.values(b.required).some(n=>n>0)).sort((a,b)=>{
+ // Original gameboard.tileMap enables clay only after BrickLayer and cloth
+ // after Weaver. A visible building outline alone does not make its cost reachable.
+ const available=new Set(['wood','stone','grain']);
+ if(s.buildings.some(b=>b.type==='bricklayer'&&b.built))available.add('clay');
+ if(s.buildings.some(b=>b.type==='weaver'&&b.built))available.add('cloth');
+ return s.buildings.filter(b=>!b.built&&!b.obsolete&&Object.values(b.required).some(n=>n>0)&&Object.entries(b.required).every(([k,n])=>n<=0||available.has(k))).sort((a,b)=>{
   const ai=order.indexOf(a.type),bi=order.indexOf(b.type);return (ai<0?100:ai)-(bi<0?100:bi);
  })[0];
+}
+function equipmentNeeded(s:Live,t:Tactics){
+ const strength=s.level<7?1:Math.floor((s.level-1)/3);
+ return {shield:s.hero!.shield<=Math.floor(t.maxShield/3),sword:s.hero!.sword===0&&!!t.monster&&t.monster.hp>strength};
 }
 function campaignRank(s:Live,m:ReturnType<typeof moves>[number],t:Tactics){
  const target=buildingTarget(s),gain=m.gains;let score=0;
@@ -65,8 +74,9 @@ function campaignRank(s:Live,m:ReturnType<typeof moves>[number],t:Tactics){
  // Keep one fight at a time. Mixed matches must not trade a gear refill for
  // multiple new enemies while the hero is already engaged.
  if(t.monster&&spawn.length)return -Infinity;
- if(gain.wood)score+=s.hero!.shield<t.maxShield?80:1;
- if(gain.stone)score+=s.hero!.sword<t.maxSword?90:1;
+ const needed=equipmentNeeded(s,t);
+ if(gain.wood)score+=(t.monster?needed.shield:s.hero!.shield<t.maxShield)?80:1;
+ if(gain.stone)score+=(t.monster?needed.sword:s.hero!.sword<t.maxSword)?90:1;
  if(!t.monster&&spawn.length){
   score+=20-80*(spawn.length-1);
   if(gain.mana)score+=s.level>=7&&t.swordDamage>=3&&!s.items.callDragon?180:-1000;
@@ -165,23 +175,32 @@ test('Gridland original campaign: real matches, progression, saves, dragon and l
     if(t.work){await waitForPlay('finish-real-carry-or-building',s,t);continue;}
    }else{
     if(t.monster&&s.items.bomb&&(t.monsterCount>=2||t.monster.hp>=20||s.health<t.monster.damage*3)){await item('bomb');continue;}
-    if(t.monster&&s.items.equipment&&(s.hero!.shield<=t.maxShield/3||s.hero!.sword===0)){await item('equipment');continue;}
+    const needed=equipmentNeeded(s,t);
+    if(t.monster&&s.items.equipment&&(needed.shield||needed.sword)){await item('equipment');continue;}
     if(!t.monster&&t.loot){await waitForPlay('pick-up-earned-loot',s,t);continue;}
     if(t.monster&&(t.monster.kind==='lich'||t.monster.kind==='dragon')&&s.mana>=3&&!t.frozen){
      note('spell',s,{name:'freezeTime'});await act(game.locator('.magic > .button'));await act(game.locator('.spell.freezeTime'));await page.waitForTimeout(150);continue;
     }
     if(!t.monster&&s.items.callDragon&&s.health>s.maxHealth*.8&&s.level>=7){await item('callDragon');continue;}
-    if(t.monster&&s.hero!.shield>=t.maxShield&&s.hero!.sword>=t.maxSword){await waitForPlay('fight-with-full-equipment',s,t);continue;}
+    // Refilling after every single hit creates avoidable cascade spawns. Let
+    // actual combat finish; replenish only exhausted weapon/low remaining shield.
+    if(t.monster&&!needed.shield&&!needed.sword){await waitForPlay('fight-before-refilling-equipment',s,t);continue;}
    }
    const choices=moves(s).sort((a,b)=>campaignRank(s,b,t)-campaignRank(s,a,t));if(!choices.length){await page.waitForTimeout(200);continue;}
-   const m=choices[0];if(!Number.isFinite(campaignRank(s,m,t))){await waitForPlay('fight-without-spawning-more-enemies',s,t);continue;}
+   const m=choices[0];if(!Number.isFinite(campaignRank(s,m,t))||(t.monster&&campaignRank(s,m,t)<50)){await waitForPlay('fight-without-spawning-more-enemies',s,t);continue;}
    note('swap',s,{tactics:t,a:m.a,b:m.b,gains:m.gains});lastWait='';
    for(const t of[m.a,m.b])await act(game.getByRole('button',{name:`第${t.row+1}行第${t.col+1}列 ${t.type}`,exact:true}));
    if(!transitionChecked){
     const transitions=await game.evaluate(()=>document.getAnimations().filter(a=>a.constructor.name==='CSSTransition'&&a.playState==='running').length);
     if(transitions){await act(game.getByRole('button',{name:'暂停游戏',exact:true}));await expect(game.locator('#gridland-pause')).toBeVisible();
-      const readVisuals=()=>game.evaluate(()=>document.getAnimations().filter(a=>a.constructor.name==='CSSTransition').map(a=>({time:a.currentTime,state:a.playState})));
-      const before=await readVisuals();expect(before.length).toBeGreaterThan(0);await page.waitForTimeout(1800);expect(await readVisuals()).toEqual(before);await page.screenshot({path:info.outputPath('gridland-frozen-transition.png'),fullPage:false});
+      const readVisuals=()=>game.evaluate(()=>document.getAnimations().filter(a=>a.constructor.name==='CSSTransition').map(a=>({time:a.currentTime,state:a.playState,pending:a.pending})));
+      const requested=await readVisuals();note('pause-requested',s,{visuals:requested});
+      // W3C Web Animations 4.4.9: pause queues an asynchronous pending task;
+      // playState may already say paused before its ready promise resolves.
+      // Observe completion; never seek, pause, or alter an animation in the test.
+      await game.evaluate(async()=>{await Promise.all(document.getAnimations().filter(a=>a.constructor.name==='CSSTransition').map(a=>a.ready));});
+      await expect.poll(async()=>{const v=await readVisuals();return v.length>0&&v.every(a=>a.state==='paused'&&!a.pending);}).toBe(true);
+      const before=await readVisuals();note('pause-settled',s,{visuals:before});await page.waitForTimeout(1800);const after=await readVisuals();note('pause-held',s,{visuals:after});expect(after).toEqual(before);await shot('gridland-frozen-transition.png');
       await act(game.getByRole('button',{name:'继续游戏',exact:true}));await expect.poll(async()=> (await read(game)).clock.paused).toBe(false);transitionChecked=true;
     }
    }
