@@ -11,56 +11,9 @@ on:
         required: false
         default: ''
         type: string
-      recover_gridland_evidence:
-        description: 'Extract small original evidence from Gridland run 38115964097; no gameplay rerun'
-        required: false
-        default: false
-        type: boolean
 permissions:
   contents: read
 jobs:
-  recover-gridland-evidence:
-    if: github.event_name == 'workflow_dispatch' && inputs.recover_gridland_evidence
-    runs-on: ubuntu-latest
-    timeout-minutes: 10
-    permissions:
-      actions: read
-    steps:
-      - uses: actions/download-artifact@v4
-        with:
-          artifact-ids: '11694070133'
-          run-id: '38115964097'
-          repository: zyuanming/playgarden
-          github-token: ${{ github.token }}
-          path: original-gridland-evidence
-      - name: Copy small evidence without altering any original member
-        run: |
-          python3 - <<'PY'
-          from pathlib import Path
-          import hashlib,json,shutil
-          source=Path('original-gridland-evidence');dest=Path('gridland-evidence-extract');dest.mkdir()
-          members=[]
-          for path in sorted(source.rglob('*')):
-            if not path.is_file(): continue
-            rel=path.relative_to(source);h=hashlib.sha256()
-            with path.open('rb') as f:
-              for block in iter(lambda:f.read(4*1024*1024),b''):h.update(block)
-            kept=path.suffix in ['.png','.json'] or path.name=='error-context.md'
-            members.append({'path':str(rel),'bytes':path.stat().st_size,'sha256':h.hexdigest(),'copied':kept})
-            if kept:
-              target=dest/rel;target.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(path,target)
-              assert hashlib.sha256(target.read_bytes()).hexdigest()==h.hexdigest()
-          assert any(x['copied'] and x['path'].endswith('earned-checkpoint.json') for x in members)
-          proof={'kind':'Byte-identical extraction, not a new gameplay run','repository':'zyuanming/playgarden','sourceRun':38115964097,'sourceHead':'28f4507c7cb481f36b63c84e92510efdf5bd876d','sourceArtifact':11694070133,'sourceArchiveSha256ReportedByGitHub':'86508f8a662e287f1a5f8d2ce074a9e813099de47621e506736601a6464b59f5','originalZipHashRecomputedHere':False,'memberHashesRecomputedHere':True,'members':members}
-          (dest/'extraction-provenance.json').write_text(json.dumps(proof,indent=2)+'\n')
-          print('Copied',sum(x['copied'] for x in members),'original evidence members; retained large traces in source artifact')
-          PY
-      - uses: actions/upload-artifact@v4
-        with:
-          name: gridland-original-run38115964097-small-evidence
-          path: gridland-evidence-extract
-          retention-days: 3
-
   build:
     runs-on: ubuntu-latest
     timeout-minutes: 10
