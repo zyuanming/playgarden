@@ -198,23 +198,39 @@ test('Grid Garden: all 28 authored lessons, touch help, interruption and earned 
   const resume = frame.locator('#resume-game');
   const expectResumeInPageViewport = async () => {
     await resume.scrollIntoViewIfNeeded();
-    const box = await resume.boundingBox(), viewport = page.viewportSize();
+    let box = await resume.boundingBox();
+    const viewport = page.viewportSize();
     expect(box).not.toBeNull(); expect(viewport).not.toBeNull();
+    if (box!.y < 24 || box!.y + box!.height > viewport!.height - 24) {
+      // Scroll the surrounding page normally, away from the viewport edge.
+      // The gutter is outside the iframe, so the wheel reaches the host page.
+      await page.mouse.move(8, viewport!.height / 2);
+      await page.mouse.wheel(0, box!.y + box!.height / 2 - viewport!.height / 2);
+      await expect.poll(async () => {
+        const placed = await resume.boundingBox();
+        return !!placed && placed.y >= 24 && placed.y + placed.height <= viewport!.height - 24;
+      }).toBe(true);
+      box = await resume.boundingBox();
+      expect(box).not.toBeNull();
+    }
     expect(box!.x).toBeGreaterThanOrEqual(0);
     expect(box!.y).toBeGreaterThanOrEqual(0);
-    expect(box!.x + box!.width).toBeLessThanOrEqual(viewport!.width + 1);
-    expect(box!.y + box!.height).toBeLessThanOrEqual(viewport!.height + 1);
+    expect(box!.x + box!.width).toBeLessThanOrEqual(viewport!.width);
+    expect(box!.y + box!.height).toBeLessThanOrEqual(viewport!.height);
   };
   await expectResumeInPageViewport();
+  await page.screenshot({ path: info.outputPath(`grid-garden-${page.viewportSize()!.width}px-paused-viewport.png`), fullPage: false });
   if (mobile) {
     const viewport = page.viewportSize()!;
     await page.setViewportSize({ width: 320, height: viewport.height });
     await expectResumeInPageViewport();
+    await page.screenshot({ path: info.outputPath('grid-garden-320px-paused-viewport.png'), fullPage: false });
     await screenshot('320px-paused-resume-reachable');
     await page.setViewportSize(viewport);
     await expectResumeInPageViewport();
   }
   await screenshot('paused-transition');
+  await expectResumeInPageViewport();
   await activate(resume);
   await expect(frame.locator('#paused-cover')).toBeHidden();
   await expect(page.getByLabel('选择关卡', { exact: true })).toHaveValue('0');

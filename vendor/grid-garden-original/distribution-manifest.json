@@ -39,8 +39,8 @@
     },
     {
       "path": "e2e/grid-garden.spec.ts",
-      "bytes": 15942,
-      "sha256": "cfdbe49dabd792d722be5107a4cf1a19b56f3b82c26155e93f10f8783d93fe2b"
+      "bytes": 16876,
+      "sha256": "01b494ff493658937fc4a9406cd4a74f1958586f58eb839df95ffbb43bb78c44"
     },
     {
       "path": "public/grid-garden/LICENSE",
@@ -359,8 +359,8 @@
     },
     {
       "path": "public/grid-garden/source.zip",
-      "bytes": 936764,
-      "sha256": "1891346e9392501b0b8069bb17fb41690074180f598eaea58f59f3e77e0e5976"
+      "bytes": 936994,
+      "sha256": "46d5e684459dd76656e8cba6ddd9b720afe90f3fe2d21fc8657323dc5421c644"
     }
   ]
 }
