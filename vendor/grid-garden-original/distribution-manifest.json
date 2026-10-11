@@ -1,0 +1,366 @@
+{
+  "game": "grid-garden",
+  "commit": "0e262f7272d4992340eb556bdb9b2d502cc59932",
+  "archive": "public/grid-garden/source.zip",
+  "archiveExclusions": [
+    "distribution-manifest.json (outside archive to avoid circular hashing)",
+    "source.zip (the archive itself)"
+  ],
+  "files": [
+    {
+      "path": "docs/grid-garden-catalog-entry.json",
+      "bytes": 1241,
+      "sha256": "dab21de6bef357cbbe5504d31689de1fb05b141fc13312891886691f74cd1b8a"
+    },
+    {
+      "path": "docs/grid-garden-integration.md",
+      "bytes": 2565,
+      "sha256": "a68a488bdbbb09b9298e9303ac8cd5bbfeab83cba2b02db5e1b3f963e1b07a88"
+    },
+    {
+      "path": "docs/grid-garden-level-inventory.json",
+      "bytes": 24251,
+      "sha256": "283823149da567f465e1d7902d2f46a7acaccca5d3d8bfdb94794ba75075bc39"
+    },
+    {
+      "path": "docs/grid-garden-notice-addendum.md",
+      "bytes": 1555,
+      "sha256": "6311e080638fa0a539623d3734817a17c2405d6372851d9577b5b689e73635f6"
+    },
+    {
+      "path": "docs/grid-garden-runtime-source-addendum.json",
+      "bytes": 2035,
+      "sha256": "9498cfa23e890f552450715ad5ca55a45459c47713bbd343a799265160885bd1"
+    },
+    {
+      "path": "docs/grid-garden-source-map.json",
+      "bytes": 1416,
+      "sha256": "d2c614cacb24ab4ce0f812b08fff2ba47ec88147551f1e89554ae70cc80479ed"
+    },
+    {
+      "path": "e2e/grid-garden.spec.ts",
+      "bytes": 14709,
+      "sha256": "4c7eecc3c752ff45c733579000928da163682069886f3ce090522ba642fac280"
+    },
+    {
+      "path": "public/grid-garden/LICENSE",
+      "bytes": 1068,
+      "sha256": "a10a44d5f91ef5b97d7657038ad49caf579e8d3a6801577cdcc4b008c2c7152f"
+    },
+    {
+      "path": "public/grid-garden/NOTICE.txt",
+      "bytes": 64520,
+      "sha256": "35c428815228b038828cd7e2caec2a3a4a81278679076a87ebca3dd0d82494d2"
+    },
+    {
+      "path": "public/grid-garden/README.md",
+      "bytes": 3426,
+      "sha256": "caf74df860ba558e3532d149539401d7ebace69c59bc1c51171bccf49d37c9cd"
+    },
+    {
+      "path": "public/grid-garden/adapter.css",
+      "bytes": 4324,
+      "sha256": "72d99a2eaf321bcb59ec591f55a2543ea2fb0ec76388bb61b7831cab1272a1d2"
+    },
+    {
+      "path": "public/grid-garden/adapter.js",
+      "bytes": 15237,
+      "sha256": "604b99dc26c402df3775a7ef7c8f060e53d4915cdcdf1790226ab2c4ea4d1d21"
+    },
+    {
+      "path": "public/grid-garden/css/style.css",
+      "bytes": 12663,
+      "sha256": "970987c5aca9559f47daa0d56b919cfb86739088a3064a86a29fb4eba1f348b4"
+    },
+    {
+      "path": "public/grid-garden/images/carrots-correct.svg",
+      "bytes": 7599,
+      "sha256": "cfdaa543de0c6182abb3d424c51c6e2fdf302add63b0ce8c95bde24786a9a8e8"
+    },
+    {
+      "path": "public/grid-garden/images/carrots-win.png",
+      "bytes": 104993,
+      "sha256": "b04f0bb2525ca4503714350bf505cbe00130d1339c40b49fd011ad23cb91bd4c"
+    },
+    {
+      "path": "public/grid-garden/images/carrots.svg",
+      "bytes": 5343,
+      "sha256": "94b3277815a82404a9e28d8265362a0c51f2131e3e19341e566edc714234c1d4"
+    },
+    {
+      "path": "public/grid-garden/images/dirt.svg",
+      "bytes": 1368,
+      "sha256": "83fe6a4b50ed1aaa2521945277f5ec09e051469b2e7e2d6cc7965703523d6b3c"
+    },
+    {
+      "path": "public/grid-garden/images/froggy.svg",
+      "bytes": 2602,
+      "sha256": "78b1d881230e69ddb1e504d1d097a12826007d236dee25a71a9b04bcd909b64a"
+    },
+    {
+      "path": "public/grid-garden/images/poison.svg",
+      "bytes": 1094,
+      "sha256": "755452f10943f850b9200dc868fef40f03bf07ec7f4905efa1fdac02cb19b5d9"
+    },
+    {
+      "path": "public/grid-garden/images/water.svg",
+      "bytes": 975,
+      "sha256": "87d9682936d6a2350bc4bfea3bb133291fa1b372191327ef7cfbe56bb72df586"
+    },
+    {
+      "path": "public/grid-garden/images/weeds-correct.svg",
+      "bytes": 6923,
+      "sha256": "3c8e8af04f084c6a0d54bb8ebf5dca01bf8653c7ad9359978a5257b5e0d7d127"
+    },
+    {
+      "path": "public/grid-garden/images/weeds.svg",
+      "bytes": 7272,
+      "sha256": "9ccb533a76af5b674a045a9205cc96541a8c0b2f3d719e25e9b00c33a1095038"
+    },
+    {
+      "path": "public/grid-garden/index.html",
+      "bytes": 6351,
+      "sha256": "44f222351ec614295200a6ecab8b2609788a971d995cd9d340f80ca21da35187"
+    },
+    {
+      "path": "public/grid-garden/js/docs.js",
+      "bytes": 95841,
+      "sha256": "bfa37528dde4a7215954e322b166701bd835b26438f685b6b2e085578ccd9299"
+    },
+    {
+      "path": "public/grid-garden/js/game.js",
+      "bytes": 7241,
+      "sha256": "c2a9d478c15d29798a6853048fa05f5e1d95f101fb1b08d7ca5b20fdfad6ada4"
+    },
+    {
+      "path": "public/grid-garden/js/levels.js",
+      "bytes": 535896,
+      "sha256": "1f4f10ff085b981a46ce14f7b18552c8aaa4b525c79b465c6643619b20fb2fc4"
+    },
+    {
+      "path": "public/grid-garden/js/messages.js",
+      "bytes": 41123,
+      "sha256": "5b7c63ab34dde8027ee23cae44f4732387c9eaaca657ebbbdc01d5426c47ce86"
+    },
+    {
+      "path": "public/grid-garden/licenses/Animate-MIT.txt",
+      "bytes": 1232,
+      "sha256": "cbfb91f71cc779a3aa497da81696960a656282a7ca04c2f2698bc1e0df7631c7"
+    },
+    {
+      "path": "public/grid-garden/licenses/CC-BY-3.0.txt",
+      "bytes": 19467,
+      "sha256": "e6bc9e9c474700b708f568bac9e5a8a9bcb2b1dad53442f5ba449fcb848b8e76"
+    },
+    {
+      "path": "public/grid-garden/licenses/Playgarden-GPL-3.0.txt",
+      "bytes": 34674,
+      "sha256": "fb981668c18a279e285fc4d83fba1e836cc84dd4daa73c9697d3cfd2d8aca6e0"
+    },
+    {
+      "path": "public/grid-garden/third-party/animate.css/README.md",
+      "bytes": 4622,
+      "sha256": "aee312c5458319f9acb51e30e80b6cf84dafd51978e9c3d6f6ceadfcee7a16c8"
+    },
+    {
+      "path": "public/grid-garden/third-party/animate.css/animate.css",
+      "bytes": 71108,
+      "sha256": "d44da5fc59ec94a8a4e6b556caeeec506d03821b1e29cef8d950a32955c5619b"
+    },
+    {
+      "path": "public/grid-garden/third-party/jquery/LICENSE.txt",
+      "bytes": 1095,
+      "sha256": "1ff603118efdb313799567cb4a408594954384f40843ca6f29c596f5b1f8907d"
+    },
+    {
+      "path": "public/grid-garden/third-party/jquery/dist/jquery.js",
+      "bytes": 287630,
+      "sha256": "416a3b2c3bf16d64f6b5b6d0f7b079df2267614dd6847fc2f3271b4409233c37"
+    },
+    {
+      "path": "public/grid-garden/third-party/jquery/external/sizzle/LICENSE.txt",
+      "bytes": 1605,
+      "sha256": "a078a8f80016416042c2e5f04dbb7f499f0f6deebb086511f3a3b72633a2d761"
+    },
+    {
+      "path": "scripts/grid-garden/adapt.py",
+      "bytes": 5189,
+      "sha256": "10dafa4d7797874210af60ca06bcb49e07627d5aedb9090c8802c7c5d478d7e0"
+    },
+    {
+      "path": "scripts/grid-garden/package-source.py",
+      "bytes": 1837,
+      "sha256": "c6a52ef8793544f96d97312fb1c2feccbffbdece94e7416ecaeac23c42801376"
+    },
+    {
+      "path": "scripts/grid-garden/verify-sources.py",
+      "bytes": 6475,
+      "sha256": "7a01c4b79029f14f560ee909b520d01cefc767a1ce1c26fe2a828bcc89d94c37"
+    },
+    {
+      "path": "src/games/GridGarden.tsx",
+      "bytes": 11304,
+      "sha256": "13a6e4df64a61cf2b7fa3d444fb252b604791498b56e4ad1984190ff29020b6f"
+    },
+    {
+      "path": "src/games/gridGarden.css",
+      "bytes": 1118,
+      "sha256": "762c160baabe8a771bb07dd843b6c8c3911e06a86056a20c3efa67dd47f4961b"
+    },
+    {
+      "path": "src/games/gridGardenLevels.json",
+      "bytes": 648,
+      "sha256": "d91d4382fb02331c2e798cf68023eaa1c0cf6e7e197739ac77ddf26c18523008"
+    },
+    {
+      "path": "vendor/grid-garden-original/CHANGES.md",
+      "bytes": 2891,
+      "sha256": "9a23e48e4610b26689bfb645bd8a33ec879004e83eb3a637f4a14759d4db768f"
+    },
+    {
+      "path": "vendor/grid-garden-original/license-manifest.json",
+      "bytes": 5114,
+      "sha256": "ab151200c7d468e004fbbdce17a938d96321120f0e11cc5029c258d38f6b3fb0"
+    },
+    {
+      "path": "vendor/grid-garden-original/source-manifest.json",
+      "bytes": 6852,
+      "sha256": "16cb6df25bf31b2c2fb28bee56a110c6378eba468cfd8f5c1d14f347069d5cc7"
+    },
+    {
+      "path": "vendor/grid-garden-original/supplement-manifest.json",
+      "bytes": 457,
+      "sha256": "dcb9efb2d7c008e7fe97eefcaf6969b0068afb0521b556604ab300bcfefbcf3a"
+    },
+    {
+      "path": "vendor/grid-garden-original/upstream/LICENSE",
+      "bytes": 1068,
+      "sha256": "a10a44d5f91ef5b97d7657038ad49caf579e8d3a6801577cdcc4b008c2c7152f"
+    },
+    {
+      "path": "vendor/grid-garden-original/upstream/README.md",
+      "bytes": 3426,
+      "sha256": "caf74df860ba558e3532d149539401d7ebace69c59bc1c51171bccf49d37c9cd"
+    },
+    {
+      "path": "vendor/grid-garden-original/upstream/css/style.css",
+      "bytes": 12663,
+      "sha256": "970987c5aca9559f47daa0d56b919cfb86739088a3064a86a29fb4eba1f348b4"
+    },
+    {
+      "path": "vendor/grid-garden-original/upstream/images/carrots-correct.svg",
+      "bytes": 7599,
+      "sha256": "cfdaa543de0c6182abb3d424c51c6e2fdf302add63b0ce8c95bde24786a9a8e8"
+    },
+    {
+      "path": "vendor/grid-garden-original/upstream/images/carrots-win.png",
+      "bytes": 104993,
+      "sha256": "b04f0bb2525ca4503714350bf505cbe00130d1339c40b49fd011ad23cb91bd4c"
+    },
+    {
+      "path": "vendor/grid-garden-original/upstream/images/carrots.svg",
+      "bytes": 5343,
+      "sha256": "94b3277815a82404a9e28d8265362a0c51f2131e3e19341e566edc714234c1d4"
+    },
+    {
+      "path": "vendor/grid-garden-original/upstream/images/dirt.svg",
+      "bytes": 1368,
+      "sha256": "83fe6a4b50ed1aaa2521945277f5ec09e051469b2e7e2d6cc7965703523d6b3c"
+    },
+    {
+      "path": "vendor/grid-garden-original/upstream/images/froggy.svg",
+      "bytes": 2602,
+      "sha256": "78b1d881230e69ddb1e504d1d097a12826007d236dee25a71a9b04bcd909b64a"
+    },
+    {
+      "path": "vendor/grid-garden-original/upstream/images/poison.svg",
+      "bytes": 1094,
+      "sha256": "755452f10943f850b9200dc868fef40f03bf07ec7f4905efa1fdac02cb19b5d9"
+    },
+    {
+      "path": "vendor/grid-garden-original/upstream/images/water.svg",
+      "bytes": 975,
+      "sha256": "87d9682936d6a2350bc4bfea3bb133291fa1b372191327ef7cfbe56bb72df586"
+    },
+    {
+      "path": "vendor/grid-garden-original/upstream/images/weeds-correct.svg",
+      "bytes": 6923,
+      "sha256": "3c8e8af04f084c6a0d54bb8ebf5dca01bf8653c7ad9359978a5257b5e0d7d127"
+    },
+    {
+      "path": "vendor/grid-garden-original/upstream/images/weeds.svg",
+      "bytes": 7272,
+      "sha256": "9ccb533a76af5b674a045a9205cc96541a8c0b2f3d719e25e9b00c33a1095038"
+    },
+    {
+      "path": "vendor/grid-garden-original/upstream/index.html",
+      "bytes": 9869,
+      "sha256": "7a6a4d49f9af46d413b2315e6c58317a9d9b3bf2818c0fe129843f7a06df2cb0"
+    },
+    {
+      "path": "vendor/grid-garden-original/upstream/js/docs.js",
+      "bytes": 95841,
+      "sha256": "bfa37528dde4a7215954e322b166701bd835b26438f685b6b2e085578ccd9299"
+    },
+    {
+      "path": "vendor/grid-garden-original/upstream/js/game.js",
+      "bytes": 12712,
+      "sha256": "cdfa26a956e87a3a734f1c208ef4e0aa040c17ee2c8a04756103f0835837d631"
+    },
+    {
+      "path": "vendor/grid-garden-original/upstream/js/levels.js",
+      "bytes": 535896,
+      "sha256": "1f4f10ff085b981a46ce14f7b18552c8aaa4b525c79b465c6643619b20fb2fc4"
+    },
+    {
+      "path": "vendor/grid-garden-original/upstream/js/messages.js",
+      "bytes": 41123,
+      "sha256": "5b7c63ab34dde8027ee23cae44f4732387c9eaaca657ebbbdc01d5426c47ce86"
+    },
+    {
+      "path": "vendor/grid-garden-original/upstream/licenses/Animate-MIT.txt",
+      "bytes": 1232,
+      "sha256": "cbfb91f71cc779a3aa497da81696960a656282a7ca04c2f2698bc1e0df7631c7"
+    },
+    {
+      "path": "vendor/grid-garden-original/upstream/licenses/CC-BY-3.0.txt",
+      "bytes": 19467,
+      "sha256": "e6bc9e9c474700b708f568bac9e5a8a9bcb2b1dad53442f5ba449fcb848b8e76"
+    },
+    {
+      "path": "vendor/grid-garden-original/upstream/licenses/Playgarden-GPL-3.0.txt",
+      "bytes": 34674,
+      "sha256": "fb981668c18a279e285fc4d83fba1e836cc84dd4daa73c9697d3cfd2d8aca6e0"
+    },
+    {
+      "path": "vendor/grid-garden-original/upstream/third-party/animate.css/README.md",
+      "bytes": 4622,
+      "sha256": "aee312c5458319f9acb51e30e80b6cf84dafd51978e9c3d6f6ceadfcee7a16c8"
+    },
+    {
+      "path": "vendor/grid-garden-original/upstream/third-party/animate.css/animate.css",
+      "bytes": 71108,
+      "sha256": "d44da5fc59ec94a8a4e6b556caeeec506d03821b1e29cef8d950a32955c5619b"
+    },
+    {
+      "path": "vendor/grid-garden-original/upstream/third-party/jquery/LICENSE.txt",
+      "bytes": 1095,
+      "sha256": "1ff603118efdb313799567cb4a408594954384f40843ca6f29c596f5b1f8907d"
+    },
+    {
+      "path": "vendor/grid-garden-original/upstream/third-party/jquery/dist/jquery.js",
+      "bytes": 287630,
+      "sha256": "416a3b2c3bf16d64f6b5b6d0f7b079df2267614dd6847fc2f3271b4409233c37"
+    },
+    {
+      "path": "vendor/grid-garden-original/upstream/third-party/jquery/external/sizzle/LICENSE.txt",
+      "bytes": 1605,
+      "sha256": "a078a8f80016416042c2e5f04dbb7f499f0f6deebb086511f3a3b72633a2d761"
+    },
+    {
+      "path": "public/grid-garden/source.zip",
+      "bytes": 936293,
+      "sha256": "3a45947bc1570b38c1e067a464f6f1c5ac57b395748977a773f61720e0d5627f"
+    }
+  ]
+}

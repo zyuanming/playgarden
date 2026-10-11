@@ -1,0 +1,27 @@
+{
+  "id": "grid-garden",
+  "title": "网格花园",
+  "subtitle": "用真正的 CSS Grid 照料胡萝卜与杂草，完整保留原作 28 课。",
+  "category": "编程启蒙",
+  "difficulty": "中级",
+  "tone": "green",
+  "levelCount": 28,
+  "allowUndo": false,
+  "resumeKey": "playgarden.grid-garden.v1",
+  "artwork": {
+    "url": "./grid-garden/images/carrots.svg",
+    "position": "center",
+    "size": "contain"
+  },
+  "source": {
+    "kind": "adapted",
+    "license": "MIT",
+    "author": "Thomas Park / Codepip",
+    "workTitle": "Grid Garden（完整原作 28 课及收获结局）",
+    "url": "https://github.com/thomaspark/gridgarden/tree/0e262f7272d4992340eb556bdb9b2d502cc59932",
+    "commit": "0e262f7272d4992340eb556bdb9b2d502cc59932",
+    "notice": "./grid-garden/NOTICE.txt",
+    "notes": "原作完整 28 课、中文课程与属性帮助、CSS Grid 浏览器矩形尺寸及颜色核验保留。代码与文字 MIT；Thomas Park 原作九张花园图像单独为 CC-BY-3.0，未经修改；jQuery/Sizzle 与 Animate.css 为 MIT。本站宿主与隔离适配 GPL-3.0-only。只有全部 28 课分别完成后才能获得完整课程收获结局；自由选关不自动通关。"
+  },
+  "component": "../games/GridGarden"
+}

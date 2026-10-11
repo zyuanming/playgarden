@@ -756,6 +756,43 @@
         "docs/avabranch-source-map.json"
       ],
       "scope": "Complete MIT first-party Canvas endless rules, four lives, group/independent steering, merger, collisions, four revival/stat pickups, score and restart. Zero finite levels. New Chinese opaque iframe host, safe storage, multitouch controls, paused clocks and card art are GPL-3.0-only. No audio, remote fonts, unknown images, analytics, Crafty or jQuery."
+    },
+    {
+      "name": "Grid Garden complete original 28-lesson course",
+      "version": "0e262f7272d4992340eb556bdb9b2d502cc59932",
+      "license": "MIT; artwork CC-BY-3.0; Playgarden adapter GPL-3.0-only",
+      "source": "https://github.com/thomaspark/gridgarden/tree/0e262f7272d4992340eb556bdb9b2d502cc59932",
+      "commit": "0e262f7272d4992340eb556bdb9b2d502cc59932",
+      "preferredSource": [
+        "vendor/grid-garden-original/upstream/js/game.js",
+        "vendor/grid-garden-original/upstream/js/levels.js",
+        "vendor/grid-garden-original/upstream/js/docs.js",
+        "vendor/grid-garden-original/upstream/js/messages.js",
+        "vendor/grid-garden-original/upstream/css/style.css",
+        "vendor/grid-garden-original/upstream/images",
+        "vendor/grid-garden-original/upstream/third-party/jquery/dist/jquery.js",
+        "vendor/grid-garden-original/upstream/third-party/animate.css/animate.css",
+        "public/grid-garden/adapter.js",
+        "public/grid-garden/adapter.css",
+        "public/grid-garden/index.html",
+        "src/games/GridGarden.tsx",
+        "src/games/gridGarden.css"
+      ],
+      "buildSources": [
+        "scripts/grid-garden/adapt.py",
+        "scripts/grid-garden/package-source.py",
+        "scripts/grid-garden/verify-sources.py"
+      ],
+      "scope": "28 original authored Grid challenges, complete multilingual lessons/help, original target class overrides, actual browser rectangle/size/color validator and uncounted original harvest ending. Nine unmodified licensed images. Readable jQuery 3.5.1/Sizzle and Animate.css 3.4.0; no upstream dependency installation or build. Opaque iframe; owned persistence, touch UI and pause/resume lifecycle. All 28 separately solved required for course ending.",
+      "notices": [
+        "public/grid-garden/NOTICE.txt",
+        "public/grid-garden/LICENSE",
+        "public/grid-garden/licenses/CC-BY-3.0.txt",
+        "public/grid-garden/licenses/Animate-MIT.txt",
+        "public/grid-garden/licenses/Playgarden-GPL-3.0.txt",
+        "public/grid-garden/third-party/jquery/LICENSE.txt",
+        "public/grid-garden/third-party/jquery/external/sizzle/LICENSE.txt"
+      ]
     }
   ]
 }
