@@ -1,0 +1,216 @@
+{
+  "game": "avabranch",
+  "repository": "https://github.com/Zolmeister/avabranch",
+  "commit": "4ab326b4a24d796328963da35c0d8d193d728496",
+  "license": "MIT",
+  "files": [
+    {
+      "upstreamPath": "LICENSE",
+      "gitBlobSha1": "67260fa8e1e2223ba10c00fe787ce166c2f738c2",
+      "sha256": "62b5faffdccf8f02a978d2f12e2593ad5f33a697a27bfc6af33a38d42225f7cf",
+      "bytes": 1077,
+      "sourceUrl": "https://github.com/Zolmeister/avabranch/blob/4ab326b4a24d796328963da35c0d8d193d728496/LICENSE",
+      "license": "MIT",
+      "classification": "upstream-allowed",
+      "runtimeEligible": true,
+      "path": "upstream/LICENSE"
+    },
+    {
+      "upstreamPath": "README",
+      "gitBlobSha1": "bec972f892e10fc2c3a09094f1c8d327885de10e",
+      "sha256": "2738fbbb167cfc8f276f5628b35694755e27908451185c67dff3f16b774442ad",
+      "bytes": 60,
+      "sourceUrl": "https://github.com/Zolmeister/avabranch/blob/4ab326b4a24d796328963da35c0d8d193d728496/README",
+      "license": "MIT",
+      "classification": "upstream-allowed",
+      "runtimeEligible": false,
+      "path": "upstream/README"
+    },
+    {
+      "upstreamPath": "docs/js/util.js",
+      "gitBlobSha1": "4dccb46a748ce526bd87ca01c0ea5f6c1b77124f",
+      "sha256": "137164adfd4852039c6c90b9524886bfc6e5b75a21a937b09bebb9261438b3de",
+      "bytes": 504,
+      "sourceUrl": "https://github.com/Zolmeister/avabranch/blob/4ab326b4a24d796328963da35c0d8d193d728496/docs/js/util.js",
+      "license": "MIT",
+      "classification": "upstream-allowed",
+      "runtimeEligible": true,
+      "path": "upstream/docs/js/util.js"
+    },
+    {
+      "upstreamPath": "docs/js/controls.js",
+      "gitBlobSha1": "1b90ab0cd9a9ba9251281921232d8994934898b8",
+      "sha256": "7644bada75ea27be19e7d0cc77f932c280b0388711d3163edc356ccb3cd11a13",
+      "bytes": 2191,
+      "sourceUrl": "https://github.com/Zolmeister/avabranch/blob/4ab326b4a24d796328963da35c0d8d193d728496/docs/js/controls.js",
+      "license": "MIT",
+      "classification": "upstream-allowed",
+      "runtimeEligible": true,
+      "path": "upstream/docs/js/controls.js"
+    },
+    {
+      "upstreamPath": "docs/js/hud.js",
+      "gitBlobSha1": "36c04fc33dc678838a628dc67f959864a78567d2",
+      "sha256": "24a0aa0f12455b45132d3eb373e9404e65cf0088bcc3197a8f54f895b6282b4f",
+      "bytes": 5183,
+      "sourceUrl": "https://github.com/Zolmeister/avabranch/blob/4ab326b4a24d796328963da35c0d8d193d728496/docs/js/hud.js",
+      "license": "MIT",
+      "classification": "upstream-allowed",
+      "runtimeEligible": true,
+      "path": "upstream/docs/js/hud.js"
+    },
+    {
+      "upstreamPath": "docs/js/powerups.js",
+      "gitBlobSha1": "5dc6e31434e6fdecfad6453c87639e0181450ec5",
+      "sha256": "71d4c5325c3b65b478be0e7e5e8b5fc63d7b431f2ab32cb379a8131bda67d66f",
+      "bytes": 4110,
+      "sourceUrl": "https://github.com/Zolmeister/avabranch/blob/4ab326b4a24d796328963da35c0d8d193d728496/docs/js/powerups.js",
+      "license": "MIT",
+      "classification": "upstream-allowed",
+      "runtimeEligible": true,
+      "path": "upstream/docs/js/powerups.js"
+    },
+    {
+      "upstreamPath": "docs/js/line.js",
+      "gitBlobSha1": "9b51c98115696bef66272b6e0bb0e9eea1be70c2",
+      "sha256": "e407a12704aaae6ccec81f4b9172de83e6dd69fe077ce5c15e2783c5412a387c",
+      "bytes": 2726,
+      "sourceUrl": "https://github.com/Zolmeister/avabranch/blob/4ab326b4a24d796328963da35c0d8d193d728496/docs/js/line.js",
+      "license": "MIT",
+      "classification": "upstream-allowed",
+      "runtimeEligible": true,
+      "path": "upstream/docs/js/line.js"
+    },
+    {
+      "upstreamPath": "docs/js/player.js",
+      "gitBlobSha1": "bb2e0b10d6a7f2a7df06a86ecae6b7c6b5028dd1",
+      "sha256": "adc34e7a3ec82613708224c2b3a1d21dc1ef45f7f60e442c6d6c13a8476920fe",
+      "bytes": 4115,
+      "sourceUrl": "https://github.com/Zolmeister/avabranch/blob/4ab326b4a24d796328963da35c0d8d193d728496/docs/js/player.js",
+      "license": "MIT",
+      "classification": "upstream-allowed",
+      "runtimeEligible": true,
+      "path": "upstream/docs/js/player.js"
+    },
+    {
+      "upstreamPath": "docs/js/blocks.js",
+      "gitBlobSha1": "e21a76969da843a052c30a498bee62784b7509b4",
+      "sha256": "d3eb2d34a59e1aec8d838263ce9578818656198142dff59c3f063b7dc729e8bc",
+      "bytes": 1341,
+      "sourceUrl": "https://github.com/Zolmeister/avabranch/blob/4ab326b4a24d796328963da35c0d8d193d728496/docs/js/blocks.js",
+      "license": "MIT",
+      "classification": "upstream-allowed",
+      "runtimeEligible": true,
+      "path": "upstream/docs/js/blocks.js"
+    },
+    {
+      "upstreamPath": "docs/js/game.js",
+      "gitBlobSha1": "11223c78eadc09d4579a7744fddf7e79b395c97f",
+      "sha256": "2a9585037edcd934fdc436a141a1af239f5138b65962caffb44b5c2f718f011f",
+      "bytes": 1190,
+      "sourceUrl": "https://github.com/Zolmeister/avabranch/blob/4ab326b4a24d796328963da35c0d8d193d728496/docs/js/game.js",
+      "license": "MIT",
+      "classification": "upstream-allowed",
+      "runtimeEligible": true,
+      "path": "upstream/docs/js/game.js"
+    },
+    {
+      "upstreamPath": "docs/js/main.js",
+      "gitBlobSha1": "5d871254dba5f61d11f485265719520c2c2260b7",
+      "sha256": "858c8a0a661a2f623b7d10a647937aca4366a2ba750733636c5b6f0ab36162d8",
+      "bytes": 2575,
+      "sourceUrl": "https://github.com/Zolmeister/avabranch/blob/4ab326b4a24d796328963da35c0d8d193d728496/docs/js/main.js",
+      "license": "MIT",
+      "classification": "upstream-allowed",
+      "runtimeEligible": true,
+      "path": "upstream/docs/js/main.js"
+    }
+  ],
+  "silentBase": [
+    {
+      "path": "silent-base/LICENSE",
+      "sha256": "62b5faffdccf8f02a978d2f12e2593ad5f33a697a27bfc6af33a38d42225f7cf",
+      "bytes": 1077,
+      "license": "MIT",
+      "modified": false
+    },
+    {
+      "path": "silent-base/index.html",
+      "sha256": "ebadd95cb9db5397bf548a49b1f2a281d34143478b3181e5902af94373237344",
+      "bytes": 1568,
+      "license": "MIT",
+      "modified": true
+    },
+    {
+      "path": "silent-base/js/blocks.js",
+      "sha256": "d3eb2d34a59e1aec8d838263ce9578818656198142dff59c3f063b7dc729e8bc",
+      "bytes": 1341,
+      "license": "MIT",
+      "modified": false
+    },
+    {
+      "path": "silent-base/js/controls.js",
+      "sha256": "7644bada75ea27be19e7d0cc77f932c280b0388711d3163edc356ccb3cd11a13",
+      "bytes": 2191,
+      "license": "MIT",
+      "modified": false
+    },
+    {
+      "path": "silent-base/js/game.js",
+      "sha256": "2a9585037edcd934fdc436a141a1af239f5138b65962caffb44b5c2f718f011f",
+      "bytes": 1190,
+      "license": "MIT",
+      "modified": false
+    },
+    {
+      "path": "silent-base/js/hud.js",
+      "sha256": "24a0aa0f12455b45132d3eb373e9404e65cf0088bcc3197a8f54f895b6282b4f",
+      "bytes": 5183,
+      "license": "MIT",
+      "modified": false
+    },
+    {
+      "path": "silent-base/js/line.js",
+      "sha256": "e407a12704aaae6ccec81f4b9172de83e6dd69fe077ce5c15e2783c5412a387c",
+      "bytes": 2726,
+      "license": "MIT",
+      "modified": false
+    },
+    {
+      "path": "silent-base/js/main.js",
+      "sha256": "5c3727b588afbbea1326f0a02ce4658f08bea9660ca089d6f15e5a34bf42e0bc",
+      "bytes": 1898,
+      "license": "MIT",
+      "modified": true
+    },
+    {
+      "path": "silent-base/js/player.js",
+      "sha256": "adc34e7a3ec82613708224c2b3a1d21dc1ef45f7f60e442c6d6c13a8476920fe",
+      "bytes": 4115,
+      "license": "MIT",
+      "modified": false
+    },
+    {
+      "path": "silent-base/js/powerups.js",
+      "sha256": "71d4c5325c3b65b478be0e7e5e8b5fc63d7b431f2ab32cb379a8131bda67d66f",
+      "bytes": 4110,
+      "license": "MIT",
+      "modified": false
+    },
+    {
+      "path": "silent-base/js/util.js",
+      "sha256": "137164adfd4852039c6c90b9524886bfc6e5b75a21a937b09bebb9261438b3de",
+      "bytes": 504,
+      "license": "MIT",
+      "modified": false
+    },
+    {
+      "path": "silent-base/style.css",
+      "sha256": "36d228b0881f8dc1fd42a483f552e2c0f72c1f38c43d456b973432a58ef66cb0",
+      "bytes": 941,
+      "license": "MIT",
+      "modified": true
+    }
+  ],
+  "excluded": "Third-party music, remote fonts, analytics, icon/sprite artwork, unused Crafty/jQuery and private audit-only references are absent."
+}

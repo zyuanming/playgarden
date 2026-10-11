@@ -1,0 +1,325 @@
+{
+  "revision": "hgc-f5b93cbb-playgarden-1",
+  "files": [
+    {
+      "path": "public/hyperspace-garbage-collection/ADAPTATION.md",
+      "bytes": 5271,
+      "sha256": "9954aebc973c1983a653fba5e8deff6b8c21fb6d3bb9b4a2b2bcb8a4ae341ccd"
+    },
+    {
+      "path": "public/hyperspace-garbage-collection/LICENSE",
+      "bytes": 1071,
+      "sha256": "ffc290c52533e629fae488a8e1403cb4b65797cba60a27ef12ae38d830eb6fad"
+    },
+    {
+      "path": "public/hyperspace-garbage-collection/NOTICE.txt",
+      "bytes": 43084,
+      "sha256": "3c54f4d74ea73a344ebfcd3e31d4d7f12f278daa321b4b046228ebe73c761fd0"
+    },
+    {
+      "path": "public/hyperspace-garbage-collection/PLAYGARDEN-CHANGES.md",
+      "bytes": 3478,
+      "sha256": "8b065f269d1b8b0951e8e131e09ff04085faf7264ae5ad7f343d6652033bdca3"
+    },
+    {
+      "path": "public/hyperspace-garbage-collection/README.md",
+      "bytes": 2023,
+      "sha256": "6c4562ace71400b4d3cd81a3e7f169e668d7194ad1eb8f2179b21371c1e72517"
+    },
+    {
+      "path": "public/hyperspace-garbage-collection/SOURCE-PROVENANCE.json",
+      "bytes": 27185,
+      "sha256": "c327e8593915b8aae5b081df37310396934209f8d82391b0734684e234c18d9a"
+    },
+    {
+      "path": "public/hyperspace-garbage-collection/adapter.css",
+      "bytes": 2836,
+      "sha256": "a72ee02bf4c2256b6a75e0d034bb3121fa97596e2cc8ed83ce1cc5fe6b5ad09a"
+    },
+    {
+      "path": "public/hyperspace-garbage-collection/adapter.js",
+      "bytes": 15193,
+      "sha256": "4f423b764f274789e63e69706a92964734ef9162ad261292709f0631e6ce7f47"
+    },
+    {
+      "path": "public/hyperspace-garbage-collection/card.svg",
+      "bytes": 1425,
+      "sha256": "41f3f4bcf7c1536ac9f57bb893daa9508b7ce132ca53e731622deb5fb49340e1"
+    },
+    {
+      "path": "public/hyperspace-garbage-collection/index.html",
+      "bytes": 2113,
+      "sha256": "c8944120288615f382884687a74c7032c5eb828f548640c970189d4de8496937"
+    },
+    {
+      "path": "public/hyperspace-garbage-collection/js/Box2dWeb/Box2dWeb-2.1.a.3.js",
+      "bytes": 429833,
+      "sha256": "a72a41cb7158ab5f0895e82928b6afe919536da1a7ffd43ec366556b6865be07"
+    },
+    {
+      "path": "public/hyperspace-garbage-collection/js/base-object.js",
+      "bytes": 343,
+      "sha256": "34d0dbc3614dd56ca702fdb9a7ae3277231cf466d4ebef677464d7c53877e234"
+    },
+    {
+      "path": "public/hyperspace-garbage-collection/js/color.js",
+      "bytes": 1537,
+      "sha256": "a8c493767525ffd875dbefde4b97096791245b1a8ec305fe0b765fa5bcc91922"
+    },
+    {
+      "path": "public/hyperspace-garbage-collection/js/config/colors.js",
+      "bytes": 681,
+      "sha256": "ba3052f086d069314ca73874894a9cee41a40deec7569e948f356238636397be"
+    },
+    {
+      "path": "public/hyperspace-garbage-collection/js/config/material.js",
+      "bytes": 454,
+      "sha256": "4e61687ce2ce359f9e205086bb7fd5ba85c8228e83d9f6ab5dba8b0dbc77a953"
+    },
+    {
+      "path": "public/hyperspace-garbage-collection/js/config/settings.js",
+      "bytes": 1317,
+      "sha256": "a5517bba50c550f7c325ce94171037e65ba75a526152b068dbe0e8cae5a50e8e"
+    },
+    {
+      "path": "public/hyperspace-garbage-collection/js/effects/background.js",
+      "bytes": 2974,
+      "sha256": "d373cb2624d504cdcbd50c614fb6ba238f8ea1c2ede0905ac47e6fa109837983"
+    },
+    {
+      "path": "public/hyperspace-garbage-collection/js/effects/shake.js",
+      "bytes": 1594,
+      "sha256": "7df042a15b976e763372364a945cb731098d6414e9914845eadfcaaa92c53a8d"
+    },
+    {
+      "path": "public/hyperspace-garbage-collection/js/effects/trail.js",
+      "bytes": 2170,
+      "sha256": "97e2869b6633383228b7a82c5ff70871993af05b3518212723585d28861ea37f"
+    },
+    {
+      "path": "public/hyperspace-garbage-collection/js/effects/trigger-wire.js",
+      "bytes": 3468,
+      "sha256": "d4e8733f4b4066aa6ce2a6c188fc56e85744ec5f7ebd3fc74e1d381e7eed7ee3"
+    },
+    {
+      "path": "public/hyperspace-garbage-collection/js/entities/camera.js",
+      "bytes": 2827,
+      "sha256": "d3a7bcb1e8b904622fce20956bc8bb2563e1201deef50b13246461aeac78ee3f"
+    },
+    {
+      "path": "public/hyperspace-garbage-collection/js/entities/door.js",
+      "bytes": 3399,
+      "sha256": "ccdc2f63dba632e79dc6f9de9789eedce3958e8b944941e11f53c9338717a002"
+    },
+    {
+      "path": "public/hyperspace-garbage-collection/js/entities/emitter.js",
+      "bytes": 4701,
+      "sha256": "1901eb979a5d94d2029b9407182fab984e5be86dc9fcc6d0cfd0f2e7f2920e48"
+    },
+    {
+      "path": "public/hyperspace-garbage-collection/js/entities/entity.js",
+      "bytes": 723,
+      "sha256": "d731c05186acf6cb8d0572786ee83e94a05f96d11bd86f0c053db54558fd2d23"
+    },
+    {
+      "path": "public/hyperspace-garbage-collection/js/entities/explosion.js",
+      "bytes": 2986,
+      "sha256": "8d5077c88699b6595a35fcfdb4533fd89ac78605eb52d67724be180a00ae03b4"
+    },
+    {
+      "path": "public/hyperspace-garbage-collection/js/entities/laser.js",
+      "bytes": 5237,
+      "sha256": "6796129268f6d9c647e71e05fc06dc763884706d22af2721cd7cd29f487d4513"
+    },
+    {
+      "path": "public/hyperspace-garbage-collection/js/entities/physics-entity.js",
+      "bytes": 7335,
+      "sha256": "39050082b5ac3abc569e3a1ce8ae8c73dd722780739846c56a6a9e5401197bd7"
+    },
+    {
+      "path": "public/hyperspace-garbage-collection/js/entities/player.js",
+      "bytes": 5181,
+      "sha256": "a025cf747591af1d07851c06bdf2823ce3b2c54dd35fa5d9149c4804560b1e27"
+    },
+    {
+      "path": "public/hyperspace-garbage-collection/js/entities/tractor-beam.js",
+      "bytes": 4030,
+      "sha256": "e05d471e105940b419fbbf395550b2cf43c2e6f126a40a2ff9c581b91e8b2709"
+    },
+    {
+      "path": "public/hyperspace-garbage-collection/js/entities/trash.js",
+      "bytes": 1095,
+      "sha256": "615b0aeab74e706396aab9c6297829d78b0ba5e3544a521531020e5a0581c52c"
+    },
+    {
+      "path": "public/hyperspace-garbage-collection/js/entities/trigger.js",
+      "bytes": 5553,
+      "sha256": "f95a8346e513ffc5064e8d9439804da7a59f449416e60ad974c3256033412236"
+    },
+    {
+      "path": "public/hyperspace-garbage-collection/js/game.js",
+      "bytes": 11584,
+      "sha256": "e31ea33a7e0050a61f82387e5753fab8df9a53ebf7751450e653f2ce91a73c97"
+    },
+    {
+      "path": "public/hyperspace-garbage-collection/js/geometry/circle.js",
+      "bytes": 2125,
+      "sha256": "cb085f6a30b3363e72546007019767e5f80e7a9c78ce6370101389529d2e3cbb"
+    },
+    {
+      "path": "public/hyperspace-garbage-collection/js/geometry/geometry-factory.js",
+      "bytes": 1093,
+      "sha256": "909c38a2f565768da39053f127c8d08e829f3fe476af9de4bc267ca54e4a7d4b"
+    },
+    {
+      "path": "public/hyperspace-garbage-collection/js/geometry/intersection.js",
+      "bytes": 4090,
+      "sha256": "4d3dcf1876c4a26b6a369f6c73f8844e347ee0d9832bcb691b41d89674eb395e"
+    },
+    {
+      "path": "public/hyperspace-garbage-collection/js/geometry/polygon.js",
+      "bytes": 2425,
+      "sha256": "70167d1af133f85681bbccfb3ab90a1186f4679f9cdf009afd197c67a45bde6f"
+    },
+    {
+      "path": "public/hyperspace-garbage-collection/js/geometry/rect.js",
+      "bytes": 1790,
+      "sha256": "ae1f4ad8719de0ecd73b8de74b05c75b64a95aae5598418f97715e8be05d51d0"
+    },
+    {
+      "path": "public/hyperspace-garbage-collection/js/geometry/segment.js",
+      "bytes": 1635,
+      "sha256": "0a69bbd4cf7186dba639e30613adaf2aab04f2665b42e3244a42bd01f89fc264"
+    },
+    {
+      "path": "public/hyperspace-garbage-collection/js/input.js",
+      "bytes": 5495,
+      "sha256": "5dda236ec670a8eff9815e611f7ba9790e7619b8899172ee4b2c86d67f480ac4"
+    },
+    {
+      "path": "public/hyperspace-garbage-collection/js/level.js",
+      "bytes": 3114,
+      "sha256": "31f9fa8f554b9f4d1152623656c70ef1bb3733b48885141c644b585bab2f0384"
+    },
+    {
+      "path": "public/hyperspace-garbage-collection/js/levels/level-01.js",
+      "bytes": 4361,
+      "sha256": "7ea487e37a97f66763c509156cf0990ea695362f76061dcc5cc9fe91a8ff0fee"
+    },
+    {
+      "path": "public/hyperspace-garbage-collection/js/levels/level-02.js",
+      "bytes": 2976,
+      "sha256": "efa3aa426f87423dd4147f1c608b39ee22a3d6ec20ab298691e82266432d22fe"
+    },
+    {
+      "path": "public/hyperspace-garbage-collection/js/levels/level-03.js",
+      "bytes": 2892,
+      "sha256": "36211c3626174c9f2fe9bcb5a4895374cbdc546821ec4608518e444da0711567"
+    },
+    {
+      "path": "public/hyperspace-garbage-collection/js/levels/level-04.js",
+      "bytes": 3379,
+      "sha256": "54bbc206cc6dc200bbc9debf018ff744a4486d62801aa26cf2ca521f2391be9f"
+    },
+    {
+      "path": "public/hyperspace-garbage-collection/js/levels/level-end.js",
+      "bytes": 535,
+      "sha256": "aa387f129980aa9a70b88802880b04f36e78b2d8ea5d402a1e16c3a68a51b10d"
+    },
+    {
+      "path": "public/hyperspace-garbage-collection/js/levels/utils-level.js",
+      "bytes": 2656,
+      "sha256": "ea358abb40eae8abe4de4d658fe949a33048e4e05f14e0df99fb149f2fa71904"
+    },
+    {
+      "path": "public/hyperspace-garbage-collection/js/maps/level-01.js",
+      "bytes": 6923,
+      "sha256": "f013d2a0d55531c2e5c35b524947ef6810b24bc463acfd12da4035522b06ad11"
+    },
+    {
+      "path": "public/hyperspace-garbage-collection/js/maps/level-02.js",
+      "bytes": 5894,
+      "sha256": "724dc8415ec3221fbb1e14b5f12948a944445a0fb6ab30b38820c25642ac398f"
+    },
+    {
+      "path": "public/hyperspace-garbage-collection/js/maps/level-03.js",
+      "bytes": 5726,
+      "sha256": "32e354d5df9f292ebb214984e43fabc85f4f985b5add6e467c1ffa7ea487ae1b"
+    },
+    {
+      "path": "public/hyperspace-garbage-collection/js/maps/level-04.js",
+      "bytes": 9853,
+      "sha256": "34b1df0cdfc11e78b485128730b363a7ab3842f265f5ef13b37e88035e4751b6"
+    },
+    {
+      "path": "public/hyperspace-garbage-collection/js/object2d.js",
+      "bytes": 1817,
+      "sha256": "c72846bd60158e6515fb91222920fa8656591ca63a40cfb75cead324ebc98dab"
+    },
+    {
+      "path": "public/hyperspace-garbage-collection/js/playgarden-clock.js",
+      "bytes": 1342,
+      "sha256": "e5760af850eb4cf21337eeb793b28935253fff02a9d1d1de2067fe0c65904c1c"
+    },
+    {
+      "path": "public/hyperspace-garbage-collection/js/require.js",
+      "bytes": 82819,
+      "sha256": "dc7d38445c5ca3336f5963cb401ae71d964368f1205124f1187ff08e4f7f9084"
+    },
+    {
+      "path": "public/hyperspace-garbage-collection/js/utils-box2d.js",
+      "bytes": 456,
+      "sha256": "e7f46d32d772278955a1096671f6b2ead4afb60921100a06f9f8002c4590d5dd"
+    },
+    {
+      "path": "public/hyperspace-garbage-collection/js/utils.js",
+      "bytes": 6020,
+      "sha256": "bc631e8cb3f80c23024792373df71f66263d9ea86d3d322e4df76c7358667299"
+    },
+    {
+      "path": "public/hyperspace-garbage-collection/js/world.js",
+      "bytes": 239,
+      "sha256": "0e476b5968c5434f463858603b1a4b51e497985ad72735c071ed37afc09357b2"
+    },
+    {
+      "path": "public/hyperspace-garbage-collection/json/level-01.json",
+      "bytes": 6164,
+      "sha256": "6e13cff7e421eee40987fdb4003bad1ee27c9463b07633ba421ea8e54ebd6205"
+    },
+    {
+      "path": "public/hyperspace-garbage-collection/json/level-02.json",
+      "bytes": 5238,
+      "sha256": "f7539c3efb5c7fd2c41a72eee28436cf044bc30d0a900094107ea2165eafe59b"
+    },
+    {
+      "path": "public/hyperspace-garbage-collection/json/level-03.json",
+      "bytes": 5087,
+      "sha256": "a2405be76e38e18976f261ba5b2cdd16293157a19edc6f4a7fe048be839ef770"
+    },
+    {
+      "path": "public/hyperspace-garbage-collection/json/level-04.json",
+      "bytes": 8857,
+      "sha256": "5f8df67fcaff6412fdab0ad25e8b06d3e65bb18e00f5445bc0c7ee51372e86a6"
+    },
+    {
+      "path": "public/hyperspace-garbage-collection/licenses/GPL-3.0.txt",
+      "bytes": 34674,
+      "sha256": "fb981668c18a279e285fc4d83fba1e836cc84dd4daa73c9697d3cfd2d8aca6e0"
+    },
+    {
+      "path": "public/hyperspace-garbage-collection/licenses/box2dweb-zlib.txt",
+      "bytes": 900,
+      "sha256": "5edec044eaf1b883c7d06e1042c9dde03c58294fc1d4059229c5084d8d3119f8"
+    },
+    {
+      "path": "public/hyperspace-garbage-collection/licenses/requirejs-2.1.9.txt",
+      "bytes": 2832,
+      "sha256": "b90ae02f7c8651b7656a6212e2cedbccb7f04a89d041acccf5a1a58fd163bb04"
+    },
+    {
+      "path": "public/hyperspace-garbage-collection/licenses/requirejs-text-2.0.10.txt",
+      "bytes": 2832,
+      "sha256": "b90ae02f7c8651b7656a6212e2cedbccb7f04a89d041acccf5a1a58fd163bb04"
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+<!doctype html>
+<!-- SPDX-License-Identifier: GPL-3.0-only -->
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'none'; font-src 'none'; media-src 'none'; connect-src 'none'; object-src 'none'; frame-src 'none'; base-uri 'none'; form-action 'none'">
+  <title>Avabranch · 四线分流</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <div class="scoreboard" aria-label="本局状态"><span>得分 <b id="score">0</b></span><span>最高 <b id="best">0</b></span><span id="mode">合流 ×1</span><span id="lives">2 / 4 条线</span></div>
+    <div class="canvas-wrap"><canvas id="canv" width="800" height="600" tabindex="0" aria-label="四线分流游戏画布"></canvas></div>
+    <div class="toolbar">
+      <button id="start" type="button">开始挑战</button>
+      <button id="branch" type="button" disabled>分流 · 空格</button>
+      <button id="pause" type="button" disabled>暂停 · P</button>
+    </div>
+    <p id="message" role="status">从红、黄两条线开始。躲开黑块和边缘，拾取彩色光球恢复同色生命。</p>
+    <section class="touch-controls" aria-label="多指方向控制">
+      <div class="color-row red" data-color-row="0"><span id="life-0">红线</span><button type="button" data-steer data-row="0" data-col="0" aria-label="红线向左">左 · A</button><button type="button" data-steer data-row="0" data-col="1" aria-label="红线向右">右 · S</button></div>
+      <div class="color-row yellow" data-color-row="1"><span id="life-1">黄线</span><button type="button" data-steer data-row="1" data-col="0" aria-label="黄线向左">左 · D</button><button type="button" data-steer data-row="1" data-col="1" aria-label="黄线向右">右 · F</button></div>
+      <div class="color-row green" data-color-row="2"><span id="life-2">绿线</span><button type="button" data-steer data-row="2" data-col="0" aria-label="绿线向左">左 · J</button><button type="button" data-steer data-row="2" data-col="1" aria-label="绿线向右">右 · K</button></div>
+      <div class="color-row blue" data-color-row="3"><span id="life-3">蓝线</span><button type="button" data-steer data-row="3" data-col="0" aria-label="蓝线向左">左 · L</button><button type="button" data-steer data-row="3" data-col="1" aria-label="蓝线向右">右 · ;</button></div>
+    </section>
+    <p class="hint">合流时任一行左右键控制全队；分流后可多指同时控制不同颜色。键盘合流用 A / F，分流按各行标示。</p>
+    <details id="settings"><summary>自定义分流键位</summary>
+      <p>每个键不可重复，使用字母、数字或分号。P、空格、Enter 保留给暂停、分流和开始；编辑时游戏暂停。</p>
+      <div class="mapping-grid">
+        <label>红左 <input maxlength="1" data-map-row="0" data-map-col="0" aria-label="红线左键" autocomplete="off"></label><label>红右 <input maxlength="1" data-map-row="0" data-map-col="1" aria-label="红线右键" autocomplete="off"></label>
+        <label>黄左 <input maxlength="1" data-map-row="1" data-map-col="0" aria-label="黄线左键" autocomplete="off"></label><label>黄右 <input maxlength="1" data-map-row="1" data-map-col="1" aria-label="黄线右键" autocomplete="off"></label>
+        <label>绿左 <input maxlength="1" data-map-row="2" data-map-col="0" aria-label="绿线左键" autocomplete="off"></label><label>绿右 <input maxlength="1" data-map-row="2" data-map-col="1" aria-label="绿线右键" autocomplete="off"></label>
+        <label>蓝左 <input maxlength="1" data-map-row="3" data-map-col="0" aria-label="蓝线左键" autocomplete="off"></label><label>蓝右 <input maxlength="1" data-map-row="3" data-map-col="1" aria-label="蓝线右键" autocomplete="off"></label>
+      </div>
+      <div class="mapping-actions"><button id="save-keys" type="button">保存键位</button><button id="reset-keys" type="button">恢复默认键位</button></div>
+      <p id="key-message" role="status">最高分与键位保存在当前浏览器。</p>
+    </details>
+    <footer>Avabranch © 2013 Zolmeister · 原作 MIT · Playgarden 适配 GPL-3.0-only</footer>
+  </main>
+  <script src="js/util.js"></script><script src="js/game.js"></script><script src="js/controls.js"></script><script src="js/line.js"></script><script src="js/player.js"></script><script src="js/blocks.js"></script><script src="js/powerups.js"></script><script src="js/hud.js"></script><script src="js/main.js"></script><script src="adapter.js"></script>
+</body>
+</html>

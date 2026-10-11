@@ -1,0 +1,3 @@
+### Hyperspace Garbage Collection (four original stages and ending)
+
+Original author razh, MIT; pinned commit `f5b93cbb57f653be4455f9dd5c130463b11abe2a`. Full original maps, material-dependent Box2D transport, finite-lived debris, matching capture triggers, lasers, tractor beams, doors, procedural Canvas art and original ending are retained. Box2dWeb 2.1.a.3 is zlib; RequireJS 2.1.9 and its source-only text 2.0.10 plugin use their MIT grants. The cleared source subset excludes the unverified audio and mixed-permission helpers. Playgarden host, lifecycle changes, scheduler, controls and original SVG cover are GPL-3.0-only. Full grants: `public/hyperspace-garbage-collection/NOTICE.txt`; source closure and changes: its `source.zip` and `ADAPTATION.md`.

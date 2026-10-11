@@ -1,0 +1,160 @@
+{
+  "game": "avabranch",
+  "commit": "4ab326b4a24d796328963da35c0d8d193d728496",
+  "levelCount": 0,
+  "endless": true,
+  "files": [
+    {
+      "path": "public/avabranch/LICENSE",
+      "bytes": 1077,
+      "sha256": "62b5faffdccf8f02a978d2f12e2593ad5f33a697a27bfc6af33a38d42225f7cf",
+      "license": "MIT",
+      "source": "https://github.com/Zolmeister/avabranch/blob/4ab326b4a24d796328963da35c0d8d193d728496/LICENSE",
+      "relationship": "complete original MIT license"
+    },
+    {
+      "path": "public/avabranch/NOTICE.txt",
+      "bytes": 36969,
+      "sha256": "f0b40589b36383d2e797342a2d4a38b878b8e19b2ab9ae90aad896db1ce7e2c7",
+      "license": "GPL-3.0-only",
+      "source": "Playgarden contributors, 2026-10-11",
+      "relationship": "new adaptation source or license/provenance document"
+    },
+    {
+      "path": "public/avabranch/Playgarden-GPL-3.0.txt",
+      "bytes": 34674,
+      "sha256": "fb981668c18a279e285fc4d83fba1e836cc84dd4daa73c9697d3cfd2d8aca6e0",
+      "license": "GPL-3.0-only",
+      "source": "Playgarden contributors, 2026-10-11",
+      "relationship": "new adaptation source or license/provenance document"
+    },
+    {
+      "path": "public/avabranch/README.md",
+      "bytes": 2066,
+      "sha256": "38f5ce89c1e8255827ea0054ccf0c36cc3f02b8cdcde1ea6b64f3ec7a390fcc0",
+      "license": "GPL-3.0-only",
+      "source": "Playgarden contributors, 2026-10-11",
+      "relationship": "new adaptation source or license/provenance document"
+    },
+    {
+      "path": "public/avabranch/adapter.js",
+      "bytes": 15243,
+      "sha256": "e4d5ddefeebe0d7e15ddad9ff3379d436aeb5b2aff3604a1e9dfe4155f6dd923",
+      "license": "GPL-3.0-only",
+      "source": "Playgarden contributors, 2026-10-11",
+      "relationship": "new adaptation source or license/provenance document"
+    },
+    {
+      "path": "public/avabranch/index.html",
+      "bytes": 4723,
+      "sha256": "cf495f15165f683cdaca109f5fab9df5d240e5c80d036da9553e5485d4730557",
+      "license": "GPL-3.0-only",
+      "source": "Playgarden contributors, 2026-10-11",
+      "relationship": "new adaptation source or license/provenance document"
+    },
+    {
+      "path": "public/avabranch/js/blocks.js",
+      "bytes": 1341,
+      "sha256": "d3eb2d34a59e1aec8d838263ce9578818656198142dff59c3f063b7dc729e8bc",
+      "license": "MIT",
+      "source": "https://github.com/Zolmeister/avabranch/blob/4ab326b4a24d796328963da35c0d8d193d728496/docs/js/blocks.js",
+      "relationship": "byte-identical original"
+    },
+    {
+      "path": "public/avabranch/js/controls.js",
+      "bytes": 1693,
+      "sha256": "43f26d95cfc414a9c16735ad12eff3855304cd141dfa65667cba6fbf6bb964b2",
+      "license": "GPL-3.0-only",
+      "source": "Playgarden contributors, 2026-10-11",
+      "relationship": "new adaptation source or license/provenance document"
+    },
+    {
+      "path": "public/avabranch/js/game.js",
+      "bytes": 1442,
+      "sha256": "9c10a78588e96fe16a84e041d2e801628cea2cc5bc37198e40f12f976f2e8f4e",
+      "license": "MIT",
+      "source": "https://github.com/Zolmeister/avabranch/blob/4ab326b4a24d796328963da35c0d8d193d728496/docs/js/game.js",
+      "relationship": "modified MIT original, reproducible in DERIVATION.patch"
+    },
+    {
+      "path": "public/avabranch/js/hud.js",
+      "bytes": 4647,
+      "sha256": "ed1e33413410d082bbc555db6821f29c8440139203f509438ddabce528e6388e",
+      "license": "MIT",
+      "source": "https://github.com/Zolmeister/avabranch/blob/4ab326b4a24d796328963da35c0d8d193d728496/docs/js/hud.js",
+      "relationship": "modified MIT original, reproducible in DERIVATION.patch"
+    },
+    {
+      "path": "public/avabranch/js/line.js",
+      "bytes": 2726,
+      "sha256": "e407a12704aaae6ccec81f4b9172de83e6dd69fe077ce5c15e2783c5412a387c",
+      "license": "MIT",
+      "source": "https://github.com/Zolmeister/avabranch/blob/4ab326b4a24d796328963da35c0d8d193d728496/docs/js/line.js",
+      "relationship": "byte-identical original"
+    },
+    {
+      "path": "public/avabranch/js/main.js",
+      "bytes": 1035,
+      "sha256": "d0bfa531fdedb75a49c9a61f122d1198339fc344bd5f63266bbdfcd46d151a9c",
+      "license": "MIT",
+      "source": "https://github.com/Zolmeister/avabranch/blob/4ab326b4a24d796328963da35c0d8d193d728496/docs/js/main.js",
+      "relationship": "modified MIT original, reproducible in DERIVATION.patch"
+    },
+    {
+      "path": "public/avabranch/js/player.js",
+      "bytes": 4115,
+      "sha256": "adc34e7a3ec82613708224c2b3a1d21dc1ef45f7f60e442c6d6c13a8476920fe",
+      "license": "MIT",
+      "source": "https://github.com/Zolmeister/avabranch/blob/4ab326b4a24d796328963da35c0d8d193d728496/docs/js/player.js",
+      "relationship": "byte-identical original"
+    },
+    {
+      "path": "public/avabranch/js/powerups.js",
+      "bytes": 4262,
+      "sha256": "f4ae8157af897a9823d0c939a9da2700b361abcd27c5535c6e2d50199a24df52",
+      "license": "MIT",
+      "source": "https://github.com/Zolmeister/avabranch/blob/4ab326b4a24d796328963da35c0d8d193d728496/docs/js/powerups.js",
+      "relationship": "modified MIT original, reproducible in DERIVATION.patch"
+    },
+    {
+      "path": "public/avabranch/js/util.js",
+      "bytes": 504,
+      "sha256": "137164adfd4852039c6c90b9524886bfc6e5b75a21a937b09bebb9261438b3de",
+      "license": "MIT",
+      "source": "https://github.com/Zolmeister/avabranch/blob/4ab326b4a24d796328963da35c0d8d193d728496/docs/js/util.js",
+      "relationship": "byte-identical original"
+    },
+    {
+      "path": "public/avabranch/style.css",
+      "bytes": 3066,
+      "sha256": "46896f4c497f231c6af8d34f133bc2f97f1c50455eea2448e359305afcbc8a3b",
+      "license": "GPL-3.0-only",
+      "source": "Playgarden contributors, 2026-10-11",
+      "relationship": "new adaptation source or license/provenance document"
+    },
+    {
+      "path": "src/games/Avabranch.tsx",
+      "bytes": 10162,
+      "sha256": "e00ac00e209258dd97c95e8fc75ff5648b49380f13fe58f18dac5fa2b280faf9",
+      "license": "GPL-3.0-only",
+      "source": "Playgarden contributors, 2026-10-11",
+      "relationship": "new adaptation source or license/provenance document"
+    },
+    {
+      "path": "src/games/avabranch.css",
+      "bytes": 1539,
+      "sha256": "f3262ecd3a9eebf3795cf773783262f475c4d3dd2ab69b60a7beeb8792f8377a",
+      "license": "GPL-3.0-only",
+      "source": "Playgarden contributors, 2026-10-11",
+      "relationship": "new adaptation source or license/provenance document"
+    },
+    {
+      "path": "public/avabranch-art.svg",
+      "bytes": 1620,
+      "sha256": "543cd47cf85501559fad10f0f7dc87944457043ac8c5bd3de752394dc54096dc",
+      "license": "GPL-3.0-only",
+      "source": "Playgarden contributors, 2026-10-11",
+      "relationship": "new adaptation source or license/provenance document"
+    }
+  ]
+}

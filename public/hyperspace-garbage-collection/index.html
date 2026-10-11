@@ -1,0 +1,10 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'none'; connect-src 'none'; media-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+<title>反物质清运站 · Hyperspace Garbage Collection</title><link rel="stylesheet" href="adapter.css"></head>
+<body><main id="app"><header><span id="stage-label">反物质清运站</span><span id="captures" aria-live="polite">等待启动</span></header>
+<div id="viewport"><div id="canvas-mount"></div><section id="briefing"><p class="eyebrow">HYPERSPACE GARBAGE COLLECTION</p><h1>反物质清运站</h1><p id="briefing-text"></p><button id="start-btn" type="button">开始清运</button></section><div id="pause-cover" hidden>已暂停 · 所有物理与计时已冻结</div><section id="finish" hidden><h2 id="finish-title">舱门已开启</h2><p id="finish-text"></p><button id="next-btn" type="button">下一关</button><button id="replay-btn" type="button">再玩本关</button></section></div>
+<div class="toolbar"><button id="material-btn" type="button">切换物质</button><button id="pause-btn" type="button">暂停</button><button id="restart-btn" type="button">重试本关</button></div>
+<div class="controls"><div class="dpad" aria-label="按住方向移动"><button data-direction="38" class="up" aria-label="向上移动">↑</button><button data-direction="37" class="left" aria-label="向左移动">←</button><button data-direction="40" class="down" aria-label="向下移动">↓</button><button data-direction="39" class="right" aria-label="向右移动">→</button></div><p id="instructions">按住方向键 / WASD，或在画布拖动。把同类碎屑推入收集框，再进入打开的舱门。</p></div>
+<p id="message" role="status"></p><p class="credit">razh · 2013 · 原作四关及结局 · 无声版</p></main>
+<script src="js/require.js"></script><script src="adapter.js"></script></body></html>

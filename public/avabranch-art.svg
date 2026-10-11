@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="600" viewBox="0 0 960 600" role="img" aria-labelledby="title desc">
+  <!-- SPDX-License-Identifier: GPL-3.0-only; original Playgarden illustration. -->
+  <title id="title">四线分流</title><desc id="desc">红黄绿蓝四道彩线在黑色障碍间分开穿行。</desc>
+  <rect width="960" height="600" fill="#f1f3e9"/>
+  <g fill="#263838"><rect x="168" y="126" width="114" height="74" rx="8"/><rect x="430" y="205" width="160" height="39" rx="8"/><rect x="705" y="68" width="80" height="130" rx="8"/><rect x="674" y="351" width="156" height="58" rx="8"/><rect x="216" y="371" width="125" height="43" rx="8"/></g>
+  <g fill="none" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"><path d="M400 620V462Q400 420 368 350L324 261Q300 211 328 158L379 72" stroke="#e67373"/><path d="M431 620V450Q431 411 421 350L389 230Q381 192 411 146L442 105" stroke="#d9c951"/><path d="M462 620V420Q462 380 503 340L599 263Q631 237 623 199L605 118" stroke="#85bd57"/><path d="M493 620V466Q493 425 542 399L615 355Q648 338 651 286L661 203" stroke="#708ee9"/></g>
+  <g fill="#708ee9"><circle cx="850" cy="254" r="9"/><circle cx="850" cy="228" r="3"/><circle cx="827" cy="267" r="3"/><circle cx="875" cy="263" r="3"/></g>
+  <g fill="#e67373"><circle cx="137" cy="297" r="9"/><circle cx="113" cy="296" r="3"/><circle cx="147" cy="274" r="3"/><circle cx="151" cy="315" r="3"/></g>
+  <rect x="38" y="35" width="175" height="39" rx="19" fill="#dce6d4"/><text x="59" y="61" font-family="sans-serif" font-size="19" fill="#3a5945" font-weight="700">AVABRANCH</text>
+</svg>

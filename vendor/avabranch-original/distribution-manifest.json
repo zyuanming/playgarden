@@ -1,0 +1,319 @@
+{
+  "game": "avabranch",
+  "commit": "4ab326b4a24d796328963da35c0d8d193d728496",
+  "levelCount": 0,
+  "endless": true,
+  "archive": "public/avabranch/source.zip",
+  "archiveExclusions": [
+    "distribution-manifest.json (external to avoid circular hashing)",
+    "source.zip (archive itself)"
+  ],
+  "files": [
+    {
+      "path": "docs/avabranch-adaptation.md",
+      "bytes": 7972,
+      "sha256": "e3734193c8d5dd032bcfef43e91ae06814cae6fdd437b3a60eeec964630e8b68",
+      "license": "GPL-3.0-only"
+    },
+    {
+      "path": "docs/avabranch-source-map.json",
+      "bytes": 6764,
+      "sha256": "27a8196ce12d37368aa02756e3dea6abb4cd17c4ae41e1a3880c455805c6a0c0",
+      "license": "GPL-3.0-only"
+    },
+    {
+      "path": "e2e/avabranch.spec.ts",
+      "bytes": 15032,
+      "sha256": "4ce4e55137aebe3ae5815aaae300f10ff6d7af98d1f35302163e32a8cd147df1",
+      "license": "GPL-3.0-only"
+    },
+    {
+      "path": "public/avabranch/LICENSE",
+      "bytes": 1077,
+      "sha256": "62b5faffdccf8f02a978d2f12e2593ad5f33a697a27bfc6af33a38d42225f7cf",
+      "license": "MIT"
+    },
+    {
+      "path": "public/avabranch/NOTICE.txt",
+      "bytes": 36969,
+      "sha256": "f0b40589b36383d2e797342a2d4a38b878b8e19b2ab9ae90aad896db1ce7e2c7",
+      "license": "GPL-3.0-only"
+    },
+    {
+      "path": "public/avabranch/Playgarden-GPL-3.0.txt",
+      "bytes": 34674,
+      "sha256": "fb981668c18a279e285fc4d83fba1e836cc84dd4daa73c9697d3cfd2d8aca6e0",
+      "license": "GPL-3.0-only"
+    },
+    {
+      "path": "public/avabranch/README.md",
+      "bytes": 2066,
+      "sha256": "38f5ce89c1e8255827ea0054ccf0c36cc3f02b8cdcde1ea6b64f3ec7a390fcc0",
+      "license": "GPL-3.0-only"
+    },
+    {
+      "path": "public/avabranch/adapter.js",
+      "bytes": 15243,
+      "sha256": "e4d5ddefeebe0d7e15ddad9ff3379d436aeb5b2aff3604a1e9dfe4155f6dd923",
+      "license": "GPL-3.0-only"
+    },
+    {
+      "path": "public/avabranch/index.html",
+      "bytes": 4723,
+      "sha256": "cf495f15165f683cdaca109f5fab9df5d240e5c80d036da9553e5485d4730557",
+      "license": "GPL-3.0-only"
+    },
+    {
+      "path": "public/avabranch/js/blocks.js",
+      "bytes": 1341,
+      "sha256": "d3eb2d34a59e1aec8d838263ce9578818656198142dff59c3f063b7dc729e8bc",
+      "license": "MIT"
+    },
+    {
+      "path": "public/avabranch/js/controls.js",
+      "bytes": 1693,
+      "sha256": "43f26d95cfc414a9c16735ad12eff3855304cd141dfa65667cba6fbf6bb964b2",
+      "license": "GPL-3.0-only"
+    },
+    {
+      "path": "public/avabranch/js/game.js",
+      "bytes": 1442,
+      "sha256": "9c10a78588e96fe16a84e041d2e801628cea2cc5bc37198e40f12f976f2e8f4e",
+      "license": "MIT"
+    },
+    {
+      "path": "public/avabranch/js/hud.js",
+      "bytes": 4647,
+      "sha256": "ed1e33413410d082bbc555db6821f29c8440139203f509438ddabce528e6388e",
+      "license": "MIT"
+    },
+    {
+      "path": "public/avabranch/js/line.js",
+      "bytes": 2726,
+      "sha256": "e407a12704aaae6ccec81f4b9172de83e6dd69fe077ce5c15e2783c5412a387c",
+      "license": "MIT"
+    },
+    {
+      "path": "public/avabranch/js/main.js",
+      "bytes": 1035,
+      "sha256": "d0bfa531fdedb75a49c9a61f122d1198339fc344bd5f63266bbdfcd46d151a9c",
+      "license": "MIT"
+    },
+    {
+      "path": "public/avabranch/js/player.js",
+      "bytes": 4115,
+      "sha256": "adc34e7a3ec82613708224c2b3a1d21dc1ef45f7f60e442c6d6c13a8476920fe",
+      "license": "MIT"
+    },
+    {
+      "path": "public/avabranch/js/powerups.js",
+      "bytes": 4262,
+      "sha256": "f4ae8157af897a9823d0c939a9da2700b361abcd27c5535c6e2d50199a24df52",
+      "license": "MIT"
+    },
+    {
+      "path": "public/avabranch/js/util.js",
+      "bytes": 504,
+      "sha256": "137164adfd4852039c6c90b9524886bfc6e5b75a21a937b09bebb9261438b3de",
+      "license": "MIT"
+    },
+    {
+      "path": "public/avabranch/style.css",
+      "bytes": 3066,
+      "sha256": "46896f4c497f231c6af8d34f133bc2f97f1c50455eea2448e359305afcbc8a3b",
+      "license": "GPL-3.0-only"
+    },
+    {
+      "path": "public/avabranch-art.svg",
+      "bytes": 1620,
+      "sha256": "543cd47cf85501559fad10f0f7dc87944457043ac8c5bd3de752394dc54096dc",
+      "license": "GPL-3.0-only"
+    },
+    {
+      "path": "scripts/avabranch/adapt.py",
+      "bytes": 3860,
+      "sha256": "9573c0243d19f4a48639dc7b78ee8c479972ba935c2a32ad0056327dec434cfc",
+      "license": "GPL-3.0-only"
+    },
+    {
+      "path": "scripts/avabranch/package-source.py",
+      "bytes": 3554,
+      "sha256": "cc04175c42d43033df74b72be3205d78bc14636446b10495682e3862a9e3163c",
+      "license": "GPL-3.0-only"
+    },
+    {
+      "path": "scripts/avabranch/verify-sources.py",
+      "bytes": 6315,
+      "sha256": "1eb4e0dbdfbafd58e876b84485ecebaf7955fdb350c2779736244b9f762cf96c",
+      "license": "GPL-3.0-only"
+    },
+    {
+      "path": "src/games/Avabranch.tsx",
+      "bytes": 10162,
+      "sha256": "e00ac00e209258dd97c95e8fc75ff5648b49380f13fe58f18dac5fa2b280faf9",
+      "license": "GPL-3.0-only"
+    },
+    {
+      "path": "src/games/avabranch.css",
+      "bytes": 1539,
+      "sha256": "f3262ecd3a9eebf3795cf773783262f475c4d3dd2ab69b60a7beeb8792f8377a",
+      "license": "GPL-3.0-only"
+    },
+    {
+      "path": "vendor/avabranch-original/DERIVATION.patch",
+      "bytes": 8620,
+      "sha256": "ddd65dd61f9d8a1e938bcbe913ec1789e05eaaa4bae51651461243b014a1e87e",
+      "license": "GPL-3.0-only"
+    },
+    {
+      "path": "vendor/avabranch-original/silent-base/LICENSE",
+      "bytes": 1077,
+      "sha256": "62b5faffdccf8f02a978d2f12e2593ad5f33a697a27bfc6af33a38d42225f7cf",
+      "license": "MIT"
+    },
+    {
+      "path": "vendor/avabranch-original/silent-base/index.html",
+      "bytes": 1568,
+      "sha256": "ebadd95cb9db5397bf548a49b1f2a281d34143478b3181e5902af94373237344",
+      "license": "MIT"
+    },
+    {
+      "path": "vendor/avabranch-original/silent-base/js/blocks.js",
+      "bytes": 1341,
+      "sha256": "d3eb2d34a59e1aec8d838263ce9578818656198142dff59c3f063b7dc729e8bc",
+      "license": "MIT"
+    },
+    {
+      "path": "vendor/avabranch-original/silent-base/js/controls.js",
+      "bytes": 2191,
+      "sha256": "7644bada75ea27be19e7d0cc77f932c280b0388711d3163edc356ccb3cd11a13",
+      "license": "MIT"
+    },
+    {
+      "path": "vendor/avabranch-original/silent-base/js/game.js",
+      "bytes": 1190,
+      "sha256": "2a9585037edcd934fdc436a141a1af239f5138b65962caffb44b5c2f718f011f",
+      "license": "MIT"
+    },
+    {
+      "path": "vendor/avabranch-original/silent-base/js/hud.js",
+      "bytes": 5183,
+      "sha256": "24a0aa0f12455b45132d3eb373e9404e65cf0088bcc3197a8f54f895b6282b4f",
+      "license": "MIT"
+    },
+    {
+      "path": "vendor/avabranch-original/silent-base/js/line.js",
+      "bytes": 2726,
+      "sha256": "e407a12704aaae6ccec81f4b9172de83e6dd69fe077ce5c15e2783c5412a387c",
+      "license": "MIT"
+    },
+    {
+      "path": "vendor/avabranch-original/silent-base/js/main.js",
+      "bytes": 1898,
+      "sha256": "5c3727b588afbbea1326f0a02ce4658f08bea9660ca089d6f15e5a34bf42e0bc",
+      "license": "MIT"
+    },
+    {
+      "path": "vendor/avabranch-original/silent-base/js/player.js",
+      "bytes": 4115,
+      "sha256": "adc34e7a3ec82613708224c2b3a1d21dc1ef45f7f60e442c6d6c13a8476920fe",
+      "license": "MIT"
+    },
+    {
+      "path": "vendor/avabranch-original/silent-base/js/powerups.js",
+      "bytes": 4110,
+      "sha256": "71d4c5325c3b65b478be0e7e5e8b5fc63d7b431f2ab32cb379a8131bda67d66f",
+      "license": "MIT"
+    },
+    {
+      "path": "vendor/avabranch-original/silent-base/js/util.js",
+      "bytes": 504,
+      "sha256": "137164adfd4852039c6c90b9524886bfc6e5b75a21a937b09bebb9261438b3de",
+      "license": "MIT"
+    },
+    {
+      "path": "vendor/avabranch-original/silent-base/style.css",
+      "bytes": 941,
+      "sha256": "36d228b0881f8dc1fd42a483f552e2c0f72c1f38c43d456b973432a58ef66cb0",
+      "license": "MIT"
+    },
+    {
+      "path": "vendor/avabranch-original/source-manifest.json",
+      "bytes": 8171,
+      "sha256": "b1f41fb26c2716e1d810626d5ade8ef46a87a4324c6c49eda924990dea08e05f",
+      "license": "GPL-3.0-only"
+    },
+    {
+      "path": "vendor/avabranch-original/upstream/LICENSE",
+      "bytes": 1077,
+      "sha256": "62b5faffdccf8f02a978d2f12e2593ad5f33a697a27bfc6af33a38d42225f7cf",
+      "license": "MIT"
+    },
+    {
+      "path": "vendor/avabranch-original/upstream/README",
+      "bytes": 60,
+      "sha256": "2738fbbb167cfc8f276f5628b35694755e27908451185c67dff3f16b774442ad",
+      "license": "MIT"
+    },
+    {
+      "path": "vendor/avabranch-original/upstream/docs/js/blocks.js",
+      "bytes": 1341,
+      "sha256": "d3eb2d34a59e1aec8d838263ce9578818656198142dff59c3f063b7dc729e8bc",
+      "license": "MIT"
+    },
+    {
+      "path": "vendor/avabranch-original/upstream/docs/js/controls.js",
+      "bytes": 2191,
+      "sha256": "7644bada75ea27be19e7d0cc77f932c280b0388711d3163edc356ccb3cd11a13",
+      "license": "MIT"
+    },
+    {
+      "path": "vendor/avabranch-original/upstream/docs/js/game.js",
+      "bytes": 1190,
+      "sha256": "2a9585037edcd934fdc436a141a1af239f5138b65962caffb44b5c2f718f011f",
+      "license": "MIT"
+    },
+    {
+      "path": "vendor/avabranch-original/upstream/docs/js/hud.js",
+      "bytes": 5183,
+      "sha256": "24a0aa0f12455b45132d3eb373e9404e65cf0088bcc3197a8f54f895b6282b4f",
+      "license": "MIT"
+    },
+    {
+      "path": "vendor/avabranch-original/upstream/docs/js/line.js",
+      "bytes": 2726,
+      "sha256": "e407a12704aaae6ccec81f4b9172de83e6dd69fe077ce5c15e2783c5412a387c",
+      "license": "MIT"
+    },
+    {
+      "path": "vendor/avabranch-original/upstream/docs/js/main.js",
+      "bytes": 2575,
+      "sha256": "858c8a0a661a2f623b7d10a647937aca4366a2ba750733636c5b6f0ab36162d8",
+      "license": "MIT"
+    },
+    {
+      "path": "vendor/avabranch-original/upstream/docs/js/player.js",
+      "bytes": 4115,
+      "sha256": "adc34e7a3ec82613708224c2b3a1d21dc1ef45f7f60e442c6d6c13a8476920fe",
+      "license": "MIT"
+    },
+    {
+      "path": "vendor/avabranch-original/upstream/docs/js/powerups.js",
+      "bytes": 4110,
+      "sha256": "71d4c5325c3b65b478be0e7e5e8b5fc63d7b431f2ab32cb379a8131bda67d66f",
+      "license": "MIT"
+    },
+    {
+      "path": "vendor/avabranch-original/upstream/docs/js/util.js",
+      "bytes": 504,
+      "sha256": "137164adfd4852039c6c90b9524886bfc6e5b75a21a937b09bebb9261438b3de",
+      "license": "MIT"
+    },
+    {
+      "path": "public/avabranch/source.zip",
+      "bytes": 91356,
+      "sha256": "e251d516e4f5990df10914b7f40d08333e65111a7b043a10c2b0fc7cd0559ea2",
+      "license": "GPL-3.0-only"
+    }
+  ]
+}

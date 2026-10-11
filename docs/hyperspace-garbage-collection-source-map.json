@@ -1,0 +1,33 @@
+{
+  "id": "hyperspace-garbage-collection",
+  "source": "https://github.com/razh/game-off-2013/tree/f5b93cbb57f653be4455f9dd5c130463b11abe2a",
+  "commit": "f5b93cbb57f653be4455f9dd5c130463b11abe2a",
+  "levelCount": 4,
+  "endingCounted": false,
+  "upstreamManifest": "vendor/hyperspace-garbage-collection-original/input-publication-manifest.json",
+  "sourceArchive": "public/hyperspace-garbage-collection/source.zip",
+  "correspondingSourceManifest": "vendor/hyperspace-garbage-collection-original/corresponding-source-manifest.json",
+  "mappings": [
+    {
+      "source": "cleared/js and cleared/json",
+      "runtime": "public/hyperspace-garbage-collection/js and json",
+      "method": "Exact-anchor scripts/hyperspace-garbage-collection/adapt.py; four map bytes unchanged, lifecycle timer/transition seams only."
+    },
+    {
+      "source": "cleared/corresponding-source/requirejs-2.1.9.js",
+      "runtime": "public/hyperspace-garbage-collection/js/require.js",
+      "method": "Original readable loader; dormant eval hook disabled."
+    },
+    {
+      "source": "cleared/js/Box2dWeb/Box2dWeb-2.1.a.3.js",
+      "runtime": "public/hyperspace-garbage-collection/js/Box2dWeb/Box2dWeb-2.1.a.3.js",
+      "method": "Byte-for-byte unminified engine."
+    },
+    {
+      "source": "Playgarden authored",
+      "runtime": "React shell, adapter, scheduler, CSS and card.svg",
+      "method": "GPL-3.0-only; card is a labeled original illustration rather than claimed upstream media."
+    }
+  ],
+  "validation": "Static-only package checks. Browser playability and screenshots await the single targeted CI invocation."
+}

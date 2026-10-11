@@ -1,0 +1,27 @@
+{
+  "id": "hyperspace-garbage-collection",
+  "title": "反物质清运站",
+  "subtitle": "在零重力中推送短命碎屑，切换物质，借牵引束与激光完成原作四关清运。",
+  "category": "科学实验",
+  "difficulty": "进阶",
+  "tone": "purple",
+  "levelCount": 4,
+  "allowUndo": false,
+  "resumeKey": "playgarden.hyperspace-garbage-collection.v1",
+  "artwork": {
+    "url": "./hyperspace-garbage-collection/card.svg",
+    "position": "center",
+    "size": "cover"
+  },
+  "source": {
+    "kind": "adapted",
+    "license": "MIT",
+    "author": "razh",
+    "workTitle": "Hyperspace Garbage Collection（原作四关及未计关的结局）",
+    "url": "https://github.com/razh/game-off-2013/tree/f5b93cbb57f653be4455f9dd5c130463b11abe2a",
+    "commit": "f5b93cbb57f653be4455f9dd5c130463b11abe2a",
+    "notice": "./hyperspace-garbage-collection/NOTICE.txt",
+    "notes": "完整保留四张作者地图、物质/反物质实时碰撞、有限寿命碎屑、牵引束、选择性激光、捕获机关、出口及原作结局；采用原 AMD/Box2D/Canvas 引擎。第一方 MIT，Box2dWeb zlib，RequireJS MIT；本站隔离宿主与生命周期修复 GPL-3.0-only。音频省略，封面为本站原创示意。"
+  },
+  "component": "../games/HyperspaceGarbageCollection"
+}
