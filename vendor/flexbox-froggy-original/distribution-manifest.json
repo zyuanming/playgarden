@@ -1,0 +1,386 @@
+{
+  "game": "flexbox-froggy",
+  "commit": "9a6feab850a56cbe9ad90f3afcc95e88335bbec8",
+  "archive": "public/flexbox-froggy/source.zip",
+  "archiveExclusions": [
+    "distribution-manifest.json (generated outside archive to avoid circular hashing)",
+    "source.zip (the archive itself)"
+  ],
+  "files": [
+    {
+      "path": "docs/flexbox-froggy-catalog-entry.json",
+      "bytes": 1274,
+      "sha256": "fec1cd0e5c88601fccf4f8e2b260fe8c53ca76c75dd28db41db567004b22a074"
+    },
+    {
+      "path": "docs/flexbox-froggy-notice-addendum.md",
+      "bytes": 1399,
+      "sha256": "3c96ea2d7033588828c72dcf077df64a4d054e63538df1831d180f5423e2bee5"
+    },
+    {
+      "path": "docs/flexbox-froggy-runtime-source-addendum.json",
+      "bytes": 2057,
+      "sha256": "48bddb662c7a3acea002f374d5eb702a29f70406d3a81121b43dc77404979e37"
+    },
+    {
+      "path": "docs/flexbox-froggy-source-map.json",
+      "bytes": 1788,
+      "sha256": "9bcee1f6505b7f6658871b1ce588f5f0b444e0233713285dd5cb747f6ac11331"
+    },
+    {
+      "path": "e2e/flexbox-froggy.spec.ts",
+      "bytes": 9465,
+      "sha256": "73010182fc2b2d8f162a250e0bde736fbaed4480bd27ea479d0da2deec4b10de"
+    },
+    {
+      "path": "public/flexbox-froggy/LICENSE",
+      "bytes": 1079,
+      "sha256": "db9d0cca08a4a6a184421fbb2a34127631ba2bbdd1303e33bbee26fca3b25f33"
+    },
+    {
+      "path": "public/flexbox-froggy/NOTICE.txt",
+      "bytes": 65917,
+      "sha256": "5c5a2deabc6e4e85a3e243891b92a2d9b5d91ab9a7f74bc565b996bb43653b1d"
+    },
+    {
+      "path": "public/flexbox-froggy/README.md",
+      "bytes": 4227,
+      "sha256": "26d47e3d6e401cde909f70cd2b7c41019af09b82b61fcc38b79b93ca52693517"
+    },
+    {
+      "path": "public/flexbox-froggy/adapter.css",
+      "bytes": 4839,
+      "sha256": "1492295f316faa4e3cff1d5829b2ad6d7245cf5248c1979f963270704af738f7"
+    },
+    {
+      "path": "public/flexbox-froggy/adapter.js",
+      "bytes": 16591,
+      "sha256": "45b3ac06d589e711aac6f68f59cf7b5094227a6910e275fdc772489417caa214"
+    },
+    {
+      "path": "public/flexbox-froggy/css/style.css",
+      "bytes": 12672,
+      "sha256": "b8377af9ff7e27ab12ef73d7a2fd358ce08e43740bc29369248844fc8cc9387b"
+    },
+    {
+      "path": "public/flexbox-froggy/images/frog-green-color-assist.svg",
+      "bytes": 2064,
+      "sha256": "5d76ac9668ed31c913bb2bf81b49ff3535bd98620dafa610d99857877439efe5"
+    },
+    {
+      "path": "public/flexbox-froggy/images/frog-green.svg",
+      "bytes": 2453,
+      "sha256": "229d05340d1272bb49cc2aea000475478563386ed430e19865f56bfb8f139964"
+    },
+    {
+      "path": "public/flexbox-froggy/images/frog-red-color-assist.svg",
+      "bytes": 3978,
+      "sha256": "1beb036c30c841ad558f652c1bfbac544e7003705436134b68217f5d9dac1fe9"
+    },
+    {
+      "path": "public/flexbox-froggy/images/frog-red.svg",
+      "bytes": 2449,
+      "sha256": "86810495e939fe775d435332c4a0f5e86ca5927c52a5031e7a4a0d3d5f8ff72d"
+    },
+    {
+      "path": "public/flexbox-froggy/images/frog-yellow-color-assist.svg",
+      "bytes": 4730,
+      "sha256": "cb78d636fac44192dc87501c8e1fdda43f1923defb96a6d77ebd98a86301d7c9"
+    },
+    {
+      "path": "public/flexbox-froggy/images/frog-yellow.svg",
+      "bytes": 2598,
+      "sha256": "dd061fcc720848c5fca36c8dd54d5b644f61f18db777bd34d0b4a0365a13c1d1"
+    },
+    {
+      "path": "public/flexbox-froggy/images/lilypad-green-color-assist.svg",
+      "bytes": 1416,
+      "sha256": "5fef0cfacf5d2f8717e9eb84f40803c75ccec686b95820ca290424aff5018fef"
+    },
+    {
+      "path": "public/flexbox-froggy/images/lilypad-green.svg",
+      "bytes": 1637,
+      "sha256": "931b0b561f1ed8fc18159eacbc01a0748616f1b0b8588c57ebeb17769e019de2"
+    },
+    {
+      "path": "public/flexbox-froggy/images/lilypad-red-color-assist.svg",
+      "bytes": 2527,
+      "sha256": "44ee6ca2fe48ab4c5106b0da5421ed7bfa717d7a684663b6a9818b4eb81c927a"
+    },
+    {
+      "path": "public/flexbox-froggy/images/lilypad-red.svg",
+      "bytes": 1652,
+      "sha256": "68bf0c8784e8b74ca0288148db503949cca4120d7bae72ffe6e61eab14109c6c"
+    },
+    {
+      "path": "public/flexbox-froggy/images/lilypad-yellow-color-assist.svg",
+      "bytes": 2261,
+      "sha256": "40beb61bf4e53e91fcb7bb8b007828494430bfdfc1a113e16a9d179a69f795b6"
+    },
+    {
+      "path": "public/flexbox-froggy/images/lilypad-yellow.svg",
+      "bytes": 1658,
+      "sha256": "0684e4c1b8d38613660b321fbdfa06ccf05afe209cad9cb6f1f937d11eeb4ba1"
+    },
+    {
+      "path": "public/flexbox-froggy/index.html",
+      "bytes": 4689,
+      "sha256": "14ae4a545231daeb321ddbf5ad67ea25a1b20bf9fe678d1d4c78f65ae732cdbb"
+    },
+    {
+      "path": "public/flexbox-froggy/js/docs.js",
+      "bytes": 95098,
+      "sha256": "77a61f6f42d57e8a4549648f19e6cd3926581329cf79ca2ad5bade94f25ea639"
+    },
+    {
+      "path": "public/flexbox-froggy/js/game.js",
+      "bytes": 9780,
+      "sha256": "a06456162f26ca3f615d9c36b7084103abc99c3c23e6d5663498e5ee35e800eb"
+    },
+    {
+      "path": "public/flexbox-froggy/js/levels.js",
+      "bytes": 641978,
+      "sha256": "a37500d98aa9b9588050a8ca310ca92bef03740ddab51e09bdc65cb99f0124cc"
+    },
+    {
+      "path": "public/flexbox-froggy/js/messages.js",
+      "bytes": 36407,
+      "sha256": "b600762cb1e85d40ef3d32613ade2ee325b2525bf4f358d8ab0aae2b826d5ce6"
+    },
+    {
+      "path": "public/flexbox-froggy/licenses/Animate-MIT.txt",
+      "bytes": 1232,
+      "sha256": "cbfb91f71cc779a3aa497da81696960a656282a7ca04c2f2698bc1e0df7631c7"
+    },
+    {
+      "path": "public/flexbox-froggy/licenses/CC-BY-3.0.txt",
+      "bytes": 19467,
+      "sha256": "e6bc9e9c474700b708f568bac9e5a8a9bcb2b1dad53442f5ba449fcb848b8e76"
+    },
+    {
+      "path": "public/flexbox-froggy/licenses/Playgarden-GPL-3.0.txt",
+      "bytes": 34674,
+      "sha256": "fb981668c18a279e285fc4d83fba1e836cc84dd4daa73c9697d3cfd2d8aca6e0"
+    },
+    {
+      "path": "public/flexbox-froggy/third-party/animate.css/README.md",
+      "bytes": 4622,
+      "sha256": "aee312c5458319f9acb51e30e80b6cf84dafd51978e9c3d6f6ceadfcee7a16c8"
+    },
+    {
+      "path": "public/flexbox-froggy/third-party/animate.css/animate.css",
+      "bytes": 71108,
+      "sha256": "d44da5fc59ec94a8a4e6b556caeeec506d03821b1e29cef8d950a32955c5619b"
+    },
+    {
+      "path": "public/flexbox-froggy/third-party/jquery/LICENSE.txt",
+      "bytes": 1095,
+      "sha256": "1ff603118efdb313799567cb4a408594954384f40843ca6f29c596f5b1f8907d"
+    },
+    {
+      "path": "public/flexbox-froggy/third-party/jquery/dist/jquery.js",
+      "bytes": 287630,
+      "sha256": "416a3b2c3bf16d64f6b5b6d0f7b079df2267614dd6847fc2f3271b4409233c37"
+    },
+    {
+      "path": "public/flexbox-froggy/third-party/jquery/external/sizzle/LICENSE.txt",
+      "bytes": 1605,
+      "sha256": "a078a8f80016416042c2e5f04dbb7f499f0f6deebb086511f3a3b72633a2d761"
+    },
+    {
+      "path": "scripts/flexbox-froggy/adapt.py",
+      "bytes": 5349,
+      "sha256": "168383b880355391462f74037fec2e3f1bb755a7eaeba54c9b8aa6437f64e396"
+    },
+    {
+      "path": "scripts/flexbox-froggy/package-source.py",
+      "bytes": 1884,
+      "sha256": "a435d26692fce3b259dc3197e35912ae288ddc109ad73acad6aa07a6ea70133a"
+    },
+    {
+      "path": "scripts/flexbox-froggy/verify-sources.py",
+      "bytes": 4809,
+      "sha256": "cc86e12dfeaea620a418993281580bf55c392c9a204bcdadea453ff4d2c8f523"
+    },
+    {
+      "path": "src/games/FlexboxFroggy.tsx",
+      "bytes": 9942,
+      "sha256": "5d0d362d54d0abeeb184db5db99955149d2e1672a2ed95f50bce0a41c83b9d37"
+    },
+    {
+      "path": "src/games/flexboxFroggy.css",
+      "bytes": 1038,
+      "sha256": "f98583283581a398a3de34ede543316effc79260ee64baf322fc8ac6a5d6a3d6"
+    },
+    {
+      "path": "src/games/flexboxFroggyLevels.json",
+      "bytes": 481,
+      "sha256": "bf1e45f6215fc588fd38d6ad2281bfb7635e1b417183e6dbdb7a4d1b3f3ec883"
+    },
+    {
+      "path": "vendor/flexbox-froggy-original/CHANGES.md",
+      "bytes": 7106,
+      "sha256": "cddbad0e1ae8fe7c0b878c203f9c66af283ce3503e8ed1848f4a05fed8154705"
+    },
+    {
+      "path": "vendor/flexbox-froggy-original/level-summary.json",
+      "bytes": 4009,
+      "sha256": "78278ef4983e13f0d9fe9da34e99687f034f88930448e0af1ed653155111d0c0"
+    },
+    {
+      "path": "vendor/flexbox-froggy-original/license-manifest.json",
+      "bytes": 6471,
+      "sha256": "7b5e0822c4f42107c9041c36b6d9f0f9eaaa9a0076a0ae44096b11712209a269"
+    },
+    {
+      "path": "vendor/flexbox-froggy-original/source-manifest.json",
+      "bytes": 11091,
+      "sha256": "c0ddeecfad4a17b01edb6ec15ca5e46c9258a6b3a21d509eea3f09a945c9a29b"
+    },
+    {
+      "path": "vendor/flexbox-froggy-original/supplement-manifest.json",
+      "bytes": 619,
+      "sha256": "a8ee05825055c1dc56d0cb1ba109fdc8dbff506253a27d1132fa2e4c8eedd259"
+    },
+    {
+      "path": "vendor/flexbox-froggy-original/supplied-supplement-manifest.json",
+      "bytes": 619,
+      "sha256": "a8ee05825055c1dc56d0cb1ba109fdc8dbff506253a27d1132fa2e4c8eedd259"
+    },
+    {
+      "path": "vendor/flexbox-froggy-original/upstream/LICENSE",
+      "bytes": 1079,
+      "sha256": "db9d0cca08a4a6a184421fbb2a34127631ba2bbdd1303e33bbee26fca3b25f33"
+    },
+    {
+      "path": "vendor/flexbox-froggy-original/upstream/README.md",
+      "bytes": 4227,
+      "sha256": "26d47e3d6e401cde909f70cd2b7c41019af09b82b61fcc38b79b93ca52693517"
+    },
+    {
+      "path": "vendor/flexbox-froggy-original/upstream/css/style.css",
+      "bytes": 12672,
+      "sha256": "b8377af9ff7e27ab12ef73d7a2fd358ce08e43740bc29369248844fc8cc9387b"
+    },
+    {
+      "path": "vendor/flexbox-froggy-original/upstream/images/frog-green-color-assist.svg",
+      "bytes": 2064,
+      "sha256": "5d76ac9668ed31c913bb2bf81b49ff3535bd98620dafa610d99857877439efe5"
+    },
+    {
+      "path": "vendor/flexbox-froggy-original/upstream/images/frog-green.svg",
+      "bytes": 2453,
+      "sha256": "229d05340d1272bb49cc2aea000475478563386ed430e19865f56bfb8f139964"
+    },
+    {
+      "path": "vendor/flexbox-froggy-original/upstream/images/frog-red-color-assist.svg",
+      "bytes": 3978,
+      "sha256": "1beb036c30c841ad558f652c1bfbac544e7003705436134b68217f5d9dac1fe9"
+    },
+    {
+      "path": "vendor/flexbox-froggy-original/upstream/images/frog-red.svg",
+      "bytes": 2449,
+      "sha256": "86810495e939fe775d435332c4a0f5e86ca5927c52a5031e7a4a0d3d5f8ff72d"
+    },
+    {
+      "path": "vendor/flexbox-froggy-original/upstream/images/frog-yellow-color-assist.svg",
+      "bytes": 4730,
+      "sha256": "cb78d636fac44192dc87501c8e1fdda43f1923defb96a6d77ebd98a86301d7c9"
+    },
+    {
+      "path": "vendor/flexbox-froggy-original/upstream/images/frog-yellow.svg",
+      "bytes": 2598,
+      "sha256": "dd061fcc720848c5fca36c8dd54d5b644f61f18db777bd34d0b4a0365a13c1d1"
+    },
+    {
+      "path": "vendor/flexbox-froggy-original/upstream/images/lilypad-green-color-assist.svg",
+      "bytes": 1416,
+      "sha256": "5fef0cfacf5d2f8717e9eb84f40803c75ccec686b95820ca290424aff5018fef"
+    },
+    {
+      "path": "vendor/flexbox-froggy-original/upstream/images/lilypad-green.svg",
+      "bytes": 1637,
+      "sha256": "931b0b561f1ed8fc18159eacbc01a0748616f1b0b8588c57ebeb17769e019de2"
+    },
+    {
+      "path": "vendor/flexbox-froggy-original/upstream/images/lilypad-red-color-assist.svg",
+      "bytes": 2527,
+      "sha256": "44ee6ca2fe48ab4c5106b0da5421ed7bfa717d7a684663b6a9818b4eb81c927a"
+    },
+    {
+      "path": "vendor/flexbox-froggy-original/upstream/images/lilypad-red.svg",
+      "bytes": 1652,
+      "sha256": "68bf0c8784e8b74ca0288148db503949cca4120d7bae72ffe6e61eab14109c6c"
+    },
+    {
+      "path": "vendor/flexbox-froggy-original/upstream/images/lilypad-yellow-color-assist.svg",
+      "bytes": 2261,
+      "sha256": "40beb61bf4e53e91fcb7bb8b007828494430bfdfc1a113e16a9d179a69f795b6"
+    },
+    {
+      "path": "vendor/flexbox-froggy-original/upstream/images/lilypad-yellow.svg",
+      "bytes": 1658,
+      "sha256": "0684e4c1b8d38613660b321fbdfa06ccf05afe209cad9cb6f1f937d11eeb4ba1"
+    },
+    {
+      "path": "vendor/flexbox-froggy-original/upstream/js/docs.js",
+      "bytes": 95098,
+      "sha256": "77a61f6f42d57e8a4549648f19e6cd3926581329cf79ca2ad5bade94f25ea639"
+    },
+    {
+      "path": "vendor/flexbox-froggy-original/upstream/js/game.js",
+      "bytes": 15492,
+      "sha256": "830824192a0690d728b6ba50871137c0c7768cddec228668424919c742b36156"
+    },
+    {
+      "path": "vendor/flexbox-froggy-original/upstream/js/levels.js",
+      "bytes": 641978,
+      "sha256": "a37500d98aa9b9588050a8ca310ca92bef03740ddab51e09bdc65cb99f0124cc"
+    },
+    {
+      "path": "vendor/flexbox-froggy-original/upstream/js/messages.js",
+      "bytes": 36407,
+      "sha256": "b600762cb1e85d40ef3d32613ade2ee325b2525bf4f358d8ab0aae2b826d5ce6"
+    },
+    {
+      "path": "vendor/flexbox-froggy-original/upstream/licenses/Animate-MIT.txt",
+      "bytes": 1232,
+      "sha256": "cbfb91f71cc779a3aa497da81696960a656282a7ca04c2f2698bc1e0df7631c7"
+    },
+    {
+      "path": "vendor/flexbox-froggy-original/upstream/licenses/CC-BY-3.0.txt",
+      "bytes": 19467,
+      "sha256": "e6bc9e9c474700b708f568bac9e5a8a9bcb2b1dad53442f5ba449fcb848b8e76"
+    },
+    {
+      "path": "vendor/flexbox-froggy-original/upstream/third-party/animate.css/README.md",
+      "bytes": 4622,
+      "sha256": "aee312c5458319f9acb51e30e80b6cf84dafd51978e9c3d6f6ceadfcee7a16c8"
+    },
+    {
+      "path": "vendor/flexbox-froggy-original/upstream/third-party/animate.css/animate.css",
+      "bytes": 71108,
+      "sha256": "d44da5fc59ec94a8a4e6b556caeeec506d03821b1e29cef8d950a32955c5619b"
+    },
+    {
+      "path": "vendor/flexbox-froggy-original/upstream/third-party/jquery/LICENSE.txt",
+      "bytes": 1095,
+      "sha256": "1ff603118efdb313799567cb4a408594954384f40843ca6f29c596f5b1f8907d"
+    },
+    {
+      "path": "vendor/flexbox-froggy-original/upstream/third-party/jquery/dist/jquery.js",
+      "bytes": 287630,
+      "sha256": "416a3b2c3bf16d64f6b5b6d0f7b079df2267614dd6847fc2f3271b4409233c37"
+    },
+    {
+      "path": "vendor/flexbox-froggy-original/upstream/third-party/jquery/external/sizzle/LICENSE.txt",
+      "bytes": 1605,
+      "sha256": "a078a8f80016416042c2e5f04dbb7f499f0f6deebb086511f3a3b72633a2d761"
+    },
+    {
+      "path": "public/flexbox-froggy/source.zip",
+      "bytes": 762798,
+      "sha256": "f3814e80d40eb2505d013f827121ebe221c51f69a73a2495e050cd49b9bde7ba"
+    }
+  ]
+}

@@ -1,0 +1,182 @@
+{
+  "sourceCommit": "9a6feab850a56cbe9ad90f3afcc95e88335bbec8",
+  "originalFiles": [
+    {
+      "path": "upstream/LICENSE",
+      "license": "MIT",
+      "copyright": "Thomas Park",
+      "sha256": "db9d0cca08a4a6a184421fbb2a34127631ba2bbdd1303e33bbee26fca3b25f33"
+    },
+    {
+      "path": "upstream/README.md",
+      "license": "MIT",
+      "copyright": "Thomas Park",
+      "sha256": "26d47e3d6e401cde909f70cd2b7c41019af09b82b61fcc38b79b93ca52693517"
+    },
+    {
+      "path": "upstream/css/style.css",
+      "license": "MIT",
+      "copyright": "Thomas Park",
+      "sha256": "b8377af9ff7e27ab12ef73d7a2fd358ce08e43740bc29369248844fc8cc9387b"
+    },
+    {
+      "path": "upstream/images/frog-green-color-assist.svg",
+      "license": "CC-BY-3.0",
+      "copyright": "Thomas Park",
+      "sha256": "5d76ac9668ed31c913bb2bf81b49ff3535bd98620dafa610d99857877439efe5"
+    },
+    {
+      "path": "upstream/images/frog-green.svg",
+      "license": "CC-BY-3.0",
+      "copyright": "Thomas Park",
+      "sha256": "229d05340d1272bb49cc2aea000475478563386ed430e19865f56bfb8f139964"
+    },
+    {
+      "path": "upstream/images/frog-red-color-assist.svg",
+      "license": "CC-BY-3.0",
+      "copyright": "Thomas Park",
+      "sha256": "1beb036c30c841ad558f652c1bfbac544e7003705436134b68217f5d9dac1fe9"
+    },
+    {
+      "path": "upstream/images/frog-red.svg",
+      "license": "CC-BY-3.0",
+      "copyright": "Thomas Park",
+      "sha256": "86810495e939fe775d435332c4a0f5e86ca5927c52a5031e7a4a0d3d5f8ff72d"
+    },
+    {
+      "path": "upstream/images/frog-yellow-color-assist.svg",
+      "license": "CC-BY-3.0",
+      "copyright": "Thomas Park",
+      "sha256": "cb78d636fac44192dc87501c8e1fdda43f1923defb96a6d77ebd98a86301d7c9"
+    },
+    {
+      "path": "upstream/images/frog-yellow.svg",
+      "license": "CC-BY-3.0",
+      "copyright": "Thomas Park",
+      "sha256": "dd061fcc720848c5fca36c8dd54d5b644f61f18db777bd34d0b4a0365a13c1d1"
+    },
+    {
+      "path": "upstream/images/lilypad-green-color-assist.svg",
+      "license": "CC-BY-3.0",
+      "copyright": "Thomas Park",
+      "sha256": "5fef0cfacf5d2f8717e9eb84f40803c75ccec686b95820ca290424aff5018fef"
+    },
+    {
+      "path": "upstream/images/lilypad-green.svg",
+      "license": "CC-BY-3.0",
+      "copyright": "Thomas Park",
+      "sha256": "931b0b561f1ed8fc18159eacbc01a0748616f1b0b8588c57ebeb17769e019de2"
+    },
+    {
+      "path": "upstream/images/lilypad-red-color-assist.svg",
+      "license": "CC-BY-3.0",
+      "copyright": "Thomas Park",
+      "sha256": "44ee6ca2fe48ab4c5106b0da5421ed7bfa717d7a684663b6a9818b4eb81c927a"
+    },
+    {
+      "path": "upstream/images/lilypad-red.svg",
+      "license": "CC-BY-3.0",
+      "copyright": "Thomas Park",
+      "sha256": "68bf0c8784e8b74ca0288148db503949cca4120d7bae72ffe6e61eab14109c6c"
+    },
+    {
+      "path": "upstream/images/lilypad-yellow-color-assist.svg",
+      "license": "CC-BY-3.0",
+      "copyright": "Thomas Park",
+      "sha256": "40beb61bf4e53e91fcb7bb8b007828494430bfdfc1a113e16a9d179a69f795b6"
+    },
+    {
+      "path": "upstream/images/lilypad-yellow.svg",
+      "license": "CC-BY-3.0",
+      "copyright": "Thomas Park",
+      "sha256": "0684e4c1b8d38613660b321fbdfa06ccf05afe209cad9cb6f1f937d11eeb4ba1"
+    },
+    {
+      "path": "upstream/js/docs.js",
+      "license": "MIT",
+      "copyright": "Thomas Park",
+      "sha256": "77a61f6f42d57e8a4549648f19e6cd3926581329cf79ca2ad5bade94f25ea639"
+    },
+    {
+      "path": "upstream/js/game.js",
+      "license": "MIT",
+      "copyright": "Thomas Park",
+      "sha256": "830824192a0690d728b6ba50871137c0c7768cddec228668424919c742b36156"
+    },
+    {
+      "path": "upstream/js/levels.js",
+      "license": "MIT",
+      "copyright": "Thomas Park",
+      "sha256": "a37500d98aa9b9588050a8ca310ca92bef03740ddab51e09bdc65cb99f0124cc"
+    },
+    {
+      "path": "upstream/js/messages.js",
+      "license": "MIT",
+      "copyright": "Thomas Park",
+      "sha256": "b600762cb1e85d40ef3d32613ade2ee325b2525bf4f358d8ab0aae2b826d5ce6"
+    },
+    {
+      "path": "upstream/licenses/Animate-MIT.txt",
+      "license": "MIT",
+      "copyright": "Daniel Eden",
+      "sha256": "cbfb91f71cc779a3aa497da81696960a656282a7ca04c2f2698bc1e0df7631c7"
+    },
+    {
+      "path": "upstream/licenses/CC-BY-3.0.txt",
+      "license": "CC-BY-3.0",
+      "copyright": "Thomas Park",
+      "sha256": "e6bc9e9c474700b708f568bac9e5a8a9bcb2b1dad53442f5ba449fcb848b8e76"
+    },
+    {
+      "path": "upstream/third-party/animate.css/README.md",
+      "license": "MIT",
+      "copyright": "Daniel Eden",
+      "sha256": "aee312c5458319f9acb51e30e80b6cf84dafd51978e9c3d6f6ceadfcee7a16c8"
+    },
+    {
+      "path": "upstream/third-party/animate.css/animate.css",
+      "license": "MIT",
+      "copyright": "Daniel Eden",
+      "sha256": "d44da5fc59ec94a8a4e6b556caeeec506d03821b1e29cef8d950a32955c5619b"
+    },
+    {
+      "path": "upstream/third-party/jquery/LICENSE.txt",
+      "license": "MIT",
+      "copyright": "JS Foundation and other contributors",
+      "sha256": "1ff603118efdb313799567cb4a408594954384f40843ca6f29c596f5b1f8907d"
+    },
+    {
+      "path": "upstream/third-party/jquery/dist/jquery.js",
+      "license": "MIT",
+      "copyright": "JS Foundation and other contributors",
+      "sha256": "416a3b2c3bf16d64f6b5b6d0f7b079df2267614dd6847fc2f3271b4409233c37"
+    },
+    {
+      "path": "upstream/third-party/jquery/external/sizzle/LICENSE.txt",
+      "license": "MIT",
+      "copyright": "JS Foundation and other contributors",
+      "sha256": "a078a8f80016416042c2e5f04dbb7f499f0f6deebb086511f3a3b72633a2d761"
+    }
+  ],
+  "adapter": {
+    "license": "GPL-3.0-only",
+    "paths": [
+      "public/flexbox-froggy/adapter.js",
+      "public/flexbox-froggy/adapter.css",
+      "public/flexbox-froggy/index.html",
+      "src/games/FlexboxFroggy.tsx",
+      "src/games/flexboxFroggy.css",
+      "scripts/flexbox-froggy",
+      "e2e/flexbox-froggy.spec.ts"
+    ],
+    "notice": "public/flexbox-froggy/licenses/Playgarden-GPL-3.0.txt"
+  },
+  "modifiedController": {
+    "path": "public/flexbox-froggy/js/game.js",
+    "license": "Original MIT; Playgarden modifications GPL-3.0-only",
+    "preferredSource": "vendor/flexbox-froggy-original/upstream/js/game.js",
+    "patch": "scripts/flexbox-froggy/adapt.py"
+  },
+  "fullNotices": "public/flexbox-froggy/NOTICE.txt",
+  "artworkNote": "Twelve unmodified Thomas Park frog/lilypad SVG assets are separately CC-BY-3.0; no endorsement; not relicensed as MIT/GPL."
+}

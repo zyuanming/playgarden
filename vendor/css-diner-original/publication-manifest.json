@@ -1,0 +1,134 @@
+{
+  "status": "Cleared source package; runtime integration and targeted gameplay/mobile QA still required.",
+  "packageRoot": "public-package",
+  "upstreamRepository": "flukeout/css-diner",
+  "upstreamCommit": "566aaa01314caddc7a9034d793250cf2b8f12a4e",
+  "includeOnlyListedFiles": true,
+  "excluded": [
+    "private-audit/**",
+    "raw transport records",
+    "unmodified index/restaurant wrappers",
+    "minified dependencies",
+    "custom scrollbar JS/CSS",
+    "optional images/fonts/social assets",
+    "NOTES.md"
+  ],
+  "files": [
+    {
+      "path": "LICENSE",
+      "bytes": 15977,
+      "sha256": "bef1747eda88b9ed46e94830b0d978c3499dad5dfe38d364971760881901dadd",
+      "gitBlobSha1": "c33dcc7c928c646b497b74de395fb53916a7be25",
+      "source": "https://github.com/flukeout/css-diner/blob/566aaa01314caddc7a9034d793250cf2b8f12a4e/LICENSE",
+      "sourceGitBlobSha1": "c33dcc7c928c646b497b74de395fb53916a7be25",
+      "sourceSha256": "bef1747eda88b9ed46e94830b0d978c3499dad5dfe38d364971760881901dadd",
+      "sourceBytes": 15977
+    },
+    {
+      "path": "README.md",
+      "bytes": 2529,
+      "sha256": "fda3636c4ffb6356bfff7ed8a8cc6bfe109039cb537199b0aaa3c86bb770a75c",
+      "gitBlobSha1": "912770bdcdf1c121646976a3221ba7dc5ffafd95",
+      "source": "https://github.com/flukeout/css-diner/blob/566aaa01314caddc7a9034d793250cf2b8f12a4e/README.md",
+      "sourceGitBlobSha1": "912770bdcdf1c121646976a3221ba7dc5ffafd95",
+      "sourceSha256": "fda3636c4ffb6356bfff7ed8a8cc6bfe109039cb537199b0aaa3c86bb770a75c",
+      "sourceBytes": 2529
+    },
+    {
+      "path": "js/levels.js",
+      "bytes": 22987,
+      "sha256": "a3758d9db768e4568cd9bfcb0afefdcec32eda684711c9c2bf6fc36678ff3daa",
+      "gitBlobSha1": "97e1172c85e1a3dd0cd952a967e07515af2027b0",
+      "source": "https://github.com/flukeout/css-diner/blob/566aaa01314caddc7a9034d793250cf2b8f12a4e/js/levels.js",
+      "sourceGitBlobSha1": "97e1172c85e1a3dd0cd952a967e07515af2027b0",
+      "sourceSha256": "a3758d9db768e4568cd9bfcb0afefdcec32eda684711c9c2bf6fc36678ff3daa",
+      "sourceBytes": 22987
+    },
+    {
+      "path": "js/restaurant.js",
+      "bytes": 15852,
+      "sha256": "938480373f064123b89ffd99d1a40ac5d40cf5f0ab9efe1bc30689059f33f69e",
+      "gitBlobSha1": "e1cdb4f9587c74dcfc04c3345e41fb86c80ed1ef",
+      "source": "https://github.com/flukeout/css-diner/blob/566aaa01314caddc7a9034d793250cf2b8f12a4e/js/restaurant.js",
+      "modifications": [
+        "Removed optional social sharing handler and its StackOverflow-derived PopupCenter function entirely.",
+        "Removed optional mCustomScrollbar initialization; integrator must restore scrolling through native CSS.",
+        "Removed Google Analytics sender and its two calls. All original level loading, selector checking, progress, tooltips and ending logic remains.",
+        "Added prominent date/change notice pointing to the retained license and package notices."
+      ],
+      "sourceGitBlobSha1": "999b8f789ee72a0f6061a15a0c23aa32af067386",
+      "sourceSha256": "444e1cc18fe55a5c13a0b103c523c6a0ed987c725f90673295f4793866d93a98",
+      "sourceBytes": 18157
+    },
+    {
+      "path": "index.html",
+      "bytes": 5026,
+      "sha256": "7885a4948841d02c2847d7c1f10973616e60764005d7b380fae844d802eac42b",
+      "gitBlobSha1": "295d56c5f2717e02d431b80864d41fdc60e5955a",
+      "source": "https://github.com/flukeout/css-diner/blob/566aaa01314caddc7a9034d793250cf2b8f12a4e/index.html",
+      "modifications": [
+        "Removed optional social markup, analytics loader, external font links, favicon/social image metadata and custom-scrollbar dependency.",
+        "Kept original complete page structure and author/source credits. This is a source package; responsive/localization/lifecycle adaptation remains.",
+        "Added prominent date/change notice pointing to the retained license and package notices."
+      ],
+      "sourceGitBlobSha1": "e2011115fa2f5d2fac4568f333086c2a89afd4d7",
+      "sourceSha256": "5e3df6687e0e3a8fe20aff29f388021a3dce48ca64dacaec3c51bc9b90537dd3",
+      "sourceBytes": 6462
+    },
+    {
+      "path": "css/style.css",
+      "bytes": 22382,
+      "sha256": "84bce308d60f87630d6fe35c4eb2850b928e9aa79e1b2fc9c0f47ff871e40378",
+      "gitBlobSha1": "1547086035c799d4443480b277770d97ab45bfca",
+      "source": "https://github.com/flukeout/css-diner/blob/566aaa01314caddc7a9034d793250cf2b8f12a4e/css/style.css",
+      "modifications": [
+        "Removed references to three optional social icons and a decorative nametag line texture. All original CSS-drawn game artwork remains.",
+        "Added prominent date/change notice pointing to the retained license and package notices."
+      ],
+      "sourceGitBlobSha1": "506a69acb598954e93584974edc3101ba6cec9b8",
+      "sourceSha256": "7889e92b9e1815bcc97b39951af2617d60b7eff6467bb811eb949f8b56429b79",
+      "sourceBytes": 22329
+    },
+    {
+      "path": "js/jquery.js",
+      "bytes": 282944,
+      "sha256": "ce0343e1d6f489768eeefe022c12181c6a0822e756239851310acf076d23d10c",
+      "gitBlobSha1": "3c88fa8b7fd3f1c1f70f6d99800f315ba7a032f1",
+      "source": "https://github.com/jquery/jquery/blob/91cd1587ed4a1d4f3834227e8eb3cc30cb385409/dist/jquery.js",
+      "modifications": [
+        "Official readable jQuery1.11.0 replaces the same upstream minified version. Upstream minified bytes exactly equal the official artifact before its sourceMappingURL comment."
+      ],
+      "sourceGitBlobSha1": "3c88fa8b7fd3f1c1f70f6d99800f315ba7a032f1",
+      "sourceSha256": "ce0343e1d6f489768eeefe022c12181c6a0822e756239851310acf076d23d10c",
+      "sourceBytes": 282944
+    },
+    {
+      "path": "licenses/jquery-MIT.txt",
+      "bytes": 1099,
+      "sha256": "44254c9a91a4647b9192584f17b2d27bf43696ba1ea16b0e88ac7bd6bf0780f1",
+      "gitBlobSha1": "cdd31b5c7103e4b0191fd1c860559b7b82806f01",
+      "source": "https://github.com/jquery/jquery/blob/91cd1587ed4a1d4f3834227e8eb3cc30cb385409/MIT-LICENSE.txt",
+      "sourceGitBlobSha1": "cdd31b5c7103e4b0191fd1c860559b7b82806f01",
+      "sourceSha256": "44254c9a91a4647b9192584f17b2d27bf43696ba1ea16b0e88ac7bd6bf0780f1",
+      "sourceBytes": 1099
+    },
+    {
+      "path": "licenses/sizzle-MIT.txt",
+      "bytes": 1099,
+      "sha256": "244779275ccf7def02a7724a707dfe8787f83afd5ccb6498b42296ae42484940",
+      "gitBlobSha1": "957f26d3e3b5ae3922f2f220263c51ab220088d4",
+      "source": "https://github.com/jquery/sizzle/blob/0fd151739d05648118002914c7a638411bbd0dbe/MIT-LICENSE.txt",
+      "sourceGitBlobSha1": "957f26d3e3b5ae3922f2f220263c51ab220088d4",
+      "sourceSha256": "244779275ccf7def02a7724a707dfe8787f83afd5ccb6498b42296ae42484940",
+      "sourceBytes": 1099
+    },
+    {
+      "path": "NOTICE.md",
+      "bytes": 2075,
+      "sha256": "1373bb917b84a6e0f2b25131fe5cb59d2994f6bef3d4e7064bcb1e9d37ad3e3c",
+      "gitBlobSha1": "b2b251a8c3904cc8ebd748d1b16fffb4f91b391a",
+      "source": "Original provenance and modification notice authored for this source package.",
+      "license": "Documentation of upstream grants; creates no replacement grant."
+    }
+  ]
+}

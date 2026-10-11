@@ -2905,5 +2905,89 @@ export const games: GameDefinition[] = [
 ,
   component: lazy(() => import("../games/HealEmAllOriginal"))
 },
+{
+  "id": "flexbox-froggy",
+  "title": "弹性盒子青蛙",
+  "subtitle": "写下真正的 Flexbox 布局，让青蛙们回到同色荷叶。完整保留原作 24 课。",
+  "category": "编程启蒙",
+  "difficulty": "中级",
+  "tone": "green",
+  "levelCount": 24,
+  "allowUndo": false,
+  "resumeKey": "playgarden.flexbox-froggy.v1",
+  "artwork": {
+    "url": "./flexbox-froggy/images/frog-green.svg",
+    "position": "center",
+    "size": "contain"
+  },
+  "source": {
+    "kind": "adapted",
+    "license": "MIT",
+    "author": "Thomas Park / Codepip",
+    "workTitle": "Flexbox Froggy（完整原作 24 课及结局）",
+    "url": "https://github.com/thomaspark/flexboxfroggy/tree/9a6feab850a56cbe9ad90f3afcc95e88335bbec8",
+    "commit": "9a6feab850a56cbe9ad90f3afcc95e88335bbec8",
+    "notice": "./flexbox-froggy/NOTICE.txt",
+    "notes": "原作完整 24 课、中文课程、属性帮助、实际浏览器 Flexbox 位置与颜色校验及结局保留。代码与文字 MIT；Thomas Park 青蛙/荷叶原图单独为 CC-BY-3.0，未经修改；jQuery/Sizzle 与 Animate.css 为 MIT。本站宿主与隔离适配 GPL-3.0-only。自由选择不会自动获得通关，全部 24 课分别完成才算完整课程通关。"
+  }
+,
+ component: lazy(() => import("../games/FlexboxFroggy"))
+},
+{
+  "id": "monkey-rally",
+  "title": "猴子救援",
+  "subtitle": "为最后一只猴子编排滑行路线，穿过停靠垫、洞和三色机关门，完成原作八关救援。",
+  "category": "编程启蒙",
+  "difficulty": "进阶",
+  "tone": "green",
+  "levelCount": 8,
+  "allowUndo": false,
+  "resumeKey": "playgarden.monkey-rally.v1",
+  "artwork": {
+    "url": "./monkey-rally/assets/backgrounds/title.jpg",
+    "position": "center",
+    "size": "cover"
+  },
+  "source": {
+    "kind": "adapted",
+    "license": "CC-BY-4.0",
+    "author": "Anders Antila; Erik Nahkala; Laura Kantti",
+    "workTitle": "Monkey Rally（完整原作八关、十幅故事与结局）",
+    "url": "https://github.com/antila/ludum-dare-28/tree/79abaad33db0e0b5bddf4500800de881e2bc738c",
+    "commit": "79abaad33db0e0b5bddf4500800de881e2bc738c",
+    "notice": "./monkey-rally/NOTICE.txt",
+    "notes": "完整保留八张作者地图、队列编辑、连续滑行、阻挡指令消耗、停靠垫、洞、可逆三色全局门开关、十幅故事和最终结局。原代码、地图及美术 CC-BY-4.0；本站 iframe、中文操作和生命周期适配 GPL-3.0-only。保留经六处工具函数许可清理的原 Phaser 1.1.3／Pixi 引擎，其余许可见完整声明。音乐与位图字体未使用。"
+  }
+,
+ component: lazy(() => import("../games/MonkeyRallyOriginal"))
+},
+{
+  "id": "css-diner",
+  "title": "CSS 选择器餐厅",
+  "subtitle": "观察 HTML，用真正的 CSS 选择器选中餐桌目标。完整保留原作 32 道谜题。",
+  "category": "编程启蒙",
+  "difficulty": "中级",
+  "tone": "orange",
+  "levelCount": 32,
+  "allowUndo": false,
+  "resumeKey": "playgarden.css-diner.v1",
+  "source": {
+    "kind": "adapted",
+    "license": "MPL-2.0",
+    "author": "@flukeout 与 CSS Diner 贡献者",
+    "workTitle": "CSS Diner（完整原作 32 道选择器谜题及结局）",
+    "url": "https://github.com/flukeout/css-diner/tree/566aaa01314caddc7a9034d793250cf2b8f12a4e",
+    "commit": "566aaa01314caddc7a9034d793250cf2b8f12a4e",
+    "notice": "./css-diner/NOTICE.txt",
+    "notes": "完整保留 32 道原作谜题、CSS 绘制餐桌与食物、jQuery/Sizzle 选择器匹配、完整目标集合核验、自由选关和原作结局。原作及修改后的覆盖文件、中文说明为 MPL-2.0；jQuery/Sizzle 为 MIT；独立宿主与桥接为 GPL-3.0-only。等价选择器也能过关，只有 32 关分别完成才算完整课程通关。"
+  },
+  "artwork": {
+    "url": "./css-diner-card.svg",
+    "position": "center",
+    "size": "cover"
+  }
+,
+ component: lazy(() => import("../games/CssDiner"))
+},
 ];
 export const findGame = (id: string) => games.find((game) => game.id === id);

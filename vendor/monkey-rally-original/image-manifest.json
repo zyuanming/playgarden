@@ -1,0 +1,618 @@
+{
+  "format": 1,
+  "count": 68,
+  "files": [
+    {
+      "path": "backgrounds/background.jpg",
+      "bytes": 128203,
+      "sha256": "de5262fc6f5d66881d869a73a894ebcf6a6e3838a9dec7e7afc3d24ecc581e4b",
+      "destinations": [
+        "vendor/monkey-rally-original/upstream/src/assets/backgrounds/background.jpg",
+        "public/monkey-rally/assets/backgrounds/background.jpg"
+      ]
+    },
+    {
+      "path": "backgrounds/credits-background.jpg",
+      "bytes": 65718,
+      "sha256": "747d9935bcee670d97eb9d711d415b5d5eee92a981212a6726df7e47ffdf56c6",
+      "destinations": [
+        "vendor/monkey-rally-original/upstream/src/assets/backgrounds/credits-background.jpg",
+        "public/monkey-rally/assets/backgrounds/credits-background.jpg"
+      ]
+    },
+    {
+      "path": "backgrounds/ending.png",
+      "bytes": 408655,
+      "sha256": "8f03480a626bf3f8bb7c3ef7ddb5f13848bbc765ef6d0ab5d589973f7a6fa4c0",
+      "destinations": [
+        "vendor/monkey-rally-original/upstream/src/assets/backgrounds/ending.png",
+        "public/monkey-rally/assets/backgrounds/ending.png"
+      ]
+    },
+    {
+      "path": "backgrounds/intro-1.jpg",
+      "bytes": 142995,
+      "sha256": "165a921125f7deb8f8ddf4bf9ffed81d8291c0a59de3d9da540927a5511d060e",
+      "destinations": [
+        "vendor/monkey-rally-original/upstream/src/assets/backgrounds/intro-1.jpg",
+        "public/monkey-rally/assets/backgrounds/intro-1.jpg"
+      ]
+    },
+    {
+      "path": "backgrounds/intro-10.jpg",
+      "bytes": 102719,
+      "sha256": "df79ae3c4a6c74982c8ade7fbd97319484d11e15ef195fb10a697b6338785f17",
+      "destinations": [
+        "vendor/monkey-rally-original/upstream/src/assets/backgrounds/intro-10.jpg",
+        "public/monkey-rally/assets/backgrounds/intro-10.jpg"
+      ]
+    },
+    {
+      "path": "backgrounds/intro-2.jpg",
+      "bytes": 148848,
+      "sha256": "a98a1c2d1b08af91e66e33ea7743d1a9d6295ef63e4ed91e61fc4a496d088214",
+      "destinations": [
+        "vendor/monkey-rally-original/upstream/src/assets/backgrounds/intro-2.jpg",
+        "public/monkey-rally/assets/backgrounds/intro-2.jpg"
+      ]
+    },
+    {
+      "path": "backgrounds/intro-3.jpg",
+      "bytes": 139122,
+      "sha256": "71c4cbfbb03a5001694346900eacf12885e977fbf01279a60aeb7a2332b0f41c",
+      "destinations": [
+        "vendor/monkey-rally-original/upstream/src/assets/backgrounds/intro-3.jpg",
+        "public/monkey-rally/assets/backgrounds/intro-3.jpg"
+      ]
+    },
+    {
+      "path": "backgrounds/intro-4.jpg",
+      "bytes": 129239,
+      "sha256": "b5260b3a18eac322fac8b6d1ce6a3958da999525f9b57bb6108a998e4977b867",
+      "destinations": [
+        "vendor/monkey-rally-original/upstream/src/assets/backgrounds/intro-4.jpg",
+        "public/monkey-rally/assets/backgrounds/intro-4.jpg"
+      ]
+    },
+    {
+      "path": "backgrounds/intro-5.jpg",
+      "bytes": 119373,
+      "sha256": "e9d2741136aab6f28e727fb80f1436866088fa666a28fe05181fc54449954230",
+      "destinations": [
+        "vendor/monkey-rally-original/upstream/src/assets/backgrounds/intro-5.jpg",
+        "public/monkey-rally/assets/backgrounds/intro-5.jpg"
+      ]
+    },
+    {
+      "path": "backgrounds/intro-6.jpg",
+      "bytes": 109282,
+      "sha256": "7906fb31d6cfd1457acee4ddcf4f44a95dda3036677d8aac6136a145b2eb9c0b",
+      "destinations": [
+        "vendor/monkey-rally-original/upstream/src/assets/backgrounds/intro-6.jpg",
+        "public/monkey-rally/assets/backgrounds/intro-6.jpg"
+      ]
+    },
+    {
+      "path": "backgrounds/intro-7.jpg",
+      "bytes": 99612,
+      "sha256": "81b149563edc3a482e1dad5d1585975bdabe98671b8dfc005a0f2c2ca809cfaa",
+      "destinations": [
+        "vendor/monkey-rally-original/upstream/src/assets/backgrounds/intro-7.jpg",
+        "public/monkey-rally/assets/backgrounds/intro-7.jpg"
+      ]
+    },
+    {
+      "path": "backgrounds/intro-8.jpg",
+      "bytes": 99828,
+      "sha256": "ad1307e628c480a84f1deecb1080e390154e8fbd2e482da157f6e0e34330c209",
+      "destinations": [
+        "vendor/monkey-rally-original/upstream/src/assets/backgrounds/intro-8.jpg",
+        "public/monkey-rally/assets/backgrounds/intro-8.jpg"
+      ]
+    },
+    {
+      "path": "backgrounds/intro-9.jpg",
+      "bytes": 104393,
+      "sha256": "3d5a53f127d1c907ddd0054b1b0a733b59c0cf92ee853eae42a8c040d5157045",
+      "destinations": [
+        "vendor/monkey-rally-original/upstream/src/assets/backgrounds/intro-9.jpg",
+        "public/monkey-rally/assets/backgrounds/intro-9.jpg"
+      ]
+    },
+    {
+      "path": "backgrounds/placeholder.png",
+      "bytes": 33371,
+      "sha256": "43de415baa07dc34f2a21faa01c8a51c15473b880a072edd3f6cf936338c2967",
+      "destinations": [
+        "vendor/monkey-rally-original/upstream/src/assets/backgrounds/placeholder.png",
+        "public/monkey-rally/assets/backgrounds/placeholder.png"
+      ]
+    },
+    {
+      "path": "backgrounds/preloader.jpg",
+      "bytes": 28953,
+      "sha256": "63f1788aff6d17c2ac9cfa13b890107fa1938e6fa7a1a92b2de7f165887cd235",
+      "destinations": [
+        "vendor/monkey-rally-original/upstream/src/assets/backgrounds/preloader.jpg",
+        "public/monkey-rally/assets/backgrounds/preloader.jpg"
+      ]
+    },
+    {
+      "path": "backgrounds/title.jpg",
+      "bytes": 153987,
+      "sha256": "a48be9af9374708db0f2316303c09cf043b6e424adc1699a3d22a0a2735afa00",
+      "destinations": [
+        "vendor/monkey-rally-original/upstream/src/assets/backgrounds/title.jpg",
+        "public/monkey-rally/assets/backgrounds/title.jpg"
+      ]
+    },
+    {
+      "path": "buttons/actions.png",
+      "bytes": 127776,
+      "sha256": "177506fdea8f11f230547a163b7d1149f3f6b847502c9660d20b136c9983efff",
+      "destinations": [
+        "vendor/monkey-rally-original/upstream/src/assets/buttons/actions.png",
+        "public/monkey-rally/assets/buttons/actions.png"
+      ]
+    },
+    {
+      "path": "buttons/back.png",
+      "bytes": 5608,
+      "sha256": "12d2359e040c0a253dfe2b2fe8b883fdbf3b66698351593204bd1df5a4262a7b",
+      "destinations": [
+        "vendor/monkey-rally-original/upstream/src/assets/buttons/back.png",
+        "public/monkey-rally/assets/buttons/back.png"
+      ]
+    },
+    {
+      "path": "buttons/background.png",
+      "bytes": 4656,
+      "sha256": "d7ee11a48098757eef8f76845d11a3b687a01c743cfa43a3998db4771c01ad2e",
+      "destinations": [
+        "vendor/monkey-rally-original/upstream/src/assets/buttons/background.png",
+        "public/monkey-rally/assets/buttons/background.png"
+      ]
+    },
+    {
+      "path": "buttons/check.png",
+      "bytes": 2022,
+      "sha256": "55e245b63081f9f054e2a68d5af9e793397590bc6eff2974e3f2c783b67e70df",
+      "destinations": [
+        "vendor/monkey-rally-original/upstream/src/assets/buttons/check.png",
+        "public/monkey-rally/assets/buttons/check.png"
+      ]
+    },
+    {
+      "path": "buttons/credits.png",
+      "bytes": 6974,
+      "sha256": "62bbaa9c7781d98c983e730ee0830acd57e7a8c2416d8d030c69f946de058e25",
+      "destinations": [
+        "vendor/monkey-rally-original/upstream/src/assets/buttons/credits.png",
+        "public/monkey-rally/assets/buttons/credits.png"
+      ]
+    },
+    {
+      "path": "buttons/endbanner.png",
+      "bytes": 32822,
+      "sha256": "273663247b8e17169843a73eda1dac60e7a848249bc790ea4017d0e659bee111",
+      "destinations": [
+        "vendor/monkey-rally-original/upstream/src/assets/buttons/endbanner.png",
+        "public/monkey-rally/assets/buttons/endbanner.png"
+      ]
+    },
+    {
+      "path": "buttons/level1.png",
+      "bytes": 4255,
+      "sha256": "17310dc2ef7cf8609fb191c072677ad7a57231f25878ca20fc15b0a2c6e53039",
+      "destinations": [
+        "vendor/monkey-rally-original/upstream/src/assets/buttons/level1.png",
+        "public/monkey-rally/assets/buttons/level1.png"
+      ]
+    },
+    {
+      "path": "buttons/level10.png",
+      "bytes": 5105,
+      "sha256": "8c7542ad6834495f75ecdedfbef5a6ab7ec8388dcb3e4c3c2247bd3a427c88dc",
+      "destinations": [
+        "vendor/monkey-rally-original/upstream/src/assets/buttons/level10.png",
+        "public/monkey-rally/assets/buttons/level10.png"
+      ]
+    },
+    {
+      "path": "buttons/level11.png",
+      "bytes": 4599,
+      "sha256": "5e3f502c74290386eda1c71c27955c9c76486800970f5874463f65178d14457e",
+      "destinations": [
+        "vendor/monkey-rally-original/upstream/src/assets/buttons/level11.png",
+        "public/monkey-rally/assets/buttons/level11.png"
+      ]
+    },
+    {
+      "path": "buttons/level12.png",
+      "bytes": 4949,
+      "sha256": "3e5418a61e83321303d3f2df6612559943746f77d9e02bba05acb6e5e7323294",
+      "destinations": [
+        "vendor/monkey-rally-original/upstream/src/assets/buttons/level12.png",
+        "public/monkey-rally/assets/buttons/level12.png"
+      ]
+    },
+    {
+      "path": "buttons/level13.png",
+      "bytes": 4935,
+      "sha256": "013513d0f89ba6da7037e8bd400e750061d1617cdd678bc2a0a9254b4e841b80",
+      "destinations": [
+        "vendor/monkey-rally-original/upstream/src/assets/buttons/level13.png",
+        "public/monkey-rally/assets/buttons/level13.png"
+      ]
+    },
+    {
+      "path": "buttons/level14.png",
+      "bytes": 4669,
+      "sha256": "16563f653fa7dc5d14a2467b7f03cbfac7d772997f40e682468322c00b9776fc",
+      "destinations": [
+        "vendor/monkey-rally-original/upstream/src/assets/buttons/level14.png",
+        "public/monkey-rally/assets/buttons/level14.png"
+      ]
+    },
+    {
+      "path": "buttons/level15.png",
+      "bytes": 4917,
+      "sha256": "04ff9bc97f1414b7e798afde9cd41e7da70ea19b192bd8ba3c3b2c9eebbd280c",
+      "destinations": [
+        "vendor/monkey-rally-original/upstream/src/assets/buttons/level15.png",
+        "public/monkey-rally/assets/buttons/level15.png"
+      ]
+    },
+    {
+      "path": "buttons/level2.png",
+      "bytes": 4645,
+      "sha256": "804176a5fc2f22a28aee3b86bd03f230299a0c8f519b5cb2085f4a86df45f130",
+      "destinations": [
+        "vendor/monkey-rally-original/upstream/src/assets/buttons/level2.png",
+        "public/monkey-rally/assets/buttons/level2.png"
+      ]
+    },
+    {
+      "path": "buttons/level3.png",
+      "bytes": 4625,
+      "sha256": "b58cfd241b20e7e9d6e7edd79f2808383651000564cd16b31c439dc5e9406f4f",
+      "destinations": [
+        "vendor/monkey-rally-original/upstream/src/assets/buttons/level3.png",
+        "public/monkey-rally/assets/buttons/level3.png"
+      ]
+    },
+    {
+      "path": "buttons/level4.png",
+      "bytes": 4373,
+      "sha256": "425f2652b50101567e08bd05a80e99643bf318b8909d60ae235c036269cb8e44",
+      "destinations": [
+        "vendor/monkey-rally-original/upstream/src/assets/buttons/level4.png",
+        "public/monkey-rally/assets/buttons/level4.png"
+      ]
+    },
+    {
+      "path": "buttons/level5.png",
+      "bytes": 4593,
+      "sha256": "e8c5ee2508453ee2617bffb6386548803c659df4ff0dc7e82c27d84a072a7dff",
+      "destinations": [
+        "vendor/monkey-rally-original/upstream/src/assets/buttons/level5.png",
+        "public/monkey-rally/assets/buttons/level5.png"
+      ]
+    },
+    {
+      "path": "buttons/level6.png",
+      "bytes": 4648,
+      "sha256": "90b39664f0b106b35e4ec9611aadd5c970f6ac231f4727d0e0acdfab7fc402dd",
+      "destinations": [
+        "vendor/monkey-rally-original/upstream/src/assets/buttons/level6.png",
+        "public/monkey-rally/assets/buttons/level6.png"
+      ]
+    },
+    {
+      "path": "buttons/level7.png",
+      "bytes": 4413,
+      "sha256": "808335b5c71bebb4b3b098adba77d48155b475b7e52d6b18778e8b239ec554d2",
+      "destinations": [
+        "vendor/monkey-rally-original/upstream/src/assets/buttons/level7.png",
+        "public/monkey-rally/assets/buttons/level7.png"
+      ]
+    },
+    {
+      "path": "buttons/level8.png",
+      "bytes": 4732,
+      "sha256": "15e3df8944fe0d93cea6adfca0a1d9114c45ac4ee61cb89de88f51018ebd13b6",
+      "destinations": [
+        "vendor/monkey-rally-original/upstream/src/assets/buttons/level8.png",
+        "public/monkey-rally/assets/buttons/level8.png"
+      ]
+    },
+    {
+      "path": "buttons/level9.png",
+      "bytes": 4557,
+      "sha256": "85949b5b30d11003ebb6ff054707ce6320e7dd8809bfd6fd01e30ce61c542467",
+      "destinations": [
+        "vendor/monkey-rally-original/upstream/src/assets/buttons/level9.png",
+        "public/monkey-rally/assets/buttons/level9.png"
+      ]
+    },
+    {
+      "path": "buttons/main_menu.png",
+      "bytes": 17906,
+      "sha256": "76832bbc9722298605c51279f7955db5489bbe7ab46d880844c4ae7a9d46330d",
+      "destinations": [
+        "vendor/monkey-rally-original/upstream/src/assets/buttons/main_menu.png",
+        "public/monkey-rally/assets/buttons/main_menu.png"
+      ]
+    },
+    {
+      "path": "buttons/menu_title.png",
+      "bytes": 50860,
+      "sha256": "e44d0a0eb53c76f1d5884a910e83b55c8577bd54fd5d5238842405a8eea58319",
+      "destinations": [
+        "vendor/monkey-rally-original/upstream/src/assets/buttons/menu_title.png",
+        "public/monkey-rally/assets/buttons/menu_title.png"
+      ]
+    },
+    {
+      "path": "buttons/mute_audio.png",
+      "bytes": 18142,
+      "sha256": "fd41d072b4eef0e47de377a856563113a0113bc8c12798aff1d1d61e1078b3ee",
+      "destinations": [
+        "vendor/monkey-rally-original/upstream/src/assets/buttons/mute_audio.png",
+        "public/monkey-rally/assets/buttons/mute_audio.png"
+      ]
+    },
+    {
+      "path": "buttons/next.png",
+      "bytes": 5152,
+      "sha256": "f04ae7e4a874d779d46e854d4ff290c9fec0334d561566d25016ff8c84e9f340",
+      "destinations": [
+        "vendor/monkey-rally-original/upstream/src/assets/buttons/next.png",
+        "public/monkey-rally/assets/buttons/next.png"
+      ]
+    },
+    {
+      "path": "buttons/play.png",
+      "bytes": 4835,
+      "sha256": "b96b0aa9f4ca5171668c5e6ae6827a812a162de929ad45ac201886c2588005db",
+      "destinations": [
+        "vendor/monkey-rally-original/upstream/src/assets/buttons/play.png",
+        "public/monkey-rally/assets/buttons/play.png"
+      ]
+    },
+    {
+      "path": "buttons/sequence.png",
+      "bytes": 28883,
+      "sha256": "d890030688f631757a44df803756ee7b51ce958ff9502bb7a0962729618a448c",
+      "destinations": [
+        "vendor/monkey-rally-original/upstream/src/assets/buttons/sequence.png",
+        "public/monkey-rally/assets/buttons/sequence.png"
+      ]
+    },
+    {
+      "path": "buttons/unmute_audio.png",
+      "bytes": 19270,
+      "sha256": "1f73e75e8e82db02b0e8766e4b4c451363b862bc351cd9abe49da5eba2bb3e9b",
+      "destinations": [
+        "vendor/monkey-rally-original/upstream/src/assets/buttons/unmute_audio.png",
+        "public/monkey-rally/assets/buttons/unmute_audio.png"
+      ]
+    },
+    {
+      "path": "entities/bottle_blue.png",
+      "bytes": 1807,
+      "sha256": "10df1b5114a3e2f522c3a9403a19bc804e44717ae2a2cfc05c8059ebb217ed48",
+      "destinations": [
+        "vendor/monkey-rally-original/upstream/src/assets/entities/bottle_blue.png",
+        "public/monkey-rally/assets/entities/bottle_blue.png"
+      ]
+    },
+    {
+      "path": "entities/bottle_green.png",
+      "bytes": 1836,
+      "sha256": "89c8ce2aa5a8d5b170679ce132f0bd9929fd51f881a56e52315a5313c43e1716",
+      "destinations": [
+        "vendor/monkey-rally-original/upstream/src/assets/entities/bottle_green.png",
+        "public/monkey-rally/assets/entities/bottle_green.png"
+      ]
+    },
+    {
+      "path": "entities/bottle_orange.png",
+      "bytes": 1832,
+      "sha256": "d3ef95cff167e693a591d959fd9129d5ff1a7430e0cf0b339a3739c1ee9df533",
+      "destinations": [
+        "vendor/monkey-rally-original/upstream/src/assets/entities/bottle_orange.png",
+        "public/monkey-rally/assets/entities/bottle_orange.png"
+      ]
+    },
+    {
+      "path": "entities/bottle_red.png",
+      "bytes": 1829,
+      "sha256": "6ca890ad561e53ca85cab195a5e6700b8fdcc867c42b78b5891fa0d46f60521a",
+      "destinations": [
+        "vendor/monkey-rally-original/upstream/src/assets/entities/bottle_red.png",
+        "public/monkey-rally/assets/entities/bottle_red.png"
+      ]
+    },
+    {
+      "path": "entities/bottle_yellow.png",
+      "bytes": 1825,
+      "sha256": "14d84a646349ce9da250c44da224900d756976a536b84b5fc49e03f09c6d9fb8",
+      "destinations": [
+        "vendor/monkey-rally-original/upstream/src/assets/entities/bottle_yellow.png",
+        "public/monkey-rally/assets/entities/bottle_yellow.png"
+      ]
+    },
+    {
+      "path": "entities/key.png",
+      "bytes": 1722,
+      "sha256": "b30aa9dad675360a0853d47b34c4620edabcadb048d00abb6fa0a371e04d06bc",
+      "destinations": [
+        "vendor/monkey-rally-original/upstream/src/assets/entities/key.png",
+        "public/monkey-rally/assets/entities/key.png"
+      ]
+    },
+    {
+      "path": "entities/monkey.png",
+      "bytes": 7144,
+      "sha256": "cea7c608f3834daef7a6c31c3c50a83ea35c93945c1117e57e1bb25e314da56b",
+      "destinations": [
+        "vendor/monkey-rally-original/upstream/src/assets/entities/monkey.png",
+        "public/monkey-rally/assets/entities/monkey.png"
+      ]
+    },
+    {
+      "path": "entities/omgfire.png",
+      "bytes": 58412,
+      "sha256": "4bc61e92d64711b0787c754839f33aa72e56aa95bcb30042262bebde81dd77aa",
+      "destinations": [
+        "vendor/monkey-rally-original/upstream/src/assets/entities/omgfire.png",
+        "public/monkey-rally/assets/entities/omgfire.png"
+      ]
+    },
+    {
+      "path": "entities/pill.png",
+      "bytes": 731,
+      "sha256": "a16e1932cd5672a7bd215b04c5ea040fc04b7373ca6957e53a8d0f45a24a5cab",
+      "destinations": [
+        "vendor/monkey-rally-original/upstream/src/assets/entities/pill.png",
+        "public/monkey-rally/assets/entities/pill.png"
+      ]
+    },
+    {
+      "path": "entities/pipette.png",
+      "bytes": 858,
+      "sha256": "0340f712e1747079e3baca00b5d460c01cf81125493624e5a0584daf0ff74b12",
+      "destinations": [
+        "vendor/monkey-rally-original/upstream/src/assets/entities/pipette.png",
+        "public/monkey-rally/assets/entities/pipette.png"
+      ]
+    },
+    {
+      "path": "entities/pipetteset.png",
+      "bytes": 1412,
+      "sha256": "aacfb1cd0eaecafc67448c276dd06a6a2dfcc27da80c4750bf929b5e2e7230a3",
+      "destinations": [
+        "vendor/monkey-rally-original/upstream/src/assets/entities/pipetteset.png",
+        "public/monkey-rally/assets/entities/pipetteset.png"
+      ]
+    },
+    {
+      "path": "entities/scientist.png",
+      "bytes": 6628,
+      "sha256": "56ed1c5ee2d152721938d2c8e2c566be78ad579ccb4b7b378c4f9723a02e9f49",
+      "destinations": [
+        "vendor/monkey-rally-original/upstream/src/assets/entities/scientist.png",
+        "public/monkey-rally/assets/entities/scientist.png"
+      ]
+    },
+    {
+      "path": "entities/star1.png",
+      "bytes": 569,
+      "sha256": "73a109b809d2943ca2780d5c86451e9e89a8df6d80d0058443fa69fc87839aae",
+      "destinations": [
+        "vendor/monkey-rally-original/upstream/src/assets/entities/star1.png",
+        "public/monkey-rally/assets/entities/star1.png"
+      ]
+    },
+    {
+      "path": "entities/star2.png",
+      "bytes": 981,
+      "sha256": "dd4ed5d45df648086331738345c8573b6ee87e04176a50af7aa8fbd396418bc3",
+      "destinations": [
+        "vendor/monkey-rally-original/upstream/src/assets/entities/star2.png",
+        "public/monkey-rally/assets/entities/star2.png"
+      ]
+    },
+    {
+      "path": "entities/star3.png",
+      "bytes": 644,
+      "sha256": "4e951f59cdd08491fa7a431083dc7e2bc31143f3896e126be99bed328931409e",
+      "destinations": [
+        "vendor/monkey-rally-original/upstream/src/assets/entities/star3.png",
+        "public/monkey-rally/assets/entities/star3.png"
+      ]
+    },
+    {
+      "path": "entities/star4.png",
+      "bytes": 648,
+      "sha256": "41a1ad7591c9ae374b3be51655a86bfdb91c4e3ca962329cf63b7c389829d601",
+      "destinations": [
+        "vendor/monkey-rally-original/upstream/src/assets/entities/star4.png",
+        "public/monkey-rally/assets/entities/star4.png"
+      ]
+    },
+    {
+      "path": "entities/star5.png",
+      "bytes": 526,
+      "sha256": "d842660c3b0437261a595e39c51d890f294e576d0600956e93cb5b4670f004c7",
+      "destinations": [
+        "vendor/monkey-rally-original/upstream/src/assets/entities/star5.png",
+        "public/monkey-rally/assets/entities/star5.png"
+      ]
+    },
+    {
+      "path": "entities/star6.png",
+      "bytes": 505,
+      "sha256": "55c969b0413474383cec3d9ea61d6fe503001f5fed974b6aa05b2f2d5f9ded26",
+      "destinations": [
+        "vendor/monkey-rally-original/upstream/src/assets/entities/star6.png",
+        "public/monkey-rally/assets/entities/star6.png"
+      ]
+    },
+    {
+      "path": "preloader-bg.png",
+      "bytes": 2097,
+      "sha256": "c02f9baddaf8eefe882f387c1c3cdd60d9c789d48c4f895416b61777703e10a7",
+      "destinations": [
+        "vendor/monkey-rally-original/upstream/src/assets/preloader-bg.png",
+        "public/monkey-rally/assets/preloader-bg.png"
+      ]
+    },
+    {
+      "path": "preloader.png",
+      "bytes": 2145,
+      "sha256": "dc5f45289a839f2d7e9c3411231587b6811aafee50af9c7e60c4b7e2fc3f858b",
+      "destinations": [
+        "vendor/monkey-rally-original/upstream/src/assets/preloader.png",
+        "public/monkey-rally/assets/preloader.png"
+      ]
+    },
+    {
+      "path": "tiles/decorations.png",
+      "bytes": 64083,
+      "sha256": "58c2f2db96c899367157af10f8de0fd70cf7c12f9b3a11a6f0983409eda50199",
+      "destinations": [
+        "vendor/monkey-rally-original/upstream/src/assets/tiles/decorations.png",
+        "public/monkey-rally/assets/tiles/decorations.png"
+      ]
+    },
+    {
+      "path": "tiles/game-tiles.png",
+      "bytes": 5877,
+      "sha256": "3b2a1823e1db39a5070ec077bb1aeb2d17b653f36755bd8236f46a8aacb00c65",
+      "destinations": [
+        "vendor/monkey-rally-original/upstream/src/assets/tiles/game-tiles.png",
+        "public/monkey-rally/assets/tiles/game-tiles.png"
+      ]
+    },
+    {
+      "path": "tiles/new-tiles.png",
+      "bytes": 122662,
+      "sha256": "9c04dcffc9e67d4d5de53c9d82afdaa8350807b35b45d10bb59a52514d5caa5e",
+      "destinations": [
+        "vendor/monkey-rally-original/upstream/src/assets/tiles/new-tiles.png",
+        "public/monkey-rally/assets/tiles/new-tiles.png"
+      ]
+    },
+    {
+      "path": "tiles/tile-logic.png",
+      "bytes": 59962,
+      "sha256": "cfef349d1f6c19423942cfcd53c425db418e8c18da40673f6a545c653269df11",
+      "destinations": [
+        "vendor/monkey-rally-original/upstream/src/assets/tiles/tile-logic.png",
+        "public/monkey-rally/assets/tiles/tile-logic.png"
+      ]
+    }
+  ]
+}

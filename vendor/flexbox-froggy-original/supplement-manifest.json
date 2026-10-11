@@ -1,0 +1,16 @@
+[
+  {
+    "path": "licenses/CC-BY-3.0.txt",
+    "bytes": 19467,
+    "gitBlobSha1": "1a16e05564d2aaa880bbe9e506a0a0226d8742cc",
+    "sha256": "e6bc9e9c474700b708f568bac9e5a8a9bcb2b1dad53442f5ba449fcb848b8e76",
+    "source": "https://github.com/spdx/license-list-data/blob/31ba1a50e5397e00a304dbadc76531740e89ee48/text/CC-BY-3.0.txt"
+  },
+  {
+    "path": "licenses/Animate-MIT.txt",
+    "bytes": 1232,
+    "sha256": "cbfb91f71cc779a3aa497da81696960a656282a7ca04c2f2698bc1e0df7631c7",
+    "source": "upstream/node_modules/animate.css/animate.css header and README.md license section",
+    "kind": "assembled notice"
+  }
+]

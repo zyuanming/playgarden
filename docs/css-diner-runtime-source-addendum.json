@@ -1,0 +1,24 @@
+{
+  "name": "CSS Diner complete original 32-puzzle selector course",
+  "version": "566aaa01314caddc7a9034d793250cf2b8f12a4e",
+  "license": "MPL-2.0 covered files and modifications; jQuery/Sizzle MIT; standalone Playgarden host and bridge GPL-3.0-only",
+  "source": "https://github.com/flukeout/css-diner/tree/566aaa01314caddc7a9034d793250cf2b8f12a4e",
+  "commit": "566aaa01314caddc7a9034d793250cf2b8f12a4e",
+  "preferredSource": [
+    "vendor/css-diner-original/cleared/js/levels.js",
+    "vendor/css-diner-original/cleared/js/restaurant.js",
+    "vendor/css-diner-original/cleared/css/style.css",
+    "vendor/css-diner-original/cleared/index.html",
+    "vendor/css-diner-original/cleared/js/jquery.js",
+    "public/css-diner/js/restaurant.js",
+    "public/css-diner/zh.js",
+    "public/css-diner/index.html",
+    "public/css-diner/adapter.js",
+    "public/css-diner/adapter.css",
+    "src/games/CssDiner.tsx",
+    "src/games/cssDiner.css"
+  ],
+  "buildSources": ["scripts/css-diner/package-source.py", "scripts/css-diner/verify-sources.py"],
+  "scope": "32 exact original level objects and board markup; original table renderer and CSS-drawn food artwork; original table-scoped selector matching and clone/markup exact-set checker; original final screen with Chinese text; original English help retained alongside Chinese guidance. Only allowlisted cleared upstream inputs are incorporated. No external assets, analytics, social snippets, scrollbar dependency or runtime install.",
+  "notices": ["public/css-diner/NOTICE.txt", "public/css-diner/LICENSE", "public/css-diner/licenses/jquery-MIT.txt", "public/css-diner/licenses/sizzle-MIT.txt", "public/css-diner/licenses/Playgarden-GPL-3.0.txt"]
+}

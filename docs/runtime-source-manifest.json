@@ -611,6 +611,98 @@
         "package-lock.json"
       ],
       "scope": "Complete original six maps, generated game body and licensed art retained with scoped input/loading/RAF/storage, accessible Chinese menus and original ending. Full preferred CoffeeScript and engine source retained; no soundtrack, tracker, font service or upstream build scripts executed."
+    },
+    {
+      "name": "Flexbox Froggy complete original 24-lesson course",
+      "version": "9a6feab850a56cbe9ad90f3afcc95e88335bbec8",
+      "license": "MIT; artwork CC-BY-3.0; Playgarden adapter GPL-3.0-only",
+      "source": "https://github.com/thomaspark/flexboxfroggy/tree/9a6feab850a56cbe9ad90f3afcc95e88335bbec8",
+      "commit": "9a6feab850a56cbe9ad90f3afcc95e88335bbec8",
+      "preferredSource": [
+        "vendor/flexbox-froggy-original/upstream/js/game.js",
+        "vendor/flexbox-froggy-original/upstream/js/levels.js",
+        "vendor/flexbox-froggy-original/upstream/js/docs.js",
+        "vendor/flexbox-froggy-original/upstream/js/messages.js",
+        "vendor/flexbox-froggy-original/upstream/css/style.css",
+        "vendor/flexbox-froggy-original/upstream/images",
+        "vendor/flexbox-froggy-original/upstream/third-party/jquery/dist/jquery.js",
+        "vendor/flexbox-froggy-original/upstream/third-party/animate.css/animate.css",
+        "public/flexbox-froggy/adapter.js",
+        "public/flexbox-froggy/adapter.css",
+        "public/flexbox-froggy/index.html",
+        "src/games/FlexboxFroggy.tsx",
+        "src/games/flexboxFroggy.css"
+      ],
+      "buildSources": [
+        "scripts/flexbox-froggy/adapt.py",
+        "scripts/flexbox-froggy/package-source.py",
+        "scripts/flexbox-froggy/verify-sources.py"
+      ],
+      "scope": "24 original challenge objects, complete multilingual lessons and help, native Flexbox/color-position checker and original uncounted 25-frog ending. Twelve unmodified separately licensed SVGs. Readable jQuery 3.5.1, embedded Sizzle and Animate.css 3.4.0; no dependency installation or upstream build. Opaque sandbox with validated local bridge, original engine plus cancellable lifecycle seams.",
+      "notices": [
+        "public/flexbox-froggy/NOTICE.txt",
+        "public/flexbox-froggy/LICENSE",
+        "public/flexbox-froggy/licenses/CC-BY-3.0.txt",
+        "public/flexbox-froggy/licenses/Animate-MIT.txt",
+        "public/flexbox-froggy/licenses/Playgarden-GPL-3.0.txt",
+        "public/flexbox-froggy/third-party/jquery/LICENSE.txt",
+        "public/flexbox-froggy/third-party/jquery/external/sizzle/LICENSE.txt"
+      ]
+    },
+    {
+      "name": "Monkey Rally complete original eight-puzzle game and licensed Phaser engine",
+      "version": "79abaad33db0e0b5bddf4500800de881e2bc738c",
+      "license": "CC-BY-4.0 first-party code/maps/art; retained engine component notices; GPL-3.0-only adapter/replacement utilities",
+      "source": "https://github.com/antila/ludum-dare-28/tree/79abaad33db0e0b5bddf4500800de881e2bc738c",
+      "preferredSource": [
+        "vendor/monkey-rally-original/upstream/src/js",
+        "vendor/monkey-rally-original/upstream/src/assets/maps",
+        "vendor/monkey-rally-original/images.zip",
+        "public/monkey-rally/adapter.js",
+        "src/games/MonkeyRallyOriginal.tsx"
+      ],
+      "buildSources": [
+        "scripts/monkey-rally/adapt.py",
+        "scripts/monkey-rally/unpack-assets.py",
+        "scripts/monkey-rally/verify-sources.py",
+        "scripts/monkey-rally/package.py",
+        "public/monkey-rally/source.zip",
+        "package-lock.json"
+      ],
+      "scope": "All eight original maps, command queue/sliding/stop/holes/reversible color doors, ten-panel story and final ending. Cleared original Phaser/Pixi engine and all68 original images retained. Standard-library archive materialization preserves exact image bytes/URLs; no soundtrack, bitmap font, raw excluded engine helpers or upstream dependency installation."
+    },
+    {
+      "name": "CSS Diner complete original 32-puzzle selector course",
+      "version": "566aaa01314caddc7a9034d793250cf2b8f12a4e",
+      "license": "MPL-2.0 covered files and modifications; jQuery/Sizzle MIT; standalone Playgarden host and bridge GPL-3.0-only",
+      "source": "https://github.com/flukeout/css-diner/tree/566aaa01314caddc7a9034d793250cf2b8f12a4e",
+      "commit": "566aaa01314caddc7a9034d793250cf2b8f12a4e",
+      "preferredSource": [
+        "vendor/css-diner-original/cleared/js/levels.js",
+        "vendor/css-diner-original/cleared/js/restaurant.js",
+        "vendor/css-diner-original/cleared/css/style.css",
+        "vendor/css-diner-original/cleared/index.html",
+        "vendor/css-diner-original/cleared/js/jquery.js",
+        "public/css-diner/js/restaurant.js",
+        "public/css-diner/zh.js",
+        "public/css-diner/index.html",
+        "public/css-diner/adapter.js",
+        "public/css-diner/adapter.css",
+        "src/games/CssDiner.tsx",
+        "src/games/cssDiner.css"
+      ],
+      "buildSources": [
+        "scripts/css-diner/package-source.py",
+        "scripts/css-diner/verify-sources.py"
+      ],
+      "scope": "32 exact original level objects and board markup; original table renderer and CSS-drawn food artwork; original table-scoped selector matching and clone/markup exact-set checker; original final screen with Chinese text; original English help retained alongside Chinese guidance. Only allowlisted cleared upstream inputs are incorporated. No external assets, analytics, social snippets, scrollbar dependency or runtime install.",
+      "notices": [
+        "public/css-diner/NOTICE.txt",
+        "public/css-diner/LICENSE",
+        "public/css-diner/licenses/jquery-MIT.txt",
+        "public/css-diner/licenses/sizzle-MIT.txt",
+        "public/css-diner/licenses/Playgarden-GPL-3.0.txt"
+      ]
     }
   ]
 }

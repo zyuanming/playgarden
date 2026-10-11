@@ -152,6 +152,9 @@ import { sortingNetworkLevels } from "../src/games/sortingNetworkLogic";
 import { voxelViewsLevels } from "../src/games/voxelViewsLogic";
 import { cubeNetLevels } from "../src/games/cubeNetLogic";
 const packs = {
+  "css-diner": Array.from({length:32}, (_,i) => i+1),
+  "flexbox-froggy": Array.from({length:24}, (_,i) => i+1),
+  "monkey-rally": [1,2,3,4,5,6,7,8],
   "swap": swapMaps.slice(0,24),
   "heal-em-all": [1,2,3,4,5,6],
   "pond": [],
@@ -339,15 +342,17 @@ describe("Scalable catalog contract", () => {
             ? "CC-BY-SA-4.0"
             : game.id === "heal-em-all"
               ? "GPL-3.0-only"
-              : game.id === "xiangqi"
+              : game.id === "monkey-rally"
+                ? "CC-BY-4.0"
+                : game.id === "xiangqi"
             ? "BSD-2-Clause"
-            : game.id === "a-dark-room"
+            : (game.id === "a-dark-room" || game.id === "css-diner")
               ? "MPL-2.0"
               : game.id === "hextris"
               ? "GPL-3.0-or-later"
               : "MIT",
       );
-      expect(game.artwork.url).toMatch(/^\.\/(?:[a-z0-9-]+\/)*[a-z0-9-]+\.(?:webp|svg)$/);
+      expect(game.artwork.url).toMatch(/^\.\/(?:[a-z0-9-]+\/)*[a-z0-9-]+\.(?:webp|svg|png|jpg)$/);
       for (const root of [
         "https://example.test/",
         "https://example.test/playgarden/",
@@ -361,8 +366,8 @@ describe("Scalable catalog contract", () => {
       }
     }),
   );
-  it("counts only 169 real games and 3032 levels, not the roadmap", () => {
-    expect(games).toHaveLength(169);
-    expect(games.reduce((sum, g) => sum + g.levelCount, 0)).toBe(3032);
+  it("counts only 172 real games and 3096 levels, not the roadmap", () => {
+    expect(games).toHaveLength(172);
+    expect(games.reduce((sum, g) => sum + g.levelCount, 0)).toBe(3096);
   });
 });
