@@ -3040,5 +3040,35 @@ component: lazy(() => import("../games/HyperspaceGarbageCollection"))
     },
     "component": lazy(() => import("../games/Avabranch"))
   },
+{
+  "id": "gridland",
+  "title": "格境求生",
+  "subtitle": "白天三连建村，夜晚配装迎敌；解锁魔法，召唤并击败巨龙。",
+  "category": "逻辑思维",
+  "difficulty": "进阶",
+  "tone": "green",
+  "levelCount": 0,
+  "campaign": true,
+  "freePlayCaption": "完整战役 · 黎明存档",
+  "allowUndo": false,
+  "artwork": {
+    "url": "./gridland-original/img/title.png",
+    "position": "center",
+    "size": "contain"
+  },
+  "source": {
+    "kind": "adapted",
+    "license": "MPL-2.0",
+    "author": "Michael Townsend / doublespeak games",
+    "workTitle": "Gridland（完整原作战役）",
+    "url": "https://github.com/doublespeakgames/gridland/tree/06af02c3af7062aead04a1e6f67b6e59f3e4b6a1",
+    "commit": "06af02c3af7062aead04a1e6f67b6e59f3e4b6a1",
+    "notice": "./gridland-original/NOTICE.txt",
+    "notes": "保留原三连资源、村落建造、昼夜战斗、装备、魔法、巫妖、屠龙结局和新游戏＋。没有人为编号关卡。原代码与美术MPL-2.0，jQuery/RequireJS MIT；独立宿主与中文适配GPL-3.0-only。原静音方式，不包含未清权音频。"
+  }
+,
+component: lazy(() => import("../games/GridlandOriginal"))
+},
+
 ];
 export const findGame = (id: string) => games.find((game) => game.id === id);

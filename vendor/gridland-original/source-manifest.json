@@ -1,0 +1,694 @@
+{
+  "game": "gridland",
+  "commit": "06af02c3af7062aead04a1e6f67b6e59f3e4b6a1",
+  "files": [
+    {
+      "path": "vendor/gridland-original/upstream/www/js/app/gamestate.js",
+      "upstreamPath": "www/js/app/gamestate.js",
+      "license": "MPL-2.0",
+      "gitBlob": "d86c493bfd07555e8d4f72b837d233d6587a0eaa",
+      "sha256": "61a1f41e0d6e80517d9c5d916ceff44ec462ae25cfbb6a9886eae10881458d3b",
+      "bytes": 6346
+    },
+    {
+      "path": "vendor/gridland-original/upstream/www/js/app/util.js",
+      "upstreamPath": "www/js/app/util.js",
+      "license": "MPL-2.0",
+      "gitBlob": "f8646aa427db014aba4cc4607f0ed67555ebe46d",
+      "sha256": "227401ab7789bc535dba5072daaae5baaa6b4f3dcffa86ba5fc857f14892cc78",
+      "bytes": 346
+    },
+    {
+      "path": "vendor/gridland-original/upstream/www/js/app/world.js",
+      "upstreamPath": "www/js/app/world.js",
+      "license": "MPL-2.0",
+      "gitBlob": "689cdccdc2b37bea4dbb853a5622e8e6ab7395dc",
+      "sha256": "98fec5ba6cfa1163b644be10cb3fd4223d29defec991092d1caa251655021f0b",
+      "bytes": 20428
+    },
+    {
+      "path": "vendor/gridland-original/upstream/www/js/app/loot.js",
+      "upstreamPath": "www/js/app/loot.js",
+      "license": "MPL-2.0",
+      "gitBlob": "f1699a16e0121dfd868cbf080281eaa3ecc55be7",
+      "sha256": "cfd00b44294dc7daf089ca3925e74d5ad55c53968480f9ca7a524b12c348063e",
+      "bytes": 2600
+    },
+    {
+      "path": "vendor/gridland-original/upstream/www/js/app/gameoptions.js",
+      "upstreamPath": "www/js/app/gameoptions.js",
+      "license": "MPL-2.0",
+      "gitBlob": "0010382955f4bb777a17dc680009b66ef2bd9310",
+      "sha256": "7f5df5410a76b91480f679101d06691985c2d6577d5218d007a8788ab8e6326d",
+      "bytes": 761
+    },
+    {
+      "path": "vendor/gridland-original/upstream/www/js/app/engine.js",
+      "upstreamPath": "www/js/app/engine.js",
+      "license": "MPL-2.0",
+      "gitBlob": "bde2b840fee7bdff44f16bb9d3c7cc28e844feeb",
+      "sha256": "4bc021e38b73abded7a8cb810cccea05c89701cb86a27f4e92eef9f45fb22b59",
+      "bytes": 10041
+    },
+    {
+      "path": "vendor/gridland-original/upstream/www/js/app/gameboard.js",
+      "upstreamPath": "www/js/app/gameboard.js",
+      "license": "MPL-2.0",
+      "gitBlob": "69d36f7a6387d5d5bb3c7407fc6f3625bc28db2e",
+      "sha256": "eb08a782c824cf5789f2d9b3421a57b31597366a87b2086cf01b0257723d134b",
+      "bytes": 16016
+    },
+    {
+      "path": "vendor/gridland-original/upstream/www/js/app/magic.js",
+      "upstreamPath": "www/js/app/magic.js",
+      "license": "MPL-2.0",
+      "gitBlob": "dfed829003ef18aa6724283c6f9a37d97dc1c08c",
+      "sha256": "78ab95365377bfa1991de2ac394a693fd6d4454bb16fc116f60a3a25abb75cc2",
+      "bytes": 440
+    },
+    {
+      "path": "vendor/gridland-original/upstream/www/js/app/gamecontent.js",
+      "upstreamPath": "www/js/app/gamecontent.js",
+      "license": "MPL-2.0",
+      "gitBlob": "8518ac25afc90c059cb14df4036ca4d91edff522",
+      "sha256": "0935a6488d81d0380be15d20f214114b26e867a9f08d5321ca7bc4b6772c7173",
+      "bytes": 13771
+    },
+    {
+      "path": "vendor/gridland-original/upstream/www/js/app/textStore.js",
+      "upstreamPath": "www/js/app/textStore.js",
+      "license": "MPL-2.0",
+      "gitBlob": "b537eb3a65e7eba20a9f180e34d3c6d95b040c89",
+      "sha256": "a3f52358c86e40f1523d84d97793e5f6b030923f8556d3074eaed4dd252aa6a3",
+      "bytes": 367
+    },
+    {
+      "path": "vendor/gridland-original/upstream/www/js/app/eventmanager.js",
+      "upstreamPath": "www/js/app/eventmanager.js",
+      "license": "MPL-2.0",
+      "gitBlob": "e8caf0498df9ef5a8f92c8033350a2cee480fae8",
+      "sha256": "5aeb2c12a817d3ef2a58ff18496d81b2611243391e5ea610ed5ac1a18e19ba4c",
+      "bytes": 2016
+    },
+    {
+      "path": "vendor/gridland-original/upstream/www/js/app/resources.js",
+      "upstreamPath": "www/js/app/resources.js",
+      "license": "MPL-2.0",
+      "gitBlob": "90edefd27aa72f648add3f131b1ba2c10c897239",
+      "sha256": "f6975f55e7436b61944944cbbc2c69dcbdf76ba0e30e6436d6293b3df84f95e7",
+      "bytes": 2136
+    },
+    {
+      "path": "vendor/gridland-original/upstream/www/js/app/action/lichspell.js",
+      "upstreamPath": "www/js/app/action/lichspell.js",
+      "license": "MPL-2.0",
+      "gitBlob": "b995ffdc91c090a55151e083963ff3db30ca2887",
+      "sha256": "d4fc06236bd497c4571c9007f0c1ea774cc79df9e1edd97206c17de4ab8755a6",
+      "bytes": 777
+    },
+    {
+      "path": "vendor/gridland-original/upstream/www/js/app/action/moveto.js",
+      "upstreamPath": "www/js/app/action/moveto.js",
+      "license": "MPL-2.0",
+      "gitBlob": "a259e92458f0d970a4343c369ce1fbe52e09239a",
+      "sha256": "70a9809dd75f600dda5473755e2c534662aec1947cd162944f7f5a4f941b288e",
+      "bytes": 1318
+    },
+    {
+      "path": "vendor/gridland-original/upstream/www/js/app/action/teleport.js",
+      "upstreamPath": "www/js/app/action/teleport.js",
+      "license": "MPL-2.0",
+      "gitBlob": "ca51598c9a9e16e3075507874624804b81658fac",
+      "sha256": "1eaba1561549e78a3982aa807fa7eecb9dbc969c28fb152f52c3efdf87a4bc0a",
+      "bytes": 1290
+    },
+    {
+      "path": "vendor/gridland-original/upstream/www/js/app/action/attack.js",
+      "upstreamPath": "www/js/app/action/attack.js",
+      "license": "MPL-2.0",
+      "gitBlob": "9ed2c8f13fe6a9ac7ab470e2f63267022eb4a12f",
+      "sha256": "fb0357e3fe3c636f944af0070dbe5073a9074a808357e110ab31de98196f7330",
+      "bytes": 828
+    },
+    {
+      "path": "vendor/gridland-original/upstream/www/js/app/action/getloot.js",
+      "upstreamPath": "www/js/app/action/getloot.js",
+      "license": "MPL-2.0",
+      "gitBlob": "16e42db77e1b8c44cfce77aceb7bf19db82e53eb",
+      "sha256": "ce90d4c14cba207747ca2d7799faa38ba4e569141200168c6f179e96725af728",
+      "bytes": 856
+    },
+    {
+      "path": "vendor/gridland-original/upstream/www/js/app/action/raisebuilding.js",
+      "upstreamPath": "www/js/app/action/raisebuilding.js",
+      "license": "MPL-2.0",
+      "gitBlob": "1f8196ea5020fc7e29a3ed4a819416faf69b6d66",
+      "sha256": "2d004d61c1dff20a9945c67d45e2499a01bc8c5c96bf428ef18c86d5ac9e0a25",
+      "bytes": 1613
+    },
+    {
+      "path": "vendor/gridland-original/upstream/www/js/app/action/die.js",
+      "upstreamPath": "www/js/app/action/die.js",
+      "license": "MPL-2.0",
+      "gitBlob": "3e4abb426f8647ad25f061d27190d2da108cd5a8",
+      "sha256": "0a3fca92ce0685bd8eb661f7f86c489b8242a2418b6da60894ecc7d28c3997f0",
+      "bytes": 849
+    },
+    {
+      "path": "vendor/gridland-original/upstream/www/js/app/action/shoot.js",
+      "upstreamPath": "www/js/app/action/shoot.js",
+      "license": "MPL-2.0",
+      "gitBlob": "5bb19f8caf9d20d19d81bb1bd79e9ff71cb1a7e7",
+      "sha256": "90f0a5c38ecb0a76f578a2364cd1a660f924743c842df2baec97cc66d97accf8",
+      "bytes": 1441
+    },
+    {
+      "path": "vendor/gridland-original/upstream/www/js/app/action/slide.js",
+      "upstreamPath": "www/js/app/action/slide.js",
+      "license": "MPL-2.0",
+      "gitBlob": "ded35afcf5df0bb47642d3b5a8ec8f7ca5310ab3",
+      "sha256": "4078affa55ef0375055dd64574039ce6baa3be4489ffc2e1ac99d5a979907208",
+      "bytes": 734
+    },
+    {
+      "path": "vendor/gridland-original/upstream/www/js/app/action/climb.js",
+      "upstreamPath": "www/js/app/action/climb.js",
+      "license": "MPL-2.0",
+      "gitBlob": "61544d2da45927316927d454a092d706e7d80561",
+      "sha256": "c40e1d144361ab137462ac21e0abc223a45e6312553eaadc5803aa9a9d6a4beb",
+      "bytes": 530
+    },
+    {
+      "path": "vendor/gridland-original/upstream/www/js/app/action/moveblock.js",
+      "upstreamPath": "www/js/app/action/moveblock.js",
+      "license": "MPL-2.0",
+      "gitBlob": "9fcc6cea6bb6fac0d50dfec9b415f0c275b00d0d",
+      "sha256": "a63e0a86034db8047917825fa438bd0d43facebf0ddfeb6e661a91e99e31024b",
+      "bytes": 2277
+    },
+    {
+      "path": "vendor/gridland-original/upstream/www/js/app/action/fastattack.js",
+      "upstreamPath": "www/js/app/action/fastattack.js",
+      "license": "MPL-2.0",
+      "gitBlob": "3115da8b1f01e23798a8f2dd779012e1fa6e921e",
+      "sha256": "05e9c58c53448c9d3ffb95fe60e5b80b9e562e991dc319104e08a7d71d23cade",
+      "bytes": 556
+    },
+    {
+      "path": "vendor/gridland-original/upstream/www/js/app/action/action.js",
+      "upstreamPath": "www/js/app/action/action.js",
+      "license": "MPL-2.0",
+      "gitBlob": "c8b00e81206cb231c8336bfdc07c61d356e445b1",
+      "sha256": "ebdfb4b248ab9050e2d92afa384fbf28e3da11f754081347de1f228c4cccc164",
+      "bytes": 576
+    },
+    {
+      "path": "vendor/gridland-original/upstream/www/js/app/action/actionfactory.js",
+      "upstreamPath": "www/js/app/action/actionfactory.js",
+      "license": "MPL-2.0",
+      "gitBlob": "7ff7356c4b0fd88e8768579ebaadc96227cfd2d4",
+      "sha256": "c05a913d0d503def67bc15e098c81686646049294d4d8d4e237cc4e237ce25d3",
+      "bytes": 1355
+    },
+    {
+      "path": "vendor/gridland-original/upstream/www/js/app/entity/building.js",
+      "upstreamPath": "www/js/app/entity/building.js",
+      "license": "MPL-2.0",
+      "gitBlob": "c3c2c35b0d9eaa2bf395affb962cbfaca8b8fabf",
+      "sha256": "55ef893c171d8a4766aebaeeec57dd67535e56c2411bc75fb12906422f4c2983",
+      "bytes": 2518
+    },
+    {
+      "path": "vendor/gridland-original/upstream/www/js/app/entity/projectile.js",
+      "upstreamPath": "www/js/app/entity/projectile.js",
+      "license": "MPL-2.0",
+      "gitBlob": "ec648758387e7140770ca22f212761f379483d82",
+      "sha256": "dc01dad963227e4b8173ce6cfc2a609abb9a2f03d452d29d37cd790f95b4c74a",
+      "bytes": 601
+    },
+    {
+      "path": "vendor/gridland-original/upstream/www/js/app/entity/star.js",
+      "upstreamPath": "www/js/app/entity/star.js",
+      "license": "MPL-2.0",
+      "gitBlob": "7d3f2282493470ae91c9c6277c8066a91cfa9b06",
+      "sha256": "1cc6ea23f3c1cbf64ba81835c2c33d7e1a4bbe0996dd28e005e4c8c5cfa999ea",
+      "bytes": 231
+    },
+    {
+      "path": "vendor/gridland-original/upstream/www/js/app/entity/entity.js",
+      "upstreamPath": "www/js/app/entity/entity.js",
+      "license": "MPL-2.0",
+      "gitBlob": "213976ed5d5ca199173a22c0a0038190c34f1df8",
+      "sha256": "8ace0be093e35964fcddd8bc0eb7d61ebb757b4bce52a2023dab3712340e2512",
+      "bytes": 2430
+    },
+    {
+      "path": "vendor/gridland-original/upstream/www/js/app/entity/dude.js",
+      "upstreamPath": "www/js/app/entity/dude.js",
+      "license": "MPL-2.0",
+      "gitBlob": "77b94913063b81b0e489dc00ea5be08dde5c0d13",
+      "sha256": "740caabb1cc764c33ca460f51bafad0a780a76b52b0d5f565ab85bf4370f7e7d",
+      "bytes": 4499
+    },
+    {
+      "path": "vendor/gridland-original/upstream/www/js/app/entity/worldentity.js",
+      "upstreamPath": "www/js/app/entity/worldentity.js",
+      "license": "MPL-2.0",
+      "gitBlob": "0354a6741266e7d734a12289820d0d152dd7745f",
+      "sha256": "ba00034dcb686a44a34da52107708cc31a01ad693faec0a7b58dda2b1da29e3c",
+      "bytes": 3940
+    },
+    {
+      "path": "vendor/gridland-original/upstream/www/js/app/entity/celestial.js",
+      "upstreamPath": "www/js/app/entity/celestial.js",
+      "license": "MPL-2.0",
+      "gitBlob": "f2d111bc558a905656fc239911b18aff94b7d371",
+      "sha256": "dc4001d8202ac9007bf83909572471185fa5e60d4294b9534e8ca48d25ad5ee7",
+      "bytes": 260
+    },
+    {
+      "path": "vendor/gridland-original/upstream/www/js/app/entity/tile.js",
+      "upstreamPath": "www/js/app/entity/tile.js",
+      "license": "MPL-2.0",
+      "gitBlob": "d493423b5d81df69c7f5a57faee456a3e96fcd77",
+      "sha256": "3b42284ab81453db0f8c0a88e171d4da2b3212a9b97cf133c45c8290dc5e4305",
+      "bytes": 1178
+    },
+    {
+      "path": "vendor/gridland-original/upstream/www/js/app/entity/block.js",
+      "upstreamPath": "www/js/app/entity/block.js",
+      "license": "MPL-2.0",
+      "gitBlob": "27b2eb31f456704c208d510cbf71741d5734f427",
+      "sha256": "5c44bfc525ba3b6135ef9e4b8f4d00438b2da29319d61df83646d83a2bfa2fed",
+      "bytes": 1135
+    },
+    {
+      "path": "vendor/gridland-original/upstream/www/js/app/entity/gem.js",
+      "upstreamPath": "www/js/app/entity/gem.js",
+      "license": "MPL-2.0",
+      "gitBlob": "234c8149933f08803b9094bb40da69f2e27c8860",
+      "sha256": "60d69959da83486e6b22ade3c370c24cdff48d66e54b9580b40486f32713b430",
+      "bytes": 224
+    },
+    {
+      "path": "vendor/gridland-original/upstream/www/js/app/entity/worldeffect.js",
+      "upstreamPath": "www/js/app/entity/worldeffect.js",
+      "license": "MPL-2.0",
+      "gitBlob": "46594a5a8c271f1a8423bb8312eb936f027debd4",
+      "sha256": "23f2e96d0ff51108ffedb17c79cfb85009ee988241960dc18658cdfe1408b5c3",
+      "bytes": 702
+    },
+    {
+      "path": "vendor/gridland-original/upstream/www/js/app/locale/en.js",
+      "upstreamPath": "www/js/app/locale/en.js",
+      "license": "MPL-2.0",
+      "gitBlob": "3a5f43ba81067b9efb60400170a24483384aa2fd",
+      "sha256": "4b76d33b58f2c133e6978d8a9ec01257e46519e8a4845f3245f27d2a8217b3f1",
+      "bytes": 816
+    },
+    {
+      "path": "vendor/gridland-original/upstream/www/js/app/graphics/sprites.js",
+      "upstreamPath": "www/js/app/graphics/sprites.js",
+      "license": "MPL-2.0",
+      "gitBlob": "3d688a1485137a5d7b954883b66a91a30d3786a0",
+      "sha256": "340e082979de569362a872b2da77584a1ba21684451c5029a7b8b7af632f2089",
+      "bytes": 2374
+    },
+    {
+      "path": "vendor/gridland-original/upstream/www/js/app/graphics/world.js",
+      "upstreamPath": "www/js/app/graphics/world.js",
+      "license": "MPL-2.0",
+      "gitBlob": "d7f557a70ae0bda59bdd35603a0fe283ba11d4fa",
+      "sha256": "e267c5d0d20f164f08858908dbc1c3ab501b9b796ae371e6d8e00013df8ff7ce",
+      "bytes": 587
+    },
+    {
+      "path": "vendor/gridland-original/upstream/www/js/app/graphics/graphics.js",
+      "upstreamPath": "www/js/app/graphics/graphics.js",
+      "license": "MPL-2.0",
+      "gitBlob": "391b3687bf889776752dae53556c1d29de10c9ea",
+      "sha256": "9179c7d2167bb612ccade77c4649ab087bdbff9b782b4b02f6e23745375f5be6",
+      "bytes": 34112
+    },
+    {
+      "path": "vendor/gridland-original/upstream/www/js/app/graphics/loot.js",
+      "upstreamPath": "www/js/app/graphics/loot.js",
+      "license": "MPL-2.0",
+      "gitBlob": "fcefee7a6d47d4f5ca67a7ef9a0e9a390dba4f16",
+      "sha256": "76fd9c34c55c204ef0b99c43822ecd8d8b41ab18e67a58f6bac2fffe94b9968a",
+      "bytes": 1893
+    },
+    {
+      "path": "vendor/gridland-original/upstream/www/js/app/graphics/difficulty.js",
+      "upstreamPath": "www/js/app/graphics/difficulty.js",
+      "license": "MPL-2.0",
+      "gitBlob": "84bf515506107b778c3d25f8394d987eb8f2f3de",
+      "sha256": "252f9cac50de93eebc3531819baf6bad810732e5ac87867ebd84aa3a06206a1b",
+      "bytes": 800
+    },
+    {
+      "path": "vendor/gridland-original/upstream/www/js/app/graphics/gameboard.js",
+      "upstreamPath": "www/js/app/graphics/gameboard.js",
+      "license": "MPL-2.0",
+      "gitBlob": "187c456ce51709da8c0dca2a91a260a8e13222eb",
+      "sha256": "62991476ba96a319eca4dae31004537b4dc2709e08e17a5739490b59e94b37dc",
+      "bytes": 8962
+    },
+    {
+      "path": "vendor/gridland-original/upstream/www/js/app/graphics/magic.js",
+      "upstreamPath": "www/js/app/graphics/magic.js",
+      "license": "MPL-2.0",
+      "gitBlob": "d70952791287f5c2c8dc99c807e453559bb35b1d",
+      "sha256": "33a9a7f01273a6dbea23f3709e4e04a92bdf56de5d834ae274ff46daa40b8336",
+      "bytes": 3120
+    },
+    {
+      "path": "vendor/gridland-original/upstream/www/js/app/graphics/resources.js",
+      "upstreamPath": "www/js/app/graphics/resources.js",
+      "license": "MPL-2.0",
+      "gitBlob": "9fcfcc4980d285ef32846659f6021aca00fde8a3",
+      "sha256": "e2bab2d9fde46bfcfbcae0d1457da4e28826d43a5ad5fbf91e4052820a0a873b",
+      "bytes": 728
+    },
+    {
+      "path": "vendor/gridland-original/upstream/www/js/app/action/dragon/fireball.js",
+      "upstreamPath": "www/js/app/action/dragon/fireball.js",
+      "license": "MPL-2.0",
+      "gitBlob": "ae2d046b70012929c8abf00e00249e4bc2ea039a",
+      "sha256": "803d079463ba7819ad9e80426fa27c82086b3e7d694548562575c7f94cdc27e7",
+      "bytes": 1733
+    },
+    {
+      "path": "vendor/gridland-original/upstream/www/js/app/action/dragon/icebeam.js",
+      "upstreamPath": "www/js/app/action/dragon/icebeam.js",
+      "license": "MPL-2.0",
+      "gitBlob": "d9052dd8a829119eebf0cb36121ff6cd6baf4126",
+      "sha256": "50de752aa9adf7f9a2c5e8c85411dc5dbd8419e9fdc6472ea8951224cd8182c1",
+      "bytes": 1076
+    },
+    {
+      "path": "vendor/gridland-original/upstream/www/js/app/action/dragon/bite.js",
+      "upstreamPath": "www/js/app/action/dragon/bite.js",
+      "license": "MPL-2.0",
+      "gitBlob": "e6d676c4d6facab899b15983784b1187b340c0be",
+      "sha256": "abf77e3ad3be9c9ec7de20cf4ed14dc49df638aba23b356c35abf3e379f101b4",
+      "bytes": 842
+    },
+    {
+      "path": "vendor/gridland-original/upstream/www/js/app/action/dragon/die.js",
+      "upstreamPath": "www/js/app/action/dragon/die.js",
+      "license": "MPL-2.0",
+      "gitBlob": "e029dc9fd16e7ec3494755d066a8051e7bc667aa",
+      "sha256": "bd1061a5d58d852b63e770a2b5f86a8ca15ed7a6d202c3f5187ac9268c75b7af",
+      "bytes": 518
+    },
+    {
+      "path": "vendor/gridland-original/upstream/www/js/app/action/dragon/fireblast.js",
+      "upstreamPath": "www/js/app/action/dragon/fireblast.js",
+      "license": "MPL-2.0",
+      "gitBlob": "f0d7c7d81a2d8c10c3cf53a1f131b8b647a11078",
+      "sha256": "c69e671036ebad3f72f7c3661dd0bf0f72c5bf46f404c510b08f23107fe2be42",
+      "bytes": 2472
+    },
+    {
+      "path": "vendor/gridland-original/upstream/www/js/app/action/dragon/wingbuffet.js",
+      "upstreamPath": "www/js/app/action/dragon/wingbuffet.js",
+      "license": "MPL-2.0",
+      "gitBlob": "f73d3aecf575c938e2dffaed6b40852f19ce202e",
+      "sha256": "e048a5975f32ceabf460c0b5dac238ba7914309e64c008415570b2ae785b0be3",
+      "bytes": 1797
+    },
+    {
+      "path": "vendor/gridland-original/upstream/www/js/app/action/dragon/land.js",
+      "upstreamPath": "www/js/app/action/dragon/land.js",
+      "license": "MPL-2.0",
+      "gitBlob": "89e3ccbfdfef51ff4bb4658de07c4224f0148d15",
+      "sha256": "81370f54cfff7d9802aa7357834cc4fa1644204496165df7b65c4863f4bc55a3",
+      "bytes": 371
+    },
+    {
+      "path": "vendor/gridland-original/upstream/www/js/app/entity/loot/treasurechest.js",
+      "upstreamPath": "www/js/app/entity/loot/treasurechest.js",
+      "license": "MPL-2.0",
+      "gitBlob": "69a21f74b9f5c4372ef3a93558f315c3b9d57c55",
+      "sha256": "9ac7b7a81f1dce4ac3e1d0ce5514cb8d4d819326f4715a68940816bccb845797",
+      "bytes": 418
+    },
+    {
+      "path": "vendor/gridland-original/upstream/www/js/app/entity/monster/demon.js",
+      "upstreamPath": "www/js/app/entity/monster/demon.js",
+      "license": "MPL-2.0",
+      "gitBlob": "fe3b23f8957f47c64b1b988c74d8cfddb14a120b",
+      "sha256": "adb99ee898d5e872694fb3d6557424baab9ef9479e3ad5364a8d68ef0c004f30",
+      "bytes": 1061
+    },
+    {
+      "path": "vendor/gridland-original/upstream/www/js/app/entity/monster/dragon.js",
+      "upstreamPath": "www/js/app/entity/monster/dragon.js",
+      "license": "MPL-2.0",
+      "gitBlob": "47f15ccb0fbc66d3633ff34c39ed9ac88bbf4f9a",
+      "sha256": "3810054f7f2f2d4e4f53327db2f71849d54efd613fcdf116eb0dde1b4ac491bb",
+      "bytes": 10513
+    },
+    {
+      "path": "vendor/gridland-original/upstream/www/js/app/entity/monster/fireelemental.js",
+      "upstreamPath": "www/js/app/entity/monster/fireelemental.js",
+      "license": "MPL-2.0",
+      "gitBlob": "8cf1f866e0439ca001855e331e31cbdffd7f3ea9",
+      "sha256": "d813cafa836fb0789d7c0ff35b2b94e2dd0cfd7e9225105a2a68863069da69ac",
+      "bytes": 1439
+    },
+    {
+      "path": "vendor/gridland-original/upstream/www/js/app/entity/monster/lich.js",
+      "upstreamPath": "www/js/app/entity/monster/lich.js",
+      "license": "MPL-2.0",
+      "gitBlob": "a1545516e97dd41e2c3c34b4d441085e38d57080",
+      "sha256": "85bdbfee225b17a73e0711dde5940eaeae231f98262a6b565e5e009cd8d72094",
+      "bytes": 1966
+    },
+    {
+      "path": "vendor/gridland-original/upstream/www/js/app/entity/monster/zombie.js",
+      "upstreamPath": "www/js/app/entity/monster/zombie.js",
+      "license": "MPL-2.0",
+      "gitBlob": "69e5dd3356cf2fedbc061c3693f4688c7d65d3e3",
+      "sha256": "802bbc962aed57e828cf63cfc45642e86739ed2d968bc81879e43b1044b0cc88",
+      "bytes": 1009
+    },
+    {
+      "path": "vendor/gridland-original/upstream/www/js/app/entity/monster/imp.js",
+      "upstreamPath": "www/js/app/entity/monster/imp.js",
+      "license": "MPL-2.0",
+      "gitBlob": "b62b255ae4b24b0a164d62078e1aa116f8ab8929",
+      "sha256": "7ada542ccb7140392fd10bec7316b6b63f5949300a1fc873acf43154d3908a20",
+      "bytes": 1092
+    },
+    {
+      "path": "vendor/gridland-original/upstream/www/js/app/entity/monster/monsterfactory.js",
+      "upstreamPath": "www/js/app/entity/monster/monsterfactory.js",
+      "license": "MPL-2.0",
+      "gitBlob": "6cb86ca3c074b2e201d075dfc0335b6a19354a8f",
+      "sha256": "ad04be42d7b17f7a8eeef84969da602ed567e4d1b4bf221c31ecb85034da9bdd",
+      "bytes": 1237
+    },
+    {
+      "path": "vendor/gridland-original/upstream/www/js/app/entity/monster/rat.js",
+      "upstreamPath": "www/js/app/entity/monster/rat.js",
+      "license": "MPL-2.0",
+      "gitBlob": "21022b6a93b464e694ef5973ae612b66371843b8",
+      "sha256": "4e3383bb5f9dc6399703d90551320ba3e17b0df356ed1578dd8823afd7a00cf3",
+      "bytes": 989
+    },
+    {
+      "path": "vendor/gridland-original/upstream/www/js/app/entity/monster/waterelemental.js",
+      "upstreamPath": "www/js/app/entity/monster/waterelemental.js",
+      "license": "MPL-2.0",
+      "gitBlob": "769e3bdafadaeb967663a222f8d468c61b01defc",
+      "sha256": "ceaa1b6566799cd397a3db9c59a3989398e705e5fdde396bebb585bb05238f49",
+      "bytes": 1256
+    },
+    {
+      "path": "vendor/gridland-original/upstream/www/js/app/entity/monster/monster.js",
+      "upstreamPath": "www/js/app/entity/monster/monster.js",
+      "license": "MPL-2.0",
+      "gitBlob": "ea83b40f06165037089ca2eb5fa8f0b6898ca7b5",
+      "sha256": "dd3b6fb02e1f4b1b74b3ff50995f8f1faaab8ee3cdd8051a5d6e3dd6cd2cde17",
+      "bytes": 1582
+    },
+    {
+      "path": "vendor/gridland-original/upstream/www/js/app/entity/monster/lizardman.js",
+      "upstreamPath": "www/js/app/entity/monster/lizardman.js",
+      "license": "MPL-2.0",
+      "gitBlob": "676356d6711b83ded667ea2080a9c34d1f6f47e7",
+      "sha256": "9b89e0ee7052fb46c832e2e2ce4559081654db45c48fc475504d1896a46eb314",
+      "bytes": 1370
+    },
+    {
+      "path": "vendor/gridland-original/upstream/www/js/app/entity/monster/earthelemental.js",
+      "upstreamPath": "www/js/app/entity/monster/earthelemental.js",
+      "license": "MPL-2.0",
+      "gitBlob": "cbb020cbe7a38884bac7c1bb8422909729c947b3",
+      "sha256": "9095c82b427157031beb811f639d6b5954f52ffe57dedc82a03eb99dd5678231",
+      "bytes": 1142
+    },
+    {
+      "path": "vendor/gridland-original/upstream/www/js/app/entity/monster/hauntedarmour.js",
+      "upstreamPath": "www/js/app/entity/monster/hauntedarmour.js",
+      "license": "MPL-2.0",
+      "gitBlob": "8ece595d46bdfd749bc71948df547f1796fbf6ce",
+      "sha256": "4ad73551a40376893787ed21bf6ff4b272a7dfdc256b6947c6efe3aa3cd9569a",
+      "bytes": 1277
+    },
+    {
+      "path": "vendor/gridland-original/upstream/www/js/app/entity/monster/skeleton.js",
+      "upstreamPath": "www/js/app/entity/monster/skeleton.js",
+      "license": "MPL-2.0",
+      "gitBlob": "4e3ea4f3e59514514ad00f5c989dc180e01b238c",
+      "sha256": "e0af07141beb9a57004ed3525989deb08b8cb658faaa9a2e52f132c7717362f7",
+      "bytes": 1303
+    },
+    {
+      "path": "vendor/gridland-original/upstream/www/js/app/entity/monster/warlock.js",
+      "upstreamPath": "www/js/app/entity/monster/warlock.js",
+      "license": "MPL-2.0",
+      "gitBlob": "e23a62361b306057b17f3e0e1cfe87a8b381d85a",
+      "sha256": "845882b9a2fd3f32fab1b31c5627ec73e6f84d96169a352a9aa0282e3c922eec",
+      "bytes": 1356
+    },
+    {
+      "path": "vendor/gridland-original/upstream/www/js/app/entity/monster/spider.js",
+      "upstreamPath": "www/js/app/entity/monster/spider.js",
+      "license": "MPL-2.0",
+      "gitBlob": "756671b7fc9b1c0f2bdf2e01859327517aa9a499",
+      "sha256": "f0271cc78503aa558d752dfd9c3724253775d7547b256abea69f90587158c3d0",
+      "bytes": 1129
+    },
+    {
+      "path": "vendor/gridland-original/upstream/www/img/buildings.png",
+      "upstreamPath": "www/img/buildings.png",
+      "license": "MPL-2.0",
+      "gitBlob": "d544854c60c088d1e3e5904189b9e6555e1d2c51",
+      "sha256": "18d90a86e8922ddac541a93138b369301e3f605080bf6faddee1237226b643ed",
+      "bytes": 9238
+    },
+    {
+      "path": "vendor/gridland-original/upstream/www/img/dragonsprite.png",
+      "upstreamPath": "www/img/dragonsprite.png",
+      "license": "MPL-2.0",
+      "gitBlob": "428076d695e217180be4310582dd30717dee4650",
+      "sha256": "16d49f5e8bae677d7f461e69081ecd041e45056e046f6c8f09093d851fed7eab",
+      "bytes": 60131
+    },
+    {
+      "path": "vendor/gridland-original/upstream/www/img/expbar.png",
+      "upstreamPath": "www/img/expbar.png",
+      "license": "MPL-2.0",
+      "gitBlob": "d311b81b479d953d9c205ca4c471c9bba1870c3f",
+      "sha256": "326297c519656ef42d9b463a3da1871ec814b02b2ea0e2f72b80bfc38c19840b",
+      "bytes": 1250
+    },
+    {
+      "path": "vendor/gridland-original/upstream/www/img/icons.png",
+      "upstreamPath": "www/img/icons.png",
+      "license": "MPL-2.0",
+      "gitBlob": "1b4362685019b3f8b6e0ebf42124e9ff5553561f",
+      "sha256": "c04f298f25927394ffe4e036a43108e6cec4f422bcdb6b61f5a4ed18cef1d0ed",
+      "bytes": 13286
+    },
+    {
+      "path": "vendor/gridland-original/upstream/www/img/magic.png",
+      "upstreamPath": "www/img/magic.png",
+      "license": "MPL-2.0",
+      "gitBlob": "4091d2c4724ea13f183bfd9589942dd5ef953783",
+      "sha256": "5d27aa72df23abc0565a0156c6d8f3dd3847e9171001abde8d65f4b71cf19a68",
+      "bytes": 224
+    },
+    {
+      "path": "vendor/gridland-original/upstream/www/img/monsters.png",
+      "upstreamPath": "www/img/monsters.png",
+      "license": "MPL-2.0",
+      "gitBlob": "cb09990822430b1c2794fd14240c13ef688ca3a4",
+      "sha256": "8eb8f5f504b48c6b70e0ef775a738f88c24646a62de1540c00dd2159f3a518eb",
+      "bytes": 96680
+    },
+    {
+      "path": "vendor/gridland-original/upstream/www/img/select-border.png",
+      "upstreamPath": "www/img/select-border.png",
+      "license": "MPL-2.0",
+      "gitBlob": "a2f579a1f9e7a12850ad5983d5e8f6186f741b3a",
+      "sha256": "99656d439a2684b800140d1e1ca647143901f025c6c88daa6b7ab04505087575",
+      "bytes": 510
+    },
+    {
+      "path": "vendor/gridland-original/upstream/www/img/tiles.png",
+      "upstreamPath": "www/img/tiles.png",
+      "license": "MPL-2.0",
+      "gitBlob": "fbd131e967fdeeaac8cf9720d928fc590ffc200a",
+      "sha256": "d0925510f488a41a5abed0bc1f16238df83f58156d0157761fb1bb3005c50d64",
+      "bytes": 32487
+    },
+    {
+      "path": "vendor/gridland-original/upstream/www/img/title.png",
+      "upstreamPath": "www/img/title.png",
+      "license": "MPL-2.0",
+      "gitBlob": "7b42e9d85bcc2eae99fbdaa59e03ab859bf017b2",
+      "sha256": "c32967cda3468db2f38e120c3ed39857a44bd880714bbb86121e1b7b149d9fa7",
+      "bytes": 7305
+    },
+    {
+      "path": "vendor/gridland-original/upstream/www/css/main.css",
+      "upstreamPath": "www/css/main.css",
+      "license": "MPL-2.0",
+      "gitBlob": "63e9430db4bd6ac9bd7c2a62a7e4dd21faf73eea",
+      "sha256": "42cbe9d378973b80b397d5665ac28694dc7d4eaf4bd8728500232f1c40be4916",
+      "bytes": 82448
+    },
+    {
+      "path": "vendor/gridland-original/upstream/LICENSE",
+      "upstreamPath": "LICENSE",
+      "license": "MPL-2.0",
+      "gitBlob": "c33dcc7c928c646b497b74de395fb53916a7be25",
+      "sha256": "bef1747eda88b9ed46e94830b0d978c3499dad5dfe38d364971760881901dadd",
+      "bytes": 15977
+    },
+    {
+      "path": "vendor/gridland-original/upstream/www/index.html",
+      "upstreamPath": "www/index.html",
+      "license": "MPL-2.0",
+      "gitBlob": "b467a35d701ecedc5328b7752a39dc816f8fbf43",
+      "sha256": "36b485de04332b8fbdc4983a0497c4837cf65fee6fdc615b66650ee5e2a29db7",
+      "bytes": 2566
+    },
+    {
+      "path": "vendor/gridland-original/dependencies/jquery/jquery.js",
+      "upstreamPath": "jquery/jquery.js",
+      "license": "MIT",
+      "gitBlob": "ebc6c187d75fd21778c97fdb7801f389050d450a",
+      "sha256": "9427fe2df51f7d4c6bf35f96d19169714d0b432b99dc18f41760d0342c538122",
+      "bytes": 242142
+    },
+    {
+      "path": "vendor/gridland-original/dependencies/jquery/MIT-LICENSE.txt",
+      "upstreamPath": "jquery/MIT-LICENSE.txt",
+      "license": "MIT",
+      "gitBlob": "957f26d3e3b5ae3922f2f220263c51ab220088d4",
+      "sha256": "244779275ccf7def02a7724a707dfe8787f83afd5ccb6498b42296ae42484940",
+      "bytes": 1099
+    },
+    {
+      "path": "vendor/gridland-original/dependencies/requirejs/require.js",
+      "upstreamPath": "requirejs/require.js",
+      "license": "MIT",
+      "gitBlob": "52c2b076b7b0a4f005c5f90bf01f13295105df9c",
+      "sha256": "a0bc2a214bc735f73e6c0c7a8e0b52b3ac379af41cc59eade1ab8bb4412ef90e",
+      "bytes": 82626
+    },
+    {
+      "path": "vendor/gridland-original/dependencies/requirejs/LICENSE",
+      "upstreamPath": "requirejs/LICENSE",
+      "license": "MIT",
+      "gitBlob": "ffaf31710ebf6798081f387736e36500b5525efd",
+      "sha256": "b90ae02f7c8651b7656a6212e2cedbccb7f04a89d041acccf5a1a58fd163bb04",
+      "bytes": 2832
+    }
+  ]
+}

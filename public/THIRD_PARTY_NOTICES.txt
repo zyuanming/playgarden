@@ -2821,6 +2821,15 @@ Full component notices: `public/avabranch/NOTICE.txt`.
 Exact corresponding source: `public/avabranch/source.zip`.
 Complete final file digests: `vendor/avabranch-original/distribution-manifest.json`.
 
+
+## Gridland original campaign
+
+Original code, game design and graphics by Michael Townsend / doublespeak games, MPL-2.0. Fixed commit `06af02c3af7062aead04a1e6f67b6e59f3e4b6a1`, [source](https://github.com/doublespeakgames/gridland/tree/06af02c3af7062aead04a1e6f67b6e59f3e4b6a1). Complete original gameplay and nine original sprite sheets retained.
+
+Original modified files remain MPL-2.0. Independent Playgarden host, Chinese text and lifecycle/storage adapters are GPL-3.0-only. jQuery2.0.3 (including Sizzle) and RequireJS2.1.8 use their original MIT grants, with exact official readable source and full notices. Unlicensed Base64 helper is replaced independently; separately credited music and audio are excluded. No remote analytics, external assets, social or donation actions.
+
+[Complete component and dependency licenses](public/gridland-original/LICENSES.txt), [Playgarden GPL-3.0](public/gridland-original/Playgarden-GPL-3.0.txt), [complete preferred source and modifications](public/gridland-original/source.zip), [source manifest](vendor/gridland-original/source-manifest.json).
+
 ## Complete bundled runtime dependency notices
 
 ### react 19.3.0 (MIT)
@@ -5287,4 +5296,10 @@ https://github.com/Zolmeister/avabranch/tree/4ab326b4a24d796328963da35c0d8d193d7
 Preferred editable source: vendor/avabranch-original/upstream, vendor/avabranch-original/silent-base, public/avabranch/adapter.js, public/avabranch/js/controls.js, src/games/Avabranch.tsx, public/avabranch/source.zip
 Build sources: scripts/avabranch/adapt.py, scripts/avabranch/package-source.py, scripts/avabranch/verify-sources.py, vendor/avabranch-original/source-manifest.json, vendor/avabranch-original/distribution-manifest.json, docs/avabranch-source-map.json
 Complete MIT first-party Canvas endless rules, four lives, group/independent steering, merger, collisions, four revival/stat pickups, score and restart. Zero finite levels. New Chinese opaque iframe host, safe storage, multitouch controls, paused clocks and card art are GPL-3.0-only. No audio, remote fonts, unknown images, analytics, Crafty or jQuery.
+
+Gridland complete original match/build/survive campaign 06af02c3af7062aead04a1e6f67b6e59f3e4b6a1 (MPL-2.0 original and modified files; MIT jQuery/Sizzle and RequireJS; GPL-3.0-only independent host/adapters)
+https://github.com/doublespeakgames/gridland/tree/06af02c3af7062aead04a1e6f67b6e59f3e4b6a1
+Preferred editable source: vendor/gridland-original/upstream, vendor/gridland-original/dependencies, public/gridland-original, src/games/GridlandOriginal.tsx, src/games/gridlandOriginal.css
+Build sources: scripts/gridland/package-source.py, scripts/gridland/verify-sources.py
+Complete original settlement, real-time combat, loot, spells, dragon-clear objective and New Game+. Zero authored numbered levels. Original sprite PNGs unchanged; local dependencies; no music, telemetry or third-party requests.
 

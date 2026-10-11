@@ -339,7 +339,7 @@
     {
       "name": "A Dark Room",
       "version": "d6d1c1b9875bb4764cdb950e8cf65ba51847f0e9 (2020-08-16)",
-      "license": "MPL-2.0; additionally GPL-3.0-only in the combined work under MPL §3.3",
+      "license": "MPL-2.0; additionally GPL-3.0-only in the combined work under MPL \u00a73.3",
       "source": "https://github.com/doublespeakgames/adarkroom/tree/d6d1c1b9875bb4764cdb950e8cf65ba51847f0e9",
       "preferredSource": [
         "vendor/adr-original/upstream",
@@ -530,7 +530,7 @@
         "docs/makemaze-source-map.json",
         "package-lock.json"
       ],
-      "scope": "Complete byte-identical 16×18 scrolling wall-edit original, handed automatic collectors, gold multipliers, flood-fill escape detection, angry wall demolition, escape penalties and missed-gold loss. Existing audited Crisp engine/audio and complete editable source/licenses reused. No finite levels or new runtime dependencies."
+      "scope": "Complete byte-identical 16\u00d718 scrolling wall-edit original, handed automatic collectors, gold multipliers, flood-fill escape detection, angry wall demolition, escape penalties and missed-gold loss. Existing audited Crisp engine/audio and complete editable source/licenses reused. No finite levels or new runtime dependencies."
     },
     {
       "name": "COUNT original endless observation and timing game",
@@ -592,7 +592,7 @@
       "scope": "Original first-party mechanics, 24 authored puzzles, uncounted credits tableau and Canvas primitive artwork under CC-BY-SA-4.0. Original notice and exact legal text retained. GPLv3-compatible adaptation adds isolated lifecycle, input/React host and validated saves. No separate music, font, icon, input library or original network-enabled shell."
     },
     {
-      "name": "Heal’em All complete six-stage game, original art and Quintus engine",
+      "name": "Heal\u2019em All complete six-stage game, original art and Quintus engine",
       "version": "66950cda39d2b91f114dcf1a0b0307972f24a68f",
       "license": "GPL-3.0-only first party and adapter; CC-BY-4.0 artwork; MIT Quintus and embedded helpers",
       "source": "https://github.com/krzysu/game-off-2013/tree/66950cda39d2b91f114dcf1a0b0307972f24a68f",
@@ -756,6 +756,24 @@
         "docs/avabranch-source-map.json"
       ],
       "scope": "Complete MIT first-party Canvas endless rules, four lives, group/independent steering, merger, collisions, four revival/stat pickups, score and restart. Zero finite levels. New Chinese opaque iframe host, safe storage, multitouch controls, paused clocks and card art are GPL-3.0-only. No audio, remote fonts, unknown images, analytics, Crafty or jQuery."
+    },
+    {
+      "name": "Gridland complete original match/build/survive campaign",
+      "version": "06af02c3af7062aead04a1e6f67b6e59f3e4b6a1",
+      "license": "MPL-2.0 original and modified files; MIT jQuery/Sizzle and RequireJS; GPL-3.0-only independent host/adapters",
+      "source": "https://github.com/doublespeakgames/gridland/tree/06af02c3af7062aead04a1e6f67b6e59f3e4b6a1",
+      "preferredSource": [
+        "vendor/gridland-original/upstream",
+        "vendor/gridland-original/dependencies",
+        "public/gridland-original",
+        "src/games/GridlandOriginal.tsx",
+        "src/games/gridlandOriginal.css"
+      ],
+      "buildSources": [
+        "scripts/gridland/package-source.py",
+        "scripts/gridland/verify-sources.py"
+      ],
+      "scope": "Complete original settlement, real-time combat, loot, spells, dragon-clear objective and New Game+. Zero authored numbered levels. Original sprite PNGs unchanged; local dependencies; no music, telemetry or third-party requests."
     }
   ]
 }

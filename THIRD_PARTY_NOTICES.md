@@ -2820,3 +2820,12 @@ No uncleared music, fonts, images, analytics or unused Crafty/jQuery are include
 Full component notices: `public/avabranch/NOTICE.txt`.
 Exact corresponding source: `public/avabranch/source.zip`.
 Complete final file digests: `vendor/avabranch-original/distribution-manifest.json`.
+
+
+## Gridland original campaign
+
+Original code, game design and graphics by Michael Townsend / doublespeak games, MPL-2.0. Fixed commit `06af02c3af7062aead04a1e6f67b6e59f3e4b6a1`, [source](https://github.com/doublespeakgames/gridland/tree/06af02c3af7062aead04a1e6f67b6e59f3e4b6a1). Complete original gameplay and nine original sprite sheets retained.
+
+Original modified files remain MPL-2.0. Independent Playgarden host, Chinese text and lifecycle/storage adapters are GPL-3.0-only. jQuery2.0.3 (including Sizzle) and RequireJS2.1.8 use their original MIT grants, with exact official readable source and full notices. Unlicensed Base64 helper is replaced independently; separately credited music and audio are excluded. No remote analytics, external assets, social or donation actions.
+
+[Complete component and dependency licenses](public/gridland-original/LICENSES.txt), [Playgarden GPL-3.0](public/gridland-original/Playgarden-GPL-3.0.txt), [complete preferred source and modifications](public/gridland-original/source.zip), [source manifest](vendor/gridland-original/source-manifest.json).
