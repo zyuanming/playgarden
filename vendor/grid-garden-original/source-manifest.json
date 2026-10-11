@@ -1,0 +1,183 @@
+{
+  "repository": "thomaspark/gridgarden",
+  "commit": "0e262f7272d4992340eb556bdb9b2d502cc59932",
+  "source": "https://github.com/thomaspark/gridgarden/tree/0e262f7272d4992340eb556bdb9b2d502cc59932",
+  "files": [
+    {
+      "path": "upstream/third-party/animate.css/animate.css",
+      "originalPath": "node_modules/animate.css/animate.css",
+      "gitBlobSha1": "54fa40e170bb51480880ddb0bf17267d196c295e",
+      "sha256": "d44da5fc59ec94a8a4e6b556caeeec506d03821b1e29cef8d950a32955c5619b",
+      "bytes": 71108,
+      "license": "MIT"
+    },
+    {
+      "path": "upstream/images/water.svg",
+      "originalPath": "images/water.svg",
+      "gitBlobSha1": "39e4159c4cad8b156399dbebe7015bf93198f1cb",
+      "sha256": "87d9682936d6a2350bc4bfea3bb133291fa1b372191327ef7cfbe56bb72df586",
+      "bytes": 975,
+      "license": "CC-BY-3.0"
+    },
+    {
+      "path": "upstream/images/carrots.svg",
+      "originalPath": "images/carrots.svg",
+      "gitBlobSha1": "430583db94ea1446821f2068e4b0f3e58e578bd4",
+      "sha256": "94b3277815a82404a9e28d8265362a0c51f2131e3e19341e566edc714234c1d4",
+      "bytes": 5343,
+      "license": "CC-BY-3.0"
+    },
+    {
+      "path": "upstream/js/messages.js",
+      "originalPath": "js/messages.js",
+      "gitBlobSha1": "2a61eafc1d5d7cca9a2e860ea4ea13478a4516f3",
+      "sha256": "5b7c63ab34dde8027ee23cae44f4732387c9eaaca657ebbbdc01d5426c47ce86",
+      "bytes": 41123,
+      "license": "MIT"
+    },
+    {
+      "path": "upstream/third-party/jquery/external/sizzle/LICENSE.txt",
+      "originalPath": "node_modules/jquery/external/sizzle/LICENSE.txt",
+      "gitBlobSha1": "88fcd178b2d37f872481d686d1ddcdd3b4929648",
+      "sha256": "a078a8f80016416042c2e5f04dbb7f499f0f6deebb086511f3a3b72633a2d761",
+      "bytes": 1605,
+      "license": "MIT"
+    },
+    {
+      "path": "upstream/images/dirt.svg",
+      "originalPath": "images/dirt.svg",
+      "gitBlobSha1": "5edceb0a5855425969d52a1abf9ae1eaa9a80e66",
+      "sha256": "83fe6a4b50ed1aaa2521945277f5ec09e051469b2e7e2d6cc7965703523d6b3c",
+      "bytes": 1368,
+      "license": "CC-BY-3.0"
+    },
+    {
+      "path": "upstream/LICENSE",
+      "originalPath": "LICENSE",
+      "gitBlobSha1": "ed3b4f750f14d45d1b9d521abbd743aafbac2027",
+      "sha256": "a10a44d5f91ef5b97d7657038ad49caf579e8d3a6801577cdcc4b008c2c7152f",
+      "bytes": 1068,
+      "license": "MIT"
+    },
+    {
+      "path": "upstream/third-party/animate.css/README.md",
+      "originalPath": "node_modules/animate.css/README.md",
+      "gitBlobSha1": "250a2154fb649595f4acb6f440462950544c54f8",
+      "sha256": "aee312c5458319f9acb51e30e80b6cf84dafd51978e9c3d6f6ceadfcee7a16c8",
+      "bytes": 4622,
+      "license": "MIT"
+    },
+    {
+      "path": "upstream/images/weeds.svg",
+      "originalPath": "images/weeds.svg",
+      "gitBlobSha1": "0ced19b54c5915aaebaf6554de88f3887fd30a36",
+      "sha256": "9ccb533a76af5b674a045a9205cc96541a8c0b2f3d719e25e9b00c33a1095038",
+      "bytes": 7272,
+      "license": "CC-BY-3.0"
+    },
+    {
+      "path": "upstream/third-party/jquery/dist/jquery.js",
+      "originalPath": "node_modules/jquery/dist/jquery.js",
+      "gitBlobSha1": "50937333b99a5e168ac9e8292b22edd7e96c3e6a",
+      "sha256": "416a3b2c3bf16d64f6b5b6d0f7b079df2267614dd6847fc2f3271b4409233c37",
+      "bytes": 287630,
+      "license": "MIT"
+    },
+    {
+      "path": "upstream/images/carrots-correct.svg",
+      "originalPath": "images/carrots-correct.svg",
+      "gitBlobSha1": "d72f2621da4209193ba80cd899778a6b11219fb7",
+      "sha256": "cfdaa543de0c6182abb3d424c51c6e2fdf302add63b0ce8c95bde24786a9a8e8",
+      "bytes": 7599,
+      "license": "CC-BY-3.0"
+    },
+    {
+      "path": "upstream/images/weeds-correct.svg",
+      "originalPath": "images/weeds-correct.svg",
+      "gitBlobSha1": "32b23453b0540ce43e31c4eeca6527e44de08a57",
+      "sha256": "3c8e8af04f084c6a0d54bb8ebf5dca01bf8653c7ad9359978a5257b5e0d7d127",
+      "bytes": 6923,
+      "license": "CC-BY-3.0"
+    },
+    {
+      "path": "upstream/index.html",
+      "originalPath": "index.html",
+      "gitBlobSha1": "52213281a271d450051b45b3c30e4582af5610e0",
+      "sha256": "7a6a4d49f9af46d413b2315e6c58317a9d9b3bf2818c0fe129843f7a06df2cb0",
+      "bytes": 9869,
+      "license": "MIT"
+    },
+    {
+      "path": "upstream/images/poison.svg",
+      "originalPath": "images/poison.svg",
+      "gitBlobSha1": "73f98231813eb7de5465beacb0c0a96f799b3ad5",
+      "sha256": "755452f10943f850b9200dc868fef40f03bf07ec7f4905efa1fdac02cb19b5d9",
+      "bytes": 1094,
+      "license": "CC-BY-3.0"
+    },
+    {
+      "path": "upstream/css/style.css",
+      "originalPath": "css/style.css",
+      "gitBlobSha1": "b53332285de4902cc05c6dd77fafd7470438c0f3",
+      "sha256": "970987c5aca9559f47daa0d56b919cfb86739088a3064a86a29fb4eba1f348b4",
+      "bytes": 12663,
+      "license": "MIT"
+    },
+    {
+      "path": "upstream/third-party/jquery/LICENSE.txt",
+      "originalPath": "node_modules/jquery/LICENSE.txt",
+      "gitBlobSha1": "e3dbacb999cef3718b1c4cc83d9aa45f869256a6",
+      "sha256": "1ff603118efdb313799567cb4a408594954384f40843ca6f29c596f5b1f8907d",
+      "bytes": 1095,
+      "license": "MIT"
+    },
+    {
+      "path": "upstream/js/game.js",
+      "originalPath": "js/game.js",
+      "gitBlobSha1": "d5547f24b49eb88a5f68c8cba05a9797cb9610e0",
+      "sha256": "cdfa26a956e87a3a734f1c208ef4e0aa040c17ee2c8a04756103f0835837d631",
+      "bytes": 12712,
+      "license": "MIT"
+    },
+    {
+      "path": "upstream/js/docs.js",
+      "originalPath": "js/docs.js",
+      "gitBlobSha1": "35ef1469e91746431b4cb431c5074b5c0315d2bd",
+      "sha256": "bfa37528dde4a7215954e322b166701bd835b26438f685b6b2e085578ccd9299",
+      "bytes": 95841,
+      "license": "MIT"
+    },
+    {
+      "path": "upstream/images/froggy.svg",
+      "originalPath": "images/froggy.svg",
+      "gitBlobSha1": "f8b66a3577f29caa52c9fb4de4ce470a23fb1315",
+      "sha256": "78b1d881230e69ddb1e504d1d097a12826007d236dee25a71a9b04bcd909b64a",
+      "bytes": 2602,
+      "license": "CC-BY-3.0"
+    },
+    {
+      "path": "upstream/images/carrots-win.png",
+      "originalPath": "images/carrots-win.png",
+      "gitBlobSha1": "36b50fab87d72596a5452f169538c958d49e4436",
+      "sha256": "b04f0bb2525ca4503714350bf505cbe00130d1339c40b49fd011ad23cb91bd4c",
+      "bytes": 104993,
+      "license": "CC-BY-3.0"
+    },
+    {
+      "path": "upstream/js/levels.js",
+      "originalPath": "js/levels.js",
+      "gitBlobSha1": "3b0557df81cfb42386a5c6ceeff6a48bcadd6a59",
+      "sha256": "1f4f10ff085b981a46ce14f7b18552c8aaa4b525c79b465c6643619b20fb2fc4",
+      "bytes": 535896,
+      "license": "MIT"
+    },
+    {
+      "path": "upstream/README.md",
+      "originalPath": "README.md",
+      "gitBlobSha1": "052ae0f95b6d8dc3a3385b07b8b2c5cc2a6b44da",
+      "sha256": "caf74df860ba558e3532d149539401d7ebace69c59bc1c51171bccf49d37c9cd",
+      "bytes": 3426,
+      "license": "MIT"
+    }
+  ]
+}

@@ -2820,3 +2820,9 @@ No uncleared music, fonts, images, analytics or unused Crafty/jQuery are include
 Full component notices: `public/avabranch/NOTICE.txt`.
 Exact corresponding source: `public/avabranch/source.zip`.
 Complete final file digests: `vendor/avabranch-original/distribution-manifest.json`.
+
+## Grid Garden — complete 28-lesson original
+
+Thomas Park / Codepip, source commit `0e262f7272d4992340eb556bdb9b2d502cc59932` ([source](https://github.com/thomaspark/gridgarden/tree/0e262f7272d4992340eb556bdb9b2d502cc59932)). Original code, course text, translations and CSS: MIT. All nine original unmodified garden images (eight SVG, one PNG): CC-BY-3.0 Unported, separately attributed to Thomas Park under the author's explicit README grant. Simplified Chinese translation: Jin; full translator list retained in README. jQuery 3.5.1 and embedded Sizzle: MIT, JS Foundation and other contributors. Animate.css 3.4.0: MIT, Daniel Eden (2015), with original additional author comments retained. Owned Playgarden host, bridge, shell and lifecycle/security modifications: GPL-3.0-only.
+
+All 28 original authored CSS Grid challenges, Chinese help, target classes and the uncounted harvest ending remain. The browser checks rendered position, width, height and treatment/plant type; valid equivalent CSS is accepted. Original artwork is unchanged. Changes include local hosting, removed analytics/promotions/remote fonts, validated namespaced saves, real pause/resume of remaining work, touch/keyboard help, responsive presentation and one-to-one matching. All 28 lessons must be individually solved to earn the harvest ending. Attribution does not imply endorsement. Full licenses: `public/grid-garden/NOTICE.txt`. Exact editable corresponding source: `public/grid-garden/source.zip`; identity manifest: `vendor/grid-garden-original/source-manifest.json`.

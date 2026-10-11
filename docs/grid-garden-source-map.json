@@ -1,0 +1,31 @@
+{
+  "id": "grid-garden",
+  "upstreamCommit": "0e262f7272d4992340eb556bdb9b2d502cc59932",
+  "countedLevels": 28,
+  "endingCounted": false,
+  "upstreamManifest": "vendor/grid-garden-original/source-manifest.json",
+  "distributionManifest": "vendor/grid-garden-original/distribution-manifest.json",
+  "sourceArchive": "public/grid-garden/source.zip",
+  "mappings": [
+    {
+      "original": "upstream/js/game.js",
+      "runtime": "public/grid-garden/js/game.js",
+      "method": "Anchored static patch by scripts/grid-garden/adapt.py; preserve original renderer/classes/layout/rectangle-color matcher; owned lifecycle seams and one-to-one matching hardening."
+    },
+    {
+      "original": "upstream/js/{levels,docs,messages}.js, css/style.css and images/*",
+      "runtime": "public/grid-garden/js/{levels,docs,messages}.js, css/style.css and images/*",
+      "method": "Byte-for-byte original data, CSS and nine images. Additive responsive shell."
+    },
+    {
+      "original": "upstream/third-party",
+      "runtime": "public/grid-garden/third-party",
+      "method": "Byte-for-byte readable dependency distributions and retained notices."
+    }
+  ],
+  "excludedFromRuntime": [
+    "original index.html containing analytics/promotional loads (retained as editable source only)",
+    "remote fonts, analytics, social widgets and promotional images",
+    "upstream build/package scripts and package metadata"
+  ]
+}

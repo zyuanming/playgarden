@@ -2821,6 +2821,12 @@ Full component notices: `public/avabranch/NOTICE.txt`.
 Exact corresponding source: `public/avabranch/source.zip`.
 Complete final file digests: `vendor/avabranch-original/distribution-manifest.json`.
 
+## Grid Garden — complete 28-lesson original
+
+Thomas Park / Codepip, source commit `0e262f7272d4992340eb556bdb9b2d502cc59932` ([source](https://github.com/thomaspark/gridgarden/tree/0e262f7272d4992340eb556bdb9b2d502cc59932)). Original code, course text, translations and CSS: MIT. All nine original unmodified garden images (eight SVG, one PNG): CC-BY-3.0 Unported, separately attributed to Thomas Park under the author's explicit README grant. Simplified Chinese translation: Jin; full translator list retained in README. jQuery 3.5.1 and embedded Sizzle: MIT, JS Foundation and other contributors. Animate.css 3.4.0: MIT, Daniel Eden (2015), with original additional author comments retained. Owned Playgarden host, bridge, shell and lifecycle/security modifications: GPL-3.0-only.
+
+All 28 original authored CSS Grid challenges, Chinese help, target classes and the uncounted harvest ending remain. The browser checks rendered position, width, height and treatment/plant type; valid equivalent CSS is accepted. Original artwork is unchanged. Changes include local hosting, removed analytics/promotions/remote fonts, validated namespaced saves, real pause/resume of remaining work, touch/keyboard help, responsive presentation and one-to-one matching. All 28 lessons must be individually solved to earn the harvest ending. Attribution does not imply endorsement. Full licenses: `public/grid-garden/NOTICE.txt`. Exact editable corresponding source: `public/grid-garden/source.zip`; identity manifest: `vendor/grid-garden-original/source-manifest.json`.
+
 ## Complete bundled runtime dependency notices
 
 ### react 19.3.0 (MIT)
@@ -5287,4 +5293,10 @@ https://github.com/Zolmeister/avabranch/tree/4ab326b4a24d796328963da35c0d8d193d7
 Preferred editable source: vendor/avabranch-original/upstream, vendor/avabranch-original/silent-base, public/avabranch/adapter.js, public/avabranch/js/controls.js, src/games/Avabranch.tsx, public/avabranch/source.zip
 Build sources: scripts/avabranch/adapt.py, scripts/avabranch/package-source.py, scripts/avabranch/verify-sources.py, vendor/avabranch-original/source-manifest.json, vendor/avabranch-original/distribution-manifest.json, docs/avabranch-source-map.json
 Complete MIT first-party Canvas endless rules, four lives, group/independent steering, merger, collisions, four revival/stat pickups, score and restart. Zero finite levels. New Chinese opaque iframe host, safe storage, multitouch controls, paused clocks and card art are GPL-3.0-only. No audio, remote fonts, unknown images, analytics, Crafty or jQuery.
+
+Grid Garden complete original 28-lesson course 0e262f7272d4992340eb556bdb9b2d502cc59932 (MIT; artwork CC-BY-3.0; Playgarden adapter GPL-3.0-only)
+https://github.com/thomaspark/gridgarden/tree/0e262f7272d4992340eb556bdb9b2d502cc59932
+Preferred editable source: vendor/grid-garden-original/upstream/js/game.js, vendor/grid-garden-original/upstream/js/levels.js, vendor/grid-garden-original/upstream/js/docs.js, vendor/grid-garden-original/upstream/js/messages.js, vendor/grid-garden-original/upstream/css/style.css, vendor/grid-garden-original/upstream/images, vendor/grid-garden-original/upstream/third-party/jquery/dist/jquery.js, vendor/grid-garden-original/upstream/third-party/animate.css/animate.css, public/grid-garden/adapter.js, public/grid-garden/adapter.css, public/grid-garden/index.html, src/games/GridGarden.tsx, src/games/gridGarden.css
+Build sources: scripts/grid-garden/adapt.py, scripts/grid-garden/package-source.py, scripts/grid-garden/verify-sources.py
+28 original authored Grid challenges, complete multilingual lessons/help, original target class overrides, actual browser rectangle/size/color validator and uncounted original harvest ending. Nine unmodified licensed images. Readable jQuery 3.5.1/Sizzle and Animate.css 3.4.0; no upstream dependency installation or build. Opaque iframe; owned persistence, touch UI and pause/resume lifecycle. All 28 separately solved required for course ending.
 
