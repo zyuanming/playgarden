@@ -130,8 +130,8 @@ test('Avabranch original: group and independent steering, multi-touch, pause, na
     expect(controlsBox.y + controlsBox.height).toBeLessThanOrEqual(page.viewportSize()!.height + 1);
     for (const button of await frame.locator('[data-steer]').all()) expect((await button.boundingBox())!.height).toBeGreaterThanOrEqual(44);
   }
-  await page.screenshot({ path: info.outputPath('avabranch-controls-paused.png'), fullPage: true });
   await page.screenshot({ path: info.outputPath('avabranch-controls-viewport.png') });
+  await page.screenshot({ path: info.outputPath('avabranch-controls-paused.png'), fullPage: true });
   // Local pause remains owned locally across a host pause/resume cycle. The
   // inner resume button cannot override an active host pause.
   await act(page.getByRole('button', { name: '暂停', exact: true }));

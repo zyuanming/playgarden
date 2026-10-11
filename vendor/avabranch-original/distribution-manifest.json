@@ -24,7 +24,7 @@
     {
       "path": "e2e/avabranch.spec.ts",
       "bytes": 15032,
-      "sha256": "8389930508c53fc946aee5423f2f042619b8e04f4e7b9dd834cebde11f9eb238",
+      "sha256": "4ce4e55137aebe3ae5815aaae300f10ff6d7af98d1f35302163e32a8cd147df1",
       "license": "GPL-3.0-only"
     },
     {
@@ -311,8 +311,8 @@
     },
     {
       "path": "public/avabranch/source.zip",
-      "bytes": 91361,
-      "sha256": "66aa01d85d83f59ece33a6c0ad7e71b6308847b864197e910773d2a643b0a56d",
+      "bytes": 91356,
+      "sha256": "e251d516e4f5990df10914b7f40d08333e65111a7b043a10c2b0fc7cd0559ea2",
       "license": "GPL-3.0-only"
     }
   ]

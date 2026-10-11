@@ -29,8 +29,8 @@
     },
     {
       "path": "e2e/hyperspace-garbage-collection.spec.ts",
-      "bytes": 20418,
-      "sha256": "2d0ef6f95adb960a7020452315bd9b736d080d23f61f7bbe4f84e6f1b6ce7f94"
+      "bytes": 21859,
+      "sha256": "3fb1a290d68a15e0eb146fe898bc1103380b52ced6cb5c747161d92de25d0b5a"
     },
     {
       "path": "public/hyperspace-garbage-collection/ADAPTATION.md",
@@ -379,8 +379,8 @@
     },
     {
       "path": "src/games/hyperspaceGarbageCollection.css",
-      "bytes": 1181,
-      "sha256": "f4f996ccca3ef9cf2a3534da448295fa999d57b3af1129777f63d2bf94b96032"
+      "bytes": 1180,
+      "sha256": "22a0f35538e7483cc15abd1fcb76401427d2f914d9829c3ae91afd186a11b4bf"
     },
     {
       "path": "vendor/hyperspace-garbage-collection-original/cleared/LICENSE",
