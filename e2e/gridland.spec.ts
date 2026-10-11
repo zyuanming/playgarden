@@ -4,7 +4,7 @@ import {test,expect,type Frame,type Locator} from '@playwright/test';
 import {openGame,captureErrors} from './helpers';
 import {writeFileSync} from 'node:fs';
 import {createHash} from 'node:crypto';
-import checkpoints from './fixtures/gridland-earned-round19.json' with {type:'json'};
+import checkpoints from './fixtures/gridland-earned-round20.json' with {type:'json'};
 // Explicit key screenshots, failure screenshots, ordinary-input logs and authentic
 // saves replace per-action DOM trace snapshots (round2 produced a 2.66 GB trace).
 test.use({trace:'off'});
@@ -61,6 +61,11 @@ function equipmentNeeded(s:Live,t:Tactics){
  const strength=s.level<7?1:Math.floor((s.level-1)/3);
  return {shield:s.hero!.shield<=Math.floor(t.maxShield/3),sword:s.hero!.sword===0&&!!t.monster&&t.monster.hp>strength};
 }
+function seekDragonRune(s:Live,t:Tactics){
+ // A tactical choice, not a game unlock: these are the actually earned gear
+ // values in round20. Lich loot is the original route to the dragon item.
+ return s.gem===4&&!s.items.callDragon&&s.level>=6&&t.swordDamage>=5&&t.maxShield>=18;
+}
 function campaignRank(s:Live,m:ReturnType<typeof moves>[number],t:Tactics){
  const target=buildingTarget(s),gain=m.gains;let score=0;
  if(!s.night){
@@ -69,9 +74,11 @@ function campaignRank(s:Live,m:ReturnType<typeof moves>[number],t:Tactics){
    else if(k==='mana')score+=n*(s.gem===4&&s.mana<3?110:1);
    else {const stored=s.stores.filter(x=>x.type===k).reduce((v,x)=>v+x.quantity,0),needed=(target?.required[k]||0)*30-stored;score+=n*(needed>0?70:3);}
   }
-  // Original gameboard creates mana tiles from daytime lines of four or more.
-  // Favor those visible opportunities while healthy, before trying to collect mana.
-  if(s.gem===4&&s.mana<3&&s.health>s.maxHealth*.75&&m.longest>=4)score+=500;
+  // Daytime lines of four create mana tiles even with a full mana meter.
+  // Preserve those tiles for a night match: ordinary mana matches summon the
+  // lich, whose original loot is the dragon item. The meter and board differ.
+  if(seekDragonRune(s,t)&&s.mana===3&&gain.mana)score-=600;
+  if(s.gem===4&&(s.mana<3||seekDragonRune(s,t))&&s.health>s.maxHealth*.75&&m.longest>=4)score+=500;
   return score;
  }
  const spawn=Object.keys(gain).filter(k=>!['wood','stone'].includes(k));
@@ -83,7 +90,7 @@ function campaignRank(s:Live,m:ReturnType<typeof moves>[number],t:Tactics){
  if(gain.stone)score+=(t.monster?needed.sword:s.hero!.sword<t.maxSword)?90:1;
  if(!t.monster&&spawn.length){
   score+=20-80*(spawn.length-1);
-  if(gain.mana)score+=s.level>=7&&t.swordDamage>=3&&!s.items.callDragon?180:-1000;
+  if(gain.mana)score+=seekDragonRune(s,t)&&s.health>s.maxHealth*.8&&s.hero!.sword===t.maxSword&&s.hero!.shield>=t.maxShield*2/3?180:-1000;
   // House grain summons 7HP/1-damage haunted armour; upgraded clay/cloth
   // summon the stronger elementals observed in round12's two real deaths.
   const houseArmour=s.buildings.some(b=>b.type==='house'&&b.built)&&!s.buildings.some(b=>['fort','castle'].includes(b.type)&&b.built);
@@ -242,6 +249,7 @@ test('Gridland original campaign: real matches, progression, saves, dragon and l
      note(refills.length?'emergency-refill-choice':'break-deadlock',s,{tactics:t,needed,legalChoices:choices.length,refillChoices:refills.length,reason:refills.length?'match-missing-equipment':'no-visible-equipment-match-clear-a-legal-line',choices:choices.map(c=>({a:c.a,b:c.b,gains:c.gains,score:emergencyRefillRank(s,c,t)})),selected:{a:m.a,b:m.b,gains:m.gains}});
     }else{await waitForPlay('fight-without-spawning-more-enemies',s,t);continue;}
    }
+   if(seekDragonRune(s,t)&&(!s.night&&m.longest>=4||s.night&&!t.monster))note('dragon-route-choice',s,{tactics:t,manaOnBoard:s.tiles.filter(v=>v.type==='mana').length,legalManaMatches:choices.filter(v=>v.gains.mana).length,longest:m.longest,selected:{a:m.a,b:m.b,gains:m.gains}});
    note('swap',s,{tactics:t,a:m.a,b:m.b,gains:m.gains});lastWait='';
    for(const t of[m.a,m.b])await act(game.getByRole('button',{name:`第${t.row+1}行第${t.col+1}列 ${t.type}`,exact:true}));
    if(!transitionChecked){
