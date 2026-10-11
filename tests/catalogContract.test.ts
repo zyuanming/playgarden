@@ -1,3 +1,4 @@
+import gridGardenLevels from '../src/games/gridGardenLevels.json' with {type:'json'};
 import { swapMaps } from "../src/vendor/swapMaps";
 import { VIKING_LEVELS } from "../src/vendor/vikingLevelData";
 import { BEATRIX_LEVELS } from "../src/vendor/beatrixCore";
@@ -152,6 +153,7 @@ import { sortingNetworkLevels } from "../src/games/sortingNetworkLogic";
 import { voxelViewsLevels } from "../src/games/voxelViewsLogic";
 import { cubeNetLevels } from "../src/games/cubeNetLogic";
 const packs = {
+  "grid-garden": gridGardenLevels,
   "hyperspace-garbage-collection": [1,2,3,4],
   "avabranch": [],
   "css-diner": Array.from({length:32}, (_,i) => i+1),
