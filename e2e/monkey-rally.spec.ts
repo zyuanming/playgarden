@@ -73,7 +73,23 @@ test('original eight puzzles: physical first/middle/final routes, interruption a
   expect((await read(frame)).completed).toContain(1);
   await expect.poll(earned).toEqual([0]);
   expect((await read(frame)).slideCount).toBe(6);
+  // The shell focuses its own victory action. The completed iframe must still
+  // expose real navigation without requiring a click on a disabled control.
+  await expect(page.getByRole('button', { name: '下一关', exact: true })).toBeFocused();
+  await expect(frame.getByRole('button', { name: '前往下一关', exact: true })).toBeEnabled();
+  expect((await read(frame)).paused).toBe(false);
   await page.screenshot({ path: info.outputPath('monkey-first-earned-win.png'), fullPage: true });
+  // Explicit manual and host pauses still gate won-state navigation.
+  await action('暂停');
+  await expect(frame.getByRole('button', { name: '前往下一关', exact: true })).toBeDisabled();
+  await action('继续');
+  await activate(page.getByRole('button', { name: '暂停', exact: true }));
+  await expect.poll(async () => (await read(frame)).paused).toBe(true);
+  await expect(frame.getByRole('button', { name: '前往下一关', exact: true })).toBeDisabled();
+  await activate(page.getByRole('button', { name: '继续游戏', exact: true }));
+  await expect(frame.getByRole('button', { name: '前往下一关', exact: true })).toBeEnabled();
+  expect((await read(frame)).phase).toBe('won');
+  await expect.poll(earned).toEqual([0]);
   await action('前往下一关');
   await expect(page.getByLabel('选择关卡', { exact: true })).toHaveValue('1'); frame = await acquire();
   expect((await read(frame)).level).toBe(2);
@@ -105,6 +121,14 @@ test('original eight puzzles: physical first/middle/final routes, interruption a
   expect((await read(frame)).completed).toContain(5);
   await expect.poll(earned).toEqual([0, 4]);
   await page.screenshot({ path: info.outputPath('monkey-middle-earned-red-door.png'), fullPage: true });
+  await stop();
+  expect((await read(frame)).phase).toBe('editing');
+  expect((await read(frame)).queue).toHaveLength(10);
+  expect((await read(frame)).doors.every(door => !door.open)).toBe(true);
+  await reset();
+  expect((await read(frame)).queue).toEqual([]);
+  expect((await read(frame)).completed).toContain(5);
+  await expect.poll(earned).toEqual([0, 4]);
 
   // Final authored route, manually read from the frozen map. This uses the stop
   // pad, all three reversible colors, and avoids the four original holes.
@@ -117,7 +141,15 @@ test('original eight puzzles: physical first/middle/final routes, interruption a
   expect((await read(frame)).completed).toEqual(expect.arrayContaining([1, 5, 8]));
   await expect.poll(earned).toEqual([0, 4, 7]);
   await expect(frame.locator('#caption')).toContainText('科学家得救');
+  await expect(frame.getByRole('button', { name: '返回原作菜单', exact: true })).toBeEnabled();
   await page.screenshot({ path: info.outputPath('monkey-final-actual-ending.png'), fullPage: true });
+  await action('返回原作菜单');
+  await action('开始第 8 关');
+  await phase('editing');
+  expect((await read(frame)).level).toBe(8);
+  expect((await read(frame)).queue).toEqual([]);
+  expect((await read(frame)).completed).toContain(8);
+  await expect.poll(earned).toEqual([0, 4, 7]);
 
   // Reentry preserves only earned stage marks. A victory callback interrupted
   // by navigation cannot grant a new selected puzzle completion.

@@ -40,6 +40,10 @@ test('complete original Froggy: physical CSS, first/middle/final, isolation and 
   await typeCSS('');
   await activate(frame.locator('#instructions code.help').filter({ hasText: /^justify-content$/ }).first());
   await expect(frame.locator('#instructions .tooltip')).toBeVisible();
+  await page.screenshot({ path: info.outputPath('froggy-original-help-open.png'), fullPage: true });
+  await activate(frame.getByRole('button', { name: '关闭帮助', exact: true }));
+  await expect(frame.locator('#instructions .tooltip')).toHaveCount(0);
+  await activate(frame.locator('#instructions code.help').filter({ hasText: /^justify-content$/ }).first());
   await activate(frame.locator('#instructions .tooltip code').filter({ hasText: /^flex-end$/ }));
   await solved();
   await expect.poll(completed).toEqual([0]);
@@ -53,7 +57,9 @@ test('complete original Froggy: physical CSS, first/middle/final, isolation and 
   await activate(frame.locator('#labelSettings'));
   await activate(frame.locator('#colorblind input[value="true"]'));
   await expect(frame.locator('#pond .frog.cb-friendly')).toHaveCount(1);
+  await page.screenshot({ path: info.outputPath('froggy-settings-open.png'), fullPage: true });
   await activate(frame.locator('#labelSettings'));
+  await expect(frame.locator('#settings .tooltip')).toBeHidden();
 
   await choose(16);
   await expect(frame.locator('#pond .frog')).toHaveCount(5);
@@ -86,10 +92,18 @@ test('complete original Froggy: physical CSS, first/middle/final, isolation and 
   await activate(frame.locator('#next'));
   await expect(page.getByLabel('选择关卡', { exact: true })).toHaveValue('17', { timeout: 5000 });
   await ready();
-  await expect(frame.locator('#level-counter .current')).toHaveText('18');
+  await expect(frame.locator('#level-indicator .current')).toHaveText('18');
   expect(await completed()).toEqual([0, 16]);
 
   // Original level menu requests host navigation without awarding that lesson.
+  await activate(frame.locator('#level-indicator'));
+  await expect(frame.locator('#levels .level-marker')).toHaveCount(24);
+  await page.screenshot({ path: info.outputPath('froggy-course-menu-open.png'), fullPage: true });
+  await activate(frame.locator('#labelReset'));
+  await expect(frame.locator('#reset-confirm')).toBeVisible();
+  await activate(frame.locator('#reset-no'));
+  await expect(frame.locator('#reset-confirm')).toBeHidden();
+  expect(await completed()).toEqual([0, 16]);
   await activate(frame.locator('#level-indicator'));
   await activate(frame.locator('.level-marker[data-level="23"]'));
   await expect(page.getByLabel('选择关卡', { exact: true })).toHaveValue('23');

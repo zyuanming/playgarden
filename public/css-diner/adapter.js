@@ -173,10 +173,23 @@
     $('.note-toggle').off('click').on('click.playgarden', function () { $('.note').toggle(); height(); });
     $('#close-note').on('click.playgarden', function () { $('.note').hide(); height(); });
     $('.editor').off('click');
-    $('.table').on('click.playgarden', '*', function (event) { if (paused()) return; event.stopPropagation(); hideTooltip(); showTooltip($(this)); });
-    $('.markup').on('focusin.playgarden click.playgarden', '> div *', function (event) {
+    // The iframe grows with its content; a fixed bottom would put help far
+    // below the phone viewport. Keep the original label beside its active UI.
+    $('.helper').insertAfter('.game-scroll');
+    // Retain clicked/touched labels until the next selection or board load.
+    // Original mouseout would otherwise hide one when scrolling it into view.
+    $('.table,.markup').off('mouseover mouseout');
+    $('.table').on('mouseover.playgarden click.playgarden', '*', function (event) {
       if (paused()) return; event.stopPropagation();
-      var index = $('.markup > div *').index(this); hideTooltip(); showTooltip($('.table *').eq(index));
+      $('.helper').insertAfter('.game-scroll'); hideTooltip(); showTooltip($(this)); height();
+    });
+    $('.markup').on('mouseover.playgarden focusin.playgarden click.playgarden', '> div *', function (event) {
+      if (paused()) return; event.stopPropagation();
+      $('.helper').insertAfter('.html-view .file-window');
+      var index = $('.markup > div *').index(this); hideTooltip(); showTooltip($('.table *').eq(index)); height();
+      if (event.type === 'click' || event.type === 'focusin') {
+        document.querySelector('.helper').scrollIntoView({ block: 'nearest', inline: 'nearest' });
+      }
     }).on('keydown.playgarden', '[role=button]', function (event) { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); $(this).trigger('click'); } });
     $('#pause-game').on('click.playgarden', function () { localPaused = true; applyPause(); $('#resume-game').trigger('focus'); });
     $('#resume-game').on('click.playgarden', function () { localPaused = false; applyPause(); });

@@ -44,10 +44,20 @@ game = game[:start] + '''  setHandlers: function() { game.bridge.setHandlers(); 
 
 ''' + game[end:]
 game = replace(game, "var levelMarker = $('<span/>').addClass('level-marker')", "var levelMarker = $('<button type=\"button\"/>').addClass('level-marker')")
+game = replace(game, "$('#level-counter .current').text(this.level + 1);", "$('#level-indicator .current').text(this.level + 1);")
 game = replace(game, "game.level = parseInt(level, 10);\n      game.loadLevel(levels[level]);", "game.bridge.navigate(parseInt(level, 10));")
 game = replace(game, "  loadLevel: function(level) {\n", "  loadLevel: function(level) {\n    game.bridge.beforeLevel(level);\n")
 game = replace(game, "$('#code').val(answer).focus();", "$('#code').val(answer || '');")
 game = replace(game, "    game.check();\n  },\n\n  loadDocs", "    game.check();\n    game.bridge.afterLevel();\n  },\n\n  loadDocs")
+# An auto-height iframe has a different viewport from the visible phone screen.
+# Keep the original help contents/value handlers, but let its panel join the
+# lesson flow so ordinary page scrolling can reach every value.
+game = replace(game, """          var tooltipX = code.offset().left;
+          var tooltipY = code.offset().top + code.height() + 13;
+          $('<div class="tooltip"></div>').html(html).css({
+            top: tooltipY,
+            left: tooltipX
+          }).appendTo($('#instructions'));""", """          $('<div class="tooltip"></div>').html(html).appendTo($('#instructions'));""")
 game = replace(game, "var code = $('#code').val();\n    var selector = level.selector || '';\n    $('#pond ' +  selector).attr('style', code);", "if (game.bridge.ending()) return;\n    var code = game.bridge.safeCSS($('#code').val());\n    var selector = level.selector || '';\n    $('#pond ' + selector).attr('style', code);")
 start = game.index('  check: async function() {')
 end = game.index('  compare: function()', start)

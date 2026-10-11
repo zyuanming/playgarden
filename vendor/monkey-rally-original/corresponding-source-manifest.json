@@ -3,8 +3,8 @@
   "files": [
     {
       "path": "e2e/monkey-rally.spec.ts",
-      "bytes": 13663,
-      "sha256": "64a8c29dd7cbdc6bb2dd968c16a43c6010dd321b077b844ddd8614ebfb8463d5"
+      "bytes": 15563,
+      "sha256": "a21c77d0455766ff7697a4ff0aedb71330ed17a6b6fcebc52da026d3060ce6b8"
     },
     {
       "path": "public/monkey-rally/LICENSE.txt",
@@ -23,8 +23,8 @@
     },
     {
       "path": "public/monkey-rally/adapter.js",
-      "bytes": 24325,
-      "sha256": "5397b0e326cb1c202c2d5c811127c59668c8891c66fdfadc011070b4642b2386"
+      "bytes": 24750,
+      "sha256": "78a8b1a94890ee2f125f60df91d31a036e79bd4475e62d714aae4639430b8820"
     },
     {
       "path": "public/monkey-rally/assets/backgrounds/background.jpg",
@@ -534,7 +534,7 @@
     {
       "path": "public/monkey-rally/runtime-manifest.json",
       "bytes": 19072,
-      "sha256": "47ee26dbfff768958d31df6ef3f3415224985f785f8153c44c7c4cd23a5beb98"
+      "sha256": "86f6f069fb9b34d206608769962561616fe4025f69048ab33a81e627236238bc"
     },
     {
       "path": "scripts/monkey-rally/adapt.py",

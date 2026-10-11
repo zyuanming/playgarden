@@ -82,7 +82,7 @@ var game = {
     $('#background, #pond').removeClass('wrap').attr('style', '').empty();
     $('#levelsWrapper').hide();
     $('.level-marker').removeClass('current').eq(this.level).addClass('current');
-    $('#level-counter .current').text(this.level + 1);
+    $('#level-indicator .current').text(this.level + 1);
     $('#before').text(level.before);
     $('#after').text(level.after);
     $('#next').removeClass('animated animation').addClass('disabled');
@@ -167,12 +167,7 @@ var game = {
           $('#settings .tooltip').hide();
           $('#instructions .tooltip').remove();
           var html = docs[text][game.language] || docs[text].en;
-          var tooltipX = code.offset().left;
-          var tooltipY = code.offset().top + code.height() + 13;
-          $('<div class="tooltip"></div>').html(html).css({
-            top: tooltipY,
-            left: tooltipX
-          }).appendTo($('#instructions'));
+          $('<div class="tooltip"></div>').html(html).appendTo($('#instructions'));
 
           var getDefaultPropVal = (pValue) => {
             if (pValue == '<integer>')

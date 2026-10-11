@@ -29,8 +29,8 @@
     },
     {
       "path": "e2e/flexbox-froggy.spec.ts",
-      "bytes": 9465,
-      "sha256": "73010182fc2b2d8f162a250e0bde736fbaed4480bd27ea479d0da2deec4b10de"
+      "bytes": 10484,
+      "sha256": "47616ca91c9c3fc22f79f0fb9088538beacd138b140456a7ec3fd53a5708eb35"
     },
     {
       "path": "public/flexbox-froggy/LICENSE",
@@ -49,13 +49,13 @@
     },
     {
       "path": "public/flexbox-froggy/adapter.css",
-      "bytes": 4839,
-      "sha256": "1492295f316faa4e3cff1d5829b2ad6d7245cf5248c1979f963270704af738f7"
+      "bytes": 4987,
+      "sha256": "3397b627ee1d9fa434a918b5e2d972179b43330270e4f180827fd6e15fef829d"
     },
     {
       "path": "public/flexbox-froggy/adapter.js",
-      "bytes": 16591,
-      "sha256": "45b3ac06d589e711aac6f68f59cf7b5094227a6910e275fdc772489417caa214"
+      "bytes": 16878,
+      "sha256": "639d62db958047e309e695dacd576d2ea215490c9d986b1e59a3015e9cc53ee9"
     },
     {
       "path": "public/flexbox-froggy/css/style.css",
@@ -124,8 +124,8 @@
     },
     {
       "path": "public/flexbox-froggy/index.html",
-      "bytes": 4689,
-      "sha256": "14ae4a545231daeb321ddbf5ad67ea25a1b20bf9fe678d1d4c78f65ae732cdbb"
+      "bytes": 4685,
+      "sha256": "18ebe08afcc63aa28908e294b0f98c2dd8e99aa0a788c7795df04b4b2640beca"
     },
     {
       "path": "public/flexbox-froggy/js/docs.js",
@@ -134,8 +134,8 @@
     },
     {
       "path": "public/flexbox-froggy/js/game.js",
-      "bytes": 9780,
-      "sha256": "a06456162f26ca3f615d9c36b7084103abc99c3c23e6d5663498e5ee35e800eb"
+      "bytes": 9599,
+      "sha256": "e2e4cb3afd921638d705eb5c28c52dfb0e07f59787dc99b019fd55fe023d394e"
     },
     {
       "path": "public/flexbox-froggy/js/levels.js",
@@ -189,8 +189,8 @@
     },
     {
       "path": "scripts/flexbox-froggy/adapt.py",
-      "bytes": 5349,
-      "sha256": "168383b880355391462f74037fec2e3f1bb755a7eaeba54c9b8aa6437f64e396"
+      "bytes": 6087,
+      "sha256": "2efa0f3874cbf426066372cab1df2b1888b214849f7523528b5387111f424119"
     },
     {
       "path": "scripts/flexbox-froggy/package-source.py",
@@ -219,8 +219,8 @@
     },
     {
       "path": "vendor/flexbox-froggy-original/CHANGES.md",
-      "bytes": 7106,
-      "sha256": "cddbad0e1ae8fe7c0b878c203f9c66af283ce3503e8ed1848f4a05fed8154705"
+      "bytes": 7824,
+      "sha256": "be63e9bdc6b5402082c38295c42789e609ef6ca2605ec97e415762f13eabcea4"
     },
     {
       "path": "vendor/flexbox-froggy-original/level-summary.json",
@@ -379,8 +379,8 @@
     },
     {
       "path": "public/flexbox-froggy/source.zip",
-      "bytes": 762798,
-      "sha256": "f3814e80d40eb2505d013f827121ebe221c51f69a73a2495e050cd49b9bde7ba"
+      "bytes": 763510,
+      "sha256": "c89973536c3a79ec506e3eb2512574b2a50d5a5db4829c3ec2a7efabf09c25f5"
     }
   ]
 }

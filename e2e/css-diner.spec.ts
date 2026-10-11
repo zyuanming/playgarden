@@ -36,8 +36,28 @@ test('32 original Diner puzzles: editor matching, alternatives, native transitio
   await expect(page.getByLabel('选择关卡', { exact: true }).locator('option')).toHaveCount(32);
   await expect(frame.locator('.table plate')).toHaveCount(2);
   await expect(frame.locator('.order')).toHaveText('选中所有盘子');
-  await activate(frame.locator('.table plate').first());
-  await expect(frame.locator('.helper')).toContainText('<plate');
+  // The original target continuously strobes. Scroll its stable table wrapper,
+  // then use normal pointer/touch input at the visible moving plate's center;
+  // waiting for that intentionally animated element to stop would never finish.
+  await frame.locator('.table-wrapper').scrollIntoViewIfNeeded();
+  const plate = frame.locator('.table plate').first();
+  await expect(plate).toBeVisible();
+  const box = await plate.boundingBox();
+  expect(box).not.toBeNull();
+  const center = { x: box!.x + box!.width / 2, y: box!.y + box!.height / 2 };
+  const viewport = page.viewportSize()!;
+  expect(center.x).toBeGreaterThan(0); expect(center.x).toBeLessThan(viewport.width);
+  expect(center.y).toBeGreaterThan(0); expect(center.y).toBeLessThan(viewport.height);
+  if (mobile) await page.touchscreen.tap(center.x, center.y);
+  else await page.mouse.click(center.x, center.y);
+  const helper = frame.locator('.helper');
+  await expect(helper).toContainText('<plate');
+  await expect(helper).toBeVisible();
+  const helpBox = await helper.boundingBox();
+  expect(helpBox).not.toBeNull();
+  expect(helpBox!.y).toBeGreaterThanOrEqual(0);
+  expect(helpBox!.y + helpBox!.height).toBeLessThanOrEqual(viewport.height);
+  await page.screenshot({ path: info.outputPath('diner-first-visible-food-label.png'), fullPage: true });
   await activate(frame.locator('#original-help summary'));
   await expect(frame.locator('#original-help-content')).toContainText('Select elements by their type');
   await activate(frame.locator('#original-help summary'));
@@ -82,6 +102,16 @@ test('32 original Diner puzzles: editor matching, alternatives, native transitio
   await ready(); await playable();
   expect(await completed()).toEqual([0]);
   await expect(frame.locator('.table .small')).toHaveCount(3);
+  // Click a real entry in the long native HTML viewer. The label must escape
+  // that viewer's inner scroll clipping and remain visible on the phone.
+  await activate(frame.locator('.markup > div > div').nth(1));
+  await expect(helper).toContainText('<plate');
+  await expect(helper).toBeVisible();
+  const htmlHelpBox = await helper.boundingBox();
+  expect(htmlHelpBox).not.toBeNull();
+  expect(htmlHelpBox!.y).toBeGreaterThanOrEqual(0);
+  expect(htmlHelpBox!.y + htmlHelpBox!.height).toBeLessThanOrEqual(page.viewportSize()!.height);
+  await screenshot('diner-middle-visible-html-label.png');
   // Same count as the target, but one different DOM element. Must fail.
   await expect(frame.locator('.table .strobe')).toHaveCount(2);
   await expect(frame.locator('.table plate:nth-child(1) apple, .table plate:nth-child(3) orange.small')).toHaveCount(2);

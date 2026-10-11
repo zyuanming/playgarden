@@ -156,6 +156,11 @@
       // The upstream direct handler stops propagation; attach on that same
       // property element so newly created value controls receive keyboard roles.
       $('#instructions .tooltip code').attr({ tabindex: '0', role: 'button' });
+      $('<button type="button" class="close-help">关闭帮助</button>').prependTo('#instructions .tooltip').on('click.playgarden', function (event) {
+        event.stopPropagation();
+        $('#instructions .tooltip').remove(); clickedCode = null; height();
+      });
+      height();
     }).on('keydown.playgarden', function (event) {
       if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); $(this).trigger('click'); }
     });

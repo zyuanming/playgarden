@@ -29,7 +29,14 @@ var MonkeyBridge;
         if (!disposed) parent.postMessage(Object.assign({ source: source, session: session, type: type }, data || {}), location.origin);
     }
     function caption(message) { byId('caption').textContent = message; send('status', { message: message }); }
-    function paused() { return Object.keys(pauseReasons).some(function (key) { return pauseReasons[key]; }); }
+    function paused() {
+        // The host focuses its victory action after an earned completion. That
+        // blurs this iframe, but must leave its Next/Reset controls reachable
+        // and allow the final deferred ending to render. Both states are idle;
+        // blur still freezes every live attempt, including its celebration.
+        var completedScene = phase === 'won' || scene === 'ending';
+        return pauseReasons.host || pauseReasons.manual || pauseReasons.hidden || (pauseReasons.blur && !completedScene);
+    }
     function read() {
         var mouse = G.mouse, doors = [];
         if (scene === 'game' && M.group) M.group.forEach(function (item) {
