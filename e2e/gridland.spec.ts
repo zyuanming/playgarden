@@ -4,7 +4,7 @@ import {test,expect,type Frame,type Locator} from '@playwright/test';
 import {openGame,captureErrors} from './helpers';
 import {writeFileSync} from 'node:fs';
 import {createHash} from 'node:crypto';
-import checkpoints from './fixtures/gridland-earned-round22.json' with {type:'json'};
+import checkpoints from './fixtures/gridland-earned-round23.json' with {type:'json'};
 // Explicit key screenshots, failure screenshots, ordinary-input logs and authentic
 // saves replace per-action DOM trace snapshots (round2 produced a 2.66 GB trace).
 test.use({trace:'off'});
@@ -12,6 +12,15 @@ type Tile={row:number;col:number;type:string};
 type Live={started:boolean;day:number;night:boolean;level:number;xp:number;health:number;maxHealth:number;gem:number;mana:number;canMove:boolean;finished:boolean;casual:boolean;rows:number;columns:number;tiles:Tile[];items:Record<string,number>;counts:Record<string,number>;stores:{type:string;quantity:number}[];buildings:{type:string;built:boolean;obsolete:boolean;required:Record<string,number>}[];hero:{x:number;hp:number;shield:number;sword:number}|null;clock:{paused:boolean;now:number;timers:number};initCount:number};
 async function read(frame:Frame):Promise<Live>{return frame.evaluate(()=> (window as unknown as Window&{__gridlandRead:()=>Live}).__gridlandRead());}
 function boardReady(s:Live){return s.canMove&&s.tiles.length===s.rows*s.columns&&new Set(s.tiles.map(t=>`${t.row},${t.col}`)).size===s.tiles.length;}
+async function tileHitTesting(frame:Frame){
+ return frame.evaluate(()=>{
+  const inactive=[...document.querySelectorAll('.tile.hidden,.tile.pooled,.tile.hidden *,.tile.pooled *')];
+  const active=[...document.querySelectorAll('.tile:not(.hidden):not(.pooled)')];
+  const checked=active.filter(el=>{const r=el.getBoundingClientRect(),x=r.x+r.width/2,y=r.y+r.height/2;return x>=0&&y>=0&&x<innerWidth&&y<innerHeight;});
+  return {inactive:inactive.length,interceptingInactive:inactive.filter(el=>getComputedStyle(el).pointerEvents!=='none').length,checked:checked.length,
+   blocked:checked.filter(el=>{const r=el.getBoundingClientRect();return document.elementFromPoint(r.x+r.width/2,r.y+r.height/2)?.closest('.tile')!==el;}).map(el=>el.getAttribute('aria-label'))};
+ });
+}
 function moves(s:Live){
  const map=new Map(s.tiles.map(t=>[`${t.row},${t.col}`,t.type])),out:{a:Tile;b:Tile;gains:Record<string,number>;longest:number}[]=[];
  for(const a of s.tiles)for(const [dr,dc] of [[0,1],[1,0]]){const b=s.tiles.find(t=>t.row===a.row+dr&&t.col===a.col+dc);if(!b||a.type===b.type)continue;
@@ -143,7 +152,15 @@ test('Gridland natural defeat and ordinary rebirth restore tile and carrying ani
   }
   const renewed=await read(game);expect(witnessedZero,'Ordinary enemies must actually exhaust health').toBe(true);expect(renewed.initCount).toBeGreaterThan(first.initCount);expect(renewed.counts.DEATHS).toBeGreaterThan(0);expect(boardReady(renewed)).toBe(true);
   expect(await game.locator('.tile.hidden[role="button"],.tile.pooled[role="button"]').count()).toBe(0);
-  const move=moves(renewed)[0];for(const t of[move.a,move.b])await act(game.getByRole('button',{name:`第${t.row+1}行第${t.col+1}列 ${t.type}`,exact:true}));
+  const hits=await tileHitTesting(game);log.push({kind:'rebirth-hit-testing',hits});expect(hits.inactive).toBeGreaterThan(0);expect(hits.interceptingInactive).toBe(0);expect(hits.checked).toBeGreaterThan(0);expect(hits.blocked).toEqual([]);
+  const move=moves(renewed)[0];
+  if(mobile){for(const t of[move.a,move.b])await act(game.getByRole('button',{name:`第${t.row+1}行第${t.col+1}列 ${t.type}`,exact:true}));}
+  else{
+   const cells=[move.a,move.b].map(t=>game.getByRole('button',{name:`第${t.row+1}行第${t.col+1}列 ${t.type}`,exact:true}));
+   await cells[0].scrollIntoViewIfNeeded();const a=await cells[0].boundingBox(),b=await cells[1].boundingBox();expect(a).not.toBeNull();expect(b).not.toBeNull();
+   await page.mouse.move(a!.x+a!.width/2,a!.y+a!.height/2);await page.mouse.down();await page.mouse.move(b!.x+b!.width/2,b!.y+b!.height/2,{steps:8});await page.mouse.up();
+   log.push({kind:'rebirth-real-mouse-drag',a:move.a,b:move.b});
+  }
   await expect.poll(async()=> (await read(game)).counts.SWAPPED||0).toBeGreaterThan(renewed.counts.SWAPPED||0);
   // Each original drawMatch takes 400ms and recursively checks new matches.
   // Real CHAIN31 already exceeds the default 5s assertion budget. Observe each

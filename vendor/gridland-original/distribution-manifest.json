@@ -7,8 +7,8 @@
   "files": [
     {
       "path": "docs/gridland-adaptation.md",
-      "bytes": 3234,
-      "sha256": "ea325359108667b42a074195c8f26525b2feb348473d13fd5778e8536002b71a",
+      "bytes": 3559,
+      "sha256": "0299307be6aefc1268bcc18b7dcf156756a6aa0a92b55317295e45f5e674b0ca",
       "license": "GPL-3.0-only"
     },
     {
@@ -96,6 +96,12 @@
       "license": "GPL-3.0-only"
     },
     {
+      "path": "e2e/fixtures/gridland-earned-round23.json",
+      "bytes": 36812,
+      "sha256": "5fe63cdfec5b6d81038355ead647f87d891ff38ba54233886d5f76fcc827901a",
+      "license": "GPL-3.0-only"
+    },
+    {
       "path": "e2e/fixtures/gridland-earned-round4.json",
       "bytes": 8498,
       "sha256": "08c7112303368aa88303de1a890ab522d0429eb36895234d6c2234cbabccb004",
@@ -133,8 +139,8 @@
     },
     {
       "path": "e2e/gridland.spec.ts",
-      "bytes": 28595,
-      "sha256": "3b39ec07a040b7223a7cc920c8ed0fd22226c92540dd1b2a60a1b88f984a6494",
+      "bytes": 30162,
+      "sha256": "5172cb1ead6078da4b4916165844143430ef7f1b7750879e2794d3f12aa1705d",
       "license": "GPL-3.0-only"
     },
     {
@@ -679,8 +685,8 @@
     },
     {
       "path": "public/gridland-original/responsive.css",
-      "bytes": 1267,
-      "sha256": "bcfda65bc1e91a098d6f4e534c7631357f8346408ec25e68a94e22fc443bbc1a",
+      "bytes": 1591,
+      "sha256": "f4c3aef4d63ce806bb370234e008de68dc3962af6f2fbda56e79ba9c1187902c",
       "license": "GPL-3.0-only"
     },
     {
@@ -691,8 +697,8 @@
     },
     {
       "path": "scripts/gridland/package-source.py",
-      "bytes": 2820,
-      "sha256": "d237f5eb64619f391ba5e7342700629c746e30451e5cf522d905b623c6cff696",
+      "bytes": 2864,
+      "sha256": "d98489cb6f0258159237b879dc3a7320b31118c3825de6d5a05903da1ffb1f2e",
       "license": "GPL-3.0-only"
     },
     {
@@ -1237,8 +1243,8 @@
     },
     {
       "path": "public/gridland-original/source.zip",
-      "bytes": 785613,
-      "sha256": "02503ec527d026c5e4f7dbdc434f18fc60b23fdedfb722e656b7b612d4282302",
+      "bytes": 789098,
+      "sha256": "10e326ce84a0be0b40ce7d759001e2606446a5c8a5557908c9b75c13ffe38f67",
       "license": "MPL-2.0 / MIT / GPL-3.0-only per member"
     }
   ]
