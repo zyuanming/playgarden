@@ -156,6 +156,8 @@ define(['jquery', 'app/eventmanager', 'app/graphics/graphics',
 	window.addEventListener("blur", clearInput);
 	var Engine = {
 		clearInput: clearInput,
+		// Read-only readiness uses the same animation gate as ordinary input.
+		canAcceptInput: canMove,
 		options: {},
 		init: function(opts) {
 			window.GridlandBridge.beforeInit();

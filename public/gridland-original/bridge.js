@@ -4,7 +4,7 @@
   'use strict';
   const session=new URLSearchParams(location.search).get('session')||'',origin=location.origin;
   const send=(type,data={})=>parent.postMessage({source:'playgarden-gridland',session,type,...data},origin);
-  let Engine,E,State,World,Board,Graphics,$,heartbeat=0,dead=false,initial=true,hostPaused=false,ready=false,initCount=0;
+  let Engine,E,State,World,Board,Graphics,$,heartbeat=0,dead=false,initial=true,hostPaused=false,ready=false,initCount=0,labels=null;
   const plain=x=>JSON.parse(JSON.stringify(x??null));
   function fail(message){const el=document.getElementById('gridland-error');el.hidden=false;el.textContent=message;send('error',{message});}
   function clearInput(){Engine?.clearInput();}
@@ -13,15 +13,18 @@
   function snapshot(){
     if(!State?.buildings)return {started:false,initCount,clock:GridlandClock.stats(),storageAvailable:GridlandSave.available()};
     const dude=World.getDude(),tiles=[];
-    document.querySelectorAll('.tile').forEach(el=>{const tile=$.data(el,'tile');if(!tile)return;tiles.push({row:tile.options.row,col:tile.options.column,type:tile.options.type?.className||'',effect:el.classList.contains('explosive')?'explosive':null});});
-    return {started:Engine.isStarted(),initCount,clock:GridlandClock.stats(),storageAvailable:GridlandSave.available(),night:World.isNight(),canMove:!!dude&&World.canMove()&&Board.canMove()&&!Engine.paused,rows:Board.options.rows,columns:Board.options.columns,tiles,
+    document.querySelectorAll('.tile:not(.hidden):not(.pooled)').forEach(el=>{const tile=$.data(el,'tile');if(!tile)return;tiles.push({row:tile.options.row,col:tile.options.column,type:tile.options.type?.className||'',effect:el.classList.contains('effect_explosive')?'explosive':null});});
+    return {started:Engine.isStarted(),initCount,clock:GridlandClock.stats(),storageAvailable:GridlandSave.available(),night:World.isNight(),canMove:!!dude&&Engine.canAcceptInput(),rows:Board.options.rows,columns:Board.options.columns,tiles,
       day:State.dayNumber,level:State.level,xp:State.xp,health:State.health,maxHealth:State.maxHealth(),gem:State.gem,mana:State.mana,counts:plain(State.counts),items:plain(State.items),prestige:State.prestige,
       buildings:State.buildings.map(b=>({type:b.options.type.className,built:b.built,obsolete:!!b.obsolete,required:plain(b.requiredResources)})),stores:State.stores.map(b=>({type:b.options.type.className,quantity:b._quantity})),
       hero:dude?{x:dude.p(),hp:dude.hp(),sword:dude.sword,shield:dude.shield}:null,finished:!!State.counts?.DRAGONS,casual:require('app/gameoptions').get('casualMode',false)};
   }
   function accessibility(){
     document.querySelectorAll('.saveSlot,.menu li,.menuBtn,.difficultySwitch,#pauseIcon').forEach(el=>{el.setAttribute('role','button');el.tabIndex=0;});
-    document.querySelectorAll('.tile').forEach(el=>{const t=$.data(el,'tile');if(t){el.tabIndex=0;el.setAttribute('role','button');el.setAttribute('aria-label',`第${t.options.row+1}行第${t.options.column+1}列 ${t.options.type.className}`);}});
+    document.querySelectorAll('.tile').forEach(el=>{const t=$.data(el,'tile');
+      if(!t||el.classList.contains('hidden')||el.classList.contains('pooled')){el.tabIndex=-1;el.setAttribute('aria-hidden','true');el.removeAttribute('role');el.removeAttribute('aria-label');return;}
+      el.removeAttribute('aria-hidden');el.tabIndex=0;el.setAttribute('role','button');el.setAttribute('aria-label',`第${t.options.row+1}行第${t.options.column+1}列 ${t.options.type.className}`);
+    });
   }
   function tick(){
     if(dead)return;
@@ -29,7 +32,7 @@
     if($&&ready){accessibility();send('snapshot',{state:snapshot()});}
     heartbeat=GridlandClock.real.set(tick,500);
   }
-  function dispose(){if(dead)return;dead=true;GridlandClock.real.clear(heartbeat);window.removeEventListener('message',receive);clearInput();}
+  function dispose(){if(dead)return;dead=true;GridlandClock.real.clear(heartbeat);labels?.disconnect();window.removeEventListener('message',receive);clearInput();}
   function receive(e){
     if(e.origin!==origin||e.source!==parent||e.data?.source!=='playgarden-host'||e.data.session!==session)return;
     if(e.data.type==='pause'){hostPaused=!!e.data.paused;if(!hostPaused)resume();GridlandClock.pause('host',hostPaused);}
@@ -47,6 +50,9 @@
     $=j;Engine=eng;E=events;State=state;World=world;Board=board;Graphics=graphics;
     const trigger=E.trigger;
     E.trigger=function(name,args){const result=trigger.call(this,name,args);if(name==='gameOver')send('complete',{dragons:State.counts.DRAGONS,day:State.dayNumber});return result;};
+    // Original tile objects are pooled. Observe their class/position changes so
+    // accessibility follows the active board, never pooled or stale coordinates.
+    labels=new MutationObserver(accessibility);labels.observe(document.body,{childList:true,subtree:true,attributes:true,attributeFilter:['class','style']});
     Engine.init();tick();
   });
 })();

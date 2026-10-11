@@ -1,11 +1,12 @@
 // SPDX-License-Identifier: GPL-3.0-only
-// Draft for review: ordinary pointer inputs only; observe snapshots without modifying game state.
+// Ordinary pointer inputs only; observe snapshots without modifying game state.
 import {test,expect,type Frame,type Locator} from '@playwright/test';
 import {openGame,captureErrors} from './helpers';
 import {writeFileSync} from 'node:fs';
 type Tile={row:number;col:number;type:string};
 type Live={started:boolean;day:number;night:boolean;level:number;xp:number;health:number;maxHealth:number;gem:number;mana:number;canMove:boolean;finished:boolean;casual:boolean;rows:number;columns:number;tiles:Tile[];items:Record<string,number>;counts:Record<string,number>;stores:{type:string;quantity:number}[];buildings:{type:string;built:boolean;obsolete:boolean;required:Record<string,number>}[];hero:{x:number;hp:number;shield:number;sword:number}|null;clock:{paused:boolean;now:number;timers:number};initCount:number};
 async function read(frame:Frame):Promise<Live>{return frame.evaluate(()=> (window as unknown as Window&{__gridlandRead:()=>Live}).__gridlandRead());}
+function boardReady(s:Live){return s.canMove&&s.tiles.length===s.rows*s.columns&&new Set(s.tiles.map(t=>`${t.row},${t.col}`)).size===s.tiles.length;}
 function moves(s:Live){
  const map=new Map(s.tiles.map(t=>[`${t.row},${t.col}`,t.type])),out:{a:Tile;b:Tile;gains:Record<string,number>}[]=[];
  for(const a of s.tiles)for(const [dr,dc] of [[0,1],[1,0]]){const b=s.tiles.find(t=>t.row===a.row+dr&&t.col===a.col+dc);if(!b||a.type===b.type)continue;
@@ -24,7 +25,40 @@ function rank(s:Live,m:ReturnType<typeof moves>[number],enemy:boolean){
  }return score;
 }
 
-test('Gridland original campaign: real matches, progression, original failure, saves, dragon and lifecycle',async({page},info)=>{
+test('Gridland natural defeat and ordinary rebirth restore tile and carrying animations',async({page},info)=>{
+ test.setTimeout(4*60*1000);const mobile=info.project.name==='mobile',errors=captureErrors(page),log:unknown[]=[];
+ const act=async(l:Locator)=>mobile?l.tap():l.click();
+ await openGame(page,'格境求生');await expect(page.locator('.gridland-game')).toHaveAttribute('data-gridland-ready','true');
+ const iframe=page.locator('iframe[title="格境求生 Gridland 完整战役"]'),game=(await (await iframe.elementHandle())!.contentFrame())!;
+ await act(game.locator('.saveSlot').first());await expect.poll(async()=>boardReady(await read(game))).toBe(true);
+ const first=await read(game),began=Date.now();let witnessedZero=false;
+ try{
+  while(Date.now()-began<3*60*1000){
+   const s=await read(game);if(s.health===0&&!witnessedZero){witnessedZero=true;await page.screenshot({path:info.outputPath('gridland-natural-defeat.png'),fullPage:false});}
+   if(s.initCount>first.initCount&&boardReady(s))break;
+   if(!boardReady(s)||s.health===0){await page.waitForTimeout(100);continue;}
+   const choices=moves(s).sort((a,b)=>{
+    const score=(m:ReturnType<typeof moves>[number])=>s.night?Object.entries(m.gains).reduce((v,[k,n])=>v+n*(['wood','stone'].includes(k)?-100:100),0):rank(s,m,false);
+    return score(b)-score(a);
+   });
+   if(!choices.length){await page.waitForTimeout(150);continue;}
+   const m=choices[0]; // Use available swaps even if only equipment matches remain; waiting would never change a settled board.
+   log.push({elapsed:Date.now()-began,day:s.day,night:s.night,hp:s.health,a:m.a,b:m.b,gains:m.gains});
+   for(const t of[m.a,m.b])await act(game.getByRole('button',{name:`第${t.row+1}行第${t.col+1}列 ${t.type}`,exact:true}));
+   await page.waitForTimeout(200);
+  }
+  const renewed=await read(game);expect(witnessedZero,'Ordinary enemies must actually exhaust health').toBe(true);expect(renewed.initCount).toBeGreaterThan(first.initCount);expect(renewed.counts.DEATHS).toBeGreaterThan(0);expect(boardReady(renewed)).toBe(true);
+  expect(await game.locator('.tile.hidden[role="button"],.tile.pooled[role="button"]').count()).toBe(0);
+  const move=moves(renewed)[0];for(const t of[move.a,move.b])await act(game.getByRole('button',{name:`第${t.row+1}行第${t.col+1}列 ${t.type}`,exact:true}));
+  await expect.poll(async()=> (await read(game)).counts.SWAPPED||0).toBeGreaterThan(renewed.counts.SWAPPED||0);
+  await expect.poll(async()=>boardReady(await read(game))).toBe(true);await page.screenshot({path:info.outputPath('gridland-rebirth-match.png'),fullPage:false});expect(errors).toEqual([]);
+ }finally{
+  const saves=await game.evaluate(()=>Object.fromEntries(Object.entries(localStorage).filter(([k])=>k.startsWith('playgarden:gridland:v1:')))).catch(()=>null);
+  writeFileSync(info.outputPath('gridland-defeat-journey.json'),JSON.stringify({mobile,log,witnessedZero,final:await read(game).catch(()=>null),saves,errors},null,2));
+ }
+});
+
+test('Gridland original campaign: real matches, progression, saves, dragon and lifecycle',async({page},info)=>{
  // Exact full-run bound is assigned only after first observed gameplay; never inject a late-game save.
  test.setTimeout(9*60*1000);const mobile=info.project.name==='mobile',errors=captureErrors(page),outside:string[]=[],log:unknown[]=[];
  page.on('request',r=>{const u=new URL(r.url());if(/^https?:/.test(u.protocol)&&!['127.0.0.1','localhost'].includes(u.hostname))outside.push(u.href);});
@@ -42,7 +76,7 @@ test('Gridland original campaign: real matches, progression, original failure, s
  try{
   while(Date.now()-began<8*60*1000){
    const s=await read(game);if(s.finished)break;
-   if(!s.canMove){await page.waitForTimeout(120);continue;}
+   if(!boardReady(s)){await page.waitForTimeout(120);continue;}
    if(s.health<s.maxHealth/2&&s.items.healthPotion){await act(game.locator('.inventory .healthPotion'));await page.waitForTimeout(150);continue;}
    if(s.night&&s.items.callDragon&&s.health>s.maxHealth*.8&&s.level>=7){await act(game.locator('.inventory .callDragon'));await page.waitForTimeout(500);continue;}
    const enemy=await game.evaluate(()=>{const w=(window as unknown as {require:(x:string)=>{findClosestMonster:()=>unknown}}).require('app/world');return !!w.findClosestMonster();});
