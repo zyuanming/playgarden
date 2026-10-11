@@ -45,11 +45,21 @@ test('Grid Garden: all 28 authored lessons, touch help, interruption and earned 
     JSON.parse(localStorage.getItem('playgarden.grid-garden.v1.state') || '{}').earnedEnding === true,
   );
   const solved = () => expect(frame.locator('#next')).not.toHaveClass(/disabled/, { timeout: 6000 });
+  const expectInstructions = async (index: number) => {
+    // Parse the complete original HTML in an inert detached document. This
+    // preserves entities and inline text without imposing a minimum clause size.
+    const expected = await page.evaluate(html =>
+      new DOMParser().parseFromString(html, 'text/html').body.textContent || '',
+      inventory.levels[index].instructionsZhCn,
+    );
+    await expect(frame.locator('#instructions')).toHaveText(expected);
+  };
   const choose = async (index: number) => {
     await chooseLevel(page, index);
     frame = page.frameLocator('iframe[title="网格花园完整课程"]');
     await ready();
     await expect(frame.locator('#level-counter .current')).toHaveText(String(index + 1));
+    await expectInstructions(index);
     if (index !== 27) await expect(frame.locator('#code')).toBeVisible();
   };
   const noOverflow = async () => {
@@ -86,6 +96,7 @@ test('Grid Garden: all 28 authored lessons, touch help, interruption and earned 
   };
 
   await ready();
+  await expectInstructions(0);
   await expect(page.getByLabel('选择关卡', { exact: true }).locator('option')).toHaveCount(28);
   await expect(frame.locator('#plants .plant')).toHaveCount(1);
   await expect(frame.locator('#instructions')).toContainText('grid-column-start');
@@ -184,8 +195,27 @@ test('Grid Garden: all 28 authored lessons, touch help, interruption and earned 
   await expect(page.getByLabel('选择关卡', { exact: true })).toHaveValue('0');
   await expect(frame.locator('#code')).toBeDisabled();
   expect(await completed()).toEqual([0, 27]);
+  const resume = frame.locator('#resume-game');
+  const expectResumeInPageViewport = async () => {
+    await resume.scrollIntoViewIfNeeded();
+    const box = await resume.boundingBox(), viewport = page.viewportSize();
+    expect(box).not.toBeNull(); expect(viewport).not.toBeNull();
+    expect(box!.x).toBeGreaterThanOrEqual(0);
+    expect(box!.y).toBeGreaterThanOrEqual(0);
+    expect(box!.x + box!.width).toBeLessThanOrEqual(viewport!.width + 1);
+    expect(box!.y + box!.height).toBeLessThanOrEqual(viewport!.height + 1);
+  };
+  await expectResumeInPageViewport();
+  if (mobile) {
+    const viewport = page.viewportSize()!;
+    await page.setViewportSize({ width: 320, height: viewport.height });
+    await expectResumeInPageViewport();
+    await screenshot('320px-paused-resume-reachable');
+    await page.setViewportSize(viewport);
+    await expectResumeInPageViewport();
+  }
   await screenshot('paused-transition');
-  await activate(frame.locator('#resume-game'));
+  await activate(resume);
   await expect(frame.locator('#paused-cover')).toBeHidden();
   await expect(page.getByLabel('选择关卡', { exact: true })).toHaveValue('0');
   // Resuming advances automatically; the player does not click Next again.
@@ -200,13 +230,6 @@ test('Grid Garden: all 28 authored lessons, touch help, interruption and earned 
   for (const lesson of inventory.levels.slice(1, 27)) {
     await test.step(`Lesson ${lesson.ordinal}: ${lesson.name}`, async () => {
       await choose(lesson.index);
-      // Compare a contiguous Chinese text node from the source instructions.
-      // Paragraph boundaries and inline code need not have identical whitespace.
-      const chineseClause = Array.from(lesson.instructionsZhCn.matchAll(/>([^<]+)</g), match => match[1].trim())
-        .filter(clause => /[\u3400-\u9fff]/.test(clause))
-        .sort((left, right) => right.length - left.length)[0];
-      expect(chineseClause.length).toBeGreaterThan(8);
-      await expect(frame.locator('#instructions')).toContainText(chineseClause);
       await expect(frame.locator('#plants .plant')).toHaveCount(lesson.board.length);
       await typeCSS(lesson.uiSolution);
       await solved();

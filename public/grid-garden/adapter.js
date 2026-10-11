@@ -61,6 +61,10 @@
   function applyPause() {
     var nowPaused = paused();
     if (nowPaused && !wasPaused) {
+      // The iframe is taller than the phone viewport. Keep Resume by the
+      // control the player just reached, in the ordinary scrollable document.
+      var pauseTop = document.getElementById('pause-game').getBoundingClientRect().top + scrollY;
+      document.getElementById('paused-cover').style.setProperty('--pause-top', Math.max(12, pauseTop - 36) + 'px');
       pauseTimer(inputTimer); pauseTimer(advanceTimer);
       clearTimeout(resizeTimer); resizeTimer = null;
       if (fade) {
