@@ -4,7 +4,7 @@ import {test,expect,type Frame,type Locator} from '@playwright/test';
 import {openGame,captureErrors} from './helpers';
 import {writeFileSync} from 'node:fs';
 import {createHash} from 'node:crypto';
-import checkpoints from './fixtures/gridland-earned-round10.json' with {type:'json'};
+import checkpoints from './fixtures/gridland-earned-round11.json' with {type:'json'};
 // Explicit key screenshots, failure screenshots, ordinary-input logs and authentic
 // saves replace per-action DOM trace snapshots (round2 produced a 2.66 GB trace).
 test.use({trace:'off'});
@@ -66,7 +66,7 @@ function campaignRank(s:Live,m:ReturnType<typeof moves>[number],t:Tactics){
  if(!s.night){
   for(const[k,n]of Object.entries(gain)){
    if(k==='grain')score+=n*(s.health<s.maxHealth-4?130:1);
-   else if(k==='mana')score+=n*(s.mana<3?30:1);
+   else if(k==='mana')score+=n*(s.gem===4&&s.mana<3?110:1);
    else {const stored=s.stores.filter(x=>x.type===k).reduce((v,x)=>v+x.quantity,0),needed=(target?.required[k]||0)*30-stored;score+=n*(needed>0?70:3);}
   }return score;
  }
@@ -149,7 +149,7 @@ test('Gridland original campaign: real matches, progression, saves, dragon and l
  await page.getByRole('button',{name:'暂停',exact:true}).click();const frozen=await read(game);await page.waitForTimeout(1800);expect((await read(game)).clock.now).toBe(frozen.clock.now);
  await page.getByRole('button',{name:'继续',exact:true}).click();await expect.poll(async()=> (await read(game)).clock.paused).toBe(false);
  let screenshotDay=false,screenshotMagic=false,transitionChecked=false,lastPhase='',lastWait='',lastWaitAt=0;const began=Date.now();
- const note=(kind:string,s:Live,extra:Record<string,unknown>={})=>log.push({elapsed:Date.now()-began,kind,day:s.day,night:s.night,level:s.level,hp:s.health,gem:s.gem,items:s.items,...extra});
+ const note=(kind:string,s:Live,extra:Record<string,unknown>={})=>log.push({elapsed:Date.now()-began,kind,day:s.day,night:s.night,level:s.level,hp:s.health,gem:s.gem,mana:s.mana,items:s.items,...extra});
  const shot=async(name:string)=>{await page.locator('.gridland-game').evaluate(el=>el.scrollIntoView({block:'start'}));await page.screenshot({path:info.outputPath(name),fullPage:false});};
  const waitForPlay=async(reason:string,s:Live,t:Tactics)=>{
   if(lastWait!==reason||Date.now()-lastWaitAt>5000){note('wait',s,{reason,tactics:t});lastWait=reason;lastWaitAt=Date.now();}
@@ -178,8 +178,15 @@ test('Gridland original campaign: real matches, progression, saves, dragon and l
     const needed=equipmentNeeded(s,t);
     if(t.monster&&s.items.equipment&&(needed.shield||needed.sword)){await item('equipment');continue;}
     if(!t.monster&&t.loot){await waitForPlay('pick-up-earned-loot',s,t);continue;}
-    if(t.monster&&(t.monster.kind==='lich'||t.monster.kind==='dragon')&&s.mana>=3&&!t.frozen){
-     note('spell',s,{name:'freezeTime'});await act(game.locator('.magic > .button'));await act(game.locator('.spell.freezeTime'));await page.waitForTimeout(150);continue;
+    // Round11's earned mobile run died twice against upgraded ranged/fast
+    // elementals while carrying zero mana. Use the original visible magic UI
+    // after ordinary daytime mana matches; no resource or combat-state writes.
+    const freezeThreat=!!t.monster&&(['lich','dragon','fireElemental','waterElemental'].includes(t.monster.kind)||t.monsterCount>=2);
+    if(freezeThreat&&s.mana>=3&&!t.frozen){
+     note('spell',s,{name:'freezeTime',tactics:t});await act(game.locator('.magic > .button'));await act(game.locator('.spell.freezeTime'));
+     await expect.poll(async()=> (await tactics(game)).frozen).toBe(true);
+     const cast=await read(game);expect(cast.mana).toBe(s.mana-3);expect(cast.counts.CAST||0).toBe((s.counts.CAST||0)+1);
+     note('spell-confirmed',cast,{name:'freezeTime'});continue;
     }
     if(!t.monster&&s.items.callDragon&&s.health>s.maxHealth*.8&&s.level>=7){await item('callDragon');continue;}
     // Refilling after every single hit creates avoidable cascade spawns. Let
