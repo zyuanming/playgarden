@@ -1,3 +1,4 @@
+import { writeFile } from 'node:fs/promises';
 // SPDX-License-Identifier: GPL-3.0-only
 import { test, expect, type Locator, type Frame } from '@playwright/test';
 import { openGame, captureErrors } from './helpers';
@@ -139,7 +140,11 @@ test('Descensus 2 original: genuine 1000m journey, loss, timer, bar physics, pau
    trace.push({wall:begun,state:s.state,frame:s.frames,height:s.height,lives:s.lives,t:s.timeElapsed,timer:s.timeSinceLastCheckpoint,checkpoint:s.nextCheckpointHeight,loss:s.lastLoss,lossCount:s.lossCount,invincible:s.isInvincible,ball:s.ball,wind:s.wind,action:decision.action,controller:decision.controllerState});
    if(decision.action)await draw(...decision.action as [number,number,number,number]);
    for(const [label,height] of [['first',900],['middle',500],['last',75]] as const)if(s.height<=height&&!shots.has(label)&&s.state==='Active'){
-    shots.add(label);console.log(info.project.name,'genuine journey',label,s.height,s.lives,s.timeElapsed);await page.screenshot({path:info.outputPath('descensus-'+label+'.png'),fullPage:true});
+    shots.add(label);console.log(info.project.name,'genuine journey',label,s.height,s.lives,s.timeElapsed);
+    // Full-page mobile captures can change the document scroll position. Keep the
+    // whole fitted playfield visible, and prove ordinary touch coordinates stayed valid.
+    await page.screenshot({path:info.outputPath('descensus-'+label+'.png')});
+    const afterShot=(await canvas.boundingBox())!;expect(Math.abs(afterShot.x-drawBox!.x)).toBeLessThan(1);expect(Math.abs(afterShot.y-drawBox!.y)).toBeLessThan(1);expect(afterShot.width).toBe(drawBox!.width);expect(afterShot.height).toBe(drawBox!.height);drawBox=afterShot;
    }
    const rest=100-(Date.now()-begun);if(rest>0)await waitWall(rest);cycles.push({wallMs:Date.now()-begun,observedGameMs:s.timeElapsed,frame:s.frames});
   }
@@ -155,7 +160,7 @@ test('Descensus 2 original: genuine 1000m journey, loss, timer, bar physics, pau
   for(const control of ['#start','#pause','#menu'])expect((await frame.locator(control).boundingBox())!.height).toBeGreaterThanOrEqual(44);
   expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);expect(await frame.locator('body').evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
   await iframe.scrollIntoViewIfNeeded();await page.screenshot({path:info.outputPath('descensus-saved-record.png'),fullPage:true});
- }finally{await info.attach('original-input-journey.json',{body:JSON.stringify({trace,cycles,gestures,terrain:[...terrain],checkpoints:[...checkpointValues],windZones:[...windZonesSeen],lossTypes:[...lossTypes],minHeight}),contentType:'application/json'});}
+ }finally{const path=info.outputPath('original-input-journey.json');await writeFile(path,JSON.stringify({trace,cycles,gestures,terrain:[...terrain],checkpoints:[...checkpointValues],windZones:[...windZonesSeen],lossTypes:[...lossTypes],minHeight}));await info.attach('original-input-journey.json',{path,contentType:'application/json'});}
  expect(remote).toEqual([]);expect(failed).toEqual([]);expect(errors).toEqual([]);
  await act(page.getByRole('button',{name:'返回游戏大厅',exact:true}));await expect(iframe).toHaveCount(0);
 });

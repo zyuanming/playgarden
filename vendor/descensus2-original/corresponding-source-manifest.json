@@ -9,8 +9,8 @@
     },
     {
       "path": "e2e/descensus-2.spec.ts",
-      "bytes": 20760,
-      "sha256": "84de5b21b2d0aac45318deeb3644acc780d5eafef0a1494f6671c9e4141e3331"
+      "bytes": 21325,
+      "sha256": "8f8e54eeda053a24f87af8640c784ed74e11fe03a09300714be7ac8af83a9535"
     },
     {
       "path": "public/descensus-2/NOTICE.txt",
