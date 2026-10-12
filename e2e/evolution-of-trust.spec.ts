@@ -157,7 +157,11 @@ test('complete original Trust journey, visible choices, simulation gates, sandbo
   if (!baseURL) throw Error('The targeted Trust journey needs its configured baseURL.');
   const j = journey(page, info, new URL(baseURL).origin);
   try {
-    await page.goto('/'); await j.enter();
+    await page.goto('/');
+    // The shared lobby defaults to sound enabled. Use its real mute control
+    // before entering, then verify the iframe follows that host preference.
+    await j.activate(page.getByRole('button', { name: '静音', exact: true }), 'host:mute-before-enter');
+    await j.enter();
     await expect(page.getByLabel('选择关卡', { exact: true })).toHaveCount(0);
     await expect(j.copy('title')).toContainText(TITLE);
     await expect(j.copy('subtitle')).toContainText(/nicky case/i);
