@@ -2843,3 +2843,13 @@ Original code, game design and graphics by Michael Townsend / doublespeak games,
 Original modified files remain MPL-2.0. Independent Playgarden host, Chinese text and lifecycle/storage adapters are GPL-3.0-only. jQuery2.0.3 (including Sizzle) and RequireJS2.1.8 use their original MIT grants, with exact official readable source and full notices. Unlicensed Base64 helper is replaced independently; separately credited music and audio are excluded. No remote analytics, external assets, social or donation actions.
 
 [Complete component and dependency licenses](public/gridland-original/LICENSES.txt), [Playgarden GPL-3.0](public/gridland-original/Playgarden-GPL-3.0.txt), [complete preferred source and modifications](public/gridland-original/source.zip), [source manifest](vendor/gridland-original/source-manifest.json).
+
+
+## SQL Murder Mystery（SQL迷案，完整原作案件）
+
+- 原作：Joon Park、Cathy He / NUKnightLab，固定 a7aa22701bd41b24e905be387fb17326db982df9。
+- 来源：https://github.com/NUKnightLab/sql-mysteries/tree/a7aa22701bd41b24e905be387fb17326db982df9
+- 原代码 MIT，原始虚构案件与数据库、中文叙事译文 CC BY-SA 4.0：https://creativecommons.org/licenses/by-sa/4.0/legalcode 。原数据库及答案触发器完整逐字保留；一案件含两阶段调查，不编号为关卡。
+- SQLite3.54.0 官方WASM与JS API为公有领域；生成的 Emscripten5.0.1 运行库保留MIT/NCSA、musl及compiler-rt全部原声明。精确官方SQLite源代码/合并源码ZIP包含在可下载源码中。
+- 新增宿主、可终止worker、封面和打包脚本 GPL-3.0-only；不包含上游Vecteezy插图、外部字体/分析、旧网站JS或未清权SQL.js扩展。
+- 完整逐项声明：public/sql-mystery/LICENSES.txt；GPL正文：public/sql-mystery/Playgarden-GPL-3.0.txt；可下载源码：public/sql-mystery/source.zip；文件来源与SHA：vendor/sql-mystery-original/source-manifest.json。
