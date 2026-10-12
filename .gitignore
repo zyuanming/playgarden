@@ -17,3 +17,5 @@ vendor/monkey-rally-original/upstream/src/assets/**/*.jpg
 # Exact SQL Mystery source archives are materialized from verified local parts.
 public/sql-mystery/source.zip
 vendor/sql-mystery-original/sqlite/sqlite-src-3540000.zip
+
+/ghosted-build-identity.json

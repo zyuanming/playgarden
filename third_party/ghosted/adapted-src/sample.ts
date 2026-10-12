@@ -1,0 +1,116 @@
+import { clamp } from "./math.js";
+
+
+const TYPE_LOOKUP : OscillatorType[] = ["square", "triangle", "sawtooth", "sine"];
+
+
+export const enum Ramp {
+
+    Instant = 0,
+    Linear = 1,
+    Exponential = 2
+};
+
+
+export const enum OscType {
+
+    Square = 0,
+    Triangle = 1,
+    Sawtooth = 2,
+    Sine = 3,
+};
+
+
+export class Sample {
+
+
+    private readonly ctx : AudioContext;
+
+    private baseSequence : number[];
+    private baseVolume : number;
+    private type : OscType;
+    private ramp : Ramp;
+    private attack : number = 0.0;
+
+    private oscillator : OscillatorNode | undefined = undefined;
+    private gain: GainNode | undefined;
+    private output: AudioNode;
+
+    public get playing(): boolean { return this.oscillator !== undefined; }
+
+    public stop(): void {
+        try { this.oscillator?.stop(); } catch (_) {}
+        this.oscillator?.disconnect();
+        this.gain?.disconnect();
+        this.oscillator = undefined;
+        this.gain = undefined;
+    }
+
+
+    constructor(ctx : AudioContext, sequence : number[], 
+        baseVolume : number, type : OscType,
+        ramp : Ramp, attack : number = 1.0, output?: AudioNode) {
+
+        this.ctx = ctx;
+        this.output = output ?? ctx.destination;
+
+        this.baseSequence = Array.from(sequence);
+
+        this.baseVolume = baseVolume;
+        this.type = type;
+        this.ramp = ramp;
+        this.attack = attack;
+    }
+
+
+    public play(volume : number) : void {
+        
+        const functions : string[] = ["setValueAtTime", "linearRampToValueAtTime", "exponentialRampToValueAtTime"]; 
+
+        const time : number = this.ctx.currentTime;
+        const osc : OscillatorNode = this.ctx.createOscillator();
+        const gain : GainNode = this.ctx.createGain();
+        const func : string = functions[this.ramp];
+        
+        osc.type = TYPE_LOOKUP[this.type] ?? "square";
+
+        volume *= this.baseVolume;
+
+        let latestVolume : number = this.baseSequence[2]*volume;
+
+        osc.frequency.setValueAtTime(this.baseSequence[0], time);
+        gain.gain.setValueAtTime(this.attack*latestVolume, time);
+
+        // TODO: It feels weird to start from index 0 since
+        // the first "note" is assigned double. However, it does
+        // not seem to play anything otherwise
+
+        let timer : number = 0.0;
+        for (let i = 0; i < this.baseSequence.length; i += 3) {
+
+            const freq : number = this.baseSequence[i];
+            const len : number = this.baseSequence[i + 1];
+
+            latestVolume = clamp(this.baseSequence[i + 2]*volume, 0.0001, 1.0);
+
+            osc.frequency[func](freq, time + timer);
+            gain.gain[func](latestVolume, time + timer);
+
+            timer += 1.0/60.0*len;
+        }
+        gain.gain.exponentialRampToValueAtTime(latestVolume*0.50, time + timer);
+        
+        osc.connect(gain).connect(this.output);
+        osc.start(time);
+
+        osc.stop(time + timer);
+        osc.onended = () : void => {
+            osc.disconnect(); gain.disconnect();
+            if (this.oscillator === osc) { this.oscillator = undefined; this.gain = undefined; }
+        };
+        
+        this.stop();
+        this.oscillator = osc;
+        this.gain = gain;
+    }
+}

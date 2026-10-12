@@ -2860,6 +2860,51 @@ Nicky Case, fixed6ec45d73befdb922bd40654dd1c1c903a953562f. First-party source, a
 
 Full component notices, audio provenance and CC0: public/evolution-of-trust/NOTICE.txt and THIRD-PARTY-NOTICES.txt. Editable source, immutable original mapping and build correspondence: third_party/evolution-of-trust/. Pixi4.4.3, Howler2.0.0, TweenJS0.6.2, Q1.5.1, MinPubSub0.0.2, Pegasus0.3.4-era and Balloon0.4.0 retain MIT/Apache-2.0/ISC/BSD-3-Clause/CC0 notices, not a blanket CC0 label. New host/lifecycle/accessibility and independent replacement assets GPL-3.0-only.
 
+## Ghosted — original engine, all 13 maps and accompanying assets
+
+- Author: Jani Nykänen; original notice: (c) 2024 Jani Nykänen.
+- Source: https://github.com/jani-nykanen/ghosted/tree/846454c3b2f7509515cbcbf8852b09f7b7d98b24
+- Actual root tree: 83ff106812650c02d8138d93a7073575965695ed.
+- Original files: third_party/ghosted/original (all 52 Git files, including the unaltered README and LFS pointers).
+- Exact LFS objects: third_party/ghosted/lfs (all four PNGs); public runtime uses the two verified image entities, not pointer text.
+- Ghosted module source: public/games/ghosted/source.tar.gz; readable original/adapted/build material is included with per-file hashes. BUILDING.md requires the matching complete Playgarden source revision, separately linked by the deployed site footer.
+- Scope: original 12 ordinary puzzles, naturally unlocked nightmare stage 13, original title/menu/control guide/ending, glyph art/atlas and local synthesized audio sequences. No third-party font binary or external music download.
+
+The upstream repository has no standalone LICENSE. The MIT terms below were assembled by the integrator from the upstream README's root license declaration and its linked MIT text, retaining the original copyright. Repository-wide license attribution is not a claim of separately obtained per-asset authorization. The original editor TSX tile metadata is preserved but is upstream-stale; this package does not claim validated Tiled editing.
+
+New Playgarden Chinese host, lifecycle bridge, build/test/check code and adapter contributions are GPL-3.0-only, with full terms at public/games/ghosted/PLAYGARDEN-COPYING.txt. Upstream MIT parts retain the following complete notice:
+
+Ghosted — MIT notice assembled by the Playgarden integrator
+
+The fixed upstream README links the MIT License and gives the following notice:
+(c) 2024 Jani Nykänen
+
+Upstream: https://github.com/jani-nykanen/ghosted/tree/846454c3b2f7509515cbcbf8852b09f7b7d98b24
+License terms: https://opensource.org/license/mit
+The upstream repository does not contain a separate LICENSE file. The original README is preserved under original/README.md. This is a faithful assembled notice, not a newly attributed upstream file or separate asset-specific permission.
+
+MIT License
+
+(c) 2024 Jani Nykänen
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
 ## Complete bundled runtime dependency notices
 
 ### react 19.3.0 (MIT)
@@ -5356,4 +5401,10 @@ https://github.com/ncase/trust/tree/6ec45d73befdb922bd40654dd1c1c903a953562f
 Preferred editable source: third_party/evolution-of-trust/, public/evolution-of-trust/, src/games/EvolutionOfTrust.tsx
 Build sources: scripts/evolution-of-trust/package-source.py, scripts/evolution-of-trust/verify-sources.py
 Complete original guided journey and sandbox. Exact original strategies/RNG/payoffs, local CanvasRenderer, Chinese/readable touch controls, scoped pause/dispose. Zero numbered levels.
+
+Ghosted 846454c3b2f7509515cbcbf8852b09f7b7d98b24 (MIT original source, pixel artwork and synthesized audio; GPL-3.0-only new adapter)
+https://github.com/jani-nykanen/ghosted/tree/846454c3b2f7509515cbcbf8852b09f7b7d98b24
+Preferred editable source: third_party/ghosted/original/, third_party/ghosted/adapted-src/, third_party/ghosted/bridge-src/, src/games/GhostedGame.tsx
+Build sources: scripts/ghosted/build.mjs, scripts/ghosted/package-source.py, scripts/ghosted/verify-sources.py
+Complete13 original maps, including earned nightmare finale; original native title/menu/controls/ending. Original MIT assembled from root README, preserved without claiming a standalone upstream LICENSE.
 
