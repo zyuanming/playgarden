@@ -1,8 +1,9 @@
 // SPDX-License-Identifier: GPL-3.0-only
-// Prepared from static source inspection only. This file has NOT been run.
+// Source-planned input fixtures are checked against real browser gameplay;
+// actual run and head-specific acceptance evidence is retained separately.
 // One targeted invocation runs this same real-input journey on desktop/mobile.
 import { expect, test, type CDPSession, type Frame, type Page, type TestInfo } from '@playwright/test';
-import { readFileSync } from 'node:fs';
+import { readFileSync, writeFileSync } from 'node:fs';
 import { captureErrors } from './helpers';
 
 type Point = { x: number; y: number; ghost: boolean };
@@ -89,6 +90,9 @@ async function driver(page: Page, mobile: boolean) {
     if (cdp) {
       const control = page.locator(`.ghosted-host [data-ghosted-key="${key}"]`);
       await expect(control).toBeVisible();
+      // Raw touch dispatch has no locator actionability wait. The read-only
+      // engine observer can exist before the parent accepts its ready message.
+      await expect(control).toBeEnabled();
       await control.scrollIntoViewIfNeeded();
       const b = await control.boundingBox();
       if (!b) throw new Error(`Missing touch control ${key}`);
@@ -501,8 +505,10 @@ test('Ghosted: native title/menu, all twelve earned prerequisites, real nightmar
     expect(errors).toEqual([]); expect(outside).toEqual([]);
   } finally {
     await input.dispose();
-    await info.attach('ghosted-real-input-journey', { body: JSON.stringify({
+    const evidence = JSON.stringify({
       source: fixture.upstreamCommit, project: info.project.name, completedJourneys: earned, audioEvidence, startupEvidence, errors, outside,
-    }, null, 2), contentType: 'application/json' });
+    }, null, 2);
+    writeFileSync(info.outputPath('ghosted-real-input-journey.json'), evidence);
+    await info.attach('ghosted-real-input-journey', { body: evidence, contentType: 'application/json' });
   }
 });
