@@ -4,7 +4,7 @@ import {test,expect,type Frame,type Locator} from '@playwright/test';
 import {openGame,captureErrors} from './helpers';
 import {writeFileSync} from 'node:fs';
 import {createHash} from 'node:crypto';
-import checkpoints from './fixtures/gridland-earned-round26.json' with {type:'json'};
+import checkpoints from './fixtures/gridland-earned-round27.json' with {type:'json'};
 // Explicit key screenshots, failure screenshots, ordinary-input logs and authentic
 // saves replace per-action DOM trace snapshots (round2 produced a 2.66 GB trace).
 test.use({trace:'off'});
@@ -246,6 +246,11 @@ test('Gridland original campaign: real matches, progression, saves, dragon and l
     const needed=equipmentNeeded(s,t);
     if(t.monster&&s.items.equipment&&(needed.shield||needed.sword)){await item('equipment');continue;}
     if(!t.monster&&t.loot){await waitForPlay('pick-up-earned-loot',s,t);continue;}
+    // Round27 had a real equipment item and legal mana matches, but no safe
+    // gear match; use the earned item before summoning instead of spawning imps.
+    if(!t.monster&&s.items.equipment&&seekDragonRune(s,t)&&s.health>s.maxHealth*.8&&
+      (s.hero.sword<t.maxSword||s.hero.shield<t.maxShield*2/3)&&
+      boardReady(s)&&moves(s).some(m=>m.gains.mana)){await item('equipment');continue;}
     // Keep earned mana for the original day/night spell when ordinary
     // enemies overwhelm depleted gear. This normal UI action saves the day's
     // real gains; it does not count as a kill or the required dragon ending.
