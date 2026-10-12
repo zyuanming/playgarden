@@ -114,7 +114,7 @@ export default function BlackHoleSquareGame({level,paused,muted=false,freshStart
     <p className="black-hole-square-instructions">点击方块激活；左右滑动可跳过、返回或重置。棋盘获得焦点后，方向键选择格子，回车或空格激活；R 重置，PageUp / PageDown 翻页。首次用“下一页”浏览原版标题和说明。</p>
     {state?.ending&&<p className="black-hole-square-ending" role="status">{solved===18?'18 个原版谜题已全部实际清空。谢谢游玩！':`已来到原版结尾；实际清空 ${solved} / 18。可以返回继续未解谜题。`}</p>}
     {error&&<div className="black-hole-square-error"><p role="alert">{error}</p><button type="button" onClick={()=>{
-      setLaunch({native:copyData(native.current),saved:saved.current,start:summary.current?.current??selected+2});
+      setLaunch({native:copyData(native.current),saved:saved.current,start:summary.current?.current??launch.start});
       setReady(false);setError('');setState(null);summary.current=null;setAttempt(value=>value+1);
     }}>重试载入 Black Hole Square</button></div>}
     {state&&!state.saved&&<p role="alert">浏览器未能保存本作记录；本次切关和重置仍保留已取得的通关。退出本作或刷新后，只能恢复成功保存的记录。</p>}
