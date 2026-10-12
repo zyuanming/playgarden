@@ -5440,7 +5440,6 @@ Preferred editable source: third_party/ghosted/original/, third_party/ghosted/ad
 Build sources: scripts/ghosted/build.mjs, scripts/ghosted/package-source.py, scripts/ghosted/verify-sources.py
 Complete13 original maps, including earned nightmare finale; original native title/menu/controls/ending. Original MIT assembled from root README, preserved without claiming a standalone upstream LICENSE.
 
-
 Black Hole Square 8d48aae2097613782ab18d5062e8a3906741baaa (MIT original game; GPL-3.0-only new adapter; separate Gugi OFL provenance for existing title outlines)
 https://github.com/Quinten/black-hole-square/tree/8d48aae2097613782ab18d5062e8a3906741baaa
 Preferred editable source: third_party/black-hole-square/original/, third_party/black-hole-square/adapted-src/, third_party/black-hole-square/bridge-src/, src/games/BlackHoleSquareGame.tsx
