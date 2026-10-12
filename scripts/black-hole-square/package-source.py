@@ -17,7 +17,7 @@ def main():
         files += [p for p in (ROOT/prefix).rglob('*') if p.is_file() and '__pycache__' not in p.parts]
     for relative in ['src/games/BlackHoleSquareGame.tsx','src/games/blackHoleSquareGame.css',
         'public/games/black-hole-square/index.html','public/games/black-hole-square/frame.css',
-        'e2e/black-hole-square.spec.ts','e2e/fixtures/black-hole-square-input-plans.json']:
+        'e2e/black-hole-square.spec.ts','e2e/black-hole-square-focus.spec.ts','e2e/fixtures/black-hole-square-input-plans.json']:
         files.append(ROOT/relative)
     # In an integrated checkout include its exact official locked build context.
     context=['package.json','package-lock.json','src/lib/types.ts','e2e/helpers.ts','playwright.config.ts']

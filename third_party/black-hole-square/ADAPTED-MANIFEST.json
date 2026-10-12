@@ -457,13 +457,13 @@
     },
     {
       "path": "scripts/black-hole-square/freeze-source-map.py",
-      "bytes": 1910,
-      "sha256": "fb03ca88c51434fc8151a1840f934b7e75ad06f750c6e2e6de78f6132200e14a"
+      "bytes": 1948,
+      "sha256": "882ce6a9c2bfbb38c9622649d29214f4e8264479f5add15939c9c45df2d2f36a"
     },
     {
       "path": "scripts/black-hole-square/package-source.py",
-      "bytes": 2702,
-      "sha256": "ad119f81190de1ca9a40b794665d7063149b6fe82183d8f6fdf3c03e1bba7da0"
+      "bytes": 2740,
+      "sha256": "64dfbb8f157affbdc8e0367eb0b85816d32fc84ae9e11498624ac73016ff38d7"
     },
     {
       "path": "scripts/black-hole-square/verify-sources.py",
@@ -484,6 +484,11 @@
       "path": "e2e/black-hole-square.spec.ts",
       "bytes": 26968,
       "sha256": "0d48628228ba6e94702a32ecee8b302a0aac6d694e7e0f4bdc364aeac5548502"
+    },
+    {
+      "path": "e2e/black-hole-square-focus.spec.ts",
+      "bytes": 5203,
+      "sha256": "88ec01166a9a6982fccda2acbd7ce5b31f8501aa0107790abdcdd7b8100b5051"
     },
     {
       "path": "e2e/fixtures/black-hole-square-input-plans.json",

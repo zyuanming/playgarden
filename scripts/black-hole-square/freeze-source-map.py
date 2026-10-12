@@ -17,7 +17,7 @@ def main():
     new=[]
     for prefix in [SOURCE/'bridge-src',ROOT/'scripts/black-hole-square']:
         new.extend(record(p) for p in sorted(prefix.rglob('*')) if p.is_file() and '__pycache__' not in p.parts)
-    for name in ['src/games/BlackHoleSquareGame.tsx','src/games/blackHoleSquareGame.css','e2e/black-hole-square.spec.ts',
+    for name in ['src/games/BlackHoleSquareGame.tsx','src/games/blackHoleSquareGame.css','e2e/black-hole-square.spec.ts','e2e/black-hole-square-focus.spec.ts',
         'e2e/fixtures/black-hole-square-input-plans.json','public/games/black-hole-square/index.html','public/games/black-hole-square/frame.css',
         'third_party/black-hole-square/ADAPTATION.md','third_party/black-hole-square/INTEGRATION.json']:
         new.append(record(ROOT/name))
