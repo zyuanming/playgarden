@@ -13,7 +13,8 @@ const temporary = path.join(root, 'third_party/ghosted/.build');
 mkdirSync(temporary, {recursive: true});
 try {
   writeFileSync(path.join(temporary, 'contract.ts'), `import {startGame as actual} from '../../../public/games/ghosted/js/adapted-src/main.js';\nimport {startGame as expected} from '../bridge-src/engine.js';\nconst checked: typeof expected = actual;\nvoid checked;\n`);
-  run(['--strict', '--noEmit', '--target', 'ES2022', '--module', 'ES2020', '--moduleResolution', 'Bundler', '--lib', 'ES2022,DOM', 'third_party/ghosted/.build/contract.ts']);
+  writeFileSync(path.join(temporary, 'tsconfig.json'), JSON.stringify({compilerOptions: {strict: true, noEmit: true, target: 'ES2022', module: 'ES2020', moduleResolution: 'Bundler', lib: ['ES2022', 'DOM'], types: []}, files: ['contract.ts']}));
+  run(['-p', 'third_party/ghosted/.build/tsconfig.json']);
 } finally { rmSync(temporary, {recursive: true, force: true}); }
 copyFileSync(path.join(root, 'third_party/ghosted/bridge-src/engine.js'), path.join(root, 'public/games/ghosted/js/engine.js'));
 execFileSync('python3', ['scripts/ghosted/package-source.py'], {cwd: root, stdio: 'inherit'});
