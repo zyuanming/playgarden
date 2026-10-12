@@ -487,8 +487,8 @@
     },
     {
       "path": "e2e/black-hole-square-focus.spec.ts",
-      "bytes": 5203,
-      "sha256": "88ec01166a9a6982fccda2acbd7ce5b31f8501aa0107790abdcdd7b8100b5051"
+      "bytes": 5266,
+      "sha256": "441c9f0bb769654f5a77766966a94b29b1576257305541fb474db782cc0ce534"
     },
     {
       "path": "e2e/fixtures/black-hole-square-input-plans.json",

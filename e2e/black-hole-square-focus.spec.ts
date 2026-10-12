@@ -16,6 +16,7 @@ test('Black Hole Square: real tab departure cancels a held gesture',async({page}
     await page.goto('/');await page.getByRole('textbox',{name:'搜索游戏'}).fill('Black Hole Square');
     await page.locator('.game-card').filter({hasText:/Black Hole Square/i}).getByRole('button',{name:/^开始玩/}).first().click();
     const handle=await page.locator(FRAME).elementHandle();frame=await handle!.contentFrame();
+    if(!frame)throw Error('Game iframe has no content frame');
     await expect.poll(async()=>frame!.evaluate(()=>typeof (window as unknown as {__blackHoleSquareSnapshot?:unknown}).__blackHoleSquareSnapshot)).toBe('function');
     const next=page.getByRole('button',{name:'下一页 / 跳过',exact:true});
     for(const current of [1,2]){await expect(next).toBeEnabled();await next.click();await expect.poll(async()=>(await state()).current).toBe(current);}
