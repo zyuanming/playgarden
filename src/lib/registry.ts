@@ -3127,5 +3127,35 @@ component: lazy(() => import("../games/ElevatorSaga"))
 component: lazy(() => import("../games/GridlandOriginal"))
 },
 
+{
+  "id": "sql-mystery",
+  "title": "SQL迷案",
+  "subtitle": "查询案发报告、证人和签到记录，从行凶者追查幕后委托者。",
+  "category": "编程启蒙",
+  "difficulty": "进阶",
+  "tone": "purple",
+  "levelCount": 0,
+  "campaign": true,
+  "freePlayCaption": "完整案件 · 两阶段推理",
+  "allowUndo": false,
+  "artwork": {
+    "url": "./sql-mystery/cover.svg",
+    "position": "center",
+    "size": "cover"
+  },
+  "source": {
+    "kind": "adapted",
+    "license": "CC-BY-SA-4.0",
+    "author": "Joon Park、Cathy He / NUKnightLab",
+    "workTitle": "SQL Murder Mystery（完整原作案件）",
+    "url": "https://github.com/NUKnightLab/sql-mysteries/tree/a7aa22701bd41b24e905be387fb17326db982df9",
+    "commit": "a7aa22701bd41b24e905be387fb17326db982df9",
+    "notice": "./sql-mystery/LICENSES.txt",
+    "notes": "原始数据库与答案触发器逐字保留，一起虚构案件、行凶者与幕后委托者两阶段，无虚构编号关卡。案件内容及中文叙事CC BY-SA4；原代码MIT。官方SQLite3.54.0公有领域，Emscripten运行库保留各自许可；新增可终止worker、中文宿主及封面GPL-3.0-only。"
+  }
+,
+component: lazy(() => import("../games/SqlMystery"))
+},
+
 ];
 export const findGame = (id: string) => games.find((game) => game.id === id);

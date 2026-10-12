@@ -159,6 +159,7 @@ const packs = {
   "hyperspace-garbage-collection": [1,2,3,4],
   "avabranch": [],
   "gridland": [],
+  "sql-mystery": [],
   "css-diner": Array.from({length:32}, (_,i) => i+1),
   "flexbox-froggy": Array.from({length:24}, (_,i) => i+1),
   "monkey-rally": [1,2,3,4,5,6,7,8],
@@ -345,7 +346,7 @@ describe("Scalable catalog contract", () => {
       expect(game.source.license).toBe(
         game.source.kind === "original"
           ? "GPL-3.0-only"
-          : game.id === "swap"
+          : (game.id === "swap" || game.id === "sql-mystery")
             ? "CC-BY-SA-4.0"
             : game.id === "heal-em-all"
               ? "GPL-3.0-only"
@@ -373,8 +374,8 @@ describe("Scalable catalog contract", () => {
       }
     }),
   );
-  it("counts only 177 real games and 3146 levels, not the roadmap", () => {
-    expect(games).toHaveLength(177);
+  it("counts only 178 real games and 3146 levels, not the roadmap", () => {
+    expect(games).toHaveLength(178);
     expect(games.reduce((sum, g) => sum + g.levelCount, 0)).toBe(3146);
   });
 });

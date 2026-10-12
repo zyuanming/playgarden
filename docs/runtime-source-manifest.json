@@ -828,6 +828,24 @@
         "scripts/gridland/verify-sources.py"
       ],
       "scope": "Complete original settlement, real-time combat, loot, spells, dragon-clear objective and New Game+. Zero authored numbered levels. Original sprite PNGs unchanged; local dependencies; no music, telemetry or third-party requests."
+    },
+    {
+      "name": "SQL Murder Mystery complete original case",
+      "version": "a7aa22701bd41b24e905be387fb17326db982df9",
+      "license": "CC-BY-SA-4.0 case and translations; MIT original code; public-domain SQLite; MIT/NCSA and retained SDK notices; GPL-3.0-only independent host",
+      "source": "https://github.com/NUKnightLab/sql-mysteries/tree/a7aa22701bd41b24e905be387fb17326db982df9",
+      "preferredSource": [
+        "vendor/sql-mystery-original/",
+        "public/sql-mystery/",
+        "src/games/SqlMystery.tsx",
+        "src/games/sqlMystery.css"
+      ],
+      "buildSources": [
+        "scripts/materialize-sql-mystery-archives.py",
+        "scripts/sql-mystery/package-source.py",
+        "scripts/sql-mystery/verify-sources.py"
+      ],
+      "scope": "Original byte-identical fictional database with original murderer and mastermind validation trigger, complete free-form SQL investigation. One case, zero numbered levels. Official SQLite3.54.0 WASM and matching preferred source archives; disposable bounded worker, scoped notebook, escaped output. No external CDN, old SQL.js, unrelated image or telemetry."
     }
   ]
 }

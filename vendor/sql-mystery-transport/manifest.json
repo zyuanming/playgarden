@@ -1,0 +1,81 @@
+{
+  "schema": 1,
+  "archives": [
+    {
+      "prefix": "source",
+      "target": "public/sql-mystery/source.zip",
+      "bytes": 21692919,
+      "sha256": "65841de88651279b802ac2501f1a7afb5d6d48043da203b3dd8361be58dda517",
+      "parts": [
+        {
+          "file": "source-00.part",
+          "bytes": 3145728,
+          "sha256": "293387f1a9c66ab2aa6d764ef7133354bd5c1d8d4f1bae952a81d82c0a819d76"
+        },
+        {
+          "file": "source-01.part",
+          "bytes": 3145728,
+          "sha256": "b594d88a16493bd5beda6c4883aa97fe582c9a5dad0047011708f3c75bfd059a"
+        },
+        {
+          "file": "source-02.part",
+          "bytes": 3145728,
+          "sha256": "9552fd4dcd9f9782c7b30313ee24aa976b3b79c0c5fd08d295b098f0fe81da2e"
+        },
+        {
+          "file": "source-03.part",
+          "bytes": 3145728,
+          "sha256": "b065d5f800a9f6a9162c04a0151148e076266e12dd1be66e9a27b4a1aa6db7ce"
+        },
+        {
+          "file": "source-04.part",
+          "bytes": 3145728,
+          "sha256": "a1bf1ba5e1ab445c3dd4c5fbdefb99d5ff29b1be8b59a73429b64064581d061e"
+        },
+        {
+          "file": "source-05.part",
+          "bytes": 3145728,
+          "sha256": "1d668b25bf7a89575f37c07eea1606a3d081d23375c4f7a3cb981168ff662f35"
+        },
+        {
+          "file": "source-06.part",
+          "bytes": 2818551,
+          "sha256": "412de7f72328b29f50449563536d6b6d79829100ca630ca25e5b20e629e91e5a"
+        }
+      ]
+    },
+    {
+      "prefix": "sqlite-src",
+      "target": "vendor/sql-mystery-original/sqlite/sqlite-src-3540000.zip",
+      "bytes": 14881448,
+      "sha256": "8847659821e0c5116bd14a94644c82ba932b2d9a05ac81af2e34af814aad7c58",
+      "parts": [
+        {
+          "file": "sqlite-src-00.part",
+          "bytes": 3145728,
+          "sha256": "603e05cb8d9bced493aaf0e95fc5933a338ff4bd1913626a7e16bca0281d3754"
+        },
+        {
+          "file": "sqlite-src-01.part",
+          "bytes": 3145728,
+          "sha256": "6ec93763c1127ef6aeb3e906945e8f2eef1fdfb5e6d8c70e829b1ef8ec8e9e14"
+        },
+        {
+          "file": "sqlite-src-02.part",
+          "bytes": 3145728,
+          "sha256": "328e2b66eee132bbf7be85c8a3521c3b094f1f10cf306e6af1a9e165144c0063"
+        },
+        {
+          "file": "sqlite-src-03.part",
+          "bytes": 3145728,
+          "sha256": "f62661e1fc4d0a5658f120c56da6a566644c8d92c4e93e943a670962ecddaaaa"
+        },
+        {
+          "file": "sqlite-src-04.part",
+          "bytes": 2298536,
+          "sha256": "8a486afa388b46c83af286ad99657d3a6a65893ccb8028e008bffcb01e07b835"
+        }
+      ]
+    }
+  ]
+}

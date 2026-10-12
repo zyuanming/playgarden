@@ -1,0 +1,135 @@
+{
+  "game": "sql-mystery",
+  "sourceCommit": "a7aa22701bd41b24e905be387fb17326db982df9",
+  "finiteLevels": 0,
+  "completeCases": 1,
+  "originalInvestigationStages": 2,
+  "archive": "public/sql-mystery/source.zip",
+  "files": [
+    {
+      "path": "e2e/sql-mystery.spec.ts",
+      "bytes": 10511,
+      "sha256": "db7c973cd0f12f254bee2accd031cab2d7f695a45243716ecbb8a84f64e86ee9"
+    },
+    {
+      "path": "public/sql-mystery/LICENSES.txt",
+      "bytes": 59223,
+      "sha256": "373cf1ced188b659d08da0bc526a77b07e5ba0dcfbd54a06e06425ffab8d3310"
+    },
+    {
+      "path": "public/sql-mystery/Playgarden-GPL-3.0.txt",
+      "bytes": 34674,
+      "sha256": "fb981668c18a279e285fc4d83fba1e836cc84dd4daa73c9697d3cfd2d8aca6e0"
+    },
+    {
+      "path": "public/sql-mystery/case.db",
+      "bytes": 3661824,
+      "sha256": "b8a9e0ff65c73fb790544240805309dd938ff2bd6993ec0e671e4a4c228e740b"
+    },
+    {
+      "path": "public/sql-mystery/cover.svg",
+      "bytes": 433,
+      "sha256": "f8f901d28697c3b7294e280243c89539bd63d07be8e79f17a3f1a6030684e5cc"
+    },
+    {
+      "path": "public/sql-mystery/sqlite3.js",
+      "bytes": 439680,
+      "sha256": "b0adb8b459dbf082b171ab99089ea9596240af0add5899f3651eb32bd7a39a44"
+    },
+    {
+      "path": "public/sql-mystery/sqlite3.wasm",
+      "bytes": 879148,
+      "sha256": "4f0bbae88a25ace2c9e5f8651d78cc76465ae3f66480ffa3cb196c89fa83ac33"
+    },
+    {
+      "path": "public/sql-mystery/worker.js",
+      "bytes": 7798,
+      "sha256": "49676486f53cb899bd78695055198baf06c30411ac89f476f84a8c995b2fa8ae"
+    },
+    {
+      "path": "scripts/sql-mystery/package-source.py",
+      "bytes": 1341,
+      "sha256": "e9809437a7e8965078372d24ed48f9dd2c97b35cf57de860459e51c5e642c3ed"
+    },
+    {
+      "path": "scripts/sql-mystery/verify-sources.py",
+      "bytes": 2732,
+      "sha256": "dbd00d6059abe974f033ee96ea5886e1f328497a3bd2d19484172d30f9fb5f3c"
+    },
+    {
+      "path": "src/games/SqlMystery.tsx",
+      "bytes": 12494,
+      "sha256": "3e9f01e69bacae612742e0ab041c108f93d992b826674ec0e5c2b2570c04f7a2"
+    },
+    {
+      "path": "src/games/sqlMystery.css",
+      "bytes": 2917,
+      "sha256": "e53260195b6f0f55bdaacad824bcb21c868e9a53564bc4ae02d8f5d62ebd8f0b"
+    },
+    {
+      "path": "vendor/sql-mystery-original/README.md",
+      "bytes": 2700,
+      "sha256": "db57b8d7aeffa21fb3f716121a9b6cbf125cd0f1d87b9023f67f9573fa9b5a97"
+    },
+    {
+      "path": "vendor/sql-mystery-original/source-manifest.json",
+      "bytes": 3815,
+      "sha256": "963e6a2128437cb82d7d5e78aa5a02ce92f33c25c7b3e4ad413b8a9b7e96b4a2"
+    },
+    {
+      "path": "vendor/sql-mystery-original/sqlite/README.txt",
+      "bytes": 1890,
+      "sha256": "c2e654b60b753dcbbf4d52f30138afd8b5eef42aef42bccdd32fc94a1776674b"
+    },
+    {
+      "path": "vendor/sql-mystery-original/sqlite/emscripten-AUTHORS",
+      "bytes": 29004,
+      "sha256": "8585fa1b981f576f52806833481323007ccac5c00f31a873215e31c0f42820f0"
+    },
+    {
+      "path": "vendor/sql-mystery-original/sqlite/emscripten-LICENSE",
+      "bytes": 5093,
+      "sha256": "620a78084fc7ca97c0b5dea9abf891f3ffcadfdbf305276f099c9c4e12fc1d86"
+    },
+    {
+      "path": "vendor/sql-mystery-original/sqlite/emscripten-compiler-rt-LICENSE",
+      "bytes": 16708,
+      "sha256": "1a8f1058753f1ba890de984e48f0242a3a5c29a6a8f2ed9fd813f36985387e8d"
+    },
+    {
+      "path": "vendor/sql-mystery-original/sqlite/emscripten-musl-COPYRIGHT",
+      "bytes": 6204,
+      "sha256": "f9bc4423732350eb0b3f7ed7e91d530298476f8fec0c6c427a1c04ade22655af"
+    },
+    {
+      "path": "vendor/sql-mystery-original/sqlite/sqlite-amalgamation-3540000.zip",
+      "bytes": 2990479,
+      "sha256": "68e913b0fe8ec6b4e5f391c594a28872884e80d6cd042a1e50c957be46b5aa4d"
+    },
+    {
+      "path": "vendor/sql-mystery-original/sqlite/sqlite-src-3540000.zip",
+      "bytes": 14881448,
+      "sha256": "8847659821e0c5116bd14a94644c82ba932b2d9a05ac81af2e34af814aad7c58"
+    },
+    {
+      "path": "vendor/sql-mystery-original/upstream/LICENSE",
+      "bytes": 1068,
+      "sha256": "a878165901d4659dbe6fd0ec5cce8e2f2070a675e1551341e9554fab9422ffdd"
+    },
+    {
+      "path": "vendor/sql-mystery-original/upstream/README.md",
+      "bytes": 3702,
+      "sha256": "5e6e8e5ec556d3df233834ea71a038b3e57a2d3bef40d98b5beb5ac12baf95fc"
+    },
+    {
+      "path": "vendor/sql-mystery-original/upstream/sql-murder-mystery.db",
+      "bytes": 3661824,
+      "sha256": "b8a9e0ff65c73fb790544240805309dd938ff2bd6993ec0e671e4a4c228e740b"
+    },
+    {
+      "path": "public/sql-mystery/source.zip",
+      "bytes": 21692919,
+      "sha256": "65841de88651279b802ac2501f1a7afb5d6d48043da203b3dd8361be58dda517"
+    }
+  ]
+}

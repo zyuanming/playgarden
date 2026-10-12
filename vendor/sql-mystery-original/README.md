@@ -1,0 +1,13 @@
+# SQL Murder Mystery complete case
+
+Fixed original: NUKnightLab/sql-mysteries a7aa22701bd41b24e905be387fb17326db982df9. Authors Joon Park and Cathy He. Original code MIT; fictional case/database and translated narrative CC BY-SA 4.0. All raw case data and original answer trigger remain byte-identical. One case, two investigation stages, zero enumerated levels.
+
+This adaptation uses independent GPL-3.0-only React and worker code with official SQLite 3.54.0 WASM. SQLite core and its JS API are public domain; generated Emscripten 5.0.1 glue/runtime notices are retained verbatim (MIT/NCSA and relevant library notices). Exact official canonical SQLite source and amalgamation ZIPs are provided. source-manifest.json binds the bytes, source ID and download checksums. No unknown build scripts or old upstream dependencies were installed or executed.
+
+The upstream Vecteezy image, external fonts, analytics and legacy website JavaScript are excluded; a small independent SVG cover and system fonts are used. The investigated older SQL.js build is excluded entirely because its separate extension-functions.c did not show a redistribution grant.
+
+Normal SQL runs in a disposable worker. SQL is never evaluated as JavaScript. Persistent SQLite filesystem providers are disabled via the official config; only an in-memory copy of the original case is opened. Evidence tables, DDL and PRAGMA are read-only. Only the documented single INSERT INTO solution VALUES(1,'name') is allowed to run as a write, with the unchanged original trigger. Parsed statements are validated before sqlite3_step, and ordinary SQL cannot write a success string. The original rule accepting the correct final answer directly is retained; the host records actual original trigger feedback and does not claim both stages were separately investigated unless they were. ATTACH/DETACH and extension loading are denied. The parent can terminate a stuck query and restores the last completed in-memory snapshot. WASM heap is capped at 64 MiB, but this is not a guarantee of total browser memory isolation. Output/SQL lengths and execution are bounded.
+
+Queries and notes save synchronously into the single game-owned localStorage key. Only earned stage, SQL, notes and bounded recent queries persist across exit; the answer table resets on entry. Pause and unmount terminate the worker. Results use React text nodes.
+
+The source bundle includes original database, notices, preferred readable SQLite sources, independent adapter source and targeted test. Rebuild with python3 scripts/sql-mystery/package-source.py, verify with python3 scripts/sql-mystery/verify-sources.py. Gameplay verification is separate from these static checks.
