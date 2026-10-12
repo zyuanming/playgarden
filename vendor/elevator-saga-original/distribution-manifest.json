@@ -7,13 +7,13 @@
   "files": [
     {
       "path": "e2e/elevator-saga.spec.ts",
-      "bytes": 12045,
-      "sha256": "5e6fff659aa7a60a3c4bcde852ec1004733b1691784fc7d63ed0f53cbf62a9d0"
+      "bytes": 12550,
+      "sha256": "ccbbe46e721303773a5a4a768061359d37e2547271a868ebc83aa84edc250dec"
     },
     {
       "path": "e2e/fixtures/elevator-saga-dispatcher.js",
-      "bytes": 2694,
-      "sha256": "0a3220bf369d3dae6f1ecfc1f53ecdcdd5edc29b1eb552af956d070083541166"
+      "bytes": 5500,
+      "sha256": "56d0edf1a6b6decffc6d0e160d9d86ca87eb628d11f2e4a63e850d64f659cd78"
     },
     {
       "path": "public/elevator-saga/LICENSE.txt",
@@ -297,8 +297,8 @@
     },
     {
       "path": "public/elevator-saga/source.zip",
-      "bytes": 527758,
-      "sha256": "f624b668edf827bc865fae8ff071f4a0d35cf0345f4dedd3ba4daa937b4ce19b"
+      "bytes": 528737,
+      "sha256": "0427ef2ca91454880b2f83f2d2d4f1bba7531857f7511234d27d9d85968dd513"
     }
   ]
 }

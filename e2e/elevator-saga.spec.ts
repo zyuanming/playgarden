@@ -74,7 +74,10 @@ test('complete original elevator programming: first middle final, isolation and 
     await expect(frame.locator('.CodeMirror')).toContainText('An ordinary player solution');
     for (const level of [8,17]) {
       await chooseLevel(page,level); await ready(); await code(solution); await frame.locator('#speed').selectOption('55'); await run();
-      await expect(frame.locator('body')).toHaveAttribute('data-result','true',{timeout:90000});
+      inputs.push({case:'started-challenge',level});
+      await expect(frame.locator('body')).toHaveAttribute('data-result',/^(true|false)$/,{timeout:90000});
+      inputs.push({case:'challenge-terminal',level,result:await frame.locator('body').getAttribute('data-result'),stats:await stats()});
+      await expect(frame.locator('body')).toHaveAttribute('data-result','true');
       expect(await progress()).toContain(level); inputs.push({case:'earned-success',level,stats:await stats()});
       await screenshot(`elevator-${level===17?'final':'middle'}-earned-success.png`);
     }
@@ -94,7 +97,8 @@ test('complete original elevator programming: first middle final, isolation and 
     expect(await page.evaluate(()=>JSON.parse(localStorage.getItem('playgarden.elevator-saga.v1')||'{}').code)).toBe(finalCode);
     expect(errors).toEqual([]); expect(responses).toEqual([]); expect(outside.filter(url=>url!=='https://example.com/elevator-csp-probe')).toEqual([]);
   } finally {
-    writeFileSync(info.outputPath('elevator-ordinary-inputs.json'),JSON.stringify({inputs,errors,outside,responses,workerEvents},null,2));
+    const finalVisible = await Promise.all([frame.locator('#level').inputValue(),frame.locator('body').getAttribute('data-result'),stats()]).then(([level,result,stats])=>({level,result,stats})).catch(()=>null);
+    writeFileSync(info.outputPath('elevator-ordinary-inputs.json'),JSON.stringify({inputs,errors,outside,responses,workerEvents,finalVisible},null,2));
     writeFileSync(info.outputPath('elevator-earned-code-progress.json'),JSON.stringify(await page.evaluate(()=>localStorage.getItem('playgarden.elevator-saga.v1')).catch(()=>null)));
     await page.screenshot({path:info.outputPath('elevator-final-viewport.png'),fullPage:false}).catch(()=>{});
   }
