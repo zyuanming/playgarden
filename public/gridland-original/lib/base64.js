@@ -1,0 +1,2 @@
+// SPDX-License-Identifier: GPL-3.0-only
+define(function(){return {encode:function(s){var b=new TextEncoder().encode(s),v='';b.forEach(function(n){v+=String.fromCharCode(n);});return btoa(v);},decode:function(s){if(typeof s!=='string'||s.length>2000000)throw Error('Invalid save');return new TextDecoder('utf-8',{fatal:true}).decode(Uint8Array.from(atob(s),function(c){return c.charCodeAt(0);}));}};});

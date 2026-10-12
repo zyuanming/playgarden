@@ -2834,3 +2834,12 @@ Magnus Wolffelt, MIT, fixed e0c55bf8cf59243c32dc371b2cc7b2e3ec1664af. The origin
 The original renderer styling and character icons remain, with a responsive DOM adapter. Player code executes only in a terminable blob worker inside an opaque sandbox iframe. The original simulation/controller is unchanged; the unnecessary MDN Math.sign shim is removed from base.js. The official Font Awesome 4.7.0 TTF replaces ambiguous 4.1 binary attribution: Dave Gandy 2016, SIL OFL 1.1; CSS MIT. CodeMirror 4.12.0, Lodash 3.6.0 (with Underscore notice), Riot 1.0.2, and first-party Unobservable retain MIT. No Google fonts, analytics or unused jQuery/highlight runtime are included. Andrew Huth's paste-and-indent snippet in source-only original app.js has its Unlicense dedication preserved. New Chinese adapter, worker boundary, host, code, tests, and schematic cover are GPL-3.0-only.
 
 Full grants: public/elevator-saga/LICENSES.txt. Editable corresponding source: public/elevator-saga/source.zip. Source and distribution identity: vendor/elevator-saga-original/.
+
+
+## Gridland original campaign
+
+Original code, game design and graphics by Michael Townsend / doublespeak games, MPL-2.0. Fixed commit `06af02c3af7062aead04a1e6f67b6e59f3e4b6a1`, [source](https://github.com/doublespeakgames/gridland/tree/06af02c3af7062aead04a1e6f67b6e59f3e4b6a1). Complete original gameplay and nine original sprite sheets retained.
+
+Original modified files remain MPL-2.0. Independent Playgarden host, Chinese text and lifecycle/storage adapters are GPL-3.0-only. jQuery2.0.3 (including Sizzle) and RequireJS2.1.8 use their original MIT grants, with exact official readable source and full notices. Unlicensed Base64 helper is replaced independently; separately credited music and audio are excluded. No remote analytics, external assets, social or donation actions.
+
+[Complete component and dependency licenses](public/gridland-original/LICENSES.txt), [Playgarden GPL-3.0](public/gridland-original/Playgarden-GPL-3.0.txt), [complete preferred source and modifications](public/gridland-original/source.zip), [source manifest](vendor/gridland-original/source-manifest.json).

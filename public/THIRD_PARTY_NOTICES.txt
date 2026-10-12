@@ -2835,6 +2835,15 @@ The original renderer styling and character icons remain, with a responsive DOM 
 
 Full grants: public/elevator-saga/LICENSES.txt. Editable corresponding source: public/elevator-saga/source.zip. Source and distribution identity: vendor/elevator-saga-original/.
 
+
+## Gridland original campaign
+
+Original code, game design and graphics by Michael Townsend / doublespeak games, MPL-2.0. Fixed commit `06af02c3af7062aead04a1e6f67b6e59f3e4b6a1`, [source](https://github.com/doublespeakgames/gridland/tree/06af02c3af7062aead04a1e6f67b6e59f3e4b6a1). Complete original gameplay and nine original sprite sheets retained.
+
+Original modified files remain MPL-2.0. Independent Playgarden host, Chinese text and lifecycle/storage adapters are GPL-3.0-only. jQuery2.0.3 (including Sizzle) and RequireJS2.1.8 use their original MIT grants, with exact official readable source and full notices. Unlicensed Base64 helper is replaced independently; separately credited music and audio are excluded. No remote analytics, external assets, social or donation actions.
+
+[Complete component and dependency licenses](public/gridland-original/LICENSES.txt), [Playgarden GPL-3.0](public/gridland-original/Playgarden-GPL-3.0.txt), [complete preferred source and modifications](public/gridland-original/source.zip), [source manifest](vendor/gridland-original/source-manifest.json).
+
 ## Complete bundled runtime dependency notices
 
 ### react 19.3.0 (MIT)
@@ -5313,4 +5322,10 @@ https://github.com/magwo/elevatorsaga/tree/e0c55bf8cf59243c32dc371b2cc7b2e3ec166
 Preferred editable source: public/elevator-saga/, vendor/elevator-saga-original/, src/games/ElevatorSaga.tsx, src/games/elevatorSaga.css
 Build sources: scripts/elevator-saga/package-source.py, scripts/elevator-saga/verify-sources.py
 18 unchanged original challenge predicates and original elevator/passenger simulation; responsive editor/renderer and opaque worker boundary. Official CodeMirror4.12.0, Lodash3.6.0, Riot1.0.2 and FontAwesome4.7.0 with readable source and full per-component grants. Full source ZIP in public/elevator-saga/source.zip.
+
+Gridland complete original match/build/survive campaign 06af02c3af7062aead04a1e6f67b6e59f3e4b6a1 (MPL-2.0 original and modified files; MIT jQuery/Sizzle and RequireJS; GPL-3.0-only independent host/adapters)
+https://github.com/doublespeakgames/gridland/tree/06af02c3af7062aead04a1e6f67b6e59f3e4b6a1
+Preferred editable source: vendor/gridland-original/upstream, vendor/gridland-original/dependencies, public/gridland-original, src/games/GridlandOriginal.tsx, src/games/gridlandOriginal.css
+Build sources: scripts/gridland/package-source.py, scripts/gridland/verify-sources.py
+Complete original settlement, real-time combat, loot, spells, dragon-clear objective and New Game+. Zero authored numbered levels. Original sprite PNGs unchanged; local dependencies; no music, telemetry or third-party requests.
 

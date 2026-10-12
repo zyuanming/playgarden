@@ -810,6 +810,24 @@
         "scripts/elevator-saga/verify-sources.py"
       ],
       "scope": "18 unchanged original challenge predicates and original elevator/passenger simulation; responsive editor/renderer and opaque worker boundary. Official CodeMirror4.12.0, Lodash3.6.0, Riot1.0.2 and FontAwesome4.7.0 with readable source and full per-component grants. Full source ZIP in public/elevator-saga/source.zip."
+    },
+    {
+      "name": "Gridland complete original match/build/survive campaign",
+      "version": "06af02c3af7062aead04a1e6f67b6e59f3e4b6a1",
+      "license": "MPL-2.0 original and modified files; MIT jQuery/Sizzle and RequireJS; GPL-3.0-only independent host/adapters",
+      "source": "https://github.com/doublespeakgames/gridland/tree/06af02c3af7062aead04a1e6f67b6e59f3e4b6a1",
+      "preferredSource": [
+        "vendor/gridland-original/upstream",
+        "vendor/gridland-original/dependencies",
+        "public/gridland-original",
+        "src/games/GridlandOriginal.tsx",
+        "src/games/gridlandOriginal.css"
+      ],
+      "buildSources": [
+        "scripts/gridland/package-source.py",
+        "scripts/gridland/verify-sources.py"
+      ],
+      "scope": "Complete original settlement, real-time combat, loot, spells, dragon-clear objective and New Game+. Zero authored numbered levels. Original sprite PNGs unchanged; local dependencies; no music, telemetry or third-party requests."
     }
   ]
 }
