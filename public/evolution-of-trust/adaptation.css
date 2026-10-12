@@ -21,7 +21,7 @@ html,body{width:100%;height:auto;min-height:100%;margin:0;overflow-x:hidden;over
 .mobile-row[hidden]{display:none!important}.mobile-row{position:relative!important;font-size:17px;line-height:1.6;overflow-wrap:anywhere}
 .mobile-copy *{position:static!important;max-width:100%!important;transform:none!important;line-height:1.6!important}
 .mobile-copy br+br{line-height:.5}.mobile-copy .icon{display:inline-block;vertical-align:middle}.mobile-copy .big{font-size:23px!important}
-.mobile-copy .divider{display:block;height:12px}.mobile-copy .credits{font-size:17px!important}
+.mobile-copy .divider{display:block;height:12px}.mobile-copy .credits{font-size:17px!important;color:#26323a}.mobile-copy .credits .big{color:#26323a}
 .mobile-row label{display:flex;flex-direction:column;gap:5px}.mobile-row input[type=range]{height:44px;width:100%;accent-color:#dd4040}
 .mobile-row:has(>span){display:flex;gap:10px;align-items:center;flex-wrap:wrap}.mobile-row>span{flex:1;min-width:160px}
 .mobile-row button{min-height:44px;border:2px solid #292c30;border-radius:10px;background:#fff;color:#20252c;padding:8px 16px;font-weight:650;touch-action:manipulation}

@@ -7,8 +7,8 @@
   "files": [
     {
       "path": "e2e/evolution-of-trust.spec.ts",
-      "bytes": 32769,
-      "sha256": "009cef1ddc04022c47b81dc2f600baaa6397a9a97a21cb4d16f6e88c799c5af8"
+      "bytes": 33301,
+      "sha256": "d8135b0c1866180c4fd285b103215f622865f7a7c0296989564ba7ecbb4752fd"
     },
     {
       "path": "public/evolution-of-trust/NOTICE.txt",
@@ -42,8 +42,8 @@
     },
     {
       "path": "public/evolution-of-trust/adaptation.css",
-      "bytes": 3265,
-      "sha256": "36b0e6eee9bf8bd104ae24129f77c721b2f56a0c7609c926fb5dff5e16c553b8"
+      "bytes": 3320,
+      "sha256": "1fb12ee0f2b156839237b25b8c38f76839af6dea42cbbd7649c9214dcbc696dc"
     },
     {
       "path": "public/evolution-of-trust/assets/conclusion/summary.png",
@@ -1077,8 +1077,8 @@
     },
     {
       "path": "public/evolution-of-trust/source.zip",
-      "bytes": 4766251,
-      "sha256": "e042b716d301b5b3c4c75780c234accef557f575563a03140417a0d7abaa63b5"
+      "bytes": 4766452,
+      "sha256": "ebaadc48f58fe9b0d061d22f92704f47c9966539d3d2f22aa5197126d7629be7"
     }
   ]
 }

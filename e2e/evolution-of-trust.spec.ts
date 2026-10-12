@@ -353,6 +353,16 @@ test('complete original Trust journey, visible choices, simulation gates, sandbo
     const completed = await j.checkpoint('full-original-journey-complete');
     expect(Number(await page.locator('[data-trust-visited]').getAttribute('data-trust-visited'))).toBe(completed.totalSlides);
     await expect(j.copy('text')).toContainText(/nicky|Nicky/i);
+    if (j.mobile) {
+      const headings = j.copy('text').locator('.credits .big');
+      await expect(headings).toHaveText(['NICKY CASE', '《合作的进化》', '我的 PATREON 支持者们']);
+      for (const heading of await headings.all()) {
+        await expect(heading).toBeVisible();
+        await expect(heading).toHaveCSS('color', 'rgb(38, 50, 58)');
+      }
+      await j.screenshot('credits-creator-readable', headings.first());
+      await j.screenshot('credits-book-and-supporters-readable', headings.last());
+    }
     await j.screenshot('full-credits', j.copy('text'));
 
     // Chapter shortcuts are deliberately first used AFTER the earned ending.
