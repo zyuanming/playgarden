@@ -472,8 +472,8 @@
     },
     {
       "path": "src/games/BlackHoleSquareGame.tsx",
-      "bytes": 11636,
-      "sha256": "5b5d1c739e87c359cc728e7014eef5c9b8714152122eb8978d6f0692ed9be31e"
+      "bytes": 11821,
+      "sha256": "e1bafb1c05605401e7fb47078be9ad44781e669fcd914c6ae94887de56e5795d"
     },
     {
       "path": "src/games/blackHoleSquareGame.css",

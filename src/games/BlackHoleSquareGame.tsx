@@ -73,7 +73,9 @@ export default function BlackHoleSquareGame({level,paused,muted=false,freshStart
         pending.current=true;post('cancel');callbacks.current.onLevelChange(data.level);
       }
     };
-    const cancel=()=>post('cancel');
+    // Focusing the owned iframe blurs the host window while the document still
+    // has focus. Only leaving the document should cancel that first gesture.
+    const cancel=()=>{if(!document.hasFocus())post('cancel');};
     window.addEventListener('message',receive);window.addEventListener('blur',cancel);
     connect();callbacks.current.onStatus(INTRO);
     return()=>{
