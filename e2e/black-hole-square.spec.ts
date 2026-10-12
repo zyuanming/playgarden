@@ -121,12 +121,36 @@ test('Black Hole Square: original 18 puzzles, honest skips and owned lifecycle',
   await tapCanvas(page,mobile,dots.canvas.width/2-18*6+9*12+4,dots.canvas.height/2+160+4);
   await idle(page,9);await board(page,9,fixture.levels[9].initial);expect(await credits(page)).toEqual([]);
   await select(page,0);
-  // Exact board/progress right edges must not become row or column six.
-  const edges=await idle(page,0);
-  await tapCanvas(page,mobile,304+edges.canvas.x,86+edges.canvas.y);
-  await tapCanvas(page,mobile,40+edges.canvas.x,350+edges.canvas.y);
-  await tapCanvas(page,mobile,edges.canvas.width/2+18*6,edges.canvas.height/2+164);
-  await page.waitForTimeout(80);await board(page,0,fixture.levels[0].initial);expect((await observed(page)).moves).toBe(0);
+  // Probe the first outward CSS pixel, then verify the actual event's logical
+  // coordinates. A fractional target exactly on an edge can land just inside.
+  const edges=await idle(page,0),edgeFrame=(await gameFrame(page))!;
+  await edgeFrame.evaluate(()=>{
+    const target=window as unknown as {__blackHoleSquareSnapshot:()=>Snapshot;__bhsBoundaryInputs:{x:number;y:number;current:number;moves:number}[]};
+    target.__bhsBoundaryInputs=[];
+    const sample=(event:PointerEvent)=>{const s=target.__blackHoleSquareSnapshot(),b=document.querySelector('canvas')!.getBoundingClientRect();
+      target.__bhsBoundaryInputs.push({x:(event.clientX-b.left)*s.canvas.width/b.width,
+        y:(event.clientY-b.top)*s.canvas.height/b.height,current:s.current,moves:s.moves});
+      if(target.__bhsBoundaryInputs.length===3)window.removeEventListener('pointerdown',sample,true);};
+    window.addEventListener('pointerdown',sample,true);
+  });
+  const edgeX=(edges.canvas.width-320)/2,edgeY=(edges.canvas.height-416)/2;
+  const boundaryProbes:{x:number;y:number;axis:'x'|'y'}[]=[
+    {x:304+edgeX,y:86+edgeY,axis:'x'},
+    {x:40+edgeX,y:350+edgeY,axis:'y'},
+    {x:edges.canvas.width/2+18*6,y:edges.canvas.height/2+164,axis:'x'},
+  ];
+  for(const probe of boundaryProbes){
+    const point=await canvasPoint(page,probe.x,probe.y);point[probe.axis]=Math.floor(point[probe.axis])+1;
+    await tapPoint(page,mobile,point);
+    await page.waitForTimeout(80);await board(page,0,fixture.levels[0].initial);expect((await observed(page)).moves).toBe(0);
+  }
+  const boundaryInputs=await edgeFrame.evaluate(()=>(window as unknown as {__bhsBoundaryInputs:{x:number;y:number;current:number;moves:number}[]}).__bhsBoundaryInputs);
+  expect(boundaryInputs).toHaveLength(3);
+  for(const [index,input] of boundaryInputs.entries()){
+    const probe=boundaryProbes[index];expect(input[probe.axis]).toBeGreaterThanOrEqual(probe[probe.axis]);
+    expect(input.current).toBe(2);expect(input.moves).toBe(0);
+  }
+  lifecycle.push({case:'real right/bottom boundary input remains outside the interactive cells',inputs:boundaryInputs});
   // Wrong source/nonce messages must not reset a real moved board or earn a win.
   // Resolve both visible targets before movement. Re-reading frame/bounds between
   // clicks previously delayed the second gesture until after the travel ended.
@@ -183,7 +207,7 @@ test('Black Hole Square: original 18 puzzles, honest skips and owned lifecycle',
     await page.locator(FRAME).click({position:{x:8,y:8}});
     await page.keyboard.press('ArrowRight');await page.keyboard.press('ArrowRight');await page.keyboard.press('ArrowDown');
     await page.keyboard.press('Enter');await board(page,0,fixture.levels[0].checkpoints[0]);
-    await page.keyboard.press('r');await idle(page,0);await board(page,0,fixture.levels[0].initial);
+    await idle(page,0);await page.keyboard.press('r');await idle(page,0);await board(page,0,fixture.levels[0].initial);
   }
   // Pause during genuine piece travel. No clock or RAF implementation is patched.
   await activate(page,mobile,fixture.levels[0].cells[0]);
