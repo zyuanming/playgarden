@@ -532,8 +532,8 @@
     },
     {
       "path": "src/games/EvolutionOfTrust.tsx",
-      "bytes": 6692,
-      "sha256": "6fb2de2e5176bf2e2b1737a7796aa96123d21f0129049a8496967545fe60053c"
+      "bytes": 6704,
+      "sha256": "bd87a7869e91a6853032050e8022f4536d2444cdd139c3b6684daafe8d63f20b"
     },
     {
       "path": "src/games/evolutionOfTrust.css",
@@ -1077,8 +1077,8 @@
     },
     {
       "path": "public/evolution-of-trust/source.zip",
-      "bytes": 4766452,
-      "sha256": "ebaadc48f58fe9b0d061d22f92704f47c9966539d3d2f22aa5197126d7629be7"
+      "bytes": 4766466,
+      "sha256": "b6b7be442c4d4fe057461230112c790dd565b263573bff19d831055a651b0141"
     }
   ]
 }

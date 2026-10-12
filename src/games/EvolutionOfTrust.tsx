@@ -57,7 +57,7 @@ function TrustRound({paused,muted,hintToken,onStatus,onComplete}:GameProps) {
     {error&&<p className="trust-error" role="alert">{error}</p>}
     <details><summary>玩法、原作与许可</summary>
       <p>先决定合作或背叛，经历 25 次重复博弈，观察不同策略的循环赛和代际演化。沙盒可以改变 25 名玩家的策略比例、四种收益、重复回合、淘汰人数和失误概率。原作规则、随机性、动画速度和结局均保留。</p>
-      <p>底部圆点可自由重看章节。重来会从开场重新开始，原作没有逐回合存档；本站只记录完整旅程完成情况。这是一部有结局的互动作品，没有人为编号关卡。默认静音，可在游戏内打开音乐。</p>
+      <p>底部圆点可自由重看章节。重来会从开场重新开始，原作没有逐回合存档；本站只记录完整旅程完成情况。这是一部有结局的互动作品，没有人为编号关卡。声音会跟随大厅设置，也可在游戏内切换。</p>
       <p>原作 Nicky Case，中文翻译吴桐、唐鳳，均明确采用 CC0。保留许可明确的原画和九段音轨；七段音效与和平示意插图为本站独立制作，字体采用系统字体。依赖保留各自 MIT、Apache-2.0、ISC、BSD 与 CC0 声明；本站宿主及新增适配 GPL-3.0-only。</p>
       <p><a href="./evolution-of-trust/NOTICE.txt" target="_blank" rel="noreferrer">完整许可与来源</a> · <a href="./evolution-of-trust/source.zip" download>对应源码与修改说明</a> · <a href="https://github.com/ncase/trust/tree/6ec45d73befdb922bd40654dd1c1c903a953562f" target="_blank" rel="noreferrer">固定版本原作</a></p>
     </details>
