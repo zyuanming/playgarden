@@ -10,7 +10,7 @@
     timeout: w.setTimeout.bind(w), interval: w.setInterval.bind(w),
     clearTimeout: w.clearTimeout.bind(w), clearInterval: w.clearInterval.bind(w),
     raf: w.requestAnimationFrame.bind(w), caf: w.cancelAnimationFrame.bind(w),
-    now: w.performance.now.bind(w)
+    now: w.performance.now.bind(w.performance)
   };
   var timers = new Map(), waiting = new Set(), apps = new Set();
   var reasons = new Set(), animations = new Map(), problems = new Set();

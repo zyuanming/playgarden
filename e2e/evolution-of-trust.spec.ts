@@ -23,7 +23,7 @@ function journey(page: Page, info: TestInfo, origin: string) {
   const frame = page.frameLocator(FRAME);
   const inputs: object[] = [], observations: object[] = [], errors: string[] = [], warnings: string[] = [], outside: string[] = [], failed: object[] = [];
   let touch: CDPSession | undefined;
-  page.on('pageerror', error => errors.push(error.message));
+  page.on('pageerror', error => errors.push(error.stack || error.message));
   page.on('console', message => {
     if (message.type() === 'error') errors.push(message.text());
     else if (message.type() === 'warning') warnings.push(message.text());

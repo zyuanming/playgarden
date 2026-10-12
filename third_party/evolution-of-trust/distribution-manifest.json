@@ -7,8 +7,8 @@
   "files": [
     {
       "path": "e2e/evolution-of-trust.spec.ts",
-      "bytes": 32501,
-      "sha256": "6180d7b248b9203d9f7126a7c0f1cfead0d74c4dd2f15b9f09c22d8dea54fc45"
+      "bytes": 32516,
+      "sha256": "d0765657dc3522e8d85b9234844de832b51d7dd199bb29980bf1e70fcb63d790"
     },
     {
       "path": "public/evolution-of-trust/NOTICE.txt",
@@ -512,8 +512,8 @@
     },
     {
       "path": "public/evolution-of-trust/lifecycle.js",
-      "bytes": 13272,
-      "sha256": "3d05e2f3ee29ff9ac75beac911f0bde2dc016b209d95b42b33b83acab0b52f90"
+      "bytes": 13284,
+      "sha256": "a21c3f77d0cc2607ab237355a80fc4b3747b0e71fd6ab5bf04035c935ecd0b6f"
     },
     {
       "path": "public/evolution-of-trust/words.html",
@@ -1077,8 +1077,8 @@
     },
     {
       "path": "public/evolution-of-trust/source.zip",
-      "bytes": 4766171,
-      "sha256": "bd9d7c26f9e20e99b7c1e0fc587a6445be94402d9953afc0e7b2b86446e19a73"
+      "bytes": 4766183,
+      "sha256": "3b0c952493eea3f14aa60bbdddf6b55853639b51514718586bce1285a5e225b7"
     }
   ]
 }
