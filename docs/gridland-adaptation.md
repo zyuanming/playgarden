@@ -15,3 +15,5 @@ Build: run python3 scripts/gridland/package-source.py after intentional source c
 Corresponding source: public/gridland-original/source.zip, including original inputs, exact dependencies, edited runtime, host, tests and reproducible packaging scripts. Source/distribution manifests identify every file and its license.
 
 Matched/pooled tiles retain their original fade and reuse lifecycle but cannot intercept pointer input while hidden. Reusing a tile removes those classes and restores normal hit testing. This fixes an observed transparent pooled face covering a live mobile cell without changing tile rules, coordinates or animation timing.
+
+New Game+ retains its original 1400ms lead-in and 1400ms fade completion. The final visual cleanup is registered after prestige resets the isolated clock, so restarting cannot discard the cleanup and leave an invisible overlay blocking the new board.

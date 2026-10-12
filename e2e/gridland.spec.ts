@@ -4,7 +4,7 @@ import {test,expect,type Frame,type Locator} from '@playwright/test';
 import {openGame,captureErrors} from './helpers';
 import {writeFileSync} from 'node:fs';
 import {createHash} from 'node:crypto';
-import checkpoints from './fixtures/gridland-earned-round23.json' with {type:'json'};
+import checkpoints from './fixtures/gridland-earned-round24.json' with {type:'json'};
 // Explicit key screenshots, failure screenshots, ordinary-input logs and authentic
 // saves replace per-action DOM trace snapshots (round2 produced a 2.66 GB trace).
 test.use({trace:'off'});
@@ -152,7 +152,10 @@ test('Gridland natural defeat and ordinary rebirth restore tile and carrying ani
   }
   const renewed=await read(game);expect(witnessedZero,'Ordinary enemies must actually exhaust health').toBe(true);expect(renewed.initCount).toBeGreaterThan(first.initCount);expect(renewed.counts.DEATHS).toBeGreaterThan(0);expect(boardReady(renewed)).toBe(true);
   expect(await game.locator('.tile.hidden[role="button"],.tile.pooled[role="button"]').count()).toBe(0);
-  const hits=await tileHitTesting(game);log.push({kind:'rebirth-hit-testing',hits});expect(hits.inactive).toBeGreaterThan(0);expect(hits.interceptingInactive).toBe(0);expect(hits.checked).toBeGreaterThan(0);expect(hits.blocked).toEqual([]);
+  // Original drawFillBoard staggers falling tiles for up to1800ms. Logical
+  // readiness alone does not mean every cell has reached its final hit box.
+  await expect.poll(()=>tileHitTesting(game),{timeout:6000}).toMatchObject({interceptingInactive:0,checked:renewed.rows*renewed.columns,blocked:[]});
+  const hits=await tileHitTesting(game);log.push({kind:'rebirth-hit-testing',hits});expect(hits.inactive).toBeGreaterThan(0);
   const move=moves(renewed)[0];
   if(mobile){for(const t of[move.a,move.b])await act(game.getByRole('button',{name:`第${t.row+1}行第${t.col+1}列 ${t.type}`,exact:true}));}
   else{
@@ -201,7 +204,7 @@ test('Gridland original campaign: real matches, progression, saves, dragon and l
  for(const key of ['dayNumber','level','xp','health','gem','mana','prestige','items','counts'])expect(loadedSave[key]).toEqual(sourceSave[key]);
  expect(loadedSave.buildings.map((b:{options:{type:{className:string}};requiredResources:unknown;built:boolean})=>({type:b.options.type.className,required:b.requiredResources,built:b.built}))).toEqual(sourceSave.buildings.map((b:{options:{type:{className:string}};requiredResources:unknown;built:boolean})=>({type:b.options.type.className,required:b.requiredResources,built:b.built})));
  expect(loadedSave.stores.map((b:{options:{type:{className:string}};_quantity:number})=>({type:b.options.type.className,quantity:b._quantity}))).toEqual(sourceSave.stores.map((b:{options:{type:{className:string}};_quantity:number})=>({type:b.options.type.className,quantity:b._quantity})));
- log.push({kind:'ui-import',sourceRun:checkpoints.sourceRun,sourceHead:checkpoints.sourceHead,slotSha256:earned.sha256,day:earned.day,level:earned.level});
+ log.push({kind:'ui-import',sourceRun:earned.sourceRun,sourceHead:earned.sourceHead,restoreReason:earned.restoreReason,slotSha256:earned.sha256,day:earned.day,level:earned.level});
  await act(game.locator('.saveSlot').first());await expect.poll(async()=> (await read(game)).started).toBe(true);
  await expect.poll(async()=> (await read(game)).canMove).toBe(true);await iframe.scrollIntoViewIfNeeded();
  const opening=await read(game);expect(opening.day).toBe(earned.day);expect(opening.level).toBe(earned.level);expect(opening.counts.DEATHS).toBe(earned.deaths);expect(opening.counts.DRAGONS||0).toBe(0);expect(opening.casual).toBe(false);
@@ -306,8 +309,10 @@ test('Gridland original campaign: real matches, progression, saves, dragon and l
   writeFileSync(info.outputPath('gridland-earned-saves.json'),JSON.stringify(saves,null,2));
   const beforePrestige=await read(game);await act(game.getByRole('button',{name:'新游戏＋',exact:true}));
   await expect.poll(async()=> (await read(game)).initCount).toBeGreaterThan(beforePrestige.initCount);
-  await expect.poll(async()=> (await read(game)).canMove).toBe(true);
+  await expect(game.locator('body')).not.toHaveClass(/bigExplosion|fadeOut/);
+  await expect.poll(async()=>boardReady(await read(game))).toBe(true);
   const renewed=await read(game);expect((renewed as Live&{prestige:number}).prestige).toBe((beforePrestige as Live&{prestige:number}).prestige+1);
+  await expect.poll(()=>tileHitTesting(game),{timeout:6000}).toMatchObject({interceptingInactive:0,checked:renewed.rows*renewed.columns,blocked:[]});
   const replay=moves(renewed)[0];for(const t of[replay.a,replay.b])await act(game.getByRole('button',{name:`第${t.row+1}行第${t.col+1}列 ${t.type}`,exact:true}));
   await expect.poll(async()=> (await read(game)).counts.SWAPPED||0).toBeGreaterThan(renewed.counts.SWAPPED||0);
   await page.screenshot({path:info.outputPath('gridland-newgameplus-working.png'),fullPage:false});

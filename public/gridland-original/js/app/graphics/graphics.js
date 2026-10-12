@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MPL-2.0
-// Playgarden modification: Remove unused audio UI; clear prior animation state on original death/prestige reinitialization
+// Playgarden modification: Remove unused audio UI; clear prior animation state on original death/prestige reinitialization; retain NG+ fade completion across the timer reset
 define(['jquery', 'app/eventmanager', 'app/textStore', 'app/gameoptions',
         'app/graphics/gameboard', 'app/graphics/world', 'app/graphics/resources', 
         'app/graphics/loot', 'app/graphics/magic', 'app/graphics/sprites'], 
@@ -194,10 +194,12 @@ define(['jquery', 'app/eventmanager', 'app/textStore', 'app/gameoptions',
 		setTimeout(function() {
 			b.addClass('fadeOut');
 			EventManager.trigger('prestige');
+			// Prestige reinitializes the isolated clock. Schedule the remaining
+			// original 1400ms fade after that reset so the cleanup survives.
+			setTimeout(function() {
+				b.removeClass('bigExplosion fadeOut');
+			}, 1400);
 		}, 1400);
-		setTimeout(function() {
-			b.removeClass('bigExplosion fadeOut');
-		}, 2800);
 	}
 	
 	function dropBlock(block, building) {
