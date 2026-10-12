@@ -41,12 +41,19 @@ async function open(page:Page,navigate=true,ready=true){
   if(ready)await observed(page);
 }
 async function select(page:Page,level:number){await page.getByLabel('选择关卡',{exact:true}).selectOption(String(level));await idle(page,level);}
-async function tapCanvas(page:Page,mobile:boolean,x:number,y:number){
-  const bounds=await page.locator(FRAME).boundingBox();if(!bounds)throw Error('Missing game frame');
-  const s=await observed(page);
+async function canvasPoint(page:Page,x:number,y:number){
+  await page.locator(FRAME).scrollIntoViewIfNeeded();
+  const s=await observed(page),bounds=await page.locator(FRAME).boundingBox();if(!bounds)throw Error('Missing game frame');
   const point={x:bounds.x+x/s.canvas.width*bounds.width,y:bounds.y+y/s.canvas.height*bounds.height};
+  const viewport=page.viewportSize();if(!viewport)throw Error('Missing viewport');
+  expect(point.x).toBeGreaterThanOrEqual(0);expect(point.x).toBeLessThan(viewport.width);
+  expect(point.y).toBeGreaterThanOrEqual(0);expect(point.y).toBeLessThan(viewport.height);
+  return point;
+}
+async function tapPoint(page:Page,mobile:boolean,point:{x:number;y:number}){
   if(mobile)await page.touchscreen.tap(point.x,point.y);else await page.mouse.click(point.x,point.y);
 }
+async function tapCanvas(page:Page,mobile:boolean,x:number,y:number){await tapPoint(page,mobile,await canvasPoint(page,x,y));}
 async function activate(page:Page,mobile:boolean,cell:number){
   const s=await idle(page);await page.locator(FRAME).scrollIntoViewIfNeeded();
   await tapCanvas(page,mobile,16+cell%6*48+24+s.canvas.x,62+Math.floor(cell/6)*48+24+s.canvas.y);
@@ -121,12 +128,27 @@ test('Black Hole Square: original 18 puzzles, honest skips and owned lifecycle',
   await tapCanvas(page,mobile,edges.canvas.width/2+18*6,edges.canvas.height/2+164);
   await page.waitForTimeout(80);await board(page,0,fixture.levels[0].initial);expect((await observed(page)).moves).toBe(0);
   // Wrong source/nonce messages must not reset a real moved board or earn a win.
-  await activate(page,mobile,fixture.levels[0].cells[0]);await board(page,0,fixture.levels[0].checkpoints[0]);
-  const traveling=await observed(page);
-  expect(traveling.settled).toBe(false);
-  const rapid=fixture.levels[0].cells[1];
-  await tapCanvas(page,mobile,16+rapid%6*48+24+traveling.canvas.x,62+Math.floor(rapid/6)*48+24+traveling.canvas.y);
-  await board(page,0,fixture.levels[0].checkpoints[0]);expect((await observed(page)).moves).toBe(1);
+  // Resolve both visible targets before movement. Re-reading frame/bounds between
+  // clicks previously delayed the second gesture until after the travel ended.
+  const rapidStart=await idle(page,0),rapidFrame=(await gameFrame(page))!;
+  const rapidPoints=[];
+  for(const cell of fixture.levels[0].cells.slice(0,2))rapidPoints.push(await canvasPoint(page,
+    16+cell%6*48+24+rapidStart.canvas.x,62+Math.floor(cell/6)*48+24+rapidStart.canvas.y));
+  await rapidFrame.evaluate(()=>{
+    const target=window as unknown as {__blackHoleSquareSnapshot:()=>Snapshot;__bhsInputReceipts:{moves:number;settled:boolean}[]};
+    target.__bhsInputReceipts=[];
+    const sample=()=>{const s=target.__blackHoleSquareSnapshot();target.__bhsInputReceipts.push({moves:s.moves,settled:s.settled});
+      if(target.__bhsInputReceipts.length===2)window.removeEventListener('pointerdown',sample,true);};
+    window.addEventListener('pointerdown',sample,true);
+  });
+  await tapPoint(page,mobile,rapidPoints[0]);
+  await rapidFrame.waitForFunction(()=>(window as unknown as {__blackHoleSquareSnapshot:()=>Snapshot}).__blackHoleSquareSnapshot().moves===1,
+    undefined,{polling:'raf',timeout:2000});
+  await tapPoint(page,mobile,rapidPoints[1]);
+  const rapidReceipts=await rapidFrame.evaluate(()=>(window as unknown as {__bhsInputReceipts:{moves:number;settled:boolean}[]}).__bhsInputReceipts);
+  expect(rapidReceipts).toEqual([{moves:0,settled:true},{moves:1,settled:false}]);
+  lifecycle.push({case:'second real gesture arrives during piece travel',inputs:rapidReceipts});
+  await idle(page,0);await board(page,0,fixture.levels[0].checkpoints[0]);expect((await observed(page)).moves).toBe(1);
   await (await gameFrame(page))!.evaluate(()=>{
     parent.postMessage({source:'playgarden-black-hole-square',revision:'black-hole-square-8d48aae-playgarden-1',session:'stale-session-that-is-not-current',type:'complete',level:0,puzzle:'click',moves:4},'*');
     window.postMessage({source:'playgarden-host',session:'stale-session-that-is-not-current',type:'command',action:'reset'},'*');
