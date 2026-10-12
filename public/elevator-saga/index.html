@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; font-src data:; worker-src blob:; connect-src 'none'; img-src 'none'; media-src 'none'; object-src 'none'; frame-src 'none'; base-uri 'none'; form-action 'none'">
+<title>电梯调度员 · Elevator Saga</title>
+<link rel="stylesheet" href="style.css"><link rel="stylesheet" href="font-awesome-embedded.css">
+<link rel="stylesheet" href="libs/codemirror/codemirror.css"><link rel="stylesheet" href="libs/codemirror/themes/solarized.css"><link rel="stylesheet" href="adapter.css">
+<script defer src="libs/codemirror/codemirror.js"></script><script defer src="libs/codemirror/mode/javascript/javascript.js"></script><script defer src="libs/codemirror/addon/edit/closebrackets.js"></script>
+<script defer src="worker-source.js"></script><script defer src="adapter.js"></script>
+</head><body>
+<main id="app" class="saga-app">
+  <header><h1>电梯调度员</h1><p>写一段 JavaScript，安排电梯接送乘客。原作 18 项挑战与自由演示完整保留。</p><p id="progress">已通过 0 / 18 个原作挑战</p></header>
+  <section class="toolbar" aria-label="挑战控制">
+    <label>选择挑战 <select id="level"></select></label><label>模拟速度 <select id="speed"></select></label>
+    <button id="run">应用代码并运行</button><button id="pause" disabled>暂停运行</button><button id="stop">停止程序</button>
+  </section>
+  <h2 id="goal"></h2><p class="help-line">时间与等待统计是原作模拟时间。倍速只改变播放速度。高楼场景可上下、左右滑动，工具栏会留在顶部。</p>
+  <p id="status" role="status" aria-live="polite"></p>
+  <dl class="stats" aria-label="真实模拟统计"><div><dt>已运送</dt><dd id="transported">0</dd></div><div><dt>模拟时间</dt><dd id="elapsed">0 秒</dd></div><div><dt>运送速度</dt><dd id="throughput">0 人/秒</dd></div><div><dt>平均等待</dt><dd id="average">0 秒</dd></div><div><dt>最长等待</dt><dd id="maximum">0 秒</dd></div><div><dt>移动层数</dt><dd id="moves">0</dd></div></dl>
+  <div class="world-scroll" tabindex="0" role="region" aria-label="电梯大楼，可上下和左右滚动"><div id="world" class="world innerworld"></div></div>
+  <details id="manual-controls"><summary>手动按楼层按钮</summary><p>这些按钮与楼层呼叫、轿厢按钮相同，方便触屏操作。真正运行路线仍由你的调度程序决定。</p><div class="editor-tools"><label>楼层 <select id="manual-floor"></select></label><button id="manual-up">向上呼叫</button><button id="manual-down">向下呼叫</button><label>电梯 <select id="manual-elevator"></select></label><button id="manual-car">按轿厢楼层按钮</button></div></details>
+  <section class="editor-area"><h2><label for="code">调度程序</label></h2><p>用电梯和楼层的事件作决策。代码在可停止的独立线程运行；循环卡住时会自动终止。可使用 JavaScript 与完整电梯/楼层 API；网络、外部线程与独立定时器不可用。</p>
+    <textarea id="code" spellcheck="false" aria-label="电梯调度 JavaScript 代码"></textarea>
+    <div class="editor-tools"><button id="save">保存代码</button><button id="reset">恢复示例</button><button id="undo" disabled>撤销恢复示例</button></div>
+  </section>
+  <details><summary>入门与完整 API 参考</summary><p>init(elevators, floors) 在每次运行开始时调用一次；update(dt, elevators, floors) 随模拟更新。默认示例只去 0、1 层，请自己完善路线。所有挑战都能直接选择，只有达到原作判定才会记录通过。</p>
+    <p>常用事件：电梯 idle、floor_button_pressed、passing_floor、stopped_at_floor；楼层 up_button_pressed、down_button_pressed。常用方法：goToFloor、currentFloor、loadFactor、getPressedFloors、goingUpIndicator、goingDownIndicator、checkDestinationQueue。下方保留原作英文的完整 API 表。</p>
+    <div id="original-docs"><div class="help">
+            <h2>About the game</h2>
+            <p>
+                This is a game of programming!<br>
+                Your task is to program the movement of elevators, by writing a program in <a target="_blank" rel="noreferrer" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide">JavaScript</a>.
+            </p>
+            <p>
+                The goal is to transport people in an efficient manner.<br>
+                Depending on how well you do it, you can progress through the ever more difficult challenges.<br>
+                Only the very best programs will be able to complete all the challenges.
+            </p>
+
+            <h2>How to play</h2>
+            <p>
+                Enter your code in the input window below the game view, and press the <span class="emphasis-color">Apply</span> button to start the challenge.<br>
+                You can increase or decrease the speed of time by pressing the <i class="fa fa-plus emphasis-color"></i> and <i class="fa fa-minus emphasis-color"></i> buttons.
+            </p>
+            <p>
+                If your program contains an error, you can use the developer tools in your web browser to try and debug it.
+                If you want to start over with the code, press the <span class="emphasis-color">Reset</span> button. This will revert the code to a working but simplistic implementation.<br>
+                If you have a favorite text editor, such as <a target="_blank" rel="noreferrer" href="http://www.sublimetext.com/">Sublime Text</a>, feel free to edit the code there and paste it into the game editor.<br>
+                Your code is automatically saved in your local storage, so don't worry - it doesn't disappear if you accidentally close the browser.
+            </p>
+            <h2>Basics</h2>
+            <p>
+                Your code must declare an object containing at least two functions called <span class="emphasis-color">init</span> and <span class="emphasis-color">update</span>. Like this:
+            </p>
+            <div><pre><code>{
+    init: function(elevators, floors) {
+        // Do stuff with the elevators and floors, which are both arrays of objects
+    },
+    update: function(dt, elevators, floors) {
+        // Do more stuff with the elevators and floors
+        // dt is the number of game seconds that passed since the last time update was called
+    }
+}</code></pre></div>
+            <p>These functions will then be called by the game during the challenge.<br>
+            <span class="emphasis-color">init</span> will be called when the challenge starts, and <span class="emphasis-color">update</span> repeatedly during the challenge.
+            </p>
+            <p>
+                Normally you will put most of your code in the <span class="emphasis-color">init</span> function, to set up event listeners and logic.
+            </p>
+            <h2>Code examples</h2>
+            <h3>How to control an elevator</h3>
+            <dl>
+                <dt><pre><code>elevator.goToFloor(1);</code></pre></dt>
+                    <dd>Tell the elevator to move to floor 1 after completing other tasks, if any. Note that this will have no effect if the elevator is already queued to go to that floor.</dd>
+                <dt><pre><code>if(elevator.currentFloor() > 2) { ... }</code></pre></dt>
+                    <dd>Calling currentFloor gets the floor number that the elevator currently is on. Note that this is a rounded number and does not necessarily mean the elevator is in a stopped state.</dd>
+            </dl>
+            <h3>Listening for events</h3>
+            <p>It is possible to listen for events, like when stopping at a floor, or a button has been pressed.</p>
+            <dl>
+                <dt><pre><code>elevator.on("idle", function() { elevator.goToFloor(0); });</code></pre></dt>
+                    <dd>Listen for the "idle" event issued by the elevator, when the task queue has been emptied and the elevator is doing nothing. In this example we tell it to move to floor 0.</dd>
+                <dt><pre><code>elevator.on("floor_button_pressed", function(floorNum) { ... } );</code></pre></dt>
+                    <dd>Listen for the "floor_button_pressed" event, issued when a passenger pressed a button inside the elevator. This indicates that the passenger wants to go to that floor.</dd>
+                <dt><pre><code>floor.on("up_button_pressed", function() { ... } );</code></pre></dt>
+                    <dd>Listen for the "up_button_pressed" event, issued when a passenger pressed the up button on the floor they are waiting on. This indicates that the passenger wants to go to another floor.</dd>
+            </dl>
+
+            <h2 id="docs">API documentation</h2>
+            <h3>Elevator object</h3>
+            <table class="doctable">
+                <thead><th width="150">Property</th><th width="90">Type</th><th width="190">Explanation</th><th width="*">Example</th></thead>
+                <tbody>
+                    <tr><td>goToFloor</td><td>function</td><td><small>Queue the elevator to go to specified floor number. If you specify true as second argument, the elevator will go to that floor directly, and then go to any other queued floors.</small></td><td><pre><code>elevator.goToFloor(3); // Do it after anything else
+elevator.goToFloor(2, true); // Do it before anything else</code></pre></td></tr>
+                    <tr><td>stop</td><td>function</td><td><small>Clear the destination queue and stop the elevator if it is moving. Note that you normally don't need to stop elevators - it is intended for advanced solutions with in-transit rescheduling logic. Also, note that the elevator will probably not stop at a floor, so passengers will not get out.</small></td><td><pre><code>elevator.stop();</code></pre></td></tr>
+                    <tr><td>currentFloor</td><td>function</td><td><small>Gets the floor number that the elevator currently is on.</small></td><td><pre><code>if(elevator.currentFloor() === 0) {
+    // Do something special?
+}</code></pre></td></tr>
+                    <tr><td>goingUpIndicator</td><td>function</td><td><small>Gets or sets the going up indicator, which will affect passenger behaviour when stopping at floors.</small></td><td><pre><code>if(elevator.goingUpIndicator()) {
+    elevator.goingDownIndicator(false);
+}</code></pre></td></tr>
+                    <tr><td>goingDownIndicator</td><td>function</td><td><small>Gets or sets the going down indicator, which will affect passenger behaviour when stopping at floors.</small></td><td><pre><code>if(elevator.goingDownIndicator()) {
+    elevator.goingUpIndicator(false);
+}</code></pre></td></tr>
+                    <tr><td>maxPassengerCount</td><td>function</td><td><small>Gets the maximum number of passengers that can occupy the elevator at the same time.</small></td><td><pre><code>if(elevator.maxPassengerCount() > 5) {
+    // Use this elevator for something special, because it's big
+}</code></pre></td></tr>
+                    <tr><td>loadFactor</td><td>function</td><td><small>Gets the load factor of the elevator. 0 means empty, 1 means full. Varies with passenger weights, which vary - not an exact measure.</small></td><td><pre><code>if(elevator.loadFactor() < 0.4) {
+    // Maybe use this elevator, since it's not full yet?
+}</code></pre></td></tr>
+                    <tr><td>destinationDirection</td><td>function</td><td><small>Gets the direction the elevator is currently going to move toward. Can be "up", "down" or "stopped".</small></td></tr>
+                    <tr><td>destinationQueue</td><td>array</td><td><small>The current destination queue, meaning the floor numbers the elevator is scheduled to go to. Can be modified and emptied if desired. Note that you need to call checkDestinationQueue() for the change to take effect immediately.</small></td><td><pre><code>elevator.destinationQueue = [];
+elevator.checkDestinationQueue();</code></pre></td></tr>
+                    <tr><td>checkDestinationQueue</td><td>function</td><td><small>Checks the destination queue for any new destinations to go to. Note that you only need to call this if you modify the destination queue explicitly.</small></td><td><pre><code>elevator.checkDestinationQueue();</code></pre></td></tr>
+                    <tr><td>getPressedFloors</td><td>function</td><td><small>Gets the currently pressed floor numbers as an array.</small></td><td><pre><code>if(elevator.getPressedFloors().length > 0) {
+    // Maybe go to some chosen floor first?
+}</code></pre></td></tr>
+                </tbody>
+            </table>
+            <table class="doctable">
+                <thead><th width="150">Event</th><th width="280">Explanation</th><th>Example</th></thead>
+                <tbody>
+                    <tr><td>idle</td><td><small>Triggered when the elevator has completed all its tasks and is not doing anything.</small></td><td><pre><code>elevator.on("idle", function() { ... });</code></pre></td></tr>
+                    <tr><td>floor_button_pressed</td><td><small>Triggered when a passenger has pressed a button inside the elevator.</small></td><td><pre><code>elevator.on("floor_button_pressed", function(floorNum) {
+    // Maybe tell the elevator to go to that floor?
+})</code></pre></td></tr>
+                    <tr><td>passing_floor</td><td><small>Triggered slightly before the elevator will pass a floor. A good time to decide whether to stop at that floor. Note that this event is not triggered for the destination floor. Direction is either "up" or "down".</small></td><td><pre><code>elevator.on("passing_floor", function(floorNum, direction) { ... });</code></pre></td></tr>
+                    <tr><td>stopped_at_floor</td><td><small>Triggered when the elevator has arrived at a floor.</small></td><td><pre><code>elevator.on("stopped_at_floor", function(floorNum) {
+    // Maybe decide where to go next?
+})</code></pre></td></tr>
+                </tbody>
+            </table>
+            <h3>Floor object</h3>
+            <table class="doctable">
+                <thead><th width="150">Property</th><th width="90">Type</th><th width="190">Explanation</th><th width="*">Example</th></thead>
+                <tbody>
+                <tr><td>floorNum</td><td>function</td><td><small>Gets the floor number of the floor object.</small></td><td><pre><code>if(floor.floorNum() > 3) { ... }</code></pre></td></tr>
+                </tbody>
+            </table>
+            <table class="doctable">
+                <thead><th width="150">Event</th><th width="280">Explanation</th><th>Example</th></thead>
+                <tbody>
+                    <tr><td>up_button_pressed</td><td><small>Triggered when someone has pressed the up button at a floor. Note that passengers will press the button again if they fail to enter an elevator.</small></td><td><pre><code>floor.on("up_button_pressed", function() {
+    // Maybe tell an elevator to go to this floor?
+})</code></pre></td></tr>
+                    <tr><td>down_button_pressed</td><td><small>Triggered when someone has pressed the down button at a floor. Note that passengers will press the button again if they fail to enter an elevator.</small></td><td><pre><code>floor.on("down_button_pressed", function() {
+    // Maybe tell an elevator to go to this floor?
+})</code></pre></td></tr>
+
+                </tbody>
+            </table>
+        </div>
+        </div>
+  </details>
+  <footer><p>原作 Magnus Wolffelt · MIT。本站隔离与中文操作适配 GPL-3.0-only。Font Awesome 图标字体 SIL OFL 1.1，编辑器及其余依赖保留各自许可。</p><p><a href="LICENSES.txt" target="_blank" rel="noreferrer">完整许可与来源</a> · <a href="source.zip" download>下载本版本完整源码</a></p></footer>
+</main><div id="host-pause" hidden role="status">游戏已暂停，请使用外层“继续”按钮。</div>
+</body></html>

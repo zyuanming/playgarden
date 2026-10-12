@@ -166,7 +166,7 @@ jobs:
           const asteroidsChunks=new Set();
           const beatrixChunks=new Set();
           const vikingChunks=new Set();
-          const batchChunks={PondGame:new Set(),BlicblockGame:new Set(),CardQOriginal:new Set(),MakeMazeOriginal:new Set(),CountObserveOriginal:new Set(),ZopGame:new Set(),SwapGame:new Set(),HealEmAllOriginal:new Set(),FlexboxFroggy:new Set(),MonkeyRallyOriginal:new Set(),CssDiner:new Set(),HyperspaceGarbageCollection:new Set(),Avabranch:new Set(),GridGarden:new Set()};
+          const batchChunks={PondGame:new Set(),BlicblockGame:new Set(),CardQOriginal:new Set(),MakeMazeOriginal:new Set(),CountObserveOriginal:new Set(),ZopGame:new Set(),SwapGame:new Set(),HealEmAllOriginal:new Set(),FlexboxFroggy:new Set(),MonkeyRallyOriginal:new Set(),CssDiner:new Set(),HyperspaceGarbageCollection:new Set(),Avabranch:new Set(),GridGarden:new Set(),ElevatorSaga:new Set()};
           for(const asset of paths){
             if(asset.origin!==new URL(url).origin)continue;
             const r=await fetch(asset);if(!r.ok)throw Error(`Missing entry resource: ${asset.pathname}`);
@@ -250,6 +250,12 @@ jobs:
             const actual=createHash('sha256').update(Buffer.from(await r.arrayBuffer())).digest('hex');
             if(actual!==file.sha256)throw Error('Grid Garden asset mismatch: '+path);
             console.log('Grid Garden exact resource OK:',path,actual);
+          }
+          for(const file of JSON.parse(readFileSync('vendor/elevator-saga-original/distribution-manifest.json','utf8')).files.filter(f=>f.path.startsWith('public/elevator-saga/'))){
+            const path=file.path.slice(7),r=await fetch(new URL(path,url),{cache:'no-store'});
+            const bytes=Buffer.from(await r.arrayBuffer());
+            if(!r.ok||bytes.length!==file.bytes||createHash('sha256').update(bytes).digest('hex')!==file.sha256)throw Error('Elevator Saga public resource mismatch '+path);
+            console.log('Elevator Saga exact resource OK:',path);
           }
           console.log('Public commit and entry verified:',sha,url);
           NODE

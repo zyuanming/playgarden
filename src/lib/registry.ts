@@ -3069,5 +3069,33 @@ component: lazy(() => import("../games/HyperspaceGarbageCollection"))
  component: lazy(() => import("../games/GridGarden"))
 },
 
+{
+  "id": "elevator-saga",
+  "title": "电梯调度员",
+  "subtitle": "编写JavaScript安排真实电梯与乘客，挑战原作18项目标。",
+  "category": "编程启蒙",
+  "difficulty": "进阶",
+  "tone": "purple",
+  "levelCount": 18,
+  "allowUndo": false,
+  "artwork": {
+    "url": "./elevator-saga-card.svg",
+    "position": "center",
+    "size": "cover"
+  },
+  "source": {
+    "kind": "adapted",
+    "license": "MIT",
+    "author": "Magnus Wolffelt",
+    "workTitle": "Elevator Saga（完整18原挑战）",
+    "url": "https://github.com/magwo/elevatorsaga/tree/e0c55bf8cf59243c32dc371b2cc7b2e3ec1664af",
+    "commit": "e0c55bf8cf59243c32dc371b2cc7b2e3ec1664af",
+    "notice": "./elevator-saga/LICENSES.txt",
+    "notes": "完整原作电梯物理、乘客、事件API、指示灯、容量和18项判定。第19项是未计关的自由演示。原代码MIT；CodeMirror/Lodash/Riot保留MIT，官方FontAwesome4.7字体OFL1.1、CSS MIT。新增中文界面、opaque iframe、可终止worker和宿主GPL-3.0-only。"
+  }
+,
+component: lazy(() => import("../games/ElevatorSaga"))
+},
+
 ];
 export const findGame = (id: string) => games.find((game) => game.id === id);

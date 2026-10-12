@@ -1,3 +1,4 @@
+import elevatorSagaLevels from '../src/games/elevatorSagaLevels.json' with {type:'json'};
 import gridGardenLevels from '../src/games/gridGardenLevels.json' with {type:'json'};
 import { swapMaps } from "../src/vendor/swapMaps";
 import { VIKING_LEVELS } from "../src/vendor/vikingLevelData";
@@ -154,6 +155,7 @@ import { voxelViewsLevels } from "../src/games/voxelViewsLogic";
 import { cubeNetLevels } from "../src/games/cubeNetLogic";
 const packs = {
   "grid-garden": gridGardenLevels,
+  "elevator-saga": elevatorSagaLevels,
   "hyperspace-garbage-collection": [1,2,3,4],
   "avabranch": [],
   "css-diner": Array.from({length:32}, (_,i) => i+1),
