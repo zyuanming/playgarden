@@ -7,8 +7,8 @@
   "files": [
     {
       "path": "e2e/evolution-of-trust.spec.ts",
-      "bytes": 32781,
-      "sha256": "9d39de603c87de9268ddfe9f2f5e12a6b0ad01d92ad544b92b5369910ae6eba2"
+      "bytes": 32769,
+      "sha256": "009cef1ddc04022c47b81dc2f600baaa6397a9a97a21cb4d16f6e88c799c5af8"
     },
     {
       "path": "public/evolution-of-trust/NOTICE.txt",
@@ -1077,8 +1077,8 @@
     },
     {
       "path": "public/evolution-of-trust/source.zip",
-      "bytes": 4766278,
-      "sha256": "6f06fdf393695e75dd16d798e257cba123adb4d7c39f0e892d2e7857bf8ced2d"
+      "bytes": 4766251,
+      "sha256": "e042b716d301b5b3c4c75780c234accef557f575563a03140417a0d7abaa63b5"
     }
   ]
 }

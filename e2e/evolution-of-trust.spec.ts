@@ -122,7 +122,7 @@ function journey(page: Page, info: TestInfo, origin: string) {
     inputs.push({ action: mobile ? cancel ? 'touch-drag-cancel' : 'touch-drag' : 'mouse-drag', control: message, before, ratio, value, at: Date.now() });
     return value;
   };
-  const tab = async (name: string) => activate(mobile ? frame.locator('#mobile-controls').getByRole('button', { name, exact: true }) : frame.locator('#sandbox_tabs > .hitbox').filter({ hasText: new RegExp(`^${name}$`) }), `sandbox-tab:${name}`);
+  const tab = async (name: string) => activate(mobile ? frame.locator('#mobile-controls').getByRole('button', { name, exact: true }) : frame.locator('#sandbox_tabs').getByRole('button', { name, exact: true }), `sandbox-tab:${name}`);
   const payoff = async () => (await frame.locator('.incdec[data-payoff="R"] .incdec_num').allTextContents()).map(Number);
   const increasePayoff = async () => activate(mobile ? frame.locator('#mobile-narrative').getByRole('button', { name: '双方合作 增加', exact: true }).first() : frame.locator('.incdec[data-payoff="R"] [arrow="up"]').first(), 'payoff:R:increase');
   const screenshot = async (name: string, anchor?: Locator) => {
