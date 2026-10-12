@@ -1,0 +1,62 @@
+[
+  {
+    "path": "libs/codemirror/addon/edit/closebrackets.js",
+    "bytes": 6302,
+    "sha256": "6d3747a9d0f65f0a3ad7b2e0221aee18ce07c820ee19ed5013d716afd65017e3",
+    "source": "Official CodeMirror4.12.0 / Lodash3.6.0 / game-patched Riot1.0.2 / Magnus Wolffelt Unobservable / official FontAwesome4.7.0 as identified in LICENSES.txt"
+  },
+  {
+    "path": "libs/codemirror/codemirror.css",
+    "bytes": 7422,
+    "sha256": "455ede0c03030dc609449ce00160cee311bbcfde5b86290559eea99469c04d05",
+    "source": "Official CodeMirror4.12.0 / Lodash3.6.0 / game-patched Riot1.0.2 / Magnus Wolffelt Unobservable / official FontAwesome4.7.0 as identified in LICENSES.txt"
+  },
+  {
+    "path": "libs/codemirror/codemirror.js",
+    "bytes": 321093,
+    "sha256": "6aa678dca438bdb2e5b35db72ab781d21d7cb8576c558369592981ab1bfb0923",
+    "source": "Official CodeMirror4.12.0 / Lodash3.6.0 / game-patched Riot1.0.2 / Magnus Wolffelt Unobservable / official FontAwesome4.7.0 as identified in LICENSES.txt"
+  },
+  {
+    "path": "libs/codemirror/mode/javascript/javascript.js",
+    "bytes": 26346,
+    "sha256": "ec73898ab2bf446367eedfeb7bcfa11eafee462ade7a39eacbe5f32f9202eed6",
+    "source": "Official CodeMirror4.12.0 / Lodash3.6.0 / game-patched Riot1.0.2 / Magnus Wolffelt Unobservable / official FontAwesome4.7.0 as identified in LICENSES.txt"
+  },
+  {
+    "path": "libs/codemirror/themes/solarized.css",
+    "bytes": 4620,
+    "sha256": "2d1141e72989943c3b82fe3a3a56bd3489f5bc585d51a1e314c7c572851f9631",
+    "source": "Official CodeMirror4.12.0 / Lodash3.6.0 / game-patched Riot1.0.2 / Magnus Wolffelt Unobservable / official FontAwesome4.7.0 as identified in LICENSES.txt"
+  },
+  {
+    "path": "libs/lodash.min.js",
+    "bytes": 49420,
+    "sha256": "e52163369ad16e3f5e260ddcab1c8541c32830b4a6275ba7c332106ce03c05b7",
+    "source": "Official CodeMirror4.12.0 / Lodash3.6.0 / game-patched Riot1.0.2 / Magnus Wolffelt Unobservable / official FontAwesome4.7.0 as identified in LICENSES.txt"
+  },
+  {
+    "path": "libs/lodash.source.js",
+    "bytes": 394915,
+    "sha256": "108a119af32320d5b7547c66c5e8ca311827a4a1d4c9200c67c494afb94c6d1e",
+    "source": "Official CodeMirror4.12.0 / Lodash3.6.0 / game-patched Riot1.0.2 / Magnus Wolffelt Unobservable / official FontAwesome4.7.0 as identified in LICENSES.txt"
+  },
+  {
+    "path": "libs/riot.js",
+    "bytes": 3271,
+    "sha256": "db14e2f47adfedc276c96d50c6a7fdc25775df430b3cfdada63566e3d0a89a98",
+    "source": "Official CodeMirror4.12.0 / Lodash3.6.0 / game-patched Riot1.0.2 / Magnus Wolffelt Unobservable / official FontAwesome4.7.0 as identified in LICENSES.txt"
+  },
+  {
+    "path": "libs/unobservable.js",
+    "bytes": 3921,
+    "sha256": "63811b22399589ac5e1907a89d122aba1fdb71ffb3069f0820fcb547095e0118",
+    "source": "Official CodeMirror4.12.0 / Lodash3.6.0 / game-patched Riot1.0.2 / Magnus Wolffelt Unobservable / official FontAwesome4.7.0 as identified in LICENSES.txt"
+  },
+  {
+    "path": "fonts/fontawesome-webfont.ttf",
+    "bytes": 165548,
+    "sha256": "aa58f33f239a0fb02f5c7a6c45c043d7a9ac9a093335806694ecd6d4edc0d6a8",
+    "source": "Official CodeMirror4.12.0 / Lodash3.6.0 / game-patched Riot1.0.2 / Magnus Wolffelt Unobservable / official FontAwesome4.7.0 as identified in LICENSES.txt"
+  }
+]

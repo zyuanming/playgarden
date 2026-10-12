@@ -2821,6 +2821,20 @@ Full component notices: `public/avabranch/NOTICE.txt`.
 Exact corresponding source: `public/avabranch/source.zip`.
 Complete final file digests: `vendor/avabranch-original/distribution-manifest.json`.
 
+## Grid Garden — complete 28-lesson original
+
+Thomas Park / Codepip, source commit `0e262f7272d4992340eb556bdb9b2d502cc59932` ([source](https://github.com/thomaspark/gridgarden/tree/0e262f7272d4992340eb556bdb9b2d502cc59932)). Original code, course text, translations and CSS: MIT. All nine original unmodified garden images (eight SVG, one PNG): CC-BY-3.0 Unported, separately attributed to Thomas Park under the author's explicit README grant. Simplified Chinese translation: Jin; full translator list retained in README. jQuery 3.5.1 and embedded Sizzle: MIT, JS Foundation and other contributors. Animate.css 3.4.0: MIT, Daniel Eden (2015), with original additional author comments retained. Owned Playgarden host, bridge, shell and lifecycle/security modifications: GPL-3.0-only.
+
+All 28 original authored CSS Grid challenges, Chinese help, target classes and the uncounted harvest ending remain. The browser checks rendered position, width, height and treatment/plant type; valid equivalent CSS is accepted. Original artwork is unchanged. Changes include local hosting, removed analytics/promotions/remote fonts, validated namespaced saves, real pause/resume of remaining work, touch/keyboard help, responsive presentation and one-to-one matching. All 28 lessons must be individually solved to earn the harvest ending. Attribution does not imply endorsement. Full licenses: `public/grid-garden/NOTICE.txt`. Exact editable corresponding source: `public/grid-garden/source.zip`; identity manifest: `vendor/grid-garden-original/source-manifest.json`.
+
+## Elevator Saga — complete 18 original programming challenges
+
+Magnus Wolffelt, MIT, fixed e0c55bf8cf59243c32dc371b2cc7b2e3ec1664af. The original physics, passengers, random traffic, floors, elevators, capacities, event API, indicators and all original predicates are retained. Eighteen finite challenges are counted; the separate perpetual demo is not a finite level. The final challenge remains 2675 passengers within 1800 simulated seconds, maximum wait 45 seconds.
+
+The original renderer styling and character icons remain, with a responsive DOM adapter. Player code executes only in a terminable blob worker inside an opaque sandbox iframe. The original simulation/controller is unchanged; the unnecessary MDN Math.sign shim is removed from base.js. The official Font Awesome 4.7.0 TTF replaces ambiguous 4.1 binary attribution: Dave Gandy 2016, SIL OFL 1.1; CSS MIT. CodeMirror 4.12.0, Lodash 3.6.0 (with Underscore notice), Riot 1.0.2, and first-party Unobservable retain MIT. No Google fonts, analytics or unused jQuery/highlight runtime are included. Andrew Huth's paste-and-indent snippet in source-only original app.js has its Unlicense dedication preserved. New Chinese adapter, worker boundary, host, code, tests, and schematic cover are GPL-3.0-only.
+
+Full grants: public/elevator-saga/LICENSES.txt. Editable corresponding source: public/elevator-saga/source.zip. Source and distribution identity: vendor/elevator-saga-original/.
+
 
 ## Gridland original campaign
 

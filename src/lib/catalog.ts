@@ -174,6 +174,8 @@ export const GAME_IDS = [
   "css-diner",
   "hyperspace-garbage-collection",
   "avabranch",
+  "grid-garden",
+  "elevator-saga",
   "gridland",
 ] as const;
 export type GameId = (typeof GAME_IDS)[number];

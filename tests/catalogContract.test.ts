@@ -1,3 +1,5 @@
+import elevatorSagaLevels from '../src/games/elevatorSagaLevels.json' with {type:'json'};
+import gridGardenLevels from '../src/games/gridGardenLevels.json' with {type:'json'};
 import { swapMaps } from "../src/vendor/swapMaps";
 import { VIKING_LEVELS } from "../src/vendor/vikingLevelData";
 import { BEATRIX_LEVELS } from "../src/vendor/beatrixCore";
@@ -152,6 +154,8 @@ import { sortingNetworkLevels } from "../src/games/sortingNetworkLogic";
 import { voxelViewsLevels } from "../src/games/voxelViewsLogic";
 import { cubeNetLevels } from "../src/games/cubeNetLogic";
 const packs = {
+  "grid-garden": gridGardenLevels,
+  "elevator-saga": elevatorSagaLevels,
   "hyperspace-garbage-collection": [1,2,3,4],
   "avabranch": [],
   "gridland": [],
@@ -369,8 +373,8 @@ describe("Scalable catalog contract", () => {
       }
     }),
   );
-  it("counts only 175 real games and 3100 levels, not the roadmap", () => {
-    expect(games).toHaveLength(175);
-    expect(games.reduce((sum, g) => sum + g.levelCount, 0)).toBe(3100);
+  it("counts only 177 real games and 3146 levels, not the roadmap", () => {
+    expect(games).toHaveLength(177);
+    expect(games.reduce((sum, g) => sum + g.levelCount, 0)).toBe(3146);
   });
 });

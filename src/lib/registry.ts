@@ -3041,6 +3041,63 @@ component: lazy(() => import("../games/HyperspaceGarbageCollection"))
     "component": lazy(() => import("../games/Avabranch"))
   },
 {
+  "id": "grid-garden",
+  "title": "网格花园",
+  "subtitle": "用真正的 CSS Grid 照料胡萝卜与杂草，完整保留原作 28 课。",
+  "category": "编程启蒙",
+  "difficulty": "中级",
+  "tone": "green",
+  "levelCount": 28,
+  "allowUndo": false,
+  "resumeKey": "playgarden.grid-garden.v1",
+  "artwork": {
+    "url": "./grid-garden/images/carrots.svg",
+    "position": "center",
+    "size": "contain"
+  },
+  "source": {
+    "kind": "adapted",
+    "license": "MIT",
+    "author": "Thomas Park / Codepip",
+    "workTitle": "Grid Garden（完整原作 28 课及收获结局）",
+    "url": "https://github.com/thomaspark/gridgarden/tree/0e262f7272d4992340eb556bdb9b2d502cc59932",
+    "commit": "0e262f7272d4992340eb556bdb9b2d502cc59932",
+    "notice": "./grid-garden/NOTICE.txt",
+    "notes": "原作完整 28 课、中文课程与属性帮助、CSS Grid 浏览器矩形尺寸及颜色核验保留。代码与文字 MIT；Thomas Park 原作九张花园图像单独为 CC-BY-3.0，未经修改；jQuery/Sizzle 与 Animate.css 为 MIT。本站宿主与隔离适配 GPL-3.0-only。只有全部 28 课分别完成后才能获得完整课程收获结局；自由选关不自动通关。"
+  }
+,
+ component: lazy(() => import("../games/GridGarden"))
+},
+
+{
+  "id": "elevator-saga",
+  "title": "电梯调度员",
+  "subtitle": "编写JavaScript安排真实电梯与乘客，挑战原作18项目标。",
+  "category": "编程启蒙",
+  "difficulty": "进阶",
+  "tone": "purple",
+  "levelCount": 18,
+  "allowUndo": false,
+  "artwork": {
+    "url": "./elevator-saga-card.svg",
+    "position": "center",
+    "size": "cover"
+  },
+  "source": {
+    "kind": "adapted",
+    "license": "MIT",
+    "author": "Magnus Wolffelt",
+    "workTitle": "Elevator Saga（完整18原挑战）",
+    "url": "https://github.com/magwo/elevatorsaga/tree/e0c55bf8cf59243c32dc371b2cc7b2e3ec1664af",
+    "commit": "e0c55bf8cf59243c32dc371b2cc7b2e3ec1664af",
+    "notice": "./elevator-saga/LICENSES.txt",
+    "notes": "完整原作电梯物理、乘客、事件API、指示灯、容量和18项判定。第19项是未计关的自由演示。原代码MIT；CodeMirror/Lodash/Riot保留MIT，官方FontAwesome4.7字体OFL1.1、CSS MIT。新增中文界面、opaque iframe、可终止worker和宿主GPL-3.0-only。"
+  }
+,
+component: lazy(() => import("../games/ElevatorSaga"))
+},
+
+{
   "id": "gridland",
   "title": "格境求生",
   "subtitle": "白天三连建村，夜晚配装迎敌；解锁魔法，召唤并击败巨龙。",

@@ -1,0 +1,141 @@
+{
+  "sourceCommit": "0e262f7272d4992340eb556bdb9b2d502cc59932",
+  "originalFiles": [
+    {
+      "path": "upstream/third-party/animate.css/animate.css",
+      "license": "MIT",
+      "sha256": "d44da5fc59ec94a8a4e6b556caeeec506d03821b1e29cef8d950a32955c5619b"
+    },
+    {
+      "path": "upstream/images/water.svg",
+      "license": "CC-BY-3.0",
+      "sha256": "87d9682936d6a2350bc4bfea3bb133291fa1b372191327ef7cfbe56bb72df586"
+    },
+    {
+      "path": "upstream/images/carrots.svg",
+      "license": "CC-BY-3.0",
+      "sha256": "94b3277815a82404a9e28d8265362a0c51f2131e3e19341e566edc714234c1d4"
+    },
+    {
+      "path": "upstream/js/messages.js",
+      "license": "MIT",
+      "sha256": "5b7c63ab34dde8027ee23cae44f4732387c9eaaca657ebbbdc01d5426c47ce86"
+    },
+    {
+      "path": "upstream/third-party/jquery/external/sizzle/LICENSE.txt",
+      "license": "MIT",
+      "sha256": "a078a8f80016416042c2e5f04dbb7f499f0f6deebb086511f3a3b72633a2d761"
+    },
+    {
+      "path": "upstream/images/dirt.svg",
+      "license": "CC-BY-3.0",
+      "sha256": "83fe6a4b50ed1aaa2521945277f5ec09e051469b2e7e2d6cc7965703523d6b3c"
+    },
+    {
+      "path": "upstream/LICENSE",
+      "license": "MIT",
+      "sha256": "a10a44d5f91ef5b97d7657038ad49caf579e8d3a6801577cdcc4b008c2c7152f"
+    },
+    {
+      "path": "upstream/third-party/animate.css/README.md",
+      "license": "MIT",
+      "sha256": "aee312c5458319f9acb51e30e80b6cf84dafd51978e9c3d6f6ceadfcee7a16c8"
+    },
+    {
+      "path": "upstream/images/weeds.svg",
+      "license": "CC-BY-3.0",
+      "sha256": "9ccb533a76af5b674a045a9205cc96541a8c0b2f3d719e25e9b00c33a1095038"
+    },
+    {
+      "path": "upstream/third-party/jquery/dist/jquery.js",
+      "license": "MIT",
+      "sha256": "416a3b2c3bf16d64f6b5b6d0f7b079df2267614dd6847fc2f3271b4409233c37"
+    },
+    {
+      "path": "upstream/images/carrots-correct.svg",
+      "license": "CC-BY-3.0",
+      "sha256": "cfdaa543de0c6182abb3d424c51c6e2fdf302add63b0ce8c95bde24786a9a8e8"
+    },
+    {
+      "path": "upstream/images/weeds-correct.svg",
+      "license": "CC-BY-3.0",
+      "sha256": "3c8e8af04f084c6a0d54bb8ebf5dca01bf8653c7ad9359978a5257b5e0d7d127"
+    },
+    {
+      "path": "upstream/index.html",
+      "license": "MIT",
+      "sha256": "7a6a4d49f9af46d413b2315e6c58317a9d9b3bf2818c0fe129843f7a06df2cb0"
+    },
+    {
+      "path": "upstream/images/poison.svg",
+      "license": "CC-BY-3.0",
+      "sha256": "755452f10943f850b9200dc868fef40f03bf07ec7f4905efa1fdac02cb19b5d9"
+    },
+    {
+      "path": "upstream/css/style.css",
+      "license": "MIT",
+      "sha256": "970987c5aca9559f47daa0d56b919cfb86739088a3064a86a29fb4eba1f348b4"
+    },
+    {
+      "path": "upstream/third-party/jquery/LICENSE.txt",
+      "license": "MIT",
+      "sha256": "1ff603118efdb313799567cb4a408594954384f40843ca6f29c596f5b1f8907d"
+    },
+    {
+      "path": "upstream/js/game.js",
+      "license": "MIT",
+      "sha256": "cdfa26a956e87a3a734f1c208ef4e0aa040c17ee2c8a04756103f0835837d631"
+    },
+    {
+      "path": "upstream/js/docs.js",
+      "license": "MIT",
+      "sha256": "bfa37528dde4a7215954e322b166701bd835b26438f685b6b2e085578ccd9299"
+    },
+    {
+      "path": "upstream/images/froggy.svg",
+      "license": "CC-BY-3.0",
+      "sha256": "78b1d881230e69ddb1e504d1d097a12826007d236dee25a71a9b04bcd909b64a"
+    },
+    {
+      "path": "upstream/images/carrots-win.png",
+      "license": "CC-BY-3.0",
+      "sha256": "b04f0bb2525ca4503714350bf505cbe00130d1339c40b49fd011ad23cb91bd4c"
+    },
+    {
+      "path": "upstream/js/levels.js",
+      "license": "MIT",
+      "sha256": "1f4f10ff085b981a46ce14f7b18552c8aaa4b525c79b465c6643619b20fb2fc4"
+    },
+    {
+      "path": "upstream/README.md",
+      "license": "MIT",
+      "sha256": "caf74df860ba558e3532d149539401d7ebace69c59bc1c51171bccf49d37c9cd"
+    }
+  ],
+  "adapter": {
+    "license": "GPL-3.0-only",
+    "paths": [
+      "src/games/GridGarden.tsx",
+      "src/games/gridGarden.css",
+      "public/grid-garden/adapter.js",
+      "public/grid-garden/adapter.css",
+      "public/grid-garden/index.html",
+      "scripts/grid-garden",
+      "e2e/grid-garden.spec.ts"
+    ],
+    "notice": "public/grid-garden/licenses/Playgarden-GPL-3.0.txt"
+  },
+  "modifiedController": {
+    "path": "public/grid-garden/js/game.js",
+    "license": "Original MIT; Playgarden modifications GPL-3.0-only",
+    "preferredSource": "vendor/grid-garden-original/upstream/js/game.js",
+    "patch": "scripts/grid-garden/adapt.py"
+  },
+  "fullNotices": "public/grid-garden/NOTICE.txt",
+  "artworkNote": "Nine unchanged Thomas Park images are separately CC-BY-3.0, as explicitly granted by this work’s own README. No endorsement.",
+  "supplementNotes": {
+    "CC-BY-3.0.txt": "Full standard legalcode text, verified from existing published project notice. The grant is Grid Garden own README, not a grant imported from another game.",
+    "Animate-MIT.txt": "Assembled full MIT notice, expressly labeled. Copyright and MIT grant from exact bundled Animate 3.4.0 header; standard MIT terms retained.",
+    "Playgarden-GPL-3.0.txt": "Exact full Playgarden GPL-3.0-only license text."
+  }
+}
