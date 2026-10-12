@@ -8,6 +8,8 @@ test.use({ trace: 'off' });
 test('complete original elevator programming: first middle final, isolation and lifecycle', async ({ page, baseURL }, info) => {
   test.setTimeout(240000);
   const mobile = info.project.name === 'mobile', inputs: object[] = [], errors: string[] = [], outside: string[] = [], responses: string[] = [], workerEvents: object[] = [];
+  const dispatchLog:object[]=[];
+  page.on('console',message=>{const text=message.text();if(text.startsWith('ELEVATOR_PUBLIC ')){try{dispatchLog.push(JSON.parse(text.slice(16)));if(dispatchLog.length>500)dispatchLog.shift();}catch{/* only our bounded JSON records */}}});
   if (!baseURL) throw new Error('The game test requires its configured baseURL.');
   const gameOrigin = new URL(baseURL).origin;
   page.on('worker', worker => { workerEvents.push({event:'created',url:worker.url()}); worker.on('close',()=>workerEvents.push({event:'closed',url:worker.url()})); });
@@ -98,7 +100,7 @@ test('complete original elevator programming: first middle final, isolation and 
     expect(errors).toEqual([]); expect(responses).toEqual([]); expect(outside.filter(url=>url!=='https://example.com/elevator-csp-probe')).toEqual([]);
   } finally {
     const finalVisible = await Promise.all([frame.locator('#level').inputValue(),frame.locator('body').getAttribute('data-result'),stats()]).then(([level,result,stats])=>({level,result,stats})).catch(()=>null);
-    writeFileSync(info.outputPath('elevator-ordinary-inputs.json'),JSON.stringify({inputs,errors,outside,responses,workerEvents,finalVisible},null,2));
+    writeFileSync(info.outputPath('elevator-ordinary-inputs.json'),JSON.stringify({inputs,errors,outside,responses,workerEvents,dispatchLog,finalVisible},null,2));
     writeFileSync(info.outputPath('elevator-earned-code-progress.json'),JSON.stringify(await page.evaluate(()=>localStorage.getItem('playgarden.elevator-saga.v1')).catch(()=>null)));
     await page.screenshot({path:info.outputPath('elevator-final-viewport.png'),fullPage:false}).catch(()=>{});
   }

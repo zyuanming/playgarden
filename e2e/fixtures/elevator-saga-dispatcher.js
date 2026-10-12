@@ -4,8 +4,14 @@
 // No simulation globals, seeded traffic, altered people, thresholds or time step.
 ({
   init: function(elevators, floors) {
-    var calls = [], serial = 0, dispatching = false, elapsed = 0;
-    var cars = elevators.map(function(e,index) { return {e:e,index:index,direction:1}; });
+    var calls = [], serial = 0, dispatching = false, elapsed = 0, clock = 0, lastReport = -5;
+    var cars = elevators.map(function(e,index) { return {e:e,index:index,direction:1,lastStop:-1,stoppedAt:-10}; });
+    // This is a conservative weight-based pickup policy, not an exact count.
+    // A full car can report 0.55..1.0 because original riders weigh 55..100.
+    function available(car, call) {
+      return car.e.loadFactor()<0.7 && !(car.lastStop===call.floor &&
+        car.e.currentFloor()===call.floor && clock-car.stoppedAt<1.5);
+    }
     function own(car) { return calls.filter(function(c) { return c.car === car.index; }); }
     function ordered(car, targets) {
       var at = car.e.currentFloor(), dir = car.direction;
@@ -22,15 +28,26 @@
     function rebuild(car) {
       var e = car.e, at = e.currentFloor(), targets = e.getPressedFloors().slice();
       var carrying = targets.length > 0;
+      var direction=e.destinationDirection(), committed=e.destinationQueue[0];
+      if(direction!=='stopped')car.direction=direction==='up'?1:-1;
       own(car).forEach(function(c) {
         // Finish the current passenger sweep before opposite-direction pickups.
+        // A call re-pressed during boarding belongs to another pickup. Do not
+        // keep a car at this floor while its passengers have other destinations.
+        if(carrying && c.floor===at)return;
         if(carrying && (c.direction!==car.direction || (c.floor-at)*car.direction<0))return;
         if(targets.indexOf(c.floor)<0) targets.push(c.floor);
       });
-      if (!targets.length) { e.destinationQueue = []; return; }
+      if (!targets.length) { e.destinationQueue = direction!=='stopped' && committed!==undefined ? [committed] : []; return; }
       var ahead = targets.some(function(f) { return (f-at)*car.direction > 0; });
       if (!ahead && targets.some(function(f) { return f !== at; })) car.direction *= -1;
       e.destinationQueue = ordered(car,targets);
+      // Public destinationDirection/queue preserve the already moving leg.
+      // Explicit passing_floor interception below still handles pickups ahead.
+      if(direction!=='stopped' && committed!==undefined) {
+        e.destinationQueue=e.destinationQueue.filter(function(f){return f!==committed;});
+        e.destinationQueue.unshift(committed);
+      }
       e.checkDestinationQueue();
     }
     function estimate(car, call) {
@@ -49,16 +66,23 @@
     function dispatch() {
       if(dispatching) return;
       dispatching=true;
-      // A full car keeps its passenger destinations but releases hall requests.
-      calls.forEach(function(c) { if(c.car!==null && cars[c.car].e.loadFactor()>=0.95)c.car=null; });
+      // Conservatively busy cars retain passengers but release hall reservations.
+      calls.forEach(function(c) { if(c.car!==null && !available(cars[c.car],c))c.car=null; });
       calls.sort(function(a,b) { return a.order-b.order; });
       calls.forEach(function(c) {
-        if(c.car!==null)return;
-        var available=cars.filter(function(car) { return car.e.loadFactor()<0.95; });
-        available.sort(function(a,b) { return estimate(a,c)-estimate(b,c); });
-        if(available.length)c.car=available[0].index;
+        var candidates=cars.filter(function(car) { return available(car,c); });
+        candidates.sort(function(a,b) { return estimate(a,c)-estimate(b,c); });
+        if(candidates.length && (c.car===null ||
+          clock-c.created>=8 && estimate(candidates[0],c)+3<estimate(cars[c.car],c)))
+          c.car=candidates[0].index;
       });
       cars.forEach(rebuild);
+      if(clock-lastReport>=5) {
+        lastReport=clock;
+        console.log('ELEVATOR_PUBLIC '+JSON.stringify({clock:clock,
+          calls:calls.map(function(c){return {floor:c.floor,direction:c.direction,age:clock-c.created,car:c.car};}),
+          cars:cars.map(function(c){return {id:c.index,floor:c.e.currentFloor(),direction:c.e.destinationDirection(),load:c.e.loadFactor(),pressed:c.e.getPressedFloors(),queue:c.e.destinationQueue.slice()};})}));
+      }
       dispatching=false;
     }
     floors.forEach(function(floor) {
@@ -66,7 +90,7 @@
         floor.on(direction+'_button_pressed',function() {
           var number=floor.floorNum(), sign=direction==='up'?1:-1;
           if(!calls.some(function(c) { return c.floor===number&&c.direction===sign; }))
-            calls.push({floor:number,direction:sign,order:serial++,car:null});
+            calls.push({floor:number,direction:sign,order:serial++,created:clock,car:null});
           dispatch();
         });
       });
@@ -78,13 +102,14 @@
       e.on('passing_floor',function(floor,direction) {
         var sign=direction==='up'?1:-1;
         var pickup=own(car).some(function(c) { return c.floor===floor&&c.direction===sign; });
-        if(e.getPressedFloors().indexOf(floor)>=0 || (pickup&&e.loadFactor()<0.95)) {
+        if(e.getPressedFloors().indexOf(floor)>=0 || (pickup&&e.loadFactor()<0.7)) {
           car.direction=sign; indicators(car,sign);
           e.destinationQueue=e.destinationQueue.filter(function(f) { return f!==floor; });
           e.goToFloor(floor,true);
         }
       });
       e.on('stopped_at_floor',function(floor) {
+        car.lastStop=floor;car.stoppedAt=clock;
         var inside=e.getPressedFloors(), here=own(car).filter(function(c) { return c.floor===floor; });
         var ahead=inside.some(function(f) { return (f-floor)*car.direction>0; });
         if(!ahead&&inside.length)car.direction=inside[0]>floor?1:-1;
@@ -100,7 +125,7 @@
         dispatch();
       });
     });
-    this.advance=function(dt) { elapsed+=dt;if(elapsed>=0.25){elapsed=0;dispatch();} };
+    this.advance=function(dt) { clock+=dt;elapsed+=dt;if(elapsed>=0.25){elapsed=0;dispatch();} };
   },
   update: function(dt) { this.advance(dt); }
 })
