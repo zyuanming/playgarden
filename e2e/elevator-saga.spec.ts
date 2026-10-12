@@ -65,8 +65,13 @@ test('complete original elevator programming: first middle final, isolation and 
     await activate(frame.locator('#save'));
     await expect.poll(async()=>page.evaluate(()=>JSON.parse(localStorage.getItem('playgarden.elevator-saga.v1')||'{}').code)).toBe(solution);
     await activate(frame.locator('#reset')); await activate(frame.locator('#undo'));
-    await page.reload(); await ready();
+    await page.reload();
     expect(await page.evaluate(()=>JSON.parse(localStorage.getItem('playgarden.elevator-saga.v1')||'{}').code)).toBe(solution);
+    expect(await progress()).toContain(0);
+    // The app deliberately returns to its lobby after a reload. Re-enter by UI.
+    await page.getByRole('textbox',{name:'搜索游戏'}).fill('电梯调度员');
+    await activate(page.getByRole('button',{name:'开始玩电梯调度员',exact:true})); await ready();
+    await expect(frame.locator('.CodeMirror')).toContainText('An ordinary player solution');
     for (const level of [8,17]) {
       await chooseLevel(page,level); await ready(); await code(solution); await frame.locator('#speed').selectOption('55'); await run();
       await expect(frame.locator('body')).toHaveAttribute('data-result','true',{timeout:90000});
