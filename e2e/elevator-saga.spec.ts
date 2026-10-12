@@ -66,7 +66,19 @@ test('complete original elevator programming: first middle final, isolation and 
     await screenshot('elevator-first-earned-success.png');
     await activate(frame.locator('#save'));
     await expect.poll(async()=>page.evaluate(()=>JSON.parse(localStorage.getItem('playgarden.elevator-saga.v1')||'{}').code)).toBe(solution);
-    await activate(frame.locator('#reset')); await activate(frame.locator('#undo'));
+    await activate(frame.locator('#reset')); await expect(frame.locator('#undo')).toBeEnabled();
+    await activate(frame.locator('#undo')); await expect(frame.locator('#undo')).toBeDisabled();
+    await expect(frame.locator('.CodeMirror')).toContainText('An ordinary player solution');
+    // Saving crosses the sandbox boundary. Observe the current revision's real
+    // acknowledgement before a full document reload, just as the UI advises.
+    await expect(frame.locator('body')).toHaveAttribute('data-code-save','saved');
+    const undoRevision = await frame.locator('body').getAttribute('data-code-revision');
+    await expect(frame.locator('body')).toHaveAttribute('data-saved-revision',undoRevision!);
+    await expect(frame.locator('#code-save-status')).toHaveText('当前代码已保存在此浏览器。');
+    expect(await page.evaluate(()=>JSON.parse(localStorage.getItem('playgarden.elevator-saga.v1')||'{}').code)).toBe(solution);
+    inputs.push({case:'undo-current-revision-saved',revision:undoRevision});
+    await frame.locator('#code-save-status').scrollIntoViewIfNeeded();
+    await page.screenshot({path:info.outputPath('elevator-undo-saved-viewport.png'),fullPage:false});
     await page.reload();
     expect(await page.evaluate(()=>JSON.parse(localStorage.getItem('playgarden.elevator-saga.v1')||'{}').code)).toBe(solution);
     expect(await progress()).toContain(0);

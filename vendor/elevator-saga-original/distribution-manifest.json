@@ -7,8 +7,8 @@
   "files": [
     {
       "path": "e2e/elevator-saga.spec.ts",
-      "bytes": 12834,
-      "sha256": "3e39a2f14a65b6c1dbae95e0219c6446043e2af4bad23cbb8c9e31a8e4f13c02"
+      "bytes": 13946,
+      "sha256": "446164c3a84858c0baadce645af69e2463e0f66b2cce53e8ffe1a0ce721b2d42"
     },
     {
       "path": "e2e/fixtures/elevator-saga-dispatcher.js",
@@ -32,8 +32,8 @@
     },
     {
       "path": "public/elevator-saga/adapter.js",
-      "bytes": 15344,
-      "sha256": "29f9ce9cfddb32a6398477663aef77e448936775d6ed920d72baf98cba606278"
+      "bytes": 16030,
+      "sha256": "e7b6b46531659e2cf536e04bb6b60fa91d35e648b25d05de3ee796fa730f5cb2"
     },
     {
       "path": "public/elevator-saga/base.js",
@@ -72,8 +72,8 @@
     },
     {
       "path": "public/elevator-saga/index.html",
-      "bytes": 16072,
-      "sha256": "3861c35770a06625db046811c5a964f157c93b674308ba5881992b95f10d050d"
+      "bytes": 16199,
+      "sha256": "9fd10ceef3993b5599b4cb051239ebd8f0a10b544f65682ad5a6de73d14fb038"
     },
     {
       "path": "public/elevator-saga/interfaces.js",
@@ -212,8 +212,8 @@
     },
     {
       "path": "src/games/ElevatorSaga.tsx",
-      "bytes": 7000,
-      "sha256": "f5df4ae748d109e8e06655d9f7bcf430e5a2e64c2e2af3b2d76d15a7bc55dae6"
+      "bytes": 7159,
+      "sha256": "10596a24da2f1f598d36f797b61e330f54bdab6af3b986101f59babdfa7f4c7a"
     },
     {
       "path": "src/games/elevatorSaga.css",
@@ -297,8 +297,8 @@
     },
     {
       "path": "public/elevator-saga/source.zip",
-      "bytes": 529491,
-      "sha256": "64e458214e2bfe1df4544b432aa67bf7041204bd867019be3827965884fc8d8f"
+      "bytes": 530038,
+      "sha256": "c233f200176f87c88c88162198651637b96142bf7ad7dcefc6d8315099c6f23a"
     }
   ]
 }

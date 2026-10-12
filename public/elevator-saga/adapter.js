@@ -21,7 +21,7 @@
   let worker = null, workerUrl = '', generation = '', level = 0, speed = 2;
   let hostPaused = false, userPaused = true, snapshot = null, disposed = false;
   let configured = false, lastHeartbeat = 0, rateStart = 0, messageCount = 0;
-  let watchdog = 0, readyTimer = 0, draftTimer = 0, oldCode = '', completeSent = false;
+  let watchdog = 0, readyTimer = 0, draftTimer = 0, oldCode = '', completeSent = false, saveRevision = 0;
   const completed = new Set();
   const editor = CodeMirror.fromTextArea($('code'), {
     mode: 'javascript', lineNumbers: true, indentUnit: 2, tabSize: 2,
@@ -31,6 +31,18 @@
   editor.getInputField().setAttribute('aria-label', '电梯调度 JavaScript 代码');
   function post(type, data = {}) {
     if (!disposed) parent.postMessage({ source: 'playgarden-elevator-saga', session, type, ...data }, parentOrigin);
+  }
+  function saveCode() {
+    const revision = ++saveRevision, code = editor.getValue();
+    document.body.dataset.codeRevision = String(revision);
+    document.body.dataset.codeSave = 'pending';
+    $('code-save-status').textContent = '正在保存当前代码，请等保存完成后再刷新。';
+    if (code.length > 64000) {
+      document.body.dataset.codeSave = 'failed';
+      $('code-save-status').textContent = '代码超过 64000 个字符，尚未保存。请先复制备份。';
+      return;
+    }
+    post('save-code', { code, revision });
   }
   function announce() { post('ready', { revision: 'elevator-saga-e0c55bf-worker-1', levels: 18 }); }
   function report(message) { $('status').textContent = message; post('status', { message }); }
@@ -153,7 +165,7 @@
     };
     watchdog = window.setInterval(() => { if (worker && performance.now() - lastHeartbeat > 2500) stop('程序长时间没有响应，已终止。请检查无限循环，再应用代码。'); },250);
     worker.postMessage({type:'init',generation,base:new URL('./',location.href).href,level,speed,code,start:true});
-    post('save-code',{code}); post('lifecycle',{running:true,terminated:false});
+    saveCode(); post('lifecycle',{running:true,terminated:false});
   }
   function updateProgress() { $('progress').textContent = `已通过 ${completed.size} / 18 个原作挑战`; }
   function selectLevel(value) {
@@ -171,10 +183,10 @@
   $('manual-down').onclick = () => { const floor = Number($('manual-floor').value); if (floor > 0) command('floor',{floor,direction:'down'}); };
   $('manual-car').onclick = () => command('elevator',{elevator:Number($('manual-elevator').value),floor:Number($('manual-floor').value)});
   $('pause').onclick = () => { if (!worker || hostPaused) return; userPaused = !snapshot?.paused; command('pause',{paused:userPaused}); };
-  $('save').onclick = () => { post('save-code',{code:editor.getValue()}); report('代码已请求保存。'); };
+  $('save').onclick = saveCode;
   $('reset').onclick = () => { oldCode = editor.getValue(); editor.setValue(defaultCode); $('undo').disabled = false; };
   $('undo').onclick = () => { if (oldCode) { editor.setValue(oldCode); oldCode = ''; $('undo').disabled = true; } };
-  editor.on('change', () => { post('save-code',{code:editor.getValue()}); });
+  editor.on('change', saveCode);
   function receive(event) {
     if (event.source !== parent || event.origin !== parentOrigin || event.data?.source !== 'playgarden-host' || event.data.session !== session) return;
     const d = event.data;
@@ -187,7 +199,11 @@
       updateProgress(); selectLevel(Number.isInteger(d.level) ? d.level : 0); hostPaused = !!d.paused; applyHostPause();
     } else if (d.type === 'pause') { hostPaused = !!d.paused; applyHostPause(); }
     else if (d.type === 'select-level' && configured && Number.isInteger(d.level) && d.level >= 0 && d.level <= 18 && d.level !== level) selectLevel(d.level);
-    else if (d.type === 'saved') report(d.ok ? '代码已保存在此浏览器。' : '此浏览器暂不能保存，请自行复制代码。');
+    else if (d.type === 'saved' && d.revision === saveRevision && typeof d.ok === 'boolean') {
+      document.body.dataset.codeSave = d.ok ? 'saved' : 'failed';
+      document.body.dataset.savedRevision = d.ok ? String(d.revision) : '';
+      $('code-save-status').textContent = d.ok ? '当前代码已保存在此浏览器。' : '此浏览器暂不能保存，请自行复制代码。';
+    }
     else if (d.type === 'dispose') dispose();
   }
   function applyHostPause() {

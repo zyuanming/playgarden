@@ -20,6 +20,7 @@
   <details id="manual-controls"><summary>手动按楼层按钮</summary><p>这些按钮与楼层呼叫、轿厢按钮相同，方便触屏操作。真正运行路线仍由你的调度程序决定。</p><div class="editor-tools"><label>楼层 <select id="manual-floor"></select></label><button id="manual-up">向上呼叫</button><button id="manual-down">向下呼叫</button><label>电梯 <select id="manual-elevator"></select></label><button id="manual-car">按轿厢楼层按钮</button></div></details>
   <section class="editor-area"><h2><label for="code">调度程序</label></h2><p>用电梯和楼层的事件作决策。代码在可停止的独立线程运行；循环卡住时会自动终止。可使用 JavaScript 与完整电梯/楼层 API；网络、外部线程与独立定时器不可用。</p>
     <textarea id="code" spellcheck="false" aria-label="电梯调度 JavaScript 代码"></textarea>
+    <p id="code-save-status" role="status" aria-live="polite">编辑后会自动保存，请等保存完成后再刷新。</p>
     <div class="editor-tools"><button id="save">保存代码</button><button id="reset">恢复示例</button><button id="undo" disabled>撤销恢复示例</button></div>
   </section>
   <details><summary>入门与完整 API 参考</summary><p>init(elevators, floors) 在每次运行开始时调用一次；update(dt, elevators, floors) 随模拟更新。默认示例只去 0、1 层，请自己完善路线。所有挑战都能直接选择，只有达到原作判定才会记录通过。</p>

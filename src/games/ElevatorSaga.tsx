@@ -28,7 +28,7 @@ export default function ElevatorSaga({ level, freePlay, paused, hintToken, onSta
     const element = frame.current; if (!element) return;
     const token = crypto.randomUUID(); session.current = token;
     const url = new URL('./elevator-saga/index.html', document.baseURI); url.searchParams.set('session', token);
-    let announced = false, disposed = false, retry = 0;
+    let announced = false, disposed = false, retry = 0, savedRevision = 0;
     const target = element.contentWindow;
     const send = (type: string, data: Record<string, unknown> = {}) => target?.postMessage({ source: 'playgarden-host', session: token, type, ...data }, '*');
     const persist = () => { try { localStorage.setItem(KEY, JSON.stringify(saved.current)); if (!disposed) setStorageOk(true); return true; } catch { if (!disposed) setStorageOk(false); return false; } };
@@ -36,8 +36,10 @@ export default function ElevatorSaga({ level, freePlay, paused, hintToken, onSta
       if (event.origin !== 'null' || event.source !== target || !event.data ||
           event.data.source !== 'playgarden-elevator-saga' || event.data.session !== token) return;
       const d = event.data;
+      const validSave = d.type === 'save-code' && typeof d.code === 'string' && d.code.length <= 64000 &&
+        Number.isSafeInteger(d.revision) && d.revision > savedRevision;
       if (disposed) {
-        if (announced && d.type === 'save-code' && typeof d.code === 'string' && d.code.length <= 64000) { saved.current.code = d.code; persist(); }
+        if (announced && validSave) { savedRevision = d.revision; saved.current.code = d.code; persist(); }
         return;
       }
       if (d.type === 'ready') {
@@ -47,7 +49,10 @@ export default function ElevatorSaga({ level, freePlay, paused, hintToken, onSta
         send('config', { ...saved.current, level: flags.current.freePlay ? 18 : Math.min(17, Math.max(0, flags.current.level)), paused: flags.current.paused });
       } else if (!announced) return;
       else if (d.type === 'status' && typeof d.message === 'string') callbacks.current.onStatus(d.message.slice(0, 1600));
-      else if (d.type === 'save-code' && typeof d.code === 'string' && d.code.length <= 64000) { saved.current.code = d.code; send('saved', { ok: persist() }); }
+      else if (validSave) {
+        savedRevision = d.revision; saved.current.code = d.code;
+        send('saved', { revision: d.revision, ok: persist() });
+      }
       else if (d.type === 'speed' && SPEEDS.includes(d.speed)) { saved.current.speed = d.speed; persist(); }
       else if (d.type === 'level' && Number.isInteger(d.level) && d.level >= 0 && d.level < 18 && d.level !== flags.current.level) callbacks.current.onLevelChange?.(d.level);
       else if (d.type === 'complete' && Number.isInteger(d.level) && d.level >= 0 && d.level < 18 && d.stats &&
