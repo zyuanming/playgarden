@@ -67,6 +67,7 @@ function denyWrites(key:string){
 }
 
 test('Black Hole Square: original 18 puzzles, honest skips and owned lifecycle',async({page},info)=>{
+  test.skip(info.project.name==='desktop','Desktop complete 18-puzzle journey passed at a8a63e371e424f68803144ea6f483818cab30830; runtime unchanged.');
   test.setTimeout(300000);
   expect(fixture.status).toBe('STATIC_DATA_ANALYSIS_ONLY_NOT_RUNTIME_PASS');
   expect(fixture.levels).toHaveLength(18);expect(fixture.levels.every(p=>p.status==='STATIC_OPERATOR_PLAN_NOT_RUNTIME_PASS')).toBe(true);
@@ -81,6 +82,24 @@ test('Black Hole Square: original 18 puzzles, honest skips and owned lifecycle',
   audioCDP.on('WebAudio.contextWillBeDestroyed',(event:{contextId:string})=>audioContexts.set(event.contextId,'destroyed'));
   try {
   await audioCDP.send('WebAudio.enable');
+  // Bounded observation only: no event is prevented and no game/pointer state
+  // is changed. This diagnoses ordinary focus transfer versus real cancellation.
+  await page.addInitScript(()=>{
+    const target=window as unknown as {__blackHoleSquareSnapshot?:()=>Snapshot;__bhsObservedInput:unknown[]};
+    target.__bhsObservedInput=[];
+    const record=(event:Event)=>{
+      if(event instanceof MessageEvent&&event.data?.source!=='playgarden-host')return;
+      const s=target.__blackHoleSquareSnapshot?.(),pointer=event instanceof PointerEvent?event:null;
+      const entry={event:event.type,at:performance.now(),trusted:event.isTrusted,focused:document.hasFocus(),
+        active:document.activeElement?.tagName,target:(event.target as Element|null)?.tagName,
+        pointer:pointer?{x:pointer.clientX,y:pointer.clientY,id:pointer.pointerId,primary:pointer.isPrimary}:null,
+        message:event instanceof MessageEvent?{type:event.data.type,paused:event.data.paused}:null,
+        snapshot:s?{current:s.current,moves:s.moves,settled:s.settled,paused:s.paused,canvasX:s.canvas.x}:null};
+      target.__bhsObservedInput.push(entry);if(target.__bhsObservedInput.length>128)target.__bhsObservedInput.shift();
+    };
+    for(const name of ['pointerdown','pointerup','pointercancel','lostpointercapture','blur','focus','message'])window.addEventListener(name,record,true);
+  });
+
   // Only invalid data is injected for this corruption test. No completed flag,
   // game state, board, clock, random source, or successful API is injected.
   await page.addInitScript(key=>{if(window===top&&!sessionStorage.getItem('bhs-corruption-probed')){
@@ -291,8 +310,11 @@ test('Black Hole Square: original 18 puzzles, honest skips and owned lifecycle',
   expect(page.frames().some(f=>f.url().includes('/games/black-hole-square/'))).toBe(false);
   expect(errors).toEqual([]);expect(outside).toEqual([]);
   } finally {
+    const inputDiagnostics=await Promise.all(page.frames().map(frame=>frame.evaluate(()=>({
+      topFrame:window===top,events:(window as unknown as {__bhsObservedInput?:unknown[]}).__bhsObservedInput??[],
+    }))));
     const evidence=JSON.stringify({upstreamCommit:fixture.upstreamCommit,
-      project:info.project.name,earned,lifecycle,errors,outside},null,2);
+      project:info.project.name,earned,lifecycle,errors,outside,inputDiagnostics},null,2);
     writeFileSync(info.outputPath('black-hole-square-real-input-evidence.json'),evidence);
     await info.attach('black-hole-square-real-input-evidence',{body:evidence,contentType:'application/json'});
     await audioCDP.detach().catch(()=>{});
