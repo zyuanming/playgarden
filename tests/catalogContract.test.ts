@@ -160,6 +160,7 @@ const packs = {
   "avabranch": [],
   "gridland": [],
   "sql-mystery": [],
+  "evolution-of-trust": [],
   "css-diner": Array.from({length:32}, (_,i) => i+1),
   "flexbox-froggy": Array.from({length:24}, (_,i) => i+1),
   "monkey-rally": [1,2,3,4,5,6,7,8],
@@ -356,6 +357,8 @@ describe("Scalable catalog contract", () => {
             ? "BSD-2-Clause"
             : (game.id === "a-dark-room" || game.id === "css-diner" || game.id === "gridland")
               ? "MPL-2.0"
+              : game.id === "evolution-of-trust"
+              ? "CC0-1.0"
               : game.id === "hextris"
               ? "GPL-3.0-or-later"
               : "MIT",

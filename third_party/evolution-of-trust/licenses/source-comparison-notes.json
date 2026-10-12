@@ -1,0 +1,71 @@
+{
+  "q_v151_matches_after_reversing_two_marked_edits": true,
+  "q_license_v150_equals_v151": true,
+  "q_license_blob": "9ce1ea591fca2060658d95475291967610763b2b",
+  "balloon_edit_groups": [
+    {
+      "localLine": 15,
+      "upstreamLine": 15,
+      "local": [
+        "  -webkit-transition: all 0.1s ease-out 0.1s;",
+        "  transition: all 0.1s ease-out 0.1s;"
+      ],
+      "upstream": [
+        "  -webkit-transition: all 0.18s ease-out 0.18s;",
+        "  transition: all 0.18s ease-out 0.18s;"
+      ]
+    },
+    {
+      "localLine": 33,
+      "upstreamLine": 33,
+      "local": [
+        "  font-size: 18px;"
+      ],
+      "upstream": [
+        "  font-size: 12px;"
+      ]
+    },
+    {
+      "localLine": 36,
+      "upstreamLine": 36,
+      "local": [
+        "  /*margin-bottom: 11px;*/",
+        "  margin-bottom: 26px;"
+      ],
+      "upstream": [
+        "  margin-bottom: 11px;"
+      ]
+    },
+    {
+      "localLine": 45,
+      "upstreamLine": 44,
+      "local": [
+        "  /*margin-bottom: 5px;*/",
+        "  margin-bottom: 20px;"
+      ],
+      "upstream": [
+        "  margin-bottom: 5px;"
+      ]
+    }
+  ],
+  "pixi": {
+    "readable_sources_count": 185,
+    "minified_sources_count": 181,
+    "all_minified_sources_identical_to_readable_by_path": true,
+    "minifier_omitted_sources": [
+      "src/extract/index.js",
+      "src/interaction/index.js",
+      "src/loaders/index.js",
+      "src/particles/index.js"
+    ],
+    "upstream_blobs": {
+      "minified": "38ea4f1b62fb50e46783972f6777faafe1422b94",
+      "readable": "20971ce4a4cdd7bce258da959dd4a43a2a319620",
+      "minified_map": "321b55111be4ee48b65131603859f836783d234f",
+      "readable_map": "4d6109c35ea09a776ff1e4de3b8ac1aa452bd198"
+    },
+    "minified_exact_bytes_match_vendored": true,
+    "verified_vendored_git_blob_sha1": "38ea4f1b62fb50e46783972f6777faafe1422b94"
+  },
+  "scope": "No runtime execution or modification; text comparison only"
+}

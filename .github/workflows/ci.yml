@@ -271,5 +271,11 @@ jobs:
             if(!r.ok||bytes.length!==row.bytes||createHash('sha256').update(bytes).digest('hex')!==row.sha256)throw Error('SQL Mystery public resource mismatch '+path);
             console.log('SQL Mystery exact resource OK:',path);
           }
+          for(const row of JSON.parse(readFileSync('third_party/evolution-of-trust/distribution-manifest.json','utf8')).files.filter(f=>f.path.startsWith('public/evolution-of-trust/'))){
+            const path=row.path.slice(7),r=await fetch(new URL(path,url),{cache:'no-store'});
+            const bytes=Buffer.from(await r.arrayBuffer());
+            if(!r.ok||bytes.length!==row.bytes||createHash('sha256').update(bytes).digest('hex')!==row.sha256)throw Error('Trust public resource mismatch '+path);
+            console.log('Trust exact resource OK:',path);
+          }
           console.log('Public commit and entry verified:',sha,url);
           NODE
