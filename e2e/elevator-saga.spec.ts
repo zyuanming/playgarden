@@ -5,13 +5,15 @@ import { spawn } from 'node:child_process';
 import { openGame, chooseLevel } from './helpers';
 const solution = readFileSync(new URL('./fixtures/elevator-saga-dispatcher.js', import.meta.url), 'utf8');
 test.use({ trace: 'off' });
-test('complete original elevator programming: first middle final, isolation and lifecycle', async ({ page }, info) => {
+test('complete original elevator programming: first middle final, isolation and lifecycle', async ({ page, baseURL }, info) => {
   test.setTimeout(240000);
   const mobile = info.project.name === 'mobile', inputs: object[] = [], errors: string[] = [], outside: string[] = [], responses: string[] = [], workerEvents: object[] = [];
+  if (!baseURL) throw new Error('The game test requires its configured baseURL.');
+  const gameOrigin = new URL(baseURL).origin;
   page.on('worker', worker => { workerEvents.push({event:'created',url:worker.url()}); worker.on('close',()=>workerEvents.push({event:'closed',url:worker.url()})); });
-  page.on('response', response => { if (/^https?:/.test(response.url()) && new URL(response.url()).origin !== new URL(page.url()).origin) responses.push(response.url()); });
+  page.on('response', response => { if (/^https?:/.test(response.url()) && new URL(response.url()).origin !== gameOrigin) responses.push(response.url()); });
   page.on('pageerror', error => errors.push(error.message));
-  page.on('request', request => { if (/^https?:/.test(request.url()) && new URL(request.url()).origin !== new URL(page.url()).origin) outside.push(request.url()); });
+  page.on('request', request => { if (/^https?:/.test(request.url()) && new URL(request.url()).origin !== gameOrigin) outside.push(request.url()); });
   const activate = async (node: Locator) => { if (mobile) await node.tap(); else await node.click(); };
   await openGame(page, '电梯调度员');
   const iframe = page.locator('iframe[title="电梯调度员 Elevator Saga 编程挑战"]');

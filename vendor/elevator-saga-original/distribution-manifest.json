@@ -7,8 +7,8 @@
   "files": [
     {
       "path": "e2e/elevator-saga.spec.ts",
-      "bytes": 11548,
-      "sha256": "603c5aa358416d8615a5544cb6534eb3f85388262da9c0eb8bd13e6654ff4b18"
+      "bytes": 11654,
+      "sha256": "305350b20083143abe38bbe39830b482c36257958c83ca6f0bd608db4ec6c418"
     },
     {
       "path": "e2e/fixtures/elevator-saga-dispatcher.js",
@@ -297,8 +297,8 @@
     },
     {
       "path": "public/elevator-saga/source.zip",
-      "bytes": 527615,
-      "sha256": "a1cd55007c9ab75768d15c51b2d4f4f0d7819c2683821fab6aff27774fac820b"
+      "bytes": 527671,
+      "sha256": "4d00789837304cd5aaa683d424749f79c22207059db9e499aef8b6dd46d37904"
     }
   ]
 }
