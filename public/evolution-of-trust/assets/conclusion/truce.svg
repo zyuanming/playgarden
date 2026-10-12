@@ -1,0 +1,24 @@
+<!-- SPDX-License-Identifier: GPL-3.0-only -->
+<!-- Original Playgarden illustration of two fictional people meeting in peace. -->
+<!-- This does not reproduce A. C. Michael's 1915 illustration or any photograph. -->
+<svg xmlns="http://www.w3.org/2000/svg" width="680" height="260" viewBox="0 0 680 260">
+  <rect width="680" height="260" rx="18" fill="#f5f1e8"/>
+  <path d="M0 214Q170 190 340 218T680 210V260H0Z" fill="#e0e8db"/>
+  <g fill="none" stroke="#3e4545" stroke-width="7" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M235 177L212 229M260 179L273 229M423 179L408 229M449 177L470 229"/>
+    <path d="M228 111Q250 98 271 116L266 180H227Z" fill="#89979c"/>
+    <path d="M414 116Q437 98 457 111L458 180H420Z" fill="#b3a486"/>
+    <path d="M230 127L207 167M270 125L321 160L343 154M416 126L363 160L342 155"/>
+    <path d="M341 156L327 166Q335 177 347 167L360 162" fill="#faf8ed"/>
+    <circle cx="248" cy="79" r="29" fill="#faf8ed"/>
+    <circle cx="436" cy="79" r="29" fill="#faf8ed"/>
+    <path d="M216 70Q222 43 248 43Q273 44 279 70Z" fill="#89979c"/>
+    <path d="M405 70Q411 44 436 43Q463 44 469 70Z" fill="#b3a486"/>
+    <path d="M252 91Q259 94 264 88M420 88Q427 94 433 91" stroke-width="4"/>
+  </g>
+  <g fill="#3e4545"><circle cx="260" cy="80" r="3"/><circle cx="424" cy="80" r="3"/></g>
+  <g fill="none" stroke="#698b72" stroke-width="4" stroke-linecap="round">
+    <path d="M330 86Q339 70 351 64M338 75Q321 72 319 59Q332 58 338 75M344 70Q345 51 360 48Q366 60 344 70"/>
+  </g>
+  <g fill="#d7dfd2"><circle cx="109" cy="68" r="4"/><circle cx="567" cy="92" r="4"/><circle cx="149" cy="141" r="3"/><circle cx="526" cy="46" r="3"/></g>
+</svg>

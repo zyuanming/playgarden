@@ -1,0 +1,56 @@
+{
+  "verified_at_utc": "2026-10-12T04:45:50Z",
+  "comparisons": [
+    {
+      "path": "js/lib/pixi.min.js",
+      "exactMatch": true,
+      "matchAfterReversingDocumentedChanges": true,
+      "localCharacters": 400017,
+      "upstreamCharacters": 400017
+    },
+    {
+      "path": "js/lib/howler.js",
+      "exactMatch": false,
+      "matchAfterReversingDocumentedChanges": true,
+      "localCharacters": 87037,
+      "upstreamCharacters": 87038
+    },
+    {
+      "path": "js/lib/tweenjs-0.6.2.min.js",
+      "exactMatch": true,
+      "matchAfterReversingDocumentedChanges": true,
+      "localCharacters": 23130,
+      "upstreamCharacters": 23130
+    },
+    {
+      "path": "js/lib/q.js",
+      "exactMatch": false,
+      "matchAfterReversingDocumentedChanges": true,
+      "localCharacters": 64094,
+      "upstreamCharacters": 64004
+    },
+    {
+      "path": "js/lib/minpubsub.src.js",
+      "exactMatch": true,
+      "matchAfterReversingDocumentedChanges": true,
+      "localCharacters": 2927,
+      "upstreamCharacters": 2927
+    },
+    {
+      "path": "js/lib/pegasus.js",
+      "exactMatch": false,
+      "matchAfterReversingDocumentedChanges": false,
+      "localCharacters": 1304,
+      "upstreamCharacters": 1265,
+      "matchAfterReversingDocumentedChangesAndAppendingUpstreamFinalNewline": true,
+      "additional_difference": "ncase file omits final newline present in upstream Pegasus source"
+    },
+    {
+      "path": "css/balloon.css",
+      "exactMatch": false,
+      "matchAfterReversingDocumentedChanges": true,
+      "localCharacters": 6051,
+      "upstreamCharacters": 6001
+    }
+  ]
+}

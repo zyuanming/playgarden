@@ -339,7 +339,7 @@
     {
       "name": "A Dark Room",
       "version": "d6d1c1b9875bb4764cdb950e8cf65ba51847f0e9 (2020-08-16)",
-      "license": "MPL-2.0; additionally GPL-3.0-only in the combined work under MPL §3.3",
+      "license": "MPL-2.0; additionally GPL-3.0-only in the combined work under MPL \u00a73.3",
       "source": "https://github.com/doublespeakgames/adarkroom/tree/d6d1c1b9875bb4764cdb950e8cf65ba51847f0e9",
       "preferredSource": [
         "vendor/adr-original/upstream",
@@ -530,7 +530,7 @@
         "docs/makemaze-source-map.json",
         "package-lock.json"
       ],
-      "scope": "Complete byte-identical 16×18 scrolling wall-edit original, handed automatic collectors, gold multipliers, flood-fill escape detection, angry wall demolition, escape penalties and missed-gold loss. Existing audited Crisp engine/audio and complete editable source/licenses reused. No finite levels or new runtime dependencies."
+      "scope": "Complete byte-identical 16\u00d718 scrolling wall-edit original, handed automatic collectors, gold multipliers, flood-fill escape detection, angry wall demolition, escape penalties and missed-gold loss. Existing audited Crisp engine/audio and complete editable source/licenses reused. No finite levels or new runtime dependencies."
     },
     {
       "name": "COUNT original endless observation and timing game",
@@ -592,7 +592,7 @@
       "scope": "Original first-party mechanics, 24 authored puzzles, uncounted credits tableau and Canvas primitive artwork under CC-BY-SA-4.0. Original notice and exact legal text retained. GPLv3-compatible adaptation adds isolated lifecycle, input/React host and validated saves. No separate music, font, icon, input library or original network-enabled shell."
     },
     {
-      "name": "Heal’em All complete six-stage game, original art and Quintus engine",
+      "name": "Heal\u2019em All complete six-stage game, original art and Quintus engine",
       "version": "66950cda39d2b91f114dcf1a0b0307972f24a68f",
       "license": "GPL-3.0-only first party and adapter; CC-BY-4.0 artwork; MIT Quintus and embedded helpers",
       "source": "https://github.com/krzysu/game-off-2013/tree/66950cda39d2b91f114dcf1a0b0307972f24a68f",
@@ -846,6 +846,22 @@
         "scripts/sql-mystery/verify-sources.py"
       ],
       "scope": "Original byte-identical fictional database with original murderer and mastermind validation trigger, complete free-form SQL investigation. One case, zero numbered levels. Official SQLite3.54.0 WASM and matching preferred source archives; disposable bounded worker, scoped notebook, escaped output. No external CDN, old SQL.js, unrelated image or telemetry."
+    },
+    {
+      "name": "The Evolution of Trust",
+      "version": "6ec45d73befdb922bd40654dd1c1c903a953562f",
+      "license": "CC0 original/translation/audio; MIT/Apache-2.0/ISC/BSD-3-Clause/CC0 dependencies; GPL-3.0-only new code",
+      "source": "https://github.com/ncase/trust/tree/6ec45d73befdb922bd40654dd1c1c903a953562f",
+      "preferredSource": [
+        "third_party/evolution-of-trust/",
+        "public/evolution-of-trust/",
+        "src/games/EvolutionOfTrust.tsx"
+      ],
+      "buildSources": [
+        "scripts/evolution-of-trust/package-source.py",
+        "scripts/evolution-of-trust/verify-sources.py"
+      ],
+      "scope": "Complete original guided journey and sandbox. Exact original strategies/RNG/payoffs, local CanvasRenderer, Chinese/readable touch controls, scoped pause/dispose. Zero numbered levels."
     }
   ]
 }

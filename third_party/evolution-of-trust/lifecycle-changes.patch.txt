@@ -1,0 +1,255 @@
+--- a/index.html
++++ b/index.html
+@@ -129,6 +129,9 @@
+ </body>
+ </html>
+ 
++<!-- Playgarden lifecycle boundary: initialize before all upstream libraries. -->
++<script src="js/lifecycle.js"></script>
++
+ <!-- Libraries -->
+ <script src="js/lib/helpers.js?v11"></script>
+ <script src="js/lib/pegasus.js?v11"></script>
+
+--- a/js/lib/q.js
++++ b/js/lib/q.js
+@@ -109,6 +109,7 @@
+     var laterQueue = [];
+ 
+     function flush() {
++        if (window.TrustLifecycle.deferUntilRunning(flush)) return;
+         /* jshint loopfunc: true */
+         var task, domain;
+ 
+
+js/lib/pixi.min.js: 2 exact replacement(s); minified line omitted here. See prepare_boundaries.py.
+
+js/lib/tweenjs-0.6.2.min.js: 1 exact replacement(s); minified line omitted here. See prepare_boundaries.py.
+
+--- a/js/lib/howler.js
++++ b/js/lib/howler.js
+@@ -350,6 +350,7 @@
+      */
+     _autoResume: function() {
+       var self = this;
++      if (window.TrustLifecycle.isFrozen()) return self;
+ 
+       if (!self.ctx || typeof self.ctx.resume === 'undefined' || !Howler.usingWebAudio) {
+         return;
+
+--- a/js/core/Slideshow.js
++++ b/js/core/Slideshow.js
+@@ -28,6 +28,9 @@
+ 		self.slideIndex = -1;
+ 		self.currentSlide = null;
+ 		self.objects = {};
++
++		// Retire old scene work only after cleanup, before replacement setup.
++		TrustLifecycle.beginScene();
+ 
+ 	};
+ 	self.reset();
+
+--- a/js/sims/Splash.js
++++ b/js/sims/Splash.js
+@@ -23,6 +23,7 @@
+ 	
+ 	// APP
+ 	var app = new PIXI.Application(width, height, {transparent:true, resolution:2});
++	TrustLifecycle.registerApp(app);
+ 	app.view.style.width = width;
+ 	app.view.style.height = height;
+ 	self.dom.appendChild(app.view);
+
+--- a/js/sims/Iterated.js
++++ b/js/sims/Iterated.js
+@@ -28,6 +28,7 @@
+ 
+ 	// APP
+ 	var app = new PIXI.Application(700, 250, {transparent:true, resolution:2});
++	TrustLifecycle.registerApp(app);
+ 	self.app = app;
+ 	app.view.style.width = 700;
+ 	app.view.style.height = 250;
+@@ -157,7 +158,7 @@
+ 			.call(function(){
+ 				self.highlightPayoff(payoffs[0]);
+ 			});
+-		Q.all([animPromise1,animPromise2]).then(function(){
++		Q.all([animPromise1,animPromise2]).then(TrustLifecycle.guardScene(function(){
+ 
+ 			// Payoff Matrix
+ 			self.dehighlightPayoff();
+@@ -165,7 +166,7 @@
+ 			// End Round
+ 			publish("iterated/round/end", payoffs);
+ 
+-		});
++		}));
+ 
+ 		// Remember own & other's moves
+ 		self.opponentLogic.remember(B, A);
+@@ -446,7 +447,7 @@
+ 
+ 					// SOUND
+ 					if(config.opponent){
+-						setTimeout(function(){
++						TrustLifecycle.sceneTimeout(function(){
+ 							Loader.sounds.coin_insert.stereo(0.9).volume(0.3).play();
+ 						},50);
+ 					}else{
+@@ -470,7 +471,7 @@
+ 
+ 					// WHOOSH SOUND
+ 					if(config.opponent){
+-						setTimeout(function(){
++						TrustLifecycle.sceneTimeout(function(){
+ 							Loader.sounds.whoosh.stereo(0.9).volume(0.8).play();
+ 						},50);
+ 					}else{
+@@ -479,7 +480,7 @@
+ 
+ 					// EVIL LAUGH
+ 					if(self.payoff==PD.PAYOFFS.T){
+-						setTimeout(function(){
++						TrustLifecycle.sceneTimeout(function(){
+ 							var stereo = (config.opponent) ? 0.9 : -0.9;
+ 							Loader.sounds.evil_laugh.stereo(stereo).volume(1).play();
+ 						},100);
+@@ -570,7 +571,7 @@
+ 							// COIN GET SOUND
+ 							if(self.payoff==PD.PAYOFFS.R && i==2) return; // NOT last coin.
+ 							if(config.opponent){
+-								setTimeout(function(){
++								TrustLifecycle.sceneTimeout(function(){
+ 									Loader.sounds.coin_get.stereo(0.9).volume(0.1).play();
+ 								},50);
+ 							}else{
+
+--- a/js/sims/Tournament.js
++++ b/js/sims/Tournament.js
+@@ -56,6 +56,7 @@
+ 	
+ 	// APP
+ 	var app = new PIXI.Application(500, 500, {transparent:true, resolution:2});
++	TrustLifecycle.registerApp(app);
+ 	self.dom = app.view;
+ 
+ 	// DOM
+@@ -320,7 +321,7 @@
+ 	var _startAutoPlay = function(){
+ 		self.isAutoPlaying = true;
+ 		_nextStep();
+-		setTimeout(function(){
++		TrustLifecycle.sceneTimeout(function(){
+ 			if(self.isAutoPlaying) _startAutoPlay();
+ 		},150);
+ 	};
+
+--- a/js/lib/helpers.js
++++ b/js/lib/helpers.js
+@@ -74,10 +74,10 @@
+ 	object.dom.style.opacity = 1;
+ };
+ var _fadeIn = function(object, time){
+-	setTimeout(function(){
++	TrustLifecycle.sceneTimeout(function(){
+ 		object.dom.classList.add("fader");
+ 		object.dom.style.opacity = 1;
+-		setTimeout(function(){
++		TrustLifecycle.sceneTimeout(function(){
+ 			object.dom.classList.remove("fader");
+ 		},500);
+ 	},time);
+
+--- a/js/slides/2_Slides_Iterated.js
++++ b/js/slides/2_Slides_Iterated.js
+@@ -92,7 +92,7 @@
+ 		//////////////////////////
+ 
+ 		// CHANGE THE BUTTONS
+-		setTimeout(function(){
++		TrustLifecycle.sceneTimeout(function(){
+ 			o.buttonCheat.config.onclick = null;
+ 			o.buttonCheat.config.message = "iterated/cheat";
+ 			o.buttonCooperate.config.onclick = null;
+
+--- a/js/slides/3_Slides_Tournament.js
++++ b/js/slides/3_Slides_Tournament.js
+@@ -222,7 +222,7 @@
+ 		Loader.sounds.drumroll.volume(0.8).play();
+ 		_hide(o.text);
+ 		_hide(o.button);
+-		setTimeout(function(){
++		TrustLifecycle.sceneTimeout(function(){
+ 			_show(o.text);
+ 			_show(o.button);
+ 		},2000);
+
+--- a/js/core/Loader.js
++++ b/js/core/Loader.js
+@@ -17,8 +17,8 @@
+ Loader.loadAssets = function(manifest, completeCallback, progressCallback){
+ 
+ 	var deferred = Q.defer();
+-	completeCallback = completeCallback || function(){};
+-	progressCallback = progressCallback || function(){};
++	completeCallback = TrustLifecycle.gate(completeCallback || function(){});
++	progressCallback = TrustLifecycle.gate(progressCallback || function(){});
+ 
+ 	// ABSOLUTE NUMBER OF ASSETS!
+ 	var _isLoadingImages = 0;
+
+--- a/js/core/Scratcher.js
++++ b/js/core/Scratcher.js
+@@ -46,11 +46,13 @@
+ subscribe("slideshow/scratch", Scratcher.scratch);
+ 
+ 
+-Scratcher.scratchAnim = function(dom, scratchIn){
++Scratcher.scratchAnim = function(dom, scratchIn, sceneOwned){
++	var scheduleInterval = sceneOwned ? TrustLifecycle.sceneInterval : setInterval;
++	var scheduleTimeout = sceneOwned ? TrustLifecycle.sceneTimeout : setTimeout;
+ 
+ 	var deferred = Q.defer();
+ 	var frame = 0;
+-	var interval = setInterval(function(){
++	var interval = scheduleInterval(function(){
+ 		frame++;
+ 		if(frame>19){
+ 			clearInterval(interval);
+@@ -60,7 +62,7 @@
+ 		}
+ 	},40);
+ 
+-	setTimeout(function(){
++	scheduleTimeout(function(){
+ 		var sound = scratchIn ? Loader.sounds.scratch_in : Loader.sounds.scratch_out;
+ 		sound.play();
+ 	},100);
+@@ -82,17 +84,17 @@
+ 	slideshow.dom.appendChild(scratcher);
+ 
+ 	// Animate!
+-	Scratcher.scratchAnim(scratcher, true)
+-	.then(function(){
++	Scratcher.scratchAnim(scratcher, true, true)
++	.then(TrustLifecycle.guardScene(function(){
+ 		if(_onChange) _onChange();
+-	})
+-	.then(function(){
+-		return Scratcher.scratchAnim(scratcher, false);
+-	})
+-	.then(function(){
++	}))
++	.then(TrustLifecycle.guardScene(function(){
++		return Scratcher.scratchAnim(scratcher, false, true);
++	}))
++	.then(TrustLifecycle.guardScene(function(){
+ 		slideshow.dom.removeChild(scratcher); // Destroy DOM
+ 		if(_onComplete) _onComplete();
+-	});
++	}));
+ 
+ };
+ 

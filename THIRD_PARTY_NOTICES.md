@@ -2853,3 +2853,9 @@ Original modified files remain MPL-2.0. Independent Playgarden host, Chinese tex
 - SQLite3.54.0 官方WASM与JS API为公有领域；生成的 Emscripten5.0.1 运行库保留MIT/NCSA、musl及compiler-rt全部原声明。精确官方SQLite源代码/合并源码ZIP包含在可下载源码中。
 - 新增宿主、可终止worker、封面和打包脚本 GPL-3.0-only；不包含上游Vecteezy插图、外部字体/分析、旧网站JS或未清权SQL.js扩展。
 - 完整逐项声明：public/sql-mystery/LICENSES.txt；GPL正文：public/sql-mystery/Playgarden-GPL-3.0.txt；可下载源码：public/sql-mystery/source.zip；文件来源与SHA：vendor/sql-mystery-original/source-manifest.json。
+
+## The Evolution of Trust / 信任的进化
+
+Nicky Case, fixed6ec45d73befdb922bd40654dd1c1c903a953562f. First-party source, art and text CC0-1.0; Chinese translation 吴桐、唐鳳 fixed07b31104a5409ff6f253701f594e284c80d448bd, explicit CC0. Full 25-choice repeated-game journey, tournament/evolution/noise experiments and sandbox; no enumerated finite levels. Nine explicitly attributed CC0 recordings retained. Seven restricted or unverifiable effects, the unlicensed font and third-party truce image are excluded and independently replaced.
+
+Full component notices, audio provenance and CC0: public/evolution-of-trust/NOTICE.txt and THIRD-PARTY-NOTICES.txt. Editable source, immutable original mapping and build correspondence: third_party/evolution-of-trust/. Pixi4.4.3, Howler2.0.0, TweenJS0.6.2, Q1.5.1, MinPubSub0.0.2, Pegasus0.3.4-era and Balloon0.4.0 retain MIT/Apache-2.0/ISC/BSD-3-Clause/CC0 notices, not a blanket CC0 label. New host/lifecycle/accessibility and independent replacement assets GPL-3.0-only.

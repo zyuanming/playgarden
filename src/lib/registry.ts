@@ -3157,5 +3157,35 @@ component: lazy(() => import("../games/GridlandOriginal"))
 component: lazy(() => import("../games/SqlMystery"))
 },
 
+{
+  "id": "evolution-of-trust",
+  "title": "信任的进化",
+  "subtitle": "亲自合作或背叛，观察八种策略怎样演化，再改变游戏的规则。",
+  "category": "科学实验",
+  "difficulty": "中级",
+  "tone": "orange",
+  "levelCount": 0,
+  "campaign": true,
+  "freePlayCaption": "完整互动旅程 · 自由沙盒",
+  "allowUndo": false,
+  "artwork": {
+    "url": "./evolution-of-trust/cover.png",
+    "position": "left center",
+    "size": "auto 100%"
+  },
+  "source": {
+    "kind": "adapted",
+    "license": "CC0-1.0",
+    "author": "Nicky Case；中文吴桐、唐鳳",
+    "workTitle": "The Evolution of Trust（完整原作与沙盒）",
+    "url": "https://github.com/ncase/trust/tree/6ec45d73befdb922bd40654dd1c1c903a953562f",
+    "commit": "6ec45d73befdb922bd40654dd1c1c903a953562f",
+    "notice": "./evolution-of-trust/NOTICE.txt",
+    "notes": "原作规则、策略、叙事、原画与明确许可的九段音轨保留。原作及中文翻译CC0；依赖分别保留MIT/Apache/ISC/BSD/CC0。仅替换具体受限/未明音效、字体和第三方插图。25次重复博弈、循环赛、演化、失误实验和沙盒完整保留；0人为编号关卡，新增宿主与适配GPL-3.0-only。"
+  }
+,
+component: lazy(() => import("../games/EvolutionOfTrust"))
+},
+
 ];
 export const findGame = (id: string) => games.find((game) => game.id === id);

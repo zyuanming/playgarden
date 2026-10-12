@@ -2854,6 +2854,12 @@ Original modified files remain MPL-2.0. Independent Playgarden host, Chinese tex
 - 新增宿主、可终止worker、封面和打包脚本 GPL-3.0-only；不包含上游Vecteezy插图、外部字体/分析、旧网站JS或未清权SQL.js扩展。
 - 完整逐项声明：public/sql-mystery/LICENSES.txt；GPL正文：public/sql-mystery/Playgarden-GPL-3.0.txt；可下载源码：public/sql-mystery/source.zip；文件来源与SHA：vendor/sql-mystery-original/source-manifest.json。
 
+## The Evolution of Trust / 信任的进化
+
+Nicky Case, fixed6ec45d73befdb922bd40654dd1c1c903a953562f. First-party source, art and text CC0-1.0; Chinese translation 吴桐、唐鳳 fixed07b31104a5409ff6f253701f594e284c80d448bd, explicit CC0. Full 25-choice repeated-game journey, tournament/evolution/noise experiments and sandbox; no enumerated finite levels. Nine explicitly attributed CC0 recordings retained. Seven restricted or unverifiable effects, the unlicensed font and third-party truce image are excluded and independently replaced.
+
+Full component notices, audio provenance and CC0: public/evolution-of-trust/NOTICE.txt and THIRD-PARTY-NOTICES.txt. Editable source, immutable original mapping and build correspondence: third_party/evolution-of-trust/. Pixi4.4.3, Howler2.0.0, TweenJS0.6.2, Q1.5.1, MinPubSub0.0.2, Pegasus0.3.4-era and Balloon0.4.0 retain MIT/Apache-2.0/ISC/BSD-3-Clause/CC0 notices, not a blanket CC0 label. New host/lifecycle/accessibility and independent replacement assets GPL-3.0-only.
+
 ## Complete bundled runtime dependency notices
 
 ### react 19.3.0 (MIT)
@@ -5344,4 +5350,10 @@ https://github.com/NUKnightLab/sql-mysteries/tree/a7aa22701bd41b24e905be387fb173
 Preferred editable source: vendor/sql-mystery-original/, public/sql-mystery/, src/games/SqlMystery.tsx, src/games/sqlMystery.css
 Build sources: scripts/materialize-sql-mystery-archives.py, scripts/sql-mystery/package-source.py, scripts/sql-mystery/verify-sources.py
 Original byte-identical fictional database with original murderer and mastermind validation trigger, complete free-form SQL investigation. One case, zero numbered levels. Official SQLite3.54.0 WASM and matching preferred source archives; disposable bounded worker, scoped notebook, escaped output. No external CDN, old SQL.js, unrelated image or telemetry.
+
+The Evolution of Trust 6ec45d73befdb922bd40654dd1c1c903a953562f (CC0 original/translation/audio; MIT/Apache-2.0/ISC/BSD-3-Clause/CC0 dependencies; GPL-3.0-only new code)
+https://github.com/ncase/trust/tree/6ec45d73befdb922bd40654dd1c1c903a953562f
+Preferred editable source: third_party/evolution-of-trust/, public/evolution-of-trust/, src/games/EvolutionOfTrust.tsx
+Build sources: scripts/evolution-of-trust/package-source.py, scripts/evolution-of-trust/verify-sources.py
+Complete original guided journey and sandbox. Exact original strategies/RNG/payoffs, local CanvasRenderer, Chinese/readable touch controls, scoped pause/dispose. Zero numbered levels.
 
