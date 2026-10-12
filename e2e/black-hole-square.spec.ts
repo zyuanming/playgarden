@@ -67,7 +67,6 @@ function denyWrites(key:string){
 }
 
 test('Black Hole Square: original 18 puzzles, honest skips and owned lifecycle',async({page},info)=>{
-  test.skip(info.project.name==='desktop','Desktop complete 18-puzzle journey passed at a8a63e371e424f68803144ea6f483818cab30830; runtime unchanged.');
   test.setTimeout(300000);
   expect(fixture.status).toBe('STATIC_DATA_ANALYSIS_ONLY_NOT_RUNTIME_PASS');
   expect(fixture.levels).toHaveLength(18);expect(fixture.levels.every(p=>p.status==='STATIC_OPERATOR_PLAN_NOT_RUNTIME_PASS')).toBe(true);
@@ -208,6 +207,30 @@ test('Black Hole Square: original 18 puzzles, honest skips and owned lifecycle',
   await page.screenshot({path:info.outputPath('black-hole-square-real-budget-failure.png'),fullPage:true});
   await idle(page,1);await board(page,1,fixture.levels[1].initial);
   await select(page,0);
+  // Observe one ordinary held first touch after a real host reset/remount.
+  // Do not retry a dropped gesture or change any gameplay state to compensate.
+  if(mobile){
+    await page.locator('.game-toolbar').getByRole('button',{name:'重来',exact:true}).click();
+    const start=await idle(page,0);await board(page,0,fixture.levels[0].initial);
+    const firstFrame=(await gameFrame(page))!,cell=fixture.levels[0].cells[0];
+    const point=await canvasPoint(page,16+cell%6*48+24+start.canvas.x,62+Math.floor(cell/6)*48+24+start.canvas.y);
+    const hostBefore=await page.evaluate(()=>({at:performance.now(),focused:document.hasFocus(),active:document.activeElement?.tagName}));
+    const frameBefore=await firstFrame.evaluate(()=>performance.now());
+    expect(hostBefore.focused).toBe(true);expect(hostBefore.active).toBe('BUTTON');
+    const cdp=await page.context().newCDPSession(page);
+    try{
+      await cdp.send('Input.dispatchTouchEvent',{type:'touchStart',touchPoints:[{...point,id:1}]});
+      await page.waitForTimeout(100);
+      await cdp.send('Input.dispatchTouchEvent',{type:'touchEnd',touchPoints:[]});
+    }finally{await cdp.detach();}
+    const hostEvents=await page.evaluate(since=>(window as unknown as {__bhsObservedInput:{at:number}[]}).__bhsObservedInput.filter(e=>e.at>=since),hostBefore.at);
+    const frameEvents=await firstFrame.evaluate(since=>(window as unknown as {__bhsObservedInput:{at:number}[]}).__bhsObservedInput.filter(e=>e.at>=since),frameBefore);
+    lifecycle.push({case:'single held first touch from host focus into a new iframe',point,hostBefore,hostEvents,frameEvents});
+    await board(page,0,fixture.levels[0].checkpoints[0]);await idle(page,0);
+    expect((await observed(page)).moves).toBe(1);
+    await page.locator('.game-toolbar').getByRole('button',{name:'重来',exact:true}).click();
+    await idle(page,0);await board(page,0,fixture.levels[0].initial);
+  }
   // Input cancellation releases a touch without synthesizing an activation.
   if(mobile){
     const cdp=await page.context().newCDPSession(page),s=await idle(page,0),bounds=await page.locator(FRAME).boundingBox();
