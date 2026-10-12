@@ -88,7 +88,7 @@ export class ProgramEvent {
 
     private applyAudio(): void {
         if (this.masterGain && this.audioContext)
-            this.masterGain.gain.setValueAtTime(this.hostMuted || !this.audioEnabled ? 0 : 1, this.audioContext.currentTime);
+            this.masterGain.gain.value = this.hostMuted || !this.audioEnabled ? 0 : 1;
         if (this.hostMuted || !this.audioEnabled) this.samples.forEach(sample => sample.stop());
     }
 
