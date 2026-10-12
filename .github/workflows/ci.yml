@@ -48,6 +48,15 @@ jobs:
       # build already performs the license-notice check and TypeScript check.
       # Unit tests and campaign enumeration are intentionally paused.
       - run: npm run build -- --base=/playgarden/
+      - name: Identify the compiled Ghosted resources
+        run: node scripts/ghosted/build-identity.mjs
+      - name: Keep exact compiled Ghosted bytes for deployment verification
+        uses: actions/upload-artifact@v4
+        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+        with:
+          name: ghosted-build-identity
+          path: ghosted-build-identity.json
+          retention-days: 3
       - name: Identify the exact build
         run: |
           node --input-type=module <<'NODE'
@@ -143,6 +152,12 @@ jobs:
       - name: Restore verified original Monkey Rally images for byte comparison
         if: steps.current.outputs.deploy == 'true'
         run: python3 scripts/monkey-rally/unpack-assets.py
+      - name: Read the same build's Ghosted resource identity
+        uses: actions/download-artifact@v4
+        if: steps.current.outputs.deploy == 'true'
+        with:
+          name: ghosted-build-identity
+          path: .build-identities
       - name: Verify public build identity and entry resources without repeating E2E
         if: steps.current.outputs.deploy == 'true'
         env:
@@ -276,6 +291,15 @@ jobs:
             const bytes=Buffer.from(await r.arrayBuffer());
             if(!r.ok||bytes.length!==row.bytes||createHash('sha256').update(bytes).digest('hex')!==row.sha256)throw Error('Trust public resource mismatch '+path);
             console.log('Trust exact resource OK:',path);
+          }
+          const ghostedIdentity=JSON.parse(readFileSync('.build-identities/ghosted-build-identity.json','utf8'));
+          if(ghostedIdentity.commit!==sha)throw Error('Ghosted identity belongs to a different build');
+          if(!Array.isArray(ghostedIdentity.files)||!ghostedIdentity.files.length||!['games/ghosted/js/bridge.js','games/ghosted/source.tar.gz'].every(path=>ghostedIdentity.files.some(row=>row.path===path)))throw Error('Incomplete Ghosted identity');
+          for(const row of ghostedIdentity.files){
+            if(!/^games\/ghosted\/[a-zA-Z0-9_./-]+$/.test(row.path)||row.path.includes('..'))throw Error('Invalid Ghosted resource path');
+            const r=await fetch(new URL(row.path,url),{cache:'no-store'}),bytes=Buffer.from(await r.arrayBuffer());
+            if(!r.ok||bytes.length!==row.bytes||createHash('sha256').update(bytes).digest('hex')!==row.sha256)throw Error('Ghosted public resource mismatch '+row.path);
+            console.log('Ghosted exact resource OK:',row.path);
           }
           console.log('Public commit and entry verified:',sha,url);
           NODE

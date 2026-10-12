@@ -179,6 +179,7 @@ export const GAME_IDS = [
   "gridland",
   "sql-mystery",
   "evolution-of-trust",
+  "ghosted",
 ] as const;
 export type GameId = (typeof GAME_IDS)[number];
 export type Category =

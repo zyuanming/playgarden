@@ -3187,5 +3187,33 @@ component: lazy(() => import("../games/SqlMystery"))
 component: lazy(() => import("../games/EvolutionOfTrust"))
 },
 
+{
+  "id": "ghosted",
+  "title": "幽灵十三步 · Ghosted",
+  "subtitle": "13 步后化身幽灵：推岩石、吃苹果，走遍 12 张谜题地图与解锁终章。",
+  "category": "空间想象",
+  "difficulty": "进阶",
+  "tone": "purple",
+  "levelCount": 13,
+  "allowUndo": true,
+  "artwork": {
+    "url": "./games/ghosted/g.png",
+    "position": "center",
+    "size": "auto 100%"
+  },
+  "source": {
+    "kind": "adapted",
+    "license": "MIT",
+    "author": "Jani Nykänen",
+    "workTitle": "Ghosted（完整13张原地图）",
+    "url": "https://github.com/jani-nykanen/ghosted/tree/846454c3b2f7509515cbcbf8852b09f7b7d98b24",
+    "commit": "846454c3b2f7509515cbcbf8852b09f7b7d98b24",
+    "notice": "./games/ghosted/LICENSE-MIT.txt",
+    "notes": "保留原引擎、13张地图、像素图集、字形及本地合成音轨。前12关完成后，原作解锁噩梦终章；不保存中途棋盘。原仓库README声明MIT，完整署名与许可保留；新增宿主和适配GPL-3.0-only。"
+  }
+,
+component: lazy(() => import("../games/GhostedGame"))
+},
+
 ];
 export const findGame = (id: string) => games.find((game) => game.id === id);
