@@ -1,0 +1,560 @@
+{
+  "repo": "Quinten/black-hole-square",
+  "commit": "8d48aae2097613782ab18d5062e8a3906741baaa",
+  "root_tree": "18df1cca987fdcdc0861ac25b3d194eaf8839c6f",
+  "files": [
+    {
+      "path": ".gitignore",
+      "bytes": 22,
+      "git_blob_sha1": "1cb5da003c88cc095a38803d13854cb2d76036e0",
+      "sha256": "c96e2774e4ff7eaedfcb0d8587c5addd9c3004f9822c91fa042855cbacdea526",
+      "source_url": "https://github.com/Quinten/black-hole-square/blob/8d48aae2097613782ab18d5062e8a3906741baaa/.gitignore"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 1071,
+      "git_blob_sha1": "fdea1f5af7b29d90ba3bde316ca65afb93459241",
+      "sha256": "1ac9a90e63439c672e6cf3c0561d88ef779788307051baf95496ed53f9a9b868",
+      "source_url": "https://github.com/Quinten/black-hole-square/blob/8d48aae2097613782ab18d5062e8a3906741baaa/LICENSE"
+    },
+    {
+      "path": "README.md",
+      "bytes": 377,
+      "git_blob_sha1": "364b88efbf69de5ae71e0af68486bafba328b922",
+      "sha256": "9a895224aba0f35838da93febc858a39d00db049392095e6e21068de6eaed9c2",
+      "source_url": "https://github.com/Quinten/black-hole-square/blob/8d48aae2097613782ab18d5062e8a3906741baaa/README.md"
+    },
+    {
+      "path": "package.json",
+      "bytes": 1025,
+      "git_blob_sha1": "1a4590d557b7a79263fed20ed254c173e7c53904",
+      "sha256": "15311c3c75b3cd5a20bb5417fe8b0d975dba44bcd8b7be95d0fa950e2061cd9b",
+      "source_url": "https://github.com/Quinten/black-hole-square/blob/8d48aae2097613782ab18d5062e8a3906741baaa/package.json"
+    },
+    {
+      "path": "scratch/bgcut.afdesign",
+      "bytes": 9172,
+      "git_blob_sha1": "ded306b698d44caa387d8080931ae8de20d0abf5",
+      "sha256": "b605c43655aa39ffc3aa0d50a7baf1887302e9a7f648232a8238bcaf90a864de",
+      "source_url": "https://github.com/Quinten/black-hole-square/blob/8d48aae2097613782ab18d5062e8a3906741baaa/scratch/bgcut.afdesign"
+    },
+    {
+      "path": "scratch/bgcut.svg",
+      "bytes": 265,
+      "git_blob_sha1": "0e631bc6695fe6794ff27abb6fc1dd1003de6eec",
+      "sha256": "5f896207d658a8a930085ede047faba43a4423bf929d8197024360f993e686cc",
+      "source_url": "https://github.com/Quinten/black-hole-square/blob/8d48aae2097613782ab18d5062e8a3906741baaa/scratch/bgcut.svg"
+    },
+    {
+      "path": "scratch/blackhole.svg",
+      "bytes": 389,
+      "git_blob_sha1": "acb64646a5dae8a8256a907d36385cc9531ff0b4",
+      "sha256": "c72047f0605781bcf71df39ff7952d809b974359493970203483357f20ddeea9",
+      "source_url": "https://github.com/Quinten/black-hole-square/blob/8d48aae2097613782ab18d5062e8a3906741baaa/scratch/blackhole.svg"
+    },
+    {
+      "path": "scratch/blanksquare.svg",
+      "bytes": 403,
+      "git_blob_sha1": "4811f877b14eb71b7c5ec21e7fbe5f771480588c",
+      "sha256": "1c84d0d28715e743fe518c45295130d55da11ded1cca3b0cf9416beca7f01ea9",
+      "source_url": "https://github.com/Quinten/black-hole-square/blob/8d48aae2097613782ab18d5062e8a3906741baaa/scratch/blanksquare.svg"
+    },
+    {
+      "path": "scratch/down.svg",
+      "bytes": 557,
+      "git_blob_sha1": "360230a7657a22d281fbbfe855025b2d4fe9ff73",
+      "sha256": "79a3f05b191df0cf5114463afb3ff3885a64670dede16f0b6cf2c868e001b616",
+      "source_url": "https://github.com/Quinten/black-hole-square/blob/8d48aae2097613782ab18d5062e8a3906741baaa/scratch/down.svg"
+    },
+    {
+      "path": "scratch/fg.afdesign",
+      "bytes": 7206,
+      "git_blob_sha1": "ffb5bcbb5d6efcf331f6ad8b3b07593bf541dc26",
+      "sha256": "ee8e637ac4bc4728ec4dcb3353411d96177a7ce5cefbfb36dcf6ce335a9baee8",
+      "source_url": "https://github.com/Quinten/black-hole-square/blob/8d48aae2097613782ab18d5062e8a3906741baaa/scratch/fg.afdesign"
+    },
+    {
+      "path": "scratch/fg.svg",
+      "bytes": 249,
+      "git_blob_sha1": "964b63dae7c47e395990b4e625887e348fac2f1e",
+      "sha256": "589edbc4939271ff3ad2a4e81b87c17744823c9ecefc2de7af4becefa49a7d7f",
+      "source_url": "https://github.com/Quinten/black-hole-square/blob/8d48aae2097613782ab18d5062e8a3906741baaa/scratch/fg.svg"
+    },
+    {
+      "path": "scratch/left.svg",
+      "bytes": 485,
+      "git_blob_sha1": "71f8d90a29b333bf8963a941c17b6cc39a33acc3",
+      "sha256": "d105d4706df4ed01c596a65219fc85e8c466666cf02076cc484715a646566cbe",
+      "source_url": "https://github.com/Quinten/black-hole-square/blob/8d48aae2097613782ab18d5062e8a3906741baaa/scratch/left.svg"
+    },
+    {
+      "path": "scratch/neutronstar.svg",
+      "bytes": 297,
+      "git_blob_sha1": "a9c18a3ecf43549f100ea9c320a7b7ed70f3b059",
+      "sha256": "7234efe5551d0994ae1af7dd1f230519066565537b95cd8739bc45f5b912bc96",
+      "source_url": "https://github.com/Quinten/black-hole-square/blob/8d48aae2097613782ab18d5062e8a3906741baaa/scratch/neutronstar.svg"
+    },
+    {
+      "path": "scratch/reset.svg",
+      "bytes": 382,
+      "git_blob_sha1": "e56ab976d43136dd434b2a2cc36446f8e87fd6a0",
+      "sha256": "07422c9f6434b86cf2b29458803e4f404601bcc55f26077dad8721ff3a914cf7",
+      "source_url": "https://github.com/Quinten/black-hole-square/blob/8d48aae2097613782ab18d5062e8a3906741baaa/scratch/reset.svg"
+    },
+    {
+      "path": "scratch/right.svg",
+      "bytes": 431,
+      "git_blob_sha1": "63b946f30e4ff2cb4a2e60d0e0a3400d7a939e5e",
+      "sha256": "59b0a9e591e95fe333db6eccaf4128e845502e751ac0a52148b70a49099634c4",
+      "source_url": "https://github.com/Quinten/black-hole-square/blob/8d48aae2097613782ab18d5062e8a3906741baaa/scratch/right.svg"
+    },
+    {
+      "path": "scratch/tiles.afdesign",
+      "bytes": 33329,
+      "git_blob_sha1": "a2f132d9f77ef22a4452c4f6c1b7423f2fac546a",
+      "sha256": "b536a3bdac71baded2b5c6b44b63fb65d41bd2d3559c21cc8a0a30d696da6fba",
+      "source_url": "https://github.com/Quinten/black-hole-square/blob/8d48aae2097613782ab18d5062e8a3906741baaa/scratch/tiles.afdesign"
+    },
+    {
+      "path": "scratch/title.afdesign",
+      "bytes": 43760,
+      "git_blob_sha1": "67b65f4a78762b2c702dc1d868c925e869a21064",
+      "sha256": "782e4ea5c866c10c9d19fb7f66f7492232695e08be0753e8701f3b1c1a163ded",
+      "source_url": "https://github.com/Quinten/black-hole-square/blob/8d48aae2097613782ab18d5062e8a3906741baaa/scratch/title.afdesign"
+    },
+    {
+      "path": "scratch/title.svg",
+      "bytes": 11352,
+      "git_blob_sha1": "1972bef9eee69c61ebc700eeecf603c0662d2bf9",
+      "sha256": "1afcceec95d7a56f9764a5fe3933dada2b362311bb8e2bbe8800f0fd32fa0328",
+      "source_url": "https://github.com/Quinten/black-hole-square/blob/8d48aae2097613782ab18d5062e8a3906741baaa/scratch/title.svg"
+    },
+    {
+      "path": "scratch/up.svg",
+      "bytes": 480,
+      "git_blob_sha1": "87ea9bf7506f42317576b07a2e3d79df2cdba4ed",
+      "sha256": "1f568fa41a02c0fd67144193d0c4f1380cda0103735e95e8741060c8945f1496",
+      "source_url": "https://github.com/Quinten/black-hole-square/blob/8d48aae2097613782ab18d5062e8a3906741baaa/scratch/up.svg"
+    },
+    {
+      "path": "scratch/x.svg",
+      "bytes": 362,
+      "git_blob_sha1": "5880cdc5cf468cd4e7c1f435c0e4c8fcb1586510",
+      "sha256": "fa5c3f3add17a7014d13d61d72c5c7f43fe13d2a4223c11a20b9102622bbdf10",
+      "source_url": "https://github.com/Quinten/black-hole-square/blob/8d48aae2097613782ab18d5062e8a3906741baaa/scratch/x.svg"
+    },
+    {
+      "path": "src/assets/icon.png",
+      "bytes": 132,
+      "git_blob_sha1": "abf074f6186f2704dfaac84d5df20514b5e4f3a4",
+      "sha256": "98c627e5d87eb3534e42b2e1955d2540ebf42ee56fad8fb8d96723035bbdf1cb",
+      "source_url": "https://github.com/Quinten/black-hole-square/blob/8d48aae2097613782ab18d5062e8a3906741baaa/src/assets/icon.png"
+    },
+    {
+      "path": "src/components/arrowdown.json",
+      "bytes": 3,
+      "git_blob_sha1": "0967ef424bce6791893e9a57bb952f80fd536e93",
+      "sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+      "source_url": "https://github.com/Quinten/black-hole-square/blob/8d48aae2097613782ab18d5062e8a3906741baaa/src/components/arrowdown.json"
+    },
+    {
+      "path": "src/components/arrowleft.json",
+      "bytes": 3,
+      "git_blob_sha1": "0967ef424bce6791893e9a57bb952f80fd536e93",
+      "sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+      "source_url": "https://github.com/Quinten/black-hole-square/blob/8d48aae2097613782ab18d5062e8a3906741baaa/src/components/arrowleft.json"
+    },
+    {
+      "path": "src/components/arrowright.json",
+      "bytes": 3,
+      "git_blob_sha1": "0967ef424bce6791893e9a57bb952f80fd536e93",
+      "sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+      "source_url": "https://github.com/Quinten/black-hole-square/blob/8d48aae2097613782ab18d5062e8a3906741baaa/src/components/arrowright.json"
+    },
+    {
+      "path": "src/components/arrowup.json",
+      "bytes": 3,
+      "git_blob_sha1": "0967ef424bce6791893e9a57bb952f80fd536e93",
+      "sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+      "source_url": "https://github.com/Quinten/black-hole-square/blob/8d48aae2097613782ab18d5062e8a3906741baaa/src/components/arrowup.json"
+    },
+    {
+      "path": "src/components/bgcut.json",
+      "bytes": 20,
+      "git_blob_sha1": "6e5e43ed575b0af8c2e2f23f2f3b39d00cb16a85",
+      "sha256": "1605f956b519b7bba5a1727840b6c5d37051def3107104ae66e16049ac055f12",
+      "source_url": "https://github.com/Quinten/black-hole-square/blob/8d48aae2097613782ab18d5062e8a3906741baaa/src/components/bgcut.json"
+    },
+    {
+      "path": "src/components/blackhole.json",
+      "bytes": 3,
+      "git_blob_sha1": "0967ef424bce6791893e9a57bb952f80fd536e93",
+      "sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+      "source_url": "https://github.com/Quinten/black-hole-square/blob/8d48aae2097613782ab18d5062e8a3906741baaa/src/components/blackhole.json"
+    },
+    {
+      "path": "src/components/blanksquare.json",
+      "bytes": 3,
+      "git_blob_sha1": "0967ef424bce6791893e9a57bb952f80fd536e93",
+      "sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+      "source_url": "https://github.com/Quinten/black-hole-square/blob/8d48aae2097613782ab18d5062e8a3906741baaa/src/components/blanksquare.json"
+    },
+    {
+      "path": "src/components/canvas.json",
+      "bytes": 120,
+      "git_blob_sha1": "39955c543609e84a5995ab040dbdbb57d7cd0eb8",
+      "sha256": "450dbebabab4a7ca87a4e927af6d70e7200026b17e3d0139ba84f2b99ae85087",
+      "source_url": "https://github.com/Quinten/black-hole-square/blob/8d48aae2097613782ab18d5062e8a3906741baaa/src/components/canvas.json"
+    },
+    {
+      "path": "src/components/fillrect.json",
+      "bytes": 23,
+      "git_blob_sha1": "fa6a8cd702aa9a382c5671f1d07d9e04a7e5bf38",
+      "sha256": "5df882f560a34c1cff893a78bbb411682df408592b5cad634f8daaffec1245fe",
+      "source_url": "https://github.com/Quinten/black-hole-square/blob/8d48aae2097613782ab18d5062e8a3906741baaa/src/components/fillrect.json"
+    },
+    {
+      "path": "src/components/home.json",
+      "bytes": 57,
+      "git_blob_sha1": "7a28daaa6dfa7bb84c42a0bc5701ebb6b02f0b1d",
+      "sha256": "eb21a0726c2ecb47da46769a066726ea99ffee8c92cfa4a4ecf612cf224603f7",
+      "source_url": "https://github.com/Quinten/black-hole-square/blob/8d48aae2097613782ab18d5062e8a3906741baaa/src/components/home.json"
+    },
+    {
+      "path": "src/components/levels.json",
+      "bytes": 37,
+      "git_blob_sha1": "7c463711ce538660c8f201cb1aa3720c32091176",
+      "sha256": "94a1a9871107a03b84558535ec9127f0a5278d745913a30773f0209aec0200e4",
+      "source_url": "https://github.com/Quinten/black-hole-square/blob/8d48aae2097613782ab18d5062e8a3906741baaa/src/components/levels.json"
+    },
+    {
+      "path": "src/components/maintitle.json",
+      "bytes": 3,
+      "git_blob_sha1": "0967ef424bce6791893e9a57bb952f80fd536e93",
+      "sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+      "source_url": "https://github.com/Quinten/black-hole-square/blob/8d48aae2097613782ab18d5062e8a3906741baaa/src/components/maintitle.json"
+    },
+    {
+      "path": "src/components/mask.json",
+      "bytes": 3,
+      "git_blob_sha1": "0967ef424bce6791893e9a57bb952f80fd536e93",
+      "sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+      "source_url": "https://github.com/Quinten/black-hole-square/blob/8d48aae2097613782ab18d5062e8a3906741baaa/src/components/mask.json"
+    },
+    {
+      "path": "src/components/neutronstar.json",
+      "bytes": 3,
+      "git_blob_sha1": "0967ef424bce6791893e9a57bb952f80fd536e93",
+      "sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+      "source_url": "https://github.com/Quinten/black-hole-square/blob/8d48aae2097613782ab18d5062e8a3906741baaa/src/components/neutronstar.json"
+    },
+    {
+      "path": "src/components/pointer.json",
+      "bytes": 131,
+      "git_blob_sha1": "991899f8c9b9caf887124c793867553417c6a1f7",
+      "sha256": "7a2a31631fedcc60aa51aaf07fcd068f2f4b5c1fe39b1bdd12b9668cac6f26bb",
+      "source_url": "https://github.com/Quinten/black-hole-square/blob/8d48aae2097613782ab18d5062e8a3906741baaa/src/components/pointer.json"
+    },
+    {
+      "path": "src/components/position.json",
+      "bytes": 43,
+      "git_blob_sha1": "004d8cb4c122e5c2a630d33eba9fc6031cd35b71",
+      "sha256": "1e2c6e4b69e5554945321c9607fda1b020a8be591ab5d3ea10116f6454e58970",
+      "source_url": "https://github.com/Quinten/black-hole-square/blob/8d48aae2097613782ab18d5062e8a3906741baaa/src/components/position.json"
+    },
+    {
+      "path": "src/components/progress.json",
+      "bytes": 17,
+      "git_blob_sha1": "6472036db4bcfadf03e18852c8ed01501ac47542",
+      "sha256": "42b1dbd7d10957a525496bfe6170c21001ad3f0cebd07b2ba02cbc1ce7d4574e",
+      "source_url": "https://github.com/Quinten/black-hole-square/blob/8d48aae2097613782ab18d5062e8a3906741baaa/src/components/progress.json"
+    },
+    {
+      "path": "src/components/puzzle.json",
+      "bytes": 48,
+      "git_blob_sha1": "ffca147bfa76890e48ffbf6e5a1376b6a7109211",
+      "sha256": "e7f4d2f5958d1e51655561728ddf5b41a9b70b3dd94d5bd7720e5ffbfa15fe0d",
+      "source_url": "https://github.com/Quinten/black-hole-square/blob/8d48aae2097613782ab18d5062e8a3906741baaa/src/components/puzzle.json"
+    },
+    {
+      "path": "src/components/size.json",
+      "bytes": 25,
+      "git_blob_sha1": "2d1769f1975ae1a1e7605d2871c5c95ca4c494da",
+      "sha256": "b993e1d9bce4f6ae9e866cf9d62c53ba0e8dfa4f5e164de4236b4e966a5c66d0",
+      "source_url": "https://github.com/Quinten/black-hole-square/blob/8d48aae2097613782ab18d5062e8a3906741baaa/src/components/size.json"
+    },
+    {
+      "path": "src/components/state.json",
+      "bytes": 35,
+      "git_blob_sha1": "e41e085d14f9730153e954f09a1b150d3a3471e0",
+      "sha256": "fa075739d5e5c0ba3e11f15ca7fad1481e70a92d5b52c6a7a412275e5d4fd562",
+      "source_url": "https://github.com/Quinten/black-hole-square/blob/8d48aae2097613782ab18d5062e8a3906741baaa/src/components/state.json"
+    },
+    {
+      "path": "src/components/statemachine.json",
+      "bytes": 19,
+      "git_blob_sha1": "6b5f780433fa0d04a3eecc065cf7bfde1aea32f9",
+      "sha256": "407e41546a62992cd1203bf465638c7ee0f82af9c528152fb552bb17642deb64",
+      "source_url": "https://github.com/Quinten/black-hole-square/blob/8d48aae2097613782ab18d5062e8a3906741baaa/src/components/statemachine.json"
+    },
+    {
+      "path": "src/components/text.json",
+      "bytes": 17,
+      "git_blob_sha1": "63de83f88611f719ec73eb8ade9d3440064d2b41",
+      "sha256": "33780dfdb55b34cbbe4e576c6ccff3997d822d1c72cea4c945e970eb2fb6ba22",
+      "source_url": "https://github.com/Quinten/black-hole-square/blob/8d48aae2097613782ab18d5062e8a3906741baaa/src/components/text.json"
+    },
+    {
+      "path": "src/components/tunnel.json",
+      "bytes": 20,
+      "git_blob_sha1": "6e5e43ed575b0af8c2e2f23f2f3b39d00cb16a85",
+      "sha256": "1605f956b519b7bba5a1727840b6c5d37051def3107104ae66e16049ac055f12",
+      "source_url": "https://github.com/Quinten/black-hole-square/blob/8d48aae2097613782ab18d5062e8a3906741baaa/src/components/tunnel.json"
+    },
+    {
+      "path": "src/components/xsquare.json",
+      "bytes": 3,
+      "git_blob_sha1": "0967ef424bce6791893e9a57bb952f80fd536e93",
+      "sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+      "source_url": "https://github.com/Quinten/black-hole-square/blob/8d48aae2097613782ab18d5062e8a3906741baaa/src/components/xsquare.json"
+    },
+    {
+      "path": "src/entities.json",
+      "bytes": 9289,
+      "git_blob_sha1": "d4446f14f4feabda28d52e9f2001f1cc2519c7e4",
+      "sha256": "ad2020704a422da93f7754bd23c151ed768ca6b9f58f34a9c18dfe2ec0d2251c",
+      "source_url": "https://github.com/Quinten/black-hole-square/blob/8d48aae2097613782ab18d5062e8a3906741baaa/src/entities.json"
+    },
+    {
+      "path": "src/index.html",
+      "bytes": 1102,
+      "git_blob_sha1": "95e5e3b52993369790d2d3956b1dd0a8ed13331d",
+      "sha256": "082a586945b23a25b50689c138d8f767e2d4cdff47e6bb9e85fb7e5f266a2968",
+      "source_url": "https://github.com/Quinten/black-hole-square/blob/8d48aae2097613782ab18d5062e8a3906741baaa/src/index.html"
+    },
+    {
+      "path": "src/index.js",
+      "bytes": 850,
+      "git_blob_sha1": "ee19ded05ba21893c90ce02f4aa86fd137560aea",
+      "sha256": "5eee1f1c711a6cb11f75acda34424212b274c7b895674cdd8aad57b9160940eb",
+      "source_url": "https://github.com/Quinten/black-hole-square/blob/8d48aae2097613782ab18d5062e8a3906741baaa/src/index.js"
+    },
+    {
+      "path": "src/manifest.json",
+      "bytes": 431,
+      "git_blob_sha1": "19da063d9906a6a7898a9dd62ff3608029c5590e",
+      "sha256": "91abf1f1e617a6f4439bfdfe37da2ed5cdff580ed0416b059af0a9da83c22da6",
+      "source_url": "https://github.com/Quinten/black-hole-square/blob/8d48aae2097613782ab18d5062e8a3906741baaa/src/manifest.json"
+    },
+    {
+      "path": "src/sw.js",
+      "bytes": 1451,
+      "git_blob_sha1": "adfab5328951b35da2d115182042ff014cdacb61",
+      "sha256": "45c6d627a1ab7c28f603e8d2bbaf9f2c4dbeab1c31f2313088104af3832adb7b",
+      "source_url": "https://github.com/Quinten/black-hole-square/blob/8d48aae2097613782ab18d5062e8a3906741baaa/src/sw.js"
+    },
+    {
+      "path": "src/systems/component.js",
+      "bytes": 504,
+      "git_blob_sha1": "c343cbc034d5ef6dcc2077955bc7cd70615eddd9",
+      "sha256": "e5cdaf5ee8c3c26a66768bd42cef41d1b13983f2275c92620aa0583f97049203",
+      "source_url": "https://github.com/Quinten/black-hole-square/blob/8d48aae2097613782ab18d5062e8a3906741baaa/src/systems/component.js"
+    },
+    {
+      "path": "src/systems/data.js",
+      "bytes": 435,
+      "git_blob_sha1": "72a0d59845bcc1e99ca746d0ddefca40051f3b7d",
+      "sha256": "8b19e5ba9dc21c929b96634b8a9235e8aa053f4b6b76158b043f3c0a9b5e1704",
+      "source_url": "https://github.com/Quinten/black-hole-square/blob/8d48aae2097613782ab18d5062e8a3906741baaa/src/systems/data.js"
+    },
+    {
+      "path": "src/systems/draw.js",
+      "bytes": 1401,
+      "git_blob_sha1": "43b2f5f3524bcbc500801aabc81da07e14aee89a",
+      "sha256": "8227bff169898c9b5339c0a8b9c5bc91b95a48668659cb01fc491a4402ac7a72",
+      "source_url": "https://github.com/Quinten/black-hole-square/blob/8d48aae2097613782ab18d5062e8a3906741baaa/src/systems/draw.js"
+    },
+    {
+      "path": "src/systems/draws/arrowdown.js",
+      "bytes": 752,
+      "git_blob_sha1": "b4978122ec07015a2ed7b5ae5c622763e286dbb0",
+      "sha256": "4f8b058773793e8315311d5fbbcc53c1512778b9f8f1d06c058131b64579bdeb",
+      "source_url": "https://github.com/Quinten/black-hole-square/blob/8d48aae2097613782ab18d5062e8a3906741baaa/src/systems/draws/arrowdown.js"
+    },
+    {
+      "path": "src/systems/draws/arrowleft.js",
+      "bytes": 680,
+      "git_blob_sha1": "bf43bb6efd02c46ce96e253b58f6311308ac7f4c",
+      "sha256": "cb8aa749b06aead685157a76de9ef4bddf219ab47d1e167dbc47b53e728c81ab",
+      "source_url": "https://github.com/Quinten/black-hole-square/blob/8d48aae2097613782ab18d5062e8a3906741baaa/src/systems/draws/arrowleft.js"
+    },
+    {
+      "path": "src/systems/draws/arrowright.js",
+      "bytes": 626,
+      "git_blob_sha1": "c5a95ad06883736d9e21333ae2c673f40391510d",
+      "sha256": "23b7184f02c898c2f457ee38b8afac4b77bebe964cfe8dfad5a40e9f9bc0d619",
+      "source_url": "https://github.com/Quinten/black-hole-square/blob/8d48aae2097613782ab18d5062e8a3906741baaa/src/systems/draws/arrowright.js"
+    },
+    {
+      "path": "src/systems/draws/arrowup.js",
+      "bytes": 675,
+      "git_blob_sha1": "c360582fcb95f365e008410316fb2575153e51d6",
+      "sha256": "152dc58956944b20633ea72f31acbbe322c631fe5bc41efd109c6e94e150c5d4",
+      "source_url": "https://github.com/Quinten/black-hole-square/blob/8d48aae2097613782ab18d5062e8a3906741baaa/src/systems/draws/arrowup.js"
+    },
+    {
+      "path": "src/systems/draws/bgcut.js",
+      "bytes": 326,
+      "git_blob_sha1": "3e91945f6d365cb42854f0dc8211d406b3c7250d",
+      "sha256": "f34ba31cf97c0258995abc19a22629f621629c6f041bca1631dc2ee07e4a92b3",
+      "source_url": "https://github.com/Quinten/black-hole-square/blob/8d48aae2097613782ab18d5062e8a3906741baaa/src/systems/draws/bgcut.js"
+    },
+    {
+      "path": "src/systems/draws/blackhole.js",
+      "bytes": 431,
+      "git_blob_sha1": "6fa22429510aea0fca79c1af1a853eb431002126",
+      "sha256": "c11ff65555e83015241cc582c51c44c0e8e16be161ecfa68fbbc67ccb3499c91",
+      "source_url": "https://github.com/Quinten/black-hole-square/blob/8d48aae2097613782ab18d5062e8a3906741baaa/src/systems/draws/blackhole.js"
+    },
+    {
+      "path": "src/systems/draws/blanksquare.js",
+      "bytes": 626,
+      "git_blob_sha1": "836b8cc2c0d0f4d6d55016558d7ac7fd7a9dafd7",
+      "sha256": "6885eacaab9c70af08350c89031dcf5f03e90d5f3993966f70f05b0592eaa2b2",
+      "source_url": "https://github.com/Quinten/black-hole-square/blob/8d48aae2097613782ab18d5062e8a3906741baaa/src/systems/draws/blanksquare.js"
+    },
+    {
+      "path": "src/systems/draws/fillrect.js",
+      "bytes": 331,
+      "git_blob_sha1": "24c0da5ed069a90a4f48c9ebfe26cccad285f54d",
+      "sha256": "2da8cf4719600e0135af73c257d2d0ef7a2e5832ff13fee59bf6d42794348994",
+      "source_url": "https://github.com/Quinten/black-hole-square/blob/8d48aae2097613782ab18d5062e8a3906741baaa/src/systems/draws/fillrect.js"
+    },
+    {
+      "path": "src/systems/draws/maintitle.js",
+      "bytes": 11357,
+      "git_blob_sha1": "1bf5d61f4bd9075322698a398fa8a08c763d2dde",
+      "sha256": "570756f8c42c75c55c55e8944ba81ce277f42e3c3e5ab6b96cdfb65504a72016",
+      "source_url": "https://github.com/Quinten/black-hole-square/blob/8d48aae2097613782ab18d5062e8a3906741baaa/src/systems/draws/maintitle.js"
+    },
+    {
+      "path": "src/systems/draws/neutronstar.js",
+      "bytes": 371,
+      "git_blob_sha1": "68f59e24ccca2eee6094142a12ff5d03a42f6d44",
+      "sha256": "3420389e3253a9b3478d75493cd1848f7db254439201211898d66dd6b4510d75",
+      "source_url": "https://github.com/Quinten/black-hole-square/blob/8d48aae2097613782ab18d5062e8a3906741baaa/src/systems/draws/neutronstar.js"
+    },
+    {
+      "path": "src/systems/draws/progress.js",
+      "bytes": 668,
+      "git_blob_sha1": "b1495ffa076781ce98978b63ba83e43882728f2d",
+      "sha256": "92b4e2992eff45c5651ed6ee653ca7a58ebddf0b667ac3f6129a5d57ae4dfa62",
+      "source_url": "https://github.com/Quinten/black-hole-square/blob/8d48aae2097613782ab18d5062e8a3906741baaa/src/systems/draws/progress.js"
+    },
+    {
+      "path": "src/systems/draws/text.js",
+      "bytes": 419,
+      "git_blob_sha1": "7a773f78ef848011c1c59bd71614b8d894ca89c2",
+      "sha256": "c13abdcfab77a13d9b9b9328b245c34dcfa652bf8bbf3b62e088f094cc760a18",
+      "source_url": "https://github.com/Quinten/black-hole-square/blob/8d48aae2097613782ab18d5062e8a3906741baaa/src/systems/draws/text.js"
+    },
+    {
+      "path": "src/systems/draws/tunnel.js",
+      "bytes": 1858,
+      "git_blob_sha1": "8af8a823917ae2dbdb4c73ff52c85a7381dd4d9f",
+      "sha256": "cdb870f500bd8a1fbf1fb43e6bf3851be8584eb36bb76a7742e3d37a36c87e75",
+      "source_url": "https://github.com/Quinten/black-hole-square/blob/8d48aae2097613782ab18d5062e8a3906741baaa/src/systems/draws/tunnel.js"
+    },
+    {
+      "path": "src/systems/draws/xsquare.js",
+      "bytes": 436,
+      "git_blob_sha1": "7430f4a693ea7c87777b1a553f0ab01527f4dee0",
+      "sha256": "14a64b4daf92eb401dd19271f23e8b4ea1f60f76085ed5961d35cf0f2ec5a1f3",
+      "source_url": "https://github.com/Quinten/black-hole-square/blob/8d48aae2097613782ab18d5062e8a3906741baaa/src/systems/draws/xsquare.js"
+    },
+    {
+      "path": "src/systems/entity.js",
+      "bytes": 280,
+      "git_blob_sha1": "c5cddd67dc9054d930248b563bb89fee38729664",
+      "sha256": "23b8f713d683ef8b45c5579507d274e5fd333ecc1c4d8bd1587b2de1e9a27ac8",
+      "source_url": "https://github.com/Quinten/black-hole-square/blob/8d48aae2097613782ab18d5062e8a3906741baaa/src/systems/entity.js"
+    },
+    {
+      "path": "src/systems/game.js",
+      "bytes": 2153,
+      "git_blob_sha1": "eb3632892f4843dcc99a09c4677ea18f33a492d7",
+      "sha256": "76d48569897a477d90362276bf2631b60fe9722c0abb47d8c406b43c0762bf96",
+      "source_url": "https://github.com/Quinten/black-hole-square/blob/8d48aae2097613782ab18d5062e8a3906741baaa/src/systems/game.js"
+    },
+    {
+      "path": "src/systems/pointer.js",
+      "bytes": 3828,
+      "git_blob_sha1": "83016d52fea9b3909eb8c27c52a8dd3b27107c76",
+      "sha256": "c7a1781a23d1305f565b5e1acc47b1fbee30ac73321971279ab8c2945c3f27e8",
+      "source_url": "https://github.com/Quinten/black-hole-square/blob/8d48aae2097613782ab18d5062e8a3906741baaa/src/systems/pointer.js"
+    },
+    {
+      "path": "src/systems/resize.js",
+      "bytes": 1397,
+      "git_blob_sha1": "3075609dcc96c516640162024e1fa4ddc5535bcf",
+      "sha256": "76bc4a282acd0b5e0df8fd32a0806f2af551610acd20d67956b7d554296fd4b5",
+      "source_url": "https://github.com/Quinten/black-hole-square/blob/8d48aae2097613782ab18d5062e8a3906741baaa/src/systems/resize.js"
+    },
+    {
+      "path": "src/systems/sound.js",
+      "bytes": 5050,
+      "git_blob_sha1": "d5f099a86dbae936ee28e2c63a3e3a639c83ff13",
+      "sha256": "f8347874deaabaa0949aab5a3bd9be2385ec8b7586cc12dc1ab2a331368298a8",
+      "source_url": "https://github.com/Quinten/black-hole-square/blob/8d48aae2097613782ab18d5062e8a3906741baaa/src/systems/sound.js"
+    },
+    {
+      "path": "src/systems/transforms/mask.js",
+      "bytes": 148,
+      "git_blob_sha1": "1ff1500cb3f5431196c379e4c5a0fc69fee4f23d",
+      "sha256": "f7ac182fb3139f3f76db4d18f13a1b8d43e7b6c8a9be308df7573dc27092579d",
+      "source_url": "https://github.com/Quinten/black-hole-square/blob/8d48aae2097613782ab18d5062e8a3906741baaa/src/systems/transforms/mask.js"
+    },
+    {
+      "path": "src/systems/transforms/position.js",
+      "bytes": 557,
+      "git_blob_sha1": "92c3acbb0968d80f7e1fae9e5873692cec5bc207",
+      "sha256": "33c04b36413757bc9532b5121e380b2362cf41025adfdd68daffd7c623818947",
+      "source_url": "https://github.com/Quinten/black-hole-square/blob/8d48aae2097613782ab18d5062e8a3906741baaa/src/systems/transforms/position.js"
+    },
+    {
+      "path": "src/systems/update.js",
+      "bytes": 795,
+      "git_blob_sha1": "db63e857fa13caf903b9cc000affe558d700dc37",
+      "sha256": "a3c6202b180bc9e01eeb657892820198e76df72c1f90c913ab05e8dbf4793b99",
+      "source_url": "https://github.com/Quinten/black-hole-square/blob/8d48aae2097613782ab18d5062e8a3906741baaa/src/systems/update.js"
+    },
+    {
+      "path": "src/systems/updates/home.js",
+      "bytes": 1531,
+      "git_blob_sha1": "a2f41a69b5327d6509a16eface83a10b0d401aee",
+      "sha256": "0b4f9e7bda76c55c87e39ac527ea0e0feacd33099a3d2e7ad61729e13363b452",
+      "source_url": "https://github.com/Quinten/black-hole-square/blob/8d48aae2097613782ab18d5062e8a3906741baaa/src/systems/updates/home.js"
+    },
+    {
+      "path": "src/systems/updates/progress.js",
+      "bytes": 1581,
+      "git_blob_sha1": "94fe1878d268407b63cb32f99bfcff2e1d8d2afd",
+      "sha256": "0d78fb5fb44e68d73639654fac00f3405effaeae42cb912bd8f8d516a75e985a",
+      "source_url": "https://github.com/Quinten/black-hole-square/blob/8d48aae2097613782ab18d5062e8a3906741baaa/src/systems/updates/progress.js"
+    },
+    {
+      "path": "src/systems/updates/puzzle.js",
+      "bytes": 17557,
+      "git_blob_sha1": "04ee843d9b23c799928c917c04914323eb5cc5bf",
+      "sha256": "3363d51484a791037ae2a2e6b3e6b8f6fb97244f93492060cbf7a8de7427146c",
+      "source_url": "https://github.com/Quinten/black-hole-square/blob/8d48aae2097613782ab18d5062e8a3906741baaa/src/systems/updates/puzzle.js"
+    },
+    {
+      "path": "webpack.config.js",
+      "bytes": 2326,
+      "git_blob_sha1": "6414b360b5c16674c6612bddd2f5044b116c6e04",
+      "sha256": "dcf11785c73aeb764a8dd7ad185eb12a79adbf90c1f4529e20512f0a55a0573e",
+      "source_url": "https://github.com/Quinten/black-hole-square/blob/8d48aae2097613782ab18d5062e8a3906741baaa/webpack.config.js"
+    }
+  ]
+}

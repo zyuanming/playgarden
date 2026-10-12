@@ -1,0 +1,514 @@
+{
+  "upstreamCommit": "8d48aae2097613782ab18d5062e8a3906741baaa",
+  "originalLicense": "MIT",
+  "newIntegrationLicense": "GPL-3.0-only",
+  "runtimeStatus": "NOT_PERFORMED",
+  "adapted": [
+    {
+      "path": "third_party/black-hole-square/adapted-src/components/arrowdown.json",
+      "bytes": 3,
+      "sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+      "original": "third_party/black-hole-square/original/src/components/arrowdown.json",
+      "originalSha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+      "changed": false
+    },
+    {
+      "path": "third_party/black-hole-square/adapted-src/components/arrowleft.json",
+      "bytes": 3,
+      "sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+      "original": "third_party/black-hole-square/original/src/components/arrowleft.json",
+      "originalSha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+      "changed": false
+    },
+    {
+      "path": "third_party/black-hole-square/adapted-src/components/arrowright.json",
+      "bytes": 3,
+      "sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+      "original": "third_party/black-hole-square/original/src/components/arrowright.json",
+      "originalSha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+      "changed": false
+    },
+    {
+      "path": "third_party/black-hole-square/adapted-src/components/arrowup.json",
+      "bytes": 3,
+      "sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+      "original": "third_party/black-hole-square/original/src/components/arrowup.json",
+      "originalSha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+      "changed": false
+    },
+    {
+      "path": "third_party/black-hole-square/adapted-src/components/bgcut.json",
+      "bytes": 20,
+      "sha256": "1605f956b519b7bba5a1727840b6c5d37051def3107104ae66e16049ac055f12",
+      "original": "third_party/black-hole-square/original/src/components/bgcut.json",
+      "originalSha256": "1605f956b519b7bba5a1727840b6c5d37051def3107104ae66e16049ac055f12",
+      "changed": false
+    },
+    {
+      "path": "third_party/black-hole-square/adapted-src/components/blackhole.json",
+      "bytes": 3,
+      "sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+      "original": "third_party/black-hole-square/original/src/components/blackhole.json",
+      "originalSha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+      "changed": false
+    },
+    {
+      "path": "third_party/black-hole-square/adapted-src/components/blanksquare.json",
+      "bytes": 3,
+      "sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+      "original": "third_party/black-hole-square/original/src/components/blanksquare.json",
+      "originalSha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+      "changed": false
+    },
+    {
+      "path": "third_party/black-hole-square/adapted-src/components/canvas.json",
+      "bytes": 120,
+      "sha256": "450dbebabab4a7ca87a4e927af6d70e7200026b17e3d0139ba84f2b99ae85087",
+      "original": "third_party/black-hole-square/original/src/components/canvas.json",
+      "originalSha256": "450dbebabab4a7ca87a4e927af6d70e7200026b17e3d0139ba84f2b99ae85087",
+      "changed": false
+    },
+    {
+      "path": "third_party/black-hole-square/adapted-src/components/fillrect.json",
+      "bytes": 23,
+      "sha256": "5df882f560a34c1cff893a78bbb411682df408592b5cad634f8daaffec1245fe",
+      "original": "third_party/black-hole-square/original/src/components/fillrect.json",
+      "originalSha256": "5df882f560a34c1cff893a78bbb411682df408592b5cad634f8daaffec1245fe",
+      "changed": false
+    },
+    {
+      "path": "third_party/black-hole-square/adapted-src/components/home.json",
+      "bytes": 57,
+      "sha256": "eb21a0726c2ecb47da46769a066726ea99ffee8c92cfa4a4ecf612cf224603f7",
+      "original": "third_party/black-hole-square/original/src/components/home.json",
+      "originalSha256": "eb21a0726c2ecb47da46769a066726ea99ffee8c92cfa4a4ecf612cf224603f7",
+      "changed": false
+    },
+    {
+      "path": "third_party/black-hole-square/adapted-src/components/levels.json",
+      "bytes": 37,
+      "sha256": "94a1a9871107a03b84558535ec9127f0a5278d745913a30773f0209aec0200e4",
+      "original": "third_party/black-hole-square/original/src/components/levels.json",
+      "originalSha256": "94a1a9871107a03b84558535ec9127f0a5278d745913a30773f0209aec0200e4",
+      "changed": false
+    },
+    {
+      "path": "third_party/black-hole-square/adapted-src/components/maintitle.json",
+      "bytes": 3,
+      "sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+      "original": "third_party/black-hole-square/original/src/components/maintitle.json",
+      "originalSha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+      "changed": false
+    },
+    {
+      "path": "third_party/black-hole-square/adapted-src/components/mask.json",
+      "bytes": 3,
+      "sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+      "original": "third_party/black-hole-square/original/src/components/mask.json",
+      "originalSha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+      "changed": false
+    },
+    {
+      "path": "third_party/black-hole-square/adapted-src/components/neutronstar.json",
+      "bytes": 3,
+      "sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+      "original": "third_party/black-hole-square/original/src/components/neutronstar.json",
+      "originalSha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+      "changed": false
+    },
+    {
+      "path": "third_party/black-hole-square/adapted-src/components/pointer.json",
+      "bytes": 131,
+      "sha256": "7a2a31631fedcc60aa51aaf07fcd068f2f4b5c1fe39b1bdd12b9668cac6f26bb",
+      "original": "third_party/black-hole-square/original/src/components/pointer.json",
+      "originalSha256": "7a2a31631fedcc60aa51aaf07fcd068f2f4b5c1fe39b1bdd12b9668cac6f26bb",
+      "changed": false
+    },
+    {
+      "path": "third_party/black-hole-square/adapted-src/components/position.json",
+      "bytes": 43,
+      "sha256": "1e2c6e4b69e5554945321c9607fda1b020a8be591ab5d3ea10116f6454e58970",
+      "original": "third_party/black-hole-square/original/src/components/position.json",
+      "originalSha256": "1e2c6e4b69e5554945321c9607fda1b020a8be591ab5d3ea10116f6454e58970",
+      "changed": false
+    },
+    {
+      "path": "third_party/black-hole-square/adapted-src/components/progress.json",
+      "bytes": 17,
+      "sha256": "42b1dbd7d10957a525496bfe6170c21001ad3f0cebd07b2ba02cbc1ce7d4574e",
+      "original": "third_party/black-hole-square/original/src/components/progress.json",
+      "originalSha256": "42b1dbd7d10957a525496bfe6170c21001ad3f0cebd07b2ba02cbc1ce7d4574e",
+      "changed": false
+    },
+    {
+      "path": "third_party/black-hole-square/adapted-src/components/puzzle.json",
+      "bytes": 48,
+      "sha256": "e7f4d2f5958d1e51655561728ddf5b41a9b70b3dd94d5bd7720e5ffbfa15fe0d",
+      "original": "third_party/black-hole-square/original/src/components/puzzle.json",
+      "originalSha256": "e7f4d2f5958d1e51655561728ddf5b41a9b70b3dd94d5bd7720e5ffbfa15fe0d",
+      "changed": false
+    },
+    {
+      "path": "third_party/black-hole-square/adapted-src/components/size.json",
+      "bytes": 25,
+      "sha256": "b993e1d9bce4f6ae9e866cf9d62c53ba0e8dfa4f5e164de4236b4e966a5c66d0",
+      "original": "third_party/black-hole-square/original/src/components/size.json",
+      "originalSha256": "b993e1d9bce4f6ae9e866cf9d62c53ba0e8dfa4f5e164de4236b4e966a5c66d0",
+      "changed": false
+    },
+    {
+      "path": "third_party/black-hole-square/adapted-src/components/state.json",
+      "bytes": 35,
+      "sha256": "fa075739d5e5c0ba3e11f15ca7fad1481e70a92d5b52c6a7a412275e5d4fd562",
+      "original": "third_party/black-hole-square/original/src/components/state.json",
+      "originalSha256": "fa075739d5e5c0ba3e11f15ca7fad1481e70a92d5b52c6a7a412275e5d4fd562",
+      "changed": false
+    },
+    {
+      "path": "third_party/black-hole-square/adapted-src/components/statemachine.json",
+      "bytes": 19,
+      "sha256": "407e41546a62992cd1203bf465638c7ee0f82af9c528152fb552bb17642deb64",
+      "original": "third_party/black-hole-square/original/src/components/statemachine.json",
+      "originalSha256": "407e41546a62992cd1203bf465638c7ee0f82af9c528152fb552bb17642deb64",
+      "changed": false
+    },
+    {
+      "path": "third_party/black-hole-square/adapted-src/components/text.json",
+      "bytes": 17,
+      "sha256": "33780dfdb55b34cbbe4e576c6ccff3997d822d1c72cea4c945e970eb2fb6ba22",
+      "original": "third_party/black-hole-square/original/src/components/text.json",
+      "originalSha256": "33780dfdb55b34cbbe4e576c6ccff3997d822d1c72cea4c945e970eb2fb6ba22",
+      "changed": false
+    },
+    {
+      "path": "third_party/black-hole-square/adapted-src/components/tunnel.json",
+      "bytes": 20,
+      "sha256": "1605f956b519b7bba5a1727840b6c5d37051def3107104ae66e16049ac055f12",
+      "original": "third_party/black-hole-square/original/src/components/tunnel.json",
+      "originalSha256": "1605f956b519b7bba5a1727840b6c5d37051def3107104ae66e16049ac055f12",
+      "changed": false
+    },
+    {
+      "path": "third_party/black-hole-square/adapted-src/components/xsquare.json",
+      "bytes": 3,
+      "sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+      "original": "third_party/black-hole-square/original/src/components/xsquare.json",
+      "originalSha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+      "changed": false
+    },
+    {
+      "path": "third_party/black-hole-square/adapted-src/entities.json",
+      "bytes": 9289,
+      "sha256": "ad2020704a422da93f7754bd23c151ed768ca6b9f58f34a9c18dfe2ec0d2251c",
+      "original": "third_party/black-hole-square/original/src/entities.json",
+      "originalSha256": "ad2020704a422da93f7754bd23c151ed768ca6b9f58f34a9c18dfe2ec0d2251c",
+      "changed": false
+    },
+    {
+      "path": "third_party/black-hole-square/adapted-src/systems/component.js",
+      "bytes": 1762,
+      "sha256": "c8224d78d9526a2537c54f1c44a92604bc405d4979a53423bad3119f57e8f857",
+      "original": "third_party/black-hole-square/original/src/systems/component.js",
+      "originalSha256": "e5cdaf5ee8c3c26a66768bd42cef41d1b13983f2275c92620aa0583f97049203",
+      "changed": true
+    },
+    {
+      "path": "third_party/black-hole-square/adapted-src/systems/data.js",
+      "bytes": 802,
+      "sha256": "afafaa169b40b1fb5b1ab9421c4ccf20f73a137f7a236e003b24cab8929c1f31",
+      "original": "third_party/black-hole-square/original/src/systems/data.js",
+      "originalSha256": "8b19e5ba9dc21c929b96634b8a9235e8aa053f4b6b76158b043f3c0a9b5e1704",
+      "changed": true
+    },
+    {
+      "path": "third_party/black-hole-square/adapted-src/systems/draw.js",
+      "bytes": 2094,
+      "sha256": "c77c9b42e11078e6ae0577cceb5f0838328bcf4edd3745357ab8a5f5393b3ee9",
+      "original": "third_party/black-hole-square/original/src/systems/draw.js",
+      "originalSha256": "8227bff169898c9b5339c0a8b9c5bc91b95a48668659cb01fc491a4402ac7a72",
+      "changed": true
+    },
+    {
+      "path": "third_party/black-hole-square/adapted-src/systems/draws/arrowdown.js",
+      "bytes": 752,
+      "sha256": "4f8b058773793e8315311d5fbbcc53c1512778b9f8f1d06c058131b64579bdeb",
+      "original": "third_party/black-hole-square/original/src/systems/draws/arrowdown.js",
+      "originalSha256": "4f8b058773793e8315311d5fbbcc53c1512778b9f8f1d06c058131b64579bdeb",
+      "changed": false
+    },
+    {
+      "path": "third_party/black-hole-square/adapted-src/systems/draws/arrowleft.js",
+      "bytes": 680,
+      "sha256": "cb8aa749b06aead685157a76de9ef4bddf219ab47d1e167dbc47b53e728c81ab",
+      "original": "third_party/black-hole-square/original/src/systems/draws/arrowleft.js",
+      "originalSha256": "cb8aa749b06aead685157a76de9ef4bddf219ab47d1e167dbc47b53e728c81ab",
+      "changed": false
+    },
+    {
+      "path": "third_party/black-hole-square/adapted-src/systems/draws/arrowright.js",
+      "bytes": 626,
+      "sha256": "23b7184f02c898c2f457ee38b8afac4b77bebe964cfe8dfad5a40e9f9bc0d619",
+      "original": "third_party/black-hole-square/original/src/systems/draws/arrowright.js",
+      "originalSha256": "23b7184f02c898c2f457ee38b8afac4b77bebe964cfe8dfad5a40e9f9bc0d619",
+      "changed": false
+    },
+    {
+      "path": "third_party/black-hole-square/adapted-src/systems/draws/arrowup.js",
+      "bytes": 675,
+      "sha256": "152dc58956944b20633ea72f31acbbe322c631fe5bc41efd109c6e94e150c5d4",
+      "original": "third_party/black-hole-square/original/src/systems/draws/arrowup.js",
+      "originalSha256": "152dc58956944b20633ea72f31acbbe322c631fe5bc41efd109c6e94e150c5d4",
+      "changed": false
+    },
+    {
+      "path": "third_party/black-hole-square/adapted-src/systems/draws/bgcut.js",
+      "bytes": 326,
+      "sha256": "f34ba31cf97c0258995abc19a22629f621629c6f041bca1631dc2ee07e4a92b3",
+      "original": "third_party/black-hole-square/original/src/systems/draws/bgcut.js",
+      "originalSha256": "f34ba31cf97c0258995abc19a22629f621629c6f041bca1631dc2ee07e4a92b3",
+      "changed": false
+    },
+    {
+      "path": "third_party/black-hole-square/adapted-src/systems/draws/blackhole.js",
+      "bytes": 431,
+      "sha256": "c11ff65555e83015241cc582c51c44c0e8e16be161ecfa68fbbc67ccb3499c91",
+      "original": "third_party/black-hole-square/original/src/systems/draws/blackhole.js",
+      "originalSha256": "c11ff65555e83015241cc582c51c44c0e8e16be161ecfa68fbbc67ccb3499c91",
+      "changed": false
+    },
+    {
+      "path": "third_party/black-hole-square/adapted-src/systems/draws/blanksquare.js",
+      "bytes": 626,
+      "sha256": "6885eacaab9c70af08350c89031dcf5f03e90d5f3993966f70f05b0592eaa2b2",
+      "original": "third_party/black-hole-square/original/src/systems/draws/blanksquare.js",
+      "originalSha256": "6885eacaab9c70af08350c89031dcf5f03e90d5f3993966f70f05b0592eaa2b2",
+      "changed": false
+    },
+    {
+      "path": "third_party/black-hole-square/adapted-src/systems/draws/fillrect.js",
+      "bytes": 331,
+      "sha256": "2da8cf4719600e0135af73c257d2d0ef7a2e5832ff13fee59bf6d42794348994",
+      "original": "third_party/black-hole-square/original/src/systems/draws/fillrect.js",
+      "originalSha256": "2da8cf4719600e0135af73c257d2d0ef7a2e5832ff13fee59bf6d42794348994",
+      "changed": false
+    },
+    {
+      "path": "third_party/black-hole-square/adapted-src/systems/draws/maintitle.js",
+      "bytes": 11357,
+      "sha256": "570756f8c42c75c55c55e8944ba81ce277f42e3c3e5ab6b96cdfb65504a72016",
+      "original": "third_party/black-hole-square/original/src/systems/draws/maintitle.js",
+      "originalSha256": "570756f8c42c75c55c55e8944ba81ce277f42e3c3e5ab6b96cdfb65504a72016",
+      "changed": false
+    },
+    {
+      "path": "third_party/black-hole-square/adapted-src/systems/draws/neutronstar.js",
+      "bytes": 371,
+      "sha256": "3420389e3253a9b3478d75493cd1848f7db254439201211898d66dd6b4510d75",
+      "original": "third_party/black-hole-square/original/src/systems/draws/neutronstar.js",
+      "originalSha256": "3420389e3253a9b3478d75493cd1848f7db254439201211898d66dd6b4510d75",
+      "changed": false
+    },
+    {
+      "path": "third_party/black-hole-square/adapted-src/systems/draws/progress.js",
+      "bytes": 668,
+      "sha256": "92b4e2992eff45c5651ed6ee653ca7a58ebddf0b667ac3f6129a5d57ae4dfa62",
+      "original": "third_party/black-hole-square/original/src/systems/draws/progress.js",
+      "originalSha256": "92b4e2992eff45c5651ed6ee653ca7a58ebddf0b667ac3f6129a5d57ae4dfa62",
+      "changed": false
+    },
+    {
+      "path": "third_party/black-hole-square/adapted-src/systems/draws/text.js",
+      "bytes": 419,
+      "sha256": "c13abdcfab77a13d9b9b9328b245c34dcfa652bf8bbf3b62e088f094cc760a18",
+      "original": "third_party/black-hole-square/original/src/systems/draws/text.js",
+      "originalSha256": "c13abdcfab77a13d9b9b9328b245c34dcfa652bf8bbf3b62e088f094cc760a18",
+      "changed": false
+    },
+    {
+      "path": "third_party/black-hole-square/adapted-src/systems/draws/tunnel.js",
+      "bytes": 1858,
+      "sha256": "cdb870f500bd8a1fbf1fb43e6bf3851be8584eb36bb76a7742e3d37a36c87e75",
+      "original": "third_party/black-hole-square/original/src/systems/draws/tunnel.js",
+      "originalSha256": "cdb870f500bd8a1fbf1fb43e6bf3851be8584eb36bb76a7742e3d37a36c87e75",
+      "changed": false
+    },
+    {
+      "path": "third_party/black-hole-square/adapted-src/systems/draws/xsquare.js",
+      "bytes": 436,
+      "sha256": "14a64b4daf92eb401dd19271f23e8b4ea1f60f76085ed5961d35cf0f2ec5a1f3",
+      "original": "third_party/black-hole-square/original/src/systems/draws/xsquare.js",
+      "originalSha256": "14a64b4daf92eb401dd19271f23e8b4ea1f60f76085ed5961d35cf0f2ec5a1f3",
+      "changed": false
+    },
+    {
+      "path": "third_party/black-hole-square/adapted-src/systems/entity.js",
+      "bytes": 280,
+      "sha256": "23b8f713d683ef8b45c5579507d274e5fd333ecc1c4d8bd1587b2de1e9a27ac8",
+      "original": "third_party/black-hole-square/original/src/systems/entity.js",
+      "originalSha256": "23b8f713d683ef8b45c5579507d274e5fd333ecc1c4d8bd1587b2de1e9a27ac8",
+      "changed": false
+    },
+    {
+      "path": "third_party/black-hole-square/adapted-src/systems/game.js",
+      "bytes": 5128,
+      "sha256": "5187b6b9c5f900c3f8e6002b1f15cb53c629303bc9d8be8072276d98c100e19f",
+      "original": "third_party/black-hole-square/original/src/systems/game.js",
+      "originalSha256": "76d48569897a477d90362276bf2631b60fe9722c0abb47d8c406b43c0762bf96",
+      "changed": true
+    },
+    {
+      "path": "third_party/black-hole-square/adapted-src/systems/pointer.js",
+      "bytes": 3757,
+      "sha256": "95cb32abb8f87e446142725a4da52821c791bcade68f85ac797378549c08da22",
+      "original": "third_party/black-hole-square/original/src/systems/pointer.js",
+      "originalSha256": "c7a1781a23d1305f565b5e1acc47b1fbee30ac73321971279ab8c2945c3f27e8",
+      "changed": true
+    },
+    {
+      "path": "third_party/black-hole-square/adapted-src/systems/resize.js",
+      "bytes": 1610,
+      "sha256": "8a6f9d66e3053ac37cb5d9e6bc48ef5c77363f4a08b523abeab40f3784475083",
+      "original": "third_party/black-hole-square/original/src/systems/resize.js",
+      "originalSha256": "76bc4a282acd0b5e0df8fd32a0806f2af551610acd20d67956b7d554296fd4b5",
+      "changed": true
+    },
+    {
+      "path": "third_party/black-hole-square/adapted-src/systems/sound.js",
+      "bytes": 7241,
+      "sha256": "d8b660bf0f9ca2221ad59e34a983174d4df3bf1bfb9da3e39f0dcd8d7525fc1b",
+      "original": "third_party/black-hole-square/original/src/systems/sound.js",
+      "originalSha256": "f8347874deaabaa0949aab5a3bd9be2385ec8b7586cc12dc1ab2a331368298a8",
+      "changed": true
+    },
+    {
+      "path": "third_party/black-hole-square/adapted-src/systems/transforms/mask.js",
+      "bytes": 148,
+      "sha256": "f7ac182fb3139f3f76db4d18f13a1b8d43e7b6c8a9be308df7573dc27092579d",
+      "original": "third_party/black-hole-square/original/src/systems/transforms/mask.js",
+      "originalSha256": "f7ac182fb3139f3f76db4d18f13a1b8d43e7b6c8a9be308df7573dc27092579d",
+      "changed": false
+    },
+    {
+      "path": "third_party/black-hole-square/adapted-src/systems/transforms/position.js",
+      "bytes": 557,
+      "sha256": "33c04b36413757bc9532b5121e380b2362cf41025adfdd68daffd7c623818947",
+      "original": "third_party/black-hole-square/original/src/systems/transforms/position.js",
+      "originalSha256": "33c04b36413757bc9532b5121e380b2362cf41025adfdd68daffd7c623818947",
+      "changed": false
+    },
+    {
+      "path": "third_party/black-hole-square/adapted-src/systems/update.js",
+      "bytes": 748,
+      "sha256": "2c347fb3985bd3d846bb2d568a143d67e3fc4fb367f153674417fd800eb76a36",
+      "original": "third_party/black-hole-square/original/src/systems/update.js",
+      "originalSha256": "a3c6202b180bc9e01eeb657892820198e76df72c1f90c913ab05e8dbf4793b99",
+      "changed": true
+    },
+    {
+      "path": "third_party/black-hole-square/adapted-src/systems/updates/home.js",
+      "bytes": 1531,
+      "sha256": "0b4f9e7bda76c55c87e39ac527ea0e0feacd33099a3d2e7ad61729e13363b452",
+      "original": "third_party/black-hole-square/original/src/systems/updates/home.js",
+      "originalSha256": "0b4f9e7bda76c55c87e39ac527ea0e0feacd33099a3d2e7ad61729e13363b452",
+      "changed": false
+    },
+    {
+      "path": "third_party/black-hole-square/adapted-src/systems/updates/progress.js",
+      "bytes": 1563,
+      "sha256": "078ff9f3069fc45f54826bcfd6c425c376f4bf8d404b2b30c7876135604c6d80",
+      "original": "third_party/black-hole-square/original/src/systems/updates/progress.js",
+      "originalSha256": "0d78fb5fb44e68d73639654fac00f3405effaeae42cb912bd8f8d516a75e985a",
+      "changed": true
+    },
+    {
+      "path": "third_party/black-hole-square/adapted-src/systems/updates/puzzle.js",
+      "bytes": 19280,
+      "sha256": "bc1bd509468bf1f1f04ec7cf4606be215a348266479bf71b7197b9dddcf0f3bf",
+      "original": "third_party/black-hole-square/original/src/systems/updates/puzzle.js",
+      "originalSha256": "3363d51484a791037ae2a2e6b3e6b8f6fb97244f93492060cbf7a8de7427146c",
+      "changed": true
+    }
+  ],
+  "new": [
+    {
+      "path": "third_party/black-hole-square/bridge-src/bridge.js",
+      "bytes": 6106,
+      "sha256": "4cd9a13f5741cc0cd79d4d828e7169dc5da20e4c612d370cd37f16b92bdf2e92"
+    },
+    {
+      "path": "third_party/black-hole-square/bridge-src/contract.ts",
+      "bytes": 3144,
+      "sha256": "a2d077248b50add1f3fae879a7a4edc1552bcba86ea0c383a09df6babd1cf7b3"
+    },
+    {
+      "path": "scripts/black-hole-square/build-identity.mjs",
+      "bytes": 1025,
+      "sha256": "01958f9cbbb91d88f06df6d33547c762a55ec0ab87e0d18fcc9b09d452364752"
+    },
+    {
+      "path": "scripts/black-hole-square/build.mjs",
+      "bytes": 1885,
+      "sha256": "23570b09ab9fcd699a1037d053bac35809ff7e950513f1aecc8493d9b0420df1"
+    },
+    {
+      "path": "scripts/black-hole-square/derive-input-plans.py",
+      "bytes": 4060,
+      "sha256": "52948190c65851c9433cbbc17f926ef0582ba729b3347de7638c9a0578994545"
+    },
+    {
+      "path": "scripts/black-hole-square/freeze-source-map.py",
+      "bytes": 1910,
+      "sha256": "fb03ca88c51434fc8151a1840f934b7e75ad06f750c6e2e6de78f6132200e14a"
+    },
+    {
+      "path": "scripts/black-hole-square/package-source.py",
+      "bytes": 2702,
+      "sha256": "ad119f81190de1ca9a40b794665d7063149b6fe82183d8f6fdf3c03e1bba7da0"
+    },
+    {
+      "path": "scripts/black-hole-square/verify-sources.py",
+      "bytes": 8570,
+      "sha256": "e9a52590e4eac42058ca5045cb71ba886e10a12fa889bfa9092839d4e6cfa2eb"
+    },
+    {
+      "path": "src/games/BlackHoleSquareGame.tsx",
+      "bytes": 11634,
+      "sha256": "d639272179c4f2c77b521dc2724867a34cf7cf5c057b2a4a377b2b90c11649ca"
+    },
+    {
+      "path": "src/games/blackHoleSquareGame.css",
+      "bytes": 2481,
+      "sha256": "d6bfaf6154f7f7c11503eb10d60b6e25083d7bc9cfa2f988efa397938e0299d8"
+    },
+    {
+      "path": "e2e/black-hole-square.spec.ts",
+      "bytes": 20028,
+      "sha256": "3d0b6d1ebadc5ff45b8627fc41dec83ac1ac84056694f331a92e1cc72b5626ee"
+    },
+    {
+      "path": "e2e/fixtures/black-hole-square-input-plans.json",
+      "bytes": 92060,
+      "sha256": "0108fb6ad72cfe49fa4264620c6f957aea066c9dc37d2411392842055dbfb099"
+    },
+    {
+      "path": "public/games/black-hole-square/index.html",
+      "bytes": 609,
+      "sha256": "85bc947753baae2af32a07b0811ff2a11c3eca1ff65852508eb4d9acfa00af2a"
+    },
+    {
+      "path": "public/games/black-hole-square/frame.css",
+      "bytes": 302,
+      "sha256": "313467de3bf82911d0c012f07aa295987fc1263b4cc9a3f36899a9f6f31e0159"
+    },
+    {
+      "path": "third_party/black-hole-square/ADAPTATION.md",
+      "bytes": 9284,
+      "sha256": "beed2c9706769301770f2e1d33259fc88f974aea41ceb2532ea083c40082165d"
+    },
+    {
+      "path": "third_party/black-hole-square/INTEGRATION.json",
+      "bytes": 1955,
+      "sha256": "0905a9b19e086a9feb983c214355cca71539b60ce80b4ca641a10c0de6ccd0d9"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+[
+  {
+    "path": "licenses/Gugi-author-OFL.txt",
+    "source": "https://github.com/1020tj/Gugi/blob/7aa7f4c408a5b63e6f58a22c90eed13993f1cdae/OFL.txt",
+    "git_blob_sha1": "11e7bb6959f9f4fcc97eaacbb7a7417de901b3e3",
+    "sha256": "1bdc6f489e497a146ecad55520108412760c58fa0a467d76e0b9804727589db0"
+  },
+  {
+    "path": "licenses/Gugi-author-README.md",
+    "source": "https://github.com/1020tj/Gugi/blob/7aa7f4c408a5b63e6f58a22c90eed13993f1cdae/README.md",
+    "git_blob_sha1": "5f2526cccbdfc46fd3f20f7cab21b25cb08fc467",
+    "sha256": "ac923805bc5512489870b16f2f999ef551e7158061908c4c6fd83fe02071bc64"
+  },
+  {
+    "path": "licenses/Gugi-Google-METADATA.pb",
+    "source": "https://github.com/google/fonts/blob/16680f8688ffcd467d2eb2146a9ce0343404581d/ofl/gugi/METADATA.pb",
+    "git_blob_sha1": "1cd02416076824ead80edbdba644ac0efcc1c84b",
+    "sha256": "8067a7cf023225c4bd325b18a3ce16275aaebc663eb1aca4f5877f3ba8d07bc3"
+  },
+  {
+    "path": "licenses/Gugi-Google-OFL.txt",
+    "source": "https://github.com/google/fonts/blob/16680f8688ffcd467d2eb2146a9ce0343404581d/ofl/gugi/OFL.txt",
+    "git_blob_sha1": "739df925977706836de9c61efdaec992465f02dc",
+    "sha256": "391ac3126dacc95b92a8f3408467879edb3245344bc411530a30d5aada52df92"
+  }
+]
