@@ -507,8 +507,8 @@
     },
     {
       "path": "third_party/black-hole-square/INTEGRATION.json",
-      "bytes": 1955,
-      "sha256": "0905a9b19e086a9feb983c214355cca71539b60ce80b4ca641a10c0de6ccd0d9"
+      "bytes": 1957,
+      "sha256": "6a3cf9e22d6d50d33f09e12e4a9745b093ddcd9e60424f0ac8ef468b1801e34f"
     }
   ]
 }

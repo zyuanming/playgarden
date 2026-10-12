@@ -3221,7 +3221,7 @@ component: lazy(() => import("../games/GhostedGame"))
   "subtitle": "点击箭头推动方块，创造黑洞，在原始步数内清空18个谜题。",
   "category": "空间想象",
   "difficulty": "进阶",
-  "tone": "blue",
+  "tone": "purple",
   "levelCount": 18,
   "allowUndo": false,
   "resumeKey": "playgarden.black-hole-square.native.v1",
