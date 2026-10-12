@@ -1,0 +1,304 @@
+{
+  "game": "elevator-saga",
+  "sourceCommit": "e0c55bf8cf59243c32dc371b2cc7b2e3ec1664af",
+  "finiteLevels": 18,
+  "demoCounted": false,
+  "archive": "public/elevator-saga/source.zip",
+  "files": [
+    {
+      "path": "e2e/elevator-saga.spec.ts",
+      "bytes": 13946,
+      "sha256": "446164c3a84858c0baadce645af69e2463e0f66b2cce53e8ffe1a0ce721b2d42"
+    },
+    {
+      "path": "e2e/fixtures/elevator-saga-dispatcher.js",
+      "bytes": 7279,
+      "sha256": "203c4e10c49726b22a9ab9ec45d4699f3043a4b99d127597fd918ba3c51f3668"
+    },
+    {
+      "path": "public/elevator-saga/LICENSE.txt",
+      "bytes": 1082,
+      "sha256": "f8ef74a2b5805a8365913a8b3dec31c6fd700ae33ce540d558ac42afc182b45a"
+    },
+    {
+      "path": "public/elevator-saga/LICENSES.txt",
+      "bytes": 48568,
+      "sha256": "1d9a4f2c3f151b7c6db14ca244c0f37c8014a3e9bdcd95e0af277ed0766b1144"
+    },
+    {
+      "path": "public/elevator-saga/adapter.css",
+      "bytes": 3728,
+      "sha256": "e08735a24a07655b7ba25e8edc65e76edde75c49744c1116f398fea881906dca"
+    },
+    {
+      "path": "public/elevator-saga/adapter.js",
+      "bytes": 16030,
+      "sha256": "e7b6b46531659e2cf536e04bb6b60fa91d35e648b25d05de3ee796fa730f5cb2"
+    },
+    {
+      "path": "public/elevator-saga/base.js",
+      "bytes": 2459,
+      "sha256": "1763c699bd00745d228680c7768fb7dc611ec7f096107217965703f69ba28253"
+    },
+    {
+      "path": "public/elevator-saga/challenges.js",
+      "bytes": 5146,
+      "sha256": "9a8617d444a72c88a03731f46ca8326bfd596f7272837aa876099d2bf18cc720"
+    },
+    {
+      "path": "public/elevator-saga/elevator.js",
+      "bytes": 10160,
+      "sha256": "d0872356592f2a6668a891e372d6d5dc86811d4b83e6a1f23de733c6a7f59ebd"
+    },
+    {
+      "path": "public/elevator-saga/floor.js",
+      "bytes": 1701,
+      "sha256": "0113df02fee9fb63e7965b09bc613647a53f5e852b2620f5ee9cc5b6c9632377"
+    },
+    {
+      "path": "public/elevator-saga/font-awesome-embedded.css",
+      "bytes": 257756,
+      "sha256": "dc6ce8bee8b5913399a3b1ce0e2e6b650a38208e3e05ba1826bf988096603ff5"
+    },
+    {
+      "path": "public/elevator-saga/font-awesome.css",
+      "bytes": 37034,
+      "sha256": "7b8de942118bbc65c8c9d98f88a1efb29210381ed47fadbebfcc5cefb4dcf9ba"
+    },
+    {
+      "path": "public/elevator-saga/fonts/fontawesome-webfont.ttf",
+      "bytes": 165548,
+      "sha256": "aa58f33f239a0fb02f5c7a6c45c043d7a9ac9a093335806694ecd6d4edc0d6a8"
+    },
+    {
+      "path": "public/elevator-saga/index.html",
+      "bytes": 16199,
+      "sha256": "9fd10ceef3993b5599b4cb051239ebd8f0a10b544f65682ad5a6de73d14fb038"
+    },
+    {
+      "path": "public/elevator-saga/interfaces.js",
+      "bytes": 3768,
+      "sha256": "a82697a4ce58f6a9bd8329d7d35167c9bb9abd3a0e4220faa841bbd0e5f71011"
+    },
+    {
+      "path": "public/elevator-saga/libs/codemirror/addon/edit/closebrackets.js",
+      "bytes": 6302,
+      "sha256": "6d3747a9d0f65f0a3ad7b2e0221aee18ce07c820ee19ed5013d716afd65017e3"
+    },
+    {
+      "path": "public/elevator-saga/libs/codemirror/codemirror.css",
+      "bytes": 7422,
+      "sha256": "455ede0c03030dc609449ce00160cee311bbcfde5b86290559eea99469c04d05"
+    },
+    {
+      "path": "public/elevator-saga/libs/codemirror/codemirror.js",
+      "bytes": 321093,
+      "sha256": "6aa678dca438bdb2e5b35db72ab781d21d7cb8576c558369592981ab1bfb0923"
+    },
+    {
+      "path": "public/elevator-saga/libs/codemirror/mode/javascript/javascript.js",
+      "bytes": 26346,
+      "sha256": "ec73898ab2bf446367eedfeb7bcfa11eafee462ade7a39eacbe5f32f9202eed6"
+    },
+    {
+      "path": "public/elevator-saga/libs/codemirror/themes/solarized.css",
+      "bytes": 4620,
+      "sha256": "2d1141e72989943c3b82fe3a3a56bd3489f5bc585d51a1e314c7c572851f9631"
+    },
+    {
+      "path": "public/elevator-saga/libs/lodash.min.js",
+      "bytes": 49420,
+      "sha256": "e52163369ad16e3f5e260ddcab1c8541c32830b4a6275ba7c332106ce03c05b7"
+    },
+    {
+      "path": "public/elevator-saga/libs/lodash.source.js",
+      "bytes": 394915,
+      "sha256": "108a119af32320d5b7547c66c5e8ca311827a4a1d4c9200c67c494afb94c6d1e"
+    },
+    {
+      "path": "public/elevator-saga/libs/riot.js",
+      "bytes": 3271,
+      "sha256": "db14e2f47adfedc276c96d50c6a7fdc25775df430b3cfdada63566e3d0a89a98"
+    },
+    {
+      "path": "public/elevator-saga/libs/unobservable.js",
+      "bytes": 3921,
+      "sha256": "63811b22399589ac5e1907a89d122aba1fdb71ffb3069f0820fcb547095e0118"
+    },
+    {
+      "path": "public/elevator-saga/licenses/CodeMirror-MIT.txt",
+      "bytes": 1094,
+      "sha256": "c7bae4ff453a099c61e5906014d3644319181834a47db839696dca0a85a76378"
+    },
+    {
+      "path": "public/elevator-saga/licenses/FontAwesome-CSS-MIT.txt",
+      "bytes": 1054,
+      "sha256": "1282d3eac3ee4b83a01d31246596fe0386badec737102b0251c6d2c5027c3959"
+    },
+    {
+      "path": "public/elevator-saga/licenses/FontAwesome-Font-OFL.txt",
+      "bytes": 4324,
+      "sha256": "69a2622cedfac70d8a6deb8b125baa8ff6f57183f7861d3b966448298c89a350"
+    },
+    {
+      "path": "public/elevator-saga/licenses/Lodash-MIT.txt",
+      "bytes": 1233,
+      "sha256": "90df9e2220f682e1f77e24b1c0f72d2de18b818096c957a65698e74c41a4826f"
+    },
+    {
+      "path": "public/elevator-saga/licenses/Paste-and-Indent-Unlicense.txt",
+      "bytes": 1211,
+      "sha256": "7e12e5df4bae12cb21581ba157ced20e1986a0508dd10d0e8a4ab9a4cf94e85c"
+    },
+    {
+      "path": "public/elevator-saga/licenses/Playgarden-GPL-3.0.txt",
+      "bytes": 34674,
+      "sha256": "fb981668c18a279e285fc4d83fba1e836cc84dd4daa73c9697d3cfd2d8aca6e0"
+    },
+    {
+      "path": "public/elevator-saga/licenses/Riot-MIT.txt",
+      "bytes": 1067,
+      "sha256": "8c0561941e9912385f73abcc7032e14c95178c1124e7f833affbdee87c4fb9d3"
+    },
+    {
+      "path": "public/elevator-saga/licenses/Underscore-MIT.txt",
+      "bytes": 1117,
+      "sha256": "57c78146cd350e9c88c82d4fa0c8a5369e7a8c4ae9fa47e80fe13e13aa9ff00e"
+    },
+    {
+      "path": "public/elevator-saga/movable.js",
+      "bytes": 4136,
+      "sha256": "0f0ce02f87b31d6b04a25c7ee05222b2fb7e93610af87e47afaf4c96f708cb6e"
+    },
+    {
+      "path": "public/elevator-saga/style.css",
+      "bytes": 5941,
+      "sha256": "c343f34227558bc5bc49142337ef1a578283d1b9b57b6b3a2cc9e89f53e08421"
+    },
+    {
+      "path": "public/elevator-saga/user.js",
+      "bytes": 2398,
+      "sha256": "b069350a035fefc9b2274ddcae6a8cb4111a382b6e905f08d4e8441fe06cac4b"
+    },
+    {
+      "path": "public/elevator-saga/worker-bootstrap.js",
+      "bytes": 6646,
+      "sha256": "7227505610899fdd210cb732991b0556185f25253d7ddf958c5618402ac10a47"
+    },
+    {
+      "path": "public/elevator-saga/worker-source.js",
+      "bytes": 6901,
+      "sha256": "abb49d8bcb86a61e2e72a58658f05da83c96ebc6d02f0c4c4f5a36200f1daa18"
+    },
+    {
+      "path": "public/elevator-saga/world.js",
+      "bytes": 11794,
+      "sha256": "f7323323e8b3d0ae0f70de936c838356e02a408da10cacd2fab92c2ed50c16e7"
+    },
+    {
+      "path": "public/elevator-saga-card.svg",
+      "bytes": 697,
+      "sha256": "a20f2b8ca5ee19bffb81ae18c0258a3848f3fedc2d824d531c42a89fe881054d"
+    },
+    {
+      "path": "scripts/elevator-saga/package-source.py",
+      "bytes": 1459,
+      "sha256": "8dda5b00c313af58ccdd805d95f8d12372bfdd44fa3eefca750d9ed4c6212280"
+    },
+    {
+      "path": "scripts/elevator-saga/verify-sources.py",
+      "bytes": 3605,
+      "sha256": "a0b746ee6cc9ea47924c575953223f76443e3fa02dbe84f3f7657807052d29e5"
+    },
+    {
+      "path": "src/games/ElevatorSaga.tsx",
+      "bytes": 7159,
+      "sha256": "10596a24da2f1f598d36f797b61e330f54bdab6af3b986101f59babdfa7f4c7a"
+    },
+    {
+      "path": "src/games/elevatorSaga.css",
+      "bytes": 780,
+      "sha256": "0923f4befb640909aaeace9ee6eb4afaf69cb2f73585dc251a7dcd7177f9b838"
+    },
+    {
+      "path": "src/games/elevatorSagaLevels.json",
+      "bytes": 919,
+      "sha256": "e6a0d78f680b12dd6319a33ffade83b5bbe230098181649517bdd6f35774b291"
+    },
+    {
+      "path": "vendor/elevator-saga-original/dependency-manifest.json",
+      "bytes": 3253,
+      "sha256": "3c11dc293d992c9776851d3c1a0aba7bbb19e3004aadf928aa5b2d747f2ec292"
+    },
+    {
+      "path": "vendor/elevator-saga-original/source-manifest.json",
+      "bytes": 3252,
+      "sha256": "9bdf614fe52645ebfaedcae4fda41716b991a8c844add0dca2773fce4e545550"
+    },
+    {
+      "path": "vendor/elevator-saga-original/upstream/LICENSE.txt",
+      "bytes": 1082,
+      "sha256": "f8ef74a2b5805a8365913a8b3dec31c6fd700ae33ce540d558ac42afc182b45a"
+    },
+    {
+      "path": "vendor/elevator-saga-original/upstream/README.md",
+      "bytes": 580,
+      "sha256": "0b4299d3dbf59884b8047320d576956d54197df5af2790ff985950afa50e07b2"
+    },
+    {
+      "path": "vendor/elevator-saga-original/upstream/app.js",
+      "bytes": 9315,
+      "sha256": "40b9fc9f7a5dec52f27450b78129340c7b740647a1b954faa6974bc724c9861e"
+    },
+    {
+      "path": "vendor/elevator-saga-original/upstream/challenges.js",
+      "bytes": 5146,
+      "sha256": "9a8617d444a72c88a03731f46ca8326bfd596f7272837aa876099d2bf18cc720"
+    },
+    {
+      "path": "vendor/elevator-saga-original/upstream/documentation.html",
+      "bytes": 12956,
+      "sha256": "eb09b24ffeda03d950c3b236d71d2b630d0a75fe074f673c7e375d0c3944b412"
+    },
+    {
+      "path": "vendor/elevator-saga-original/upstream/elevator.js",
+      "bytes": 10160,
+      "sha256": "d0872356592f2a6668a891e372d6d5dc86811d4b83e6a1f23de733c6a7f59ebd"
+    },
+    {
+      "path": "vendor/elevator-saga-original/upstream/floor.js",
+      "bytes": 1701,
+      "sha256": "0113df02fee9fb63e7965b09bc613647a53f5e852b2620f5ee9cc5b6c9632377"
+    },
+    {
+      "path": "vendor/elevator-saga-original/upstream/interfaces.js",
+      "bytes": 3768,
+      "sha256": "a82697a4ce58f6a9bd8329d7d35167c9bb9abd3a0e4220faa841bbd0e5f71011"
+    },
+    {
+      "path": "vendor/elevator-saga-original/upstream/movable.js",
+      "bytes": 4136,
+      "sha256": "0f0ce02f87b31d6b04a25c7ee05222b2fb7e93610af87e47afaf4c96f708cb6e"
+    },
+    {
+      "path": "vendor/elevator-saga-original/upstream/presenters.js",
+      "bytes": 6651,
+      "sha256": "b2180c71526461f3d70cfecd81e0454fc5d0d4e8b39e44c3f5dba6a0c066401d"
+    },
+    {
+      "path": "vendor/elevator-saga-original/upstream/user.js",
+      "bytes": 2398,
+      "sha256": "b069350a035fefc9b2274ddcae6a8cb4111a382b6e905f08d4e8441fe06cac4b"
+    },
+    {
+      "path": "vendor/elevator-saga-original/upstream/world.js",
+      "bytes": 11794,
+      "sha256": "f7323323e8b3d0ae0f70de936c838356e02a408da10cacd2fab92c2ed50c16e7"
+    },
+    {
+      "path": "public/elevator-saga/source.zip",
+      "bytes": 530038,
+      "sha256": "c233f200176f87c88c88162198651637b96142bf7ad7dcefc6d8315099c6f23a"
+    }
+  ]
+}

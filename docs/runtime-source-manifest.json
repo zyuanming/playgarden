@@ -793,6 +793,23 @@
         "public/grid-garden/third-party/jquery/LICENSE.txt",
         "public/grid-garden/third-party/jquery/external/sizzle/LICENSE.txt"
       ]
+    },
+    {
+      "name": "Elevator Saga complete original campaign",
+      "version": "e0c55bf8cf59243c32dc371b2cc7b2e3ec1664af",
+      "license": "MIT / SIL-OFL-1.1 / GPL-3.0-only per file",
+      "source": "https://github.com/magwo/elevatorsaga/tree/e0c55bf8cf59243c32dc371b2cc7b2e3ec1664af",
+      "preferredSource": [
+        "public/elevator-saga/",
+        "vendor/elevator-saga-original/",
+        "src/games/ElevatorSaga.tsx",
+        "src/games/elevatorSaga.css"
+      ],
+      "buildSources": [
+        "scripts/elevator-saga/package-source.py",
+        "scripts/elevator-saga/verify-sources.py"
+      ],
+      "scope": "18 unchanged original challenge predicates and original elevator/passenger simulation; responsive editor/renderer and opaque worker boundary. Official CodeMirror4.12.0, Lodash3.6.0, Riot1.0.2 and FontAwesome4.7.0 with readable source and full per-component grants. Full source ZIP in public/elevator-saga/source.zip."
     }
   ]
 }
