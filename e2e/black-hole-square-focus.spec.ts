@@ -8,11 +8,22 @@ type State={current:number;moves:number;paused:boolean;settled:boolean;board:num
 test('Black Hole Square: real tab departure cancels a held gesture',async({page},info)=>{
   test.setTimeout(60000);
   const mobile=info.project.name==='mobile',errors=captureErrors(page),events:unknown[]=[];
-  let frame:Frame|null=null,other:Page|null=null,otherFocus:CDPSession|null=null;
+  let frame:Frame|null=null,other:Page|null=null,otherFocus:CDPSession|null=null,frameSession:CDPSession|null=null;
+  let frameSessionError:string|null=null;
   const firstPlan=JSON.parse(readFileSync(new URL('./fixtures/black-hole-square-input-plans.json',import.meta.url),'utf8')).levels[0] as {initial:number[];checkpoints:number[][]};
   const browserSession=await page.context().newCDPSession(page);
   const touch=mobile?browserSession:null;
   const state=async()=>frame!.evaluate(()=>(window as unknown as {__blackHoleSquareSnapshot:()=>State}).__blackHoleSquareSnapshot());
+  const observeFocus=async(stage:string)=>{
+    const documentFocus=()=>({focused:document.hasFocus(),visibility:document.visibilityState,hidden:document.hidden,active:document.activeElement?.tagName??null,activeTitle:document.activeElement?.getAttribute('title')??null,events:(window as unknown as {__nativeFocusEvents?:unknown[]}).__nativeFocusEvents??[]});
+    const query=async(session:CDPSession|null,method:string)=>{if(!session)return null;try{return await session.send(method as 'Target.getTargetInfo');}catch(error){return {error:String(error)};}};
+    events.push({case:'read-only native focus diagnostics',stage,
+      host:await page.evaluate(documentFocus),frame:frame&&!frame.isDetached()?await frame.evaluate(documentFocus):null,
+      other:other?await other.evaluate(documentFocus):null,
+      hostTarget:await query(browserSession,'Target.getTargetInfo'),hostWindow:await query(browserSession,'Browser.getWindowForTarget'),
+      frameTarget:await query(frameSession,'Target.getTargetInfo'),frameSessionError,
+      otherTarget:await query(otherFocus,'Target.getTargetInfo'),otherWindow:await query(otherFocus,'Browser.getWindowForTarget')});
+  };
   try{
     // Playwright 1.63 forces every tab focused, even when headed. Disable only
     // that automation override on both tabs to observe native browser focus.
@@ -22,11 +33,18 @@ test('Black Hole Square: real tab departure cancels a held gesture',async({page}
     await page.locator('.game-card').filter({hasText:/Black Hole Square/i}).getByRole('button',{name:/^开始玩/}).first().click();
     const handle=await page.locator(FRAME).elementHandle();frame=await handle!.contentFrame();
     if(!frame)throw Error('Game iframe has no content frame');
+    try{frameSession=await page.context().newCDPSession(frame);}catch(error){frameSessionError=String(error);}
     await expect.poll(async()=>frame!.evaluate(()=>typeof (window as unknown as {__blackHoleSquareSnapshot?:unknown}).__blackHoleSquareSnapshot)).toBe('function');
     const next=page.getByRole('button',{name:'下一页 / 跳过',exact:true});
     for(const current of [1,2]){await expect(next).toBeEnabled();await next.click();await expect.poll(async()=>(await state()).current).toBe(current);}
     await expect.poll(async()=>{const s=await state();return s.settled&&!s.paused&&Math.abs(s.canvas.x-(s.canvas.width-320)/2)<1;}).toBe(true);
     const initial=await state();expect(initial.moves).toBe(0);expect(initial.board).toEqual(firstPlan.initial);
+    const recordNativeFocus=()=>{
+      const w=window as unknown as {__nativeFocusEvents:unknown[]};w.__nativeFocusEvents=[];
+      const record=(e:Event)=>w.__nativeFocusEvents.push({event:e.type,focused:document.hasFocus(),visibility:document.visibilityState,trusted:e.isTrusted});
+      window.addEventListener('blur',record);window.addEventListener('focus',record);document.addEventListener('visibilitychange',record);
+    };
+    await page.evaluate(recordNativeFocus);await frame.evaluate(recordNativeFocus);
     await frame.evaluate(()=>{
       const w=window as unknown as {__focusEvents:unknown[]};w.__focusEvents=[];
       window.addEventListener('blur',e=>w.__focusEvents.push({event:'blur',focused:document.hasFocus(),trusted:e.isTrusted}));
@@ -36,12 +54,15 @@ test('Black Hole Square: real tab departure cancels a held gesture',async({page}
     const point={x:b.x+(136+initial.canvas.x)/initial.canvas.width*b.width,y:b.y+(134+initial.canvas.y)/initial.canvas.height*b.height};
     expect(point.x).toBeGreaterThan(0);expect(point.x).toBeLessThan(page.viewportSize()!.width);
     expect(point.y).toBeGreaterThan(0);expect(point.y).toBeLessThan(page.viewportSize()!.height);
+    await observeFocus('before held gesture');
     if(touch)await touch.send('Input.dispatchTouchEvent',{type:'touchStart',touchPoints:[{...point,id:1}]});
     else{await page.mouse.move(point.x,point.y);await page.mouse.down();}
+    await observeFocus('after held gesture');
     await expect.poll(()=>frame!.evaluate(()=>document.hasFocus())).toBe(true);
     other=await page.context().newPage();otherFocus=await page.context().newCDPSession(other);
     await otherFocus.send('Emulation.setFocusEmulationEnabled',{enabled:false});
-    await other.goto('about:blank');await other.bringToFront();
+    await other.goto('about:blank');await other.evaluate(recordNativeFocus);await other.bringToFront();
+    await observeFocus('after other tab activation');
     await expect.poll(()=>page.evaluate(()=>document.hasFocus())).toBe(false);
     await expect.poll(()=>frame!.evaluate(()=>(window as unknown as {__focusEvents:{event:string;focused:boolean}[]}).__focusEvents.some(e=>['blur','host-cancel'].includes(e.event)&&!e.focused))).toBe(true);
     events.push({case:'real background tab',hostHasFocus:await page.evaluate(()=>document.hasFocus()),events:await frame.evaluate(()=>(window as unknown as {__focusEvents:unknown[]}).__focusEvents)});
@@ -57,8 +78,9 @@ test('Black Hole Square: real tab departure cancels a held gesture',async({page}
     await page.screenshot({path:info.outputPath('black-hole-square-return-from-real-tab.png'),fullPage:true});
     expect(errors).toEqual([]);
   }finally{
+    try{await observeFocus('final observation');}catch(error){events.push({case:'diagnostic observation error',error:String(error)});}
     const finalEvents=frame&&!frame.isDetached()?await frame.evaluate(()=>(window as unknown as {__focusEvents?:unknown[]}).__focusEvents??[]):[];
     writeFileSync(info.outputPath('black-hole-square-real-tab-focus.json'),JSON.stringify({project:info.project.name,events,finalEvents,errors},null,2));
-    if(otherFocus)await otherFocus.detach();if(other)await other.close();await browserSession.detach();
+    if(frameSession)await frameSession.detach();if(otherFocus)await otherFocus.detach();if(other)await other.close();await browserSession.detach();
   }
 });
