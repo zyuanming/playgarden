@@ -24,7 +24,8 @@ function rmInit(){
  document.addEventListener('keyup',event=>{if(rmCodes.has(event.code)){event.preventDefault();rmKey(event.code,false);}});
  gs.osd.addEventListener('pointerdown',event=>{
   if(rmPaused||rmDisposed||rmPending||!event.isPrimary||event.button!==0)return;
-  event.preventDefault();rmPointer=event.pointerId;gs.osd.setPointerCapture(event.pointerId);pointerpos(event,1);rmFeedback(300);
+  event.preventDefault();if(event.pointerType==='mouse')gs.osd.focus({preventScroll:true});
+  rmPointer=event.pointerId;gs.osd.setPointerCapture(event.pointerId);pointerpos(event,1);rmFeedback(300);
  });
  gs.osd.addEventListener('pointermove',event=>{if(rmPointer===event.pointerId&&!rmPaused&&!rmPending)pointerpos(event,1);});
  const release=event=>{if(rmPointer!==event.pointerId)return;rmClearInput();if(gs.osd.hasPointerCapture(event.pointerId))gs.osd.releasePointerCapture(event.pointerId);};

@@ -10,7 +10,7 @@ async function read(page:Page):Promise<Snapshot>{return (await frame(page)).eval
 async function ready(page:Page,level=0){await expect(page.locator('.onoff-host')).toHaveAttribute('data-onoff-ready','true');await expect.poll(async()=>(await read(page)).level).toBe(level);}
 async function select(page:Page,level:number){await page.getByLabel('选择关卡',{exact:true}).selectOption(String(level));await ready(page,level);}
 async function credits(page:Page):Promise<number[]>{return page.evaluate(()=>JSON.parse(localStorage.getItem('playgarden.progress.v2')??'{}').completed?.onoff??[]);}
-async function open(page:Page){await page.goto('/');await page.getByRole('textbox',{name:'搜索游戏'}).fill('ONOFF');await page.locator('.game-card').filter({hasText:'ONOFF'}).getByRole('button',{name:/开始玩/}).click();}
+async function open(page:Page){await page.goto('/');await page.getByRole('textbox',{name:'搜索游戏'}).fill('ONOFF');await page.locator('.game-card').filter({hasText:'ONOFF'}).getByRole('button',{name:'开始玩',exact:true}).click();}
 const keyNames:Record<string,string>={left:'ArrowLeft',right:'ArrowRight',jump:'ArrowUp',toggle:'Space'};
 function controls(page:Page,mobile:boolean,cdp:CDPSession){
  let held:string[]=[];
@@ -87,7 +87,7 @@ test('ONOFF: earned jumps, layer changes, touch controls and owned lifecycle',as
   await page.screenshot({path:info.outputPath('onoff-controls-and-lifecycle.png'),fullPage:true});
   expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
   await page.getByRole('button',{name:'返回游戏大厅',exact:true}).click();await expect(page.locator(FRAME)).toHaveCount(0);
-  await page.getByRole('textbox',{name:'搜索游戏'}).fill('ONOFF');await page.locator('.game-card').filter({hasText:'ONOFF'}).getByRole('button',{name:/开始玩/}).click();
+  await page.getByRole('textbox',{name:'搜索游戏'}).fill('ONOFF');await page.locator('.game-card').filter({hasText:'ONOFF'}).getByRole('button',{name:'开始玩',exact:true}).click();
   await expect(page.locator('.onoff-host')).toHaveAttribute('data-onoff-ready','true');expect((await read(page)).deaths).toBe(0);
   expect(await credits(page)).toEqual([0,1,2]);expect(outside).toEqual([]);expect(errors).toEqual([]);
   writeFileSync(info.outputPath('onoff-earned-receipts.json'),JSON.stringify({project:info.project.name,upstream:'cb1e2e4615af6195aeb0dade06c08738511dd3b6',receipts,final:await read(page)},null,2));

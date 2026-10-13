@@ -13,7 +13,7 @@ async function driver(page:Page,mobile:boolean){
  const cdp=mobile?await page.context().newCDPSession(page):null;let held:string|null=null;
  return {down:async(code:string)=>{if(held)throw Error('Release previous input first');
   if(cdp){const control=page.locator(`[data-rollermaze-key="${code}"]`);await expect(control).toBeEnabled();await control.scrollIntoViewIfNeeded();const b=await control.boundingBox();if(!b)throw Error('Missing control');await cdp.send('Input.dispatchTouchEvent',{type:'touchStart',touchPoints:[{x:b.x+b.width/2,y:b.y+b.height/2,id:1}]});}
-  else{await page.locator(FRAME).click({position:{x:8,y:8}});await page.keyboard.down(code);}held=code;
+  else{await page.locator(FRAME).click({position:{x:8,y:8}});await expect((await frame(page)).locator('#osd')).toBeFocused();await page.keyboard.down(code);}held=code;
  },up:async(cancel=false)=>{if(!held)return;if(cdp)await cdp.send('Input.dispatchTouchEvent',{type:cancel?'touchCancel':'touchEnd',touchPoints:[]});else await page.keyboard.up(held);held=null;},dispose:async()=>{if(held){if(cdp)await cdp.send('Input.dispatchTouchEvent',{type:'touchEnd',touchPoints:[]});else await page.keyboard.up(held);}await cdp?.detach();}};
 }
 // One focused desktop+touch journey. All outcomes use real keyboard/touch events;
