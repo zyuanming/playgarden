@@ -130,14 +130,44 @@ test('Descensus 2 original: genuine 1000m journey, loss, timer, bar physics, pau
  // A new original round: no RNG override, save injection, teleport or life edits.
  await act(page.getByRole('button',{name:'重来',exact:true}));await expect(page.locator('[data-descensus-ready]')).toHaveAttribute('data-descensus-ready','true');await act(frame.locator('#start'));await expect.poll(async()=>(await read()).state).toBe('Active');await canvas.scrollIntoViewIfNeeded();
  drawBox=(await canvas.boundingBox())!;expect(drawBox.y).toBeGreaterThanOrEqual(-1);expect(drawBox.y+drawBox.height).toBeLessThanOrEqual(page.viewportSize()!.height+1);
- const trace:unknown[]=[],cycles:unknown[]=[],shots=new Set<string>(),terrain=new Set<number>(),checkpointValues=new Set<number>(),windZonesSeen=new Set<number>();const windZones=[[600,575],[500,475],[350,325],[275,250],[100,75],[75,50]];let priorCheckpoint=900;const decide=createController();let minHeight=1000;const journeyDeadline=Date.now()+360000;
+ const trace:unknown[]=[],cycles:unknown[]=[],observations:unknown[]=[],recentInputs:unknown[]=[],shots=new Set<string>(),terrain=new Set<number>(),checkpointValues=new Set<number>(),windZonesSeen=new Set<number>();const windZones=[[600,575],[500,475],[350,325],[275,250],[100,75],[75,50]];let priorCheckpoint=900;const decide=createController();let minHeight=1000;const journeyDeadline=Date.now()+360000;
+ let previousObservation:Live|null=null,lastProgressHeight=1000,lastProgressTime=0,lastStallReport=0;
+ function observeJourney(s:Live,final=false){
+  const previous=previousObservation,reasons:string[]=[];
+  if(!previous)reasons.push('start');
+  if(previous&&s.nextCheckpointHeight!==previous.nextCheckpointHeight)reasons.push('checkpoint');
+  if(previous&&s.lossCount>previous.lossCount)reasons.push('life-lost');
+  // A net life gain is directly observable. A pickup offset by a simultaneous
+  // loss is deliberately not inferred from a missing pickup sprite.
+  if(previous&&s.lives>previous.lives&&s.resetCount===previous.resetCount)reasons.push('life-gained');
+  if(previous&&s.state!==previous.state)reasons.push('state-change');
+  if(s.ball.position[1]<lastProgressHeight-2){lastProgressHeight=s.ball.position[1];lastProgressTime=s.timeElapsed;}
+  if(s.state==='Active'&&s.timeElapsed-lastProgressTime>=5000&&s.timeElapsed-lastStallReport>=5000){reasons.push('stalled');lastStallReport=s.timeElapsed;}
+  if(final||s.state==='Lost'||s.state==='Won')reasons.push('terminal');
+  previousObservation=s;
+  if(!reasons.length)return;
+  const [x,y]=s.ball.position;
+  const nearby=s.bodies.filter(b=>b.type!==undefined).map(b=>({
+   ...b,clearance:shapeDist(x,y,b,0)-s.ball.radius
+  })).sort((a,b)=>a.clearance-b.clearance).slice(0,8);
+  const observation={reasons,wall:Date.now(),state:s.state,height:s.height,lives:s.lives,
+   timeElapsed:s.timeElapsed,timeSinceLastCheckpoint:s.timeSinceLastCheckpoint,nextCheckpointHeight:s.nextCheckpointHeight,
+   lastLoss:s.lastLoss,lossCount:s.lossCount,resetCount:s.resetCount,wonCount:s.wonCount,
+   isInvincible:s.isInvincible,timeSinceInvincible:s.timeSinceInvincible,physicsClock:s.physicsClock,frames:s.frames,
+   ball:s.ball,bar:s.bar,wind:s.wind,nearby,recentInputs:[...recentInputs]};
+  observations.push(observation);
+  // Emit bounded read-only evidence before terminal assertions, so the reason
+  // for a failed journey is available in CI logs as well as the trace artifact.
+  console.log(info.project.name,'descensus-observation',JSON.stringify(observation));
+ }
  try{
-  while(Date.now()<journeyDeadline){const begun=Date.now(),s=await read();minHeight=Math.min(minHeight,s.height);checkpointValues.add(s.nextCheckpointHeight);if(s.lastLoss)lossTypes.add(s.lastLoss);if(s.nextCheckpointHeight<priorCheckpoint){expect(s.timeSinceLastCheckpoint,'Crossing100m resets the original30s clock').toBeLessThan(1000);priorCheckpoint=s.nextCheckpointHeight;}windZones.forEach(([top,bottom],i)=>{if(s.ball.position[1]<=top&&s.ball.position[1]>=bottom&&(i%2===0?s.wind.left:s.wind.right))windZonesSeen.add(i);});s.bodies.forEach(b=>{if(b.type!==undefined)terrain.add(b.type);});
+  while(Date.now()<journeyDeadline){const begun=Date.now(),s=await read();observeJourney(s);minHeight=Math.min(minHeight,s.height);checkpointValues.add(s.nextCheckpointHeight);if(s.lastLoss)lossTypes.add(s.lastLoss);if(s.nextCheckpointHeight<priorCheckpoint){expect(s.timeSinceLastCheckpoint,'Crossing100m resets the original30s clock').toBeLessThan(1000);priorCheckpoint=s.nextCheckpointHeight;}windZones.forEach(([top,bottom],i)=>{if(s.ball.position[1]<=top&&s.ball.position[1]>=bottom&&(i%2===0?s.wind.left:s.wind.right))windZonesSeen.add(i);});s.bodies.forEach(b=>{if(b.type!==undefined)terrain.add(b.type);});
    if(s.state==='Won')break;
    expect(s.resetCount,'Do not silently retry a lost journey').toBe(1);expect(s.state,'Original lives must survive this ordinary-input route').not.toBe('Lost');
    expect(s.paused,'The full journey must advance without test-time pauses').toBe(false);
    const decision=decide(s);
-   trace.push({wall:begun,state:s.state,frame:s.frames,height:s.height,lives:s.lives,t:s.timeElapsed,timer:s.timeSinceLastCheckpoint,checkpoint:s.nextCheckpointHeight,loss:s.lastLoss,lossCount:s.lossCount,invincible:s.isInvincible,ball:s.ball,wind:s.wind,action:decision.action,controller:decision.controllerState});
+   trace.push({wall:begun,state:s.state,frame:s.frames,height:s.height,lives:s.lives,t:s.timeElapsed,timer:s.timeSinceLastCheckpoint,checkpoint:s.nextCheckpointHeight,loss:s.lastLoss,lossCount:s.lossCount,invincible:s.isInvincible,ball:s.ball,bar:s.bar,wind:s.wind,action:decision.action,controller:decision.controllerState});
+   if(decision.action){recentInputs.push({wall:begun,time:s.timeElapsed,ball:s.ball,bar:s.bar,action:decision.action,plan:decision.plan,controller:decision.controllerState});if(recentInputs.length>6)recentInputs.shift();}
    if(decision.action)await draw(...decision.action as [number,number,number,number]);
    for(const [label,height] of [['first',900],['middle',500],['last',75]] as const)if(s.height<=height&&!shots.has(label)&&s.state==='Active'){
     shots.add(label);console.log(info.project.name,'genuine journey',label,s.height,s.lives,s.timeElapsed);
@@ -148,7 +178,7 @@ test('Descensus 2 original: genuine 1000m journey, loss, timer, bar physics, pau
    }
    const rest=100-(Date.now()-begun);if(rest>0)await waitWall(rest);cycles.push({wallMs:Date.now()-begun,observedGameMs:s.timeElapsed,frame:s.frames});
   }
-  const won=await read();console.log(info.project.name,'journey terminal',won.state,won.height,won.lives,won.resetCount);trace.push({final:won});expect(won.state).toBe('Won');expect(won.wonCount).toBe(1);expect(won.resetCount).toBe(1);expect(won.ball.position[1]).toBeLessThan(2);expect(won.lives).toBeGreaterThan(0);expect(minHeight).toBeLessThan(10);
+  const won=await read();observeJourney(won,true);console.log(info.project.name,'journey terminal',won.state,won.height,won.lives,won.resetCount);trace.push({final:won});expect(won.state).toBe('Won');expect(won.wonCount).toBe(1);expect(won.resetCount).toBe(1);expect(won.ball.position[1]).toBeLessThan(2);expect(won.lives).toBeGreaterThan(0);expect(minHeight).toBeLessThan(10);
   expect(checkpointValues.size).toBeGreaterThanOrEqual(9);expect(terrain.size).toBeGreaterThanOrEqual(8);expect(shots.size).toBe(3);expect(windZonesSeen.size).toBe(6);expect([...lossTypes].sort()).toEqual(['saw','timeout']);
   await expect(frame.locator('#status')).toContainText('已真实落地');await expect(frame.locator('#records')).toContainText('已完成 1 次');await page.waitForTimeout(5500);
   await page.screenshot({path:info.outputPath('descensus-ground-certificate.png'),fullPage:true});await iframe.scrollIntoViewIfNeeded();await page.screenshot({path:info.outputPath('descensus-certificate-viewport.png')});
@@ -160,7 +190,7 @@ test('Descensus 2 original: genuine 1000m journey, loss, timer, bar physics, pau
   for(const control of ['#start','#pause','#menu'])expect((await frame.locator(control).boundingBox())!.height).toBeGreaterThanOrEqual(44);
   expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);expect(await frame.locator('body').evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
   await iframe.scrollIntoViewIfNeeded();await page.screenshot({path:info.outputPath('descensus-saved-record.png'),fullPage:true});
- }finally{const path=info.outputPath('original-input-journey.json');await writeFile(path,JSON.stringify({trace,cycles,gestures,terrain:[...terrain],checkpoints:[...checkpointValues],windZones:[...windZonesSeen],lossTypes:[...lossTypes],minHeight}));await info.attach('original-input-journey.json',{path,contentType:'application/json'});}
+ }finally{const path=info.outputPath('original-input-journey.json');await writeFile(path,JSON.stringify({trace,cycles,gestures,observations,terrain:[...terrain],checkpoints:[...checkpointValues],windZones:[...windZonesSeen],lossTypes:[...lossTypes],minHeight}));await info.attach('original-input-journey.json',{path,contentType:'application/json'});}
  expect(remote).toEqual([]);expect(failed).toEqual([]);expect(errors).toEqual([]);
  await act(page.getByRole('button',{name:'返回游戏大厅',exact:true}));await expect(iframe).toHaveCount(0);
 });
