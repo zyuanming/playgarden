@@ -1,0 +1,14 @@
+/* SPDX-License-Identifier: GPL-3.0-only */
+html,body{height:100%;width:100%;overflow:hidden;font-family:system-ui,sans-serif}
+body{display:flex;flex-direction:column;justify-content:center;background:#e5e5e5;touch-action:manipulation;user-select:none}
+body>svg#game{display:block;flex:1 1 auto;min-height:0;max-height:calc(100% - 88px);width:100%;overflow:hidden}
+#status{flex:0 0 28px;width:100%;text-align:center;font-size:12px;line-height:28px;background:#e5e5e5;color:#222;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#touch{display:flex;gap:8px;padding:6px 10px 10px;width:100%;height:60px;background:#e5e5e5}
+#touch button{flex:1;min-width:0;min-height:44px;font:700 15px system-ui;border:1px solid #bbb;border-radius:9px;background:#fff;color:#222;touch-action:none;user-select:none;-webkit-user-select:none}
+#touch button.held,#touch button:active{background:#333;color:white}
+#touch button:focus-visible{outline:3px solid #54926a;outline-offset:-3px}
+#hud{opacity:.45}
+.paused *,.waiting *{animation-play-state:paused!important}
+.paused #touch,.waiting #touch{pointer-events:none;opacity:.55}
+#congrats>path:nth-of-type(2),#congrats>.menu{display:none}
+@media(prefers-reduced-motion:reduce){#inner-goal,.walk #left_foot,.walk #right_foot,.walk #head{animation:none}}

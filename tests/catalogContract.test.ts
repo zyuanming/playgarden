@@ -163,6 +163,8 @@ const packs = {
   "evolution-of-trust": [],
   "ghosted": Array.from({length:13}, (_,i) => i+1),
   "black-hole-square": Array.from({length:18}, (_,i) => i+1),
+  "rollermaze": Array.from({length:25}, (_,i) => i+1),
+  "onoff": Array.from({length:25}, (_,i) => i+1),
   "css-diner": Array.from({length:32}, (_,i) => i+1),
   "flexbox-froggy": Array.from({length:24}, (_,i) => i+1),
   "monkey-rally": [1,2,3,4,5,6,7,8],
@@ -379,8 +381,8 @@ describe("Scalable catalog contract", () => {
       }
     }),
   );
-  it("counts only 181 real games and 3177 levels, not the roadmap", () => {
-    expect(games).toHaveLength(181);
-    expect(games.reduce((sum, g) => sum + g.levelCount, 0)).toBe(3177);
+  it("counts only 183 real games and 3227 levels, not the roadmap", () => {
+    expect(games).toHaveLength(183);
+    expect(games.reduce((sum, g) => sum + g.levelCount, 0)).toBe(3227);
   });
 });
