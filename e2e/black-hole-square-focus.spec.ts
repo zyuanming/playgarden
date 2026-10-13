@@ -1,11 +1,40 @@
 // SPDX-License-Identifier: GPL-3.0-only
 // Narrow browser-focus regression; no puzzle completion or state injection.
-import {expect,test,type CDPSession,type Frame,type Page} from '@playwright/test';
+import {expect,test as base,type Browser,type CDPSession,type Frame,type Page} from '@playwright/test';
 import {readFileSync,writeFileSync} from 'node:fs';
 import {captureErrors} from './helpers';
+// The default context must never receive Playwright's focus override. Launching
+// without a context leaves targets alone; the official noDefaults CDP connection
+// skips focus emulation on this existing context, including newly opened tabs.
+const test=base.extend({
+  page:async({playwright,viewport,isMobile},use,info)=>{
+    const port=9339+info.workerIndex;
+    const owner=await playwright.chromium.launch({headless:false,timeout:10000,args:[`--remote-debugging-port=${port}`,'--remote-debugging-address=127.0.0.1']});
+    let browser:Browser|undefined;
+    try{
+      browser=await playwright.chromium.connectOverCDP(`http://127.0.0.1:${port}`,{noDefaults:true,timeout:10000});
+      const context=browser.contexts()[0];
+      try{
+        const page=await context.newPage();
+        if(!viewport)throw Error('Focus regression requires a configured viewport');
+        await page.setViewportSize(viewport);
+        const device=await context.newCDPSession(page);
+        try{
+          // Keep the existing touch-sized project; this controls device input,
+          // never focus, visibility, game state or synthetic DOM events.
+          if(isMobile){
+            await device.send('Emulation.setDeviceMetricsOverride',{...viewport,deviceScaleFactor:1,mobile:true});
+            await device.send('Emulation.setTouchEmulationEnabled',{enabled:true});
+          }
+          await use(page);
+        }finally{await device.detach();}
+      }finally{await context.close();} // Test runner retains failure trace/screenshots.
+    }finally{try{await browser?.close();}finally{await owner.close();}}
+  },
+});
 const FRAME='iframe[title="Black Hole Square 原版游戏"]';
 type State={current:number;moves:number;paused:boolean;settled:boolean;board:number[];canvas:{width:number;height:number;x:number;y:number}};
-test('Black Hole Square: real tab departure cancels a held gesture',async({page},info)=>{
+test('Black Hole Square: real tab departure cancels a held gesture',async({page,baseURL},info)=>{
   test.setTimeout(60000);
   const mobile=info.project.name==='mobile',errors=captureErrors(page),events:unknown[]=[];
   let frame:Frame|null=null,other:Page|null=null,otherFocus:CDPSession|null=null,frameSession:CDPSession|null=null;
@@ -25,11 +54,8 @@ test('Black Hole Square: real tab departure cancels a held gesture',async({page}
       otherTarget:await query(otherFocus,'Target.getTargetInfo'),otherWindow:await query(otherFocus,'Browser.getWindowForTarget')});
   };
   try{
-    // Playwright 1.63 forces every tab focused, even when headed. Disable only
-    // that automation override on both tabs to observe native browser focus.
-    await browserSession.send('Emulation.setFocusEmulationEnabled',{enabled:false});
     await page.bringToFront();
-    await page.goto('/');await page.getByRole('textbox',{name:'搜索游戏'}).fill('Black Hole Square');
+    await page.goto(new URL('/',baseURL).href);await page.getByRole('textbox',{name:'搜索游戏'}).fill('Black Hole Square');
     await page.locator('.game-card').filter({hasText:/Black Hole Square/i}).getByRole('button',{name:/^开始玩/}).first().click();
     const handle=await page.locator(FRAME).elementHandle();frame=await handle!.contentFrame();
     if(!frame)throw Error('Game iframe has no content frame');
@@ -60,7 +86,6 @@ test('Black Hole Square: real tab departure cancels a held gesture',async({page}
     await observeFocus('after held gesture');
     await expect.poll(()=>frame!.evaluate(()=>document.hasFocus())).toBe(true);
     other=await page.context().newPage();otherFocus=await page.context().newCDPSession(other);
-    await otherFocus.send('Emulation.setFocusEmulationEnabled',{enabled:false});
     await other.goto('about:blank');await other.evaluate(recordNativeFocus);await other.bringToFront();
     await observeFocus('after other tab activation');
     await expect.poll(()=>page.evaluate(()=>document.hasFocus())).toBe(false);
@@ -71,7 +96,8 @@ test('Black Hole Square: real tab departure cancels a held gesture',async({page}
     await expect.poll(async()=>(await state()).paused).toBe(false);
     await page.waitForTimeout(150);expect((await state()).board).toEqual(initial.board);expect((await state()).moves).toBe(0);
     // A new ordinary gesture still works; the interrupted one earned nothing.
-    if(mobile)await page.touchscreen.tap(point.x,point.y);else await page.mouse.click(point.x,point.y);
+    if(touch){await touch.send('Input.dispatchTouchEvent',{type:'touchStart',touchPoints:[{...point,id:1}]});await touch.send('Input.dispatchTouchEvent',{type:'touchEnd',touchPoints:[]});}
+    else await page.mouse.click(point.x,point.y);
     await expect.poll(async()=>(await state()).moves).toBe(1);
     await expect.poll(async()=>(await state()).board).toEqual(firstPlan.checkpoints[0]);
     events.push({case:'fresh gesture after return',state:await state()});
