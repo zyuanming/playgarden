@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: GPL-3.0-only
 // Narrow browser-focus regression; no puzzle completion or state injection.
-import {expect,test,type Frame,type Page} from '@playwright/test';
+import {expect,test,type CDPSession,type Frame,type Page} from '@playwright/test';
 import {readFileSync,writeFileSync} from 'node:fs';
 import {captureErrors} from './helpers';
 const FRAME='iframe[title="Black Hole Square 原版游戏"]';
@@ -8,11 +8,16 @@ type State={current:number;moves:number;paused:boolean;settled:boolean;board:num
 test('Black Hole Square: real tab departure cancels a held gesture',async({page},info)=>{
   test.setTimeout(60000);
   const mobile=info.project.name==='mobile',errors=captureErrors(page),events:unknown[]=[];
-  let frame:Frame|null=null,other:Page|null=null;
+  let frame:Frame|null=null,other:Page|null=null,otherFocus:CDPSession|null=null;
   const firstPlan=JSON.parse(readFileSync(new URL('./fixtures/black-hole-square-input-plans.json',import.meta.url),'utf8')).levels[0] as {initial:number[];checkpoints:number[][]};
-  const touch=mobile?await page.context().newCDPSession(page):null;
+  const browserSession=await page.context().newCDPSession(page);
+  const touch=mobile?browserSession:null;
   const state=async()=>frame!.evaluate(()=>(window as unknown as {__blackHoleSquareSnapshot:()=>State}).__blackHoleSquareSnapshot());
   try{
+    // Playwright 1.63 forces every tab focused, even when headed. Disable only
+    // that automation override on both tabs to observe native browser focus.
+    await browserSession.send('Emulation.setFocusEmulationEnabled',{enabled:false});
+    await page.bringToFront();
     await page.goto('/');await page.getByRole('textbox',{name:'搜索游戏'}).fill('Black Hole Square');
     await page.locator('.game-card').filter({hasText:/Black Hole Square/i}).getByRole('button',{name:/^开始玩/}).first().click();
     const handle=await page.locator(FRAME).elementHandle();frame=await handle!.contentFrame();
@@ -24,7 +29,7 @@ test('Black Hole Square: real tab departure cancels a held gesture',async({page}
     const initial=await state();expect(initial.moves).toBe(0);expect(initial.board).toEqual(firstPlan.initial);
     await frame.evaluate(()=>{
       const w=window as unknown as {__focusEvents:unknown[]};w.__focusEvents=[];
-      window.addEventListener('blur',()=>w.__focusEvents.push({event:'blur',focused:document.hasFocus()}));
+      window.addEventListener('blur',e=>w.__focusEvents.push({event:'blur',focused:document.hasFocus(),trusted:e.isTrusted}));
       window.addEventListener('message',e=>{if(e.data?.source==='playgarden-host'&&e.data.type==='cancel')w.__focusEvents.push({event:'host-cancel',focused:document.hasFocus()});});
     });
     await page.locator(FRAME).scrollIntoViewIfNeeded();const b=await page.locator(FRAME).boundingBox();if(!b)throw Error('Missing frame');
@@ -34,7 +39,9 @@ test('Black Hole Square: real tab departure cancels a held gesture',async({page}
     if(touch)await touch.send('Input.dispatchTouchEvent',{type:'touchStart',touchPoints:[{...point,id:1}]});
     else{await page.mouse.move(point.x,point.y);await page.mouse.down();}
     await expect.poll(()=>frame!.evaluate(()=>document.hasFocus())).toBe(true);
-    other=await page.context().newPage();await other.goto('about:blank');await other.bringToFront();
+    other=await page.context().newPage();otherFocus=await page.context().newCDPSession(other);
+    await otherFocus.send('Emulation.setFocusEmulationEnabled',{enabled:false});
+    await other.goto('about:blank');await other.bringToFront();
     await expect.poll(()=>page.evaluate(()=>document.hasFocus())).toBe(false);
     await expect.poll(()=>frame!.evaluate(()=>(window as unknown as {__focusEvents:{event:string;focused:boolean}[]}).__focusEvents.some(e=>['blur','host-cancel'].includes(e.event)&&!e.focused))).toBe(true);
     events.push({case:'real background tab',hostHasFocus:await page.evaluate(()=>document.hasFocus()),events:await frame.evaluate(()=>(window as unknown as {__focusEvents:unknown[]}).__focusEvents)});
@@ -52,6 +59,6 @@ test('Black Hole Square: real tab departure cancels a held gesture',async({page}
   }finally{
     const finalEvents=frame&&!frame.isDetached()?await frame.evaluate(()=>(window as unknown as {__focusEvents?:unknown[]}).__focusEvents??[]):[];
     writeFileSync(info.outputPath('black-hole-square-real-tab-focus.json'),JSON.stringify({project:info.project.name,events,finalEvents,errors},null,2));
-    if(other)await other.close();if(touch)await touch.detach();
+    if(otherFocus)await otherFocus.detach();if(other)await other.close();await browserSession.detach();
   }
 });
