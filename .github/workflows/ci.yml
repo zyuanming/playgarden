@@ -57,6 +57,15 @@ jobs:
           name: ghosted-build-identity
           path: ghosted-build-identity.json
           retention-days: 3
+      - name: Identify the compiled Black Hole Square resources
+        run: node scripts/black-hole-square/build-identity.mjs
+      - name: Keep exact compiled Black Hole Square bytes for deployment verification
+        uses: actions/upload-artifact@v4
+        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+        with:
+          name: black-hole-square-build-identity
+          path: black-hole-square-build-identity.json
+          retention-days: 3
       - name: Identify the exact build
         run: |
           node --input-type=module <<'NODE'
@@ -101,7 +110,12 @@ jobs:
       - run: npm ci
       - run: npx playwright install --with-deps chromium
       - name: Final desktop and touch-size journey for this game only
-        run: npm run test:e2e -- "$E2E_FILE"
+        run: |
+          if [[ "$E2E_FILE" == "e2e/black-hole-square-focus.spec.ts" ]]; then
+            xvfb-run --auto-servernum npm run test:e2e -- "$E2E_FILE"
+          else
+            npm run test:e2e -- "$E2E_FILE"
+          fi
         env:
           E2E_FILE: ${{ matrix.game.file }}
       - uses: actions/upload-artifact@v4
@@ -157,6 +171,12 @@ jobs:
         if: steps.current.outputs.deploy == 'true'
         with:
           name: ghosted-build-identity
+          path: .build-identities
+      - name: Read the same build's Black Hole Square resource identity
+        uses: actions/download-artifact@v4
+        if: steps.current.outputs.deploy == 'true'
+        with:
+          name: black-hole-square-build-identity
           path: .build-identities
       - name: Verify public build identity and entry resources without repeating E2E
         if: steps.current.outputs.deploy == 'true'
@@ -300,6 +320,15 @@ jobs:
             const r=await fetch(new URL(row.path,url),{cache:'no-store'}),bytes=Buffer.from(await r.arrayBuffer());
             if(!r.ok||bytes.length!==row.bytes||createHash('sha256').update(bytes).digest('hex')!==row.sha256)throw Error('Ghosted public resource mismatch '+row.path);
             console.log('Ghosted exact resource OK:',row.path);
+          }
+          const blackHoleIdentity=JSON.parse(readFileSync('.build-identities/black-hole-square-build-identity.json','utf8'));
+          if(blackHoleIdentity.commit!==sha)throw Error('Black Hole Square identity belongs to a different build');
+          if(!Array.isArray(blackHoleIdentity.files)||!blackHoleIdentity.files.length||!['games/black-hole-square/js/runtime.js','games/black-hole-square/source.tar.gz'].every(path=>blackHoleIdentity.files.some(row=>row.path===path)))throw Error('Incomplete Black Hole Square identity');
+          for(const row of blackHoleIdentity.files){
+            if(!/^games\/black-hole-square\/[a-zA-Z0-9_./-]+$/.test(row.path)||row.path.includes('..'))throw Error('Invalid Black Hole Square resource path');
+            const r=await fetch(new URL(row.path,url),{cache:'no-store'}),bytes=Buffer.from(await r.arrayBuffer());
+            if(!r.ok||bytes.length!==row.bytes||createHash('sha256').update(bytes).digest('hex')!==row.sha256)throw Error('Black Hole Square public resource mismatch '+row.path);
+            console.log('Black Hole Square exact resource OK:',row.path);
           }
           console.log('Public commit and entry verified:',sha,url);
           NODE

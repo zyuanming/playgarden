@@ -1,0 +1,11 @@
+{
+  "original_path": "scratch/title.afdesign",
+  "zstd_frame_offset": 76,
+  "compressed_frame_bytes": 19747,
+  "decoded_bytes": 55146,
+  "decoded_sha256": "0662a4533a1b8685afe32a0893ace0c5a80aa106df504a85e14b7a31b6e8cd7c",
+  "font_postscript_name": "Gugi-Regular",
+  "font_family": "Gugi",
+  "license": "SIL-OFL-1.1",
+  "note": "Name read from original design metadata; no font software executed or bundled."
+}

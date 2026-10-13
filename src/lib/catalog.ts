@@ -180,6 +180,7 @@ export const GAME_IDS = [
   "sql-mystery",
   "evolution-of-trust",
   "ghosted",
+  "black-hole-square",
 ] as const;
 export type GameId = (typeof GAME_IDS)[number];
 export type Category =

@@ -3215,5 +3215,34 @@ component: lazy(() => import("../games/EvolutionOfTrust"))
 component: lazy(() => import("../games/GhostedGame"))
 },
 
+{
+  "id": "black-hole-square",
+  "title": "黑洞方块 · Black Hole Square",
+  "subtitle": "点击箭头推动方块，创造黑洞，在原始步数内清空18个谜题。",
+  "category": "空间想象",
+  "difficulty": "进阶",
+  "tone": "purple",
+  "levelCount": 18,
+  "allowUndo": false,
+  "resumeKey": "playgarden.black-hole-square.native.v1",
+  "artwork": {
+    "url": "./games/black-hole-square/title.svg",
+    "position": "center",
+    "size": "contain"
+  },
+  "source": {
+    "kind": "adapted",
+    "license": "MIT",
+    "author": "Quinten Clause",
+    "workTitle": "Black Hole Square（18个原版谜题）",
+    "url": "https://github.com/Quinten/black-hole-square/tree/8d48aae2097613782ab18d5062e8a3906741baaa",
+    "commit": "8d48aae2097613782ab18d5062e8a3906741baaa",
+    "notice": "./games/black-hole-square/LICENSE-MIT.txt",
+    "notes": "原作MIT引擎、18张6×6地图、步数、矢量图、星空与合成音效保留；标题Gugi轮廓注明独立OFL来源，不打包字体。关卡可自由跳过，只给真实清空记通关；保存选择、已清空与成功解法，不保存中途棋盘。新宿主/适配GPL-3.0-only。"
+  }
+,
+component: lazy(() => import("../games/BlackHoleSquareGame"))
+},
+
 ];
 export const findGame = (id: string) => games.find((game) => game.id === id);
