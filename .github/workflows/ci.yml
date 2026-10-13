@@ -110,7 +110,12 @@ jobs:
       - run: npm ci
       - run: npx playwright install --with-deps chromium
       - name: Final desktop and touch-size journey for this game only
-        run: npm run test:e2e -- "$E2E_FILE"
+        run: |
+          if [[ "$E2E_FILE" == "e2e/black-hole-square-focus.spec.ts" ]]; then
+            xvfb-run --auto-servernum npm run test:e2e -- "$E2E_FILE"
+          else
+            npm run test:e2e -- "$E2E_FILE"
+          fi
         env:
           E2E_FILE: ${{ matrix.game.file }}
       - uses: actions/upload-artifact@v4
