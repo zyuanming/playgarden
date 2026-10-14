@@ -1,6 +1,6 @@
 import { writeFile } from 'node:fs/promises';
 // SPDX-License-Identifier: GPL-3.0-only
-import { test, expect, type Locator, type Frame } from '@playwright/test';
+import { test, expect, type Locator, type Frame, type ElementHandle } from '@playwright/test';
 import { openGame, captureErrors } from './helpers';
 type Live = { state:string; paused:boolean; localPaused:boolean; externalPaused:boolean; height:number; lives:number; timeElapsed:number; timeSinceLastCheckpoint:number; nextCheckpointHeight:number; isInvincible:boolean; timeSinceInvincible:number; physicsClock:number; frames:number; lastLoss:string; lossCount:number; resetCount:number; wonCount:number; ball:{position:number[];velocity:number[];radius:number};camera:{x:number;y:number};bar:{finalized:boolean;pointer:number|null;settleRemaining:number;position:number[];angle:number;width:number}; wind:{left:boolean;right:boolean};bodies:{id:number;position:number[];velocity:number[];angle:number;angularVelocity:number;shapeOffsets:number[][];shapeAngles:number[];fatal:boolean;ground:boolean;type:number;shapes:{radius?:number;width?:number;height?:number;vertices?:number[][]}[]}[] };
 
@@ -79,8 +79,8 @@ test('Descensus 2 original: genuine 1000m journey, loss, timer, bar physics, pau
  page.on('requestfailed',r=>{if(!r.failure()?.errorText.includes('ERR_ABORTED'))failed.push(r.url());});
  const act=async(l:Locator)=>mobile?l.tap():l.click();
  const iframe=page.locator('iframe[title="Descensus 2 千米降落完整旅程"]'),frame=page.frameLocator('iframe[title="Descensus 2 千米降落完整旅程"]'),canvas=frame.locator('#viewport');
- let gameFrame:Frame|null=null;
- const read=async()=>{if(!gameFrame||gameFrame.isDetached())gameFrame=await (await iframe.elementHandle())!.contentFrame();if(!gameFrame)throw Error('No game frame');return await gameFrame.evaluate(()=> (window as unknown as {__descensusRead:()=>Live}).__descensusRead());};
+ let gameFrame:Frame|null=null,drawSurface:ElementHandle<SVGElement|HTMLElement>|null=null;
+ const read=async()=>{if(!gameFrame||gameFrame.isDetached()){gameFrame=await (await iframe.elementHandle())!.contentFrame();drawSurface=null;}if(!gameFrame)throw Error('No game frame');return await gameFrame.evaluate(()=> (window as unknown as {__descensusRead:()=>Live}).__descensusRead());};
  const cdp=await page.context().newCDPSession(page);
  const waitWall=(ms:number)=>new Promise<void>(resolve=>setTimeout(resolve,ms));
  let drawBox:{x:number;y:number;width:number;height:number}|null=null;
@@ -89,7 +89,14 @@ test('Descensus 2 original: genuine 1000m journey, loss, timer, bar physics, pau
   // Native CDP input is relative to the current viewport. The mobile trace
   // showed a 146px scroll shift during play, without a milestone screenshot.
   // Never reuse a prior canvas rectangle for a later mouse/touch gesture.
-  const box=(await canvas.boundingBox())!;drawBox=box;const point=(x:number,y:number)=>({x:box.x+Math.max(16,Math.min(1008,x))*box.width/1024,y:box.y+Math.max(16,Math.min(1776,y))*box.height/1792});const a=point(x1,y1),b=point(x2,y2);
+  // Keep the DOM identity only, never a cached rectangle. Re-resolving this
+  // nested locator took 174ms median on mobile in the real failed CI trace,
+  // so several shields began after the observed ball had already hit a saw.
+  // read() invalidates this handle whenever the game iframe is replaced.
+  const preparing=Date.now();
+  if(!drawSurface)drawSurface=await canvas.elementHandle();
+  if(!drawSurface)throw Error('No current game canvas');
+  const box=(await drawSurface.boundingBox())!;drawBox=box;const point=(x:number,y:number)=>({x:box.x+Math.max(16,Math.min(1008,x))*box.width/1024,y:box.y+Math.max(16,Math.min(1776,y))*box.height/1792});const a=point(x1,y1),b=point(x2,y2);
   const targets=await page.evaluate(({a,b})=>[a,{x:(a.x+b.x)/2,y:(a.y+b.y)/2},b].map(({x,y})=>{
    const el=document.elementFromPoint(x,y);
    return {tag:el?.tagName,title:el?.getAttribute('title'),label:el?.getAttribute('aria-label')};
@@ -107,7 +114,7 @@ test('Descensus 2 original: genuine 1000m journey, loss, timer, bar physics, pau
   if(mobile)touch('touchMove',[{...b,id:1}]);else mouse('mouseMoved',b,1);
   const remaining=48-(Date.now()-began);if(remaining>0)await waitWall(remaining);
   if(mobile)touch(cancel?'touchCancel':'touchEnd',[]);else mouse('mouseReleased',b,0);
-  const results=await Promise.all(pending);gestures.push({began,ends:Date.now(),sent,from:a,to:b,box});
+  const results=await Promise.all(pending);gestures.push({began,ends:Date.now(),preparedInMs:began-preparing,sent,from:a,to:b,box});
   const error=results.find(Boolean);if(error)throw Error(error);
  }
  async function tapCanvas(x:number,y:number){const box=(await canvas.boundingBox())!;const position={x:x*box.width/1024,y:y*box.height/1792};if(mobile)await canvas.tap({position});else await canvas.click({position});}
