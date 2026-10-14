@@ -85,7 +85,9 @@ test('Rollermaze original routes, lifecycle and offline host',async({page},info)
   // Wake one original sentinel through a real collision, observing its chase flag.
   await chooseLevel(page,4);await ready(page,4);
   await input.down('ArrowUp');await expect.poll(async()=>(await read(page)).position[2],{intervals:[20]}).toBe(-20);await input.up();await stop(page);
-  await input.down('ArrowDown');await (await frame(page)).waitForFunction(()=>(window as unknown as {__rollermazeSnapshot:()=>Snapshot}).__rollermazeSnapshot().moving!==0,undefined,{polling:'raf'});await input.up();await stop(page);expect((await read(page)).position[2]).toBe(-18);
+  const sentinelFrame=await frame(page);
+  await Promise.all([sentinelFrame.waitForFunction(()=>(window as unknown as {__rollermazeSnapshot:()=>Snapshot}).__rollermazeSnapshot().target[2]===-18,undefined,{polling:'raf'}),input.down('ArrowDown')]);
+  await input.up();await stop(page);expect((await read(page)).position[2]).toBe(-18);
   await input.down('ArrowLeft');await expect.poll(async()=>(await read(page)).collisions,{intervals:[20]}).toBeGreaterThan(0);await input.up();expect((await read(page)).npcs.some(n=>n.deadly)).toBe(true);expect(await credits(page)).toEqual([0,2]);await capture('sentinel-wakes-and-returns-player');
   await chooseLevel(page,24);const last=await ready(page,24);expect(last.title).toBe('Quarter C');expect(last.cleared).toEqual([0,2]);expect(last.ending).toBe(false);expect(await credits(page)).toEqual([0,2]);await capture('original-map-25-no-credit');
   if(mobile){await page.setViewportSize({width:320,height:760});await capture('320px-controls');expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);await page.setViewportSize({width:390,height:844});}
@@ -94,7 +96,8 @@ test('Rollermaze original routes, lifecycle and offline host',async({page},info)
   await chooseLevel(page,0);await ready(page,0);expect((await read(page)).moves).toBe(0);expect((await read(page)).remaining).toBe(null);
   // Mute and exit while a real action is active; the frame is detached with its loop.
   await page.getByRole('button',{name:'静音',exact:true}).click();await expect.poll(async()=>(await read(page)).audio.enabled).toBe(false);
-  await input.down('ArrowRight');await expect.poll(async()=>(await read(page)).moving).not.toBe(0);await input.up();
+  const exitFrame=await frame(page);
+  await Promise.all([exitFrame.waitForFunction(()=>(window as unknown as {__rollermazeSnapshot:()=>Snapshot}).__rollermazeSnapshot().moving!==0,undefined,{polling:'raf'}),input.down('ArrowRight')]);await input.up();
   const leaving=await frame(page);await page.getByRole('button',{name:'返回游戏大厅',exact:true}).click();expect(leaving.isDetached()).toBe(true);await expect(page.locator(FRAME)).toHaveCount(0);
   expect(errors).toEqual([]);expect(outside).toEqual([]);
  }finally{await input.dispose();const data=JSON.stringify({upstreamCommit:'2a08f83fa3935fc981ac6efce26e2b9d6d34a5ed',project:info.project.name,evidence,errors,outside},null,2);writeFileSync(info.outputPath('rollermaze-real-input-evidence.json'),data);await info.attach('rollermaze-real-input-evidence',{body:data,contentType:'application/json'});}

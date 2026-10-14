@@ -16,10 +16,12 @@ function controls(page:Page,mobile:boolean,cdp:CDPSession){
  let held:string[]=[];
  async function release(cancel=false){if(!held.length)return;if(mobile)await cdp.send('Input.dispatchTouchEvent',{type:cancel?'touchCancel':'touchEnd',touchPoints:[]});else for(const action of held)await page.keyboard.up(keyNames[action]);held=[];}
  async function hold(actions:string[]){
-  await release();await page.locator(FRAME).scrollIntoViewIfNeeded();
-  if(mobile){const points=[];for(const [id,action]of actions.entries()){
+  // Adding a finger must keep the jump/direction fingers down in midair.
+  const extending=mobile&&held.length>0&&held.every(action=>actions.includes(action));
+  if(!extending){await release();await page.locator(FRAME).scrollIntoViewIfNeeded();}
+  if(mobile){const points=[];for(const action of actions){
    const bounds=await (await frame(page)).locator(`[data-action="${action}"]`).boundingBox();if(!bounds)throw Error('Missing touch control');
-   points.push({x:bounds.x+bounds.width/2,y:bounds.y+bounds.height/2,id:id+1});
+   points.push({x:bounds.x+bounds.width/2,y:bounds.y+bounds.height/2,id:Object.keys(keyNames).indexOf(action)+1});
   }await cdp.send('Input.dispatchTouchEvent',{type:'touchStart',touchPoints:points});}
   else{await (await frame(page)).locator('#status').click();for(const action of actions)await page.keyboard.down(keyNames[action]);}
   held=actions;
