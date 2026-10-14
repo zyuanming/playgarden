@@ -2,8 +2,8 @@ import {test,expect,type Page} from '@playwright/test';
 import {writeFileSync} from 'node:fs';
 import {openGame,chooseLevel} from './helpers';
 const TITLE='滚动迷宫 · Rollermaze',FRAME='iframe[title="Rollermaze 原版游戏"]',KEY='playgarden.rollermaze.native.v1';
-type Snapshot={level:number;title:string;state:number;ready:boolean;paused:boolean;frames:number;time:number;remaining:number|null;position:number[];moving:number;keys:number;touch:boolean;cleared:number[];moves:number;safeSpots:number;collisions:number;failures:number;saved:boolean;blocks:{blocked:boolean}[];npcs:{deadly:boolean}[];ending:boolean;audio:{context:string;enabled:boolean;oscillators:number};map:{width:number;height:number;tiles:(number|null)[]}};
-async function frame(page:Page){const f=await page.locator(FRAME).contentFrame().locator('body').elementHandle();const result=f?await f.ownerFrame():null;if(!result)throw Error('Missing game frame');return result;}
+type Snapshot={level:number;title:string;state:number;ready:boolean;paused:boolean;frames:number;time:number;remaining:number|null;position:number[];target:number[];moving:number;keys:number;touch:boolean;cleared:number[];moves:number;safeSpots:number;collisions:number;failures:number;saved:boolean;blocks:{blocked:boolean}[];npcs:{deadly:boolean}[];ending:boolean;audio:{context:string;enabled:boolean;oscillators:number};map:{width:number;height:number;tiles:(number|null)[]}};
+async function frame(page:Page){const result=page.frame({url:/\/games\/rollermaze\/index\.html(?:\?|$)/});if(!result)throw Error('Missing game frame');return result;}
 async function read(page:Page):Promise<Snapshot>{return (await frame(page)).evaluate(()=>(window as unknown as {__rollermazeSnapshot:()=>Snapshot}).__rollermazeSnapshot());}
 async function ready(page:Page,level?:number){await expect(page.locator('.rollermaze-host')).toHaveAttribute('data-rollermaze-ready','true');await expect.poll(async()=>{const s=await read(page);return s.ready&&s.position[1]<=0&&(level===undefined||s.level===level);},{timeout:10000}).toBe(true);return read(page);}
 async function stop(page:Page){await expect.poll(async()=>(await read(page)).moving).toBe(0);return read(page);}
@@ -78,7 +78,9 @@ test('Rollermaze original routes, lifecycle and offline host',async({page},info)
   // Original safe spot on map four refreshes the genuine running clock.
   await chooseLevel(page,3);await ready(page,3);
   await input.down('ArrowDown');await expect.poll(async()=>(await read(page)).position[2],{intervals:[20]}).toBe(-4);await input.up();await stop(page);
-  await input.down('ArrowRight');await expect.poll(async()=>(await read(page)).position[0],{intervals:[20]}).toBeGreaterThanOrEqual(-6);await input.up();await stop(page);
+  const safeFrame=await frame(page);await input.down('ArrowRight');
+  await safeFrame.waitForFunction(()=>(window as unknown as {__rollermazeSnapshot:()=>Snapshot}).__rollermazeSnapshot().target[0]===-6,undefined,{polling:'raf'});
+  await input.up();await stop(page);expect((await read(page)).position[0]).toBe(-6);
   await input.down('ArrowDown');await expect.poll(async()=>(await read(page)).safeSpots,{intervals:[20]}).toBeGreaterThan(0);await input.up();await stop(page);expect((await read(page)).remaining).toBeGreaterThan(11);await capture('safe-spot-refills-clock');
   // Wake one original sentinel through a real collision, observing its chase flag.
   await chooseLevel(page,4);await ready(page,4);
