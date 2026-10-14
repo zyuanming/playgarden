@@ -58,7 +58,9 @@ function createController(){
   }else if(p.dir&&Math.abs(s.ball.velocity[0]-p.tx)>.8){
    const dx=-p.dir*58;
    action=[cx+dx,cy-128,cx+dx,cy+128];
-  }else if(lastAction){action=[32,100,64,100];}
+  // Replace the old bar away from the ball and the canvas's top-edge menu.
+  // Keep native touch clear of page navigation if the document scrolls.
+  }else if(lastAction){action=[32,500,64,500];}
 
  lastAction=action?(p.kind||p.dir):"";
  return {action,plan:p,lastAction,controllerState:{stallY,stallAt,escapeUntil,escapeDir,lastDir}};
@@ -84,7 +86,17 @@ test('Descensus 2 original: genuine 1000m journey, loss, timer, bar physics, pau
  let drawBox:{x:number;y:number;width:number;height:number}|null=null;
  const gestures:unknown[]=[];
  async function draw(x1:number,y1:number,x2:number,y2:number,cancel=false){
-  const box=drawBox??(await canvas.boundingBox())!;const point=(x:number,y:number)=>({x:box.x+Math.max(16,Math.min(1008,x))*box.width/1024,y:box.y+Math.max(16,Math.min(1776,y))*box.height/1792});const a=point(x1,y1),b=point(x2,y2);
+  // Native CDP input is relative to the current viewport. The mobile trace
+  // showed a 146px scroll shift during play, without a milestone screenshot.
+  // Never reuse a prior canvas rectangle for a later mouse/touch gesture.
+  const box=(await canvas.boundingBox())!;drawBox=box;const point=(x:number,y:number)=>({x:box.x+Math.max(16,Math.min(1008,x))*box.width/1024,y:box.y+Math.max(16,Math.min(1776,y))*box.height/1792});const a=point(x1,y1),b=point(x2,y2);
+  const targets=await page.evaluate(({a,b})=>[a,{x:(a.x+b.x)/2,y:(a.y+b.y)/2},b].map(({x,y})=>{
+   const el=document.elementFromPoint(x,y);
+   return {tag:el?.tagName,title:el?.getAttribute('title'),label:el?.getAttribute('aria-label')};
+  }),{a,b});
+  expect(targets,'Every native gesture must hit the actual game iframe, not page navigation').toEqual(
+   Array.from({length:3},()=>({tag:'IFRAME',title:'Descensus 2 千米降落完整旅程',label:null}))
+  );
   const began=Date.now(),sent:{type:string;at:number}[]=[],pending:Promise<string|null>[]=[];
   // These are ordinary native input events. Schedule the gesture in wall time,
   // without adding one browser protocol acknowledgement delay after each point.
