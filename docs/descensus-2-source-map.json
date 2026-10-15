@@ -1,0 +1,54 @@
+{
+  "game": "descensus-2",
+  "commit": "750003f12815a756ebd18634e88620c1050a1ec5",
+  "campaign": true,
+  "finiteLevels": 0,
+  "distanceMetres": 1000,
+  "originalTerrainClasses": 10,
+  "originalWindZones": 6,
+  "sourceChain": [
+    "bobeff/open-source-games",
+    "leereilly/games",
+    "TomWHall/Descensus2"
+  ],
+  "excludedOriginalPaths": [
+    ".gitignore",
+    "src/favicon.ico",
+    "src/fonts/Constantia/Constantia.fnt",
+    "src/fonts/Constantia/Constantia_0.png",
+    "src/js/lib/MersenneTwister/MersenneTwister.min.js",
+    "src/img/two-by-four.png",
+    "src/img/seesaw.png",
+    "src/img/spinner.png",
+    "src/sound/alarm.mp3",
+    "src/sound/alarm.ogg",
+    "src/sound/checkpoint.mp3",
+    "src/sound/checkpoint.ogg",
+    "src/sound/clock.mp3",
+    "src/sound/clock.ogg",
+    "src/sound/gained-life.mp3",
+    "src/sound/gained-life.ogg",
+    "src/sound/lost-life.mp3",
+    "src/sound/lost-life.ogg",
+    "src/sound/lost.mp3",
+    "src/sound/lost.ogg",
+    "src/sound/saw.mp3",
+    "src/sound/saw.ogg",
+    "src/sound/won.mp3",
+    "src/sound/won.ogg"
+  ],
+  "replacements": {
+    "textures": "Three newly drawn programmatic textures at original dimensions; sixteen cleared original images retained.",
+    "font": "System serif PIXI.Text; no font files.",
+    "random": "Official readable MersenneTwister v0.2.3, BSD-3-Clause. No assertion of exact parity with unidentified original minification."
+  },
+  "repairs": [
+    "case-sensitive imports",
+    "two CSP-safe uniform accessor closures",
+    "loader failure reporting",
+    "Active-only idempotent death/win event transitions",
+    "pause-aware snake clock and bar settle",
+    "restart/visibility/input cancellation/disposal",
+    "isolated host completion records"
+  ]
+}

@@ -1,0 +1,5 @@
+parse-uri is based on parseUri by Steven Levithan.
+Original author notice: (c) Steven Levithan <stevenlevithan.com>.
+Original declared license: MIT.
+Primary source: https://blog.stevenlevithan.com/archives/parseuri
+Full MIT terms are preserved in parse-uri-MIT.txt.

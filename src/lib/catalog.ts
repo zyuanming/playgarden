@@ -181,6 +181,7 @@ export const GAME_IDS = [
   "evolution-of-trust",
   "ghosted",
   "black-hole-square",
+  "descensus-2",
 ] as const;
 export type GameId = (typeof GAME_IDS)[number];
 export type Category =
@@ -216,6 +217,7 @@ export type GameMeta = {
   endless?: boolean;
   /** A complete campaign with an ending, without enumerated finite levels. */
   campaign?: boolean;
+  campaignCaption?: string;
   freePlayCaption?: string;
   modeLabels?: { free: string; practice: string };
   allowUndo?: boolean;
