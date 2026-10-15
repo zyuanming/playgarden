@@ -82,9 +82,11 @@ test('Rollermaze original routes, lifecycle and offline host',async({page},info)
   // Original safe spot on map four refreshes the genuine running clock.
   await chooseLevel(page,3);await ready(page,3);
   await input.down('ArrowDown');await expect.poll(async()=>(await read(page)).position[2],{intervals:[20]}).toBe(-4);await input.up();await stop(page);
-  const safeFrame=await frame(page);await input.down('ArrowRight');
-  await safeFrame.waitForFunction(()=>(window as unknown as {__rollermazeSnapshot:()=>Snapshot}).__rollermazeSnapshot().target[0]===-6,undefined,{polling:'raf'});
-  await input.up();await stop(page);expect((await read(page)).position[0]).toBe(-6);
+  if(mobile){for(let x=-16;x<=-6;x+=2){await input.tap('ArrowRight');await stop(page);expect((await read(page)).position[0]).toBe(x);}}
+  else{const safeFrame=await frame(page);await input.down('ArrowRight');
+   await safeFrame.waitForFunction(()=>(window as unknown as {__rollermazeSnapshot:()=>Snapshot}).__rollermazeSnapshot().target[0]===-6,undefined,{polling:'raf'});
+   await input.up();await stop(page);}
+  expect((await read(page)).position[0]).toBe(-6);
   await input.down('ArrowDown');await expect.poll(async()=>(await read(page)).safeSpots,{intervals:[20]}).toBeGreaterThan(0);await input.up();await stop(page);expect((await read(page)).remaining).toBeGreaterThan(11);await capture('safe-spot-refills-clock');
   // Wake one original sentinel through a real collision, observing its chase flag.
   await chooseLevel(page,4);await ready(page,4);
