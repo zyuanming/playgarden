@@ -3244,5 +3244,61 @@ component: lazy(() => import("../games/GhostedGame"))
 component: lazy(() => import("../games/BlackHoleSquareGame"))
 },
 
+{
+  "id": "rollermaze",
+  "title": "滚动迷宫 · Rollermaze",
+  "subtitle": "13 秒穿过空中棋盘：按钮开路、安全点续时，挑战25张原版地图。",
+  "category": "空间想象",
+  "difficulty": "进阶",
+  "tone": "green",
+  "levelCount": 25,
+  "allowUndo": false,
+  "resumeKey": "playgarden.rollermaze.native.v1",
+  "artwork": {
+    "url": "./games/rollermaze/cover.svg",
+    "position": "center",
+    "size": "cover"
+  },
+  "source": {
+    "kind": "adapted",
+    "license": "MIT",
+    "author": "Jasper Renow-Clarke（picosonic）",
+    "workTitle": "Rollermaze（完整25张原地图）",
+    "url": "https://github.com/picosonic/js13k-2024/tree/2a08f83fa3935fc981ac6efce26e2b9d6d34a5ed",
+    "commit": "2a08f83fa3935fc981ac6efce26e2b9d6d34a5ed",
+    "notice": "./games/rollermaze/LICENSE-MIT.txt",
+    "notes": "保留25张原地图、13秒规则、按钮、安全点、哨兵追逐与程序化3D模型。原作MIT，MicroW公共领域；排除未明确许可的字体、具体音乐编排和宣传图，改用系统字体与原创短音效。新增宿主/适配GPL-3.0-only。"
+  }
+,
+component: lazy(() => import("../games/RollermazeGame"))
+},
+
+{
+  "id": "onoff",
+  "title": "ONOFF 明暗之间",
+  "subtitle": "切换实体层，跳过深坑与尖刺",
+  "category": "动作反应",
+  "difficulty": "进阶",
+  "tone": "purple",
+  "levelCount": 25,
+  "artwork": {
+    "url": "./games/onoff/card.svg",
+    "position": "50% 50%",
+    "size": "cover"
+  },
+  "allowUndo": false,
+  "source": {
+    "kind": "adapted",
+    "license": "MIT",
+    "notes": "完整保留25个原版平台关卡、SVG画面与作者音乐；第12、14、17关含原作随机布局。TinyMusic为MIT。宿主与适配为GPL-3.0-only。",
+    "author": "Daniel Marino 与 Brad Dunbar",
+    "workTitle": "ONOFF",
+    "url": "https://github.com/starzonmyarmz/js13k-2018",
+    "commit": "cb1e2e4615af6195aeb0dade06c08738511dd3b6",
+    "notice": "./games/onoff/LICENSE-MIT.txt"
+  },
+  "resumeKey": "playgarden.onoff",
+  component: lazy(() => import("../games/OnoffGame"))
+},
 ];
 export const findGame = (id: string) => games.find((game) => game.id === id);

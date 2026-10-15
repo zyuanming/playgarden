@@ -1,0 +1,16 @@
+{
+  "upstream": "starzonmyarmz/js13k-2018",
+  "commit": "cb1e2e4615af6195aeb0dade06c08738511dd3b6",
+  "levels": 25,
+  "files": {
+    "index.html": "32d91c3dcd9874b5ec8ba8a35261a0283faa3e131466110051b1cff9c0527b92",
+    "original.css": "d0c1674360b5b1a7e65d9ef890b56c58ab534060e756f9b20001c8593482f396",
+    "embed.css": "ea0c483ff2e7b546e5eb4da99abc85ada8e1ca9d2f4e971ea9e493295cd626f0",
+    "card.svg": "0dee9683c11092691746f8ed4d097b5f13de80b5fbb1ea7b1a7a92fbe015393e",
+    "runtime.js": "201f71944886528b61443f75b20320519855bb932e8e9d2d1175ef92f8dfbd6c",
+    "runtime.js.map": "ef5492e671c5e803d24cce201246ae511d8bebce2bff3bc8185d4f3d0ce5c03e",
+    "LICENSE-MIT.txt": "5d902754c43ae352f9d7a880736cae6173ab4f8a2510a858bec382c0be2d8f26",
+    "TinyMusic-MIT.txt": "a33a2de673afd894cb169f7b03890984fede39333213a3cc84d332200815ac9a",
+    "PLAYGARDEN-COPYING.txt": "fb981668c18a279e285fc4d83fba1e836cc84dd4daa73c9697d3cfd2d8aca6e0"
+  }
+}

@@ -1,0 +1,2 @@
+/* SPDX-License-Identifier: GPL-3.0-only */
+*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#222b45}#wrapper{position:absolute;inset:0;overflow:hidden}canvas{position:absolute}#osd{touch-action:none;user-select:none;outline:none}#osd:focus-visible{outline:3px solid #ffb75d;outline-offset:-3px}

@@ -2936,3 +2936,61 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+## Rollermaze
+
+Jasper Renow-Clarke (picosonic), copyright 2024, MIT. Source pinned to 2a08f83fa3935fc981ac6efce26e2b9d6d34a5ed: https://github.com/picosonic/js13k-2024 . Complete original 25 maps and programmatic 3D gameplay assets retained. MicroW by xem is public domain, as its official README states. Full MIT and public-domain provenance are shipped under games/rollermaze/. Original font, specific Schubert music arrangement/MIDI, editor image and promotional artwork are excluded; system font and original short feedback are used instead. New host/adapter GPL-3.0-only. Preferred editable sources and deterministic module archive: third_party/rollermaze/, scripts/rollermaze/, games/rollermaze/source.tar.gz.
+
+## ONOFF — complete original 25-level platform campaign
+
+Original work by Daniel Marino and Brad Dunbar. Fixed official source: https://github.com/starzonmyarmz/js13k-2018/tree/cb1e2e4615af6195aeb0dade06c08738511dd3b6. Original code, 25 level definitions, SVG artwork, custom outlined glyphs and composed synthesized audio retain MIT. Levels 12/14/17 preserve original random generation; no numbered variants are fabricated. New host/input/lifecycle integration is GPL-3.0-only. No font binaries, external recordings, remote images or upstream build dependencies ship in the runtime.
+
+The official README documents the authors creating the art, typeface, level layouts and music/effects. The historical package manifest says ISC; the later explicit root LICENSE supplies MIT and is preserved without substitution. Source/license audit: third_party/onoff/README.md. Editable sources: third_party/onoff/original and adapted. Complete module source with locked host build context: public/games/onoff/source.tar.gz. Optional editor code is in the source archive; the embedded runtime provides the complete original campaign.
+
+MIT License
+
+Copyright (c) 2018 Daniel Marino and Brad Dunbar
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+### TinyMusic
+
+Only third-party runtime library, by Kevin Ennis. License copied from the official source pinned at https://github.com/kevincennis/TinyMusic/blob/ebc559c8a7a612b8157dc77fef622fbe9fa7a3a5/LICENSE. Original 2018 bundled source is preserved in original/src/tinymusic.js; adapted copy only adds explicit oscillator stop on cleanup.
+
+The MIT License (MIT)
+
+Copyright (c) 2014 Kevin Ennis
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
