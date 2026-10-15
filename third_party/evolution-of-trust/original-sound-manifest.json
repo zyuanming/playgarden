@@ -1,0 +1,58 @@
+[
+  {
+    "path": "button1.wav",
+    "bytes": 5336,
+    "sha256": "34e21cace38c78dfc41f479d185b244e61711f5bd9d98480c802aa807872bc43",
+    "license": "GPL-3.0-only",
+    "origin": "Playgarden original mathematical synthesis; no third-party recordings",
+    "durationSeconds": 0.12
+  },
+  {
+    "path": "button2.wav",
+    "bytes": 5336,
+    "sha256": "3ec0e762f1c76f1cda55ec5b22f8cd3ad2ed80956f2c5685286137f67f721c43",
+    "license": "GPL-3.0-only",
+    "origin": "Playgarden original mathematical synthesis; no third-party recordings",
+    "durationSeconds": 0.12
+  },
+  {
+    "path": "button3.wav",
+    "bytes": 5336,
+    "sha256": "548b946ebb35c31d571b1d92c749ef82239859727302166a4e162a03533a3356",
+    "license": "GPL-3.0-only",
+    "origin": "Playgarden original mathematical synthesis; no third-party recordings",
+    "durationSeconds": 0.12
+  },
+  {
+    "path": "bonk.wav",
+    "bytes": 7982,
+    "sha256": "49a424848bc32f25965d23119fe88eaf9179456ea56c988f31461abde8a866fd",
+    "license": "GPL-3.0-only",
+    "origin": "Playgarden original mathematical synthesis; no third-party recordings",
+    "durationSeconds": 0.18
+  },
+  {
+    "path": "machine_start.wav",
+    "bytes": 26504,
+    "sha256": "21f240c7ca7fefe6de1968511a8a67e6c692d22b485697b5234736c6f77293f1",
+    "license": "GPL-3.0-only",
+    "origin": "Playgarden original mathematical synthesis; no third-party recordings",
+    "durationSeconds": 0.6
+  },
+  {
+    "path": "scratch_in.wav",
+    "bytes": 13274,
+    "sha256": "888ca2654c95e61812bae6da955cba8a44be1b1549d087f6f17ca12d423c737b",
+    "license": "GPL-3.0-only",
+    "origin": "Playgarden original mathematical synthesis; no third-party recordings",
+    "durationSeconds": 0.3
+  },
+  {
+    "path": "scratch_out.wav",
+    "bytes": 13274,
+    "sha256": "a73758523505c3c42c774342b76447f7542e7fd6379065694ef4426658de8a8a",
+    "license": "GPL-3.0-only",
+    "origin": "Playgarden original mathematical synthesis; no third-party recordings",
+    "durationSeconds": 0.3
+  }
+]

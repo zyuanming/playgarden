@@ -174,6 +174,13 @@ export const GAME_IDS = [
   "css-diner",
   "hyperspace-garbage-collection",
   "avabranch",
+  "grid-garden",
+  "elevator-saga",
+  "gridland",
+  "sql-mystery",
+  "evolution-of-trust",
+  "ghosted",
+  "black-hole-square",
   "descensus-2",
 ] as const;
 export type GameId = (typeof GAME_IDS)[number];
@@ -218,7 +225,7 @@ export type GameMeta = {
     | { kind: "original"; license: "GPL-3.0-only"; notes: string }
     | {
         kind: "adapted";
-        license: "MIT" | "BSD-2-Clause" | "GPL-3.0-or-later" | "MPL-2.0" | "CC-BY-SA-4.0" | "GPL-3.0-only" | "CC-BY-4.0";
+        license: "MIT" | "BSD-2-Clause" | "GPL-3.0-or-later" | "MPL-2.0" | "CC-BY-SA-4.0" | "GPL-3.0-only" | "CC-BY-4.0" | "CC0-1.0";
         notes: string;
         author: string;
         workTitle?: string;

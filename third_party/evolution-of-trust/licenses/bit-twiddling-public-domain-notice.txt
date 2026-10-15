@@ -1,0 +1,10 @@
+Bit Twiddling Hacks by Sean Eron Anderson
+https://graphics.stanford.edu/~seander/bithacks.html
+
+Individually, the code snippets here are in the public domain (unless otherwise noted).
+The aggregate collection and descriptions are copyright 1997-2005 Sean Eron Anderson.
+The code and descriptions are distributed WITHOUT ANY WARRANTY, including merchantability or fitness for a particular purpose.
+
+The JavaScript port is separately MIT licensed by Mikola Lysenko; see bit-license.txt.
+This note records the upstream public-domain provenance and is not a claim that the JavaScript port or full application is public domain.
+

@@ -1,0 +1,420 @@
+{
+  "commit": "846454c3b2f7509515cbcbf8852b09f7b7d98b24",
+  "rootTree": "83ff106812650c02d8138d93a7073575965695ed",
+  "upstream": "https://github.com/jani-nykanen/ghosted",
+  "original": [
+    {
+      "path": ".gitattributes",
+      "bytes": 330,
+      "sha256": "bab6def42ce5af9de346d94d8661f16a9c4aed40de0d32e3e6fb70868a742ba6",
+      "gitBlob": "f002d6cad2b5e4c078b09553e41d3cc896e78f11",
+      "mode": "100644"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 28,
+      "sha256": "1764a79eecc1f1c1f7a5ca5b3027e56d38a9896fe7542b7e46e36508f41e9e6f",
+      "gitBlob": "10e762e06582b81855474da1830a41c30de76f57",
+      "mode": "100644"
+    },
+    {
+      "path": "README.md",
+      "bytes": 925,
+      "sha256": "9c1b32fb2c595600f7f50cabd0f3d4f62d5d10ec3e79b52b3160033224d30e67",
+      "gitBlob": "240c9d9466cb82b9df09a713d7be6fc4cbcda432",
+      "mode": "100644"
+    },
+    {
+      "path": "f.png",
+      "bytes": 128,
+      "sha256": "8668c2703a23a6eeaf328ddcb112935f7667db9e623620a84252067e0ad8c56d",
+      "gitBlob": "9ea9755934d57404eb4c399f9d194e0d493f2b7b",
+      "mode": "100644"
+    },
+    {
+      "path": "g.png",
+      "bytes": 128,
+      "sha256": "1ccca8b98627eb9a885547ea6487c78a52bc1df617f4f6c94801790fa0c79ea4",
+      "gitBlob": "58d87947fc8e985b1ed2bd1f5191bd4328d1013d",
+      "mode": "100644"
+    },
+    {
+      "path": "index.html",
+      "bytes": 359,
+      "sha256": "8d6bc7f13cb94e79f4502398634d2eb5d01dd732065fb42085f70bc17e95ac50",
+      "gitBlob": "8b04a2ad454f1c1669ace05a88ae8f882e6a4f7c",
+      "mode": "100644"
+    },
+    {
+      "path": "levels/1.tmx",
+      "bytes": 452,
+      "sha256": "a7784e46250fe75df87578ea9d4133b4fcda9daa56aba495ac5c1378bc2b9422",
+      "gitBlob": "247c5ce3d827963eac6fe323e086690c0e480490",
+      "mode": "100644"
+    },
+    {
+      "path": "levels/2.tmx",
+      "bytes": 453,
+      "sha256": "94ebb5553fe9ce6e3f7113c91d1f9623a507ed071d48b514c9847650dbd72f8c",
+      "gitBlob": "0dd2f7de1e1ba6253ab82f714560d6c2893a8fa1",
+      "mode": "100644"
+    },
+    {
+      "path": "levels/3.tmx",
+      "bytes": 452,
+      "sha256": "6cf0437aa01901b267784c35c925f9ec808425add6e21df89363a4f4db6fd4ce",
+      "gitBlob": "e54d1cfb713c5dda41b95e49eccb3075bec2b49e",
+      "mode": "100644"
+    },
+    {
+      "path": "levels/4.tmx",
+      "bytes": 452,
+      "sha256": "6967f86d344af1d971ca2ec34e92eef28f50aa6b3dd58b437eb465705e70517b",
+      "gitBlob": "774ac581ea1bba1369ac6bc0fbc6c847cabbc519",
+      "mode": "100644"
+    },
+    {
+      "path": "levels/5.tmx",
+      "bytes": 465,
+      "sha256": "97507d9ec6aa5dd40d80ff95f9ea864607adabdb2d24da754cd2e3aee92cbbaa",
+      "gitBlob": "9e6b954f0e05dc3e57d2eab78161710617f3960d",
+      "mode": "100644"
+    },
+    {
+      "path": "levels/6.tmx",
+      "bytes": 457,
+      "sha256": "20f908a7a1fecc6f14b3d8ceee95a73a655c7d3a53611c205d0797ae8edf17e5",
+      "gitBlob": "5ffc5e775f751894642582e743fc12dd9dde9589",
+      "mode": "100644"
+    },
+    {
+      "path": "levels/7.tmx",
+      "bytes": 461,
+      "sha256": "470ca4b80ffb3169e880be9cfdfc4c03f28b0810a82ffee4b29e00d76e4d2a14",
+      "gitBlob": "32f5c0df4a82dc4f6e0703804b114a5c768e9fa5",
+      "mode": "100644"
+    },
+    {
+      "path": "levels/8.tmx",
+      "bytes": 472,
+      "sha256": "cd65d79d44b5fd4cbb054e53d7acbbcc994d4d34247dbf6682d41e51d0b5b872",
+      "gitBlob": "21ff916ddf48bcbcc41183118c0c4fa5ab13c5d3",
+      "mode": "100644"
+    },
+    {
+      "path": "levels/9.tmx",
+      "bytes": 481,
+      "sha256": "9b37f4853e1344fd52802d08faf0c6cfe943c44d7f2022c0849cf2d6c5874e40",
+      "gitBlob": "c5ef4432becff2ad6bf9693d9ba9fb775aaaf06c",
+      "mode": "100644"
+    },
+    {
+      "path": "levels/A.tmx",
+      "bytes": 473,
+      "sha256": "36b54282d79528f643d2470c3e99e9b1a56661ec5bb95f44c8114ac2dcc2a165",
+      "gitBlob": "962be807ae85f22d334b0520fb5e9952b8546482",
+      "mode": "100644"
+    },
+    {
+      "path": "levels/B.tmx",
+      "bytes": 478,
+      "sha256": "a4a463b6b369f365da7a636516f7ccf1dcc4379504e2e708e3c096e50458e9f4",
+      "gitBlob": "67817a2f0ff89544376315b831c03323ab7e565b",
+      "mode": "100644"
+    },
+    {
+      "path": "levels/C.tmx",
+      "bytes": 491,
+      "sha256": "7db35509611b6db83bc78cabe377e350bc71113eb854fd962db896ee3bb87fd8",
+      "gitBlob": "5e778202a2c202ab020e6ce0eb898a90a96b38f6",
+      "mode": "100644"
+    },
+    {
+      "path": "levels/D.tmx",
+      "bytes": 506,
+      "sha256": "5549ee569d83f1f3c97eba0a25ea3f6dd6cba9d6ac8f3cfc778cd26b87f48c90",
+      "gitBlob": "2886ca328f4877c1eb53e3f00eb94776ab60233f",
+      "mode": "100644"
+    },
+    {
+      "path": "levels/convert.py",
+      "bytes": 1794,
+      "sha256": "4518155a0c622cd8eb29252ca01b4b86201d877edb7646a3c4e4f31f2e728122",
+      "gitBlob": "bd9a1f0d2f3c06eb814f997ce9927c1c0a94eb37",
+      "mode": "100755"
+    },
+    {
+      "path": "makefile",
+      "bytes": 1032,
+      "sha256": "9d06d5575e7523e181263bbd6697f0375a9deb3e2a6f8db39a90fb0ef329ebb6",
+      "gitBlob": "776bbf97d1936ee3fe5b163496a278d8deaee78e",
+      "mode": "100644"
+    },
+    {
+      "path": "misc/rgb333.png",
+      "bytes": 129,
+      "sha256": "a7d85dddd8a80bc743500b415bbc82fa0a2d9403021e318d048ebe929dcaa7cc",
+      "gitBlob": "839f91b8cd6ce01fec84b75a755906008d75b14e",
+      "mode": "100644"
+    },
+    {
+      "path": "src/assetgenerator.ts",
+      "bytes": 9876,
+      "sha256": "fd81aa77f939ed9e49143a43e3040eb5d719c9425bfd18ce1a0c630c7351f320",
+      "gitBlob": "c670001acef8e0b2dec1a3a33c79999876d8cf8f",
+      "mode": "100644"
+    },
+    {
+      "path": "src/bitmapgenerator.ts",
+      "bytes": 4137,
+      "sha256": "967039a3e75d6a9557668c2e6bc9384546f73a3db166d3e0250ae637f3f6de83",
+      "gitBlob": "7231a80bdc1a432999407d0e2b3be3116222253f",
+      "mode": "100644"
+    },
+    {
+      "path": "src/box.ts",
+      "bytes": 317,
+      "sha256": "f74088cfda843f3424f317fcd10257f4343d0497ba52a5614e4d1b5d686d84eb",
+      "gitBlob": "356d8be7d2fb93514520b71805a073ad5cf42c8c",
+      "mode": "100644"
+    },
+    {
+      "path": "src/canvas.ts",
+      "bytes": 12815,
+      "sha256": "41ae669fdf0f0cbcec4208449e67f82a1584ad147d38b5614a4e5efd8145fd10",
+      "gitBlob": "445c560033b2dcbc0df7015d10d6e06845f7c9d8",
+      "mode": "100644"
+    },
+    {
+      "path": "src/controlguide.ts",
+      "bytes": 2593,
+      "sha256": "b61f3744561c333bf2b5f75cf98d6b2dd97774eef13eda13689b9d619d33510d",
+      "gitBlob": "9a15b71ac447e2b964334bcf926196e1c573f20a",
+      "mode": "100644"
+    },
+    {
+      "path": "src/ending.ts",
+      "bytes": 1637,
+      "sha256": "c93059d790ca6f3288be62f8f277dca7a58fc7d9ae7a3893c4e3a3f09eb1d625",
+      "gitBlob": "61861c45d57f8b6617f5afbfb021cab44a469c6b",
+      "mode": "100644"
+    },
+    {
+      "path": "src/event.ts",
+      "bytes": 8060,
+      "sha256": "9762f3635f080e869271f1a4e3e167e46b6287ebb57b112787a32a6873de8362",
+      "gitBlob": "87ab4be5f034909eba3369338321b18b120a7dd5",
+      "mode": "100644"
+    },
+    {
+      "path": "src/game.ts",
+      "bytes": 27566,
+      "sha256": "1b1a25c319e29d2311f3ef2972889828ef704df6f63e40b571d214fa193b087e",
+      "gitBlob": "a3e5ed6aafb746228570370415d1e7d70f9ef924",
+      "mode": "100644"
+    },
+    {
+      "path": "src/gameobject.ts",
+      "bytes": 18073,
+      "sha256": "fbeef82e5a0ab719d1bf389740799d92325ff772cace339f09067e03120e468d",
+      "gitBlob": "3ff6463a81e4762c2e95712cb2f913f4b2d2b749",
+      "mode": "100644"
+    },
+    {
+      "path": "src/leveldata.ts",
+      "bytes": 554,
+      "sha256": "155d78d27fc1e420e069af9ca3fcf0bb23215f7500ce98214b69e312ca8ee4ce",
+      "gitBlob": "8c4aa3fccd3df81aab9aab86f936ab046a9e8723",
+      "mode": "100644"
+    },
+    {
+      "path": "src/levelmenu.ts",
+      "bytes": 7441,
+      "sha256": "0280471074bfd7e76b5a7e66e0b110d5f34867db860385be34753fee1d0a9b4c",
+      "gitBlob": "a56272a2182a915886638069e87a039449127ec7",
+      "mode": "100644"
+    },
+    {
+      "path": "src/main.ts",
+      "bytes": 2121,
+      "sha256": "bd5301d49a5d5cbf86e296da278a765004e5ade575516b366312b878c5ce61d6",
+      "gitBlob": "bdfa480be3eb7cda866721e590685e68179d6b7f",
+      "mode": "100644"
+    },
+    {
+      "path": "src/math.ts",
+      "bytes": 338,
+      "sha256": "e264724f57ef9c5a5dcffe463b048b51e30f2f11ea85b33035dc2f6d6bdf1114",
+      "gitBlob": "6ddafbc107c388fe11879c52a52d731d2350d869",
+      "mode": "100644"
+    },
+    {
+      "path": "src/menu.ts",
+      "bytes": 3832,
+      "sha256": "ddd6fa4ff5501fa479acaa4d609ee0c94c35afdd2e09f5ab98c45e86817316e4",
+      "gitBlob": "2653df8ffe83f6a83cb506c1ef263fc31cf14a03",
+      "mode": "100644"
+    },
+    {
+      "path": "src/mnemonics.ts",
+      "bytes": 797,
+      "sha256": "2faba848f0e29b8e2e4ec7d3b7b883892bc0300a8d6df37973a7185d614b64b9",
+      "gitBlob": "35f14f370c6415d4f7c519d027f839f6f07347dd",
+      "mode": "100644"
+    },
+    {
+      "path": "src/notes.ts",
+      "bytes": 375,
+      "sha256": "dcf3ff51ccb2ee6ad70ac92f33fec5c2f1f62c2be75b71688ba43cc47ab6ece0",
+      "gitBlob": "522212ed342b82394e9a1647d64eb864db85c282",
+      "mode": "100644"
+    },
+    {
+      "path": "src/program.ts",
+      "bytes": 3497,
+      "sha256": "670832bbf57a86f261c8d407fd09ff0409daf065f1a7af54906d967d94f9cd72",
+      "gitBlob": "e22f80a4374c41f97ecfc56d1fc0108a93499eef",
+      "mode": "100644"
+    },
+    {
+      "path": "src/progress.ts",
+      "bytes": 741,
+      "sha256": "0d6876cc2a0f5e7ad97fd763386c9ecf9753f859bd7ed9a702dd213a8312074c",
+      "gitBlob": "4607f55bfc6fb763f03910c920d6529b430b6a75",
+      "mode": "100644"
+    },
+    {
+      "path": "src/puzzlestate.ts",
+      "bytes": 3755,
+      "sha256": "799ad094bd3832d4b5c89930159e6e7af0b22b28727586e1e88218c68fdf5e3b",
+      "gitBlob": "f00d8162c0ec15e7d843f963568d3dee52eca88c",
+      "mode": "100644"
+    },
+    {
+      "path": "src/sample.ts",
+      "bytes": 2616,
+      "sha256": "7a39c05deb161bfa136a98f73a7a758056e99c6e076a64370b859ea59a44734c",
+      "gitBlob": "3aa2d1e8e59d3bf75aad83caaa866928c08d6ea2",
+      "mode": "100644"
+    },
+    {
+      "path": "src/scene.ts",
+      "bytes": 298,
+      "sha256": "3a9de64e2d70dc65dd725c89338553f8d43a85912559a5e93c9ff38b84dbf9a7",
+      "gitBlob": "81ef2b88df91e6c4e536e5488be085e099856d84",
+      "mode": "100644"
+    },
+    {
+      "path": "src/tilemap.ts",
+      "bytes": 1619,
+      "sha256": "c5a0313387c80716c37c30b71ceba4c6c104567277a6c1b834c1d03e162a51de",
+      "gitBlob": "8d9b5ff55b5fd6796c87dc2856775fca528298c8",
+      "mode": "100644"
+    },
+    {
+      "path": "src/titlescreen.ts",
+      "bytes": 6818,
+      "sha256": "ee8341fb1f39a60bf91a7bd52417bb2a95391de3426700d48b31683c5e39cc0e",
+      "gitBlob": "a819128cb5d53cf60679d825e85033d2fa51b3c0",
+      "mode": "100644"
+    },
+    {
+      "path": "src/transition.ts",
+      "bytes": 458,
+      "sha256": "906945b75e37757d95b1f46d24dfa4fc9ca5fa1962b6be931f97e9b60d067eab",
+      "gitBlob": "e014c4058e8fc626f2c893a7cd56c6510c03f0fa",
+      "mode": "100644"
+    },
+    {
+      "path": "src/vector.ts",
+      "bytes": 724,
+      "sha256": "85867ee1252b060316988a207b8aced6a566221542e5d1f6f9f761692677e9d8",
+      "gitBlob": "30914fc6301d632c9e3cc9f8e60558f32f8b37a4",
+      "mode": "100644"
+    },
+    {
+      "path": "src/wallmap.ts",
+      "bytes": 4809,
+      "sha256": "e70d70feae73bc9f063a0a4ac54f3478cb5f3875f33123253dc0c36b83625ae4",
+      "gitBlob": "4e04f765c3a5a149dfebd9c8d5650a29c0c1caea",
+      "mode": "100644"
+    },
+    {
+      "path": "templates/index.html",
+      "bytes": 128,
+      "sha256": "0a64e749506dccc6b92bfad71058424af05a6be642828309e2c4991cd8e9eb11",
+      "gitBlob": "36a7723dbd68b82f4cb12b641b91f51692fa8818",
+      "mode": "100644"
+    },
+    {
+      "path": "tiled/editor_tiles.png",
+      "bytes": 130,
+      "sha256": "03c2824731ea3265f428d25a183f1111c207f69f290413de3343c3d9ceb65151",
+      "gitBlob": "0e979e622c9dd964587b493b1061f76d722bbedc",
+      "mode": "100644"
+    },
+    {
+      "path": "tiled/editor_tiles.tsx",
+      "bytes": 234,
+      "sha256": "801cf8979b65d4f261b4d425358e3ed8a75f60b0acd5f15bb39b6e5d3be12e55",
+      "gitBlob": "7f7c561ee0f466a0eada3499590462077275924b",
+      "mode": "100644"
+    },
+    {
+      "path": "tsconfig.json",
+      "bytes": 179,
+      "sha256": "8e896061877de5c576234523d1af99f66da8bb0dbdfcd61e89fcbc8b5df7db17",
+      "gitBlob": "30a820bfa34d281298c628ff1d7e9594a0213494",
+      "mode": "100644"
+    }
+  ],
+  "lfs": [
+    {
+      "path": "f.png",
+      "bytes": 385,
+      "sha256": "17fd846e88ee24c0f1cede997c00edd63b733ce0d9bbaab0804994e16bdd447c"
+    },
+    {
+      "path": "g.png",
+      "bytes": 976,
+      "sha256": "5b1bc80fc981f106946e3de2b90eacf1a81e97465d5f588382a18d0b2027046a"
+    },
+    {
+      "path": "misc/rgb333.png",
+      "bytes": 1156,
+      "sha256": "9d8d21e1e6dc939910c55ef1ebae9329b1b93acf0aa00dce33a35e02bd69c099"
+    },
+    {
+      "path": "tiled/editor_tiles.png",
+      "bytes": 15036,
+      "sha256": "debbb42425d455dd2166ca0aff8681b5c4ab24bf035a46f5cec763929be1812b"
+    }
+  ],
+  "trees": [
+    {
+      "path": "levels",
+      "mode": "040000",
+      "sha": "55760cac3a69b1aa16bb27481524714a772fade1"
+    },
+    {
+      "path": "misc",
+      "mode": "040000",
+      "sha": "81ec7d94ed76649a6b1a382888d16164b2cd15cf"
+    },
+    {
+      "path": "src",
+      "mode": "040000",
+      "sha": "4df6a9868430fcec1e7e0ca2ef170043780ee56c"
+    },
+    {
+      "path": "templates",
+      "mode": "040000",
+      "sha": "39e6c223b6cf832255b3bdcab074fa3f87d9db37"
+    },
+    {
+      "path": "tiled",
+      "mode": "040000",
+      "sha": "6f4547081aa0fb7f3bf55f442f2dd2889b9a411a"
+    }
+  ]
+}

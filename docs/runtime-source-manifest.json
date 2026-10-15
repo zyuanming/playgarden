@@ -758,6 +758,148 @@
       "scope": "Complete MIT first-party Canvas endless rules, four lives, group/independent steering, merger, collisions, four revival/stat pickups, score and restart. Zero finite levels. New Chinese opaque iframe host, safe storage, multitouch controls, paused clocks and card art are GPL-3.0-only. No audio, remote fonts, unknown images, analytics, Crafty or jQuery."
     },
     {
+      "name": "Grid Garden complete original 28-lesson course",
+      "version": "0e262f7272d4992340eb556bdb9b2d502cc59932",
+      "license": "MIT; artwork CC-BY-3.0; Playgarden adapter GPL-3.0-only",
+      "source": "https://github.com/thomaspark/gridgarden/tree/0e262f7272d4992340eb556bdb9b2d502cc59932",
+      "commit": "0e262f7272d4992340eb556bdb9b2d502cc59932",
+      "preferredSource": [
+        "vendor/grid-garden-original/upstream/js/game.js",
+        "vendor/grid-garden-original/upstream/js/levels.js",
+        "vendor/grid-garden-original/upstream/js/docs.js",
+        "vendor/grid-garden-original/upstream/js/messages.js",
+        "vendor/grid-garden-original/upstream/css/style.css",
+        "vendor/grid-garden-original/upstream/images",
+        "vendor/grid-garden-original/upstream/third-party/jquery/dist/jquery.js",
+        "vendor/grid-garden-original/upstream/third-party/animate.css/animate.css",
+        "public/grid-garden/adapter.js",
+        "public/grid-garden/adapter.css",
+        "public/grid-garden/index.html",
+        "src/games/GridGarden.tsx",
+        "src/games/gridGarden.css"
+      ],
+      "buildSources": [
+        "scripts/grid-garden/adapt.py",
+        "scripts/grid-garden/package-source.py",
+        "scripts/grid-garden/verify-sources.py"
+      ],
+      "scope": "28 original authored Grid challenges, complete multilingual lessons/help, original target class overrides, actual browser rectangle/size/color validator and uncounted original harvest ending. Nine unmodified licensed images. Readable jQuery 3.5.1/Sizzle and Animate.css 3.4.0; no upstream dependency installation or build. Opaque iframe; owned persistence, touch UI and pause/resume lifecycle. All 28 separately solved required for course ending.",
+      "notices": [
+        "public/grid-garden/NOTICE.txt",
+        "public/grid-garden/LICENSE",
+        "public/grid-garden/licenses/CC-BY-3.0.txt",
+        "public/grid-garden/licenses/Animate-MIT.txt",
+        "public/grid-garden/licenses/Playgarden-GPL-3.0.txt",
+        "public/grid-garden/third-party/jquery/LICENSE.txt",
+        "public/grid-garden/third-party/jquery/external/sizzle/LICENSE.txt"
+      ]
+    },
+    {
+      "name": "Elevator Saga complete original campaign",
+      "version": "e0c55bf8cf59243c32dc371b2cc7b2e3ec1664af",
+      "license": "MIT / SIL-OFL-1.1 / GPL-3.0-only per file",
+      "source": "https://github.com/magwo/elevatorsaga/tree/e0c55bf8cf59243c32dc371b2cc7b2e3ec1664af",
+      "preferredSource": [
+        "public/elevator-saga/",
+        "vendor/elevator-saga-original/",
+        "src/games/ElevatorSaga.tsx",
+        "src/games/elevatorSaga.css"
+      ],
+      "buildSources": [
+        "scripts/elevator-saga/package-source.py",
+        "scripts/elevator-saga/verify-sources.py"
+      ],
+      "scope": "18 unchanged original challenge predicates and original elevator/passenger simulation; responsive editor/renderer and opaque worker boundary. Official CodeMirror4.12.0, Lodash3.6.0, Riot1.0.2 and FontAwesome4.7.0 with readable source and full per-component grants. Full source ZIP in public/elevator-saga/source.zip."
+    },
+    {
+      "name": "Gridland complete original match/build/survive campaign",
+      "version": "06af02c3af7062aead04a1e6f67b6e59f3e4b6a1",
+      "license": "MPL-2.0 original and modified files; MIT jQuery/Sizzle and RequireJS; GPL-3.0-only independent host/adapters",
+      "source": "https://github.com/doublespeakgames/gridland/tree/06af02c3af7062aead04a1e6f67b6e59f3e4b6a1",
+      "preferredSource": [
+        "vendor/gridland-original/upstream",
+        "vendor/gridland-original/dependencies",
+        "public/gridland-original",
+        "src/games/GridlandOriginal.tsx",
+        "src/games/gridlandOriginal.css"
+      ],
+      "buildSources": [
+        "scripts/gridland/package-source.py",
+        "scripts/gridland/verify-sources.py"
+      ],
+      "scope": "Complete original settlement, real-time combat, loot, spells, dragon-clear objective and New Game+. Zero authored numbered levels. Original sprite PNGs unchanged; local dependencies; no music, telemetry or third-party requests."
+    },
+    {
+      "name": "SQL Murder Mystery complete original case",
+      "version": "a7aa22701bd41b24e905be387fb17326db982df9",
+      "license": "CC-BY-SA-4.0 case and translations; MIT original code; public-domain SQLite; MIT/NCSA and retained SDK notices; GPL-3.0-only independent host",
+      "source": "https://github.com/NUKnightLab/sql-mysteries/tree/a7aa22701bd41b24e905be387fb17326db982df9",
+      "preferredSource": [
+        "vendor/sql-mystery-original/",
+        "public/sql-mystery/",
+        "src/games/SqlMystery.tsx",
+        "src/games/sqlMystery.css"
+      ],
+      "buildSources": [
+        "scripts/materialize-sql-mystery-archives.py",
+        "scripts/sql-mystery/package-source.py",
+        "scripts/sql-mystery/verify-sources.py"
+      ],
+      "scope": "Original byte-identical fictional database with original murderer and mastermind validation trigger, complete free-form SQL investigation. One case, zero numbered levels. Official SQLite3.54.0 WASM and matching preferred source archives; disposable bounded worker, scoped notebook, escaped output. No external CDN, old SQL.js, unrelated image or telemetry."
+    },
+    {
+      "name": "The Evolution of Trust",
+      "version": "6ec45d73befdb922bd40654dd1c1c903a953562f",
+      "license": "CC0 original/translation/audio; MIT/Apache-2.0/ISC/BSD-3-Clause/CC0 dependencies; GPL-3.0-only new code",
+      "source": "https://github.com/ncase/trust/tree/6ec45d73befdb922bd40654dd1c1c903a953562f",
+      "preferredSource": [
+        "third_party/evolution-of-trust/",
+        "public/evolution-of-trust/",
+        "src/games/EvolutionOfTrust.tsx"
+      ],
+      "buildSources": [
+        "scripts/evolution-of-trust/package-source.py",
+        "scripts/evolution-of-trust/verify-sources.py"
+      ],
+      "scope": "Complete original guided journey and sandbox. Exact original strategies/RNG/payoffs, local CanvasRenderer, Chinese/readable touch controls, scoped pause/dispose. Zero numbered levels."
+    },
+    {
+      "name": "Ghosted",
+      "version": "846454c3b2f7509515cbcbf8852b09f7b7d98b24",
+      "license": "MIT original source, pixel artwork and synthesized audio; GPL-3.0-only new adapter",
+      "source": "https://github.com/jani-nykanen/ghosted/tree/846454c3b2f7509515cbcbf8852b09f7b7d98b24",
+      "preferredSource": [
+        "third_party/ghosted/original/",
+        "third_party/ghosted/adapted-src/",
+        "third_party/ghosted/bridge-src/",
+        "src/games/GhostedGame.tsx"
+      ],
+      "buildSources": [
+        "scripts/ghosted/build.mjs",
+        "scripts/ghosted/package-source.py",
+        "scripts/ghosted/verify-sources.py"
+      ],
+      "scope": "Complete13 original maps, including earned nightmare finale; original native title/menu/controls/ending. Original MIT assembled from root README, preserved without claiming a standalone upstream LICENSE."
+    },
+    {
+      "name": "Black Hole Square",
+      "version": "8d48aae2097613782ab18d5062e8a3906741baaa",
+      "license": "MIT original game; GPL-3.0-only new adapter; separate Gugi OFL provenance for existing title outlines",
+      "source": "https://github.com/Quinten/black-hole-square/tree/8d48aae2097613782ab18d5062e8a3906741baaa",
+      "preferredSource": [
+        "third_party/black-hole-square/original/",
+        "third_party/black-hole-square/adapted-src/",
+        "third_party/black-hole-square/bridge-src/",
+        "src/games/BlackHoleSquareGame.tsx"
+      ],
+      "buildSources": [
+        "scripts/black-hole-square/build.mjs",
+        "scripts/black-hole-square/package-source.py",
+        "scripts/black-hole-square/verify-sources.py"
+      ],
+      "scope": "All 18 original puzzles with original budgets and native title/guide/ending. No current gated revision or font binary. Module source archive includes exact locked host build context; full host remains in this repository."
+    },
+    {
       "name": "Descensus 2 complete original 1000-metre descent",
       "version": "750003f12815a756ebd18634e88620c1050a1ec5",
       "license": "MIT original; p2/Pixi bundled MIT/BSD/CC0 notices; BSD-3-Clause MersenneTwister; GPL-3.0-only Playgarden changes",

@@ -1,0 +1,8 @@
+Gridland / 格境求生, complete original campaign.
+Original code, design and graphics: Michael Townsend / doublespeak games, MPL-2.0.
+https://github.com/doublespeakgames/gridland/tree/06af02c3af7062aead04a1e6f67b6e59f3e4b6a1
+Original full rules, sprites, settlement, combat, magic, dragon and New Game+ preserved. No authored numbered levels.
+Adaptation: local dependencies and assets, Chinese text, scoped saves/import validation, input release, pausable clocks/transitions and teardown. Original modified files remain MPL-2.0; standalone bridge, host and packaging GPL-3.0-only.
+Audio omitted: separate redistribution permission unverified. No analytics, social/donation actions or external fonts.
+Readable corresponding source, original inputs, changes and build scripts: ./source.zip
+Complete licenses: ./LICENSES.txt and ./Playgarden-GPL-3.0.txt.

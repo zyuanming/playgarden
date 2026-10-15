@@ -1,3 +1,5 @@
+import elevatorSagaLevels from '../src/games/elevatorSagaLevels.json' with {type:'json'};
+import gridGardenLevels from '../src/games/gridGardenLevels.json' with {type:'json'};
 import { swapMaps } from "../src/vendor/swapMaps";
 import { VIKING_LEVELS } from "../src/vendor/vikingLevelData";
 import { BEATRIX_LEVELS } from "../src/vendor/beatrixCore";
@@ -153,8 +155,15 @@ import { voxelViewsLevels } from "../src/games/voxelViewsLogic";
 import { cubeNetLevels } from "../src/games/cubeNetLogic";
 const packs = {
   "descensus-2": [],
+  "grid-garden": gridGardenLevels,
+  "elevator-saga": elevatorSagaLevels,
   "hyperspace-garbage-collection": [1,2,3,4],
   "avabranch": [],
+  "gridland": [],
+  "sql-mystery": [],
+  "evolution-of-trust": [],
+  "ghosted": Array.from({length:13}, (_,i) => i+1),
+  "black-hole-square": Array.from({length:18}, (_,i) => i+1),
   "css-diner": Array.from({length:32}, (_,i) => i+1),
   "flexbox-froggy": Array.from({length:24}, (_,i) => i+1),
   "monkey-rally": [1,2,3,4,5,6,7,8],
@@ -341,7 +350,7 @@ describe("Scalable catalog contract", () => {
       expect(game.source.license).toBe(
         game.source.kind === "original"
           ? "GPL-3.0-only"
-          : game.id === "swap"
+          : (game.id === "swap" || game.id === "sql-mystery")
             ? "CC-BY-SA-4.0"
             : game.id === "heal-em-all"
               ? "GPL-3.0-only"
@@ -349,8 +358,10 @@ describe("Scalable catalog contract", () => {
                 ? "CC-BY-4.0"
                 : game.id === "xiangqi"
             ? "BSD-2-Clause"
-            : (game.id === "a-dark-room" || game.id === "css-diner")
+            : (game.id === "a-dark-room" || game.id === "css-diner" || game.id === "gridland")
               ? "MPL-2.0"
+              : game.id === "evolution-of-trust"
+              ? "CC0-1.0"
               : game.id === "hextris"
               ? "GPL-3.0-or-later"
               : "MIT",
@@ -369,8 +380,8 @@ describe("Scalable catalog contract", () => {
       }
     }),
   );
-  it("counts only 175 real games and 3100 levels, not the roadmap", () => {
-    expect(games).toHaveLength(175);
-    expect(games.reduce((sum, g) => sum + g.levelCount, 0)).toBe(3100);
+  it("counts only 182 real games and 3177 levels, not the roadmap", () => {
+    expect(games).toHaveLength(182);
+    expect(games.reduce((sum, g) => sum + g.levelCount, 0)).toBe(3177);
   });
 });

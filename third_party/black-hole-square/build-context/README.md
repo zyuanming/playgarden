@@ -1,0 +1,1 @@
+Reference host build context at preparation. These files are inert documentation, not an independent project or a replacement for the integration checkout. The module build uses the actual integrated host package-lock.json and its already-installed official esbuild.

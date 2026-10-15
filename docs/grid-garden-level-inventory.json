@@ -1,0 +1,496 @@
+{
+  "id": "grid-garden",
+  "title": "网格花园",
+  "upstreamRepository": "https://github.com/thomaspark/gridgarden",
+  "upstreamCommit": "0e262f7272d4992340eb556bdb9b2d502cc59932",
+  "sourceFile": "js/levels.js",
+  "sourceSha256": "1f4f10ff085b981a46ce14f7b18552c8aaa4b525c79b465c6643619b20fb2fc4",
+  "countedLevels": 28,
+  "endingCounted": false,
+  "extraction": "Static parsing of literal fields only; upstream JavaScript was not executed. Missing selector fields are recorded as null; the original runtime treats them as the grid container.",
+  "levels": [
+    {
+      "ordinal": 1,
+      "index": 0,
+      "name": "grid-column-start 1",
+      "board": "c",
+      "selector": "> :nth-child(1)",
+      "style": {
+        "grid-column-start": "3"
+      },
+      "classes": {},
+      "before": "#garden {\n  display: grid;\n  grid-template-columns: 20% 20% 20% 20% 20%;\n  grid-template-rows: 20% 20% 20% 20% 20%;\n}\n\n#water {\n",
+      "after": "}",
+      "instructionsZhCn": "<p>欢迎来到网格花园，在这里你可以通过书写CSS代码来栽种你的胡萝卜花园！使用<code>grid-column-start</code> 属性来给胡萝卜浇水。</p><p>比如说， <code>grid-column-start: 3;</code>将会给第三列的网格开始的区域浇水，这也是描述网格中从左起第三列边界的另一种方法。</p>",
+      "uiSolution": "grid-column-start: 3;",
+      "sourceLine": 3
+    },
+    {
+      "ordinal": 2,
+      "index": 1,
+      "name": "grid-column-start 2",
+      "board": "w",
+      "selector": "> :nth-child(1)",
+      "style": {
+        "grid-column-start": "5"
+      },
+      "classes": {},
+      "before": "#garden {\n  display: grid;\n  grid-template-columns: 20% 20% 20% 20% 20%;\n  grid-template-rows: 20% 20% 20% 20% 20%;\n}\n\n#poison {\n",
+      "after": "}",
+      "instructionsZhCn": "<p>哎呀，在你的花园的角落里好像长着一些杂草。用<code>grid-column-start</code>来除掉杂草。注意，杂草从第五个网格列开始。</p>",
+      "uiSolution": "grid-column-start: 5;",
+      "sourceLine": 56
+    },
+    {
+      "ordinal": 3,
+      "index": 2,
+      "name": "grid-column-end 1",
+      "board": "c",
+      "selector": "> :nth-child(1)",
+      "style": {
+        "grid-column-end": "4"
+      },
+      "classes": {
+        "#garden > *, #plants > *": "grid-column-start-1"
+      },
+      "before": "#garden {\n  display: grid;\n  grid-template-columns: 20% 20% 20% 20% 20%;\n  grid-template-rows: 20% 20% 20% 20% 20%;\n}\n\n#water {\n  grid-column-start: 1;\n",
+      "after": "}",
+      "instructionsZhCn": "<p>若仅使用<code>grid-column-start</code>，网格默认只占一列。然而，你可以使用<code>grid-column-end</code>属性将网格拓展到多列。</p><p>使用<code>grid-column-end</code>，将你的所有胡萝卜浇水，但不要将水浇到土地上哦，我们要节约用水！注意，胡萝卜从第一列开始，第四列结束。</p>",
+      "uiSolution": "grid-column-end: 4;",
+      "sourceLine": 109
+    },
+    {
+      "ordinal": 4,
+      "index": 3,
+      "name": "grid-column-end 2",
+      "board": "c",
+      "selector": "> :nth-child(1)",
+      "style": {
+        "grid-column-end": "2"
+      },
+      "classes": {
+        "#garden > *, #plants > *": "grid-column-start-5"
+      },
+      "before": "#garden {\n  display: grid;\n  grid-template-columns: 20% 20% 20% 20% 20%;\n  grid-template-rows: 20% 20% 20% 20% 20%;\n}\n\n#water {\n  grid-column-start: 5;\n",
+      "after": "}",
+      "instructionsZhCn": "<p>当将<code>grid-column-start</code>和<code>grid-column-end</code>一起使用时，你也许已经注意到结束的值比起始的值大。但事实证明并非如此！</p><p>尝试设置<code>grid-column-end</code>的值小于5，以此来给胡萝卜浇水。</p>",
+      "uiSolution": "grid-column-end: 2;",
+      "sourceLine": 163
+    },
+    {
+      "ordinal": 5,
+      "index": 4,
+      "name": "grid-column-end 3",
+      "board": "c",
+      "selector": "> :nth-child(1)",
+      "style": {
+        "grid-column-end": "-2"
+      },
+      "classes": {
+        "#garden > *, #plants > *": "grid-column-start-1"
+      },
+      "before": "#garden {\n  display: grid;\n  grid-template-columns: 20% 20% 20% 20% 20%;\n  grid-template-rows: 20% 20% 20% 20% 20%;\n}\n\n#water {\n  grid-column-start: 1;\n",
+      "after": "}",
+      "instructionsZhCn": "<p>如果你想要从右边数网格的列数而不是从左边数，你可以设置<code>grid-column-start</code>和<code>grid-column-end</code>为负值。比如说，你可以设置它为-1来指定为右边的第一列。</p><p>尝试将<code>grid-column-end</code>设置为负值。</p>",
+      "uiSolution": "grid-column-end: -2;",
+      "sourceLine": 217
+    },
+    {
+      "ordinal": 6,
+      "index": 5,
+      "name": "grid-column-start 3",
+      "board": "w",
+      "selector": "> :nth-child(1)",
+      "style": {
+        "grid-column-start": "-3"
+      },
+      "classes": {},
+      "before": "#garden {\n  display: grid;\n  grid-template-columns: 20% 20% 20% 20% 20%;\n  grid-template-rows: 20% 20% 20% 20% 20%;\n}\n\n#poison {\n",
+      "after": "}",
+      "instructionsZhCn": "<p>现在尝试设置<code>grid-column-start</code>为负值。</p>",
+      "uiSolution": "grid-column-start: -3;",
+      "sourceLine": 271
+    },
+    {
+      "ordinal": 7,
+      "index": 6,
+      "name": "grid-column-end 4",
+      "board": "c",
+      "selector": "> :nth-child(1)",
+      "style": {
+        "grid-column-end": "span 2"
+      },
+      "classes": {
+        "#garden > *, #plants > *": "grid-column-start-2"
+      },
+      "before": "#garden {\n  display: grid;\n  grid-template-columns: 20% 20% 20% 20% 20%;\n  grid-template-rows: 20% 20% 20% 20% 20%;\n}\n\n#water {\n  grid-column-start: 2;\n",
+      "after": "}",
+      "instructionsZhCn": "<p>你可以根据网格的开始和结束位置来定义一个网格项，你也可以用<code>span</code>关键词来指定你所要跨越的宽度。请注意<code>span</code>只能是正值。</p><p>比如说，你可以通过<code>grid-column-end: span 2;</code>来给这些胡萝卜浇水。</p>",
+      "uiSolution": "grid-column-end: span 2;",
+      "sourceLine": 324
+    },
+    {
+      "ordinal": 8,
+      "index": 7,
+      "name": "grid-column-end 5",
+      "board": "c",
+      "selector": "> :nth-child(1)",
+      "style": {
+        "grid-column-end": "span 5"
+      },
+      "classes": {
+        "#garden > *, #plants > *": "grid-column-start-1"
+      },
+      "before": "#garden {\n  display: grid;\n  grid-template-columns: 20% 20% 20% 20% 20%;\n  grid-template-rows: 20% 20% 20% 20% 20%;\n}\n\n#water {\n  grid-column-start: 1;\n",
+      "after": "}",
+      "instructionsZhCn": "<p>尝试在<code>grid-column-end</code>属性中使用<code>span</code>关键字来给胡萝卜浇水。</p>",
+      "uiSolution": "grid-column-end: span 5;",
+      "sourceLine": 378
+    },
+    {
+      "ordinal": 9,
+      "index": 8,
+      "name": "grid-column-start 4",
+      "board": "c",
+      "selector": "> :nth-child(1)",
+      "style": {
+        "grid-column-start": "span 3"
+      },
+      "classes": {
+        "#garden > *, #plants > *": "grid-column-end-6"
+      },
+      "before": "#garden {\n  display: grid;\n  grid-template-columns: 20% 20% 20% 20% 20%;\n  grid-template-rows: 20% 20% 20% 20% 20%;\n}\n\n#water {\n",
+      "after": "  grid-column-end: 6;\n}",
+      "instructionsZhCn": "<p>你也可以将<code>span</code>关键字和<code>grid-column-start</code>一起使用，相对于结束位置来设置其宽度。</p>",
+      "uiSolution": "grid-column-start: span 3;",
+      "sourceLine": 432
+    },
+    {
+      "ordinal": 10,
+      "index": 9,
+      "name": "grid-column 1",
+      "board": "c",
+      "selector": "> :nth-child(1)",
+      "style": {
+        "grid-column": "4 / 6"
+      },
+      "classes": {},
+      "before": "#garden {\n  display: grid;\n  grid-template-columns: 20% 20% 20% 20% 20%;\n  grid-template-rows: 20% 20% 20% 20% 20%;\n}\n\n#water {\n",
+      "after": "}",
+      "instructionsZhCn": "<p>如果每次都输入<code>grid-column-start</code>和<code>grid-column-end</code>两个属性，我们一定会厌烦的。幸运的是，<code>grid-column</code>是一个缩写形式，它可以一次接受两个值，只要用'/'分开就好。</p><p>比如说：<code>grid-column: 2 / 4;</code>就会设置网格项从第二列开始，到第四列结束。</p>",
+      "uiSolution": "grid-column: 4 / 6;",
+      "sourceLine": 486
+    },
+    {
+      "ordinal": 11,
+      "index": 10,
+      "name": "grid-column 2",
+      "board": "c",
+      "selector": "> :nth-child(1)",
+      "style": {
+        "grid-column": "2 / 5"
+      },
+      "classes": {},
+      "before": "#garden {\n  display: grid;\n  grid-template-columns: 20% 20% 20% 20% 20%;\n  grid-template-rows: 20% 20% 20% 20% 20%;\n}\n\n#water {\n",
+      "after": "}",
+      "instructionsZhCn": "<p>尝试使用<code>grid-column</code>来给胡萝卜浇水。<code>span</code>关键字在这个简写中也是可以使用的，所以你也可以试一下哟！</p>",
+      "uiSolution": "grid-column: 2 / 5;",
+      "sourceLine": 539
+    },
+    {
+      "ordinal": 12,
+      "index": 11,
+      "name": "grid-row-start 1",
+      "board": "c",
+      "selector": "> :nth-child(1)",
+      "style": {
+        "grid-row-start": "3"
+      },
+      "classes": {},
+      "before": "#garden {\n  display: grid;\n  grid-template-columns: 20% 20% 20% 20% 20%;\n  grid-template-rows: 20% 20% 20% 20% 20%;\n}\n\n#water {\n",
+      "after": "}",
+      "instructionsZhCn": "<p>其中一件事情使CSS网格布局和Flex盒布局不同的是，你可以很轻松的在二维的空间里定位一个网格项: 行和列。<code>grid-row-start</code>就像<code>grid-column-start</code>一样，只不过是在垂直方向指定起始位置。</p><p>用<code>grid-row-start</code>来给胡萝卜浇水吧！</p>",
+      "uiSolution": "grid-row-start: 3;",
+      "sourceLine": 592
+    },
+    {
+      "ordinal": 13,
+      "index": 12,
+      "name": "grid-row-start 2",
+      "board": "c",
+      "selector": "> :nth-child(1)",
+      "style": {
+        "grid-row": "3 / 6"
+      },
+      "classes": {},
+      "before": "#garden {\n  display: grid;\n  grid-template-columns: 20% 20% 20% 20% 20%;\n  grid-template-rows: 20% 20% 20% 20% 20%;\n}\n\n#water {\n",
+      "after": "}",
+      "instructionsZhCn": "<p>现在你可以试一试缩写属性 <code>grid-row</code>。</p>",
+      "uiSolution": "grid-row: 3 / 6;",
+      "sourceLine": 645
+    },
+    {
+      "ordinal": 14,
+      "index": 13,
+      "name": "grid-column-row 1",
+      "board": "w",
+      "selector": "> :nth-child(1)",
+      "style": {
+        "grid-column": "2",
+        "grid-row": "5"
+      },
+      "classes": {},
+      "before": "#garden {\n  display: grid;\n  grid-template-columns: 20% 20% 20% 20% 20%;\n  grid-template-rows: 20% 20% 20% 20% 20%;\n}\n\n#poison {\n",
+      "after": "}",
+      "instructionsZhCn": "<p>同时使用<code>grid-column</code>和<code>grid-row</code>来设置网格项在行和列中的位置。</p>",
+      "uiSolution": "grid-column: 2; grid-row: 5;",
+      "sourceLine": 698
+    },
+    {
+      "ordinal": 15,
+      "index": 14,
+      "name": "grid-column-row 2",
+      "board": "c",
+      "selector": "> :nth-child(1)",
+      "style": {
+        "grid-column": "2 / 6",
+        "grid-row": "1 / 6"
+      },
+      "classes": {},
+      "before": "#garden {\n  display: grid;\n  grid-template-columns: 20% 20% 20% 20% 20%;\n  grid-template-rows: 20% 20% 20% 20% 20%;\n}\n\n#water {\n",
+      "after": "}",
+      "instructionsZhCn": "<p>你也可以使用<code>grid-column</code>和<code>grid-row</code>一起来定义一个较大区域的网格。试一下吧！</p>",
+      "uiSolution": "grid-column: 2 / 6; grid-row: 1 / 6;",
+      "sourceLine": 751
+    },
+    {
+      "ordinal": 16,
+      "index": 15,
+      "name": "grid-area 1",
+      "board": "c",
+      "selector": "> :nth-child(1)",
+      "style": {
+        "grid-area": "1 / 2 / 4 / 6"
+      },
+      "classes": {},
+      "before": "#garden {\n  display: grid;\n  grid-template-columns: 20% 20% 20% 20% 20%;\n  grid-template-rows: 20% 20% 20% 20% 20%;\n}\n\n#water {\n",
+      "after": "}",
+      "instructionsZhCn": "<p>如果你觉得同时输入<code>grid-column</code>和<code>grid-row</code>也很复杂，我们还有另一种缩写。<code>grid-area</code>属性接受4个由'/'分开的值：<code>grid-row-start</code>, <code>grid-column-start</code>, <code>grid-row-end</code>, 最后是<code>grid-column-end</code>。</p><p>举个例子如下所示：<code>grid-area: 1 / 1 / 3 / 6;</code>。</p>",
+      "uiSolution": "grid-area: 1 / 2 / 4 / 6;",
+      "sourceLine": 804
+    },
+    {
+      "ordinal": 17,
+      "index": 16,
+      "name": "grid-area 2",
+      "board": "cc",
+      "selector": "> :nth-child(1)",
+      "style": {
+        "grid-area": "2 / 3 / 5 / 6"
+      },
+      "classes": {
+        "#garden > :nth-child(2), #plants > :nth-child(2)": "grid-column-4"
+      },
+      "before": "#garden {\n  display: grid;\n  grid-template-columns: 20% 20% 20% 20% 20%;\n  grid-template-rows: 20% 20% 20% 20% 20%;\n}\n\n#water-1 {\n  grid-area: 1 / 4 / 6 / 5;\n}\n\n#water-2 {\n",
+      "after": "}",
+      "instructionsZhCn": "<p>如果我们有很多个网格项呢？你可以任意覆盖它们不用有任何担心。用<code>grid-area</code>定义第二个网格项为所有未浇水的胡萝卜浇水。</p>",
+      "uiSolution": "grid-area: 2 / 3 / 5 / 6;",
+      "sourceLine": 857
+    },
+    {
+      "ordinal": 18,
+      "index": 17,
+      "name": "order 1",
+      "board": "cwccc",
+      "selector": "> :nth-child(2)",
+      "style": {
+        "order": "2"
+      },
+      "classes": {},
+      "before": "#garden {\n  display: grid;\n  grid-template-columns: 20% 20% 20% 20% 20%;\n  grid-template-rows: 20% 20% 20% 20% 20%;\n}\n\n.water {\n  order: 0;\n}\n\n#poison {\n",
+      "after": "}",
+      "instructionsZhCn": "<p>如果网格项不是以<code>grid-area</code>、<code>grid-column</code>、<code>grid-row</code> 等显示的，它们会自动按照它们在源程序中出现的位置摆放。同样我们也可以使用<code>order</code>属性来重写它的顺序，这也是网格布局优于表格布局的好处之一。</p><p>默认情况下，所有的网格项的<code>order</code>都是0，但是顺序也可以被任意设置为正数或者负数，就像<code>z-index</code>一样。</p><p>现在，看到第二列的胡萝卜中毒了并且最后有杂草的那一列也浇了水。现在就改变中毒的网格项的<code>order</code>的值来修复它们吧！</p>",
+      "uiSolution": "order: 2;",
+      "sourceLine": 911
+    },
+    {
+      "ordinal": 19,
+      "index": 18,
+      "name": "order 2",
+      "board": "wcwcwcwcwc",
+      "selector": "> :nth-child(odd)",
+      "style": {
+        "order": "-1"
+      },
+      "classes": {},
+      "before": "#garden {\n  display: grid;\n  grid-template-columns: 20% 20% 20% 20% 20%;\n  grid-template-rows: 20% 20% 20% 20% 20%;\n}\n\n.water {\n  order: 0;\n}\n\n.poison {\n",
+      "after": "}",
+      "instructionsZhCn": "<p>现在水和中毒的土地是交替出现的，并且所有的杂草都出现在每一列的开始。设置中毒土地的正确<code>order</code>值来修复它们吧！</p>",
+      "uiSolution": "order: -1;",
+      "sourceLine": 964
+    },
+    {
+      "ordinal": 20,
+      "index": 19,
+      "name": "grid-template-columns 1",
+      "board": "c",
+      "selector": null,
+      "style": {
+        "grid-template-columns": "50% 50%"
+      },
+      "classes": {},
+      "before": "#garden {\n  display: grid;\n",
+      "after": "  grid-template-rows: 20% 20% 20% 20% 20%;\n}\n\n#water {\n  grid-column: 1;\n  grid-row: 1;\n}",
+      "instructionsZhCn": "<p>到现在为止，你已经将你的花园设置为5列，每列占总宽度的20%；5行，每行占全部高度的20%。</p><p>这是通过设置<code>grid-template-columns: 20% 20% 20% 20% 20%;</code>和<code>grid-template-rows: 20% 20% 20% 20% 20%;</code>来实现的。每一条规则都有5个值，代表创建了5个列，每一列设置为花园宽度的20%。</p><p>但是你也可以任意设置网格项的宽度。为<code>grid-template-columns</code>设置一个新的值来给你的胡萝卜浇水吧！你想要将第一列的宽度设置为50%。</p>",
+      "uiSolution": "grid-template-columns: 50% 50%;",
+      "sourceLine": 1017
+    },
+    {
+      "ordinal": 21,
+      "index": 20,
+      "name": "grid-template-columns 2",
+      "board": "c",
+      "selector": null,
+      "style": {
+        "grid-template-columns": "repeat(8, 12.5%)"
+      },
+      "classes": {
+        "#plants": "grid-template-columns-repeat-8-12"
+      },
+      "before": "#garden {\n  display: grid;\n",
+      "after": "  grid-template-rows: 20% 20% 20% 20% 20%;\n}\n\n#water {\n  grid-column: 1;\n  grid-row: 1;\n}",
+      "instructionsZhCn": "<p>指定一些具有相同宽度的网格项会变得很乏味。幸运的是有<code>repeat</code>函数来帮助我们。</p><p>比如说，之前我们使用<code>grid-template-columns: 20% 20% 20% 20% 20%;</code>属性定义了5列，每列占20%。这可以被简写为：<code>grid-template-columns: repeat(5, 20%);</code></p><p>使用<code>grid-template-columns</code>属性以及<code>repeat</code>函数，创建8列，每列占12.5%的宽度。这样你就不会给花园浇过多的水。</p>",
+      "uiSolution": "grid-template-columns: repeat(8, 12.5%);",
+      "sourceLine": 1069
+    },
+    {
+      "ordinal": 22,
+      "index": 21,
+      "name": "grid-template-columns 4",
+      "board": "cwc",
+      "selector": null,
+      "style": {
+        "grid-template-columns": "100px 3em 40%;"
+      },
+      "classes": {
+        "#plants": "grid-template-columns-100px-3em-40p"
+      },
+      "before": "#garden {\n  display: grid;\n",
+      "after": "  grid-template-rows: 20% 20% 20% 20% 20%;\n}",
+      "instructionsZhCn": "<p><code>grid-template-columns</code>不仅仅只接受百分比的值，也接受像像素或em这样的长度单位。你甚至可以将不同的长度单位混合使用。</p><p>接下来，分别将列的宽度设置为<code>100px</code>、<code>3em</code>和<code>40%</code>。</p>",
+      "uiSolution": "grid-template-columns: 100px 3em 40%;",
+      "sourceLine": 1122
+    },
+    {
+      "ordinal": 23,
+      "index": 22,
+      "name": "grid-template-columns 5",
+      "board": "wc",
+      "selector": null,
+      "style": {
+        "grid-template-columns": "1fr 5fr;"
+      },
+      "classes": {
+        "#plants": "grid-template-columns-1fr-5fr"
+      },
+      "before": "#garden {\n  display: grid;\n",
+      "after": "  grid-template-rows: 20% 20% 20% 20% 20%;\n}",
+      "instructionsZhCn": "<p>网格系统也引入了一个新的单位，分数<code>fr</code>。每一个<code>fr</code>单元分配一个可用的空间。比如说，如果两个元素分别被设置为<code>1fr</code>和<code>3fr</code>，那么空间就会被平均分配为4份；第一个元素占据1/4，第二个元素占据3/4。</p><p>这里，杂草占据了你第一行的左1/6，胡萝卜占据着剩下的5/6。创建两个列，并使用<code>fr</code>单位来定义它们的宽度。</p>",
+      "uiSolution": "grid-template-columns: 1fr 5fr;",
+      "sourceLine": 1175
+    },
+    {
+      "ordinal": 24,
+      "index": 23,
+      "name": "grid-template-columns 3",
+      "board": "cw",
+      "selector": null,
+      "style": {
+        "grid-template-columns": "50px 1fr 1fr 1fr 50px;"
+      },
+      "classes": {
+        "#plants": "grid-template-columns-50px-1fr-1fr-1fr-50px",
+        "#plants > :nth-child(1), #garden > :nth-child(1)": "grid-area-1-1-6-2",
+        "#plants > :nth-child(2), #garden > :nth-child(2)": "grid-area-1-5-6-6"
+      },
+      "before": "#garden {\n  display: grid;\n",
+      "after": "  grid-template-rows: 20% 20% 20% 20% 20%;\n}\n\n#water {\n  grid-area: 1 / 1 / 6 / 2;\n}\n\n#poison {\n  grid-area: 1 / 5 / 6 / 6;\n}",
+      "instructionsZhCn": "<p>当列的宽度采用像素，百分比或者em的单位的时候，其他使用<code>fr</code>单位设置的列将会平分剩下的空间。</p><p>这里的胡萝卜在左边形成了一个50像素的列，并且杂草在右边也占据着50像素的宽度。使用<code>grid-template-columns</code>属性，创建这两个列，使用<code>fr</code>再创建三列，使其平均占据剩下的空间。</p>",
+      "uiSolution": "grid-template-columns: 50px 1fr 1fr 1fr 50px;",
+      "sourceLine": 1228
+    },
+    {
+      "ordinal": 25,
+      "index": 24,
+      "name": "grid-template-columns 6",
+      "board": "wcw",
+      "selector": null,
+      "style": {
+        "grid-template-columns": "75px 3fr 2fr;"
+      },
+      "classes": {
+        "#plants": "grid-template-columns-6",
+        "#garden, #overlay": "grid-template-rows-100p"
+      },
+      "before": "#garden {\n  display: grid;\n",
+      "after": "  grid-template-rows: 100%;\n}",
+      "instructionsZhCn": "<p>现在，在你的花园的左边有一列杂草，占据75像素宽。剩余空间的3/5正在长着胡萝卜，剩下的2/5已经杂草泛滥了。</p><p>用<code>grid-template-columns</code>属性，将<code>px</code>和<code>fr</code>单位结合起来，来制作必要的列。</p>",
+      "uiSolution": "grid-template-columns: 75px 3fr 2fr;",
+      "sourceLine": 1285
+    },
+    {
+      "ordinal": 26,
+      "index": 25,
+      "name": "grid-template-rows 1",
+      "board": "c",
+      "selector": null,
+      "style": {
+        "grid-template-rows": "1fr 100px;"
+      },
+      "classes": {
+        "#plants": "grid-template-rows-50px-0-0-0-1fr",
+        "#plants > :nth-child(1), #garden > :nth-child(1)": "grid-area-5-1-6-6"
+      },
+      "before": "#garden {\n  display: grid;\n  grid-template-columns: 20% 20% 20% 20% 20%;\n",
+      "after": "}\n\n#water {\n  grid-column: 1 / 6;\n  grid-row: 5 / 6;\n}",
+      "instructionsZhCn": "<p><code>grid-template-rows</code>和<code>grid-template-columns</code>的作用大概相同。</p><p>用<code>grid-template-rows</code>属性来为花园中除了顶部50像素之外的所有区域浇水。注意：水被设置为仅填充第五行，所以你总共需要创建5行。</p>",
+      "uiSolution": "grid-template-rows: 50px 0 0 0 1fr;",
+      "sourceLine": 1338,
+      "solutionSourceNote": "The original style literal is retained exactly above. The effective target is overridden by #plants class grid-template-rows-50px-0-0-0-1fr in css/style.css:625-627 (!important), matching the Chinese instruction to water row 5 beneath a 50px top strip."
+    },
+    {
+      "ordinal": 27,
+      "index": 26,
+      "name": "grid-template 1",
+      "board": "c",
+      "selector": null,
+      "style": {
+        "grid-template": "60% 1fr / 200px 1fr"
+      },
+      "classes": {},
+      "before": "#garden {\n  display: grid;\n",
+      "after": "}\n\n#water {\n  grid-column: 1;\n  grid-row: 1;\n}",
+      "instructionsZhCn": "<p><code>grid-template</code>是<code>grid-template-rows</code>和<code>grid-template-columns</code>的缩写形式。</p><p>比如说，<code>grid-template: 50% 50% / 200px;</code>将创建一个具有两行的网格，每一行占据50%，以及一个200像素宽的列。</p><p>尝试着使用<code>grid-template</code>属性来浇水，需要包括你的花园上部的60%，以及左侧的200像素。</p>",
+      "uiSolution": "grid-template: 60% 1fr / 200px 1fr;",
+      "sourceLine": 1394
+    },
+    {
+      "ordinal": 28,
+      "index": 27,
+      "name": "grid-template 2",
+      "board": "wc",
+      "selector": null,
+      "style": {
+        "grid-template": "1fr 50px / 20% 1fr"
+      },
+      "classes": {
+        "#plants": "grid-template-2"
+      },
+      "before": "#garden {\n  display: grid;\n",
+      "after": "}",
+      "instructionsZhCn": "<p>你的花园看起来很棒。现在，你在花园的底部留下了50像素的小路，其他的空间用来种植胡萝卜。</p><p>不幸的是，胡萝卜地的20%已经杂草丛生了，最后一次用CSS网格布局来规划你的花园吧！</p>",
+      "uiSolution": "grid-template: 1fr 50px / 20% 1fr;",
+      "sourceLine": 1446
+    }
+  ]
+}

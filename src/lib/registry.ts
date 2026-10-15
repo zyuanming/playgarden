@@ -3041,6 +3041,210 @@ component: lazy(() => import("../games/HyperspaceGarbageCollection"))
     "component": lazy(() => import("../games/Avabranch"))
   },
 {
+  "id": "grid-garden",
+  "title": "网格花园",
+  "subtitle": "用真正的 CSS Grid 照料胡萝卜与杂草，完整保留原作 28 课。",
+  "category": "编程启蒙",
+  "difficulty": "中级",
+  "tone": "green",
+  "levelCount": 28,
+  "allowUndo": false,
+  "resumeKey": "playgarden.grid-garden.v1",
+  "artwork": {
+    "url": "./grid-garden/images/carrots.svg",
+    "position": "center",
+    "size": "contain"
+  },
+  "source": {
+    "kind": "adapted",
+    "license": "MIT",
+    "author": "Thomas Park / Codepip",
+    "workTitle": "Grid Garden（完整原作 28 课及收获结局）",
+    "url": "https://github.com/thomaspark/gridgarden/tree/0e262f7272d4992340eb556bdb9b2d502cc59932",
+    "commit": "0e262f7272d4992340eb556bdb9b2d502cc59932",
+    "notice": "./grid-garden/NOTICE.txt",
+    "notes": "原作完整 28 课、中文课程与属性帮助、CSS Grid 浏览器矩形尺寸及颜色核验保留。代码与文字 MIT；Thomas Park 原作九张花园图像单独为 CC-BY-3.0，未经修改；jQuery/Sizzle 与 Animate.css 为 MIT。本站宿主与隔离适配 GPL-3.0-only。只有全部 28 课分别完成后才能获得完整课程收获结局；自由选关不自动通关。"
+  }
+,
+ component: lazy(() => import("../games/GridGarden"))
+},
+
+{
+  "id": "elevator-saga",
+  "title": "电梯调度员",
+  "subtitle": "编写JavaScript安排真实电梯与乘客，挑战原作18项目标。",
+  "category": "编程启蒙",
+  "difficulty": "进阶",
+  "tone": "purple",
+  "levelCount": 18,
+  "allowUndo": false,
+  "artwork": {
+    "url": "./elevator-saga-card.svg",
+    "position": "center",
+    "size": "cover"
+  },
+  "source": {
+    "kind": "adapted",
+    "license": "MIT",
+    "author": "Magnus Wolffelt",
+    "workTitle": "Elevator Saga（完整18原挑战）",
+    "url": "https://github.com/magwo/elevatorsaga/tree/e0c55bf8cf59243c32dc371b2cc7b2e3ec1664af",
+    "commit": "e0c55bf8cf59243c32dc371b2cc7b2e3ec1664af",
+    "notice": "./elevator-saga/LICENSES.txt",
+    "notes": "完整原作电梯物理、乘客、事件API、指示灯、容量和18项判定。第19项是未计关的自由演示。原代码MIT；CodeMirror/Lodash/Riot保留MIT，官方FontAwesome4.7字体OFL1.1、CSS MIT。新增中文界面、opaque iframe、可终止worker和宿主GPL-3.0-only。"
+  }
+,
+component: lazy(() => import("../games/ElevatorSaga"))
+},
+
+{
+  "id": "gridland",
+  "title": "格境求生",
+  "subtitle": "白天三连建村，夜晚配装迎敌；解锁魔法，召唤并击败巨龙。",
+  "category": "逻辑思维",
+  "difficulty": "进阶",
+  "tone": "green",
+  "levelCount": 0,
+  "campaign": true,
+  "freePlayCaption": "完整战役 · 黎明存档",
+  "allowUndo": false,
+  "artwork": {
+    "url": "./gridland-original/img/title.png",
+    "position": "center",
+    "size": "contain"
+  },
+  "source": {
+    "kind": "adapted",
+    "license": "MPL-2.0",
+    "author": "Michael Townsend / doublespeak games",
+    "workTitle": "Gridland（完整原作战役）",
+    "url": "https://github.com/doublespeakgames/gridland/tree/06af02c3af7062aead04a1e6f67b6e59f3e4b6a1",
+    "commit": "06af02c3af7062aead04a1e6f67b6e59f3e4b6a1",
+    "notice": "./gridland-original/NOTICE.txt",
+    "notes": "保留原三连资源、村落建造、昼夜战斗、装备、魔法、巫妖、屠龙结局和新游戏＋。没有人为编号关卡。原代码与美术MPL-2.0，jQuery/RequireJS MIT；独立宿主与中文适配GPL-3.0-only。原静音方式，不包含未清权音频。"
+  }
+,
+component: lazy(() => import("../games/GridlandOriginal"))
+},
+
+{
+  "id": "sql-mystery",
+  "title": "SQL迷案",
+  "subtitle": "查询案发报告、证人和签到记录，从行凶者追查幕后委托者。",
+  "category": "编程启蒙",
+  "difficulty": "进阶",
+  "tone": "purple",
+  "levelCount": 0,
+  "campaign": true,
+  "freePlayCaption": "完整案件 · 两阶段推理",
+  "allowUndo": false,
+  "artwork": {
+    "url": "./sql-mystery/cover.svg",
+    "position": "center",
+    "size": "cover"
+  },
+  "source": {
+    "kind": "adapted",
+    "license": "CC-BY-SA-4.0",
+    "author": "Joon Park、Cathy He / NUKnightLab",
+    "workTitle": "SQL Murder Mystery（完整原作案件）",
+    "url": "https://github.com/NUKnightLab/sql-mysteries/tree/a7aa22701bd41b24e905be387fb17326db982df9",
+    "commit": "a7aa22701bd41b24e905be387fb17326db982df9",
+    "notice": "./sql-mystery/LICENSES.txt",
+    "notes": "原始数据库与答案触发器逐字保留，一起虚构案件、行凶者与幕后委托者两阶段，无虚构编号关卡。案件内容及中文叙事CC BY-SA4；原代码MIT。官方SQLite3.54.0公有领域，Emscripten运行库保留各自许可；新增可终止worker、中文宿主及封面GPL-3.0-only。"
+  }
+,
+component: lazy(() => import("../games/SqlMystery"))
+},
+
+{
+  "id": "evolution-of-trust",
+  "title": "信任的进化",
+  "subtitle": "亲自合作或背叛，观察八种策略怎样演化，再改变游戏的规则。",
+  "category": "科学实验",
+  "difficulty": "中级",
+  "tone": "orange",
+  "levelCount": 0,
+  "campaign": true,
+  "freePlayCaption": "完整互动旅程 · 自由沙盒",
+  "allowUndo": false,
+  "artwork": {
+    "url": "./evolution-of-trust/cover.png",
+    "position": "left center",
+    "size": "auto 100%"
+  },
+  "source": {
+    "kind": "adapted",
+    "license": "CC0-1.0",
+    "author": "Nicky Case；中文吴桐、唐鳳",
+    "workTitle": "The Evolution of Trust（完整原作与沙盒）",
+    "url": "https://github.com/ncase/trust/tree/6ec45d73befdb922bd40654dd1c1c903a953562f",
+    "commit": "6ec45d73befdb922bd40654dd1c1c903a953562f",
+    "notice": "./evolution-of-trust/NOTICE.txt",
+    "notes": "原作规则、策略、叙事、原画与明确许可的九段音轨保留。原作及中文翻译CC0；依赖分别保留MIT/Apache/ISC/BSD/CC0。仅替换具体受限/未明音效、字体和第三方插图。25次重复博弈、循环赛、演化、失误实验和沙盒完整保留；0人为编号关卡，新增宿主与适配GPL-3.0-only。"
+  }
+,
+component: lazy(() => import("../games/EvolutionOfTrust"))
+},
+
+{
+  "id": "ghosted",
+  "title": "幽灵十三步 · Ghosted",
+  "subtitle": "13 步后化身幽灵：推岩石、吃苹果，走遍 12 张谜题地图与解锁终章。",
+  "category": "空间想象",
+  "difficulty": "进阶",
+  "tone": "purple",
+  "levelCount": 13,
+  "allowUndo": true,
+  "artwork": {
+    "url": "./games/ghosted/g.png",
+    "position": "center",
+    "size": "auto 100%"
+  },
+  "source": {
+    "kind": "adapted",
+    "license": "MIT",
+    "author": "Jani Nykänen",
+    "workTitle": "Ghosted（完整13张原地图）",
+    "url": "https://github.com/jani-nykanen/ghosted/tree/846454c3b2f7509515cbcbf8852b09f7b7d98b24",
+    "commit": "846454c3b2f7509515cbcbf8852b09f7b7d98b24",
+    "notice": "./games/ghosted/LICENSE-MIT.txt",
+    "notes": "保留原引擎、13张地图、像素图集、字形及本地合成音轨。前12关完成后，原作解锁噩梦终章；不保存中途棋盘。原仓库README声明MIT，完整署名与许可保留；新增宿主和适配GPL-3.0-only。"
+  }
+,
+component: lazy(() => import("../games/GhostedGame"))
+},
+
+{
+  "id": "black-hole-square",
+  "title": "黑洞方块 · Black Hole Square",
+  "subtitle": "点击箭头推动方块，创造黑洞，在原始步数内清空18个谜题。",
+  "category": "空间想象",
+  "difficulty": "进阶",
+  "tone": "purple",
+  "levelCount": 18,
+  "allowUndo": false,
+  "resumeKey": "playgarden.black-hole-square.native.v1",
+  "artwork": {
+    "url": "./games/black-hole-square/title.svg",
+    "position": "center",
+    "size": "contain"
+  },
+  "source": {
+    "kind": "adapted",
+    "license": "MIT",
+    "author": "Quinten Clause",
+    "workTitle": "Black Hole Square（18个原版谜题）",
+    "url": "https://github.com/Quinten/black-hole-square/tree/8d48aae2097613782ab18d5062e8a3906741baaa",
+    "commit": "8d48aae2097613782ab18d5062e8a3906741baaa",
+    "notice": "./games/black-hole-square/LICENSE-MIT.txt",
+    "notes": "原作MIT引擎、18张6×6地图、步数、矢量图、星空与合成音效保留；标题Gugi轮廓注明独立OFL来源，不打包字体。关卡可自由跳过，只给真实清空记通关；保存选择、已清空与成功解法，不保存中途棋盘。新宿主/适配GPL-3.0-only。"
+  }
+,
+component: lazy(() => import("../games/BlackHoleSquareGame"))
+},
+
+{
   "id": "descensus-2",
   "title": "千米降落",
   "subtitle": "画木条改变弹跳，穿过锯片与风区，完成1000米旅程。",

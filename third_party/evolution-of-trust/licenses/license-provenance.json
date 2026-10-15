@@ -1,0 +1,164 @@
+[
+  {
+    "file": "howler-license.txt",
+    "sha": "e65bdd0b8405e14d098ca4d704767688eb8d0df8",
+    "display_url": "https://github.com/goldfire/howler.js/blob/v2.0.0/LICENSE.md"
+  },
+  {
+    "file": "tween-license.txt",
+    "sha": "268787f650a360dfd8aea0264d2bc581bbfefde6",
+    "display_url": "https://github.com/CreateJS/TweenJS/blob/0.6.2/LICENSE.txt"
+  },
+  {
+    "file": "q-license.txt",
+    "sha": "9ce1ea591fca2060658d95475291967610763b2b",
+    "display_url": "https://github.com/kriskowal/q/blob/v1.5.0/LICENSE"
+  },
+  {
+    "file": "pixi-license.txt",
+    "sha": "7ca4d7c97e59b03e9a43079f7e75d4a0e5a89f7c",
+    "display_url": "https://github.com/pixijs/pixijs/blob/v4.4.3/LICENSE"
+  },
+  {
+    "file": "minpubsub-license.txt",
+    "sha": "0644727cde915086a53937b7416dcc9741498eec",
+    "display_url": "https://github.com/daniellmb/MinPubSub/blob/799865454c82c1d576e218ae9d33b702305df2b2/LICENSE.txt"
+  },
+  {
+    "file": "pegasus-license.txt",
+    "sha": "c0affb47ed500795a9d89bb17c6c77592ac70e7a",
+    "display_url": "https://github.com/typicode/pegasus/blob/46374014c2db41ea54190ef542d19558a31cb1c1/LICENSE"
+  },
+  {
+    "file": "balloon-license.txt",
+    "sha": "0168f21cb5d2c9d55b1ea60c24c67c1b949c493a",
+    "display_url": "https://github.com/kazzkiq/balloon.css/blob/d7884de673f96612a670328bb9d8cc5970443e08/LICENSE"
+  },
+  {
+    "file": "resource-license.txt",
+    "sha": "f0b4a63b5888692bddca1252600dfee0846526e1",
+    "display_url": "https://github.com/englercj/resource-loader/blob/v2.0.7/LICENSE"
+  },
+  {
+    "file": "earcut-license.txt",
+    "sha": "6925f4b0e86e61b8a67ea98c534f157b491c40a6",
+    "display_url": "https://github.com/mapbox/earcut/blob/v2.1.1/LICENSE"
+  },
+  {
+    "file": "eventemitter-license.txt",
+    "sha": "abcbd54e5eefdac272de763e774ca75825ca55ce",
+    "display_url": "https://github.com/primus/eventemitter3/blob/2.0.2/LICENSE"
+  },
+  {
+    "file": "objectassign-license.txt",
+    "sha": "654d0bfe943437d43242325b1fbcff5f400d84ee",
+    "display_url": "https://github.com/sindresorhus/object-assign/blob/v4.1.1/license"
+  },
+  {
+    "file": "bit-license.txt",
+    "sha": "8ce206a84544ae1623a4c94db88c18c2d9ed8009",
+    "display_url": "https://github.com/mikolalysenko/bit-twiddle/blob/0c4c32db753108c5ec7e3779d35eb103be8e7ee1/LICENSE"
+  },
+  {
+    "file": "mini-license.txt",
+    "sha": "c16d2e17e25fae80f8809ced2c97dbf691045853",
+    "display_url": "https://github.com/Hypercubed/mini-signals/blob/v1.1.1/LICENSE"
+  },
+  {
+    "file": "parse-license.txt",
+    "sha": "60ca1dafb082010fffe2a8ebae6cac3fdec10a4e",
+    "display_url": "https://github.com/Kikobeats/parse-uri/blob/1.0.0/LICENSE.md"
+  },
+  {
+    "file": "process-license.txt",
+    "sha": "b8c1246cf49cbdc3084c7b33f69ec64cb019a42a",
+    "display_url": "https://github.com/defunctzombie/node-process/blob/v0.11.9/LICENSE"
+  },
+  {
+    "file": "punycode-license.txt",
+    "sha": "a41e0a7ef970ecdd83d82cd99bda97b22077bc62",
+    "display_url": "https://github.com/mathiasbynens/punycode.js/blob/v1.4.1/LICENSE-MIT.txt"
+  },
+  {
+    "file": "browserpack-license.txt",
+    "sha": "ee27ba4b4412b0e4a05af5e3d8a005bc6681fdf3",
+    "display_url": "https://github.com/browserify/browser-pack/blob/v6.0.2/LICENSE"
+  },
+  {
+    "file": "umd-license.txt",
+    "sha": "dfb0b19eab71a024c604795c763c431bd8884e14",
+    "display_url": "https://github.com/ForbesLindesay/umd/blob/3.0.1/LICENSE"
+  },
+  {
+    "file": "babel-license.txt",
+    "sha": "d6b2e00435601a4d770949b6258c091e7f953f4b",
+    "display_url": "https://github.com/babel/babel/blob/v6.24.0/LICENSE"
+  },
+  {
+    "file": "async-license.txt",
+    "sha": "8f29698588533b535c9989361c44abacf23512ae",
+    "display_url": "https://github.com/caolan/async/blob/v1.5.2/LICENSE"
+  },
+  {
+    "file": "apache-license.txt",
+    "sha": "261eeb9e9f8b2b4b0d119366dda99c6fd7d35c64",
+    "display_url": "https://github.com/apache/.github/blob/main/LICENSE"
+  },
+  {
+    "file": "nodeurl-license.txt",
+    "sha": "f45bc1186e2aa7cf7e0c01d5c11e42c34a6bad44",
+    "display_url": "https://github.com/defunctzombie/node-url/blob/v0.11.0/LICENSE"
+  },
+  {
+    "file": "path-license.txt",
+    "sha": "ee27ba4b4412b0e4a05af5e3d8a005bc6681fdf3",
+    "display_url": "https://github.com/browserify/path-browserify/blob/0.0.0/LICENSE"
+  },
+  {
+    "file": "query-license.txt",
+    "sha": "fc80e85f2d16af5616b842fce3b3e1053b62dd42",
+    "display_url": "https://github.com/mike-spainhower/querystring/blob/master/License.md"
+  },
+  {
+    "file": "async2-license.txt",
+    "sha": "d807c05acd6aabe8f93a4b8232980da9decf0503",
+    "display_url": "https://github.com/caolan/async/blob/v2.1.5/LICENSE"
+  },
+  {
+    "file": "cc0-1.0.txt",
+    "source_url": "https://creativecommons.org/publicdomain/zero/1.0/legalcode.txt",
+    "note": "Complete canonical CC0 text copied from /usr/share/common-licenses/CC0-1.0; official text independently checked."
+  },
+  {
+    "file": "node-contributors-MIT.txt",
+    "note": "Extracted declaration or complete notice/terms; source URL(s) appear inside file."
+  },
+  {
+    "file": "fxaa-BSD-3-Clause.txt",
+    "note": "Extracted declaration or complete notice/terms; source URL(s) appear inside file."
+  },
+  {
+    "file": "ismobile-CC0-notice.txt",
+    "note": "Extracted declaration or complete notice/terms; source URL(s) appear inside file."
+  },
+  {
+    "file": "pixigl-MIT-declaration-and-terms.txt",
+    "note": "Extracted declaration or complete notice/terms; source URL(s) appear inside file."
+  },
+  {
+    "file": "q-Tyler-Close-MIT.txt",
+    "note": "Extracted declaration or complete notice/terms; source URL(s) appear inside file."
+  },
+  {
+    "file": "parseUri-Steven-Levithan-MIT.txt",
+    "note": "Extracted declaration or complete notice/terms; source URL(s) appear inside file."
+  },
+  {
+    "file": "bit-twiddling-public-domain-notice.txt",
+    "note": "Extracted declaration or complete notice/terms; source URL(s) appear inside file."
+  },
+  {
+    "file": "q-Apache-notice.txt",
+    "note": "Extracted declaration or complete notice/terms; source URL(s) appear inside file."
+  }
+]

@@ -1,0 +1,91 @@
+{
+  "source": "https://github.com/magwo/elevatorsaga",
+  "commit": "e0c55bf8cf59243c32dc371b2cc7b2e3ec1664af",
+  "files": [
+    {
+      "path": "upstream/LICENSE.txt",
+      "bytes": 1082,
+      "sha256": "f8ef74a2b5805a8365913a8b3dec31c6fd700ae33ce540d558ac42afc182b45a",
+      "gitBlobSha1": "935649658f1bc54f5559ecbb7d92a804a71eb882",
+      "license": "MIT"
+    },
+    {
+      "path": "upstream/README.md",
+      "bytes": 580,
+      "sha256": "0b4299d3dbf59884b8047320d576956d54197df5af2790ff985950afa50e07b2",
+      "gitBlobSha1": "4cc4ca7372b261f9da244ca49563d120ba0d2534",
+      "license": "MIT"
+    },
+    {
+      "path": "upstream/app.js",
+      "bytes": 9315,
+      "sha256": "40b9fc9f7a5dec52f27450b78129340c7b740647a1b954faa6974bc724c9861e",
+      "gitBlobSha1": "7a101a762b4477adf06fb349707368bd8345eb6f",
+      "license": "MIT"
+    },
+    {
+      "path": "upstream/presenters.js",
+      "bytes": 6651,
+      "sha256": "b2180c71526461f3d70cfecd81e0454fc5d0d4e8b39e44c3f5dba6a0c066401d",
+      "gitBlobSha1": "56db9313946d8b3aac897a132ddb338fe61f96f4",
+      "license": "MIT"
+    },
+    {
+      "path": "upstream/challenges.js",
+      "bytes": 5146,
+      "sha256": "9a8617d444a72c88a03731f46ca8326bfd596f7272837aa876099d2bf18cc720",
+      "gitBlobSha1": "9faf247a1512b9430639f50f6c7cd1265df1fcdd",
+      "license": "MIT"
+    },
+    {
+      "path": "upstream/world.js",
+      "bytes": 11794,
+      "sha256": "f7323323e8b3d0ae0f70de936c838356e02a408da10cacd2fab92c2ed50c16e7",
+      "gitBlobSha1": "9020c5f0a849082288471aead8c4fbed31484ab2",
+      "license": "MIT"
+    },
+    {
+      "path": "upstream/elevator.js",
+      "bytes": 10160,
+      "sha256": "d0872356592f2a6668a891e372d6d5dc86811d4b83e6a1f23de733c6a7f59ebd",
+      "gitBlobSha1": "2198d09593c5563d703d912199fcd357e1ccb3d6",
+      "license": "MIT"
+    },
+    {
+      "path": "upstream/interfaces.js",
+      "bytes": 3768,
+      "sha256": "a82697a4ce58f6a9bd8329d7d35167c9bb9abd3a0e4220faa841bbd0e5f71011",
+      "gitBlobSha1": "d020f019d7000db58ec0d5e7aee055ced20e33b5",
+      "license": "MIT"
+    },
+    {
+      "path": "upstream/floor.js",
+      "bytes": 1701,
+      "sha256": "0113df02fee9fb63e7965b09bc613647a53f5e852b2620f5ee9cc5b6c9632377",
+      "gitBlobSha1": "be0435280e09903b6d05599bb3152590126431a6",
+      "license": "MIT"
+    },
+    {
+      "path": "upstream/movable.js",
+      "bytes": 4136,
+      "sha256": "0f0ce02f87b31d6b04a25c7ee05222b2fb7e93610af87e47afaf4c96f708cb6e",
+      "gitBlobSha1": "899ce9c7c8d46e78df671b3187879a5820f824f2",
+      "license": "MIT"
+    },
+    {
+      "path": "upstream/user.js",
+      "bytes": 2398,
+      "sha256": "b069350a035fefc9b2274ddcae6a8cb4111a382b6e905f08d4e8441fe06cac4b",
+      "gitBlobSha1": "8f8cf6822dcf130284a1a3847c33be809f23d0cf",
+      "license": "MIT"
+    },
+    {
+      "path": "upstream/documentation.html",
+      "bytes": 12956,
+      "sha256": "eb09b24ffeda03d950c3b236d71d2b630d0a75fe074f673c7e375d0c3944b412",
+      "gitBlobSha1": "10521206baf3b7635dd4700ecc897d83f8f078aa",
+      "license": "MIT"
+    }
+  ],
+  "omitted": "Original MDN Math.sign polyfill and ambiguous FontAwesome4.1 binaries excluded. Official FontAwesome4.7 replacement, CodeMirror4.12.0, Lodash3.6.0, Riot1.0.2 full licenses in public."
+}
