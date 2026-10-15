@@ -51,8 +51,8 @@ export default function RollermazeGame({level,paused,muted=false,hintToken,undoT
  useEffect(()=>{if(ready)send('mute',{muted});},[ready,muted,session]);
  useEffect(()=>{if(tokens.current.hintToken===hintToken)return;tokens.current.hintToken=hintToken;callbacks.current.onStatus('出发前先看路线：紫色按钮打开距离最近的灰色通道；安全点补回 13 秒。灰色哨兵碰到后会把你送回起点，并开始追逐。提示不会改变位置或时间。');},[hintToken]);
  useEffect(()=>{if(tokens.current.undoToken===undoToken)return;tokens.current.undoToken=undoToken;callbacks.current.onStatus('实时滚动没有撤销；用上方“重来”重新开始本关。');},[undoToken]);
- const down=(event:PointerEvent<HTMLButtonElement>,code:string)=>{if(!ready||paused||pending.current||!event.isPrimary||event.button!==0)return;event.preventDefault();event.currentTarget.setPointerCapture(event.pointerId);held.current.set(event.pointerId,code);send('key',{code,down:true});};
- const up=(event:PointerEvent<HTMLButtonElement>)=>{const code=held.current.get(event.pointerId);held.current.delete(event.pointerId);if(code)send('key',{code,down:false});if(event.currentTarget.hasPointerCapture(event.pointerId))event.currentTarget.releasePointerCapture(event.pointerId);};
+ const down=(event:PointerEvent<HTMLButtonElement>,code:string)=>{if(!ready||paused||pending.current||!event.isPrimary||event.button!==0)return;event.preventDefault();event.currentTarget.setPointerCapture(event.pointerId);held.current.set(event.pointerId,code);send('key',{code,down:true,retainTap:true});};
+ const up=(event:PointerEvent<HTMLButtonElement>)=>{const code=held.current.get(event.pointerId);held.current.delete(event.pointerId);if(code)send('key',{code,down:false,retainTap:event.type==='pointerup'});if(event.currentTarget.hasPointerCapture(event.pointerId))event.currentTarget.releasePointerCapture(event.pointerId);};
  return <section className="rollermaze-host" data-rollermaze-ready={ready} data-rollermaze-state={state?.state??'loading'}>
   <header><div><span>ROLLERMAZE · PICOSONIC</span><h3>十三秒，滚进下一片树林。</h3></div><b>25 张原版地图</b></header>
   <p>{INTRO}</p>

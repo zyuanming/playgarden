@@ -20,7 +20,7 @@ function rmPump(timestamp){
   try{for(const [,callback]of batch){if(rmDisposed)break;callback(rmTime);}}catch(error){rmError(error);return;}
   if(rmTime-rmSnapshotAt>=100){rmSnapshotAt=rmTime;rmPublish();}rmSchedule();
 }
-function rmClearInput(){if(typeof gs==='undefined')return;gs.keystate=0;gs.touch=false;rmPointer=null;rmTapCode=null;}
+function rmClearInput(){if(typeof gs==='undefined')return;gs.keystate=0;gs.touch=false;rmPointer=null;rmTapCode=null;rmUnconsumedPress=null;}
 function rmStopSound(){for(const oscillator of rmOscillators){try{oscillator.stop();oscillator.disconnect();}catch{}}rmOscillators.clear();}
 function rmPause(value){rmPaused=value;rmClearInput();rmLast=null;if(rmFrame!==null){cancelAnimationFrame(rmFrame);rmFrame=null;}
  if(rmPaused||!rmVisible){rmStopSound();if(rmAudio?.state==='running')void rmAudio.suspend().catch(()=>{});}rmSchedule();rmPublish();}
@@ -54,4 +54,4 @@ function rmDispose(){if(rmDisposed)return;rmDisposed=true;rmClearInput();if(rmFr
 function rmError(error){rmSend('error',{message:'游戏资源未能启动或图形设备不可用，请重试。'});rmDispose();}
 function write(ctx,x,y,text,size,style){ctx.save();ctx.font=`bold ${size*8}px ui-monospace, monospace`;ctx.textBaseline='top';
  ctx.lineWidth=3;ctx.strokeStyle='#172331';ctx.fillStyle=style;ctx.strokeText(text,x,y,text.length*size*4);ctx.fillText(text,x,y,text.length*size*4);ctx.restore();}
-let rmPointer=null,rmTapCode=null;
+let rmPointer=null,rmTapCode=null,rmUnconsumedPress=null;

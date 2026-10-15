@@ -15,9 +15,11 @@ async function driver(page:Page,mobile:boolean){
   if(cdp){const control=page.locator(`[data-rollermaze-key="${code}"]`);await expect(control).toBeEnabled();await control.scrollIntoViewIfNeeded();const b=await control.boundingBox();if(!b)throw Error('Missing control');await cdp.send('Input.dispatchTouchEvent',{type:'touchStart',touchPoints:[{x:b.x+b.width/2,y:b.y+b.height/2,id:1}]});}
   else{await page.locator(FRAME).click({position:{x:8,y:8}});await expect((await frame(page)).locator('#osd')).toBeFocused();await page.keyboard.down(code);}held=code;
  },tap:async(code:string)=>{if(!cdp||held)throw Error('Touch tap requires an idle mobile driver');
-  const control=page.locator(`[data-rollermaze-key="${code}"]`);await expect(control).toBeEnabled();await control.scrollIntoViewIfNeeded();const b=await control.boundingBox();if(!b)throw Error('Missing control');held=code;
+  const control=page.locator(`[data-rollermaze-key="${code}"]`);await expect(control).toBeEnabled();await control.scrollIntoViewIfNeeded();const b=await control.boundingBox();if(!b)throw Error('Missing control');const before=await read(page);held=code;
   // A real short gesture: schedule release independently of a slow CDP/RAF receipt.
   await Promise.all([cdp.send('Input.dispatchTouchEvent',{type:'touchStart',touchPoints:[{x:b.x+b.width/2,y:b.y+b.height/2,id:1}]}),(async()=>{await new Promise(resolve=>setTimeout(resolve,40));await cdp.send('Input.dispatchTouchEvent',{type:'touchEnd',touchPoints:[]});})()]);held=null;
+  // Stopped before a buffered press is consumed is not a completed gesture.
+  await expect.poll(async()=>(await read(page)).moves,{intervals:[20]}).toBe(before.moves+1);
  },up:async(cancel=false)=>{if(!held)return;if(cdp)await cdp.send('Input.dispatchTouchEvent',{type:cancel?'touchCancel':'touchEnd',touchPoints:[]});else await page.keyboard.up(held);held=null;},dispose:async()=>{if(held){if(cdp)await cdp.send('Input.dispatchTouchEvent',{type:'touchEnd',touchPoints:[]});else await page.keyboard.up(held);}await cdp?.detach();}};
 }
 // One focused desktop+touch journey. All outcomes use real keyboard/touch events;

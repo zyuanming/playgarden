@@ -1,8 +1,13 @@
 // SPDX-License-Identifier: GPL-3.0-only
 const rmCodes=new Set(['ArrowLeft','ArrowRight','ArrowUp','ArrowDown','KeyW','KeyA','KeyS','KeyD','KeyZ','KeyX','Semicolon','Period']);
-function rmKey(code,down){if(!rmConnected||rmDisposed||rmPaused||!rmVisible||rmPending)return;
+function rmKey(code,down,retainTap=false){if(!rmConnected||rmDisposed||rmPaused||!rmVisible||rmPending)return;
  if(code==='KeyR'&&down&&(gs.state===1||gs.state===2)){gs.timeline.reset();rmCompleteSent=false;createobjects();rmPublish();return;}
- if(!rmCodes.has(code))return;updatekeystate({code,preventDefault(){}},down?1:0);if(down)rmFeedback(300);}
+ if(!rmCodes.has(code))return;const before=gs.keystate;updatekeystate({code,preventDefault(){}},down?1:0);
+ // A fresh host press can start and end between native updates. Preserve it
+ // only on normal pointerup; a hold already seen by logic must not add a step.
+ if(down&&retainTap&&gs.keystate!==before&&gs.moving===KEYNONE&&gs.state===STATEINPLAY)rmUnconsumedPress=code;
+ else if(!down&&rmUnconsumedPress===code){rmUnconsumedPress=null;if(retainTap)rmTap(code);}
+ if(down)rmFeedback(300);}
 // Accessible button activation is buffered until an eligible native logic step.
 // A 120/144 Hz paint callback may contain no 60 Hz update at all.
 function rmTap(code){
@@ -10,7 +15,9 @@ function rmTap(code){
  rmTapCode=code;rmFeedback(300);
 }
 function rmConsumeTap(){
- if(rmTapCode===null||gs.moving!==KEYNONE)return 0;
+ if(gs.moving!==KEYNONE)return 0;
+ rmUnconsumedPress=null; // This eligible update sees every currently held key.
+ if(rmTapCode===null)return 0;
  const before=gs.keystate,code=rmTapCode;rmTapCode=null;
  updatekeystate({code,preventDefault(){}},1);
  return gs.keystate&~before; // Release only bits added by this tap, not held input.
@@ -47,7 +54,7 @@ window.addEventListener('message',event=>{
   if(data.type==='pause')rmPause(data.paused===true);
   else if(data.type==='mute'){rmMuted=data.muted!==false;if(rmMuted)rmStopSound();rmPublish();}
   else if(data.type==='cancel')rmClearInput();
-  else if(data.type==='key')rmKey(data.code,data.down===true);
+  else if(data.type==='key')rmKey(data.code,data.down===true,data.retainTap===true);
   else if(data.type==='tap')rmTap(data.code);
   else if(data.type==='next'&&!rmPaused)rmNext();
   else if(data.type==='save-ack'&&data.saveId===rmSaveId){rmSaved=data.saved===true;rmPublish();}
