@@ -1,0 +1,1058 @@
+[
+  {
+    "id": "domineering-001",
+    "mask": 5488,
+    "cells": 6,
+    "solution": [
+      6,
+      4,
+      8
+    ]
+  },
+  {
+    "id": "domineering-002",
+    "mask": 1139,
+    "cells": 6,
+    "solution": [
+      1
+    ]
+  },
+  {
+    "id": "domineering-003",
+    "mask": 35044,
+    "cells": 6,
+    "solution": [
+      2
+    ]
+  },
+  {
+    "id": "domineering-004",
+    "mask": 13073,
+    "cells": 6,
+    "solution": [
+      8
+    ]
+  },
+  {
+    "id": "domineering-005",
+    "mask": 30496,
+    "cells": 7,
+    "solution": [
+      5,
+      12,
+      10
+    ]
+  },
+  {
+    "id": "domineering-006",
+    "mask": 4910,
+    "cells": 7,
+    "solution": [
+      5,
+      1,
+      8
+    ]
+  },
+  {
+    "id": "domineering-007",
+    "mask": 36548,
+    "cells": 7,
+    "solution": [
+      6
+    ]
+  },
+  {
+    "id": "domineering-008",
+    "mask": 44680,
+    "cells": 7,
+    "solution": [
+      3,
+      9,
+      11
+    ]
+  },
+  {
+    "id": "domineering-009",
+    "mask": 35568,
+    "cells": 7,
+    "solution": [
+      5,
+      6,
+      11
+    ]
+  },
+  {
+    "id": "domineering-010",
+    "mask": 6112,
+    "cells": 7,
+    "solution": [
+      5,
+      6,
+      8
+    ]
+  },
+  {
+    "id": "domineering-011",
+    "mask": 27874,
+    "cells": 8,
+    "solution": [
+      6,
+      13,
+      1
+    ]
+  },
+  {
+    "id": "domineering-012",
+    "mask": 9047,
+    "cells": 8,
+    "solution": [
+      0,
+      1,
+      9
+    ]
+  },
+  {
+    "id": "domineering-013",
+    "mask": 1902,
+    "cells": 8,
+    "solution": [
+      2,
+      8,
+      1
+    ]
+  },
+  {
+    "id": "domineering-014",
+    "mask": 15728,
+    "cells": 8,
+    "solution": [
+      6,
+      4,
+      8
+    ]
+  },
+  {
+    "id": "domineering-015",
+    "mask": 35958,
+    "cells": 8,
+    "solution": [
+      1,
+      10,
+      2
+    ]
+  },
+  {
+    "id": "domineering-016",
+    "mask": 52337,
+    "cells": 8,
+    "solution": [
+      6,
+      4,
+      11
+    ]
+  },
+  {
+    "id": "domineering-017",
+    "mask": 2812,
+    "cells": 8,
+    "solution": [
+      2,
+      4,
+      3
+    ]
+  },
+  {
+    "id": "domineering-018",
+    "mask": 52898,
+    "cells": 8,
+    "solution": [
+      10
+    ]
+  },
+  {
+    "id": "domineering-019",
+    "mask": 28236,
+    "cells": 8,
+    "solution": [
+      9,
+      2,
+      6
+    ]
+  },
+  {
+    "id": "domineering-020",
+    "mask": 25687,
+    "cells": 8,
+    "solution": [
+      0,
+      1,
+      10
+    ]
+  },
+  {
+    "id": "domineering-021",
+    "mask": 13030,
+    "cells": 8,
+    "solution": [
+      1,
+      6,
+      9
+    ]
+  },
+  {
+    "id": "domineering-022",
+    "mask": 1771,
+    "cells": 8,
+    "solution": [
+      6,
+      0,
+      3
+    ]
+  },
+  {
+    "id": "domineering-023",
+    "mask": 52914,
+    "cells": 9,
+    "solution": [
+      10,
+      4,
+      7
+    ]
+  },
+  {
+    "id": "domineering-024",
+    "mask": 58478,
+    "cells": 9,
+    "solution": [
+      1,
+      2,
+      10
+    ]
+  },
+  {
+    "id": "domineering-025",
+    "mask": 32208,
+    "cells": 9,
+    "solution": [
+      6,
+      12,
+      4
+    ]
+  },
+  {
+    "id": "domineering-026",
+    "mask": 21884,
+    "cells": 9,
+    "solution": [
+      2,
+      4,
+      8
+    ]
+  },
+  {
+    "id": "domineering-027",
+    "mask": 15075,
+    "cells": 9,
+    "solution": [
+      1,
+      6,
+      9
+    ]
+  },
+  {
+    "id": "domineering-028",
+    "mask": 8014,
+    "cells": 9,
+    "solution": [
+      8,
+      1,
+      6
+    ]
+  },
+  {
+    "id": "domineering-029",
+    "mask": 4603,
+    "cells": 9,
+    "solution": [
+      0,
+      5,
+      3
+    ]
+  },
+  {
+    "id": "domineering-030",
+    "mask": 1903,
+    "cells": 9,
+    "solution": [
+      2,
+      0,
+      5
+    ]
+  },
+  {
+    "id": "domineering-031",
+    "mask": 64904,
+    "cells": 9,
+    "solution": [
+      7,
+      12,
+      10
+    ]
+  },
+  {
+    "id": "domineering-032",
+    "mask": 22357,
+    "cells": 9,
+    "solution": [
+      0,
+      8,
+      2
+    ]
+  },
+  {
+    "id": "domineering-033",
+    "mask": 17879,
+    "cells": 9,
+    "solution": [
+      2,
+      0,
+      4
+    ]
+  },
+  {
+    "id": "domineering-034",
+    "mask": 28454,
+    "cells": 9,
+    "solution": [
+      9,
+      1,
+      10
+    ]
+  },
+  {
+    "id": "domineering-035",
+    "mask": 30161,
+    "cells": 9,
+    "solution": [
+      6,
+      12,
+      0
+    ]
+  },
+  {
+    "id": "domineering-036",
+    "mask": 36761,
+    "cells": 9,
+    "solution": [
+      3,
+      8,
+      11
+    ]
+  },
+  {
+    "id": "domineering-037",
+    "mask": 3263,
+    "cells": 9,
+    "solution": [
+      1,
+      2,
+      7
+    ]
+  },
+  {
+    "id": "domineering-038",
+    "mask": 12209,
+    "cells": 9,
+    "solution": [
+      0,
+      8,
+      7
+    ]
+  },
+  {
+    "id": "domineering-039",
+    "mask": 15731,
+    "cells": 10,
+    "solution": [
+      1,
+      10,
+      8
+    ]
+  },
+  {
+    "id": "domineering-040",
+    "mask": 58967,
+    "cells": 10,
+    "solution": [
+      9,
+      0,
+      10
+    ]
+  },
+  {
+    "id": "domineering-041",
+    "mask": 65314,
+    "cells": 10,
+    "solution": [
+      8,
+      9,
+      11,
+      13,
+      1
+    ]
+  },
+  {
+    "id": "domineering-042",
+    "mask": 18301,
+    "cells": 10,
+    "solution": [
+      5,
+      2,
+      0
+    ]
+  },
+  {
+    "id": "domineering-043",
+    "mask": 5503,
+    "cells": 10,
+    "solution": [
+      1,
+      2,
+      0
+    ]
+  },
+  {
+    "id": "domineering-044",
+    "mask": 28628,
+    "cells": 10,
+    "solution": [
+      7,
+      8,
+      10
+    ]
+  },
+  {
+    "id": "domineering-045",
+    "mask": 51708,
+    "cells": 10,
+    "solution": [
+      2,
+      4,
+      11
+    ]
+  },
+  {
+    "id": "domineering-046",
+    "mask": 63092,
+    "cells": 10,
+    "solution": [
+      10,
+      4,
+      9
+    ]
+  },
+  {
+    "id": "domineering-047",
+    "mask": 11257,
+    "cells": 10,
+    "solution": [
+      4,
+      5,
+      3
+    ]
+  },
+  {
+    "id": "domineering-048",
+    "mask": 55244,
+    "cells": 10,
+    "solution": [
+      2,
+      8,
+      10
+    ]
+  },
+  {
+    "id": "domineering-049",
+    "mask": 64913,
+    "cells": 10,
+    "solution": [
+      7,
+      12,
+      10
+    ]
+  },
+  {
+    "id": "domineering-050",
+    "mask": 56296,
+    "cells": 10,
+    "solution": [
+      5,
+      6,
+      11
+    ]
+  },
+  {
+    "id": "domineering-051",
+    "mask": 36602,
+    "cells": 10,
+    "solution": [
+      5,
+      6,
+      11
+    ]
+  },
+  {
+    "id": "domineering-052",
+    "mask": 11983,
+    "cells": 10,
+    "solution": [
+      6,
+      0,
+      3
+    ]
+  },
+  {
+    "id": "domineering-053",
+    "mask": 52903,
+    "cells": 10,
+    "solution": [
+      10,
+      0,
+      5
+    ]
+  },
+  {
+    "id": "domineering-054",
+    "mask": 5999,
+    "cells": 10,
+    "solution": [
+      2,
+      0,
+      5
+    ]
+  },
+  {
+    "id": "domineering-055",
+    "mask": 25847,
+    "cells": 10,
+    "solution": [
+      1,
+      6,
+      10
+    ]
+  },
+  {
+    "id": "domineering-056",
+    "mask": 51902,
+    "cells": 10,
+    "solution": [
+      1,
+      2,
+      11
+    ]
+  },
+  {
+    "id": "domineering-057",
+    "mask": 61292,
+    "cells": 11,
+    "solution": [
+      10,
+      2,
+      5
+    ]
+  },
+  {
+    "id": "domineering-058",
+    "mask": 22011,
+    "cells": 11,
+    "solution": [
+      0,
+      5,
+      3
+    ]
+  },
+  {
+    "id": "domineering-059",
+    "mask": 28350,
+    "cells": 11,
+    "solution": [
+      10,
+      1,
+      3,
+      4,
+      9
+    ]
+  },
+  {
+    "id": "domineering-060",
+    "mask": 15263,
+    "cells": 11,
+    "solution": [
+      8,
+      0,
+      3
+    ]
+  },
+  {
+    "id": "domineering-061",
+    "mask": 39930,
+    "cells": 11,
+    "solution": [
+      1,
+      6,
+      4
+    ]
+  },
+  {
+    "id": "domineering-062",
+    "mask": 13279,
+    "cells": 11,
+    "solution": [
+      0,
+      1,
+      8,
+      6,
+      9
+    ]
+  },
+  {
+    "id": "domineering-063",
+    "mask": 28643,
+    "cells": 11,
+    "solution": [
+      6,
+      0,
+      5,
+      13,
+      7
+    ]
+  },
+  {
+    "id": "domineering-064",
+    "mask": 64302,
+    "cells": 11,
+    "solution": [
+      8,
+      1,
+      11,
+      13,
+      5
+    ]
+  },
+  {
+    "id": "domineering-065",
+    "mask": 30582,
+    "cells": 11,
+    "solution": [
+      1,
+      8,
+      10,
+      12,
+      2
+    ]
+  },
+  {
+    "id": "domineering-066",
+    "mask": 60371,
+    "cells": 11,
+    "solution": [
+      9,
+      0,
+      4,
+      6,
+      11
+    ]
+  },
+  {
+    "id": "domineering-067",
+    "mask": 30712,
+    "cells": 11,
+    "solution": [
+      5,
+      6,
+      10,
+      12,
+      4
+    ]
+  },
+  {
+    "id": "domineering-068",
+    "mask": 31722,
+    "cells": 11,
+    "solution": [
+      9,
+      5,
+      3
+    ]
+  },
+  {
+    "id": "domineering-069",
+    "mask": 30198,
+    "cells": 11,
+    "solution": [
+      1,
+      6,
+      10,
+      12,
+      4
+    ]
+  },
+  {
+    "id": "domineering-070",
+    "mask": 32710,
+    "cells": 11,
+    "solution": [
+      9,
+      1,
+      6
+    ]
+  },
+  {
+    "id": "domineering-071",
+    "mask": 29119,
+    "cells": 11,
+    "solution": [
+      1,
+      2,
+      8,
+      13,
+      0
+    ]
+  },
+  {
+    "id": "domineering-072",
+    "mask": 61262,
+    "cells": 11,
+    "solution": [
+      10,
+      1,
+      9
+    ]
+  },
+  {
+    "id": "domineering-073",
+    "mask": 32234,
+    "cells": 11,
+    "solution": [
+      6,
+      12,
+      1
+    ]
+  },
+  {
+    "id": "domineering-074",
+    "mask": 25471,
+    "cells": 11,
+    "solution": [
+      1,
+      2,
+      9
+    ]
+  },
+  {
+    "id": "domineering-075",
+    "mask": 22518,
+    "cells": 11,
+    "solution": [
+      5,
+      1,
+      4,
+      6,
+      10
+    ]
+  },
+  {
+    "id": "domineering-076",
+    "mask": 64462,
+    "cells": 12,
+    "solution": [
+      2,
+      8,
+      11,
+      12,
+      3
+    ]
+  },
+  {
+    "id": "domineering-077",
+    "mask": 61294,
+    "cells": 12,
+    "solution": [
+      2,
+      8,
+      10
+    ]
+  },
+  {
+    "id": "domineering-078",
+    "mask": 64189,
+    "cells": 12,
+    "solution": [
+      0,
+      2,
+      9,
+      14,
+      7
+    ]
+  },
+  {
+    "id": "domineering-079",
+    "mask": 39927,
+    "cells": 12,
+    "solution": [
+      0,
+      1,
+      5,
+      6,
+      8
+    ]
+  },
+  {
+    "id": "domineering-080",
+    "mask": 57274,
+    "cells": 12,
+    "solution": [
+      1,
+      8,
+      10
+    ]
+  },
+  {
+    "id": "domineering-081",
+    "mask": 16111,
+    "cells": 12,
+    "solution": [
+      2,
+      0,
+      9,
+      10,
+      3
+    ]
+  },
+  {
+    "id": "domineering-082",
+    "mask": 27391,
+    "cells": 12,
+    "solution": [
+      1,
+      2,
+      0,
+      6,
+      9
+    ]
+  },
+  {
+    "id": "domineering-083",
+    "mask": 64892,
+    "cells": 12,
+    "solution": [
+      10,
+      2,
+      8,
+      4,
+      11
+    ]
+  },
+  {
+    "id": "domineering-084",
+    "mask": 61363,
+    "cells": 12,
+    "solution": [
+      0,
+      8,
+      7,
+      13,
+      1
+    ]
+  },
+  {
+    "id": "domineering-085",
+    "mask": 32491,
+    "cells": 12,
+    "solution": [
+      6,
+      0,
+      3,
+      12,
+      5
+    ]
+  },
+  {
+    "id": "domineering-086",
+    "mask": 48115,
+    "cells": 12,
+    "solution": [
+      1,
+      6,
+      4,
+      12,
+      11
+    ]
+  },
+  {
+    "id": "domineering-087",
+    "mask": 28662,
+    "cells": 12,
+    "solution": [
+      1,
+      6,
+      9,
+      10,
+      4
+    ]
+  },
+  {
+    "id": "domineering-088",
+    "mask": 55215,
+    "cells": 12,
+    "solution": [
+      5,
+      0,
+      3,
+      14,
+      8
+    ]
+  },
+  {
+    "id": "domineering-089",
+    "mask": 53242,
+    "cells": 12,
+    "solution": [
+      3,
+      4,
+      10,
+      8,
+      11
+    ]
+  },
+  {
+    "id": "domineering-090",
+    "mask": 64469,
+    "cells": 12,
+    "solution": [
+      2,
+      8,
+      11,
+      12,
+      0
+    ]
+  },
+  {
+    "id": "domineering-091",
+    "mask": 65143,
+    "cells": 13,
+    "solution": [
+      1,
+      9,
+      11,
+      12,
+      0
+    ]
+  },
+  {
+    "id": "domineering-092",
+    "mask": 62911,
+    "cells": 13,
+    "solution": [
+      0,
+      1,
+      3,
+      12,
+      10
+    ]
+  },
+  {
+    "id": "domineering-093",
+    "mask": 49015,
+    "cells": 13,
+    "solution": [
+      1,
+      8,
+      6,
+      12,
+      0
+    ]
+  },
+  {
+    "id": "domineering-094",
+    "mask": 40951,
+    "cells": 13,
+    "solution": [
+      1,
+      6,
+      0,
+      8,
+      11
+    ]
+  },
+  {
+    "id": "domineering-095",
+    "mask": 61310,
+    "cells": 13,
+    "solution": [
+      2,
+      4,
+      10,
+      8,
+      11
+    ]
+  },
+  {
+    "id": "domineering-096",
+    "mask": 32755,
+    "cells": 13,
+    "solution": [
+      1,
+      6,
+      9,
+      10,
+      0
+    ]
+  },
+  {
+    "id": "domineering-097",
+    "mask": 56827,
+    "cells": 13,
+    "solution": [
+      1,
+      6,
+      10
+    ]
+  },
+  {
+    "id": "domineering-098",
+    "mask": 60925,
+    "cells": 13,
+    "solution": [
+      0,
+      2,
+      6,
+      13,
+      7
+    ]
+  },
+  {
+    "id": "domineering-099",
+    "mask": 40957,
+    "cells": 13,
+    "solution": [
+      2,
+      4,
+      3,
+      8,
+      11
+    ]
+  },
+  {
+    "id": "domineering-100",
+    "mask": 61403,
+    "cells": 13,
+    "solution": [
+      6,
+      0,
+      4,
+      13,
+      3
+    ]
+  }
+]
