@@ -1,3 +1,4 @@
+import domineeringLevels from '../src/games/domineeringLevels.json' with {type:'json'};
 import elevatorSagaLevels from '../src/games/elevatorSagaLevels.json' with {type:'json'};
 import gridGardenLevels from '../src/games/gridGardenLevels.json' with {type:'json'};
 import { swapMaps } from "../src/vendor/swapMaps";
@@ -154,6 +155,7 @@ import { sortingNetworkLevels } from "../src/games/sortingNetworkLogic";
 import { voxelViewsLevels } from "../src/games/voxelViewsLogic";
 import { cubeNetLevels } from "../src/games/cubeNetLogic";
 const packs = {
+  domineering: domineeringLevels,
   "grid-garden": gridGardenLevels,
   "elevator-saga": elevatorSagaLevels,
   "hyperspace-garbage-collection": [1,2,3,4],
@@ -379,8 +381,8 @@ describe("Scalable catalog contract", () => {
       }
     }),
   );
-  it("counts only 181 real games and 3177 levels, not the roadmap", () => {
-    expect(games).toHaveLength(181);
-    expect(games.reduce((sum, g) => sum + g.levelCount, 0)).toBe(3177);
+  it("counts only 182 real games and 3277 levels, not the roadmap", () => {
+    expect(games).toHaveLength(182);
+    expect(games.reduce((sum, g) => sum + g.levelCount, 0)).toBe(3277);
   });
 });
