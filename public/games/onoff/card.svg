@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 768 480"><!-- ONOFF original SVG character © 2018 Daniel Marino and Brad Dunbar, MIT. Playgarden composition GPL-3.0-only. --><rect width="768" height="480" fill="#f3f3ee"/><rect x="384" width="384" height="480" fill="#333"/><path d="M0 348h268v132H0zm460 0h308v132H460z" fill="#798579"/><path d="M290 316h146v18H290z" fill="#b8c7b2" opacity=".4"/><g transform="translate(200 198) scale(3)"><svg id="guy">
+      <g id="inner-guy">
+        <rect class="accent" x="0" y="17" width="24" height="21"/>
+        <rect id="left_foot" class="accent" x="4" y="38" width="6" height="10"/>
+        <rect id="right_foot" class="accent" x="14" y="38" width="6" height="10"/>
+        <g id="head">
+          <rect class="accent" x="0" y="0" width="26" height="19"/>
+          <rect id="face" x="4" y="3" width="20" height="14"/>
+          <rect class="accent" x="9" y="7" width="4" height="4"/>
+          <rect class="accent" x="17" y="7" width="4" height="4"/>
+        </g>
+      </g>
+    </svg></g><path d="m570 180 12 26 28 4-20 20 5 28-25-14-25 14 5-28-20-20 28-4z" fill="#e6e5cb"/><style>.accent{fill:#333}#face{fill:#f3f3ee}</style></svg>

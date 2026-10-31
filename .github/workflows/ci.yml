@@ -66,6 +66,24 @@ jobs:
           name: black-hole-square-build-identity
           path: black-hole-square-build-identity.json
           retention-days: 3
+      - name: Identify the compiled Rollermaze resources
+        run: node scripts/rollermaze/build-identity.mjs
+      - name: Keep exact compiled Rollermaze bytes for deployment verification
+        uses: actions/upload-artifact@v4
+        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+        with:
+          name: rollermaze-build-identity
+          path: rollermaze-build-identity.json
+          retention-days: 3
+      - name: Identify the compiled ONOFF resources
+        run: node scripts/onoff/build-identity.mjs
+      - name: Keep exact compiled ONOFF bytes for deployment verification
+        uses: actions/upload-artifact@v4
+        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+        with:
+          name: onoff-build-identity
+          path: onoff-build-identity.json
+          retention-days: 3
       - name: Identify the exact build
         run: |
           node --input-type=module <<'NODE'
@@ -178,6 +196,18 @@ jobs:
         with:
           name: black-hole-square-build-identity
           path: .build-identities
+      - name: Read the same build's Rollermaze resource identity
+        uses: actions/download-artifact@v4
+        if: steps.current.outputs.deploy == 'true'
+        with:
+          name: rollermaze-build-identity
+          path: .build-identities
+      - name: Read the same build's ONOFF resource identity
+        uses: actions/download-artifact@v4
+        if: steps.current.outputs.deploy == 'true'
+        with:
+          name: onoff-build-identity
+          path: .build-identities
       - name: Verify public build identity and entry resources without repeating E2E
         if: steps.current.outputs.deploy == 'true'
         env:
@@ -226,11 +256,13 @@ jobs:
           const asteroidsChunks=new Set();
           const beatrixChunks=new Set();
           const vikingChunks=new Set();
+          const entryResources=new Map();
           const batchChunks={PondGame:new Set(),BlicblockGame:new Set(),CardQOriginal:new Set(),MakeMazeOriginal:new Set(),CountObserveOriginal:new Set(),ZopGame:new Set(),SwapGame:new Set(),HealEmAllOriginal:new Set(),FlexboxFroggy:new Set(),MonkeyRallyOriginal:new Set(),CssDiner:new Set(),HyperspaceGarbageCollection:new Set(),Avabranch:new Set(),GridGarden:new Set(),ElevatorSaga:new Set(),GridlandOriginal:new Set(),SqlMystery:new Set()};
           for(const asset of paths){
             if(asset.origin!==new URL(url).origin)continue;
             const r=await fetch(asset);if(!r.ok)throw Error(`Missing entry resource: ${asset.pathname}`);
-            const text=await r.text();if(text.length<100 || /^\s*<!doctype html/i.test(text))throw Error(`Invalid entry resource: ${asset.pathname}`);
+            const bytes=Buffer.from(await r.arrayBuffer()),text=bytes.toString('utf8');if(text.length<100 || /^\s*<!doctype html/i.test(text))throw Error(`Invalid entry resource: ${asset.pathname}`);
+            entryResources.set(asset.href,bytes);
             console.log('Entry resource OK:',asset.pathname);
             for(const match of text.matchAll(/\.\/HexaBattleGame-[a-zA-Z0-9_-]+\.js/g))hexaChunks.add(new URL(match[0],asset).href);
             for(const match of text.matchAll(/\.\/HexahedralGame-[a-zA-Z0-9_-]+\.js/g))hexahedralChunks.add(new URL(match[0],asset).href);
@@ -354,6 +386,50 @@ jobs:
             const r=await fetch(new URL(row.path,url),{cache:'no-store'}),bytes=Buffer.from(await r.arrayBuffer());
             if(!r.ok||bytes.length!==row.bytes||createHash('sha256').update(bytes).digest('hex')!==row.sha256)throw Error('Black Hole Square public resource mismatch '+row.path);
             console.log('Black Hole Square exact resource OK:',row.path);
+          }
+          const rollermazeIdentity=JSON.parse(readFileSync('.build-identities/rollermaze-build-identity.json','utf8'));
+          if(rollermazeIdentity.commit!==sha)throw Error('Rollermaze identity belongs to a different build');
+          const {entry:rollermazeEntry,host:rollermazeHost}=rollermazeIdentity;
+          if(!/^assets\/index-[a-zA-Z0-9_-]+\.js$/.test(rollermazeEntry)||!/^assets\/RollermazeGame-[a-zA-Z0-9_-]+\.js$/.test(rollermazeHost?.script)||!/^assets\/RollermazeGame-[a-zA-Z0-9_-]+\.css$/.test(rollermazeHost?.style))throw Error('Invalid Rollermaze host identity paths');
+          const rollermazeEntryBytes=entryResources.get(new URL(rollermazeEntry,url).href);
+          if(!rollermazeEntryBytes)throw Error('Rollermaze identity entry is not referenced by public HTML');
+          const rollermazeEntryText=rollermazeEntryBytes.toString('utf8');
+          const rollermazeScripts=[...new Set([...rollermazeEntryText.matchAll(/\bimport\("\.\/(RollermazeGame-[a-zA-Z0-9_-]+\.js)"\)/g)].map(match=>'assets/'+match[1]))];
+          const rollermazeStyles=[...new Set([...rollermazeEntryText.matchAll(/"(assets\/RollermazeGame-[a-zA-Z0-9_-]+\.css)"/g)].map(match=>match[1]))];
+          if(rollermazeScripts.length!==1||rollermazeScripts[0]!==rollermazeHost.script||rollermazeStyles.length!==1||rollermazeStyles[0]!==rollermazeHost.style)throw Error('Public entry does not reference the exact Rollermaze host runtime/style');
+          const rollermazeRequired=['games/rollermaze/runtime.js','games/rollermaze/source.tar.gz',rollermazeEntry,rollermazeHost.script,rollermazeHost.style];
+          if(!Array.isArray(rollermazeIdentity.files)||!rollermazeRequired.every(path=>rollermazeIdentity.files.some(row=>row?.path===path)))throw Error('Incomplete Rollermaze identity');
+          const rollermazeSeen=new Set();
+          for(const row of rollermazeIdentity.files){
+            const safeGamePath=typeof row?.path==='string'&&/^games\/rollermaze\/(?:[a-zA-Z0-9_-][a-zA-Z0-9_.-]*\/)*[a-zA-Z0-9_-][a-zA-Z0-9_.-]*$/.test(row.path)&&!row.path.includes('..');
+            if(!row||(!safeGamePath&&![rollermazeEntry,rollermazeHost.script,rollermazeHost.style].includes(row.path))||rollermazeSeen.has(row.path)||!Number.isSafeInteger(row.bytes)||row.bytes<1||!/^[a-f0-9]{64}$/.test(row.sha256))throw Error('Invalid Rollermaze resource identity');
+            rollermazeSeen.add(row.path);
+            let bytes=entryResources.get(new URL(row.path,url).href);
+            if(!bytes){const r=await fetch(new URL(row.path,url),{cache:'no-store'});if(!r.ok)throw Error('Missing Rollermaze public resource '+row.path);bytes=Buffer.from(await r.arrayBuffer());}
+            if(bytes.length!==row.bytes||createHash('sha256').update(bytes).digest('hex')!==row.sha256)throw Error('Rollermaze public resource mismatch '+row.path);
+            console.log('Rollermaze exact resource OK:',row.path);
+          }
+          const onoffIdentity=JSON.parse(readFileSync('.build-identities/onoff-build-identity.json','utf8'));
+          if(onoffIdentity.commit!==sha)throw Error('ONOFF identity belongs to a different build');
+          const {entry:onoffEntry,host:onoffHost}=onoffIdentity;
+          if(!/^assets\/index-[a-zA-Z0-9_-]+\.js$/.test(onoffEntry)||!/^assets\/OnoffGame-[a-zA-Z0-9_-]+\.js$/.test(onoffHost?.script)||!/^assets\/OnoffGame-[a-zA-Z0-9_-]+\.css$/.test(onoffHost?.style))throw Error('Invalid ONOFF host identity paths');
+          const onoffEntryBytes=entryResources.get(new URL(onoffEntry,url).href);
+          if(!onoffEntryBytes)throw Error('ONOFF identity entry is not referenced by public HTML');
+          const onoffEntryText=onoffEntryBytes.toString('utf8');
+          const onoffScripts=[...new Set([...onoffEntryText.matchAll(/\bimport\("\.\/(OnoffGame-[a-zA-Z0-9_-]+\.js)"\)/g)].map(match=>'assets/'+match[1]))];
+          const onoffStyles=[...new Set([...onoffEntryText.matchAll(/"(assets\/OnoffGame-[a-zA-Z0-9_-]+\.css)"/g)].map(match=>match[1]))];
+          if(onoffScripts.length!==1||onoffScripts[0]!==onoffHost.script||onoffStyles.length!==1||onoffStyles[0]!==onoffHost.style)throw Error('Public entry does not reference the exact ONOFF host runtime/style');
+          const onoffRequired=['games/onoff/runtime.js','games/onoff/source.tar.gz',onoffEntry,onoffHost.script,onoffHost.style];
+          if(!Array.isArray(onoffIdentity.files)||!onoffRequired.every(path=>onoffIdentity.files.some(row=>row?.path===path)))throw Error('Incomplete ONOFF identity');
+          const onoffSeen=new Set();
+          for(const row of onoffIdentity.files){
+            const safeGamePath=typeof row?.path==='string'&&/^games\/onoff\/(?:[a-zA-Z0-9_-][a-zA-Z0-9_.-]*\/)*[a-zA-Z0-9_-][a-zA-Z0-9_.-]*$/.test(row.path)&&!row.path.includes('..');
+            if(!row||(!safeGamePath&&![onoffEntry,onoffHost.script,onoffHost.style].includes(row.path))||onoffSeen.has(row.path)||!Number.isSafeInteger(row.bytes)||row.bytes<1||!/^[a-f0-9]{64}$/.test(row.sha256))throw Error('Invalid ONOFF resource identity');
+            onoffSeen.add(row.path);
+            let bytes=entryResources.get(new URL(row.path,url).href);
+            if(!bytes){const r=await fetch(new URL(row.path,url),{cache:'no-store'});if(!r.ok)throw Error('Missing ONOFF public resource '+row.path);bytes=Buffer.from(await r.arrayBuffer());}
+            if(bytes.length!==row.bytes||createHash('sha256').update(bytes).digest('hex')!==row.sha256)throw Error('ONOFF public resource mismatch '+row.path);
+            console.log('ONOFF exact resource OK:',row.path);
           }
           console.log('Public commit and entry verified:',sha,url);
           NODE

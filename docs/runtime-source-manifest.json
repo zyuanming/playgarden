@@ -339,7 +339,7 @@
     {
       "name": "A Dark Room",
       "version": "d6d1c1b9875bb4764cdb950e8cf65ba51847f0e9 (2020-08-16)",
-      "license": "MPL-2.0; additionally GPL-3.0-only in the combined work under MPL \u00a73.3",
+      "license": "MPL-2.0; additionally GPL-3.0-only in the combined work under MPL §3.3",
       "source": "https://github.com/doublespeakgames/adarkroom/tree/d6d1c1b9875bb4764cdb950e8cf65ba51847f0e9",
       "preferredSource": [
         "vendor/adr-original/upstream",
@@ -898,6 +898,42 @@
         "scripts/black-hole-square/verify-sources.py"
       ],
       "scope": "All 18 original puzzles with original budgets and native title/guide/ending. No current gated revision or font binary. Module source archive includes exact locked host build context; full host remains in this repository."
+    },
+    {
+      "name": "Rollermaze",
+      "version": "2a08f83fa3935fc981ac6efce26e2b9d6d34a5ed",
+      "license": "MIT original; public-domain MicroW; GPL-3.0-only new adapter",
+      "source": "https://github.com/picosonic/js13k-2024/tree/2a08f83fa3935fc981ac6efce26e2b9d6d34a5ed",
+      "preferredSource": [
+        "third_party/rollermaze/original/",
+        "third_party/rollermaze/adapted-src/",
+        "third_party/rollermaze/bridge-src/",
+        "src/games/RollermazeGame.tsx"
+      ],
+      "buildSources": [
+        "scripts/rollermaze/build.mjs",
+        "scripts/rollermaze/verify-sources.py",
+        "scripts/rollermaze/package-source.py"
+      ],
+      "scope": "Complete 25 exact original TMX/runtime maps; timed rolling, switches, safe spots and sentinels. Original fonts, specific music arrangement/MIDI, editor image and third-party promotional screenshots excluded. System font and original feedback replace them. Offline opaque-frame integration with module-source archive."
+    },
+    {
+      "name": "ONOFF",
+      "version": "cb1e2e4615af6195aeb0dade06c08738511dd3b6",
+      "license": "MIT original code, SVG artwork, custom glyphs and composed synthesized audio; TinyMusic MIT; GPL-3.0-only new adapter",
+      "source": "https://github.com/starzonmyarmz/js13k-2018/tree/cb1e2e4615af6195aeb0dade06c08738511dd3b6",
+      "preferredSource": [
+        "third_party/onoff/original/",
+        "third_party/onoff/adapted/",
+        "src/games/OnoffGame.tsx",
+        "src/games/onoffGame.css"
+      ],
+      "buildSources": [
+        "scripts/onoff/build.mjs",
+        "scripts/onoff/package-source.py",
+        "scripts/onoff/verify-sources.py"
+      ],
+      "scope": "Complete 25-level original campaign including original random level definitions 12/14/17, layer-dependent platforms/spikes and star goals. All original runtime art and note scores retained. Optional original editor is included as editable source only; no external font/audio/images are required. Module archive includes exact locked host build context."
     }
   ]
 }
