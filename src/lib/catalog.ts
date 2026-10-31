@@ -183,6 +183,7 @@ export const GAME_IDS = [
   "black-hole-square",
   "rollermaze",
   "onoff",
+  "domineering",
 ] as const;
 export type GameId = (typeof GAME_IDS)[number];
 export type Category =

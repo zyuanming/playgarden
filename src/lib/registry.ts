@@ -34,6 +34,13 @@ const original = {
 } as const;
 export const games: GameDefinition[] = [
   {
+    id: "domineering", title: "横竖争地", subtitle: "你放竖牌，电脑放横牌。留住自己的路，让对手无处落子。",
+    category: "逻辑思维", difficulty: "进阶", tone: "green", levelCount: 100,
+    artwork: { url: "./domineering-art.svg", position: "center", size: "cover" },
+    source: { ...original, notes: "经典 Domineering 方向对弈规则的原创实现、100 个原创固定开局与程序化图形；未使用第三方源码或素材。" },
+    component: lazy(() => import("../games/DomineeringGarden")),
+  },
+  {
     id: "light",
     title: "光线实验室",
     subtitle: "调整镜子与光路，让光线点亮目标吧。",
