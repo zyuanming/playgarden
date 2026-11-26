@@ -148,8 +148,53 @@ test('Descensus 2 original: genuine 1000m journey, loss, timer, bar physics, pau
  console.log(info.project.name,'natural loss and restart', (await read()).resetCount);
  await info.attach('natural-loss-and-restart.json',{body:JSON.stringify(negative),contentType:'application/json'});
  expect(firstLoss).not.toBeNull();expect(invincible).toBe(true);expect(seenLost).toBe(true);expect((await read()).resetCount).toBe(2);expect((await read()).lives).toBe(5);
+ // Check the actual 30-second clock separately. A successful descent is not
+ // required to take a timeout penalty. Hold the ball in the clear opening
+ // with an ordinary drawn bar; do not change the clock, physics or lives.
+ const freshRound=async()=>{
+  await act(page.getByRole('button',{name:'重来',exact:true}));
+  await expect(page.locator('[data-descensus-ready]')).toHaveAttribute('data-descensus-ready','true');
+  await canvas.scrollIntoViewIfNeeded();
+  await act(frame.locator('#start'));
+  await expect.poll(async()=>(await read()).state).toBe('Active');
+  await canvas.scrollIntoViewIfNeeded();
+ };
+ await freshRound();
+ const opening=await read();
+ expect(opening.nextCheckpointHeight).toBe(900);
+ expect(opening.lives).toBe(5);
+ expect(opening.lossCount).toBe(0);
+ let observedClockLoss:Live|null=null, clockBefore=0;
+ let lastCatch=Infinity, lastDrawTime=-1000;
+ const clockDeadline=Date.now()+90000;
+ while(Date.now()<clockDeadline){
+  const snapshot=await read();
+  expect(snapshot.resetCount).toBe(opening.resetCount);
+  expect(snapshot.nextCheckpointHeight,'Stay in the clear opening before the first checkpoint').toBe(900);
+  if(snapshot.lossCount>opening.lossCount){observedClockLoss=snapshot;break;}
+  clockBefore=Math.max(clockBefore,snapshot.timeSinceLastCheckpoint);
+  const [x,y]=snapshot.ball.position, elapsed=snapshot.timeElapsed-lastDrawTime;
+  // Redraw just under the ball when the lightly tilted bar starts to slip.
+  if(elapsed>400&&(lastCatch-y>1.6||(elapsed>2000&&snapshot.ball.velocity[1]<-2))){
+   const center=snapshot.camera.x+x*64, under=snapshot.camera.y-y*64+125;
+   await draw(center-465,under,center+465,under);
+   lastCatch=y;
+   lastDrawTime=snapshot.timeElapsed;
+  }
+  await waitWall(100);
+ }
+ expect(observedClockLoss?.lastLoss,'An actual timeout, not a saw hit, must cost the life').toBe('timeout');
+ expect(clockBefore).toBeGreaterThan(28000);
+ expect(observedClockLoss?.lives).toBe(4);
+ expect(observedClockLoss?.lossCount).toBe(opening.lossCount+1);
+ expect(observedClockLoss?.state).toBe('Dying');
+ expect(observedClockLoss?.nextCheckpointHeight).toBe(900);
+ expect(observedClockLoss?.timeSinceLastCheckpoint).toBe(0);
+ console.log(info.project.name,'native checkpoint timeout',clockBefore,observedClockLoss?.lives);
+ await info.attach('native-checkpoint-timeout.json',{body:JSON.stringify({clockBefore,loss:observedClockLoss}),contentType:'application/json'});
+
  // A new original round: no RNG override, save injection, teleport or life edits.
- await act(page.getByRole('button',{name:'重来',exact:true}));await expect(page.locator('[data-descensus-ready]')).toHaveAttribute('data-descensus-ready','true');await act(frame.locator('#start'));await expect.poll(async()=>(await read()).state).toBe('Active');await canvas.scrollIntoViewIfNeeded();
+ await freshRound();
  drawBox=(await canvas.boundingBox())!;expect(drawBox.y).toBeGreaterThanOrEqual(-1);expect(drawBox.y+drawBox.height).toBeLessThanOrEqual(page.viewportSize()!.height+1);
  const trace:unknown[]=[],cycles:unknown[]=[],observations:unknown[]=[],recentInputs:unknown[]=[],shots=new Set<string>(),terrain=new Set<number>(),checkpointValues=new Set<number>(),windZonesSeen=new Set<number>();const windZones=[[600,575],[500,475],[350,325],[275,250],[100,75],[75,50]];let priorCheckpoint=900;const decide=createController();let minHeight=1000;const journeyDeadline=Date.now()+360000;
  const pendingShots:Promise<void>[]=[],shotErrors:unknown[]=[],shotTimings:unknown[]=[];
@@ -218,7 +263,7 @@ test('Descensus 2 original: genuine 1000m journey, loss, timer, bar physics, pau
   }
   await Promise.all(pendingShots);if(shotErrors.length)throw shotErrors[0];
   const won=await read();observeJourney(won,true);console.log(info.project.name,'journey terminal',won.state,won.height,won.lives,won.resetCount);trace.push({final:won});expect(won.state).toBe('Won');expect(won.wonCount).toBe(1);expect(won.resetCount).toBe(1);expect(won.ball.position[1]).toBeLessThan(2);expect(won.lives).toBeGreaterThan(0);expect(minHeight).toBeLessThan(10);
-  expect(checkpointValues.size).toBeGreaterThanOrEqual(9);expect(terrain.size).toBeGreaterThanOrEqual(8);expect(shots.size).toBe(3);expect(windZonesSeen.size).toBe(6);expect([...lossTypes].sort()).toEqual(['saw','timeout']);
+  expect(checkpointValues.size).toBeGreaterThanOrEqual(9);expect(terrain.size).toBeGreaterThanOrEqual(8);expect(shots.size).toBe(3);expect(windZonesSeen.size).toBe(6);
   await expect(frame.locator('#status')).toContainText('已真实落地');await expect(frame.locator('#records')).toContainText('已完成 1 次');await page.waitForTimeout(5500);
   await page.screenshot({path:info.outputPath('descensus-ground-certificate.png'),fullPage:true});await iframe.scrollIntoViewIfNeeded();await page.screenshot({path:info.outputPath('descensus-certificate-viewport.png')});
   const record=await page.evaluate(()=>JSON.parse(localStorage.getItem('playgarden.descensus2.v1.records')||'null'));expect(record.completed).toBe(1);expect(record.bestTime).toBe(won.timeElapsed);expect(record.lastLives).toBe(won.lives);
