@@ -22,3 +22,13 @@ vendor/sql-mystery-original/sqlite/sqlite-src-3540000.zip
 /public/games/black-hole-square/js/
 /public/games/black-hole-square/source.tar.gz
 /black-hole-square-build-identity.json
+
+/public/games/rollermaze/runtime.js
+/public/games/rollermaze/source.tar.gz
+/rollermaze-build-identity.json
+
+# ONOFF is rebuilt from its audited local source.
+/public/games/onoff/runtime.js
+/public/games/onoff/runtime.js.map
+/public/games/onoff/source.tar.gz
+/onoff-build-identity.json

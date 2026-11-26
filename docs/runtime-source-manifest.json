@@ -530,7 +530,7 @@
         "docs/makemaze-source-map.json",
         "package-lock.json"
       ],
-      "scope": "Complete byte-identical 16×18 scrolling wall-edit original, handed automatic collectors, gold multipliers, flood-fill escape detection, angry wall demolition, escape penalties and missed-gold loss. Existing audited Crisp engine/audio and complete editable source/licenses reused. No finite levels or new runtime dependencies."
+      "scope": "Complete byte-identical 16\u00d718 scrolling wall-edit original, handed automatic collectors, gold multipliers, flood-fill escape detection, angry wall demolition, escape penalties and missed-gold loss. Existing audited Crisp engine/audio and complete editable source/licenses reused. No finite levels or new runtime dependencies."
     },
     {
       "name": "COUNT original endless observation and timing game",
@@ -592,7 +592,7 @@
       "scope": "Original first-party mechanics, 24 authored puzzles, uncounted credits tableau and Canvas primitive artwork under CC-BY-SA-4.0. Original notice and exact legal text retained. GPLv3-compatible adaptation adds isolated lifecycle, input/React host and validated saves. No separate music, font, icon, input library or original network-enabled shell."
     },
     {
-      "name": "Heal’em All complete six-stage game, original art and Quintus engine",
+      "name": "Heal\u2019em All complete six-stage game, original art and Quintus engine",
       "version": "66950cda39d2b91f114dcf1a0b0307972f24a68f",
       "license": "GPL-3.0-only first party and adapter; CC-BY-4.0 artwork; MIT Quintus and embedded helpers",
       "source": "https://github.com/krzysu/game-off-2013/tree/66950cda39d2b91f114dcf1a0b0307972f24a68f",
@@ -898,6 +898,42 @@
         "scripts/black-hole-square/verify-sources.py"
       ],
       "scope": "All 18 original puzzles with original budgets and native title/guide/ending. No current gated revision or font binary. Module source archive includes exact locked host build context; full host remains in this repository."
+    },
+    {
+      "name": "Rollermaze",
+      "version": "2a08f83fa3935fc981ac6efce26e2b9d6d34a5ed",
+      "license": "MIT original; public-domain MicroW; GPL-3.0-only new adapter",
+      "source": "https://github.com/picosonic/js13k-2024/tree/2a08f83fa3935fc981ac6efce26e2b9d6d34a5ed",
+      "preferredSource": [
+        "third_party/rollermaze/original/",
+        "third_party/rollermaze/adapted-src/",
+        "third_party/rollermaze/bridge-src/",
+        "src/games/RollermazeGame.tsx"
+      ],
+      "buildSources": [
+        "scripts/rollermaze/build.mjs",
+        "scripts/rollermaze/verify-sources.py",
+        "scripts/rollermaze/package-source.py"
+      ],
+      "scope": "Complete 25 exact original TMX/runtime maps; timed rolling, switches, safe spots and sentinels. Original fonts, specific music arrangement/MIDI, editor image and third-party promotional screenshots excluded. System font and original feedback replace them. Offline opaque-frame integration with module-source archive."
+    },
+    {
+      "name": "ONOFF",
+      "version": "cb1e2e4615af6195aeb0dade06c08738511dd3b6",
+      "license": "MIT original code, SVG artwork, custom glyphs and composed synthesized audio; TinyMusic MIT; GPL-3.0-only new adapter",
+      "source": "https://github.com/starzonmyarmz/js13k-2018/tree/cb1e2e4615af6195aeb0dade06c08738511dd3b6",
+      "preferredSource": [
+        "third_party/onoff/original/",
+        "third_party/onoff/adapted/",
+        "src/games/OnoffGame.tsx",
+        "src/games/onoffGame.css"
+      ],
+      "buildSources": [
+        "scripts/onoff/build.mjs",
+        "scripts/onoff/package-source.py",
+        "scripts/onoff/verify-sources.py"
+      ],
+      "scope": "Complete 25-level original campaign including original random level definitions 12/14/17, layer-dependent platforms/spikes and star goals. All original runtime art and note scores retained. Optional original editor is included as editable source only; no external font/audio/images are required. Module archive includes exact locked host build context."
     },
     {
       "name": "Descensus 2 complete original 1000-metre descent",

@@ -1,0 +1,26 @@
+{
+  "id": "onoff",
+  "title": "ONOFF 明暗之间",
+  "subtitle": "切换实体层，跳过深坑与尖刺",
+  "category": "动作反应",
+  "difficulty": "进阶",
+  "tone": "purple",
+  "levelCount": 25,
+  "artwork": {
+    "url": "./games/onoff/card.svg",
+    "position": "50% 50%",
+    "size": "cover"
+  },
+  "allowUndo": false,
+  "source": {
+    "kind": "adapted",
+    "license": "MIT",
+    "notes": "完整保留25个原版平台关卡、SVG画面与作者音乐；第12、14、17关含原作随机布局。TinyMusic为MIT。宿主与适配为GPL-3.0-only。",
+    "author": "Daniel Marino 与 Brad Dunbar",
+    "workTitle": "ONOFF",
+    "url": "https://github.com/starzonmyarmz/js13k-2018",
+    "commit": "cb1e2e4615af6195aeb0dade06c08738511dd3b6",
+    "notice": "./games/onoff/LICENSE-MIT.txt"
+  },
+  "resumeKey": "playgarden.onoff"
+}

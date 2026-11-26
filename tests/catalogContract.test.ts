@@ -1,3 +1,4 @@
+import domineeringLevels from '../src/games/domineeringLevels.json' with {type:'json'};
 import elevatorSagaLevels from '../src/games/elevatorSagaLevels.json' with {type:'json'};
 import gridGardenLevels from '../src/games/gridGardenLevels.json' with {type:'json'};
 import { swapMaps } from "../src/vendor/swapMaps";
@@ -155,6 +156,7 @@ import { voxelViewsLevels } from "../src/games/voxelViewsLogic";
 import { cubeNetLevels } from "../src/games/cubeNetLogic";
 const packs = {
   "descensus-2": [],
+  domineering: domineeringLevels,
   "grid-garden": gridGardenLevels,
   "elevator-saga": elevatorSagaLevels,
   "hyperspace-garbage-collection": [1,2,3,4],
@@ -164,6 +166,8 @@ const packs = {
   "evolution-of-trust": [],
   "ghosted": Array.from({length:13}, (_,i) => i+1),
   "black-hole-square": Array.from({length:18}, (_,i) => i+1),
+  "rollermaze": Array.from({length:25}, (_,i) => i+1),
+  "onoff": Array.from({length:25}, (_,i) => i+1),
   "css-diner": Array.from({length:32}, (_,i) => i+1),
   "flexbox-froggy": Array.from({length:24}, (_,i) => i+1),
   "monkey-rally": [1,2,3,4,5,6,7,8],
@@ -380,8 +384,8 @@ describe("Scalable catalog contract", () => {
       }
     }),
   );
-  it("counts only 182 real games and 3177 levels, not the roadmap", () => {
-    expect(games).toHaveLength(182);
-    expect(games.reduce((sum, g) => sum + g.levelCount, 0)).toBe(3177);
+  it("counts only 185 real games and 3327 levels, not the roadmap", () => {
+    expect(games).toHaveLength(185);
+    expect(games.reduce((sum, g) => sum + g.levelCount, 0)).toBe(3327);
   });
 });
