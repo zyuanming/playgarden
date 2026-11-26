@@ -934,6 +934,27 @@
         "scripts/onoff/verify-sources.py"
       ],
       "scope": "Complete 25-level original campaign including original random level definitions 12/14/17, layer-dependent platforms/spikes and star goals. All original runtime art and note scores retained. Optional original editor is included as editable source only; no external font/audio/images are required. Module archive includes exact locked host build context."
+    },
+    {
+      "name": "Descensus 2 complete original 1000-metre descent",
+      "version": "750003f12815a756ebd18634e88620c1050a1ec5",
+      "license": "MIT original; p2/Pixi bundled MIT/BSD/CC0 notices; BSD-3-Clause MersenneTwister; GPL-3.0-only Playgarden changes",
+      "source": "https://github.com/TomWHall/Descensus2/tree/750003f12815a756ebd18634e88620c1050a1ec5",
+      "preferredSource": [
+        "vendor/descensus2-original/upstream",
+        "vendor/descensus2-original/adapted",
+        "public/descensus-2/adapter.js",
+        "src/games/Descensus2.tsx",
+        "vendor/descensus2-original/pixi-csp-patch.json"
+      ],
+      "buildSources": [
+        "scripts/descensus-2/build-runtime.mjs",
+        "scripts/descensus-2/generate-timber.py",
+        "scripts/descensus-2/package-source.py",
+        "scripts/descensus-2/verify-sources.py",
+        "docs/descensus-2-source-map.json"
+      ],
+      "scope": "Complete finite1000m journey with0enumeratedlevels: original physics, ten terrain classes, six wind zones, bars, lives, timeout, death/restart and genuine ground certificate. Sixteen original cleared images and three new textures. Local opaque iframe and complete licenses/sourceZIP; no remote assets, analytics, bitmap font, audio or unreviewed upstream dependencies."
     }
   ]
 }

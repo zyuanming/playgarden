@@ -1,0 +1,854 @@
+{
+  "scope": "Only listed files; excludes all audit-only content. A preflight input package, not a runnable integration.",
+  "files": [
+    {
+      "path": "LICENSE",
+      "origin": "original-game",
+      "source_url": "https://github.com/TomWHall/Descensus2/blob/750003f12815a756ebd18634e88620c1050a1ec5/LICENSE",
+      "bytes": 1067,
+      "sha256": "b0f061567f2477c1d53ce109d5d3443d0f49d325a17d44602094aa7d460fb28f",
+      "git_blob_sha1": "73050a0a56b9b2d8d6d04f6f224c7d1c95860843"
+    },
+    {
+      "path": "LICENSES/CC0-1.0.txt",
+      "origin": "upstream-component-notice",
+      "upstream_repository": "spdx/license-list-data",
+      "upstream_commit": null,
+      "upstream_path": "text/CC0-1.0.txt",
+      "bytes": 7048,
+      "sha256": "a2010f343487d3f7618affe54f789f5487602331c0a8d03f49e9a7c547cf0499",
+      "git_blob_sha1": "0e259d42c996742e9e3cba14c677129b2c1b6311"
+    },
+    {
+      "path": "LICENSES/DefinitelyTyped-MIT.txt",
+      "origin": "upstream-component-notice",
+      "upstream_repository": "DefinitelyTyped/DefinitelyTyped",
+      "upstream_commit": "7b9f0ea10ae394a6a9ceac236126a7a3e6583523",
+      "upstream_path": "LICENSE",
+      "bytes": 1167,
+      "sha256": "0a48f63d7d32a49d196dce4b2e0cbc236c2cc8fef42cb20e005e4d5f813cc8f6",
+      "git_blob_sha1": "c3ee6e73d5736bd3b45fa59722d0c61d12617a91"
+    },
+    {
+      "path": "LICENSES/FXAA-BSD-3-Clause.txt",
+      "origin": "notice-extracted-from-original-game-pixi-minified-shader-string",
+      "bytes": 1704,
+      "sha256": "67a8af54cf28e7334304335d117ba39c1fb48dd218dcef4473cfdb5cebc9bfee",
+      "git_blob_sha1": "9ab7e606629ef7aba8565ad35213b7a0b78e071f"
+    },
+    {
+      "path": "LICENSES/MersenneTwister-BSD-3-Clause.txt",
+      "origin": "upstream-component-notice",
+      "upstream_repository": "pigulla/mersennetwister",
+      "upstream_commit": "5a747d99ef0831e5d1ffddfdbb6ea70f539501d4",
+      "upstream_path": "LICENSE",
+      "bytes": 1498,
+      "sha256": "7452b4f1bc64efab802f2ee3484ca88753e4393a9885cbf6aacff9e0da17eddd",
+      "git_blob_sha1": "705d593c870e06a7abc9e927085824df5ff30d91"
+    },
+    {
+      "path": "LICENSES/Node-shims-MIT.txt",
+      "origin": "notice-extracted-from-pixi-readable-source",
+      "bytes": 1133,
+      "sha256": "2196d3c9a86bd2fb76fa4fa0f2d1df4aa8412143ab258b177c496bd458c8bf75",
+      "git_blob_sha1": "dd2472dfb2e0f99a2ff1b45a266c22e0d9347e7f"
+    },
+    {
+      "path": "LICENSES/PIXI-MIT.txt",
+      "origin": "upstream-component-notice",
+      "upstream_repository": "pixijs/pixijs",
+      "upstream_commit": "8f68fa6350bc9782311b0b52e567f59462c34efe",
+      "upstream_path": "LICENSE",
+      "bytes": 1093,
+      "sha256": "3c0b3f2f70edb23c5ff2b63758b749de727e99c02089838ada710e58932cd8ba",
+      "git_blob_sha1": "7ca4d7c97e59b03e9a43079f7e75d4a0e5a89f7c"
+    },
+    {
+      "path": "LICENSES/PolyK-MIT.txt",
+      "origin": "notice-extracted-from-p2-readable-source",
+      "bytes": 1312,
+      "sha256": "1340cb3d8eb39d65cd195fd325d4220cbe19fa6fd6949205044afeb1dc1f2261",
+      "git_blob_sha1": "91f5e6d7d7b08318ff1edd50a2f3c02c00be5d50"
+    },
+    {
+      "path": "LICENSES/bit-twiddle-MIT.txt",
+      "origin": "upstream-component-notice",
+      "upstream_repository": "mikolalysenko/bit-twiddle",
+      "upstream_commit": "0c4c32db753108c5ec7e3779d35eb103be8e7ee1",
+      "upstream_path": "LICENSE",
+      "bytes": 1082,
+      "sha256": "e67aed7df22dc8031e4fcf5338fe91cb33e3817e5c58a99a2a2802eea9069791",
+      "git_blob_sha1": "8ce206a84544ae1623a4c94db88c18c2d9ed8009"
+    },
+    {
+      "path": "LICENSES/earcut-ISC.txt",
+      "origin": "upstream-component-notice",
+      "upstream_repository": "mapbox/earcut",
+      "upstream_commit": "dfb66be3dd16e29043f07157edc47d98654be33b",
+      "upstream_path": "LICENSE",
+      "bytes": 725,
+      "sha256": "6c7e3e75cd5368e6a552a2e94db1a50080c0b2972d1d2364144227b047a6e18c",
+      "git_blob_sha1": "00e991407a4f849621a36cce6ded414c6a29f4f8"
+    },
+    {
+      "path": "LICENSES/eventemitter3-MIT.txt",
+      "origin": "upstream-component-notice",
+      "upstream_repository": "primus/eventemitter3",
+      "upstream_commit": "b0144e940ace8add8f335a8adfbed9284eb419f3",
+      "upstream_path": "LICENSE",
+      "bytes": 1082,
+      "sha256": "3aecc12b1cb28832b5f65ab64291de96568c3f236a74d646281b4491f7bcadbf",
+      "git_blob_sha1": "abcbd54e5eefdac272de763e774ca75825ca55ce"
+    },
+    {
+      "path": "LICENSES/glMatrix-BSD-2-Clause.txt",
+      "origin": "notice-extracted-from-p2-readable-source",
+      "bytes": 1332,
+      "sha256": "b432d963101e682808253ba05e67b28280116d79a7d0713cadc261a6a7e8d526",
+      "git_blob_sha1": "3258254be77ce37239c0324c90d33ae3d111b4c2"
+    },
+    {
+      "path": "LICENSES/isMobile-0.4.0-CC0-notice.txt",
+      "origin": "notice-extracted-from-pixi-readable-source",
+      "bytes": 365,
+      "sha256": "d616f2d1e383c941b906310d7c5142520d6c516b2a6aeae54529dc2277a3db14",
+      "git_blob_sha1": "117d3e7a7e734a5ee9550aaf36cba1bb181426dc"
+    },
+    {
+      "path": "LICENSES/mini-signals-MIT.txt",
+      "origin": "upstream-component-notice",
+      "upstream_repository": "Hypercubed/mini-signals",
+      "upstream_commit": "dada12f2a35b2ccf015589f1a748094547caa069",
+      "upstream_path": "LICENSE",
+      "bytes": 1086,
+      "sha256": "07f9a37334ffe0050d63659021cc62e8745709b40048d597f7750fe7afdda3af",
+      "git_blob_sha1": "c16d2e17e25fae80f8809ced2c97dbf691045853"
+    },
+    {
+      "path": "LICENSES/node-process-MIT.txt",
+      "origin": "upstream-component-notice",
+      "upstream_repository": "defunctzombie/node-process",
+      "upstream_commit": "77caa43cdaee4ea710aa14d11cea1705293c0ef3",
+      "upstream_path": "LICENSE",
+      "bytes": 1098,
+      "sha256": "59a400d04c5078579acc27ddd6452c1bdf763f9506e01364700935fbb1a7c91b",
+      "git_blob_sha1": "b8c1246cf49cbdc3084c7b33f69ec64cb019a42a"
+    },
+    {
+      "path": "LICENSES/normalize-MIT.txt",
+      "origin": "upstream-component-notice",
+      "upstream_repository": "necolas/normalize.css",
+      "upstream_commit": "39c21b3678ff1ebd2aebc51ec56d55d18a5a68e3",
+      "upstream_path": "LICENSE.md",
+      "bytes": 1098,
+      "sha256": "89a9a9ace8be9e79bdc962823479bf980e4a14777ebe51b37e669f658e6f25ef",
+      "git_blob_sha1": "43b5ddcc90745e626ad2b68c6bf7e38691c4d643"
+    },
+    {
+      "path": "LICENSES/object-assign-MIT.txt",
+      "origin": "upstream-component-notice",
+      "upstream_repository": "sindresorhus/object-assign",
+      "upstream_commit": "76462cb537c7fd8aad334c7379ee0a3d065b4228",
+      "upstream_path": "license",
+      "bytes": 1117,
+      "sha256": "5c932d88256b4ab958f64a856fa48e8bd1f55bc1d96b8149c65689e0c61789d3",
+      "git_blob_sha1": "fa7ceba3eb4a9657a9db7f3ffca4e4e97a9019de"
+    },
+    {
+      "path": "LICENSES/p2-MIT.txt",
+      "origin": "upstream-component-notice",
+      "upstream_repository": "schteppe/p2.js",
+      "upstream_commit": "d83c483f912362fd6e57c74b0634ea3f1f3e0c82",
+      "upstream_path": "LICENSE",
+      "bytes": 1146,
+      "sha256": "15e9e6dcafc17dc701a5ea7bb3c2ea746386d85740f4ca4dc6880e7407850ad3",
+      "git_blob_sha1": "adfbd3de0d2141a9e4bdfd0c487a535646e8ddf0"
+    },
+    {
+      "path": "LICENSES/parse-uri-MIT.txt",
+      "origin": "upstream-component-notice",
+      "upstream_repository": "Kikobeats/parse-uri",
+      "upstream_commit": "bf6cc25423305d047b243d905e4f0a3b3c4fc146",
+      "upstream_path": "LICENSE.md",
+      "bytes": 1084,
+      "sha256": "7ace2e75c11a8479938862cc38c56701d2b82ac79dd52a150c763ff7a1a4d36b",
+      "git_blob_sha1": "60ca1dafb082010fffe2a8ebae6cac3fdec10a4e"
+    },
+    {
+      "path": "LICENSES/parseUri-original-attribution.txt",
+      "origin": "research-attribution",
+      "bytes": 266,
+      "sha256": "92b4a54dfb63af1f4ee67201999ae832e6851c44340f4b84307ab2f724490953",
+      "git_blob_sha1": "cd62e721cd53b872ae8421433df35a9d68115899"
+    },
+    {
+      "path": "LICENSES/path-browserify-MIT.txt",
+      "origin": "upstream-component-notice",
+      "upstream_repository": "browserify/path-browserify",
+      "upstream_commit": "872fec31a8bac7b9b43be0e54ef3037e0202c5fb",
+      "upstream_path": "LICENSE",
+      "bytes": 1071,
+      "sha256": "a22b9d5763f574e5db347c30acc0b33eaf4846767c03d2e27d012e864e79a824",
+      "git_blob_sha1": "f52ee8c7249baebfc063b5284958105b199bc2c2"
+    },
+    {
+      "path": "LICENSES/pixi-gl-core-README.md",
+      "origin": "upstream-component-notice",
+      "upstream_repository": "pixijs/pixi-gl-core",
+      "upstream_commit": "104a3d221fd68569bf85fabf71bf2d5007c1cd38",
+      "upstream_path": "README.md",
+      "bytes": 1486,
+      "sha256": "c6a44e794b6f6ecc89ab5f1f0c01c194883c8312edb1f7bc616cf36c1c061cdf",
+      "git_blob_sha1": "6c89ec327988f247f6f3c15d86e61de60ce9c84f"
+    },
+    {
+      "path": "LICENSES/pixi-gl-core-package.json",
+      "origin": "upstream-component-notice",
+      "upstream_repository": "pixijs/pixi-gl-core",
+      "upstream_commit": "104a3d221fd68569bf85fabf71bf2d5007c1cd38",
+      "upstream_path": "package.json",
+      "bytes": 1656,
+      "sha256": "17116b695284f25efb9c353be99207adcd212eb15889ab1cf434503ee1410b95",
+      "git_blob_sha1": "abb96e3bca74502bb044191bf0f2799519d0ee4d"
+    },
+    {
+      "path": "LICENSES/poly-decomp-MIT.txt",
+      "origin": "upstream-component-notice",
+      "upstream_repository": "schteppe/poly-decomp.js",
+      "upstream_commit": "c60d5f5129b419c35c276cf26b479b0456412ee2",
+      "upstream_path": "LICENSE",
+      "bytes": 1080,
+      "sha256": "aa92b836949eb315e062592a9fdd660e6a301477e771305160f492dd3ee8a066",
+      "git_blob_sha1": "6c851a656d7d73d0ccf53c274629e36ca06ead04"
+    },
+    {
+      "path": "LICENSES/punycode-MIT.txt",
+      "origin": "upstream-component-notice",
+      "upstream_repository": "mathiasbynens/punycode.js",
+      "upstream_commit": "9e1b2cda98d215d3a73fcbfe93c62e021f4ba768",
+      "upstream_path": "LICENSE-MIT.txt",
+      "bytes": 1077,
+      "sha256": "483acb265f182907d1caf6cff9c16c96f31325ed23792832cc5d8b12d5f88c8a",
+      "git_blob_sha1": "a41e0a7ef970ecdd83d82cd99bda97b22077bc62"
+    },
+    {
+      "path": "LICENSES/resource-loader-MIT.txt",
+      "origin": "upstream-component-notice",
+      "upstream_repository": "englercj/resource-loader",
+      "upstream_commit": "d86cec3f6148ead0149988e17417f3b4f9ee2a31",
+      "upstream_path": "LICENSE",
+      "bytes": 1077,
+      "sha256": "859c3d24560c2159d22676c0968b2a9ffa862e70c28a4e55104dc0e01d58fac9",
+      "git_blob_sha1": "f0b4a63b5888692bddca1252600dfee0846526e1"
+    },
+    {
+      "path": "PREFLIGHT-NOTES.txt",
+      "origin": "preflight-attribution-and-scope",
+      "bytes": 1467,
+      "sha256": "ba32f4e443eedaebdb7ec0a980e752ff44e08933b76d70cfe9413be7e542d1da",
+      "git_blob_sha1": "7de63507ef3e71436a6ad0dbe57f9237701ab2b2"
+    },
+    {
+      "path": "README.md",
+      "origin": "original-game",
+      "source_url": "https://github.com/TomWHall/Descensus2/blob/750003f12815a756ebd18634e88620c1050a1ec5/README.md",
+      "bytes": 498,
+      "sha256": "3168bcc0027063a990e770cd6459983635442a373cafc4f5d468a60104b0549d",
+      "git_blob_sha1": "a29b5f4adff01178476ea0b027b232b44ed3adec"
+    },
+    {
+      "path": "TypeScriptDefinitions/MersenneTwister.d.ts",
+      "origin": "original-game",
+      "source_url": "https://github.com/TomWHall/Descensus2/blob/750003f12815a756ebd18634e88620c1050a1ec5/TypeScriptDefinitions/MersenneTwister.d.ts",
+      "bytes": 119,
+      "sha256": "9e1c8f93751874a12caa85dd4c9cd46d72370ab3c7feda1713b690f700584c06",
+      "git_blob_sha1": "6047ef12959c8709d718429edb8c2e17e2fbff46"
+    },
+    {
+      "path": "TypeScriptDefinitions/Window.d.ts",
+      "origin": "original-game",
+      "source_url": "https://github.com/TomWHall/Descensus2/blob/750003f12815a756ebd18634e88620c1050a1ec5/TypeScriptDefinitions/Window.d.ts",
+      "bytes": 48,
+      "sha256": "dc0e87933240fd020b7274e89e7d02c211804e987791eeebde80180a122974f7",
+      "git_blob_sha1": "c7ceb8a0b338b1667b736b7ede2d17b2e4e05957"
+    },
+    {
+      "path": "TypeScriptDefinitions/p2.d.ts",
+      "origin": "original-game",
+      "source_url": "https://github.com/TomWHall/Descensus2/blob/750003f12815a756ebd18634e88620c1050a1ec5/TypeScriptDefinitions/p2.d.ts",
+      "bytes": 27007,
+      "sha256": "5a01530ca02d7f218ba66a9596457a7af8ff7b8299bed66c7fc90fd88ed48ccf",
+      "git_blob_sha1": "a51ef4c709c631ad873cd13f4871bbbdb924e04f"
+    },
+    {
+      "path": "TypeScriptDefinitions/pixi.js.d.ts",
+      "origin": "original-game",
+      "source_url": "https://github.com/TomWHall/Descensus2/blob/750003f12815a756ebd18634e88620c1050a1ec5/TypeScriptDefinitions/pixi.js.d.ts",
+      "bytes": 95323,
+      "sha256": "dd64ac2546c52bbb151b54ce85186be25fef1eea1054e774107aaa772e72f5b4",
+      "git_blob_sha1": "f0a7ae538548d398c0af98953255ab0948724fa5"
+    },
+    {
+      "path": "package.json",
+      "origin": "original-game",
+      "source_url": "https://github.com/TomWHall/Descensus2/blob/750003f12815a756ebd18634e88620c1050a1ec5/package.json",
+      "bytes": 658,
+      "sha256": "dbec926c500321c93112ae5de68294b7e49d4fc0fb12efaef1c9c8b007cffd93",
+      "git_blob_sha1": "d1c4138ff0e3ca4367764f76ae54e3ab032a3aec"
+    },
+    {
+      "path": "replacements/MersenneTwister.js",
+      "origin": "required-library-replacement",
+      "upstream_repository": "pigulla/mersennetwister",
+      "upstream_commit": "5a747d99ef0831e5d1ffddfdbb6ea70f539501d4",
+      "upstream_path": "src/MersenneTwister.js",
+      "bytes": 6983,
+      "sha256": "4c008b4c57eb74eb075c905a78c38e140e666ef4847705b1c9516345a6805009",
+      "git_blob_sha1": "d415a197a046b826294c9f3f57e2cd05b05244ad"
+    },
+    {
+      "path": "src/css/default.css",
+      "origin": "original-game",
+      "source_url": "https://github.com/TomWHall/Descensus2/blob/750003f12815a756ebd18634e88620c1050a1ec5/src/css/default.css",
+      "bytes": 177,
+      "sha256": "53eaa5899c45828808a16c59f6158e0c352f36925ed6bef92cc0c8bdb1a8f89f",
+      "git_blob_sha1": "177c09e32fbdc2fb79a83377c874ed68337d6a87"
+    },
+    {
+      "path": "src/css/normalize.css",
+      "origin": "original-game",
+      "source_url": "https://github.com/TomWHall/Descensus2/blob/750003f12815a756ebd18634e88620c1050a1ec5/src/css/normalize.css",
+      "bytes": 7279,
+      "sha256": "d65bf66f0c26374e0550145b264b5dbdfb7e6b78c48e2e68453583878bc30801",
+      "git_blob_sha1": "18ddf7fede130e870c5cdd33945d3321f8e2f2a0"
+    },
+    {
+      "path": "src/img/ball-reflections.png",
+      "origin": "original-game",
+      "source_url": "https://github.com/TomWHall/Descensus2/blob/750003f12815a756ebd18634e88620c1050a1ec5/src/img/ball-reflections.png",
+      "bytes": 12208,
+      "sha256": "c04031fb03685a9bdd1a4ca2928d4319c6f4e7c6f32b7b4cc4bec086a2a35cfb",
+      "git_blob_sha1": "deb2810ecf118cbeaf059ae28860348842c6f377"
+    },
+    {
+      "path": "src/img/ball.png",
+      "origin": "original-game",
+      "source_url": "https://github.com/TomWHall/Descensus2/blob/750003f12815a756ebd18634e88620c1050a1ec5/src/img/ball.png",
+      "bytes": 18345,
+      "sha256": "d38deb455d7b2d25442dd6a7576e2284e4987a1f7f24eb8f3643567fb9542c10",
+      "git_blob_sha1": "058ca35aac184a570be38c58a51123062272f9d7"
+    },
+    {
+      "path": "src/img/bar.png",
+      "origin": "original-game",
+      "source_url": "https://github.com/TomWHall/Descensus2/blob/750003f12815a756ebd18634e88620c1050a1ec5/src/img/bar.png",
+      "bytes": 3254,
+      "sha256": "a88561650585bcbd29f7dc21b01af0072be8f7a6ebd93141ee22a9164d8d2f96",
+      "git_blob_sha1": "5df041bf4cf0fc47f96f7703302f1984d552c14f"
+    },
+    {
+      "path": "src/img/brick.png",
+      "origin": "original-game",
+      "source_url": "https://github.com/TomWHall/Descensus2/blob/750003f12815a756ebd18634e88620c1050a1ec5/src/img/brick.png",
+      "bytes": 15678,
+      "sha256": "1ede983ac00879dbbbbb42c61e78c9579abae8a8b5b13c86248f65b804b4d31d",
+      "git_blob_sha1": "e55ae77a03bdb0e9319b02b0b5e88841bf5f43e1"
+    },
+    {
+      "path": "src/img/clouds.jpg",
+      "origin": "original-game",
+      "source_url": "https://github.com/TomWHall/Descensus2/blob/750003f12815a756ebd18634e88620c1050a1ec5/src/img/clouds.jpg",
+      "bytes": 82980,
+      "sha256": "a6383a94e481b4e4a7604133e62a3abaa84247c2a7eb84506c50fd23c5ea9975",
+      "git_blob_sha1": "3a329437c3405e35204c5a17e45057701e046ed7"
+    },
+    {
+      "path": "src/img/girder.png",
+      "origin": "original-game",
+      "source_url": "https://github.com/TomWHall/Descensus2/blob/750003f12815a756ebd18634e88620c1050a1ec5/src/img/girder.png",
+      "bytes": 27857,
+      "sha256": "6e31ce1c9448994a47890fcad7abcba08450fb39724adc5f02ca167321f1ca6b",
+      "git_blob_sha1": "35c18886b2276aa16a9c5a8f3296c34346ff2920"
+    },
+    {
+      "path": "src/img/ground.png",
+      "origin": "original-game",
+      "source_url": "https://github.com/TomWHall/Descensus2/blob/750003f12815a756ebd18634e88620c1050a1ec5/src/img/ground.png",
+      "bytes": 203999,
+      "sha256": "dc5306584c7ec2594f3fe77a2963c06fe5f51989db2280d9478efbf6f114e7d6",
+      "git_blob_sha1": "7e9c9a0b143d105be8dd9c3fb5e257d70c0aae5d"
+    },
+    {
+      "path": "src/img/help-hand.png",
+      "origin": "original-game",
+      "source_url": "https://github.com/TomWHall/Descensus2/blob/750003f12815a756ebd18634e88620c1050a1ec5/src/img/help-hand.png",
+      "bytes": 43671,
+      "sha256": "522c7620c73c8411943beda46a3877fc18043c11205b4eb6a4072250d3b72b37",
+      "git_blob_sha1": "b4f854205b302b31faa240fef0575c1b4353d80b"
+    },
+    {
+      "path": "src/img/paper.jpg",
+      "origin": "original-game",
+      "source_url": "https://github.com/TomWHall/Descensus2/blob/750003f12815a756ebd18634e88620c1050a1ec5/src/img/paper.jpg",
+      "bytes": 133211,
+      "sha256": "be19d1686b9304bfe3bcee5cc252bd1711dd871e7b9c866c29b4b86875e06989",
+      "git_blob_sha1": "18b1a412304cb18a727f985cef3e200585bc4c44"
+    },
+    {
+      "path": "src/img/plus-1-life.png",
+      "origin": "original-game",
+      "source_url": "https://github.com/TomWHall/Descensus2/blob/750003f12815a756ebd18634e88620c1050a1ec5/src/img/plus-1-life.png",
+      "bytes": 16957,
+      "sha256": "62071f73482dc1a3b05e88eaaf7fe6c34181c3d76626bb39c2273e1fa4e70d5b",
+      "git_blob_sha1": "1ba997e374426a53c2f4aa8fe4b7270bcaa40c03"
+    },
+    {
+      "path": "src/img/saw-small.png",
+      "origin": "original-game",
+      "source_url": "https://github.com/TomWHall/Descensus2/blob/750003f12815a756ebd18634e88620c1050a1ec5/src/img/saw-small.png",
+      "bytes": 13738,
+      "sha256": "3e40dc37b5e36e15eec3eebae19ecc1294760e5074d690b1b650e0d37be290e7",
+      "git_blob_sha1": "1ab7bf57560178788f4352eb45c94de22783f189"
+    },
+    {
+      "path": "src/img/saw.png",
+      "origin": "original-game",
+      "source_url": "https://github.com/TomWHall/Descensus2/blob/750003f12815a756ebd18634e88620c1050a1ec5/src/img/saw.png",
+      "bytes": 21087,
+      "sha256": "0dd235836826ffc7f998283e2ee4a0996fe7659467085b4fd28ee762f4b87c37",
+      "git_blob_sha1": "be8e85f245a7ad42c12f33785cf063a23d16b4b6"
+    },
+    {
+      "path": "src/img/time-bar-time.png",
+      "origin": "original-game",
+      "source_url": "https://github.com/TomWHall/Descensus2/blob/750003f12815a756ebd18634e88620c1050a1ec5/src/img/time-bar-time.png",
+      "bytes": 1066,
+      "sha256": "2a10835b15d8e5cb56f6a76dac9dc9d4b542c9e61350179d41f7b3d80e8d00f3",
+      "git_blob_sha1": "c3b468ca72ae845570ac54122541dcc2c8def3a3"
+    },
+    {
+      "path": "src/img/time-bar.png",
+      "origin": "original-game",
+      "source_url": "https://github.com/TomWHall/Descensus2/blob/750003f12815a756ebd18634e88620c1050a1ec5/src/img/time-bar.png",
+      "bytes": 1140,
+      "sha256": "aef3d1ff8e899481accee70fc2e13d86a5908b6223709f74f90db729807ec536",
+      "git_blob_sha1": "d82e32d9eca91dbc4ec4ab3a4c2e1f10feff0a61"
+    },
+    {
+      "path": "src/img/wind-left.png",
+      "origin": "original-game",
+      "source_url": "https://github.com/TomWHall/Descensus2/blob/750003f12815a756ebd18634e88620c1050a1ec5/src/img/wind-left.png",
+      "bytes": 46749,
+      "sha256": "a9499ad4f6c7636e6bf5913d1e38668a7d6ee47d8e67d043f357e0e8cd746a8d",
+      "git_blob_sha1": "7d495ba825de4048c6af6bb82196265410d0f94b"
+    },
+    {
+      "path": "src/img/wind-right.png",
+      "origin": "original-game",
+      "source_url": "https://github.com/TomWHall/Descensus2/blob/750003f12815a756ebd18634e88620c1050a1ec5/src/img/wind-right.png",
+      "bytes": 46156,
+      "sha256": "c9a570f90f26883174850e2a3d5c28a0fa6a33cb126ca32d70aa0332de012d3d",
+      "git_blob_sha1": "4127df7d2ccd80a0ecfd9fe6743cf56d4929197f"
+    },
+    {
+      "path": "src/index.html",
+      "origin": "original-game",
+      "source_url": "https://github.com/TomWHall/Descensus2/blob/750003f12815a756ebd18634e88620c1050a1ec5/src/index.html",
+      "bytes": 910,
+      "sha256": "27e338df05f0a7684cadb3b252604c872091c81ac294ea441c19a46112e479d1",
+      "git_blob_sha1": "f9e24681cd14d2271f1ee4ee6f30dab3e72a4e39"
+    },
+    {
+      "path": "src/js/Assets/ISounds.ts",
+      "origin": "original-game",
+      "source_url": "https://github.com/TomWHall/Descensus2/blob/750003f12815a756ebd18634e88620c1050a1ec5/src/js/Assets/ISounds.ts",
+      "bytes": 306,
+      "sha256": "b99363196874bec431ce254c7ca15b2c28a77c91fa22e035b891bd7436e75ee3",
+      "git_blob_sha1": "3ece964a0e8ca45fad82440cce0004bd52c1899a"
+    },
+    {
+      "path": "src/js/Assets/ITextures.ts",
+      "origin": "original-game",
+      "source_url": "https://github.com/TomWHall/Descensus2/blob/750003f12815a756ebd18634e88620c1050a1ec5/src/js/Assets/ITextures.ts",
+      "bytes": 527,
+      "sha256": "b24aade9e52e61a8e5a37dd67d83cda6dbabd5c83528048a8ebff5f7e26edcb5",
+      "git_blob_sha1": "3ec34fcefd7e5b1a6c6d7db288fc8b5e1d23fb4b"
+    },
+    {
+      "path": "src/js/Assets/loadFonts.ts",
+      "origin": "original-game",
+      "source_url": "https://github.com/TomWHall/Descensus2/blob/750003f12815a756ebd18634e88620c1050a1ec5/src/js/Assets/loadFonts.ts",
+      "bytes": 288,
+      "sha256": "470b411ccbd61e438fe1a02f74f4b48be34c5389cf7a8796681b3ea37f4f0dd1",
+      "git_blob_sha1": "201e182400085476e81f2e5e1b368cf838c389c9"
+    },
+    {
+      "path": "src/js/Assets/loadSounds.ts",
+      "origin": "original-game",
+      "source_url": "https://github.com/TomWHall/Descensus2/blob/750003f12815a756ebd18634e88620c1050a1ec5/src/js/Assets/loadSounds.ts",
+      "bytes": 1324,
+      "sha256": "68bec0c752c4cde4af963ab6266bf0ab502cadebfbbbff99f460abf9523075a5",
+      "git_blob_sha1": "d790646f606fb460393b8c89306ce4f8fc929260"
+    },
+    {
+      "path": "src/js/Assets/loadTextures.ts",
+      "origin": "original-game",
+      "source_url": "https://github.com/TomWHall/Descensus2/blob/750003f12815a756ebd18634e88620c1050a1ec5/src/js/Assets/loadTextures.ts",
+      "bytes": 1282,
+      "sha256": "9fd79280fee21bbdb3fd4de83b94ebfdc20fa06ca46a356cce6c21dfae2f0ae6",
+      "git_blob_sha1": "0bbd1a3e452eb427409a4fa86969cd713fdfa1ad"
+    },
+    {
+      "path": "src/js/Bar.ts",
+      "origin": "original-game",
+      "source_url": "https://github.com/TomWHall/Descensus2/blob/750003f12815a756ebd18634e88620c1050a1ec5/src/js/Bar.ts",
+      "bytes": 4918,
+      "sha256": "d82dfc0cd9af441d36081b55a4db97dc1e38d8fe6f9435d1e75d25ed44ca7c66",
+      "git_blob_sha1": "0dfd562b5aee86d96c92e19f345373b0552eb7ca"
+    },
+    {
+      "path": "src/js/Bus.ts",
+      "origin": "original-game",
+      "source_url": "https://github.com/TomWHall/Descensus2/blob/750003f12815a756ebd18634e88620c1050a1ec5/src/js/Bus.ts",
+      "bytes": 755,
+      "sha256": "925f1c4aa4cd7c10fb05815e6803077326e2ff3b1b521e692557730421b3a71f",
+      "git_blob_sha1": "3e856c0682c4ef210fc3f24314616b9c957fa9a1"
+    },
+    {
+      "path": "src/js/Color.ts",
+      "origin": "original-game",
+      "source_url": "https://github.com/TomWHall/Descensus2/blob/750003f12815a756ebd18634e88620c1050a1ec5/src/js/Color.ts",
+      "bytes": 116,
+      "sha256": "579bc5841d0877d6c59ab5cefa2b2cd891d2ea8eb6d86f83ca89d89f6dafcad5",
+      "git_blob_sha1": "8b0656c96d5f629da66cb9cee997c9627f6f3e74"
+    },
+    {
+      "path": "src/js/Game/GameState.ts",
+      "origin": "original-game",
+      "source_url": "https://github.com/TomWHall/Descensus2/blob/750003f12815a756ebd18634e88620c1050a1ec5/src/js/Game/GameState.ts",
+      "bytes": 137,
+      "sha256": "e67fbcec8ca5ad0bcaa3d6e11ce7feb6949b571e31b7c8a0c2f683a5d94b41fe",
+      "git_blob_sha1": "bfc3d22c6ead09bd076773ba451b8f70dec6a21a"
+    },
+    {
+      "path": "src/js/Game/IGameWonStats.ts",
+      "origin": "original-game",
+      "source_url": "https://github.com/TomWHall/Descensus2/blob/750003f12815a756ebd18634e88620c1050a1ec5/src/js/Game/IGameWonStats.ts",
+      "bytes": 91,
+      "sha256": "ed81f32e38b05d9c64727469a0233bd0c2d2f4f3873df607328e21cb1b748f3a",
+      "git_blob_sha1": "c811500bdb6c127e13f686196061e2a90b062831"
+    },
+    {
+      "path": "src/js/Game/gameLoop.ts",
+      "origin": "original-game",
+      "source_url": "https://github.com/TomWHall/Descensus2/blob/750003f12815a756ebd18634e88620c1050a1ec5/src/js/Game/gameLoop.ts",
+      "bytes": 11968,
+      "sha256": "97c6d0383874fb0b79b1066f21750cd87c4cff0e74a3fdea552c729bac61ff27",
+      "git_blob_sha1": "be7cbea6ac8bd67ea93ee679b08831e72345e3b3"
+    },
+    {
+      "path": "src/js/Pixi/IPixiGraph.ts",
+      "origin": "original-game",
+      "source_url": "https://github.com/TomWHall/Descensus2/blob/750003f12815a756ebd18634e88620c1050a1ec5/src/js/Pixi/IPixiGraph.ts",
+      "bytes": 651,
+      "sha256": "334f2223d523f963089446d4e6e06b50fc6110e168e53a9f09727ed63e5b192b",
+      "git_blob_sha1": "323f9d6056c42a9f73b1305a0cefb5089e7e0caa"
+    },
+    {
+      "path": "src/js/Pixi/PixiRenderer.ts",
+      "origin": "original-game",
+      "source_url": "https://github.com/TomWHall/Descensus2/blob/750003f12815a756ebd18634e88620c1050a1ec5/src/js/Pixi/PixiRenderer.ts",
+      "bytes": 1318,
+      "sha256": "05851910021644954d1db5439132bf070a43d9be2f647f2bab2b5c0ac7ee69a6",
+      "git_blob_sha1": "9cbe9d8a2f9b749d70026704e62d552c239208f1"
+    },
+    {
+      "path": "src/js/Pixi/buildNavContainer.ts",
+      "origin": "original-game",
+      "source_url": "https://github.com/TomWHall/Descensus2/blob/750003f12815a756ebd18634e88620c1050a1ec5/src/js/Pixi/buildNavContainer.ts",
+      "bytes": 15222,
+      "sha256": "5163203044e699d7492f30baa4262362aef2410981f52891f81a7fd0769f6afd",
+      "git_blob_sha1": "3f6b562ee6df086311737860b1e7821d5ff66044"
+    },
+    {
+      "path": "src/js/Pixi/buildPixiGraph.ts",
+      "origin": "original-game",
+      "source_url": "https://github.com/TomWHall/Descensus2/blob/750003f12815a756ebd18634e88620c1050a1ec5/src/js/Pixi/buildPixiGraph.ts",
+      "bytes": 3143,
+      "sha256": "295bd28bd366b3c26be0cd35e26d9a6811c47624d0dbb228f3cc671bc295c073",
+      "git_blob_sha1": "c4a5e0caa962f7b387ba25aeebf5064598a0e25c"
+    },
+    {
+      "path": "src/js/Sound/ISounds.ts",
+      "origin": "original-game",
+      "source_url": "https://github.com/TomWHall/Descensus2/blob/750003f12815a756ebd18634e88620c1050a1ec5/src/js/Sound/ISounds.ts",
+      "bytes": 281,
+      "sha256": "0f6f264e351a2bb85305590f107f849b3f5158d3c4aa77f8d1edf157a7b9a138",
+      "git_blob_sha1": "9ef31838f7dd3270f0af8d38f358734e86cb6a89"
+    },
+    {
+      "path": "src/js/Sound/soundPlayer.ts",
+      "origin": "original-game",
+      "source_url": "https://github.com/TomWHall/Descensus2/blob/750003f12815a756ebd18634e88620c1050a1ec5/src/js/Sound/soundPlayer.ts",
+      "bytes": 1928,
+      "sha256": "69f2738b8d55546fe9580c1986abd8fe5091e65e644b641699e57e5d2c88ed3b",
+      "git_blob_sha1": "6ecf4f4a46b8f48d921c09eb7de558fe0e968b5e"
+    },
+    {
+      "path": "src/js/Terrain/Objects/Brick.ts",
+      "origin": "original-game",
+      "source_url": "https://github.com/TomWHall/Descensus2/blob/750003f12815a756ebd18634e88620c1050a1ec5/src/js/Terrain/Objects/Brick.ts",
+      "bytes": 979,
+      "sha256": "bdfc5dfd6f1a3309888b5436be3fb3ebb46bcec1a1681da3e39994d42250d2bd",
+      "git_blob_sha1": "7963fffe2e7dd9536f566e13bd9f7e483ceb5234"
+    },
+    {
+      "path": "src/js/Terrain/Objects/FreeSaw.ts",
+      "origin": "original-game",
+      "source_url": "https://github.com/TomWHall/Descensus2/blob/750003f12815a756ebd18634e88620c1050a1ec5/src/js/Terrain/Objects/FreeSaw.ts",
+      "bytes": 1175,
+      "sha256": "010b510b0ce50d9f8b87518941330d48947c4988f4b4fffb5928d3259c468af5",
+      "git_blob_sha1": "daad32fa63437efa2ea4d1c43a016f0ee084221b"
+    },
+    {
+      "path": "src/js/Terrain/Objects/Girder.ts",
+      "origin": "original-game",
+      "source_url": "https://github.com/TomWHall/Descensus2/blob/750003f12815a756ebd18634e88620c1050a1ec5/src/js/Terrain/Objects/Girder.ts",
+      "bytes": 983,
+      "sha256": "b41cc570acdd02d87dabe78920aab34274fcb2746ab7d4f46923a60edd747cfb",
+      "git_blob_sha1": "8cb499b6754e16b8b3024309437ade42fc952b19"
+    },
+    {
+      "path": "src/js/Terrain/Objects/Plus1Life.ts",
+      "origin": "original-game",
+      "source_url": "https://github.com/TomWHall/Descensus2/blob/750003f12815a756ebd18634e88620c1050a1ec5/src/js/Terrain/Objects/Plus1Life.ts",
+      "bytes": 1085,
+      "sha256": "0c336100b20443637efde9d966c050fcf8f53721a9e8db17178c704dff2ea094",
+      "git_blob_sha1": "2de6e0b64803c68f184bdc881281908ff309c100"
+    },
+    {
+      "path": "src/js/Terrain/Objects/Saw.ts",
+      "origin": "original-game",
+      "source_url": "https://github.com/TomWHall/Descensus2/blob/750003f12815a756ebd18634e88620c1050a1ec5/src/js/Terrain/Objects/Saw.ts",
+      "bytes": 1459,
+      "sha256": "aaa1fab4bf3205dca36769bea47c53d653879fb2e99bfc8173a71d739efe09bd",
+      "git_blob_sha1": "3c5460053c6923889150e3e4932ff73f56f65403"
+    },
+    {
+      "path": "src/js/Terrain/Objects/SawSnake.ts",
+      "origin": "original-game",
+      "source_url": "https://github.com/TomWHall/Descensus2/blob/750003f12815a756ebd18634e88620c1050a1ec5/src/js/Terrain/Objects/SawSnake.ts",
+      "bytes": 2122,
+      "sha256": "79f553c77d489376ee342ebe9f42f78ef63d1fbc04618a7809a3e26772322095",
+      "git_blob_sha1": "d6b8ad2661ff4a138617af260c999a877821da94"
+    },
+    {
+      "path": "src/js/Terrain/Objects/SawSpinner.ts",
+      "origin": "original-game",
+      "source_url": "https://github.com/TomWHall/Descensus2/blob/750003f12815a756ebd18634e88620c1050a1ec5/src/js/Terrain/Objects/SawSpinner.ts",
+      "bytes": 2237,
+      "sha256": "1b6adc66b3e3be626a9d9bf787071fbf2b61ebc018dd606d0c8e99f5eed2e5e0",
+      "git_blob_sha1": "557fb2b97bd50b98420ac797d10d17683421fa33"
+    },
+    {
+      "path": "src/js/Terrain/Objects/Seesaw.ts",
+      "origin": "original-game",
+      "source_url": "https://github.com/TomWHall/Descensus2/blob/750003f12815a756ebd18634e88620c1050a1ec5/src/js/Terrain/Objects/Seesaw.ts",
+      "bytes": 1390,
+      "sha256": "1b806fcb1281182bb65100e4bc203d4118f8c0bdcea8ec454cd3041a276db77a",
+      "git_blob_sha1": "7ca7912a9928eb67602d35de994cb2ddcaca0dd0"
+    },
+    {
+      "path": "src/js/Terrain/Objects/ShapeOptions.ts",
+      "origin": "original-game",
+      "source_url": "https://github.com/TomWHall/Descensus2/blob/750003f12815a756ebd18634e88620c1050a1ec5/src/js/Terrain/Objects/ShapeOptions.ts",
+      "bytes": 180,
+      "sha256": "cd5c88624a80ec133f99c343c75b627b3d878088803c3df398123b3c066ca369",
+      "git_blob_sha1": "b30a350f49fb639f9a674c2c4c6bbb96a44001d4"
+    },
+    {
+      "path": "src/js/Terrain/Objects/Snake.ts",
+      "origin": "original-game",
+      "source_url": "https://github.com/TomWHall/Descensus2/blob/750003f12815a756ebd18634e88620c1050a1ec5/src/js/Terrain/Objects/Snake.ts",
+      "bytes": 3092,
+      "sha256": "5b783ab7e21df9f0791f512340e11d3e9a298955b1d7029aed7c04e8782bc1f5",
+      "git_blob_sha1": "595f307bc73dc57b32af053ad302fd5491902a6f"
+    },
+    {
+      "path": "src/js/Terrain/Objects/Spinner.ts",
+      "origin": "original-game",
+      "source_url": "https://github.com/TomWHall/Descensus2/blob/750003f12815a756ebd18634e88620c1050a1ec5/src/js/Terrain/Objects/Spinner.ts",
+      "bytes": 1863,
+      "sha256": "73ec1a1504df7c5cd0aa29129641e813f70466738d753bf39e27494a75cf2d92",
+      "git_blob_sha1": "0928eb0b9ed427630d83320fdd111867a36f06eb"
+    },
+    {
+      "path": "src/js/Terrain/Objects/TerrainObject.ts",
+      "origin": "original-game",
+      "source_url": "https://github.com/TomWHall/Descensus2/blob/750003f12815a756ebd18634e88620c1050a1ec5/src/js/Terrain/Objects/TerrainObject.ts",
+      "bytes": 3819,
+      "sha256": "c0cbf0b693d012964e95f06e598269c9c95ee1fefa1e5875a59cc09b47f351de",
+      "git_blob_sha1": "9299d3d64805f25a9af01fb275aee4abff487197"
+    },
+    {
+      "path": "src/js/Terrain/Objects/TerrainObjectType.ts",
+      "origin": "original-game",
+      "source_url": "https://github.com/TomWHall/Descensus2/blob/750003f12815a756ebd18634e88620c1050a1ec5/src/js/Terrain/Objects/TerrainObjectType.ts",
+      "bytes": 209,
+      "sha256": "d614766de25676daf2f5ee4f04fc79798a0d8a9514d8f3343ec1119731305b31",
+      "git_blob_sha1": "187af11b27ece6dcffc3508144edc0f1df6b86d6"
+    },
+    {
+      "path": "src/js/Terrain/Objects/terrainObjectKit.ts",
+      "origin": "original-game",
+      "source_url": "https://github.com/TomWHall/Descensus2/blob/750003f12815a756ebd18634e88620c1050a1ec5/src/js/Terrain/Objects/terrainObjectKit.ts",
+      "bytes": 876,
+      "sha256": "15349cd771f391271f83fdff60da4c2b88edb6b29b4c4bb8164b0eb55c58b376",
+      "git_blob_sha1": "3a808cea0c083f4d7ac15d745417ebcfa8536916"
+    },
+    {
+      "path": "src/js/Terrain/terrainBuilder.ts",
+      "origin": "original-game",
+      "source_url": "https://github.com/TomWHall/Descensus2/blob/750003f12815a756ebd18634e88620c1050a1ec5/src/js/Terrain/terrainBuilder.ts",
+      "bytes": 14754,
+      "sha256": "8736ea0706ace35bfe2513200c75d16749645c960dc027caaa2eb9d6f277be0e",
+      "git_blob_sha1": "8055e319e184872155273c4e120a7953eb747e64"
+    },
+    {
+      "path": "src/js/Terrain/terrainUtil.ts",
+      "origin": "original-game",
+      "source_url": "https://github.com/TomWHall/Descensus2/blob/750003f12815a756ebd18634e88620c1050a1ec5/src/js/Terrain/terrainUtil.ts",
+      "bytes": 2338,
+      "sha256": "b8ec1a97405b4737d35ea7ecebdd8c23338af57b1c6d65be5c7977ff86bb60e8",
+      "git_blob_sha1": "b954bce6a2e8933ccbe2992f0f6f971210692223"
+    },
+    {
+      "path": "src/js/Utility/blendColors.ts",
+      "origin": "original-game",
+      "source_url": "https://github.com/TomWHall/Descensus2/blob/750003f12815a756ebd18634e88620c1050a1ec5/src/js/Utility/blendColors.ts",
+      "bytes": 774,
+      "sha256": "3c2682af9389faddab89d2cc71b4b30fbccb3f97bce1c70cd7537588409b7c93",
+      "git_blob_sha1": "0897386b652777e27f4bfb9004074044a064046d"
+    },
+    {
+      "path": "src/js/Utility/randomUtil.ts",
+      "origin": "original-game",
+      "source_url": "https://github.com/TomWHall/Descensus2/blob/750003f12815a756ebd18634e88620c1050a1ec5/src/js/Utility/randomUtil.ts",
+      "bytes": 932,
+      "sha256": "99bc9ce0a1a62ffd47835dba13973679de2dc91758ee90a27d2e74d056f7f981",
+      "git_blob_sha1": "ff988f3630076062c0512f8b9469e5b59e137d7a"
+    },
+    {
+      "path": "src/js/Utility/timer.ts",
+      "origin": "original-game",
+      "source_url": "https://github.com/TomWHall/Descensus2/blob/750003f12815a756ebd18634e88620c1050a1ec5/src/js/Utility/timer.ts",
+      "bytes": 1217,
+      "sha256": "246e5ada1d87c9d78423e99670f4890b096d1034065c5d003d10d6e08f58d49e",
+      "git_blob_sha1": "4a3b3dda8b49e49ea6e72f9d243ed23995ee073f"
+    },
+    {
+      "path": "src/js/Utility/tintUtil.ts",
+      "origin": "original-game",
+      "source_url": "https://github.com/TomWHall/Descensus2/blob/750003f12815a756ebd18634e88620c1050a1ec5/src/js/Utility/tintUtil.ts",
+      "bytes": 915,
+      "sha256": "18e8117ef4d850db20e9967a863263556c2203e4097dc326acd7812d2e2c0be8",
+      "git_blob_sha1": "7da56dd17bd3bf14138814756540df822b99723c"
+    },
+    {
+      "path": "src/js/ball.ts",
+      "origin": "original-game",
+      "source_url": "https://github.com/TomWHall/Descensus2/blob/750003f12815a756ebd18634e88620c1050a1ec5/src/js/ball.ts",
+      "bytes": 1920,
+      "sha256": "ec4c21d68e8cbd3e945debb2380a6335e10fca3c961aa95d8215f18b63b76a2c",
+      "git_blob_sha1": "e33220bd9a48ee5b6d1cc8f2577e89533863d07d"
+    },
+    {
+      "path": "src/js/deviceReady.ts",
+      "origin": "original-game",
+      "source_url": "https://github.com/TomWHall/Descensus2/blob/750003f12815a756ebd18634e88620c1050a1ec5/src/js/deviceReady.ts",
+      "bytes": 244,
+      "sha256": "f31d21251e25537aa8f62763666ee7c2fb75705c22030b0eeeb8c6bff28379e1",
+      "git_blob_sha1": "d5b34a84d3172ca1b87ac7b7e69b01d212d9380c"
+    },
+    {
+      "path": "src/js/ground.ts",
+      "origin": "original-game",
+      "source_url": "https://github.com/TomWHall/Descensus2/blob/750003f12815a756ebd18634e88620c1050a1ec5/src/js/ground.ts",
+      "bytes": 1178,
+      "sha256": "19d41ce495cd669247ecdb6b839070cacb1ab0df2c96cbf396ecb5a90b40fcd9",
+      "git_blob_sha1": "2c28424ce4151d84b7244ea940f43d6acee366b7"
+    },
+    {
+      "path": "src/js/index.ts",
+      "origin": "original-game",
+      "source_url": "https://github.com/TomWHall/Descensus2/blob/750003f12815a756ebd18634e88620c1050a1ec5/src/js/index.ts",
+      "bytes": 1621,
+      "sha256": "50e5b86f965a7ae078d2f7aa4a7ac94244d6c71e583f75b17164fcb2fd1fe7cb",
+      "git_blob_sha1": "b6536bcd54412af9d6715237b7d6a5b338439b1b"
+    },
+    {
+      "path": "src/js/lib/p2/p2.min.js",
+      "origin": "original-game",
+      "source_url": "https://github.com/TomWHall/Descensus2/blob/750003f12815a756ebd18634e88620c1050a1ec5/src/js/lib/p2/p2.min.js",
+      "bytes": 121978,
+      "sha256": "73488d7e272871799149a4f20d7cb30134fc98592f22a36c008bf6eddf4c5846",
+      "git_blob_sha1": "d18bb08b8e6821e577e912b0aa8d012b5bc142a5"
+    },
+    {
+      "path": "src/js/lib/pixi/pixi.min.js",
+      "origin": "original-game",
+      "source_url": "https://github.com/TomWHall/Descensus2/blob/750003f12815a756ebd18634e88620c1050a1ec5/src/js/lib/pixi/pixi.min.js",
+      "bytes": 407114,
+      "sha256": "d4db1ab70ec539a8b0422a4b42e77179806061fb64455bf58945801bd9dca971",
+      "git_blob_sha1": "a76d2eb553aaa72ce1719f080f8256df0798c0b4"
+    },
+    {
+      "path": "src/js/p2/IContactEvent.ts",
+      "origin": "original-game",
+      "source_url": "https://github.com/TomWHall/Descensus2/blob/750003f12815a756ebd18634e88620c1050a1ec5/src/js/p2/IContactEvent.ts",
+      "bytes": 94,
+      "sha256": "d9bb14d7581970463ee5c478f27a02778ef00f7f46b6d71010542e8dfda22a44",
+      "git_blob_sha1": "f167fed3fc990be9007b88e4de1fa4087a55b5f2"
+    },
+    {
+      "path": "src/js/p2/createWorld.ts",
+      "origin": "original-game",
+      "source_url": "https://github.com/TomWHall/Descensus2/blob/750003f12815a756ebd18634e88620c1050a1ec5/src/js/p2/createWorld.ts",
+      "bytes": 2774,
+      "sha256": "fcbd3d31827459bded4a59a3204acbbba5fca525aa15806281da2eb20dfdab92",
+      "git_blob_sha1": "2868c302e89558e73278bb527b8733ba78fef880"
+    },
+    {
+      "path": "src/js/p2/materials.ts",
+      "origin": "original-game",
+      "source_url": "https://github.com/TomWHall/Descensus2/blob/750003f12815a756ebd18634e88620c1050a1ec5/src/js/p2/materials.ts",
+      "bytes": 156,
+      "sha256": "0de72bbdd6d003af1d558a46211de86e9b8ee31651cd495230a9d84bfb1752bb",
+      "git_blob_sha1": "6f93ba9a3a3083ec7467ce53d8f39474b76d86a1"
+    },
+    {
+      "path": "src/js/p2/p2Util.ts",
+      "origin": "original-game",
+      "source_url": "https://github.com/TomWHall/Descensus2/blob/750003f12815a756ebd18634e88620c1050a1ec5/src/js/p2/p2Util.ts",
+      "bytes": 1288,
+      "sha256": "c26e5e7e1efb007ff905377fe2a3be26b506f2a73c783950a39dc9934c5a385d",
+      "git_blob_sha1": "6685def1d4709774dd668c80e5df3ce6f1073384"
+    },
+    {
+      "path": "tsconfig.json",
+      "origin": "original-game",
+      "source_url": "https://github.com/TomWHall/Descensus2/blob/750003f12815a756ebd18634e88620c1050a1ec5/tsconfig.json",
+      "bytes": 265,
+      "sha256": "5d79ce6d2bee370cfb27643f03e2f2230e4e602ed90a4601f3e53ff591dea537",
+      "git_blob_sha1": "eeed27472c6b3002e348a50d1b7699490938a494"
+    },
+    {
+      "path": "webpack.config.js",
+      "origin": "original-game",
+      "source_url": "https://github.com/TomWHall/Descensus2/blob/750003f12815a756ebd18634e88620c1050a1ec5/webpack.config.js",
+      "bytes": 2102,
+      "sha256": "2ef9c85b4f3aa5cb9f55c3732561e0fb780855d77a0bbaa1a90a58ca666a1bff",
+      "git_blob_sha1": "7b9b86407cf8f211522dd68691b029e5172f32d1"
+    }
+  ]
+}

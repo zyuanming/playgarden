@@ -155,6 +155,7 @@ import { sortingNetworkLevels } from "../src/games/sortingNetworkLogic";
 import { voxelViewsLevels } from "../src/games/voxelViewsLogic";
 import { cubeNetLevels } from "../src/games/cubeNetLogic";
 const packs = {
+  "descensus-2": [],
   domineering: domineeringLevels,
   "grid-garden": gridGardenLevels,
   "elevator-saga": elevatorSagaLevels,
@@ -383,8 +384,8 @@ describe("Scalable catalog contract", () => {
       }
     }),
   );
-  it("counts only 184 real games and 3327 levels, not the roadmap", () => {
-    expect(games).toHaveLength(184);
+  it("counts only 185 real games and 3327 levels, not the roadmap", () => {
+    expect(games).toHaveLength(185);
     expect(games.reduce((sum, g) => sum + g.levelCount, 0)).toBe(3327);
   });
 });
