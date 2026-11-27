@@ -154,7 +154,9 @@ import { binaryCourierLevels } from "../src/games/binaryCourierLogic";
 import { sortingNetworkLevels } from "../src/games/sortingNetworkLogic";
 import { voxelViewsLevels } from "../src/games/voxelViewsLogic";
 import { cubeNetLevels } from "../src/games/cubeNetLogic";
+import { angleLevels } from "../src/games/angleRingLogic";
 const packs = {
+  "angle-ring": angleLevels,
   "descensus-2": [],
   "tidal-post": [],
   domineering: domineeringLevels,
@@ -385,8 +387,8 @@ describe("Scalable catalog contract", () => {
       }
     }),
   );
-  it("counts only 186 real games and 3419 levels, not the roadmap", () => {
-    expect(games).toHaveLength(186);
-    expect(games.reduce((sum, g) => sum + g.levelCount, 0)).toBe(3419);
+  it("counts only 187 real games and 3431 levels, not the roadmap", () => {
+    expect(games).toHaveLength(187);
+    expect(games.reduce((sum, g) => sum + g.levelCount, 0)).toBe(3431);
   });
 });

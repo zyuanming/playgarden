@@ -1,0 +1,146 @@
+/* SPDX-License-Identifier: GPL-3.0-only */
+.angular-game .angular-panel {
+  min-width: 0;
+  padding: clamp(12px, 3vw, 24px);
+  border: 1px solid #5d4a69;
+  border-radius: 22px;
+  background: radial-gradient(ellipse at 35% 26%, #39254a, #20172c 70%);
+  color: #f9ecfd;
+}
+.angular-game .angular-panel :focus-visible,
+.angular-game .angular-panel:focus-visible {
+  outline: 3px solid #f6e580;
+  outline-offset: 3px;
+}
+.angular-game .angular-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.angular-game .angular-heading .mini-label {
+  color: #f5c99f;
+}
+.angular-game .angular-board {
+  display: grid;
+  align-items: center;
+  grid-template-columns: minmax(0, 2fr) minmax(96px, 1fr);
+  gap: clamp(5px, 2vw, 16px);
+  margin: 8px 0;
+}
+.angular-game .angular-dial {
+  width: 100%;
+  max-width: 260px;
+  display: block;
+  margin-inline: auto;
+}
+.angular-game .angular-dial text {
+  dominant-baseline: middle;
+  text-anchor: middle;
+}
+.angular-game .angular-dial-value {
+  fill: #fff1fb;
+  font-size: 31px;
+  font-weight: 800;
+}
+.angular-game .angular-dial-label {
+  fill: #dac4e4;
+  font-size: 13px;
+}
+.angular-game .angular-tick-label {
+  fill: #f6e580;
+  font-size: 13px;
+  font-weight: 700;
+}
+.angular-game .angular-wedge-id {
+  fill: #22152d;
+  font-size: 14px;
+  font-weight: 850;
+}
+.angular-game .angular-readout {
+  min-width: 0;
+  color: #fceaf9;
+  font-variant-numeric: tabular-nums;
+  margin: 0;
+  background: #22182d;
+  padding: 8px 10px;
+  border: 1px solid #685076;
+  border-radius: 12px;
+}
+.angular-game .angular-readout div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5px;
+  padding: 5px 0;
+  flex-wrap: wrap;
+}
+.angular-game .angular-readout div + div {
+  border-top: 1px solid #53425f;
+}
+.angular-game .angular-readout dt {
+  font-size: 0.75rem;
+  color: #e4cde6;
+}
+.angular-game .angular-readout dd {
+  margin: 0;
+  font-size: 0.85rem;
+  font-weight: 760;
+  white-space: nowrap;
+}
+.angular-game .angular-frames,
+.angular-game .angular-pieces {
+  display: grid;
+  gap: 5px;
+}
+.angular-game .angular-frames {
+  grid-template-columns: repeat(auto-fit, minmax(75px, 1fr));
+  margin-top: 10px;
+}
+.angular-game .angular-pieces {
+  grid-template-columns: repeat(auto-fit, minmax(min(72px, 24%), 1fr));
+}
+.angular-game .angular-panel button {
+  display: grid;
+  place-items: center;
+  gap: 2px;
+  min-height: 52px;
+  padding: 6px 2px;
+  color: #fff0fa;
+  background: #392849;
+  border: 1px solid #806889;
+  border-radius: 10px;
+  line-height: 1.15;
+  font-size: 0.82rem;
+  touch-action: manipulation;
+}
+.angular-game
+  .angular-panel
+  button:hover:not([aria-disabled="true"]):not(:disabled) {
+  background: #573c65;
+}
+.angular-game .angular-panel button small {
+  font-size: 0.72rem;
+  color: #e6d2e9;
+}
+.angular-game .angular-pieces b {
+  font-size: 1rem;
+}
+.angular-game .angular-panel button[aria-pressed="true"],
+.angular-game .angular-panel button[data-hinted="true"] {
+  border-color: #f6e580;
+  box-shadow: inset 0 0 0 1px #f6e580;
+  color: #fff2ad;
+}
+.angular-game .angular-panel button[aria-disabled="true"],
+.angular-game .angular-panel button:disabled {
+  color: #d5c7d7;
+  background: #2a2133;
+  opacity: 1;
+}
+.angular-game .angular-status {
+  margin: 9px 0 0;
+  color: #ffe2c1;
+  min-height: 2.6em;
+  font-size: 0.86rem;
+}

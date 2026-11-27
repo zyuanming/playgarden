@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420" role="img" aria-label="Illustrated angle ring with mosaic wedges">
+  <defs>
+    <radialGradient id="a"><stop stop-color="#563666"/><stop offset="1" stop-color="#24162f"/></radialGradient>
+    <pattern id="b" width="24" height="24" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.5" fill="#bd9acc" opacity=".35"/></pattern>
+  </defs>
+  <path fill="url(#a)" d="M0 0h800v420H0z"/>
+  <path fill="url(#b)" d="M0 0h800v420H0z"/>
+  <g transform="translate(400 211) rotate(-12)" fill="none">
+    <circle r="172" stroke="#ad8ab7" stroke-dasharray="2 12" stroke-width="7"/>
+    <circle r="141" stroke="#30213c" stroke-width="53"/>
+    <circle r="141" stroke="#ffbf81" stroke-width="50" stroke-dasharray="161 725" transform="rotate(-90)"/>
+    <circle r="141" stroke="#66deca" stroke-width="50" stroke-dasharray="173 713" transform="rotate(-21)"/>
+    <circle r="141" stroke="#cbabfd" stroke-width="50" stroke-dasharray="218 668" transform="rotate(53)"/>
+    <circle r="141" stroke="#f9e480" stroke-width="50" stroke-dasharray="86 800" transform="rotate(145)"/>
+  </g>
+  <g fill="#fae5ff" text-anchor="middle" font-family="system-ui,sans-serif">
+    <text x="400" y="219" font-size="59" font-weight="750">270°</text>
+    <text x="400" y="251" font-size="16" letter-spacing="5">ANGLE RING</text>
+  </g>
+  <g fill="#f9e480"><path d="m574 273 12 14-12 14-12-14z"/><path d="m208 137 7 9-7 9-7-9z"/></g>
+</svg>
