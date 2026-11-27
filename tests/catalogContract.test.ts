@@ -162,6 +162,7 @@ import { debugCases } from "../src/games/debugDetectiveLevels";
 import { packingLevels } from "../src/games/voxelPackingLevels";
 import { appointmentLevels } from "../src/games/appointmentPlannerLevels";
 import { equationLevels } from "../src/games/equationBalanceLevels";
+import { magneticBoards } from "../src/games/magneticMazeLevels";
 import { mazeBoards } from "../src/games/layeredMazeLevels";
 const packs = {
   "irrigation-plan": irrigationLevels,
@@ -170,6 +171,7 @@ const packs = {
   "voxel-packing": packingLevels,
   "appointment-planner": appointmentLevels,
   "equation-balance": equationLevels,
+  "magnetic-maze": magneticBoards,
   "recursive-orchard": treeLevels,
   "angle-ring": angleLevels,
   "descensus-2": [],

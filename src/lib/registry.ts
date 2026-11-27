@@ -3450,5 +3450,18 @@ component: lazy(() => import("../games/Descensus2"))
     source: original,
     component: lazy(() => import("../games/EquationBalance")),
   },
+  {
+    id: "magnetic-maze",
+    title: "磁场迷宫",
+    subtitle: "用同极推开、异极吸引和翻转台，把小车刚好停在出口。12 道原创谜题。",
+    category: "科学实验",
+    difficulty: "中级",
+    tone: "green",
+    levelCount: 12,
+    resumeKey: "playgarden.magnetic-maze.v1",
+    artwork: { url: "./magnetic-maze-art.svg", position: "center", size: "cover" },
+    source: original,
+    component: lazy(() => import("../games/MagneticMaze")),
+  },
 ];
 export const findGame = (id: string) => games.find((game) => game.id === id);
