@@ -1366,9 +1366,9 @@ export const games: GameDefinition[] = [
     id: "set-trio", title: "三卡共鸣",
     subtitle: "选出全同或全异的三张牌，让四种属性一起共鸣。",
     category: "逻辑思维", difficulty: "中级", tone: "purple",
-    levelCount: 18, resumeKey: "playgarden.set-trio.v1",
+    levelCount: 100, resumeKey: "playgarden.set-trio.v1",
     artwork: { url: "./set-trio-art.svg", position: "50% 50%", size: "cover" },
-    source: { kind: "original", license: "GPL-3.0-only", notes: "通用三值属性规则的原创实现；原创18个教学牌局、四项预览、当前余牌分组提示、可撤销收牌与经过校验的本机存档。与商业SET品牌无关联。" },
+    source: { kind: "original", license: "GPL-3.0-only", notes: "通用三值属性规则的原创实现；100 个原创牌局、四项预览、当前余牌分组提示、可撤销收牌与经过校验的本机存档。与商业SET品牌无关联。" },
     component: lazy(() => import("../games/SetTrio")),
   },
   {

@@ -123,7 +123,7 @@ function TrioRound({ level, paused, freshStart, hintToken, undoToken, onComplete
     <section className="trio-table" aria-label="三卡共鸣牌桌">
       <header className="trio-heading">
         <div><span className="trio-eyebrow">{puzzle.chapter}</span><h3>{puzzle.title}</h3></div>
-        <span className="trio-number">{String(level + 1).padStart(2, '0')}<small> / 18</small></span>
+        <span className="trio-number">{String(level + 1).padStart(2, '0')}<small> / {setTrioLevels.length}</small></span>
       </header>
       <div className="trio-progress"><span>余牌 <strong>{remaining.length}</strong> / {puzzle.cards.length}</span><span>已收 <strong>{state.removed.length}</strong> 组</span><span>无计时 · 可撤销</span></div>
       <p className="trio-lesson">{puzzle.lesson}</p>
@@ -171,7 +171,7 @@ function TrioRound({ level, paused, freshStart, hintToken, undoToken, onComplete
         <p>Tab 切换控件，Enter / 空格选牌，方向键在三列牌桌移动焦点。颜色和填充均有文字标签。</p>
       </details>
       <p className="trio-save" data-set-trio-save>{saved ? '选牌与收牌记录已保存在本机。' : '当前无法保存。仍可游玩，离开后这局可能丢失。'}</p>
-      <p className="trio-origin">原创规则实现、十八个教学牌局与图形。采用通用的三值属性规则；与商业 SET® 品牌无关联。</p>
+      <p className="trio-origin">原创规则实现、{setTrioLevels.length} 个牌局与图形。采用通用的三值属性规则；与商业 SET® 品牌无关联。</p>
     </aside>
   </div>;
 }

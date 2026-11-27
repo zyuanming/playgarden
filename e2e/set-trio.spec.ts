@@ -128,3 +128,104 @@ test('three-card relations: first, middle and final lessons with recoverable con
   await expect(page.locator('[data-set-trio-card]')).toHaveCount(6);
   expect(errors).toEqual([]);
 });
+
+const trio = (p: Page) => p.locator('[data-set-trio-game]');
+const cardAt = (p: Page, i: number) => p.locator('[data-set-trio-card="' + i + '"]');
+const layer = (p: Page, n: string) => p.getByRole('button', { name: n, exact: true });
+const confirmAt = (p: Page) => p.locator('[data-set-trio-confirm]');
+const msg = (p: Page) => p.locator('[data-set-trio-message]');
+const use = (locator: Locator, touch: boolean) => touch ? locator.tap() : locator.press('Space');
+const playGroups = async (p: Page, touch: boolean, groups: number[][]) => {
+  for (const ids of groups) {
+    for (const id of ids) await use(cardAt(p, id), touch);
+    await expect(p.locator('[data-set-trio-preview]')).toHaveAttribute('data-set-trio-preview', 'valid');
+    await use(confirmAt(p), touch);
+  }
+};
+const finished = async (p: Page, index: number) => {
+  await expect(trio(p)).toHaveAttribute('data-set-trio-won', 'true');
+  await expect(p.locator('.status.success')).toContainText('整桌共鸣');
+  await expect.poll(() => p.evaluate(() =>
+    JSON.parse(localStorage.getItem('playgarden.progress.v2') ?? '{}').completed?.['set-trio']
+  )).toContain(index);
+};
+
+for (let index = 18; index < 100; index += 8) {
+  const end = Math.min(index + 8, 100);
+  test('New trio tables ' + (index + 1) + '–' + end + ', selecting only through the game', async ({ page, isMobile }, info) => {
+    const errors = captureErrors(page);
+    await openGame(page, '三卡共鸣');
+    for (let i = index; i < end; i++) {
+      await chooseLevel(page, i);
+      await expect(trio(page)).toHaveAttribute('data-set-trio-id', 'set-trio-' + (i + 1));
+      const cards = await visibleCards(page);
+      expect(cards).toHaveLength(i < 30 ? 9 : 12);
+      if ([18, 48, 82, 99].includes(i)) {
+        await expect(page.locator('.trio-number')).toHaveText((i + 1) + ' / 100');
+        expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+        const sizes = await page.locator('.trio-card, .trio-actions button').evaluateAll(ns =>
+          ns.map(n => { const r = n.getBoundingClientRect(); return [r.width, r.height]; })
+        );
+        expect(Math.min(...sizes.flat())).toBeGreaterThanOrEqual(44);
+        await page.screenshot({ path: info.outputPath('table-' + (i + 1) + '.png'), fullPage: true, animations: 'disabled' });
+      }
+      const route = partition(cards);
+      expect(route).not.toBeNull();
+      await playGroups(page, isMobile, route!);
+      await finished(page, i);
+    }
+    expect(errors).toEqual([]);
+  });
+}
+
+test('A legacy level-18 partial save finishes and opens the new chapter', async ({ page, isMobile }) => {
+  const errors = captureErrors(page);
+  await page.goto('/');
+  // Exact version-1 fingerprint from the 18-table release, not from current data.
+  await page.evaluate(() => {
+    localStorage.setItem('playgarden.set-trio.v1.selected', '17');
+    localStorage.setItem('playgarden.set-trio.v1.round.17',
+      '{"version":1,"id":"final-resonance","board":"0000-0022-0100-0211-1112-1101-1202-1220-2221-2210-2001-2202","actions":[[0,4,8]],"selected":[1]}');
+  });
+  await openGame(page, '三卡共鸣');
+  await expect(trio(page)).toHaveAttribute('data-set-trio-id', 'final-resonance');
+  await expect(trio(page)).toHaveAttribute('data-set-trio-selected', '1');
+  await expect(trio(page)).toHaveAttribute('data-set-trio-groups', '1');
+  await expect(trio(page)).toHaveAttribute('data-set-trio-remaining', '1,2,3,5,6,7,9,10,11');
+  await expect(msg(page)).toContainText('已恢复');
+  await playGroups(page, isMobile, [[5, 9], [2, 6, 10], [3, 7, 11]]);
+  await finished(page, 17);
+  await use(layer(page, '下一关'), isMobile);
+  await expect(trio(page)).toHaveAttribute('data-set-trio-id', 'set-trio-19');
+  await expect(page.getByLabel('选择关卡', { exact: true }).locator('option')).toHaveCount(100);
+  await expect(trio(page)).toHaveAttribute('data-set-trio-groups', '0');
+  expect(errors).toEqual([]);
+});
+
+test('Final table accepts both solutions, and two viable groups can together strand the rest', async ({ page, isMobile }, info) => {
+  const errors = captureErrors(page);
+  await openGame(page, '三卡共鸣');
+  await chooseLevel(page, 99);
+  await playGroups(page, isMobile, [[0, 1, 11]]);
+  await expect(msg(page)).toContainText('下一组');
+  await playGroups(page, isMobile, [[4, 7, 9]]);
+  await expect(msg(page)).toContainText('6 张不能全部清空');
+  const rest = '2,3,5,6,8,10';
+  await expect(trio(page)).toHaveAttribute('data-set-trio-remaining', rest);
+  await use(layer(page, '提示'), isMobile);
+  await expect(msg(page)).toContainText('至少撤销 1 次');
+  await expect(trio(page)).toHaveAttribute('data-set-trio-remaining', rest);
+  await expect(trio(page)).toHaveAttribute('data-set-trio-selected', '');
+  await page.screenshot({ path: info.outputPath('final-dead-end.png'), fullPage: true, animations: 'disabled' });
+  await use(layer(page, '撤销'), isMobile);
+  await expect(trio(page)).toHaveAttribute('data-set-trio-selected', '4,7,9');
+  await expect(trio(page)).toHaveAttribute('data-set-trio-groups', '1');
+  await use(layer(page, '清空选择'), isMobile);
+  await playGroups(page, isMobile, [[2, 8, 9], [3, 4, 10], [5, 6, 7]]);
+  await finished(page, 99);
+  await use(layer(page, '重来'), isMobile);
+  await expect(trio(page)).toHaveAttribute('data-set-trio-groups', '0');
+  await playGroups(page, isMobile, [[4, 7, 9], [0, 3, 8], [1, 6, 10], [2, 5, 11]]);
+  await finished(page, 99);
+  expect(errors).toEqual([]);
+});
