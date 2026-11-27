@@ -1,0 +1,131 @@
+/* SPDX-License-Identifier: GPL-3.0-only */
+.irrigation-game .irrigation-panel {
+  min-width: 0;
+  padding: clamp(11px, 3vw, 22px);
+  border: 1px solid #a9c9ba;
+  border-radius: 20px;
+  background: linear-gradient(155deg, #eef7e8, #e5f3ef);
+  color: #173e33;
+}
+.irrigation-game header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 4px 12px;
+  font-size: 0.84rem;
+  font-weight: 720;
+  margin-bottom: 9px;
+}
+.irrigation-game .irrigation-tanks,
+.irrigation-game .irrigation-plots {
+  display: grid;
+  gap: 5px;
+  margin: 0 0 9px;
+}
+.irrigation-game .irrigation-tanks {
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+}
+.irrigation-game .irrigation-plots {
+  grid-template-columns: repeat(var(--plots), minmax(0, 1fr));
+}
+.irrigation-game .irrigation-tanks div,
+.irrigation-game .irrigation-plots div {
+  min-width: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3px 8px;
+  padding: 7px;
+  border: 1px solid #96b6ab;
+  border-radius: 9px;
+  background: #f9fff9;
+  font-size: 0.82rem;
+}
+.irrigation-game .irrigation-tanks div {
+  background: #dcf1f1;
+}
+.irrigation-game .irrigation-tanks small,
+.irrigation-game .irrigation-plots small {
+  font-size: 0.68rem;
+  flex-basis: 100%;
+}
+.irrigation-game .irrigation-plots div[data-fill="exact"] {
+  background: #dbedc0;
+  border-color: #6d9960;
+}
+.irrigation-game .irrigation-plots div[data-fill="over"],
+.irrigation-game .irrigation-tanks div[data-over="true"] {
+  background: #ffe7d6;
+  border-color: #af6747;
+  color: #732e16;
+}
+.irrigation-game .irrigation-valves {
+  display: grid;
+  gap: 6px;
+}
+.irrigation-game .irrigation-valve {
+  display: grid;
+  grid-template-columns: minmax(47px, auto) minmax(0, 1fr);
+  gap: 5px;
+  align-items: center;
+  border: 1px solid #bed0c6;
+  border-radius: 10px;
+  background: #f5fbf6;
+  padding: 4px;
+}
+.irrigation-game .irrigation-valve > b {
+  font-size: 0.77rem;
+  text-align: center;
+}
+.irrigation-game .irrigation-valve > b small {
+  display: block;
+  font-size: 0.65rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.irrigation-game .irrigation-modes {
+  display: flex;
+  gap: 4px;
+}
+.irrigation-game .irrigation-modes button {
+  flex: 1 1 0;
+  min-width: 0;
+  min-height: 48px;
+  padding: 3px 1px;
+  display: grid;
+  place-content: center;
+  border: 1px solid #a2bdb0;
+  border-radius: 7px;
+  background: #fff;
+  color: #173e33;
+  text-align: center;
+  touch-action: manipulation;
+}
+.irrigation-game .irrigation-modes button strong {
+  font-size: 0.76rem;
+}
+.irrigation-game .irrigation-modes button small {
+  font-size: 0.65rem;
+  overflow-wrap: anywhere;
+}
+.irrigation-game .irrigation-modes button[aria-pressed="true"] {
+  border-color: #53806d;
+  background: #d3eadc;
+}
+.irrigation-game .irrigation-modes button[data-hinted="true"] {
+  box-shadow: inset 0 0 0 2px #ad6610;
+  background: #fff2cb;
+}
+.irrigation-game .irrigation-modes button:disabled {
+  opacity: 0.76;
+}
+.irrigation-game :focus-visible {
+  outline: 2px solid #236a57;
+  outline-offset: 2px;
+}
+.irrigation-game .irrigation-status {
+  font-size: 0.82rem;
+  min-height: 2em;
+  margin: 8px 0 0;
+}
