@@ -1,7 +1,7 @@
 import { test, expect } from "@playwright/test";
 import { readFileSync } from "node:fs";
 const proof = JSON.parse(readFileSync("docs/galaxies/campaign.json", "utf8"))
-  .levels[35] as { solution: number[] };
+  .levels[99] as { solution: number[] };
 test("Galaxies exact public build completes last puzzle with actual controls and saves progress", async ({
   page,
 }, info) => {
@@ -17,9 +17,9 @@ test("Galaxies exact public build completes last puzzle with actual controls and
   await page
     .getByRole("button", { name: "开始玩星系分区", exact: true })
     .click();
-  await page.getByLabel("选择关卡", { exact: true }).selectOption("35");
+  await page.getByLabel("选择关卡", { exact: true }).selectOption("99");
   const root = page.locator(".galaxies-layout");
-  await expect(root).toHaveAttribute("data-galaxies-id", "galaxies-036");
+  await expect(root).toHaveAttribute("data-galaxies-id", "galaxies-100");
   await page.screenshot({
     path: info.outputPath("galaxies-public-start.png"),
     fullPage: true,
@@ -41,7 +41,7 @@ test("Galaxies exact public build completes last puzzle with actual controls and
         JSON.parse(localStorage.getItem("playgarden.progress.v2")!).completed
           .galaxies,
     ),
-  ).toContain(35);
+  ).toContain(99);
   expect(
     await page.evaluate(
       () => document.documentElement.scrollWidth <= innerWidth,

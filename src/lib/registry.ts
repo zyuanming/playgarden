@@ -1264,7 +1264,7 @@ export const games: GameDefinition[] = [
     category: "逻辑思维",
     difficulty: "中级",
     tone: "green",
-    levelCount: 36,
+    levelCount: 100,
     resumeKey: "playgarden.galaxies.v1",
     artwork: { url: "./galaxies-art.svg", position: "50% 50%", size: "cover" },
     source: {
@@ -1276,7 +1276,7 @@ export const games: GameDefinition[] = [
       commit: "d1e10eb57dd80af4999e698a9ab31f546e9a0b9d",
       notice: "./galaxies-LICENCE.txt",
       notes:
-        "实际移植 Galaxies 的对称对应、连通分量、区域中心及完成判定；原创 36 关、界面、当前局面提示与存档。",
+        "实际移植 Galaxies 的对称对应、连通分量、区域中心及完成判定；原创 100 关、界面、当前局面提示与存档。",
     },
     component: lazy(() => import("../games/GalaxiesGarden")),
   },

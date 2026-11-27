@@ -11,12 +11,25 @@ import {
   solveGalaxies,
 } from "./galaxiesLogic";
 import "./galaxiesGarden.css";
-const chapters = ["初识星心", "双星之间", "旋臂生长", "群星成图"];
+const chapters = [
+  "初识星心",
+  "双星之间",
+  "旋臂生长",
+  "群星成图",
+  "聚星成团",
+  "旋臂交汇",
+  "遥望星野",
+  "万星归位",
+];
 const lessons = [
   "星心可以在格内，也可以落在格线或交点上。它周围的格子已经为你归好队。",
   "绕同一颗星转半圈，每个格子都要找到自己的搭档。",
   "旋臂可以拐弯，但同一星系的格子必须上下左右连在一起。",
   "让所有星系各自对称、彼此相邻，最终铺满整片星图。",
+  "先处理靠近外边缘的格子：如果某颗星旋转后会让搭档出界，就能排除它。",
+  "一对格子归队前，把从星心连过去的路想一遍；不能用斜角跨过其他星系。",
+  "星心落在边或交点上时，从固定的两格或四格向外成对扩展。",
+  "卡住时回看各个星系的边界。在一处放下旋转搭档，常会缩小另一处的选择。",
 ];
 const intro =
   "先选编号星心，再点空格归队；再点同编号格子可清除。每个星系连通且绕自己的星心旋转180°重合。";
@@ -178,7 +191,9 @@ function GalaxiesRound({
             </span>
             <h3>{p.title}</h3>
           </div>
-          <span>{String(level + 1).padStart(2, "0")} / 36</span>
+          <span>
+            {String(level + 1).padStart(2, "0")} / {galaxiesLevels.length}
+          </span>
         </header>
         <p>{lessons[p.chapter]}</p>
         <div className="galaxies-stats">

@@ -1,11 +1,15 @@
-import { test, expect } from "@playwright/test";
+import { test, expect, type Page } from "@playwright/test";
 import { readFileSync } from "node:fs";
 import { openGame, chooseLevel, captureErrors } from "./helpers";
 import { galaxiesLevels } from "../src/games/galaxiesLevels";
-import { initialGalaxies, opposite } from "../src/games/galaxiesLogic";
+import {
+  GALAXIES_SAVE,
+  initialGalaxies,
+  opposite,
+} from "../src/games/galaxiesLogic";
 const proofs = JSON.parse(readFileSync("docs/galaxies/campaign.json", "utf8"))
   .levels as { id: string; solution: number[] }[];
-test("Galaxies actual 36-level keyboard and touch journey, errors, pause and resume", async ({
+test("Galaxies existing move, error, pause and resume behavior", async ({
   page,
 }, info) => {
   test.setTimeout(360000);
@@ -83,57 +87,169 @@ test("Galaxies actual 36-level keyboard and touch journey, errors, pause and res
     fullPage: true,
   });
   await page.getByRole("button", { name: "重来", exact: true }).click();
-  for (let index = 0; index < 36; index++) {
-    if (index) await chooseLevel(page, index);
-    const level = galaxiesLevels[index],
-      start = initialGalaxies(level);
-    await expect(root).toHaveAttribute("data-galaxies-id", level.id);
-    const capture = [0, 17, 35].includes(index);
-    if (capture) {
-      expect(
-        await page.evaluate(
-          () => document.documentElement.scrollWidth <= innerWidth,
-        ),
-      ).toBe(true);
-      await page.screenshot({
-        path: info.outputPath(`galaxies-${index + 1}-start.png`),
-        fullPage: true,
-      });
-    }
-    let step = 0;
-    for (const [j, owner] of proofs[index].solution.entries())
-      if (start[j] < 0) {
-        if (info.project.name === "mobile") {
-          await star(owner).tap();
-          await cell(j).tap();
-        } else {
-          await star(owner).click();
-          await cell(j).focus();
-          await cell(j).press("Enter");
-        }
-        if (
-          capture &&
-          ++step === Math.ceil(start.filter((v) => v < 0).length / 2)
-        )
-          await page.screenshot({
-            path: info.outputPath(`galaxies-${index + 1}-mid.png`),
-            fullPage: true,
-          });
-      }
-    await expect(root).toHaveAttribute("data-galaxies-won", "true");
-    await expect(page.locator(".status")).toHaveClass(/success/);
-    await expect(cell(0)).toBeDisabled();
-    if (capture)
-      await page.screenshot({
-        path: info.outputPath(`galaxies-${index + 1}-completed.png`),
-        fullPage: true,
-      });
+
+  await playBoard(page, 0, startFor(0), info.project.name === "mobile");
+  await expect(root).toHaveAttribute("data-galaxies-won", "true");
+  expect(errors).toEqual([]);
+});
+
+const game = (page: Page) => page.locator(".galaxies-layout");
+const star = (page: Page, g: number) =>
+  game(page).locator(`button[data-star="${g}"]`);
+const cell = (page: Page, i: number) =>
+  game(page).locator(`button[data-cell="${i}"]`);
+const startFor = (index: number) => initialGalaxies(galaxiesLevels[index]);
+const click = (touch: boolean, target: ReturnType<Page["locator"]>) =>
+  touch ? target.tap() : target.click();
+const assign = (page: Page, i: number, touch: boolean) =>
+  touch ? cell(page, i).tap() : cell(page, i).press("Enter");
+async function playBoard(
+  page: Page,
+  index: number,
+  state: number[],
+  touch: boolean,
+) {
+  const proof = proofs[index];
+  expect(proof.id).toBe(galaxiesLevels[index].id);
+  for (let g = 0; g < galaxiesLevels[index].centers.length; g++) {
+    const cells = proof.solution.flatMap((owner, i) =>
+      owner === g && state[i] < 0 ? [i] : [],
+    );
+    if (!cells.length) continue;
+    await click(touch, star(page, g));
+    for (const i of cells) await assign(page, i, touch);
   }
-  const completed = await page.evaluate(
-    () =>
-      JSON.parse(localStorage.getItem("playgarden.progress.v2")!).completed
-        .galaxies,
+  await expect(game(page)).toHaveAttribute("data-galaxies-won", "true");
+  await expect(game(page)).toHaveAttribute(
+    "data-galaxies-state",
+    proof.solution.join(","),
   );
-  expect(completed).toEqual(Array.from({ length: 36 }, (_, i) => i));
+  await expect(page.locator(".status")).toHaveClass(/success/);
+  await expect(cell(page, 0)).toBeDisabled();
+}
+
+for (let batch = 0; batch < 8; batch++) {
+  const first = 36 + 8 * batch;
+  test(`Galaxies append ${first + 1}–${first + 8}`, async ({
+    page,
+    isMobile,
+  }, info) => {
+    const errors = captureErrors(page);
+    await openGame(page, "星系分区");
+    for (let index = first; index < first + 8; index++) {
+      await chooseLevel(page, index);
+      const root = game(page);
+      await expect(root).toHaveAttribute(
+        "data-galaxies-id",
+        galaxiesLevels[index].id,
+      );
+      await expect(root.locator(".galaxies-heading > span")).toHaveText(
+        `${index + 1} / 100`,
+      );
+      await expect(root).toHaveAttribute("data-galaxies-won", "false");
+      const capture = [36, 52, 68, 84, 99].includes(index);
+      if (capture) {
+        expect(
+          await page.evaluate(
+            () => document.documentElement.scrollWidth <= innerWidth,
+          ),
+        ).toBe(true);
+        await page.screenshot({
+          path: info.outputPath(`galaxies-${index + 1}-start.png`),
+          fullPage: true,
+        });
+      }
+      await playBoard(page, index, startFor(index), isMobile);
+      if (capture) {
+        await page.screenshot({
+          path: info.outputPath(`galaxies-${index + 1}-completed.png`),
+          fullPage: true,
+        });
+      }
+    }
+    await expect
+      .poll(() =>
+        page.evaluate(
+          () =>
+            JSON.parse(localStorage.getItem("playgarden.progress.v2")!)
+              .completed.galaxies,
+        ),
+      )
+      .toEqual(Array.from({ length: 8 }, (_, i) => first + i));
+    expect(errors).toEqual([]);
+  });
+}
+
+test("Galaxies resumes the unchanged old level 36 and continues to new level 37", async ({
+  page,
+  isMobile,
+}) => {
+  const errors = captureErrors(page);
+  const old = 35,
+    initial = startFor(old),
+    partial = initial.slice();
+  const first = initial.indexOf(-1);
+  partial[first] = proofs[old].solution[first];
+  await page.addInitScript(
+    ([key, raw]) => {
+      if (localStorage.getItem(`${key}.selected`) === null) {
+        localStorage.setItem(`${key}.selected`, "35");
+        localStorage.setItem(`${key}.round.35`, raw);
+      }
+    },
+    [
+      GALAXIES_SAVE,
+      JSON.stringify({ id: "galaxies-036", history: [initial, partial] }),
+    ],
+  );
+  await openGame(page, "星系分区");
+  await expect(game(page)).toHaveAttribute("data-galaxies-id", "galaxies-036");
+  await expect(game(page)).toHaveAttribute(
+    "data-galaxies-state",
+    partial.join(","),
+  );
+  await playBoard(page, old, partial, isMobile);
+  await click(
+    isMobile,
+    page.getByRole("button", { name: "下一关", exact: true }),
+  );
+  await expect(game(page)).toHaveAttribute("data-galaxies-id", "galaxies-037");
+  const fresh = startFor(36);
+  await expect(game(page)).toHaveAttribute(
+    "data-galaxies-state",
+    fresh.join(","),
+  );
+  await click(
+    isMobile,
+    page.getByRole("button", { name: "提示", exact: true }),
+  );
+  const hint = game(page).locator(".hint");
+  await expect(hint).toHaveCount(1);
+  await expect(game(page)).toHaveAttribute(
+    "data-galaxies-state",
+    fresh.join(","),
+  );
+  const index = Number(await hint.getAttribute("data-cell"));
+  await expect(star(page, proofs[36].solution[index])).toHaveAttribute(
+    "aria-pressed",
+    "true",
+  );
+  await assign(page, index, isMobile);
+  const next = fresh.slice();
+  next[index] = proofs[36].solution[index];
+  await expect(game(page)).toHaveAttribute(
+    "data-galaxies-state",
+    next.join(","),
+  );
+  await page.reload();
+  await page.getByRole("textbox", { name: "搜索游戏" }).fill("星系分区");
+  await page
+    .getByRole("button", { name: "开始玩星系分区", exact: true })
+    .click();
+  await expect(game(page)).toHaveAttribute("data-galaxies-id", "galaxies-037");
+  await expect(game(page)).toHaveAttribute(
+    "data-galaxies-state",
+    next.join(","),
+  );
   expect(errors).toEqual([]);
 });

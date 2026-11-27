@@ -153,9 +153,9 @@ def main():
     raw=(repo/'src/games/galaxiesLevels.ts').read_text()
     levels=json.loads(raw.split('export const galaxiesLevels: GalaxiesLevel[] = ',1)[1].strip().removesuffix(';'))
     offline=json.loads((repo/'docs/galaxies/campaign.json').read_text())['levels']
-    assert len(levels)==len(offline)==36
-    assert len({p['id'] for p in levels})==36
-    assert len({canonical(p['size'],p['centers']) for p in levels})==36,'D4 duplicate clues'
+    assert len(levels)==len(offline)==100
+    assert len({p['id'] for p in levels})==100
+    assert len({canonical(p['size'],p['centers']) for p in levels})==100,'D4 duplicate clues'
     checked=selftests(); report=[];global_shapes=set()
     for p,proof in zip(levels,offline):
         n,cs=p['size'],p['centers'];begin=time.time()
@@ -170,13 +170,14 @@ def main():
         solution=answers[0];regs=[{i for i,v in enumerate(solution) if v==g} for g in range(len(cs))]
         shapes=[shape_canonical(n,a) for a in regs];global_shapes.update(shapes)
         nonrect=sum(len(a)!=(max(i%n for i in a)-min(i%n for i in a)+1)*(max(i//n for i in a)-min(i//n for i in a)+1) for a in regs)
+        if p['chapter']>=4:assert nonrect>=2,p['id']
         editable=n*n-sum(map(len,fixed))
         info={'id':p['id'],'chapter':p['chapter'],'size':n,'centers':len(cs),'fixedCells':n*n-editable,'editableCells':editable,'solutionCount':len(answers),'exactCoverNodes':nodes,'regionCandidates':counts,'areaProfile':sorted(map(len,regs)),'nonrectangularRegions':nonrect,'centerTypes':{'cell':sum(x%2==y%2==1 for x,y in cs),'edge':sum((x+y)%2==1 for x,y in cs),'vertex':sum(x%2==y%2==0 for x,y in cs)},'seconds':round(time.time()-begin,4)}
         report.append(info);print(p['id'], 'unique',nodes,'nodes',counts,flush=True)
     chapter=[]
-    for ch in range(4):
-        rows=[r for r in report if r['chapter']==ch];assert len(rows)==9
+    for ch in range(8):
+        rows=[r for r in report if r['chapter']==ch];assert len(rows)==(9 if ch<4 else 16)
         chapter.append({'chapter':ch,'count':len(rows),'size':sorted({r['size'] for r in rows}),'editableMin':min(r['editableCells'] for r in rows),'editableMax':max(r['editableCells'] for r in rows),'editableMedian':statistics.median(r['editableCells'] for r in rows),'exactCoverNodeMedian':statistics.median(r['exactCoverNodes'] for r in rows),'exactCoverNodeMax':max(r['exactCoverNodes'] for r in rows),'nonrectangularRegions':sum(r['nonrectangularRegions'] for r in rows),'areaProfiles':len({tuple(r['areaProfile']) for r in rows})})
-    result={'method':'independent region-orbit enumeration + exact cover; direct geometric BFS validator','selftestCases':checked,'count':36,'allUnique':True,'d4Unique':True,'distinctRegionShapesD4Translation':len(global_shapes),'chapters':chapter,'levels':report,'inputsSha256':{str(p.relative_to(repo)):hashlib.sha256(p.read_bytes()).hexdigest() for p in [repo/'src/games/galaxiesLogic.ts',repo/'src/games/galaxiesLevels.ts',repo/'docs/galaxies/campaign.json']},'seconds':round(time.time()-start,3)}
+    result={'method':'independent region-orbit enumeration + exact cover; direct geometric BFS validator','selftestCases':checked,'count':len(levels),'allUnique':True,'d4Unique':True,'distinctRegionShapesD4Translation':len(global_shapes),'chapters':chapter,'levels':report,'inputsSha256':{str(p.relative_to(repo)):hashlib.sha256(p.read_bytes()).hexdigest() for p in [repo/'src/games/galaxiesLogic.ts',repo/'src/games/galaxiesLevels.ts',repo/'docs/galaxies/campaign.json']},'seconds':round(time.time()-start,3)}
     pathlib.Path(args.output).write_text(json.dumps(result,indent=2)+'\n');print(json.dumps({k:v for k,v in result.items() if k!='levels'},indent=2))
 if __name__=='__main__':main()

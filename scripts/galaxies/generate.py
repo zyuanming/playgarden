@@ -107,11 +107,38 @@ def generate():
    levels.append(p)
   print(n,attempt,[p['searchNodes'] for p in found],file=sys.stderr)
  return {'seed':SEED,'levels':levels}
+APPEND_TITLES=("聚星成团","旋臂交汇","遥望星野","万星归位")
+
+def append_campaign(data):
+ rows=json.loads((ROOT/'docs/galaxies/append-037-100.json').read_text())
+ levels=data['levels']
+ assert len(levels)==36 and len(rows)==64
+ seen={(p['size'],canonical(p['size'],p['centers'])) for p in levels}
+ for index,(cs,code) in enumerate(rows):
+  n=6 if index<32 else 7
+  chapter=4+index//16
+  id=f'galaxies-{index+37:03}'
+  assert all(len(c)==2 and all(type(v)==int and 0<v<2*n for v in c) for c in cs),id
+  fixed=[i for c in cs for i in core(n,c)]
+  assert len(fixed)==len(set(fixed)),id
+  solution=[int(s,36) for s in code]
+  assert len(solution)==n*n and all(0<=v<len(cs) for v in solution),id
+  answers,nodes=solve(n,cs)
+  assert answers==[solution],(id,'wrong or nonunique certificate')
+  regions=[{i for i,v in enumerate(solution) if v==g} for g in range(len(cs))]
+  assert sum(len(r)!=(max(i%n for i in r)-min(i%n for i in r)+1)*(max(i//n for i in r)-min(i//n for i in r)+1) for r in regions)>=2,id
+  key=(n,canonical(n,cs))
+  assert key not in seen,(id,'D4 duplicate')
+  seen.add(key)
+  levels.append({'size':n,'centers':cs,'solution':solution,'searchNodes':nodes,
+                 'editableCells':n*n-len(fixed),'id':id,'chapter':chapter,
+                 'title':f'{APPEND_TITLES[chapter-4]} · {index%16+1}'})
+ return data
 if __name__=='__main__':
- data=generate();cert=json.dumps(data,ensure_ascii=False,indent=2)+'\n'
+ data=append_campaign(generate());cert=json.dumps(data,ensure_ascii=False,indent=2)+'\n'
  runtime='// SPDX-License-Identifier: GPL-3.0-only\n// Original campaign. Solutions remain in offline certificates only.\nimport type { GalaxiesLevel } from "./galaxiesLogic";\nexport const galaxiesLevels: GalaxiesLevel[] = '+json.dumps([{k:v for k,v in p.items() if k not in ('solution','searchNodes','editableCells')} for p in data['levels']],ensure_ascii=False,indent=2)+';\n'
  for name,text in [('docs/galaxies/campaign.json',cert),('src/games/galaxiesLevels.ts',runtime)]:
   path=ROOT/name
   if '--check' in sys.argv:assert path.read_text()==text,name+' differs'
   else:path.write_text(text)
- print('36 unique, D4-distinct Galaxies puzzles verified')
+ print('100 unique, D4-distinct Galaxies puzzles verified')
