@@ -16,11 +16,21 @@ The upstream source was read only, never installed or executed. No Vue code, can
 
 Move one entire selected row left/right or one entire selected column up/down by one cell. All tiles remain on the board; the edge wraps to the other side. Restore increasing numeric order from left to right, top to bottom. There is no empty space and no individual-tile swap. This differs from the catalog's empty-slot sliding puzzle and from its prefix-reversal pancake game.
 
-## Campaign: 18 authored levels
+## Campaign: 100 authored levels
 
 Six 3×3 lessons teach wrapping, intersections, central columns, a four-step commutator, staggered rows, and all-row/all-column interactions. Six 3×4 lessons introduce unequal row/column cycle lengths, flanking columns, separated rows sharing a column, chained swaps, edge routing, and a combined rectangular route. Six 4×4 lessons use corners, central interweaving, diagonal relays, double row shifts, ordered commutators, and a final ten-move interleaving.
 
-Each board is constructed by its own explicit legal disturbance sequence from the target. No mirrored/rotated template batch or unseeded random runtime levels are counted. The construction is an existence witness only; no optimality or exhaustive independent proof is claimed. The starting disturbances range from one to ten steps. A player may use any legal route without a time limit or move budget.
+The first 18 records, including all starting sequences and storage identifiers, remain unchanged. The 82 added boards form five further chapters:
+
+| Levels | Chapter | Dimensions |
+| --- | --- | --- |
+| 19–30 | 九格交叉 | 3×3 |
+| 31–48 | 长方环路 | 3×4 |
+| 49–66 | 四阶借位 | 4×4 |
+| 67–84 | 交线远行 | 4×4 |
+| 85–100 | 全盘织结 | 4×4 |
+
+Each is built from its own reversible sequence, not created by randomly shuffling at runtime or counting translated, mirrored, rotated or inverse copies. Offline comparison checked the new starts against the legacy campaign and each other, and found shortest opening routes of 4–10 moves. In-game hints after arbitrary player moves still do not promise shortest paths. Any valid solution wins without a time limit or move budget.
 
 ## Hint and storage contracts
 
@@ -30,4 +40,4 @@ The browser resume prefix is `playgarden.loopover.v1`. Per-level storage records
 
 ## Verification boundary
 
-No unit tests, campaign solver sweep, unfamiliar upstream execution, package installation, or independent review was performed for this module. `e2e/loopover.spec.ts` is authored for the integration owner's one final `npm run test:e2e -- e2e/loopover.spec.ts` invocation. It uses desktop and touch controls, independently checks forward cyclic displacement, completes representative first/middle/final levels through real input, captures those board states, checks controls at least 44px, and covers preview cancellation, repeated input, current-state hints, pause, undo, restart, reload, and invalid saved data. Authoring the scenario is not a claim that it has passed.
+Run only the game-scoped `npm run test:e2e -- e2e/loopover.spec.ts`. It preserves the legacy first/middle/final and corruption checks; clears all 82 new boards through actual preview and confirmation on desktop keyboard and touch; checks the initial tile order and forward displacement independently; reopens a version-1 partial level 18 and advances to level 19; and finishes level 100 after a detour, refresh, undo and current-state hints. The expansion does not change the movement core, source attribution, game shell, storage, or hint logic.

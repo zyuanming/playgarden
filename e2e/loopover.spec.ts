@@ -3,6 +3,7 @@ import { test, expect, type Locator, type Page, type TestInfo } from "@playwrigh
 import { openGame, chooseLevel, captureErrors } from "./helpers";
 import { loopoverLevels } from "../src/games/loopoverLevels";
 import type { LoopMove } from "../src/vendor/loopoverCore";
+import { loopoverExtension } from "./fixtures/loopover-extension";
 
 const rootOf = (page: Page) => page.locator(".loopover-layout");
 const moveKey = (move: LoopMove) => `${move.axis}-${move.index}-${move.delta}`;
@@ -141,5 +142,113 @@ test("Loopover malformed or forged saves cannot bypass legal play", async ({ pag
   await expect(page.locator(".status")).not.toHaveClass(/success/);
   await checkTouchTargets(page);
   await page.screenshot({ path: info.outputPath("loopover-safe-restore.png"), fullPage: true, animations: "disabled" });
+  expect(errors).toEqual([]);
+});
+
+const touchOrKey = (loc: Locator, mobile: boolean) => mobile ? loc.tap() : loc.press("Enter");
+const shellButton = (page: Page, name: string) => page.getByRole("button", { name, exact: true });
+const inverse = (move: LoopMove): LoopMove => ({ ...move, delta: move.delta === 1 ? -1 : 1 });
+const parseMove = (s: string): LoopMove => ({ axis: s[0] === "R" ? "row" : "column", index: Number(s[1]), delta: s[2] === "+" ? 1 : -1 });
+async function playChecked(page: Page, move: LoopMove, rows: number, cols: number, mobile: boolean) {
+  const root = rootOf(page);
+  const before = await boardOf(page);
+  const expected = expectedShift(before, rows, cols, move);
+  await touchOrKey(root.locator('[data-loopover-move="' + moveKey(move) + '"]'), mobile);
+  await expect(root).toHaveAttribute("data-loopover-selected", moveKey(move));
+  expect(await root.getAttribute("data-loopover-board")).toBe(before.join(","));
+  await touchOrKey(root.locator("[data-loopover-confirm]"), mobile);
+  await expect(root).toHaveAttribute("data-loopover-board", expected.join(","));
+}
+async function finishChecked(page: Page, index: number) {
+  await expect(rootOf(page)).toHaveAttribute("data-loopover-won", "true");
+  await expect(page.locator(".status")).toHaveClass(/success/);
+  await expect.poll(() => page.evaluate(() => JSON.parse(localStorage.getItem("playgarden.progress.v2") ?? "{}").completed?.loopover)).toContain(index);
+}
+for (let start = 0; start < loopoverExtension.length; start += 8) {
+  const end = Math.min(start + 8, loopoverExtension.length);
+  test("New Loopover boards " + (start + 19) + "–" + (end + 18) + ", preview and apply", async ({ page, isMobile }, info) => {
+    const errors = captureErrors(page);
+    await openGame(page, "环移拼盘");
+    for (let k = start; k < end; k++) {
+      const i = k + 18;
+      const [code, hex] = loopoverExtension[k];
+      await chooseLevel(page, i);
+      const root = rootOf(page);
+      await expect(root).toHaveAttribute("data-loopover-id", "loopover-" + (i + 1));
+      const dimension = i < 30 ? [3, 3] : i < 48 ? [3, 4] : [4, 4];
+      const [rows, cols] = dimension;
+      await expect(root).toHaveAttribute("data-loopover-board", [...hex].map(h => parseInt(h, 16)).join(","));
+      if ([18, 30, 48, 99].includes(i)) {
+        await expect(root.locator(".loopover-counter")).toHaveText((i + 1) + " / 100");
+        await checkTouchTargets(page);
+        await page.screenshot({ path: info.outputPath("new-" + (i + 1) + ".png"), fullPage: true, animations: "disabled" });
+      }
+      for (const move of code.split(" ").reverse().map(parseMove).map(inverse))
+        await playChecked(page, move, rows, cols, isMobile);
+      await finishChecked(page, i);
+    }
+    expect(errors).toEqual([]);
+  });
+}
+
+test("Old level-18 history replays unchanged and continues into level 19", async ({ page, isMobile }) => {
+  const errors = captureErrors(page);
+  await page.goto("/");
+  await page.evaluate(() => {
+    localStorage.setItem("playgarden.loopover.v1.selected", "17");
+    localStorage.setItem("playgarden.loopover.v1.round.17",
+      '{"version":1,"id":"loopover-18","history":[{"axis":"row","index":0,"delta":1},{"axis":"column","index":3,"delta":1},{"axis":"row","index":1,"delta":1}]}');
+  });
+  await openGame(page, "环移拼盘");
+  const root = rootOf(page);
+  await expect(root).toHaveAttribute("data-loopover-id", "loopover-18");
+  await expect(root).toHaveAttribute("data-loopover-board", "15,5,14,2,9,10,1,3,12,0,6,8,11,4,13,7");
+  await expect(root).toHaveAttribute("data-loopover-moves", "3");
+  const extra = ["R1-", "C3-", "R0-"].map(parseMove);
+  for (const m of [...extra, ...[...loopoverLevels[17].scramble].reverse().map(inverse)])
+    await playChecked(page, m, 4, 4, isMobile);
+  await finishChecked(page, 17);
+  await touchOrKey(shellButton(page, "下一关"), isMobile);
+  await expect(root).toHaveAttribute("data-loopover-id", "loopover-19");
+  await expect(root).toHaveAttribute("data-loopover-moves", "0");
+  await expect(page.getByLabel("选择关卡", { exact: true }).locator("option")).toHaveCount(100);
+  expect(errors).toEqual([]);
+});
+
+test("Level 100 keeps an off-path save and hints lead back without moving until confirmed", async ({ page, isMobile }, info) => {
+  const errors = captureErrors(page);
+  await openGame(page, "环移拼盘");
+  await chooseLevel(page, 99);
+  const root = rootOf(page);
+  for (const m of ["R0+", "C3-", "R3-"].map(parseMove)) await playChecked(page, m, 4, 4, isMobile);
+  const before = await boardOf(page);
+  await reenter(page);
+  await expect(root).toHaveAttribute("data-loopover-id", "loopover-100");
+  await expect(root).toHaveAttribute("data-loopover-moves", "3");
+  await expect(root).toHaveAttribute("data-loopover-board", before.join(","));
+  await touchOrKey(shellButton(page, "撤销"), isMobile);
+  const undone = expectedShift(before, 4, 4, parseMove("R3+"));
+  await expect(root).toHaveAttribute("data-loopover-board", undone.join(","));
+  await expect(root).toHaveAttribute("data-loopover-moves", "2");
+  let previousDistance = 14;
+  for (let k = 0; k < 13; k++) {
+    const b = await boardOf(page);
+    await touchOrKey(shellButton(page, "提示"), isMobile);
+    await expect(root).not.toHaveAttribute("data-loopover-selected", "");
+    await expect(root).toHaveAttribute("data-loopover-board", b.join(","));
+    const msg = page.locator(".status");
+    await expect(msg).toContainText("不保证最少");
+    const distance = Number((await msg.textContent())!.match(/还需 (\d+) 步/)?.[1]);
+    expect(distance).toBeGreaterThan(0);
+    expect(distance).toBeLessThan(previousDistance);
+    if (k === 0) {
+      await checkTouchTargets(page);
+      await page.screenshot({ path: info.outputPath("final-hint.png"), fullPage: true, animations: "disabled" });
+    }
+    previousDistance = distance;
+    await touchOrKey(root.locator("[data-loopover-confirm]"), isMobile);
+    if (distance === 1) break;
+  }
+  await finishChecked(page, 99);
   expect(errors).toEqual([]);
 });
