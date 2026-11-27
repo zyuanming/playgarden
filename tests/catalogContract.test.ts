@@ -161,6 +161,7 @@ import { tidalLevels } from "../src/games/tidalPostLogic";
 import { debugCases } from "../src/games/debugDetectiveLevels";
 import { packingLevels } from "../src/games/voxelPackingLevels";
 import { appointmentLevels } from "../src/games/appointmentPlannerLevels";
+import { equationLevels } from "../src/games/equationBalanceLevels";
 import { mazeBoards } from "../src/games/layeredMazeLevels";
 const packs = {
   "irrigation-plan": irrigationLevels,
@@ -168,6 +169,7 @@ const packs = {
   "debug-detective": debugCases,
   "voxel-packing": packingLevels,
   "appointment-planner": appointmentLevels,
+  "equation-balance": equationLevels,
   "recursive-orchard": treeLevels,
   "angle-ring": angleLevels,
   "descensus-2": [],
@@ -400,8 +402,8 @@ describe("Scalable catalog contract", () => {
       }
     }),
   );
-  it("counts only 193 real games and 4041 levels, not the roadmap", () => {
-    expect(games).toHaveLength(193);
-    expect(games.reduce((sum, g) => sum + g.levelCount, 0)).toBe(4041);
+  it("counts only 194 real games and 4053 levels, not the roadmap", () => {
+    expect(games).toHaveLength(194);
+    expect(games.reduce((sum, g) => sum + g.levelCount, 0)).toBe(4053);
   });
 });

@@ -3437,5 +3437,18 @@ component: lazy(() => import("../games/Descensus2"))
     source: original,
     component: lazy(() => import("../games/AppointmentPlanner")),
   },
+  {
+    id: "equation-balance",
+    title: "天平等式",
+    subtitle: "等式两边一起变，用有限操作牌把 x 单独留下。12 道原创代数谜题。",
+    category: "数字推理",
+    difficulty: "中级",
+    tone: "purple",
+    levelCount: 12,
+    resumeKey: "playgarden.equation-balance.v1",
+    artwork: { url: "./equation-balance-art.svg", position: "center", size: "cover" },
+    source: original,
+    component: lazy(() => import("../games/EquationBalance")),
+  },
 ];
 export const findGame = (id: string) => games.find((game) => game.id === id);
