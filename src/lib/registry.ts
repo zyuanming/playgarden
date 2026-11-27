@@ -3385,5 +3385,18 @@ component: lazy(() => import("../games/Descensus2"))
     source: original,
     component: lazy(() => import("../games/IrrigationPlan")),
   },
+  {
+    id: "layered-maze",
+    title: "层梯迷宫",
+    subtitle: "跨楼层收集邮戳，每座楼梯只能通过一次。12 道原创迷宫。",
+    category: "空间想象",
+    difficulty: "中级",
+    tone: "green",
+    levelCount: 12,
+    resumeKey: "playgarden.layered-maze.v1",
+    artwork: { url: "./layered-maze-art.svg", position: "center", size: "cover" },
+    source: original,
+    component: lazy(() => import("../games/LayeredMaze")),
+  },
 ];
 export const findGame = (id: string) => games.find((game) => game.id === id);
