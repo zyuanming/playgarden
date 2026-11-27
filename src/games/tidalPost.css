@@ -79,6 +79,9 @@
   margin-top: 12px;
 }
 .tide-game .tide-controls button {
+  display: grid;
+  place-content: center;
+  gap: 2px;
   min-height: 50px;
   padding: 4px 1px;
   border: 1px solid #7da6aa;

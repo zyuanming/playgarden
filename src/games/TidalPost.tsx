@@ -40,6 +40,12 @@ const labels: Record<string, string> = {
   "1": "潮门 1",
   "2": "潮门 2",
 };
+const firstAdvice = "看清下一拍潮位，再走进对应数字的潮门。";
+const chapterName = (index: number) =>
+  index < 12 ? "潮汐邮路" : index < 28 ? "辨认潮门" :
+  index < 44 ? "停靠等潮" : index < 62 ? "双戳邮路" :
+  index < 80 ? "带戳换潮" : "夜潮终程";
+
 export default function TidalPost(props: GameProps) {
   return <Round key={`${props.level}:${props.resetToken}`} {...props} />;
 }
@@ -51,16 +57,17 @@ function Round({
   onStatus,
   onComplete,
 }: GameProps) {
-  const { rows } = tidalLevels[level] ?? tidalLevels[0];
+  const { rows, id } = tidalLevels[level] ?? tidalLevels[0];
   const [history, setHistory] = useState<State[]>(() => [start(rows)]);
   const state = history[history.length - 1],
     finished = won(rows, state),
     locked = paused || finished;
   const [advice, setAdvice] = useState<Move | null>(null);
-  const [message, say] = useState("看清下一拍潮位，再走进对应数字的潮门。");
+  const [message, say] = useState(firstAdvice);
   const usedHint = useRef(hintToken),
     usedUndo = useRef(undoToken),
     reported = useRef(false);
+  useEffect(() => { onStatus(firstAdvice); }, [onStatus, rows]);
   useEffect(() => {
     if (usedHint.current === hintToken) return;
     usedHint.current = hintToken;
@@ -109,7 +116,7 @@ function Round({
       rows[result.state.y][result.state.x] === "E" &&
       !won(rows, result.state)
     )
-      say("邮戳还没集齐，可以先离开邮站。");
+      say("邮戳还没集齐，尚未送达。");
     else
       say(action === "W" ? "等了一拍，位置不变。" : "前进一格，潮位推进一拍。");
   }
@@ -117,6 +124,8 @@ function Round({
     <div
       className="puzzle-layout tide-game"
       data-tide-won={finished}
+      data-tide-id={id}
+      data-tide-steps={history.length - 1}
       onKeyDown={(e) => {
         const a = keys[e.key];
         if (!a || locked || e.ctrlKey || e.altKey || e.metaKey || e.repeat)
@@ -127,7 +136,7 @@ function Round({
     >
       <section className="tide-panel">
         <header>
-          <span className="mini-label">潮汐邮路 · 第 {level + 1} 关</span>
+          <span className="mini-label">{chapterName(level)} · 第 {level + 1} 关</span>
           <strong>{history.length - 1} 步</strong>
         </header>
         <div className="tide-meter">
