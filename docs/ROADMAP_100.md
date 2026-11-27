@@ -1,6 +1,6 @@
 # 至少 1000 款优秀游戏的长期路线图
 
-长期目标：至少 1000 款规则独立的游戏；适合编号关卡的游戏逐步扩到至少 100 关。当前发布批次包含 **190 款游戏、3,747 个编号关卡**；165 款设有编号关卡，其中 15 款已达 100 关。连续战役与无尽模式不计编号关卡；最新发布以[线上大厅](https://zyuanming.github.io/playgarden/)和[目录](../src/lib/registry.ts)为准。经典规则采用原创代码、关卡和图形；实际改编见各游戏的来源说明。
+长期目标：至少 1000 款规则独立的游戏；适合编号关卡的游戏逐步扩到至少 100 关。当前发布批次包含 **191 款游戏、3,759 个编号关卡**；166 款设有编号关卡，其中 15 款已达 100 关。连续战役与无尽模式不计编号关卡；最新发布以[线上大厅](https://zyuanming.github.io/playgarden/)和[目录](../src/lib/registry.ts)为准。经典规则采用原创代码、关卡和图形；实际改编见各游戏的来源说明。
 
 ## 什么才计为一款游戏
 
@@ -114,7 +114,6 @@
 ## 后续玩法候选
 
 1. 天平等式：两侧保持代数平衡
-2. 调试侦探：定位最小规则或指令错误
 3. 磁场迷宫：正负磁极与路径影响
 4. 弹簧节拍：周期与共振的安全模拟
 5. 词链拼接：按相邻词语关系组成路径
@@ -128,7 +127,7 @@
 
 候选会按机制差异和试玩结果调整，尚未计入完成数量。
 
-已上线同类玩法，不再列作新候选：[周长花园](perimeter-garden.md)、[故事排序](story-sequence.md)、[找不同花园](scene-differences.md)、[平衡雕塑](balance-sculpture.md)、[双伴救援](dual-rescue.md)、[角度拼环](angle-ring.md)、[递归树园](recursive-orchard.md)、[灌溉规划](irrigation-plan.md)、[层梯迷宫](layered-maze.md)。
+已上线同类玩法，不再列作新候选：[周长花园](perimeter-garden.md)、[故事排序](story-sequence.md)、[找不同花园](scene-differences.md)、[平衡雕塑](balance-sculpture.md)、[双伴救援](dual-rescue.md)、[角度拼环](angle-ring.md)、[递归树园](recursive-orchard.md)、[灌溉规划](irrigation-plan.md)、[层梯迷宫](layered-maze.md)、[调试侦探](debug-detective.md)。
 
 ## 迁移与许可门槛
 

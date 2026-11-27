@@ -157,10 +157,12 @@ import { cubeNetLevels } from "../src/games/cubeNetLogic";
 import { angleLevels } from "../src/games/angleRingLogic";
 import { treeLevels } from "../src/games/recursiveOrchardLogic";
 import { irrigationLevels } from "../src/games/irrigationPlanLogic";
+import { debugCases } from "../src/games/debugDetectiveLevels";
 import { mazeBoards } from "../src/games/layeredMazeLevels";
 const packs = {
   "irrigation-plan": irrigationLevels,
   "layered-maze": mazeBoards,
+  "debug-detective": debugCases,
   "recursive-orchard": treeLevels,
   "angle-ring": angleLevels,
   "descensus-2": [],
@@ -393,8 +395,8 @@ describe("Scalable catalog contract", () => {
       }
     }),
   );
-  it("counts only 190 real games and 3747 levels, not the roadmap", () => {
-    expect(games).toHaveLength(190);
-    expect(games.reduce((sum, g) => sum + g.levelCount, 0)).toBe(3747);
+  it("counts only 191 real games and 3759 levels, not the roadmap", () => {
+    expect(games).toHaveLength(191);
+    expect(games.reduce((sum, g) => sum + g.levelCount, 0)).toBe(3759);
   });
 });

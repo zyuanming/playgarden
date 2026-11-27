@@ -3398,5 +3398,18 @@ component: lazy(() => import("../games/Descensus2"))
     source: original,
     component: lazy(() => import("../games/LayeredMaze")),
   },
+  {
+    id: "debug-detective",
+    title: "调试侦探",
+    subtitle: "用有限次开关测试排除错误方案，修好灯光程序。12 个原创案件。",
+    category: "编程启蒙",
+    difficulty: "中级",
+    tone: "purple",
+    levelCount: 12,
+    resumeKey: "playgarden.debug-detective.v1",
+    artwork: { url: "./debug-detective-art.svg", position: "center", size: "cover" },
+    source: original,
+    component: lazy(() => import("../games/DebugDetective")),
+  },
 ];
 export const findGame = (id: string) => games.find((game) => game.id === id);
