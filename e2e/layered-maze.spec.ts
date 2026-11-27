@@ -26,15 +26,15 @@ const complete = async (p: Page, index: number) => {
   await expect(p.locator('.status.success')).toHaveText('邮戳集齐，成功走出迷宫！');
   await expect.poll(() => save(p)).toContain(index);
 };
-for (let group = 0; group < 3; group++) {
-  test('Proves floors and stamps in levels ' + (group * 4 + 1) + ' to ' + (group * 4 + 4), async ({ page, isMobile }, info) => {
+for (let group = 0; group < routes.length / 4; group++) {
+  test((group < 3 ? 'Original' : 'Expansion') + ' proves floors and stamps in levels ' + (group * 4 + 1) + ' to ' + (group * 4 + 4), async ({ page, isMobile }, info) => {
     const errors = captureErrors(page);
     await openGame(page, title);
     for (let index = group * 4; index < group * 4 + 4; index++) {
       await chooseLevel(page, index);
       await expect(root(page)).toHaveAttribute('data-maze-id', 'layered-maze-' + String(index + 1).padStart(2, '0'));
       await moveCount(page, 0);
-      if ([0, 6, 11].includes(index)) {
+      if ([0, 6, 11, 12, 44, 99].includes(index)) {
         expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(await page.evaluate(() => innerWidth));
         await page.screenshot({ path: info.outputPath('start-' + (index + 1) + '.png'), fullPage: true, animations: 'disabled' });
       }
@@ -126,7 +126,71 @@ test('Reloads the exact late attempt, keeps pause isolated, and resets intention
   await expect(root(page)).toHaveAttribute('data-spent', '0');
   await play(page, isMobile, routes[11]);
   await complete(page, 11);
-  await tap(page, '返回大厅', isMobile);
+  await tap(page, '返回游戏大厅', isMobile);
   await expect(page.getByRole('textbox', { name: '搜索游戏' })).toBeVisible();
+  expect(errors).toEqual([]);
+});
+
+test('Expansion resumes the original level 12 and progresses into 13', async ({ page, isMobile }) => {
+  const errors = captureErrors(page);
+  await openGame(page, title);
+  await chooseLevel(page, 11);
+  await play(page, isMobile, 'SEEEN1');
+  await page.reload();
+  await page.getByRole('textbox', { name: '搜索游戏' }).fill(title);
+  await tap(page, '开始玩' + title, isMobile);
+  await expect(root(page)).toHaveAttribute('data-maze-id', 'layered-maze-12');
+  await pos(page, 29);
+  await moveCount(page, 6);
+  await expect(root(page)).toHaveAttribute('data-spent', '1');
+  await expect(root(page)).toHaveAttribute('data-stamps', '3');
+  await play(page, isMobile, routes[11].slice(6));
+  await complete(page, 11);
+  await tap(page, '下一关', isMobile);
+  await expect(root(page)).toHaveAttribute('data-maze-id', 'layered-maze-13');
+  await play(page, isMobile, routes[12]);
+  await complete(page, 12);
+  await page.reload();
+  await expect.poll(() => save(page)).toEqual(expect.arrayContaining([11, 12]));
+  expect(errors).toEqual([]);
+});
+
+test('Expansion finale previews both ends of a spent stair and recovers by undo', async ({ page, isMobile }, info) => {
+  const errors = captureErrors(page);
+  await openGame(page, title);
+  await chooseLevel(page, 99);
+  await play(page, isMobile, 'W1');
+  await pos(page, 38);
+  await expect(root(page)).toHaveAttribute('data-spent', '1');
+  await expect(root(page)).toHaveAttribute('data-stamps', '0');
+  await expect(cross(page)).toBeDisabled();
+  await expect(cell(page, 38)).toHaveAttribute('data-spent', 'true');
+  if (!isMobile) await play(page, false, '1');
+  await tap(page, '预览1 层', isMobile);
+  await expect(root(page)).toHaveAttribute('data-view', '0');
+  await expect(btn(page, '2 层，所在楼层')).toHaveAttribute('aria-pressed', 'false');
+  await expect(btn(page, '预览1 层')).toHaveAttribute('aria-pressed', 'true');
+  await expect(cell(page, 18)).toHaveAttribute('data-spent', 'true');
+  await expect(dir(page, 'E')).toBeDisabled();
+  await expect(status(page)).toContainText('角色没有移动');
+  await page.screenshot({ path: info.outputPath('finale-preview.png'), fullPage: true, animations: 'disabled' });
+  await tap(page, '回到所在楼层', isMobile);
+  await pos(page, 38);
+  await moveCount(page, 2);
+  await tap(page, '提示', isMobile);
+  await expect(status(page)).toContainText('已无通关路线');
+  await tap(page, '撤销', isMobile);
+  await pos(page, 18);
+  await expect(root(page)).toHaveAttribute('data-spent', '0');
+  await expect(cell(page, 18)).toHaveAttribute('data-spent', 'false');
+  await expect(cross(page)).toBeEnabled();
+  await tap(page, '提示', isMobile);
+  await expect(status(page)).toContainText('还需 30 步');
+  await expect(dir(page, 'W')).toHaveAttribute('data-hinted', 'true');
+  await play(page, isMobile, routes[99].slice(1));
+  await moveCount(page, 31);
+  await expect(root(page)).toHaveAttribute('data-spent', '63');
+  await complete(page, 99);
+  await page.screenshot({ path: info.outputPath('finale-win.png'), fullPage: true, animations: 'disabled' });
   expect(errors).toEqual([]);
 });
