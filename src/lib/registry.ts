@@ -3376,11 +3376,11 @@ component: lazy(() => import("../games/Descensus2"))
   {
     id: "irrigation-plan",
     title: "灌溉规划",
-    subtitle: "调整窄喷、宽喷和独立水箱，在预算内精确灌溉田块。12 道原创谜题。",
+    subtitle: "调整窄喷、宽喷和独立水箱，在预算内精确灌溉田块。100 道原创谜题。",
     category: "逻辑思维",
     difficulty: "中级",
     tone: "green",
-    levelCount: 12,
+    levelCount: 100,
     artwork: { url: "./irrigation-plan-art.svg", position: "center", size: "cover" },
     source: original,
     component: lazy(() => import("../games/IrrigationPlan")),

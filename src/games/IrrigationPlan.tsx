@@ -13,10 +13,17 @@ import {
 } from "./irrigationPlanLogic";
 import "./irrigationPlan.css";
 
+const intro = "选一个阀门，比较每块地还差多少水。";
+const success = "每块地的水量都刚好，水箱也没有超额！";
+const chapter = (index: number) =>
+  index < 12 ? "灌溉规划" : index < 24 ? "先看地块" :
+  index < 40 ? "留心水量" : index < 58 ? "分开记账" :
+  index < 78 ? "一题多策" : "双箱极限";
+
 export default function IrrigationPlan(props: GameProps) {
   return <Round key={`${props.level}:${props.resetToken}`} {...props} />;
 }
-function Round({ level, paused, hintToken, undoToken, onComplete }: GameProps) {
+function Round({ level, paused, hintToken, undoToken, onComplete, onStatus }: GameProps) {
   const board = irrigationLevels[level] ?? irrigationLevels[0];
   const [history, setHistory] = useState<readonly (readonly number[])[]>(() => [
     initial(board),
@@ -24,11 +31,12 @@ function Round({ level, paused, hintToken, undoToken, onComplete }: GameProps) {
   const selection = history[history.length - 1],
     view = inspect(board, selection),
     locked = paused || view.won;
-  const [message, say] = useState("选一个阀门，比较每块地还差多少水。");
+  const [message, say] = useState(intro);
   const [advice, setAdvice] = useState<ReturnType<typeof hint>>(null);
   const usedHint = useRef(hintToken),
     usedUndo = useRef(undoToken),
     reported = useRef(false);
+  useEffect(() => { onStatus(intro); }, [board, onStatus]);
   useEffect(() => {
     if (usedHint.current === hintToken) return;
     usedHint.current = hintToken;
@@ -56,9 +64,10 @@ function Round({ level, paused, hintToken, undoToken, onComplete }: GameProps) {
   useEffect(() => {
     if (view.won && !paused && !reported.current) {
       reported.current = true;
+      onStatus(success);
       onComplete();
     }
-  }, [onComplete, paused, view.won]);
+  }, [onComplete, onStatus, paused, view.won]);
 
   function setMode(valve: number, mode: number) {
     if (locked) return;
@@ -108,7 +117,7 @@ function Round({ level, paused, hintToken, undoToken, onComplete }: GameProps) {
         aria-label="灌溉方案，按数字键轮换对应阀门"
       >
         <header>
-          <span>灌溉规划 · 第 {level + 1} 关</span>
+          <span>{chapter(level)} · 第 {level + 1} 关</span>
           <strong>
             {view.doses.filter((n, i) => n === board.needs[i]).length}/
             {board.needs.length} 块达标
@@ -200,7 +209,7 @@ function Round({ level, paused, hintToken, undoToken, onComplete }: GameProps) {
           {paused
             ? "已暂停。"
             : view.won
-              ? "每块地的水量都刚好，水箱也没有超额！"
+              ? success
               : message}
         </p>
       </section>
