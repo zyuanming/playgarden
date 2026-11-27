@@ -353,6 +353,71 @@ def build_campaign(quiet: bool = False) -> dict:
             "levels": all_levels}
 
 
+APPEND_TITLES = ("极线重逢", "稀线推演", "长廊磁阵", "磁场会合")
+LEGACY_LEVELS_SHA256 = "2d40a534921add7ef78011d97e52533ab8f65908298fa787053601c37414b49d"
+
+def append_original_boards(campaign: dict) -> dict:
+    old = campaign["levels"][:36]
+    encoded = json.dumps(old, ensure_ascii=False, separators=(",", ":")).encode()
+    if hashlib.sha256(encoded).hexdigest() != LEGACY_LEVELS_SHA256:
+        raise ValueError("The first 36 boards and certificate records must not change")
+    rows = json.loads((ROOT / "docs/magnets/append-037-100.json").read_text())
+    assert len(rows) == 64
+
+    def tiling_key(puzzle: dict) -> str:
+        # Hide all clues to canonicalize just the physical domino layout.
+        return canonical_problem({**puzzle, **{f: [-1] * len(puzzle[f]) for f in FIELDS}})
+
+    seen = {tiling_key(p) for p in old}
+    levels = old[:]
+    for index, (layout, clues, code) in enumerate(rows):
+        w, h = 6, 6 if index < 32 else 8
+        block = index // 16
+        id = f"magnets-{index + 37:03}"
+        assert len(layout) == w * h and set(layout) <= set("HV."), id
+        dominoes = []
+        for i, c in enumerate(layout):
+            if c != ".":
+                j = i + (1 if c == "H" else w)
+                assert j < len(layout) and layout[j] == ".", id
+                if c == "H":
+                    assert i % w < w - 1, id
+                dominoes.append([i, j])
+        assert len(clues) == 2 * (w + h), id
+        nums = [int(c) if c != "-" else -1 for c in clues]
+        puzzle = {"id": id, "title": f"{APPEND_TITLES[block]} · {index % 16 + 1}",
+                  "chapter": 4 + block, "width": w, "height": h, "dominoes": dominoes,
+                  **dict(zip(FIELDS, (nums[:h], nums[h:2*h], nums[2*h:2*h+w], nums[2*h+w:])))}
+        assert all(-1 <= v <= (w if f.startswith("row") else h)
+                   for f in FIELDS for v in puzzle[f]), id
+        answer = [int(c) for c in code]
+        validate_certificate(puzzle, answer)
+        horizontal = sum(b == a + 1 for a, b in dominoes)
+        assert min(horizontal, len(dominoes) - horizontal) >= 2 and set(answer) == {0, 1, 2}, id
+        proof = unique(puzzle, answer)
+        assert proof is not None, id
+        key = tiling_key(puzzle)
+        assert key not in seen, (id, "duplicate tiling")
+        seen.add(key)
+        levels.append({**puzzle, "solution": answer, "metrics": {
+            "clues": sum(v >= 0 for v in nums), "omittedClues": nums.count(-1),
+            "horizontalDominoes": horizontal, "verticalDominoes": len(dominoes) - horizontal,
+            "neutralDominoes": answer.count(0), "authorSolutionCount": 1,
+            "authorNodes": proof.nodes, "authorBranches": proof.branches,
+            "authorMaxDepth": proof.max_depth, "rootForcedDominoes": proof.root_forced,
+            "nodeBudget": NODE_BUDGET,
+            "canonicalSha256": hashlib.sha256(canonical_problem(puzzle).encode()).hexdigest(),
+        }})
+    return {**campaign, "levels": levels}
+
+
+def with_compact_append(old: str, ending: str, records: list[dict], indent: str) -> str:
+    assert old.endswith(ending)
+    suffix = "".join(",\n" + indent + json.dumps(r, ensure_ascii=False, separators=(",", ":"))
+                     for r in records)
+    return old[:-len(ending)] + suffix + ending
+
+
 def render(campaign: dict) -> dict[Path, str]:
     public = [{key: value for key, value in level.items() if key not in ("solution", "metrics")}
               for level in campaign["levels"]]
@@ -361,29 +426,36 @@ def render(campaign: dict) -> dict[Path, str]:
               "// Solution certificates are offline in docs/magnets/campaign.json.\n"
               "import type { MagnetsLevel } from './magnetsLogic';\n\n"
               "export const magnetsLevels: MagnetsLevel[] = " +
-              json.dumps(public, ensure_ascii=False, indent=2) + ";\n")
+              with_compact_append(json.dumps(public[:36], ensure_ascii=False, indent=2),
+                                  "\n]", public[36:], "  ") + ";\n")
     return {PUBLIC_PATH: source,
-            CERTIFICATE_PATH: json.dumps(campaign, ensure_ascii=False, indent=2) + "\n"}
+            CERTIFICATE_PATH: with_compact_append(
+                json.dumps({**campaign, "levels": campaign["levels"][:36]}, ensure_ascii=False, indent=2),
+                "\n  ]\n}", campaign["levels"][36:], "    ") + "\n"}
 
 
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--check", action="store_true", help="regenerate and compare without writing")
     parser.add_argument("--quiet", action="store_true", help="omit per-level progress")
+    parser.add_argument("--append-only", action="store_true",
+                        help="reuse the checksum-pinned first 36 offline records, prove only the append")
     args = parser.parse_args()
-    campaign = build_campaign(quiet=args.quiet)
+    legacy = (json.loads(CERTIFICATE_PATH.read_text(encoding="utf-8"))
+              if args.append_only else build_campaign(quiet=args.quiet))
+    campaign = append_original_boards(legacy)
     outputs = render(campaign)
     if args.check:
         different = [str(path.relative_to(ROOT)) for path, content in outputs.items()
                      if not path.exists() or path.read_text(encoding="utf-8") != content]
         if different:
             raise SystemExit("Generated artifacts differ: " + ", ".join(different))
-        print("Verified: 36 unique original puzzles; deterministic public data and offline certificates match.")
+        print("Verified: 100 unique original puzzles; deterministic public data and offline certificates match.")
     else:
         for path, content in outputs.items():
             path.parent.mkdir(parents=True, exist_ok=True)
             path.write_text(content, encoding="utf-8")
-        print("Generated 36 uniquely solved puzzles in four chapters.")
+        print("Generated 100 uniquely solved puzzles in eight chapters.")
 
 
 if __name__ == "__main__":

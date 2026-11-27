@@ -255,10 +255,9 @@
     font-size: 12px;
   }
   .magnets-frame {
-    grid-template-columns: 25px repeat(
-        var(--magnets-width),
-        minmax(0, 1fr)
-      ) 25px;
+    grid-template-columns:
+      25px repeat(var(--magnets-width), minmax(0, 1fr))
+      25px;
   }
   .magnets-clue {
     font-size: 13px;
@@ -275,6 +274,14 @@
   }
   .magnets-palette button {
     min-height: 46px;
+    padding: 5px 4px;
+    gap: 4px;
+  }
+  .magnets-palette b {
+    font-size: 18px;
+  }
+  .magnets-palette span {
+    white-space: nowrap;
   }
   .magnets-notes {
     padding: 20px;

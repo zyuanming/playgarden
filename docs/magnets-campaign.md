@@ -1,7 +1,7 @@
 # Magnets campaign provenance and verification
 
-The 36 PlayGarden Magnets puzzles are original, deterministically generated
-content. No upstream puzzle strings, saved games, seed lists, or answer tables
+The 100 PlayGarden Magnets puzzles are original. The first 36 are reproduced
+from the fixed seed; the remaining 64 are a curated original append. No upstream puzzle strings, saved games, seed lists, or answer tables
 were copied. The upstream game supplies the rules; this campaign has its own
 authoring program, data, and offline solution certificates.
 
@@ -36,7 +36,18 @@ count. These solver metrics are transparent engineering measurements, not a
 claim of calibrated human difficulty; displayed clue counts need not decrease
 monotonically. The first puzzle is completely resolved by constraint propagation.
 
-## Authoring method
+The expansion adds four chapters of 16: 极线重逢 and 稀线推演 on 6×6
+boards; 长廊磁阵 and 磁场会合 on 6×8 boards. The second group of each size
+retains sparser clues. Every new domino layout is distinct under rotations
+and reflections from the legacy and other new layouts. The first 36 records
+and save IDs are preserved. For a focused reproducibility check, use
+`python3 scripts/magnets/generate.py --append-only --check --quiet`; it verifies
+the original prefix checksum and proves the append without regenerating old
+boards. The compact authoring input is `docs/magnets/append-037-100.json`.
+The original 36-board independent MILP report remains archived and verifiable
+as a prefix; the new boards have separate exhaustive domain proofs.
+
+## Authoring method for the original 36
 
 1. Start with a complete horizontal domino tiling, then make seeded random 2×2
    flips. Flips preserve coverage and adjacency while producing mixed tilings.
@@ -68,7 +79,7 @@ state. This is separate from the interactive TypeScript assistance solver.
   IDs, titles, chapter indexes, dimensions, domino endpoints, and clues. It has no
   answers, generation metrics, or runtime dependency on the offline JSON.
 - `docs/magnets/campaign.json` holds the seed, format version, author-solver
-  description, and 36 public puzzle definitions with `solution` and `metrics`.
+  description, and 100 public puzzle definitions with `solution` and `metrics`.
   It is an offline review artifact, not gameplay input.
 - Cell indexes are row-major. Every domino is an orthogonally adjacent pair.
   States are `0` neutral, `1` first endpoint positive, and `2` first endpoint
@@ -79,4 +90,4 @@ state. This is separate from the interactive TypeScript assistance solver.
 In addition to the deterministic check, all nine 4×4 opening levels were checked
 with a separate direct enumeration of all `3^8` states. Canonical signatures were
 also checked for invariance under reflection, transpose, endpoint reordering,
-and sign inversion. The campaign has 36 distinct canonical signatures.
+and sign inversion. The initial 36 boards have distinct canonical puzzle signatures.

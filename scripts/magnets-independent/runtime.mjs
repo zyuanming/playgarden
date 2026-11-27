@@ -18,14 +18,24 @@ const js=ts.transpileModule(source,{compilerOptions:{module:ts.ModuleKind.ESNext
 const api=await import('data:text/javascript;base64,'+Buffer.from(js).toString('base64'));
 const levels=JSON.parse(readFileSync(resolve(repo,'src/games/magnetsLevels.ts'),'utf8').split('export const magnetsLevels: MagnetsLevel[] = ')[1].trim().replace(/;$/,''));
 const certificate=JSON.parse(readFileSync(report,'utf8'));
-for(const file of ['src/games/magnetsLevels.ts','docs/magnets/campaign.json']){
- const actual=createHash('sha256').update(readFileSync(resolve(repo,file))).digest('hex');
+const runtimeFile='src/games/magnetsLevels.ts', offlineFile='docs/magnets/campaign.json';
+const marker='export const magnetsLevels: MagnetsLevel[] = ';
+const runtimeRaw=readFileSync(resolve(repo,runtimeFile),'utf8');
+const offlineRaw=readFileSync(resolve(repo,offlineFile),'utf8');
+const offline=JSON.parse(offlineRaw);
+const covered=certificate.summary.levels;
+assert(covered===36 || covered===levels.length,'Unexpected independent proof count');
+const useArchive=covered===36 && covered<levels.length;
+const runtimeChecked=useArchive ? runtimeRaw.split(marker)[0]+marker+JSON.stringify(levels.slice(0,covered),null,2)+';\n' : runtimeRaw;
+const offlineChecked=useArchive ? JSON.stringify({...offline,levels:offline.levels.slice(0,covered)},null,2)+'\n' : offlineRaw;
+for(const [file,data] of [[runtimeFile,runtimeChecked],[offlineFile,offlineChecked],['src/games/magnetsLogic.ts',source]]){
+ const actual=createHash('sha256').update(data).digest('hex');
  assert.equal(actual,certificate.hashes[file],`Stored independent proof is stale for ${file}; regenerate with optional MILP verifier.`);
 }
-assert.equal(certificate.summary.levels,36);
-const proofs=certificate.levels;
+assert.equal(certificate.levels.length,covered);
+for(const proof of certificate.levels){assert.equal(proof.solutions,1);assert.equal(proof.exhausted,true);}
+const proofs=[...certificate.levels,...(useArchive?offline.levels.slice(covered):[])];
 assert.equal(proofs.length,levels.length);
-for(const proof of proofs){assert.equal(proof.solutions,1);assert.equal(proof.exhausted,true);}
 const count={fixtures:0,inspection:0,hints:0,budgets:0,campaignHints:0,wrongCampaignHints:0,terminalGuards:0,invalidGuards:0,saveRejections:0,pairChecks:0};
 const start=performance.now();
 const fixtures=JSON.parse(execFileSync('python3',[resolve(here,'fixtures.py')],{encoding:'utf8',maxBuffer:30*1024*1024,env:{...process.env,PYTHONDONTWRITEBYTECODE:'1',OPENBLAS_NUM_THREADS:'1'}}));

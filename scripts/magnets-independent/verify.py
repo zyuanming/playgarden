@@ -41,7 +41,7 @@ def main():
     campaign=json.loads((repo/'docs/magnets/campaign.json').read_text())['levels']
     text=(repo/'src/games/magnetsLevels.ts').read_text()
     public=json.loads(text.split('export const magnetsLevels: MagnetsLevel[] = ',1)[1].strip().removesuffix(';'))
-    assert len(campaign)==len(public)==36
+    assert len(campaign)==len(public)==100
     assert [{k:p[k] for k in KEYS} for p in campaign]==public
     assert all(set(p)==set(KEYS) for p in public), 'answer/metadata in public levels'
     results=[]; keys=set(); solved_keys=set(); tilings=set()
@@ -72,7 +72,7 @@ def main():
         assert digest(path)==f['sha256']
         assert hashlib.sha1(f'blob {len(data)}\0'.encode()+data).hexdigest()==f['gitBlob']
     assert (repo/'public/magnets-LICENCE.txt').read_bytes()==(repo/'vendor/sgtatham-magnets/LICENCE').read_bytes()
-    summary={'levels':36,'uniquePuzzleOrbitsD4Polarity':len(keys),'uniqueTilingOrbitsD4':len(tilings),'uniqueSolvedTilingOrbitsD4Polarity':len(solved_keys),
+    summary={'levels':len(campaign),'uniquePuzzleOrbitsD4Polarity':len(keys),'uniqueTilingOrbitsD4':len(tilings),'uniqueSolvedTilingOrbitsD4Polarity':len(solved_keys),
              'dimensions':dict(collections.Counter(f"{p['width']}x{p['height']}" for p in campaign)),
              'chapters':dict(collections.Counter(p['chapter'] for p in campaign)),
              'clueRange':[min(x['clues'] for x in results),max(x['clues'] for x in results)],

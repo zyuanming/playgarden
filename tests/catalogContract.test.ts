@@ -389,8 +389,8 @@ describe("Scalable catalog contract", () => {
       }
     }),
   );
-  it("counts only 188 real games and 3507 levels, not the roadmap", () => {
+  it("counts only 188 real games and 3571 levels, not the roadmap", () => {
     expect(games).toHaveLength(188);
-    expect(games.reduce((sum, g) => sum + g.levelCount, 0)).toBe(3507);
+    expect(games.reduce((sum, g) => sum + g.levelCount, 0)).toBe(3571);
   });
 });

@@ -20,8 +20,8 @@ afterEach(() => {
   cleanup();
   localStorage.clear();
 });
-it("all36 actual certificates, live solving, edit and save invariants", () => {
-  expect(magnetsLevels).toHaveLength(36);
+it("all 100 actual certificates, live solving, edit and save invariants", () => {
+  expect(magnetsLevels).toHaveLength(100);
   for (const [index, p] of magnetsLevels.entries()) {
     const fresh = initialMagnets(p),
       solution = proofs[index].solution;

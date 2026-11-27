@@ -1,7 +1,9 @@
 import { test, expect } from "@playwright/test";
 import { readFileSync } from "node:fs";
-const proof = JSON.parse(readFileSync("docs/magnets/campaign.json", "utf8"))
-  .levels[35] as { solution: number[]; dominoes: number[][] };
+const proofs = JSON.parse(readFileSync("docs/magnets/campaign.json", "utf8"))
+  .levels as { id: string; solution: number[]; dominoes: number[][] }[];
+const last = proofs.length - 1;
+const proof = proofs[last];
 test("Magnets exact public build completes last puzzle with actual controls and saves progress", async ({
   page,
 }, info) => {
@@ -17,9 +19,9 @@ test("Magnets exact public build completes last puzzle with actual controls and 
   await page
     .getByRole("button", { name: "开始玩磁极拼图", exact: true })
     .click();
-  await page.getByLabel("选择关卡", { exact: true }).selectOption("35");
+  await page.getByLabel("选择关卡", { exact: true }).selectOption(String(last));
   const root = page.locator(".magnets-layout");
-  await expect(root).toHaveAttribute("data-magnets-id", "magnets-036");
+  await expect(root).toHaveAttribute("data-magnets-id", proof.id);
   await page.screenshot({
     path: info.outputPath("magnets-public-start.png"),
     fullPage: true,
@@ -36,7 +38,7 @@ test("Magnets exact public build completes last puzzle with actual controls and 
         JSON.parse(localStorage.getItem("playgarden.progress.v2")!).completed
           .magnets,
     ),
-  ).toContain(35);
+  ).toContain(last);
   expect(
     await page.evaluate(
       () => document.documentElement.scrollWidth <= innerWidth,

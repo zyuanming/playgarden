@@ -11,7 +11,16 @@ import {
   solveMagnets,
 } from "./magnetsLogic";
 import "./magnetsGarden.css";
-const chapters = ["磁极初识", "交错磁场", "隐去线索", "磁场大师"];
+const chapters = [
+  "磁极初识",
+  "交错磁场",
+  "隐去线索",
+  "磁场大师",
+  "极线重逢",
+  "稀线推演",
+  "长廊磁阵",
+  "磁场会合",
+];
 const intro =
   "先选 ＋、− 或 ○，再点格子。相连的两格一起改变；空白待定，○ 表示整块不放磁铁。";
 export default function MagnetsGarden(props: GameProps) {
@@ -176,7 +185,9 @@ function MagnetsRound({
             </span>
             <h3>{p.title}</h3>
           </div>
-          <span>{String(level + 1).padStart(2, "0")} / 36</span>
+          <span>
+            {String(level + 1).padStart(2, "0")} / {magnetsLevels.length}
+          </span>
         </header>
         <p className="magnets-intro">
           每个长框是一块：放入 ＋／−，或让两格都空置 ○。
