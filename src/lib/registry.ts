@@ -3361,5 +3361,17 @@ component: lazy(() => import("../games/Descensus2"))
     source: original,
     component: lazy(() => import("../games/AngleRing")),
   },
+  {
+    id: "recursive-orchard",
+    title: "递归树园",
+    subtitle: "一次改变所有同类芽，在有限步数内长成目标树。12 道原创谜题。",
+    category: "编程启蒙",
+    difficulty: "中级",
+    tone: "green",
+    levelCount: 12,
+    artwork: { url: "./recursive-orchard-art.svg", position: "center", size: "cover" },
+    source: original,
+    component: lazy(() => import("../games/RecursiveOrchard")),
+  },
 ];
 export const findGame = (id: string) => games.find((game) => game.id === id);

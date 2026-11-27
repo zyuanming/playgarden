@@ -1,0 +1,159 @@
+/* SPDX-License-Identifier: GPL-3.0-only */
+.orchard-game .orchard-panel {
+  padding: clamp(12px, 3vw, 22px);
+  border: 1px solid #b1c9be;
+  border-radius: 22px;
+  background: linear-gradient(155deg, #e2f1e9, #f5f0de);
+  color: #132f29;
+  min-width: 0;
+}
+.orchard-game header,
+.orchard-game figcaption {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 8px;
+}
+.orchard-game header {
+  margin-bottom: 12px;
+  font-size: 0.86rem;
+  font-weight: 700;
+}
+.orchard-game header strong {
+  white-space: nowrap;
+  color: #174f3c;
+}
+.orchard-game .orchard-comparison {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+.orchard-game figure {
+  margin: 0;
+  min-width: 0;
+  background: #fefffb;
+  padding: 8px;
+  border-radius: 12px;
+  border: 1px solid #a9c2ba;
+}
+.orchard-game figure:nth-child(2) {
+  background: #fdf9ee;
+  border-style: dashed;
+}
+.orchard-game figcaption {
+  font-weight: 780;
+  font-size: 0.83rem;
+  flex-wrap: wrap;
+}
+.orchard-game figcaption small {
+  font-size: 0.68rem;
+  color: #406457;
+  white-space: nowrap;
+}
+.orchard-game .orchard-drawing {
+  min-height: 64px;
+  min-width: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.orchard-game svg {
+  display: block;
+  margin: 6px auto;
+  max-width: 100%;
+  height: auto;
+}
+.orchard-game .orchard-node text {
+  font-size: 11px;
+  font-weight: 800;
+  fill: #18302b;
+}
+.orchard-game .orchard-node > :first-child {
+  stroke: #37685f;
+  stroke-width: 1.1;
+}
+.orchard-game .orchard-A circle {
+  fill: #bbdfad;
+}
+.orchard-game .orchard-B circle {
+  fill: #aee4da;
+}
+.orchard-game .orchard-X rect {
+  fill: #f4d474;
+}
+.orchard-game .orchard-Y rect {
+  fill: #edb8a3;
+}
+.orchard-game .orchard-junction circle {
+  fill: #37685f;
+}
+.orchard-game code {
+  font-size: 0.72rem;
+  display: block;
+  padding: 4px 1px 1px;
+  overflow-wrap: anywhere;
+  color: #305e52;
+}
+.orchard-game .orchard-limits {
+  font-size: 0.73rem;
+  color: #325e51;
+  margin: 9px 0;
+}
+.orchard-game .orchard-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(83px, 1fr));
+  gap: 6px;
+}
+.orchard-game .orchard-cards button {
+  display: grid;
+  place-items: center;
+  min-height: 58px;
+  padding: 5px;
+  gap: 3px;
+  border: 1px solid #5f8d7d;
+  background: #f8fdf9;
+  color: #163f31;
+  border-radius: 10px;
+  touch-action: manipulation;
+}
+.orchard-game .orchard-cards button:hover:not(:disabled) {
+  background: #deefe2;
+}
+.orchard-game .orchard-cards button:disabled {
+  opacity: 0.72;
+}
+.orchard-game .orchard-cards span,
+.orchard-game .orchard-cards small {
+  font-size: 0.68rem;
+  color: #345e4d;
+}
+.orchard-game .orchard-cards b {
+  font:
+    750 0.85rem system-ui,
+    sans-serif;
+  overflow-wrap: anywhere;
+}
+.orchard-game .orchard-cards button[data-hinted="true"] {
+  box-shadow: inset 0 0 0 2px #aa6800;
+  background: #fff2c9;
+}
+.orchard-game :focus-visible {
+  outline: 3px solid #236e5a;
+  outline-offset: 2px;
+}
+.orchard-game .orchard-status {
+  min-height: 2em;
+  font-size: 0.84rem;
+  margin: 10px 0 0;
+  color: #193f32;
+}
+@media (max-width: 680px) {
+  .orchard-game .orchard-comparison[data-compact="false"] {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+@media (max-width: 375px) {
+  .orchard-game .orchard-comparison {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
