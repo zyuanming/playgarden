@@ -1,0 +1,56 @@
+/* SPDX-License-Identifier: GPL-3.0-only */
+.parameter-garden .pg-studio {
+  min-width: 0; padding: clamp(10px, 3vw, 23px); border-radius: 20px;
+  border: 1px solid #98b8a2; background: #e8f2e8; color: #173e34;
+}
+.parameter-garden .pg-studio :focus-visible,
+.parameter-garden .pg-studio:focus-visible { outline: 3px solid #2b5483; outline-offset: 2px; }
+.parameter-garden .pg-title { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
+.parameter-garden .pg-title h3 { margin: .2rem 0 .65rem; line-height: 1.16; }
+.parameter-garden .pg-title span { font-size: .78rem; color: #3d5f53; }
+.parameter-garden .pg-title strong { font-size: .91rem; flex: none; }
+.parameter-garden .pg-settings, .parameter-garden .pg-tabs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 4px; }
+.parameter-garden .pg-control {
+  display: grid; grid-template-rows: auto auto auto; gap: 2px; justify-items: center;
+  align-content: start; padding: 4px 1px; border-radius: 8px;
+  background: #f5f9f0; border: 1px solid #c6dacb;
+}
+.parameter-garden .pg-control small { font-size: .75rem; }
+.parameter-garden .pg-control > div { display: flex; align-items: center; justify-content: space-evenly; width: 100%; }
+.parameter-garden .pg-control strong { font-size: clamp(.77rem, 3.3vw, .97rem); white-space: nowrap; }
+.parameter-garden .pg-control button, .parameter-garden .pg-tabs button, .parameter-garden .pg-apply {
+  border: 1px solid #93b6a4; border-radius: 7px; color: #164434;
+  background: #fbfbf1; font-family: inherit; font-weight: 750; cursor: pointer;
+}
+.parameter-garden .pg-control button { width: 25%; min-width: 20px; min-height: 43px; font-size: 1.2rem; padding: 0; }
+.parameter-garden .pg-control[data-fixed="true"] > div { min-height: 27px; }
+.parameter-garden .pg-fixed { color: #4b6258; }
+.parameter-garden .pg-tabs { margin: 9px 0; }
+.parameter-garden .pg-tabs button {
+  display: grid; place-content: center; justify-items: center; gap: 1px;
+  min-height: 44px; font-size: .84rem; line-height: 1.15; padding: 2px; white-space: nowrap;
+}
+.parameter-garden .pg-tabs button[aria-pressed="true"] { background: #25604d; color: white; }
+.parameter-garden .pg-tabs small { display: block; font-size: .69rem; }
+.parameter-garden .pg-seed { display: flex; gap: 8px; align-items: center; font-size: .83rem; margin-bottom: 7px; }
+.parameter-garden .pg-seed svg { width: 50px; height: 50px; background: #f7f9ee; border: 1px solid #b4cbbc; border-radius: 5px; }
+.parameter-garden .pg-seed small { display: block; font-size: .72rem; }
+.parameter-garden .pg-grids { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 5px; }
+.parameter-garden .pg-grid-card { padding: 5px; border-radius: 8px; border: 1px solid #b6ccbd; background: #f7f9ef; min-width: 0; }
+.parameter-garden .pg-grid-card strong { display: block; font-size: .79rem; text-align: center; }
+.parameter-garden .pg-grid {
+  display: grid; grid-template-columns: .60fr repeat(5, 1fr); gap: 2px; max-width: 220px; margin: auto;
+}
+.parameter-garden .pg-grid small { font-size: .63rem; display: grid; place-items: center; color: #345b4f; }
+.parameter-garden .pg-cell {
+  display: grid; place-items: center; aspect-ratio: 1; min-width: 0; border-radius: 3px;
+  background: #e4ebe0; font-size: clamp(.66rem, 3.1vw, 1rem); font-weight: 800; line-height: 1;
+}
+.parameter-garden .pg-cell[data-state="target"], .parameter-garden .pg-cell[data-state="match"] { background: #2b6c55; color: white; }
+.parameter-garden .pg-cell[data-state="missing"] { background: #ffe5ad; color: #5f410b; }
+.parameter-garden .pg-cell[data-state="extra"] { background: #f5cdca; color: #771d1b; }
+.parameter-garden .pg-cell[data-anchor="true"] { outline: 2px solid #2c62a0; outline-offset: -2px; }
+.parameter-garden .pg-stats, .parameter-garden .pg-legend { display: flex; flex-wrap: wrap; gap: 4px 8px; font-size: .72rem; margin-top: 6px; }
+.parameter-garden .pg-apply { width: 100%; min-height: 44px; margin-top: 10px; background: #206049; color: white; font-size: .9rem; }
+.parameter-garden button:disabled { cursor: default; opacity: .63; }
+.parameter-garden .pg-message { min-height: 1.4em; margin: .55rem 0 0; font-size: .84rem; }

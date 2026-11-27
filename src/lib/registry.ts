@@ -3463,5 +3463,17 @@ component: lazy(() => import("../games/Descensus2"))
     source: original,
     component: lazy(() => import("../games/MagneticMaze")),
   },
+  {
+    id: "parameter-garden",
+    title: "参数花园",
+    subtitle: "旋转、位移、重复盖印，让同一套参数同时匹配多个印盘。12 道原创谜题。",
+    category: "编程启蒙",
+    difficulty: "中级",
+    tone: "green",
+    levelCount: 12,
+    artwork: { url: "./parameter-garden-art.svg", position: "center", size: "cover" },
+    source: original,
+    component: lazy(() => import("../games/ParameterGarden")),
+  },
 ];
 export const findGame = (id: string) => games.find((game) => game.id === id);
