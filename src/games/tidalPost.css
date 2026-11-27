@@ -1,0 +1,105 @@
+/* SPDX-License-Identifier: GPL-3.0-only */
+.tide-game .tide-panel {
+  background: #eaf5f3;
+  padding: clamp(10px, 3vw, 22px);
+  border: 1px solid #b4d6cf;
+  border-radius: 22px;
+  color: #153b42;
+  min-width: 0;
+}
+.tide-game header,
+.tide-game .tide-meter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.tide-game .tide-meter {
+  margin: 12px 0;
+  font-weight: 650;
+}
+.tide-game .tide-meter b {
+  display: inline-grid;
+  place-items: center;
+  background: #123e4a;
+  color: #fff;
+  min-width: 28px;
+  min-height: 28px;
+  border-radius: 9px;
+}
+.tide-game .tide-board {
+  display: grid;
+  gap: 4px;
+  max-width: 365px;
+  margin: 0 auto;
+  padding: 7px;
+  background: #123e4a;
+  border-radius: 14px;
+}
+.tide-game .tide-cell {
+  position: relative;
+  display: grid;
+  place-items: center;
+  aspect-ratio: 1;
+  background: #bfe2d7;
+  color: #153b42;
+  border-radius: 8px;
+  font-weight: 800;
+}
+.tide-game .tide-cell.rock {
+  background: #315866;
+}
+.tide-game .tide-cell.gate {
+  background: #ffd989;
+  border-bottom: 4px double #854e16;
+}
+.tide-game .tide-cell.dock {
+  background: #ebf7fc;
+  border: 2px dotted #236784;
+}
+.tide-game .tide-cell.port {
+  background: #ffe3a2;
+}
+.tide-game .tide-cell small {
+  font-size: clamp(13px, 3.3vw, 19px);
+}
+.tide-game .tide-courier {
+  position: absolute;
+  top: 2px;
+  right: 3px;
+  color: #813122;
+  font-size: clamp(15px, 3.7vw, 22px);
+  line-height: 1;
+}
+.tide-game .tide-controls {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 4px;
+  margin-top: 12px;
+}
+.tide-game .tide-controls button {
+  min-height: 50px;
+  padding: 4px 1px;
+  border: 1px solid #7da6aa;
+  border-radius: 10px;
+  background: #fff;
+  color: #153b42;
+  font-weight: 800;
+}
+.tide-game .tide-controls small {
+  display: block;
+  font-size: 11px;
+}
+.tide-game button[data-hinted="true"] {
+  box-shadow: inset 0 0 0 2px #175e69;
+  background: #d8eff2;
+}
+.tide-game :focus-visible {
+  outline: 3px solid #81531c;
+  outline-offset: 2px;
+}
+.tide-game .tide-status {
+  min-height: 3em;
+  margin: 10px 0 0;
+}

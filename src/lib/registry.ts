@@ -3337,5 +3337,17 @@ component: lazy(() => import("../games/RollermazeGame"))
 ,
 component: lazy(() => import("../games/Descensus2"))
 },
+  {
+    id: "tidal-post",
+    title: "潮汐邮路",
+    subtitle: "看准下一拍的潮位，穿过潮门，把信送到邮站。12 道原创路线。",
+    category: "逻辑思维",
+    difficulty: "中级",
+    tone: "green",
+    levelCount: 12,
+    artwork: { url: "./tidal-post-art.svg", position: "center", size: "cover" },
+    source: original,
+    component: lazy(() => import("../games/TidalPost")),
+  },
 ];
 export const findGame = (id: string) => games.find((game) => game.id === id);
