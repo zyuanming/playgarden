@@ -158,11 +158,13 @@ import { angleLevels } from "../src/games/angleRingLogic";
 import { treeLevels } from "../src/games/recursiveOrchardLogic";
 import { irrigationLevels } from "../src/games/irrigationPlanLogic";
 import { debugCases } from "../src/games/debugDetectiveLevels";
+import { packingLevels } from "../src/games/voxelPackingLevels";
 import { mazeBoards } from "../src/games/layeredMazeLevels";
 const packs = {
   "irrigation-plan": irrigationLevels,
   "layered-maze": mazeBoards,
   "debug-detective": debugCases,
+  "voxel-packing": packingLevels,
   "recursive-orchard": treeLevels,
   "angle-ring": angleLevels,
   "descensus-2": [],
@@ -395,8 +397,8 @@ describe("Scalable catalog contract", () => {
       }
     }),
   );
-  it("counts only 191 real games and 3841 levels, not the roadmap", () => {
-    expect(games).toHaveLength(191);
-    expect(games.reduce((sum, g) => sum + g.levelCount, 0)).toBe(3841);
+  it("counts only 192 real games and 3853 levels, not the roadmap", () => {
+    expect(games).toHaveLength(192);
+    expect(games.reduce((sum, g) => sum + g.levelCount, 0)).toBe(3853);
   });
 });

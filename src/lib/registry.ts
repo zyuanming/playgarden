@@ -3411,5 +3411,18 @@ component: lazy(() => import("../games/Descensus2"))
     source: original,
     component: lazy(() => import("../games/DebugDetective")),
   },
+  {
+    id: "voxel-packing",
+    title: "空间装箱",
+    subtitle: "旋转立体积木，从箱口垂直装入。12 道考验投放顺序的原创谜题。",
+    category: "空间想象",
+    difficulty: "中级",
+    tone: "green",
+    levelCount: 12,
+    resumeKey: "playgarden.voxel-packing.v1",
+    artwork: { url: "./voxel-packing-art.svg", position: "center", size: "cover" },
+    source: original,
+    component: lazy(() => import("../games/VoxelPacking")),
+  },
 ];
 export const findGame = (id: string) => games.find((game) => game.id === id);
