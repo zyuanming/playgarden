@@ -101,7 +101,9 @@ function Round({ level, paused, hintToken, undoToken, onComplete }: GameProps) {
     const result = place(puzzle, layout, { frame: active, piece });
     setAdvice(null);
     if ("reason" in result) {
-      say(result.reason);
+      say(current.pin && result.reason.includes("不能跨过定位钉")
+        ? `扇片 ${piece + 1}：${angle}° → ${angle + puzzle.pieces[piece].span}°。 ${result.reason}`
+        : result.reason);
       return;
     }
     setHistory([...history, { layout: result.layout, frame: active }]);

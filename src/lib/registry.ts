@@ -3352,11 +3352,11 @@ component: lazy(() => import("../games/Descensus2"))
   {
     id: "angle-ring",
     title: "角度拼环",
-    subtitle: "对齐符号与定位钉，用一套扇片精确拼出圆弧。12 道原创谜题。",
+    subtitle: "对齐符号与定位钉，用一套扇片精确拼出圆弧。100 道原创谜题。",
     category: "空间想象",
     difficulty: "中级",
     tone: "purple",
-    levelCount: 12,
+    levelCount: 100,
     artwork: { url: "./angle-ring-art.svg", position: "center", size: "cover" },
     source: original,
     component: lazy(() => import("../games/AngleRing")),
