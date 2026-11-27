@@ -3,7 +3,7 @@ import type { GameProps } from '../lib/types';
 import { signpostLevels } from './signpostLevels';
 import { SIGNPOST_SAVE, DIRECTIONS, DIRECTION_NAMES, initialSignpost, inspectSignpost, linkSignpost, unlinkSignpost, parseSignpostSave, pointsTo, solveSignpost } from './signpostLogic';
 import './signpostGarden.css';
-const chapters=['顺着路标','远近之间','数字驿站','交错岔路','完整旅途'];
+const chapters=['顺着路标','远近之间','数字驿站','交错岔路','完整旅途','数字接力','斜径交会','长线驿站','疏标远行','百程终站'];
 const intro='先点任意格作为起点，再点它箭头方向上的另一格。可以跨格，也可以先拼接路线中段。';
 export default function SignpostGarden(props:GameProps){
   const key=`${props.level}:${props.resetToken}`,round=useRef({key,level:props.level,fresh:false});
@@ -41,7 +41,7 @@ function SignpostRound({level,paused,freshStart,hintToken,undoToken,onComplete,o
   function disconnect(){if(blocked||selected===null)return;const next=unlinkSignpost(p,state,selected);if(next!==state){save(next);report(`已断开${coord(selected)}的出线，其他连线保留。`);}}
   return <div className="signpost-layout" data-signpost-id={p.id} data-signpost-state={state.join(',')} data-signpost-selected={selected??''} data-signpost-won={check.won} onKeyDown={e=>{if((e.ctrlKey||e.metaKey||e.altKey)&&['Enter',' '].includes(e.key))e.preventDefault();}}>
     <section className="signpost-play" aria-label="箭头路标棋局">
-      <header className="signpost-heading"><div><span className="signpost-eyebrow">第 {p.chapter+1} 章 · {chapters[p.chapter]}</span><h3>{p.title}</h3></div><span>{String(level+1).padStart(2,'0')} / 30</span></header>
+      <header className="signpost-heading"><div><span className="signpost-eyebrow">第 {p.chapter+1} 章 · {chapters[p.chapter]}</span><h3>{p.title}</h3></div><span>{String(level+1).padStart(2,'0')} / {signpostLevels.length}</span></header>
       <p className="signpost-intro">把所有格子连成 1 → {n}。箭头给方向，固定数字给路程。</p>
       <div className="signpost-stats"><span>已连 <strong>{check.links}</strong> / {n-1} 段</span><span>{p.width} × {p.height} 路标图</span></div>
       <div className="signpost-toolbar"><button type="button" disabled={blocked||selected===null} onClick={()=>{setSelected(null);setHint(null);report('请选择新的起点，可以先连接路线中段。');}}>换个起点</button><button type="button" disabled={blocked||selected===null||state[selected]<0} onClick={disconnect}>断开出线</button><span>{selected===null?'① 选起点 → ② 点目标':`已选 ${coord(selected)}`}</span></div>

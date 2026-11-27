@@ -1310,7 +1310,7 @@ export const games: GameDefinition[] = [
     category: "逻辑思维",
     difficulty: "中级",
     tone: "green",
-    levelCount: 30,
+    levelCount: 100,
     resumeKey: "playgarden.signpost.v1",
     artwork: { url: "./signpost-art.svg", position: "50% 50%", size: "cover" },
     source: {
@@ -1318,7 +1318,7 @@ export const games: GameDefinition[] = [
       workTitle: "Signpost",
       url: "https://github.com/chrisboyle/sgtpuzzles/tree/d1e10eb57dd80af4999e698a9ab31f546e9a0b9d",
       commit: "d1e10eb57dd80af4999e698a9ab31f546e9a0b9d", notice: "./signpost-LICENCE.txt",
-      notes: "移植 Signpost 的八向射线、数字链一致性与完成规则；原创30关、可从中段拼接的界面、当前局面搜索提示与存档。",
+      notes: "移植 Signpost 的八向射线、数字链一致性与完成规则；原创100关、可从中段拼接的界面、当前局面搜索提示与存档。",
     },
     component: lazy(() => import("../games/SignpostGarden")),
   },

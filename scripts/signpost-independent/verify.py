@@ -221,9 +221,9 @@ def read_runtime(repo):
 
 def review(repo):
     levels = read_runtime(repo)
-    assert len(levels) == 30
-    assert [p['id'] for p in levels] == [f'signpost-{i:02}' for i in range(1, 31)]
-    assert [sum(p['chapter'] == k for p in levels) for k in range(5)] == [6] * 5
+    assert len(levels) == 100
+    assert [p['id'] for p in levels] == [f'signpost-{i:02}' for i in range(1, 101)]
+    assert [sum(p['chapter'] == k for p in levels) for k in range(10)] == [6] * 5 + [14] * 5
     assert len({signature(p) for p in levels}) == len(levels), 'symmetry duplicate'
     rows = []
     unique_paths = []

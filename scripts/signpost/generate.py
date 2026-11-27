@@ -90,13 +90,60 @@ def generate():
             levels.append({'id':f'signpost-{idx:02}','title':f'{chapters[chapter]} · {j+1}','chapter':chapter,**p,'solution':path,'metrics':metrics})
     return levels
 
+LEGACY_SHA256 = "bee1d9bac8f5c6d98ba01fdb50d5ca3f3947d8bcd108da0c5774ac16d6ae8589"
+def append_levels(legacy):
+    encoded=json.dumps(legacy,ensure_ascii=False,separators=(',',':')).encode()
+    assert len(legacy)==30 and hashlib.sha256(encoded).hexdigest()==LEGACY_SHA256
+    rows=(ROOT/'docs/signpost/append-031-100.txt').read_text().splitlines()
+    assert len(rows)==70
+    def arrow_key(p):
+        return canonical({**p,'clues':[0]*len(p['arrows'])})
+    seen={arrow_key(p) for p in legacy}
+    new=[]
+    for offset,row in enumerate(rows):
+        id,title,c,size,a,b,z,m=row.split('|')
+        w,h=map(int,size.split('x')); n=w*h
+        arrows=[-1 if ch=='-' else int(ch) for ch in a]
+        clues=[int(ch,36) for ch in b]
+        path=[int(ch,36) for ch in z]
+        _,choices,jumps,diagonals,independent=map(int,m.split(','))
+        chapter=int(c)
+        assert id==f'signpost-{offset+31:02}' and chapter==5+offset//14
+        assert len(arrows)==len(clues)==len(path)==n and arrows.count(-1)==1
+        assert all(-1<=v<8 for v in arrows) and sorted(path)==list(range(n))
+        assert clues[path[0]]==1 and clues[path[-1]]==n and arrows[path[-1]]==-1
+        assert all(v==0 or v==k+1 for k,v in enumerate(clues[i] for i in path))
+        p={'id':id,'title':title,'chapter':chapter,'width':w,'height':h,'arrows':arrows,'clues':clues}
+        key=arrow_key(p)
+        assert key not in seen,(id,'repeated arrow geometry')
+        seen.add(key)
+        answers,nodes=solutions(p)
+        assert answers==[path],(id,'bad or nonunique certificate')
+        new.append({**p,'solution':path,'metrics':{'nodes':nodes,'choicePoints':choices,
+                     'longJumps':jumps,'diagonals':diagonals,'independentNodes':independent,
+                     'canonicalSha256':hashlib.sha256(canonical(p).encode()).hexdigest()}})
+    return legacy+new
+
+def append_json(original, ending, additions, indent):
+    assert original.endswith(ending)
+    suffix=''.join(',\n'+indent+json.dumps(p,ensure_ascii=False,separators=(',',':')) for p in additions)
+    return original[:-len(ending)]+suffix+ending
+
 def main():
-    parser=argparse.ArgumentParser();parser.add_argument('--check',action='store_true');args=parser.parse_args();levels=generate()
-    corpus=json.dumps({'origin':'Playgarden original deterministic campaign; not upstream levels','seed':940810,'levels':levels},ensure_ascii=False,indent=2)+'\n'
-    runtime='// Original campaign. Certificates are deliberately outside the runtime bundle.\nimport type { SignpostLevel } from "./signpostLogic";\nexport const signpostLevels: SignpostLevel[] = '+json.dumps([{k:v for k,v in p.items() if k not in ('solution','metrics')} for p in levels],ensure_ascii=False,indent=2)+';\n'
+    parser=argparse.ArgumentParser()
+    parser.add_argument('--check',action='store_true')
+    parser.add_argument('--append-only',action='store_true',help='reuse pinned first 30 and check new puzzles')
+    args=parser.parse_args()
+    old=(json.loads((ROOT/'docs/signpost/campaign.json').read_text())['levels'][:30]
+         if args.append_only else generate())
+    levels=append_levels(old)
+    doc={'origin':'Playgarden original deterministic campaign; not upstream levels','seed':940810,'levels':old}
+    corpus=append_json(json.dumps(doc,ensure_ascii=False,indent=2),'\n  ]\n}',levels[30:],'    ')+'\n'
+    public=[{k:v for k,v in p.items() if k not in ('solution','metrics')} for p in levels]
+    runtime='// Original campaign. Certificates are deliberately outside the runtime bundle.\nimport type { SignpostLevel } from "./signpostLogic";\nexport const signpostLevels: SignpostLevel[] = '+append_json(json.dumps(public[:30],ensure_ascii=False,indent=2),'\n]',public[30:],'  ')+';\n'
     for file,data in [('docs/signpost/campaign.json',corpus),('src/games/signpostLevels.ts',runtime)]:
         dest=ROOT/file
         if args.check:assert dest.read_text()==data,file+' differs'
         else:dest.write_text(data)
-    print(json.dumps({'levels':len(levels),'sizes':sorted({str((p['width'],p['height'])) for p in levels}),'maxNodes':max(p['metrics']['nodes'] for p in levels),'minChoicePoints':min(p['metrics']['choicePoints'] for p in levels)}))
+    print(json.dumps({'levels':len(levels),'maxNodes':max(p['metrics']['nodes'] for p in levels)}))
 if __name__=='__main__':main()

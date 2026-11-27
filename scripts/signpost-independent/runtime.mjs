@@ -10,7 +10,7 @@ const repo = resolve(process.argv[2] ?? resolve(here, '../..'));
 const report = JSON.parse(readFileSync(process.argv[3] ?? '/tmp/signpost-independent-report.json', 'utf8'));
 const levelsSource = readFileSync(resolve(repo, 'src/games/signpostLevels.ts'), 'utf8');
 const levels = JSON.parse(levelsSource.split('export const signpostLevels: SignpostLevel[] = ')[1].trim().replace(/;$/, ''));
-assert.equal(report.count, 30);
+assert.equal(report.count, levels.length);
 const cases = [], rays = [];
 let seed = 940031;
 function random(n) { seed = (Math.imul(seed, 1664525) + 1013904223) >>> 0; return seed % n; }

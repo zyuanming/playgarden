@@ -7,8 +7,8 @@ import { signpostLevels } from '../src/games/signpostLevels';
 import { SIGNPOST_SAVE,initialSignpost,inspectSignpost,linkSignpost,unlinkSignpost,parseSignpostSave,solveSignpost,pointsTo } from '../src/games/signpostLogic';
 const proofs=JSON.parse(readFileSync('docs/signpost/campaign.json','utf8')).levels as {solution:number[]}[];
 afterEach(()=>{cleanup();localStorage.clear();vi.restoreAllMocks();});
-it('all30 original certificates support arbitrary-order linking and current-state solving',()=>{
- expect(signpostLevels).toHaveLength(30);
+it('all 100 original certificates support arbitrary-order linking and current-state solving',()=>{
+ expect(signpostLevels).toHaveLength(100);
  for(const [index,p] of signpostLevels.entries()){
   const path=proofs[index].solution;let state=initialSignpost(p);const solved=solveSignpost(p,state);expect(solved.kind).toBe('solution');
   // Join suffixes before prefixes to exercise relative groups and back propagation.
