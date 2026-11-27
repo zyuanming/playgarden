@@ -47,8 +47,8 @@ describe("Akari rules and campaign", () => {
     t[1] = 1;
     expect(inspectAkari(numbered, t).wrong).not.toContain(4);
   });
-  it("replays all 36 certificates through real transitions, validates hints from partial and contradicted states", () => {
-    expect(akariLevels).toHaveLength(36);
+  it("replays all 100 certificates through real transitions, validates hints from partial and contradicted states", () => {
+    expect(akariLevels).toHaveLength(100);
     for (const [index, p] of akariLevels.entries()) {
       expect(proofs[index].id).toBe(p.id);
       let state = Array(p.board.length).fill(0);

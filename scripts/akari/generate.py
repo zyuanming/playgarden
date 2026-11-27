@@ -91,12 +91,43 @@ def generate():
             if key in seen:continue
             seen.add(key);count+=1
             levels.append(dict(id=f'akari-{len(levels)+1:03}',title=f'{["初见灯光","隔墙相望","交错光径","夜园全亮"][chapter]} · {count}',chapter=chapter,size=n,board=''.join(board),solution=sorted(solution)))
+    # Preserve the complete seeded release as a prefix. Curated append input
+    # is kept outside the runtime and independently re-solved here.
+    append=json.loads(pathlib.Path(__file__).with_name('append-037-100.json').read_text())
+    chapters=['灯线初织','交汇之光','扩建夜园','万灯归位']
+    mask=lambda board: ''.join('.' if cell=='.' else '#' for cell in board)
+    layouts={(p['size'],canonical(p['size'],mask(p['board']))) for p in levels}
+    assert len(append)==64
+    for i,p in enumerate(append):
+        chapter=4+i//16
+        n=6 if chapter<6 else 7
+        board=p['board']
+        assert len(board)==n*n and all(c in '.#01234' for c in board)
+        key=(n,canonical(n,mask(board)))
+        assert key not in layouts, f'Duplicate wall layout at level {len(levels)+1}'
+        layouts.add(key)
+        answers,_=solve(n,board)
+        assert answers==[p['solution']], f'Wrong or ambiguous certificate at level {len(levels)+1}'
+        levels.append(dict(id=f'akari-{len(levels)+1:03}',title=f'{chapters[chapter-4]} · {i%16+1}',chapter=chapter,size=n,board=board,solution=p['solution']))
     return dict(seed=9102026,levels=levels)
+
+def runtime(levels):
+    lines=['import type { AkariLevel } from "./akariLogic";','export const akariLevels: AkariLevel[] = [']
+    for level in levels:
+        lines.append('  {')
+        for k,v in level.items():
+            if k!='solution':
+                lines.append(f'    {k}: {json.dumps(v,ensure_ascii=False)},')
+        lines.append('  },')
+    return '\n'.join([*lines,'];',''])
+
 if __name__=='__main__':
-    result=generate(); path=ROOT/'docs/akari/campaign.json'; content=json.dumps(result,ensure_ascii=False,indent=2)+'\n'
-    if '--check' in sys.argv:assert path.read_text()==content
-    else:
-        path.write_text(content)
-        public=[{k:v for k,v in p.items() if k!='solution'} for p in result['levels']]
-        (ROOT/'src/games/akariLevels.ts').write_text('import type { AkariLevel } from "./akariLogic";\nexport const akariLevels: AkariLevel[] = '+json.dumps(public,ensure_ascii=False,indent=2)+';\n')
+    result=generate()
+    outputs={
+        ROOT/'docs/akari/campaign.json':json.dumps(result,ensure_ascii=False,indent=2)+'\n',
+        ROOT/'src/games/akariLevels.ts':runtime(result['levels']),
+    }
+    for path,content in outputs.items():
+        if '--check' in sys.argv: assert path.read_text()==content, f'Stale generated file: {path}'
+        else: path.write_text(content)
     print('Verified',len(result['levels']),'unique Akari puzzles')

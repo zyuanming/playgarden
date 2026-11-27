@@ -4,7 +4,7 @@ import { openGame, chooseLevel, captureErrors } from "./helpers";
 import { akariLevels } from "../src/games/akariLevels";
 const proofs = JSON.parse(readFileSync("docs/akari/campaign.json", "utf8"))
   .levels as { id: string; solution: number[] }[];
-test("Akari real 36-level journey with keyboard, touch, interruption, conflict and storage", async ({
+test("Akari real campaign journey with keyboard, touch, interruption, conflict and storage", async ({
   page,
 }, info) => {
   test.setTimeout(240000);
@@ -54,11 +54,11 @@ test("Akari real 36-level journey with keyboard, touch, interruption, conflict a
   await cell(1).focus();
   await cell(1).press("ArrowRight");
   await expect(cell(2)).toBeFocused();
-  for (let index = 0; index < 36; index++) {
+  for (let index = 0; index < akariLevels.length; index++) {
     if (index) await chooseLevel(page, index);
     const p = akariLevels[index];
     await expect(root).toHaveAttribute("data-akari-id", p.id);
-    const capture = [0, 17, 35].includes(index);
+    const capture = [0, 17, 35, 36, 68, 99].includes(index);
     if (capture) {
       expect(
         await page.evaluate(
@@ -96,6 +96,6 @@ test("Akari real 36-level journey with keyboard, touch, interruption, conflict a
       JSON.parse(localStorage.getItem("playgarden.progress.v2")!).completed
         .akari,
   );
-  expect(completed).toHaveLength(36);
+  expect(completed).toHaveLength(akariLevels.length);
   expect(errors).toEqual([]);
 });
