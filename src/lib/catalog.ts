@@ -192,6 +192,7 @@ export const GAME_IDS = [
   "layered-maze",
   "debug-detective",
   "voxel-packing",
+  "appointment-planner",
 ] as const;
 export type GameId = (typeof GAME_IDS)[number];
 export type Category =

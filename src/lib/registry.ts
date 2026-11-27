@@ -3424,5 +3424,18 @@ component: lazy(() => import("../games/Descensus2"))
     source: original,
     component: lazy(() => import("../games/VoxelPacking")),
   },
+  {
+    id: "appointment-planner",
+    title: "活动日程",
+    subtitle: "算上步行、等待和返程，在各场馆关门前排好校园行程。12 道原创谜题。",
+    category: "逻辑思维",
+    difficulty: "中级",
+    tone: "orange",
+    levelCount: 12,
+    resumeKey: "playgarden.appointment-planner.v1",
+    artwork: { url: "./appointment-planner-art.svg", position: "center", size: "cover" },
+    source: original,
+    component: lazy(() => import("../games/AppointmentPlanner")),
+  },
 ];
 export const findGame = (id: string) => games.find((game) => game.id === id);
