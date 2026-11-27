@@ -36,6 +36,12 @@ export const blackboxChapters = [
     "title": "星雾深处",
     "lesson": "四颗星会遮挡或改变彼此的信号。没有限时或探测上限；验证比较所有边缘响应，任何完全等价的布局都能过关。",
     "count": 24
+  },
+  {
+    "id": "evidence-capstone",
+    "title": "星雾会诊",
+    "lesson": "先选能区分多种星图的入口，再用交叉证据锁定星位；提示只依据已观测的光束，不替你落子。",
+    "count": 16
   }
 ];
 export const blackboxLevels: BlackboxLevel[] = [
@@ -954,6 +960,198 @@ export const blackboxLevels: BlackboxLevel[] = [
       2,
       16,
       24
+    ]
+  },
+  {
+    "id": "blackbox-085",
+    "title": "星雾会诊 · 1",
+    "chapter": 6,
+    "size": 5,
+    "atoms": [
+      0,
+      3,
+      9,
+      19
+    ]
+  },
+  {
+    "id": "blackbox-086",
+    "title": "星雾会诊 · 2",
+    "chapter": 6,
+    "size": 5,
+    "atoms": [
+      6,
+      7,
+      12,
+      17
+    ]
+  },
+  {
+    "id": "blackbox-087",
+    "title": "星雾会诊 · 3",
+    "chapter": 6,
+    "size": 5,
+    "atoms": [
+      0,
+      1,
+      2,
+      8
+    ]
+  },
+  {
+    "id": "blackbox-088",
+    "title": "星雾会诊 · 4",
+    "chapter": 6,
+    "size": 5,
+    "atoms": [
+      0,
+      8,
+      16,
+      18
+    ]
+  },
+  {
+    "id": "blackbox-089",
+    "title": "星雾会诊 · 5",
+    "chapter": 6,
+    "size": 5,
+    "atoms": [
+      0,
+      2,
+      19,
+      23
+    ]
+  },
+  {
+    "id": "blackbox-090",
+    "title": "星雾会诊 · 6",
+    "chapter": 6,
+    "size": 5,
+    "atoms": [
+      6,
+      7,
+      8,
+      17
+    ]
+  },
+  {
+    "id": "blackbox-091",
+    "title": "星雾会诊 · 7",
+    "chapter": 6,
+    "size": 5,
+    "atoms": [
+      0,
+      1,
+      2,
+      3
+    ]
+  },
+  {
+    "id": "blackbox-092",
+    "title": "星雾会诊 · 8",
+    "chapter": 6,
+    "size": 5,
+    "atoms": [
+      0,
+      1,
+      8,
+      18
+    ]
+  },
+  {
+    "id": "blackbox-093",
+    "title": "星雾会诊 · 9",
+    "chapter": 6,
+    "size": 5,
+    "atoms": [
+      0,
+      2,
+      14,
+      23
+    ]
+  },
+  {
+    "id": "blackbox-094",
+    "title": "星雾会诊 · 10",
+    "chapter": 6,
+    "size": 5,
+    "atoms": [
+      0,
+      7,
+      8,
+      17
+    ]
+  },
+  {
+    "id": "blackbox-095",
+    "title": "星雾会诊 · 11",
+    "chapter": 6,
+    "size": 5,
+    "atoms": [
+      0,
+      1,
+      2,
+      13
+    ]
+  },
+  {
+    "id": "blackbox-096",
+    "title": "星雾会诊 · 12",
+    "chapter": 6,
+    "size": 5,
+    "atoms": [
+      0,
+      3,
+      7,
+      17
+    ]
+  },
+  {
+    "id": "blackbox-097",
+    "title": "星雾会诊 · 13",
+    "chapter": 6,
+    "size": 5,
+    "atoms": [
+      0,
+      3,
+      20,
+      24
+    ]
+  },
+  {
+    "id": "blackbox-098",
+    "title": "星雾会诊 · 14",
+    "chapter": 6,
+    "size": 5,
+    "atoms": [
+      0,
+      4,
+      12,
+      17
+    ]
+  },
+  {
+    "id": "blackbox-099",
+    "title": "星雾会诊 · 15",
+    "chapter": 6,
+    "size": 5,
+    "atoms": [
+      0,
+      1,
+      14,
+      22
+    ]
+  },
+  {
+    "id": "blackbox-100",
+    "title": "星雾会诊 · 16",
+    "chapter": 6,
+    "size": 5,
+    "atoms": [
+      0,
+      8,
+      12,
+      22
     ]
   }
 ];

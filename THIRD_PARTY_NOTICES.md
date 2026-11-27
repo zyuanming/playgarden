@@ -71,7 +71,7 @@ SOFTWARE.
 
 规则核对固定到 Simon Tatham's Portable Puzzle Collection 快照 `a7c7826bce5cbb9b9c337c11b9b7f8b278e76fba`。只读参考 `blackbox.c` 与 `puzzles.but` 的 Black Box 章节，用于明确入口、正前吸收与前侧转向的优先级；完整快照文件、来源校验和 MIT 许可保留在 `vendor/sgtatham-blackbox/`，许可同时随生产产物分发为 `public/blackbox-LICENCE.txt`。上游 Black Box 模块由 James Harvey 贡献；机制历史见上游文档，不把商业原版品牌、包装或关卡当作 MIT 素材。
 
-Playgarden 的 TypeScript 游戏规则实现、Python 独立求解器、6 章 84 个 D4 非同构题、中文教程、界面、`scripts/blackbox/art.svg` 与由其渲染的 `public/blackbox-art.webp` 均为原创。本游戏不移植上游生成器或关卡，不载入外部美术、字体、音频，也不执行上游源码。完整上游 MIT 版权及许可文本见本文件前述 Simon Tatham 节和独立 `blackbox-LICENCE.txt`；该声明不会替代许可证正文。
+Playgarden 的 TypeScript 游戏规则实现、Python 独立求解器、7 章 100 个 D4 非同构题、中文教程、界面、`scripts/blackbox/art.svg` 与由其渲染的 `public/blackbox-art.webp` 均为原创。本游戏不移植上游生成器或关卡，不载入外部美术、字体、音频，也不执行上游源码。完整上游 MIT 版权及许可文本见本文件前述 Simon Tatham 节和独立 `blackbox-LICENCE.txt`；该声明不会替代许可证正文。
 
 ## open-gomoku: actual TypeScript source adaptation
 

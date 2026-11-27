@@ -85,12 +85,12 @@ describe("star probe physical rules", () => {
   });
 });
 describe("original campaign and round certificates", () => {
-  it("has six chapters of non-padding lesson sizes", () => {
-    expect(blackboxLevels).toHaveLength(84);
+  it("has seven chapters of non-padding lesson sizes", () => {
+    expect(blackboxLevels).toHaveLength(100);
     expect(blackboxChapters.map((c) => c.count)).toEqual([
-      3, 9, 12, 16, 20, 24,
+      3, 9, 12, 16, 20, 24, 16,
     ]);
-    expect(new Set(blackboxLevels.map((l) => l.id)).size).toBe(84);
+    expect(new Set(blackboxLevels.map((l) => l.id)).size).toBe(100);
   });
   for (const [i, l] of blackboxLevels.entries())
     it(`level ${i + 1} accepts its real marks, locks and restores`, () => {

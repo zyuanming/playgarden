@@ -2,7 +2,7 @@
   "version": 1,
   "rules": "boundary-priority-front-then-diagonals-v1",
   "ports": "N left-to-right, E top-to-bottom, S left-to-right, W top-to-bottom; -1 absorbed, -2 reflected",
-  "selection": "D4-distinct, unique full signatures; structurally stratified with deterministic hash, ordered by greedy evidence trace length. No shortest-probe claim.",
+  "selection": "D4-distinct, unique full signatures; structurally stratified with deterministic hash, ordered by greedy evidence trace length. Chapter 7 uses fixed authored layouts, preserving chapters 1–6. No shortest-probe claim.",
   "chapters": [
     {
       "id": "first-signals",
@@ -51,6 +51,14 @@
       "size": 5,
       "countAtoms": 4,
       "count": 24
+    },
+    {
+      "id": "evidence-capstone",
+      "title": "星雾会诊",
+      "lesson": "先选能区分多种星图的入口，再用交叉证据锁定星位；提示只依据已观测的光束，不替你落子。",
+      "size": 5,
+      "countAtoms": 4,
+      "count": 16
     }
   ],
   "stats": [
@@ -118,6 +126,17 @@
       "greedyRange": [
         4,
         12
+      ]
+    },
+    {
+      "chapter": "evidence-capstone",
+      "universe": 12650,
+      "uniqueLayouts": 11985,
+      "uniqueD4Classes": 1572,
+      "selected": 16,
+      "greedyRange": [
+        5,
+        11
       ]
     }
   ],
@@ -6641,6 +6660,1622 @@
         "hits": 13,
         "returns": 5,
         "through": 2
+      }
+    },
+    {
+      "id": "blackbox-085",
+      "title": "星雾会诊 · 1",
+      "chapter": 6,
+      "size": 5,
+      "atoms": [
+        0,
+        3,
+        9,
+        19
+      ],
+      "signature": [
+        -1,
+        -2,
+        -2,
+        -1,
+        -2,
+        -2,
+        -1,
+        -2,
+        -1,
+        -2,
+        -1,
+        12,
+        11,
+        19,
+        -1,
+        -1,
+        -2,
+        -2,
+        -1,
+        13
+      ],
+      "canonical": "0,15,21,23",
+      "probeTrace": [
+        {
+          "port": 0,
+          "result": -1,
+          "candidates": 6080,
+          "worst": 6080,
+          "partitions": 7
+        },
+        {
+          "port": 5,
+          "result": -2,
+          "candidates": 785,
+          "worst": 2816,
+          "partitions": 7
+        },
+        {
+          "port": 9,
+          "result": -2,
+          "candidates": 80,
+          "worst": 341,
+          "partitions": 7
+        },
+        {
+          "port": 12,
+          "result": 11,
+          "candidates": 4,
+          "worst": 33,
+          "partitions": 10
+        },
+        {
+          "port": 15,
+          "result": -1,
+          "candidates": 1,
+          "worst": 2,
+          "partitions": 3
+        }
+      ],
+      "metrics": {
+        "greedyProbes": 5,
+        "edge": 4,
+        "adjacent": 0,
+        "hits": 8,
+        "returns": 8,
+        "through": 4
+      }
+    },
+    {
+      "id": "blackbox-086",
+      "title": "星雾会诊 · 2",
+      "chapter": 6,
+      "size": 5,
+      "atoms": [
+        6,
+        7,
+        12,
+        17
+      ],
+      "signature": [
+        15,
+        -1,
+        -1,
+        5,
+        14,
+        3,
+        -1,
+        -1,
+        -1,
+        13,
+        17,
+        19,
+        -1,
+        9,
+        4,
+        0,
+        -1,
+        10,
+        -1,
+        11
+      ],
+      "canonical": "11,12,13,16",
+      "probeTrace": [
+        {
+          "port": 0,
+          "result": 15,
+          "candidates": 1330,
+          "worst": 6080,
+          "partitions": 7
+        },
+        {
+          "port": 4,
+          "result": 14,
+          "candidates": 165,
+          "worst": 620,
+          "partitions": 7
+        },
+        {
+          "port": 3,
+          "result": 5,
+          "candidates": 36,
+          "worst": 45,
+          "partitions": 6
+        },
+        {
+          "port": 7,
+          "result": -1,
+          "candidates": 8,
+          "worst": 15,
+          "partitions": 4
+        },
+        {
+          "port": 9,
+          "result": 13,
+          "candidates": 1,
+          "worst": 3,
+          "partitions": 5
+        }
+      ],
+      "metrics": {
+        "greedyProbes": 5,
+        "edge": 0,
+        "adjacent": 3,
+        "hits": 8,
+        "returns": 0,
+        "through": 12
+      }
+    },
+    {
+      "id": "blackbox-087",
+      "title": "星雾会诊 · 3",
+      "chapter": 6,
+      "size": 5,
+      "atoms": [
+        0,
+        1,
+        2,
+        8
+      ],
+      "signature": [
+        -1,
+        -1,
+        -1,
+        -2,
+        5,
+        4,
+        -1,
+        14,
+        18,
+        19,
+        -1,
+        -1,
+        17,
+        -1,
+        7,
+        -1,
+        -2,
+        12,
+        8,
+        9
+      ],
+      "canonical": "0,1,2,8",
+      "probeTrace": [
+        {
+          "port": 0,
+          "result": -1,
+          "candidates": 6080,
+          "worst": 6080,
+          "partitions": 7
+        },
+        {
+          "port": 5,
+          "result": 4,
+          "candidates": 620,
+          "worst": 2816,
+          "partitions": 7
+        },
+        {
+          "port": 9,
+          "result": 19,
+          "candidates": 88,
+          "worst": 282,
+          "partitions": 7
+        },
+        {
+          "port": 8,
+          "result": 18,
+          "candidates": 13,
+          "worst": 21,
+          "partitions": 6
+        },
+        {
+          "port": 12,
+          "result": 17,
+          "candidates": 1,
+          "worst": 6,
+          "partitions": 4
+        }
+      ],
+      "metrics": {
+        "greedyProbes": 5,
+        "edge": 3,
+        "adjacent": 2,
+        "hits": 8,
+        "returns": 2,
+        "through": 10
+      }
+    },
+    {
+      "id": "blackbox-088",
+      "title": "星雾会诊 · 4",
+      "chapter": 6,
+      "size": 5,
+      "atoms": [
+        0,
+        8,
+        16,
+        18
+      ],
+      "signature": [
+        -1,
+        -2,
+        -1,
+        -1,
+        5,
+        4,
+        -1,
+        -2,
+        -1,
+        14,
+        19,
+        -1,
+        -2,
+        -1,
+        9,
+        -1,
+        -2,
+        -1,
+        -1,
+        10
+      ],
+      "canonical": "0,8,16,18",
+      "probeTrace": [
+        {
+          "port": 0,
+          "result": -1,
+          "candidates": 6080,
+          "worst": 6080,
+          "partitions": 7
+        },
+        {
+          "port": 5,
+          "result": 4,
+          "candidates": 620,
+          "worst": 2816,
+          "partitions": 7
+        },
+        {
+          "port": 9,
+          "result": 14,
+          "candidates": 60,
+          "worst": 282,
+          "partitions": 7
+        },
+        {
+          "port": 19,
+          "result": 10,
+          "candidates": 3,
+          "worst": 24,
+          "partitions": 5
+        },
+        {
+          "port": 1,
+          "result": -2,
+          "candidates": 1,
+          "worst": 1,
+          "partitions": 3
+        }
+      ],
+      "metrics": {
+        "greedyProbes": 5,
+        "edge": 1,
+        "adjacent": 0,
+        "hits": 10,
+        "returns": 4,
+        "through": 6
+      }
+    },
+    {
+      "id": "blackbox-089",
+      "title": "星雾会诊 · 5",
+      "chapter": 6,
+      "size": 5,
+      "atoms": [
+        0,
+        2,
+        19,
+        23
+      ],
+      "signature": [
+        -1,
+        -2,
+        -1,
+        -2,
+        -1,
+        -1,
+        17,
+        -2,
+        -1,
+        -2,
+        -1,
+        -2,
+        -2,
+        -1,
+        -2,
+        -1,
+        -2,
+        6,
+        -1,
+        -1
+      ],
+      "canonical": "0,10,19,23",
+      "probeTrace": [
+        {
+          "port": 0,
+          "result": -1,
+          "candidates": 6080,
+          "worst": 6080,
+          "partitions": 7
+        },
+        {
+          "port": 5,
+          "result": -1,
+          "candidates": 2816,
+          "worst": 2816,
+          "partitions": 7
+        },
+        {
+          "port": 14,
+          "result": -2,
+          "candidates": 331,
+          "worst": 1265,
+          "partitions": 7
+        },
+        {
+          "port": 6,
+          "result": 17,
+          "candidates": 8,
+          "worst": 126,
+          "partitions": 11
+        },
+        {
+          "port": 3,
+          "result": -2,
+          "candidates": 3,
+          "worst": 3,
+          "partitions": 3
+        },
+        {
+          "port": 11,
+          "result": -2,
+          "candidates": 2,
+          "worst": 2,
+          "partitions": 2
+        },
+        {
+          "port": 16,
+          "result": -2,
+          "candidates": 1,
+          "worst": 1,
+          "partitions": 2
+        }
+      ],
+      "metrics": {
+        "greedyProbes": 7,
+        "edge": 4,
+        "adjacent": 0,
+        "hits": 10,
+        "returns": 8,
+        "through": 2
+      }
+    },
+    {
+      "id": "blackbox-090",
+      "title": "星雾会诊 · 6",
+      "chapter": 6,
+      "size": 5,
+      "atoms": [
+        6,
+        7,
+        8,
+        17
+      ],
+      "signature": [
+        15,
+        -1,
+        -1,
+        -1,
+        5,
+        4,
+        -1,
+        14,
+        -1,
+        13,
+        17,
+        19,
+        -1,
+        9,
+        7,
+        0,
+        -1,
+        10,
+        -1,
+        11
+      ],
+      "canonical": "6,11,13,16",
+      "probeTrace": [
+        {
+          "port": 0,
+          "result": 15,
+          "candidates": 1330,
+          "worst": 6080,
+          "partitions": 7
+        },
+        {
+          "port": 4,
+          "result": 5,
+          "candidates": 136,
+          "worst": 620,
+          "partitions": 7
+        },
+        {
+          "port": 9,
+          "result": 13,
+          "candidates": 11,
+          "worst": 60,
+          "partitions": 7
+        },
+        {
+          "port": 10,
+          "result": 17,
+          "candidates": 5,
+          "worst": 5,
+          "partitions": 5
+        },
+        {
+          "port": 8,
+          "result": -1,
+          "candidates": 3,
+          "worst": 3,
+          "partitions": 3
+        },
+        {
+          "port": 1,
+          "result": -1,
+          "candidates": 2,
+          "worst": 2,
+          "partitions": 2
+        },
+        {
+          "port": 2,
+          "result": -1,
+          "candidates": 1,
+          "worst": 1,
+          "partitions": 2
+        }
+      ],
+      "metrics": {
+        "greedyProbes": 7,
+        "edge": 0,
+        "adjacent": 2,
+        "hits": 8,
+        "returns": 0,
+        "through": 12
+      }
+    },
+    {
+      "id": "blackbox-091",
+      "title": "星雾会诊 · 7",
+      "chapter": 6,
+      "size": 5,
+      "atoms": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "signature": [
+        -1,
+        -1,
+        -1,
+        -1,
+        -2,
+        -1,
+        14,
+        17,
+        18,
+        19,
+        -1,
+        -1,
+        -1,
+        -1,
+        6,
+        -1,
+        -2,
+        7,
+        8,
+        9
+      ],
+      "canonical": "0,1,2,3",
+      "probeTrace": [
+        {
+          "port": 0,
+          "result": -1,
+          "candidates": 6080,
+          "worst": 6080,
+          "partitions": 7
+        },
+        {
+          "port": 5,
+          "result": -1,
+          "candidates": 2816,
+          "worst": 2816,
+          "partitions": 7
+        },
+        {
+          "port": 14,
+          "result": 6,
+          "candidates": 245,
+          "worst": 1265,
+          "partitions": 7
+        },
+        {
+          "port": 13,
+          "result": -1,
+          "candidates": 95,
+          "worst": 95,
+          "partitions": 5
+        },
+        {
+          "port": 12,
+          "result": -1,
+          "candidates": 17,
+          "worst": 31,
+          "partitions": 6
+        },
+        {
+          "port": 7,
+          "result": 17,
+          "candidates": 2,
+          "worst": 7,
+          "partitions": 6
+        },
+        {
+          "port": 1,
+          "result": -1,
+          "candidates": 1,
+          "worst": 1,
+          "partitions": 2
+        }
+      ],
+      "metrics": {
+        "greedyProbes": 7,
+        "edge": 4,
+        "adjacent": 3,
+        "hits": 10,
+        "returns": 2,
+        "through": 8
+      }
+    },
+    {
+      "id": "blackbox-092",
+      "title": "星雾会诊 · 8",
+      "chapter": 6,
+      "size": 5,
+      "atoms": [
+        0,
+        1,
+        8,
+        18
+      ],
+      "signature": [
+        -1,
+        -1,
+        -2,
+        -1,
+        5,
+        4,
+        -1,
+        -2,
+        -1,
+        14,
+        -1,
+        -1,
+        19,
+        -1,
+        9,
+        -1,
+        -2,
+        -2,
+        -1,
+        12
+      ],
+      "canonical": "0,1,8,18",
+      "probeTrace": [
+        {
+          "port": 0,
+          "result": -1,
+          "candidates": 6080,
+          "worst": 6080,
+          "partitions": 7
+        },
+        {
+          "port": 5,
+          "result": 4,
+          "candidates": 620,
+          "worst": 2816,
+          "partitions": 7
+        },
+        {
+          "port": 9,
+          "result": 14,
+          "candidates": 60,
+          "worst": 282,
+          "partitions": 7
+        },
+        {
+          "port": 19,
+          "result": 12,
+          "candidates": 24,
+          "worst": 24,
+          "partitions": 5
+        },
+        {
+          "port": 2,
+          "result": -2,
+          "candidates": 3,
+          "worst": 12,
+          "partitions": 4
+        },
+        {
+          "port": 1,
+          "result": -1,
+          "candidates": 2,
+          "worst": 2,
+          "partitions": 2
+        },
+        {
+          "port": 15,
+          "result": -1,
+          "candidates": 1,
+          "worst": 1,
+          "partitions": 2
+        }
+      ],
+      "metrics": {
+        "greedyProbes": 7,
+        "edge": 2,
+        "adjacent": 1,
+        "hits": 10,
+        "returns": 4,
+        "through": 6
+      }
+    },
+    {
+      "id": "blackbox-093",
+      "title": "星雾会诊 · 9",
+      "chapter": 6,
+      "size": 5,
+      "atoms": [
+        0,
+        2,
+        14,
+        23
+      ],
+      "signature": [
+        -1,
+        -2,
+        -1,
+        -2,
+        -1,
+        -1,
+        -2,
+        -1,
+        -2,
+        -1,
+        -1,
+        -2,
+        -2,
+        -1,
+        -2,
+        -1,
+        -2,
+        -1,
+        -1,
+        -1
+      ],
+      "canonical": "0,10,19,22",
+      "probeTrace": [
+        {
+          "port": 0,
+          "result": -1,
+          "candidates": 6080,
+          "worst": 6080,
+          "partitions": 7
+        },
+        {
+          "port": 5,
+          "result": -1,
+          "candidates": 2816,
+          "worst": 2816,
+          "partitions": 7
+        },
+        {
+          "port": 14,
+          "result": -2,
+          "candidates": 331,
+          "worst": 1265,
+          "partitions": 7
+        },
+        {
+          "port": 6,
+          "result": -2,
+          "candidates": 126,
+          "worst": 126,
+          "partitions": 11
+        },
+        {
+          "port": 2,
+          "result": -1,
+          "candidates": 61,
+          "worst": 61,
+          "partitions": 10
+        },
+        {
+          "port": 18,
+          "result": -1,
+          "candidates": 27,
+          "worst": 27,
+          "partitions": 7
+        },
+        {
+          "port": 11,
+          "result": -2,
+          "candidates": 8,
+          "worst": 14,
+          "partitions": 5
+        },
+        {
+          "port": 7,
+          "result": -1,
+          "candidates": 2,
+          "worst": 2,
+          "partitions": 5
+        },
+        {
+          "port": 8,
+          "result": -2,
+          "candidates": 1,
+          "worst": 1,
+          "partitions": 2
+        }
+      ],
+      "metrics": {
+        "greedyProbes": 9,
+        "edge": 4,
+        "adjacent": 0,
+        "hits": 12,
+        "returns": 8,
+        "through": 0
+      }
+    },
+    {
+      "id": "blackbox-094",
+      "title": "星雾会诊 · 10",
+      "chapter": 6,
+      "size": 5,
+      "atoms": [
+        0,
+        7,
+        8,
+        17
+      ],
+      "signature": [
+        -1,
+        -2,
+        -1,
+        -1,
+        5,
+        4,
+        -1,
+        14,
+        -1,
+        13,
+        -1,
+        19,
+        -1,
+        9,
+        7,
+        -1,
+        -2,
+        -2,
+        -1,
+        11
+      ],
+      "canonical": "0,11,13,16",
+      "probeTrace": [
+        {
+          "port": 0,
+          "result": -1,
+          "candidates": 6080,
+          "worst": 6080,
+          "partitions": 7
+        },
+        {
+          "port": 5,
+          "result": 4,
+          "candidates": 620,
+          "worst": 2816,
+          "partitions": 7
+        },
+        {
+          "port": 9,
+          "result": 13,
+          "candidates": 50,
+          "worst": 282,
+          "partitions": 7
+        },
+        {
+          "port": 1,
+          "result": -2,
+          "candidates": 23,
+          "worst": 23,
+          "partitions": 6
+        },
+        {
+          "port": 19,
+          "result": 11,
+          "candidates": 13,
+          "worst": 13,
+          "partitions": 4
+        },
+        {
+          "port": 17,
+          "result": -2,
+          "candidates": 5,
+          "worst": 7,
+          "partitions": 3
+        },
+        {
+          "port": 3,
+          "result": -1,
+          "candidates": 3,
+          "worst": 3,
+          "partitions": 2
+        },
+        {
+          "port": 15,
+          "result": -1,
+          "candidates": 2,
+          "worst": 2,
+          "partitions": 2
+        },
+        {
+          "port": 16,
+          "result": -2,
+          "candidates": 1,
+          "worst": 1,
+          "partitions": 2
+        }
+      ],
+      "metrics": {
+        "greedyProbes": 9,
+        "edge": 1,
+        "adjacent": 1,
+        "hits": 9,
+        "returns": 3,
+        "through": 8
+      }
+    },
+    {
+      "id": "blackbox-095",
+      "title": "星雾会诊 · 11",
+      "chapter": 6,
+      "size": 5,
+      "atoms": [
+        0,
+        1,
+        2,
+        13
+      ],
+      "signature": [
+        -1,
+        -1,
+        -1,
+        -2,
+        6,
+        -1,
+        4,
+        -1,
+        14,
+        19,
+        -1,
+        -1,
+        18,
+        -1,
+        8,
+        -1,
+        -2,
+        -1,
+        12,
+        9
+      ],
+      "canonical": "0,1,2,13",
+      "probeTrace": [
+        {
+          "port": 0,
+          "result": -1,
+          "candidates": 6080,
+          "worst": 6080,
+          "partitions": 7
+        },
+        {
+          "port": 5,
+          "result": -1,
+          "candidates": 2816,
+          "worst": 2816,
+          "partitions": 7
+        },
+        {
+          "port": 14,
+          "result": 8,
+          "candidates": 221,
+          "worst": 1265,
+          "partitions": 7
+        },
+        {
+          "port": 11,
+          "result": -1,
+          "candidates": 79,
+          "worst": 79,
+          "partitions": 8
+        },
+        {
+          "port": 10,
+          "result": -1,
+          "candidates": 30,
+          "worst": 30,
+          "partitions": 5
+        },
+        {
+          "port": 4,
+          "result": 6,
+          "candidates": 10,
+          "worst": 11,
+          "partitions": 3
+        },
+        {
+          "port": 12,
+          "result": 18,
+          "candidates": 4,
+          "worst": 4,
+          "partitions": 3
+        },
+        {
+          "port": 1,
+          "result": -1,
+          "candidates": 2,
+          "worst": 2,
+          "partitions": 2
+        },
+        {
+          "port": 2,
+          "result": -1,
+          "candidates": 1,
+          "worst": 1,
+          "partitions": 2
+        }
+      ],
+      "metrics": {
+        "greedyProbes": 9,
+        "edge": 3,
+        "adjacent": 2,
+        "hits": 10,
+        "returns": 2,
+        "through": 8
+      }
+    },
+    {
+      "id": "blackbox-096",
+      "title": "星雾会诊 · 12",
+      "chapter": 6,
+      "size": 5,
+      "atoms": [
+        0,
+        3,
+        7,
+        17
+      ],
+      "signature": [
+        -1,
+        -2,
+        -2,
+        -1,
+        -2,
+        -1,
+        14,
+        -2,
+        -1,
+        13,
+        -1,
+        19,
+        -1,
+        9,
+        6,
+        -1,
+        -2,
+        -2,
+        -1,
+        11
+      ],
+      "canonical": "0,11,13,15",
+      "probeTrace": [
+        {
+          "port": 0,
+          "result": -1,
+          "candidates": 6080,
+          "worst": 6080,
+          "partitions": 7
+        },
+        {
+          "port": 5,
+          "result": -1,
+          "candidates": 2816,
+          "worst": 2816,
+          "partitions": 7
+        },
+        {
+          "port": 14,
+          "result": 6,
+          "candidates": 245,
+          "worst": 1265,
+          "partitions": 7
+        },
+        {
+          "port": 13,
+          "result": 9,
+          "candidates": 40,
+          "worst": 95,
+          "partitions": 5
+        },
+        {
+          "port": 19,
+          "result": 11,
+          "candidates": 18,
+          "worst": 18,
+          "partitions": 4
+        },
+        {
+          "port": 18,
+          "result": -1,
+          "candidates": 10,
+          "worst": 10,
+          "partitions": 3
+        },
+        {
+          "port": 16,
+          "result": -2,
+          "candidates": 5,
+          "worst": 5,
+          "partitions": 2
+        },
+        {
+          "port": 17,
+          "result": -2,
+          "candidates": 2,
+          "worst": 2,
+          "partitions": 3
+        },
+        {
+          "port": 2,
+          "result": -2,
+          "candidates": 1,
+          "worst": 1,
+          "partitions": 2
+        }
+      ],
+      "metrics": {
+        "greedyProbes": 9,
+        "edge": 2,
+        "adjacent": 0,
+        "hits": 8,
+        "returns": 6,
+        "through": 6
+      }
+    },
+    {
+      "id": "blackbox-097",
+      "title": "星雾会诊 · 13",
+      "chapter": 6,
+      "size": 5,
+      "atoms": [
+        0,
+        3,
+        20,
+        24
+      ],
+      "signature": [
+        -1,
+        -2,
+        -2,
+        -1,
+        -2,
+        -1,
+        -1,
+        17,
+        -2,
+        -1,
+        -1,
+        -2,
+        -1,
+        -2,
+        -1,
+        -1,
+        -2,
+        7,
+        -2,
+        -1
+      ],
+      "canonical": "0,3,20,24",
+      "probeTrace": [
+        {
+          "port": 0,
+          "result": -1,
+          "candidates": 6080,
+          "worst": 6080,
+          "partitions": 7
+        },
+        {
+          "port": 5,
+          "result": -1,
+          "candidates": 2816,
+          "worst": 2816,
+          "partitions": 7
+        },
+        {
+          "port": 14,
+          "result": -1,
+          "candidates": 1265,
+          "worst": 1265,
+          "partitions": 7
+        },
+        {
+          "port": 13,
+          "result": -2,
+          "candidates": 532,
+          "worst": 532,
+          "partitions": 14
+        },
+        {
+          "port": 7,
+          "result": 17,
+          "candidates": 47,
+          "worst": 257,
+          "partitions": 13
+        },
+        {
+          "port": 2,
+          "result": -2,
+          "candidates": 16,
+          "worst": 28,
+          "partitions": 5
+        },
+        {
+          "port": 12,
+          "result": -1,
+          "candidates": 8,
+          "worst": 8,
+          "partitions": 6
+        },
+        {
+          "port": 1,
+          "result": -2,
+          "candidates": 5,
+          "worst": 5,
+          "partitions": 3
+        },
+        {
+          "port": 4,
+          "result": -2,
+          "candidates": 3,
+          "worst": 3,
+          "partitions": 2
+        },
+        {
+          "port": 16,
+          "result": -2,
+          "candidates": 2,
+          "worst": 2,
+          "partitions": 2
+        },
+        {
+          "port": 18,
+          "result": -2,
+          "candidates": 1,
+          "worst": 1,
+          "partitions": 2
+        }
+      ],
+      "metrics": {
+        "greedyProbes": 11,
+        "edge": 4,
+        "adjacent": 0,
+        "hits": 10,
+        "returns": 8,
+        "through": 2
+      }
+    },
+    {
+      "id": "blackbox-098",
+      "title": "星雾会诊 · 14",
+      "chapter": 6,
+      "size": 5,
+      "atoms": [
+        0,
+        4,
+        12,
+        17
+      ],
+      "signature": [
+        -1,
+        -2,
+        -1,
+        -2,
+        -1,
+        -1,
+        -2,
+        -1,
+        -1,
+        13,
+        -1,
+        19,
+        -1,
+        9,
+        -1,
+        -1,
+        -2,
+        -1,
+        -1,
+        11
+      ],
+      "canonical": "0,12,13,20",
+      "probeTrace": [
+        {
+          "port": 0,
+          "result": -1,
+          "candidates": 6080,
+          "worst": 6080,
+          "partitions": 7
+        },
+        {
+          "port": 5,
+          "result": -1,
+          "candidates": 2816,
+          "worst": 2816,
+          "partitions": 7
+        },
+        {
+          "port": 14,
+          "result": -1,
+          "candidates": 1265,
+          "worst": 1265,
+          "partitions": 7
+        },
+        {
+          "port": 13,
+          "result": 9,
+          "candidates": 75,
+          "worst": 532,
+          "partitions": 14
+        },
+        {
+          "port": 17,
+          "result": -1,
+          "candidates": 28,
+          "worst": 34,
+          "partitions": 8
+        },
+        {
+          "port": 1,
+          "result": -2,
+          "candidates": 15,
+          "worst": 15,
+          "partitions": 5
+        },
+        {
+          "port": 18,
+          "result": -1,
+          "candidates": 7,
+          "worst": 7,
+          "partitions": 3
+        },
+        {
+          "port": 3,
+          "result": -2,
+          "candidates": 4,
+          "worst": 4,
+          "partitions": 2
+        },
+        {
+          "port": 6,
+          "result": -2,
+          "candidates": 3,
+          "worst": 3,
+          "partitions": 2
+        },
+        {
+          "port": 8,
+          "result": -1,
+          "candidates": 2,
+          "worst": 2,
+          "partitions": 2
+        },
+        {
+          "port": 10,
+          "result": -1,
+          "candidates": 1,
+          "worst": 1,
+          "partitions": 2
+        }
+      ],
+      "metrics": {
+        "greedyProbes": 11,
+        "edge": 2,
+        "adjacent": 1,
+        "hits": 12,
+        "returns": 4,
+        "through": 4
+      }
+    },
+    {
+      "id": "blackbox-099",
+      "title": "星雾会诊 · 15",
+      "chapter": 6,
+      "size": 5,
+      "atoms": [
+        0,
+        1,
+        14,
+        22
+      ],
+      "signature": [
+        -1,
+        -1,
+        -2,
+        -1,
+        -1,
+        -1,
+        -2,
+        -1,
+        -2,
+        -1,
+        -1,
+        -2,
+        -1,
+        -2,
+        -1,
+        -1,
+        -2,
+        -1,
+        -1,
+        -1
+      ],
+      "canonical": "0,1,14,22",
+      "probeTrace": [
+        {
+          "port": 0,
+          "result": -1,
+          "candidates": 6080,
+          "worst": 6080,
+          "partitions": 7
+        },
+        {
+          "port": 5,
+          "result": -1,
+          "candidates": 2816,
+          "worst": 2816,
+          "partitions": 7
+        },
+        {
+          "port": 14,
+          "result": -1,
+          "candidates": 1265,
+          "worst": 1265,
+          "partitions": 7
+        },
+        {
+          "port": 13,
+          "result": -2,
+          "candidates": 532,
+          "worst": 532,
+          "partitions": 14
+        },
+        {
+          "port": 7,
+          "result": -1,
+          "candidates": 257,
+          "worst": 257,
+          "partitions": 13
+        },
+        {
+          "port": 11,
+          "result": -2,
+          "candidates": 105,
+          "worst": 105,
+          "partitions": 10
+        },
+        {
+          "port": 2,
+          "result": -2,
+          "candidates": 22,
+          "worst": 58,
+          "partitions": 10
+        },
+        {
+          "port": 1,
+          "result": -1,
+          "candidates": 8,
+          "worst": 8,
+          "partitions": 5
+        },
+        {
+          "port": 17,
+          "result": -1,
+          "candidates": 4,
+          "worst": 4,
+          "partitions": 3
+        },
+        {
+          "port": 4,
+          "result": -1,
+          "candidates": 2,
+          "worst": 2,
+          "partitions": 2
+        },
+        {
+          "port": 8,
+          "result": -2,
+          "candidates": 1,
+          "worst": 1,
+          "partitions": 2
+        }
+      ],
+      "metrics": {
+        "greedyProbes": 11,
+        "edge": 4,
+        "adjacent": 1,
+        "hits": 14,
+        "returns": 6,
+        "through": 0
+      }
+    },
+    {
+      "id": "blackbox-100",
+      "title": "星雾会诊 · 16",
+      "chapter": 6,
+      "size": 5,
+      "atoms": [
+        0,
+        8,
+        12,
+        22
+      ],
+      "signature": [
+        -1,
+        -2,
+        -1,
+        -1,
+        5,
+        4,
+        -1,
+        14,
+        -2,
+        -1,
+        -1,
+        -2,
+        -1,
+        -2,
+        7,
+        -1,
+        -2,
+        -1,
+        -2,
+        -1
+      ],
+      "canonical": "0,12,14,16",
+      "probeTrace": [
+        {
+          "port": 0,
+          "result": -1,
+          "candidates": 6080,
+          "worst": 6080,
+          "partitions": 7
+        },
+        {
+          "port": 5,
+          "result": 4,
+          "candidates": 620,
+          "worst": 2816,
+          "partitions": 7
+        },
+        {
+          "port": 9,
+          "result": -1,
+          "candidates": 282,
+          "worst": 282,
+          "partitions": 7
+        },
+        {
+          "port": 1,
+          "result": -2,
+          "candidates": 115,
+          "worst": 115,
+          "partitions": 9
+        },
+        {
+          "port": 8,
+          "result": -2,
+          "candidates": 43,
+          "worst": 43,
+          "partitions": 8
+        },
+        {
+          "port": 12,
+          "result": -1,
+          "candidates": 20,
+          "worst": 20,
+          "partitions": 7
+        },
+        {
+          "port": 18,
+          "result": -2,
+          "candidates": 10,
+          "worst": 10,
+          "partitions": 4
+        },
+        {
+          "port": 15,
+          "result": -1,
+          "candidates": 5,
+          "worst": 5,
+          "partitions": 3
+        },
+        {
+          "port": 3,
+          "result": -1,
+          "candidates": 3,
+          "worst": 3,
+          "partitions": 2
+        },
+        {
+          "port": 7,
+          "result": 14,
+          "candidates": 2,
+          "worst": 2,
+          "partitions": 2
+        },
+        {
+          "port": 13,
+          "result": -2,
+          "candidates": 1,
+          "worst": 1,
+          "partitions": 2
+        }
+      ],
+      "metrics": {
+        "greedyProbes": 11,
+        "edge": 2,
+        "adjacent": 0,
+        "hits": 10,
+        "returns": 6,
+        "through": 4
       }
     }
   ]

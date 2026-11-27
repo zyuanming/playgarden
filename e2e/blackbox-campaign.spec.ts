@@ -77,11 +77,11 @@ async function earnedOnce(page: Page, index: number) {
   }, { key: STORAGE_KEY, index })).toBe(1);
 }
 
-// Seven levels per test keeps the full 84-level desktop/touch campaign inside the unchanged 120s budget.
-for (let start = 0; start < 84; start += 7) test(`Blackbox genuine observations and completion ${start + 1}–${start + 7}`, async ({ page, isMobile }, info) => {
+// Seven levels per test keeps the full desktop/touch campaign inside the unchanged 120s budget.
+for (let start = 0; start < blackboxLevels.length; start += 7) test(`Blackbox genuine observations and completion ${start + 1}–${Math.min(start + 7, blackboxLevels.length)}`, async ({ page, isMobile }, info) => {
   const errors = errorsFor(page); await openGame(page, '星雾探测'); await chooseLevel(page, start); await ready(page, start);
-  await expect(page.getByLabel('选择关卡', { exact: true }).locator('option')).toHaveCount(84);
-  for (let index = start; index < start + 7; index++) {
+  await expect(page.getByLabel('选择关卡', { exact: true }).locator('option')).toHaveCount(blackboxLevels.length);
+  for (let index = start; index < Math.min(start + 7, blackboxLevels.length); index++) {
     const level = blackboxLevels[index], proof = certificates[index]; expect(proof.id).toBe(level.id); await ready(page, index);
     expect(await marks(page)).toEqual(Array(level.size ** 2).fill(0)); await expect(page.locator('[data-blackbox-shots]')).toHaveAttribute('data-blackbox-shots', '0');
     await expect(verify(page)).toBeDisabled(); await checkControlSizes(page);
@@ -102,7 +102,7 @@ for (let start = 0; start < 84; start += 7) test(`Blackbox genuine observations 
       }
     }
     await finish(page, index, isMobile); await earnedOnce(page, index);
-    const advance = page.getByRole('button', { name: index < 83 ? '下一关' : '返回大厅', exact: true }); await expect(advance).toBeFocused();
+    const advance = page.getByRole('button', { name: index + 1 < blackboxLevels.length ? '下一关' : '返回大厅', exact: true }); await expect(advance).toBeFocused();
     expect(await marks(page)).toEqual(Array.from({ length: level.size ** 2 }, (_, i) => level.atoms.includes(i) ? 1 : 0));
     await expect(page.locator('[data-blackbox-cell]:not(:disabled), [data-blackbox-port]:not(:disabled)')).toHaveCount(0);
     await expect(verify(page)).toBeDisabled(); await expect(stars(page)).toBeDisabled(); await expect(blanks(page)).toBeDisabled();
@@ -115,7 +115,7 @@ for (let start = 0; start < 84; start += 7) test(`Blackbox genuine observations 
       await page.screenshot({ path: info.outputPath(`blackbox-${index + 1}-won.png`), fullPage: true, animations: 'disabled' });
     }
     await activate(advance, isMobile);
-    if (index < 83) { await ready(page, index + 1); await expect(page.getByRole('heading', { name: '星雾探测', exact: true })).toBeFocused(); }
+    if (index + 1 < blackboxLevels.length) { await ready(page, index + 1); await expect(page.getByRole('heading', { name: '星雾探测', exact: true })).toBeFocused(); }
     else await expect(page.getByRole('textbox', { name: '搜索游戏' })).toBeVisible();
   }
   expect(errors).toEqual([]);

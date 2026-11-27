@@ -10,8 +10,8 @@ const marks = (page: Page) => page.locator('[data-blackbox-cell]').evaluateAll(n
 const results = (page: Page) => page.locator('[data-blackbox-port]').evaluateAll(nodes => nodes.map(node => node.getAttribute('data-result')));
 const activate = (control: Locator, touch: boolean) => touch ? control.tap() : control.click();
 
-test('Blackbox level 84 proves public base/assets and resumes real evidence before earning completion', async ({ page, baseURL, isMobile }, info) => {
-  const index = 83, level = blackboxLevels[index], proof = certificates[index], base = new URL(baseURL!);
+test('Blackbox last level proves public base/assets and resumes real evidence before earning completion', async ({ page, baseURL, isMobile }, info) => {
+  const index = blackboxLevels.length - 1, level = blackboxLevels[index], proof = certificates[index], base = new URL(baseURL!);
   const errors: string[] = [], failedNetwork: string[] = [], loadedAssets = new Set<string>();
   const validatedAssetMimes = new Map<string, string>();
   await page.addInitScript(() => {
@@ -95,9 +95,9 @@ test('Blackbox level 84 proves public base/assets and resumes real evidence befo
   };
 
   await enter(); await page.getByLabel('选择关卡', { exact: true }).selectOption(String(index)); await ready();
-  expect(proof.id).toBe(level.id); await expect(page.getByLabel('选择关卡', { exact: true }).locator('option')).toHaveCount(84);
+  expect(proof.id).toBe(level.id); await expect(page.getByLabel('选择关卡', { exact: true }).locator('option')).toHaveCount(blackboxLevels.length);
   expect(await marks(page)).toEqual(Array(level.size ** 2).fill(0)); await accessibleControls();
-  await page.screenshot({ path: info.outputPath('pages-blackbox-84-start.png'), fullPage: true, animations: 'disabled' });
+  await page.screenshot({ path: info.outputPath('pages-blackbox-last-start.png'), fullPage: true, animations: 'disabled' });
   const midpoint = Math.floor(proof.probeTrace.length / 2); expect(midpoint).toBeGreaterThan(0); expect(midpoint).toBeLessThan(proof.probeTrace.length);
   for (let step = 0; step < midpoint; step++) await fire(step);
   const firstAtom = level.atoms[0]; await activate(page.locator(`[data-blackbox-cell="${firstAtom}"]`), isMobile);
@@ -115,7 +115,7 @@ test('Blackbox level 84 proves public base/assets and resumes real evidence befo
   await activate(page.getByRole('button', { name: '撤销', exact: true }), isMobile);
   await expect.poll(() => marks(page)).toEqual(Array(level.size ** 2).fill(0)); expect(await results(page)).toEqual(measured);
   await activate(page.locator(`[data-blackbox-cell="${firstAtom}"]`), isMobile); expect(await marks(page)).toEqual(current);
-  await accessibleControls(); await page.screenshot({ path: info.outputPath('pages-blackbox-84-resumed.png'), fullPage: true, animations: 'disabled' });
+  await accessibleControls(); await page.screenshot({ path: info.outputPath('pages-blackbox-last-resumed.png'), fullPage: true, animations: 'disabled' });
   for (let step = midpoint; step < proof.probeTrace.length; step++) await fire(step);
   for (const atom of level.atoms.slice(1)) await activate(page.locator(`[data-blackbox-cell="${atom}"]`), isMobile);
   const verify = page.locator('[data-blackbox-verify]'); await expect(verify).toBeEnabled(); await activate(verify, isMobile);
@@ -126,7 +126,7 @@ test('Blackbox level 84 proves public base/assets and resumes real evidence befo
   await earnedOnce(); await expect(page.getByRole('button', { name: '撤销', exact: true })).toBeDisabled(); await expect(verify).toBeDisabled();
   await expect(page.locator('[data-blackbox-cell]:not(:disabled), [data-blackbox-port]:not(:disabled), [data-blackbox-tool]:not(:disabled)')).toHaveCount(0);
   await activate(page.getByRole('button', { name: '提示', exact: true }), isMobile); expect(await marks(page)).toEqual(expected); await earnedOnce();
-  await accessibleControls(); await page.screenshot({ path: info.outputPath('pages-blackbox-84-completed.png'), fullPage: true, animations: 'disabled' });
+  await accessibleControls(); await page.screenshot({ path: info.outputPath('pages-blackbox-last-completed.png'), fullPage: true, animations: 'disabled' });
   await activate(page.getByRole('button', { name: '返回大厅', exact: true }), isMobile); await expect(page.getByRole('textbox', { name: '搜索游戏' })).toBeVisible();
   expect([...loadedAssets].some(path => path.endsWith('.js'))).toBe(true); expect([...loadedAssets].some(path => path.endsWith('.css'))).toBe(true);
   expect([...loadedAssets].every(path => path.startsWith(base.pathname))).toBe(true);

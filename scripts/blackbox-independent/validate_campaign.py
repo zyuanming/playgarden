@@ -62,9 +62,9 @@ def validate(repo):
     levels=data.get('levels')
     chapters=data.get('chapters')
     require(type(levels)==list and type(chapters)==list,'Campaign arrays missing')
-    require(len(chapters)==6 and len(levels)==84,'Expected six chapters, 84 levels')
-    expected_counts=[3,9,12,16,20,24]
-    expected_scopes=[(3,1),(4,2),(4,3),(5,2),(5,3),(5,4)]
+    require(len(chapters)==7 and len(levels)==100,'Expected seven chapters, 100 levels')
+    expected_counts=[3,9,12,16,20,24,16]
+    expected_scopes=[(3,1),(4,2),(4,3),(5,2),(5,3),(5,4),(5,4)]
     require(len(set(c['id'] for c in chapters))==len(chapters),'Repeated chapter ID')
     for c,count,scope in zip(chapters,expected_counts,expected_scopes):
         require((c['size'],c['countAtoms'])==scope and c['count']==count,f'Chapter definition mismatch: {c}')
