@@ -3466,11 +3466,11 @@ component: lazy(() => import("../games/Descensus2"))
   {
     id: "parameter-garden",
     title: "参数花园",
-    subtitle: "旋转、位移、重复盖印，让同一套参数同时匹配多个印盘。12 道原创谜题。",
+    subtitle: "旋转、位移、重复盖印，让同一套参数同时匹配多个印盘。100 道原创谜题。",
     category: "编程启蒙",
     difficulty: "中级",
     tone: "green",
-    levelCount: 12,
+    levelCount: 100,
     artwork: { url: "./parameter-garden-art.svg", position: "center", size: "cover" },
     source: original,
     component: lazy(() => import("../games/ParameterGarden")),
