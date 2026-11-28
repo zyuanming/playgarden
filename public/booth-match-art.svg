@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" fill="none">
+<title>展台配对</title><defs><pattern id="leaf" width="32" height="28" patternUnits="userSpaceOnUse"><path d="M5 17q-4-8 8-10-1 10-8 10Z" fill="#a3c691" opacity=".23"/></pattern><g id="stall"><rect x="12" y="38" width="104" height="114" rx="7" fill="#f4dfaa" stroke="#203e31" stroke-width="4"/><path d="M8 56 20 17h86l14 39H8Z" fill="#df9a72" stroke="#203e31" stroke-width="4"/><path d="m43 19-8 35m51-35 7 35" stroke="#fff1c4" stroke-width="12"/><path d="M30 78h67v46H30z" fill="#325747"/><path d="M22 126h82" stroke="#203e31" stroke-width="7" stroke-linecap="round"/></g></defs>
+<path d="M0 0h800v500H0z" fill="#285342"/><path d="M0 0h800v500H0z" fill="url(#leaf)"/><rect x="112" y="76" width="576" height="348" rx="38" fill="#33674f" stroke="#9cc387" stroke-dasharray="5 9" stroke-width="3"/>
+<use href="#stall" transform="translate(165 127)"/><use href="#stall" transform="translate(337 107)"/><use href="#stall" transform="translate(510 127)"/>
+<path d="M228 302c15 60 185 60 190 14M400 281c2 54 151 74 169 20" stroke="#f8d79c" stroke-width="4" stroke-dasharray="6 7" stroke-linecap="round"/>
+<circle cx="228" cy="303" r="9" fill="#fed49b"/><circle cx="570" cy="302" r="9" fill="#fed49b"/><path d="m398 355 15 16 30-35" stroke="#c3e5a8" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M322 326l16 16m0-16-16 16" stroke="#f2ab91" stroke-width="6" stroke-linecap="round"/><circle cx="544" cy="373" r="5" fill="#f8d79c"/><circle cx="250" cy="365" r="5" fill="#f8d79c"/>
+</svg>

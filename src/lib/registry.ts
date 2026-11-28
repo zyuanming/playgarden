@@ -3548,5 +3548,17 @@ component: lazy(() => import("../games/Descensus2"))
     source: original,
     component: lazy(() => import("../games/RecipeRatio")),
   },
+  {
+    id: "booth-match",
+    title: "展台配对",
+    subtitle: "按双方偏好安排工坊，只要没有一对同时想换，就能交付。12 道原创谜题。",
+    category: "逻辑思维",
+    difficulty: "中级",
+    tone: "green",
+    levelCount: 12,
+    artwork: { url: "./booth-match-art.svg", position: "center", size: "cover" },
+    source: original,
+    component: lazy(() => import("../games/BoothMatch")),
+  },
 ];
 export const findGame = (id: string) => games.find((game) => game.id === id);

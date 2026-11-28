@@ -165,6 +165,7 @@ import { equationLevels } from "../src/games/equationBalanceLevels";
 import { magneticBoards } from "../src/games/magneticMazeLevels";
 import { springBeatLevels } from "../src/games/springBeatLevels";
 import { wordChainLevels } from "../src/games/wordChainLevels";
+import { boothMatchLevels } from "../src/games/boothMatchLevels";
 import { recipeRatioLevels } from "../src/games/recipeRatioLevels";
 import { figureSequenceLevels } from "../src/games/figureSequenceLevels";
 import { recyclingWorkshopLevels } from "../src/games/recyclingWorkshopLevels";
@@ -186,6 +187,7 @@ const packs = {
   "word-chain": wordChainLevels,
   "figure-sequence": figureSequenceLevels,
   "recipe-ratio": recipeRatioLevels,
+  "booth-match": boothMatchLevels,
   "recursive-orchard": treeLevels,
   "angle-ring": angleLevels,
   "descensus-2": [],
