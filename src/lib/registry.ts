@@ -3475,5 +3475,17 @@ component: lazy(() => import("../games/Descensus2"))
     source: original,
     component: lazy(() => import("../games/ParameterGarden")),
   },
+  {
+    id: "food-web-balance",
+    title: "食物网平衡",
+    subtitle: "为昆虫、小鼠和猫头鹰选牌，共用开场库存，不能预支本季产出。12 道原创谜题。",
+    category: "科学实验",
+    difficulty: "中级",
+    tone: "green",
+    levelCount: 12,
+    artwork: { url: "./food-web-balance-art.svg", position: "center", size: "cover" },
+    source: original,
+    component: lazy(() => import("../games/FoodWebBalance")),
+  },
 ];
 export const findGame = (id: string) => games.find((game) => game.id === id);
