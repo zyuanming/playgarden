@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 450">
+  <!-- SPDX-License-Identifier: GPL-3.0-only -->
+  <defs>
+    <pattern id="dot" width="22" height="22" patternUnits="userSpaceOnUse"><circle cx="4" cy="4" r="1.5" fill="#967db5" opacity=".22"/></pattern>
+    <g id="grid" fill="#f7effc" stroke="#a481c0" stroke-width="2">
+      <rect x="0" y="0" width="28" height="28" rx="4"/><rect x="36" y="0" width="28" height="28" rx="4"/><rect x="72" y="0" width="28" height="28" rx="4"/>
+      <rect x="0" y="36" width="28" height="28" rx="4"/><rect x="36" y="36" width="28" height="28" rx="4"/><rect x="72" y="36" width="28" height="28" rx="4"/>
+      <rect x="0" y="72" width="28" height="28" rx="4"/><rect x="36" y="72" width="28" height="28" rx="4"/><rect x="72" y="72" width="28" height="28" rx="4"/>
+    </g>
+    <rect id="filled" width="28" height="28" rx="4" fill="#513479"/>
+  </defs>
+  <rect width="720" height="450" fill="#e8d9f5"/>
+  <rect width="720" height="450" fill="url(#dot)"/>
+  <path d="M66 326h588M66 348h588" fill="none" stroke="#ad91c7" stroke-width="3"/>
+  <g transform="translate(76 135) rotate(-7 73 72)">
+    <rect width="146" height="146" rx="17" fill="#fff8ff" stroke="#9d79bc" stroke-width="3"/>
+    <g transform="translate(23 23)"><use href="#grid"/><use href="#filled"/><use href="#filled" x="36"/><use href="#filled" y="36"/><use href="#filled" y="72"/></g>
+  </g>
+  <path d="M243 211h46m-12-12 12 12-12 12m153-12h46m-12-12 12 12-12 12" fill="none" stroke="#674481" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <g transform="translate(289 130)">
+    <rect width="146" height="146" rx="17" fill="#f7edff" stroke="#8c67a8" stroke-dasharray="8 7" stroke-width="3"/>
+    <text x="73" y="103" fill="#6a4b8c" font-family="system-ui,sans-serif" font-size="84" font-weight="750" text-anchor="middle">?</text>
+  </g>
+  <g transform="translate(493 133) rotate(7 73 72)">
+    <rect width="146" height="146" rx="17" fill="#fff8ff" stroke="#9d79bc" stroke-width="3"/>
+    <g transform="translate(23 23)"><use href="#grid"/><use href="#filled" x="72"/><use href="#filled" x="72" y="36"/><use href="#filled" x="36" y="72"/><use href="#filled" x="72" y="72"/></g>
+  </g>
+  <g fill="#885eae"><circle cx="111" cy="370" r="6"/><circle cx="134" cy="370" r="6"/><circle cx="157" cy="370" r="6"/></g>
+</svg>
