@@ -3511,5 +3511,18 @@ component: lazy(() => import("../games/Descensus2"))
     source: original,
     component: lazy(() => import("../games/SpringBeat")),
   },
+  {
+    id: "word-chain",
+    title: "词链拼接",
+    subtitle: "把双字词首尾相接，按顺序盖章，用完所有词牌。12 道原创谜题。",
+    category: "逻辑思维",
+    difficulty: "中级",
+    tone: "orange",
+    levelCount: 12,
+    resumeKey: "playgarden.word-chain.v1",
+    artwork: { url: "./word-chain-art.svg", position: "center", size: "cover" },
+    source: original,
+    component: lazy(() => import("../games/WordChain")),
+  },
 ];
 export const findGame = (id: string) => games.find((game) => game.id === id);
