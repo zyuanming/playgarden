@@ -1,6 +1,6 @@
 import {expect,test,type Locator,type Page} from '@playwright/test';
 import {captureErrors,chooseLevel,openGame} from './helpers';
-import {equationProofs} from './fixtures/equation-balance-data';
+import {equationExpansionProofs,equationProofs} from './fixtures/equation-balance-data';
 import {STORAGE_KEY} from '../src/lib/progress';
 const title='天平等式';
 const root=(p:Page)=>p.locator('.eq-game');
@@ -24,7 +24,7 @@ async function play(p:Page,actions:string,touch:boolean){
 }
 async function complete(p:Page,i:number,n:number){
   await attr(p,'won','true');await attr(p,'terms','1,0,0,'+n);
-  await expect(p.locator('.status.success')).toContainText('x = '+n);
+  await expect(p.locator('.status.success')).toContainText('x = '+(n<0?'−'+Math.abs(n):String(n)));
   await expect.poll(()=>p.evaluate(k=>JSON.parse(localStorage.getItem(k)??'{}').completed?.['equation-balance'],STORAGE_KEY)).toContain(i);
 }
 for(let start=0;start<12;start+=4){
@@ -93,7 +93,114 @@ test('Final round recovers from a legal dead end, resumes, and accepts all three
   await page.screenshot({path:info.outputPath('final-proof-preview.png'),fullPage:true,animations:'disabled'});
   for(const route of ['BGFED','EGBDF','EGBFD']){
     await play(page,route,isMobile);await complete(page,11,3);
-    await use(control(page,'重来'),isMobile);await attr(page,'history','');await attr(page,'left',5);
+    if(route!=='EGBFD'){
+      await use(control(page,'重来'),isMobile);await attr(page,'history','');await attr(page,'left',5);
+    }
+  }
+  await use(control(page,'下一关'),isMobile);
+  await attr(page,'id','equation-balance-13');
+  await attr(page,'history','');
+  await play(page,'CBF',isMobile);await complete(page,12,-2);
+  await page.reload();
+  await expect.poll(()=>page.evaluate(k=>JSON.parse(localStorage.getItem(k)??'{}').completed?.['equation-balance'],STORAGE_KEY)).toEqual(expect.arrayContaining([11,12]));
+  expect(errors).toEqual([]);
+});
+
+for(let start=0; start<equationExpansionProofs.length; start+=8){
+  test('Expansion proofs on boards '+(start+13)+'–'+(start+20),async({page,isMobile})=>{
+    const errors=captureErrors(page);
+    await openGame(page,title);
+    for(let k=start;k<start+8;k++){
+      const i=k+12;
+      const {orders,x}=equationExpansionProofs[k];
+      await chooseLevel(page,i);
+      await attr(page,'id','equation-balance-'+(i+1));
+      await attr(page,'history','');
+      await play(page,orders[0],isMobile);
+      await attr(page,'left',0);
+      await complete(page,i,x);
+    }
+    expect(errors).toEqual([]);
+  });
+}
+
+test('New early boards distinguish a blocked division from a dead move; level 14 has two openings',async({page,isMobile})=>{
+  const errors=captureErrors(page);
+  await openGame(page,title);await chooseLevel(page,12);
+  await use(card(page,'A'),isMobile);
+  await expect(apply(page)).toBeDisabled();
+  await attr(page,'terms','20,15,15,5');await attr(page,'left',3);await attr(page,'history','');
+  await play(page,'B',isMobile);
+  await attr(page,'terms','17,15,12,5');
+  await use(control(page,'提示'),isMobile);
+  await expect(msg(page)).toContainText('无法解开');
+  await use(control(page,'撤销'),isMobile);
+  await use(control(page,'提示'),isMobile);
+  await attr(page,'hint','C');await attr(page,'history','');await attr(page,'left',3);
+  await expect(page.locator('[data-eq-projection]')).toHaveText('4x + 3 = 3x + 1');
+  await play(page,'CFB',isMobile);await complete(page,12,-2);
+  await chooseLevel(page,13);
+  await play(page,'ADE',isMobile);await complete(page,13,6);
+  await use(control(page,'重来'),isMobile);
+  await play(page,'DAE',isMobile);await complete(page,13,6);
+  expect(errors).toEqual([]);
+});
+
+test('Multiplication can be essential and a zero solution is credited',async({page,isMobile})=>{
+  const errors=captureErrors(page);
+  await openGame(page,title);await chooseLevel(page,48);
+  await use(control(page,'提示'),isMobile);
+  await attr(page,'hint','B');await attr(page,'history','');await attr(page,'left',5);
+  await play(page,'BCADG',isMobile);await complete(page,48,-4);
+  await chooseLevel(page,66);
+  await play(page,'HEFGD',isMobile);await complete(page,66,0);
+  await use(control(page,'重来'),isMobile);
+  await play(page,'HFEGD',isMobile);await complete(page,66,0);
+  expect(errors).toEqual([]);
+});
+
+test('Level 100 permits four proofs and makes a blocked division possible',async({page,isMobile},info)=>{
+  const errors=captureErrors(page);
+  await openGame(page,title);await chooseLevel(page,99);
+  const panel=page.getByRole('region',{name:'等式工作台'});
+  const screenshot=(name:string)=>panel.screenshot({path:info.outputPath(name+'.png'),animations:'disabled'});
+  async function checkLayout(){
+    expect(await page.evaluate(()=>document.documentElement.scrollWidth===innerWidth)).toBe(true);
+    expect(await panel.locator('button').evaluateAll(ns=>ns.every(n=>{const r=n.getBoundingClientRect();return r.width>=44&&r.height>=44;}))).toBe(true);
+    await expect(page.getByLabel('选择关卡',{exact:true})).toHaveValue('99');
+  }
+  await use(card(page,'D'),isMobile);
+  await expect(apply(page)).toBeDisabled();
+  await expect(page.locator('.eq-preview')).toContainText('普通代数可以有分数');
+  await attr(page,'terms','-51,-63,-66,-33');await attr(page,'left',6);await attr(page,'history','');
+  await checkLayout();await screenshot('blocked-100');
+  await play(page,'A',isMobile);
+  await attr(page,'terms','-48,-63,-63,-33');
+  await use(control(page,'提示'),isMobile);
+  await expect(msg(page)).toContainText('无法解开');
+  await attr(page,'history','A');
+  await use(control(page,'撤销'),isMobile);
+  await attr(page,'terms','-51,-63,-66,-33');await attr(page,'left',6);
+  await use(control(page,'提示'),isMobile);
+  await attr(page,'hint','E');await attr(page,'history','');
+  await play(page,'EGH',isMobile);
+  await attr(page,'terms','-10,-15,-15,-5');
+  await use(card(page,'D'),isMobile);
+  await expect(apply(page)).toBeEnabled();
+  await expect(page.locator('[data-eq-projection]')).toHaveText('−2x − 3 = −3x − 1');
+  await screenshot('divide-now-100');
+  await play(page,'DAF',isMobile);await complete(page,99,2);
+  for(const proof of ['EGHDFA','EHGDAF','EHGDFA']){
+    await use(control(page,'重来'),isMobile);
+    await play(page,proof,isMobile);await complete(page,99,2);
+  }
+  await expect(page.locator('.eq-log li')).toHaveCount(6);
+  await screenshot('proof-100');
+  if(isMobile){
+    await page.setViewportSize({width:360,height:844});
+    await checkLayout();
+    await expect(page.locator('.eq-log li')).toHaveCount(6);
+    await page.screenshot({path:info.outputPath('proof-100-360.png'),fullPage:true,animations:'disabled'});
   }
   expect(errors).toEqual([]);
 });
