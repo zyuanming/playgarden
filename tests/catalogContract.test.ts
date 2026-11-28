@@ -163,6 +163,7 @@ import { packingLevels } from "../src/games/voxelPackingLevels";
 import { appointmentLevels } from "../src/games/appointmentPlannerLevels";
 import { equationLevels } from "../src/games/equationBalanceLevels";
 import { magneticBoards } from "../src/games/magneticMazeLevels";
+import { recyclingWorkshopLevels } from "../src/games/recyclingWorkshopLevels";
 import { foodWebLevels } from "../src/games/foodWebLevels";
 import { parameterLevels } from "../src/games/parameterGardenLevels";
 import { mazeBoards } from "../src/games/layeredMazeLevels";
@@ -176,6 +177,7 @@ const packs = {
   "magnetic-maze": magneticBoards,
   "parameter-garden": parameterLevels,
   "food-web-balance": foodWebLevels,
+  "recycling-workshop": recyclingWorkshopLevels,
   "recursive-orchard": treeLevels,
   "angle-ring": angleLevels,
   "descensus-2": [],

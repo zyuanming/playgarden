@@ -197,6 +197,7 @@ export const GAME_IDS = [
   "magnetic-maze",
   "parameter-garden",
   "food-web-balance",
+  "recycling-workshop",
 ] as const;
 export type GameId = (typeof GAME_IDS)[number];
 export type Category =

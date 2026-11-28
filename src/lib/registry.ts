@@ -3487,5 +3487,17 @@ component: lazy(() => import("../games/Descensus2"))
     source: original,
     component: lazy(() => import("../games/FoodWebBalance")),
   },
+  {
+    id: "recycling-workshop",
+    title: "回收分拣",
+    subtitle: "用有限的卡扣和螺丝工具，拆开关键物件，把纸、金属和玻璃送入回收箱。12 道原创谜题。",
+    category: "科学实验",
+    difficulty: "中级",
+    tone: "green",
+    levelCount: 12,
+    artwork: { url: "./recycling-workshop-art.svg", position: "center", size: "cover" },
+    source: original,
+    component: lazy(() => import("../games/RecyclingWorkshop")),
+  },
 ];
 export const findGame = (id: string) => games.find((game) => game.id === id);
