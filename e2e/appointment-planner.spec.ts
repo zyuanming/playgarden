@@ -1,6 +1,6 @@
 import {expect,test,type Locator,type Page} from '@playwright/test';
 import {captureErrors,chooseLevel,openGame} from './helpers';
-import {dayProofs} from './fixtures/appointment-planner-data';
+import {dayProofs, expansionProofs} from './fixtures/appointment-planner-data';
 import {STORAGE_KEY} from '../src/lib/progress';
 const title='活动日程';
 const root=(p:Page)=>p.locator('.ap-game');
@@ -112,5 +112,95 @@ test('Final six tasks can be done yet arrive late; real saved prefix returns exa
   await click(back(page),isMobile);
   await expect(page.locator('.ap-return')).toContainText('实际到达12:20');
   await win(page,11);
+  await click(control(page,'下一关'),isMobile);
+  await attr(page,'id','appointment-planner-13');
+  await play(page,'BAC',isMobile,[0,7,9]);
+  await attr(page,'time',12);
+  await win(page,12);
+  await page.reload();
+  await expect.poll(()=>page.evaluate(k=>JSON.parse(localStorage.getItem(k)??'{}').completed?.['appointment-planner'],STORAGE_KEY)).toEqual(expect.arrayContaining([11,12]));
+  expect(errors).toEqual([]);
+});
+
+for (let start=0; start<expansionProofs.length; start+=8) {
+  test('Schedules expansion boards '+(start+13)+'–'+(start+20),async({page,isMobile})=>{
+    const errors=captureErrors(page);
+    await openGame(page,title);
+    for(let k=start;k<start+8;k++){
+      const i=k+12;
+      const [order,starts,end,home]=expansionProofs[k];
+      await chooseLevel(page,i);
+      await attr(page,'id','appointment-planner-'+(i+1));
+      await attr(page,'order','');
+      await play(page,order,isMobile,starts);
+      await attr(page,'time',end);
+      if(home!==null){
+        await attr(page,'return',home);
+        await attr(page,'won','false');
+        await click(back(page),isMobile);
+        await attr(page,'returned','true');
+      }
+      await win(page,i);
+    }
+    expect(errors).toEqual([]);
+  });
+}
+
+test('Level 58 accepts a second independent appointment order',async({page,isMobile})=>{
+  const errors=captureErrors(page);
+  await openGame(page,title);await chooseLevel(page,57);
+  await play(page,'BAEDC',isMobile,[0,6,20,21,25]);
+  await attr(page,'time',26);
+  await win(page,57);
+  expect(errors).toEqual([]);
+});
+
+test('Level 100 rejects a five-minute late return, then completes after undo',async({page,isMobile},info)=>{
+  const errors=captureErrors(page);
+  await openGame(page,title);await chooseLevel(page,99);
+  const panel=page.getByRole('region',{name:'活动规划'});
+  const save=async(name:string)=>await panel.screenshot({path:info.outputPath(name+'.png'),animations:'disabled'});
+  expect(await page.evaluate(()=>document.documentElement.scrollWidth===innerWidth)).toBe(true);
+  expect(await panel.locator('button').evaluateAll(ns=>ns.every(n=>n.getBoundingClientRect().height>=44))).toBe(true);
+  await expect(panel.locator('[data-ap-task]')).toHaveCount(6);
+  await save('six-appointments');
+  await place(page,'A',isMobile);
+  await click(control(page,'提示'),isMobile);
+  await expect(page.locator('.ap-message')).toContainText('已来不及按时完成。请撤销。');
+  await attr(page,'order','A');
+  await select(page,'F',isMobile);
+  await expect(page.locator('[data-ap-preview="F"]')).toHaveAttribute('data-ap-legal','false');
+  await expect(add(page)).toBeDisabled();
+  await click(control(page,'撤销'),isMobile);
+  await attr(page,'time',0);
+  await play(page,'FECAB',isMobile);
+  await select(page,'D',isMobile);
+  await expect(page.locator('.ap-preview')).toContainText('预计 12:25 回到礼堂；截止 12:20');
+  await click(add(page),isMobile);
+  await attr(page,'order','FECABD');
+  await attr(page,'time',36);
+  await attr(page,'return',41);
+  const summary=page.getByRole('region',{name:'回礼堂时间'});
+  await expect(summary).toContainText('预计到达12:25');
+  await expect(summary).toContainText('回礼堂截止12:20');
+  await expect(summary).toContainText('晚了 5 分钟');
+  await expect(back(page)).toBeDisabled();
+  await attr(page,'won','false');
+  await save('late-final-return');
+  for(let i=0;i<3;i++)await click(control(page,'撤销'),isMobile);
+  await attr(page,'order','FEC');
+  await play(page,'BA',isMobile,[25,28]);
+  await select(page,'D',isMobile);
+  await expect(page.locator('.ap-preview')).toContainText('预计 12:20 回到礼堂；截止 12:20');
+  await attr(page,'order','FECBA');
+  await click(add(page),isMobile);
+  await attr(page,'time',35);
+  await attr(page,'return',40);
+  await expect(summary).toContainText('恰好准时');
+  await expect(back(page)).toBeEnabled();
+  await save('exact-final-return');
+  await click(back(page),isMobile);
+  await expect(summary).toContainText('实际到达12:20');
+  await win(page,99);
   expect(errors).toEqual([]);
 });
