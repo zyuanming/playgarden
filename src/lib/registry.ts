@@ -3514,11 +3514,11 @@ component: lazy(() => import("../games/Descensus2"))
   {
     id: "word-chain",
     title: "词链拼接",
-    subtitle: "把双字词首尾相接，按顺序盖章，用完所有词牌。12 道原创谜题。",
+    subtitle: "把双字词首尾相接，按顺序盖章，用完所有词牌。100 道原创谜题。",
     category: "逻辑思维",
     difficulty: "中级",
     tone: "orange",
-    levelCount: 12,
+    levelCount: 100,
     resumeKey: "playgarden.word-chain.v1",
     artwork: { url: "./word-chain-art.svg", position: "center", size: "cover" },
     source: original,
