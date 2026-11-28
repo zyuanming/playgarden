@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 340" role="img" aria-label="蓝色弹簧小车旁有速度箭头和四分之一拍刻度">
+ <defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#e0f1ef"/><stop offset="1" stop-color="#a8d2d8"/></linearGradient>
+ <pattern id="grid" width="38" height="38" patternUnits="userSpaceOnUse"><path d="M0 38V0H38" fill="none" stroke="#417986" opacity=".18"/></pattern></defs>
+ <rect width="640" height="340" fill="url(#bg)"/><rect width="640" height="340" fill="url(#grid)"/>
+ <path d="M73 261h494" stroke="#487784" stroke-width="7" stroke-linecap="round"/>
+ <path d="M122 266v15m66-15v15m66-15v15m66-15v19m66-19v15m66-15v15m66-15v15" stroke="#487784" stroke-width="4"/>
+ <rect x="311" y="156" width="113" height="112" rx="18" fill="#98ceb4" fill-opacity=".46" stroke="#448c77" stroke-width="4" stroke-dasharray="8 8"/>
+ <path d="M84 225h55l10-22 15 45 15-45 15 45 15-45 15 45 15-45 15 45 15-45 13 22h34" fill="none" stroke="#527f84" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+ <circle cx="85" cy="225" r="9" fill="#386f7d"/>
+ <rect x="309" y="195" width="115" height="54" rx="12" fill="#266480" stroke="#215264" stroke-width="4"/>
+ <circle cx="334" cy="250" r="12" fill="#1d485b"/><circle cx="397" cy="250" r="12" fill="#1d485b"/>
+ <path d="M342 119h138l-20-19m20 19-20 19" fill="none" stroke="#236479" stroke-width="7" stroke-linejoin="round" stroke-linecap="round"/>
+ <path d="m505 199 17 17-17 17-17-17z" fill="#ffe882" stroke="#916c29" stroke-width="4" stroke-dasharray="6 5"/>
+ <circle cx="90" cy="72" r="26" fill="#f6fff4" stroke="#4d8e91" stroke-width="4"/><path d="M90 54v18h18" fill="none" stroke="#4d8e91" stroke-width="5" stroke-linecap="round"/>
+</svg>

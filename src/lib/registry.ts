@@ -3499,5 +3499,17 @@ component: lazy(() => import("../games/Descensus2"))
     source: original,
     component: lazy(() => import("../games/RecyclingWorkshop")),
   },
+  {
+    id: "spring-beat",
+    title: "弹簧节拍",
+    subtitle: "在摆动中留好推力，逐拍通过窗口，让位置和速度在目标拍同时达标。12 道原创谜题。",
+    category: "科学实验",
+    difficulty: "中级",
+    tone: "green",
+    levelCount: 12,
+    artwork: { url: "./spring-beat-art.svg", position: "center", size: "cover" },
+    source: original,
+    component: lazy(() => import("../games/SpringBeat")),
+  },
 ];
 export const findGame = (id: string) => games.find((game) => game.id === id);

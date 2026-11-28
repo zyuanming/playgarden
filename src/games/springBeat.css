@@ -1,0 +1,212 @@
+/* SPDX-License-Identifier: GPL-3.0-only */
+.sb-studio {
+  min-width: 0;
+  border: 1px solid #bdd7d7;
+  border-radius: 23px;
+  color: #1b3f4e;
+  background: linear-gradient(145deg, #ebf6f5, #f1f8f2);
+  padding: clamp(10px, 2vw, 22px);
+}
+.sb-studio button:focus-visible {
+  outline: 3px solid #8d5218;
+  outline-offset: 2px;
+}
+.sb-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+}
+.sb-title small,
+.sb-title > b {
+  font-size: 12px;
+}
+.sb-title small {
+  color: #496a71;
+  font-weight: 700;
+}
+.sb-title > b {
+  border: 1px solid #bdd7d7;
+  background: white;
+  border-radius: 999px;
+  padding: 5px 9px;
+  white-space: nowrap;
+}
+.sb-title h3 {
+  margin: 2px 0 0;
+  font-size: clamp(21px, 4vw, 32px);
+  line-height: 1.16;
+  letter-spacing: -0.04em;
+}
+.sb-readings {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+  margin: 10px 0 8px;
+}
+.sb-readings > div {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px;
+  border: 1px solid #c3dad9;
+  border-radius: 10px;
+  background: #fff;
+  padding: 6px;
+  min-width: 0;
+}
+.sb-readings .sb-target {
+  background: #e6f3e8;
+  border-color: #bdd7c7;
+}
+.sb-readings small {
+  grid-column: 1/-1;
+  font-weight: 750;
+  color: #44646b;
+}
+.sb-readings span {
+  display: grid;
+  gap: 2px;
+  color: #355966;
+  font-size: 11px;
+}
+.sb-readings b {
+  font-size: 17px;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.sb-rail {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.sb-rail-key {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 3px 9px;
+  font-size: 11px;
+  color: #426770;
+  margin: 5px 0;
+}
+.sb-beats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 4px;
+  padding: 0;
+  list-style: none;
+  margin: 8px 0;
+}
+.sb-beats li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 3px;
+  min-width: 0;
+  min-height: 38px;
+  border: 1px solid #ccdedb;
+  border-radius: 6px;
+  background: #f9fdfa;
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.17;
+}
+.sb-beats li[data-gate="true"] {
+  border-style: dashed;
+  border-color: #528e79;
+}
+.sb-beats li[data-next="true"] {
+  border-style: solid;
+  border-color: #295e6d;
+  background: #e1eef0;
+  box-shadow: inset 0 0 0 1px #295e6d;
+}
+.sb-beats li[data-past="true"] {
+  background: #e1ece7;
+}
+.sb-beats small {
+  flex-basis: 100%;
+  text-align: center;
+  font-size: 10px;
+  color: #376358;
+  white-space: nowrap;
+}
+.sb-controls {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 5px;
+  margin: 8px 0;
+}
+.sb-controls button {
+  display: block;
+  text-align: center;
+  white-space: nowrap;
+  min-height: 55px;
+  min-width: 0;
+  border: 1px solid #b3d0cf;
+  border-radius: 8px;
+  color: #234e61;
+  background: #fff;
+  padding: 4px 1px;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 760;
+  cursor: pointer;
+}
+.sb-controls button > span {
+  margin-right: 3px;
+  font-size: 14px;
+}
+.sb-controls button small {
+  display: block;
+  color: #436770;
+  font-size: 11px;
+}
+.sb-controls button[aria-pressed="true"] {
+  border-color: #235a73;
+  background: #dbeef3;
+  box-shadow: inset 0 0 0 1px #235a73;
+}
+.sb-controls button:disabled {
+  background: #e1ebea;
+  cursor: default;
+}
+.sb-preview {
+  display: grid;
+  gap: 2px;
+  border: 1px solid #c2d8cf;
+  background: #fbfffc;
+  border-radius: 9px;
+  padding: 7px;
+  font-size: 12px;
+  color: #32595d;
+  min-height: 48px;
+}
+.sb-preview[data-error="true"] {
+  background: #fff3ea;
+  border-color: #e0a591;
+  color: #862f23;
+}
+.sb-apply {
+  width: 100%;
+  min-height: 44px;
+  background: #1f5c70;
+  color: #fff;
+  border: 0;
+  border-radius: 9px;
+  margin-top: 7px;
+  font: inherit;
+  font-weight: 760;
+  cursor: pointer;
+}
+.sb-apply:disabled {
+  background: #d8e7e7;
+  color: #405e65;
+  cursor: default;
+}
+.sb-status {
+  margin: 5px 0 0;
+  font-size: 12px;
+  min-height: 1.55em;
+  color: #365c68;
+}
