@@ -3536,5 +3536,17 @@ component: lazy(() => import("../games/Descensus2"))
     source: original,
     component: lazy(() => import("../games/FigureSequence")),
   },
+  {
+    id: "recipe-ratio",
+    title: "配方比例",
+    subtitle: "用同一份标准勺满足不同杯子的比例和容量，还要够库存。12 道原创谜题。",
+    category: "数字推理",
+    difficulty: "中级",
+    tone: "orange",
+    levelCount: 12,
+    artwork: { url: "./recipe-ratio-art.svg", position: "center", size: "cover" },
+    source: original,
+    component: lazy(() => import("../games/RecipeRatio")),
+  },
 ];
 export const findGame = (id: string) => games.find((game) => game.id === id);

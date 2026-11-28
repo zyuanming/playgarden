@@ -165,6 +165,7 @@ import { equationLevels } from "../src/games/equationBalanceLevels";
 import { magneticBoards } from "../src/games/magneticMazeLevels";
 import { springBeatLevels } from "../src/games/springBeatLevels";
 import { wordChainLevels } from "../src/games/wordChainLevels";
+import { recipeRatioLevels } from "../src/games/recipeRatioLevels";
 import { figureSequenceLevels } from "../src/games/figureSequenceLevels";
 import { recyclingWorkshopLevels } from "../src/games/recyclingWorkshopLevels";
 import { foodWebLevels } from "../src/games/foodWebLevels";
@@ -184,6 +185,7 @@ const packs = {
   "spring-beat": springBeatLevels,
   "word-chain": wordChainLevels,
   "figure-sequence": figureSequenceLevels,
+  "recipe-ratio": recipeRatioLevels,
   "recursive-orchard": treeLevels,
   "angle-ring": angleLevels,
   "descensus-2": [],

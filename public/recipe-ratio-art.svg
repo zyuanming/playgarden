@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" fill="none">
+<title>配方比例</title>
+<defs><pattern id="dot" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="3" cy="3" r="1.5" fill="#ffdd9e" opacity=".33"/></pattern><clipPath id="glass"><path d="M12 54h123l-13 122c-1 8-6 12-14 12H39c-8 0-13-4-14-12z"/></clipPath><g id="cup"><path d="M12 54h123l-13 122c-1 8-6 12-14 12H39c-8 0-13-4-14-12z" fill="#fff2d4"/><g clip-path="url(#glass)"><path d="M10 115c26-12 69 12 127-4v90H10z" fill="#e57c8d"/><path d="M10 146c28-16 69 17 127-2v57H10z" fill="#f5b653"/><path d="M10 171c26-10 68 9 127-2v30H10z" fill="#83bbc6"/><path d="M39 82h18m-16 22h11m-9 22h14m-11 22h8" stroke="#fff9e5" stroke-width="4" stroke-linecap="round"/></g><path d="M9 54h130m-127 0 13 122q1 12 14 12h69q13 0 14-12l13-122" stroke="#422436" stroke-width="5" stroke-linecap="round"/></g></defs>
+<path d="M0 0h800v500H0z" fill="#552d45"/><path d="M0 0h800v500H0z" fill="url(#dot)"/><circle cx="400" cy="235" r="198" fill="#65384b"/><circle cx="400" cy="235" r="182" stroke="#bd737d" stroke-dasharray="3 8" stroke-width="2"/>
+<path d="M141 364q259 68 518 0" stroke="#f0ae75" stroke-width="4" stroke-dasharray="4 10" stroke-linecap="round"/>
+<use href="#cup" transform="translate(177 182) rotate(-9 72 100)"/><use href="#cup" transform="translate(327 193)"/><use href="#cup" transform="translate(477 180) rotate(9 72 100)"/>
+<path d="M332 132h133c-5 30-28 46-67 46-37 0-61-16-66-46z" fill="#ffc91c" stroke="#422436" stroke-width="5"/><path d="m455 132 79-64" stroke="#ffd98e" stroke-width="14" stroke-linecap="round"/><path d="m367 119-10-16m42 11V91m34 27 10-16" stroke="#fff0bd" stroke-width="4" stroke-linecap="round"/>
+<circle cx="229" cy="129" r="7" fill="#f3b456"/><circle cx="588" cy="158" r="7" fill="#8ad0c3"/><path d="M193 173l14-6m398 35 14 7M265 88l11 14m273 19 16-8" stroke="#f6c794" stroke-width="3" stroke-linecap="round"/>
+</svg>
