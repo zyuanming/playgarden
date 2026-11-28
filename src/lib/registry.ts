@@ -3453,11 +3453,11 @@ component: lazy(() => import("../games/Descensus2"))
   {
     id: "magnetic-maze",
     title: "磁场迷宫",
-    subtitle: "用同极推开、异极吸引和翻转台，把小车刚好停在出口。12 道原创谜题。",
+    subtitle: "用同极推开、异极吸引和翻转台，把小车刚好停在出口。100 道原创谜题。",
     category: "科学实验",
     difficulty: "中级",
     tone: "green",
-    levelCount: 12,
+    levelCount: 100,
     resumeKey: "playgarden.magnetic-maze.v1",
     artwork: { url: "./magnetic-maze-art.svg", position: "center", size: "cover" },
     source: original,

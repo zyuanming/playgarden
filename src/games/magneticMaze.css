@@ -49,3 +49,10 @@
 .mm-actions button:disabled { opacity: .61; }
 .mm-lessons { display: flex; flex-wrap: wrap; gap: 6px; font-size: .81rem; }
 .mm-lessons span { padding: 4px 6px; border-radius: 6px; background: #e9efe5; }
+
+/* Keep six-column boards readable without overlapping magnet hit areas. */
+.mm-tile { width: 100%; box-sizing: border-box; }
+@media (max-width: 375px) {
+  .magnetic-maze.puzzle-layout,
+  .magnetic-maze .mm-panel { padding-inline: 8px; }
+}
