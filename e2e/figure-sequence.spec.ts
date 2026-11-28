@@ -136,3 +136,181 @@ test("Finale rejects the same-ending rule, predicts both hidden frames, and pers
   await expect.poll(()=>completion(page)).toContain(11);
   expect(errors).toEqual([]);
 });
+
+const addedReplays: [string,[number,number][]][] = [
+  ["T",[[3,22]]],
+  ["K",[[3,55]]],
+  ["E",[[3,180]]],
+  ["H",[[3,41]]],
+  ["V",[[3,282]]],
+  ["C",[[3,335]]],
+  ["L",[[3,257]]],
+  ["R",[[3,455]]],
+  ["V",[[3,329]]],
+  ["C",[[3,274]]],
+  ["K",[[3,103]]],
+  ["T",[[3,82]]],
+  ["E",[[3,133]]],
+  ["H",[[3,373]]],
+  ["L",[[3,40]]],
+  ["R",[[3,68]]],
+  ["R",[[3,130]]],
+  ["H",[[3,94]]],
+  ["T",[[3,49]]],
+  ["V",[[3,440]]],
+  ["K",[[3,57]]],
+  ["C",[[3,105]]],
+  ["TV",[[2,136]]],
+  ["EK",[[2,227],[4,72]]],
+  ["HE",[[2,137]]],
+  ["CV",[[2,277],[4,17]]],
+  ["VE",[[2,58]]],
+  ["TC",[[2,333],[4,24]]],
+  ["VC",[[2,133],[4,7]]],
+  ["CE",[[2,446]]],
+  ["HL",[[2,82],[4,28]]],
+  ["CT",[[2,357]]],
+  ["VT",[[2,320]]],
+  ["CH",[[2,356],[4,12]]],
+  ["KC",[[2,339]]],
+  ["HT",[[2,53],[4,13]]],
+  ["LH",[[2,390]]],
+  ["EH",[[2,176],[4,50]]],
+  ["VR",[[2,3]]],
+  ["HC",[[2,113],[4,89]]],
+  ["RH",[[2,65],[4,5]]],
+  ["KE",[[2,200]]],
+  ["KT",[[2,55]]],
+  ["VL",[[2,385],[5,76]]],
+  ["RH",[[1,275],[2,86]]],
+  ["RE",[[1,161],[2,11],[3,38]]],
+  ["RC",[[2,320],[4,260]]],
+  ["RV",[[1,328],[2,13],[5,328]]],
+  ["KC",[[2,85],[3,84],[5,272]]],
+  ["LC",[[1,334],[3,200],[4,397]]],
+  ["RT",[[1,136],[2,152],[3,26]]],
+  ["CK",[[1,312],[3,124],[4,125]]],
+  ["RC",[[3,195],[4,390]]],
+  ["RH",[[1,315],[4,222],[5,315]]],
+  ["RV",[[1,259],[3,265]]],
+  ["KC",[[3,495],[4,170],[5,171]]],
+  ["LT",[[1,307],[2,291],[3,78]]],
+  ["EK",[[1,296],[3,387],[4,386]]],
+  ["RC",[[2,260],[4,5],[5,260]]],
+  ["RV",[[1,126],[3,222]]],
+  ["RH",[[2,419],[3,236],[5,206]]],
+  ["KC",[[3,238],[4,427],[5,426]]],
+  ["RE",[[1,477],[2,375],[3,501]]],
+  ["CK",[[1,66],[3,262],[4,263]]],
+  ["RC",[[1,506],[4,251]]],
+  ["LC",[[1,50],[2,375],[3,351]]],
+  ["RH",[[1,86],[2,275],[5,86]]],
+  ["RC",[[3,61],[4,376],[5,211]]],
+  ["RV",[[1,13],[4,193],[5,13]]],
+  ["LT",[[1,239],[2,255],[3,507]]],
+  ["RT",[[1,375],[3,485],[4,501]]],
+  ["KC",[[2,426],[3,427],[5,239]]],
+  ["CK",[[1,210],[2,211],[3,406]]],
+  ["LC",[[1,340],[3,80],[4,277]]],
+  ["RC",[[2,151],[4,121],[5,151]]],
+  ["RE",[[1,351],[2,501],[3,477]]],
+  ["RV",[[2,233],[3,143],[5,107]]],
+  ["RH",[[1,236],[2,425],[5,236]]],
+  ["EK",[[1,402],[3,313],[4,312]]],
+  ["RC",[[2,316],[4,151],[5,316]]],
+  ["RH",[[1,209],[4,368],[5,209]]],
+  ["RV",[[1,29],[2,344]]],
+  ["CK",[[1,182],[2,183],[3,498]]],
+  ["RE",[[1,307],[3,94],[4,244]]],
+  ["LT",[[1,102],[2,118],[3,283]]],
+  ["RC",[[3,135],[4,450],[5,105]]],
+  ["RV",[[1,444],[3,498]]],
+  ["LC",[[1,69],[3,4],[4,321]]],
+];
+
+for(let start=0;start<addedReplays.length;start+=8) {
+  const end=Math.min(addedReplays.length,start+8);
+  test("Expanded campaign "+(start+13)+"–"+(end+12),async({page,isMobile})=>{
+    const errors=captureErrors(page);
+    await openGame(page,title);
+    for(let j=start;j<end;j++){
+      const i=j+12;
+      await chooseLevel(page,i);
+      await expect(root(page)).toHaveAttribute("data-board","figure-sequence-"+(i+1));
+      const [answer,hidden]=addedReplays[j];
+      await choose(page,isMobile,answer);
+      await expect(root(page)).toHaveAttribute("data-won","false");
+      expect(await completion(page)).not.toContain(i);
+      await expect(page.locator('[data-frame-state="conflict"]')).toHaveCount(0);
+      for(const [step,bits] of hidden){
+        await expect(frame(page,step)).toHaveAttribute("data-frame-state","prediction");
+        await expect(frame(page,step)).toHaveAttribute("data-prediction",String(bits));
+      }
+      await hit(page,isMobile,"确认规则");
+      await done(page,i);
+    }
+    expect(errors).toEqual([]);
+  });
+}
+
+test("Original progress survives reload and next advances from 12 to 13",async({page,isMobile})=>{
+  await openGame(page,title);
+  await chooseLevel(page,11);
+  await choose(page,isMobile,"KR");
+  await hit(page,isMobile,"确认规则");
+  await done(page,11);
+  await page.reload();
+  await expect.poll(()=>completion(page)).toEqual([11]);
+  await openGame(page,title);
+  await chooseLevel(page,11);
+  await choose(page,isMobile,"KR");
+  await hit(page,isMobile,"确认规则");
+  await done(page,11);
+  await hit(page,isMobile,"下一关");
+  await expect(root(page)).toHaveAttribute("data-board","figure-sequence-13");
+  expect(await completion(page)).toEqual([11]);
+  await choose(page,isMobile,"H");
+  await expect(frame(page,1)).toHaveAttribute("data-frame-state","conflict");
+  await hit(page,isMobile,"确认规则");
+  expect(await completion(page)).toEqual([11]);
+  await choose(page,isMobile,"T");
+  await expect(frame(page,3)).toHaveAttribute("data-prediction","22");
+  await hit(page,isMobile,"确认规则");
+  await done(page,12);
+  await page.reload();
+  await expect.poll(()=>completion(page)).toEqual([11,12]);
+});
+
+test("Level 100's identical final frames conceal separate conflicts",async({page,isMobile},info)=>{
+  const errors=captureErrors(page);
+  await openGame(page,title);
+  await chooseLevel(page,99);
+  await expect(page.locator(".fs-card")).toHaveCount(6);
+  await expect(page.locator('[data-frame-state="blank"]')).toHaveCount(3);
+  for(const [code,step,bits] of [["CL",5,[6,8]],["VC",2,[0,8]]] as const){
+    await choose(page,isMobile,code);
+    await expect(frame(page,6)).toHaveAttribute("data-prediction","1");
+    await expect(page.locator('[data-frame-state="conflict"]')).toHaveCount(1);
+    await expect(frame(page,step)).toHaveAttribute("data-frame-state","conflict");
+    for(const bit of bits) await expect(frame(page,step).locator(".fs-cell").nth(bit)).toHaveAttribute("data-difference","true");
+    await expect(frame(page,step).locator('[data-difference="true"]')).toHaveCount(bits.length);
+    await hit(page,isMobile,"确认规则");
+    await expect(status(page)).toContainText("第 "+step+" 步不是这张图");
+    await expect(root(page)).toHaveAttribute("data-won","false");
+    expect(await completion(page)).not.toContain(99);
+    if(isMobile){
+      const width=code==="CL"?360:390;
+      await page.setViewportSize({width,height:844});
+      expect(await page.evaluate(()=>document.documentElement.scrollWidth)).toBeLessThanOrEqual(width);
+      const sizes=await page.locator(".fs-card").evaluateAll(cards=>cards.map(c=>[c.clientWidth,c.scrollWidth,c.getBoundingClientRect().height]));
+      expect(sizes.every(([inside,scroll,height])=>inside>=scroll&&height>=44)).toBe(true);
+      await page.locator(".fs-panel").screenshot({path:info.outputPath("figure-100-"+width+".png"),animations:"disabled"});
+    }
+  }
+  await choose(page,isMobile,"LC");
+  for(const [step,bits] of [[1,69],[3,4],[4,321]]) await expect(frame(page,step)).toHaveAttribute("data-prediction",String(bits));
+  expect(await completion(page)).not.toContain(99);
+  await hit(page,isMobile,"确认规则");
+  await done(page,99);
+  expect(errors).toEqual([]);
+});

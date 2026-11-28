@@ -3527,11 +3527,11 @@ component: lazy(() => import("../games/Descensus2"))
   {
     id: "figure-sequence",
     title: "图形序列",
-    subtitle: "找出解释每张已知图的规则，补好留白。12 道原创谜题。",
+    subtitle: "找出解释每张已知图的规则，补好留白。100 道原创谜题。",
     category: "逻辑思维",
     difficulty: "中级",
     tone: "purple",
-    levelCount: 12,
+    levelCount: 100,
     artwork: { url: "./figure-sequence-art.svg", position: "center", size: "cover" },
     source: original,
     component: lazy(() => import("../games/FigureSequence")),
